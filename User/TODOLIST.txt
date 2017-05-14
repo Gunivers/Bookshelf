@@ -1,0 +1,18 @@
+LeiRoF
+- Entity Get Location
+- Entity Get Orientation
+- Entity Set Orientation
+- Entity Set Location
+- Entity Set Vectors
+- Systems LGdir *
+- Systems GPS *
+- Update Hierarchy
+
+theogiraudet
+- Utils Math Rnd
+- DisplayLife
+
+Non-attribuer
+- Utils Math Float
+- PlayerId
+- EntityId
