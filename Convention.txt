@@ -3,18 +3,27 @@ Remplacez les valeurs entre "<>" par les valeures correspondantes
 
 
 
-//<Nom Du Systeme>
-//Import method: <Nom Du Fichier D'import>*
+// <Nom Du Systeme>
+// @Author: <Name>
 
-//Version: <Version Du Système>
+// Version: <Version Du Système>
 // Minecraft Version: <Version Du Jeu>
 
-//Input values: <Nom>** (<Type>***), ...
-//Output values: <Nom>** (<Type>***), ...
+// Requirement:
+// - <Nom>** (<Type>***)
+// - ...
 
-//Author: <Name>
+// Input values:
+// - <Nom>** (<Type>***)
+// - ...
 
-//<Code>****
+// Output values:
+// - <Nom>** (<Type>***)
+// - ...
+
+// Note: <Note> (optionnel)
+
+// <Code>****
 
 
 

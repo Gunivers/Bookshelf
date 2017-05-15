@@ -1,18 +1,26 @@
-//SetOrientation
-//Import method: Orientation
+// SetOrientation
+
+// @Author: Leirof
 
 //Version: 1.0
 // Minecraft Version: 1.12
 
-//Input values: Phi (score dummy), Theta (score dummy)
+// Requirement:
+// - Phi (score dummy)
+// - Theta (score dummy)
+
+//Input values:
+// - Phi (score dummy)
+// - Theta (score dummy)
+
 //Output values: None
 
-//@Author: Leirof
 
 
+//Initialization
 
-//Initializer
-
+scoreboard players operation @s Tmp = @s Phi
+scoreboard players operation @s Tmp2 = @s Theta
 tp @s[] ~ ~ ~ 0 0
 
 //Phi(horizontal)
@@ -54,3 +62,7 @@ tp @s[score_Theta_min=2] ~ ~ ~ ~ ~2
 scoreboard players remove @s[score_Theta_min=2] Theta 2
 tp @s[score_Theta_min=1] ~ ~ ~ ~ ~1
 scoreboard players remove @s[score_Theta_min=1] Theta 1 
+
+//Restitution
+scoreboard players operation @s Phi = @s Tmp
+scoreboard players operation @s Theta = @s Tmp2

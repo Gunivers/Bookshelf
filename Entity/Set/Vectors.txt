@@ -1,0 +1,34 @@
+// SetVectors
+
+// @Author: Leirof
+
+// Version: 1.0
+// Minecraft Version: 1.12
+
+// Requirement:
+// - Phi (score dummy)
+// - Theta (score dummy
+// - VectorX (score dummy)
+// - VectorY (score dummy)
+// - VectorZ (score dummy)
+// - VectorSpeed (score dummy)
+
+// Input values:
+// - Phi (score dummy)
+// - Theta (score dummy)
+
+// Output values:
+// - VectorX (score dummy)
+// - VectorY (score dummy)
+// - VectorZ (score dummy)
+// - VectorSpeed (score dummy)
+
+
+
+
+
+//Initialization
+
+scoreboard players set @s VectorSpeed 200
+
+//Calcul Cos Phi

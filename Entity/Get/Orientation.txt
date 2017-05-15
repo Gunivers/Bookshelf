@@ -1,17 +1,23 @@
-//GetOrientation
-//Import method: Orientation
+// GetOrientation
+
+// @Author: Leirof
 
 //Version: 1.0
 // Minecraft Version: 1.12
 
+// Requirement:
+// - Phi (score dummy)
+// - Theta (score dummy)
+
 //Input values: None
-//Output values: Phi (score dummy), Theta (score dummy)
 
-//@Author: Leirof
+//Output values:
+// - Phi (score dummy)
+// - Theta (score dummy)
 
 
 
-//Initializer
+//Initialization
 
 scoreboard players set @s Phi 0
 scoreboard players set @s Theta 0
