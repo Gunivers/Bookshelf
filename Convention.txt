@@ -5,6 +5,10 @@ Remplacez les valeurs entre "<>" par les valeures correspondantes
 
 //<Nom Du Systeme>
 //Import method: <Nom Du Fichier D'import>*
+
+//Version: <Version Du Système>
+// Minecraft Version: <Version Du Jeu>
+
 //Input values: <Nom>** (<Type>***), ...
 //Output values: <Nom>** (<Type>***), ...
 

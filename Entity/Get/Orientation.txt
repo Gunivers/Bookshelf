@@ -1,6 +1,9 @@
 //GetOrientation
 //Import method: Orientation
 
+//Version: 1.0
+// Minecraft Version: 1.12
+
 //Input values: None
 //Output values: Phi (score dummy), Theta (score dummy)
 
