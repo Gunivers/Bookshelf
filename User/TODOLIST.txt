@@ -12,5 +12,8 @@ theogiraudet
 
 Non-attribuer
 - Utils Math Float
+- Utils Math Ln
+- Utils Math Exp
+- Utils Math PGCD
 - PlayerId
 - EntityId
