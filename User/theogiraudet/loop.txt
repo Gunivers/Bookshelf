@@ -1,0 +1,4 @@
+execute @e[tag=setPow,score_pow_min=0] ~ ~ ~ function GuniversDevLibrary:User/theogiraudet/pow
+execute @e[tag=setSqrt] ~ ~ ~ function GuniversDevLibrary:User/theogiraudet/sqrt
+execute @e[tag=searchTilt] ~ ~ ~ function GuniversDevLibrary:User/theogiraudet/tilt
+execute @e[tag=rnd] ~ ~ ~ function GuniversDevLibrary:User/theogiraudet/rnd
