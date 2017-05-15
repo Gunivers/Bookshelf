@@ -2,7 +2,7 @@
 //Import method: Orientation
 
 //Input values: None
-//Return values: Phi (score dummy), Theta (score dummy)
+//Output values: Phi (score dummy), Theta (score dummy)
 
 //@Author: Leirof
 
