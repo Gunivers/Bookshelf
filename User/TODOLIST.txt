@@ -1,7 +1,5 @@
 LeiRoF
 - Entity Get Location
-- Entity Get Orientation
-- Entity Set Orientation
 - Entity Set Location
 - Entity Set Vectors
 - Systems LGdir *

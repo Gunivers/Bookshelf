@@ -8,9 +8,12 @@
 
 
 
-//Phi detection (horizontal)
+//Initializer
 
 scoreboard players set @s Phi 0
+scoreboard players set @s Theta 0
+
+//Phi detection (horizontal)
 
 scoreboard players add @s[rym=256] Phi 256
 tp @s[rym=256] ~ ~ ~ ~-256 ~
@@ -29,13 +32,9 @@ tp @s[rym=4] ~ ~ ~ ~-4 ~
 scoreboard players add @s[rym=2] Phi 2
 tp @s[rym=2] ~ ~ ~ ~-2 ~
 scoreboard players add @s[rym=1] Phi 1
-tp @s[rym=1] ~ ~ ~ ~-1 ~ 
-
-
+tp @s[rym=1] ~ ~ ~ ~-1 ~
 
 //Theta detection (vertical)
-
-scoreboard players set @s Theta 0
 
 scoreboard players add @s[rxm=0,rx=90] Theta 90
 tp @s[rxm=-90,rx=-1] ~ ~ ~ ~ ~90
