@@ -34,7 +34,7 @@ scoreboard players set 1000 Constant 1000
 scoreboard players set 32400 Constant 32400 
 scoreboard players set 40500 Constant 40500
 
-//Calcul Cos
+// Retranscription of Phi on interval [0;90[
 
 scoreboard players operation @s Tmp3 = @s Tmp
 scoreboard players operation @s[score_Tmp_min=90,score_Tmp=179] Tmp3 *= Neg Constant
@@ -42,6 +42,8 @@ scoreboard players operation @s[score_Tmp_min=90,score_Tmp=179] Tmp3 += 180 Cons
 scoreboard players operation @s[score_Tmp_min=180,score_Tmp=269] Tmp3 -= 180 Constant
 scoreboard players operation @s[score_DirAngP_min=270] Tmp3 *= Neg Constant
 scoreboard players operation @s[score_DirAngP_min=270] Tmp3 += 360 Constant
+
+// Calcul Cos
 
 scoreboard players operation @s Cos = @s Tmp3
 scoreboard players operation @s Cos *= @s Cos
@@ -55,73 +57,4 @@ scoreboard players operation @s Tmp2 += 32400 Constant
 scoreboard players operation @s Cos /= @s Tmp2
 
 scoreboard players operation @s[score_Tmp_min=90,score_Tmp=269] Cos *= Neg Constant
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Tmp3 = @s Tmp
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Tmp3 -= 180 Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos = @s Tmp3
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos *= @s Cos
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos *= 4 Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos *= Neg Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos += 32400 Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos *= 1000 Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Tmp2 = @s Tmp3
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Tmp2 *= @s Tmp2
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Tmp2 += 32400 Constant
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos /= @s Tmp2
-scoreboard players operation @s[score_Tmp=269,score_Tmp_min=180] Cos *= Neg Constant
-
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp3 = @s Tmp
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp3 -= 90 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos = @s Tmp3
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos *= Neg Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos += 180 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos *= @s Tmp3
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos *= 4 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos *= 1000 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 = @s Tmp3
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 *= Neg Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 += 180 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 *= @s Tmp3
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 *= Neg Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Tmp2 += 40500 Constant
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos /= @s Tmp2
-scoreboard players operation @s[score_Tmp=179,score_Tmp_min=90] Cos *= Neg Constant
-
-scoreboard players operation @s[score_DirAngP_min=270] Tmp3 = @s Tmp
-scoreboard players operation @s[score_DirAngP_min=270] Tmp3 -= 270 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Cos = @s Tmp3
-scoreboard players operation @s[score_DirAngP_min=270] Cos *= Neg Constant
-scoreboard players operation @s[score_DirAngP_min=270] Cos += 180 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Cos *= @s Tmp3
-scoreboard players operation @s[score_DirAngP_min=270] Cos *= 4 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Cos *= 1000 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 = @s Tmp3
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 *= Neg Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 += 180 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 *= @s Tmp3
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 *= Neg Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp2 += 40500 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Cos /= @s Tmp2
-
-
-
-
 
