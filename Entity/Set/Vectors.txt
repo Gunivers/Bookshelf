@@ -6,6 +6,8 @@
 // Minecraft Version: 1.12
 
 // Requirement:
+// - Gunivers:Utils/Math/Cos (function)
+// - Gunivers:Utils/Math/Sin (function)
 // - Phi (score dummy)
 // - Theta (score dummy
 // - VectorX (score dummy)
@@ -24,11 +26,30 @@
 // - VectorSpeed (score dummy)
 
 
-
-
-
 //Initialization
 
 scoreboard players set @s VectorSpeed 200
 
-//Calcul Cos Phi
+//Calcul Vector Y
+
+scoreboard players operation @s Tmp = @s Theta
+function Gunivers:Utils/Math/Cos
+scoreboard players operation @s VectorY = @s Res
+
+//Calcul Vector Z
+
+scoreboard players operation @s Tmp = @s Phi
+function Gunivers:Utils/Math/Cos
+scoreboard players operation @s VectorZ = @s Res
+
+scoreboard players operation @s Tmp = @s Theta
+function Gunivers:Utils/Math/Sin
+scoreboard players operation @s VectorZ *= @s Res
+
+//Calcul Vector X
+
+scoreboard players operation @s VectorX = @s Res
+
+scoreboard players operation @s Tmp = @s Phi
+function Gunivers:Utils/Math/Sin
+scoreboard players operation @s VectorX *= @s Res
