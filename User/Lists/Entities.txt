@@ -1,9 +1,11 @@
 //Entities
 
 area_effect_cloud
-armor_standarrow
+armor_stand
+arrow
 bat
-blaze_powderboat
+blaze_powder
+boat
 cave_spider
 chest_minecraft
 chicken
@@ -33,7 +35,7 @@ guardian
 horse
 husk
 item
-item_frame
+// item_frame
 lightning_bolt
 llama
 llama_split
@@ -81,4 +83,4 @@ xp_orb
 zombie
 zombie_horse
 zombie_pigman
-zombie_villager
+zombie_villager 
