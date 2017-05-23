@@ -29,7 +29,7 @@ scoreboard players set @s VectorSpeed 200
 scoreboard players set Neg Constant -1
 scoreboard players set 4 Constant 4 
 scoreboard players set 180 Constant 180
-scoreboard players set 180 Constant 360
+scoreboard players set 360 Constant 360
 scoreboard players set 1000 Constant 1000 
 scoreboard players set 32400 Constant 32400 
 scoreboard players set 40500 Constant 40500
@@ -40,8 +40,8 @@ scoreboard players operation @s Tmp3 = @s Tmp
 scoreboard players operation @s[score_Tmp_min=90,score_Tmp=179] Tmp3 *= Neg Constant
 scoreboard players operation @s[score_Tmp_min=90,score_Tmp=179] Tmp3 += 180 Constant
 scoreboard players operation @s[score_Tmp_min=180,score_Tmp=269] Tmp3 -= 180 Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp3 *= Neg Constant
-scoreboard players operation @s[score_DirAngP_min=270] Tmp3 += 360 Constant
+scoreboard players operation @s[score_Tmp_min=270] Tmp3 *= Neg Constant
+scoreboard players operation @s[score_Tmp_min=270] Tmp3 += 360 Constant
 
 # Calcul Cos
 

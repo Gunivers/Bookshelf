@@ -53,5 +53,4 @@ scoreboard players operation @s Tmp2 *= Neg Constant
 scoreboard players operation @s Tmp2 += 40500 Constant
 scoreboard players operation @s Res /= @s Tmp2
 
-scoreboard players operation @s[score_Tmp=179] Res *= Neg Constant
-
+scoreboard players operation @s[score_Tmp_min=180] Res *= Neg Constant

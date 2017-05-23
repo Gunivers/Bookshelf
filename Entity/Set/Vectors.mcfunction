@@ -26,6 +26,7 @@
 # - VectorSpeed (score dummy)
 
 
+
 #Initialization
 
 scoreboard players set @s VectorSpeed 200
@@ -53,3 +54,8 @@ scoreboard players operation @s VectorX = @s Res
 scoreboard players operation @s Tmp = @s Phi
 function Gunivers-Lib:Utils/Math/Sin
 scoreboard players operation @s VectorX *= @s Res
+
+# Retranscription of Phi on interval [0;1000]
+scoreboard players operation @s VectorX /= 1000 Constant
+scoreboard players operation @s VectorX /= Neg Constant
+scoreboard players operation @s VectorZ /= 1000 Constant

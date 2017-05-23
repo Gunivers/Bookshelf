@@ -21,7 +21,7 @@
 
 scoreboard players operation @s Tmp = @s Phi
 scoreboard players operation @s Tmp2 = @s Theta
-tp @s[] ~ ~ ~ 0 0
+tp @s[] ~ ~ ~ 0 -90
 
 #Phi(horizontal)
 
@@ -46,8 +46,8 @@ scoreboard players remove @s[score_Phi_min=1] Phi 1
 
 #Theta(vertical)
 
-tp @s[score_Theta_min=90] ~ ~ ~ ~ ~-90
-scoreboard players remove @s[score_Theta_min=90] Theta 90
+tp @s[score_Theta_min=128] ~ ~ ~ ~ ~128
+scoreboard players remove @s[score_Theta_min=128] Theta 128
 tp @s[score_Theta_min=64] ~ ~ ~ ~ ~64
 scoreboard players remove @s[score_Theta_min=64] Theta 64
 tp @s[score_Theta_min=32] ~ ~ ~ ~ ~32
