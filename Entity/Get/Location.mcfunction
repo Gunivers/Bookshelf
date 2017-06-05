@@ -17,8 +17,6 @@
 
 execute @s ~ ~ ~ summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags=["CalcLocation"]}
 
-execute @p ~ ~ ~ say @e
-
 execute @s ~ ~ ~ execute @e[type=armor_stand,tag=CalcLocation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Get/Location-Slave
 
 scoreboard players operation @s LocX = @e[x=0,y=0,z=0,type=armor_stand,tag=CalcLocation,c=1] LocX
