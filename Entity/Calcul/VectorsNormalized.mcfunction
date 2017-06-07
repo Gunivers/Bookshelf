@@ -32,14 +32,11 @@ scoreboard players operation @s Tmp3 = @s VectorZ
 scoreboard players operation @s[score_VectorZ=-1] Tmp3 *= Neg Constant 
 scoreboard players operation @s Tmp += @s Tmp3
 
-scoreboard players set @s Tmp2 1000000
-scoreboard players operation @s Tmp2 /= @s Tmp
 
 
-scoreboard players operation @s VectorX *= @s Tmp2
-scoreboard players operation @s VectorY *= @s Tmp2
-scoreboard players operation @s VectorZ *= @s Tmp2
-
-scoreboard players operation @s VectorX /= 1000 Constant
-scoreboard players operation @s VectorY /= 1000 Constant
-scoreboard players operation @s VectorZ /= 1000 Constant
+scoreboard players operation @s VectorX *= 1000 Constant
+scoreboard players operation @s VectorX /= @s Tmp
+scoreboard players operation @s VectorY *= 1000 Constant
+scoreboard players operation @s VectorY /= @s Tmp
+scoreboard players operation @s VectorZ *= 1000 Constant
+scoreboard players operation @s VectorZ /= @s Tmp
