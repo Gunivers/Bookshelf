@@ -29,7 +29,7 @@
 
 #Initialization
 
-scoreboard players set @s VectorSpeed 200
+scoreboard players set @s VectorSpeed 1000
 
 #Calcul Vector Y
 
