@@ -22,12 +22,8 @@ scoreboard players operation @s[score_Tmp4_min=1] Tmp3 = @s Tmp9
 # DEBUG
 tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT2 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
 tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT2 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
-execute @s[tag=DebugMovement] ~ ~ ~ particle endRod ~ ~ ~ 0 0 0 0 1 force
-<<<<<<< HEAD
-execute @s[tag=DebugMovement] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Permanent"]}
-=======
-#execute @s[tag=DebugMovement] ~ ~ ~ summon Falling_Block ~ ~ ~ {Block:"minecraft:bedrock",Time:1,NoGravity:1,Tags:["Permanent"]}
->>>>>>> a6f87b65a088c40a4af61552e1d43a000e8512ee
+#execute @s[tag=Debug] ~ ~ ~ particle endRod ~ ~ ~ 0 0 0 0 1 force
+execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
 execute @s[score_Collision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Set/CollisionV2

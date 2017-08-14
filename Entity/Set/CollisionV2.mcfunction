@@ -37,11 +37,7 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionX
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionX] add Collision
 
 #DEBUG
-<<<<<<< HEAD
-execute @s[tag=CollisionX] ~ ~ ~ summon Falling_Block ~0.1 ~-0.5 ~-0.1 {Block:"minecraft:gold_block",Time:1,NoGravity:1,Tags:["Permanent"]}
-=======
-#execute @s[tag=CollisionX] ~ ~ ~ summon Falling_Block ~0.1 ~0.5 ~-0.1 {Block:"minecraft:gold_block",Time:1,NoGravity:1,Tags:["Permanent"]}
->>>>>>> a6f87b65a088c40a4af61552e1d43a000e8512ee
+execute @s[tag=CollisionX] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~0.1 ~-0.5 ~-0.1 {Block:"minecraft:gold_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
 
@@ -68,11 +64,7 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionY
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionY] add Collision
 
 # DEBUG
-<<<<<<< HEAD
-execute @s[tag=CollisionY] ~ ~ ~ summon Falling_Block ~ ~-0.5 ~0.1 {Block:"minecraft:iron_block",Time:1,NoGravity:1,Tags:["Permanent"]}
-=======
-#execute @s[tag=CollisionY] ~ ~ ~ summon Falling_Block ~ ~0.5 ~0.1 {Block:"minecraft:iron_block",Time:1,NoGravity:1,Tags:["Permanent"]}
->>>>>>> a6f87b65a088c40a4af61552e1d43a000e8512ee
+execute @s[tag=CollisionY] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-0.5 ~0.1 {Block:"minecraft:iron_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
 
@@ -97,10 +89,6 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionZ
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionZ] add Collision
 
 # DEBUG
-<<<<<<< HEAD
-execute @s[tag=CollisionZ] ~ ~ ~ summon Falling_Block ~-0.1 ~-0.5 ~-0.1 {Block:"minecraft:diamond_block",Time:1,NoGravity:1,Tags:["Permanent"]}
-=======
-#execute @s[tag=CollisionZ] ~ ~ ~ summon Falling_Block ~-0.1 ~0.5 ~-0.1 {Block:"minecraft:diamond_block",Time:1,NoGravity:1,Tags:["Permanent"]}
->>>>>>> a6f87b65a088c40a4af61552e1d43a000e8512ee
+execute @s[tag=CollisionZ] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~-0.1 ~-0.5 ~-0.1 {Block:"minecraft:diamond_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
