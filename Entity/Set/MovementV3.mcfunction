@@ -5,7 +5,7 @@
 # Version: 1.0
 # Minecraft Version: 1.12
 
-# Import: Vectors, Tmp7
+# Import: Vectors, Tmp9
 
 # Input values:
 # - VectorX (score dummy)
@@ -31,16 +31,27 @@ tellraw @a[tag=DebugMovement] ["",{"text":"INPUT -> ","color":"gray"},{"text":"S
 tellraw @a[tag=DebugMovement] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
 tellraw @a[tag=DebugMovement] ["",{"text":"CALC -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
 
-scoreboard players operation @s Tmp4 = @s Tmp
-scoreboard players operation @s Tmp4 /= 1000 Constant
-scoreboard players operation @s Tmp %= 1000 Constant
+scoreboard players set @s Tmp4 0
 
-scoreboard players operation @s Tmp5 = @s Tmp2
-scoreboard players operation @s Tmp5 /= 1000 Constant
-scoreboard players operation @s Tmp2 %= 1000 Constant
+scoreboard players tag @s remove FectorIncrease
+scoreboard players tag @s[score_Tmp_min=1] add FactorIncrease
+scoreboard players tag @s[score_Tmp2_min=1] add FactorIncrease
+scoreboard players tag @s[score_Tmp3_min=1] add FactorIncrease
+scoreboard players tag @s[score_Tmp=-1] add FactorIncrease
+scoreboard players tag @s[score_Tmp2=-1] add FactorIncrease
+scoreboard players tag @s[score_Tmp3=-1] add FactorIncrease
+scoreboard players add @s[tag=FactorIncrease] Tmp4 1
 
-scoreboard players operation @s Tmp6 = @s Tmp3
-scoreboard players operation @s Tmp6 /= 1000 Constant
-scoreboard players operation @s Tmp3 %= 1000 Constant
+tellraw @a[tag=DebugMovement] ["",{"text":"\n>>> Loop 1 <<<","color":"green"}]
 
-function Gunivers-Lib:Entity/Set/MovementV2Loop
+tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
+tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
+
+function Gunivers-Lib:Entity/Set/MovementV3Loop
+
+scoreboard players operation @s[score_Tmp4_min=1] Tmp7 = @s Tmp
+scoreboard players operation @s[score_Tmp4_min=1] Tmp8 = @s Tmp2
+scoreboard players operation @s[score_Tmp4_min=1] Tmp9 = @s Tmp3
+
+tellraw @a[tag=DebugMovement] ["",{"text":"\n>>> Loop 2 <<<","color":"green"}]
+function Gunivers-Lib:Entity/Set/MovementV3Loop2
