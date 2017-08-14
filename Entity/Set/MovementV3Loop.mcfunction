@@ -32,7 +32,11 @@ scoreboard players operation @s[tag=FactorIncrease] Tmp3 /= 2 Constant
 # DEBUG
 tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
 tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
+<<<<<<< HEAD
 execute @s ~ ~ ~ summon Falling_Block ~ ~ ~ {Block:"minecraft:fence",Time:1,NoGravity:1,Tags:["Permanent"]}
+=======
+# execute @s ~ ~ ~ summon Falling_Block ~ ~1 ~ {Block:"minecraft:fence",Time:1,NoGravity:1,Tags:["Permanent"]}
+>>>>>>> a6f87b65a088c40a4af61552e1d43a000e8512ee
 # END DEBUG
 
 scoreboard players tag @s remove MovementV3Loop
