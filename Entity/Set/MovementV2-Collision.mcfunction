@@ -1,20 +1,14 @@
-# SetVectors
+# NAME: Mise en movement d'une entité
+# PATH: Gunivers-Lib: ... /MovementV2-Collision
 
-# @Author: Leirof
+# AUTHOR: LeiRoF
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 2.0
+# MINECRAFT: 1.12
 
-# Import: Vectors, Tmp3, Constant
+# CHILD OF: Gunivers-Lib:Entity/Set/MovementV2
 
-# Input values:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-# - Collision (score dummy)
-
-# Ouput values:
-# - None
+# CODE:
 
 #----------------#
 # Collision on X #

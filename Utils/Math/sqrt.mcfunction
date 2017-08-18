@@ -41,5 +41,5 @@ scoreboard players operation @s Tmp3 /= 2 Constant
 execute @s ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
 
 # Save
-scoreboard players operation @s Res = @s Temp4
+scoreboard players operation @s Res = @s Tmp4
 
