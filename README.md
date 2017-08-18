@@ -22,35 +22,35 @@ Gunivers-Lib possède déjà certaines fonctions mathématiques ainsi que certai
 MOTIVATION: Cette biliothèque offrira une aide conséquente aux développeur CMD suhaitant réaliser des systèmes/maps complèxes. Ainsi, ce petit projet fait faire un bond de géant à la "technologie" des Command Blocks et ouvre les portes à d'autres projets plus ambitieux ! 
 
 # Convention:
-Ci-dessous la convention d'écriture au sein de cette librairie. Merci de la respecter.
+Ci-dessous la convention d'écriture au sein de cette librairie en commentaire en début de chaque fichier. Merci de la respecter.
 Remplacez les valeurs entre "<>" par les valeures correspondantes
 ___________________________________________________________________________________________________
 
 
-# <Nom Du Systeme>
-# @Author: <Name>
-# @Contributors:
-# - <Name>
-# - ...
+<Nom Du Systeme>
+@Author: <Name>
+@Contributors:
+- <Name>
+- ...
 
-# Version: <Version Du Système>
-# Minecraft Version: <Version Du Jeu>
+Version: <Version Du Système>
+Minecraft Version: <Version Du Jeu>
 
-# Requierements:
-# - <Name>** (<Type>***)
-# - ...
+Requierements:
+- <Name>** (<Type>***)
+- ...
 
-# Input values:
-# - <Name>** (<Type>***)
-# - ...
+Input values:
+- <Name>** (<Type>***)
+- ...
 
-# Output values:
-# - <Name>** (<Type>***)
-# - ...
+Output values:
+- <Name>** (<Type>***)
+- ...
 
-# Note: <Note> (optionnel)
+Note: <Note> (optionnel)
 
-# <Code>****
+<Code>****
 
 ___________________________________________________________________________________________________
 
