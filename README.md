@@ -4,7 +4,7 @@
 # CHEFS DE PROJET:
 @theogiraudet/Oromis, @LeiRoF
 
-# Contributeurs:
+# CONTRIBUTEURS:
 @theogiraudet/Oromis, @LeiRoF
 
 # TITRE:
