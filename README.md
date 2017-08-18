@@ -1,9 +1,10 @@
-# GUNIVERS-LIB
-
-# CONCEPTCONCEPT:
+# CONCEPT:
 @LeiRoF
 
 # CHEFS DE PROJET:
+@theogiraudet/Oromis, @LeiRoF
+
+# Contributeurs:
 @theogiraudet/Oromis, @LeiRoF
 
 # TITRE:
