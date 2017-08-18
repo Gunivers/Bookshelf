@@ -1,4 +1,5 @@
-# Cos
+# Calcul Cosinus
+# Path: Gunivers-Lib:Utils/Math/Cos
 
 # @Author: Leirof
 
@@ -6,11 +7,10 @@
 # Minecraft Version: 1.12
 
 # Requirement:
-# - Tmp (dummy)
-# - Tmp2 (dummy)
-# - Tmp3 (dummy)
-# - Res (dummy)
-# - Constant (dummy)
+# - Tmp (score dummy)
+# - Tmp2 (score dummy)
+# - Tmp3 (score dummy)
+# - Gunivers-Lib:Import/Math (MCfunction)
 
 # Input values:
 # - Tmp (score dummy)

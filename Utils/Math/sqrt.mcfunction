@@ -1,36 +1,45 @@
-#-------- Fonction permettant de calculer la racine carrÃ©e d'un nombre --------
+# NAME: Racine carré
+# PATH: Gunivers-Lib:Utils/Math/Sqrt
 
-#@Author: theogiraudet/Oromis
+# AUTHOR: Luludatra
+# CONTRIBUTORS:
+# - Theogiraudet/Oromis
 
-#Constantes
-scoreboard players set 2 Constant 2
-scoreboard players set -1 Constant -1
+# VERSION: 1.1
+# MINECRAFT: 1.12
 
-#Initialisation
-scoreboard players set @s[tag=!launchSqrt] sqrt 20
+# REQUIEREMENTS:
+# - Gunivers-Lib:Import/Math (MCfunction)
+# - Tmp (score dummy)
+# - Tmp2 (score dummy)
+# - Tmp3 (score dummy)
+# - Tmp4 (score dummy)
 
-#VÃ©rification de la prÃ©sence d'un nombre nÃ©gatif
-scoreboard players operation @s[score_Operation=-1] Operation *= -1 Constant 
+# INPUT:
+# - Tmp (score dummy)
 
-#Operation
-execute @s[tag=!launchSqrt] ~ ~ ~ scoreboard players operation @s[tag=setSqrt] Temp = @s[tag=setSqrt] Operation
-execute @s[tag=!launchSqrt] ~ ~ ~ scoreboard players operation @s[tag=!launchSqrt] Temp /= 2 Constant
-execute @s[tag=!launchSqrt] ~ ~ ~ scoreboard players tag @s[tag=setSqrt] add launchSqrt
+# OUTPUT:
+# - Res (score dummy)
 
-#Boucle
-scoreboard players remove @s sqrt 1
-scoreboard players operation @s[tag=setSqrt] Temp2 = @s[tag=setSqrt] Operation
-scoreboard players operation @s[tag=setSqrt] Operation /= @s[tag=setSqrt] Temp
-scoreboard players operation @s[tag=setSqrt] Temp += @s[tag=setSqrt] Operation
-scoreboard players operation @s[tag=setSqrt] Temp /= 2 Constant
-scoreboard players operation @s[tag=setSqrt] Operation = @s[tag=setSqrt] Temp2
+# NOTE: Resolution de la racine carrée d'un nombre
 
-#Save
-scoreboard players tag @s[tag=setSqrt,score_sqrt=0] add getSqrt
-scoreboard players tag @s[tag=getSqrt] remove setSqrt
-scoreboard players tag @s[tag=getSqrt] remove launchSqrt
-scoreboard players operation @s[tag=getSqrt] Operation = @s[tag=getSqrt] Temp
+# CONFIGURATION:
+scoreboard players set @s Tmp2 20
+# -> Permet de gérer la précision du resultat. Valeur par défaut: 20. Plus cette valeure est grande, plsu le résultat sera précis et l'execution de la fonction sera lourde.
 
+# CODE:
 
-#---------------------------- Formule de HÃ©ron ------------------------------
+# Vérification de la présence d'un nombre négatif
+scoreboard players operation @s Res = @s Tmp
+scoreboard players operation @s[score_Res=-1] Res *= -1 Constant 
+
+# Operation
+scoreboard players operation @s Tmp3 = @s Res
+scoreboard players operation @s Tmp3 /= 2 Constant
+
+# Boucle à executer {Tmp2} fois
+execute @s ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
+
+# Save
+scoreboard players operation @s Res = @s Temp4
 
