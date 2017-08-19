@@ -21,19 +21,6 @@
 #Note: Tmp must be in interval [0;360]
 
 
-
-#Initialization
-
-scoreboard players set @s VectorSpeed 200
-
-scoreboard players set Neg Constant -1
-scoreboard players set 4 Constant 4 
-scoreboard players set 180 Constant 180
-scoreboard players set 360 Constant 360
-scoreboard players set 1000 Constant 1000 
-scoreboard players set 32400 Constant 32400 
-scoreboard players set 40500 Constant 40500
-
 # Retranscription of Phi on interval [0;90[
 
 scoreboard players operation @s Tmp3 = @s Tmp

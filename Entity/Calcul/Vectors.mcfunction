@@ -1,11 +1,12 @@
-# SetVectors
+# TITLE: Calcul Vectors
+# PATH: Gunivers-Lib:Entity/Calcul/Vectors
 
-# @Author: Leirof
+# AUTHOR: Leirof
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
+# REQUIEREMENT:
 # - Gunivers-Lib:Utils/Math/Cos (function)
 # - Gunivers-Lib:Utils/Math/Sin (function)
 # - Phi (score dummy)
@@ -15,21 +16,20 @@
 # - VectorZ (score dummy)
 # - VectorSpeed (score dummy)
 
-# Input values:
+# INPUT:
 # - Phi (score dummy)
 # - Theta (score dummy)
 
-# Output values:
+# OUTPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 # - VectorSpeed (score dummy)
 
-
-
-#Initialization
-
+# CONFIGURATION:
 scoreboard players set @s VectorSpeed 1000
+
+# CODE 
 
 #Calcul Vector Y
 

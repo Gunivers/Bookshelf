@@ -1,4 +1,4 @@
-#Import Location
+#Import Vectors
 #@Author: LeiRoF
 
 scoreboard objectives add VectorX dummy

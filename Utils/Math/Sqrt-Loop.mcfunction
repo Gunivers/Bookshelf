@@ -1,4 +1,3 @@
-
 # NAME: Racine carré
 # PATH: Gunivers-Lib:Utils/Math/Sqrt
 
@@ -22,4 +21,3 @@ scoreboard players operation @s Res = @s Tmp4
 
 scoreboard players remove @s Tmp2 1
 execute @s[score_Tmp2_min=1] ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
-
