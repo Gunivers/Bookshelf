@@ -15,5 +15,5 @@
 
 
 
-execute @e[tag=DirMoving] ~ ~ ~ function Gunivers-Lib:Entity/Apply/Move
-execute @e[tag=DirMoving,score_DirCollision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Apply/Collision
+execute @e[tag=DirMoving] ~ ~ ~ function Gunivers-Lib:Entity/Set/Movement
+execute @e[tag=DirMoving,score_DirCollision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Set/Collision

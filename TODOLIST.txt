@@ -1,10 +1,9 @@
 LeiRoF
-- Entity Get Location
 - Entity Set Location
-- Entity Set Vectors
-- Systems LGdir *
-- Systems GPS *
 - Update Hierarchy
+- Entity Get PositionByVector
+   -> Utils Math Arctan
+   -> Utils Math Arccos
 
 theogiraudet
 - Utils Math Rnd
