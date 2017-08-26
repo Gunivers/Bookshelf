@@ -37,7 +37,8 @@ scoreboard players operation @s[tag=!CantApply] Tmp3 %= 10 Constant
 
 scoreboard players operation @s Res = @s Tmp
 scoreboard players operation @s[tag=!CantApply] Res /= @s[tag=!CantApply] Tmp2
-scoreboard players add @s[tag=!CantApply,score_Tmp3_min=5] Res 1 
+scoreboard players add @s[tag=!CantApply,score_Tmp3_min=5,score_Tmp_min=0] Res 1 
+scoreboard players remove @s[tag=!CantApply,score_Tmp3_min=-5,score_Tmp=-1] Res 1 
 
 scoreboard players operation @s[tag=CantApply] Res /= @s[tag=CantApply] Tmp2
 

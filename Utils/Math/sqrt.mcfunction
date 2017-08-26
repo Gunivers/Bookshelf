@@ -1,8 +1,8 @@
-# NAME: Racine carré
+# NAME: Square Root
 # PATH: Gunivers-Lib:Utils/Math/Sqrt
 
 # AUTHOR: Luludatra
-# CONTRIBUTORS:
+# CONTRIBUTOR:
 # - Theogiraudet/Oromis
 
 # VERSION: 1.1
@@ -21,15 +21,16 @@
 # OUTPUT:
 # - Res (score dummy)
 
-# NOTE: Resolution de la racine carrée d'un nombre
+# NOTE: Resolution of the square root of a number
 
 # CONFIGURATION:
 scoreboard players set @s Tmp2 20
-# -> Permet de gérer la précision du resultat. Valeur par défaut: 20. Plus cette valeur est grande, plus le résultat sera précis et l'exécution de la fonction sera lourde.
+# -> Allows you to manage the accuracy of the result. More this value is high, more the impact on the performance is high.
+# -> Default value: 20.
 
 # CODE:
 
-# Vérification de la présence d'un nombre négatif
+# Verifying the presence of a negative number
 scoreboard players operation @s Res = @s Tmp
 scoreboard players operation @s[score_Res=-1] Res *= -1 Constant 
 
@@ -37,7 +38,7 @@ scoreboard players operation @s[score_Res=-1] Res *= -1 Constant
 scoreboard players operation @s Tmp3 = @s Res
 scoreboard players operation @s Tmp3 /= 2 Constant
 
-# Boucle à executer {Tmp2} fois
+# Loop to execute {Tmp2} time
 execute @s ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
 
 # Save
