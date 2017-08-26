@@ -3,15 +3,14 @@
 
 # AUTHOR: theogiraudet/Oromis
 
-# VERSION: 0.1
+# VERSION: 1.0
 # MINECRAFT: 1.12.1
 
 # REQUIEREMENTS:
 # - Tmp (score dummy)
 # - Tmp2 (score dummy)
 # - Tmp3 (score dummy)
-# - Res (score dummy)
-# - Constant
+# - Gunivers-Lib:Import/Math (MCfunction)
 
 # INPUT:
 # - Tmp (score dummy)
