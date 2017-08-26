@@ -25,7 +25,7 @@
 
 # CONFIGURATION:
 scoreboard players set @s Tmp2 20
-# -> Permet de gérer la précision du resultat. Valeur par défaut: 20. Plus cette valeure est grande, plsu le résultat sera précis et l'execution de la fonction sera lourde.
+# -> Permet de gérer la précision du resultat. Valeur par défaut: 20. Plus cette valeur est grande, plus le résultat sera précis et l'exécution de la fonction sera lourde.
 
 # CODE:
 

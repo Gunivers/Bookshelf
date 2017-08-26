@@ -4,7 +4,7 @@
 #Version: 1.0
 #Minecraft Version: 1.12
 
-#Requirement:
+#Import:
 # - runIncrement (dummy)
 # - setMinIncrement (dummy)
 # - setMaxIncrement (dummy)

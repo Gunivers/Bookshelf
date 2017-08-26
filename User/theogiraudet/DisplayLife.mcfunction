@@ -4,7 +4,7 @@
 #Version: 0.1
 #Minecraft Version: 1.12
 
-#Requirement:
+#Import:
 # - healthBar (dummy)
 
 #Input values:
