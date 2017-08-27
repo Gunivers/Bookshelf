@@ -16,6 +16,7 @@ scoreboard objectives add zM_dist dummy
 scoreboard objectives add Constant dummy
 
 scoreboard players set -1 Constant -1
+scoreboard players set 1000 Constant 1000
 
 # ---------------------------------------------------------------------------------------
 
