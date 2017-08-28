@@ -5,7 +5,7 @@
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTEURS:
-@theogiraudet/Oromis, @LeiRoF
+@theogiraudet/Oromis, @LeiRoF, @Luludatra
 
 # TITRE:
 Gunivers-Lib
