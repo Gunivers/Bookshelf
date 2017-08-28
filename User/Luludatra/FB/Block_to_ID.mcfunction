@@ -2,7 +2,7 @@
 # SYSTEME BLOCK TO ID
 # by Luludatra
 
-# La fonction va donner le score BlockID à l'entité @s pour le block dans lequel elle est.
+# La fonction va donner les scores BlockID et BlockDamage à @s pour le block sur elle-même
 
 # ---------------------------------------------------------------------------------------
 
@@ -142,7 +142,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ bedrock 12 /scoreboard players set @s BlockDamage 
 execute @s ~ ~ ~ detect ~ ~ ~ bedrock 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ bedrock 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ bedrock 15 /scoreboard players set @s BlockDamage 15
-# 8 - flowing water
+# 8 - flowing_water
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water -1 /scoreboard players set @s BlockID 8
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 1 /scoreboard players set @s BlockDamage 1
@@ -160,7 +160,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_water 15 /scoreboard players set @s BlockDamage 15
-# 9 - flowing water
+# 9 - water
 execute @s ~ ~ ~ detect ~ ~ ~ water -1 /scoreboard players set @s BlockID 9
 execute @s ~ ~ ~ detect ~ ~ ~ water 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ water 1 /scoreboard players set @s BlockDamage 1
@@ -178,7 +178,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ water 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ water 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ water 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ water 15 /scoreboard players set @s BlockDamage 15
-# 10 - flowing lava
+# 10 - flowing_lava
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava -1 /scoreboard players set @s BlockID 10
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 1 /scoreboard players set @s BlockDamage 1
@@ -196,7 +196,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ flowing_lava 15 /scoreboard players set @s BlockDamage 15
-# 11 - flowing lava
+# 11 - lava
 execute @s ~ ~ ~ detect ~ ~ ~ lava -1 /scoreboard players set @s BlockID 11
 execute @s ~ ~ ~ detect ~ ~ ~ lava 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lava 1 /scoreboard players set @s BlockDamage 1
@@ -250,7 +250,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ gravel 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ gravel 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ gravel 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ gravel 15 /scoreboard players set @s BlockDamage 15
-# 14 - gold ore
+# 14 - gold_ore
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore -1 /scoreboard players set @s BlockID 14
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 1 /scoreboard players set @s BlockDamage 1
@@ -268,7 +268,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ gold_ore 15 /scoreboard players set @s BlockDamage 15
-# 15 - iron ore
+# 15 - iron_ore
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore -1 /scoreboard players set @s BlockID 15
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 1 /scoreboard players set @s BlockDamage 1
@@ -286,7 +286,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ iron_ore 15 /scoreboard players set @s BlockDamage 15
-# 16 - coal ore
+# 16 - coal_ore
 execute @s ~ ~ ~ detect ~ ~ ~ coal_ore -1 /scoreboard players set @s BlockID 16
 execute @s ~ ~ ~ detect ~ ~ ~ coal_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ coal_ore 1 /scoreboard players set @s BlockDamage 1
@@ -376,7 +376,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ glass 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ glass 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ glass 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ glass 15 /scoreboard players set @s BlockDamage 15
-# 21 - lapis ore
+# 21 - lapis_ore
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore -1 /scoreboard players set @s BlockID 21
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 1 /scoreboard players set @s BlockDamage 1
@@ -394,7 +394,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_ore 15 /scoreboard players set @s BlockDamage 15
-# 22 - lapis block
+# 22 - lapis_block
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_block -1 /scoreboard players set @s BlockID 22
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lapis_block 1 /scoreboard players set @s BlockDamage 1
@@ -484,7 +484,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ bed 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ bed 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ bed 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ bed 15 /scoreboard players set @s BlockDamage 15
-# 27 - golden rail
+# 27 - golden_rail
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail -1 /scoreboard players set @s BlockID 27
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 1 /scoreboard players set @s BlockDamage 1
@@ -502,7 +502,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ golden_rail 15 /scoreboard players set @s BlockDamage 15
-# 28 - detector rail
+# 28 - detector_rail
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail -1 /scoreboard players set @s BlockID 28
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 1 /scoreboard players set @s BlockDamage 1
@@ -520,7 +520,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ detector_rail 15 /scoreboard players set @s BlockDamage 15
-# 29 - sticky piston
+# 29 - sticky_piston
 execute @s ~ ~ ~ detect ~ ~ ~ sticky_piston -1 /scoreboard players set @s BlockID 29
 execute @s ~ ~ ~ detect ~ ~ ~ sticky_piston 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ sticky_piston 1 /scoreboard players set @s BlockDamage 1
@@ -610,7 +610,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ piston 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ piston 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ piston 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ piston 15 /scoreboard players set @s BlockDamage 15
-# 34 - piston head
+# 34 - piston_head
 execute @s ~ ~ ~ detect ~ ~ ~ piston_head -1 /scoreboard players set @s BlockID 34
 execute @s ~ ~ ~ detect ~ ~ ~ piston_head 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ piston_head 1 /scoreboard players set @s BlockDamage 1
@@ -646,7 +646,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ wool 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ wool 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ wool 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ wool 15 /scoreboard players set @s BlockDamage 15
-# 37 - yellow flower
+# 37 - yellow_flower
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower -1 /scoreboard players set @s BlockID 37
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 1 /scoreboard players set @s BlockDamage 1
@@ -664,7 +664,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_flower 15 /scoreboard players set @s BlockDamage 15
-# 38 - red flower
+# 38 - red_flower
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower -1 /scoreboard players set @s BlockID 38
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower 1 /scoreboard players set @s BlockDamage 1
@@ -682,7 +682,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_flower 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_flower 15 /scoreboard players set @s BlockDamage 15
-# 39 - brown mushroom
+# 39 - brown_mushroom
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom -1 /scoreboard players set @s BlockID 39
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 1 /scoreboard players set @s BlockDamage 1
@@ -700,7 +700,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 12 /scoreboard players set @s Block
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom 15 /scoreboard players set @s BlockDamage 15
-# 40 - red mushroom
+# 40 - red_mushroom
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom -1 /scoreboard players set @s BlockID 40
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 1 /scoreboard players set @s BlockDamage 1
@@ -718,7 +718,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom 15 /scoreboard players set @s BlockDamage 15
-# 41 - gold block
+# 41 - gold_block
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block -1 /scoreboard players set @s BlockID 41
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block 1 /scoreboard players set @s BlockDamage 1
@@ -736,7 +736,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ gold_block 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ gold_block 15 /scoreboard players set @s BlockDamage 15
-# 42 - iron block
+# 42 - iron_block
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block -1 /scoreboard players set @s BlockID 42
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block 1 /scoreboard players set @s BlockDamage 1
@@ -754,7 +754,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ iron_block 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ iron_block 15 /scoreboard players set @s BlockDamage 15
-# 43 - double slab
+# 43 - double_slab
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab -1 /scoreboard players set @s BlockID 43
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 1 /scoreboard players set @s BlockDamage 1
@@ -772,7 +772,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab 15 /scoreboard players set @s BlockDamage 15
-# 44 - slab
+# 44 - stone_slab
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab -1 /scoreboard players set @s BlockID 44
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab 1 /scoreboard players set @s BlockDamage 1
@@ -844,7 +844,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ bookshelf 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ bookshelf 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ bookshelf 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ bookshelf 15 /scoreboard players set @s BlockDamage 15
-# 48 - mossy cobblestone
+# 48 - mossy_cobblestone
 execute @s ~ ~ ~ detect ~ ~ ~ mossy_cobblestone -1 /scoreboard players set @s BlockID 48
 execute @s ~ ~ ~ detect ~ ~ ~ mossy_cobblestone 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ mossy_cobblestone 1 /scoreboard players set @s BlockDamage 1
@@ -916,7 +916,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ fire 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ fire 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ fire 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ fire 15 /scoreboard players set @s BlockDamage 15
-# 52 - mob spawner
+# 52 - mob_spawner
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner -1 /scoreboard players set @s BlockID 52
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 1 /scoreboard players set @s BlockDamage 1
@@ -934,7 +934,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ mob_spawner 15 /scoreboard players set @s BlockDamage 15
-# 53 - oak stairs
+# 53 - oak_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ oak_stairs -1 /scoreboard players set @s BlockID 53
 execute @s ~ ~ ~ detect ~ ~ ~ oak_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ oak_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -970,7 +970,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ chest 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ chest 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ chest 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ chest 15 /scoreboard players set @s BlockDamage 15
-# 55 - redstone wire
+# 55 - redstone_wire
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire -1 /scoreboard players set @s BlockID 55
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 1 /scoreboard players set @s BlockDamage 1
@@ -988,7 +988,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_wire 15 /scoreboard players set @s BlockDamage 15
-# 56 - diamond ore
+# 56 - diamond_ore
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore -1 /scoreboard players set @s BlockID 56
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 1 /scoreboard players set @s BlockDamage 1
@@ -1006,7 +1006,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_ore 15 /scoreboard players set @s BlockDamage 15
-# 57 - diamond block
+# 57 - diamond_block
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block -1 /scoreboard players set @s BlockID 57
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 1 /scoreboard players set @s BlockDamage 1
@@ -1024,7 +1024,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ diamond_block 15 /scoreboard players set @s BlockDamage 15
-# 58 - crafting table
+# 58 - crafting_table
 execute @s ~ ~ ~ detect ~ ~ ~ crafting_table -1 /scoreboard players set @s BlockID 58
 execute @s ~ ~ ~ detect ~ ~ ~ crafting_table 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ crafting_table 1 /scoreboard players set @s BlockDamage 1
@@ -1096,7 +1096,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ furnace 12 /scoreboard players set @s BlockDamage 
 execute @s ~ ~ ~ detect ~ ~ ~ furnace 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ furnace 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ furnace 15 /scoreboard players set @s BlockDamage 15
-# 62 - lit furnace
+# 62 - lit_furnace
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace -1 /scoreboard players set @s BlockID 62
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 1 /scoreboard players set @s BlockDamage 1
@@ -1114,7 +1114,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lit_furnace 15 /scoreboard players set @s BlockDamage 15
-# 63 - standing sign
+# 63 - standing_sign
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign -1 /scoreboard players set @s BlockID 63
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 1 /scoreboard players set @s BlockDamage 1
@@ -1132,7 +1132,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ standing_sign 15 /scoreboard players set @s BlockDamage 15
-# 64 - wooden door
+# 64 - wooden_door
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_door -1 /scoreboard players set @s BlockID 64
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_door 1 /scoreboard players set @s BlockDamage 1
@@ -1186,7 +1186,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ rail 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ rail 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ rail 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ rail 15 /scoreboard players set @s BlockDamage 15
-# 67 - stone stairs
+# 67 - stone_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs -1 /scoreboard players set @s BlockID 67
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -1204,7 +1204,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stone_stairs 15 /scoreboard players set @s BlockDamage 15
-# 68 - wall sign
+# 68 - wall_sign
 execute @s ~ ~ ~ detect ~ ~ ~ wall_sign -1 /scoreboard players set @s BlockID 68
 execute @s ~ ~ ~ detect ~ ~ ~ wall_sign 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wall_sign 1 /scoreboard players set @s BlockDamage 1
@@ -1240,7 +1240,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lever 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ lever 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lever 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lever 15 /scoreboard players set @s BlockDamage 15
-# 70 - stone pressure plate
+# 70 - stone_pressure_plate
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate -1 /scoreboard players set @s BlockID 70
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 /scoreboard players set @s BlockDamage 1
@@ -1258,7 +1258,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 12 /scoreboard players set @s
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 15 /scoreboard players set @s BlockDamage 15
-# 71 - iron door
+# 71 - iron_door
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door -1 /scoreboard players set @s BlockID 71
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door 1 /scoreboard players set @s BlockDamage 1
@@ -1276,7 +1276,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ iron_door 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ iron_door 15 /scoreboard players set @s BlockDamage 15
-# 72 - wooden pressure plate
+# 72 - wooden_pressure_plate
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate -1 /scoreboard players set @s BlockID 72
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 1 /scoreboard players set @s BlockDamage 1
@@ -1294,7 +1294,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 12 /scoreboard players set @
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_pressure_plate 15 /scoreboard players set @s BlockDamage 15
-# 73 - redstone ore
+# 73 - redstone_ore
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore -1 /scoreboard players set @s BlockID 73
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 1 /scoreboard players set @s BlockDamage 1
@@ -1312,7 +1312,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 15 /scoreboard players set @s BlockDamage 15
-# 74 - lit redstone ore
+# 74 - lit_redstone_ore
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore -1 /scoreboard players set @s BlockID 74
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 1 /scoreboard players set @s BlockDamage 1
@@ -1330,7 +1330,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_ore 15 /scoreboard players set @s BlockDamage 15
-# 75 - unlit redstone torch
+# 75 - unlit_redstone_torch
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore -1 /scoreboard players set @s BlockID 75
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 1 /scoreboard players set @s BlockDamage 1
@@ -1348,7 +1348,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ unlit_redstone_ore 15 /scoreboard players set @s BlockDamage 15
-# 76 - redstone torch
+# 76 - redstone_torch
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore -1 /scoreboard players set @s BlockID 76
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 1 /scoreboard players set @s BlockDamage 1
@@ -1366,7 +1366,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_ore 15 /scoreboard players set @s BlockDamage 15
-# 77 - stone button
+# 77 - stone_button
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button -1 /scoreboard players set @s BlockID 77
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button 1 /scoreboard players set @s BlockDamage 1
@@ -1384,7 +1384,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stone_button 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stone_button 15 /scoreboard players set @s BlockDamage 15
-# 78 - snow layer
+# 78 - snow_layer
 execute @s ~ ~ ~ detect ~ ~ ~ snow_layer -1 /scoreboard players set @s BlockID 78
 execute @s ~ ~ ~ detect ~ ~ ~ snow_layer 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ snow_layer 1 /scoreboard players set @s BlockDamage 1
@@ -1420,7 +1420,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ ice 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ ice 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ ice 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ ice 15 /scoreboard players set @s BlockDamage 15
-# 80 - snow block
+# 80 - snow
 execute @s ~ ~ ~ detect ~ ~ ~ snow -1 /scoreboard players set @s BlockID 80
 execute @s ~ ~ ~ detect ~ ~ ~ snow 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ snow 1 /scoreboard players set @s BlockDamage 1
@@ -1564,7 +1564,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ netherrack 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ netherrack 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ netherrack 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ netherrack 15 /scoreboard players set @s BlockDamage 15
-# 88 - soul sand
+# 88 - soul_sand
 execute @s ~ ~ ~ detect ~ ~ ~ soul_sand -1 /scoreboard players set @s BlockID 88
 execute @s ~ ~ ~ detect ~ ~ ~ soul_sand 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ soul_sand 1 /scoreboard players set @s BlockDamage 1
@@ -1600,7 +1600,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ glowstone 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ glowstone 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ glowstone 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ glowstone 15 /scoreboard players set @s BlockDamage 15
-# 90 - nether portal
+# 90 - portal
 execute @s ~ ~ ~ detect ~ ~ ~ portal -1 /scoreboard players set @s BlockID 90
 execute @s ~ ~ ~ detect ~ ~ ~ portal 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ portal 1 /scoreboard players set @s BlockDamage 1
@@ -1618,7 +1618,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ portal 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ portal 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ portal 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ portal 15 /scoreboard players set @s BlockDamage 15
-# 91 - lit pumpkin
+# 91 - lit_pumpkin
 execute @s ~ ~ ~ detect ~ ~ ~ lit_pumpkin -1 /scoreboard players set @s BlockID 91
 execute @s ~ ~ ~ detect ~ ~ ~ lit_pumpkin 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lit_pumpkin 1 /scoreboard players set @s BlockDamage 1
@@ -1654,7 +1654,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cake 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ cake 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cake 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cake 15 /scoreboard players set @s BlockDamage 15
-# 93 - unpowered repeater
+# 93 - unpowered_repeater
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater -1 /scoreboard players set @s BlockID 93
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 1 /scoreboard players set @s BlockDamage 1
@@ -1672,7 +1672,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_repeater 15 /scoreboard players set @s BlockDamage 15
-# 94 - powered repeater
+# 94 - powered_repeater
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater -1 /scoreboard players set @s BlockID 94
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 1 /scoreboard players set @s BlockDamage 1
@@ -1690,7 +1690,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ powered_repeater 15 /scoreboard players set @s BlockDamage 15
-# 95 - stained glass
+# 95 - stained_glass
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass -1 /scoreboard players set @s BlockID 95
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass 1 /scoreboard players set @s BlockDamage 1
@@ -1726,7 +1726,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ trapdoor 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ trapdoor 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ trapdoor 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ trapdoor 15 /scoreboard players set @s BlockDamage 15
-# 97 - monster egg
+# 97 - monster_egg
 execute @s ~ ~ ~ detect ~ ~ ~ monster_egg -1 /scoreboard players set @s BlockID 97
 execute @s ~ ~ ~ detect ~ ~ ~ monster_egg 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ monster_egg 1 /scoreboard players set @s BlockDamage 1
@@ -1762,7 +1762,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stonebrick 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ stonebrick 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stonebrick 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stonebrick 15 /scoreboard players set @s BlockDamage 15
-# 99 - brown mushroom
+# 99 - brown_mushroom_block
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block -1 /scoreboard players set @s BlockID 99
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 1 /scoreboard players set @s BlockDamage 1
@@ -1780,7 +1780,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 12 /scoreboard players set @s
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ brown_mushroom_block 15 /scoreboard players set @s BlockDamage 15
-# 100 - red mushroom
+# 100 - red_mushroom_block
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block -1 /scoreboard players set @s BlockID 100
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 1 /scoreboard players set @s BlockDamage 1
@@ -1798,7 +1798,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_mushroom_block 15 /scoreboard players set @s BlockDamage 15
-# 101 - iron bars
+# 101 - iron_bars
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars -1 /scoreboard players set @s BlockID 101
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 1 /scoreboard players set @s BlockDamage 1
@@ -1816,7 +1816,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ iron_bars 15 /scoreboard players set @s BlockDamage 15
-# 102 - glass pane
+# 102 - glass_pane
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane -1 /scoreboard players set @s BlockID 102
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 1 /scoreboard players set @s BlockDamage 1
@@ -1834,7 +1834,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ glass_pane 15 /scoreboard players set @s BlockDamage 15
-# 103 - melon block
+# 103 - melon_block
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block -1 /scoreboard players set @s BlockID 103
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block 1 /scoreboard players set @s BlockDamage 1
@@ -1852,7 +1852,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ melon_block 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ melon_block 15 /scoreboard players set @s BlockDamage 15
-# 104 - pumpkin stem
+# 104 - pumpkin_stem
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem -1 /scoreboard players set @s BlockID 104
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 1 /scoreboard players set @s BlockDamage 1
@@ -1870,7 +1870,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ pumpkin_stem 15 /scoreboard players set @s BlockDamage 15
-# 105 - melon stem
+# 105 - melon_stem
 execute @s ~ ~ ~ detect ~ ~ ~ melon_stem -1 /scoreboard players set @s BlockID 105
 execute @s ~ ~ ~ detect ~ ~ ~ melon_stem 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ melon_stem 1 /scoreboard players set @s BlockDamage 1
@@ -1906,7 +1906,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ vine 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ vine 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ vine 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ vine 15 /scoreboard players set @s BlockDamage 15
-# 107 - fence gate
+# 107 - fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate -1 /scoreboard players set @s BlockID 107
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -1924,7 +1924,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 108 - brick stairs
+# 108 - brick_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs -1 /scoreboard players set @s BlockID 108
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -1942,7 +1942,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ brick_stairs 15 /scoreboard players set @s BlockDamage 15
-# 109 -  stone brick stairs
+# 109 -  stone_brick_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ stone_brick_stairs -1 /scoreboard players set @s BlockID 109
 execute @s ~ ~ ~ detect ~ ~ ~ stone_brick_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_brick_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -1996,7 +1996,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ waterlily 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ waterlily 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ waterlily 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ waterlily 15 /scoreboard players set @s BlockDamage 15
-# 112 - nether brick
+# 112 - nether_brick
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick -1 /scoreboard players set @s BlockID 112
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 1 /scoreboard players set @s BlockDamage 1
@@ -2014,7 +2014,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick 15 /scoreboard players set @s BlockDamage 15
-# 113 - nether brick fence
+# 113 - nether_brick_fence
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence -1 /scoreboard players set @s BlockID 113
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 1 /scoreboard players set @s BlockDamage 1
@@ -2032,7 +2032,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_fence 15 /scoreboard players set @s BlockDamage 15
-# 114 - nether brick stairs
+# 114 - nether_brick_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs -1 /scoreboard players set @s BlockID 114
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2050,7 +2050,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 12 /scoreboard players set @s 
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ nether_brick_stairs 15 /scoreboard players set @s BlockDamage 15
-# 115 - nether wart
+# 115 - nether_wart
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart -1 /scoreboard players set @s BlockID 115
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 1 /scoreboard players set @s BlockDamage 1
@@ -2068,7 +2068,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart 15 /scoreboard players set @s BlockDamage 15
-# 116 - enchanting table
+# 116 - enchanting_table
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table -1 /scoreboard players set @s BlockID 116
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 1 /scoreboard players set @s BlockDamage 1
@@ -2086,7 +2086,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ enchanting_table 15 /scoreboard players set @s BlockDamage 15
-# 117 - brewing stand
+# 117 - brewing_stand
 execute @s ~ ~ ~ detect ~ ~ ~ brewing_stand -1 /scoreboard players set @s BlockID 117
 execute @s ~ ~ ~ detect ~ ~ ~ brewing_stand 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brewing_stand 1 /scoreboard players set @s BlockDamage 1
@@ -2122,7 +2122,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cauldron 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ cauldron 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cauldron 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cauldron 15 /scoreboard players set @s BlockDamage 15
-# 119 - end portal
+# 119 - end_portal
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal -1 /scoreboard players set @s BlockID 119
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal 1 /scoreboard players set @s BlockDamage 1
@@ -2140,7 +2140,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ end_portal 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal 15 /scoreboard players set @s BlockDamage 15
-# 120 - end portal frame
+# 120 - end_portal_frame
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame -1 /scoreboard players set @s BlockID 120
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 1 /scoreboard players set @s BlockDamage 1
@@ -2158,7 +2158,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ end_portal_frame 15 /scoreboard players set @s BlockDamage 15
-# 121 - end stone
+# 121 - end_stone
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone -1 /scoreboard players set @s BlockID 121
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone 1 /scoreboard players set @s BlockDamage 1
@@ -2176,7 +2176,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ end_stone 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ end_stone 15 /scoreboard players set @s BlockDamage 15
-# 122 - dragon egg
+# 122 - dragon_egg
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg -1 /scoreboard players set @s BlockID 122
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 1 /scoreboard players set @s BlockDamage 1
@@ -2194,7 +2194,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ dragon_egg 15 /scoreboard players set @s BlockDamage 15
-# 123 - redstone lamp
+# 123 - redstone_lamp
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp -1 /scoreboard players set @s BlockID 123
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 1 /scoreboard players set @s BlockDamage 1
@@ -2212,7 +2212,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_lamp 15 /scoreboard players set @s BlockDamage 15
-# 124 - lit redstone lamp
+# 124 - lit_redstone_lamp
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp -1 /scoreboard players set @s BlockID 124
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 1 /scoreboard players set @s BlockDamage 1
@@ -2230,7 +2230,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lit_redstone_lamp 15 /scoreboard players set @s BlockDamage 15
-# 125 - double wooden slab
+# 125 - double_wooden_slab
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab -1 /scoreboard players set @s BlockID 125
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 1 /scoreboard players set @s BlockDamage 1
@@ -2248,7 +2248,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ double_wooden_slab 15 /scoreboard players set @s BlockDamage 15
-# 126 - wooden slab
+# 126 - wooden_slab
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_slab -1 /scoreboard players set @s BlockID 126
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_slab 1 /scoreboard players set @s BlockDamage 1
@@ -2284,7 +2284,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cocoa 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ cocoa 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cocoa 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cocoa 15 /scoreboard players set @s BlockDamage 15
-# 128 - sandstone stairs
+# 128 - sandstone_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs -1 /scoreboard players set @s BlockID 128
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2302,7 +2302,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ sandstone_stairs 15 /scoreboard players set @s BlockDamage 15
-# 129 - emerald ore
+# 129 - emerald_ore
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore -1 /scoreboard players set @s BlockID 129
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 1 /scoreboard players set @s BlockDamage 1
@@ -2320,7 +2320,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_ore 15 /scoreboard players set @s BlockDamage 15
-# 130 - ender chest
+# 130 - ender_chest
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest -1 /scoreboard players set @s BlockID 130
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 1 /scoreboard players set @s BlockDamage 1
@@ -2338,7 +2338,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ ender_chest 15 /scoreboard players set @s BlockDamage 15
-# 131 - tripwire hook
+# 131 - tripwire_hook
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire_hook -1 /scoreboard players set @s BlockID 131
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire_hook 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire_hook 1 /scoreboard players set @s BlockDamage 1
@@ -2374,7 +2374,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ tripwire 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ tripwire 15 /scoreboard players set @s BlockDamage 15
-# 133 - emerald block
+# 133 - emerald_block
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block -1 /scoreboard players set @s BlockID 133
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 1 /scoreboard players set @s BlockDamage 1
@@ -2392,7 +2392,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ emerald_block 15 /scoreboard players set @s BlockDamage 15
-# 134 - spruce stairs
+# 134 - spruce_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs -1 /scoreboard players set @s BlockID 134
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2410,7 +2410,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_stairs 15 /scoreboard players set @s BlockDamage 15
-# 135 - birch stairs
+# 135 - birch_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs -1 /scoreboard players set @s BlockID 135
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2428,7 +2428,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ birch_stairs 15 /scoreboard players set @s BlockDamage 15
-# 136 - jungle stairs
+# 136 - jungle_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs -1 /scoreboard players set @s BlockID 136
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2446,7 +2446,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_stairs 15 /scoreboard players set @s BlockDamage 15
-# 137 - command block
+# 137 - command_block
 execute @s ~ ~ ~ detect ~ ~ ~ command_block -1 /scoreboard players set @s BlockID 137
 execute @s ~ ~ ~ detect ~ ~ ~ command_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ command_block 1 /scoreboard players set @s BlockDamage 1
@@ -2482,7 +2482,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ beacon 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ beacon 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ beacon 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ beacon 15 /scoreboard players set @s BlockDamage 15
-# 139 - cobblestone wall
+# 139 - cobblestone_wall
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall -1 /scoreboard players set @s BlockID 139
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 1 /scoreboard players set @s BlockDamage 1
@@ -2500,7 +2500,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cobblestone_wall 15 /scoreboard players set @s BlockDamage 15
-# 140 - flower pot
+# 140 - flower_pot
 execute @s ~ ~ ~ detect ~ ~ ~ flower_pot -1 /scoreboard players set @s BlockID 140
 execute @s ~ ~ ~ detect ~ ~ ~ flower_pot 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ flower_pot 1 /scoreboard players set @s BlockDamage 1
@@ -2554,7 +2554,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ potatoes 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ potatoes 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ potatoes 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ potatoes 15 /scoreboard players set @s BlockDamage 15
-# 143 - wooden button
+# 143 - wooden_button
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button -1 /scoreboard players set @s BlockID 143
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 1 /scoreboard players set @s BlockDamage 1
@@ -2572,7 +2572,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 15 /scoreboard players set @s BlockDamage 15
-# 143 - wooden button
+# 143 - wooden_button
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button -1 /scoreboard players set @s BlockID 143
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wooden_button 1 /scoreboard players set @s BlockDamage 1
@@ -2626,7 +2626,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ anvil 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ anvil 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ anvil 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ anvil 15 /scoreboard players set @s BlockDamage 15
-# 146 - trapped chest
+# 146 - trapped_chest
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest -1 /scoreboard players set @s BlockID 146
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 1 /scoreboard players set @s BlockDamage 1
@@ -2644,7 +2644,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ trapped_chest 15 /scoreboard players set @s BlockDamage 15
-# 147 - light weighted pressure plate
+# 147 - light_weighted_pressure_plate
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate -1 /scoreboard players set @s BlockID 147
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 1 /scoreboard players set @s BlockDamage 1
@@ -2662,7 +2662,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 12 /scoreboard playe
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ light_weighted_pressure_plate 15 /scoreboard players set @s BlockDamage 15
-# 148 - heavy weighted pressure plate
+# 148 - heavy_weighted_pressure_plate
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate -1 /scoreboard players set @s BlockID 148
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 1 /scoreboard players set @s BlockDamage 1
@@ -2680,7 +2680,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 12 /scoreboard playe
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ heavy_weighted_pressure_plate 15 /scoreboard players set @s BlockDamage 15
-# 149 - unpowered comparator
+# 149 - unpowered_comparator
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator -1 /scoreboard players set @s BlockID 149
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 1 /scoreboard players set @s BlockDamage 1
@@ -2698,7 +2698,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 12 /scoreboard players set @s
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ unpowered_comparator 15 /scoreboard players set @s BlockDamage 15
-# 150 - powered comparator
+# 150 - powered_comparator
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator -1 /scoreboard players set @s BlockID 150
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 1 /scoreboard players set @s BlockDamage 1
@@ -2716,7 +2716,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ powered_comparator 15 /scoreboard players set @s BlockDamage 15
-# 151 - daylight detector
+# 151 - daylight_detector
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector -1 /scoreboard players set @s BlockID 151
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector 1 /scoreboard players set @s BlockDamage 1
@@ -2752,7 +2752,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ redstone_block 12 /scoreboard players set @s Block
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ redstone_block 15 /scoreboard players set @s BlockDamage 15
-# 153 - quartz ore	
+# 153 - quartz_ore	
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_ore -1 /scoreboard players set @s BlockID 153
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_ore 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_ore 1 /scoreboard players set @s BlockDamage 1
@@ -2788,7 +2788,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ hopper 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ hopper 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ hopper 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ hopper 15 /scoreboard players set @s BlockDamage 15
-# 155 - quartz block
+# 155 - quartz_block
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block -1 /scoreboard players set @s BlockID 155
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 1 /scoreboard players set @s BlockDamage 1
@@ -2806,7 +2806,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_block 15 /scoreboard players set @s BlockDamage 15
-# 156 - quartz stairs
+# 156 - quartz_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs -1 /scoreboard players set @s BlockID 156
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2824,7 +2824,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ quartz_stairs 15 /scoreboard players set @s BlockDamage 15
-# 157 - activator rail
+# 157 - activator_rail
 execute @s ~ ~ ~ detect ~ ~ ~ activator_rail -1 /scoreboard players set @s BlockID 157
 execute @s ~ ~ ~ detect ~ ~ ~ activator_rail 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ activator_rail 1 /scoreboard players set @s BlockDamage 1
@@ -2860,7 +2860,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ dropper 12 /scoreboard players set @s BlockDamage 
 execute @s ~ ~ ~ detect ~ ~ ~ dropper 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ dropper 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ dropper 15 /scoreboard players set @s BlockDamage 15
-# 159 - stained hardened clay
+# 159 - stained_hardened_clay
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay -1 /scoreboard players set @s BlockID 159
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 1 /scoreboard players set @s BlockDamage 1
@@ -2878,7 +2878,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 12 /scoreboard players set @
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stained_hardened_clay 15 /scoreboard players set @s BlockDamage 15
-# 160 - stained glass pane
+# 160 - stained_glass_pane
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass_pane -1 /scoreboard players set @s BlockID 160
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass_pane 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stained_glass_pane 1 /scoreboard players set @s BlockDamage 1
@@ -2932,7 +2932,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ log2 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ log2 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ log2 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ log2 15 /scoreboard players set @s BlockDamage 15
-# 163 - acacia stairs
+# 163 - acacia_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs -1 /scoreboard players set @s BlockID 163
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -2950,7 +2950,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_stairs 15 /scoreboard players set @s BlockDamage 15
-# 164 - dark oak stairs
+# 164 - dark_oak_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_stairs -1 /scoreboard players set @s BlockID 164
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -3004,7 +3004,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ barrier 12 /scoreboard players set @s BlockDamage 
 execute @s ~ ~ ~ detect ~ ~ ~ barrier 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ barrier 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ barrier 15 /scoreboard players set @s BlockDamage 15
-# 167 - iron trapdoor
+# 167 - iron_trapdoor
 execute @s ~ ~ ~ detect ~ ~ ~ iron_trapdoor -1 /scoreboard players set @s BlockID 167
 execute @s ~ ~ ~ detect ~ ~ ~ iron_trapdoor 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ iron_trapdoor 1 /scoreboard players set @s BlockDamage 1
@@ -3040,7 +3040,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ prismarine 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ prismarine 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ prismarine 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ prismarine 15 /scoreboard players set @s BlockDamage 15
-# 169 - sea lantern
+# 169 - sea_lantern
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern -1 /scoreboard players set @s BlockID 169
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 1 /scoreboard players set @s BlockDamage 1
@@ -3058,7 +3058,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ sea_lantern 15 /scoreboard players set @s BlockDamage 15
-# 170 - hay block
+# 170 - hay_block
 execute @s ~ ~ ~ detect ~ ~ ~ hay_block -1 /scoreboard players set @s BlockID 170
 execute @s ~ ~ ~ detect ~ ~ ~ hay_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ hay_block 1 /scoreboard players set @s BlockDamage 1
@@ -3094,7 +3094,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ carpet 12 /scoreboard players set @s BlockDamage 1
 execute @s ~ ~ ~ detect ~ ~ ~ carpet 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ carpet 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ carpet 15 /scoreboard players set @s BlockDamage 15
-# 172 - hardened clay
+# 172 - hardened_clay
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay -1 /scoreboard players set @s BlockID 172
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 1 /scoreboard players set @s BlockDamage 1
@@ -3112,7 +3112,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ hardened_clay 15 /scoreboard players set @s BlockDamage 15
-# 173 - coal block
+# 173 - coal_block
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block -1 /scoreboard players set @s BlockID 173
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block 1 /scoreboard players set @s BlockDamage 1
@@ -3130,7 +3130,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ coal_block 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ coal_block 15 /scoreboard players set @s BlockDamage 15
-# 174 - packed ice
+# 174 - packed_ice
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice -1 /scoreboard players set @s BlockID 174
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 1 /scoreboard players set @s BlockDamage 1
@@ -3148,7 +3148,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ packed_ice 15 /scoreboard players set @s BlockDamage 15
-# 175 - double plant
+# 175 - double_plant
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant -1 /scoreboard players set @s BlockID 175
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant 1 /scoreboard players set @s BlockDamage 1
@@ -3166,7 +3166,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ double_plant 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ double_plant 15 /scoreboard players set @s BlockDamage 15
-# 176 - standing banner
+# 176 - standing_banner
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner -1 /scoreboard players set @s BlockID 176
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 1 /scoreboard players set @s BlockDamage 1
@@ -3184,7 +3184,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 12 /scoreboard players set @s Bloc
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ standing_banner 15 /scoreboard players set @s BlockDamage 15
-# 177 - wall banner
+# 177 - wall_banner
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner -1 /scoreboard players set @s BlockID 177
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 1 /scoreboard players set @s BlockDamage 1
@@ -3202,7 +3202,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ wall_banner 15 /scoreboard players set @s BlockDamage 15
-# 178 - daylight detector inverted
+# 178 - daylight_detector_inverted
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted -1 /scoreboard players set @s BlockID 178
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 1 /scoreboard players set @s BlockDamage 1
@@ -3220,7 +3220,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 12 /scoreboard players 
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ daylight_detector_inverted 15 /scoreboard players set @s BlockDamage 15
-# 179 - red sandstone
+# 179 - red_sandstone
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone -1 /scoreboard players set @s BlockID 179
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 1 /scoreboard players set @s BlockDamage 1
@@ -3238,7 +3238,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone 15 /scoreboard players set @s BlockDamage 15
-# 180 - red sandstone stairs
+# 180 - red_sandstone_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs -1 /scoreboard players set @s BlockID 180
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -3256,7 +3256,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 12 /scoreboard players set @s
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_sandstone_stairs 15 /scoreboard players set @s BlockDamage 15
-# 181 - double stone slab2
+# 181 - double_stone_slab2
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 -1 /scoreboard players set @s BlockID 181
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 1 /scoreboard players set @s BlockDamage 1
@@ -3274,7 +3274,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ double_stone_slab2 15 /scoreboard players set @s BlockDamage 15
-# 182 - stone slab
+# 182 - stone_slab
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 -1 /scoreboard players set @s BlockID 182
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 1 /scoreboard players set @s BlockDamage 1
@@ -3292,7 +3292,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ stone_slab2 15 /scoreboard players set @s BlockDamage 15
-# 183 - spruce fence gate
+# 183 - spruce_fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate -1 /scoreboard players set @s BlockID 183
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -3310,7 +3310,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 184 - birch fence gate
+# 184 - birch_fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate -1 /scoreboard players set @s BlockID 184
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -3328,7 +3328,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 185 - jungle fence gate
+# 185 - jungle_fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate -1 /scoreboard players set @s BlockID 185
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -3346,7 +3346,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 186 - dark oak fence gate
+# 186 - dark_oak_fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate -1 /scoreboard players set @s BlockID 186
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -3364,7 +3364,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 12 /scoreboard players set @s 
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 187 - acacia fence gate
+# 187 - acacia_fence_gate
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate -1 /scoreboard players set @s BlockID 187
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 1 /scoreboard players set @s BlockDamage 1
@@ -3382,7 +3382,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence_gate 15 /scoreboard players set @s BlockDamage 15
-# 188 - spruce fence
+# 188 - spruce_fence
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence -1 /scoreboard players set @s BlockID 188
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 1 /scoreboard players set @s BlockDamage 1
@@ -3400,7 +3400,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_fence 15 /scoreboard players set @s BlockDamage 15
-# 189 - birch fence
+# 189 - birch_fence
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence -1 /scoreboard players set @s BlockID 189
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 1 /scoreboard players set @s BlockDamage 1
@@ -3418,7 +3418,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ birch_fence 15 /scoreboard players set @s BlockDamage 15
-# 190 - jungle fence
+# 190 - jungle_fence
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence -1 /scoreboard players set @s BlockID 190
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 1 /scoreboard players set @s BlockDamage 1
@@ -3436,7 +3436,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_fence 15 /scoreboard players set @s BlockDamage 15
-# 191 - dark oak fence
+# 191 - dark_oak_fence
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence -1 /scoreboard players set @s BlockID 191
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 1 /scoreboard players set @s BlockDamage 1
@@ -3454,7 +3454,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 12 /scoreboard players set @s Block
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_fence 15 /scoreboard players set @s BlockDamage 15
-# 192 - acacia fence
+# 192 - acacia_fence
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence -1 /scoreboard players set @s BlockID 192
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 1 /scoreboard players set @s BlockDamage 1
@@ -3472,7 +3472,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_fence 15 /scoreboard players set @s BlockDamage 15
-# 193 - spruce door
+# 193 - spruce_door
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door -1 /scoreboard players set @s BlockID 193
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 1 /scoreboard players set @s BlockDamage 1
@@ -3490,7 +3490,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ spruce_door 15 /scoreboard players set @s BlockDamage 15
-# 194 - birch door
+# 194 - birch_door
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door -1 /scoreboard players set @s BlockID 194
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door 1 /scoreboard players set @s BlockDamage 1
@@ -3508,7 +3508,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ birch_door 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ birch_door 15 /scoreboard players set @s BlockDamage 15
-# 195 - jungle door
+# 195 - jungle_door
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door -1 /scoreboard players set @s BlockID 195
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 1 /scoreboard players set @s BlockDamage 1
@@ -3526,7 +3526,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ jungle_door 15 /scoreboard players set @s BlockDamage 15
-# 196 - acacia door
+# 196 - acacia_door
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door -1 /scoreboard players set @s BlockID 196
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 1 /scoreboard players set @s BlockDamage 1
@@ -3544,7 +3544,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ acacia_door 15 /scoreboard players set @s BlockDamage 15
-# 197 - dark oak door
+# 197 - dark_oak_door
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door -1 /scoreboard players set @s BlockID 197
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 1 /scoreboard players set @s BlockDamage 1
@@ -3562,7 +3562,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ dark_oak_door 15 /scoreboard players set @s BlockDamage 15
-# 198 - end rod
+# 198 - end_rod
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod -1 /scoreboard players set @s BlockID 198
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod 1 /scoreboard players set @s BlockDamage 1
@@ -3580,7 +3580,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ end_rod 12 /scoreboard players set @s BlockDamage 
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ end_rod 15 /scoreboard players set @s BlockDamage 15
-# 199 - chorus plant
+# 199 - chorus_plant
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant -1 /scoreboard players set @s BlockID 199
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 1 /scoreboard players set @s BlockDamage 1
@@ -3598,7 +3598,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_plant 15 /scoreboard players set @s BlockDamage 15
-# 200 - chorus flower
+# 200 - chorus_flower
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower -1 /scoreboard players set @s BlockID 200
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 1 /scoreboard players set @s BlockDamage 1
@@ -3616,7 +3616,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ chorus_flower 15 /scoreboard players set @s BlockDamage 15
-# 201 - purpur block
+# 201 - purpur_block
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block -1 /scoreboard players set @s BlockID 201
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 1 /scoreboard players set @s BlockDamage 1
@@ -3634,7 +3634,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 12 /scoreboard players set @s BlockDa
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_block 15 /scoreboard players set @s BlockDamage 15
-# 202 - purpur pillar
+# 202 - purpur_pillar
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar -1 /scoreboard players set @s BlockID 202
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 1 /scoreboard players set @s BlockDamage 1
@@ -3652,7 +3652,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_pillar 15 /scoreboard players set @s BlockDamage 15
-# 203 - purpur stairs
+# 203 - purpur_stairs
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs -1 /scoreboard players set @s BlockID 203
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 1 /scoreboard players set @s BlockDamage 1
@@ -3670,7 +3670,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 12 /scoreboard players set @s BlockD
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_stairs 15 /scoreboard players set @s BlockDamage 15
-# 204 - purpur double slab
+# 204 - purpur_double_slab
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab -1 /scoreboard players set @s BlockID 204
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 1 /scoreboard players set @s BlockDamage 1
@@ -3688,7 +3688,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_double_slab 15 /scoreboard players set @s BlockDamage 15
-# 205 - purpur slab
+# 205 - purpur_slab
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab -1 /scoreboard players set @s BlockID 205
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 1 /scoreboard players set @s BlockDamage 1
@@ -3706,7 +3706,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purpur_slab 15 /scoreboard players set @s BlockDamage 15
-# 206 - end bricks
+# 206 - end_bricks
 execute @s ~ ~ ~ detect ~ ~ ~ end_bricks -1 /scoreboard players set @s BlockID 206
 execute @s ~ ~ ~ detect ~ ~ ~ end_bricks 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_bricks 1 /scoreboard players set @s BlockDamage 1
@@ -3742,7 +3742,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ beetroots 12 /scoreboard players set @s BlockDamag
 execute @s ~ ~ ~ detect ~ ~ ~ beetroots 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ beetroots 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ beetroots 15 /scoreboard players set @s BlockDamage 15
-# 208 - grass path
+# 208 - grass_path
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path -1 /scoreboard players set @s BlockID 208
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path 1 /scoreboard players set @s BlockDamage 1
@@ -3760,7 +3760,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ grass_path 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ grass_path 15 /scoreboard players set @s BlockDamage 15
-# 209 - end gateway
+# 209 - end_gateway
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway -1 /scoreboard players set @s BlockID 209
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 1 /scoreboard players set @s BlockDamage 1
@@ -3778,7 +3778,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 12 /scoreboard players set @s BlockDam
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ end_gateway 15 /scoreboard players set @s BlockDamage 15
-# 210 - repeating command block
+# 210 - repeating_command_block
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block -1 /scoreboard players set @s BlockID 210
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 1 /scoreboard players set @s BlockDamage 1
@@ -3796,7 +3796,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 12 /scoreboard players set
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ repeating_command_block 15 /scoreboard players set @s BlockDamage 15
-# 211 - chain command block
+# 211 - chain_command_block
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block -1 /scoreboard players set @s BlockID 211
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 1 /scoreboard players set @s BlockDamage 1
@@ -3814,7 +3814,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 12 /scoreboard players set @s 
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ chain_command_block 15 /scoreboard players set @s BlockDamage 15
-# 212 - frosted ice
+# 212 - frosted_ice
 execute @s ~ ~ ~ detect ~ ~ ~ frosted_ice -1 /scoreboard players set @s BlockID 212
 execute @s ~ ~ ~ detect ~ ~ ~ frosted_ice 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ frosted_ice 1 /scoreboard players set @s BlockDamage 1
@@ -3850,7 +3850,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ magma 12 /scoreboard players set @s BlockDamage 12
 execute @s ~ ~ ~ detect ~ ~ ~ magma 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ magma 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ magma 15 /scoreboard players set @s BlockDamage 15
-# 214 - nether wart block
+# 214 - nether_wart_block
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block -1 /scoreboard players set @s BlockID 214
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 1 /scoreboard players set @s BlockDamage 1
@@ -3868,7 +3868,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ nether_wart_block 15 /scoreboard players set @s BlockDamage 15
-# 215 - red nether brick
+# 215 - red_nether_brick
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick -1 /scoreboard players set @s BlockID 215
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 1 /scoreboard players set @s BlockDamage 1
@@ -3886,7 +3886,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_nether_brick 15 /scoreboard players set @s BlockDamage 15
-# 216 - red nether brick
+# 216 - bone_block
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block -1 /scoreboard players set @s BlockID 216
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block 1 /scoreboard players set @s BlockDamage 1
@@ -3904,7 +3904,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ bone_block 12 /scoreboard players set @s BlockDama
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ bone_block 15 /scoreboard players set @s BlockDamage 15
-# 217 - structure void
+# 217 - structure_void
 execute @s ~ ~ ~ detect ~ ~ ~ structure_void -1 /scoreboard players set @s BlockID 217
 execute @s ~ ~ ~ detect ~ ~ ~ structure_void 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ structure_void 1 /scoreboard players set @s BlockDamage 1
@@ -3940,7 +3940,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ observer 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ observer 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ observer 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ observer 15 /scoreboard players set @s BlockDamage 15
-# 219 - white shulker box
+# 219 - white_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box -1 /scoreboard players set @s BlockID 219
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -3958,7 +3958,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ white_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 220 - orange shulker box
+# 220 - orange_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box -1 /scoreboard players set @s BlockID 220
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -3976,7 +3976,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ orange_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 221 - magenta shulker box
+# 221 - magenta_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box -1 /scoreboard players set @s BlockID 221
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -3994,7 +3994,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 12 /scoreboard players set @s 
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 222 - light blue shulker box
+# 222 - light_blue_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box -1 /scoreboard players set @s BlockID 222
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4012,7 +4012,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 223 - yellow shulker box
+# 223 - yellow_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box -1 /scoreboard players set @s BlockID 223
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4030,7 +4030,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 224 - lime shulker box
+# 224 - lime_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box -1 /scoreboard players set @s BlockID 224
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4048,7 +4048,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lime_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 225 - pink shulker box
+# 225 - pink_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box -1 /scoreboard players set @s BlockID 225
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4066,7 +4066,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ pink_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 226 - gray shulker box
+# 226 - gray_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box -1 /scoreboard players set @s BlockID 226
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4084,7 +4084,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ gray_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 227 - silver shulker box
+# 227 - silver_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box -1 /scoreboard players set @s BlockID 227
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4102,7 +4102,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ silver_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 228 - cyan shulker box
+# 228 - cyan_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box -1 /scoreboard players set @s BlockID 228
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4120,7 +4120,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 229 - purple shulker box
+# 229 - purple_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box -1 /scoreboard players set @s BlockID 229
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4138,7 +4138,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 12 /scoreboard players set @s B
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purple_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 230 - blue shulker box
+# 230 - blue_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box -1 /scoreboard players set @s BlockID 230
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4156,7 +4156,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 12 /scoreboard players set @s Blo
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ blue_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 231 - brown shulker box
+# 231 - brown_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box -1 /scoreboard players set @s BlockID 231
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4174,7 +4174,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ brown_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 232 - green shulker box
+# 232 - green_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box -1 /scoreboard players set @s BlockID 232
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4192,7 +4192,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ green_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 233 - red shulker box
+# 233 - red_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box -1 /scoreboard players set @s BlockID 233
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4210,7 +4210,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 12 /scoreboard players set @s Bloc
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 234 - black shulker box
+# 234 - black_shulker_box
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box -1 /scoreboard players set @s BlockID 234
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 1 /scoreboard players set @s BlockDamage 1
@@ -4228,7 +4228,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 12 /scoreboard players set @s Bl
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ black_shulker_box 15 /scoreboard players set @s BlockDamage 15
-# 235 - white glazed terracotta
+# 235 - white_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta -1 /scoreboard players set @s BlockID 235
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4246,7 +4246,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 12 /scoreboard players set
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ white_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 236 - orange glazed terracotta
+# 236 - orange_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta -1 /scoreboard players set @s BlockID 236
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4264,7 +4264,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 12 /scoreboard players se
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ orange_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 237 - magenta glazed terracotta
+# 237 - magenta_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta -1 /scoreboard players set @s BlockID 237
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4282,7 +4282,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 12 /scoreboard players s
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ magenta_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 238 - light_blue glazed terracotta
+# 238 - light_blue_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta -1 /scoreboard players set @s BlockID 238
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4300,7 +4300,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 12 /scoreboard player
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ light_blue_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 239 - yellow glazed terracotta
+# 239 - yellow_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta -1 /scoreboard players set @s BlockID 239
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4318,7 +4318,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 12 /scoreboard players se
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ yellow_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 240 - lime glazed terracotta
+# 240 - lime_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta -1 /scoreboard players set @s BlockID 240
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4336,7 +4336,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ lime_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 241 - pink glazed terracotta
+# 241 - pink_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta -1 /scoreboard players set @s BlockID 241
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4354,7 +4354,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ pink_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 242 - gray glazed terracotta
+# 242 - gray_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta -1 /scoreboard players set @s BlockID 242
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4372,7 +4372,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ gray_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 243 - light_gray glazed terracotta
+# 243 - light_gray_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta -1 /scoreboard players set @s BlockID 243
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4390,7 +4390,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 12 /scoreboard player
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ light_gray_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 244 - cyan glazed terracotta
+# 244 - cyan_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta -1 /scoreboard players set @s BlockID 244
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4408,7 +4408,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ cyan_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 245 - purple glazed terracotta
+# 245 - purple_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta -1 /scoreboard players set @s BlockID 245
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4426,7 +4426,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 12 /scoreboard players se
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ purple_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 246 - blue glazed terracotta
+# 246 - blue_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta -1 /scoreboard players set @s BlockID 246
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4444,7 +4444,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 12 /scoreboard players set 
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ blue_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 247 - brown glazed terracotta
+# 247 - brown_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta -1 /scoreboard players set @s BlockID 247
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4462,7 +4462,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 12 /scoreboard players set
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ brown_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 248 - green glazed terracotta
+# 248 - green_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta -1 /scoreboard players set @s BlockID 248
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4480,7 +4480,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 12 /scoreboard players set
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ green_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 249 - red glazed terracotta
+# 249 - red_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta -1 /scoreboard players set @s BlockID 249
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4498,7 +4498,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 12 /scoreboard players set @
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ red_glazed_terracotta 15 /scoreboard players set @s BlockDamage 15
-# 250 - black glazed terracotta
+# 250 - black_glazed_terracotta
 execute @s ~ ~ ~ detect ~ ~ ~ black_glazed_terracotta -1 /scoreboard players set @s BlockID 250
 execute @s ~ ~ ~ detect ~ ~ ~ black_glazed_terracotta 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ black_glazed_terracotta 1 /scoreboard players set @s BlockDamage 1
@@ -4534,7 +4534,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ concrete 12 /scoreboard players set @s BlockDamage
 execute @s ~ ~ ~ detect ~ ~ ~ concrete 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ concrete 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ concrete 15 /scoreboard players set @s BlockDamage 15
-# 252 - concrete powder
+# 252 - concrete_powder
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder -1 /scoreboard players set @s BlockID 252
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 1 /scoreboard players set @s BlockDamage 1
@@ -4552,7 +4552,7 @@ execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 12 /scoreboard players set @s Bloc
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 13 /scoreboard players set @s BlockDamage 13
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 14 /scoreboard players set @s BlockDamage 14
 execute @s ~ ~ ~ detect ~ ~ ~ concrete_powder 15 /scoreboard players set @s BlockDamage 15
-# 255 - structure block
+# 255 - structure_block
 execute @s ~ ~ ~ detect ~ ~ ~ structure_block -1 /scoreboard players set @s BlockID 255
 execute @s ~ ~ ~ detect ~ ~ ~ structure_block 0 /scoreboard players set @s BlockDamage 0
 execute @s ~ ~ ~ detect ~ ~ ~ structure_block 1 /scoreboard players set @s BlockDamage 1

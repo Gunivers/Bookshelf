@@ -5,6 +5,8 @@
 
 # -------------------------------------------------------------
 
+playsound minecraft:ui.button.click master @p ~ ~ ~ 1 1
+
 execute @e[tag=RS] ~ ~ ~ /function RS:placement/reset_pla
 execute @e[name=RS_Centre] ~ ~ ~ /function RS:placement/reset_pla
 

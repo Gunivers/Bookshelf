@@ -5,6 +5,9 @@
 
 # -------------------------------------------------------------
 
+gamerule maxCommandChainLength 99999999
+gamerule sendCommandFeedback false
+
 scoreboard objectives add step dummy
 scoreboard objectives add list dummy
 scoreboard objectives add tellraw_angle dummy
@@ -13,16 +16,19 @@ scoreboard objectives add tellraw_dir dummy
 scoreboard teams add RS
 scoreboard teams add Curseur_Select
 scoreboard teams add Curseur_NoSelect
+scoreboard teams add RS_Centre
+
 scoreboard teams option RS color green
-scoreboard teams option Curseur_NoSelect color gold
+scoreboard teams option Curseur_NoSelect color yellow
 scoreboard teams option Curseur_Select color dark_green
+scoreboard teams option RS_Centre color gold
 
 # -------------------------------------------------------------
 
 execute @e[name=RS_Centre] ~ ~ ~ /execute @e[name=RS_Spawn] ~ ~ ~ /function RS:tellraw/tellraw
 execute @e[name=RS_Centre] ~ ~ ~ /kill @e[name=RS_Spawn]
 
-execute @e[name=RS_Spawn] ~ ~ ~ /summon Armor_Stand ~ ~ ~ {CustomName:"RS_Centre",CustomNameVisible:1b,Small:1b,Invisible:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:gold_block,Damage:0s,Count:1b}]}
+execute @e[name=RS_Spawn] ~ ~ ~ /summon Armor_Stand ~ ~ ~ {CustomName:"RS_Centre",Small:1b,Invisible:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:gold_block,Damage:0s,Count:1b}],DisabledSlots:2039583,Marker:1b}
 execute @e[name=RS_Spawn] ~ ~ ~ /scoreboard players set @e[name=RS_Centre,c=1] id 9
 execute @e[name=RS_Spawn] ~ ~ ~ /scoreboard players set @e[name=RS_Centre,c=1] step 0
 tp @e[name=RS_Spawn] ~ ~-300 ~
@@ -50,6 +56,9 @@ scoreboard players set @e[tag=RS] id 9
 # Glowing
 effect @e[score_list_min=1,score_list=1] minecraft:glowing 1 1 true
 effect @e[tag=RS] minecraft:glowing 1 1 true
+effect @e[name=RS_Centre] minecraft:glowing 1 1 true
+
+scoreboard teams join RS_Centre @e[name=RS_Centre]
 
 effect @e[tag=!RS,score_list_min=2] clear
 effect @e[tag=!RS,score_list=0] clear

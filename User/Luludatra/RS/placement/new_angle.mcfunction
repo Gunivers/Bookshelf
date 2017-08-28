@@ -5,6 +5,8 @@
 
 # -------------------------------------------------------------
 
+playsound minecraft:ui.button.click master @p ~ ~ ~ 1 1
+
 scoreboard players operation @e[name=RS_Centre] RS_angle += @e[name=RS_Centre] tellraw_angle
 scoreboard players set @e[name=RS_Centre] tellraw_angle 0
 

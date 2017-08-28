@@ -5,6 +5,8 @@
 
 # -------------------------------------------------------------
 
+playsound minecraft:ui.button.click master @p ~ ~ ~ 1 1
+
 scoreboard players tag @e[type=Armor_Stand,score_list_min=1,score_list=1,tag=!RS] add RS_2
 
 scoreboard players tag @e[type=Armor_Stand,score_list_min=1,score_list=1,tag=RS] remove RS

@@ -5,6 +5,8 @@
 
 # -------------------------------------------------------------
 
+playsound minecraft:ui.button.click master @p ~ ~ ~ 1 1
+
 scoreboard players tag @e remove RS
 scoreboard players reset @e list
 

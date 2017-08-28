@@ -5,6 +5,8 @@
 
 # -------------------------------------------------------------
 
+playsound minecraft:ui.button.click master @p ~ ~ ~ 1 1
+
 execute @p[rym=46,ry=135] ~ ~ ~ /tp @e[name=RS_Centre,score_tellraw_dir_min=1,score_tellraw_dir=1] ~-0.1 ~ ~
 execute @p[rym=136,ry=225] ~ ~ ~ /tp @e[name=RS_Centre,score_tellraw_dir_min=1,score_tellraw_dir=1] ~ ~ ~-0.1
 execute @p[rym=226,ry=315] ~ ~ ~ /tp @e[name=RS_Centre,score_tellraw_dir_min=1,score_tellraw_dir=1] ~0.1 ~ ~
