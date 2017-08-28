@@ -1,4 +1,4 @@
-# SYSTEME BLOCK TO ID
+# SYSTEME ID TO MAINHAND
 # by Luludatra
 
 # La fonction va placer un block dans la main sélectionné de @s selon les scores BlockID et BlockDamage de @s

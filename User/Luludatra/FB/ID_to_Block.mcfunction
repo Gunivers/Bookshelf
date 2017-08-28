@@ -1,4 +1,4 @@
-# SYSTEME BLOCK TO ID
+# SYSTEME ID TO BLOCK
 # by Luludatra
 
 # La fonction va placer un block selon les scores BlockID et BlockDamage du @s

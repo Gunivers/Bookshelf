@@ -1,4 +1,4 @@
-# SYSTEME BLOCK TO ID
+# SYSTEME ID TO HEAD
 # by Luludatra
 
 # La fonction va placer un block sur la tête de @s selon les scores BlockID et BlockDamage de @s

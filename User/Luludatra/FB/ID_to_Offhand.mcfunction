@@ -1,4 +1,4 @@
-# SYSTEME BLOCK TO ID
+# SYSTEME ID TO OFFHAND
 # by Luludatra
 
 # La fonction va placer un block dans la offhand de @s selon les scores BlockID et BlockDamage de @s

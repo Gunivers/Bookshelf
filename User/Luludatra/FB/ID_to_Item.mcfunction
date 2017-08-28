@@ -1,4 +1,4 @@
-# SYSTEME BLOCK TO ID
+# SYSTEME ID TO ITEM
 # by Luludatra
 
 # La fonction va summon un item d'un block sur @s selon les scores BlockID et BlockDamage de @s
