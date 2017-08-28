@@ -1,9 +1,9 @@
-# NAME: Racine carrÈ
+# NAME: Racine carr√©
 # PATH: Gunivers-Lib:Utils/Math/Sqrt
 
-# AUTHOR: Luludatra
+# AUTHOR: Theogiraudet/Oromis
 # CONTRIBUTORS:
-# - Theogiraudet/Oromis
+# - Luludatra
 
 # VERSION: 1.1
 # MINECRAFT: 1.12
@@ -21,15 +21,15 @@
 # OUTPUT:
 # - Res (score dummy)
 
-# NOTE: Resolution de la racine carrÈe d'un nombre
+# NOTE: Resolution de la racine carr√©e d'un nombre
 
 # CONFIGURATION:
 scoreboard players set @s Tmp2 20
-# -> Permet de gÈrer la prÈcision du resultat. Valeur par dÈfaut: 20. Plus cette valeur est grande, plus le rÈsultat sera prÈcis et l'exÈcution de la fonction sera lourde.
+# -> Permet de g√©rer la pr√©cision du resultat. Valeur par d√©faut: 20. Plus cette valeur est grande, plus le r√©sultat sera pr√©cis et l'ex√©cution de la fonction sera lourde.
 
 # CODE:
 
-# VÈrification de la prÈsence d'un nombre nÈgatif
+# V√©rification de la pr√©sence d'un nombre n√©gatif
 scoreboard players operation @s Res = @s Tmp
 scoreboard players operation @s[score_Res=-1] Res *= -1 Constant 
 
@@ -37,7 +37,7 @@ scoreboard players operation @s[score_Res=-1] Res *= -1 Constant
 scoreboard players operation @s Tmp3 = @s Res
 scoreboard players operation @s Tmp3 /= 2 Constant
 
-# Boucle ‡ executer {Tmp2} fois
+# Boucle √† executer {Tmp2} fois
 execute @s ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
 
 # Save

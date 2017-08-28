@@ -1,9 +1,9 @@
 # NAME: Racine carré
 # PATH: Gunivers-Lib:Utils/Math/Sqrt
 
-# AUTHOR: Luludatra
+# AUTHOR: Theogiraudet/Oromis
 # CONTRIBUTORS:
-# - Theogiraudet/Oromis
+# - Luludatra
 
 # VERSION: 1.1
 # MINECRAFT: 1.12
