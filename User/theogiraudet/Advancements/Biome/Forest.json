@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "forest": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:forest"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/Forest"
+		
+		
+    }
+}

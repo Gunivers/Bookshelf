@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_swampland": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_swampland"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedSwampland"
+		
+		
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "forest_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:forest_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/ForestHills"
+		
+		
+    }
+}

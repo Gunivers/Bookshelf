@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_mesa": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_mesa"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedMesa"
+		
+		
+    }
+}

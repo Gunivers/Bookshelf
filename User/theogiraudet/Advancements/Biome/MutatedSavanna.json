@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_savanna": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_savanna"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedSavanna"
+		
+		
+    }
+}

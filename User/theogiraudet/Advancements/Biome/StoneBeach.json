@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "stone_beach": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:stone_beach"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/StoneBeach"
+		
+		
+    }
+}

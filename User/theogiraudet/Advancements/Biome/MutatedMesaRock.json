@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_mesa_rock": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_mesa_rock"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedMesaRock"
+		
+		
+    }
+}

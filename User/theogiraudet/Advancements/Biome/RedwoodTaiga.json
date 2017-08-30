@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "redwood_taiga": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:redwood_taiga"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/RedwoodTaiga"
+		
+		
+    }
+}

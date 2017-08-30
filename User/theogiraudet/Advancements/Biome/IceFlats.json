@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "ice_flats": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:ice_flats"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/IceFlats"
+		
+		
+    }
+}

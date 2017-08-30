@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "plains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:plains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/Plains"
+		
+		
+    }
+}

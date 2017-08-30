@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mesa": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mesa"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/Mesa"
+		
+		
+    }
+}

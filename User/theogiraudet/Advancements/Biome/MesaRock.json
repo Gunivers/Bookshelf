@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mesa_rock": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mesa_rock"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MesaRock"
+		
+		
+    }
+}

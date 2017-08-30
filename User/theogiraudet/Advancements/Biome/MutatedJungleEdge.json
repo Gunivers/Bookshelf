@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_jungle_edge": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_jungle_edge"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedJungleEdge"
+		
+		
+    }
+}

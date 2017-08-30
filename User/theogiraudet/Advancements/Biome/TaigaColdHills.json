@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "taiga_cold_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:taiga_cold_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/TaigaColdHills"
+		
+		
+    }
+}

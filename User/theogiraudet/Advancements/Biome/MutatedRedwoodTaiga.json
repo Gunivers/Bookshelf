@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_redwood_taiga": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_redwood_taiga"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedRedwoodTaiga"
+		
+		
+    }
+}
