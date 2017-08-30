@@ -21,7 +21,6 @@ scoreboard players tag @s[score_Tmp=-1] add pla_xP
 
 scoreboard players operation @s[score_Tmp=0] Tmp *= -1 Constant
 
-
 tp @s[score_Tmp_min=160000000,tag=pla_xP] ~16 ~ ~
 tp @s[score_Tmp_min=160000000,tag=pla_xN] ~-16 ~ ~
 scoreboard players remove @s[score_Tmp_min=160000000] Tmp 160000000
@@ -67,20 +66,6 @@ scoreboard players remove @s[score_Tmp_min=19531] Tmp 19531
 tp @s[score_Tmp_min=9765,tag=pla_xP] ~0.0009765 ~ ~
 tp @s[score_Tmp_min=9765,tag=pla_xN] ~-0.0009765 ~ ~
 scoreboard players remove @s[score_Tmp_min=9765] Tmp 9765
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
