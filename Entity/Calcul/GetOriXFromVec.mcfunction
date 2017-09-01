@@ -39,7 +39,7 @@
 # scoreboard players set 180 Constant 180
 # scoreboard players set 135 Constant 135
 # scoreboard players set 270 Constant 270
-# scoreboard players set Neg Constant -1
+# scoreboard players set -1 Constant -1
 # scoreboard players set 10000 Constant 10000
 # scoreboard players set 1000 Constant 1000
 # scoreboard players set 10 Constant 10
@@ -50,7 +50,7 @@
 
 #Tmp is positive if the absolute value of VectorX is bigger than the absolute value of VectorZ
 scoreboard players operation @s Tmp = @s VectorX
-scoreboard players operation @s[score_Tmp=-1] Tmp *= Neg Constant
+scoreboard players operation @s[score_Tmp=-1] Tmp *= -1 Constant
 scoreboard players operation @s[score_VectorZ_min=1] Tmp -= @s VectorZ
 scoreboard players operation @s[score_VectorZ=-1] Tmp += @s VectorZ
 
@@ -96,7 +96,7 @@ scoreboard players operation @s Tmp2 = Pi3 Constant
 function Gunivers-Lib:Utils/Math/Divide
 
 #Adjustments
-scoreboard players operation @s[score_Tmp3_min=3,score_Tmp3=5] Res *= Neg Constant
+scoreboard players operation @s[score_Tmp3_min=3,score_Tmp3=5] Res *= -1 Constant
 scoreboard players operation @s[score_Tmp3_min=1,score_Tmp3=1] Res += 270 Constant
 scoreboard players operation @s[score_Tmp3_min=2,score_Tmp3=2] Res += 90 Constant
 scoreboard players operation @s[score_Tmp3_min=3,score_Tmp3=3] Res += 135 Constant
