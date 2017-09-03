@@ -9,19 +9,21 @@
 # REQUIEREMENTS: 
 # - Tmp (score dummy) 
 # - Tmp2 (score dummy) 
-# - Tmp5 (score dummy)
-# - Tmp3 (score dummy) 
+# - Tmp3 (score dummy)
 # - Tmp4 (score dummy) 
-# - Res (score dummy) 
-# - Constants
-# - Gunivers-Lib:Utils/Math/Divide
+# - Tmp5 (score dummy)
+# - VectorX (score dummy)
+# - VectorZ (score dummy) 
+# - Phi (score dummy) 
+# - Gunivers-Lib:Import/Math (Import)
+# - Gunivers-Lib:Utils/Math/Divide (Function)
  
 # INPUT: 
 # - VectorX (score dummy) 
 # - VectorZ (score dummy) 
  
 # OUTPUT: 
-# - Res (score dummy) 
+# - Phi (score dummy) 
  
 # NOTE:  
 # The vector must be normalized (100 < vector length < 1000) 
@@ -31,22 +33,6 @@
 # CONFIGURATION: <none> 
  
 # CODE: 
-
-
-#Constants
-# scoreboard players set Pi3 Constant 314
-# scoreboard players set 18 Constant 18
-# scoreboard players set 180 Constant 180
-# scoreboard players set 135 Constant 135
-# scoreboard players set 270 Constant 270
-# scoreboard players set -1 Constant -1
-# scoreboard players set 10000 Constant 10000
-# scoreboard players set 1000 Constant 1000
-# scoreboard players set 10 Constant 10
-# scoreboard players set 28125 Constant 28125
-# scoreboard players set 90 Constant 90
-# scoreboard players set 360 Constant 360
-
 
 #Tmp is positive if the absolute value of VectorX is bigger than the absolute value of VectorZ
 scoreboard players operation @s Tmp = @s VectorX
@@ -96,14 +82,14 @@ scoreboard players operation @s Tmp2 = Pi3 Constant
 function Gunivers-Lib:Utils/Math/Divide
 
 #Adjustments
-scoreboard players operation @s[score_Tmp3_min=3,score_Tmp3=5] Res *= -1 Constant
-scoreboard players operation @s[score_Tmp3_min=1,score_Tmp3=1] Res += 270 Constant
-scoreboard players operation @s[score_Tmp3_min=2,score_Tmp3=2] Res += 90 Constant
-scoreboard players operation @s[score_Tmp3_min=3,score_Tmp3=3] Res += 135 Constant
-scoreboard players operation @s[score_Tmp3_min=5,score_Tmp3=5] Res += 180 Constant
-scoreboard players operation @s[score_Tmp3_min=4,score_Tmp3=4,score_VectorX_min=1] Res += 360 Constant
+scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Res *= -1 Constant
+scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=1] Res += 270 Constant
+scoreboard players operation @s[score_Tmp5_min=2,score_Tmp5=2] Res += 90 Constant
+scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=3] Res += 135 Constant
+scoreboard players operation @s[score_Tmp5_min=5,score_Tmp5=5] Res += 180 Constant
+scoreboard players operation @s[score_Tmp5_min=4,score_Tmp5=4,score_VectorX_min=1] Res += 360 Constant
 
-
+scoreboard players operation @s Phi = @s Res
 
 
 
