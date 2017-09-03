@@ -1,10 +1,11 @@
 #Import Constant
 
 # Note: Ce score contient toutes les constantes utiles dans des fonctions mathématiques tel que:
-# - Valeurs allant de -1 à 10 jusqu'a 1 000 000
+# - Valeurs allant de -1 à 25
 # - Valeurs trigonométrique Pi et x*Pi/4 (en degrés)
 # - Valeurs trigonométrique 32400, 40500, 28125 (utile pour les approximations de sinus, cosinus et arctangente)
 # - Puissances de 2 (2,4,8,16,32,64,... jusqu'a 4096)
+# - Puissances de 10 (10,100,1000,... jusqu'a 1000000)
 # - Nombres premiers inferrieurs à 100
 
 scoreboard objectives add Constant dummy
@@ -23,12 +24,19 @@ scoreboard players set 8 Constant 8
 scoreboard players set 9 Constant 9
 scoreboard players set 10 Constant 10
 scoreboard players set 11 Constant 11
+scoreboard players set 12 Constant 12
 scoreboard players set 13 Constant 13
+scoreboard players set 14 Constant 14
+scoreboard players set 15 Constant 15
 scoreboard players set 16 Constant 16
 scoreboard players set 17 Constant 17
+scoreboard players set 18 Constant 18
 scoreboard players set 19 Constant 19
 scoreboard players set 20 Constant 20
+scoreboard players set 21 Constant 21
+scoreboard players set 22 Constant 22
 scoreboard players set 23 Constant 23
+scoreboard players set 24 Constant 24
 scoreboard players set 25 Constant 25
 scoreboard players set 29 Constant 29
 scoreboard players set 30 Constant 30
