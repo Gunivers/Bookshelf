@@ -1,5 +1,5 @@
-# NAME: GetXOriFromVec
-# PATH: Gunivers-Lib:Entity/Calcul/GetXOriFromVec
+# NAME: GetOriXFromVec
+# PATH: Gunivers-Lib:Entity/Calcul/GetOriXFromVec
  
 # AUTHOR: KubbyDev
  
