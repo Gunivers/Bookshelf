@@ -18,7 +18,7 @@
 # - Res (score dummy) 
  
 # NOTE:  
-# - This function returns acos(x) in degrees, but x must be in interval [-1000;1000] instead of [-Pi;Pi]
+# - This function returns acos(x) in degrees, but x must be in interval [-1000;1000] instead of [-1;1]
  
 # CONFIGURATION: <none> 
  
