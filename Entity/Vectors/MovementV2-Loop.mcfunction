@@ -39,5 +39,5 @@ scoreboard players tag @s[score_Tmp=-1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp2=-1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp3=-1001] add MovementV2Loop
 
-execute @s[tag=MovementV2Loop] ~ ~ ~ function Gunivers-Lib:Entity/Set/MovementV2-Loop
+execute @s[tag=MovementV2Loop] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/MovementV2-Loop
 

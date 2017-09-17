@@ -209,4 +209,4 @@ scoreboard players tag @s[x=0,y=0,z=0,dx=1,dy=1,dz=1] add InRange
 scoreboard players add @s[tag=!InRange] LocY 1
 tp @s[tag=!InRange] ~ ~-1 ~
 scoreboard players add @s LocY 0
-tp @s 0 0t 0
+tp @s 0 0 0

@@ -21,11 +21,11 @@ tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT2 -> ","color":"gray"},{"text":
 execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
-execute @s[score_Collision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Set/MovementV2-Collision
-function Gunivers-Lib:Entity/Set/MovementV2-Child
+execute @s[score_Collision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/MovementV2-Collision
+function Gunivers-Lib:Entity/Vectors/MovementV2-Child
 
 scoreboard players remove @s Tmp4 1
 
 scoreboard players tag @s remove MovementV2-Loop2
 scoreboard players tag @s[score_Tmp4_min=1] add MovementV2-Loop2
-execute @s[tag=MovementV3Loop2] ~ ~ ~ function Gunivers-Lib:Entity/Set/MovementV2-Loop2
+execute @s[tag=MovementV3Loop2] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/MovementV2-Loop2

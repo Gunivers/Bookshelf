@@ -44,7 +44,7 @@ scoreboard players operation @s VectorX = @s Tmp
 scoreboard players operation @s VectorY = @s Tmp2 
 scoreboard players operation @s VectorZ = @s Tmp3 
 
-function Gunivers-Lib:Entity/Calcul/VectorsNormalized
+function Gunivers-Lib:Entity/Vectors/Normalize
 
 scoreboard players operation @s Tmp = @s VectorX 
 scoreboard players operation @s Tmp2 = @s VectorY 
@@ -71,6 +71,6 @@ scoreboard players operation @s VectorZ += @s Tmp3
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
 
 
-function Gunivers-Lib:Entity/Calcul/VectorsNormalized
+function Gunivers-Lib:Entity/Vectors/Normalize
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"OUTPUT (normalized) -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]

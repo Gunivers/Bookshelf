@@ -27,6 +27,6 @@ scoreboard players tag @s[score_Health_min=-100000] remove InitHealth
 scoreboard players set @s[tag=InitHealth] Health 20
 scoreboard players tag @s remove InitHealth
 scoreboard players operation @s Health -= @s HealthRead
-execute @s[score_Health_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Set/UpdateHealthP
-execute @s[score_Health=-1] ~ ~ ~ function Gunivers-Lib:Entity/Set/UpdateHealthM
+execute @s[score_Health_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Health/UpdateHealthP
+execute @s[score_Health=-1] ~ ~ ~ function Gunivers-Lib:Entity/Health/UpdateHealthM
 scoreboard players operation @s Health += @s HealthRead

@@ -33,4 +33,4 @@ scoreboard players operation @e[tag=!Self] ShooterId -= @s ShooterId
 execute @e[score_ShooterId_min=0,score_ShooterId=0] ~ ~ ~ scoreboard players tag @e[tag=Self] add EncoreUnTour
 scoreboard players operation @e[tag=!Self] ShooterId += @s ShooterId
 scoreboard players tag @s remove Self
-execute @s[tag=EncoreUnTour] ~ ~ ~ function Gunivers-Lib:Entity/Calcul/AddShooterId
+execute @s[tag=EncoreUnTour] ~ ~ ~ function Gunivers-Lib:Entity/Id/AddShooterId

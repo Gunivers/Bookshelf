@@ -40,7 +40,7 @@ scoreboard players operation @s VectorX -= @s LocX
 scoreboard players operation @s VectorY -= @s LocY
 scoreboard players operation @s VectorZ -= @s LocZ
 
-function Gunivers-Lib:Entity/Calcul/NormalizeVector
+function Gunivers-Lib:Entity/Vectors/Normalize
 
 scoreboard players operation @e[tag=!Self] ShooterId += @s TargetId
 scoreboard players tag @s remove Self
