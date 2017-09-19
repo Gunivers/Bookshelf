@@ -17,10 +17,8 @@ ________________________________________________________________________________
 # REQUIEREMENTS:
 # - <Name>** (<Type>***)
 # - ...
-
 or 
-
-# CHILD OF: Gunivers-Lib: ... /<Nom Du Systeme>
+# CHILD OF: Gunivers-Lib: ... /<Nom Du Systeme Parent>
 
 # INPUT:
 # - <Name>** (<Type>***)

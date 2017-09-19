@@ -16,5 +16,5 @@
 
 
 #Code
-scoreboard players set @a isOffHand 0
-scoreboard players set @a isOffHand 1 {Inventory:[{Slot:-106b}]}
+scoreboard players tag @a remove isOffHand
+scoreboard players tag @a add isOffHand {Inventory:[{Slot:-106b}]}

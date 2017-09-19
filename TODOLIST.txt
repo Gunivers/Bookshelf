@@ -1,9 +1,6 @@
 LeiRoF
 - Entity Set Location
 - Update Hierarchy
-- Entity Get PositionByVector
-   -> Utils Math Arctan
-   -> Utils Math Arccos
 
 theogiraudet
 - Utils Math Rnd
