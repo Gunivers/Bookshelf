@@ -39,7 +39,7 @@ execute @s[tag=CollisionX] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Bloc
 # Collision on Y #
 #----------------#
 
-scoreboard players tag @s[tag=DirMoving,score_Collision_min=1] add CollisionY
+scoreboard players tag @s[score_Collision_min=1] add CollisionY
 scoreboard players tag @s[score_Collision_min=1,score_Tmp2=0,score_Tmp2_min=0] remove CollisionY
 
 execute @s[score_Tmp2_min=1] ~ ~ ~ detect ~ ~1 ~ air 0 scoreboard players tag @s remove CollisionY
@@ -66,7 +66,7 @@ execute @s[tag=CollisionY] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Bloc
 # Collision on Z #
 #----------------#
 
-scoreboard players tag @s[tag=DirMoving,score_Collision_min=1] add CollisionZ
+scoreboard players tag @s[score_Collision_min=1] add CollisionZ
 scoreboard players tag @s[score_Collision_min=1,score_Tmp3=0,score_Tmp3_min=0] remove CollisionZ
 
 execute @s[score_Tmp3_min=1] ~ ~ ~ detect ~ ~ ~1 air 0 scoreboard players tag @s remove CollisionZ
