@@ -16,6 +16,7 @@
 # - Theta (score dummy)
 
 summon armor_stand ~ ~ ~ {Tags:["GetOrientation"],NoGravity:1,Invisible:1,Small:1,Marker:1}
+tp @e[type=armor_stand,tag=GetOrientation,c=1] @s
 execute @e[type=armor_stand,tag=GetOrientation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Orientation/Get-Slave
 
 scoreboard players operation @s Phi = @e[type=armor_stand,tag=GetOrientation,c=1] Phi
