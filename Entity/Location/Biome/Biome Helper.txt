@@ -13,6 +13,7 @@
 # - Biome (dummy)
 
 # NOTE: This system works automatically thanks to advancements. He's detect the biome where the players (only) are and assign an id to each biome. You can find the list of id here.
+To disable this système, delete this folder.
 
 
 0 : Ocean
