@@ -21,13 +21,10 @@
 # CONFIGURATION:
  
 # CODE:
+scoreboard players tag @p add HaveBook {Inventory:[{id:"minecraft:written_book",Damage:0s,tag:{title:"Gunivers-Lib"}}]}
+clear @a[tag=HaveBook]
+execute @a[tag=HaveBook] ~ ~ ~ function Gunivers-Lib:GuniversBook/Give
+scoreboard players tag @a[tag=HaveBook] remove HaveBook
 
-#Imports Vectors, Orientation, Math and Temporary
-function Gunivers-Lib:Import/Vectors
-function Gunivers-Lib:Import/Orientation
-function Gunivers-Lib:Import/Math
-function Gunivers-Lib:Import/Temporary
-
-function Gunivers-Lib:GuniversBook/Imports/ImportAll/UpdateBook
 
 

@@ -22,11 +22,8 @@
  
 # CODE:
 
-#Imports Vectors, Orientation, Math and Temporary
-function Gunivers-Lib:Import/Vectors
-function Gunivers-Lib:Import/Orientation
+#Imports Math
 function Gunivers-Lib:Import/Math
-function Gunivers-Lib:Import/Temporary
 
 function Gunivers-Lib:GuniversBook/Imports/ImportAll/UpdateBook
 
