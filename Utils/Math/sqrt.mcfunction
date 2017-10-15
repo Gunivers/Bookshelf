@@ -35,12 +35,10 @@ scoreboard players operation @s Res = @s Tmp1
 scoreboard players operation @s[score_Res=-1] Res *= -1 Constant 
 
 # Operation
+scoreboard players operation @s Tmp4 = @s Res
+scoreboard players operation @s Tmp4 /= 2 Constant
 scoreboard players operation @s Tmp3 = @s Res
-scoreboard players operation @s Tmp3 /= 2 Constant
 
 # Loop to execute {Tmp2} time
-execute @s ~ ~ ~ function Gunivers-Lib:Utils/Math/Sqrt-Loop
-
-# Save
-scoreboard players operation @s Res = @s Tmp4
+function Gunivers-Lib:Utils/Math/Sqrt-Loop
 

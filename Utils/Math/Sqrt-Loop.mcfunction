@@ -13,10 +13,10 @@
 # NOTE: Boucle de resolution de la racine carrée d'un nombre
 
 # CODE:
-scoreboard players operation @s Tmp4 = @s Res
-scoreboard players operation @s Res /= @s Tmp3
-scoreboard players operation @s Tmp3 += @s Res
-scoreboard players operation @s Tmp3 /= 2 Constant
+scoreboard players operation @s Tmp4 = @s Tmp3
+scoreboard players operation @s Tmp4 /= @s Res
+scoreboard players operation @s Tmp4 += @s Res
+scoreboard players operation @s Tmp4 /= 2 Constant
 scoreboard players operation @s Res = @s Tmp4
 
 scoreboard players remove @s Tmp2 1
