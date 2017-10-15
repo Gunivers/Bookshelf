@@ -118,6 +118,6 @@ scoreboard players set @s[score_Tmp2_min=998,score_Tmp2=998] Res 3
 scoreboard players set @s[score_Tmp2_min=999,score_Tmp2=999] Res 2
 scoreboard players set @s[score_Tmp2_min=1000,score_Tmp2=1000] Res 0
 
-scoreboard players set @s[score_Tmp=-1] Tmp2 180
-scoreboard players operation @s[score_Tmp=-1] Tmp2 -= @s Res
-scoreboard players operation @s[score_Tmp=-1] Res = @s Tmp2
+scoreboard players set @s[score_Tmp1=-1] Tmp2 180
+scoreboard players operation @s[score_Tmp1=-1] Tmp2 -= @s Res
+scoreboard players operation @s[score_Tmp1=-1] Res = @s Tmp2
