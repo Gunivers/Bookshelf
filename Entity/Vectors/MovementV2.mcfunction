@@ -37,7 +37,7 @@ tellraw @a[tag=DebugMovement] ["",{"text":"CALC -> ","color":"gray"},{"text":"X:
 
 scoreboard players set @s Tmp4 0
 
-scoreboard players tag @s remove FectorIncrease
+scoreboard players tag @s remove FactorIncrease
 scoreboard players tag @s[score_Tmp1_min=1] add FactorIncrease
 scoreboard players tag @s[score_Tmp2_min=1] add FactorIncrease
 scoreboard players tag @s[score_Tmp3_min=1] add FactorIncrease

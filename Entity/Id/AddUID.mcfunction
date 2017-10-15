@@ -16,4 +16,4 @@
 
 #Gives a unique identifier to a player
 scoreboard players add UID UID 1
-scoreboard players operation UID UID = @s UID
+scoreboard players operation @s UID = UID UID

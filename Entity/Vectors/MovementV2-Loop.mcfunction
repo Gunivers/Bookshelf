@@ -10,7 +10,7 @@
 
 # CODE:
 
-scoreboard players tag @s remove FectorIncrease
+scoreboard players tag @s remove FactorIncrease
 
 scoreboard players tag @s[score_Tmp1_min=1001] add FactorIncrease
 scoreboard players tag @s[score_Tmp2_min=1001] add FactorIncrease
