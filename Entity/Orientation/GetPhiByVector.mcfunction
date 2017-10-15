@@ -63,9 +63,9 @@ scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=2] Tmp2 *= @s Tmp4
 scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Tmp2 *= @s Tmp3
 scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=2] Tmp1 = @s Tmp3
 scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Tmp1 = @s Tmp4
-scoreboard players operation @s Tmp1 *= @s Tmp
+scoreboard players operation @s Tmp1 *= @s Tmp1
 scoreboard players operation @s Tmp1 *= 10 Constant
-scoreboard players operation @s Tmp2 += @s Tmp
+scoreboard players operation @s Tmp2 += @s Tmp1
 scoreboard players operation @s Tmp2 /= 10 Constant
 
 #Calculation of the numerator (On Tmp)

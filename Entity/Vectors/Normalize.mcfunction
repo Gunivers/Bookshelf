@@ -35,8 +35,8 @@ scoreboard players operation @s Tmp1 += @s Tmp3
 
 
 scoreboard players operation @s VectorX *= 1000 Constant
-scoreboard players operation @s VectorX /= @s Tmp
+scoreboard players operation @s VectorX /= @s Tmp1
 scoreboard players operation @s VectorY *= 1000 Constant
-scoreboard players operation @s VectorY /= @s Tmp
+scoreboard players operation @s VectorY /= @s Tmp1
 scoreboard players operation @s VectorZ *= 1000 Constant
-scoreboard players operation @s VectorZ /= @s Tmp
+scoreboard players operation @s VectorZ /= @s Tmp1

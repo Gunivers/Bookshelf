@@ -64,5 +64,5 @@ tp @s[score_Theta_min=1] ~ ~ ~ ~ ~1
 scoreboard players remove @s[score_Theta_min=1] Theta 1 
 
 #Restitution
-scoreboard players operation @s Phi = @s Tmp
+scoreboard players operation @s Phi = @s Tmp1
 scoreboard players operation @s Theta = @s Tmp2

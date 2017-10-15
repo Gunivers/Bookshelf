@@ -64,7 +64,7 @@ scoreboard players operation @s Tmp1 *= @s Tmp5
 scoreboard players operation @s Tmp2 *= @s Tmp5
 scoreboard players operation @s Tmp3 *= @s Tmp5
 
-scoreboard players operation @s VectorX += @s Tmp
+scoreboard players operation @s VectorX += @s Tmp1
 scoreboard players operation @s VectorY += @s Tmp2
 scoreboard players operation @s VectorZ += @s Tmp3
 
