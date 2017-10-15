@@ -31,7 +31,7 @@ scoreboard players set @s Tmp2 20
 # CODE:
 
 # Verifying the presence of a negative number
-scoreboard players operation @s Res = @s Tmp
+scoreboard players operation @s Res = @s Tmp1
 scoreboard players operation @s[score_Res=-1] Res *= -1 Constant 
 
 # Operation

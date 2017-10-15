@@ -23,7 +23,7 @@
 
 # Retranscription of Phi on interval [0;90[
 
-scoreboard players operation @s Tmp3 = @s Tmp
+scoreboard players operation @s Tmp3 = @s Tmp1
 scoreboard players operation @s[score_Tmp1_min=90,score_Tmp1=179] Tmp3 *= Neg Constant
 scoreboard players operation @s[score_Tmp1_min=90,score_Tmp1=179] Tmp3 += 180 Constant
 scoreboard players operation @s[score_Tmp1_min=180,score_Tmp1=269] Tmp3 -= 180 Constant

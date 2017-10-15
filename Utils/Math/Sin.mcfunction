@@ -23,7 +23,7 @@
 
 # Retranscription of Tmp1 on interval [0;180[
 
-scoreboard players operation @s Tmp3 = @s Tmp
+scoreboard players operation @s Tmp3 = @s Tmp1
 scoreboard players operation @s[score_Tmp1_min=180] Tmp3 -= 180 Constant
 
 # Calcul Sin

@@ -24,7 +24,7 @@
  
 # CODE: 
 
-scoreboard players operation @s Tmp2 = @s Tmp
+scoreboard players operation @s Tmp2 = @s Tmp1
 scoreboard players operation @s[score_Tmp2=-1] Tmp2 *= -1 Constant
 
 scoreboard players set @s[score_Tmp2_min=0,score_Tmp2=8] Res 90

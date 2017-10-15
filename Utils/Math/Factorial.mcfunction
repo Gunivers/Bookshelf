@@ -24,6 +24,6 @@
 # CONFIGURATION: <none> 
  
 # CODE: 
-scoreboard players operation @s Tmp2 = @s Tmp
+scoreboard players operation @s Tmp2 = @s Tmp1
 scoreboard players set @s Res 1
 function Gunivers-Lib:Utils/Math/Factorial-Loop
