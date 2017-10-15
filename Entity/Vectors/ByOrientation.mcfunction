@@ -33,17 +33,17 @@ scoreboard players set @s VectorSpeed 1000
 
 #Calcul Vector Y
 
-scoreboard players operation @s Tmp = @s Theta
+scoreboard players operation @s Tmp1 = @s Theta
 function Gunivers-Lib:Utils/Math/Cos
 scoreboard players operation @s VectorY = @s Res
 
 #Calcul Vector Z
 
-scoreboard players operation @s Tmp = @s Phi
+scoreboard players operation @s Tmp1 = @s Phi
 function Gunivers-Lib:Utils/Math/Cos
 scoreboard players operation @s VectorZ = @s Res
 
-scoreboard players operation @s Tmp = @s Theta
+scoreboard players operation @s Tmp1 = @s Theta
 function Gunivers-Lib:Utils/Math/Sin
 scoreboard players operation @s VectorZ *= @s Res
 
@@ -51,7 +51,7 @@ scoreboard players operation @s VectorZ *= @s Res
 
 scoreboard players operation @s VectorX = @s Res
 
-scoreboard players operation @s Tmp = @s Phi
+scoreboard players operation @s Tmp1 = @s Phi
 function Gunivers-Lib:Utils/Math/Sin
 scoreboard players operation @s VectorX *= @s Res
 

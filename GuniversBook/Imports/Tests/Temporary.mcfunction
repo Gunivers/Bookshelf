@@ -7,7 +7,7 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy) 
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy) 
@@ -34,7 +34,7 @@
  
 # CODE:
 
-scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp 0
+scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp1 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp2 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp3 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp4 0
@@ -43,7 +43,7 @@ scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp6 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp7 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp8 0
 scoreboard players set @e[type=area_effect_cloud,tag=TestImport] Tmp9 0
-scoreboard players tag @e[type=area_effect_cloud,tag=ImportDone,score_Tmp_min=0,score_Tmp2_min=0,score_Tmp3_min=0,score_Tmp4_min=0,score_Tmp5_min=0,score_Tmp6_min=0,score_Tmp7_min=0,score_Tmp8_min=0,score_Tmp9_min=0] add Temporary
+scoreboard players tag @e[type=area_effect_cloud,tag=ImportDone,score_Tmp1_min=0,score_Tmp2_min=0,score_Tmp3_min=0,score_Tmp4_min=0,score_Tmp5_min=0,score_Tmp6_min=0,score_Tmp7_min=0,score_Tmp8_min=0,score_Tmp9_min=0] add Temporary
 scoreboard players tag @e[type=area_effect_cloud,tag=ImportToDo] add Temporary
 execute @e[type=area_effect_cloud,tag=ImportDone] ~ ~ ~ execute @s[tag=Temporary] ~ ~ ~ scoreboard players tag @e[type=area_effect_cloud,tag=ImportToDo] remove Temporary
 

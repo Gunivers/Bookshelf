@@ -12,15 +12,15 @@
 
 scoreboard players tag @s remove FectorIncrease
 
-scoreboard players tag @s[score_Tmp_min=1001] add FactorIncrease
+scoreboard players tag @s[score_Tmp1_min=1001] add FactorIncrease
 scoreboard players tag @s[score_Tmp2_min=1001] add FactorIncrease
 scoreboard players tag @s[score_Tmp3_min=1001] add FactorIncrease
-scoreboard players tag @s[score_Tmp=-1001] add FactorIncrease
+scoreboard players tag @s[score_Tmp1=-1001] add FactorIncrease
 scoreboard players tag @s[score_Tmp2=-1001] add FactorIncrease
 scoreboard players tag @s[score_Tmp3=-1001] add FactorIncrease
 
 scoreboard players add @s[tag=FactorIncrease] Tmp4 1
-scoreboard players operation @s[tag=FactorIncrease] Tmp /= 2 Constant
+scoreboard players operation @s[tag=FactorIncrease] Tmp1 /= 2 Constant
 scoreboard players operation @s[tag=FactorIncrease] Tmp2 /= 2 Constant
 scoreboard players operation @s[tag=FactorIncrease] Tmp3 /= 2 Constant
 
@@ -32,10 +32,10 @@ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~ ~ {Block:"minecraft:fence",
 
 scoreboard players tag @s remove MovementV2Loop
 
-scoreboard players tag @s[score_Tmp_min=1001] add MovementV2Loop
+scoreboard players tag @s[score_Tmp1_min=1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp2_min=1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp3_min=1001] add MovementV2Loop
-scoreboard players tag @s[score_Tmp=-1001] add MovementV2Loop
+scoreboard players tag @s[score_Tmp1=-1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp2=-1001] add MovementV2Loop
 scoreboard players tag @s[score_Tmp3=-1001] add MovementV2Loop
 

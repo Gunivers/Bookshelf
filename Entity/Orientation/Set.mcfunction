@@ -19,7 +19,7 @@
 
 #Initialization
 
-scoreboard players operation @s Tmp = @s Phi
+scoreboard players operation @s Tmp1 = @s Phi
 scoreboard players operation @s Tmp2 = @s Theta
 tp @s[] ~ ~ ~ 0 -90
 

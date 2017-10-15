@@ -7,12 +7,12 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy)  
 # - Res (score dummy) 
  
 # INPUT: 
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
  
 # OUTPUT: 
 # - Res (score dummy) 

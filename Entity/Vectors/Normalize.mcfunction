@@ -22,15 +22,15 @@
 
 scoreboard players operation @s Tmp3 = @s VectorX
 scoreboard players operation @s[score_VectorX=-1] Tmp3 *= Neg Constant 
-scoreboard players operation @s Tmp = @s Tmp3
+scoreboard players operation @s Tmp1 = @s Tmp3
 
 scoreboard players operation @s Tmp3 = @s VectorY
 scoreboard players operation @s[score_VectorY=-1] Tmp3 *= Neg Constant 
-scoreboard players operation @s Tmp += @s Tmp3
+scoreboard players operation @s Tmp1 += @s Tmp3
 
 scoreboard players operation @s Tmp3 = @s VectorZ
 scoreboard players operation @s[score_VectorZ=-1] Tmp3 *= Neg Constant 
-scoreboard players operation @s Tmp += @s Tmp3
+scoreboard players operation @s Tmp1 += @s Tmp3
 
 
 

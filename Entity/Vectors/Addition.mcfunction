@@ -11,7 +11,7 @@
 # - VectorX (score dummy)
 # - Vectory (score dummy)
 # - Vectorz (score dummy)
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
 # - Tmp2 (score dummy)
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy)
@@ -25,7 +25,7 @@
 
 # Note:
 #
-# Tmp = second VectorX
+# Tmp1 = second VectorX
 # Tmp2 = second VectorY
 # Tmp3 = second VectorZ
 # Tmp4 = coefficient first Vector
@@ -40,13 +40,13 @@ scoreboard players operation @s Tmp6 = @s VectorX
 scoreboard players operation @s Tmp7 = @s VectorY 
 scoreboard players operation @s Tmp8 = @s VectorZ 
 
-scoreboard players operation @s VectorX = @s Tmp 
+scoreboard players operation @s VectorX = @s Tmp1 
 scoreboard players operation @s VectorY = @s Tmp2 
 scoreboard players operation @s VectorZ = @s Tmp3 
 
 function Gunivers-Lib:Entity/Vectors/Normalize
 
-scoreboard players operation @s Tmp = @s VectorX 
+scoreboard players operation @s Tmp1 = @s VectorX 
 scoreboard players operation @s Tmp2 = @s VectorY 
 scoreboard players operation @s Tmp3 = @s VectorZ 
 
@@ -60,7 +60,7 @@ scoreboard players operation @s VectorX *= @s Tmp4
 scoreboard players operation @s VectorY *= @s Tmp4
 scoreboard players operation @s VectorZ *= @s Tmp4
 
-scoreboard players operation @s Tmp *= @s Tmp5
+scoreboard players operation @s Tmp1 *= @s Tmp5
 scoreboard players operation @s Tmp2 *= @s Tmp5
 scoreboard players operation @s Tmp3 *= @s Tmp5
 

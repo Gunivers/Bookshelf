@@ -12,25 +12,25 @@
 
 # X positive
 
-tp @s[score_Tmp_min=512] ~0.512 ~ ~
-scoreboard players remove @s[score_Tmp_min=512] Tmp 512
-tp @s[score_Tmp_min=256] ~0.256 ~ ~
-scoreboard players remove @s[score_Tmp_min=256] Tmp 256
-tp @s[score_Tmp_min=128] ~0.128 ~ ~
-scoreboard players remove @s[score_Tmp_min=128] Tmp 128
-tp @s[score_Tmp_min=64] ~0.064 ~ ~
-scoreboard players remove @s[score_Tmp_min=64] Tmp 64
-tp @s[score_Tmp_min=32] ~0.032 ~ ~
-scoreboard players remove @s[score_Tmp_min=32] Tmp 32
-tp @s[score_Tmp_min=16] ~0.016 ~ ~
-scoreboard players remove @s[score_Tmp_min=16] Tmp 16
-tp @s[score_Tmp_min=8] ~0.008 ~ ~
-scoreboard players remove @s[score_Tmp_min=8] Tmp 8
-tp @s[score_Tmp_min=4] ~0.004 ~ ~
-scoreboard players remove @s[score_Tmp_min=4] Tmp 4
-tp @s[score_Tmp_min=2] ~0.002 ~ ~
-scoreboard players remove @s[score_Tmp_min=2] Tmp 2
-tp @s[score_Tmp_min=1] ~0.001 ~ ~
+tp @s[score_Tmp1_min=512] ~0.512 ~ ~
+scoreboard players remove @s[score_Tmp1_min=512] Tmp1 512
+tp @s[score_Tmp1_min=256] ~0.256 ~ ~
+scoreboard players remove @s[score_Tmp1_min=256] Tmp1 256
+tp @s[score_Tmp1_min=128] ~0.128 ~ ~
+scoreboard players remove @s[score_Tmp1_min=128] Tmp1 128
+tp @s[score_Tmp1_min=64] ~0.064 ~ ~
+scoreboard players remove @s[score_Tmp1_min=64] Tmp1 64
+tp @s[score_Tmp1_min=32] ~0.032 ~ ~
+scoreboard players remove @s[score_Tmp1_min=32] Tmp1 32
+tp @s[score_Tmp1_min=16] ~0.016 ~ ~
+scoreboard players remove @s[score_Tmp1_min=16] Tmp1 16
+tp @s[score_Tmp1_min=8] ~0.008 ~ ~
+scoreboard players remove @s[score_Tmp1_min=8] Tmp1 8
+tp @s[score_Tmp1_min=4] ~0.004 ~ ~
+scoreboard players remove @s[score_Tmp1_min=4] Tmp1 4
+tp @s[score_Tmp1_min=2] ~0.002 ~ ~
+scoreboard players remove @s[score_Tmp1_min=2] Tmp1 2
+tp @s[score_Tmp1_min=1] ~0.001 ~ ~
 
 # Y positive
 
@@ -78,25 +78,25 @@ tp @s[score_Tmp3_min=1] ~ ~ ~0.001
 
 # X negative
 
-tp @s[score_Tmp=-512] ~-0.512 ~ ~
-scoreboard players add @s[score_Tmp=-512] Tmp 512
-tp @s[score_Tmp=-256] ~-0.256 ~ ~
-scoreboard players add @s[score_Tmp=-256] Tmp 256
-tp @s[score_Tmp=-128] ~-0.128 ~ ~
-scoreboard players add @s[score_Tmp=-128] Tmp 128
-tp @s[score_Tmp=-64] ~-0.064 ~ ~
-scoreboard players add @s[score_Tmp=-64] Tmp 64
-tp @s[score_Tmp=-32] ~-0.032 ~ ~
-scoreboard players add @s[score_Tmp=-32] Tmp 32
-tp @s[score_Tmp=-16] ~-0.016 ~ ~
-scoreboard players add @s[score_Tmp=-16] Tmp 16
-tp @s[score_Tmp=-8] ~-0.008 ~ ~
-scoreboard players add @s[score_Tmp=-8] Tmp 8
-tp @s[score_Tmp=-4] ~-0.004 ~ ~
-scoreboard players add @s[score_Tmp=-4] Tmp 4
-tp @s[score_Tmp=-2] ~-0.002 ~ ~
-scoreboard players add @s[score_Tmp=-2] Tmp 2
-tp @s[score_Tmp=-1] ~-0.001 ~ ~
+tp @s[score_Tmp1=-512] ~-0.512 ~ ~
+scoreboard players add @s[score_Tmp1=-512] Tmp1 512
+tp @s[score_Tmp1=-256] ~-0.256 ~ ~
+scoreboard players add @s[score_Tmp1=-256] Tmp1 256
+tp @s[score_Tmp1=-128] ~-0.128 ~ ~
+scoreboard players add @s[score_Tmp1=-128] Tmp1 128
+tp @s[score_Tmp1=-64] ~-0.064 ~ ~
+scoreboard players add @s[score_Tmp1=-64] Tmp1 64
+tp @s[score_Tmp1=-32] ~-0.032 ~ ~
+scoreboard players add @s[score_Tmp1=-32] Tmp1 32
+tp @s[score_Tmp1=-16] ~-0.016 ~ ~
+scoreboard players add @s[score_Tmp1=-16] Tmp1 16
+tp @s[score_Tmp1=-8] ~-0.008 ~ ~
+scoreboard players add @s[score_Tmp1=-8] Tmp1 8
+tp @s[score_Tmp1=-4] ~-0.004 ~ ~
+scoreboard players add @s[score_Tmp1=-4] Tmp1 4
+tp @s[score_Tmp1=-2] ~-0.002 ~ ~
+scoreboard players add @s[score_Tmp1=-2] Tmp1 2
+tp @s[score_Tmp1=-1] ~-0.001 ~ ~
 
 # Y negative
 

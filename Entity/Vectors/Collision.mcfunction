@@ -16,16 +16,16 @@
 # Ouput values:
 # - None
 
-scoreboard players operation @s Tmp = @s VectorX
+scoreboard players operation @s Tmp1 = @s VectorX
 scoreboard players operation @s Tmp2 = @s VectorY
 scoreboard players operation @s Tmp3 = @s VectorZ
-scoreboard players operation @s Tmp *= @s VectorSpeed
+scoreboard players operation @s Tmp1 *= @s VectorSpeed
 scoreboard players operation @s Tmp2 *= @s VectorSpeed
 scoreboard players operation @s Tmp3 *= @s VectorSpeed
-scoreboard players operation @s Tmp *= 25 Constant
+scoreboard players operation @s Tmp1 *= 25 Constant
 scoreboard players operation @s Tmp2 *= 25 Constant
 scoreboard players operation @s Tmp3 *= 25 Constant
-scoreboard players operation @s Tmp /= 10000 Constant
+scoreboard players operation @s Tmp1 /= 10000 Constant
 scoreboard players operation @s Tmp2 /= 10000 Constant
 scoreboard players operation @s Tmp3 /= 10000 Constant
 
@@ -34,19 +34,19 @@ scoreboard players operation @s Tmp3 /= 10000 Constant
 #----------------#
 
 scoreboard players tag @s[tag=DirMoving,score_Collision_min=1] add CollisionX
-scoreboard players tag @s[score_Collision_min=1,score_Tmp=0,score_Tmp_min=0] remove CollisionX
+scoreboard players tag @s[score_Collision_min=1,score_Tmp1=0,score_Tmp1_min=0] remove CollisionX
 
 # X positive
-execute @s[score_Tmp_min=1,score_Tmp=499] ~ ~ ~ detect ~0.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp_min=500,score_Tmp=999] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp_min=1000,score_Tmp=1499] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~2.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp_min=1500] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~2.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~3.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1_min=1,score_Tmp1=499] ~ ~ ~ detect ~0.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1_min=500,score_Tmp1=999] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1_min=1000,score_Tmp1=1499] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~2.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1_min=1500] ~ ~ ~ detect ~0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~2.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~3.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
 
 # X negative
-execute @s[score_Tmp=-1,score_Tmp_min=-499] ~ ~ ~ detect ~-0.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp=-500,score_Tmp_min=-999] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp=-1000,score_Tmp_min=-1499] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-2.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp=-1500] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-2.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-3.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1=-1,score_Tmp1_min=-499] ~ ~ ~ detect ~-0.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1=-500,score_Tmp1_min=-999] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1=-1000,score_Tmp1_min=-1499] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-2.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1=-1500] ~ ~ ~ detect ~-0.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-1.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-2.5 ~ ~ air 0 execute @s ~ ~ ~ detect ~-3.5 ~ ~ air 0 scoreboard players tag @s remove CollisionX
 
 scoreboard players operation @s[score_Collision_min=1,score_Collision=3,tag=CollisionX] DirX *= Neg Constant
 scoreboard players set @s[score_Collision_min=4,score_Collision=4,tag=CollisionX] DirX 0

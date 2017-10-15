@@ -7,19 +7,19 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy)  
 # - Res (score dummy) 
  
 # INPUT: 
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
  
 # OUTPUT: 
 # - Res (score dummy) 
  
 # NOTE:  
 # - Factorial of 5 ( 5! ) = 5 x 4 x 3 x 2
-# - Warning, this function doesn't work if Tmp > 12 (Because the result is greater than 2^31, the limit value of the scoreboards)
+# - Warning, this function doesn't work if Tmp1 > 12 (Because the result is greater than 2^31, the limit value of the scoreboards)
  
 # CONFIGURATION: <none> 
  

@@ -12,7 +12,7 @@ scoreboard objectives add yM dummy
 scoreboard objectives add zM dummy
 scoreboard objectives add Constant dummy
 scoreboard objectives add vision dummy
-scoreboard objectives add v_tmp dummy
+scoreboard objectives add v_Tmp1 dummy
 
 scoreboard players set -1 Constant -1
 
@@ -419,33 +419,33 @@ tp @e[name=pos_test] @e[name=pos_main]
 
 # --- vision ---------------------------------------------------------------------------
 
-scoreboard players set @e[name=pos_main] v_tmp 0
+scoreboard players set @e[name=pos_main] v_Tmp1 0
 
-scoreboard players add @e[name=pos_main,rym=180,ry=359] v_tmp 180
+scoreboard players add @e[name=pos_main,rym=180,ry=359] v_Tmp1 180
 tp @e[name=pos_main,rym=180,ry=359] ~ ~ ~ ~-180 ~
 
-scoreboard players add @e[name=pos_main,rym=90,ry=359] v_tmp 90
+scoreboard players add @e[name=pos_main,rym=90,ry=359] v_Tmp1 90
 tp @e[name=pos_main,rym=90,ry=359] ~ ~ ~ ~-90 ~
 
-scoreboard players add @e[name=pos_main,rym=45,ry=359] v_tmp 45
+scoreboard players add @e[name=pos_main,rym=45,ry=359] v_Tmp1 45
 tp @e[name=pos_main,rym=45,ry=359] ~ ~ ~ ~-45 ~
 
-scoreboard players add @e[name=pos_main,rym=22,ry=359] v_tmp 23
+scoreboard players add @e[name=pos_main,rym=22,ry=359] v_Tmp1 23
 tp @e[name=pos_main,rym=23,ry=359] ~ ~ ~ ~-23 ~
 
-scoreboard players add @e[name=pos_main,rym=12,ry=359] v_tmp 12
+scoreboard players add @e[name=pos_main,rym=12,ry=359] v_Tmp1 12
 tp @e[name=pos_main,rym=12,ry=359] ~ ~ ~ ~-12 ~
 
-scoreboard players add @e[name=pos_main,rym=6,ry=359] v_tmp 6
+scoreboard players add @e[name=pos_main,rym=6,ry=359] v_Tmp1 6
 tp @e[name=pos_main,rym=6,ry=359] ~ ~ ~ ~-6 ~
 
-scoreboard players add @e[name=pos_main,rym=3,ry=359] v_tmp 3
+scoreboard players add @e[name=pos_main,rym=3,ry=359] v_Tmp1 3
 tp @e[name=pos_main,rym=3,ry=359] ~ ~ ~ ~-3 ~
 
-scoreboard players add @e[name=pos_main,rym=2,ry=359] v_tmp 2
+scoreboard players add @e[name=pos_main,rym=2,ry=359] v_Tmp1 2
 tp @e[name=pos_main,rym=2,ry=359] ~ ~ ~ ~-2 ~
 
-scoreboard players add @e[name=pos_main,rym=1,ry=359] v_tmp 1
+scoreboard players add @e[name=pos_main,rym=1,ry=359] v_Tmp1 1
 tp @e[name=pos_main,rym=1,ry=359] ~ ~ ~ ~-1 ~
 
 # --- FINITION ---------------------------------------------------------------------------

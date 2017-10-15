@@ -10,7 +10,7 @@
 
 # CODE:
 
-scoreboard players operation @s[score_Tmp4_min=1] Tmp = @s Tmp7
+scoreboard players operation @s[score_Tmp4_min=1] Tmp1 = @s Tmp7
 scoreboard players operation @s[score_Tmp4_min=1] Tmp2 = @s Tmp8
 scoreboard players operation @s[score_Tmp4_min=1] Tmp3 = @s Tmp9
 

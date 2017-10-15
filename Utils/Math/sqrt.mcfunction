@@ -10,13 +10,13 @@
 
 # REQUIEREMENTS:
 # - Gunivers-Lib:Import/Math (MCfunction)
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
 # - Tmp2 (score dummy)
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy)
 
 # INPUT:
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
 
 # OUTPUT:
 # - Res (score dummy)

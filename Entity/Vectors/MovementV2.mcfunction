@@ -20,13 +20,13 @@
 
 # CODE:
 
-scoreboard players operation @s Tmp = @s VectorX
+scoreboard players operation @s Tmp1 = @s VectorX
 scoreboard players operation @s Tmp2 = @s VectorY
 scoreboard players operation @s Tmp3 = @s VectorZ
-scoreboard players operation @s Tmp *= @s VectorSpeed
+scoreboard players operation @s Tmp1 *= @s VectorSpeed
 scoreboard players operation @s Tmp2 *= @s VectorSpeed
 scoreboard players operation @s Tmp3 *= @s VectorSpeed
-scoreboard players operation @s Tmp /= 1000 Constant
+scoreboard players operation @s Tmp1 /= 1000 Constant
 scoreboard players operation @s Tmp2 /= 1000 Constant
 scoreboard players operation @s Tmp3 /= 1000 Constant
 
@@ -38,10 +38,10 @@ tellraw @a[tag=DebugMovement] ["",{"text":"CALC -> ","color":"gray"},{"text":"X:
 scoreboard players set @s Tmp4 0
 
 scoreboard players tag @s remove FectorIncrease
-scoreboard players tag @s[score_Tmp_min=1] add FactorIncrease
+scoreboard players tag @s[score_Tmp1_min=1] add FactorIncrease
 scoreboard players tag @s[score_Tmp2_min=1] add FactorIncrease
 scoreboard players tag @s[score_Tmp3_min=1] add FactorIncrease
-scoreboard players tag @s[score_Tmp=-1] add FactorIncrease
+scoreboard players tag @s[score_Tmp1=-1] add FactorIncrease
 scoreboard players tag @s[score_Tmp2=-1] add FactorIncrease
 scoreboard players tag @s[score_Tmp3=-1] add FactorIncrease
 scoreboard players add @s[tag=FactorIncrease] Tmp4 1

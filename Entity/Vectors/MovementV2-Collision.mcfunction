@@ -15,17 +15,17 @@
 #----------------#
 
 scoreboard players tag @s[score_Collision_min=1] add CollisionX
-scoreboard players tag @s[score_Collision_min=1,score_Tmp=0,score_Tmp_min=0] remove CollisionX
+scoreboard players tag @s[score_Collision_min=1,score_Tmp1=0,score_Tmp1_min=0] remove CollisionX
 
-execute @s[score_Tmp_min=1] ~ ~ ~ detect ~1 ~ ~ air 0 scoreboard players tag @s remove CollisionX
-execute @s[score_Tmp=-1] ~ ~ ~ detect ~-1 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1_min=1] ~ ~ ~ detect ~1 ~ ~ air 0 scoreboard players tag @s remove CollisionX
+execute @s[score_Tmp1=-1] ~ ~ ~ detect ~-1 ~ ~ air 0 scoreboard players tag @s remove CollisionX
 
 scoreboard players operation @s[score_Collision_min=1,score_Collision=3,tag=CollisionX] VectorX *= Neg Constant
 scoreboard players operation @s[score_Collision_min=1,score_Collision=3,tag=CollisionX] Tmp7 *= Neg Constant
-scoreboard players operation @s[score_Collision_min=1,score_Collision=3,tag=CollisionX] Tmp *= Neg Constant
+scoreboard players operation @s[score_Collision_min=1,score_Collision=3,tag=CollisionX] Tmp1 *= Neg Constant
 scoreboard players set @s[score_Collision_min=4,score_Collision=4,tag=CollisionX] VectorX 0
 scoreboard players set @s[score_Collision_min=4,score_Collision=4,tag=CollisionX] Tmp7 0
-scoreboard players set @s[score_Collision_min=4,score_Collision=4,tag=CollisionX] Tmp 0
+scoreboard players set @s[score_Collision_min=4,score_Collision=4,tag=CollisionX] Tmp1 0
 kill @s[type=!Player,score_Collision_min=6,score_Collision=6,tag=CollisionX]
 scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionX] remove DirMoving
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionX] add Collision

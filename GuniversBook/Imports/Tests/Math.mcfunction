@@ -7,7 +7,7 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy) 
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy) 

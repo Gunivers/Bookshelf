@@ -7,9 +7,9 @@
 
 #before loop
 scoreboard players set @s conv.out 0
-scoreboard players set algorithm_conv_2 conv.tmp 2
-scoreboard players set algorithm_conv_10 conv.tmp 10
-scoreboard players set algorithm_conv_tmp conv.tmp 1
+scoreboard players set algorithm_conv_2 conv.Tmp1 2
+scoreboard players set algorithm_conv_10 conv.Tmp1 10
+scoreboard players set algorithm_conv_Tmp1 conv.Tmp1 1
 
 #error
 tellraw @s[score_conv.in=0] {"text":"\n\nInput value too small","color":"red"}
