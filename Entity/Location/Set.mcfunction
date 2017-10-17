@@ -16,9 +16,12 @@
 # - None
 
 tp @s -100000 0 -100000
-scoreboard players operation @s Tmp = @s LocX
-scoreboard players operation @s Tmp2 = @s LocY
-scoreboard players operation @s Tmp3 = @s LocZ
+scoreboard players set @s Tmp -100000
+scoreboard players set @s Tmp2 -100000
+scoreboard players set @s Tmp3 -100000
+scoreboard players operation @s Tmp += @s LocX
+scoreboard players operation @s Tmp2 += @s LocY
+scoreboard players operation @s Tmp3 += @s LocZ
 
 tp @s[score_Tmp_min=131072] ~131072 ~ ~
 scoreboard players remove @s[score_Tmp_min=131072] Tmp 131072
