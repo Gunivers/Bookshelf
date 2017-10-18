@@ -33,7 +33,7 @@
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"   -=[ Debug Vector Addition ]=-","color":"green"}]
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
-tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
+tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp1"}},{"text":".   Y2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"M1: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}},{"text":".   M2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp5"}}]
 
 scoreboard players operation @s Tmp6 = @s VectorX 
@@ -54,7 +54,7 @@ scoreboard players operation @s VectorX = @s Tmp6
 scoreboard players operation @s VectorY = @s Tmp7
 scoreboard players operation @s VectorZ = @s Tmp8
 
-tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT (normalized) -> ","color":"gray"},{"text":"X2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp"}},{"text":".   Y2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
+tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT (normalized) -> ","color":"gray"},{"text":"X2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp1"}},{"text":".   Y2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z2: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
 
 scoreboard players operation @s VectorX *= @s Tmp4
 scoreboard players operation @s VectorY *= @s Tmp4
@@ -70,7 +70,5 @@ scoreboard players operation @s VectorZ += @s Tmp3
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
 
-
-function Gunivers-Lib:Entity/Vectors/Normalize
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"OUTPUT (normalized) -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
