@@ -11,7 +11,7 @@ First, you need to create all the objectives:
 Then you need to add an identifier to you and your targets:
 
 /function Gunivers-Lib:Entity/ID/AddUID
-/execute @e[SELECTOR] ~ ~ ~ /function Gunivers-Lib:Entity/ID/AddUID
+/execute @e[SELECTOR FOR YOUR TARGETS] ~ ~ ~ /function Gunivers-Lib:Entity/ID/AddUID
 
 
 Then you need to set your score on TargetID equals to one of the UIDs of your targets:
@@ -21,6 +21,7 @@ For example if one of your targets has 4 on it's UID score, write:
 
 
 And that's all !
+
 Now every time you want to aim at your target, write this (in the chat or in a command block):
 /function Gunivers-Lib:ExampleSystems/Aimbot/Main
 
