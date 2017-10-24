@@ -1,14 +1,6 @@
-- Entity Id PID
-
-- Entity Id EID
-
 - Entity Id PlayerChain
 
 - Entity Id EntityChain
-
-
-- Location Set
-
 - Location GetFloat
 
 - Location SetFloat
