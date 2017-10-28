@@ -10,13 +10,13 @@
 # - LocX (score dummy)
 # - LocY (score dummy)
 # - LocZ (score dummy)
-# - Tmp1 (score dummy)
+# - TargetID (score dummy)
 
 # INPUT:
 # - LocX (score dummy)  /!\ must be defined on both entities
 # - LocY (score dummy)  /!\ must be defined on both entities
 # - LocZ (score dummy)  /!\ must be defined on both entities
-# - Tmp1 (score dummy)  <- ID
+# - TargetID (score dummy)  <- ID
 
 # OUTPUT:
 # - LocX (score dummy)

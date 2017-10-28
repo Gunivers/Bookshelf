@@ -9,12 +9,12 @@
 # REQUIEREMENTS:
 # - Theta (score dummy)
 # - Phi (score dummy)
-# - Tmp1 (score dummy)
+# - TargetID (score dummy)
 
 # INPUT:
 # - Theta (score dummy)  /!\ must be defined on both entities
 # - Phi (score dummy)  /!\ must be defined on both entities
-# - Tmp1 (score dummy)  <- ID
+# - TargetID (score dummy)  <- ID
 
 # OUTPUT:
 # - Pi (score dummy)

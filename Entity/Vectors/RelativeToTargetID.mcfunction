@@ -10,13 +10,13 @@
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
-# - Tmp1 (score dummy)
+# - TargetID (score dummy)
 
 # INPUT:
 # - VectorX (score dummy)  /!\ must be defined on both entities
 # - VectorY (score dummy)  /!\ must be defined on both entities
 # - VectorZ (score dummy)  /!\ must be defined on both entities
-# - Tmp1 (score dummy)  <- ID
+# - TargetID (score dummy)  <- ID
 
 # OUTPUT:
 # - VectorX (score dummy)
@@ -28,5 +28,5 @@
 function Gunivers-Lib/Entity/Id/Check
 
 scoreboard players operation @s VectorX -= @e[c=1,tag=IdMatch] VectorX
-scoreboard players operation @s VectorY -= @e[c=1,tag=IdMatch] LocY
-scoreboard players operation @s VectorZ -= @e[c=1,tag=IdMatch] LocZ
+scoreboard players operation @s VectorY -= @e[c=1,tag=IdMatch] VectorY
+scoreboard players operation @s VectorZ -= @e[c=1,tag=IdMatch] VectorZ
