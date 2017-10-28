@@ -28,7 +28,7 @@ function Gunivers-Lib:Entity/Location/Get
 function Gunivers-Lib:ExampleSystems/Aimbot/UpdateTargetLoc
 
 #Calculates the vector from the source to the target
-function Gunivers-Lib:Entity/Vectors/ByTarget
+function Gunivers-Lib:Entity/Vectors/GetByTarget
 
 #Calculates the orientation corresponding to this vector
 function Gunivers-Lib:Entity/Orientation/GetPhiByVector
