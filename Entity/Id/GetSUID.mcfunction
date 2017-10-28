@@ -1,4 +1,4 @@
-# Get SUID (Unique Identifier)
+# Add SUID (Simple Unique Identifier)
 
 # @Author: KubbyDev
 
@@ -15,5 +15,5 @@
 # - UID
 
 #Gives a unique identifier to the source entity
-scoreboard players add UID UID 1
-scoreboard players operation @s UID = UID UID
+scoreboard players add SUID SUID 1
+scoreboard players operation @s SUID = SUID SUID
