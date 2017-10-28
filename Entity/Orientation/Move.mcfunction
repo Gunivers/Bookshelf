@@ -1,28 +1,30 @@
-# SetOrientation
+# Move Orientation
 
 # @Author: KubbyDev
 
-#Version: 1.0
+# Version: 1.0
 # Minecraft Version: 1.12
 
 # Requirement:
 # - Tmp1 (score dummy)
 # - Tmp2 (score dummy)
+# - VectorPhi (score dummy)
+# - VectorTheta (score dummy)
 
 #Input values:
-# - PhiVec (score dummy)
-# - ThetaVec (score dummy)
+# - VectorPhi (score dummy)
+# - VectorTheta (score dummy)
 
 #Output values: None
 
 # Note
-# The PhiVec value must be in range -511 to 511 and the ThetaVec must be in range -255 to 255
+# The VectorPhi value must be in range -511 to 511 and the VectorTheta must be in range -255 to 255
 
 
 #Initialization
 
-scoreboard players operation @s Tmp1 = @s PhiVec
-scoreboard players operation @s Tmp2 = @s ThetaVec
+scoreboard players operation @s Tmp1 = @s VectorPhi
+scoreboard players operation @s Tmp2 = @s VectorTheta
 
 #Phi (horizontal) positive
 

@@ -2,25 +2,25 @@
 
 # @Author: KubbyDev
 
-#Version: 1.0
+# Version: 1.0
 # Minecraft Version: 1.12
 
 # Requirement:
 # - Tmp1 (score dummy)
 # - Tmp2 (score dummy)
+# - Phi (score dummy)
+# - Theta (score dummy)
 
 #Input values:
-# - PhiAcc (score dummy)
-# - ThetaAcc (score dummy)
+# - Phi (score dummy)
+# - Theta (score dummy)
 
 #Output values: None
 
-
-
 #Initialization
 
-scoreboard players operation @s Tmp1 = @s PhiAcc
-scoreboard players operation @s Tmp2 = @s ThetaAcc
+scoreboard players operation @s Tmp1 = @s Phi
+scoreboard players operation @s Tmp2 = @s Theta
 tp @s ~ ~ ~ 0 -90
 
 #Phi(horizontal)
