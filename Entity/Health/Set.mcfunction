@@ -1,23 +1,25 @@
-# Set Health
+# NAME: Set Health
+# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/Set
 
-# @Author: KubbyDev
+# AUTHOR: KubbyDev
 
-#Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
+# REQUIEREMENTS:
 # - Health (score dummy)
 # - HealthRead (score health)
 
-#Input values:
+# INPUT:
 # - Health (score dummy)
 
-#Output values:
+# OUTPUT:
 # - Health
 
-#Note: 
+# NOTE: <Note>
 # - This system can be sometimes imprecise when the health points are low (the player can be killed if he has 1 health point)
 
+# CODE:
 
 effect @s instant_damage 0
 effect @s regeneration 0

@@ -1,3 +1,23 @@
+# NAME: Update Health
+# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthM
+
+# AUTHOR: KubbyDev
+
+# VERSION: 1.0
+# MINECRAFT: 1.12
+
+# REQUIEREMENTS:
+# - Health (score dummy)
+# - Tmp1 (score dummy)
+
+# INPUT:
+# - Health (score dummy)
+
+# OUTPUT: None
+
+# CODE:
+
+
 scoreboard players operation @s Tmp1 = @s Health
 
 #3 coeurs
