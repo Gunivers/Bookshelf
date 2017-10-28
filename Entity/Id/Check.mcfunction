@@ -1,5 +1,5 @@
 # NAME: Check
-# PATH: Gunivers-Lib: Entity/Id/Compare
+# PATH: Gunivers-Lib: Entity/Id/Check
 
 # AUTHOR: LeiRoF
 
