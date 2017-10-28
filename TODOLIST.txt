@@ -1,13 +1,12 @@
-- Entity Id PlayerChain
+- Chain ID
 
-- Entity Id EntityChain
 - Location GetFloat
 
 - Location SetFloat
 
-- Orientation GetFloat
 
-- Orientation SetFloat
+- Location RelativeToID
+- Orientation RelativeToID
 
 
 - Utils Math Float
@@ -19,6 +18,7 @@
 - Utils Math PGCD
 
 - Utils Math Rnd
+
 
 
 - DisplayLife

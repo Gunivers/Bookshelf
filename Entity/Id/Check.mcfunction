@@ -1,5 +1,5 @@
 # NAME: Check
-# PATH: Gunivers-Lib: Entity/Id/Compare
+# PATH: Gunivers-Lib: Entity/Id/Check
 
 # AUTHOR: LeiRoF
 
@@ -8,9 +8,10 @@
 
 # REQUIEREMENTS:
 # - ID (score)
+# - TargetID (score)
 
 # INPUT:
-# - Tmp1
+# - TargetID
 
 # OUTPUT:
 # - IdMatch (tag)
@@ -22,11 +23,11 @@ scoreboard players tag @e remove IdMatch
 scoreboard players tag @e remove IdUpper
 scoreboard players tag @e remove IdLower
 scoreboard players tag @e remove IdChecker
-scoreboard players operation @e ID -= @s ID
+scoreboard players operation @e ID -= @s TargetID
 scoreboard players tag @e[score_ID_min=0,score_ID=0] add IdMatch
 scoreboard players tag @e[score_ID_min=1] add IdUpper
 scoreboard players tag @e[score_ID=-1] add IdLower
-scoreboard players tag @s remove IdUpper
+scoreboard players tag @s remove IdMatch
 scoreboard players tag @s add IdChecker
-scoreboard players operation @e ID += @s ID
+scoreboard players operation @e ID += @s TargetID
  
