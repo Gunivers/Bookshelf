@@ -1,25 +1,33 @@
 # NAME: Aimbot Main
-# PATH: Gunivers-Lib:ExampleSystems/Aimbot/Main
- 
+# PATH: Gunivers-Lib:Utils/ExampleSystems/Aimbot/Main
+
 # AUTHOR: KubbyDev
- 
-# VERSION: 1.0
-# MINECRAFT: 1.12.1 
- 
-# REQUIEREMENTS: 
-# - 
- 
-# INPUT: 
+# CONTRIBUTORS:
 # -
- 
-# OUTPUT: 
-# - 
- 
-# NOTE:  
+
+# VERSION: 1.0
+# MINECRAFT: 1.12.2
+
+# REQUIEREMENTS:
+# - ID (import)
+# - Vectors (import)
+# - Orientation (import)
+# - Math (import)
+# - Temporary (import)
+# - Location (import)
+# - ExampleSystems/Aimbot/UpdateTargetLoc (function)
+
+# INPUT:
+# - TargetID
+
+# OUTPUT:
+# -
+
+# NOTE:
 # -
 
 # CONFIGURATION:
-# -
+# - Read the "How to use it" file
 
 # CODE:
 
