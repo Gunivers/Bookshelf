@@ -1,19 +1,26 @@
-# Add SUID (Simple Unique Identifier)
+# NAME: Get Simple Unique Identifier
+# PATH: Entity/Id/GetSUID
 
-# @Author: KubbyDev
+# AUTHOR: KubbyDev
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
-# - UID (score dummy)
+# REQUIEREMENTS:
+# - ID (score)
 
-# Input values:
-# - Null
+# INPUT:
+# - 
 
-# Output values:
-# - UID
+# OUTPUT:
+# - ID
+
+# NOTE:
+# - If you use another system to give an ID to an entity, this system can give non unique IDs !
+# - To fix it, please run this command everytime you give an ID to an entity: /scoreboard players add ID ID 1
+
+# CODE:
 
 #Gives a unique identifier to the source entity
-scoreboard players add SUID SUID 1
-scoreboard players operation @s SUID = SUID SUID
+scoreboard players add ID ID 1
+scoreboard players operation @s ID = ID ID
