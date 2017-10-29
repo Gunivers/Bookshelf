@@ -1,12 +1,6 @@
-- Chain ID
-
 - Location GetFloat
 
 - Location SetFloat
-
-
-- Location RelativeToID
-- Orientation RelativeToID
 
 
 - Utils Math Float
@@ -14,9 +8,6 @@
 - Utils Math Ln
 
 - Utils Math Exp
-
-- Utils Math PGCD
-
 - Utils Math Rnd
 
 
