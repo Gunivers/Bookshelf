@@ -25,7 +25,7 @@ scoreboard players operation @e[tag=UpdateCUID] ID -= CUID ID
 
 #Catches one entity with the searched ID
 scoreboard players tag @e remove CorrectCUID
-scoreboard players tag @e[score_ID_min=0,score_ID=0,c=1] add CorrectCUID
+scoreboard players tag @e[score_ID_min=0,score_ID=0,c=1,tag=UpdateCUID] add CorrectCUID
 
 #Marks all the entities with more than the wanted score
 scoreboard players tag @e remove HasToMove
