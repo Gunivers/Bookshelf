@@ -4,6 +4,7 @@
 # AUTHOR: Luludatra
 # CONTRIBUTOR:
 # - Theogiraudet/Oromis
+# - KubbyDev
 
 # VERSION: 1.1
 # MINECRAFT: 1.12
@@ -14,6 +15,7 @@
 # - Tmp2 (score dummy)
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy)
+# - Tmp5 (score dummy)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -24,7 +26,7 @@
 # NOTE: Resolution of the square root of a number
 
 # CONFIGURATION:
-scoreboard players set @s Tmp2 20
+scoreboard players set @s Tmp2 50
 # -> Allows you to manage the accuracy of the result. More this value is high, more the impact on the performance is high.
 # -> Default value: 20.
 
