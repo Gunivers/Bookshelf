@@ -1,5 +1,5 @@
 # NAME: Mise en movement d'une entité
-# PATH: Gunivers-Lib: ... /MovementV2-Loop2
+# PATH: Gunivers-Lib:Entity/Vectors/Move-Loop2
 
 # AUTHOR: LeiRoF
 
@@ -15,13 +15,14 @@ scoreboard players operation @s[score_Tmp4_min=1] Tmp2 = @s Tmp8
 scoreboard players operation @s[score_Tmp4_min=1] Tmp3 = @s Tmp9
 
 # DEBUG
-tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT2 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
-tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT2 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
-#execute @s[tag=Debug] ~ ~ ~ particle endRod ~ ~ ~ 0 0 0 0 1 force
-execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Debug"]}
+# tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT2 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
+# tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT2 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
+# #execute @s[tag=Debug] ~ ~ ~ particle endRod ~ ~ ~ 0 0 0 0 1 force
+# execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
-execute @s[score_Collision_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Move-Collision
+execute @s[score_Collision_min=1,score_Collision=99] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Move-Collision
+execute @s[score_Collision_min=100,score_Collision=199] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Move-CollisionS
 function Gunivers-Lib:Entity/Vectors/Move-Child
 
 scoreboard players remove @s Tmp4 1

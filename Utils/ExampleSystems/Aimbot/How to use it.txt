@@ -22,5 +22,8 @@ For example if one of your targets has 4 on it's UID score, write:
 
 And that's all !
 
-Now every time you want to aim at your target, write this (in the chat or in a command block):
-/function Gunivers-Lib:ExampleSystems/Aimbot/Main
+Now every time you want to aim at your target, write this (in the chat):
+/function Gunivers-Lib:Utils/ExampleSystems/Aimbot/Main
+
+Or this (in a command block):
+/execute @p ~ ~ ~ function Gunivers-Lib:Utils/ExampleSystems/Aimbot/Main

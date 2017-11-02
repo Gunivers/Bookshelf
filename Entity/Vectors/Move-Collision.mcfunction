@@ -1,5 +1,5 @@
 # NAME: Mise en movement d'une entité
-# PATH: Gunivers-Lib: ... /MovementV2-Collision
+# PATH: Gunivers-Lib:Entity/Vectors/Move-Collision
 
 # AUTHOR: LeiRoF
 
@@ -31,7 +31,7 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionX
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionX] add Collision
 
 #DEBUG
-execute @s[tag=CollisionX] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~0.1 ~-0.5 ~-0.1 {Block:"minecraft:gold_block",Time:1,NoGravity:1,Tags:["Debug"]}
+# execute @s[tag=CollisionX] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~0.1 ~-0.5 ~-0.1 {Block:"minecraft:gold_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
 
@@ -58,7 +58,7 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionY
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionY] add Collision
 
 # DEBUG
-execute @s[tag=CollisionY] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-0.5 ~0.1 {Block:"minecraft:iron_block",Time:1,NoGravity:1,Tags:["Debug"]}
+# execute @s[tag=CollisionY] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-0.5 ~0.1 {Block:"minecraft:iron_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
 
@@ -83,6 +83,6 @@ scoreboard players tag @s[score_Collision_min=5,score_Collision=6,tag=CollisionZ
 scoreboard players tag @s[score_Collision_min=1,tag=CollisionZ] add Collision
 
 # DEBUG
-execute @s[tag=CollisionZ] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~-0.1 ~-0.5 ~-0.1 {Block:"minecraft:diamond_block",Time:1,NoGravity:1,Tags:["Debug"]}
+# execute @s[tag=CollisionZ] ~ ~ ~ execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~-0.1 ~-0.5 ~-0.1 {Block:"minecraft:diamond_block",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 

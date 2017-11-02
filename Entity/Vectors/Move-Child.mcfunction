@@ -1,5 +1,5 @@
 # NAME: Mise en movement d'une entité
-# PATH: Gunivers-Lib: ... /MovementV2-Child
+# PATH: Gunivers-Lib:Entity/Vectors/Move-Child
 
 # AUTHOR: LeiRoF
 
