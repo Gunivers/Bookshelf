@@ -4,7 +4,7 @@
 # AUTHOR: KubbyDev
 
 # VERSION: 1.0
-# MINECRAFT: 1.12
+# MINECRAFT: 1.12.2
 
 # REQUIEREMENTS:
 # - Health (score dummy)
@@ -17,17 +17,19 @@
 # - Health
 
 # NOTE: <Note>
-# - This system can be sometimes imprecise when the health points are low (the player can be killed if he has 1 health point)
+# - This function must be executed every tick !
 
 # CODE:
 
-effect @s instant_damage 0
 effect @s regeneration 0
-effect @s resistance 2 255 true
-scoreboard players tag @s add InitHealth
-scoreboard players tag @s[score_Health_min=-100000] remove InitHealth
-scoreboard players set @s[tag=InitHealth] Health 20
-scoreboard players tag @s remove InitHealth
+effect @s poison 0
+effect @s resistance 0
+
+scoreboard players tag @e remove Health0
+scoreboard players tag @s[score_Health=0] add Health0
+scoreboard players set @s[tag=Health0] Health 20
+kill @s[tag=Health0]
+
 scoreboard players operation @s Health -= @s HealthRead
 execute @s[score_Health_min=1] ~ ~ ~ function Gunivers-Lib:Entity/Health/UpdateHealthP
 execute @s[score_Health=-1] ~ ~ ~ function Gunivers-Lib:Entity/Health/UpdateHealthM

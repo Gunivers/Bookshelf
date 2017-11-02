@@ -1,14 +1,13 @@
 # NAME: Update Health
-# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthM
+# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthP
 
 # AUTHOR: KubbyDev
 
 # VERSION: 1.0
-# MINECRAFT: 1.12
+# MINECRAFT: 1.12.2
 
 # REQUIEREMENTS:
 # - Health (score dummy)
-# - Tmp1 (score dummy)
 
 # INPUT:
 # - Health (score dummy)
@@ -17,17 +16,11 @@
 
 # CODE:
 
-
-scoreboard players operation @s Tmp1 = @s Health
-
 #3 coeurs
-effect @s[score_Tmp1_min=6,score_Tmp1=11] instant_health 1 0 true
-scoreboard players remove @s[score_Tmp1_min=6,score_Tmp1=11] Tmp1 6
+effect @s[score_Health_min=6,score_Health=11] instant_health 1 0 true
 
 #6 coeurs
-effect @s[score_Tmp1_min=12] instant_health 1 1 true
-scoreboard players remove @s[score_Tmp1_min=12] Tmp1 12
+effect @s[score_Health_min=12] instant_health 1 1 true
 
 #Demi coeurs restants
-effect @s[score_Tmp1_min=1] regeneration 1 255 true
-
+effect @s[score_Health_min=1] regeneration 1 5 true
