@@ -3,7 +3,7 @@
 # Note: Ce score contient toutes les constantes utiles dans des fonctions mathématiques tel que:
 # - Valeurs allant de -1 à 25
 # - Valeurs trigonométrique Pi et x*Pi/4 (en degrés)
-# # - Valeurs trigonométrique 32400, 40500, 28125, 18000, 36000, 324000000, 405000000 (utile pour les approximations de sinus, cosinus et arctangente)
+# # - Valeurs trigonométrique 32400, 40500, 18000, 36000, 324000000, 405000000, 28125, 640, 785 (utiles pour les approximations de sinus, cosinus et arctangente)
 # - Puissances de 2 (2,4,8,16,32,64,... jusqu'a 4096)
 # - Puissances de 10 (10,100,1000,... jusqu'a 1000000)
 # - Nombres premiers inferrieurs à 100
@@ -74,6 +74,8 @@ scoreboard players set 270 Constant 270
 scoreboard players set 315 Constant 315
 scoreboard players set 360 Constant 360
 scoreboard players set 512 Constant 512
+scoreboard players set 640 Constant 640
+scoreboard players set 785 Constant 785
 scoreboard players set 1000 Constant 1000
 scoreboard players set 1024 Constant 1024
 scoreboard players set 2048 Constant 2048
