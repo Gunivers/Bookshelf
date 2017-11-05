@@ -77,7 +77,7 @@ scoreboard players operation @s Tmp1 *= 1000 Constant
 scoreboard players operation @s Tmp1 /= @s Tmp2
 
 #Conversion in degrees (The result is on Res)
-scoreboard players operation @s Tmp1 *= 18 Constant
+scoreboard players operation @s Tmp1 *= 180 Constant
 scoreboard players operation @s Tmp2 = Pi3 Constant
 function Gunivers-Lib:Utils/Math/Divide
 

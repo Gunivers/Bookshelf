@@ -33,10 +33,11 @@
 
 #Update the target and the source's locations
 function Gunivers-Lib:Entity/Location/Get
-function Gunivers-Lib:ExampleSystems/Aimbot/UpdateTargetLoc
+function Gunivers-Lib:Utils/ExampleSystems/Aimbot/UpdateTargetLoc
 
 #Calculates the vector from the source to the target
-function Gunivers-Lib:Entity/Vectors/GetByTarget
+function Gunivers-Lib:Entity/Vectors/GetByTargetID
+function Gunivers-Lib:EntityAccurate/Vectors/Normalize
 
 #Calculates the orientation corresponding to this vector
 function Gunivers-Lib:Entity/Orientation/GetPhiByVector
