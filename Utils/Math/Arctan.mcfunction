@@ -11,7 +11,7 @@
 # - Tmp2 (score dummy)  
 # - Tmp3 (score dummy)  
 # - Res (score dummy) 
-# - Constants
+# - Constant (import)
 
 # INPUT: 
 # - Tmp1 (score dummy)
@@ -20,7 +20,8 @@
 # - Res (score dummy) 
  
 # NOTE:  
-# - This function returns atan(Tmp1) in degrees, Tmp1 must be in interval [0;1000] instead of [0;1]
+# - This function returns atan(Tmp1) in degrees (multiplied by 1000 for my acuracy), Tmp1 must be in interval [0;1000] instead of [0;1]
+# - The maximum error of this function is 0.068 degrees
  
 # CONFIGURATION: <none> 
  
