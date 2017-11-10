@@ -1,5 +1,5 @@
 Ci-dessous la convention d'écriture au sein de cette librairie. Merci de la respecter.
-Remplacez les valeurs entre "<>" par les valeures correspondantes
+Remplacez les valeurs entre "<>" par les valeures correspondantes.
 ___________________________________________________________________________________________________
 
 
