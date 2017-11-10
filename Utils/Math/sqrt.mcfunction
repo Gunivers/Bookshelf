@@ -26,7 +26,7 @@
 # NOTE: Resolution of the square root of a number
 
 # CONFIGURATION:
-scoreboard players set @s Tmp2 50
+scoreboard players set @s Tmp2 20
 # -> Allows you to manage the accuracy of the result. More this value is high, more the impact on the performance is high.
 # -> Default value: 20.
 
@@ -43,4 +43,3 @@ scoreboard players operation @s Tmp3 = @s Res
 
 # Loop to execute {Tmp2} time
 function Gunivers-Lib:Utils/Math/Sqrt-Loop
-
