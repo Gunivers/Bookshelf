@@ -1,0 +1,17 @@
+First, you need to create all the objectives:
+
+/function Gunivers-Lib:Import/Vectors
+/function Gunivers-Lib:Import/Orientation
+/function Gunivers-Lib:Import/Math
+/function Gunivers-Lib:Import/Temporary
+/function Gunivers-Lib:Import/Location
+/scoreboard objectives add Collision dummy 
+
+
+And that's all !
+
+Now every time you want to get the location of the block you are aiming at, write this (in the chat):
+/function Gunivers-Lib:Utils/ExampleSystems/Raycasting/Main
+
+Or this (in a command block):
+/execute @p ~ ~ ~ function Gunivers-Lib:Utils/ExampleSystems/Raycasting/Main

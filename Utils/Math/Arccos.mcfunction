@@ -7,12 +7,12 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy)  
 # - Res (score dummy) 
  
 # INPUT: 
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
  
 # OUTPUT: 
 # - Res (score dummy) 
@@ -24,7 +24,7 @@
  
 # CODE: 
 
-scoreboard players operation @s Tmp2 = @s Tmp
+scoreboard players operation @s Tmp2 = @s Tmp1
 scoreboard players operation @s[score_Tmp2=-1] Tmp2 *= -1 Constant
 
 scoreboard players set @s[score_Tmp2_min=0,score_Tmp2=8] Res 90
@@ -118,6 +118,6 @@ scoreboard players set @s[score_Tmp2_min=998,score_Tmp2=998] Res 3
 scoreboard players set @s[score_Tmp2_min=999,score_Tmp2=999] Res 2
 scoreboard players set @s[score_Tmp2_min=1000,score_Tmp2=1000] Res 0
 
-scoreboard players set @s[score_Tmp=-1] Tmp2 180
-scoreboard players operation @s[score_Tmp=-1] Tmp2 -= @s Res
-scoreboard players operation @s[score_Tmp=-1] Res = @s Tmp2
+scoreboard players set @s[score_Tmp1=-1] Tmp2 180
+scoreboard players operation @s[score_Tmp1=-1] Tmp2 -= @s Res
+scoreboard players operation @s[score_Tmp1=-1] Res = @s Tmp2

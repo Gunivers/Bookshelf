@@ -7,7 +7,7 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy) 
 # - VectorY (score dummy) 
 # - Res (score dummy) 
@@ -26,6 +26,6 @@
  
 # CODE: 
 
-scoreboard players operation @s Tmp = @s VectorY
+scoreboard players operation @s Tmp1 = @s VectorY
 function Gunivers-Lib:Utils/Math/Arccos
 scoreboard players operation @s Theta = @s Res

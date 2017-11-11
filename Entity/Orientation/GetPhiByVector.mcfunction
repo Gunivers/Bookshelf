@@ -7,7 +7,7 @@
 # MINECRAFT: 1.12.1 
  
 # REQUIEREMENTS: 
-# - Tmp (score dummy) 
+# - Tmp1 (score dummy) 
 # - Tmp2 (score dummy) 
 # - Tmp3 (score dummy)
 # - Tmp4 (score dummy) 
@@ -34,18 +34,18 @@
  
 # CODE: 
 
-#Tmp is positive if the absolute value of VectorX is bigger than the absolute value of VectorZ
-scoreboard players operation @s Tmp = @s VectorX
-scoreboard players operation @s[score_Tmp=-1] Tmp *= -1 Constant
-scoreboard players operation @s[score_VectorZ_min=1] Tmp -= @s VectorZ
-scoreboard players operation @s[score_VectorZ=-1] Tmp += @s VectorZ
+#Tmp1 is positive if the absolute value of VectorX is bigger than the absolute value of VectorZ
+scoreboard players operation @s Tmp1 = @s VectorX
+scoreboard players operation @s[score_Tmp1=-1] Tmp1 *= -1 Constant
+scoreboard players operation @s[score_VectorZ_min=1] Tmp1 -= @s VectorZ
+scoreboard players operation @s[score_VectorZ=-1] Tmp1 += @s VectorZ
 
 #Choice of the approximation to be used (Stored on Tmp5)
-scoreboard players set @s[score_Tmp_min=0,score_VectorX_min=0] Tmp5 1
-scoreboard players set @s[score_Tmp_min=0,score_VectorX=-1,score_VectorZ_min=0] Tmp5 2
-scoreboard players set @s[score_Tmp_min=0,score_VectorX=-1,score_VectorZ=-1] Tmp5 3
-scoreboard players set @s[score_Tmp=-1,score_VectorZ_min=0] Tmp5 4
-scoreboard players set @s[score_Tmp=-1,score_VectorZ=-1] Tmp5 5
+scoreboard players set @s[score_Tmp1_min=0,score_VectorX_min=0] Tmp5 1
+scoreboard players set @s[score_Tmp1_min=0,score_VectorX=-1,score_VectorZ_min=0] Tmp5 2
+scoreboard players set @s[score_Tmp1_min=0,score_VectorX=-1,score_VectorZ=-1] Tmp5 3
+scoreboard players set @s[score_Tmp1=-1,score_VectorZ_min=0] Tmp5 4
+scoreboard players set @s[score_Tmp1=-1,score_VectorZ=-1] Tmp5 5
 
 #Input vectors (X = Tmp3; Z = Tmp4)
 scoreboard players operation @s Tmp3 = @s VectorX
@@ -61,23 +61,23 @@ scoreboard players operation @s Tmp2 *= 28125 Constant
 scoreboard players operation @s Tmp2 /= 10000 Constant
 scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=2] Tmp2 *= @s Tmp4
 scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Tmp2 *= @s Tmp3
-scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=2] Tmp = @s Tmp3
-scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Tmp = @s Tmp4
-scoreboard players operation @s Tmp *= @s Tmp
-scoreboard players operation @s Tmp *= 10 Constant
-scoreboard players operation @s Tmp2 += @s Tmp
+scoreboard players operation @s[score_Tmp5_min=1,score_Tmp5=2] Tmp1 = @s Tmp3
+scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Tmp1 = @s Tmp4
+scoreboard players operation @s Tmp1 *= @s Tmp1
+scoreboard players operation @s Tmp1 *= 10 Constant
+scoreboard players operation @s Tmp2 += @s Tmp1
 scoreboard players operation @s Tmp2 /= 10 Constant
 
 #Calculation of the numerator (On Tmp)
-scoreboard players operation @s Tmp = @s Tmp3
-scoreboard players operation @s Tmp *= @s Tmp4
-scoreboard players operation @s Tmp *= 1000 Constant
+scoreboard players operation @s Tmp1 = @s Tmp3
+scoreboard players operation @s Tmp1 *= @s Tmp4
+scoreboard players operation @s Tmp1 *= 1000 Constant
 
 #Calculation of the angle (radians)
-scoreboard players operation @s Tmp /= @s Tmp2
+scoreboard players operation @s Tmp1 /= @s Tmp2
 
 #Conversion in degrees (The result is on Res)
-scoreboard players operation @s Tmp *= 18 Constant
+scoreboard players operation @s Tmp1 *= 180 Constant
 scoreboard players operation @s Tmp2 = Pi3 Constant
 function Gunivers-Lib:Utils/Math/Divide
 

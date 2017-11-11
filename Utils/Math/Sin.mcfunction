@@ -1,30 +1,35 @@
-# Cos
+# TITLE: Sin
+# PATH: Gunivers-Lib:Utils/Math/Sin
 
-# @Author: Leirof
+# AUTHOR: Leirof
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
 # Requirement:
-# - Tmp (dummy)
+# - Tmp1 (dummy)
 # - Tmp2 (dummy)
 # - Tmp3 (dummy)
 # - Res (dummy)
 # - Constant (dummy)
 
-# Input values:
-# - Tmp (score dummy)
+# INPUT:
+# - Tmp1 (score dummy)
 
-# Output values:
+# OUTPUT:
 # - Res (score dummy)
 
-#Note: Tmp must be in interval [0;360]
+#Note:
+# - Tmp1 must be in interval [0;360]
 
+# CONFIGURATION:
 
-# Retranscription of Tmp on interval [0;180[
+# CODE
 
-scoreboard players operation @s Tmp3 = @s Tmp
-scoreboard players operation @s[score_Tmp_min=180] Tmp3 -= 180 Constant
+# Retranscription of Tmp1 on interval [0;180[
+
+scoreboard players operation @s Tmp3 = @s Tmp1
+scoreboard players operation @s[score_Tmp1_min=180] Tmp3 -= 180 Constant
 
 # Calcul Sin
 
@@ -43,4 +48,4 @@ scoreboard players operation @s Tmp2 *= Neg Constant
 scoreboard players operation @s Tmp2 += 40500 Constant
 scoreboard players operation @s Res /= @s Tmp2
 
-scoreboard players operation @s[score_Tmp_min=180] Res *= Neg Constant
+scoreboard players operation @s[score_Tmp1_min=180] Res *= Neg Constant
