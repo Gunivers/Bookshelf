@@ -1,5 +1,5 @@
-# NAME: Pow
-# PATH: Gunivers-Lib:Utils/Math/Pow
+# NAME: Pow-Loop
+# PATH: Gunivers-Lib:Utils/Math/Pow-Loop
  
 # AUTHOR: Theogiraudet/Oromis
 # CONTRIBUTORS: 
@@ -10,7 +10,6 @@
  
 # REQUIEREMENTS: 
 # - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
 # - Tmp3 (score dummy)
 # - Res (score dummy)
  
@@ -27,7 +26,8 @@
 
 # CODE: 
 
-scoreboard players operation @s Res = @s Tmp1
-scoreboard players operation @s Tmp3 = @s Tmp2
+
+scoreboard players operation @s Res *= @s Tmp1
+scoreboard players remove @s Tmp3 1
 
 function Gunivers-Lib:Utils/Math/Pow-Loop if @s[score_Tmp3_min=2]
