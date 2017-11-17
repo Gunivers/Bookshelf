@@ -1,0 +1,17 @@
+scoreboard players set Neg Constant -1
+scoreboard players set 2 Constant 2
+scoreboard players set 4 Constant 4
+scoreboard players set 7 Constant 7
+scoreboard players set 9 Constant 9
+scoreboard players set 10 Constant 10
+scoreboard players set 20 Constant 20
+scoreboard players set 25 Constant 25
+scoreboard players set 90 Constant 90
+scoreboard players set 180 Constant 180
+scoreboard players set 270 Constant 270
+scoreboard players set 900 Constant 900
+scoreboard players set 1000 Constant 1000
+scoreboard players set 2000 Constant 2000
+scoreboard players set 10000 Constant 10000
+scoreboard players set 32400 Constant 32400
+scoreboard players set 40500 Constant 40500

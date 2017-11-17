@@ -6,7 +6,7 @@ execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260
 execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260,score_TakeDamage_min=1999,team=Blue] ~ ~ ~ /scoreboard players set @e[tag=AffectByBlue,r=10,score_EffSlow_min=1,score_EffSlow=999] EffSlow 1040
 execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260,score_TakeDamage_min=1999,team=Blue] ~ ~ ~ /scoreboard players set @e[tag=AffectByBlue,r=10,score_EffSlow=0] EffSlow 40
 execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260] ~ ~ ~ /particle fireworksSpark ~ ~1 ~ 0.1 0.7 0.1 0 3 force
-execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260] ~ ~ ~ /summon Falling_Block ~ ~ ~ {NoGravity:1,Block:"minecraft:snow_layer",Tags:["WF3G"],Time:500}
+effect @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1280] glowing 1 1 true
 execute @e[tag=WF3G] ~ ~ ~ detect ~ ~-0.1 ~ air 0 /kill @s
 execute @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260] ~ ~ ~ /playsound block.snow.fall record @a[r=15] ~ ~ ~ 2 1 1
 scoreboard players set @a[tag=IsPlaying,score_Class_min=34,score_Class=34,score_Spell3_min=1260,score_EffSpeed=1002] EffSpeed 1002

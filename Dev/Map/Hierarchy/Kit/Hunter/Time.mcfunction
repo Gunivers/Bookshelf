@@ -1,3 +1,9 @@
+execute @a[score_InGame_min=1,score_Class_min=21,score_Class=21,score_Spell3_min=199,score_Spell3=199] ~ ~ ~ /particle largesmoke ~ ~1 ~ 0.2 0.5 0.2 0 10 force
+execute @e[type=Snowball,score_Class_min=-21,score_Class=-21] ~ ~ ~ /particle depthsuspend ~ ~ ~ 1.5 1.5 1.5 0 30 force
+execute @e[type=Snowball,score_Class_min=21,score_Class=21] ~ ~ ~ /particle depthsuspend ~ ~ ~ 1.5 1.5 1.5 0 30 force
+execute @a[score_InGame_min=1,score_Class_min=21,score_Class=21,score_Spell1_min=199] ~ ~ ~ /particle dragonbreath ~ ~ ~ 3 0 3 0 20 force
+
+
 execute @a[score_InGame_min=1,score_Class_min=21,score_Class=21,score_Spell3_min=199,score_Spell3=199] ~ ~ ~ /playsound entity.creeper.hurt record @a[r=30] ~ ~ ~ 2 2 1
 scoreboard players remove @a[score_UseXp_min=2,score_UseXp=2,score_Class_min=21,score_Class=21,score_InGame_min=1] UpgradedWeapon 1
 scoreboard players set @a[score_Class_min=21,score_Class=21,score_InGame_min=1,score_UpgradedWeapon=-2] UpgradedWeapon 0

@@ -1,3 +1,9 @@
+execute @a[score_LifeState_min=500,score_Class_min=23,score_Class=23,score_Spell3_min=940,score_IsWalking_min=10] ~ ~ ~ /particle sweepAttack ~ ~1 ~ 2 1 2 0 10 force
+execute @a[score_LifeState_min=500,score_Class_min=23,score_Class=23,score_Spell3_min=940,score_IsWalking_min=10] ~ ~ ~ /particle spell ~ ~1 ~ 2 1 2 0 50 force
+execute @e[type=Snowball,score_Class_min=23,score_Class=23] ~ ~ ~ /particle cloud ~ ~ ~ 0 0 0 0 1 force
+execute @e[type=Snowball,score_Class_min=-23,score_Class=-23] ~ ~ ~ /particle cloud ~ ~ ~ 0 0 0 0 1 force
+
+
 execute @a[score_IsWalking_min=10,score_Class_min=23,score_Class=23,score_Spell3_min=960,score_EffSpeed_min=3002,team=Blue] ~ ~ ~ /execute @a[team=Orange,r=5,score_LifeState_min=500,score_C3_min=1] ~ ~ ~ /scoreboard players set @a[score_LifeState_min=500,team=Blue,r=3,score_EffInvulnerable=20] EffInvulnerable 20
 execute @a[score_Class_min=23,score_Class=23,score_Spell3_min=960,team=Blue] ~ ~ ~ /execute @e[team=Orange,r=5,score_LifeState_min=500,score_C3_min=1] ~ ~ ~ /summon Lightning_Bolt ~ ~ ~
 execute @a[score_Class_min=23,score_Class=23,score_Spell3_min=960,team=Blue] ~ ~ ~ /scoreboard players set @e[team=Orange,r=5,score_LifeState_min=500,score_C3_min=1] C3 0

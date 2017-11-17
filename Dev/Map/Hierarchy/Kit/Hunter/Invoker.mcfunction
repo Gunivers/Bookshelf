@@ -1,3 +1,11 @@
+execute @a[score_UseFishing_min=2,score_UseFishing=2,score_Class_min=25,score_Class=25,score_InGame_min=1] ~ ~ ~ /particle cloud ~ ~1 ~ 1 0.5 1 0 20 force
+execute @a[score_Class_min=25,score_Class=25,score_Spell2=199,score_Spell2_min=199,score_InGame_min=1,m=2] ~ ~ ~ /particle cloud ~ ~0.2 ~ 5 0 5 0 70
+execute @a[score_Class_min=25,score_Class=25,score_Spell2=199,score_Spell2_min=199,score_InGame_min=1,m=2] ~ ~ ~ /particle sweepAttack ~ ~0.2 ~ 5 0 5 0 15
+execute @e[type=armor_stand,score_Class_min=25,score_Class=25] ~ ~ ~ /particle cloud ~ ~ ~ 0.4 0.4 0.4 0 5 force
+execute @e[type=armor_stand,score_Class_min=-25,score_Class=-25] ~ ~ ~ /particle largeexplode ~ ~ ~ 0 0 0 0 1 force
+execute @a[score_InGame_min=1,score_Class_min=25,score_Class=25,score_Spell3=-1,m=2] ~ ~ ~ /particle cloud ~ ~ ~ 0.5 0.3 0.5 0 3 force
+
+
 execute @a[score_Class_min=26,score_Class=26,score_Spell3=1799,score_Spell3_min=1799,score_InGame_min=1,m=2,team=Blue] ~ ~ ~ /scoreboard players set @e[team=!Blue,score_InGame_min=1,m=2,score_TouchBy_min=26,score_TouchBy=26,score_EffDamage=1] EffDamage 1
 execute @a[score_Class_min=26,score_Class=26,score_Spell3=1799,score_Spell3_min=1799,score_InGame_min=1,m=2,team=Blue] ~ ~ ~ /scoreboard players set @e[team=!Blue,score_InGame_min=1,m=2,score_TouchBy_min=26,score_TouchBy=26,score_EffSilence=20] EffSilence 40
 execute @a[score_Class_min=26,score_Class=26,score_Spell3=1799,score_Spell3_min=1799,score_InGame_min=1,m=2,team=Blue] ~ ~ ~ /scoreboard players set @e[team=!Blue,score_InGame_min=1,m=2,score_TouchBy_min=26,score_TouchBy=26,score_EffSlow=3040] EffSlow 3040

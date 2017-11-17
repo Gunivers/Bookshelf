@@ -1,0 +1,14 @@
+execute @a[score_InGame_min=1,score_Class_min=2,score_Class=2,score_Spell1_min=299,m=2] ~ ~ ~ /playsound item.flintandsteel.use record @p[r=1] ~ ~ ~ 2 0.5 1
+execute @a[team=Blue,score_Class_min=2,score_Class=2,score_InGame_min=1,score_Spell1_min=200,score_Timer05_min=1,score_Timer05=1,m=2] ~ ~ ~ /summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Small:1,DisabledSlots:31,Invulnerable:1,NoBasePlate:1,ActiveEffects:[{Id:9,Amplifier:100,Duration:30,ShowParticles:0b},{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}],Tags:["MB1B","MB1G"]}
+execute @a[team=Blue,score_Class_min=2,score_Class=2,score_InGame_min=1,score_Spell1_min=200,score_Timer05_min=6,score_Timer05=6,m=2] ~ ~ ~ /summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Small:1,DisabledSlots:31,Invulnerable:1,NoBasePlate:1,ActiveEffects:[{Id:9,Amplifier:100,Duration:30,ShowParticles:0b},{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}],Tags:["MB1B","MB1G"]}
+execute @a[team=Orange,score_Class_min=2,score_Class=2,score_InGame_min=1,score_Spell1_min=200,score_Timer05_min=1,score_Timer05=1,m=2] ~ ~ ~ /summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Small:1,DisabledSlots:31,Invulnerable:1,NoBasePlate:1,ActiveEffects:[{Id:9,Amplifier:100,Duration:30,ShowParticles:0b},{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}],Tags:["MB1R","MB1G"]}
+execute @a[team=Orange,score_Class_min=2,score_Class=2,score_InGame_min=1,score_Spell1_min=200,score_Timer05_min=6,score_Timer05=6,m=2] ~ ~ ~ /summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Small:1,DisabledSlots:31,Invulnerable:1,NoBasePlate:1,ActiveEffects:[{Id:9,Amplifier:100,Duration:30,ShowParticles:0b},{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}],Tags:["MB1R","MB1G"]}
+execute @e[type=armor_stand,tag=MB1B] ~ ~ ~ /scoreboard players set @e[team=!Blue,tag=IsPlaying,r=2,score_EffPoison=20] EffPoison 1020
+execute @e[type=armor_stand,tag=MB1R] ~ ~ ~ /scoreboard players set @e[team=!Orange,tag=IsPlaying,r=2,score_EffPoison=20] EffPoison 1020
+execute @e[type=armor_stand,tag=MB1B] ~ ~ ~ /scoreboard players set @e[team=!Blue,tag=IsPlaying,r=2] TouchBy 2
+execute @e[type=armor_stand,tag=MB1R] ~ ~ ~ /scoreboard players set @e[team=!Orange,tag=IsPlaying,r=2] TouchBy 2
+scoreboard players set @a[score_Class_min=2,score_Class=2,score_InGame_min=1,score_Spell1_min=200,m=2] EffSpeed 1020
+scoreboard players set @a[score_Class_min=-2,score_Class=-2,score_InGame_min=1,score_Spell1_min=200,m=2] EffSpeed 1020
+execute @e[type=armor_stand,tag=MB1G] ~ ~ ~ /particle flame ~ ~0.2 ~ 0.5 0 0.5 0 3 force
+execute @e[type=armor_stand,tag=MB1G] ~ ~ ~ /summon falling_block ~ ~ ~ {Block:"minecraft:fire",Time:1,NoGravity:1,Tags:["MB1G"]}
+kill @e[tag=MB1G,type=falling_block]

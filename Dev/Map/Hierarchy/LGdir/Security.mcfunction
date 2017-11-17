@@ -1,0 +1,9 @@
+scoreboard players set @e[score_DirSpeed_min=401] DirSpeed 400
+scoreboard players set @e[score_DirSpeed=-1] DirSpeed 0
+scoreboard players set @e[score_DirX_min=1001] DirX 1000
+scoreboard players set @e[score_DirY_min=1001] DirY 1000
+scoreboard players set @e[score_DirZ_min=1001] DirZ 1000
+scoreboard players set @e[score_DirX=-1001] DirX -1000
+scoreboard players set @e[score_DirY=-1001] DirY -1000
+scoreboard players set @e[score_DirZ=-1001] DirZ -1000
+scoreboard players set @e[tag=!DirMoving] DirCollision 0

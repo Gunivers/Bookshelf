@@ -1,3 +1,7 @@
+execute @a[score_InGame_min=1,score_Class=24,score_Class_min=24,score_Spell3_min=899,score_Spell3=899,team=Orange] ~ ~ ~ /execute @a[tag=IsPlaying,team=Orange] ~ ~ ~ /particle fireworksSpark ~ ~1 ~ 3 3 3 0 100 force
+execute @a[score_InGame_min=1,score_Class=24,score_Class_min=24,score_Spell3_min=899,score_Spell3=899,team=Blue] ~ ~ ~ /execute @a[tag=IsPlaying,team=Blue] ~ ~ ~ /particle fireworksSpark ~ ~1 ~ 3 3 3 0.2 100 force
+
+
 execute @a[score_InGame_min=1,score_Class=24,score_Class_min=24,score_Spell3_min=899,score_Spell3=899,team=Blue] ~ ~ ~ /execute @a[tag=IsPlaying,team=Blue] ~ ~ ~ /scoreboard players set @e[r=7,tag=IsPlaying,team=!Blue,score_EffDamage=1] EffDamage 1
 execute @a[score_InGame_min=1,score_Class=24,score_Class_min=24,score_Spell3_min=899,score_Spell3=899,team=Blue] ~ ~ ~ /execute @a[tag=IsPlaying,team=Blue] ~ ~ ~ /scoreboard players set @e[r=7,tag=IsPlaying,team=!Blue,score_EffSlow=3020] EffSlow 3020
 execute @a[score_InGame_min=1,score_Class=24,score_Class_min=24,score_Spell3_min=899,score_Spell3=899,team=Blue] ~ ~ ~ /execute @a[tag=IsPlaying,team=Blue] ~ ~ ~ /scoreboard players set @e[r=7,tag=IsPlaying,team=!Blue] TouchBy 24
@@ -25,11 +29,11 @@ scoreboard players set @e[type=armor_stand,score_Class_min=-24,score_Class=-24,s
 execute @a[tag=IsPlaying,score_Class_min=24,score_Class=24,team=Orange,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /tp @e[r=5,c=1,type=armor_stand,score_Class_min=24,score_Class=24] ~ ~-2 ~
 execute @a[tag=IsPlaying,score_Class_min=24,score_Class=24,team=Blue,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /tp @e[r=5,c=1,type=armor_stand,score_Class_min=-24,score_Class=-24] ~ ~-2 ~
 execute @e[type=armor_stand,score_Class_min=24,score_Class=24] ~ ~ ~ /summon armor_stand ~ ~1 ~ {Marker:1b,Invisible:1b,Small:1,DisabledSlots:31,Invulnerable:1,NoBasePlate:1,ActiveEffects:[{Id:9,Amplifier:100,Duration:30,ShowParticles:0b},{Id:14,Amplifier:100,Duration:999999,ShowParticles:0b}],Tags:["HF2R","HF2"]}
-execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,scire_InGame_min=1,score_LifeState_min=500,score_EffSlow=1002,r=3] EffSlow 1002
-execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,scire_InGame_min=1,score_LifeState_min=500,score_EffPoison=1002,r=3] EffPoison 1002
-execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=Orange,scire_InGame_min=1,score_LifeState_min=500,score_EffSpeed=2002,r=3] EffSpeed 2002
-execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=Orange,scire_InGame_min=1,score_LifeState_min=500,score_EffJump=2,r=3] EffJump 2
-execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,scire_InGame_min=1,score_LifeState_min=500,r=3] TouchBy 24
+execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,score_InGame_min=1,score_LifeState_min=500,score_EffSlow=1002,r=3] EffSlow 1002
+execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,score_InGame_min=1,score_LifeState_min=500,score_EffPoison=1002,r=3] EffPoison 1002
+execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=Orange,score_InGame_min=1,score_LifeState_min=500,score_EffSpeed=2002,r=3] EffSpeed 2002
+execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=Orange,score_InGame_min=1,score_LifeState_min=500,score_EffJump=2,r=3] EffJump 2
+execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ /scoreboard players set @e[team=!Orange,score_InGame_min=1,score_LifeState_min=500,r=3] TouchBy 24
 execute @e[type=armor_stand,score_Class_min=24,score_Class=24] ~ ~ ~ /playsound block.snow.step record @a[r=30] ~ ~ ~ 2 1 1
 scoreboard players tag @e[type=armor_stand,tag=HF2R] add HF2RonGround
 execute @e[type=armor_stand,tag=HF2R] ~ ~ ~ detect ~ ~-1 ~ air 0 /scoreboard players tag @e[type=armor_stand,tag=HF2R,c=1] remove HF2RonGround

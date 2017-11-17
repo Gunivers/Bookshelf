@@ -28,7 +28,7 @@ execute @a[team=Orange,score_Spell3=1359,score_Spell3_min=1359,score_Class_min=3
 execute @a[team=Orange,score_Spell3=1359,score_Spell3_min=1359,score_Class_min=33,score_Class=33,tag=IsPlaying] ~ ~ ~ /execute @e[type=Armor_Stand,tag=333R,c=20] ~ ~ ~ /summon minecraft:lightning_bolt
 execute @a[team=Orange,score_Spell3=1359,score_Spell3_min=1359,score_Class_min=33,score_Class=33,tag=IsPlaying] ~ ~ ~ /execute @e[type=Armor_Stand,tag=333R,c=20] ~ ~ ~ /scoreboard players set @e[tag=AffectByOrange,r=4] TouchBy 33
 execute @a[team=Orange,score_Spell3=1359,score_Spell3_min=1359,score_Class_min=33,score_Class=33,tag=IsPlaying] ~ ~ ~ /kill @e[type=Armor_Stand,tag=333R,c=20]
-execute @e[type=Armor_Stand,tag=333R] ~ ~ ~ /particle snowshovel ~ ~0.2 ~ 0 0 0 0 1 force @a[team=Blue]
+execute @e[type=Armor_Stand,tag=333R] ~ ~ ~ /particle snowshovel ~ ~0.2 ~ 0 0 0 0 1 force @a[team=Orange]
 execute @e[type=armor_stand,tag=EnderPearl,score_ParticleClass=3,score_ParticleClass_min=3,score_Timer_min=37] ~ ~ ~ /execute @p[team=Blue,score_UseTp_min=1,score_Class_min=33,score_Class=33,tag=IsPlaying,r=1] ~ ~ ~ /effect @e[tag=AffectByOrange,r=4] resistance 2 100 true
 execute @e[type=armor_stand,tag=EnderPearl,score_ParticleClass=3,score_ParticleClass_min=3,score_Timer_min=37] ~ ~ ~ /execute @p[score_UseTp_min=1,score_Class_min=33,score_Class=33,tag=IsPlaying,r=1,team=Blue] ~ ~ ~ /summon minecraft:lightning_bolt
 execute @a[team=Blue,score_Class_min=33,score_Class=33,tag=IsPlaying,score_UseTp_min=2,score_UseTp=2] ~ ~ ~ /effect @e[tag=AffectByOrange,r=4] resistance 2 100 true
