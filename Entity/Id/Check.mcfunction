@@ -27,7 +27,6 @@ scoreboard players operation @e ID -= @s TargetID
 scoreboard players tag @e[score_ID_min=0,score_ID=0] add IdMatch
 scoreboard players tag @e[score_ID_min=1] add IdUpper
 scoreboard players tag @e[score_ID=-1] add IdLower
-scoreboard players tag @s remove IdMatch
 scoreboard players tag @s add IdChecker
 scoreboard players operation @e ID += @s TargetID
  

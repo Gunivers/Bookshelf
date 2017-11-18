@@ -11,10 +11,10 @@
 # - None
 
 #Output values:
-# - score (isOffHand)
+# - score (IsOffHand)
 
 
 
 #Code
-scoreboard players tag @a remove isOffHand
-scoreboard players tag @a add isOffHand {Inventory:[{Slot:-106b}]}
+scoreboard players tag @a remove IsOffHand
+scoreboard players tag @a add IsOffHand {Inventory:[{Slot:-106b}]}

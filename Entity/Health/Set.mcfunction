@@ -18,6 +18,8 @@
 
 # NOTE: <Note>
 # - This function must be executed every tick !
+# - Don't forget to deal damage to the players once (to update the HealthRead score (Thanks Moajng :/))
+# - Don't forget to turn off Natural Regeneration (/gamerule naturalRegeneration false) 
 
 # CODE:
 

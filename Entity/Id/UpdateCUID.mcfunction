@@ -26,3 +26,4 @@ scoreboard players tag @e[score_ID_min=1] add UpdateCUID
 function Gunivers-Lib:Entity/Id/UpdateCUID-Check
 
 scoreboard players tag @e remove UpdateCUID
+scoreboard players tag @e remove CorrectCUID
