@@ -16,49 +16,49 @@
 # - None
 
 tp @s -100000 0 -100000
-scoreboard players set @s Tmp -100000
-scoreboard players set @s Tmp2 -100000
-scoreboard players set @s Tmp3 -100000
-scoreboard players operation @s Tmp += @s LocX
+scoreboard players set @s Tmp1 100000
+scoreboard players set @s Tmp2 0
+scoreboard players set @s Tmp3 100000
+scoreboard players operation @s Tmp1 += @s LocX
 scoreboard players operation @s Tmp2 += @s LocY
 scoreboard players operation @s Tmp3 += @s LocZ
 
-tp @s[score_Tmp_min=131072] ~131072 ~ ~
-scoreboard players remove @s[score_Tmp_min=131072] Tmp 131072
-tp @s[score_Tmp_min=65536] ~65536 ~ ~
-scoreboard players remove @s[score_Tmp_min=65536] Tmp 65536
-tp @s[score_Tmp_min=32768] ~32768 ~ ~
-scoreboard players remove @s[score_Tmp_min=32768] Tmp 32768
-tp @s[score_Tmp_min=16384] ~16384 ~ ~
-scoreboard players remove @s[score_Tmp_min=16384] Tmp 16384
-tp @s[score_Tmp_min=8192] ~8192 ~ ~
-scoreboard players remove @s[score_Tmp_min=8192] Tmp 8192
-tp @s[score_Tmp_min=4096] ~4096 ~ ~
-scoreboard players remove @s[score_Tmp_min=4096] Tmp 4096
-tp @s[score_Tmp_min=2048] ~2048 ~ ~
-scoreboard players remove @s[score_Tmp_min=2048] Tmp 2048
-tp @s[score_Tmp_min=1024] ~1024 ~ ~
-scoreboard players remove @s[score_Tmp_min=1024] Tmp 1024
-tp @s[score_Tmp_min=512] ~512 ~ ~
-scoreboard players remove @s[score_Tmp_min=512] Tmp 512
-tp @s[score_Tmp_min=256] ~256 ~ ~
-scoreboard players remove @s[score_Tmp_min=256] Tmp 256
-tp @s[score_Tmp_min=128] ~128 ~ ~
-scoreboard players remove @s[score_Tmp_min=128] Tmp 128
-tp @s[score_Tmp_min=64] ~64 ~ ~
-scoreboard players remove @s[score_Tmp_min=64] Tmp 64
-tp @s[score_Tmp_min=32] ~32 ~ ~
-scoreboard players remove @s[score_Tmp_min=32] Tmp 32
-tp @s[score_Tmp_min=16] ~16 ~ ~
-scoreboard players remove @s[score_Tmp_min=16] Tmp 16
-tp @s[score_Tmp_min=8] ~8 ~ ~
-scoreboard players remove @s[score_Tmp_min=8] Tmp 8
-tp @s[score_Tmp_min=4] ~4 ~ ~
-scoreboard players remove @s[score_Tmp_min=4] Tmp 4
-tp @s[score_Tmp_min=2] ~2 ~ ~
-scoreboard players remove @s[score_Tmp_min=2] Tmp 2
-tp @s[score_Tmp_min=1] ~1 ~ ~
-scoreboard players remove @s[score_Tmp_min=1] Tmp 1 
+tp @s[score_Tmp1_min=131072] ~131072 ~ ~
+scoreboard players remove @s[score_Tmp1_min=131072] Tmp1 131072
+tp @s[score_Tmp1_min=65536] ~65536 ~ ~
+scoreboard players remove @s[score_Tmp1_min=65536] Tmp1 65536
+tp @s[score_Tmp1_min=32768] ~32768 ~ ~
+scoreboard players remove @s[score_Tmp1_min=32768] Tmp1 32768
+tp @s[score_Tmp1_min=16384] ~16384 ~ ~
+scoreboard players remove @s[score_Tmp1_min=16384] Tmp1 16384
+tp @s[score_Tmp1_min=8192] ~8192 ~ ~
+scoreboard players remove @s[score_Tmp1_min=8192] Tmp1 8192
+tp @s[score_Tmp1_min=4096] ~4096 ~ ~
+scoreboard players remove @s[score_Tmp1_min=4096] Tmp1 4096
+tp @s[score_Tmp1_min=2048] ~2048 ~ ~
+scoreboard players remove @s[score_Tmp1_min=2048] Tmp1 2048
+tp @s[score_Tmp1_min=1024] ~1024 ~ ~
+scoreboard players remove @s[score_Tmp1_min=1024] Tmp1 1024
+tp @s[score_Tmp1_min=512] ~512 ~ ~
+scoreboard players remove @s[score_Tmp1_min=512] Tmp1 512
+tp @s[score_Tmp1_min=256] ~256 ~ ~
+scoreboard players remove @s[score_Tmp1_min=256] Tmp1 256
+tp @s[score_Tmp1_min=128] ~128 ~ ~
+scoreboard players remove @s[score_Tmp1_min=128] Tmp1 128
+tp @s[score_Tmp1_min=64] ~64 ~ ~
+scoreboard players remove @s[score_Tmp1_min=64] Tmp1 64
+tp @s[score_Tmp1_min=32] ~32 ~ ~
+scoreboard players remove @s[score_Tmp1_min=32] Tmp1 32
+tp @s[score_Tmp1_min=16] ~16 ~ ~
+scoreboard players remove @s[score_Tmp1_min=16] Tmp1 16
+tp @s[score_Tmp1_min=8] ~8 ~ ~
+scoreboard players remove @s[score_Tmp1_min=8] Tmp1 8
+tp @s[score_Tmp1_min=4] ~4 ~ ~
+scoreboard players remove @s[score_Tmp1_min=4] Tmp1 4
+tp @s[score_Tmp1_min=2] ~2 ~ ~
+scoreboard players remove @s[score_Tmp1_min=2] Tmp1 2
+tp @s[score_Tmp1_min=1] ~1 ~ ~
+scoreboard players remove @s[score_Tmp1_min=1] Tmp1 1 
 
 
 tp @s[score_Tmp2_min=131072] ~ ~131072 ~
