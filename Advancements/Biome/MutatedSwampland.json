@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Get/Biome/MutatedSwampland"
+			"function": "Gunivers-Lib:Entity/Location/Biome/MutatedSwampland"
 		
 		
     }

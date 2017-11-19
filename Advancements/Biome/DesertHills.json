@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Get/Biome/DesertHills"
+			"function": "Gunivers-Lib:Entity/Location/Biome/DesertHills"
 		
 		
     }

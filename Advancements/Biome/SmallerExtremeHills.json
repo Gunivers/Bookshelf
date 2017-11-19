@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Get/Biome/SmallerExtremeHills"
+			"function": "Gunivers-Lib:Entity/Location/Biome/SmallerExtremeHills"
 		
 		
     }

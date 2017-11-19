@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Get/Biome/ExtremeHillsWithTrees"
+			"function": "Gunivers-Lib:Entity/Location/Biome/ExtremeHillsWithTrees"
 		
 		
     }
