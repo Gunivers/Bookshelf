@@ -29,7 +29,7 @@
 # - Res
 
 # NOTE:
-# - 
+# - The distance must be less than 40 000 blocks
 
 # CODE:
 

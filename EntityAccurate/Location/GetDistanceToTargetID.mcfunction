@@ -29,13 +29,18 @@
 # - Res
 
 # NOTE:
-# - 
+# - The Input must have 3 decimals (Calculated by the Accurate Location Get function)
+# - Returns the distance between two entities with 2 decimals
+# - The distance must be less than 400 blocks
 
 # CODE:
 
 function Gunivers-Lib:Entity/Vectors/GetByTargetID
 
+scoreboard players operation @s VectorX /= 10 Constant
+scoreboard players operation @s VectorY /= 10 Constant
+scoreboard players operation @s VectorZ /= 10 Constant
+
 function Gunivers-Lib:Entity/Vectors/GetLenghtSquared
 scoreboard players operation @s Tmp1 = @s Res
-scoreboard players operation @s Tmp1 *= 1000000 Constant
 function Gunivers-Lib:Utils/Math/Sqrt
