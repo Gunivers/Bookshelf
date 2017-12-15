@@ -1,5 +1,5 @@
 # NAME: Pow-Loop
-# PATH: Gunivers-Lib:Utils/Math/Pow-Loop
+# PATH: Gunivers-Lib:Math/Pow-Loop
  
 # AUTHOR: Theogiraudet/Oromis
 # CONTRIBUTORS: 
@@ -30,4 +30,4 @@
 scoreboard players operation @s Res *= @s Tmp1
 scoreboard players remove @s Tmp3 1
 
-function Gunivers-Lib:Utils/Math/Pow-Loop if @s[score_Tmp3_min=2]
+function Gunivers-Lib:Math/Pow-Loop if @s[score_Tmp3_min=2]

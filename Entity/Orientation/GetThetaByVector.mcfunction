@@ -12,7 +12,7 @@
 # - VectorY (score dummy) 
 # - Res (score dummy) 
 # - Theta(score dummy) 
-# - Gunivers-Lib:Utils/Math/Arccos (function)
+# - Gunivers-Lib:Math/Arccos (function)
  
 # INPUT: 
 # - VectorY (score dummy) 
@@ -27,5 +27,5 @@
 # CODE: 
 
 scoreboard players operation @s Tmp1 = @s VectorY
-function Gunivers-Lib:Utils/Math/Arccos
+function Gunivers-Lib:Math/Arccos
 scoreboard players operation @s Theta = @s Res

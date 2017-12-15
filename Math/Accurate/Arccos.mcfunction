@@ -1,5 +1,5 @@
 # NAME: Arccos
-# PATH: Gunivers-Lib:Utils/MathAccurate/Arccos
+# PATH: Gunivers-Lib:Math/Accurate/Arccos
  
 # AUTHOR: KubbyDev 
  
@@ -62,12 +62,12 @@ scoreboard players operation @s Tmp1 *= -1 Constant
 scoreboard players operation @s Tmp1 *= 100000 Constant
 scoreboard players add @s Tmp1 100000000
 
-function Gunivers-Lib:Utils/Math/sqrt
+function Gunivers-Lib:Math/sqrt
 
 scoreboard players operation @s Res *= @s Tmp6
 
 scoreboard players operation @s Tmp2 = @s Tmp8
-execute @s[score_Tmp2=-1] ~ ~ ~ function Gunivers-Lib:Utils/MathAccurate/Arccos-Child
+execute @s[score_Tmp2=-1] ~ ~ ~ function Gunivers-Lib:Math/Accurate/Arccos-Child
 
 scoreboard players operation @s Res /= 100000 Constant
 scoreboard players operation @s Res *= 18000 Constant

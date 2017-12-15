@@ -1,5 +1,5 @@
 # NAME: Aimbot Main
-# PATH: Gunivers-Lib:Utils/ExampleSystems/Aimbot/Main
+# PATH: Gunivers-Lib:System/Aimbot/Main
 
 # AUTHOR: KubbyDev
 # CONTRIBUTORS:
@@ -9,12 +9,12 @@
 # MINECRAFT: 1.12.2
 
 # REQUIEREMENTS:
-# - ID (import)
-# - Vectors (import)
-# - Orientation (import)
-# - Math (import)
-# - Temporary (import)
-# - Location (import)
+# - ID (Import)
+# - Vectors (Import)
+# - Orientation (Import)
+# - Math (Import)
+# - Temporary (Import)
+# - Location (Import)
 # - ExampleSystems/Aimbot/UpdateTargetLoc (function)
 
 # INPUT:
@@ -33,7 +33,7 @@
 
 #Update the target and the source's locations
 function Gunivers-Lib:Entity/Location/Get
-function Gunivers-Lib:Utils/ExampleSystems/Aimbot/UpdateTargetLoc
+function Gunivers-Lib:System/Aimbot/UpdateTargetLoc
 
 #Calculates the vector from the source to the target
 function Gunivers-Lib:Entity/Vectors/GetByTargetID

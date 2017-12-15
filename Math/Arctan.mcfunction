@@ -1,5 +1,5 @@
 # NAME: Arctan
-# PATH: Gunivers-Lib:Utils/Math/Arctan
+# PATH: Gunivers-Lib:Math/Arctan
  
 # AUTHOR: KubbyDev 
  
@@ -11,7 +11,7 @@
 # - Tmp2 (score dummy)  
 # - Tmp3 (score dummy)  
 # - Res (score dummy) 
-# - Constant (import)
+# - Constant (Import)
 
 # INPUT: 
 # - Tmp1 (score dummy)

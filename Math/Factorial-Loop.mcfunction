@@ -1,5 +1,5 @@
 # NAME: Factorial Loop
-# PATH: Gunivers-Lib:Utils/Math/Factorial-Loop
+# PATH: Gunivers-Lib:Math/Factorial-Loop
  
 # AUTHOR: KubbyDev 
  
@@ -26,4 +26,4 @@
 # CODE: 
 scoreboard players operation @s Res *= @s Tmp2
 scoreboard players remove @s Tmp2 1
-function Gunivers-Lib:Utils/Math/Factorial-Loop if @s[score_Tmp2_min=2]
+function Gunivers-Lib:Math/Factorial-Loop if @s[score_Tmp2_min=2]

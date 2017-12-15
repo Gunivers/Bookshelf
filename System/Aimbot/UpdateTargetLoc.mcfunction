@@ -1,5 +1,5 @@
 # NAME: Update Target Location
-# PATH: Gunivers-Lib:Utils/ExampleSystems/Aimbot/UpdateTargetLoc
+# PATH: Gunivers-Lib:System/Aimbot/UpdateTargetLoc
 
 # AUTHOR: KubbyDev
 # CONTRIBUTORS:
@@ -8,7 +8,7 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12.2
 
-# CHILD OF: Utils/ExampleSystems/Aimbot/Main
+# CHILD OF: System/Aimbot/Main
 
 # INPUT:
 # - TargetID

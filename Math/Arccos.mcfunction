@@ -1,5 +1,5 @@
 # NAME: Arccos
-# PATH: Gunivers-Lib:Utils/Math/Arccos
+# PATH: Gunivers-Lib:Math/Arccos
  
 # AUTHOR: KubbyDev 
  

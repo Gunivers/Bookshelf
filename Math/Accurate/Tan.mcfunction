@@ -1,5 +1,5 @@
 # TITLE: Tan Accurate
-# PATH: Gunivers-Lib:Utils/MathAccurate/Tan
+# PATH: Gunivers-Lib:Math/Accurate/Tan
 
 # AUTHOR: KubbyDev
 
@@ -13,8 +13,8 @@
 # - Tmp4 (dummy)
 # - Res (dummy)
 # - Constant (dummy)
-# - Utils/MathAccurate/Sin (MCfunction)
-# - Utils/MathAccurate/Cos (MCfunction)
+# - Math/Accurate/Sin (MCfunction)
+# - Math/Accurate/Cos (MCfunction)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -29,11 +29,11 @@
 
 # CODE
 
-function Gunivers-Lib:Utils/MathAccurate/Cos
+function Gunivers-Lib:Math/Accurate/Cos
 
 scoreboard players operation @s Tmp4 = @s Res
 
-function Gunivers-Lib:Utils/MathAccurate/Sin
+function Gunivers-Lib:Math/Accurate/Sin
 
 scoreboard players operation @s Res *= 1000 Constant
 scoreboard players operation @s Res /= @s Tmp4

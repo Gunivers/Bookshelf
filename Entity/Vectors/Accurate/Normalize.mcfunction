@@ -32,7 +32,7 @@ scoreboard players operation @s Tmp2 = @s VectorZ
 scoreboard players operation @s Tmp2 *= @s Tmp2
 scoreboard players operation @s Tmp1 += @s Tmp2
 
-function Gunivers-Lib:Utils/Math/sqrt
+function Gunivers-Lib:Math/sqrt
 
 scoreboard players operation @s VectorX *= 1000 Constant
 scoreboard players operation @s VectorY *= 1000 Constant

@@ -1,5 +1,5 @@
 # TITLE: Tan
-# PATH: Gunivers-Lib:Utils/Math/Tan
+# PATH: Gunivers-Lib:Math/Tan
 
 # AUTHOR: KubbyDev
 
@@ -13,8 +13,8 @@
 # - Tmp4 (dummy)
 # - Res (dummy)
 # - Constant (dummy)
-# - Utils/Math/Sin (MCfunction)
-# - Utils/Math/Cos (MCfunction)
+# - Math/Sin (MCfunction)
+# - Math/Cos (MCfunction)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -29,11 +29,11 @@
 
 # CODE
 
-function Gunivers-Lib:Utils/Math/Cos
+function Gunivers-Lib:Math/Cos
 
 scoreboard players operation @s Tmp4 = @s Res
 
-function Gunivers-Lib:Utils/Math/Sin
+function Gunivers-Lib:Math/Sin
 
 scoreboard players operation @s Res *= 1000 Constant
 scoreboard players operation @s Res /= @s Tmp4

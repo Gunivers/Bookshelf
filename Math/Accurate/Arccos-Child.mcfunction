@@ -1,5 +1,5 @@
 # NAME: Arccos Child
-# PATH: Gunivers-Lib:Utils/MathAccurate/Arccos-Child
+# PATH: Gunivers-Lib:Math/Accurate/Arccos-Child
  
 # AUTHOR: KubbyDev 
  

@@ -1,5 +1,5 @@
 # NAME: Arcsin
-# PATH: Gunivers-Lib:Utils/Math/Arcsin
+# PATH: Gunivers-Lib:Math/Arcsin
  
 # AUTHOR: Luludatra
  

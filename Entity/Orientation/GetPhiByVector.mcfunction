@@ -16,7 +16,7 @@
 # - VectorZ (score dummy) 
 # - Phi (score dummy) 
 # - Gunivers-Lib:Import/Math (Import)
-# - Gunivers-Lib:Utils/Math/Divide (Function)
+# - Gunivers-Lib:Math/Divide (Function)
  
 # INPUT: 
 # - VectorX (score dummy) 
@@ -79,7 +79,7 @@ scoreboard players operation @s Tmp1 /= @s Tmp2
 #Conversion in degrees (The result is on Res)
 scoreboard players operation @s Tmp1 *= 180 Constant
 scoreboard players operation @s Tmp2 = Pi3 Constant
-function Gunivers-Lib:Utils/Math/Divide
+function Gunivers-Lib:Math/Divide
 
 #Adjustments
 scoreboard players operation @s[score_Tmp5_min=3,score_Tmp5=5] Res *= -1 Constant

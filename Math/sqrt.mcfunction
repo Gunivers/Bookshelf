@@ -1,5 +1,5 @@
 # NAME: Square Root
-# PATH: Gunivers-Lib:Utils/Math/Sqrt
+# PATH: Gunivers-Lib:Math/Sqrt
 
 # AUTHOR: Luludatra
 # CONTRIBUTOR:
@@ -42,4 +42,4 @@ scoreboard players operation @s Tmp4 /= 2 Constant
 scoreboard players operation @s Tmp3 = @s Res
 
 # Loop to execute {Tmp2} time
-function Gunivers-Lib:Utils/Math/Sqrt-Loop
+function Gunivers-Lib:Math/Sqrt-Loop

@@ -1,5 +1,5 @@
 # TITLE: Sin
-# PATH: Gunivers-Lib:Utils/Math/Sin
+# PATH: Gunivers-Lib:Math/Sin
 
 # AUTHOR: Leirof
 

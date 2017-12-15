@@ -1,5 +1,5 @@
 # Cos
-# Path: Gunivers-Lib:Utils/Math/Cos
+# Path: Gunivers-Lib:Math/Cos
 
 # AUTHOR: Leirof
 

@@ -1,5 +1,5 @@
 # NAME: Arcsin
-# PATH: Gunivers-Lib:Utils/MathAccurate/Arcsin
+# PATH: Gunivers-Lib:Math/Accurate/Arcsin
  
 # AUTHOR: KubbyDev 
  
@@ -25,7 +25,7 @@
 
 # CODE: 
 
-function Gunivers-Lib:Utils/MathAccurate/Arccos
+function Gunivers-Lib:Math/Accurate/Arccos
 
 scoreboard players operation @s Res *= -1 Constant
 scoreboard players add @s Res 90000

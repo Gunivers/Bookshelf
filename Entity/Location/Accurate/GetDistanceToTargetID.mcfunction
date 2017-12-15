@@ -1,5 +1,5 @@
 # NAME: Get Distance To TargetID Accurate
-# PATH: Gunivers-Lib:EntityAccurate/Location/GetDistanceToTargetID
+# PATH: Gunivers-Lib:Entity/Location/Accurate/GetDistanceToTargetID
 
 # AUTHOR: KubbyDev
 
@@ -43,4 +43,4 @@ scoreboard players operation @s VectorZ /= 10 Constant
 
 function Gunivers-Lib:Entity/Vectors/GetLenghtSquared
 scoreboard players operation @s Tmp1 = @s Res
-function Gunivers-Lib:Utils/Math/Sqrt
+function Gunivers-Lib:Math/Sqrt

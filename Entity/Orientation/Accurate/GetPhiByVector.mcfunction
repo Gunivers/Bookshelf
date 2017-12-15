@@ -1,5 +1,5 @@
 # NAME: GetPhiByVector
-# PATH: Gunivers-Lib:EntityAccurate/Orientation/GetPhiByVector
+# PATH: Gunivers-Lib:Entity/Orientation/Accurate/GetPhiByVector
  
 # AUTHOR: KubbyDev
  
@@ -11,7 +11,7 @@
 # - Tmp2 (score dummy)
 # - Tmp3 (score dummy) 
 # - Res (score dummy) 
-# - Constant (import)
+# - Constant (Import)
 # - Phi (score dummy)
 # - VectorX (score dummy) 
 # - VectorZ (score dummy)
@@ -55,7 +55,7 @@ scoreboard players operation @s[score_Tmp4=-1] Tmp1 /= @s Tmp2
 scoreboard players operation @s[score_Tmp4_min=1] Tmp1 /= @s Tmp3
 
 #Calculation of arctan(z/x)
-function Gunivers-Lib:Utils/Math/Arctan
+function Gunivers-Lib:Math/Arctan
 
 #Adjustments of the angle
 scoreboard players operation @s[tag=2ndQuarter] Tmp4 *= -1 Constant

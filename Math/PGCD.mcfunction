@@ -1,5 +1,5 @@
 # NAME: PGCD
-# PATH: Gunivers-Lib:Utils/Math/PGCD
+# PATH: Gunivers-Lib:Math/PGCD
 
 # AUTHOR: LeiRoF
 
@@ -33,6 +33,6 @@ scoreboard players operation @s[score_Tmp3=-1] Tmp3 = @s Tmp2
 
 scoreboard players tag @s[score_Tmp3_min=0,score_Tmp3=0] add PGCDfound
 
-execute @s[tag=!PGCDfound] ~ ~ ~ function Gunivers-Lib:Utils/Math/PGCD-Loop
+execute @s[tag=!PGCDfound] ~ ~ ~ function Gunivers-Lib:Math/PGCD-Loop
 
 scoreboard players tag @s remove PGCDfound

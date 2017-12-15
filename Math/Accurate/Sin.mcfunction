@@ -1,5 +1,5 @@
 # TITLE: Accurate Sin
-# PATH: Gunivers-Lib:Utils/MathAccurate/Sin
+# PATH: Gunivers-Lib:Math/Accurate/Sin
 
 # AUTHOR: KubbyDev
 # CONTRIBUTORS:

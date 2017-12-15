@@ -14,7 +14,7 @@ Gunivers-Lib
 Gunivers-Lib est une bibliothèque de fonctions Minecraft utiles à la réalisation de systèmes et/ou de maps, ainsi que de structures de toute sorte. Elle permet ainsi à la fois de cacher certains aspects complexes du développement (la partie mathématique notamment) et favorise la création de gros projets.
 
 # PARTICULARITÉ:
-Les fonctions présentes dans cette bibliothèque peuvent interagir entre elles et respecte une convention d'écriture logique leur permettant de s'adapter à n'importe quel système.
+Les fonctions présentes dans cette bibliothèque peuvent interagir entre elles et respecte une convention d'écriture logique leur permettant de s'adapter à n'Importe quel système.
 
 # AVANCÉE:
 Gunivers-Lib possède déjà certaines fonctions mathématiques ainsi que certaines fonctions utiles à la détection et à la modification d'état d'une entité.

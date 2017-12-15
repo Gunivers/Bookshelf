@@ -1,5 +1,5 @@
 # NAME: Raycast Main
-# PATH: Gunivers-Lib:Utils/ExampleSystems/Raycasting/Main
+# PATH: Gunivers-Lib:System/Raycasting/Main
  
 # AUTHOR: KubbyDev
  
@@ -26,7 +26,7 @@
 #Summons an invisible amror stand and get the player's orientation
 summon armor_stand ~ ~ ~ {Tags:["Raycast","RaycastInit"],NoGravity:1,Marker:1,Invisible:1}
 tp @e[tag=RaycastInit] @s
-execute @e[tag=RaycastInit] ~ ~ ~ function Gunivers-Lib:EntityAccurate/Orientation/Get-Slave
+execute @e[tag=RaycastInit] ~ ~ ~ function Gunivers-Lib:Entity/Orientation/Accurate/Get-Slave
 
 #Calculates the vector corresponding to the player's orientation
 execute @e[tag=RaycastInit] ~ ~ ~ function Gunivers-Lib:EntityAccurate/Vectors/GetByOrientation

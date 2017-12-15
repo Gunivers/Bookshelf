@@ -1,5 +1,5 @@
 # NAME: Divide 
-# PATH: Gunivers-Lib:Utils/Math/Divide 
+# PATH: Gunivers-Lib:Math/Divide 
  
 # AUTHOR: theogiraudet/Oromis 
  
