@@ -1,4 +1,4 @@
-# NAME: PGCD
+# NAME: GCD
 # PATH: Gunivers-Lib:Math/GCD
 
 # AUTHOR: LeiRoF
@@ -20,6 +20,9 @@
 
 # OUTPUT:
 # - Res (score dummy)
+
+# Note:
+# - Calculates the Greatest Common Divisor of 2 given numbers.
 
 # CODE:
 scoreboard players operation @s Tmp3 = @s Tmp1

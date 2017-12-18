@@ -1,4 +1,4 @@
-# NAME: PGCD-Loop
+# NAME: GCD-Loop
 # PATH: Gunivers-Lib:Math/GCD-Loop
 
 # AUTHOR: LeiRoF
