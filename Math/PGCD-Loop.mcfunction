@@ -1,5 +1,5 @@
 # NAME: PGCD-Loop
-# PATH: Gunivers-Lib:Math/PGCD-Loop
+# PATH: Gunivers-Lib:Math/GCD-Loop
 
 # AUTHOR: LeiRoF
 
@@ -18,4 +18,4 @@ scoreboard players operation @s[tag=!PGCDfound] Tmp5 = Tmp4
 scoreboard players operation @s[tag=!PGCDfound] Tmp4 = Tmp3
 scoreboard players operation @s[tag=!PGCDfound] Tmp3 = Tmp5
 
-execute @s[tag=!PGCDfound] ~ ~ ~ function Gunivers-Lib:Math/PGCD-Loop
+execute @s[tag=!PGCDfound] ~ ~ ~ function Gunivers-Lib:Math/GCD-Loop
