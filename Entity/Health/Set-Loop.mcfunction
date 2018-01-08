@@ -37,6 +37,8 @@ effect @s resistance 0
 scoreboard players tag @e remove Health0
 scoreboard players tag @s[score_Health=0] add Health0
 scoreboard players set @s[tag=Health0] Health 20
+
+#Action when the Health score is 0
 kill @s[tag=Health0]
 
 scoreboard players operation @s Health -= @s HealthRead
