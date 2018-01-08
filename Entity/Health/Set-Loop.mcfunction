@@ -1,5 +1,5 @@
 # NAME: Set Health
-# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/Set
+# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/Set-Loop
 
 # AUTHOR: KubbyDev
 
@@ -25,6 +25,8 @@
 # - Don't forget to turn off Natural Regeneration (/gamerule naturalRegeneration false) 
 #
 # /!\
+#
+# This function sets the player's health equal to his Health score
 
 # CODE:
 
