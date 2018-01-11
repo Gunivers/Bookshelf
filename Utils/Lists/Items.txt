@@ -1,438 +1,258 @@
-//Items
+ID list:
 
-acacia_door
-acacia_door
-acacia_fence
-acacia_fence_gate
-acacia_stairs
-activator_rail
-air
-anvil
-apple
-armor_stand
-arrow
-baked_potato
-banner
-barrier
-beacon
-bed
-bed
-bedrock
-beef
-beetroot
-beetroot_seeds
-beetroot_soup
-birch_door
-birch_door
-birch_fence
-birch_fence_gate
-birch_stairs
-black_glazed_terracotta
-blaze_powder
-blaze_rod
-blue_glazed_terracotta
-boat
-bone
-bone_block
-book
-bookshelf
-bow
-bowl
-bread
-brewing_stand
-brewing_stand
-brick
-brick_block
-brick_stairs
-brown_glazed_terracotta
-brown_mushroom
-brown_mushroom_block
-bucket
-cactus
-cake
-cake
-carpet
-carrot
-carrot_on_a_stick
-carrots
-cauldron
-cauldron
-chain_command_block
-chainmail_boots
-chainmail_chestplate
-chainmail_helmet
-chainmail_leggings
-chest
-chest_minecart
-chicken
-chorus_flower
-chorus_fruit
-chorus_fruit_popped
-chorus_plant
-clay
-clay_ball
-clock
-coal
-coal_block
-coal_ore
-cobblestone
-cobblestone_wall
-cocoa
-command_block
-command_block_minecart
-comparator
-compass
-concrete
-concrete_powder
-cooked_beef
-cooked_chicken
-cooked_fished
-cooked_mutton
-cooked_porkchop
-cooked_rabbit
-cookie
-crafting_table
-cyan_glazed_terracotta
-dark_oak_door
-dark_oak_door
-dark_oak_fence
-dark_oak_fence_gate
-dark_oak_stairs
-daylight_detector
-daylight_detector_inverted
-deadbush
-detector_rail
-diamond
-diamond_axe
-diamond_block
-diamond_boots
-diamond_chestplate
-diamond_helmet
-diamond_hoe
-diamond_horse_armor
-diamond_leggings
-diamond_ore
-diamond_pickaxe
-diamond_shovel
-diamond_sword
-dirt
-dispenser
-double_plant
-double_stone_slab
-double_stone_slab2
-double_wooden_slab
-dragon_breath
-dragon_egg
-dropper
-dye
-egg
-elytra
-emerald
-emerald_block
-emerald_ore
-enchanted_book
-enchanting_table
-end_bricks
-end_crystal
-end_gateway
-end_portal
-end_portal_frame
-end_rod
-end_stone
-ender_chest
-ender_eye
-ender_pearl
-experience_bottle
-farmland
-feather
-fence
-fence_gate
-fermented_spider_eye
-filled_map
-fire
-fire_charge
-firework_charge
-fireworks
-fish
-fishing_rod
-flint
-flint_and_steel
-flower_pot
-flower_pot
-flowing_lava
-flowing_water
-frosted_ice
-furnace
-furnace_minecart
-ghast_tear
-glass
-glass_bottle
-glass_pane
-glowstone
-glowstone_dust
-gold_block
-gold_ingot
-gold_nugget
-gold_ore
-golden_apple
-golden_axe
-golden_boots
-golden_carrot
-golden_chestplate
-golden_helmet
-golden_hoe
-golden_horse_armor
-golden_leggings
-golden_pickaxe
-golden_rail
-golden_shovel
-golden_sword
-grass
-grass_path
-gravel
-green_glazed_terracotta
-grey_glazed_terracotta
-gunpowder
-hardened_clay
-hay_block
-heavy_weighted_pressure_plate
-hopper
-hopper_minecart
-ice
-iron_axe
-iron_bars
-iron_block
-iron_boots
-iron_chestplate
-iron_door
-iron_door
-iron_helmet
-iron_hoe
-iron_horse_armor
-iron_ingot
-iron_leggings
-iron_ore
-iron_pickaxe
-iron_shovel
-iron_sword
-iron_trapdoor
-item_frame
-jukebox
-jungle_door
-jungle_door
-jungle_fence
-jungle_fence_gate
-jungle_stairs
-ladder
-lapis_block
-lapis_ore
-lava
-lava_bucket
-lead
-leather
-leather_boots
-leather_chestplate
-leather_helmet
-leather_leggings
-leaves
-leaves2
-lever
-light_blue_glazed_terracotta
-light_weighted_pressure_plate
-lime_glazed_terracotta
-lingering_potion
-lit_furnace
-lit_pumpkin
-lit_redstone_lamp
-lit_redstone_ore
-log
-log2
-magenta_glazed_terracotta
-magma
-magma_cream
-map
-melon
-melon_block
-melon_seeds
-melon_stem
-milk_bucket
-minecart
-mob_spawner
-monster_egg
-mossy_cobblestone
-mushroom_stew
-mutton
-mycelium
-name_tag
-nether_brick
-nether_brick_fence
-nether_brick_stairs
-nether_star
-nether_wart
-nether_wart
-nether_wart_block
-netherbrick
-netherrack
-noteblock
-oak_stairs
-observer
-obsidian
-orange_glazed_terracotta
-packed_ice
-painting
-paper
-pink_glazed_terracotta
-piston
-piston_extension
-piston_head
-planks
-poisonous_potato
-porkchop
-portal
-potato
-potatoes
-potion
-powered_comparator
-powered_repeater
-prismarine
-prismarine_crystals
-prismarine_shard
-pumpkin
-pumpkin_pie
-pumpkin_seeds
-pumpkin_stem
-purple_glazed_terracotta
-purple_shulker_box
-purpur_block
-purpur_double_slab
-purpur_pillar
-purpur_slab
-purpur_stairs
-quartz
-quartz_block
-quartz_ore
-quartz_stairs
-rabbit
-rabbit_foot
-rabbit_hide
-rabbit_stew
-rail
-record_11
-record_13
-record_blocks
-record_cat
-record_chirp
-record_far
-record_mall
-record_mellohi
-record_stal
-record_strad
-record_wait
-record_ward
-red_flower
-red_glazed_terracotta
-red_mushroom
-red_mushroom_block
-red_nether_brick
-red_sandstone
-red_sandstone_stairs
-redstone
-redstone_block
-redstone_lamp
-redstone_ore
-redstone_torch
-redstone_wire
-reeds
-reeds
-repeater
-repeating_command_block
-rotten_flesh
-saddle
-sand
-sand
-sandstone
-sandstone_stairs
-sapling
-sea_lantern
-shears
-shield
-shulker_shell
-sign
-silver_glazed_terracotta
-skull
-skull
-slime
-slimeball
-snow
-snow_layer
-snowball
-soul_sand
-speckled_melon
-spectral_arrow
-spider_eye
-splash_potion
-sponge
-spruce_door
-spruce_door
-spruce_fence
-spruce_fence_gate
-spruce_stairs
-stained_glass
-stained_glass_pane
-stained_hardened_clay
-standing_banner
-standing_sign
-stick
-sticky_piston
-stone
-stone_axe
-stone_brick_stairs
-stone_button
-stone_hoe
-stone_pickaxe
-stone_pressure_plate
-stone_shovel
-stone_slab
-stone_slab2
-stone_stairs
-stone_sword
-stonebrick
-string
-structure_block
-sugar
-tallgrass
-tnt
-tnt_minecart
-torch
-totem_of_undying
-trapdoor
-trapped_chest
-tripwire
-tripwire_hook
-unlit_redstone_torch
-unpowered_comparator
-unpowered_repeater
-vine
-wall_banner
-wall_sign
-water
-water_bucket
-waterlily
-web
-wheat
-wheat_seeds
-white_glazed_terracotta
-wooden_axe
-wooden_button
-wooden_door
-wooden_hoe
-wooden_pickaxe
-wooden_pressure_plate
-wooden_shovel
-wooden_slab
-wooden_sword
-wool
-writable_book
-written_book
-yellow_flower
-yellow_glazed_terracotta
+# 0 - air
+# 1 - stone
+# 2 - grass
+# 3 - dirt
+# 4 - cobblestone
+# 5 - planks
+# 6 - sapling
+# 7 - bedrock
+# 8 - flowing_water
+# 9 - water
+# 10 - flowing_lava
+# 11 - lava
+# 12 - sand
+# 13 - gravel
+# 14 - gold_ore
+# 15 - iron_ore
+# 16 - coal_ore
+# 17 - log
+# 18 - leaves
+# 19 - sponge
+# 20 - glass
+# 21 - lapis_ore
+# 22 - lapis_block
+# 23 - dispenser
+# 24 - sandstone
+# 25 - noteblock
+# 26 - bed
+# 27 - golden_rail
+# 28 - detector_rail
+# 29 - sticky_piston
+# 30 - web
+# 31 - tallgrass
+# 32 - deadbush
+# 33 - piston
+# 34 - piston_head
+# 35 - wool
+# 36 - none
+# 37 - yellow_flower
+# 38 - red_flower
+# 39 - brown_mushroom
+# 40 - red_mushroom
+# 41 - gold_block
+# 42 - iron_block
+# 43 - double_slab
+# 44 - stone_slab
+# 45 - brick
+# 46 - tnt
+# 47 - bookshelf
+# 48 - mossy_cobblestone
+# 49 - obsidian
+# 50 - torch
+# 51 - fire
+# 52 - mob_spawner
+# 53 - oak_stairs
+# 54 - chest
+# 55 - redstone_wire
+# 56 - diamond_ore
+# 57 - diamond_block
+# 58 - crafting_table
+# 59 - wheat
+# 60 - farmland
+# 61 - furnace
+# 62 - lit_furnace
+# 63 - standing_sign
+# 64 - wooden_door
+# 65 - ladder
+# 66 - rail
+# 67 - stone_stairs
+# 68 - wall_sign
+# 69 - lever
+# 70 - stone_pressure_plate
+# 71 - iron_door
+# 72 - wooden_pressure_plate
+# 73 - redstone_ore
+# 74 - lit_redstone_ore
+# 75 - unlit_redstone_torch
+# 76 - redstone_torch
+# 77 - stone_button
+# 78 - snow_layer
+# 79 - ice
+# 80 - snow
+# 81 - cactus
+# 82 - clay
+# 83 - reeds
+# 84 - jukebox
+# 85 - fence
+# 86 - pumpkin
+# 87 - netherrack
+# 88 - soul_sand
+# 89 - glowstone
+# 90 - portal
+# 91 - lit_pumpkin
+# 92 - cake
+# 93 - unpowered_repeater
+# 94 - powered_repeater
+# 95 - stained_glass
+# 96 - trapdoor
+# 97 - monster_egg
+# 98 - stonebrick
+# 99 - brown_mushroom_block
+# 100 - red_mushroom_block
+# 101 - iron_bars
+# 102 - glass_pane
+# 103 - melon_block
+# 104 - pumpkin_stem
+# 105 - melon_stem
+# 106 - vine
+# 107 - fence_gate
+# 108 - brick_stairs
+# 109 - stone_brick_stairs
+# 110 - mycelium
+# 111 - waterlily
+# 112 - nether_brick
+# 113 - nether_brick_fence
+# 114 - nether_brick_stairs
+# 115 - nether_wart
+# 116 - enchanting_table
+# 117 - brewing_stand
+# 118 - cauldron
+# 119 - end_portal
+# 120 - end_portal_frame
+# 121 - end_stone
+# 122 - dragon_egg
+# 123 - redstone_lamp
+# 124 - lit_redstone_lamp
+# 125 - double_wooden_slab
+# 126 - wooden_slab
+# 127 - cocoa
+# 128 - sandstone_stairs
+# 129 - emerald_ore
+# 130 - ender_chest
+# 131 - tripwire_hook
+# 132 - tripwire
+# 133 - emerald_block
+# 134 - spruce_stairs
+# 135 - birch_stairs
+# 136 - jungle_stairs
+# 137 - command_block
+# 138 - beacon
+# 139 - cobblestone_wall
+# 140 - flower_pot
+# 141 - carrots
+# 142 - potatoes
+# 143 - wooden_button
+# 144 - skull
+# 145 - anvil
+# 146 - trapped_chest
+# 147 - light_weighted_pressure_plate
+# 148 - heavy_weighted_pressure_plate
+# 149 - unpowered_comparator
+# 150 - powered_comparator
+# 151 - daylight_detector
+# 152 - redstone_block
+# 153 - quartz_ore
+# 154 - hopper
+# 155 - quartz_block
+# 156 - quartz_stairs
+# 157 - activator_rail
+# 158 - dropper
+# 159 - stained_hardened_clay
+# 160 - stained_glass_pane
+# 161 - leaves2
+# 162 - log2
+# 163 - acacia_stairs
+# 164 - dark_oak_stairs
+# 165 - slime
+# 166 - barrier
+# 167 - iron_trapdoor
+# 168 - prismarine
+# 169 - sea_lantern
+# 170 - hay_block
+# 171 - carpet
+# 172 - hardened_clay
+# 173 - coal_block
+# 174 - packed_ice
+# 175 - double_plant
+# 176 - standing_banner
+# 177 - wall_banner
+# 178 - daylight_detector_inverted
+# 179 - red_sandstone
+# 180 - red_sandstone_stairs
+# 181 - double_stone_slab2
+# 182 - stone_slab
+# 183 - spruce_fence_gate
+# 184 - birch_fence_gate
+# 185 - jungle_fence_gate
+# 186 - dark_oak_fence_gate
+# 187 - acacia_fence_gate
+# 188 - spruce_fence
+# 189 - birch_fence
+# 190 - jungle_fence
+# 191 - dark_oak_fence
+# 192 - acacia_fence
+# 193 - spruce_door
+# 194 - birch_door
+# 195 - jungle_door
+# 196 - acacia_door
+# 197 - dark_oak_door
+# 198 - end_rod
+# 199 - chorus_plant
+# 200 - chorus_flower
+# 201 - purpur_block
+# 202 - purpur_pillar
+# 203 - purpur_stairs
+# 204 - purpur_double_slab
+# 205 - purpur_slab
+# 206 - end_bricks
+# 207 - beetroot
+# 208 - grass_path
+# 209 - end_gateway
+# 210 - repeating_command_block
+# 211 - chain_command_block
+# 212 - frosted_ice
+# 213 - magma
+# 214 - nether_wart_block
+# 215 - red_nether_brick
+# 216 - bone_block
+# 217 - structure_void
+# 218 - observer
+# 219 - white_shulker_box
+# 220 - orange_shulker_box
+# 221 - magenta_shulker_box
+# 222 - light_blue_shulker_box
+# 223 - yellow_shulker_box
+# 224 - lime_shulker_box
+# 225 - pink_shulker_box
+# 226 - gray_shulker_box
+# 227 - silver_shulker_box
+# 228 - cyan_shulker_box
+# 229 - purple_shulker_box
+# 230 - blue_shulker_box
+# 231 - brown_shulker_box
+# 232 - green_shulker_box
+# 233 - red_shulker_box
+# 234 - black_shulker_box
+# 235 - white_glazed_terracotta
+# 236 - orange_glazed_terracotta
+# 237 - magenta_glazed_terracotta
+# 238 - light_blue_glazed_terracotta
+# 239 - yellow_glazed_terracotta
+# 240 - lime_glazed_terracotta
+# 241 - pink_glazed_terracotta
+# 242 - gray_glazed_terracotta
+# 243 - light_gray_glazed_terracotta
+# 244 - cyan_glazed_terracotta
+# 245 - purple_glazed_terracotta
+# 246 - blue_glazed_terracotta
+# 247 - brown_glazed_terracotta
+# 248 - green_glazed_terracotta
+# 249 - red_glazed_terracotta
+# 250 - black_glazed_terracotta
+# 251 - concrete
+# 252 - concrete_powder
+# 253 - none
+# 254 - none
+# 255 - structure_block
