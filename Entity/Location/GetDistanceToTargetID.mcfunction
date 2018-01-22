@@ -18,6 +18,7 @@
 # - Math (Import)
 # - Entity/Vectors/GetByTargetID (MCfunction)
 # - Entity/Vectors/GetLenght (MCfunction)
+# - Res (score dummy)
 
 # INPUT:
 # - TargetID (score dummy) The ID of the Target
@@ -26,7 +27,7 @@
 # - LocZ (score dummy) /!\ must be defined on both entities
 
 # OUTPUT:
-# - Res
+# - Res (score dummy)
 
 # NOTE:
 # - The distance must be less than 40 000 blocks

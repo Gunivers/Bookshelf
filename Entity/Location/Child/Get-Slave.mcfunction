@@ -1,10 +1,5 @@
 # NAME: Get Location Slave
-# PATH: Gunivers-Lib:Entity/Location/Get-Slave
-
-# AUTHOR: LeiRoF
-
-# VERSION: 1.0
-# MINECRAFT: 1.12
+# PATH: Gunivers-Lib:Entity/Location/Child/Get-Slave
 
 #CHILD OF: Entity/Location/Get
 

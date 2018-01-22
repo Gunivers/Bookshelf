@@ -1,21 +1,9 @@
-# NAME: Update Health
-# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthM
+# NAME: Add Health
+# PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthP
 
-# AUTHOR: KubbyDev
-
-# VERSION: 1.0
-# MINECRAFT: 1.12.2
-
-# REQUIEREMENTS:
-# - Health (score dummy)
-
-# INPUT:
-# - Health (score dummy)
-
-# OUTPUT: None
+# CHILD OF: Gunivers-Lib/Entity/Health/Advenced
 
 # CODE:
-
 #0.5 coeur
 effect @s[score_Health=-1,score_Health_min=-1] poison 1 4 true
 

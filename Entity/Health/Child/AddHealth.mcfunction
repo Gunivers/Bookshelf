@@ -1,21 +1,9 @@
-# NAME: Update Health
+# NAME: Add Health
 # PATH: Gunivers-Lib: Gunivers-Lib/Entity/Health/UpdateHealthP
 
-# AUTHOR: KubbyDev
-
-# VERSION: 1.0
-# MINECRAFT: 1.12.2
-
-# REQUIEREMENTS:
-# - Health (score dummy)
-
-# INPUT:
-# - Health (score dummy)
-
-# OUTPUT: None
+# CHILD OF: Gunivers-Lib/Entity/Health/Advenced
 
 # CODE:
-
 #3 coeurs
 effect @s[score_Health_min=6,score_Health=11] instant_health 1 0 true
 

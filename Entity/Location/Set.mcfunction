@@ -1,20 +1,26 @@
-#Get Location
-#@Author: LeiRoF
+# NAME: Set Location
+# PATH: Gunivers-Lib:Entity/Location/Set
 
-#Version: 1.0
-#Minecraft Version: 1.12
+# AUTHOR: LeiRoF
 
-#Import:
-# - Location
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-#Input values:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# REQUIREMENTS:
+# - Tmp1 (score dummy)
+# - Tmp2 (score dummy)
+# - Tmp3 (score dummy)
 
-#Output values:
-# - None
+# INPUT:
+# - Tmp1 (score dummy) <- Location X
+# - Tmp2 (score dummy) <- Location Y
+# - Tmp3 (score dummy) <- Location 2
 
+# OUTPUT:
+
+# NOTE:
+
+# CODE:
 tp @s -100000 0 -100000
 scoreboard players set @s Tmp1 100000
 scoreboard players set @s Tmp2 0
