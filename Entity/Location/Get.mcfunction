@@ -1,3 +1,28 @@
+# NAME: Get Location
+# PATH: Gunivers-Lib:Entity/Location/Get
+
+# AUTHOR: LeiRoF
+
+# VERSION: 1.0
+# MINECRAFT: 1.12
+
+# REQUIREMENTS:
+# - LocX (score dummy)
+# - LocY (score dummy)
+# - LocZ (score dummy)
+
+# INPUT:
+
+# OUTPUT:
+# - LocX (score dummy)
+# - LocY (score dummy)
+# - LocZ (score dummy)
+
+# NOTE:
+
+# CODE:
+
+
 #Get Location
 #@Author: LeiRoF
 
@@ -11,9 +36,6 @@
 # - None
 
 #Output values:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
 
 
 execute @s ~ ~ ~ summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["GetLocation"]}

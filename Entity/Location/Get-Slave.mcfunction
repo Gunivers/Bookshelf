@@ -1,19 +1,12 @@
-#Get Location-Slave
-#@Author: LeiRoF
+# NAME: Get Location Slave
+# PATH: Gunivers-Lib:Entity/Location/Get-Slave
 
-#Version: 1.0
-#Minecraft Version: 1.12
+# AUTHOR: LeiRoF
 
-#Import:
-# - Location
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-#Input values:
-# - None
-
-#Output values:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+#CHILD OF: Entity/Location/Get
 
 scoreboard players set @s LocX -100000
 scoreboard players set @s LocY 0
