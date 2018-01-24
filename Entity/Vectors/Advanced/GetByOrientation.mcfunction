@@ -1,5 +1,5 @@
 # TITLE: Calcul Vectors
-# PATH: Gunivers-Lib:Entity/Vectors/GetByOrientation
+# PATH: Gunivers-Lib:Entity/Vectors/Advanced/GetByOrientation
 
 # AUTHOR: KubbyDev
 # CONTRIBUTORS:
@@ -9,8 +9,8 @@
 # MINECRAFT: 1.12
 
 # REQUIEREMENT:
-# - Gunivers-Lib:Math/Accurate/Cos (function)
-# - Gunivers-Lib:Math/Accurate/Sin (function)
+# - Gunivers-Lib:Math/Advanced/Cos (function)
+# - Gunivers-Lib:Math/Advanced/Sin (function)
 # - Phi (score dummy)
 # - Theta (score dummy)
 # - VectorX (score dummy)
@@ -39,17 +39,17 @@ scoreboard players set @s VectorSpeed 1000
 #Calcul Vector Y
 
 scoreboard players operation @s Tmp1 = @s Theta
-function Gunivers-Lib:Math/Accurate/Cos
+function Gunivers-Lib:Math/Advanced/Cos
 scoreboard players operation @s VectorY = @s Res
 
 #Calcul Vector Z
 
 scoreboard players operation @s Tmp1 = @s Phi
-function Gunivers-Lib:Math/Accurate/Cos
+function Gunivers-Lib:Math/Advanced/Cos
 scoreboard players operation @s VectorZ = @s Res
 
 scoreboard players operation @s Tmp1 = @s Theta
-function Gunivers-Lib:Math/Accurate/Sin
+function Gunivers-Lib:Math/Advanced/Sin
 scoreboard players operation @s VectorZ *= @s Res
 
 #Calcul Vector X
@@ -57,7 +57,7 @@ scoreboard players operation @s VectorZ *= @s Res
 scoreboard players operation @s VectorX = @s Res
 
 scoreboard players operation @s Tmp1 = @s Phi
-function Gunivers-Lib:Math/Accurate/Sin
+function Gunivers-Lib:Math/Advanced/Sin
 scoreboard players operation @s VectorX *= @s Res
 
 # Retranscription of Phi on interval [0;1000]

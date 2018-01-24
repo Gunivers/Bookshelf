@@ -1,5 +1,5 @@
-# NAME: Get Distance To TargetID Accurate
-# PATH: Gunivers-Lib:Entity/Location/Accurate/GetDistanceToTargetID
+# NAME: Get Distance To TargetID Advanced
+# PATH: Gunivers-Lib:Entity/Location/Advanced/GetDistanceToTargetID
 
 # AUTHOR: KubbyDev
 
@@ -29,7 +29,7 @@
 # - Res
 
 # NOTE:
-# - The Input must have 3 decimals (Calculated by the Accurate Location Get function)
+# - The Input must have 3 decimals (Calculated by the Advanced Location Get function)
 # - Returns the distance between two entities with 2 decimals
 # - The distance must be less than 400 blocks
 

@@ -6,15 +6,10 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# Requirement:
-# - Tmp1 (dummy)
-# - Tmp2 (dummy)
-# - Tmp3 (dummy)
-# - Tmp4 (dummy)
-# - Res (dummy)
-# - Constant (dummy)
-# - Math/Sin (MCfunction)
-# - Math/Cos (MCfunction)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
+# - Gunivers-Lib:Utils/Import/Constant(Import file)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -24,8 +19,6 @@
 
 #Note:
 # - Tmp1 must be in interval [0;360]
-
-# CONFIGURATION:
 
 # CODE
 

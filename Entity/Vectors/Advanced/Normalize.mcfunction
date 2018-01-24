@@ -1,4 +1,4 @@
-# Calcul Vectors Normalizer Precise
+# Calcul Vectors Normalizer Advanced
 
 # @Author: KubbyDev
 

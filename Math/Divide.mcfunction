@@ -6,13 +6,10 @@
 # VERSION: 0.1 
 # MINECRAFT: 1.12.1 
  
-# REQUIEREMENTS: 
-# - Tmp1 (score dummy) 
-# - Tmp2 (score dummy) 
-# - Tmp3 (score dummy) 
-# - Res (score dummy) 
-# - Gunivers-Lib:Import/Constant (MCfunction)
-# - Gunivers-Lib:Import/Math (MCfunction)
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
+# - Gunivers-Lib:Utils/Import/Constant(Import file)
  
 # INPUT: 
 # - Tmp1 (score dummy) 

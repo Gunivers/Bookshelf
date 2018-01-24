@@ -1,4 +1,4 @@
-# Get Orientation Accurate
+# Get Orientation Advanced
 
 # @Author: KubbyDev
 
@@ -8,7 +8,7 @@
 # Requirement:
 # - Phi (score dummy)
 # - Theta (score dummy)
-# - Entity/Orientation/Accurate/Get-Slave (function)
+# - Entity/Orientation/Advanced/Get-Slave (function)
 # - Constants (Import)
 # - Entity/Orientation/Get-Slave (function)
 
@@ -20,7 +20,7 @@
 
 summon armor_stand ~ ~ ~ {Tags:["GetOrientation"],NoGravity:1,Invisible:1,Small:1,Marker:1}
 tp @e[type=armor_stand,tag=GetOrientation,c=1] @s
-execute @e[type=armor_stand,tag=GetOrientation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Orientation/Accurate/Get-Slave
+execute @e[type=armor_stand,tag=GetOrientation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Orientation/Advanced/Get-Slave
 
 scoreboard players operation @s Phi = @e[type=armor_stand,tag=GetOrientation,c=1] Phi
 scoreboard players operation @s Theta = @e[type=armor_stand,tag=GetOrientation,c=1] Theta

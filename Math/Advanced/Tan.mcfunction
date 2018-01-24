@@ -1,5 +1,5 @@
 # TITLE: Tan Accurate
-# PATH: Gunivers-Lib:Math/Accurate/Tan
+# PATH: Gunivers-Lib:Math/Advanced/Tan
 
 # AUTHOR: KubbyDev
 
@@ -29,11 +29,11 @@
 
 # CODE
 
-function Gunivers-Lib:Math/Accurate/Cos
+function Gunivers-Lib:Math/Advanced/Cos
 
 scoreboard players operation @s Tmp4 = @s Res
 
-function Gunivers-Lib:Math/Accurate/Sin
+function Gunivers-Lib:Math/Advanced/Sin
 
 scoreboard players operation @s Res *= 1000 Constant
 scoreboard players operation @s Res /= @s Tmp4

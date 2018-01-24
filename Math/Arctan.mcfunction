@@ -6,12 +6,10 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12.1 
  
-# REQUIEREMENTS: 
-# - Tmp1 (score dummy) 
-# - Tmp2 (score dummy)  
-# - Tmp3 (score dummy)  
-# - Res (score dummy) 
-# - Constant (Import)
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
+# - Gunivers-Lib:Utils/Import/Constant(Import file)
 
 # INPUT: 
 # - Tmp1 (score dummy)
@@ -23,11 +21,9 @@
 # - This function returns atan(Tmp1) in degrees (multiplied by 1000 for more acuracy), Tmp1 must be in interval [0;1000] instead of [0;1]
 # - The maximum error of this function is 0.068 degrees
  
-# CONFIGURATION: <none> 
- 
 # CODE: 
 
-#Nominateur
+#Numerateur
 scoreboard players operation @s Tmp3 = @s Tmp1
 scoreboard players operation @s Tmp3 *= @s Tmp1
 

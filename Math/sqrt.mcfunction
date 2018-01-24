@@ -10,12 +10,9 @@
 # MINECRAFT: 1.12
 
 # REQUIEREMENTS:
-# - Gunivers-Lib:Import/Math (MCfunction)
-# - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
-# - Tmp3 (score dummy)
-# - Tmp4 (score dummy)
-# - Tmp5 (score dummy)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
+# - Gunivers-Lib:Utils/Import/Constant(Import file)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -42,4 +39,4 @@ scoreboard players operation @s Tmp4 /= 2 Constant
 scoreboard players operation @s Tmp3 = @s Res
 
 # Loop to execute {Tmp2} time
-function Gunivers-Lib:Math/Sqrt-Loop
+function Gunivers-Lib:Math/Child/Sqrt-Loop

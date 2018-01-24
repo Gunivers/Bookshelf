@@ -1,5 +1,5 @@
 # NAME: GetThetaByVector
-# PATH: Gunivers-Lib:Entity/Orientation/Accurate/GetPhiByVector
+# PATH: Gunivers-Lib:Entity/Orientation/Advanced/GetPhiByVector
  
 # AUTHOR: KubbyDev
  
@@ -28,7 +28,7 @@
 # CODE: 
 
 scoreboard players operation @s Tmp2 = @s VectorY
-function Gunivers-Lib:Math/Accurate/Arccos
+function Gunivers-Lib:Math/Advanced/Arccos
 scoreboard players operation @s Theta = @s Res
 
 

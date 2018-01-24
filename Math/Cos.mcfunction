@@ -1,27 +1,26 @@
-# Cos
-# Path: Gunivers-Lib:Math/Cos
+# NAME: Cosinus
+# PATH: Gunivers-Lib:Math/Cos
+ 
+# AUTHOR: LeiRoF
+ 
+# VERSION: 1.0
+# MINECRAFT: 1.12 
+ 
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
+# - Gunivers-Lib:Utils/Import/Constant(Import file)
 
-# AUTHOR: Leirof
-
-# Version: 1.0
-# Minecraft Version: 1.12
-
-# Requirement:
+# INPUT: 
 # - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
-# - Tmp3 (score dummy)
-# - Gunivers-Lib:Import/Math (MCfunction)
+ 
+# OUTPUT: 
+# - Res (score dummy) 
 
-# Input values:
-# - Tmp1 (score dummy)
-
-# Output values:
-# - Res (score dummy)
-
-#Note:
+# NOTE:
 # - Tmp1 must be in interval [0;360]
 
-
+# CODE:
 # Retranscription of Tmp1 on interval [0;90[
 
 scoreboard players operation @s Tmp3 = @s Tmp1
