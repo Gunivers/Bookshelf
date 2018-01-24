@@ -1,24 +1,22 @@
-# SetOrientation
+# NAME: Set Orientation
+# PATH: Gunivers-Lib:Entity/Orientation/Set
 
-# @Author: Leirof
+# AUTHOR: LeiRoF
 
-#Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
-# - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Orienation (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
 
-#Input values:
+# INPUT:
 # - Phi (score dummy)
 # - Theta (score dummy)
-# - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
 
-#Output values: None
+# OUTPUT:
 
-
-
+# CODE:
 #Initialization
 
 scoreboard players operation @s Tmp1 = @s Phi

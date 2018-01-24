@@ -1,12 +1,7 @@
-# NAME: Mise en movement d'une entité
-# PATH: Gunivers-Lib:Entity/Vectors/Move-Collision
+# NAME: Move Entity By Vector
+# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-Collision
 
-# AUTHOR: LeiRoF
-
-# VERSION: 2.0
-# MINECRAFT: 1.12
-
-# CHILD OF: Gunivers-Lib:Entity/Set/MovementV2
+# CHILD OF: Gunivers-Lib:Entity/Vectors/Move
 
 # CODE:
 

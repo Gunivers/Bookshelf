@@ -1,35 +1,31 @@
-# Calcul Vectors Addition
+# NAME: Vector Addition
+# PATH: Gunivers-Lib:Entity/Vectors/Addition
 
-# @Author: Leirof
+# AUTHOR: LeiRoF
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Imports: Vectors & Tmp8
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
 
-# Input values:
-# - VectorX (score dummy)
-# - Vectory (score dummy)
-# - Vectorz (score dummy)
-# - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
-# - Tmp3 (score dummy)
-# - Tmp4 (score dummy)
-# - Tmp5 (score dummy)
+# INPUT:
+# - VectorX (score dummy)  \
+# - Vectory (score dummy)   | Initial vectors
+# - Vectorz (score dummy)  /
+# - Tmp1 (score dummy)     \
+# - Tmp2 (score dummy)      | Additionnal Vectors
+# - Tmp3 (score dummy)     /
+# - Tmp4 (score dummy)     <- Intial vectors coefficient
+# - Tmp5 (score dummy)     <- Additionnal vectors coefficient
 
-# Output values:
+# OUTPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 
-
-# Note:
-#
-# Tmp1 = second VectorX
-# Tmp2 = second VectorY
-# Tmp3 = second VectorZ
-# Tmp4 = coefficient first Vector
-# Tmp4 = coefficient second Vector
+# CODE:
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"   -=[ Debug Vector Addition ]=-","color":"green"}]
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]

@@ -1,25 +1,28 @@
-# Calcul Vectors Normalizer
+# NAME: Normalize Vectors
+# PATH: Gunivers-Lib:Entity/Vectors/Normalize
 
-# @Author: Leirof
+# AUTHOR: LeiRoF
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Import: Vectors
+# REQUIREMENT:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Constant (Import file)
 
-# Input values:
+# INPUT:
 # - VectorX (score dummy)
 # - Vectory (score dummy)
 # - Vectorz (score dummy)
+# - Tmp1 (score dummy)    <- Vectors will be normalized between [ -Tmp1 ; Tmp1 ]
 
-# Output values:
+# OUTPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 
-
-# Note: Cette fonction permet de redefinir des vecteurs de mouvement correctes à partir de 3 vecteurs basiques (coordonnées relatvies par exemple)
-
+# CODE:
 scoreboard players operation @s Tmp3 = @s VectorX
 scoreboard players operation @s[score_VectorX=-1] Tmp3 *= Neg Constant 
 scoreboard players operation @s Tmp2 = @s Tmp3

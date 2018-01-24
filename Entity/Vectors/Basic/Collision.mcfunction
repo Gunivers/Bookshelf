@@ -1,20 +1,26 @@
-# SetVectors
+# NAME: Move Entity By Vector
+# PATH: Gunivers-Lib:Entity/Vectors/Basic/Collision
 
-# @Author: Leirof
+# AUTHOR: LeiRoF
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 2.0
+# MINECRAFT: 1.12
 
-# Import: Vectors, Tmp3, Constant
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Constant (Import file)
 
-# Input values:
+# INPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
-# - Collision (score dummy)
+# - VectorSpeed (score dummy)
+# - Collision (score dummy)  <- Type of collision
 
-# Ouput values:
-# - None
+# OUTPUT:
+
+# CODE:
 
 scoreboard players operation @s Tmp1 = @s VectorX
 scoreboard players operation @s Tmp2 = @s VectorY

@@ -1,25 +1,25 @@
-# Move Orientation
+# NAME: Rotate
+# PATH: Gunivers-Lib:Entity/Vectors/Rotate
 
-# @Author: KubbyDev
+# AUTHOR:KubbyDev
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
-# - Tmp1 (score dummy)
-# - Tmp2 (score dummy)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/OrienationVec (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+
+# INPUT:
 # - VectorPhi (score dummy)
 # - VectorTheta (score dummy)
 
-#Input values:
-# - VectorPhi (score dummy)
-# - VectorTheta (score dummy)
+# OUTPUT:
 
-#Output values: None
-
-# Note
+# NOTE:
 # The VectorPhi value must be in range -511 to 511 and the VectorTheta must be in range -255 to 255
 
+# CODE:
 
 #Initialization
 

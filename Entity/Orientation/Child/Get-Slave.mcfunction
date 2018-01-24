@@ -1,22 +1,9 @@
-# GetOrientation
+# NAME: Get Orientation Slave
+# PATH: Gunivers-Lib:Entity/Orientation/Child/Get-Slave
 
-# @Author: Leirof
+#CHILD OF: Gunivers-Lib:Entity/Orientation/Get
 
-#Version: 1.0
-# Minecraft Version: 1.12
-
-# Requirement:
-# - Phi (score dummy)
-# - Theta (score dummy)
-
-#Input values: None
-
-#Output values:
-# - Phi (score dummy)
-# - Theta (score dummy)
-
-
-
+# CODE:
 #Initialization
 
 scoreboard players set @s Phi 0

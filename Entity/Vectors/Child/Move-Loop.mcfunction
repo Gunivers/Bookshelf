@@ -1,15 +1,9 @@
-# NAME: Mise en movement d'une entité
-# PATH: Gunivers-Lib:Entity/Vectors/Move-Loop
+# NAME: Move Entity By Vector
+# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-Loop
 
-# AUTHOR: LeiRoF
-
-# VERSION: 2.0
-# MINECRAFT: 1.12
-
-# CHILD OF: Gunivers-Lib:Entity/Set/MovementV2
+# CHILD OF: Gunivers-Lib:Entity/Vectors/Move
 
 # CODE:
-
 scoreboard players tag @s remove FactorIncrease
 
 scoreboard players tag @s[score_Tmp1_min=1001] add FactorIncrease
@@ -39,5 +33,5 @@ scoreboard players tag @s[score_Tmp1=-1001] add MoveLoop
 scoreboard players tag @s[score_Tmp2=-1001] add MoveLoop
 scoreboard players tag @s[score_Tmp3=-1001] add MoveLoop
 
-execute @s[tag=MoveLoop] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Move-Loop
+execute @s[tag=MoveLoop] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Child/Move-Loop
 

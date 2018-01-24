@@ -1,35 +1,34 @@
-# Get Vector by Target
+# NAME: Calcul Vectors By Target
+# PATH: Gunivers-Lib:Entity/Vectors/GetByTargetID
 
-# @Author: KubbyDev
+# AUTHOR: KubbyDev
 
-# Version: 1.0
-# Minecraft Version: 1.12
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-# Requirement:
-# - Gunivers-Lib:Entity/Vectors/Normalize (mcfunction)
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
-# - ID (score dummy)
-# - TargetId (score dummy)
+# REQUIREMENT:
+# - Gunivers-Lib:Utils/Import/Location (Import file)
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/ID (Import file)
 
-# Input values:
-# - LocX (score dummy) (On the source and on the target)
-# - LocY (score dummy) (On the source and on the target)
-# - LocZ (score dummy) (On the source and on the target)
-# - ID (On the Target)
-# - TargetID (On the source)
+# INPUT:
+# - LocX (score dummy)     \
+# - LocY (score dummy)      | Must be defined on both entities
+# - LocZ (score dummy)     /
+# - ID (score dummy)       <- Must be defined on the Target
+# - TargetID (score dummy) <- Must be defined on the Source
 
-# Output values:
+# OUTPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 
-#Note: 
-# If there is no entity with a ID equal to the source entity's TargetID, the given vector will be wrong ! (from the source to 0 0 0)
-# If two entities have the same ID, the vector will not be calculated !
+# NOTE:
+# - If there is no entity with a ID equal to the source entity's TargetID, the given vector will be wrong ! (from the source to 0 0 0)
+# - If two entities have the same ID, the vector will not be calculated !
 
-#Calculates a vector to the entity with the ID stored on the source entity's TargetID
+#CODE:
+# - Calculates a vector to the entity with the ID stored on the source entity's TargetID
 scoreboard players tag @s add Self
 scoreboard players operation @e[tag=!Self] ID -= @s TargetID
 
