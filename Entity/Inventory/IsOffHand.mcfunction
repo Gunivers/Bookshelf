@@ -5,13 +5,13 @@
 #Minecraft Version: 1.12
 
 #Requirement:
-# - isOffHand (dummy)
+# -
 
 #Input values:
 # - None
 
 #Output values:
-# - score (IsOffHand)
+# - Tag (IsOffHand)
 
 
 
