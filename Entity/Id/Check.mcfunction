@@ -1,4 +1,4 @@
-# NAME: Check
+# NAME: Check ID
 # PATH: Gunivers-Lib: Entity/Id/Check
 
 # AUTHOR: LeiRoF
@@ -6,9 +6,9 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - ID (score)
-# - TargetID (score)
+# REQUIREMENTS:
+# - ID (score dummy)
+# - TargetID (score dummy)
 
 # INPUT:
 # - TargetID

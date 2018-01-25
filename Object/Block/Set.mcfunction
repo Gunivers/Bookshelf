@@ -6,9 +6,8 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - Tmp1
-# - Tmp2
+# REQUIREMENTS:
+# Gunivers-Lib:Utils/Import/Temporary (Import file)
 
 # INPUT:
 # - Tmp1   <- Block ID

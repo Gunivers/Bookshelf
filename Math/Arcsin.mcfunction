@@ -6,25 +6,23 @@
 # VERSION: 0.1 
 # MINECRAFT: 1.12.1 
  
-# REQUIEREMENTS: 
-# - Tmp (score dummy) 
-# - Tmp2 (score dummy)  
-# - Res (score dummy) 
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
  
 # INPUT: 
-# - Tmp (score dummy)
+# - Tmp1 (score dummy)
  
 # OUTPUT: 
 # - Res (score dummy) 
  
 # NOTE:  
 # - This function returns asin(x) in degrees, but x must be in interval [-1000;1000] instead of [-1;1]
- 
-# CONFIGURATION: <none> 
+
  
 # CODE: 
 
-scoreboard players operation @s Tmp2 = @s Tmp
+scoreboard players operation @s Tmp2 = @s Tmp1
 scoreboard players operation @s[score_Tmp2=-1] Tmp2 *= -1 Constant
 
 scoreboard players set @s[score_Tmp2_min=0,score_Tmp2=8] Res 0
@@ -118,9 +116,9 @@ scoreboard players set @s[score_Tmp2_min=999,score_Tmp2=999] Res 88
 scoreboard players set @s[score_Tmp2_min=999,score_Tmp2=999] Res 89
 scoreboard players set @s[score_Tmp2_min=999,score_Tmp2=1000] Res 90
 
-scoreboard players set @s[score_Tmp=-1] Tmp2 180
-scoreboard players operation @s[score_Tmp=-1] Tmp2 -= @s Res
-scoreboard players operation @s[score_Tmp=-1] Res = @s Tmp2
+scoreboard players set @s[score_Tmp1=-1] Tmp2 180
+scoreboard players operation @s[score_Tmp1=-1] Tmp2 -= @s Res
+scoreboard players operation @s[score_Tmp1=-1] Res = @s Tmp2
 
 
 

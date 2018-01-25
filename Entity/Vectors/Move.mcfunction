@@ -1,4 +1,4 @@
-# NAME: Mise en movement d'une entité
+# NAME: Move Entity By Vector
 # PATH: Gunivers-Lib:Entity/Vectors/Move
 
 # AUTHOR: LeiRoF
@@ -6,8 +6,10 @@
 # VERSION: 2.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - Gunivers-Lib:Import/Vectors (MCfunction)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Constant (Import file)
 
 # INPUT:
 # - VectorX (score dummy)
@@ -16,10 +18,8 @@
 # - VectorSpeed (score dummy)
 
 # OUTPUT:
-# - None
 
 # CODE:
-
 scoreboard players operation @s VectorX *= @s VectorSpeed
 scoreboard players operation @s VectorY *= @s VectorSpeed
 scoreboard players operation @s VectorZ *= @s VectorSpeed
@@ -53,13 +53,13 @@ scoreboard players add @s[tag=FactorIncrease] Tmp4 1
 # tellraw @a[tag=DebugMovement] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Tmp4"}}]
 # tellraw @a[tag=DebugMovement] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Tmp1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Tmp2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Tmp3"}}]
 
-function Gunivers-Lib:Entity/Vectors/Move-Loop
+function Gunivers-Lib:Entity/Vectors/Child/Move-Loop
 
 scoreboard players operation @s[score_Tmp4_min=1] Tmp7 = @s Tmp1
 scoreboard players operation @s[score_Tmp4_min=1] Tmp8 = @s Tmp2
 scoreboard players operation @s[score_Tmp4_min=1] Tmp9 = @s Tmp3
 
 # tellraw @a[tag=DebugMovement] ["",{"text":"\n>>> Loop 2 <<<","color":"green"}]
-function Gunivers-Lib:Entity/Vectors/Move-Loop2
+function Gunivers-Lib:Entity/Vectors/Child/Move-Loop2
 
 

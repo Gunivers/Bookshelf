@@ -6,11 +6,10 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-# - Tmp1 (score dummy)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file)
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
 
 # INPUT:
 # - VectorX (score dummy)
@@ -18,14 +17,21 @@
 # - VectorZ (score dummy)
 
 # OUTPUT:
-# - Res
-
-# NOTE:
-# - 
+# - Res (score dummy)
 
 # CODE:
+scoreboard players operation @s Tmp1 = @s VectorX
+scoreboard players operation @s Tmp1 *= @s VectorX
+scoreboard players operation @s Res = @s Tmp1
 
-function Gunivers-Lib:Entity/Vectors/GetLenghtSquared
+scoreboard players operation @s Tmp1 = @s VectorY
+scoreboard players operation @s Tmp1 *= @s VectorY
+scoreboard players operation @s Res += @s Tmp1
+
+scoreboard players operation @s Tmp1 = @s VectorZ
+scoreboard players operation @s Tmp1 *= @s VectorZ
+scoreboard players operation @s Res += @s Tmp1
+
 scoreboard players operation @s Tmp1 = @s Res
 
 function Gunivers-Lib:Math/sqrt

@@ -6,10 +6,9 @@
 # VERSION: 0.1 
 # MINECRAFT: 1.12.1 
  
-# REQUIEREMENTS: 
-# - Tmp1 (score dummy) 
-# - Tmp2 (score dummy)  
-# - Res (score dummy) 
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
  
 # INPUT: 
 # - Tmp1 (score dummy)
@@ -20,7 +19,6 @@
 # NOTE:  
 # - This function returns acos(x) in degrees, but x must be in interval [-1000;1000] instead of [-1;1]
  
-# CONFIGURATION: <none> 
  
 # CODE: 
 

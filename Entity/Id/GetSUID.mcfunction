@@ -6,14 +6,13 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - ID (score)
+# REQUIREMENTS:
+# - ID (score dummy)
 
 # INPUT:
-# - 
 
 # OUTPUT:
-# - ID
+# - ID (score dummy)
 
 # NOTE:
 # - If you use another system to give an ID to an entity, this system can give non unique IDs !

@@ -1,21 +1,20 @@
-#ActiveSlot
-#@Author: theogiraudet
+# NAME: Off Hand
+# PATH: Gunivers-Lib:Entity/Inventory/IsOffHand
 
-#Version: 1.0
-#Minecraft Version: 1.12
+# AUTHOR: Theogiraudet
 
-#Requirement:
-# - getActiveSlot (dummy)
+# VERSION: 1.0
+# MINECRAFT: 1.12
 
-#Input values:
-# - None
+# REQUIREMENTS:
+#- ActiveSlot (score dummy)
 
-#Output values:
-# - score (getActiveSlot)
+# INPUT:
 
+# OUTPUT:
+# - ActiveSlot (score dummy)
 
-
-#Code
+# CODE:
 scoreboard players set @s ActiveSlot 0 {SelectedItemSlot:0}
 scoreboard players set @s ActiveSlot 1 {SelectedItemSlot:1}
 scoreboard players set @s ActiveSlot 2 {SelectedItemSlot:2}

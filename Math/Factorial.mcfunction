@@ -6,10 +6,9 @@
 # VERSION: 0.1 
 # MINECRAFT: 1.12.1 
  
-# REQUIEREMENTS: 
-# - Tmp1 (score dummy) 
-# - Tmp2 (score dummy)  
-# - Res (score dummy) 
+# REQUIREMENTS: 
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file) 
  
 # INPUT: 
 # - Tmp1 (score dummy)
@@ -26,4 +25,4 @@
 # CODE: 
 scoreboard players operation @s Tmp2 = @s Tmp1
 scoreboard players set @s Res 1
-function Gunivers-Lib:Math/Factorial-Loop
+function Gunivers-Lib:Math/Child/Factorial-Loop

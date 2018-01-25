@@ -6,11 +6,9 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-# - TargetID (score dummy)
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/ID (Import file)
 
 # INPUT:
 # - VectorX (score dummy)  /!\ must be defined on both entities

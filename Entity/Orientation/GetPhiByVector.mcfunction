@@ -1,39 +1,30 @@
-# NAME: GetOriXFromVec
-# PATH: Gunivers-Lib:Entity/Calcul/GetOriXFromVec
- 
+# NAME: Get Orientation Phi By Vector
+# PATH: Gunivers-Lib:Entity/Orientation/GetPhiByVector
+
 # AUTHOR: KubbyDev
- 
-# VERSION: 0.1 
-# MINECRAFT: 1.12.1 
- 
-# REQUIEREMENTS: 
-# - Tmp1 (score dummy) 
-# - Tmp2 (score dummy) 
-# - Tmp3 (score dummy)
-# - Tmp4 (score dummy) 
-# - Tmp5 (score dummy)
-# - VectorX (score dummy)
-# - VectorZ (score dummy) 
-# - Phi (score dummy) 
-# - Gunivers-Lib:Import/Math (Import)
-# - Gunivers-Lib:Math/Divide (Function)
- 
-# INPUT: 
+
+# VERSION: 1.0
+# MINECRAFT: 1.12
+
+# REQUIREMENTS:
+# - Gunivers-Lib:Utils/Import/Temporary (Import file)
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Orientation (Import file)
+# - Gunivers-Lib:Utils/Import/Math (Import file)
+
+# INPUT:
 # - VectorX (score dummy) 
 # - VectorZ (score dummy) 
- 
-# OUTPUT: 
+
+# OUTPUT:
 # - Phi (score dummy) 
- 
+
 # NOTE:  
 # The vector must be normalized (100 < vector length < 1000) 
 # Thanks to this article for giving the formula used in this function:
 # www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation
-
-# CONFIGURATION: <none> 
  
 # CODE: 
-
 #Tmp1 is positive if the absolute value of VectorX is bigger than the absolute value of VectorZ
 scoreboard players operation @s Tmp1 = @s VectorX
 scoreboard players operation @s[score_Tmp1=-1] Tmp1 *= -1 Constant

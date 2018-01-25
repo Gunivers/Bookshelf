@@ -6,17 +6,17 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIEREMENTS:
-# - ID (score)
+# REQUIREMENTS:
+# - ID (score dummy)
 
 # INPUT:
-# - 
 
 # OUTPUT:
-# - CUID
+# ID (score dummy)
 
 # CODE:
 
 #Gives a unique identifier to the source entity
+scoreboard players add CUID ID 0
 scoreboard players operation @s ID = CUID ID
 scoreboard players add CUID ID 1
