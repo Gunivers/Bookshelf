@@ -1,18 +1,20 @@
-# NAME: Off Hand
-# PATH: Gunivers-Lib:Entity/Inventory/IsOffHand
+#IsOffHand
+#@Author: theogiraudet
 
-# AUTHOR: Theogiraudet
+#Version: 1.0
+#Minecraft Version: 1.12
 
-# VERSION: 1.0
-# MINECRAFT: 1.12
+#Requirement:
+# - None
 
-# REQUIREMENTS:
+#Input values:
+# - None
 
-# INPUT:
+#Output values:
+# - tag (IsOffHand)
 
-# OUTPUT:
-# - IsOffHand (tag)
 
-# CODE:
+
+#Code
 scoreboard players tag @a remove IsOffHand
 scoreboard players tag @a add IsOffHand {Inventory:[{Slot:-106b}]}
