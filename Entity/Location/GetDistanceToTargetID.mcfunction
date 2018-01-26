@@ -36,4 +36,4 @@
 
 function Gunivers-Lib:Entity/Vectors/GetByTargetID
 
-function Gunivers-Lib:Entity/Vectors/GetLenght
+function Gunivers-Lib:Entity/Vectors/GetLength

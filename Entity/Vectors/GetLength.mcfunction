@@ -20,18 +20,7 @@
 # - Res (score dummy)
 
 # CODE:
-scoreboard players operation @s Tmp1 = @s VectorX
-scoreboard players operation @s Tmp1 *= @s VectorX
-scoreboard players operation @s Res = @s Tmp1
 
-scoreboard players operation @s Tmp1 = @s VectorY
-scoreboard players operation @s Tmp1 *= @s VectorY
-scoreboard players operation @s Res += @s Tmp1
-
-scoreboard players operation @s Tmp1 = @s VectorZ
-scoreboard players operation @s Tmp1 *= @s VectorZ
-scoreboard players operation @s Res += @s Tmp1
-
+function Gunivers-Lib:Entity/Vectors/GetLengthSquared
 scoreboard players operation @s Tmp1 = @s Res
-
 function Gunivers-Lib:Math/sqrt

@@ -41,6 +41,4 @@ scoreboard players operation @s VectorX /= 10 Constant
 scoreboard players operation @s VectorY /= 10 Constant
 scoreboard players operation @s VectorZ /= 10 Constant
 
-function Gunivers-Lib:Entity/Vectors/GetLenghtSquared
-scoreboard players operation @s Tmp1 = @s Res
-function Gunivers-Lib:Math/Sqrt
+function Gunivers-Lib:Entity/Vectors/GetLength
