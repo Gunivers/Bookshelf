@@ -19,7 +19,7 @@
 
 #Initialization
 
-function Gunivers-Lib:Entity/Orientation/Get-Slave
+function Gunivers-Lib:Entity/Orientation/Child/Get-Slave
 scoreboard players operation @s Phi *= 1000 Constant
 scoreboard players operation @s Theta *= 1000 Constant
 

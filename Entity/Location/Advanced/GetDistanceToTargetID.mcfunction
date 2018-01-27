@@ -29,7 +29,7 @@
 # - Res
 
 # NOTE:
-# - The Input must have 3 decimals (Calculated by the Advanced Location Get function)
+# - The Input must have 3 decimals (Calculated by the Advanced Location Get function OR multiplied by 1000) /!\ THE ADVANCED LOCATION GET FUNCTION DOES'T EXIST FOR THE MOMENT /!\
 # - Returns the distance between two entities with 2 decimals
 # - The distance must be less than 400 blocks
 

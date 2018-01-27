@@ -37,7 +37,7 @@ function Gunivers-Lib:System/Aimbot/UpdateTargetLoc
 
 #Calculates the vector from the source to the target
 function Gunivers-Lib:Entity/Vectors/GetByTargetID
-function Gunivers-Lib:EntityAccurate/Vectors/Normalize
+function Gunivers-Lib:Entity/Vectors/Advanced/Normalize
 
 #Calculates the orientation corresponding to this vector
 function Gunivers-Lib:Entity/Orientation/GetPhiByVector
