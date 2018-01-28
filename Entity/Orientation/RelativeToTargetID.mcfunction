@@ -21,7 +21,7 @@
 
 # CODE:
 
-function Gunivers-Lib/Entity/Id/Check
+function Gunivers-Lib:Entity/Id/Check
 
 scoreboard players operation @s Phi -= @e[c=1,tag=IdMatch] Phi
 scoreboard players operation @s Theta -= @e[c=1,tag=IdMatch] Theta

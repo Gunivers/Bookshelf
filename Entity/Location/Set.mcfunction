@@ -12,9 +12,9 @@
 # - Tmp3 (score dummy)
 
 # INPUT:
-# - Tmp1 (score dummy) <- Location X
-# - Tmp2 (score dummy) <- Location Y
-# - Tmp3 (score dummy) <- Location 2
+# - LocX (score dummy)
+# - LocY (score dummy)
+# - LocZ (score dummy)
 
 # OUTPUT:
 

@@ -25,7 +25,7 @@
 
 # CODE:
 
-function Gunivers-Lib/Entity/Id/Check
+function Gunivers-Lib:Entity/Id/Check
 
 scoreboard players operation @s LocX -= @e[c=1,tag=IdMatch] LocX
 scoreboard players operation @s LocY -= @e[c=1,tag=IdMatch] LocY

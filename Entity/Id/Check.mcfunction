@@ -29,4 +29,5 @@ scoreboard players tag @e[score_ID_min=1] add IdUpper
 scoreboard players tag @e[score_ID=-1] add IdLower
 scoreboard players tag @s add IdChecker
 scoreboard players operation @e ID += @s TargetID
- 
+
+#execute @e[score_ID_min=1] ~ ~ ~ tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ID"},"color":"none"},{"text":" TargetID: ","color":"none"},{"score":{"name":"@s","objective":"TargetID"},"color":"none"}]
