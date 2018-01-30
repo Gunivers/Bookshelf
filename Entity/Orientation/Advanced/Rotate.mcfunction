@@ -1,6 +1,6 @@
-# Move Orientation Advanced
+# Rotate Orientation Advanced
 
-# @Author: KubbyDev
+# Author: KubbyDev
 
 # Version: 1.0
 # Minecraft Version: 1.12

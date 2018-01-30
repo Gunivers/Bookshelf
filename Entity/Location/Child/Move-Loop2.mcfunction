@@ -1,5 +1,5 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-Loop2
+# PATH: Gunivers-Lib:Entity/Location/Child/Move-Loop2
 
 # CHILD OF: Gunivers-Lib:Entity/Vector/Move
 
@@ -16,12 +16,12 @@ scoreboard players operation @s[score_Tmp4_min=1] Tmp3 = @s Tmp9
 # execute @s[tag=Debug] ~ ~ ~ summon Falling_Block ~ ~-1 ~ {Block:"minecraft:stone_button",Time:1,NoGravity:1,Tags:["Debug"]}
 # END DEBUG
 
-execute @s[score_Collision_min=1,score_Collision=99] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Child/Move-Collision
-execute @s[score_Collision_min=100,score_Collision=199] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Child/Move-CollisionS
-function Gunivers-Lib:Entity/Vectors/Child/Move-Child
+execute @s[score_Collision_min=1,score_Collision=99] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Move-Collision
+execute @s[score_Collision_min=100,score_Collision=199] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Move-CollisionS
+function Gunivers-Lib:Entity/Location/Child/Move-Child
 
 scoreboard players remove @s Tmp4 1
 
 scoreboard players tag @s remove Move-Loop2
 scoreboard players tag @s[score_Tmp4_min=1] add Move-Loop2
-execute @s[tag=Move-Loop2] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Child/Move-Loop2
+execute @s[tag=Move-Loop2] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Move-Loop2

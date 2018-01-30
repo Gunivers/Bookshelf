@@ -23,7 +23,7 @@
 
 # CODE:
 
-execute @e[tag=Raycast] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Move
+execute @e[tag=Raycast] ~ ~ ~ function Gunivers-Lib:Entity/Location/Move
 
 execute @e[tag=Collision] ~ ~ ~ execute @s[tag=Raycast] ~ ~ ~ function Gunivers-Lib:Entity/Location/Get
 execute @e[tag=Collision] ~ ~ ~ execute @s[tag=Raycast] ~ ~ ~ tellraw @a {"text":"X: ","extra":[{"score":{"objective":"LocX","name":"@s"}},{"text":" | Y: "},{"score":{"objective":"LocY","name":"@s"}},{"text":" | Z: "},{"score":{"objective":"LocZ","name":"@s"}}]}

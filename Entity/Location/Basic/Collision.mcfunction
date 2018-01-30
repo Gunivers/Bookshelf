@@ -1,5 +1,5 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Basic/Collision
+# PATH: Gunivers-Lib:Entity/Location/Basic/Collision
 
 # AUTHOR: LeiRoF
 

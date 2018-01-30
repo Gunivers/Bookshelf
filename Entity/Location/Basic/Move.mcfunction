@@ -1,5 +1,5 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Basic/Move
+# PATH: Gunivers-Lib:Entity/Location/Basic/Move
 
 # AUTHOR: LeiRoF
 

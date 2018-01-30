@@ -1,7 +1,7 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-Child
+# PATH: Gunivers-Lib:Entity/Location/Child/Move-Child
 
-# CHILD OF: Gunivers-Lib:Entity/Vectors/Move
+# CHILD OF: Gunivers-Lib:Entity/Location/Move
 
 # CODE:
 

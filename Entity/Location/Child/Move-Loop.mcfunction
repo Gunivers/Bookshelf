@@ -1,7 +1,7 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-Loop
+# PATH: Gunivers-Lib:Entity/Location/Child/Move-Loop
 
-# CHILD OF: Gunivers-Lib:Entity/Vectors/Move
+# CHILD OF: Gunivers-Lib:Entity/Location/Move
 
 # CODE:
 scoreboard players tag @s remove FactorIncrease
@@ -33,5 +33,5 @@ scoreboard players tag @s[score_Tmp1=-1001] add MoveLoop
 scoreboard players tag @s[score_Tmp2=-1001] add MoveLoop
 scoreboard players tag @s[score_Tmp3=-1001] add MoveLoop
 
-execute @s[tag=MoveLoop] ~ ~ ~ function Gunivers-Lib:Entity/Vectors/Child/Move-Loop
+execute @s[tag=MoveLoop] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Move-Loop
 

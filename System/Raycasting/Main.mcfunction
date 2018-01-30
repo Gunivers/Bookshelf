@@ -23,7 +23,7 @@
 
 # CODE:
 
-#Summons an invisible amror stand and get the player's orientation
+#Summons an invisible armor stand and get the player's orientation
 summon armor_stand ~ ~ ~ {Tags:["Raycast","RaycastInit"],NoGravity:1,Marker:1,Invisible:1}
 tp @e[tag=RaycastInit] @s
 execute @e[tag=RaycastInit] ~ ~ ~ function Gunivers-Lib:Entity/Orientation/Advanced/Get-Slave

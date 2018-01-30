@@ -1,7 +1,7 @@
 # NAME: Move Entity By Vector
-# PATH: Gunivers-Lib:Entity/Vectors/Child/Move-CollisionS
+# PATH: Gunivers-Lib:Entity/Location/Child/Move-CollisionS
 
-# CHILD OF: Gunivers-Lib:Entity/Vectors/Move
+# CHILD OF: Gunivers-Lib:Entity/Location/Move
 
 # CODE:
 
