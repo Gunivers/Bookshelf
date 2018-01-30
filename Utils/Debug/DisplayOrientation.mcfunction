@@ -1,5 +1,5 @@
-# NAME: Display Vector
-# PATH: Gunivers-Lib:Utils/Debug/DisplayVector
+# NAME: Display Orientation
+# PATH: Gunivers-Lib:Utils/Debug/DisplayOrientation
 
 # AUTHOR: KubbyDev
 
@@ -7,14 +7,12 @@
 # MINECRAFT: 1.12
 
 # REQUIREMENTS:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# - Phi (score dummy)
+# - Theta (score dummy)
 
 # INPUT:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
+# - Phi (score dummy)
+# - Theta (score dummy
 
 # OUTPUT:
 

@@ -7,9 +7,9 @@
 # MINECRAFT: 1.12
 
 # REQUIREMENTS:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# - VectorX (score dummy)
+# - VectorY (score dummy)
+# - VectorZ (score dummy)
 
 # INPUT:
 # - VectorX (score dummy)
