@@ -26,7 +26,7 @@
 # - The Phi input must be in interval [0;360] and the Theta input must be in interval [0;180]
 
 # CONFIGURATION:
-# - Defaut VectorSpeed
+# - Default VectorSpeed
 scoreboard players set @s VectorSpeed 1000
 
 # CODE 

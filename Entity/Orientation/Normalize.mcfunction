@@ -1,4 +1,4 @@
-# NAME: Normaize Orientation
+# NAME: Normalize Orientation
 # PATH: Gunivers-Lib:Entity/Orientation/Normalize
 
 # AUTHOR: LeiRoF
@@ -23,3 +23,4 @@ scoreboard players operation @s Phi %= 360 Constant
 scoreboard players operation @s Theta %= 180 Constant
 
 scoreboard players add @s[score_Phi=-1] Phi 360
+scoreboard players add @s[score_Theta=-1] Theta 180
