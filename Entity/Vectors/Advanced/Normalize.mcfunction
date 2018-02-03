@@ -11,14 +11,16 @@
 # - VectorX (score dummy)
 # - Vectory (score dummy)
 # - Vectorz (score dummy)
+# - Tmp9 (score dummy)    <- The new vector length will be Tmp9
 
 # Output values:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 
+# Note:
 
-# Note: Cette fonction permet de redefinir des vecteurs de mouvement correctes à partir de 3 vecteurs basiques (coordonnées relatvies par exemple)
+# CODE:
 
 scoreboard players operation @s Tmp2 = @s VectorX
 scoreboard players operation @s Tmp2 *= @s Tmp2
@@ -32,11 +34,11 @@ scoreboard players operation @s Tmp2 = @s VectorZ
 scoreboard players operation @s Tmp2 *= @s Tmp2
 scoreboard players operation @s Tmp1 += @s Tmp2
 
-function Gunivers-Lib:Math/sqrt
+function Gunivers-Lib:Math/Sqrt
 
-scoreboard players operation @s VectorX *= 1000 Constant
-scoreboard players operation @s VectorY *= 1000 Constant
-scoreboard players operation @s VectorZ *= 1000 Constant
+scoreboard players operation @s VectorX *= @s Tmp9
+scoreboard players operation @s VectorY *= @s Tmp9
+scoreboard players operation @s VectorZ *= @s Tmp9
 
 scoreboard players operation @s VectorX /= @s Res
 scoreboard players operation @s VectorY /= @s Res

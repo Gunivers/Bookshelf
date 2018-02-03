@@ -23,4 +23,4 @@
 
 function Gunivers-Lib:Entity/Vectors/GetLengthSquared
 scoreboard players operation @s Tmp1 = @s Res
-function Gunivers-Lib:Math/sqrt
+function Gunivers-Lib:Math/Sqrt

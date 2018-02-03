@@ -62,7 +62,7 @@ scoreboard players operation @s Tmp1 *= -1 Constant
 scoreboard players operation @s Tmp1 *= 100000 Constant
 scoreboard players add @s Tmp1 100000000
 
-function Gunivers-Lib:Math/sqrt
+function Gunivers-Lib:Math/Sqrt
 
 scoreboard players operation @s Res *= @s Tmp6
 
