@@ -19,6 +19,10 @@
 
 # OUTPUT:
 
+# NOTE:
+# VectorSpeed is the scale of the movement (FROM 1 = 0.01 blocks/tick TO 400 = 4 blocks/tick) 
+# /!\ The input vector length must be around 1000 or the movement speed will be imprecise /!\ 
+
 # CODE:
 
 scoreboard players operation @s Tmp1 = @s VectorX
