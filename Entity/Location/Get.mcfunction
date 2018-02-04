@@ -7,25 +7,19 @@
 # MINECRAFT: 1.12
 
 # REQUIREMENTS:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# - Gunivers-Lib:utils/import/basic
 
 # INPUT:
 
 # OUTPUT:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# - Output1   <- Location X
+# - Output2   <- Location Y
+# - Output3   <- Location Z
 
 # NOTE:
+It was excessively more impressive in 1.12 ...
 
 # CODE:
-execute @s ~ ~ ~ summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["GetLocation"]}
-
-execute @s ~ ~ ~ execute @e[type=armor_stand,tag=GetLocation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Get-Slave
-
-scoreboard players operation @s LocX = @e[x=0,y=0,z=0,type=armor_stand,tag=GetLocation,c=1] LocX
-scoreboard players operation @s LocY = @e[x=0,y=0,z=0,type=armor_stand,tag=GetLocation,c=1] LocY
-scoreboard players operation @s LocZ = @e[x=0,y=0,z=0,type=armor_stand,tag=GetLocation,c=1] LocZ
-kill @e[x=0,y=0,z=0,type=armor_stand,tag=GetLocation,c=1]
+execute store result score @s Output1 run data get entity @s Pos[0] 1
+execute store result score @s Output2 run data get entity @s Pos[1] 1
+execute store result score @s Output3 run data get entity @s Pos[1] 1

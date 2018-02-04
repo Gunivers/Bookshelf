@@ -1,3 +1,0 @@
-Execute this function in a loop to toggle the Edit Mode.
-
-This function allow you to use other functions with chat interface
