@@ -17,7 +17,7 @@
 # - Output3   <- Location Z
 
 # NOTE:
-It was excessively more impressive in 1.12 ...
+#It was excessively more impressive in 1.12 ...
 
 # CODE:
 execute store result score @s Output1 run data get entity @s Pos[0] 1
