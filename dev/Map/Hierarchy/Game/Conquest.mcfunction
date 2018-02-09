@@ -1,0 +1,63 @@
+function gunivers-lib:dev/map/hierarchy/game/noctf
+function gunivers-lib:dev/map/hierarchy/game/nodeathmatch
+
+scoreboard players set Mode:Conquest Info -3
+execute @e[type=Villager,tag=BlueTower] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~5 ~ air 0 clone -25 64 28 -23 68 30 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=OrangeTower] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~5 ~ air 0 clone -28 64 28 -26 68 30 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=OrangeInib] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~5 ~ air 0 clone -31 64 28 -29 68 30 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=BlueInib] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~5 ~ air -1 clone -22 64 28 -20 68 30 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=BlueTower,score_HaveObjective_min=-999] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 4 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 setblock ~ ~5 ~ air 0
+execute @e[type=Villager,tag=OrangeTower,score_HaveObjective_min=-999] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 4 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 setblock ~ ~5 ~ air 0
+execute @e[type=Villager,tag=OrangeInib,score_HaveObjective_min=-999] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 4 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 setblock ~ ~5 ~ air 0
+execute @e[type=Villager,tag=BlueInib,score_HaveObjective_min=-999] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 4 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 setblock ~ ~5 ~ air 0
+scoreboard players add @e[type=Villager,tag=Conquest] HaveObjective 0
+execute @e[type=Villager,tag=OrangeTower,score_HaveObjective=-1000] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 0 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 clone -28 64 25 -26 68 27 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=OrangeInib,score_HaveObjective=-1000] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 0 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 clone -31 64 25 -29 68 27 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=BlueInib,score_HaveObjective=-1000] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 0 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 clone -22 64 25 -20 68 27 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=BlueTower,score_HaveObjective=-1000] ~ ~ ~ detect ~ ~5 ~ purpur_pillar 0 execute @e[type=Villager,c=1,r=1] ~ ~ ~ detect ~ ~ ~ stone_pressure_plate 1 clone -25 64 25 -23 68 27 ~-1 ~5 ~-1
+execute @e[type=Villager,tag=Conquest,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ particle hugeexplosion ~ ~ ~ 0 1 0 0 3 force
+execute @e[type=Villager,tag=Conquest,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ playsound entity.generic.explode record @a ~ ~ ~ 2 1 1
+scoreboard players set @e[type=Villager,tag=Conquest,score_HaveObjective_min=-1007,score_HaveObjective=-1000] HaveObjective -1010
+execute @a[tag=IsPlaying,team=Blue] ~ ~-5 ~ scoreboard players remove @e[type=Villager,tag=OrangeConquest,r=7,score_HaveObjective_min=-1009] HaveObjective 1
+execute @a[tag=IsPlaying,team=Orange] ~ ~-5 ~ scoreboard players remove @e[type=Villager,tag=BlueConquest,r=7,score_HaveObjective_min=-1009] HaveObjective 1
+execute @a[tag=IsPlaying,team=Blue] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,r=7] ~ ~5 ~ execute @a[tag=IsPlaying,team=Orange,r=7,m=2] ~ ~-5 ~ scoreboard players add @e[type=Villager,tag=BlueConquest,r=7] HaveObjective 1
+execute @r[tag=IsPlaying,team=Orange] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,r=7] ~ ~5 ~ execute @a[tag=IsPlaying,team=Blue,r=7,m=2] ~ ~-5 ~ scoreboard players add @e[type=Villager,tag=OrangeConquest,r=7] HaveObjective 1
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=0,score_HaveObjective_min=-999] ~ ~5 ~ scoreboard players operation @a[r=7] HaveObjective = @e[tag=Conquest,type=Villager,c=1] HaveObjective
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=0,score_HaveObjective_min=-999] ~ ~5 ~ scoreboard players operation @a[r=7] HaveObjective += 1000 Constant
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=0,score_HaveObjective_min=-999] ~ ~5 ~ scoreboard players operation @a[r=7] HaveObjective = 10 Constant
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=-1,score_HaveObjective_min=-999] ~ ~5 ~ scoreboard players add @a[r=7] HaveObjective 1
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=0,score_HaveObjective_min=-999] ~ ~5 ~ execute @a[r=7] ~ ~ ~ title @p title ["",{"text":""}]
+execute @e[tag=Conquest,type=Villager,score_HaveObjective=0,score_HaveObjective_min=-999] ~ ~5 ~ execute @a[r=7] ~ ~ ~ title @p subtitle ["",{"text":"Tower life: ","color":"green"},{"score":{"name":"@p","objective":"HaveObjective"},"color":"red"},{"text":"%","color":"red"}]
+execute @e[type=Villager,tag=BlueLeftTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=BlueLeftInib] HaveObjective 0
+execute @e[type=Villager,tag=BlueMiddleTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=BlueMiddleInib] HaveObjective 0
+execute @e[type=Villager,tag=BlueRightTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=BlueRightInib] HaveObjective 0
+execute @e[type=Villager,tag=OrangeLeftTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=OrangeLeftInib] HaveObjective 0
+execute @e[type=Villager,tag=OrangeMiddleTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=OrangeMiddleInib] HaveObjective 0
+execute @e[type=Villager,tag=OrangeRightTower,score_HaveObjective_min=-999] ~ ~ ~ scoreboard players set @e[type=Villager,tag=OrangeRightInib] HaveObjective 0
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=1,score_Timer=1,r=7] ~ ~5 ~ scoreboard players set @e[c=1,r=7,team=Blue,tag=IsPlaying] EffDamage 1001
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~10 ~ particle enchantmenttable ~ ~ ~ 0 0 0 1 200 force
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Blue,tag=IsPlaying] ~ ~ ~ particle smoke ~ ~1 ~ 0.5 1 0.5 0 100 force
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ particle smoke ~ ~5 ~ 0.5 0.5 0.5 0 100 force
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ playsound minecraft:entity.firework.twinkle record @a[r=30] ~ ~ ~ 2 1 0
+execute @e[team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ playsound entity.guardian.attack record @a[r=30] ~ ~ ~ 2 1 0
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=1,score_Timer=1,r=7] ~ ~5 ~ scoreboard players set @e[c=1,r=7,team=Orange,tag=IsPlaying] EffDamage 1001
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~10 ~ particle enchantmenttable ~ ~ ~ 0 0 0 1 200 force
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Orange,tag=IsPlaying] ~ ~ ~ particle smoke ~ ~1 ~ 0.5 1 0.5 0 100 force
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ particle smoke ~ ~5 ~ 0.5 0.5 0.5 0 100 force
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ playsound minecraft:entity.firework.twinkle record @a[r=30] ~ ~ ~ 2 1 0
+execute @e[team=Blue,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ execute @e[c=1,r=7,team=Orange,tag=IsPlaying] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-999,score_Timer_min=3,score_Timer=3,r=7] ~ ~5 ~ playsound entity.guardian.attack record @a[r=30] ~ ~ ~ 2 1 0
+execute @e[type=Villager,name=Blue,score_Timer_min=1,score_Timer=1] ~ ~ ~ scoreboard players add @e[type=Villager,tag=OrangeInib,score_HaveObjective_min=-999,score_HaveObjective=-10] HaveObjective 5
+execute @e[type=Villager,name=Blue,score_Timer_min=1,score_Timer=1] ~ ~ ~ scoreboard players add @e[type=Villager,tag=BlueInib,score_HaveObjective_min=-999,score_HaveObjective=-10] HaveObjective 5
+scoreboard players set @a HaveObjective 0
+execute @e[type=Villager,tag=OrangeTower,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ tellraw @a ["",{"text":"\n>> An orange tower has been destroyed !\n","color":"aqua","bold":true}]
+execute @e[type=Villager,tag=OrangeInib,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ tellraw @a ["",{"text":"\n>> An orange inibitor has been destroyed ! The bulk is no longer protected !\n","color":"aqua","bold":true}]
+execute @e[type=Villager,tag=BlueTower,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ tellraw @a ["",{"text":"\n>> A blue tower has been destroyed !\n","color":"gold","bold":true}]
+execute @e[type=Villager,tag=BlueInib,score_HaveObjective_min=-1007,score_HaveObjective=-1000] ~ ~8 ~ tellraw @a ["",{"text":"\n>> A blue inibitor has been destroyed ! The bulk is no longer protected !\n","color":"gold","bold":true}]
+execute @a[tag=AffectByOrange,m=2,score_Timer_min=1,score_Timer=1] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ particle blockcrack ~ ~2.5 ~ 0.5 0.5 0.5 0 100 force @a 179
+execute @a[tag=AffectByOrange,m=2,score_Timer_min=1,score_Timer=1] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ playsound minecraft:block.stone.break record @a ~ ~ ~ 2 1 1
+execute @a[tag=AffectByOrange,m=2,score_Timer_min=21,score_Timer=21] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ particle blockcrack ~ ~2.5 ~ 0.5 0.5 0.5 0 100 force @a 179
+execute @a[tag=AffectByOrange,m=2,score_Timer_min=21,score_Timer=21] ~ ~-5 ~ execute @e[type=Villager,tag=OrangeConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ playsound minecraft:block.stone.break record @a ~ ~ ~ 2 1 1
+execute @a[tag=AffectByBlue,m=2,score_Timer_min=1,score_Timer=1] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ particle blockcrack ~ ~2.5 ~ 0.5 0.5 0.5 0 100 force @a 22
+execute @a[tag=AffectByBlue,m=2,score_Timer_min=1,score_Timer=1] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ playsound minecraft:block.stone.break record @a ~ ~ ~ 2 1 1
+execute @a[tag=AffectByBlue,m=2,score_Timer_min=21,score_Timer=21] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ particle blockcrack ~ ~2.5 ~ 0.5 0.5 0.5 0 100 force @a 22
+execute @a[tag=AffectByBlue,m=2,score_Timer_min=21,score_Timer=21] ~ ~-5 ~ execute @e[type=Villager,tag=BlueConquest,score_HaveObjective_min=-1000,r=7] ~ ~5 ~ playsound minecraft:block.stone.break record @a ~ ~ ~ 2 1 1

@@ -1,0 +1,79 @@
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~ ~-3 ~2 {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363B"],Rotation:[0f,0f]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~ ~-3 ~-2 {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363B"],Rotation:[180f,0f]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~2 ~-3 ~ {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363B"],Rotation:[-90f,0f]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~-2 ~-3 ~ {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363B"],Rotation:[90f,0f]}
+execute @e[tag=363B] ~ ~ ~ /particle endRod ~ ~2 ~ 0 0 0 0 1 force @a[tag=IsPlaying,team=Blue]
+execute @e[tag=363B] ~ ~ ~ /scoreboard players set @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,r=1] UpgradedWeapon 2
+execute @e[tag=363B] ~ ~ ~ /scoreboard players set @a[tag=IsPlaying,team=Blue,r=1,score_EffResistance=2] EffResistance 2
+execute @e[tag=363B] ~ ~ ~ /scoreboard players set @a[tag=AffectByBlue,r=2,score_EffPoison=1002] EffPoison 1002
+scoreboard players set @e[tag=363G,score_Timer_min=38] Timer -1
+execute @e[type=!Player,tag=WI1G,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,r=1] ~ ~ ~ /playsound block.lava.pop record @a[r=30]
+execute @e[tag=363G] ~ ~ ~ /tp @a[tag=IsPlaying,r=2,score_HaveObjective_min=1] ~ ~ ~
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~ ~-3 ~2 {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363R"],Rotation:[0f,0f]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~ ~-3 ~-2 {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363R"],Rotation:[180f,0f]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~2 ~-3 ~ {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363R"],Rotation:[-90f,0f]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell3_min=1399,score_Spell3=1399] ~ ~ ~ /summon Skeleton_Horse ~-2 ~-3 ~ {Tame:1,Invulnerable:1,SaddleItem:{id:saddle,Count:1},Tags:["SpawnAnime","363G","363R"],Rotation:[90f,0f]}
+execute @e[tag=363R] ~ ~ ~ /particle endRod ~ ~2 ~ 0 0 0 0 1 force @a[tag=IsPlaying,team=Orange]
+execute @e[tag=363R] ~ ~ ~ /scoreboard players set @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,r=1] UpgradedWeapon 2
+execute @e[tag=363R] ~ ~ ~ /scoreboard players set @a[tag=IsPlaying,team=Orange,r=1,score_EffResistance=2] EffResistance 2
+execute @e[tag=363R] ~ ~ ~ /scoreboard players set @a[tag=AffectByOrange,r=2,score_EffPoison=1002] EffPoison 1002
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /particle largesmoke ~ ~0.1 ~ 5 0 5 0.2 50 force
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /particle largesmoke ~ ~0.1 ~ 5 0 5 0.2 50 force
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1B","Permanent"],Marker:1,Small:1,Motion:[0.3,0.5,0.3]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1B","Permanent"],Marker:1,Small:1,Motion:[-0.3,0.5,-0.3]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1B","Permanent"],Marker:1,Small:1,Motion:[-0.3,0.5,0.3]}
+execute @a[tag=IsPlaying,team=Blue,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1B","Permanent"],Marker:1,Small:1,Motion:[0.3,0.5,-0.3]}
+execute @e[type=!Player,tag=WI1B] ~ ~ ~ /particle endRod ~ ~0.2 ~ 0 0 0 0 1 normal @a[team=Blue,tag=IsPlaying]
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,score_EffHeal=1,team=Blue,r=1] EffHeal 1
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,score_EffDamage=1002,team=Orange,r=1] EffDamage 1002
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,team=Orange,r=1] TouchBy 36
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,team=Blue,r=1] ~ ~ ~ /particle happyVillager ~ ~1 ~ 0.3 0.5 0.3 0.2 50 force
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,team=Orange,r=1] ~ ~ ~ /particle reddust ~ ~1 ~ 0.3 0.5 0.3 1 50 force
+execute @e[type=!Player,tag=WI1B,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,r=1] ~ ~ ~ /kill @e[type=!Player,tag=WI1B,score_Timer=-20,r=2,c=1]
+execute @e[type=!Player,tag=WI1G] ~ ~ ~ /particle reddust ~ ~0.8 ~ 0.2 0.2 0.2 1 3
+tp @e[type=!Player,tag=WI1G,score_Timer=-35] ~ ~ ~ ~7.2 0
+scoreboard players set @e[tag=WI1G,score_Timer_min=0] Timer -1
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1R","Permanent"],Marker:1,Small:1,Motion:[0.3,0.5,0.3]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1R","Permanent"],Marker:1,Small:1,Motion:[-0.3,0.5,-0.3]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1R","Permanent"],Marker:1,Small:1,Motion:[-0.3,0.5,0.3]}
+execute @a[tag=IsPlaying,team=Orange,score_Class_min=36,score_Class=36,score_Spell1_min=499,score_Spell1=499] ~ ~ ~ /summon armor_stand ~ ~0 ~ {Invisible:1,NoBasePlate:1,ArmorItems:[{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:air",Damage:0},{id:"minecraft:end_stone",Damage:0,Count:1b}],Tags:["WI1G","WI1R","Permanent"],Marker:1,Small:1,Motion:[0.3,0.5,-0.3]}
+execute @e[type=!Player,tag=WI1G] ~ ~ ~ /particle endRod ~ ~0.2 ~ 0 0 0 0 1 normal @a[team=Orange,tag=IsPlaying]
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,score_EffHeal=1,team=Orange,r=1] EffHeal 1
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,score_EffDamage=1002,team=Blue,r=1] EffDamage 1002
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /scoreboard players set @e[tag=IsPlaying,team=Blue,r=1] TouchBy 36
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,team=Orange,r=1] ~ ~ ~ /particle happyVillager ~ ~1 ~ 0.3 0.5 0.3 0.2 50 force
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,team=Blue,r=1] ~ ~ ~ /particle reddust ~ ~1 ~ 0.3 0.5 0.3 1 50 force
+execute @e[type=!Player,tag=WI1R,score_Timer=-20] ~ ~ ~ /execute @e[tag=IsPlaying,r=1] ~ ~ ~ /kill @e[type=!Player,tag=WI1R,score_Timer=-20,r=2,c=1]
+replaceitem entity @a[score_EffSilencePrim=0,score_InGame_min=1,score_Class_min=36,score_Class=36,score_UpgradedWeapon_min=1,m=2] slot.hotbar.0 iron_axe 1 0 {Unbreakable:1,ench:[{id:19,lvl:0},{id:16,lvl:0}],display:{Name:"Basic Attack (Upgraded)"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackDamage",Name:"generic.attackDamage",Amount:6,Operation:0,UUIDMost:84053,UUIDLeast:137737},{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:100,Operation:0,UUIDMost:32387,UUIDLeast:165141}]}
+execute @a[score_TouchBy_min=36,score_TouchBy=36,score_InGame_min=1,score_TakeDamage_min=2000,score_TakeDamage=2999,m=2,score_EffPoison_min=1] ~ ~ ~ /particle enchantmenttable ~ ~1 ~ 0.5 1 0.5 0 20 force
+execute @a[score_TouchBy_min=36,score_TouchBy=36,score_InGame_min=1,score_TakeDamage_min=2000,score_TakeDamage=2999,m=2,score_EffPoison_min=1] ~ ~ ~ /particle reddust ~ ~1 ~ 0.5 1 0.5 0.005 20 force
+scoreboard players set @a[score_Class_min=36,score_Class=36,score_UsePotion_min=2,score_UsePotion=2,score_InGame_min=1,m=2] Spell1 500
+scoreboard players set @a[score_Class_min=36,score_Class=36,score_UseFishing_min=2,score_UseFishing=2,score_InGame_min=1,m=2] Spell2 400
+scoreboard players set @a[score_Class_min=36,score_Class=36,score_UseXp_min=2,score_UseXp=2,score_InGame_min=1,m=2] Spell3 1400
+replaceitem entity @a[score_Mana=19,score_Class_min=36,score_Class=36,score_InGame_min=1,score_Spell1=0,score_Spell1_min=0,m=2,score_EffSilence=0] slot.hotbar.1 dye 1 8 {display:{Name:"Not enough mana !"},ench:[{id:19,lvl:0}]}
+scoreboard players remove @a[score_Class_min=36,score_Class=36,score_UsePotion_min=2,score_UsePotion=2] Mana 20
+replaceitem entity @a[score_Mana=29,score_Class_min=36,score_Class=36,score_InGame_min=1,score_Spell2=0,score_Spell2_min=0,m=2,score_EffSilence=0] slot.hotbar.2 dye 1 8 {display:{Name:"Not enough mana !"},ench:[{id:19,lvl:0}]}
+scoreboard players remove @a[score_Class_min=36,score_Class=36,score_UseFishing_min=2,score_UseFishing=2] Mana 30
+replaceitem entity @a[score_Mana=69,score_Class_min=36,score_Class=36,score_InGame_min=1,score_Spell3=0,score_Spell3_min=0,m=2,score_EffSilence=0] slot.hotbar.3 dye 1 8 {display:{Name:"Not enough mana !"},ench:[{id:19,lvl:0}]}
+scoreboard players remove @a[score_Class_min=36,score_Class=36,score_UseXp_min=2,score_UseXp=2] Mana 70
+replaceitem entity @a[score_Mana_min=20,score_InGame_min=1,score_EffSilence=0,score_Spell1=0,score_Class_min=36,score_Class=36,m=2] slot.hotbar.1 minecraft:splash_potion 1 0 {Unbreakable:1,ench:[{id:19,lvl:0}],display:{Name:"Life Orbs  20✸  25s",Lore:["۞ 20 Mana","... 25s Cooldown","","⚔ 2 Damage/Orb","❤ 1 Heal/Orb"]},HideFlags:63}
+replaceitem entity @a[score_EffNoTp=0,score_Mana_min=30,score_InGame_min=1,score_EffSilence=0,score_Spell2=0,score_Class_min=36,score_Class=36,m=2] slot.hotbar.2 minecraft:fishing_rod 1 0 {Unbreakable:1,ench:[{id:19,lvl:0}],display:{Name:"Nightmare  30✸  20s",Lore:["۞ 30 Mana","... 20s Cooldown","","» Teleport"]},HideFlags:63}
+replaceitem entity @a[score_Mana_min=70,score_InGame_min=1,score_EffSilence=0,score_Spell3=0,score_Class_min=36,score_Class=36,m=2] slot.hotbar.3 minecraft:experience_bottle 1 0 {Unbreakable:1,ench:[{id:19,lvl:0}],display:{Name:"Cavalry  70✸  70s",Lore:["۞ 70 Mana","... 70s Cooldown","","+ Spawn 2 horses","","+ No cooldown on primary","❤ 20% Protection ▢ Range 5 around horse"]},HideFlags:63}
+execute @a[score_EffNoDie=0,score_IsDead_min=2,score_IsDead=2,score_InGame_min=1,score_TouchBy_min=36,score_TouchBy=36,team=Orange] ~ ~ ~ /say 's existence has been erased by @p[score_Class_min=36,score_Class=36,team=Blue,score_InGame_min=1]
+execute @a[score_EffNoDie=0,score_IsDead_min=2,score_IsDead=2,score_InGame_min=1,score_TouchBy_min=36,score_TouchBy=36,team=Blue] ~ ~ ~ /say 's existence has been erased by @p[score_Class_min=36,score_Class=36,team=Orange,score_InGame_min=1]
+execute @a[score_EffNoDie=0,score_IsDead_min=2,score_IsDead=2,score_InGame_min=1,score_TouchBy_min=36,score_TouchBy=36,team=Orange] ~ ~ ~ /scoreboard players add @p[score_Class_min=36,score_Class=36,team=Blue,score_InGame_min=1,tag=!InTraining] KillNumber 1
+execute @a[score_EffNoDie=0,score_IsDead_min=2,score_IsDead=2,score_InGame_min=1,score_TouchBy_min=36,score_TouchBy=36,team=Blue] ~ ~ ~ /scoreboard players add @p[score_Class_min=36,score_Class=36,team=Orange,score_InGame_min=1,tag=!InTraining] KillNumber 1
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /effect @e[r=10,tag=AffectByBlue] blindness 5 1 true
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /effect @e[r=10,tag=AffectByOrange] blindness 5 1 true
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=10,tag=AffectByBlue,score_EffSlow=1060] EffSlow 1060
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=10,tag=AffectByBlue,score_EffSilencePrim=60] EffSilencePrim 60
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /tp @e[r=10,tag=AffectByBlue,score_EffSilencePrim=60] ~ ~ ~ ~180 ~
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /tp @p @p[tag=AffectByBlue]
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=1,tag=AffectByBlue,score_EffDamage=2] EffDamage 2
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Blue,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /particle largesmoke ~ ~ ~ 0.5 1 0.5 0.2 50 force
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=10,tag=AffectByOrange,score_EffSlow=1060] EffSlow 1060
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=10,tag=AffectByOrange,score_EffSilencePrim=60] EffSilencePrim 60
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /tp @e[r=10,tag=AffectByOrange,score_EffSilencePrim=60] ~ ~ ~ ~180 ~
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /tp @p @p[tag=AffectByOrange]
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /scoreboard players set @e[r=1,tag=AffectByOrange,score_EffDamage=2] EffDamage 2
+execute @a[score_Class_min=36,score_Class=36,tag=IsPlaying,team=Orange,score_Spell2_min=398,score_Spell2=398] ~ ~ ~ /particle largesmoke ~ ~ ~ 0.5 1 0.5 0.2 50 force

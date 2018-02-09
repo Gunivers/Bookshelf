@@ -1,0 +1,9 @@
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399,team=Blue] ~ ~ ~ /summon Wither_Skeleton ~1 ~-2 ~ {CustomName:Guardians,CustomNameVisible:false,HandItems:[{id:"minecraft:stone_sword",Count:1b},{id:"minecraft:stone_sword",Count:1b}],LeftHanded:false,Tags:["SpawnAnime","NotOrange","Blue","162B","Life10"]}
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399,team=Blue] ~ ~ ~ /summon Wither_Skeleton ~-1 ~-2 ~ {CustomName:Guardians,CustomNameVisible:false,HandItems:[{id:"minecraft:stone_sword",Count:1b},{id:"minecraft:stone_sword",Count:1b}],LeftHanded:false,Tags:["SpawnAnime","NotOrange","Blue","162B","Life10"]}
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /playsound entity.zombie_pig.death record @a[r=15] ~ ~ ~ 2 2 1
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399,team=Orange] ~ ~ ~ /summon Wither_Skeleton ~1 ~-2 ~ {CustomName:Guardians,CustomNameVisible:false,HandItems:[{id:"minecraft:stone_sword",Count:1b},{id:"minecraft:stone_sword",Count:1b}],LeftHanded:false,Tags:["SpawnAnime","NotBlue","Orange","162R","Life10"]}
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399,team=Orange] ~ ~ ~ /summon Wither_Skeleton ~-1 ~-2 ~ {CustomName:Guardians,CustomNameVisible:false,HandItems:[{id:"minecraft:stone_sword",Count:1b},{id:"minecraft:stone_sword",Count:1b}],LeftHanded:false,Tags:["SpawnAnime","NotBlue","Orange","162R","Life10"]}
+effect @e[type=Skeleton,tag=162R] speed 1 2 true
+effect @e[type=Skeleton,tag=162B] speed 1 2 true
+
+execute @a[score_Class_min=16,score_Class=16,score_Spell2_min=399,score_Spell2=399] ~ ~ ~ /particle largesmoke ~ ~1 ~ 1 0.5 1 0 20 force

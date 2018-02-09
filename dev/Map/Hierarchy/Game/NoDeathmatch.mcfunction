@@ -1,0 +1,1 @@
+scoreboard players reset Mode:Deathmatch Info
