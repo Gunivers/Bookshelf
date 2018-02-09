@@ -1,2 +1,0 @@
-scoreboard players set @a[score_Class_min=11,score_Class=11,score_Spell2_min=599] UpgradedWeapon 140
-execute @a[score_Class_min=11,score_Class=11,score_Spell2_min=599] ~ ~ ~ /playsound entity.enderdragon.growl record @a[r=15] ~ ~ ~ 2 2 1
