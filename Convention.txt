@@ -4,7 +4,7 @@ ________________________________________________________________________________
 
 
 # NAME: <Nom Du Systeme>
-# PATH: Gunivers-Lib: ... /<Nom Du Systeme>
+# PATH: gunivers-lib: ... /<Nom Du Systeme>
 
 # AUTHOR: <Name>
 # CONTRIBUTORS: (optional)
@@ -18,7 +18,7 @@ ________________________________________________________________________________
 # - <Name>** (<Type>***)
 # - ...
 or 
-# CHILD OF: Gunivers-Lib: ... /<Nom Du Systeme Parent>
+# CHILD OF: gunivers-lib: ... /<Nom Du Systeme Parent>
 
 # INPUT:
 # - <Name>** (<Type>***)
