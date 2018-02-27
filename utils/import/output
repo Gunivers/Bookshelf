@@ -1,0 +1,9 @@
+scoreboard objectives add Output1 dummy
+scoreboard objectives add Output2 dummy
+scoreboard objectives add Output3 dummy
+scoreboard objectives add Output4 dummy
+scoreboard objectives add Output5 dummy
+scoreboard objectives add Output6 dummy
+scoreboard objectives add Output7 dummy
+scoreboard objectives add Output8 dummy
+scoreboard objectives add Output9 dummy
