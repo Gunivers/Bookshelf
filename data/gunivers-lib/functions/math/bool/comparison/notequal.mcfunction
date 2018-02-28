@@ -18,8 +18,10 @@
 
 # NOTE:
 # Return 1 if Input1 != Input2 else return 0
+# At this end of the function, all inputs are clear.
 
 # CODE:
 function gunivers-lib:math/bool/clearoutput
-execute if score Input1 Input != Input2 Input run scoreboard players set Output1 Output 1
 execute if score Input1 Input = Input2 Input run scoreboard players set Output1 Output 0
+execute if score Output1 Output = -1 Constant run scoreboard players set Output1 Output 1
+function gunivers-lib:math/bool/clearinput
