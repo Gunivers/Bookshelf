@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "frozen_ocean": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:frozen_ocean"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/FrozenOcean"
+		
+		
+    }
+}

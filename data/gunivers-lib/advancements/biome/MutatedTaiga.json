@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_taiga": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_taiga"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/MutatedTaiga"
+		
+		
+    }
+}

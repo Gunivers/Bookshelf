@@ -1,0 +1,2 @@
+scoreboard players set @s Biome 161
+advancement revoke @s only gunivers-lib:biome/MutatedRedwoodTaigaHills

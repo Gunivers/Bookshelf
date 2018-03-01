@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "river": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:river"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/River"
+		
+		
+    }
+}

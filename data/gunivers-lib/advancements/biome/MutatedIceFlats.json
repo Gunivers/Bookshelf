@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mutated_ice_flats": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mutated_ice_flats"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/MutatedIceFlats"
+		
+		
+    }
+}
