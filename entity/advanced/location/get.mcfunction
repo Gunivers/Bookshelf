@@ -1,5 +1,5 @@
 # NAME: Get Location
-# PATH: gunivers-lib:entity/location/get
+# PATH: gunivers-lib:entity/advanced/location/get
 
 # AUTHOR: LeiRoF
 
@@ -21,6 +21,6 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
-execute store result score @s Output1 run data get entity @s Pos[0] 1
-execute store result score @s Output2 run data get entity @s Pos[1] 1
-execute store result score @s Output3 run data get entity @s Pos[2] 1
+execute store result score @s Output1 run data get entity @s Pos[0] 1000
+execute store result score @s Output2 run data get entity @s Pos[1] 1000
+execute store result score @s Output3 run data get entity @s Pos[2] 1000
