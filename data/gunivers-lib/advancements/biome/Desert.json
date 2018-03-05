@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "desert": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:desert"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/Desert"
+		
+		
+    }
+}

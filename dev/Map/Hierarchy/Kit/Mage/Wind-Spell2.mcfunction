@@ -1,5 +1,0 @@
-execute @e[score_InGame_min=1,score_Class_min=5,score_Class=5,score_Spell2=499,score_Spell2_min=499,m=2,team=Blue] ~ ~ ~ /effect @a[team=Blue,r=10,tag=IsPlaying] instant_health 1 1 true
-execute @e[score_InGame_min=1,score_Class_min=5,score_Class=5,score_Spell2=499,score_Spell2_min=499,m=2] ~ ~ ~ /playsound entity.zombie.infect record @a[r=10] ~ ~ ~ 2 2 1
-execute @e[score_InGame_min=1,score_Class_min=5,score_Class=5,score_Spell2=499,score_Spell2_min=499,m=2,team=Orange] ~ ~ ~ /effect @a[team=Orange,r=10,tag=IsPlaying] instant_health 1 1 true
-execute @e[score_InGame_min=1,score_Class_min=5,score_Class=5,score_Spell2_min=499,m=2,team=Blue] ~ ~ ~ /execute @e[team=Blue,r=10,tag=IsPlaying] ~ ~ ~ /particle happyVillager ~ ~1 ~ 0.3 0.8 0.3 0 20 force
-execute @e[score_InGame_min=1,score_Class_min=5,score_Class=5,score_Spell2_min=499,m=2,team=Orange] ~ ~ ~ /execute @e[team=Orange,r=10,tag=IsPlaying] ~ ~ ~ /particle happyVillager ~ ~1 ~ 0.3 0.8 0.3 0 20 force

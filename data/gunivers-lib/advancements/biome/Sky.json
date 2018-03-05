@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "sky": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:sky"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/Sky"
+		
+		
+    }
+}

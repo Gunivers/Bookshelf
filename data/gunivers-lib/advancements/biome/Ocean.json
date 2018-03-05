@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "ocean": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:ocean"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/Ocean"
+		
+		
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "hell": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:hell"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/Hell"
+		
+		
+    }
+}

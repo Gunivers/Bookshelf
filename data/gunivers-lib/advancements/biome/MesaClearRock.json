@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mesa_clear_rock": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mesa_clear_rock"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/MesaClearRock"
+		
+		
+    }
+}
