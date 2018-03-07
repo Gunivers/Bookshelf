@@ -475,7 +475,7 @@ entitydata @e[score_healthBar_min=12,score_healthBar=12,tag=20] {CustomName:"§4
 entitydata @e[score_healthBar_min=11,score_healthBar=11,tag=20] {CustomName:"§4❤❤❤❤❤§e❤§r❤❤❤❤"}
 entitydata @e[score_healthBar_min=10,score_healthBar=10,tag=20] {CustomName:"§4❤❤❤❤❤§r❤❤❤❤❤"}
 entitydata @e[score_healthBar_min=9,score_healthBar=9,tag=20] {CustomName:"§4❤❤❤❤§e❤§r❤❤❤❤❤"}
-entitydata @e[score_healthBar_min=8,score_healthBar:8,tag=20] {CustomName:"§4❤❤❤❤§r❤❤❤❤❤❤"}
+entitydata @e[score_healthBar_min=8,score_healthBar=8,tag=20] {CustomName:"§4❤❤❤❤§r❤❤❤❤❤❤"}
 entitydata @e[score_healthBar_min=7,score_healthBar=7,tag=20] {CustomName:"§4❤❤❤§e❤§r❤❤❤❤❤❤"}
 entitydata @e[score_healthBar_min=6,score_healthBar=6,tag=20] {CustomName:"§4❤❤❤§r❤❤❤❤❤❤❤"}
 entitydata @e[score_healthBar_min=5,score_healthBar=5,tag=20] {CustomName:"§4❤❤§e❤§r❤❤❤❤❤❤❤"}
