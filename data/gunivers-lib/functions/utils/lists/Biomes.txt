@@ -1,5 +1,3 @@
-
-
 0 : Ocean
 
 1 : Plains

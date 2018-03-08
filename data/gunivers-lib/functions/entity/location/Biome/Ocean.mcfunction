@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 0
-advancement revoke @s only gunivers-lib:biome/Ocean
+scoreboard players set @p Biome 0
+advancement revoke @p only gunivers-lib:biome/Ocean

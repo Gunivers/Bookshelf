@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 167
-advancement revoke @s only gunivers-lib:biome/MutatedMesaRockClearRock
+scoreboard players set @p Biome 167
+advancement revoke @p only gunivers-lib:biome/MutatedMesaRockClearRock

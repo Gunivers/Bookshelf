@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 165
-advancement revoke @s only gunivers-lib:biome/MutatedMesa
+scoreboard players set @p Biome 165
+advancement revoke @p only gunivers-lib:biome/MutatedMesa

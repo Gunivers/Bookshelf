@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 28
-advancement revoke @s only gunivers-lib:biome/BirchForestHills
+scoreboard players set @p Biome 28
+advancement revoke @p only gunivers-lib:biome/BirchForestHills

@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 156
-advancement revoke @s only gunivers-lib:biome/MutatedBirchForestHills
+scoreboard players set @p Biome 156
+advancement revoke @p only gunivers-lib:biome/MutatedBirchForestHills

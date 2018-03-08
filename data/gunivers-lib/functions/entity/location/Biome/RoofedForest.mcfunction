@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 29
-advancement revoke @s only gunivers-lib:biome/RoofedForest
+scoreboard players set @p Biome 29
+advancement revoke @p only gunivers-lib:biome/RoofedForest

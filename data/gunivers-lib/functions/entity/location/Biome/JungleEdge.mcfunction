@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 23
-advancement revoke @s only gunivers-lib:biome/JungleEdge
+scoreboard players set @p Biome 23
+advancement revoke @p only gunivers-lib:biome/JungleEdge

@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 132
-advancement revoke @s only gunivers-lib:biome/MutatedForest
+scoreboard players set @p Biome 132
+advancement revoke @p only gunivers-lib:biome/MutatedForest

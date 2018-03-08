@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 127
-advancement revoke @s only gunivers-lib:biome/Void
+scoreboard players set @p Biome 127
+advancement revoke @p only gunivers-lib:biome/Void

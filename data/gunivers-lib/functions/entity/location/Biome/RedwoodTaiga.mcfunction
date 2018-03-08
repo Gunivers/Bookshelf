@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 32
-advancement revoke @s only gunivers-lib:biome/RedwoodTaiga
+scoreboard players set @p Biome 32
+advancement revoke @p only gunivers-lib:biome/RedwoodTaiga

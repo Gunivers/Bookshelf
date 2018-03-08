@@ -1,2 +1,2 @@
-scoreboard players set @s Biome 8
-advancement revoke @s only gunivers-lib:biome/Hell
+scoreboard players set @p Biome 8
+advancement revoke @p only gunivers-lib:biome/Hell
