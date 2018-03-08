@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 7
-advancement revoke @p only gunivers-lib:biome/River
+scoreboard players set @s Biome 7
+advancement revoke @s only gunivers-lib:biome/River

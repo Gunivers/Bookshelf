@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 33
-advancement revoke @p only gunivers-lib:biome/RedwoodTaigaHills
+scoreboard players set @s Biome 33
+advancement revoke @s only gunivers-lib:biome/RedwoodTaigaHills

@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 18
-advancement revoke @p only gunivers-lib:biome/ForestHills
+scoreboard players set @s Biome 18
+advancement revoke @s only gunivers-lib:biome/ForestHills

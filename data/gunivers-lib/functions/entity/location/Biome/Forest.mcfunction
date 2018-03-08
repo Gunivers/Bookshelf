@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 4
-advancement revoke @p only gunivers-lib:biome/Forest
+scoreboard players set @s Biome 4
+advancement revoke @s only gunivers-lib:biome/Forest

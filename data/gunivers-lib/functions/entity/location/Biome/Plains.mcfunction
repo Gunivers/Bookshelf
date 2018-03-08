@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 1
-advancement revoke @p only gunivers-lib:biome/Plains
+scoreboard players set @s Biome 1
+advancement revoke @s only gunivers-lib:biome/Plains

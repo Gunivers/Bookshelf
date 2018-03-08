@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 37
-advancement revoke @p only gunivers-lib:biome/Mesa
+scoreboard players set @s Biome 37
+advancement revoke @s only gunivers-lib:biome/Mesa

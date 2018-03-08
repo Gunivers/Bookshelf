@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 35
-advancement revoke @p only gunivers-lib:biome/Savanna
+scoreboard players set @s Biome 35
+advancement revoke @s only gunivers-lib:biome/Savanna

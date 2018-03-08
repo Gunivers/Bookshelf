@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 19
-advancement revoke @p only gunivers-lib:biome/TaigaHills
+scoreboard players set @s Biome 19
+advancement revoke @s only gunivers-lib:biome/TaigaHills

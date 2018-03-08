@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 9
-advancement revoke @p only gunivers-lib:biome/Sky
+scoreboard players set @s Biome 9
+advancement revoke @s only gunivers-lib:biome/Sky

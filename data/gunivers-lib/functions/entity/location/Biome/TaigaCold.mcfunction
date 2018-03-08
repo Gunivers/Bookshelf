@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 30
-advancement revoke @p only gunivers-lib:biome/TaigaCold
+scoreboard players set @s Biome 30
+advancement revoke @s only gunivers-lib:biome/TaigaCold

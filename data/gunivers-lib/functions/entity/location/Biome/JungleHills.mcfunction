@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 22
-advancement revoke @p only gunivers-lib:biome/JungleHills
+scoreboard players set @s Biome 22
+advancement revoke @s only gunivers-lib:biome/JungleHills

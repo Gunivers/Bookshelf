@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 3
-advancement revoke @p only gunivers-lib:biome/ExtremeHills
+scoreboard players set @s Biome 3
+advancement revoke @s only gunivers-lib:biome/ExtremeHills

@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 163
-advancement revoke @p only gunivers-lib:biome/MutatedSavanna
+scoreboard players set @s Biome 163
+advancement revoke @s only gunivers-lib:biome/MutatedSavanna

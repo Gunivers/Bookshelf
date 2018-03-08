@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 13
-advancement revoke @p only gunivers-lib:biome/IceMountains
+scoreboard players set @s Biome 13
+advancement revoke @s only gunivers-lib:biome/IceMountains

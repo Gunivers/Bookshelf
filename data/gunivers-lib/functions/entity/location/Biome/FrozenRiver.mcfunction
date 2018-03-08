@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 11
-advancement revoke @p only gunivers-lib:biome/FrozenRiver
+scoreboard players set @s Biome 11
+advancement revoke @s only gunivers-lib:biome/FrozenRiver

@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 34
-advancement revoke @p only gunivers-lib:biome/ExtremeHillsWithTrees
+scoreboard players set @s Biome 34
+advancement revoke @s only gunivers-lib:biome/ExtremeHillsWithTrees

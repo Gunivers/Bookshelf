@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 12
-advancement revoke @p only gunivers-lib:biome/IceFlats
+scoreboard players set @s Biome 12
+advancement revoke @s only gunivers-lib:biome/IceFlats

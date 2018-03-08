@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 16
-advancement revoke @p only gunivers-lib:biome/Beaches
+scoreboard players set @s Biome 16
+advancement revoke @s only gunivers-lib:biome/Beaches

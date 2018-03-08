@@ -1,2 +1,2 @@
-scoreboard players set @p Biome 158
-advancement revoke @p only gunivers-lib:biome/MutatedTaigaCold
+scoreboard players set @s Biome 158
+advancement revoke @s only gunivers-lib:biome/MutatedTaigaCold
