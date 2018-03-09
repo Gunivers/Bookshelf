@@ -7,8 +7,8 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:utils/import/var
-# - Gunivers-Lib:utils/import/rotation
+# - gunivers-Lib:utils/import/var
+# - gunivers-Lib:utils/import/rotation
 
 # OUTPUT:
 # - Phi (score dummy)

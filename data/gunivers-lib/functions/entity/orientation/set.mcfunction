@@ -1,5 +1,5 @@
 # NAME: Set Rotation
-# PATH: Gunivers-Lib:entity/rotation/set
+# PATH: gunivers-Lib:entity/rotation/advanced/set
 
 # AUTHOR: theogiraudet
 
@@ -7,14 +7,12 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:utils/import/Var
-# - Gunivers-Lib:utils/import/Location
+# - gunivers-Lib:utils/import/var
+# - gunivers-Lib:utils/import/rotation
 
 # INPUT:
 # - Var1 (score dummy)
 # - Var2 (score dummy)
-
-# OUTPUT:
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...

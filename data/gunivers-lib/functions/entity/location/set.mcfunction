@@ -7,15 +7,13 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:utils/import/Var
-# - Gunivers-Lib:utils/import/Location
+# - gunivers-lib:utils/import/var
+# - gunivers-lib:utils/import/location
 
 # INPUT:
 # - Var1 (score dummy)
 # - Var2 (score dummy)
 # - Var3 (score dummy)
-
-# OUTPUT:
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...
