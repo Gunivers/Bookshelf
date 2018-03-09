@@ -1,5 +1,5 @@
 # NAME: Set Location
-# PATH: Gunivers-Lib:Entity/Location/Set
+# PATH: gunivers-lib:entity/location/set
 
 # AUTHOR: LeiRoF
 
@@ -11,9 +11,9 @@
 # - Gunivers-Lib:utils/import/Location
 
 # INPUT:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+# - Var1 (score dummy)
+# - Var2 (score dummy)
+# - Var3 (score dummy)
 
 # OUTPUT:
 
@@ -22,8 +22,8 @@
 
 # CODE:
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetLocation"]}
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 1 run scoreboard players get @s Tmp1
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 1 run scoreboard players get @s Tmp2
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 1 run scoreboard players get @s Tmp3
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 1 run scoreboard players get @s Var1
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 1 run scoreboard players get @s Var2
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 1 run scoreboard players get @s Var3
 tp @s @e[type=armor_stand,tag=SetLocation,limit=1]
 kill @e[type=armor_stand,tag=SetLocation,limit=1]
