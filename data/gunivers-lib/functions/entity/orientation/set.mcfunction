@@ -1,7 +1,7 @@
 # NAME: Set Rotation
 # PATH: Gunivers-Lib:entity/rotation/set
 
-# AUTHOR: LeiRoF
+# AUTHOR: theogiraudet
 
 # VERSION: 2.0
 # MINECRAFT: 1.13
