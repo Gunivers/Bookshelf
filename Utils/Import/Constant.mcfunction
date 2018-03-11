@@ -2,7 +2,7 @@
 
 # Note: Ce score contient toutes les constantes utiles dans des fonctions mathématiques tel que:
 # - Valeurs allant de -1 à 25
-# - Valeurs trigonométrique Pi et x*Pi/4 (en degrés)
+# - Constantes mathématiques (exponentielle, pi)
 # - Valeurs trigonométriques 32400, 40500, 18000, 36000, 90000, 180000, 270000, 324000000, 405000000, 28125, 640, 785, 74, 212 (utiles pour les approximations de sinus, cosinus, arctangente et arccosinus)
 # - Puissances de 2 (2,4,8,16,32,64,... jusqu'a 4096)
 # - Puissances de 10 (10,100,1000,... jusqu'a 1000000)
@@ -42,6 +42,7 @@ scoreboard players set 29 Constant 29
 scoreboard players set 30 Constant 30
 scoreboard players set 31 Constant 31
 scoreboard players set 32 Constant 32
+scoreboard players set 35 Constant 35
 scoreboard players set 37 Constant 37
 scoreboard players set 40 Constant 40
 scoreboard players set 41 Constant 41
@@ -98,5 +99,13 @@ scoreboard players set 324000000 Constant 324000000
 scoreboard players set Pi Constant 3142
 scoreboard players set Pi2 Constant 314
 scoreboard players set Pi3 Constant 3142
+scoreboard players set Pi4 Constant 31416
+scoreboard players set Pi5 Constant 314159
 scoreboard players set Pi6 Constant 3141593
+scoreboard players set Exp Constant 2718
+scoreboard players set Exp2 Constant 272
+scoreboard players set Exp3 Constant 2718
+scoreboard players set Exp4 Constant 27183
+scoreboard players set Exp5 Constant 271828
+scoreboard players set Exp6 Constant 2718282
 
