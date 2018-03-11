@@ -1,0 +1,21 @@
+#Met a jour la vitesse du cheval en fonction de son score (Commandes générées par mon programme trop génial en java :D)
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=0,score_GroundSpeed=0] {Attributes:[{Name:"generic.movementSpeed",Base:0.03}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1,score_GroundSpeed=166] {Attributes:[{Name:"generic.movementSpeed",Base:0.083}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=167,score_GroundSpeed=333] {Attributes:[{Name:"generic.movementSpeed",Base:0.135}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=334,score_GroundSpeed=500] {Attributes:[{Name:"generic.movementSpeed",Base:0.185}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=501,score_GroundSpeed=666] {Attributes:[{Name:"generic.movementSpeed",Base:0.234}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=667,score_GroundSpeed=833] {Attributes:[{Name:"generic.movementSpeed",Base:0.28}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=834,score_GroundSpeed=1000] {Attributes:[{Name:"generic.movementSpeed",Base:0.325}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1001,score_GroundSpeed=1166] {Attributes:[{Name:"generic.movementSpeed",Base:0.368}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1167,score_GroundSpeed=1333] {Attributes:[{Name:"generic.movementSpeed",Base:0.409}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1334,score_GroundSpeed=1500] {Attributes:[{Name:"generic.movementSpeed",Base:0.448}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1501,score_GroundSpeed=1666] {Attributes:[{Name:"generic.movementSpeed",Base:0.485}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1667,score_GroundSpeed=1833] {Attributes:[{Name:"generic.movementSpeed",Base:0.521}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=1834,score_GroundSpeed=2000] {Attributes:[{Name:"generic.movementSpeed",Base:0.554}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=2001,score_GroundSpeed=2166] {Attributes:[{Name:"generic.movementSpeed",Base:0.586}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=2167,score_GroundSpeed=2333] {Attributes:[{Name:"generic.movementSpeed",Base:0.616}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=2334,score_GroundSpeed=2666] {Attributes:[{Name:"generic.movementSpeed",Base:0.645}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=2667,score_GroundSpeed=3166] {Attributes:[{Name:"generic.movementSpeed",Base:0.696}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=3167,score_GroundSpeed=3666] {Attributes:[{Name:"generic.movementSpeed",Base:0.758}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=3667,score_GroundSpeed=4833] {Attributes:[{Name:"generic.movementSpeed",Base:0.805}]}
+entitydata @e[type=horse,score_VehicleType_min=1,score_VehicleType=9,score_GroundSpeed_min=4834,score_GroundSpeed=5000] {Attributes:[{Name:"generic.movementSpeed",Base:0.85}]}

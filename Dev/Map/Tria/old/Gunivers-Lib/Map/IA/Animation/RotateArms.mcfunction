@@ -1,0 +1,11 @@
+entitydata @s[score_Theta_min=135] {Pose:{RightArm:[-35f,-20f,-10f],LeftArm:[-25f,45f,0f]}}
+entitydata @s[score_Theta_min=125,score_Theta=134] {Pose:{RightArm:[-45f,-20f,-10f],LeftArm:[-35f,45f,0f]}}
+entitydata @s[score_Theta_min=115,score_Theta=124] {Pose:{RightArm:[-55f,-20f,-10f],LeftArm:[-45f,45f,0f]}}
+entitydata @s[score_Theta_min=105,score_Theta=114] {Pose:{RightArm:[-65f,-20f,-10f],LeftArm:[-55f,45f,0f]}}
+entitydata @s[score_Theta_min=95,score_Theta=104] {Pose:{RightArm:[-75f,-20f,-10f],LeftArm:[-65f,45f,0f]}}
+entitydata @s[score_Theta_min=85,score_Theta=94] {Pose:{RightArm:[-85f,-20f,-10f],LeftArm:[-75f,45f,0f]}}
+entitydata @s[score_Theta_min=75,score_Theta=84] {Pose:{RightArm:[-95f,-20f,-10f],LeftArm:[-85f,45f,0f]}}
+entitydata @s[score_Theta_min=65,score_Theta=74] {Pose:{RightArm:[-105f,-20f,-10f],LeftArm:[-95f,45f,0f]}}
+entitydata @s[score_Theta_min=55,score_Theta=64] {Pose:{RightArm:[-115f,-20f,-10f],LeftArm:[-105f,45f,0f]}}
+entitydata @s[score_Theta_min=45,score_Theta=54] {Pose:{RightArm:[-125f,-20f,-10f],LeftArm:[-115f,45f,0f]}}
+entitydata @s[score_Theta=44] {Pose:{RightArm:[-135f,-20f,-10f],LeftArm:[-125f,45f,0f]}}

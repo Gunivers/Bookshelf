@@ -1,0 +1,1 @@
+Certaines fonctions de la lib mais modifiées (passées en @a par exemple)
