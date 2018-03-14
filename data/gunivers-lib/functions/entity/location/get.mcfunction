@@ -1,5 +1,5 @@
 # NAME: Get Location
-# PATH: Gunivers-Lib:Entity/Location/Get
+# PATH: gunivers-lib:entity/location/get
 
 # AUTHOR: LeiRoF
 
@@ -7,10 +7,8 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:utils/import/Var
-# - Gunivers-Lib:utils/import/Location
-
-# INPUT:
+# - gunivers-Lib:utils/import/var
+# - gunivers-Lib:utils/import/location
 
 # OUTPUT:
 # - LocX (score dummy)
@@ -21,6 +19,6 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
-execute store result score @s Output1 run data get entity @s Pos[0] 1
-execute store result score @s Output2 run data get entity @s Pos[1] 1
-execute store result score @s Output3 run data get entity @s Pos[2] 1
+execute store result score @s LocX run data get entity @s Pos[0] 1
+execute store result score @s LocY run data get entity @s Pos[1] 1
+execute store result score @s LocZ run data get entity @s Pos[2] 1
