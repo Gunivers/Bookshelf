@@ -1,35 +1,35 @@
 # NAME: Update Chain Unique Identifier - Check
-# PATH: Entity/Id/Child/UpdateCUID-Check
+# PATH: gunivers-lib:entity/id/child/updatecuid-check
 
 # CHILD OF:
-# - Entity/Id/UpdateCUID
+# - gunivers-lib:entity/id/updatecuid
 
 # CODE:
 #The entities with the same score as the CUID vitual player have now 0
 scoreboard players operation @e[tag=UpdateCUID] Id -= CUID Data
 
 #Catches one entity with the searched Id
-scoreboard players tag @e remove CorrectCUID
-scoreboard players tag @e[score_Id_min=0,score_Id=0,c=1,tag=UpdateCUID] add CorrectCUID
+tag @e remove CorrectCUID
+tag @e[scores={Id=0},limit=1,tag=UpdateCUID] add CorrectCUID
 
 #Marks all the entities with more than the wanted score
 scoreboard players tag @e remove HasToMove
-scoreboard players tag @e[tag=UpdateCUID,score_Id_min=1] add HasToMove
+scoreboard players tag @e[tag=UpdateCUID,scores={Id=1..}] add HasToMove
 
 #Lower the score of the entities who have more than the wanted score if there is no entity with that score
-execute @e[tag=CorrectCUID] ~ ~ ~ scoreboard players tag @e remove HasToMove
-execute @e[tag=HasToMove,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Id/Child/UpdateCUID-Plug
+execute as @e[tag=CorrectCUID] run tag @e remove HasToMove
+execute as @e[tag=HasToMove,limit=1] run function gunivers-lib:entity/id/child/updatecuid-plug
 
 #Unstack the group of entities who have the searched score (if exists)
-execute @e[score_Id_min=0,score_Id=0,tag=UpdateCUID] ~ ~ ~ scoreboard players tag @s[tag=!CorrectCUID] add StackedCUID
-execute @e[tag=StackedCUID] ~ ~ ~ function Gunivers-Lib:Entity/Id/Child/UpdateCUID-Unstack
+execute as @e[scores={Id=0},tag=UpdateCUID] run tag @s[tag=!CorrectCUID] add StackedCUID
+execute as @e[tag=StackedCUID] run function gunivers-lib:entity/id/child/updatecuid-unstack
 
 #Detects if there are entities with more than the wanted score
-scoreboard players tag @e remove AnotherLoop
-scoreboard players tag @e[score_Id_min=1] add AnotherLoop
+tag @e remove AnotherLoop
+tag @e[scores={Id=1..}] add AnotherLoop
 
 scoreboard players operation @e[tag=UpdateCUID] Id += CUID Data
 
 #Executes the system another time if there are entities with more than the wanted score
 scoreboard players add CUID Data 1
-execute @e[tag=AnotherLoop,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Id/Child/UpdateCUID-Check
+execute @as e[tag=AnotherLoop,limit=1] run function gunivers-lib:entity/id/child/updatecuid-check

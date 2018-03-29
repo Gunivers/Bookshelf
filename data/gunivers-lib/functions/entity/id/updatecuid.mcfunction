@@ -1,26 +1,26 @@
 # NAME: Update Chain Unique Identifier
-# PATH: Entity/Id/UpdateCUID
+# PATH: gunivers-lib:entity/id/Updatecuid
 
 # AUTHOR: KubbyDev
 
 # VERSION: 1.0
-# MINECRAFT: 1.12
+# MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:Utils/Import/Basic (import file)
-# - ID (score dummy)
+# - gunivers-lib:utils/import/basic (import file)
+# - Id(score dummy)
 
 # INPUT:
 
 # OUTPUT:
-# - ID (score dummy)
+# - Id (score dummy)
 
 # CODE:
 
 scoreboard players set CUID Data 1
-scoreboard players tag @e[score_ID_min=1] add UpdateCUID
+scoreboard players tag @e[scores={Id=1..}] add UpdateCUID
 
-function Gunivers-Lib:Entity/Id/Child/UpdateCUID-Check
+function gunivers-lib:entity/id/child/updatecuid-check
 
-scoreboard players tag @e remove UpdateCUID
-scoreboard players tag @e remove CorrectCUID
+tag @e remove UpdateCUID
+tag @e remove CorrectCUID

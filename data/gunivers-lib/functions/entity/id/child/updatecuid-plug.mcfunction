@@ -1,13 +1,13 @@
 # NAME: Update Chain Unique Identifier - Plug
-# PATH: Entity/Id/Child/UpdateCUID-Plug
+# PATH: gunivers-lib:entity/id/child/updatecuid-plug
 
 # CHILD OF:
-# - Entity/Id/Child/UpdateCUID-Check
+# - gunivers-lib:entity/id/child/updatecuid-check
 
 # CODE:
 scoreboard players remove @e[tag=HasToMove] Id 1
 
-scoreboard players tag @e[score_Id_min=0,score_Id=0,tag=UpdateCUID] add CorrectCUID
-execute @e[tag=CorrectCUID] ~ ~ ~ scoreboard players tag @e remove HasToMove
+tag @e[scores={Id=1},tag=UpdateCUID] add CorrectCUID
+execute as @e[tag=CorrectCUID] run tag @e remove HasToMove
 
-execute @e[tag=HasToMove,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Id/Child/UpdateCUID-Plug
+execute as @e[tag=HasToMove,limit=1] run function gunivers-lib:entity/id/child/updatecuid-plug

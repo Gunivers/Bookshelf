@@ -1,9 +1,9 @@
 # NAME: Update Chain Unique Identifier - Unstack
-# PATH: Entity/Id/Child/UpdateCUID-Unstack
+# PATH: gunivers-lib:entity/id/child/updatecuid-unstack
 
 # CHILD OF:
-# - Entity/Id/Child/UpdateCUID-Check
+# - gunivers-lib:entity/id/child/updatecuid-check
 
 # CODE:
-scoreboard players tag @s remove StackedCUID
-execute @e[tag=UpdateCUID,score_Id_min=0] ~ ~ ~ scoreboard players add @s[tag=!CorrectCUID] Id 1
+tag @s remove StackedCUID
+execute as @e[tag=UpdateCUID,scores={Id=0..}] run scoreboard players add @s[tag=!CorrectCUID] Id 1

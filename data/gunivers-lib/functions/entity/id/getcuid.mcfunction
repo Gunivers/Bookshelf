@@ -1,13 +1,13 @@
 # NAME: Get Chain Unique Identifier
-# PATH: Entity/Id/GetCUID
+# PATH: gunivers-lib:entity/id/Getcuid
 
 # AUTHOR: KubbyDev
 
 # VERSION: 1.0
-# MINECRAFT: 1.12
+# MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Gunivers-Lib:Utils/Import/Id
+# - gunivers-lib:utils/import/id
 
 # INPUT:
 
