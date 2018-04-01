@@ -20,8 +20,8 @@
 
 # CODE:
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetLocation"]}
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 1000 run scoreboard players get @s Var1
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 1000 run scoreboard players get @s Var2
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 1000 run scoreboard players get @s Var3
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 0.001 run scoreboard players get @s Var1
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 0.001 run scoreboard players get @s Var2
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 0.001 run scoreboard players get @s Var3
 tp @s @e[type=armor_stand,tag=SetLocation,limit=1]
 kill @e[type=armor_stand,tag=SetLocation,limit=1]
