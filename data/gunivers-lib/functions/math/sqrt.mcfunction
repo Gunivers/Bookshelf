@@ -1,5 +1,5 @@
 # NAME: Square Root
-# PATH: Gunivers-Lib:Math/Sqrt
+# PATH: gunivers-lib:math/sqrt
 
 # AUTHOR: Luludatra
 # CONTRIBUTOR:
@@ -10,9 +10,9 @@
 # MINECRAFT: 1.12
 
 # REQUIEREMENTS:
-# - Gunivers-Lib:Utils/Import/Temporary (Import file)
-# - Gunivers-Lib:Utils/Import/Math (Import file) 
-# - Gunivers-Lib:Utils/Import/Constant(Import file)
+# - gunivers-lib:utils/import/temporary (Import file)
+# - gunivers-lib:utils/import/math (Import file) 
+# - gunivers-lib:utils/import/constant(Import file)
 
 # INPUT:
 # - Tmp1 (score dummy)
@@ -39,4 +39,4 @@ scoreboard players operation @s Tmp4 /= 2 Constant
 scoreboard players operation @s Tmp3 = @s Res
 
 # Loop to execute {Tmp2} time
-function Gunivers-Lib:Math/Child/Sqrt-Loop
+function gunivers-lib:math/child/sqrt-loop
