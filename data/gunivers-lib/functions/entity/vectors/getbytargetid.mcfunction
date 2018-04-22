@@ -25,14 +25,12 @@
 
 # CODE:
 
-function gunivers-lib:location/accurate/get
+execute as @s run function gunivers-lib:entity/location/get
 
 tag @s add Source
-execute as @e if @s ID = @e[tag=Source] TargetID run tag @s add PotTarget
-execute as @e[tag=PotTarget,limit=1] run tag @s add Target
-tag @e remove PotTarget
+execute as @e if @s ID = @e[tag=Source] TargetID unless entity @e[tag=Target,limit=1] run tag @s add Target
 
-execute as @e[tag=Target] run function gunivers-lib:location/accurate/get
+execute as @e[tag=Target] run function gunivers-lib:entity/location/get
 
 scoreboard players operation @s VectorX = @e[tag=Target] LocX
 scoreboard players operation @s VectorY = @e[tag=Target] LocY
