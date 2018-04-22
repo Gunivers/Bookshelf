@@ -24,7 +24,7 @@
 
 # CODE:
 
-function gunivers-lib:entity/vectors/getlength
+function gunivers-lib:entity/vectors/getlengthsquared
 
 scoreboard players operation @s Var1 = @s Res
 
