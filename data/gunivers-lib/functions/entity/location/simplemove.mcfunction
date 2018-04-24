@@ -16,8 +16,6 @@
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
 
-# NOTE:
-
 # CODE:
 
 execute store result score @s Var1 run data get entity @s Pos[0] 1000
@@ -29,8 +27,3 @@ scoreboard players operation @s Var2 += @s VectorY
 scoreboard players operation @s Var3 += @s VectorZ
 
 function gunivers-lib:entity/location/advanced/set
-
-
-
-
-
