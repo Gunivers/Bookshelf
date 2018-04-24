@@ -1,18 +1,7 @@
+#System: Gesture
 #Name: Speech
-#Path: gunivers-lib:system/gesture/speech
 
 #Author: A~Z
-
-#Version: 1.0
-#Minecraft: 1.13
-
-#Requirements: /
-
-#Input:
-# - gestureTime (score dummy)
-# - @s (entity)
-
-#Output: /
 
 #Code:
 data merge entity @s[scores={gesturePart= 1}] {Pose:{Head:[0f, 0f,0f], LeftArm:[0f,0f,-6f], RightArm:[0f,0f,6f]}}
