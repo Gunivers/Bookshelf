@@ -12,32 +12,32 @@
 
 #Input:
 # - gestureTime (score dummy)
-# - @s (entity)
+# - gesture (score dummy)
 
 #Output: /
 
 #Code:
 	#timer
-tag @s[scores={gestureTime=1..}] add gesture
-scoreboard players remove @s[tag=gesture] gestureTime 1
-tag @s[scores={gestureTime=-1}] add gesture
+tag @e[scores={gestureTime=1..}] add gesture
+scoreboard players remove @e[tag=gesture] gestureTime 1
+tag @e[scores={gestureTime=-1}] add gesture
 
 	#gesturePart adder
-scoreboard players add @s[tag=gesture] gesturePart 1
+scoreboard players add @e[tag=gesture] gesturePart 1
 
 	#gesture functions manager
-execute as @s[scores={gesture=1},tag=gesture] run function gunivers-lib:system/gesture/speech
-#execute as @s[scores={gesture=2},tag=gesture] run function gunivers-lib:system/gesture/new_gesture
+execute as @e[scores={gesture=1},tag=gesture] run function gunivers-lib:system/gesture/speech
+# execute as @e[scores={gesture=2},tag=gesture] run function gunivers-lib:system/gesture/<name>
 
 	#reset
-tag @s[tag=gesture] remove gesture
+tag @e[tag=gesture] remove gesture
 
 #######################################################################################################
 # gestureTime (score dummy): It is the instances counters. Set -1 for countless uses
 # gesturePart (score dummy): It is the current part of the gesture. It is used in the gesture function.
 # gesture (tag): When an entity has the gesture tag, it can have a gesture
 # gesture (score dummy): Set the rank of the gesture you want to use
-#######################################################################################################
-
-#Gestures List:
+# -----------------------------------------------------------------------------------------------------
+# Gestures List:
 # 1: speech
+# n: <name>
