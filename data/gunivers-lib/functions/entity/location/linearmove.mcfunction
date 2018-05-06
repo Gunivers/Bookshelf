@@ -9,7 +9,6 @@
 #Requirements: /
 
 #Input:
-# - linear_move (tag)
 # - Var1 (score dummy)
 
 #Output: /
