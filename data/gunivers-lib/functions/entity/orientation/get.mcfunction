@@ -11,12 +11,12 @@
 # - gunivers-Lib:utils/import/rotation
 
 # OUTPUT:
-# - Phi (score dummy)
-# - Theta (score dummy)
+# - OriP (score dummy)
+# - OriT (score dummy)
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
-execute store result score @s Phi run data get entity @s Rotation[0] 1
-execute store result score @s Theta run data get entity @s Rotation[1] 1
+execute store result score @s OriP run data get entity @s Rotation[0] 1
+execute store result score @s OriT run data get entity @s Rotation[1] 1
