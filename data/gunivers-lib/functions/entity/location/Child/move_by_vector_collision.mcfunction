@@ -12,8 +12,8 @@
 tag @s[scores={Collision=1..}] add CollisionX
 tag @s[scores={Collision=1..,Var1=0}] remove CollisionX
 
-execute as @s[score_Var1_min=1] at @s if block ~1 ~ ~ air run tag @s remove CollisionX
-execute as @s[score_Var1=-1] at @s if block ~-1 ~ ~ air run tag @s remove CollisionX
+execute as @s[scores={Var1=1..}] at @s if block ~1 ~ ~ air run tag @s remove CollisionX
+execute as @s[scores={Var1=..-1}] at @s if block ~-1 ~ ~ air run tag @s remove CollisionX
 
 scoreboard players operation @s[scores={Collision=1..3},tag=CollisionX] VectorX *= Neg Constant
 scoreboard players operation @s[scores={Collision=1..3},tag=CollisionX] Var7 *= Neg Constant
@@ -37,8 +37,8 @@ tag @s[scores={Collision=1..},tag=CollisionX] add Collision
 tag @s[score_Collision_min=1] add CollisionY
 tag @s[score_Collision_min=1,score_Var2=0,score_Var2_min=0] remove CollisionY
 
-execute as @s[score_Var2_min=1] at @s if block ~ ~1 ~ air run tag @s remove CollisionY
-execute as @s[score_Var2=-1] at @s if block ~ ~-1 ~ air run tag @s remove CollisionY
+execute as @s[scores={Var2=1..}] at @s if block ~ ~1 ~ air run tag @s remove CollisionY
+execute as @s[scores={Var2=..-1}] at @s if block ~ ~-1 ~ air run tag @s remove CollisionY
 
 
 
@@ -64,8 +64,8 @@ tag @s[scores={Collision=1..},tag=CollisionY] add Collision
 tag @s[score_Collision_min=1] add CollisionZ
 tag @s[score_Collision_min=1,score_Var3=0,score_Var3_min=0] remove CollisionZ
 
-execute as @s[score_Var3_min=1] at @s if block ~ ~ ~1 air run tag @s remove CollisionZ
-execute as @s[score_Var3=-1] at @s if block ~ ~ ~-1 air run tag @s remove CollisionZ
+execute as @s[scores={Var3=1..}] at @s if block ~ ~ ~1 air run tag @s remove CollisionZ
+execute as @s[scores={Var3=..-1}] at @s if block ~ ~ ~-1 air run tag @s remove CollisionZ
 
 scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] VectorZ *= Neg Constant
 scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] Var9 *= Neg Constant
