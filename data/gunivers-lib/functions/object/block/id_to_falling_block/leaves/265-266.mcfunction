@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 265 run summon falling_block ~ ~ ~ {BlockState:{Name:"lava"},Time:1}
+execute if score @s Var1 matches 266 run summon falling_block ~ ~ ~ {BlockState:{Name:"lever"},Time:1}

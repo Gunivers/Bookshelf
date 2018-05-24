@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 347 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_slab"},Time:1}
+execute if score @s Var1 matches 348 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_stairs"},Time:1}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 145 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_log"},Time:1}
+execute if score @s Var1 matches 146 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_planks"},Time:1}

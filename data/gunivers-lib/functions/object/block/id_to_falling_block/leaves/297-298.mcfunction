@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 297 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_concrete"},Time:1}
+execute if score @s Var1 matches 298 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_concrete_powder"},Time:1}

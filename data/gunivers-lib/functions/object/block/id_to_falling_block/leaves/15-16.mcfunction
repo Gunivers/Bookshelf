@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 15 run summon falling_block ~ ~ ~ {BlockState:{Name:"allium"},Time:1}
+execute if score @s Var1 matches 16 run summon falling_block ~ ~ ~ {BlockState:{Name:"andesite"},Time:1}

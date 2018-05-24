@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 67 run summon falling_block ~ ~ ~ {BlockState:{Name:"brain_coral_block"},Time:1}
+execute if score @s Var1 matches 68 run summon falling_block ~ ~ ~ {BlockState:{Name:"brain_coral_fan"},Time:1}

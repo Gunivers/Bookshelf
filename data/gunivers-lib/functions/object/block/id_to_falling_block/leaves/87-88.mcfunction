@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 87 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_column"},Time:1}
+execute if score @s Var1 matches 88 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral"},Time:1}

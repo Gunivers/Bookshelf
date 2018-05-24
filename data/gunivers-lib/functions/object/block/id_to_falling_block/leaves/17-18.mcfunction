@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"anvil"},Time:1}
+execute if score @s Var1 matches 18 run summon falling_block ~ ~ ~ {BlockState:{Name:"attached_melon_stem"},Time:1}

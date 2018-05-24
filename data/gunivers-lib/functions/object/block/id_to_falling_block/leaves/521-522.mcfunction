@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 521 run summon falling_block ~ ~ ~ {BlockState:{Name:"structure_void"},Time:1}
+execute if score @s Var1 matches 522 run summon falling_block ~ ~ ~ {BlockState:{Name:"sugar_cane"},Time:1}

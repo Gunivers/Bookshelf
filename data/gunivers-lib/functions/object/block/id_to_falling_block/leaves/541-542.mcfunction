@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 541 run summon falling_block ~ ~ ~ {BlockState:{Name:"wet_sponge"},Time:1}
+execute if score @s Var1 matches 542 run summon falling_block ~ ~ ~ {BlockState:{Name:"wheat"},Time:1}
