@@ -33,5 +33,5 @@ tag @s[scores={Var1=..-1001}] add MoveLoop
 tag @s[scores={Var2=..-1001}] add MoveLoop
 tag @s[scores={Var3=..-1001}] add MoveLoop
 
-execute as @s[tag=MoveLoop] at @s run function gunivers-lib:entity/location/child/move_by_vector_loop1
+execute as @s[tag=MoveLoop] at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_loop1
 
