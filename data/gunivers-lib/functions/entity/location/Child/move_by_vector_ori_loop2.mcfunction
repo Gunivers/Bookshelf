@@ -16,11 +16,11 @@ scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9
 execute at @s[tag=Debug] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Debug"]}
 # END DEBUG
 
-execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/location/child/move_by_vector_collision
-execute at @s run function gunivers-lib:entity/location/child/move_by_vector_apply
+execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_collision
+execute at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_apply
 
 scoreboard players remove @s Var4 1
 
 tag @s remove Move-Loop2
 tag @s[scores={Var4=1..}] add Move-Loop2
-execute as @s[tag=Move-Loop2] at @s run function gunivers-lib:entity/location/child/move_by_vector_loop2
+execute as @s[tag=Move-Loop2] at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_loop2
