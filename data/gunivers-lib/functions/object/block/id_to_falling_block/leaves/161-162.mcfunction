@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 161 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral_block"},Time:1}
-execute if score @s Var1 matches 162 run summon falling_block ~ ~ ~ {BlockState:{Name:"detector_rail"},Time:1}
+execute if score @s Var1 matches 161 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 162 run summon falling_block ~ ~ ~ {BlockState:{Name:"detector_rail"},Time:1,Tags:["FallingObjectConverter"]}

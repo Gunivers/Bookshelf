@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 63 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_wool"},Time:1}
-execute if score @s Var1 matches 64 run summon falling_block ~ ~ ~ {BlockState:{Name:"bone_block"},Time:1}
+execute if score @s Var1 matches 63 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_wool"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 64 run summon falling_block ~ ~ ~ {BlockState:{Name:"bone_block"},Time:1,Tags:["FallingObjectConverter"]}

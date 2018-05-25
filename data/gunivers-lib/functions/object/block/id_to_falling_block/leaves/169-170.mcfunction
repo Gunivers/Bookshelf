@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 169 run summon falling_block ~ ~ ~ {BlockState:{Name:"dragon_head"},Time:1}
-execute if score @s Var1 matches 170 run summon falling_block ~ ~ ~ {BlockState:{Name:"dragon_wall_head"},Time:1}
+execute if score @s Var1 matches 169 run summon falling_block ~ ~ ~ {BlockState:{Name:"dragon_head"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 170 run summon falling_block ~ ~ ~ {BlockState:{Name:"dragon_wall_head"},Time:1,Tags:["FallingObjectConverter"]}

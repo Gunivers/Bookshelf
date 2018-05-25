@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 89 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral_block"},Time:1}
-execute if score @s Var1 matches 90 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral_fan"},Time:1}
+execute if score @s Var1 matches 89 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 90 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral_fan"},Time:1,Tags:["FallingObjectConverter"]}

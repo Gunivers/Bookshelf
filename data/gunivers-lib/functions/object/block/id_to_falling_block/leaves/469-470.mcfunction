@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 469 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_wool"},Time:1}
-execute if score @s Var1 matches 470 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},Time:1}
+execute if score @s Var1 matches 469 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_wool"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 470 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},Time:1,Tags:["FallingObjectConverter"]}

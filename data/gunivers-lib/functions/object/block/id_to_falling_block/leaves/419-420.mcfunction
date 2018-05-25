@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 419 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_slab"},Time:1}
-execute if score @s Var1 matches 420 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_stairs"},Time:1}
+execute if score @s Var1 matches 419 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_slab"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 420 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_stairs"},Time:1,Tags:["FallingObjectConverter"]}

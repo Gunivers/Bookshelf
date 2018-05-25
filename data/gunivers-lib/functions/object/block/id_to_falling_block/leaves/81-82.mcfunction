@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 81 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_shulker_box"},Time:1}
-execute if score @s Var1 matches 82 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_stained_glass"},Time:1}
+execute if score @s Var1 matches 81 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_shulker_box"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 82 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_stained_glass"},Time:1,Tags:["FallingObjectConverter"]}

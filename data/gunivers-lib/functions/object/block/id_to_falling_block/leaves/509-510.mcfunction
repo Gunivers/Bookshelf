@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 509 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_brick_slab"},Time:1}
-execute if score @s Var1 matches 510 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_brick_stairs"},Time:1}
+execute if score @s Var1 matches 509 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_brick_slab"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 510 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_brick_stairs"},Time:1,Tags:["FallingObjectConverter"]}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 387 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_andesite"},Time:1}
-execute if score @s Var1 matches 388 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_diorite"},Time:1}
+execute if score @s Var1 matches 387 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_andesite"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 388 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_diorite"},Time:1,Tags:["FallingObjectConverter"]}

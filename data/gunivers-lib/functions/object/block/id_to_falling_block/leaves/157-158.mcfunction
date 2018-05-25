@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 157 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_bubble_coral_block"},Time:1}
-execute if score @s Var1 matches 158 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_bush"},Time:1}
+execute if score @s Var1 matches 157 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_bubble_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 158 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_bush"},Time:1,Tags:["FallingObjectConverter"]}

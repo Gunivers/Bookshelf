@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 533 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_block"},Time:1}
-execute if score @s Var1 matches 534 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_fan"},Time:1}
+execute if score @s Var1 matches 533 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 534 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_fan"},Time:1,Tags:["FallingObjectConverter"]}

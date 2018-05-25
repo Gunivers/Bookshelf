@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 249 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence"},Time:1}
-execute if score @s Var1 matches 250 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence_gate"},Time:1}
+execute if score @s Var1 matches 249 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 250 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence_gate"},Time:1,Tags:["FallingObjectConverter"]}

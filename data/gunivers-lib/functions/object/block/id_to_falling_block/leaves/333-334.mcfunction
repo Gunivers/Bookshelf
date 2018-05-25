@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 333 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_quartz_ore"},Time:1}
-execute if score @s Var1 matches 334 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_wart"},Time:1}
+execute if score @s Var1 matches 333 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_quartz_ore"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 334 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_wart"},Time:1,Tags:["FallingObjectConverter"]}

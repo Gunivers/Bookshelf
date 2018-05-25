@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 355 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_concrete"},Time:1}
-execute if score @s Var1 matches 356 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_concrete_powder"},Time:1}
+execute if score @s Var1 matches 355 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_concrete"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 356 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_concrete_powder"},Time:1,Tags:["FallingObjectConverter"]}

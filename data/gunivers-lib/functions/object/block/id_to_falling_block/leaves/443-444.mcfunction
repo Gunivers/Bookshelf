@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 443 run summon falling_block ~ ~ ~ {BlockState:{Name:"rail"},Time:1}
-execute if score @s Var1 matches 444 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_block"},Time:1}
+execute if score @s Var1 matches 443 run summon falling_block ~ ~ ~ {BlockState:{Name:"rail"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 444 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_block"},Time:1,Tags:["FallingObjectConverter"]}

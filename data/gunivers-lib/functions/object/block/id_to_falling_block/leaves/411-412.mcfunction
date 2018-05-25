@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 411 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_tulip"},Time:1}
-execute if score @s Var1 matches 412 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_spruce_sapling"},Time:1}
+execute if score @s Var1 matches 411 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_tulip"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 412 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_spruce_sapling"},Time:1,Tags:["FallingObjectConverter"]}

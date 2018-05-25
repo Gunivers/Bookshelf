@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 409 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_poppy"},Time:1}
-execute if score @s Var1 matches 410 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_mushroom"},Time:1}
+execute if score @s Var1 matches 409 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_poppy"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 410 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_mushroom"},Time:1,Tags:["FallingObjectConverter"]}
