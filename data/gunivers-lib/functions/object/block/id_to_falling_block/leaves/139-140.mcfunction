@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 139 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_bark"},Time:1}
-execute if score @s Var1 matches 140 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_button"},Time:1}
+execute if score @s Var1 matches 139 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_bark"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 140 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_button"},Time:1,Tags:["FallingObjectConverter"]}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 171 run summon falling_block ~ ~ ~ {BlockState:{Name:"dried_kelp_block"},Time:1}
-execute if score @s Var1 matches 172 run summon falling_block ~ ~ ~ {BlockState:{Name:"dropper"},Time:1}
+execute if score @s Var1 matches 171 run summon falling_block ~ ~ ~ {BlockState:{Name:"dried_kelp_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 172 run summon falling_block ~ ~ ~ {BlockState:{Name:"dropper"},Time:1,Tags:["FallingObjectConverter"]}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 385 run summon falling_block ~ ~ ~ {BlockState:{Name:"player_wall_head"},Time:1}
-execute if score @s Var1 matches 386 run summon falling_block ~ ~ ~ {BlockState:{Name:"podzol"},Time:1}
+execute if score @s Var1 matches 385 run summon falling_block ~ ~ ~ {BlockState:{Name:"player_wall_head"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 386 run summon falling_block ~ ~ ~ {BlockState:{Name:"podzol"},Time:1,Tags:["FallingObjectConverter"]}

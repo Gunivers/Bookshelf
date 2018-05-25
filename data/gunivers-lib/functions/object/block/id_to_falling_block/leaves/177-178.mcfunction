@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 177 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_gateway"},Time:1}
-execute if score @s Var1 matches 178 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_portal"},Time:1}
+execute if score @s Var1 matches 177 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_gateway"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 178 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_portal"},Time:1,Tags:["FallingObjectConverter"]}

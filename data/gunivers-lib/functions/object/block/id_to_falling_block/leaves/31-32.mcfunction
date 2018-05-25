@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 31 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_log"},Time:1}
-execute if score @s Var1 matches 32 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_planks"},Time:1}
+execute if score @s Var1 matches 31 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_log"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 32 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_planks"},Time:1,Tags:["FallingObjectConverter"]}

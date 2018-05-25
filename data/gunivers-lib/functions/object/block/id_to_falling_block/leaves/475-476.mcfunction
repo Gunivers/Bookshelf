@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 475 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_slab"},Time:1}
-execute if score @s Var1 matches 476 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_stairs"},Time:1}
+execute if score @s Var1 matches 475 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_slab"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 476 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_stairs"},Time:1,Tags:["FallingObjectConverter"]}

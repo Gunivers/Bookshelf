@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 9 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_sapling"},Time:1}
-execute if score @s Var1 matches 10 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_slab"},Time:1}
+execute if score @s Var1 matches 9 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_sapling"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 10 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_slab"},Time:1,Tags:["FallingObjectConverter"]}

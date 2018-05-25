@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 29 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_fence_gate"},Time:1}
-execute if score @s Var1 matches 30 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_leaves"},Time:1}
+execute if score @s Var1 matches 29 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_fence_gate"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 30 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_leaves"},Time:1,Tags:["FallingObjectConverter"]}
