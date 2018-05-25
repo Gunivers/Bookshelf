@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 179 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_portal_frame"},Time:1}
+execute if score @s Var1 matches 180 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_rod"},Time:1}

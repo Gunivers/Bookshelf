@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 395 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_azure_bluet"},Time:1}
+execute if score @s Var1 matches 396 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_birch_sapling"},Time:1}

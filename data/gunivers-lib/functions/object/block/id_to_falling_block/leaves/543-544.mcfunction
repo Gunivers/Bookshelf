@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 543 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_banner"},Time:1}
+execute if score @s Var1 matches 544 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_bed"},Time:1}

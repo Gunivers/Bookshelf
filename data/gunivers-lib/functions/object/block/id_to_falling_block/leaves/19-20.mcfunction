@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 19 run summon falling_block ~ ~ ~ {BlockState:{Name:"attached_pumpkin_stem"},Time:1}
+execute if score @s Var1 matches 20 run summon falling_block ~ ~ ~ {BlockState:{Name:"azure_bluet"},Time:1}

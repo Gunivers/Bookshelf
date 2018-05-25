@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 115 run summon falling_block ~ ~ ~ {BlockState:{Name:"cocoa"},Time:1}
+execute if score @s Var1 matches 116 run summon falling_block ~ ~ ~ {BlockState:{Name:"command_block"},Time:1}

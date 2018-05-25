@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 121 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_head"},Time:1}
+execute if score @s Var1 matches 122 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_wall_head"},Time:1}

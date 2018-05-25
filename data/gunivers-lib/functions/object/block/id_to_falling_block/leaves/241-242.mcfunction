@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 241 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_door"},Time:1}
+execute if score @s Var1 matches 242 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_ore"},Time:1}

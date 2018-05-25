@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 431 run summon falling_block ~ ~ ~ {BlockState:{Name:"purple_stained_glass_pane"},Time:1}
+execute if score @s Var1 matches 432 run summon falling_block ~ ~ ~ {BlockState:{Name:"purple_terracotta"},Time:1}

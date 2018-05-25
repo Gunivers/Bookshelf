@@ -1,0 +1,10 @@
+execute if block ~ ~ ~ #gunivers-lib:group/group0 run say 1024
+execute if block ~ ~ ~ #gunivers-lib:group/group1 run say 256
+execute if block ~ ~ ~ #gunivers-lib:group/group2 run say 128
+execute if block ~ ~ ~ #gunivers-lib:group/group3 run say 64
+execute if block ~ ~ ~ #gunivers-lib:group/group4 run say 32
+execute if block ~ ~ ~ #gunivers-lib:group/group5 run say 16
+execute if block ~ ~ ~ #gunivers-lib:group/group6 run say 8
+execute if block ~ ~ ~ #gunivers-lib:group/group7 run say 4
+execute if block ~ ~ ~ #gunivers-lib:group/group8 run say 2
+execute if block ~ ~ ~ #gunivers-lib:group/group9 run say 1

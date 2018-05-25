@@ -1,0 +1,1 @@
+execute if score @s Var1 matches 571 run summon falling_block ~ ~ ~ {BlockState:{Name:"zombie_wall_head"},Time:1}

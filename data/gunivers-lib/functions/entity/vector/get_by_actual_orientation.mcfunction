@@ -42,7 +42,7 @@ scoreboard players operation @s VectorZ -= @s Var3
 
 kill @e[tag=GetVec,type=armor_stand]
 
-scoreboard players set @s VectorSpeed 2000
+scoreboard players set @s VectorSpeed 1000
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Vectors/Get_By_Actual_Orientation]=-","color":"green"}]
