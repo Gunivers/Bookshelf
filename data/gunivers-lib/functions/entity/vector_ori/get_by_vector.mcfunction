@@ -30,29 +30,29 @@ scoreboard players add @s[scores={Var9=..-1}] Var9 180
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Vectors/Get_By_Actual_Orientation]=-","color":"green"}]
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var8"}},{"text":".   Tetha: ","color":"red"},{"score":{"name":"@s","objective":"Var9"}}]
+tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var8"}},{"text":".   Tetha: ","color":"red"},{"score":{"name":"@s","objective":"Var9"}}]
 ### END DEBUG
 
-# Cos(Phi)
+# Cos(Theta)
 scoreboard players operation @s Var1 = @s Var8
 function gunivers-lib:math/cos
 scoreboard players operation @s Var4 = @s Res
 
-# Sin(Phi)
+# Sin(Theta)
 function gunivers-lib:math/sin
 scoreboard players operation @s Var5 = @s Res
 
-# Cos(Theta)
+# Cos(Phi)
 scoreboard players operation @s Var1 = @s Var9
 function gunivers-lib:math/cos
 scoreboard players operation @s Var6 = @s Res
 
-# Sin(Theta)
+# Sin(Phi)
 function gunivers-lib:math/sin
 scoreboard players operation @s Var7 = @s Res
 
 ### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Thta): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
+tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Thta): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 ### END DEBUG
 
 
