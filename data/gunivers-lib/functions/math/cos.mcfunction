@@ -17,10 +17,14 @@
 # OUTPUT: 
 # - Res (score dummy) 
 
-# NOTE:
-# - Var1 must be in interval [0;360]
 
 # CODE:
+
+# Convert to angle [0;360]
+
+scoreboard players operation @s[scores={Var1=..-1}] Var1 *= Neg Constant
+scoreboard players operation @s[scores={Var1=360..}] Var1 %= 360 Constant
+
 # Retranscription of Var1 on interval [0;90[
 
 scoreboard players operation @s Var3 = @s Var1

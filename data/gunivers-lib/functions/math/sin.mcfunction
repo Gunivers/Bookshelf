@@ -22,10 +22,17 @@
 
 # CODE:
 
+# Convert to angle [-90;90]
+
+scoreboard players operation @s Var1 += 90 Constant
+scoreboard players operation @s[scores={Var1=..-1}] Var1 *= Neg Constant
+scoreboard players operation @s[scores={Var1=360..}] Var1 %= 180 Constant
+scoreboard players operation @s Var1 -= 90 Constant
+
 # Retranscription of Var1 on interval [0;180[
 
 scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s[scores={Var1=180..}] Var3 -= 180 Constant
+scoreboard players operation @s[scores={Var1=..-1}] Var3 *= Neg Constant
 
 # Calcul Sin
 
@@ -44,4 +51,4 @@ scoreboard players operation @s Var2 *= Neg Constant
 scoreboard players operation @s Var2 += 40500 Constant
 scoreboard players operation @s Res /= @s Var2
 
-scoreboard players operation @s[scores={Var1=180..}] Res *= Neg Constant
+scoreboard players operation @s[scores={Var1=..-1}] Res *= Neg Constant
