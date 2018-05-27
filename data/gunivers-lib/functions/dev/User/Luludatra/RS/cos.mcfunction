@@ -25,7 +25,7 @@ scoreboard players set 32400 Constant 32400
 # Note: Tmp1 must be in interval [0;360]
 scoreboard players operation @s Tmp1 = @s Operation
 
-# Retranscription of Phi on interval [0;90[
+# Retranscription of Theta on interval [0;90[
 
 scoreboard players operation @s Tmp3 = @s Tmp
 scoreboard players operation @s[score_Tmp1_min=90,score_Tmp1=179] Tmp3 *= -1 Constant

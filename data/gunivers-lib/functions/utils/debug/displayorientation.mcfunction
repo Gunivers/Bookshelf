@@ -7,12 +7,12 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Phi (score dummy)
 # - Theta (score dummy)
+# - Phi (score dummy)
 
 # INPUT:
-# - Phi (score dummy)
-# - Theta (score dummy
+# - Theta (score dummy)
+# - Phi (score dummy
 
 # OUTPUT:
 
@@ -20,4 +20,4 @@
 
 # CODE:
 
-tellraw @a ["",{"text":"[Debug]","color":"green","bold":"true"},{"text":" Phi: ","color":"red"},{"score":{"name":"@s","objective":"Phi"}},{"text":" | Theta: ","color":"red"},{"score":{"name":"@s","objective":"Theta"}}]
+tellraw @a ["",{"text":"[Debug]","color":"green","bold":"true"},{"text":" Theta: ","color":"red"},{"score":{"name":"@s","objective":"Theta"}},{"text":" | Phi: ","color":"red"},{"score":{"name":"@s","objective":"Phi"}}]

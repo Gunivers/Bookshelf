@@ -13,16 +13,16 @@
 # - gunivers-lib:utils/import/constant (Import file)
 
 # INPUT:
-# - Theta (score dummy)
 # - Phi (score dummy)
+# - Theta (score dummy)
 
 # OUTPUT:
-# - Theta (score dummy)
 # - Phi (score dummy)
+# - Theta (score dummy)
 
 # CODE:
-scoreboard players operation @s Phi %= 360 Constant
-scoreboard players operation @s Theta %= 180 Constant
+scoreboard players operation @s Theta %= 360 Constant
+scoreboard players operation @s Phi %= 180 Constant
 
-scoreboard players add @s[scores={Phi=..-1}] Phi 360
-scoreboard players add @s[scores={Theta=..-1}] Theta 180
+scoreboard players add @s[scores={Theta=..-1}] Theta 360
+scoreboard players add @s[scores={Phi=..-1}] Phi 180

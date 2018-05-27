@@ -38,6 +38,6 @@ execute @e[tag=DirCollisionY] ~ ~ ~ say Collision Y
 
 execute @e[tag=DirCollisionZ] ~ ~ ~ say Collision Z
 
-execute @e[tag=DirMoving] ~ ~ ~ execute @s[tag=!TestOld] ~ ~ ~ tellraw @a ["",{"text":"----------\n"},{"text":" Phi: "},{"score":{"name":"@e[c=1]","objective":"Phi"}},{"text":" Theta: "},{"score":{"name":"@e[c=1]","objective":"Theta"}},{"text":"\n VectorX: "},{"score":{"name":"@e[c=1]","objective":"VectorX"}},{"text":" Vector Y: "},{"score":{"name":"@e[c=1]","objective":"VectorY"}},{"text":" Vector Z: "},{"score":{"name":"@e[c=1]","objective":"VectorZ"}},{"text":"\n----------"}]
+execute @e[tag=DirMoving] ~ ~ ~ execute @s[tag=!TestOld] ~ ~ ~ tellraw @a ["",{"text":"----------\n"},{"text":" Theta: "},{"score":{"name":"@e[c=1]","objective":"Theta"}},{"text":" Phi: "},{"score":{"name":"@e[c=1]","objective":"Phi"}},{"text":"\n VectorX: "},{"score":{"name":"@e[c=1]","objective":"VectorX"}},{"text":" Vector Y: "},{"score":{"name":"@e[c=1]","objective":"VectorY"}},{"text":" Vector Z: "},{"score":{"name":"@e[c=1]","objective":"VectorZ"}},{"text":"\n----------"}]
 
 scoreboard players tag @e[tag=DirMoving] add TestOld
