@@ -1,5 +1,5 @@
 # NAME: Get Vector
-# PATH: gunivers-lib:entity/vectors_ori/get_by_vector
+# PATH: gunivers-lib:entity/local_vectors/get_by_vector
 
 # AUTHOR: LeiRoF
 
@@ -57,17 +57,16 @@ tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta)
 
 
 # Vector Left
-scoreboard players operation @s Var1 = @s VectorZ
-scoreboard players operation @s Var1 *= @s Var6
-scoreboard players operation @s Var1 *= @s Var5
-scoreboard players operation @s Var1 /= 1000000 Constant
+scoreboard players operation @s Var1 = @s VectorX
+scoreboard players operation @s Var1 *= @s Var4
+scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorLeft = @s Var1
 
-scoreboard players operation @s Var1 = @s VectorX
-scoreboard players operation @s Var1 *= @s Var6
-scoreboard players operation @s Var1 *= @s Var4
-scoreboard players operation @s Var1 /= 1000000 Constant
-scoreboard players operation @s VectorLeft += @s Var1
+scoreboard players operation @s Var1 = @s VectorZ
+scoreboard players operation @s Var1 *= @s Var5
+scoreboard players operation @s Var1 /= 1000 Constant
+scoreboard players operation @s VectorLeft -= @s Var1
+
 
 # Vector Up
 scoreboard players operation @s Var1 = @s VectorY
