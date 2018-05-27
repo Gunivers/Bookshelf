@@ -1,2 +1,2 @@
 execute if score @s Var1 matches ..208 run function gunivers-lib:object/block/id_to_falling_block/nodes/193-208
-execute if score @s Var1 matches 208.. run function gunivers-lib:object/block/id_to_falling_block/nodes/209-224
+execute if score @s Var1 matches 209.. run function gunivers-lib:object/block/id_to_falling_block/nodes/209-224
