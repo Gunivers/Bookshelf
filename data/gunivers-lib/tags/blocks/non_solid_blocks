@@ -25,6 +25,7 @@
 	"minecraft:conduit",
 	"minecraft:end_rod",
 	"minecraft:sign",
-	"minecraft:wall_sign",
+	"minecraft:wall_sign"
+	TRAPPE
 	]
 }
