@@ -2,32 +2,38 @@
 # PATH: Gunivers-Lib:Entity/Location/Child/Move-Collision
 
 # CHILD OF: Gunivers-Lib:Entity/Location/Move
-
+1
 # CODE:
 
-execute store result score @s Var8 run data get entity @s Rotation[0] 1
-execute store result score @s Var9 run data get entity @s Rotation[1] 1
+execute store result score @s Var1 run data get entity @s Rotation[0] 1
+execute store result score @s Var2 run data get entity @s Rotation[1] 1
 
-execute if @s[
+tag @s[scores={Var2=1..}] add CollisionNegY
+tag @s[scores={Var2=..-1}] add CollisionPosY
+
+tag @s[scores={Var1=1..179}] add CollisionNegX
+tag @s[scores={Var1=-179..-1}] add CollisionPosX
+
+tag @s[scores={Var1=-89..89}] add CollisionNegZ
+tag @s[scores={Var1=..-91}] add CollisionPosZ
+tag @s[scores={Var1=91..}] add CollisionPosZ
 
 #----------------#
 # Collision on X #
 #----------------#
 
 tag @s[scores={Collision=1..}] add CollisionX
-tag @s[scores={Collision=1..,Var1=0}] remove CollisionX
+tag @s[scores={Collision=1..,Var1=0..0}] remove CollisionX
 
-execute as @s[scores={Var1=1..}] at @s if block ~1 ~ ~ air run tag @s remove CollisionX
-execute as @s[scores={Var1=..-1}] at @s if block ~-1 ~ ~ air run tag @s remove CollisionX
+execute as @s[tag=CollisionPosX] at @s if block ~1 ~ ~ air run tag @s remove CollisionX
+execute as @s[tag=CollisionPosX] at @s if block ~-1 ~ ~ air run tag @s remove CollisionX
 
-scoreboard players operation @s[scores={Collision=1..3},tag=CollisionX] VectorX *= Neg Constant
-scoreboard players operation @s[scores={Collision=1..3},tag=CollisionX] Var7 *= Neg Constant
+tag @s[scores={Var1=..-1}] add Var1Neg
+scoreboard players operation @s[scores={Collision=1..3,Var1=1..},tag=CollisionX] Var1 -= 180 Constant
+scoreboard players operation @s[scores={Collision=1..3},tag=Var1Neg,tag=CollisionX] Var1 += 180 Constant
 scoreboard players operation @s[scores={Collision=1..3},tag=CollisionX] Var1 *= Neg Constant
-scoreboard players set @s[scores={Collision=4},tag=CollisionX] VectorX 0
-scoreboard players set @s[scores={Collision=4},tag=CollisionX] Var7 0
-scoreboard players set @s[scores={Collision=4},tag=CollisionX] Var1 0
-kill @s[type=!player,scores={Collision=6},tag=CollisionX]
-tag @s[scores={Collision=5..6},tag=CollisionX] remove DirMoving
+
+tag @s remove Var1Neg
 tag @s[scores={Collision=1..},tag=CollisionX] add Collision
 
 #DEBUG
@@ -39,21 +45,13 @@ execute at @s[tag=CollisionX,tag=Debug] run summon falling_block ~0.1 ~-0.5 ~-0.
 # Collision on Y #
 #----------------#
 tag @s[scores={Collision=1..}] add CollisionY
-tag @s[scores={Collision=1..,Var1=0}] remove CollisionY
+tag @s[scores={Collision=1..,Var1=0..0}] remove CollisionY
 
-execute as @s[scores={Var2=1..}] at @s if block ~ ~1 ~ air run tag @s remove CollisionY
-execute as @s[scores={Var2=..-1}] at @s if block ~ ~-1 ~ air run tag @s remove CollisionY
+execute as @s[tag=CollisionPosY] at @s if block ~ ~1 ~ air run tag @s remove CollisionY
+execute as @s[tag=CollisionNegY] at @s if block ~ ~-1 ~ air run tag @s remove CollisionY
 
 
-
-scoreboard players operation @s[scores={Collision=1},tag=CollisionY] VectorY *= Neg Constant
-scoreboard players operation @s[scores={Collision=1},tag=CollisionY] Var8 *= Neg Constant
-scoreboard players operation @s[scores={Collision=1},tag=CollisionY] Var2 *= Neg Constant
-scoreboard players set @s[scores={Collision=2..4},tag=CollisionY] VectorY 0
-scoreboard players set @s[scores={Collision=2..4},tag=CollisionY] Var8 0
-scoreboard players set @s[scores={Collision=2..4},tag=CollisionY] Var2 0
-kill @s[type=!player,scores={Collision=6},tag=CollisionY]
-tag @s[scores={Collision=5..6},tag=CollisionY] remove DirMoving
+scoreboard players operation @s[scores={Collision=1..3},tag=CollisionY] Var2 *= Neg Constant
 tag @s[scores={Collision=1..},tag=CollisionY] add Collision
 
 # DEBUG
@@ -66,22 +64,20 @@ execute at @s[tag=CollisionY,tag=Debug] run summon falling_block ~ ~-0.5 ~0.1 {B
 #----------------#
 
 tag @s[scores={Collision=1..}] add CollisionZ
-tag @s[scores={Collision=1..,Var1=0}] remove CollisionZ
+tag @s[scores={Collision=1..,Var1=0..0}] remove CollisionZ
 
-execute as @s[scores={Var3=1..}] at @s if block ~ ~ ~1 air run tag @s remove CollisionZ
-execute as @s[scores={Var3=..-1}] at @s if block ~ ~ ~-1 air run tag @s remove CollisionZ
+execute as @s[tag=CollisionPosZ] at @s if block ~ ~ ~1 air run tag @s remove CollisionZ
+execute as @s[tag=CollisionNegZ] at @s if block ~ ~ ~-1 air run tag @s remove CollisionZ
 
-scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] VectorZ *= Neg Constant
-scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] Var9 *= Neg Constant
-scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] Var3 *= Neg Constant
-scoreboard players set @s[scores={Collision=4},tag=CollisionZ] VectorZ 0
-scoreboard players set @s[scores={Collision=4},tag=CollisionZ] Var9 0
-scoreboard players set @s[scores={Collision=4},tag=CollisionZ] Var3 0
-kill @s[type=!player,scores={Collision=6},tag=CollisionZ]
-tag @s[scores={Collision=5..6},tag=CollisionZ] remove DirMoving
+scoreboard players operation @s[scores={Collision=1..3},tag=CollisionZ] Var1 *= Neg Constant
 tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 
 # DEBUG
 execute at @s[tag=CollisionZ,tag=Debug] run summon falling_block ~-0.1 ~-0.5 ~-0.1 {BlockState:{Name:"diamond_block"},NoGravity:1,Time:50,Tags:["Debug"]}
 # END DEBUG
 
+#---------------------#
+# Set new orientation #
+#---------------------#
+
+function gunivers-lib:entity/orientation/set
