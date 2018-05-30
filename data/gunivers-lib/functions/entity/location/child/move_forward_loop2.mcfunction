@@ -6,8 +6,6 @@
 # CODE:
 
 scoreboard players operation @s[scores={Var4=1..}] Var1 = @s Var7
-scoreboard players operation @s[scores={Var4=1..}] Var2 = @s Var8
-scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9
 
 # DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"\nOUTPUT2 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
@@ -16,10 +14,11 @@ scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9
 #execute at @s[tag=Debug] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Debug"]}
 # END DEBUG
 
-execute at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_apply
+execute at @s run function gunivers-lib:entity/location/child/move_forward_apply
+execute at @s[scores={Collisions=1..}] run function gunivers-lib:entity/location/child/move_forward_collision
 
 scoreboard players remove @s Var4 1
 
 tag @s remove Move-Loop2
 tag @s[scores={Var4=1..}] add Move-Loop2
-execute as @s[tag=Move-Loop2] at @s run function gunivers-lib:entity/location/child/move_by_vector_ori_loop2
+execute as @s[tag=Move-Loop2] at @s run function gunivers-lib:entity/location/child/move_forward_loop2

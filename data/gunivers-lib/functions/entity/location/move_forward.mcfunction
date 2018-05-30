@@ -1,81 +1,51 @@
-# NAME: Move Forward
-# PATH: gunivers-lib:entity/location/moveforward
+# NAME: Move Entity Forward
+# PATH: gunivers-lib:entity/location/move_forward
 
-# AUTHOR: KubbyDev
+# AUTHOR: LeiRoF
 
-# VERSION: 1.0
+# VERSION: 2.0
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Var1 (score dummy)
+# - Gunivers-Lib:Utils/Import/Vectors (Import file)
+# - Gunivers-Lib:Utils/Import/Vars (Import file)
+# - Gunivers-Lib:Utils/Import/Constant (Import file)
 
 # INPUT:
-# - Var1 (score dummy)
+# - VectorFront (score dummy)
+# - VectorSpeed (score dummy)
 
-# NOTE:
-# The source entity will be teleported forward (following its orientation) by Var1 milliblocks.
-# The input value must be less than 1 048 576 (less than 1000 blocks)
-# This function must be executed at the source's location (execute as Source at @s run function)
+# OUTPUT:
 
 # CODE:
+scoreboard players operation @s VectorFront *= @s VectorSpeed
+scoreboard players operation @s VectorFront /= 1000 Constant
+scoreboard players set @s VectorSpeed 1000
 
-execute at @s run tp @s[scores={Var1=524288..}] ^ ^ ^524.288
-scoreboard players remove @s[scores={Var1=524288..}] Var1 524288
+scoreboard players operation @s Var1 = @s VectorFront
 
-execute at @s run tp @s[scores={Var1=262144..}] ^ ^ ^262.144
-scoreboard players remove @s[scores={Var1=262144..}] Var1 262144
+#tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Location/Move_By_Vector_Ori]=-","color":"green"}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorLeft"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorUp"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorFront"}}]
+#tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
-execute at @s run tp @s[scores={Var1=131072..}] ^ ^ ^131.072
-scoreboard players remove @s[scores={Var1=131072..}] Var1 131072
+scoreboard players set @s Var4 0
 
-execute at @s run tp @s[scores={Var1=65536..}] ^ ^ ^65.536
-scoreboard players remove @s[scores={Var1=65536..}] Var1 65536
+tag @s remove FactorIncrease
+tag @s[scores={Var1=1001..}] add FactorIncrease
+tag @s[scores={Var1=..-1001}] add FactorIncrease
+scoreboard players add @s[tag=FactorIncrease] Var4 1
 
-execute at @s run tp @s[scores={Var1=32768..}] ^ ^ ^32.768
-scoreboard players remove @s[scores={Var1=32768..}] Var1 32768
+#tellraw @a[tag=Debug] ["",{"text":"\n>>> Loop 1 <<<","color":"green"}]
 
-execute at @s run tp @s[scores={Var1=16384..}] ^ ^ ^16.384
-scoreboard players remove @s[scores={Var1=16384..}] Var1 16384
+#tellraw @a[tag=Debug] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
+#tellraw @a[tag=Debug] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
-execute at @s run tp @s[scores={Var1=8192..}] ^ ^ ^8.192
-scoreboard players remove @s[scores={Var1=8192..}] Var1 8192
+execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/location/child/move_forward_loop1
 
-execute at @s run tp @s[scores={Var1=4096..}] ^ ^ ^4.096
-scoreboard players remove @s[scores={Var1=4096..}] Var1 4096
+scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var1
 
-execute at @s run tp @s[scores={Var1=2048..}] ^ ^ ^2.048
-scoreboard players remove @s[scores={Var1=2048..}] Var1 2048
+#tellraw @a[tag=Debug] ["",{"text":"\n>>> Loop 2 <<<","color":"green"}]
+function gunivers-lib:entity/location/child/move_forward_loop2
 
-execute at @s run tp @s[scores={Var1=1024..}] ^ ^ ^1.024
-scoreboard players remove @s[scores={Var1=1024..}] Var1 1024
-
-execute at @s run tp @s[scores={Var1=512..}] ^ ^ ^0.512
-scoreboard players remove @s[scores={Var1=512..}] Var1 512
-
-execute at @s run tp @s[scores={Var1=256..}] ^ ^ ^0.256
-scoreboard players remove @s[scores={Var1=256..}] Var1 256
-
-execute at @s run tp @s[scores={Var1=128..}] ^ ^ ^0.128
-scoreboard players remove @s[scores={Var1=128..}] Var1 128
-
-execute at @s run tp @s[scores={Var1=64..}] ^ ^ ^0.064
-scoreboard players remove @s[scores={Var1=64..}] Var1 64
-
-execute at @s run tp @s[scores={Var1=32..}] ^ ^ ^0.032
-scoreboard players remove @s[scores={Var1=32..}] Var1 32
-
-execute at @s run tp @s[scores={Var1=16..}] ^ ^ ^0.016
-scoreboard players remove @s[scores={Var1=16..}] Var1 16
-
-execute at @s run tp @s[scores={Var1=8..}] ^ ^ ^0.008
-scoreboard players remove @s[scores={Var1=8..}] Var1 8
-
-execute at @s run tp @s[scores={Var1=4..}] ^ ^ ^0.004
-scoreboard players remove @s[scores={Var1=4..}] Var1 4
-
-execute at @s run tp @s[scores={Var1=2..}] ^ ^ ^0.002
-scoreboard players remove @s[scores={Var1=2..}] Var1 2
-
-execute at @s run tp @s[scores={Var1=1..}] ^ ^ ^0.001
-scoreboard players remove @s[scores={Var1=1..}] Var1 1
 

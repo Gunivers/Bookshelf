@@ -5,6 +5,11 @@
 
 # CODE:
 
+execute store result score @s Var8 run data get entity @s Rotation[0] 1
+execute store result score @s Var9 run data get entity @s Rotation[1] 1
+
+execute if @s[
+
 #----------------#
 # Collision on X #
 #----------------#
