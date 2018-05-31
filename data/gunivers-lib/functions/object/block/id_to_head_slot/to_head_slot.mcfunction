@@ -1,5 +1,5 @@
 # NAME: Id to Head Slot
-# PATH: gunivers-lib:functions/object/block/id_to_falling_block/to_head_slot
+# PATH: gunivers-lib:functions/object/block/id_to_head_slot/to_head_slot
 
 # AUTHOR: theogiraudet
 # CONTRIBUTORS: (optional)
