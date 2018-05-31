@@ -23,7 +23,7 @@ tag @e remove ParentIdMatch
 tag @e remove ParentIdUpper
 tag @e remove ParentIdLower
 tag @e remove ParentIdChecker
-scoreboard players operation @e Parent -= @s TargetId
+scoreboard players operation @e ParentId -= @s TargetId
 tag @e[scores={ParentId=0}] add ParentIdMatch
 tag @e[scores={ParentId=..-1}] add ParentIdUpper
 tag @e[scores={ParentId=-1..}] add ParentIdLower
