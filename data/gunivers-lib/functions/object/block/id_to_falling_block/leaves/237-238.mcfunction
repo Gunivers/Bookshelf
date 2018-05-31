@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 237 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_stone"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 238 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_stone_bricks"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 237 run setblock ~ ~ ~ infested_stone
+execute if score @s Var1 matches 238 run setblock ~ ~ ~ infested_stone_bricks

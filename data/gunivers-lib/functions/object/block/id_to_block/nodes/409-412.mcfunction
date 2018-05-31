@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..410 run function gunivers-lib:object/block/id_to_falling_block/leaves/409-410
-execute if score @s Var1 matches 411.. run function gunivers-lib:object/block/id_to_falling_block/leaves/411-412
+execute if score @s Var1 matches ..410 run function gunivers-lib:object/block/id_to_block/leaves/409-410
+execute if score @s Var1 matches 411.. run function gunivers-lib:object/block/id_to_block/leaves/411-412

@@ -5,7 +5,7 @@
 # CONTRIBUTORS: (optional)
 # - LeiRoF
 
-# VERSION: 1.0
+# VERSION: 1.1
 # MINECRAFT: 1.13
 
 # REQUIEREMENTS:
@@ -19,4 +19,4 @@
 # CODE:
 
 execute if score @s Var1 matches ..512 run function gunivers-lib:object/block/id_to_falling_block/nodes/0-512
-execute if score @s Var1 matches 512.. run function gunivers-lib:object/block/id_to_falling_block/nodes/513-1024
+execute if score @s Var1 matches 513.. run function gunivers-lib:object/block/id_to_falling_block/nodes/513-1024

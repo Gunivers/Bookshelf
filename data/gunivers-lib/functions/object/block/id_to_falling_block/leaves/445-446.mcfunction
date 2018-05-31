@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 445 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_lamp"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 446 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_ore"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 445 run setblock ~ ~ ~ redstone_lamp
+execute if score @s Var1 matches 446 run setblock ~ ~ ~ redstone_ore

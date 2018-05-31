@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 541 run summon falling_block ~ ~ ~ {BlockState:{Name:"wet_sponge"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 542 run summon falling_block ~ ~ ~ {BlockState:{Name:"wheat"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 541 run setblock ~ ~ ~ wet_sponge
+execute if score @s Var1 matches 542 run setblock ~ ~ ~ wheat

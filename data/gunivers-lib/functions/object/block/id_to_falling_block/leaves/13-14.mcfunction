@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 13 run summon falling_block ~ ~ ~ {BlockState:{Name:"activator_rail"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 14 run summon falling_block ~ ~ ~ {BlockState:{Name:"air"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 13 run setblock ~ ~ ~ activator_rail
+execute if score @s Var1 matches 14 run setblock ~ ~ ~ air

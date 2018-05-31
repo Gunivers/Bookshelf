@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 231 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral_fan"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 232 run summon falling_block ~ ~ ~ {BlockState:{Name:"ice"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 231 run setblock ~ ~ ~ horn_coral_fan
+execute if score @s Var1 matches 232 run setblock ~ ~ ~ ice

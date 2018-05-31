@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 403 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_fern"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 404 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_jungle_sapling"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 403 run setblock ~ ~ ~ potted_fern
+execute if score @s Var1 matches 404 run setblock ~ ~ ~ potted_jungle_sapling

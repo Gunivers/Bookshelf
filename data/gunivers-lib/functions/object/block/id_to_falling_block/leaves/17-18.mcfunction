@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"anvil"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 18 run summon falling_block ~ ~ ~ {BlockState:{Name:"attached_melon_stem"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 17 run setblock ~ ~ ~ anvil
+execute if score @s Var1 matches 18 run setblock ~ ~ ~ attached_melon_stem

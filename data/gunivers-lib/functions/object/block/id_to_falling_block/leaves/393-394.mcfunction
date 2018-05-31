@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 393 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_acacia_sapling"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 394 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_allium"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 393 run setblock ~ ~ ~ potted_acacia_sapling
+execute if score @s Var1 matches 394 run setblock ~ ~ ~ potted_allium

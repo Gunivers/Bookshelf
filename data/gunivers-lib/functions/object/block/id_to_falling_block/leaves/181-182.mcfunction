@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 181 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 182 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_bricks"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 181 run setblock ~ ~ ~ end_stone
+execute if score @s Var1 matches 182 run setblock ~ ~ ~ end_stone_bricks

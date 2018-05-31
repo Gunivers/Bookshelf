@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 499 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_log"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 500 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_planks"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 499 run setblock ~ ~ ~ spruce_log
+execute if score @s Var1 matches 500 run setblock ~ ~ ~ spruce_planks

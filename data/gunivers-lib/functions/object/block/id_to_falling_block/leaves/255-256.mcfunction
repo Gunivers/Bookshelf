@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 255 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_sapling"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 256 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_slab"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 255 run setblock ~ ~ ~ jungle_sapling
+execute if score @s Var1 matches 256 run setblock ~ ~ ~ jungle_slab

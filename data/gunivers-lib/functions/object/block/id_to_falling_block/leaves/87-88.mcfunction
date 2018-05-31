@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 87 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_column"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 88 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 87 run setblock ~ ~ ~ bubble_column
+execute if score @s Var1 matches 88 run setblock ~ ~ ~ bubble_coral

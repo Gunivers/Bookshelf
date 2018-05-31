@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 553 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_tulip"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 554 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_wall_banner"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 553 run setblock ~ ~ ~ white_tulip
+execute if score @s Var1 matches 554 run setblock ~ ~ ~ white_wall_banner

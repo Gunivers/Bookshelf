@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 293 run summon falling_block ~ ~ ~ {BlockState:{Name:"lily_pad"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 294 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_banner"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 293 run setblock ~ ~ ~ lily_pad
+execute if score @s Var1 matches 294 run setblock ~ ~ ~ lime_banner

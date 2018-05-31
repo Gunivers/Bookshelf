@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 345 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_pressure_plate"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 346 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_sapling"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 345 run setblock ~ ~ ~ oak_pressure_plate
+execute if score @s Var1 matches 346 run setblock ~ ~ ~ oak_sapling

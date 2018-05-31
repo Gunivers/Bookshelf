@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 175 run summon falling_block ~ ~ ~ {BlockState:{Name:"enchanting_table"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 176 run summon falling_block ~ ~ ~ {BlockState:{Name:"ender_chest"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 175 run setblock ~ ~ ~ enchanting_table
+execute if score @s Var1 matches 176 run setblock ~ ~ ~ ender_chest

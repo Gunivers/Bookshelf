@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 11 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_stairs"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 12 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_trapdoor"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 11 run setblock ~ ~ ~ acacia_stairs
+execute if score @s Var1 matches 12 run setblock ~ ~ ~ acacia_trapdoor

@@ -1,1 +1,1 @@
-execute if score @s Var1 matches 571 run summon falling_block ~ ~ ~ {BlockState:{Name:"zombie_wall_head"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 571 run setblock ~ ~ ~ zombie_wall_head

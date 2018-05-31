@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 265 run summon falling_block ~ ~ ~ {BlockState:{Name:"lava"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 266 run summon falling_block ~ ~ ~ {BlockState:{Name:"lever"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 265 run setblock ~ ~ ~ lava
+execute if score @s Var1 matches 266 run setblock ~ ~ ~ lever

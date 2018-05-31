@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 559 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_bed"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 560 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_carpet"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 559 run setblock ~ ~ ~ yellow_bed
+execute if score @s Var1 matches 560 run setblock ~ ~ ~ yellow_carpet

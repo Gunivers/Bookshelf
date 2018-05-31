@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 515 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_log"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 516 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_dark_oak_log"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 515 run setblock ~ ~ ~ stripped_birch_log
+execute if score @s Var1 matches 516 run setblock ~ ~ ~ stripped_dark_oak_log

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 327 run summon falling_block ~ ~ ~ {BlockState:{Name:"mycelium"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 328 run summon falling_block ~ ~ ~ {BlockState:{Name:"netherrack"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 327 run setblock ~ ~ ~ mycelium
+execute if score @s Var1 matches 328 run setblock ~ ~ ~ netherrack

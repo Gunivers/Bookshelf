@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 511 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_button"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 512 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_pressure_plate"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 511 run setblock ~ ~ ~ stone_button
+execute if score @s Var1 matches 512 run setblock ~ ~ ~ stone_pressure_plate

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 483 run summon falling_block ~ ~ ~ {BlockState:{Name:"skeleton_wall_skull"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 484 run summon falling_block ~ ~ ~ {BlockState:{Name:"slime_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 483 run setblock ~ ~ ~ skeleton_wall_skull
+execute if score @s Var1 matches 484 run setblock ~ ~ ~ slime_block

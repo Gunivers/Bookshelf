@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 529 run summon falling_block ~ ~ ~ {BlockState:{Name:"trapped_chest"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 530 run summon falling_block ~ ~ ~ {BlockState:{Name:"tripwire"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 529 run setblock ~ ~ ~ trapped_chest
+execute if score @s Var1 matches 530 run setblock ~ ~ ~ tripwire

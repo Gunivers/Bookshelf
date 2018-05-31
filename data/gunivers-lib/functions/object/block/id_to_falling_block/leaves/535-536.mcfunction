@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 535 run summon falling_block ~ ~ ~ {BlockState:{Name:"turtle_egg"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 536 run summon falling_block ~ ~ ~ {BlockState:{Name:"vine"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 535 run setblock ~ ~ ~ turtle_egg
+execute if score @s Var1 matches 536 run setblock ~ ~ ~ vine

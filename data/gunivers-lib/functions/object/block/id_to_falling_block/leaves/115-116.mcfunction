@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 115 run summon falling_block ~ ~ ~ {BlockState:{Name:"cocoa"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 116 run summon falling_block ~ ~ ~ {BlockState:{Name:"command_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 115 run setblock ~ ~ ~ cocoa
+execute if score @s Var1 matches 116 run setblock ~ ~ ~ command_block

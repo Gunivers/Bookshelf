@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 261 run summon falling_block ~ ~ ~ {BlockState:{Name:"ladder"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 262 run summon falling_block ~ ~ ~ {BlockState:{Name:"lapis_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 261 run setblock ~ ~ ~ ladder
+execute if score @s Var1 matches 262 run setblock ~ ~ ~ lapis_block

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 227 run summon falling_block ~ ~ ~ {BlockState:{Name:"heavy_weighted_pressure_plate"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 228 run summon falling_block ~ ~ ~ {BlockState:{Name:"hopper"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 227 run setblock ~ ~ ~ heavy_weighted_pressure_plate
+execute if score @s Var1 matches 228 run setblock ~ ~ ~ hopper

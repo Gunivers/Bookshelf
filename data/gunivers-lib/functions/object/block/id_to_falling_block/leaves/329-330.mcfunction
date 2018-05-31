@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 329 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_bricks"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 330 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_fence"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 329 run setblock ~ ~ ~ nether_bricks
+execute if score @s Var1 matches 330 run setblock ~ ~ ~ nether_brick_fence

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 471 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeating_command_block"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 472 run summon falling_block ~ ~ ~ {BlockState:{Name:"rose_bush"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 471 run setblock ~ ~ ~ repeating_command_block
+execute if score @s Var1 matches 472 run setblock ~ ~ ~ rose_bush

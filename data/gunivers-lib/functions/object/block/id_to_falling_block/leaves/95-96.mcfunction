@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 95 run summon falling_block ~ ~ ~ {BlockState:{Name:"cauldron"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 96 run summon falling_block ~ ~ ~ {BlockState:{Name:"cave_air"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 95 run setblock ~ ~ ~ cauldron
+execute if score @s Var1 matches 96 run setblock ~ ~ ~ cave_air

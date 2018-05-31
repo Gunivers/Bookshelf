@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 159 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_fire_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
-execute if score @s Var1 matches 160 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_horn_coral_block"},Time:1,Tags:["FallingObjectConverter"]}
+execute if score @s Var1 matches 159 run setblock ~ ~ ~ dead_fire_coral_block
+execute if score @s Var1 matches 160 run setblock ~ ~ ~ dead_horn_coral_block
