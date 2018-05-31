@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 417 run setblock ~ ~ ~ prismarine_brick_slab
-execute if score @s Var1 matches 418 run setblock ~ ~ ~ prismarine_brick_stairs
+execute if score @s Var1 matches 417 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_brick_slab"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 418 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_brick_stairs"},NoGravity:0,Time:50}

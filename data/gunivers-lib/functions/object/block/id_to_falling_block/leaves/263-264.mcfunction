@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 263 run setblock ~ ~ ~ lapis_ore
-execute if score @s Var1 matches 264 run setblock ~ ~ ~ large_fern
+execute if score @s Var1 matches 263 run summon falling_block ~ ~ ~ {BlockState:{Name:"lapis_ore"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 264 run summon falling_block ~ ~ ~ {BlockState:{Name:"large_fern"},NoGravity:0,Time:50}

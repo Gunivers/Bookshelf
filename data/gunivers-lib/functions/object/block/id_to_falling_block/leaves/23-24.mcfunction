@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 23 run setblock ~ ~ ~ bedrock
-execute if score @s Var1 matches 24 run setblock ~ ~ ~ beetroots
+execute if score @s Var1 matches 23 run summon falling_block ~ ~ ~ {BlockState:{Name:"bedrock"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 24 run summon falling_block ~ ~ ~ {BlockState:{Name:"beetroots"},NoGravity:0,Time:50}

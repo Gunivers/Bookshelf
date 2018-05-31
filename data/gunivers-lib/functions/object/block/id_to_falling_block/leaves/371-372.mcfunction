@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 371 run setblock ~ ~ ~ pink_carpet
-execute if score @s Var1 matches 372 run setblock ~ ~ ~ pink_concrete
+execute if score @s Var1 matches 371 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_carpet"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 372 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_concrete"},NoGravity:0,Time:50}

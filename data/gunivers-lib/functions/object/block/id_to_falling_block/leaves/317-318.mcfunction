@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 317 run setblock ~ ~ ~ magenta_wool
-execute if score @s Var1 matches 318 run setblock ~ ~ ~ magma_block
+execute if score @s Var1 matches 317 run summon falling_block ~ ~ ~ {BlockState:{Name:"magenta_wool"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 318 run summon falling_block ~ ~ ~ {BlockState:{Name:"magma_block"},NoGravity:0,Time:50}

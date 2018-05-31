@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 63 run setblock ~ ~ ~ blue_wool
-execute if score @s Var1 matches 64 run setblock ~ ~ ~ bone_block
+execute if score @s Var1 matches 63 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_wool"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 64 run summon falling_block ~ ~ ~ {BlockState:{Name:"bone_block"},NoGravity:0,Time:50}

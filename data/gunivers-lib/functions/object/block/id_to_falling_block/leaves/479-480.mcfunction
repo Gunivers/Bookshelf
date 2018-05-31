@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 479 run setblock ~ ~ ~ sea_pickle
-execute if score @s Var1 matches 480 run setblock ~ ~ ~ shulker_box
+execute if score @s Var1 matches 479 run summon falling_block ~ ~ ~ {BlockState:{Name:"sea_pickle"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 480 run summon falling_block ~ ~ ~ {BlockState:{Name:"shulker_box"},NoGravity:0,Time:50}

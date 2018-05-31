@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 217 run setblock ~ ~ ~ green_concrete
-execute if score @s Var1 matches 218 run setblock ~ ~ ~ green_concrete_powder
+execute if score @s Var1 matches 217 run summon falling_block ~ ~ ~ {BlockState:{Name:"green_concrete"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 218 run summon falling_block ~ ~ ~ {BlockState:{Name:"green_concrete_powder"},NoGravity:0,Time:50}

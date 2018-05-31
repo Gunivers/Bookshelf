@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 463 run setblock ~ ~ ~ red_shulker_box
-execute if score @s Var1 matches 464 run setblock ~ ~ ~ red_stained_glass
+execute if score @s Var1 matches 463 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_shulker_box"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 464 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_stained_glass"},NoGravity:0,Time:50}

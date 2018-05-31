@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 483 run setblock ~ ~ ~ skeleton_wall_skull
-execute if score @s Var1 matches 484 run setblock ~ ~ ~ slime_block
+execute if score @s Var1 matches 483 run summon falling_block ~ ~ ~ {BlockState:{Name:"skeleton_wall_skull"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 484 run summon falling_block ~ ~ ~ {BlockState:{Name:"slime_block"},NoGravity:0,Time:50}

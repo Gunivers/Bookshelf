@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 253 run setblock ~ ~ ~ jungle_planks
-execute if score @s Var1 matches 254 run setblock ~ ~ ~ jungle_pressure_plate
+execute if score @s Var1 matches 253 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_planks"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 254 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_pressure_plate"},NoGravity:0,Time:50}

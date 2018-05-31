@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 127 run setblock ~ ~ ~ cyan_carpet
-execute if score @s Var1 matches 128 run setblock ~ ~ ~ cyan_concrete
+execute if score @s Var1 matches 127 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_carpet"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 128 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_concrete"},NoGravity:0,Time:50}

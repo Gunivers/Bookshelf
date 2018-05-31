@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 113 run setblock ~ ~ ~ cobblestone_wall
-execute if score @s Var1 matches 114 run setblock ~ ~ ~ cobweb
+execute if score @s Var1 matches 113 run summon falling_block ~ ~ ~ {BlockState:{Name:"cobblestone_wall"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 114 run summon falling_block ~ ~ ~ {BlockState:{Name:"cobweb"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 39 run setblock ~ ~ ~ black_bed
-execute if score @s Var1 matches 40 run setblock ~ ~ ~ black_carpet
+execute if score @s Var1 matches 39 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_bed"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 40 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_carpet"},NoGravity:0,Time:50}

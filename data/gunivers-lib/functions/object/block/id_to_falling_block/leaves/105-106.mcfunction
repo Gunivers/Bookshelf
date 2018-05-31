@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 105 run setblock ~ ~ ~ chorus_plant
-execute if score @s Var1 matches 106 run setblock ~ ~ ~ clay
+execute if score @s Var1 matches 105 run summon falling_block ~ ~ ~ {BlockState:{Name:"chorus_plant"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 106 run summon falling_block ~ ~ ~ {BlockState:{Name:"clay"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 173 run setblock ~ ~ ~ emerald_block
-execute if score @s Var1 matches 174 run setblock ~ ~ ~ emerald_ore
+execute if score @s Var1 matches 173 run summon falling_block ~ ~ ~ {BlockState:{Name:"emerald_block"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 174 run summon falling_block ~ ~ ~ {BlockState:{Name:"emerald_ore"},NoGravity:0,Time:50}

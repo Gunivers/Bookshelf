@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 0 run setblock ~ ~ ~ acacia_bark
-execute if score @s Var1 matches 2 run setblock ~ ~ ~ acacia_door
+execute if score @s Var1 matches 0 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_bark"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 2 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_door"},NoGravity:0,Time:50}

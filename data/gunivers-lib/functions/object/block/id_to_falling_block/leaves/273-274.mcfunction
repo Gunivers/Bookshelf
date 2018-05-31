@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 273 run setblock ~ ~ ~ light_blue_shulker_box
-execute if score @s Var1 matches 274 run setblock ~ ~ ~ light_blue_stained_glass
+execute if score @s Var1 matches 273 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_shulker_box"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 274 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_stained_glass"},NoGravity:0,Time:50}

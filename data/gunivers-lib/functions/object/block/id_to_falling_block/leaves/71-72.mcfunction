@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 71 run setblock ~ ~ ~ brick_slab
-execute if score @s Var1 matches 72 run setblock ~ ~ ~ brick_stairs
+execute if score @s Var1 matches 71 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_slab"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 72 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_stairs"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 153 run setblock ~ ~ ~ dark_prismarine_slab
-execute if score @s Var1 matches 154 run setblock ~ ~ ~ dark_prismarine_stairs
+execute if score @s Var1 matches 153 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_prismarine_slab"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 154 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_prismarine_stairs"},NoGravity:0,Time:50}

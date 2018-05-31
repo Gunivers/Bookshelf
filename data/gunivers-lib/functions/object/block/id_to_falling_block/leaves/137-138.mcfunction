@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 137 run setblock ~ ~ ~ damaged_anvil
-execute if score @s Var1 matches 138 run setblock ~ ~ ~ dandelion
+execute if score @s Var1 matches 137 run summon falling_block ~ ~ ~ {BlockState:{Name:"damaged_anvil"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 138 run summon falling_block ~ ~ ~ {BlockState:{Name:"dandelion"},NoGravity:0,Time:50}

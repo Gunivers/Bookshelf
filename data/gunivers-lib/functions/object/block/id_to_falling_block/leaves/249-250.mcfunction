@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 249 run setblock ~ ~ ~ jungle_fence
-execute if score @s Var1 matches 250 run setblock ~ ~ ~ jungle_fence_gate
+execute if score @s Var1 matches 249 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 250 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_fence_gate"},NoGravity:0,Time:50}

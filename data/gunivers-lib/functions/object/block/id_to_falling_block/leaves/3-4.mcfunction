@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 3 run setblock ~ ~ ~ acacia_fence
-execute if score @s Var1 matches 4 run setblock ~ ~ ~ acacia_fence_gate
+execute if score @s Var1 matches 3 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 4 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence_gate"},NoGravity:0,Time:50}

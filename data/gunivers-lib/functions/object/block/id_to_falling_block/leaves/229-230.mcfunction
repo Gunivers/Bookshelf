@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 229 run setblock ~ ~ ~ horn_coral
-execute if score @s Var1 matches 230 run setblock ~ ~ ~ horn_coral_block
+execute if score @s Var1 matches 229 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 230 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral_block"},NoGravity:0,Time:50}

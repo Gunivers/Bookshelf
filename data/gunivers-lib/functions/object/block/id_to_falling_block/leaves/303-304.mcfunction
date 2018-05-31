@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 303 run setblock ~ ~ ~ lime_terracotta
-execute if score @s Var1 matches 304 run setblock ~ ~ ~ lime_wall_banner
+execute if score @s Var1 matches 303 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_terracotta"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 304 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_wall_banner"},NoGravity:0,Time:50}

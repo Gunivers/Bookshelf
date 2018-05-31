@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 459 run setblock ~ ~ ~ red_sand
-execute if score @s Var1 matches 460 run setblock ~ ~ ~ red_sandstone
+execute if score @s Var1 matches 459 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_sand"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 460 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_sandstone"},NoGravity:0,Time:50}

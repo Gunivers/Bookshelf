@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 493 run setblock ~ ~ ~ spruce_bark
-execute if score @s Var1 matches 494 run setblock ~ ~ ~ spruce_button
+execute if score @s Var1 matches 493 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_bark"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 494 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_button"},NoGravity:0,Time:50}

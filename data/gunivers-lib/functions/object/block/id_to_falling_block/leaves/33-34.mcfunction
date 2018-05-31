@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 33 run setblock ~ ~ ~ birch_pressure_plate
-execute if score @s Var1 matches 34 run setblock ~ ~ ~ birch_sapling
+execute if score @s Var1 matches 33 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_pressure_plate"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 34 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_sapling"},NoGravity:0,Time:50}

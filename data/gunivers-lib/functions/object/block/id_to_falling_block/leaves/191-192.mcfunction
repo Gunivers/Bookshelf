@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 191 run setblock ~ ~ ~ furnace
-execute if score @s Var1 matches 192 run setblock ~ ~ ~ glass
+execute if score @s Var1 matches 191 run summon falling_block ~ ~ ~ {BlockState:{Name:"furnace"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 192 run summon falling_block ~ ~ ~ {BlockState:{Name:"glass"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 383 run setblock ~ ~ ~ piston_head
-execute if score @s Var1 matches 384 run setblock ~ ~ ~ player_head
+execute if score @s Var1 matches 383 run summon falling_block ~ ~ ~ {BlockState:{Name:"piston_head"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 384 run summon falling_block ~ ~ ~ {BlockState:{Name:"player_head"},NoGravity:0,Time:50}

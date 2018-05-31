@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 411 run setblock ~ ~ ~ potted_red_tulip
-execute if score @s Var1 matches 412 run setblock ~ ~ ~ potted_spruce_sapling
+execute if score @s Var1 matches 411 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_tulip"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 412 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_spruce_sapling"},NoGravity:0,Time:50}

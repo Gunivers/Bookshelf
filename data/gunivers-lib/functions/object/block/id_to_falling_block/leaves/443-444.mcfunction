@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 443 run setblock ~ ~ ~ rail
-execute if score @s Var1 matches 444 run setblock ~ ~ ~ redstone_block
+execute if score @s Var1 matches 443 run summon falling_block ~ ~ ~ {BlockState:{Name:"rail"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 444 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_block"},NoGravity:0,Time:50}

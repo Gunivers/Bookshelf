@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 239 run setblock ~ ~ ~ iron_bars
-execute if score @s Var1 matches 240 run setblock ~ ~ ~ iron_block
+execute if score @s Var1 matches 239 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_bars"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 240 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_block"},NoGravity:0,Time:50}

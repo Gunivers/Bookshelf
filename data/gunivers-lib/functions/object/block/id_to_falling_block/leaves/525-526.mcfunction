@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 525 run setblock ~ ~ ~ tall_seagrass
-execute if score @s Var1 matches 526 run setblock ~ ~ ~ terracotta
+execute if score @s Var1 matches 525 run summon falling_block ~ ~ ~ {BlockState:{Name:"tall_seagrass"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 526 run summon falling_block ~ ~ ~ {BlockState:{Name:"terracotta"},NoGravity:0,Time:50}

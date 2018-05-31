@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 469 run setblock ~ ~ ~ red_wool
-execute if score @s Var1 matches 470 run setblock ~ ~ ~ repeater
+execute if score @s Var1 matches 469 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_wool"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 470 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},NoGravity:0,Time:50}

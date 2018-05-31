@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 7 run setblock ~ ~ ~ acacia_planks
-execute if score @s Var1 matches 8 run setblock ~ ~ ~ acacia_pressure_plate
+execute if score @s Var1 matches 7 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_planks"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 8 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_pressure_plate"},NoGravity:0,Time:50}

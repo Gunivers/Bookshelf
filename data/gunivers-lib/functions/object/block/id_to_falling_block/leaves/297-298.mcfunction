@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 297 run setblock ~ ~ ~ lime_concrete
-execute if score @s Var1 matches 298 run setblock ~ ~ ~ lime_concrete_powder
+execute if score @s Var1 matches 297 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_concrete"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 298 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_concrete_powder"},NoGravity:0,Time:50}

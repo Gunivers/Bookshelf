@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 245 run setblock ~ ~ ~ jukebox
-execute if score @s Var1 matches 246 run setblock ~ ~ ~ jungle_bark
+execute if score @s Var1 matches 245 run summon falling_block ~ ~ ~ {BlockState:{Name:"jukebox"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 246 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_bark"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 43 run setblock ~ ~ ~ black_glazed_terracotta
-execute if score @s Var1 matches 44 run setblock ~ ~ ~ black_shulker_box
+execute if score @s Var1 matches 43 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_glazed_terracotta"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 44 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_shulker_box"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 323 run setblock ~ ~ ~ mossy_cobblestone_wall
-execute if score @s Var1 matches 324 run setblock ~ ~ ~ mossy_stone_bricks
+execute if score @s Var1 matches 323 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_cobblestone_wall"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 324 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_stone_bricks"},NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 165 run setblock ~ ~ ~ diorite
-execute if score @s Var1 matches 166 run setblock ~ ~ ~ dirt
+execute if score @s Var1 matches 165 run summon falling_block ~ ~ ~ {BlockState:{Name:"diorite"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 166 run summon falling_block ~ ~ ~ {BlockState:{Name:"dirt"},NoGravity:0,Time:50}

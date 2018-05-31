@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 291 run setblock ~ ~ ~ light_weighted_pressure_plate
-execute if score @s Var1 matches 292 run setblock ~ ~ ~ lilac
+execute if score @s Var1 matches 291 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_weighted_pressure_plate"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 292 run summon falling_block ~ ~ ~ {BlockState:{Name:"lilac"},NoGravity:0,Time:50}

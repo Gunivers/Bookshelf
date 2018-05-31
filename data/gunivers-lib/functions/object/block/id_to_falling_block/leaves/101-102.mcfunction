@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 101 run setblock ~ ~ ~ chiseled_red_sandstone
-execute if score @s Var1 matches 102 run setblock ~ ~ ~ chiseled_sandstone
+execute if score @s Var1 matches 101 run summon falling_block ~ ~ ~ {BlockState:{Name:"chiseled_red_sandstone"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 102 run summon falling_block ~ ~ ~ {BlockState:{Name:"chiseled_sandstone"},NoGravity:0,Time:50}

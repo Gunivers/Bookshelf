@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 145 run setblock ~ ~ ~ dark_oak_log
-execute if score @s Var1 matches 146 run setblock ~ ~ ~ dark_oak_planks
+execute if score @s Var1 matches 145 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_log"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 146 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_planks"},NoGravity:0,Time:50}

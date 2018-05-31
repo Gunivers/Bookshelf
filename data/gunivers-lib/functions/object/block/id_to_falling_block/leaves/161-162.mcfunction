@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 161 run setblock ~ ~ ~ dead_tube_coral_block
-execute if score @s Var1 matches 162 run setblock ~ ~ ~ detector_rail
+execute if score @s Var1 matches 161 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral_block"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 162 run summon falling_block ~ ~ ~ {BlockState:{Name:"detector_rail"},NoGravity:0,Time:50}

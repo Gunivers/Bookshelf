@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 5 run setblock ~ ~ ~ acacia_leaves
-execute if score @s Var1 matches 6 run setblock ~ ~ ~ acacia_log
+execute if score @s Var1 matches 5 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_leaves"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 6 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_log"},NoGravity:0,Time:50}

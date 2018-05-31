@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 99 run setblock ~ ~ ~ chipped_anvil
-execute if score @s Var1 matches 100 run setblock ~ ~ ~ chiseled_quartz_block
+execute if score @s Var1 matches 99 run summon falling_block ~ ~ ~ {BlockState:{Name:"chipped_anvil"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 100 run summon falling_block ~ ~ ~ {BlockState:{Name:"chiseled_quartz_block"},NoGravity:0,Time:50}

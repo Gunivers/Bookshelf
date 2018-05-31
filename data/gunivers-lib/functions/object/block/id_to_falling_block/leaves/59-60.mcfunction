@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 59 run setblock ~ ~ ~ blue_stained_glass
-execute if score @s Var1 matches 60 run setblock ~ ~ ~ blue_stained_glass_pane
+execute if score @s Var1 matches 59 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_stained_glass"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 60 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_stained_glass_pane"},NoGravity:0,Time:50}
