@@ -1,5 +1,5 @@
 # NAME: Id to Block
-# PATH: gunivers-lib:functions/object/block/id_to_block/id_to_block
+# PATH: gunivers-lib:functions/object/block/id_to_block/to_block
 
 # AUTHOR: theogiraudet
 # CONTRIBUTORS: (optional)

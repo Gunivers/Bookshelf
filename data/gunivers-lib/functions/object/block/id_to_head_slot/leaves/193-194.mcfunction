@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 193 run replaceitem entity @e[tag=setHeadSlot] armor.head glass_pane
+execute if score @s Var1 matches 194 run replaceitem entity @e[tag=setHeadSlot] armor.head glowstone

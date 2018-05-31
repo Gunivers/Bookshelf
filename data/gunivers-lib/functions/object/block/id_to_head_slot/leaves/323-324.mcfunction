@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 323 run replaceitem entity @e[tag=setHeadSlot] armor.head mossy_cobblestone_wall
+execute if score @s Var1 matches 324 run replaceitem entity @e[tag=setHeadSlot] armor.head mossy_stone_bricks

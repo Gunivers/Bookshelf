@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 235 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_cracked_stone_bricks
+execute if score @s Var1 matches 236 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_mossy_stone_bricks

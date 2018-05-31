@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 481 run replaceitem entity @e[tag=setHeadSlot] armor.head sign
+execute if score @s Var1 matches 482 run replaceitem entity @e[tag=setHeadSlot] armor.head skeleton_skull

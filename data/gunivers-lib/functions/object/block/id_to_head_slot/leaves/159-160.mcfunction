@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 159 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_fire_coral_block
+execute if score @s Var1 matches 160 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_horn_coral_block

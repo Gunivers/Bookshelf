@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 115 run replaceitem entity @e[tag=setHeadSlot] armor.head cocoa
+execute if score @s Var1 matches 116 run replaceitem entity @e[tag=setHeadSlot] armor.head command_block

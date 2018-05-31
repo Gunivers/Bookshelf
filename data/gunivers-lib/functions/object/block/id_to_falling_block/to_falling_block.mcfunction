@@ -1,5 +1,5 @@
 # NAME: Id to Falling Block
-# PATH: gunivers-lib:functions/object/block/id_to_falling_block/id_to_falling_block
+# PATH: gunivers-lib:functions/object/block/id_to_falling_block/to_falling_block
 
 # AUTHOR: theogiraudet
 # CONTRIBUTORS: (optional)

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches ..38 run function gunivers-lib:object/block/id_to_head_slot/leaves/37-38
+execute if score @s Var1 matches 39.. run function gunivers-lib:object/block/id_to_head_slot/leaves/39-40

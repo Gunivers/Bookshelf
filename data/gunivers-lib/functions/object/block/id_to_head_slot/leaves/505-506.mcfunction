@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 505 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_trapdoor
+execute if score @s Var1 matches 506 run replaceitem entity @e[tag=setHeadSlot] armor.head sticky_piston

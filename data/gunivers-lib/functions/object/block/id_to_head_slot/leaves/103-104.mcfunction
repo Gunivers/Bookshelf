@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 103 run replaceitem entity @e[tag=setHeadSlot] armor.head chiseled_stone_bricks
+execute if score @s Var1 matches 104 run replaceitem entity @e[tag=setHeadSlot] armor.head chorus_flower

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 335 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_wart_block
+execute if score @s Var1 matches 336 run replaceitem entity @e[tag=setHeadSlot] armor.head note_block

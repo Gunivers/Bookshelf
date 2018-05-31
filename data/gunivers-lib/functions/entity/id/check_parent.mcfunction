@@ -30,4 +30,8 @@ tag @e[scores={ParentId=-1..}] add ParentIdLower
 tag @s add ParentIdChecker
 scoreboard players operation @e ParentId += @s TargetId
 
-#execute @e[score_ID_min=1] ~ ~ ~ tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ParentId"},"color":"none"},{"text":" TargetID: ","color":"none"},{"score":{"name":"@s","objective":"TargetID"},"color":"none"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ParentId"},"color":"none"},{"text":" TargetId: ","color":"none"},{"score":{"name":"@s","objective":"TargetId"},"color":"none"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"red"},{"text":"Match: "},{"selector":"@e[tag=ParentIdMatch]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Upper: "},{"selector":"@e[tag=ParentIdUpper]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Lower: "},{"selector":"@e[tag=ParentIdLower]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Checker: "},{"selector":"@e[tag=ParentIdChecker]"}]

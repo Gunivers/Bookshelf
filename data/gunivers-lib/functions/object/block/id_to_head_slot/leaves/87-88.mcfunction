@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 87 run replaceitem entity @e[tag=setHeadSlot] armor.head bubble_column
+execute if score @s Var1 matches 88 run replaceitem entity @e[tag=setHeadSlot] armor.head bubble_coral
