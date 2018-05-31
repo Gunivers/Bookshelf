@@ -21,5 +21,6 @@ execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tag
 scoreboard players operation @e[tag=NewAimedBlock] ParentId = @s Id
 tp @e[tag=NewAimedBlock] @s
 execute at @s run tp @e[tag=NewAimedBlock] ~ ~1.7 ~
+scoreboard players set @e[tag=NewAimedBlock] Var1 100
 execute as @e[tag=NewAimedBlock] at @s run function gunivers-lib:entity/view/child/aimed_block_raycast
 tag @e remove NewAimedBlock
