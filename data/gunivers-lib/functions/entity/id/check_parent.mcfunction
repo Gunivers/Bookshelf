@@ -7,7 +7,7 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - Id (score dummy)
+# - ParentId (score dummy)
 # - TargetId (score dummy)
 
 # INPUT:
@@ -28,6 +28,6 @@ tag @e[scores={ParentId=0}] add ParentIdMatch
 tag @e[scores={ParentId=..-1}] add ParentIdUpper
 tag @e[scores={ParentId=-1..}] add ParentIdLower
 tag @s add ParentIdChecker
-scoreboard players operation @e ParentId += @s ParentTargetId
+scoreboard players operation @e ParentId += @s TargetId
 
 #execute @e[score_ID_min=1] ~ ~ ~ tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ParentId"},"color":"none"},{"text":" TargetID: ","color":"none"},{"score":{"name":"@s","objective":"TargetID"},"color":"none"}]
