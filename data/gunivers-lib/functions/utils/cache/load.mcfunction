@@ -7,4 +7,5 @@ execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheZ C
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateX Cache 1
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateY Cache 2
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateZ Cache 1
-execute as @e[name=glCacheLoc,limit=1] run setblock ~ ~ ~ minecraft:structure_block{mode:"LOAD",posX:0,posY:0,posZ:0,sizeX:16,sizeY:16,sizeZ:16,name:"gunivers-lib:cache",ignoreEntities:0b} replace
+execute as @e[name=glCacheLoc,limit=1] run setblock ~ ~ ~ structure_block{mode:"LOAD",posX:0,posY:0,posZ:0,sizeX:16,sizeY:16,sizeZ:16,name:"gunivers-lib:cache",ignoreEntities:0b} replace
+execute at @e[name=glCacheLoc,limit=1] run setblock ~ ~1 ~ redstone_block
