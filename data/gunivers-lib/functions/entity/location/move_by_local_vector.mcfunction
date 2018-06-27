@@ -15,18 +15,18 @@
 # - VectorLeft (score dummy)
 # - VectorUp (score dummy)
 # - VectorFront (score dummy)
-# - VectorSpeed (score dummy)
+# - VectorSpeedLocal (score dummy)
 
 # OUTPUT:
 
 # CODE:
-scoreboard players operation @s VectorLeft *= @s VectorSpeed
-scoreboard players operation @s VectorUp *= @s VectorSpeed
-scoreboard players operation @s VectorFront *= @s VectorSpeed
+scoreboard players operation @s VectorLeft *= @s VectorSpeedLocal
+scoreboard players operation @s VectorUp *= @s VectorSpeedLocal
+scoreboard players operation @s VectorFront *= @s VectorSpeedLocal
 scoreboard players operation @s VectorLeft /= 1000 Constant
 scoreboard players operation @s VectorUp /= 1000 Constant
 scoreboard players operation @s VectorFront /= 1000 Constant
-scoreboard players set @s VectorSpeed 1000
+scoreboard players set @s VectorSpeedLocal 1000
 
 scoreboard players operation @s Var1 = @s VectorLeft
 scoreboard players operation @s Var2 = @s VectorUp

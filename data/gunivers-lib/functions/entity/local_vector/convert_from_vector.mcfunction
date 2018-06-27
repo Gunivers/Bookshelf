@@ -10,17 +10,22 @@
 # - VectorX (score dummy)
 # - VectorY (score dummy)
 # - VectorZ (score dummy)
+# - VectorSpeed (score dummy)
 
 # OUTPUT:
 # - VectorLeft (score dummy)
 # - VectorUp (score dummy)
 # - VectorFront (score dummy)
+# - VectorSpeedLocal (score dummy)
 
 # NOTE:
 
 # CODE:
 execute store result score @s Var8 run data get entity @s Rotation[0] 1
 execute store result score @s Var9 run data get entity @s Rotation[1] 1
+
+
+scoreboard players operation @s VectorSpeedLocal = @s VectorSpeed
 
 
 ### DEBUG
