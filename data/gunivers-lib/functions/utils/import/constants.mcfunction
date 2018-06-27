@@ -10,6 +10,8 @@
 
 scoreboard objectives add Constant dummy
 
+scoreboard players set Glib_Data_Init Constant 1
+
 scoreboard players set Neg Constant -1
 scoreboard players set -2 Constant -2
 scoreboard players set -1 Constant -1
