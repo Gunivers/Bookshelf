@@ -19,7 +19,6 @@
 
 
 # CODE:
-tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Imports"},"hoverEvent":{"action":"show_text","value":"Exit imports"}},{"text":"   ","color":"gold"},{"text":"G-Lib > Imports","underlined":true,"color":"gold"},{"text":"\n "}]
 
 
 # Test Math

@@ -12,8 +12,6 @@
 
 # INPUT:
 # - Var1 (score dummy)
-# - Var2 (score dummy)
-# - Var3 (score dummy)
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...
@@ -23,8 +21,6 @@ summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetLocation"]}
 
 tp @e[type=armor_stand,tag=SetLocation,limit=1] @s
 
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 1 run scoreboard players get @s Var1
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 1 run scoreboard players get @s Var2
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 1 run scoreboard players get @s Var3
+execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 1 run scoreboard players get @s Var1
 tp @s @e[type=armor_stand,tag=SetLocation,limit=1]
 kill @e[type=armor_stand,tag=SetLocation,limit=1]

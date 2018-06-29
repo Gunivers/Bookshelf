@@ -19,7 +19,7 @@
 
 
 # CODE:
-tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Imports"},"hoverEvent":{"action":"show_text","value":"Exit imports"}},{"text":"   ","color":"gold"},{"text":"G-Lib > Imports","underlined":true,"color":"gold"},{"text":"\n "}]
+
 
 # All
 tellraw @s ["",{"text":"      "},{"text":"[Import All]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/all"},"hoverEvent":{"action":"show_text","value":"Import all modules"}},{"text":"   "},{"text":"[Remove All]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/all"},"hoverEvent":{"action":"show_text","value":"Remove all modules"}}]
@@ -34,9 +34,10 @@ tag @s remove Glib_Init_Data_Ok
 
 # Test Id
 scoreboard players set Glib_Data_Init Id 1
+scoreboard players set Glib_Data_Init TargetId 1
 
-execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
-execute if score Glib_Data_Init Id matches 1 run tag @s add Glib_Init_Id_Warning
+execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
+execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 run tag @s add Glib_Init_Id_Warning
 tellraw @s[tag=Glib_Init_Id_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id"}}]
 tellraw @s[tag=Glib_Init_Id_Warning,tag=!Glib_Init_Id_Ok] ["",{"text":"      ","color":"gray"},{"text":"[!]","color":"gold","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id\n\nWARNING: Data module missing\n -> Double click to fixe it"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id\n\nWARNING: Data module missing\n -> Double click to fixe it"}}]
 tellraw @s[tag=!Glib_Init_Id_Ok,tag=!Glib_Init_Id_Warning] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/id"},"hoverEvent":{"action":"show_text","value":"Import id\n -> Auto import parent: Data"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/id"},"hoverEvent":{"action":"show_text","value":"Import id\n -> Auto import parent: Data"}}]

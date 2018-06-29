@@ -1,4 +1,5 @@
 scoreboard objectives add Id dummy
+scoreboard objectives add TargetId dummy
 
 function gunivers-lib:utils/import/data
 
