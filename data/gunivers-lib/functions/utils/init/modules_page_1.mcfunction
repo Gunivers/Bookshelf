@@ -28,8 +28,8 @@ tellraw @s ["",{"text":"      "},{"text":"[Import All]","color":"green","clickEv
 scoreboard players set Glib_Data_Init Data 1
 
 execute if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Data_Ok
-tellraw @s[tag=Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}}]
-tellraw @s[tag=!Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}}]
+tellraw @s[tag=Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Data is the default storage objective. The lib can automatically enable this module to work properly (example: the gamerule manager use this objective to check the state of each gamerules)."}}]
+tellraw @s[tag=!Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Data is the default storage objective. The lib can automatically enable this module to work properly (example: the gamerule manager use this objective to check the state of each gamerules)."}}]
 tag @s remove Glib_Init_Data_Ok
 
 # Test Id
@@ -67,4 +67,4 @@ tag @s remove Glib_Init_Location_Ok
 
 
 # Pages
-tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/2","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Init_Imports_Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
+tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/2","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Init_Modules_Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]

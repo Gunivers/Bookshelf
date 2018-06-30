@@ -75,4 +75,4 @@ tellraw @s ["",{"text":" "}]
 tellraw @s ["",{"text":" "}]
 
 # Pages
-tellraw @s ["",{"text":"      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Imports_Page_2"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"2/2","color":"gray"},{"text":" "},{"text":"[>]","color":"gray"}]
+tellraw @s ["",{"text":"      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Modules_Page_2"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"2/2","color":"gray"},{"text":" "},{"text":"[>]","color":"gray"}]
