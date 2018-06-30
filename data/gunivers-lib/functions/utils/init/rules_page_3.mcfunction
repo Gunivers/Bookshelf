@@ -21,28 +21,29 @@
 # CODE:
 
 
-# doWeatherCycle
-execute store result score Glib_Init_Rules_WeatherCycle Data run gamerule doWeatherCycle
-execute if score Glib_Init_Rules_WeatherCycle Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Weather Cycle: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doWeatherCycle false"},"hoverEvent":{"action":"show_text","value":"Disable Weather Cycle"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doWeatherCycle false"},"hoverEvent":{"action":"show_text","value":"Disable Weather Cycle"}}]
-execute if score Glib_Init_Rules_WeatherCycle Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Weather Cycle: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doWeatherCycle true"},"hoverEvent":{"action":"show_text","value":"Enable Weather Cycle"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doWeatherCycle true"},"hoverEvent":{"action":"show_text","value":"Enable Weather Cycle"}}]
-
-# keepInventory
-execute store result score Glib_Init_Rules_KeepInventory Data run gamerule keepInventory
-execute if score Glib_Init_Rules_KeepInventory Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Keep Inventory: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule keepInventory false"},"hoverEvent":{"action":"show_text","value":"Disable Keep Inventory"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule keepInventory false"},"hoverEvent":{"action":"show_text","value":"Disable Keep Inventory"}}]
-execute if score Glib_Init_Rules_KeepInventory Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Keep Inventory: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule keepInventory true"},"hoverEvent":{"action":"show_text","value":"Enable Keep Inventory"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule keepInventory true"},"hoverEvent":{"action":"show_text","value":"Enable Keep Inventory"}}]
-
-# logAdminCommands
-execute store result score Glib_Init_Rules_Logs Data run gamerule logAdminCommands
-execute if score Glib_Init_Rules_Logs Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Log Admin Commands: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands false"},"hoverEvent":{"action":"show_text","value":"Disable Log Admin Commands"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands false"},"hoverEvent":{"action":"show_text","value":"Disable Log Admin Commands"}}]
-execute if score Glib_Init_Rules_Logs Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Log Admin Commands: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands true"},"hoverEvent":{"action":"show_text","value":"Enable Log Admin Commands"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands true"},"hoverEvent":{"action":"show_text","value":"Enable Log Admin Commands"}}]
-
-# maxCommandChainLength
+# Max Command Chain Length
 execute store result score Glib_Init_Rules_MaxCommandChain Data run gamerule maxCommandChainLength
 tellraw @s ["",{"text":"      - Max Command Chain Length: ","color":"gray","clickEvent":{"action":"suggest_command","value":"/gamerule maxCommandChainLength "},"hoverEvent":{"action":"show_text","value":"Modify Max Command Chain Length (Default: 65536)"}},{"score":{"name":"Glib_Init_Rules_MaxCommandChain","objective":"Data"},"color":"blue","clickEvent":{"action":"suggest_command","value":"/gamerule maxCommandChainLength "},"hoverEvent":{"action":"show_text","value":"Modify Max Command Chain Length (Default: 65536)"}}]
 
-# maxEntityCramming
+# Max Entity Cramming
 execute store result score Glib_Init_Rules_MaxEntityCramming Data run gamerule maxEntityCramming
 tellraw @s ["",{"text":"      - Max Entity Cramming: ","color":"gray","clickEvent":{"action":"suggest_command","value":"/gamerule maxEntityCramming "},"hoverEvent":{"action":"show_text","value":"Modify Max Entity Cramming (Default: 24)"}},{"score":{"name":"Glib_Init_Rules_MaxEntityCramming","objective":"Data"},"color":"blue","clickEvent":{"action":"suggest_command","value":"/gamerule maxEntityCramming "},"hoverEvent":{"action":"show_text","value":"Modify Max Entity Cramming (Default: 24)"}}]
+
+# MobGriefing
+execute store result score Glib_Init_Rules_MobGriefing Data run gamerule mobGriefing
+execute if score Glib_Init_Rules_MobGriefing Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Griefing: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule mobGriefing false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Griefing"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule mobGriefing false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Griefing"}}]
+execute if score Glib_Init_Rules_MobGriefing Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Griefing: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule mobGriefing true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Griefing"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule mobGriefing true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Griefing"}}]
+
+# MobLoot
+execute store result score Glib_Init_Rules_MobLoot Data run gamerule doMobLoot
+execute if score Glib_Init_Rules_MobLoot Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Loot: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Loot"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Loot"}}]
+execute if score Glib_Init_Rules_MobLoot Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Loot: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Loot"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Loot"}}]
+
+# MobSpawning
+execute store result score Glib_Init_Rules_MobSpawning Data run gamerule doMobSpawning
+execute if score Glib_Init_Rules_MobSpawning Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Spawning: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Spawning"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Spawning"}}]
+execute if score Glib_Init_Rules_MobSpawning Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Spawning: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Spawning"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Spawning"}}]
+
 
 
 # Pages

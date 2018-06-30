@@ -20,31 +20,31 @@
 
 # CODE:
 
+
 # Fire Tick
 execute store result score Glib_Init_Rules_FireTick Data run gamerule doFireTick
 execute if score Glib_Init_Rules_FireTick Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Fire Tick: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doFireTick false"},"hoverEvent":{"action":"show_text","value":"Disable Fire Tick"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doFireTick false"},"hoverEvent":{"action":"show_text","value":"Disable Fire Tick"}}]
 execute if score Glib_Init_Rules_FireTick Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Fire Tick: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doFireTick true"},"hoverEvent":{"action":"show_text","value":"Enable Fire Tick"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doFireTick true"},"hoverEvent":{"action":"show_text","value":"Enable Fire Tick"}}]
+
+# Keep Inventory
+execute store result score Glib_Init_Rules_KeepInventory Data run gamerule keepInventory
+execute if score Glib_Init_Rules_KeepInventory Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Keep Inventory: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule keepInventory false"},"hoverEvent":{"action":"show_text","value":"Disable Keep Inventory"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule keepInventory false"},"hoverEvent":{"action":"show_text","value":"Disable Keep Inventory"}}]
+execute if score Glib_Init_Rules_KeepInventory Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Keep Inventory: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule keepInventory true"},"hoverEvent":{"action":"show_text","value":"Enable Keep Inventory"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule keepInventory true"},"hoverEvent":{"action":"show_text","value":"Enable Keep Inventory"}}]
 
 # Limited Crafting 
 execute store result score Glib_Init_Rules_LimitedCrafting Data run gamerule doLimitedCrafting 
 execute if score Glib_Init_Rules_LimitedCrafting Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Limited Crafting: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doLimitedCrafting false"},"hoverEvent":{"action":"show_text","value":"Disable Limited Crafting"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doLimitedCrafting false"},"hoverEvent":{"action":"show_text","value":"Disable Limited Crafting"}}]
 execute if score Glib_Init_Rules_LimitedCrafting Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Limited Crafting: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doLimitedCrafting true"},"hoverEvent":{"action":"show_text","value":"Enable Limited Crafting"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doLimitedCrafting true"},"hoverEvent":{"action":"show_text","value":"Enable Limited Crafting"}}]
 
+# Log Admin Commands
+execute store result score Glib_Init_Rules_Logs Data run gamerule logAdminCommands
+execute if score Glib_Init_Rules_Logs Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Log Admin Commands: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands false"},"hoverEvent":{"action":"show_text","value":"Disable Log Admin Commands"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands false"},"hoverEvent":{"action":"show_text","value":"Disable Log Admin Commands"}}]
+execute if score Glib_Init_Rules_Logs Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Log Admin Commands: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands true"},"hoverEvent":{"action":"show_text","value":"Enable Log Admin Commands"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule logAdminCommands true"},"hoverEvent":{"action":"show_text","value":"Enable Log Admin Commands"}}]
 
-# doMobLoot
-execute store result score Glib_Init_Rules_MobLoot Data run gamerule doMobLoot
-execute if score Glib_Init_Rules_MobLoot Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Loot: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Loot"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Loot"}}]
-execute if score Glib_Init_Rules_MobLoot Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Loot: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Loot"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doMobLoot true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Loot"}}]
-
-# doMobSpawning
-execute store result score Glib_Init_Rules_MobSpawning Data run gamerule doMobSpawning
-execute if score Glib_Init_Rules_MobSpawning Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Spawning: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Spawning"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning false"},"hoverEvent":{"action":"show_text","value":"Disable Mob Spawning"}}]
-execute if score Glib_Init_Rules_MobSpawning Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Mob Spawning: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Spawning"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doMobSpawning true"},"hoverEvent":{"action":"show_text","value":"Enable Mob Spawning"}}]
-
-# doTileDrops
-execute store result score Glib_Init_Rules_TileDrops Data run gamerule doTileDrops
-execute if score Glib_Init_Rules_TileDrops Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Tile Drops: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doTileDrops false"},"hoverEvent":{"action":"show_text","value":"Disable Tile Drops"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule doTileDrops false"},"hoverEvent":{"action":"show_text","value":"Disable Tile Drops"}}]
-execute if score Glib_Init_Rules_TileDrops Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Tile Drops: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule doTileDrops true"},"hoverEvent":{"action":"show_text","value":"Enable Tile Drops"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule doTileDrops true"},"hoverEvent":{"action":"show_text","value":"Enable Tile Drops"}}]
+# NaturalRegeneration
+execute store result score Glib_Init_Rules_RaturalRegen Data run gamerule naturalRegeneration
+execute if score Glib_Init_Rules_RaturalRegen Data matches 1 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Natural Regeneration: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule naturalRegeneration false"},"hoverEvent":{"action":"show_text","value":"Disable Natural Regeneration"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":"/gamerule naturalRegeneration false"},"hoverEvent":{"action":"show_text","value":"Disable Natural Regeneration"}}]
+execute if score Glib_Init_Rules_RaturalRegen Data matches 0 run tellraw @s ["",{"text":"      ","color":"gray"},{"text":"- Natural Regeneration: ","color":"gray","clickEvent":{"action":"run_command","value":"/gamerule naturalRegeneration true"},"hoverEvent":{"action":"show_text","value":"Enable Natural Regeneration"}},{"text":"x","color":"red","clickEvent":{"action":"run_command","value":"/gamerule naturalRegeneration true"},"hoverEvent":{"action":"show_text","value":"Enable Natural Regeneration"}}]
 
 
 
