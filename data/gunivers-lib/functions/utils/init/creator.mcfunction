@@ -19,11 +19,11 @@
 
 
 # CODE:
-tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Edit"},"hoverEvent":{"action":"show_text","value":"Exit map editor"}},{"text":"   ","color":"gold"},{"text":"Map Editor","underlined":true,"color":"gold"},{"text":"\n "}]
+tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Init_Creator"},"hoverEvent":{"action":"show_text","value":"Exit crator tools"}},{"text":"   ","color":"gold"},{"text":"Creator Tools","underlined":true,"color":"gold"},{"text":"\n "}]
 
 tellraw @s ["",{"text":"      > ","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/init/generate_base"},"hoverEvent":{"action":"show_text","value":"Set worldspawn on your position and create a platform to put all command-blocks."}},{"text":"Create base platform","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/init/generate_base"},"hoverEvent":{"action":"show_text","value":"Set worldspawn on your position and create a platform to put all command-blocks."}}]
+tellraw @s ["",{"text":"      > ","color":"red","clickEvent":{"action":"open_url","value":"http://minecraft.tools"},"hoverEvent":{"action":"show_text","value":"Go to minecraft.tools to see all generators (tellraw, signs, summon, banner and many other !"}},{"text":"Generators","color":"gray","clickEvent":{"action":"open_url","value":"http://minecraft.tools"},"hoverEvent":{"action":"show_text","value":"Go to minecraft.tools to see all generators (tellraw, signs, summon, banner and many other !"}}]
 
-tellraw @s ["",{"text":"      ","color":"gray"}]
 tellraw @s ["",{"text":"      ","color":"gray"}]
 tellraw @s ["",{"text":"      ","color":"gray"}]
 tellraw @s ["",{"text":"      ","color":"gray"}]
