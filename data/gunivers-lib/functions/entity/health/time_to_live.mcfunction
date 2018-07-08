@@ -16,6 +16,7 @@
 # NOTE:
 #     Execute this fonction in a loop to set TTL to your entity.
 #     20 = 1 second.
+#     Execute this command: "scoreboard players set @e[scores={Glib_TTL=0}] Glib_TTL <Value>" to set custome time before the execution of this function
 #     Set a negative value to make permanent entities.
 
 # CONFIGURATION:
