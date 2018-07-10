@@ -1,5 +1,6 @@
 {
  "values": [
-	"gunivers-lib:utils/cache/cache_loop"
+	"gunivers-lib:utils/cache/cache_loop",
+	"gunivers-lib:utils/init/loop"
  ]
 }
