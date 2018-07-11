@@ -2,8 +2,8 @@ execute store result score locateX Cache run data get entity @e[name=glCacheLoc,
 execute store result score locateY Cache run data get entity @e[name=glCacheLoc,limit=1] Pos[1] 1
 execute store result score locateZ Cache run data get entity @e[name=glCacheLoc,limit=1] Pos[2] 1
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheX Cache = locateX Cache
-execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheY Cache = locateZ Cache
-execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheZ Cache = locateY Cache
+execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheY Cache = locateY Cache
+execute as @e[name=glCacheLoc,limit=1] run scoreboard players operation cacheZ Cache = locateZ Cache
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateX Cache 1
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateY Cache 2
 execute as @e[name=glCacheLoc,limit=1] run scoreboard players add locateZ Cache 1
