@@ -1,3 +1,4 @@
+function gunivers-lib:utils/remove/bool
 function gunivers-lib:utils/remove/math
 function gunivers-lib:utils/remove/vectors
 function gunivers-lib:utils/remove/local_vectors

@@ -25,45 +25,26 @@
 tellraw @s ["",{"text":"      "},{"text":"[Import All]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/all"},"hoverEvent":{"action":"show_text","value":"Import all modules"}},{"text":"   "},{"text":"[Remove All]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/all"},"hoverEvent":{"action":"show_text","value":"Remove all modules"}}]
 
 # Test Data
-scoreboard players set Glib_Data_Init Data 1
-
-execute if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Data_Ok
 tellraw @s[tag=Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/data"},"hoverEvent":{"action":"show_text","value":"Remove data"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Data is the default storage objective. The lib can automatically enable this module to work properly (example: the gamerule manager use this objective to check the state of each gamerules)."}}]
 tellraw @s[tag=!Glib_Init_Data_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}},{"text":" Data","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/data"},"hoverEvent":{"action":"show_text","value":"Import data"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Data is the default storage objective. The lib can automatically enable this module to work properly (example: the gamerule manager use this objective to check the state of each gamerules)."}}]
-tag @s remove Glib_Init_Data_Ok
 
-# Test Id
-scoreboard players set Glib_Data_Init Id 1
-scoreboard players set Glib_Data_Init TargetId 1
 
-execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
-execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 run tag @s add Glib_Init_Id_Warning
-tellraw @s[tag=Glib_Init_Id_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id"}}]
-tellraw @s[tag=Glib_Init_Id_Warning,tag=!Glib_Init_Id_Ok] ["",{"text":"      ","color":"gray"},{"text":"[!]","color":"gold","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id\n\nWARNING: Data module missing\n -> Double click to fixe it"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/id"},"hoverEvent":{"action":"show_text","value":"Remove id\n\nWARNING: Data module missing\n -> Double click to fixe it"}}]
-tellraw @s[tag=!Glib_Init_Id_Ok,tag=!Glib_Init_Id_Warning] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/id"},"hoverEvent":{"action":"show_text","value":"Import id\n -> Auto import parent: Data"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/id"},"hoverEvent":{"action":"show_text","value":"Import id\n -> Auto import parent: Data"}}]
-tag @s remove Glib_Init_Id_Ok
-tag @s remove Glib_Init_Id_Warning
+# Test Vars
+tellraw @s[tag=Glib_Init_Vars_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/vars"},"hoverEvent":{"action":"show_text","value":"Remove vars"}},{"text":" Vars","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/vars"},"hoverEvent":{"action":"show_text","value":"Remove vars"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Vars is used several systems. It allow to create variables wich can be used as parameters."}}]
+tellraw @s[tag=!Glib_Init_Vars_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/vars"},"hoverEvent":{"action":"show_text","value":"Import vars"}},{"text":" Vars","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/vars"},"hoverEvent":{"action":"show_text","value":"Import vars"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Vars is used several systems. It allow to create variables wich can be used as parameters."}}]
 
-# Test Local Vectors
-scoreboard players set Glib_Data_Init VectorLeft 1
-scoreboard players set Glib_Data_Init VectorUp 1
-scoreboard players set Glib_Data_Init VectorFront 1
-scoreboard players set Glib_Data_Init VectorSpeedLocal 1
 
-execute if score Glib_Data_Init VectorLeft matches 1 if score Glib_Data_Init VectorUp matches 1 if score Glib_Data_Init VectorFront matches 1 if score Glib_Data_Init VectorSpeedLocal matches 1 run tag @s add Glib_Init_Local_Vectors_Ok
-tellraw @s[tag=Glib_Init_Local_Vectors_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/local_vectors"},"hoverEvent":{"action":"show_text","value":"Remove local vectors"}},{"text":" Local Vectors","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/local_vectors"},"hoverEvent":{"action":"show_text","value":"Remove local vectors"}}]
-tellraw @s[tag=!Glib_Init_Local_Vectors_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/local_vectors"},"hoverEvent":{"action":"show_text","value":"Import local vectors"}},{"text":" Local Vectors","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/local_vectors"},"hoverEvent":{"action":"show_text","value":"Import local vectors"}}]
-tag @s remove Glib_Init_Local_Vectors_Ok
+# Test Constant
 
-# Test Location
-scoreboard players set Glib_Data_Init LocX 1
-scoreboard players set Glib_Data_Init LocY 1
-scoreboard players set Glib_Data_Init LocZ 1
+tellraw @s[tag=Glib_Init_Const_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/constants"},"hoverEvent":{"action":"show_text","value":"Remove constants"}},{"text":" Constants","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/constants"},"hoverEvent":{"action":"show_text","value":"Remove constants"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Constant is used several systems. It allow to use constants wich are used in some calculs."}}]
+tellraw @s[tag=!Glib_Init_Const_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/constants"},"hoverEvent":{"action":"show_text","value":"Import constants"}},{"text":" Constants","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/constants"},"hoverEvent":{"action":"show_text","value":"Import constants"}},{"text":"  [?]","color":"blue","hoverEvent":{"action":"show_text","value":"Constant is used several systems. It allow to use constants wich are used in some calculs."}}]
 
-execute if score Glib_Data_Init LocX matches 1 if score Glib_Data_Init LocY matches 1 if score Glib_Data_Init LocZ matches 1 run tag @s add Glib_Init_Location_Ok
-tellraw @s[tag=Glib_Init_Location_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/location"},"hoverEvent":{"action":"show_text","value":"Remove location"}},{"text":" Location","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/location"},"hoverEvent":{"action":"show_text","value":"Remove location"}}]
-tellraw @s[tag=!Glib_Init_Location_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/location"},"hoverEvent":{"action":"show_text","value":"Import location"}},{"text":" Location","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/location"},"hoverEvent":{"action":"show_text","value":"Import location"}}]
-tag @s remove Glib_Init_Location_Ok
+#Test Bool
+
+tellraw @s[tag=Glib_Init_Local_Bool_Ok] ["",{"text":"      ","color":"gray"},{"text":"[✔]","color":"green","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/bool"},"hoverEvent":{"action":"show_text","value":"Remove lbool"}},{"text":" Bool","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/remove/bool"},"hoverEvent":{"action":"show_text","value":"Remove bool"}}]
+tellraw @s[tag=!Glib_Init_Local_Bool_Ok] ["",{"text":"      ","color":"gray"},{"text":"[x]","color":"red","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/bool"},"hoverEvent":{"action":"show_text","value":"Import bool"}},{"text":" Bool","color":"gray","clickEvent":{"action":"run_command","value":"/function gunivers-lib:utils/import/bool"},"hoverEvent":{"action":"show_text","value":"Import bool"}}]
+
+
 
 
 # Pages

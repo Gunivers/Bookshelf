@@ -9,19 +9,6 @@
 # - Nombres premiers inferrieurs à 100
 
 
-
-scoreboard players set 1103515245 Constant 1103515245
-scoreboard players set 12345 Constant 12345
-scoreboard players set 65536 Constant 65536
-scoreboard players set 32768 Constant 32768
-scoreboard players set 32767 Constant 32767
-
-
-scoreboard players set 118998 Constant 118998
-scoreboard players set 16807 Constant 16807
-scoreboard players set 307 Constant 307
-
-
 scoreboard objectives add Constant dummy
 
 scoreboard players set Neg Constant -1
@@ -115,3 +102,6 @@ scoreboard players set Pi2 Constant 314
 scoreboard players set Pi3 Constant 3142
 scoreboard players set Pi6 Constant 3141593
 
+scoreboard players set 118998 Constant 118998
+scoreboard players set 16807 Constant 16807
+scoreboard players set 307 Constant 307
