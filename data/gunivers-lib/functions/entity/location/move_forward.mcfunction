@@ -41,7 +41,7 @@ scoreboard players add @s[tag=FactorIncrease] Var4 1
 #tellraw @a[tag=Debug] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
 #tellraw @a[tag=Debug] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
-execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/location/child/move_forward_loop1
+execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/location/child/move_forward/loop1
 
 scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var3
 

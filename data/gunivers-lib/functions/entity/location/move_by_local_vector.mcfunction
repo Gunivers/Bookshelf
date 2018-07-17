@@ -53,13 +53,13 @@ scoreboard players add @s[tag=FactorIncrease] Var4 1
 #tellraw @a[tag=Debug] ["",{"text":"\nOUTPUT1 -> ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
 #tellraw @a[tag=Debug] ["",{"text":"OUTPUT1 -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
-execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/location/child/move_by_vector_ori_loop1
+execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/location/child/move_by_local_vector/loop1
 
 scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var1
 scoreboard players operation @s[scores={Var4=1..}] Var8 = @s Var2
 scoreboard players operation @s[scores={Var4=1..}] Var9 = @s Var3
 
 #tellraw @a[tag=Debug] ["",{"text":"\n>>> Loop 2 <<<","color":"green"}]
-function gunivers-lib:entity/location/child/move_by_vector_ori_loop2
+function gunivers-lib:entity/location/child/move_by_local_vector/loop2
 
 

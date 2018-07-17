@@ -22,5 +22,5 @@ tag @s remove MoveLoop
 tag @s[scores={Var3=1001..}] add MoveLoop
 tag @s[scores={Var3=..-1001}] add MoveLoop
 
-execute as @s[tag=MoveLoop] at @s run function gunivers-lib:entity/location/child/move_forward_loop1
+execute as @s[tag=MoveLoop] at @s run function gunivers-lib:entity/location/child/move_forward/loop1
 
