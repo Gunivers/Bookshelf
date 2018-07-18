@@ -15,9 +15,6 @@ execute at @s[tag=Debug] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Na
 # END DEBUG
 
 execute at @s run function gunivers-lib:entity/location/child/move_forward/apply
-execute at @s[scores={Collision=1..}] run function gunivers-lib:entity/location/child/move_forward/collision_detect_x
-execute at @s[scores={Collision=1..}] run function gunivers-lib:entity/location/child/move_forward/collision_detect_y
-execute at @s[scores={Collision=1..}] run function gunivers-lib:entity/location/child/move_forward/collision_detect_z
 
 #execute at @s[scores={Collision=1..}] run function gunivers-lib:entity/location/child/move_forward/collision
 
