@@ -1,1 +1,0 @@
-execute as @a[tag=Glib_Init_Menu] at @s run function gunivers-lib:utils/init/main

@@ -8,7 +8,6 @@
 #----------------#
 # Collision on X #
 #----------------#
-
 execute as @s[scores={Var1=1..,Collision=1..}] at @s run function gunivers-lib:entity/location/child/move_by_vector/collision_detect_pos_x
 execute as @s[scores={Var1=..-1,Collision=1..}] at @s run function gunivers-lib:entity/location/child/move_by_vector/collision_detect_neg_x
 

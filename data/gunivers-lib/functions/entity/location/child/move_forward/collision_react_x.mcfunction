@@ -5,4 +5,4 @@
 
 # CODE:
 #     Reaction X
-scoreboard players operation @s[scores={Collision=1..3}] Var1 *= Neg Constant
+scoreboard players operation @s[scores={CollisionLocal=1..3}] Var1 *= Neg Constant
