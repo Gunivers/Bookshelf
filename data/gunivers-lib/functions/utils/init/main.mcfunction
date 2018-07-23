@@ -34,12 +34,12 @@ tellraw @s ["",{"text":"      ","color":"gray"}]
 
 
 execute as @s[tag=Glib_Init_Modules] at @s run function gunivers-lib:utils/init/modules
-execute as @s[tag=Glib_Init_Debug] at @s run function gunivers-lib:utils/init/debugs
+execute as @s[tag=Glib_Init_Debug] at @s run function gunivers-lib:utils/init/debug
 execute as @s[tag=Glib_Init_Examples] at @s run function gunivers-lib:utils/init/examples
 execute as @s[tag=Glib_Init_Creator] at @s run function gunivers-lib:utils/init/creator
 execute as @s[tag=Glib_Init_Rules] at @s run function gunivers-lib:utils/init/rules
 execute as @s[tag=Glib_Init_Informations] at @s run function gunivers-lib:utils/init/informations
 
-tellraw @s[tag=Glib_Init_Exit] ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n"},{"text":"     Thanks to use Gunivers-Lib !\n\n\n     Good luck for your project !","color":"gold"},{"text":"\n\n\n____________________","color":"black"}]
+tellraw @s[tag=Glib_Init_Exit] ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n"},{"text":"     Thanks for using Gunivers-Lib !\n\n\n     Good luck for your project !","color":"gold"},{"text":"\n\n\n____________________","color":"black"}]
 tag @s[tag=Glib_Init_Exit] remove Glib_Init_Menu
 tag @s[tag=Glib_Init_Exit] remove Glib_Init_Exit
