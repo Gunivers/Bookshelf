@@ -35,7 +35,7 @@ Cette biliothèque offrira une aide conséquente aux développeurs CMD souhaitan
 Gunivers-Lib
 
 # PRESENTATION:
-Gunivers-Lib is a Minecraft function library useful for maps/systems and structures of any kind. Therefore, it allows you to hide any complex aspect of development (e.g.: mathematic parts) and helps the creation of massive projects.
+Gunivers-Lib is a Minecraft function library useful for maps/systems and structures of any kind. Therefore, it enables you to hide any complex aspect of development (e.g.: mathematic parts) and helps the creation of massive projects.
 
 # CHARACTERISTIC:
 The available functions can interact between them and respect conventions so they can adapt to any system.
