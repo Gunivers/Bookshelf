@@ -28,7 +28,7 @@ Cette biliothèque offrira une aide conséquente aux développeurs CMD souhaitan
 # PROJECT MANAGERS PROJET:
 @theogiraudet/Oromis, @LeiRoF
 
-# CONTRIBUTors:
+# CONTRIBUTORS:
 @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev
 
 # Title:
