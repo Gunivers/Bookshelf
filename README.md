@@ -5,7 +5,7 @@
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTEURS:
-@theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev
+@theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑
 
 # TITRE:
 Gunivers-Lib
@@ -29,7 +29,7 @@ Cette biliothèque offrira une aide conséquente aux développeurs CMD souhaitan
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTORS:
-@theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev
+@theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑
 
 # Title:
 Gunivers-Lib
