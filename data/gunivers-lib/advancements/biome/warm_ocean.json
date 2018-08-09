@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "warm_ocean": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:warm_ocean"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/warm_ocean"
+		
+		
+    }
+}

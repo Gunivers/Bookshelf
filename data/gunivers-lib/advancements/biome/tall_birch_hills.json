@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "tall_birch_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:tall_birch_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/tall_birch_hills"
+		
+		
+    }
+}

@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Location/Biome/Forest"
+			"function": "gunivers-lib:entity/location/biome/forest"
 		
 		
     }

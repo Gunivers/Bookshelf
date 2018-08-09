@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "gravelly_mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:gravelly_mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/gravelly_mountains"
+		
+		
+    }
+}

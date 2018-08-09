@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "end_highlands": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:end_highlands"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/end_highlands"
+		
+		
+    }
+}

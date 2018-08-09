@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "stone_shore": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:stone_shore"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/stone_shore"
+		
+		
+    }
+}

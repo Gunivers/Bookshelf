@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "small_end_islands": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:small_end_islands"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/small_end_islands"
+		
+		
+    }
+}

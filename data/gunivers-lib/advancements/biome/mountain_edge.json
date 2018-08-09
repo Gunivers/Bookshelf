@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mountain_edge": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mountain_edge"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/mountain_edge"
+		
+		
+    }
+}

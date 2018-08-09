@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "snowy_beach": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:snowy_beach"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/snowy_beach"
+		
+		
+    }
+}

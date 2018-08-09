@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "savanna_plateau": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:savanna_plateau"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/savanna_plateau"
+		
+		
+    }
+}

@@ -1,0 +1,15 @@
+# NAME: Biome Indicator
+# PATH: /
+# AUTHOR: theogiraudet/Oromis
+
+# VERSION: 1.1
+# MINECRAFT: 1.13
+
+# REQUIEREMENTS:
+# - Biome (score - dummy)
+
+# OUTPUT:
+# - Biome (score - dummy)
+
+# NOTE: This system works automatically thanks to advancements. It detects the biome where the player (only) are and assign an id to each biome. You can find the list of id in /utils/list/Biomes.
+To disable this system, delete this folder.

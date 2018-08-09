@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "the_end": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:the_end"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/the_end"
+		
+		
+    }
+}

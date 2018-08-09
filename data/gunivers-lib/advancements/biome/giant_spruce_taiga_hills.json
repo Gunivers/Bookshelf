@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "giant_spruce_taiga_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:giant_spruce_taiga_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/giant_spruce_taiga_hills"
+		
+		
+    }
+}

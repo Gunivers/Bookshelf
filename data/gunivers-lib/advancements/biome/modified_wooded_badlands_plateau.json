@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "modified_wooded_badlands_plateau": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:modified_wooded_badlands_plateau"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/modified_wooded_badlands_plateau"
+		
+		
+    }
+}

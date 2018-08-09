@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "ice_spikes": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:ice_spikes"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/ice_spikes"
+		
+		
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/mountains"
+		
+		
+    }
+}

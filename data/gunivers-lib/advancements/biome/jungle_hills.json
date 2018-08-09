@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "jungle_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:jungle_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/jungle_hills"
+		
+		
+    }
+}

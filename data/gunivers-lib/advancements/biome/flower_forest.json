@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "flower_forest": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:flower_forest"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/flower_forest"
+		
+		
+    }
+}

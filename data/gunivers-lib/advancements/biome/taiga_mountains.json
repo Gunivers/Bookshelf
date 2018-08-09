@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "taiga_mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:taiga_mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/taiga_mountains"
+		
+		
+    }
+}

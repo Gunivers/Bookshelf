@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "snowy_taiga": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:snowy_taiga"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/snowy_taiga"
+		
+		
+    }
+}

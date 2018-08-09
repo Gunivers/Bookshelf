@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "the_void": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:the_void"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/the_void"
+		
+		
+    }
+}

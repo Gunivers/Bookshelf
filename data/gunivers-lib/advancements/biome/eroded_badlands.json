@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "eroded_badlands": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:eroded_badlands"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/eroded_badlands"
+		
+		
+    }
+}

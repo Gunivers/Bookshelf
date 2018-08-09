@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "wooded_mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:wooded_mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/wooded_mountains"
+		
+		
+    }
+}

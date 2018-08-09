@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "Gunivers-Lib:Entity/Location/Biome/Plains"
+			"function": "gunivers-lib:entity/location/biome/plains"
 		
 		
     }

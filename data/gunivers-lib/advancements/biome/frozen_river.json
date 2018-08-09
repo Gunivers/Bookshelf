@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "frozen_river": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:frozen_river"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/frozen_river"
+		
+		
+    }
+}

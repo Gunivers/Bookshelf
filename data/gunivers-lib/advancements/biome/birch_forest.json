@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "birch_forest": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:birch_forest"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/birch_forest"
+		
+		
+    }
+}

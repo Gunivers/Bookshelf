@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "snowy_mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:snowy_mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/snowy_mountains"
+		
+		
+    }
+}

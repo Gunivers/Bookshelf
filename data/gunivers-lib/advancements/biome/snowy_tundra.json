@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "snowy_tundra": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:snowy_tundra"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/snowy_tundra"
+		
+		
+    }
+}

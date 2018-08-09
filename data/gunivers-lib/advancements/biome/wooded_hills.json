@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "wooded_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:wooded_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/wooded_hills"
+		
+		
+    }
+}

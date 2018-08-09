@@ -4,120 +4,143 @@
 
 2 : Desert
 
-3 : Extreme Hills
+3 : Mountains
 
 4 : Forest
 
 5 : Taiga
 
-6 : Swampland
+6 : Swamp
 
 7 : River
 
-8 : Hell
+8 : Nether
 
 9 : The End
 
-10 : FrozenOcean
+10 : Frozen Ocean
 
-11 : FrozenRiver
+11 : Frozen River
 
-12 : Ice Plains
+12 : Snowy Tundra
 
-13 : Ice Mountains
+13 : Snowy Mountains
 
-14 : MushroomIsland
+14 : Mushroom Fields
 
-15 : MushroomIslandShore
+15 : Mushroom Field Shore
 
 16 : Beach
 
-17 : DesertHills
+17 : Desert Hills
 
-18 : ForestHills
+18 : Wooded Hills
 
-19 : TaigaHills
+19 : Taiga Hills
 
-20 : Extreme Hills Edge
+20 : Mountain Edge
 
 21 : Jungle
 
-22 : JungleHills
+22 : Jungle Hills
 
-23 : JungleEdge
+23 : Jungle Edge
 
 24 : Deep Ocean
 
-25 : Stone Beach
+25 : Stone Shore
 
-26 : Cold Beach
+26 : Snowy Beach
 
 27 : Birch Forest
 
 28 : Birch Forest Hills
 
-29 : Roofed Forest
+29 : Dark Forest
 
-30 : Cold Taiga
+30 : Snowy Taiga
 
-31 : Cold Taiga Hills
+31 : Snowy Taiga Hills
 
-32 : Mega Taiga
+32 : Giant Tree Taiga
 
-33 : Mega Taiga Hills
+33 : Giant Tree Taiga Hills
 
-34 : Extreme Hills+
+34 : Wooded Mountains
 
 35 : Savanna
 
 36 : Savanna Plateau
 
-37 : Mesa
+37 : Badlands
 
-38 : Mesa Plateau F
+38 : Wooded Badlands Plateau
 
-39 : Mesa Plateau
+39 : Badlands Plateau
 
-127 : The Void
+40 : Small End Islands
 
-129 : Sunflower Plains
+41 : End Midlands
 
-130 : Desert M
+42 : End Highlands
 
-131 : Extreme Hills M
+43 : End Barrens
 
-132 : Flower Forest
+44 : Warm Ocean
 
-133 : Taiga M
+45 : Lukewarm Ocean
 
-134 : Swampland M
+46 : Cold Ocean
 
-140 : Ice Plains Spikes
+47 : Deep Warm Ocean
 
-149 : Jungle M
+48 : Deep Lukewarm Ocean
 
-151 : JungleEdge M
+49 : Deep Cold Ocean
 
-155 : Birch Forest M
+50 : Deep Frozen Ocean
 
-156 : Birch Forest Hills M
+51 : The Void
 
-157 : Roofed Forest M
+52 : Sunflower Plains
 
-158 : Cold Taiga M
+53 : Desert Lakes
 
-160 : Mega Spruce Taiga
+54 : Gravelly Mountains
 
-161 : Redwood Taiga Hills M
+55 : Flower Forest
 
-162 : Extreme Hills+ M
+56 : Taiga Mountains
 
-163 : Savanna M
+57 : Swamp Hills
 
-164 : Savanna Plateau M
+58 : Ice Spikes
 
-165 : Mesa (Bryce)
+59 : Modified Jungle
 
-166 : Mesa Plateau F M
+60 : Modified Jungle Edge
 
-167 : Mesa Plateau M
+61 : Tall Birch Forest
+
+62 : Tall Birch Hills
+
+63 : Dark Forest Hills
+
+64 : Snowy Taiga Mountains
+
+65 : Giant Spruce Taiga
+
+66 : Giant Spruce Taiga Hills
+
+67 : Modified Gravelly Mountains
+
+68 : Shattered Savanna
+
+69 : Shattered Savanna Plateau
+
+70 : Eroded Badlands
+
+71 : Modified Wooded Badlands Plateau
+
+72 : Modified Badlands Plateau
+

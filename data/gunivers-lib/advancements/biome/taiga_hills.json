@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "taiga_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:taiga_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/taiga_hills"
+		
+		
+    }
+}

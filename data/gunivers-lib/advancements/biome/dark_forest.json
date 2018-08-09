@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "dark_forest": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:dark_forest"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/dark_forest"
+		
+		
+    }
+}

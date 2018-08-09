@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "swamp": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:swamp"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/swamp"
+		
+		
+    }
+}

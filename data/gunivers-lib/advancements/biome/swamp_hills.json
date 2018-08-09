@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "swamp_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:swamp_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/swamp_hills"
+		
+		
+    }
+}

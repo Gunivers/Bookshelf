@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "mushroom_fields": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:mushroom_fields"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/mushroom_fields"
+		
+		
+    }
+}

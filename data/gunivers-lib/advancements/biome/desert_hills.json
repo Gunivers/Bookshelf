@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "desert_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:desert_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/desert_hills"
+		
+		
+    }
+}

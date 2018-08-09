@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "lukewarm_ocean": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:lukewarm_ocean"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/lukewarm_ocean"
+		
+		
+    }
+}

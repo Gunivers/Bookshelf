@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "birch_forest_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:birch_forest_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/birch_forest_hills"
+		
+		
+    }
+}

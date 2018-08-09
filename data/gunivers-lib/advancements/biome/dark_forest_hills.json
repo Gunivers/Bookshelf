@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "dark_forest_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:dark_forest_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/dark_forest_hills"
+		
+		
+    }
+}
