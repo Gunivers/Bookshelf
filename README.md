@@ -1,7 +1,7 @@
 # CONCEPT:
 @LeiRoF
 
-# PROJECT MANAGERS PROJET:
+# PROJECT MANAGERS:
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTORS:
