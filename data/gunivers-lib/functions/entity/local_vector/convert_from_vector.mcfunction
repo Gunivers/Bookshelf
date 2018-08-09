@@ -29,9 +29,9 @@ scoreboard players operation @s VectorSpeedLocal = @s VectorSpeed
 
 
 ### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Local_Vectors/Convert_From_Vector]=-","color":"green"}]
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var8"}},{"text":".   Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var9"}}]
+#tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Local_Vectors/Convert_From_Vector]=-","color":"green"}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var8"}},{"text":".   Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var9"}}]
 ### END DEBUG
 
 # Cos(Theta)
@@ -55,7 +55,7 @@ function gunivers-lib:math/sin
 scoreboard players operation @s Var7 = @s Res
 
 ### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
+#tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 ### END DEBUG
 
 
@@ -116,5 +116,5 @@ scoreboard players operation @s VectorFront -= @s Var1
 scoreboard players set @s VectorSpeed 1000
 
 ### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Left: ","color":"red"},{"score":{"name":"@s","objective":"VectorLeft"}},{"text":".   Up: ","color":"red"},{"score":{"name":"@s","objective":"VectorUp"}},{"text":".   Front: ","color":"red"},{"score":{"name":"@s","objective":"VectorFront"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
+#tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Left: ","color":"red"},{"score":{"name":"@s","objective":"VectorLeft"}},{"text":".   Up: ","color":"red"},{"score":{"name":"@s","objective":"VectorUp"}},{"text":".   Front: ","color":"red"},{"score":{"name":"@s","objective":"VectorFront"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
 ### END DEBUG

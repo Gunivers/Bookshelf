@@ -49,6 +49,7 @@ scoreboard players set Glib_Data_Init VectorLeft 1
 scoreboard players set Glib_Data_Init VectorUp 1
 scoreboard players set Glib_Data_Init VectorFront 1
 scoreboard players set Glib_Data_Init VectorSpeedLocal 1
+scoreboard players set Glib_Data_Init CollisionLocal 1
 
 scoreboard players set Glib_Data_Init LocX 1
 scoreboard players set Glib_Data_Init LocY 1
@@ -64,6 +65,7 @@ scoreboard players set Glib_Data_Init VectorX 1
 scoreboard players set Glib_Data_Init VectorY 1
 scoreboard players set Glib_Data_Init VectorZ 1
 scoreboard players set Glib_Data_Init VectorSpeed 1
+scoreboard players set Glib_Data_Init Collision 1
 
 # ---------------------
 # Test Module Integrity
@@ -79,7 +81,7 @@ execute if score Glib_Data_Init Output matches 1 if score Glib_Data_Init Input m
 execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
 execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 run tag @s add Glib_Init_Id_Warning
 
-execute if score Glib_Data_Init VectorLeft matches 1 if score Glib_Data_Init VectorUp matches 1 if score Glib_Data_Init VectorFront matches 1 if score Glib_Data_Init VectorSpeedLocal matches 1 run tag @s add Glib_Init_Local_Vectors_Ok
+execute if score Glib_Data_Init CollisionLocal matches 1 if score Glib_Data_Init VectorLeft matches 1 if score Glib_Data_Init VectorUp matches 1 if score Glib_Data_Init VectorFront matches 1 if score Glib_Data_Init VectorSpeedLocal matches 1 run tag @s add Glib_Init_Local_Vectors_Ok
 
 execute if score Glib_Data_Init LocX matches 1 if score Glib_Data_Init LocY matches 1 if score Glib_Data_Init LocZ matches 1 run tag @s add Glib_Init_Location_Ok
 
@@ -89,5 +91,5 @@ execute if score Glib_Data_Init Res matches 1 if entity @s[tag=!Glib_Init_Vars_O
 
 execute if score Glib_Data_Init OriT matches 1 if score Glib_Data_Init OriP matches 1 run tag @s add Glib_Init_Orientation_Ok
 
-execute if score Glib_Data_Init VectorX matches 1 if score Glib_Data_Init VectorY matches 1 if score Glib_Data_Init VectorZ matches 1 if score Glib_Data_Init VectorSpeed matches 1 run tag @s add Glib_Init_Vectors_Ok
+execute if score Glib_Data_Init CollisionLocal matches 1 if score Glib_Data_Init VectorX matches 1 if score Glib_Data_Init VectorY matches 1 if score Glib_Data_Init VectorZ matches 1 if score Glib_Data_Init VectorSpeed matches 1 run tag @s add Glib_Init_Vectors_Ok
 

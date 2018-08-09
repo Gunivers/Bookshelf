@@ -1,0 +1,2 @@
+tellraw @a ["",{"text":" | ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Move_Forward"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Loop 1: ","color":"gray"},{"text":"Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Front: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
+execute at @s[tag=Debug] run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence"},NoGravity:1,Time:50,Tags:["Debug"]}
