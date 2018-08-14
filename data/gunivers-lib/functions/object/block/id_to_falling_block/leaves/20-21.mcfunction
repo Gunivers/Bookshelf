@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 20 run summon falling_block ~ ~ ~ {BlockState:{Name:"azure_bluet"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 21 run summon falling_block ~ ~ ~ {BlockState:{Name:"barrier"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

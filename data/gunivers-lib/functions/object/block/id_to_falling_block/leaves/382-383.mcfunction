@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 382 run summon falling_block ~ ~ ~ {BlockState:{Name:"petrified_oak_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 383 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

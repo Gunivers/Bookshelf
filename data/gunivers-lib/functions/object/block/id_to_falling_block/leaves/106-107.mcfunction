@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 106 run summon falling_block ~ ~ ~ {BlockState:{Name:"chorus_flower"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 107 run summon falling_block ~ ~ ~ {BlockState:{Name:"chorus_plant"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

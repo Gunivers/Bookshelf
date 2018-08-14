@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 462 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_wire"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 463 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

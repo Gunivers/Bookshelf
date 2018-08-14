@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 256 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 257 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_trapdoor"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

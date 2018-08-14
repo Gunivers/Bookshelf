@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 96 run summon falling_block ~ ~ ~ {BlockState:{Name:"carved_pumpkin"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 97 run summon falling_block ~ ~ ~ {BlockState:{Name:"cauldron"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

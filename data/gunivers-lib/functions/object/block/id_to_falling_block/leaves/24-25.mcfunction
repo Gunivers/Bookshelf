@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 24 run summon falling_block ~ ~ ~ {BlockState:{Name:"beetroots"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 25 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_button"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 202 run summon falling_block ~ ~ ~ {BlockState:{Name:"flower_pot"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 203 run summon falling_block ~ ~ ~ {BlockState:{Name:"frosted_ice"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

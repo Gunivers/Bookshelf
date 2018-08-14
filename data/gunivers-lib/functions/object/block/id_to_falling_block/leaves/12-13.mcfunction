@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 12 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 13 run summon falling_block ~ ~ ~ {BlockState:{Name:"activator_rail"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

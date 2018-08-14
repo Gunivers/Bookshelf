@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 482 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_wool"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 483 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

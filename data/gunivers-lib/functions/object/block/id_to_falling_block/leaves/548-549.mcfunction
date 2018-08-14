@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 548 run summon falling_block ~ ~ ~ {BlockState:{Name:"torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 549 run summon falling_block ~ ~ ~ {BlockState:{Name:"trapped_chest"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

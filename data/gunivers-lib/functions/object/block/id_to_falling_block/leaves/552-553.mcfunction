@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 552 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 553 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 80 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_mushroom"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 81 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_mushroom_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

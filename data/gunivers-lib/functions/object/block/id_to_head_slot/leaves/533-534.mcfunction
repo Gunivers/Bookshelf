@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 533 run replaceitem entity @e[tag=setHeadSlot] armor.head tube_coral_block
-execute if score @s Var1 matches 534 run replaceitem entity @e[tag=setHeadSlot] armor.head tube_coral_fan

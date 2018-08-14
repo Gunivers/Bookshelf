@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 210 run summon falling_block ~ ~ ~ {BlockState:{Name:"granite"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 211 run summon falling_block ~ ~ ~ {BlockState:{Name:"grass"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

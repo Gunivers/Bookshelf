@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 264 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_leaves"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 265 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

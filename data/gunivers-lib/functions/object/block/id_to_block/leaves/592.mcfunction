@@ -1,0 +1,1 @@
+execute if score @s Var1 matches 592 run setblock ~ ~ ~ zombie_wall_head

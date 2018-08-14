@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 492 run summon falling_block ~ ~ ~ {BlockState:{Name:"sea_pickle"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 493 run summon falling_block ~ ~ ~ {BlockState:{Name:"shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 116 run summon falling_block ~ ~ ~ {BlockState:{Name:"cobweb"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 117 run summon falling_block ~ ~ ~ {BlockState:{Name:"cocoa"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

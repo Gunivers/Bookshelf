@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 401 run replaceitem entity @e[tag=setHeadSlot] armor.head potted_dark_oak_sapling
-execute if score @s Var1 matches 402 run replaceitem entity @e[tag=setHeadSlot] armor.head potted_dead_bush

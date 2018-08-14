@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 434 run summon falling_block ~ ~ ~ {BlockState:{Name:"pumpkin"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 435 run summon falling_block ~ ~ ~ {BlockState:{Name:"pumpkin_stem"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

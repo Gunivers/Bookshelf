@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 251 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_leaves"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 252 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_log"},NoGravity:0,Time:50}

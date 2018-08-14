@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 119 run replaceitem entity @e[tag=setHeadSlot] armor.head cracked_stone_bricks
-execute if score @s Var1 matches 120 run replaceitem entity @e[tag=setHeadSlot] armor.head crafting_table

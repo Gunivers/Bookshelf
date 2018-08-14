@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 35 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_slab
-execute if score @s Var1 matches 36 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_stairs

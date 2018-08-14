@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 252 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_stone_bricks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 253 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_bars"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 396 run summon falling_block ~ ~ ~ {BlockState:{Name:"piston"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 397 run summon falling_block ~ ~ ~ {BlockState:{Name:"piston_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

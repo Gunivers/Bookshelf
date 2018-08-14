@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 346 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_portal"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 347 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_quartz_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

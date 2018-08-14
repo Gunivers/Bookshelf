@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 188 run summon falling_block ~ ~ ~ {BlockState:{Name:"ender_chest"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 189 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_gateway"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

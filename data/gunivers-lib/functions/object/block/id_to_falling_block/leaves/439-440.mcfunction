@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 439 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_block"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 440 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_pillar"},NoGravity:0,Time:50}

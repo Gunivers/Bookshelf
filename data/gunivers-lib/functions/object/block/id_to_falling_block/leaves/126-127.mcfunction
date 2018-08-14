@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 126 run summon falling_block ~ ~ ~ {BlockState:{Name:"cut_sandstone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 127 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

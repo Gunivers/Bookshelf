@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 122 run summon falling_block ~ ~ ~ {BlockState:{Name:"crafting_table"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 123 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

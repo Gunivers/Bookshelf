@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 471 run replaceitem entity @e[tag=setHeadSlot] armor.head repeating_command_block
-execute if score @s Var1 matches 472 run replaceitem entity @e[tag=setHeadSlot] armor.head rose_bush

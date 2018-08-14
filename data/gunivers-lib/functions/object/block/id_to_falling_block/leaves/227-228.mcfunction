@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 227 run summon falling_block ~ ~ ~ {BlockState:{Name:"heavy_weighted_pressure_plate"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 228 run summon falling_block ~ ~ ~ {BlockState:{Name:"hopper"},NoGravity:0,Time:50}

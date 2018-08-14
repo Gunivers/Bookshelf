@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 176 run summon falling_block ~ ~ ~ {BlockState:{Name:"diamond_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 177 run summon falling_block ~ ~ ~ {BlockState:{Name:"diorite"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

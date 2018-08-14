@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 504 run summon falling_block ~ ~ ~ {BlockState:{Name:"soul_sand"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 505 run summon falling_block ~ ~ ~ {BlockState:{Name:"spawner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

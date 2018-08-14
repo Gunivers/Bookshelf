@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 206 run summon falling_block ~ ~ ~ {BlockState:{Name:"glass_pane"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 207 run summon falling_block ~ ~ ~ {BlockState:{Name:"glowstone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

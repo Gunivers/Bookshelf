@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 270 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 271 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_trapdoor"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

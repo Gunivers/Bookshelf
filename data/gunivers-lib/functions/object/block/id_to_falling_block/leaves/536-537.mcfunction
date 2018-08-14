@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 536 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 537 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

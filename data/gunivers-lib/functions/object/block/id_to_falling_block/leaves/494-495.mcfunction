@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 494 run summon falling_block ~ ~ ~ {BlockState:{Name:"sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 495 run summon falling_block ~ ~ ~ {BlockState:{Name:"skeleton_skull"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 171 run replaceitem entity @e[tag=setHeadSlot] armor.head dried_kelp_block
-execute if score @s Var1 matches 172 run replaceitem entity @e[tag=setHeadSlot] armor.head dropper

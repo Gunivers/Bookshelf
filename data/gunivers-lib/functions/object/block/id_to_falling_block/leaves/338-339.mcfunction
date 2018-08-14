@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 338 run summon falling_block ~ ~ ~ {BlockState:{Name:"moving_piston"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 339 run summon falling_block ~ ~ ~ {BlockState:{Name:"mushroom_stem"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
