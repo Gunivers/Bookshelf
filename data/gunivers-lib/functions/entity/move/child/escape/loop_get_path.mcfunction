@@ -19,4 +19,4 @@ tag @e remove Glib_Pathfind_Rewind_Check
 effect give @e[tag=Glib_Pathfind_Rewind_Head] minecraft:glowing 1 1 true
 data merge entity @s {ArmorItems:[{},{},{},{id:"redstone_block",Count:1b}]}
 
-execute at @e[tag=Glib_Pathfind_Source] as @e[tag=Glib_Pathfind_Rewind_Head,limit=1,sort=nearest,distance=0.1..] at @s run function gunivers-lib:entity/move/child/pathfind_loop_get_path
+execute at @e[tag=Glib_Pathfind_Source] as @e[tag=Glib_Pathfind_Rewind_Head,limit=1,sort=nearest,distance=0.1..] at @s run function gunivers-lib:entity/move/child/pathfind/loop_get_path
