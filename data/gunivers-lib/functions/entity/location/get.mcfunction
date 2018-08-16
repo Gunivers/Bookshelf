@@ -7,8 +7,8 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
-# - gunivers-Lib:utils/import/var
-# - gunivers-Lib:utils/import/location
+# - gunivers-lib:utils/import/var
+# - gunivers-lib:utils/import/location
 
 # OUTPUT:
 # - LocX (score dummy)

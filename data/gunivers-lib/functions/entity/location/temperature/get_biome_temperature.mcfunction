@@ -8,7 +8,7 @@
 
 # REQUIEREMENTS:
 # - Biome (score dummy)
-# - gunivers-Lib:utils/import/var
+# - gunivers-lib:utils/import/var
 
 # OUTPUT:
 # - Temperature(score dummy)
