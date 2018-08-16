@@ -24,7 +24,6 @@
 # CODE:
 
 execute as @s run function gunivers-lib:entity/location/Var1/get_biome_temperature
-scoreboard players operation @s Temperature = @s Var1
 execute as @s run function gunivers-lib:entity/location/get
 scoreboard players set @s Var1 0
 execute if score @s LocY matches 63.. run scoreboard operation @s Var1 = @s LocY

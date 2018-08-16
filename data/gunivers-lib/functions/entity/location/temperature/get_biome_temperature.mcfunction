@@ -1,5 +1,5 @@
 # NAME: Biome Temperature
-# PATH: gunivers-lib:entity/location/Var1/get_biome_temperature
+# PATH: gunivers-lib:entity/location/Temperature/get_biome_temperature
 
 # AUTHOR: theogiraudet
 
@@ -11,83 +11,83 @@
 # - gunivers-Lib:utils/import/var
 
 # OUTPUT:
-# - Var1(score dummy)
+# - Temperature(score dummy)
 
 # NOTE: Allow to get the temperature of the player's biome at y = 62 (sea level).
 #		The format of the result is "temperature * 10^8", based on the wiki values.
 
 # CODE:
 
-scoreboard players set @s[scores={Biome=0}] Var1 50000000
-scoreboard players set @s[scores={Biome=1}] Var1 80000000
-scoreboard players set @s[scores={Biome=2}] Var1 200000000
-scoreboard players set @s[scores={Biome=3}] Var1 20000000
-scoreboard players set @s[scores={Biome=4}] Var1 70000000
-scoreboard players set @s[scores={Biome=5}] Var1 25000000
-scoreboard players set @s[scores={Biome=6}] Var1 80000000
-scoreboard players set @s[scores={Biome=7}] Var1 50000000
-scoreboard players set @s[scores={Biome=8}] Var1 200000000
-scoreboard players set @s[scores={Biome=9}] Var1 50000000
-scoreboard players set @s[scores={Biome=10}] Var1 0
-scoreboard players set @s[scores={Biome=11}] Var1 0
-scoreboard players set @s[scores={Biome=12}] Var1 0
-scoreboard players set @s[scores={Biome=13}] Var1 0
-scoreboard players set @s[scores={Biome=14}] Var1 90000000
-scoreboard players set @s[scores={Biome=15}] Var1 90000000
-scoreboard players set @s[scores={Biome=16}] Var1 80000000
-scoreboard players set @s[scores={Biome=17}] Var1 200000000
-scoreboard players set @s[scores={Biome=18}] Var1 70000000
-scoreboard players set @s[scores={Biome=19}] Var1 25000000
-scoreboard players set @s[scores={Biome=20}] Var1 20000000
-scoreboard players set @s[scores={Biome=21}] Var1 95000000
-scoreboard players set @s[scores={Biome=22}] Var1 95000000
-scoreboard players set @s[scores={Biome=23}] Var1 95000000
-scoreboard players set @s[scores={Biome=24}] Var1 50000000
-scoreboard players set @s[scores={Biome=25}] Var1 20000000
-scoreboard players set @s[scores={Biome=26}] Var1 5000000
-scoreboard players set @s[scores={Biome=27}] Var1 60000000
-scoreboard players set @s[scores={Biome=28}] Var1 60000000
-scoreboard players set @s[scores={Biome=29}] Var1 70000000
-scoreboard players set @s[scores={Biome=30}] Var1 -50000000
-scoreboard players set @s[scores={Biome=31}] Var1 -50000000
-scoreboard players set @s[scores={Biome=32}] Var1 30000000
-scoreboard players set @s[scores={Biome=33}] Var1 30000000
-scoreboard players set @s[scores={Biome=34}] Var1 20000000
-scoreboard players set @s[scores={Biome=35}] Var1 120000000
-scoreboard players set @s[scores={Biome=36}] Var1 120000000
-scoreboard players set @s[scores={Biome=37}] Var1 200000000
-scoreboard players set @s[scores={Biome=38}] Var1 200000000
-scoreboard players set @s[scores={Biome=39}] Var1 200000000
-scoreboard players set @s[scores={Biome=40}] Var1 50000000
-scoreboard players set @s[scores={Biome=41}] Var1 50000000
-scoreboard players set @s[scores={Biome=42}] Var1 50000000
-scoreboard players set @s[scores={Biome=43}] Var1 50000000
-scoreboard players set @s[scores={Biome=44}] Var1 50000000
-scoreboard players set @s[scores={Biome=45}] Var1 50000000
-scoreboard players set @s[scores={Biome=46}] Var1 50000000
-scoreboard players set @s[scores={Biome=47}] Var1 50000000
-scoreboard players set @s[scores={Biome=48}] Var1 50000000
-scoreboard players set @s[scores={Biome=49}] Var1 50000000
-scoreboard players set @s[scores={Biome=50}] Var1 0
-scoreboard players set @s[scores={Biome=51}] Var1 0
-scoreboard players set @s[scores={Biome=52}] Var1 80000000
-scoreboard players set @s[scores={Biome=53}] Var1 200000000
-scoreboard players set @s[scores={Biome=54}] Var1 20000000
-scoreboard players set @s[scores={Biome=55}] Var1 70000000
-scoreboard players set @s[scores={Biome=56}] Var1 25000000
-scoreboard players set @s[scores={Biome=57}] Var1 80000000
-scoreboard players set @s[scores={Biome=58}] Var1 0
-scoreboard players set @s[scores={Biome=59}] Var1 95000000
-scoreboard players set @s[scores={Biome=60}] Var1 95000000
-scoreboard players set @s[scores={Biome=61}] Var1 60000000
-scoreboard players set @s[scores={Biome=62}] Var1 60000000
-scoreboard players set @s[scores={Biome=63}] Var1 70000000
-scoreboard players set @s[scores={Biome=64}] Var1 -50000000
-scoreboard players set @s[scores={Biome=65}] Var1 25000000
-scoreboard players set @s[scores={Biome=66}] Var1 25000000
-scoreboard players set @s[scores={Biome=67}] Var1 20000000
-scoreboard players set @s[scores={Biome=68}] Var1 110000000
-scoreboard players set @s[scores={Biome=69}] Var1 110000000
-scoreboard players set @s[scores={Biome=70}] Var1 200000000
-scoreboard players set @s[scores={Biome=71}] Var1 200000000
-scoreboard players set @s[scores={Biome=72}] Var1 200000000
+scoreboard players set @s[scores={Biome=0}] Temperature 50000000
+scoreboard players set @s[scores={Biome=1}] Temperature 80000000
+scoreboard players set @s[scores={Biome=2}] Temperature 200000000
+scoreboard players set @s[scores={Biome=3}] Temperature 20000000
+scoreboard players set @s[scores={Biome=4}] Temperature 70000000
+scoreboard players set @s[scores={Biome=5}] Temperature 25000000
+scoreboard players set @s[scores={Biome=6}] Temperature 80000000
+scoreboard players set @s[scores={Biome=7}] Temperature 50000000
+scoreboard players set @s[scores={Biome=8}] Temperature 200000000
+scoreboard players set @s[scores={Biome=9}] Temperature 50000000
+scoreboard players set @s[scores={Biome=10}] Temperature 0
+scoreboard players set @s[scores={Biome=11}] Temperature 0
+scoreboard players set @s[scores={Biome=12}] Temperature 0
+scoreboard players set @s[scores={Biome=13}] Temperature 0
+scoreboard players set @s[scores={Biome=14}] Temperature 90000000
+scoreboard players set @s[scores={Biome=15}] Temperature 90000000
+scoreboard players set @s[scores={Biome=16}] Temperature 80000000
+scoreboard players set @s[scores={Biome=17}] Temperature 200000000
+scoreboard players set @s[scores={Biome=18}] Temperature 70000000
+scoreboard players set @s[scores={Biome=19}] Temperature 25000000
+scoreboard players set @s[scores={Biome=20}] Temperature 20000000
+scoreboard players set @s[scores={Biome=21}] Temperature 95000000
+scoreboard players set @s[scores={Biome=22}] Temperature 95000000
+scoreboard players set @s[scores={Biome=23}] Temperature 95000000
+scoreboard players set @s[scores={Biome=24}] Temperature 50000000
+scoreboard players set @s[scores={Biome=25}] Temperature 20000000
+scoreboard players set @s[scores={Biome=26}] Temperature 5000000
+scoreboard players set @s[scores={Biome=27}] Temperature 60000000
+scoreboard players set @s[scores={Biome=28}] Temperature 60000000
+scoreboard players set @s[scores={Biome=29}] Temperature 70000000
+scoreboard players set @s[scores={Biome=30}] Temperature -50000000
+scoreboard players set @s[scores={Biome=31}] Temperature -50000000
+scoreboard players set @s[scores={Biome=32}] Temperature 30000000
+scoreboard players set @s[scores={Biome=33}] Temperature 30000000
+scoreboard players set @s[scores={Biome=34}] Temperature 20000000
+scoreboard players set @s[scores={Biome=35}] Temperature 120000000
+scoreboard players set @s[scores={Biome=36}] Temperature 120000000
+scoreboard players set @s[scores={Biome=37}] Temperature 200000000
+scoreboard players set @s[scores={Biome=38}] Temperature 200000000
+scoreboard players set @s[scores={Biome=39}] Temperature 200000000
+scoreboard players set @s[scores={Biome=40}] Temperature 50000000
+scoreboard players set @s[scores={Biome=41}] Temperature 50000000
+scoreboard players set @s[scores={Biome=42}] Temperature 50000000
+scoreboard players set @s[scores={Biome=43}] Temperature 50000000
+scoreboard players set @s[scores={Biome=44}] Temperature 50000000
+scoreboard players set @s[scores={Biome=45}] Temperature 50000000
+scoreboard players set @s[scores={Biome=46}] Temperature 50000000
+scoreboard players set @s[scores={Biome=47}] Temperature 50000000
+scoreboard players set @s[scores={Biome=48}] Temperature 50000000
+scoreboard players set @s[scores={Biome=49}] Temperature 50000000
+scoreboard players set @s[scores={Biome=50}] Temperature 0
+scoreboard players set @s[scores={Biome=51}] Temperature 0
+scoreboard players set @s[scores={Biome=52}] Temperature 80000000
+scoreboard players set @s[scores={Biome=53}] Temperature 200000000
+scoreboard players set @s[scores={Biome=54}] Temperature 20000000
+scoreboard players set @s[scores={Biome=55}] Temperature 70000000
+scoreboard players set @s[scores={Biome=56}] Temperature 25000000
+scoreboard players set @s[scores={Biome=57}] Temperature 80000000
+scoreboard players set @s[scores={Biome=58}] Temperature 0
+scoreboard players set @s[scores={Biome=59}] Temperature 95000000
+scoreboard players set @s[scores={Biome=60}] Temperature 95000000
+scoreboard players set @s[scores={Biome=61}] Temperature 60000000
+scoreboard players set @s[scores={Biome=62}] Temperature 60000000
+scoreboard players set @s[scores={Biome=63}] Temperature 70000000
+scoreboard players set @s[scores={Biome=64}] Temperature -50000000
+scoreboard players set @s[scores={Biome=65}] Temperature 25000000
+scoreboard players set @s[scores={Biome=66}] Temperature 25000000
+scoreboard players set @s[scores={Biome=67}] Temperature 20000000
+scoreboard players set @s[scores={Biome=68}] Temperature 110000000
+scoreboard players set @s[scores={Biome=69}] Temperature 110000000
+scoreboard players set @s[scores={Biome=70}] Temperature 200000000
+scoreboard players set @s[scores={Biome=71}] Temperature 200000000
+scoreboard players set @s[scores={Biome=72}] Temperature 200000000
