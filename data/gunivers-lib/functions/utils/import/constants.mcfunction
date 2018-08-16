@@ -55,6 +55,7 @@ scoreboard players set 53 Constant 53
 scoreboard players set 59 Constant 59
 scoreboard players set 60 Constant 60
 scoreboard players set 61 Constant 61
+scoreboard players set 62 Constant 62
 scoreboard players set 64 Constant 64
 scoreboard players set 67 Constant 67
 scoreboard players set 70 Constant 70
@@ -92,6 +93,7 @@ scoreboard players set 36000 Constant 36000
 scoreboard players set 40500 Constant 40500
 scoreboard players set 90000 Constant 90000
 scoreboard players set 100000 Constant 100000
+scoreboard players set 166667 Constant 166667
 scoreboard players set 180000 Constant 180000
 scoreboard players set 270000 Constant 270000
 scoreboard players set 1000000 Constant 1000000
