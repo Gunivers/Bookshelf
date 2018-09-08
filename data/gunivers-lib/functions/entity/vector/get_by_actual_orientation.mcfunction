@@ -27,6 +27,8 @@
 # Will set on your VectorX,Y,Z the coordinates of the vector from you to the nearest armor stand
 
 # CODE:
+#____________________________________________________________________________________________________
+
 execute store result score @s Var1 run data get entity @s Pos[0] 1000
 execute store result score @s Var2 run data get entity @s Pos[1] 1000
 execute store result score @s Var3 run data get entity @s Pos[2] 1000

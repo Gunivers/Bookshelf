@@ -14,6 +14,8 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players operation @s TargetId = @s Id
 function gunivers-lib:entity/id/check_parent
 kill @e[tag=AimedBlock,tag=ParentIdMatch]

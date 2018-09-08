@@ -21,5 +21,7 @@
 # CONFIGURATION:
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players set @s Res 1
 execute if score @s Res < @s Var1 run function gunivers-lib:math/child/get_pow2_loop

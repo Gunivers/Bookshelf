@@ -12,5 +12,7 @@
 # NOTE: Allow to get the health of an entity (2000 = 1 heart).
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 execute store result score @s Output1 run data get entity @s Health 1000

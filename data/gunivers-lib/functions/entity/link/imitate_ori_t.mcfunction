@@ -18,6 +18,8 @@
 # CONFIGURATION:
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players operation @s TargetId = @s Glib_Link_Parent
 
 function gunivers-lib:entity/id/check

@@ -28,6 +28,8 @@ execute as @s unless score @s Var2 matches 0.. run scoreboard players set @s Var
 # -> Default value: 20.
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 # Verifying the presence of a negative number
 scoreboard players operation @s Res = @s Var1

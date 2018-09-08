@@ -23,6 +23,7 @@
 # NOTE:
 
 # CODE:
+#____________________________________________________________________________________________________
 
 function gunivers-lib:entity/vectors/getlengthsquared
 

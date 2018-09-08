@@ -18,5 +18,7 @@
 #Gives a unique identifier to the source entity
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players add SUID Data 1
 scoreboard players operation @s Id = SUID Data

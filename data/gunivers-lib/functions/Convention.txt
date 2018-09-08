@@ -1,12 +1,12 @@
-Ci-dessous la convention d'écriture au sein de cette librairie. Merci de la respecter.
+﻿Ci-dessous la convention d'écriture au sein de cette librairie. Merci de la respecter.
 Remplacez les valeurs entre "<>" par les valeures correspondantes.
 ___________________________________________________________________________________________________
 
 
-# NAME: <Nom Du Systeme>
+# NAME: <Nom Du Systeme>   (optional)
 # PATH: gunivers-lib: ... /<Nom Du Systeme>
 
-# AUTHOR: <Name>
+# AUTHOR: <Name>   (optional)
 # CONTRIBUTORS: (optional)
 # - <Name>
 # - ...
@@ -34,13 +34,16 @@ or
 ...
 
 # CODE:
+#____________________________________________________________________________________________________
 ...
+
+
 
 ___________________________________________________________________________________________________
 
 * Le champ configuration permet aux développeur de modifier des paramètres de la fonction (exemple: sur un calcul de racine carré, un score "Precision" permet d'ajuster la précision de la fonction)
 ** Faire la liste des éléments utilisés par le système. Si aucun élément, mettre "None"
-*** Le type peut être: (score dummy), (team), (tag), (NBT), (MCfunction) etc... selon ce que le système utilise
+*** Le type peut être: (score dummy), (team), (tag), (NBT), (MCfunction), (Module) etc... selon ce que le système utilise
 ****Le code contient tout le système. L'auteur du système peut organiser son code comme bon lui semble du moment que ce code n'intervient pas dans les systèmes des autres (modification d'un Score qui ne le concerne pas etc...)
 
 Il est mis à disposition de l'auteurs plusieurs outils permettant l'harmonisation de la librairy:

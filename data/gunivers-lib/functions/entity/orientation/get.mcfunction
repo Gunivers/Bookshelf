@@ -18,5 +18,7 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
+#____________________________________________________________________________________________________
+
 execute store result score @s OriP run data get entity @s Rotation[0] 1
 execute store result score @s OriT run data get entity @s Rotation[1] 1

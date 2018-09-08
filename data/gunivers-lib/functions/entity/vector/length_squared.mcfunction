@@ -22,6 +22,7 @@
 # This function does not calculate the vector length but its square, so the real length is the square root of the output
 
 # CODE:
+#____________________________________________________________________________________________________
 
 scoreboard players operation @s Res = @s VectorX
 scoreboard players operation @s Res *= @s Res

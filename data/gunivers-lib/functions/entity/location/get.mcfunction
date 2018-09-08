@@ -19,6 +19,8 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
+#____________________________________________________________________________________________________
+
 execute store result score @s LocX run data get entity @s Pos[0] 1
 execute store result score @s LocY run data get entity @s Pos[1] 1
 execute store result score @s LocZ run data get entity @s Pos[2] 1

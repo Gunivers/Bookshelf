@@ -17,6 +17,8 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
+#____________________________________________________________________________________________________
+
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetRotation"]}
 
 tp @e[type=armor_stand,tag=SetRotaton,limit=1] @s

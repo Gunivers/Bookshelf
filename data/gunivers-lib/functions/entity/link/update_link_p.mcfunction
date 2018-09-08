@@ -21,6 +21,8 @@
 
 
 # CODE:
+#____________________________________________________________________________________________________
+
 execute store result score @s Var2 run data get entity @s Rotation[1] 1000
 
 execute store result score @s Glib_R_OriP run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[1] 1000

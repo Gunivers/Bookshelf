@@ -19,6 +19,8 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
+#____________________________________________________________________________________________________
+
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetLocation"]}
 
 tp @e[type=armor_stand,tag=SetLocation,limit=1] @s

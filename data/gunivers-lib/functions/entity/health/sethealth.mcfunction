@@ -27,6 +27,7 @@
 # This function sets the player's health equal to his Health score
 
 # CODE:
+#____________________________________________________________________________________________________
 
 effect clear @s regeneration
 effect clear @s poison

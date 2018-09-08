@@ -12,6 +12,8 @@
 # The parent function need to be active to the work of Display Life.
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 execute as @e[type=!player] run data merge entity @s[scores={Health=1},nbt={Attributes:[{Name:generic.maxHealth,Base:1.0d}]}] {CustomNameVisible:1,CustomName:"[\"\",{\"text\":\"\",\"color\":\"dark_red\"},{\"text\":\"❤\",\"color\":\"gold\"},{\"text\":\"\",\"color\":\"dark_gray\"}]"}
 

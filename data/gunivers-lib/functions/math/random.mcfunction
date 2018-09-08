@@ -17,6 +17,8 @@
 # This is the C++ LCG (Linear Congruential Generator). It takes the Game tick as the first seed
 
 #CODE:
+#____________________________________________________________________________________________________
+
 
 scoreboard players add Glib_Random_Last Data 0
 execute store result score Glib_Random_Seed Data run time query gametime

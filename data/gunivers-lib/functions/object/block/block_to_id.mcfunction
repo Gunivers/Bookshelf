@@ -17,6 +17,8 @@
 # NOTE: Allow to get the id of the block at the position of the entity
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 scoreboard players set @s Var1 0
 execute unless block ~ ~ ~ #gunivers-lib:group/group0 run scoreboard players add @s Var1 512

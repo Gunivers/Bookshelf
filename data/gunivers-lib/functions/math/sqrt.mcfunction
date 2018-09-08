@@ -21,6 +21,8 @@
 # CONFIGURATION:
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players set @s[scores={Var1=..1}] Var2 1
 execute if entity @s[scores={Var1=2..}] run function gunivers-lib:math/get_pow2
 scoreboard players operation @s Var2 = @s Res
