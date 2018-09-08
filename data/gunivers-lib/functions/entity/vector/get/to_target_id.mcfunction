@@ -27,6 +27,6 @@
 
 tag @s add Source
 
-execute as @e if score @s ID = @e[tag=Source,limit=1] TargetID at @s as @e[tag=Source] run function gunivers-lib:entity/vectors/get_as_to_at
+execute as @e if score @s ID = @e[tag=Source,limit=1] TargetID at @s as @e[tag=Source] run function gunivers-lib:entity/vector/get_as_to_at
 
 tag @s remove Source

@@ -21,4 +21,4 @@
 
 # CODE:
 
-execute as @s positioned ^ ^ ^-1 run function gunivers-lib:entity/vectors/get_as_to_at
+execute as @s positioned ^ ^ ^-1 run function gunivers-lib:entity/vector/get_as_to_at
