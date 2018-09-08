@@ -16,6 +16,8 @@
 # - Theta (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 summon armor_stand ~ ~ ~ {Tags:["GetOrientation"],NoGravity:1,Invisible:1,Small:1,Marker:1}
 tp @e[type=armor_stand,tag=GetOrientation,c=1] @s

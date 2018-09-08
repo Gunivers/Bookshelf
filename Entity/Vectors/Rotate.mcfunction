@@ -31,6 +31,8 @@
 # - VectorZ (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 # Gets the old vectors orientation
 function Gunivers-Lib:Entity/Orientation/GetPhiByVector

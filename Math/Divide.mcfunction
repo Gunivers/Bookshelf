@@ -26,6 +26,8 @@
 # CONFIGURATION: <none> 
  
 # CODE: 
+#____________________________________________________________________________________________________
+
  
 scoreboard players operation @s Tmp3 = @s Tmp1 
 scoreboard players operation @s Tmp3 %= @s Tmp2 

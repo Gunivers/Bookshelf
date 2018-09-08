@@ -23,6 +23,8 @@
 # - VectorZ (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players operation @s Tmp3 = @s VectorX
 scoreboard players operation @s[score_VectorX=-1] Tmp3 *= Neg Constant 
 scoreboard players operation @s Tmp2 = @s Tmp3

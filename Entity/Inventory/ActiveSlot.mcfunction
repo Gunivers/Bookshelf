@@ -15,6 +15,8 @@
 # - ActiveSlot (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players set @s ActiveSlot 0 {SelectedItemSlot:0}
 scoreboard players set @s ActiveSlot 1 {SelectedItemSlot:1}
 scoreboard players set @s ActiveSlot 2 {SelectedItemSlot:2}

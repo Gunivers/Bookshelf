@@ -28,6 +28,8 @@ scoreboard players set @s Tmp2 20
 # -> Default value: 20.
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 # Verifying the presence of a negative number
 scoreboard players operation @s Res = @s Tmp1

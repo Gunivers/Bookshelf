@@ -16,6 +16,8 @@
 # - Tmp2   <- Block Damage
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard objectives add Tmp1 dummy
 scoreboard objectives add Tmp2 dummy
 

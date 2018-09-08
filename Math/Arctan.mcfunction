@@ -22,6 +22,8 @@
 # - The maximum error of this function is 0.068 degrees
  
 # CODE: 
+#____________________________________________________________________________________________________
+
 
 #Numerateur
 scoreboard players operation @s Tmp3 = @s Tmp1

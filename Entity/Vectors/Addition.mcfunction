@@ -26,6 +26,8 @@
 # - VectorZ (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"   -=[ Debug Vector Addition ]=-","color":"green"}]
 tellraw @a[tag=DebugVectorsAdd] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]

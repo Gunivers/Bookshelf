@@ -20,6 +20,8 @@
 # OUTPUT:
 
 # CODE:
+#____________________________________________________________________________________________________
+
 scoreboard players operation @s VectorX *= @s VectorSpeed
 scoreboard players operation @s VectorY *= @s VectorSpeed
 scoreboard players operation @s VectorZ *= @s VectorSpeed

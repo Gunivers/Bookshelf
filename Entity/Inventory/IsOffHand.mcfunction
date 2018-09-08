@@ -15,6 +15,8 @@
 
 
 # CODE: 
+#____________________________________________________________________________________________________
+
 
 scoreboard players tag @a remove IsOffHand
 scoreboard players tag @a add IsOffHand {Inventory:[{Slot:-106b}]}

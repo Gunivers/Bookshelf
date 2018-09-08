@@ -21,6 +21,8 @@
 # NOTE:
 
 # CODE:
+#____________________________________________________________________________________________________
+
 execute @s ~ ~ ~ summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["GetLocation"]}
 
 execute @s ~ ~ ~ execute @e[type=armor_stand,tag=GetLocation,c=1] ~ ~ ~ function Gunivers-Lib:Entity/Location/Child/Get-Slave

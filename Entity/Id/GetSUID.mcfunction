@@ -19,6 +19,8 @@
 # - To fix it, please run this command everytime you give an ID to an entity: /scoreboard players add ID ID 1
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 #Gives a unique identifier to the source entity
 scoreboard players add ID ID 1

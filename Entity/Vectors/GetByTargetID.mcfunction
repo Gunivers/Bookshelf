@@ -28,6 +28,8 @@
 # - If two entities have the same ID, the vector will not be calculated !
 
 #CODE:
+#____________________________________________________________________________________________________
+
 # - Calculates a vector to the entity with the ID stored on the source entity's TargetID
 scoreboard players tag @s add Self
 scoreboard players operation @e[tag=!Self] ID -= @s TargetID

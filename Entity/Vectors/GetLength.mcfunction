@@ -20,6 +20,8 @@
 # - Res (score dummy)
 
 # CODE:
+#____________________________________________________________________________________________________
+
 
 function Gunivers-Lib:Entity/Vectors/GetLengthSquared
 scoreboard players operation @s Tmp1 = @s Res
