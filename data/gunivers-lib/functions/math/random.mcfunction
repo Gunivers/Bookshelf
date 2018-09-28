@@ -1,5 +1,7 @@
 #AUTHOR: LeiRoF
 #PATH: gunivers-lib/math/random
+#CONTRIBUTORS:
+# - A~Z
 
 #NAME: Random
 
