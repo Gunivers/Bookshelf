@@ -1,9 +1,9 @@
-#AUTHOR: A~Z
+#AUTHOR: LeiRoF
 #PATH: gunivers-lib/math/random
 
 #NAMe: Random
 
-#VERSION: 1.0
+#VERSION: 2.0
 #MINECRAFT: 1.13
 
 #REQUIREMENTS:
@@ -32,4 +32,4 @@ scoreboard players operation @s Res %= 10000 Constant
 
 scoreboard players operation Glib_Random_Last Data = @s Res
 
-tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
+#tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
