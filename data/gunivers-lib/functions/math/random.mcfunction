@@ -1,7 +1,7 @@
 #AUTHOR: LeiRoF
 #PATH: gunivers-lib/math/random
 
-#NAMe: Random
+#NAME: Random
 
 #VERSION: 2.0
 #MINECRAFT: 1.13
@@ -12,9 +12,6 @@
 #INPUT: /
 
 #OUTPUT: /
-
-#NOTE:
-# This is the C++ LCG (Linear Congruential Generator). It takes the Game tick as the first seed
 
 #CODE:
 #____________________________________________________________________________________________________
