@@ -7,6 +7,8 @@
 # MINECRAFT: 1.13
 
 # REQUIREMENTS:
+# - Id (module)
+# - Vars (module)
 
 # OUTPUT:
 
