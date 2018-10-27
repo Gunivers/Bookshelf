@@ -16,9 +16,9 @@ execute at @s[scores={CollisionLocal=1..,Var1=-179..-1}] run function gunivers-l
 execute at @s[scores={CollisionLocal=1..,Var2=1..}] run function gunivers-lib:entity/move/child/forward/collision_detect_neg_y
 execute at @s[scores={CollisionLocal=1..,Var2=..-1}] run function gunivers-lib:entity/move/child/forward/collision_detect_pos_y
 #     Detect Z
-execute at @s[scores={CollisionLocal=1..,Var1=..-91}] run function gunivers-lib:entity/move/child/forward/collision_detect_neg_x
-execute at @s[scores={CollisionLocal=1..,Var1=91..}] run function gunivers-lib:entity/move/child/forward/collision_detect_neg_x
-execute at @s[scores={CollisionLocal=1..,Var1=-89..89}] run function gunivers-lib:entity/move/child/forward/collision_detect_pos_x
+execute at @s[scores={CollisionLocal=1..,Var1=..-91}] run function gunivers-lib:entity/move/child/forward/collision_detect_neg_z
+execute at @s[scores={CollisionLocal=1..,Var1=91..}] run function gunivers-lib:entity/move/child/forward/collision_detect_neg_z
+execute at @s[scores={CollisionLocal=1..,Var1=-89..89}] run function gunivers-lib:entity/move/child/forward/collision_detect_pos_z
 
 # REACTIONS
 
