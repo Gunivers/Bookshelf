@@ -44,6 +44,9 @@ tag @s remove Glib_Init_Orientation_Ok
 
 tag @s remove Glib_Init_Vectors_Ok
 
+tag @s remove Glib_Init_Pathfind_Ok
+tag @s remove Glib_Init_Pathfind_Warning
+
 # -----------
 #Reset scores
 # -----------

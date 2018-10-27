@@ -8,7 +8,6 @@
 #----------------#
 # Collision on Z #
 #----------------#
-say 1
 tag @s add CollisionLocalZ
 
 execute if block ~ ~ ~-1 air run tag @s remove CollisionLocalZ

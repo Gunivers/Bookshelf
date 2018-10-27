@@ -48,4 +48,4 @@ tellraw @s[tag=!Glib_Init_Local_Bool_Ok] ["",{"text":"      ","color":"gray"},{"
 
 
 # Pages
-tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/2","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Init_Modules_Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
+tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/3","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Init_Modules_Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
