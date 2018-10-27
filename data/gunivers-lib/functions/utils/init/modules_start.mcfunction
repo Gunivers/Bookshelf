@@ -44,6 +44,7 @@ scoreboard players set Glib_Data_Init Memory 1
 
 scoreboard players set Glib_Data_Init Id 1
 scoreboard players set Glib_Data_Init TargetId 1
+scoreboard players set Glib_Data_Init ParentId 1
 
 scoreboard players set Glib_Data_Init VectorLeft 1
 scoreboard players set Glib_Data_Init VectorUp 1
@@ -78,7 +79,7 @@ execute if score Glib_Data_Init Constant matches 1 run tag @s add Glib_Init_Cons
 
 execute if score Glib_Data_Init Output matches 1 if score Glib_Data_Init Input matches 1 if score Glib_Data_Init Memory matches 1 run tag @s add Glib_Init_Local_Bool_Ok
 
-execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
+execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 if score Glib_Data_Init ParentId matches 1 if score Glib_Data_Init Data matches 1 run tag @s add Glib_Init_Id_Ok
 execute if score Glib_Data_Init Id matches 1 if score Glib_Data_Init TargetId matches 1 run tag @s add Glib_Init_Id_Warning
 
 execute if score Glib_Data_Init CollisionLocal matches 1 if score Glib_Data_Init VectorLeft matches 1 if score Glib_Data_Init VectorUp matches 1 if score Glib_Data_Init VectorFront matches 1 if score Glib_Data_Init VectorSpeedLocal matches 1 run tag @s add Glib_Init_Local_Vectors_Ok
