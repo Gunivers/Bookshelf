@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 153 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_prismarine_slab
+execute if score @s Var1 matches 154 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_prismarine_stairs

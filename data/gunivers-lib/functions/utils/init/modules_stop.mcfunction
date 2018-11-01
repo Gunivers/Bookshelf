@@ -42,10 +42,15 @@ tag @s remove Glib_Init_Math_Warning
 
 tag @s remove Glib_Init_Orientation_Ok
 
-tag @s remove Glib_Init_Vectors_Ok
-
 tag @s remove Glib_Init_Pathfind_Ok
 tag @s remove Glib_Init_Pathfind_Warning
+
+tag @s remove Glib_Init_Relative_Location_Ok
+
+tag @s remove Glib_Init_Relative_Orientation_Ok
+
+tag @s remove Glib_Init_Vectors_Ok
+
 
 # -----------
 #Reset scores

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 533 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_block"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 534 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral_fan"},NoGravity:0,Time:50}

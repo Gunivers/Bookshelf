@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 521 run replaceitem entity @e[tag=setHeadSlot] armor.head structure_void
+execute if score @s Var1 matches 522 run replaceitem entity @e[tag=setHeadSlot] armor.head sugar_cane

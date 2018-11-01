@@ -4,7 +4,7 @@
 # AUTHOR: LeiRoF
 
 # VERSION: 1.0
-# MINECRAFT: 1.13
+# MINECRAFT: 1.13.X
 
 # REQUIEREMENTS:
 # - Vars
@@ -24,7 +24,7 @@
 #____________________________________________________________________________________________________
 
 scoreboard players set @s[scores={Var1=..1}] Var2 1
-execute if entity @s[scores={Var1=2..}] run function gunivers-lib:math/get_pow2
+execute if entity @s[scores={Var1=2..}] run function gunivers-lib:math/get_next_pow2
 scoreboard players operation @s Var2 = @s Res
 
 scoreboard players set @s Res 1

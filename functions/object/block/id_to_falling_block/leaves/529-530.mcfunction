@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 529 run summon falling_block ~ ~ ~ {BlockState:{Name:"trapped_chest"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 530 run summon falling_block ~ ~ ~ {BlockState:{Name:"tripwire"},NoGravity:0,Time:50}

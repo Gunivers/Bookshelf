@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 325 run replaceitem entity @e[tag=setHeadSlot] armor.head moving_piston
+execute if score @s Var1 matches 326 run replaceitem entity @e[tag=setHeadSlot] armor.head mushroom_stem

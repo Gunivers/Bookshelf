@@ -7,7 +7,12 @@
 # MINECRAFT: 1.13
 
 # REQUIEREMENTS:
+# - Vars (module)
+# - Id (module)
+# - Orientation (module)
+# - Relative Orientation (module)
 # Must be linked to an entity
+
 
 # INPUT:
 

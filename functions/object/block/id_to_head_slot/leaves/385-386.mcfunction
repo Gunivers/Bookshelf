@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 385 run replaceitem entity @e[tag=setHeadSlot] armor.head player_wall_head
+execute if score @s Var1 matches 386 run replaceitem entity @e[tag=setHeadSlot] armor.head podzol

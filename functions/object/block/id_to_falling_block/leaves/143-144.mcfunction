@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 143 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_fence_gate"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 144 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_leaves"},NoGravity:0,Time:50}

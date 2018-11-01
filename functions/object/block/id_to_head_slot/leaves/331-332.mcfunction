@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 331 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_brick_slab
+execute if score @s Var1 matches 332 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_brick_stairs

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 131 run replaceitem entity @e[tag=setHeadSlot] armor.head cyan_shulker_box
+execute if score @s Var1 matches 132 run replaceitem entity @e[tag=setHeadSlot] armor.head cyan_stained_glass

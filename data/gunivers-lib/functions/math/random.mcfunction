@@ -6,7 +6,7 @@
 #NAME: Random
 
 #VERSION: 2.0
-#MINECRAFT: 1.13
+#MINECRAFT: 1.13.X
 
 #REQUIREMENTS:
 # - Data (score dummy)

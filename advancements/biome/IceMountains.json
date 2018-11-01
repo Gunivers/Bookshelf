@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "ice_mountains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:ice_mountains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/IceMountains"
+		
+		
+    }
+}

@@ -7,3 +7,6 @@ function gunivers-lib:utils/import/id
 function gunivers-lib:utils/import/data
 function gunivers-lib:utils/import/location
 function gunivers-lib:utils/import/orientation
+function gunivers-lib:utils/import/pathfind
+function gunivers-lib:utils/import/relative_location
+function gunivers-lib:utils/import/relative_orientation

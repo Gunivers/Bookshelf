@@ -70,6 +70,13 @@ scoreboard players set Glib_Data_Init VectorZ 1
 scoreboard players set Glib_Data_Init VectorSpeed 1
 scoreboard players set Glib_Data_Init Collision 1
 
+scoreboard players set Glib_Data_Init Glib_R_LocX 1
+scoreboard players set Glib_Data_Init Glib_R_LocY 1
+scoreboard players set Glib_Data_Init Glib_R_LocZ 1
+
+scoreboard players set Glib_Data_Init Glib_R_OriP 1
+scoreboard players set Glib_Data_Init Glib_R_OriT 1
+
 # ---------------------
 # Test Module Integrity
 # ---------------------
@@ -95,8 +102,13 @@ execute if score Glib_Data_Init Res matches 1 if entity @s[tag=!Glib_Init_Const_
 execute if score Glib_Data_Init Res matches 1 if entity @s[tag=!Glib_Init_Vars_Ok] run tag @s add Glib_Init_Math_Warning
 #Orientation
 execute if score Glib_Data_Init OriT matches 1 if score Glib_Data_Init OriP matches 1 run tag @s add Glib_Init_Orientation_Ok
-#Vectors
-execute if score Glib_Data_Init CollisionLocal matches 1 if score Glib_Data_Init VectorX matches 1 if score Glib_Data_Init VectorY matches 1 if score Glib_Data_Init VectorZ matches 1 if score Glib_Data_Init VectorSpeed matches 1 run tag @s add Glib_Init_Vectors_Ok
 #Pathfind
 execute if score Glib_Data_Init PathCost matches 1 if entity @s[tag=Glib_Init_Vars_Ok] run tag @s add Glib_Init_Pathfind_Ok
 execute if score Glib_Data_Init PathCost matches 1 run tag @s add Glib_Init_Pathfind_Warning
+#Relative Location
+execute if score Glib_Data_Init Glib_R_LocX matches 1 if score Glib_Data_Init Glib_R_LocY matches 1 if score Glib_Data_Init Glib_R_LocZ matches 1 run tag @s add Glib_Init_Relative_Location_Ok
+#Relative Orientation
+execute if score Glib_Data_Init Glib_R_OriT matches 1 if score Glib_Data_Init Glib_R_OriP matches 1 run tag @s add Glib_Init_Relative_Orientation_Ok
+#Vectors
+execute if score Glib_Data_Init CollisionLocal matches 1 if score Glib_Data_Init VectorX matches 1 if score Glib_Data_Init VectorY matches 1 if score Glib_Data_Init VectorZ matches 1 if score Glib_Data_Init VectorSpeed matches 1 run tag @s add Glib_Init_Vectors_Ok
+

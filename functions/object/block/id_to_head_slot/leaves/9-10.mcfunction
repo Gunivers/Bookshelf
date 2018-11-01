@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 9 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sapling
+execute if score @s Var1 matches 10 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_slab

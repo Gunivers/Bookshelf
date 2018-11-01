@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 259 run summon falling_block ~ ~ ~ {BlockState:{Name:"kelp"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 260 run summon falling_block ~ ~ ~ {BlockState:{Name:"kelp_plant"},NoGravity:0,Time:50}

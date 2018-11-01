@@ -1,0 +1,3 @@
+scoreboard objectives remove Glib_R_LocX
+scoreboard objectives remove Glib_R_LocY
+scoreboard objectives remove Glib_R_LocZ

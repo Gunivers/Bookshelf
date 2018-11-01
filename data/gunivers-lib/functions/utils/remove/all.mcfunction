@@ -6,4 +6,7 @@ function gunivers-lib:utils/remove/vars
 function gunivers-lib:utils/remove/id
 function gunivers-lib:utils/remove/data
 function gunivers-lib:utils/remove/location
+function gunivers-lib:utils/remove/pathfind
 function gunivers-lib:utils/remove/orientation
+function gunivers-lib:utils/remove/relative_location
+function gunivers-lib:utils/remove/relative_orientation

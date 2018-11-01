@@ -1,15 +1,15 @@
 # TITLE: Sin
-# PATH: Gunivers-Lib:Math/Sin
+# PATH: gunivers-lib:math/sin
 
-# AUTHOR: Leirof
+# AUTHOR: LeiRoF
 
 # VERSION: 1.0
-# MINECRAFT: 1.12
+# MINECRAFT: 1.13.X
 
 # REQUIREMENTS:
-# - Gunivers-Lib:Utils/Import/Temporary (Import file)
-# - Gunivers-Lib:Utils/Import/Math (Import file) 
-# - Gunivers-Lib:Utils/Import/Constant(Import file)
+# - Vars (Module)
+# - Math (Module) 
+# - Constants (Module)
 
 # INPUT:
 # - Var1 (score dummy)
@@ -19,6 +19,7 @@
 
 #Note:
 # - Var1 must be in interval [0;360]
+# - The result is rounded 10^-3
 
 # CODE:
 #____________________________________________________________________________________________________

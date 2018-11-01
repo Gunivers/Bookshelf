@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 25 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_bark"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 26 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_button"},NoGravity:0,Time:50}

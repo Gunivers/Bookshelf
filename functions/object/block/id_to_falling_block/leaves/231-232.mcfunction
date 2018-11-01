@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 231 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral_fan"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 232 run summon falling_block ~ ~ ~ {BlockState:{Name:"ice"},NoGravity:0,Time:50}

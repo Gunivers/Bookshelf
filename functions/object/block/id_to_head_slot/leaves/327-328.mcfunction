@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 327 run replaceitem entity @e[tag=setHeadSlot] armor.head mycelium
+execute if score @s Var1 matches 328 run replaceitem entity @e[tag=setHeadSlot] armor.head netherrack

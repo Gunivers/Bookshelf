@@ -1,15 +1,14 @@
 # NAME: Cosinus
-# PATH: Gunivers-Lib:Math/Cos
+# PATH: gunivers-lib:math/cos
  
 # AUTHOR: LeiRoF
  
 # VERSION: 1.0
-# MINECRAFT: 1.12 
+# MINECRAFT: 1.13.X 
  
 # REQUIREMENTS: 
-# - Gunivers-Lib:Utils/Import/Temporary (Import file)
-# - Gunivers-Lib:Utils/Import/Math (Import file) 
-# - Gunivers-Lib:Utils/Import/Constant(Import file)
+# - Vars (Module)
+# - Math (Module) 
 
 # INPUT: 
 # - Var1 (score dummy)
@@ -17,6 +16,8 @@
 # OUTPUT: 
 # - Res (score dummy) 
 
+# NOTE:
+# - The input is the angle in degrees. The result is scaled by 1000
 
 # CODE:
 #____________________________________________________________________________________________________

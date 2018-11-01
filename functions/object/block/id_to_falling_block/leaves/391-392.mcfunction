@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 391 run summon falling_block ~ ~ ~ {BlockState:{Name:"portal"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 392 run summon falling_block ~ ~ ~ {BlockState:{Name:"potatoes"},NoGravity:0,Time:50}

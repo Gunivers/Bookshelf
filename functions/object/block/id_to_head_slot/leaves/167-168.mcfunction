@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 167 run replaceitem entity @e[tag=setHeadSlot] armor.head dispenser
+execute if score @s Var1 matches 168 run replaceitem entity @e[tag=setHeadSlot] armor.head dragon_egg

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 95 run summon falling_block ~ ~ ~ {BlockState:{Name:"cauldron"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 96 run summon falling_block ~ ~ ~ {BlockState:{Name:"cave_air"},NoGravity:0,Time:50}

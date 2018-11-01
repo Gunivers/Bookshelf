@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 351 run replaceitem entity @e[tag=setHeadSlot] armor.head obsidian
+execute if score @s Var1 matches 352 run replaceitem entity @e[tag=setHeadSlot] armor.head orange_banner

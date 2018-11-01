@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 413 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_white_tulip"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 414 run summon falling_block ~ ~ ~ {BlockState:{Name:"powered_rail"},NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 415 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 416 run summon falling_block ~ ~ ~ {BlockState:{Name:"prismarine_bricks"},NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 501 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_pressure_plate"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 502 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_sapling"},NoGravity:0,Time:50}

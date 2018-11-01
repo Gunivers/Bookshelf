@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 539 run summon falling_block ~ ~ ~ {BlockState:{Name:"wall_torch"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 540 run summon falling_block ~ ~ ~ {BlockState:{Name:"water"},NoGravity:0,Time:50}

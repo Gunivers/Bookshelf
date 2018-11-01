@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "redwood_taiga_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:redwood_taiga_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/RedwoodTaigaHills"
+		
+		
+    }
+}

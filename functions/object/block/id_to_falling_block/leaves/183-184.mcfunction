@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 183 run summon falling_block ~ ~ ~ {BlockState:{Name:"farmland"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 184 run summon falling_block ~ ~ ~ {BlockState:{Name:"fern"},NoGravity:0,Time:50}

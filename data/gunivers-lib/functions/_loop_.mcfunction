@@ -1,5 +1,10 @@
+# CONFIG
+#   Init Menu Refresh Frenquency (20 = 1 seconde). If you use the lib in solo, you can refresh the menu all ticks.
+scoreboard players set @a[scores={Gunivers-Lib=5..}] Gunivers-Lib 0
 
-execute as @a[tag=Glib_Init_Menu] at @s run function gunivers-lib:utils/init/main
+scoreboard objectives add Gunivers-Lib dummy
+scoreboard players add @a Gunivers-Lib 1
+execute as @a[tag=Glib_Init_Menu,scores={Gunivers-Lib=1}] at @s run function gunivers-lib:utils/init/main
 function gunivers-lib:utils/cache/cache_loop
 
 

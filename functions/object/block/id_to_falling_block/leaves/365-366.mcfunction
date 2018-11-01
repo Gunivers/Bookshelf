@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 365 run summon falling_block ~ ~ ~ {BlockState:{Name:"oxeye_daisy"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 366 run summon falling_block ~ ~ ~ {BlockState:{Name:"packed_ice"},NoGravity:0,Time:50}

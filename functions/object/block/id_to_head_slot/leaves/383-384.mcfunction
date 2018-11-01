@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 383 run replaceitem entity @e[tag=setHeadSlot] armor.head piston_head
+execute if score @s Var1 matches 384 run replaceitem entity @e[tag=setHeadSlot] armor.head player_head

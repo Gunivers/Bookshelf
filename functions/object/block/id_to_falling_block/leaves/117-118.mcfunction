@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 117 run summon falling_block ~ ~ ~ {BlockState:{Name:"comparator"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 118 run summon falling_block ~ ~ ~ {BlockState:{Name:"conduit"},NoGravity:0,Time:50}

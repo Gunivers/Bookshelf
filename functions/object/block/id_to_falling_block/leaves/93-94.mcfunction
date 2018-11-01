@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 93 run summon falling_block ~ ~ ~ {BlockState:{Name:"carrots"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 94 run summon falling_block ~ ~ ~ {BlockState:{Name:"carved_pumpkin"},NoGravity:0,Time:50}

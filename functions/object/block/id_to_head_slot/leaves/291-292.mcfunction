@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 291 run replaceitem entity @e[tag=setHeadSlot] armor.head light_weighted_pressure_plate
+execute if score @s Var1 matches 292 run replaceitem entity @e[tag=setHeadSlot] armor.head lilac

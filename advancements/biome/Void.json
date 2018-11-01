@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "void": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:void"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/Void"
+		
+		
+    }
+}

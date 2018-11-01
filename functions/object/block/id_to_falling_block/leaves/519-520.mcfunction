@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 519 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_spruce_log"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 520 run summon falling_block ~ ~ ~ {BlockState:{Name:"structure_block"},NoGravity:0,Time:50}

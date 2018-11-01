@@ -7,10 +7,13 @@
 # MINECRAFT: 1.13
 
 # REQUIEREMENTS:
-# - Module: Id
-# - Module: Vars
-# - Module: Relative_Location
-# - Module: Relative_Orientation
+# - Vars (module)
+# - Id (module)
+# - Location (module)
+# - Relative Location (module)
+# - Orientation (module)
+# - Relative Orientation (module)
+# Must be linked to an entity
 
 # INPUT:
 # - TargetId

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 447 run replaceitem entity @e[tag=setHeadSlot] armor.head redstone_torch
+execute if score @s Var1 matches 448 run replaceitem entity @e[tag=setHeadSlot] armor.head redstone_wall_torch

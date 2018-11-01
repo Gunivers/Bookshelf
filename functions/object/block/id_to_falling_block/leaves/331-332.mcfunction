@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 331 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_slab"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 332 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_stairs"},NoGravity:0,Time:50}

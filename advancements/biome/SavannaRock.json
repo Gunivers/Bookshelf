@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "savanna_rock": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:savanna_rock"
+			}
+			}
+        },
+		"rewards": {
+			"function": "Gunivers-Lib:Entity/Location/Biome/SavannaRock"
+		
+		
+    }
+}

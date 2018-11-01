@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 11 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_stairs"},NoGravity:0,Time:50}
+execute if score @s Var1 matches 12 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_trapdoor"},NoGravity:0,Time:50}
