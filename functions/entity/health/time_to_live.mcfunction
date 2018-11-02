@@ -27,4 +27,4 @@ execute as @e[scores={TTL=1}] at @e run kill @s
 
 # CODE:
 scoreboard players add @e Glib_TTL 0
-scoreboard players remove @e[scores={Glib_TTL=1..} TTL 0
+scoreboard players remove @e[scores={Glib_TTL=1..}] TTL 0
