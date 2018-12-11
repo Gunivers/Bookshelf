@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 175 run replaceitem entity @e[tag=setHeadSlot] armor.head enchanting_table
-execute if score @s Var1 matches 176 run replaceitem entity @e[tag=setHeadSlot] armor.head ender_chest

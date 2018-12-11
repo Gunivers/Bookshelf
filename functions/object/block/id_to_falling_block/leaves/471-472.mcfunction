@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 471 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeating_command_block"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 472 run summon falling_block ~ ~ ~ {BlockState:{Name:"rose_bush"},NoGravity:0,Time:50}

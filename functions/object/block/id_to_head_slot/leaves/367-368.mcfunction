@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 367 run replaceitem entity @e[tag=setHeadSlot] armor.head peony
-execute if score @s Var1 matches 368 run replaceitem entity @e[tag=setHeadSlot] armor.head petrified_oak_slab

@@ -1,2 +1,0 @@
-scoreboard objectives remove Res
-scoreboard objectives remove Constant

@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 21 run summon falling_block ~ ~ ~ {BlockState:{Name:"barrier"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 22 run summon falling_block ~ ~ ~ {BlockState:{Name:"beacon"},NoGravity:0,Time:50}

@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 129 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_concrete_powder"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 130 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_glazed_terracotta"},NoGravity:0,Time:50}

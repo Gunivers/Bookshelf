@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 7 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_planks
-execute if score @s Var1 matches 8 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_pressure_plate

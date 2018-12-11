@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 255 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_sapling"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 256 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_slab"},NoGravity:0,Time:50}

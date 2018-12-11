@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 139 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_bark
-execute if score @s Var1 matches 140 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_button

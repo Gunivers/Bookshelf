@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 295 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_bed
-execute if score @s Var1 matches 296 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_carpet

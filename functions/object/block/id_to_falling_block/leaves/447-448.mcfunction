@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 447 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_torch"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 448 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_wall_torch"},NoGravity:0,Time:50}

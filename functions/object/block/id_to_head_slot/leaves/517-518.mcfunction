@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 517 run replaceitem entity @e[tag=setHeadSlot] armor.head stripped_jungle_log
-execute if score @s Var1 matches 518 run replaceitem entity @e[tag=setHeadSlot] armor.head stripped_oak_log

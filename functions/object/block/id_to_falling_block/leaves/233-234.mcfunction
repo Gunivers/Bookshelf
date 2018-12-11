@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 233 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_chiseled_stone_bricks"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 234 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_cobblestone"},NoGravity:0,Time:50}

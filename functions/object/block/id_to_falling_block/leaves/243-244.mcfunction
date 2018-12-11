@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 243 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_trapdoor"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 244 run summon falling_block ~ ~ ~ {BlockState:{Name:"jack_o_lantern"},NoGravity:0,Time:50}

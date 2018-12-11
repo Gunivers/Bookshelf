@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 111 run replaceitem entity @e[tag=setHeadSlot] armor.head cobblestone_slab
-execute if score @s Var1 matches 112 run replaceitem entity @e[tag=setHeadSlot] armor.head cobblestone_stairs

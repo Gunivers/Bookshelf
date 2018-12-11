@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 49 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_wool"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 50 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_banner"},NoGravity:0,Time:50}

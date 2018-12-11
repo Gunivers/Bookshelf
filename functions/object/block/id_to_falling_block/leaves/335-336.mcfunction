@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 335 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_wart_block"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 336 run summon falling_block ~ ~ ~ {BlockState:{Name:"note_block"},NoGravity:0,Time:50}

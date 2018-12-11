@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 365 run replaceitem entity @e[tag=setHeadSlot] armor.head oxeye_daisy
-execute if score @s Var1 matches 366 run replaceitem entity @e[tag=setHeadSlot] armor.head packed_ice
