@@ -7,7 +7,7 @@
 # CONTRIBUTORS:
 @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑, @A~Z
 
-# Title:
+# TITLE:
 Gunivers-Lib
 
 # PRESENTATION:
