@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 65 run replaceitem entity @e[tag=setHeadSlot] armor.head bookshelf
-execute if score @s Var1 matches 66 run replaceitem entity @e[tag=setHeadSlot] armor.head brain_coral

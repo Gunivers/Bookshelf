@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 179 run replaceitem entity @e[tag=setHeadSlot] armor.head end_portal_frame
-execute if score @s Var1 matches 180 run replaceitem entity @e[tag=setHeadSlot] armor.head end_rod

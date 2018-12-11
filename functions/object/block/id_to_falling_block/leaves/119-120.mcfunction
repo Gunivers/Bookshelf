@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 119 run summon falling_block ~ ~ ~ {BlockState:{Name:"cracked_stone_bricks"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 120 run summon falling_block ~ ~ ~ {BlockState:{Name:"crafting_table"},NoGravity:0,Time:50}

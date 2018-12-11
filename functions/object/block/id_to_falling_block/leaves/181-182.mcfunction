@@ -1,2 +1,0 @@
-execute if score @s Var1 matches 181 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone"},NoGravity:0,Time:50}
-execute if score @s Var1 matches 182 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_bricks"},NoGravity:0,Time:50}
