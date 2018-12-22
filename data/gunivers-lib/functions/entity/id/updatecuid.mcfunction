@@ -19,7 +19,7 @@
 #____________________________________________________________________________________________________
 
 scoreboard players set CUID Data 1
-scoreboard players tag @e[scores={Id=1..}] add UpdateCUID
+tag @e[scores={Id=1..}] add UpdateCUID
 
 function gunivers-lib:entity/id/child/updatecuid-check
 
