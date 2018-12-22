@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "gunivers-lib:entity/location/biome/taiga"
+			"function": "gunivers-lib:entity/location/biome/taiga" 
 		
 		
     }
