@@ -1,0 +1,18 @@
+First, you need to init the pile:
+/function gunivers-lib:system/pile/init
+
+The init file can be used as a reset file.
+
+/function gunivers-lib:system/pile/add              Add @s to the selected pile
+/function gunivers-lib:system/pile/remove           Remove @s from its pile
+/function gunivers-lib:system/pile/removelastin     Remove the last added entity from the selected pile
+/function gunivers-lib:system/pile/removefirstin    Remove the first added entity from the selected pile
+
+/function gunivers-lib:system/pile/clearpile		Clear the selected pile
+/function gunivers-lib:system/pile/getpilesize		Store selected pile's size in pile_size (score PILE)
+
+The last added entity to the selected pile has the score PILE to 0
+
+So as to select a pile, type:
+/scoreboard players set pile PILE <rank of the pile (0-32767)>
+
