@@ -13,8 +13,8 @@ tag @e remove CorrectCUID
 tag @e[scores={Id=0},limit=1,tag=UpdateCUID] add CorrectCUID
 
 #Marks all the entities with more than the wanted score
-scoreboard players tag @e remove HasToMove
-scoreboard players tag @e[tag=UpdateCUID,scores={Id=1..}] add HasToMove
+tag @e remove HasToMove
+tag @e[tag=UpdateCUID,scores={Id=1..}] add HasToMove
 
 #Lower the score of the entities who have more than the wanted score if there is no entity with that score
 execute as @e[tag=CorrectCUID] run tag @e remove HasToMove
@@ -32,4 +32,4 @@ scoreboard players operation @e[tag=UpdateCUID] Id += CUID Data
 
 #Executes the system another time if there are entities with more than the wanted score
 scoreboard players add CUID Data 1
-execute @as e[tag=AnotherLoop,limit=1] run function gunivers-lib:entity/id/child/updatecuid-check
+execute as @e[tag=AnotherLoop,limit=1] run function gunivers-lib:entity/id/child/updatecuid-check
