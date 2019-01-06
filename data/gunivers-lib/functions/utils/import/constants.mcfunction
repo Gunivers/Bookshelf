@@ -1,13 +1,13 @@
 #Import Constant
 
-# Note: Ce score contient toutes les constantes utiles dans des fonctions mathématiques tel que:
-# - Valeurs allant de -1 à 25
-# - Valeurs trigonométrique Pi et x*Pi/4 (en degrés)
-# - Valeurs trigonométriques 32400, 40500, 18000, 36000, 90000, 180000, 270000, 324000000, 405000000, 28125, 640, 785, 74, 212 (utiles pour les approximations de sinus, cosinus, arctangente et arccosinus)
-# - Puissances de 2 (2,4,8,16,32,64,... jusqu'a 4096)
-# - Puissances de 10 (10,100,1000,... jusqu'a 1000000)
-# - Nombres premiers inferrieurs à 100
-
+# Note: This score contains useful constants like:
+# - Values from -2 to 25
+# - Trigonometric values Pi and x*Pi/4 (in degrees)
+# - Trigonometric values 32400, 40500, 18000, 36000, 90000, 180000, 270000, 324000000, 405000000, 28125, 640, 785, 74, 212 (usefull for sinus, cosinus, arctangent et arccosinus approximations)
+# - Powers of 2 (2,4,8,16,32,64,... to 4096)
+# - Powers of 10 (10,100,1000,... to 1000000)
+# - Prime numbers to 100
+# - Others: log(10)*10^6, log(10)*10^4, log(2)*10^4
 
 scoreboard objectives add Constant dummy
 
@@ -85,8 +85,10 @@ scoreboard players set 1000 Constant 1000
 scoreboard players set 1024 Constant 1024
 scoreboard players set 2048 Constant 2048
 scoreboard players set 4096 Constant 4096
+scoreboard players set 6931 Constant 6931
 scoreboard players set 10000 Constant 10000
 scoreboard players set 18000 Constant 18000
+scoreboard players set 23026 Constant 23026
 scoreboard players set 28125 Constant 28125
 scoreboard players set 32400 Constant 32400 
 scoreboard players set 36000 Constant 36000 
@@ -97,6 +99,7 @@ scoreboard players set 166667 Constant 166667
 scoreboard players set 180000 Constant 180000
 scoreboard players set 270000 Constant 270000
 scoreboard players set 1000000 Constant 1000000
+scoreboard players set 2302585 Constant 2302585
 scoreboard players set 405000000 Constant 405000000
 scoreboard players set 324000000 Constant 324000000
 scoreboard players set Pi Constant 3142
