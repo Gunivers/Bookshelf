@@ -24,4 +24,5 @@
 scoreboard players operation @s Res = @s Var1
 scoreboard players operation @s Var3 = @s Var2
 
+execute if entity @s[score={Var3=0}] run scoreboard players set @s Res 1
 execute if entity @s[scores={Var3=2..}] run function gunivers-lib:math/child/pow-loop
