@@ -13,15 +13,20 @@
 # - Var1 (the input *10 ^ 3)
 
 #OUTPUT:
-# - Res (the input *10 ^ 4)
+# - Res (the output *10 ^ 4)
 
 #NOTE:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]). If you want log(0.5), input 500
 # - The output values are scaled by 10 000. They are the exact result +- 0.002 (The maximum error is 0.0017, 90% of the errors are < 0.001)
 # - Thanks to this guy for the formula used in this function: https://math.stackexchange.com/questions/977586/is-there-an-approximation-to-the-natural-log-function-at-large-values
+# - If you input 0 the function returns log(0.001), if you input a negative value it returns log(-x)
 
 #CODE:
 #____________________________________________________________________________________________________
+
+# Not defined values
+scoreboard players set @s[scores={Var1=0}] Var1 1
+scoreboard players operation @s[scores={Var1=..-1}] Var1 *= -1 Constant  	
 
 # Var4 = x (* 1000)
 scoreboard players operation @s Var4 = @s Var1 

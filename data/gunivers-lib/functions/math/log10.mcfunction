@@ -13,7 +13,7 @@
 # - Var1 (the input *10 ^ 3)
 
 #OUTPUT:
-# - Res (the input *10 ^ 4)
+# - Res (the output *10 ^ 4)
 
 #NOTE:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]). If you want log10(0.5), input 500
