@@ -34,6 +34,4 @@ kill @e[type=armor_stand,tag=Move_By_Vector]
 
 scoreboard players remove @s Var4 1
 
-tag @s remove Move-Loop2
-tag @s[scores={Var4=1..}] add Move-Loop2
-execute as @s[tag=Move-Loop2] at @s run function gunivers-lib:entity/move/child/by_vector/loop2
+execute as @s[scores={Var4=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/loop2

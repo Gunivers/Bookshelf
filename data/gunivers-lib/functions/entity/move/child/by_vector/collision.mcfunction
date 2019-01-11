@@ -8,8 +8,7 @@
 #----------------#
 # Collision on X #
 #----------------#
-execute as @s[scores={Var1=1..,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_pos_x
-execute as @s[scores={Var1=..-1,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_neg_x
+execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_x
 
 
 # Reactions
@@ -29,8 +28,7 @@ tag @s[scores={Collision=1..},tag=CollisionX] add Collision
 # Collision on Y #
 #----------------#
 
-execute as @s[scores={Var2=1..,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_pos_y
-execute as @s[scores={Var2=..-1,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_neg_y
+execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_y
 
 
 # Reactions
@@ -50,8 +48,7 @@ tag @s[scores={Collision=1..},tag=CollisionY] add Collision
 # Collision on Z #
 #----------------#
 
-execute as @s[scores={Var3=1..,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_pos_z
-execute as @s[scores={Var3=..-1,Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_neg_z
+execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_z
 
 
 # Reactions
