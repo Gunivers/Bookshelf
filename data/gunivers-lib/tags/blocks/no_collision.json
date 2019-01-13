@@ -28,6 +28,8 @@
 		"minecraft:end_rod",
 		"#minecraft:signs",
 		"minecraft:air",
+		"minecraft:water",
+		"minecraft:lava",
 		"minecraft:iron_bars"
 	]
 }
