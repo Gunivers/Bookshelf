@@ -27,6 +27,7 @@
 		"minecraft:conduit",
 		"minecraft:end_rod",
 		"#minecraft:signs",
+		"minecraft:air",
 		"minecraft:iron_bars"
 	]
 }
