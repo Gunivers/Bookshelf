@@ -21,12 +21,12 @@
 
 # CONFIGURATION:
 #     Default time to live (10s)
-scoreboard players set @e[scores={Glib_TTL=0}] Glib_TTL 200
+scoreboard players set @s[scores={Glib_TTL=0}] Glib_TTL 200
 #     Acton when time out
-execute as @e[type=!player,scores={Glib_TTL=1}] at @e run kill @s
+execute as @s[scores={Glib_TTL=1}] at @e run kill @s
 
 # CODE:
 #____________________________________________________________________________________________________
 
-scoreboard players add @e Glib_TTL 0
-scoreboard players remove @e[scores={Glib_TTL=1..}] Glib_TTL 1
+scoreboard players add @s Glib_TTL 0
+scoreboard players remove @s[scores={Glib_TTL=1..}] Glib_TTL 1
