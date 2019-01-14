@@ -23,9 +23,12 @@
 
 # CODE
 
+scoreboard players operation @s Var5 = @s Var1
+
 function gunivers-lib:math/cos
 
 scoreboard players operation @s Var4 = @s Res
+scoreboard players operation @s Var1 = @s Var5
 
 function gunivers-lib:math/sin
 
