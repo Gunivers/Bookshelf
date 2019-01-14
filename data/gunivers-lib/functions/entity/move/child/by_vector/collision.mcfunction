@@ -63,3 +63,7 @@ tag @s[scores={Collision=5..6},tag=CollisionZ] remove DirMoving
 tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 
 
+execute if entity @s[tag=CollisionX,tag=CollisionZ] run function gunivers-lib:entity/move/child/by_vector/last_position
+execute if entity @s[tag=CollisionX,tag=CollisionY] run function gunivers-lib:entity/move/child/by_vector/last_position
+execute if entity @s[tag=CollisionZ,tag=CollisionY] run function gunivers-lib:entity/move/child/by_vector/last_position
+
