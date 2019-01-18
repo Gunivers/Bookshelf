@@ -11,69 +11,22 @@
 # - Math (Module) 
 
 # INPUT: 
-# - Var1 (score dummy)
+# - Var1 (score dummy) (scaled by 1000)
  
 # OUTPUT: 
-# - Res (score dummy) 
+# - Res (score dummy)  (scaled by 1000)
  
 # NOTE:  
-# - This function returns atan(Tmp1) in degrees (scaled by 1000), Tmp1 must be in interval [0;1000] instead of [0;1]
+# - This function returns atan(Var1) in degrees (scaled by 1000), Var1 must be in interval [-1000;1000] instead of [-1;1]
 # - The maximum error of this function is 0.068 degrees
  
 # CODE: 
 
-#Numerateur
-scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s Var3 *= @s Var1
+scoreboard players set @s Var5 1
+scoreboard players set @s[scores={Var1=..-1}] Var5 -1
 
-scoreboard players operation @s Var2 = @s Var3
+scoreboard players operation @s Var1 *= @s Var5
 
-scoreboard players operation @s Var3 *= @s Var1
-scoreboard players operation @s Var3 /= 1000 Constant
+function gunivers-lib:math/child/arctan-child
 
-scoreboard players operation @s Var2 += @s Var3
-
-scoreboard players operation @s Res = @s Var1
-scoreboard players operation @s Res *= 640 Constant
-
-scoreboard players operation @s Res += @s Var2
-scoreboard players operation @s Res *= 785 Constant
-
-#Dénominateur
-scoreboard players operation @s Var2 = @s Var1
-scoreboard players operation @s Var2 *= 640 Constant
-
-scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s Var3 *= 1000 Constant
-
-scoreboard players operation @s Var2 += @s Var3
-scoreboard players add @s Var2 1000000
-
-scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s Var3 *= @s Var1
-scoreboard players operation @s Var3 *= 640 Constant
-scoreboard players operation @s Var3 /= 1000 Constant
-
-scoreboard players operation @s Var2 += @s Var3
-
-scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s Var3 *= @s Var1
-
-scoreboard players operation @s Var2 += @s Var3
-
-scoreboard players operation @s Var3 *= @s Var1
-scoreboard players operation @s Var3 /= 1000 Constant
-
-scoreboard players operation @s Var2 += @s Var3
-
-#Division
-scoreboard players operation @s Res /= @s Var2
-scoreboard players operation @s Res *= 2 Constant
-scoreboard players add @s Res 1
-
-scoreboard players operation @s Res *= 18000 Constant
-scoreboard players operation @s Res /= Pi2 Constant
-
-
-
-
+scoreboard players operation @s Res *= @s Var5
