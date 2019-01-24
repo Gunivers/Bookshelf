@@ -11,6 +11,7 @@ execute at @s[tag=Debug] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Na
 tag @s remove CollisionTest
 tag @s[tag=CollisionFront,tag=!Collision] add CollisionTest
 execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_front
+tag @s remove Collision
 execute as @s[scores={Collision=1..},tag=CollisionFront] at @s run function gunivers-lib:entity/move/child/by_vector/collision
 execute as @s[scores={Collision=1..},tag=CollisionTest] at @s run function gunivers-lib:entity/move/child/by_vector/collision
 

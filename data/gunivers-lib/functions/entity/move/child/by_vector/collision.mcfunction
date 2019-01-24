@@ -4,7 +4,6 @@
 # CHILD OF: Gunivers-Lib:Entity/move/by_vector
 
 # CODE:
-tag @s remove Collision
 
 #----------------#
 # Collision on X #
