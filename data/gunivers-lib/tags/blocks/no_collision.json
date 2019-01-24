@@ -2,8 +2,6 @@
 	"replace": false,
 	"values": [
 		"#minecraft:banners",
-		"#minecraft:coral_plants",
-		"#minecraft:corals",
 		"#minecraft:rails",
 		"#minecraft:flower_pots",
 		"#minecraft:carpets",
@@ -11,9 +9,7 @@
 		"#gunivers-lib:skulls",
 		"#gunivers-lib:vegetals/vegetal",
 		"#gunivers-lib:redstone/redstone",
-		"#gunivers-lib:wood/fences",
 		"#gunivers-lib:wood/trapdoors",
-		"#gunivers-lib:glass_panes",
 		"minecraft:fire",
 		"minecraft:torch",
 		"minecraft:wall_torch",
@@ -28,8 +24,6 @@
 		"minecraft:end_rod",
 		"#minecraft:signs",
 		"minecraft:air",
-		"minecraft:water",
-		"minecraft:lava",
 		"minecraft:iron_bars"
 	]
 }

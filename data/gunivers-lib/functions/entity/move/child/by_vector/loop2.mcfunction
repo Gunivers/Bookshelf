@@ -5,17 +5,20 @@
 
 # CODE:
 
-scoreboard players operation @s[scores={Var4=1..}] Var1 = @s Var7
-scoreboard players operation @s[scores={Var4=1..}] Var2 = @s Var8
-scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9
-
 # DEBUG
 execute at @s[tag=Debug] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Debug"]}
 # END DEBUG
-
-execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision
+tag @s remove CollisionTest
+tag @s[tag=CollisionFront,tag=!Collision] add CollisionTest
+execute as @s[scores={Collision=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/collision_detect_front
+execute as @s[scores={Collision=1..},tag=CollisionFront] at @s run function gunivers-lib:entity/move/child/by_vector/collision
+execute as @s[scores={Collision=1..},tag=CollisionTest] at @s run function gunivers-lib:entity/move/child/by_vector/collision
 
 #Apply on entity
+scoreboard players operation @s Var1 = @s Var7
+scoreboard players operation @s Var2 = @s Var8
+scoreboard players operation @s Var3 = @s Var9
+
 execute if entity @s[type=!player] at @s run function gunivers-lib:entity/move/child/by_vector/apply
 
 #Apply on player
