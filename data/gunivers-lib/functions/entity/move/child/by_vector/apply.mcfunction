@@ -5,11 +5,13 @@
 
 # CODE:
 
-execute if entity @s[scores={Var1=1..}] run function gunivers-lib:entity/move/child/by_vector/apply_pos_x
-execute if entity @s[scores={Var1=..-1}] run function gunivers-lib:entity/move/child/by_vector/apply_neg_x
+execute at @s run function gunivers-lib:entity/location/accurate/get
 
-execute if entity @s[scores={Var2=1..}] run function gunivers-lib:entity/move/child/by_vector/apply_pos_y
-execute if entity @s[scores={Var2=..-1}] run function gunivers-lib:entity/move/child/by_vector/apply_neg_y
+# tellraw @a ["",{"text":"----------\nX: "},{"score":{"name":"@s","objective":"LocX"}},{"text":"\nY: "},{"score":{"name":"@s","objective":"LocY"}},{"text":"\nZ: "},{"score":{"name":"@s","objective":"LocZ"}}]
 
-execute if entity @s[scores={Var3=1..}] run function gunivers-lib:entity/move/child/by_vector/apply_pos_z
-execute if entity @s[scores={Var3=..-1}] run function gunivers-lib:entity/move/child/by_vector/apply_neg_z
+execute store result entity @s Pos[0] double 0.001 run scoreboard players operation @s LocX += @s Var1
+execute store result entity @s Pos[1] double 0.001 run scoreboard players operation @s LocY += @s Var2
+execute store result entity @s Pos[2] double 0.001 run scoreboard players operation @s LocZ += @s Var3
+
+
+# tellraw @a ["",{"text":"\nX: "},{"score":{"name":"@s","objective":"LocX"}},{"text":"\nY: "},{"score":{"name":"@s","objective":"LocY"}},{"text":"\nZ: "},{"score":{"name":"@s","objective":"LocZ"}}]
