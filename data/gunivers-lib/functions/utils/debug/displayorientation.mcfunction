@@ -20,4 +20,4 @@
 
 # CODE:
 
-tellraw @a ["",{"text":"[Debug]","color":"green","bold":"true"},{"text":" Theta: ","color":"red"},{"score":{"name":"@s","objective":"OriT"}},{"text":" | Phi: ","color":"red"},{"score":{"name":"@s","objective":"OriP"}}]
+tellraw @a ["",{"text":"[Debug]","color":"green","bold":"true"},{"text":" Vertical: ","color":"red"},{"score":{"name":"@s","objective":"OriT"}},{"text":" | Horizontal: ","color":"red"},{"score":{"name":"@s","objective":"OriP"}}]

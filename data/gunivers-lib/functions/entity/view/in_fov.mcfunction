@@ -21,6 +21,7 @@
 # CODE:
 #____________________________________________________________________________________________________
 
+say ----------
 tag @s remove Glib_InFOV
 
 execute at @s run summon area_effect_cloud ~ ~ ~ {Tags:["Glib_FOV","Glib_InFOV","Glib_FOV_min"]}
@@ -43,14 +44,36 @@ execute as @e[tag=Glib_InFOV] run function gunivers-lib:utils/debug/plot_orienat
 
 execute as @e[tag=Glib_InFOV] run function gunivers-lib:entity/orientation/get
 
-scoreboard players operation @e[tag=Glib_InFOV] OriP -= @e[tag=Glib_FOV_min,limit=1] OriP
-scoreboard players operation @e[tag=Glib_InFOV] OriT -= @e[tag=Glib_FOV_min,limit=1] OriT
 
-say --------
+say BIEN AVANT
 execute as @e[tag=Glib_FOV_min] run function gunivers-lib:utils/debug/displayorientation
 execute as @e[tag=Glib_FOV_aim] run function gunivers-lib:utils/debug/displayorientation
 execute as @e[tag=Glib_FOV_max] run function gunivers-lib:utils/debug/displayorientation
 
+
+execute as @e[tag=Glib_InFOV] run function gunivers-lib:entity/orientation/normalize
+
+say Avant
+execute as @e[tag=Glib_FOV_min] run function gunivers-lib:utils/debug/displayorientation
+execute as @e[tag=Glib_FOV_aim] run function gunivers-lib:utils/debug/displayorientation
+execute as @e[tag=Glib_FOV_max] run function gunivers-lib:utils/debug/displayorientation
+
+execute as @e[tag=Glib_InFOV,tag=!Glib_FOV_min] if score @s OriP < @e[tag=Glib_FOV_min,limit=1] OriP run scoreboard players add @s OriP 360
+execute as @e[tag=Glib_InFOV,tag=!Glib_FOV_min] if score @s OriT < @e[tag=Glib_FOV_min,limit=1] OriT run scoreboard players add @s OriT 180
+
+# scoreboard players operation @e[tag=Glib_InFOV,tag=!Glib_FOV_min] OriP -= @e[tag=Glib_FOV_min,limit=1] OriP
+# scoreboard players operation @e[tag=Glib_InFOV,tag=!Glib_FOV_min] OriT -= @e[tag=Glib_FOV_min,limit=1] OriT
+# scoreboard players set @e[tag=Glib_FOV_min] OriP 0
+# scoreboard players set @e[tag=Glib_FOV_min] OriT 0
+
+say Après
+execute as @e[tag=Glib_FOV_min] run function gunivers-lib:utils/debug/displayorientation
+execute as @e[tag=Glib_FOV_aim] run function gunivers-lib:utils/debug/displayorientation
+execute as @e[tag=Glib_FOV_max] run function gunivers-lib:utils/debug/displayorientation
+
+
+
+# execute if score @e[tag=Glib_FOV_aim,limit=1] OriP < @e[tag=Glib_FOV_max,limit=1] OriP if score @e[tag=Glib_FOV_aim,limit=1] OriP > @e[tag=Glib_FOV_min,limit=1] OriP run tag @s add Glib_InFOV
 execute if score @e[tag=Glib_FOV_aim,limit=1] OriP < @e[tag=Glib_FOV_max,limit=1] OriP if score @e[tag=Glib_FOV_aim,limit=1] OriP > @e[tag=Glib_FOV_min,limit=1] OriP if score @e[tag=Glib_FOV_aim,limit=1] OriT < @e[tag=Glib_FOV_max,limit=1] OriT if score @e[tag=Glib_FOV_aim,limit=1] OriT > @e[tag=Glib_FOV_min,limit=1] OriT run tag @s add Glib_InFOV
 
 execute as @s[tag=Glib_InFOV] run say JE LA VOIS !
