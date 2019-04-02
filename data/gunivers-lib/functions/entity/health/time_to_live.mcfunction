@@ -6,8 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Glib_TTL (score dummy)
 
 # INPUT:
 
@@ -18,6 +16,9 @@
 #     20 = 1 second.
 #     Execute this command: "scoreboard players set @e[scores={Glib_TTL=0}] Glib_TTL <Value>" to set custome time before the execution of this function
 #     Set a negative value to make permanent entities.
+
+# INIT
+scoreboard objectives add TTL
 
 # CONFIGURATION:
 #     Default time to live (10s)
