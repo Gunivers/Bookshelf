@@ -3,6 +3,8 @@
 
 scoreboard objectives add Glib_Data dummy
 
+function gunivers-lib:utils/import/constants
+
 scoreboard players set @a[scores={Glib_Data=5..}] Glib_Data 0
 
 scoreboard objectives add Glib_Data dummy
