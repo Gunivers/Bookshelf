@@ -6,9 +6,9 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Biome (score dummy)
-# - gunivers-lib:utils/import/var
+# INIT:
+scoreboard objectives add Biome dummy
+scoreboard objectives add Temperature dummy
 
 # OUTPUT:
 # - Temperature(score dummy)
