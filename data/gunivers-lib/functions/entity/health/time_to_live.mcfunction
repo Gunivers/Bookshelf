@@ -6,11 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-
-# INPUT:
-
-# OUTPUT:
-
 # NOTE:
 #     Execute this fonction in a loop to set TTL to your entity.
 #     20 = 1 second.

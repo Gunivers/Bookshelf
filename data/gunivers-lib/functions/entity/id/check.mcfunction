@@ -6,17 +6,17 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - Id (score dummy)
-# - TargetId (score dummy)
-
 # INPUT:
-# - TargetId
+# - TargetId (score)
 
 # OUTPUT:
 # - IdMatch (tag)
 # - IdUpper (tag)
 # - IdLower (tag)
+
+# INIT
+scoreboard objectives add Id dummy
+scoreboard objectives add TargetId dummy
 
 # CODE:
 #____________________________________________________________________________________________________
@@ -32,4 +32,3 @@ tag @e[scores={Id=-1..}] add IdLower
 tag @s add IdChecker
 scoreboard players operation @e Id += @s TargetId
 
-#execute @e[score_ID_min=1] ~ ~ ~ tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ID"},"color":"none"},{"text":" TargetID: ","color":"none"},{"score":{"name":"@s","objective":"TargetID"},"color":"none"}]

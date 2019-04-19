@@ -11,6 +11,10 @@
 
 # NOTE: Allow to get the health of an entity (2000 = 1 heart).
 
+# INIT
+scoreboard objectives add Health health
+scoreboard objectives add Output1 dummy
+
 # CODE:
 #____________________________________________________________________________________________________
 

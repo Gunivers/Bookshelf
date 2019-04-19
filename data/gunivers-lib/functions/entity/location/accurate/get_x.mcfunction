@@ -6,14 +6,11 @@
 # VERSION: 2.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - gunivers-lib:utils/import/var
-# - gunivers-lib:utils/import/location
-
 # OUTPUT:
 # - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
+
+# INIT
+scoreboard objectives add LocX dummy
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...

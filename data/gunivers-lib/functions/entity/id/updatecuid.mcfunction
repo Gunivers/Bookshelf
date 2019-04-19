@@ -6,14 +6,12 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - gunivers-lib:utils/import/basic (import file)
-# - Id(score dummy)
-
-# INPUT:
-
 # OUTPUT:
 # - Id (score dummy)
+
+# INIT
+scoreboard objectives add Data dummy
+scoreboard objectives add Id dummy
 
 # CODE:
 #____________________________________________________________________________________________________

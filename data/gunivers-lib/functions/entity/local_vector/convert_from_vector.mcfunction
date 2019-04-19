@@ -24,7 +24,28 @@
 # - VectorFront (score dummy)
 # - VectorSpeedLocal (score dummy)
 
-# NOTE:
+# INIT
+scoreboard objectives add VectorX dummy
+scoreboard objectives add VectorY dummy
+scoreboard objectives add VectorZ dummy
+scoreboard objectives add VectorSpeed dummy
+
+scoreboard objectives add VectorLeft dummy
+scoreboard objectives add VectorUp dummy
+scoreboard objectives add VectorFront dummy
+scoreboard objectives add VectorSpeedLocal dummy
+
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Var4 dummy
+scoreboard objectives add Var5 dummy
+scoreboard objectives add Var6 dummy
+scoreboard objectives add Var7 dummy
+scoreboard objectives add Var8 dummy
+scoreboard objectives add Var9 dummy
+
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________
