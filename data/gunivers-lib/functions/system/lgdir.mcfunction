@@ -14,13 +14,13 @@
 #____________________________________________________________________________________________________
 
 scoreboard objectives add UseCarrot minecraft.used:minecraft.carrot_on_a_stick
-execute at @s[scores={UseCarrot=1}] run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Projectile"]}
+execute at @s[scores={UseCarrot=1}] run summon armor_stand ~ ~ ~ {Invisible:1,Marker:1,NoGravity:1,Tags:["Projectile"]}
 execute at @s[scores={UseCarrot=1}] run tp @e[tag=Projectile,tag=!Old,limit=1,sort=nearest] @s
 execute at @s[scores={UseCarrot=1}] run tp @e[tag=Projectile,tag=!Old,limit=1,sort=nearest] ~ ~1.7 ~
 scoreboard players set @s UseCarrot 0
 
 execute as @e[tag=Projectile,tag=!Old] run function gunivers-lib:entity/vector/get_by_actual_orientation 
-scoreboard players set @e[tag=Projectile,tag=!Old] Collision 0
+scoreboard players set @e[tag=Projectile,tag=!Old] Collision 1
 
 tag @e[tag=Projectile] add Old
 
