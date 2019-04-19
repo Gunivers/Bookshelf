@@ -6,11 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - Gunivers-Lib:Utils/Import/Temporary (Import file)
-# - Gunivers-Lib:Utils/Import/Math (Import file) 
-# - Gunivers-Lib:Utils/Import/Constant(Import file)
-
 # INPUT:
 # - Var1 (score dummy)
 
@@ -22,6 +17,12 @@
 # - Res is multiplied by 1000 to allow 3 digits, but the function has a 3 digits accuracy only around 0
 # - Var1 must be in interval ]-6 *100; 12 *100]
 # - Thanks to this page for the formula used in this function https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap04/exp.html
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________

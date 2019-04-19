@@ -5,12 +5,7 @@
  
 # VERSION: 1.0
 # MINECRAFT: 1.13.X 
- 
-# REQUIREMENTS: 
-# - Vars (Module)
-# - Math (Module) 
-# - Constants (Module)
- 
+
 # INPUT: 
 # - Var1 (score dummy) 
 # - Var2 (score dummy) 
@@ -22,9 +17,13 @@
 # Allows to retrieve the value rounded to the integer near of a normal division. 
 # - Var1 is the divisor 
 # - Var2 is the dividend 
- 
-# CONFIGURATION: <none> 
- 
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
+
 # CODE: 
  
 scoreboard players operation @s Var3 = @s Var1

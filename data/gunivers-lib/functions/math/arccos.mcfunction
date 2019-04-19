@@ -5,11 +5,7 @@
  
 # VERSION: 0.1 
 # MINECRAFT: 1.13.X 
- 
-# REQUIREMENTS: 
-# - Vars (Module)
-# - Math (Module) 
- 
+
 # INPUT: 
 # - Var1 (score dummy)
  
@@ -19,6 +15,12 @@
 # NOTE:  
 # - This function returns acos(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)
 # - Rounds the result to the nearest integer
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Res dummy
+
 
 # CODE: 
 

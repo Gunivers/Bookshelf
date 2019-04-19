@@ -6,10 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13.X
 
-# REQUIEREMENTS:
-# - Vars
-# - Math
-
 # INPUT:
 # - Var1 (score dummy)
 
@@ -19,7 +15,9 @@
 # NOTE:
 # - Return the next power 2 of the number
 
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________

@@ -8,12 +8,11 @@
 #VERSION: 2.0
 #MINECRAFT: 1.13.X
 
-#REQUIREMENTS:
-# - Data (score dummy)
+# OUTPUT
+# - Res (score)
 
-#INPUT: /
-
-#OUTPUT: /
+# INIT:
+scoreboard objectives add Res dummy
 
 #CODE:
 #____________________________________________________________________________________________________

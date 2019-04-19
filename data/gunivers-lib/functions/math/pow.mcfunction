@@ -7,17 +7,19 @@
  
 # VERSION: 1.1
 # MINECRAFT: 1.13.X
- 
-# REQUIREMENTS: 
-# - Vars (Module)
-# - Math (Module) 
- 
+
 # INPUT: 
 # - Var1 (score dummy)  The number
 # - Var2 (score dummy)  The exponent
- 
+
 # OUTPUT: 
 # - Res (score dummy) 
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
 # CODE: 
 

@@ -5,10 +5,6 @@
  
 # VERSION: 1.0
 # MINECRAFT: 1.13.X 
- 
-# REQUIREMENTS: 
-# - Vars (Module)
-# - Math (Module) 
 
 # INPUT: 
 # - Var1 (score dummy)
@@ -18,6 +14,12 @@
 
 # NOTE:
 # - The input is the angle in degrees. The result is scaled by 1000
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________

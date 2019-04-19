@@ -6,11 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13.X
 
-# REQUIREMENTS:
-# - Vars (Module)
-# - Math (Module) 
-# - Constants (Module)
-
 # INPUT:
 # - Var1 (score dummy)
 
@@ -20,6 +15,12 @@
 #Note:
 # - Var1 must be in interval [0;360]
 # - The result is rounded 10^-3
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________

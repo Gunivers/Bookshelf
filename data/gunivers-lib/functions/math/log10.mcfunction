@@ -6,9 +6,6 @@
 #VERSION: 1.0
 #MINECRAFT: 1.13.X
 
-#REQUIREMENTS:
-# - Math (Module)
-
 #INPUT: 
 # - Var1 (the input *10 ^ 3)
 

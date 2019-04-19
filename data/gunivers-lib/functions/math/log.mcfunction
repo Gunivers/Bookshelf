@@ -6,9 +6,6 @@
 #VERSION: 1.0
 #MINECRAFT: 1.13.X
 
-#REQUIREMENTS:
-# - Math (Module)
-
 #INPUT: 
 # - Var1 (the input *10 ^ 3)
 
@@ -20,6 +17,17 @@
 # - The output values are scaled by 10 000. They are the exact result +- 0.002 (The maximum error is 0.0017, 90% of the errors are < 0.001)
 # - Thanks to this guy for the formula used in this function: https://math.stackexchange.com/questions/977586/is-there-an-approximation-to-the-natural-log-function-at-large-values
 # - If you input 0 the function returns log(0.001), if you input a negative value it returns log(-x)
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Var4 dummy
+scoreboard objectives add Var5 dummy
+scoreboard objectives add Var6 dummy
+scoreboard objectives add Var7 dummy
+scoreboard objectives add Var8 dummy
+scoreboard objectives add Res dummy
 
 #CODE:
 #____________________________________________________________________________________________________
