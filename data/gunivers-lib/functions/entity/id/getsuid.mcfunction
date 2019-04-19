@@ -21,5 +21,5 @@ scoreboard objectives add Id dummy
 
 scoreboard players add @s Id 0
 
-execute if entity @s[scores={Id=0} run scoreboard players add SUID Data 1
-execute if entity @s[scores={Id=0} run scoreboard players operation @s Id = SUID Data
+execute if entity @s[scores={Id=0}] run scoreboard players add SUID Data 1
+execute if entity @s[scores={Id=0}] run scoreboard players operation @s Id = SUID Data
