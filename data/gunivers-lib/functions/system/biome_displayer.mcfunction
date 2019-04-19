@@ -1,3 +1,5 @@
+scoreboard objectives add Biome dummy
+
 execute as @a[scores={Biome=0}] run title @s actionbar {"color":"gold","text":"You are in a Ocean biome"}
 execute as @a[scores={Biome=1}] run title @s actionbar {"color":"gold","text":"You are in a Plains biome"}
 execute as @a[scores={Biome=2}] run title @s actionbar {"color":"gold","text":"You are in a Desert biome"}
