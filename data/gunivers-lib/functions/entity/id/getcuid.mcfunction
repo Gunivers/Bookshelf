@@ -17,6 +17,8 @@ scoreboard objectives add Id dummy
 #____________________________________________________________________________________________________
 
 #Gives a unique identifier to the source entity
-scoreboard players add CUID Data 0
-scoreboard players operation @s Id = CUID Data
-scoreboard players add CUID Data 1
+scoreboard players add @s Id 0
+
+execute if entity @s[scores={Id=0} run scoreboard players add CUID Data 0
+execute if entity @s[scores={Id=0} run scoreboard players operation @s Id = CUID Data
+execute if entity @s[scores={Id=0} run scoreboard players add CUID Data 1
