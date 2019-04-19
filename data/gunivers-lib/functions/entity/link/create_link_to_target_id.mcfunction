@@ -6,25 +6,25 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Vars (module)
-# - Id (module)
-# - Location (module)
-# - Relative Location (module)
-# - Orientation (module)
-# - Relative Orientation (module)
-# Must be linked to an entity
-
 # INPUT:
 # - TargetId
 
-# OUTPUT:
-
-
 # NOTE:
+# @s must have TargetId defined (equal to another entity id)
 
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
 
+scoreboard objectives add Glib_R_LocX dummy
+scoreboard objectives add Glib_R_LocY dummy
+scoreboard objectives add Glib_R_LocZ dummy
+
+scoreboard objectives add Glib_R_OriT dummy
+scoreboard objectives add Glib_R_OriP dummy
+
+scoreboard objectives add Glib_Link_Parent dummy
 
 # CODE:
 #____________________________________________________________________________________________________

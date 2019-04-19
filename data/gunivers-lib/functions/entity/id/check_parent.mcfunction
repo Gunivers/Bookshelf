@@ -1,22 +1,22 @@
-# NAME: Check ID
-# PATH: gunivers-lib:entity/id/check
+# NAME: Check Parent ID
+# PATH: gunivers-lib:entity/id/check_parent
 
 # AUTHOR: LeiRoF
 
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - ParentId (score dummy)
-# - TargetId (score dummy)
-
 # INPUT:
-# - TargetId
+# - TargetId (score)
 
 # OUTPUT:
 # - IdMatch (tag)
 # - IdUpper (tag)
 # - IdLower (tag)
+
+# INIT
+scoreboard objectives add ParentId dummy
+scoreboard objectives add TargetId dummy
 
 # CODE:
 #____________________________________________________________________________________________________

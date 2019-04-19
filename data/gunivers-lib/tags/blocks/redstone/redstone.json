@@ -1,0 +1,16 @@
+{
+	"replace": false,
+	"values": [
+		"#gunivers-lib:redstone/pressure_plates",
+		"#minecraft:buttons",
+		"minecraft:redstone_wire",
+		"minecraft:lever",
+		"minecraft:redstone_torch",
+		"minecraft:redstone_wall_torch",
+		"minecraft:tripwire_hook",
+		"minecraft:tripwire",
+		"minecraft:repeater",
+		"minecraft:comparator",
+		"minecraft:daylight_detector"
+	]
+}

@@ -6,23 +6,15 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Vars (module)
-# - Id (module)
-# - Location (module)
-# - Relative Location (module)
-# Must be linked to an entity
-
-# INPUT:
-# - Glib_Link_Parent
-
-# OUTPUT:
-
-
 # NOTE:
+# @s must be linked to an entity
 
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
 
+scoreboard objectives add Glib_R_LocY dummy
+
+scoreboard objectives add Glib_Link_Parent dummy
 
 # CODE:
 #____________________________________________________________________________________________________

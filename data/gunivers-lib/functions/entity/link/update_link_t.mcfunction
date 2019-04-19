@@ -6,26 +6,22 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Vars (module)
-# - Id (module)
-# - Orientation (module)
-# - Relative Orientation (module)
-# Must be linked to an entity
-
-# INPUT:
-# - Glib_Link_Parent
-
-# OUTPUT:
-
-
 # NOTE:
+# @s must be linked to an entity
 
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
 
+scoreboard objectives add Glib_R_OriT dummy
+
+scoreboard objectives add Glib_Link_Parent dummy
 
 # CODE:
 #____________________________________________________________________________________________________
+
+scoreboard players operation @s TargetId = @s Glib_Link_Parent
+
+function gunivers-lib:entity/id/check
 
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 

@@ -1,0 +1,26 @@
+{
+	"replace": false,
+	"values": [
+	"minecraft:dandelion",
+	"minecraft:poppy",
+	"minecraft:azure_bluet",
+	"minecraft:blue_orchid",
+	"minecraft:allium",
+	"minecraft:red_tulip",
+	"minecraft:orange_tulip",
+	"minecraft:white_tulip",
+	"minecraft:pink_tulip",
+	"minecraft:oxeye_daisy",
+	"minecraft:lilac",
+	"minecraft:rose_bush",
+	"minecraft:peony",
+	"minecraft:cornflower",
+	"minecraft:lily_of_the_valley",
+	"minecraft:wither_rose",
+	"minecraft:sunflower"
+	],
+	"other block": [
+		"minecraft:chorus_plant",
+		"minecraft:chorus_flower"
+	]
+}

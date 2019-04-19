@@ -1,0 +1,31 @@
+{
+	"replace": false,
+	"values": [
+		"#minecraft:banners",
+		"#minecraft:rails",
+		"#minecraft:flower_pots",
+		"#minecraft:carpets",
+		"#minecraft:doors",
+		"#gunivers-lib:skulls",
+		"#gunivers-lib:vegetals/vegetal",
+		"#gunivers-lib:redstone/redstone",
+		"#gunivers-lib:wood/trapdoors",
+		"minecraft:fire",
+		"minecraft:torch",
+		"minecraft:wall_torch",
+		"minecraft:ladder",
+		"minecraft:snow",
+		"minecraft:nether_portal",
+		"minecraft:end_portal",
+		"minecraft:cobweb",
+		"minecraft:end_gateway",
+		"minecraft:turtle_egg",
+		"minecraft:conduit",
+		"minecraft:end_rod",
+		"#minecraft:signs",
+		"minecraft:air",
+		"minecraft:water",
+		"minecraft:lava",
+		"minecraft:iron_bars"
+	]
+}

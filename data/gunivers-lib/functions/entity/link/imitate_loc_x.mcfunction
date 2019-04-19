@@ -6,20 +6,16 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Vars (module)
-# - Id (module)
-# - Location (module)
-# - Relative Location (module)
-# Must be linked to an entity
-
-# INPUT:
-
-# OUTPUT:
-
 # NOTE:
+# @s must be linked to an entity
 
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+
+scoreboard objectives add Glib_R_LocX dummy
+
+scoreboard objectives add Glib_Link_Parent dummy
 
 # CODE:
 #____________________________________________________________________________________________________
@@ -44,7 +40,5 @@ scoreboard players operation @s Var2 -= @s Var1
 scoreboard players operation @s Var2 -= @s Glib_R_LocX
 
 scoreboard players operation @s Var1 += @s Var2
-
-
 
 function gunivers-lib:entity/location/accurate/set_x

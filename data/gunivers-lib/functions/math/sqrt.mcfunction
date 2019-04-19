@@ -6,19 +6,17 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13.X
 
-# REQUIEREMENTS:
-# - Vars
-# - Math
-
 # INPUT:
 # - Var1 (score dummy)
 
 # OUTPUT:
 # - Res (score dummy)
 
-# NOTE:
-
-# CONFIGURATION:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
 # CODE:
 #____________________________________________________________________________________________________

@@ -9,9 +9,14 @@
 # REQUIREMENTS:
 # - Vars (module)
 
-# INPUT:
+# NOTE: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 
-# OUTPUT:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+
+scoreboard objectives add PathCost dummy
 
 # CODE:
 #____________________________________________________________________________________________________
@@ -22,5 +27,9 @@ summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib_Pathfind_
 execute as @e[tag=Glib_Pathfind_Source] run function gunivers-lib:entity/move/child/pathfind/source
 
 # Clear
+
 kill @e[tag=Glib_Pathfind_Target]
 kill @e[tag=Glib_Pathfind_Source]
+
+execute if entity @s[tag=!Debug] run kill @e[tag=Glib_Pathfind,tag=!Glib_Pathfind_Rewind]
+execute if entity @s[tag=!Debug] as @e[tag=Glib_Pathfind] run data merge entity @s {ArmorItems:[{},{},{},{id:"air",Count:1b}]}

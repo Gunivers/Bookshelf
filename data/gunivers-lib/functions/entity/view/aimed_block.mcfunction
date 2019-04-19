@@ -10,10 +10,11 @@
 # - Id (module)
 # - Vars (module)
 
-# OUTPUT:
-
 # NOTE:
 #It was excessively more impressive in 1.12 ...
+
+# INIT:
+scoreboard objectives add Var1 dummy
 
 # CODE:
 #____________________________________________________________________________________________________
@@ -30,4 +31,5 @@ execute at @s run tp @e[tag=NewAimedBlock] ~ ~1.7 ~
 scoreboard players set @e[tag=NewAimedBlock] Var1 100
 # END CONFIG
 execute as @e[tag=NewAimedBlock] at @s run function gunivers-lib:entity/view/child/aimed_block_raycast
+execute as @e[tag=NewAimedBlock] at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 tag @e remove NewAimedBlock
