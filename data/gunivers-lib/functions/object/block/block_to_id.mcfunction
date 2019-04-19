@@ -8,13 +8,13 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIEREMENTS:
-# - Var1 (score dummy)
-
 # Output:
 # - Var1 (score dummy)
 
 # NOTE: Allow to get the id of the block at the position of the entity
+
+# INIT:
+scoreboard objectives add Var1 dummy
 
 # CODE:
 #____________________________________________________________________________________________________
