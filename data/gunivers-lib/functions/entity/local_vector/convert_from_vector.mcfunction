@@ -6,12 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - Vectors (module)
-# - Local Vectors (module)
-# - Vars (module)
-# - Math (module)
-
 # OUTPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)

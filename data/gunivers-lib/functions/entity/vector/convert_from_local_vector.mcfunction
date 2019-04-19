@@ -6,17 +6,31 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-
 # OUTPUT:
 # - VectorLeft (score dummy)
 # - VectorUp (score dummy)
 # - VectorFront (score dummy)
 
-# NOTE:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Var4 dummy
+scoreboard objectives add Var5 dummy
+scoreboard objectives add Var6 dummy
+scoreboard objectives add Var7 dummy
+scoreboard objectives add Var8 dummy
+scoreboard objectives add Var9 dummy
+
+scoreboard objectives add VectorX dummy
+scoreboard objectives add VectorY dummy
+scoreboard objectives add VectorZ dummy
+scoreboard objectives add VectorSpeed dummy
+
+scoreboard objectives add VectorLeft dummy
+scoreboard objectives add VectorUp dummy
+scoreboard objectives add VectorFront dummy
+scoreboard objectives add VectorSpeedLocal dummy
 
 # CODE:
 #____________________________________________________________________________________________________
@@ -106,11 +120,7 @@ scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorFront -= @s Var1
 
 
-
-
-
-
-scoreboard players set @s VectorSpeed 1000
+scoreboard players operation @s VectorSpeed = @s VectorSpeedLocal
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Left: ","color":"red"},{"score":{"name":"@s","objective":"VectorLeft"}},{"text":".   Up: ","color":"red"},{"score":{"name":"@s","objective":"VectorUp"}},{"text":".   Front: ","color":"red"},{"score":{"name":"@s","objective":"VectorFront"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]

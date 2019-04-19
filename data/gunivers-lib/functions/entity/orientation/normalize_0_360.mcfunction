@@ -8,10 +8,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.12
 
-# REQUIREMENTS:
-# - gunivers-lib:utils/import/orientation (Import file)
-# - gunivers-lib:utils/import/constant (Import file)
-
 # INPUT:
 # - Phi (score dummy)
 # - Theta (score dummy)
@@ -19,6 +15,10 @@
 # OUTPUT:
 # - Phi (score dummy)
 # - Theta (score dummy)
+
+# INIT:
+scoreboard objectives add OriT dummy
+scoreboard objectives add OriP dummy
 
 # CODE:
 #____________________________________________________________________________________________________

@@ -6,16 +6,16 @@
 # VERSION: 2.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - gunivers-Lib:utils/import/var
-# - gunivers-Lib:utils/import/rotation
-
 # INPUT:
 # - Var1 (score dummy)
 # - Var2 (score dummy)
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
 
 # CODE:
 #____________________________________________________________________________________________________

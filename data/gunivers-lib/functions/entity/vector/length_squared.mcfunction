@@ -6,10 +6,6 @@
 # VERSION: 1.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - gunivers-lib:utils/import/vectors
-# - gunivers-lib:utils/import/var
-
 # INPUT:
 # - VectorX (score dummy)
 # - VectorY (score dummy)
@@ -20,6 +16,14 @@
 
 # NOTE:
 # This function does not calculate the vector length but its square, so the real length is the square root of the output
+
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Res dummy
+
+scoreboard objectives add VectorX dummy
+scoreboard objectives add VectorY dummy
+scoreboard objectives add VectorZ dummy
 
 # CODE:
 #____________________________________________________________________________________________________

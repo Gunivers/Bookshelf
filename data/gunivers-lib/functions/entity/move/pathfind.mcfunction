@@ -9,9 +9,13 @@
 # REQUIREMENTS:
 # - Vars (module)
 
-# INPUT:
 
-# OUTPUT:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+
+scoreboard objectives add PathCost dummy
 
 # CODE:
 #____________________________________________________________________________________________________

@@ -6,16 +6,25 @@
 # VERSION: 2.0
 # MINECRAFT: 1.13
 
-# REQUIREMENTS:
-# - Vars (module)
-# - Constats (module)
-# - Local Vectors (module)
-
 # INPUT:
 # - VectorFront (score dummy)
 # - VectorSpeedLocal (score dummy)
 
-# OUTPUT:
+# INIT:
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Var4 dummy
+scoreboard objectives add Var5 dummy
+scoreboard objectives add Var6 dummy
+scoreboard objectives add Var7 dummy
+scoreboard objectives add Var8 dummy
+scoreboard objectives add Var9 dummy
+
+scoreboard objectives add Collision dummy
+
+scoreboard objectives add VectorLeft dummy
+scoreboard objectives add VectorSpeedLocal dummy
 
 # CODE:
 #____________________________________________________________________________________________________
