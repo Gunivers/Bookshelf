@@ -11,11 +11,11 @@
 
 tag @s add CollisionY
 
-summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib_Tmp_Collision_Detection"]}
-execute at @s as @e[type=armor_stand,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] run function gunivers-lib:entity/location/accurate/get_y
-execute store result entity @e[type=armor_stand,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] Pos[1] double 0.001 run scoreboard players operation @e[type=armor_stand,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] LocY += @s Var8
+summon area_effect_cloud ~ ~ ~ {Tags:["Glib_Tmp_Collision_Detection"]}
+execute at @s as @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] run function gunivers-lib:entity/location/accurate/get_y
+execute store result entity @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] Pos[1] double 0.001 run scoreboard players operation @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] LocY += @s Var8
 
-execute at @e[type=armor_stand,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] if block ~ ~ ~ #gunivers-lib:no_collision run tag @s remove CollisionY
+execute at @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] if block ~ ~ ~ #gunivers-lib:no_collision run tag @s remove CollisionY
 tag @s[scores={VectorY=0}] remove CollisionY
 
 
