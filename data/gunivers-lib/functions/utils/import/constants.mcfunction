@@ -102,6 +102,7 @@ scoreboard players set 1000000 Constant 1000000
 scoreboard players set 2302585 Constant 2302585
 scoreboard players set 405000000 Constant 405000000
 scoreboard players set 324000000 Constant 324000000
+
 scoreboard players set Pi Constant 3142
 scoreboard players set Pi2 Constant 314
 scoreboard players set Pi3 Constant 3142
@@ -110,3 +111,7 @@ scoreboard players set Pi6 Constant 3141593
 scoreboard players set 118998 Constant 118998
 scoreboard players set 16807 Constant 16807
 scoreboard players set 307 Constant 307
+
+#Random CLG
+scorebaord players set 17364 Constant 17364
+scoreboard players set 65521 Constant 65521
