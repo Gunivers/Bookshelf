@@ -10,6 +10,7 @@
 # - Res (score)
 
 # INIT:
+scoreboard objectives add Res dummy
 execute if score rand Data matches 0 store result score randSeed run time query gametime
 
 # NOTE:
