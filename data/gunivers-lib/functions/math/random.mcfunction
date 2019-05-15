@@ -1,33 +1,29 @@
-#AUTHOR: LeiRoF
-#PATH: gunivers-lib/math/random
-#CONTRIBUTORS:
-# - A~Z
+# AUTHOR: A~Z
+# PATH: gunivers-lib/math/random
 
-#NAME: Random
+# NAME: Random CLG
 
-#VERSION: 2.0
-#MINECRAFT: 1.13.X
+# VERSION: 3.0
+# MINECRAFT: 1.13+
 
 # OUTPUT
 # - Res (score)
 
 # INIT:
-scoreboard objectives add Res dummy
+execute if score rand Data matches 0 store result score randSeed run time query gametime
 
-#CODE:
-#____________________________________________________________________________________________________
+# NOTE:
+# This script gets you a random number between 0 and 65521.
+# You can use the modulo operator so as to limit the output to any value greater than 0,
+# but please take in account that this would impact the equaprobability
+#
+# To regenerate the seed, use:
+# execute store result score rand Data run time query gametime
 
+# CODE:
+scoreboard players operation rand Data %= 65521 Constant
+scoreboard players operation @s Res = rand Data
 
-scoreboard players add Glib_Random_Last Data 0
-execute store result score Glib_Random_Seed Data run time query gametime
-scoreboard players operation Glib_Random_Seed Data += Glib_Random_Last Data
-scoreboard players operation Glib_Random_Seed Data %= 118998 Constant
-
-scoreboard players operation @s Res = Glib_Random_Seed Data
-scoreboard players operation @s Res *= 16807 Constant
-scoreboard players operation @s Res += 307 Constant
-scoreboard players operation @s Res %= 10000 Constant
-
-scoreboard players operation Glib_Random_Last Data = @s Res
+scoreboard players operation rand Data *= 17364 Constant
 
 #tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
