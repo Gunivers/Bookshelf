@@ -1,0 +1,2 @@
+This loot table was taken to the Phi Project.
+Link: https://github.com/MinecraftPhi/MinecraftPhi-modules
