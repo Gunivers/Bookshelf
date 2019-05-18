@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 16 run summon falling_block ~ ~ ~ {BlockState:{Name:"andesite"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"anvil"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 16 run summon falling_block ~ ~ ~ {BlockState:{Name:"air"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"allium"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

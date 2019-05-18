@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 500 run setblock ~ ~ ~ smooth_sandstone
-execute if score @s Var1 matches 501 run setblock ~ ~ ~ smooth_stone
+execute if score @s Var1 matches 500 run setblock ~ ~ ~ purple_bed
+execute if score @s Var1 matches 501 run setblock ~ ~ ~ purple_carpet

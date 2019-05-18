@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 274 run summon falling_block ~ ~ ~ {BlockState:{Name:"kelp_plant"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 275 run summon falling_block ~ ~ ~ {BlockState:{Name:"ladder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 274 run summon falling_block ~ ~ ~ {BlockState:{Name:"green_wool"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 275 run summon falling_block ~ ~ ~ {BlockState:{Name:"grindstone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

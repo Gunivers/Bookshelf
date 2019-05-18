@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 392 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"pink_terracotta"}}]}
-execute if score @s Var1 matches 393 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"pink_tulip"}}]}
+execute if score @s Var1 matches 392 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"nether_brick_fence"}}]}
+execute if score @s Var1 matches 393 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"nether_brick_slab"}}]}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 218 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 219 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete_powder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 218 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_gateway"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 219 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_portal"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

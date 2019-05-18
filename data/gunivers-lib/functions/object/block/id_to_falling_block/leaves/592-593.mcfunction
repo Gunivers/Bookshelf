@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 592 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 593 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

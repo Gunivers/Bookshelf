@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 330 run setblock ~ ~ ~ magenta_wall_banner
-execute if score @s Var1 matches 331 run setblock ~ ~ ~ magenta_wool
+execute if score @s Var1 matches 330 run setblock ~ ~ ~ light_blue_stained_glass
+execute if score @s Var1 matches 331 run setblock ~ ~ ~ light_blue_stained_glass_pane

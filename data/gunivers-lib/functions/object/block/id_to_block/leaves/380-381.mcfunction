@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 380 run setblock ~ ~ ~ packed_ice
-execute if score @s Var1 matches 381 run setblock ~ ~ ~ peony
+execute if score @s Var1 matches 380 run setblock ~ ~ ~ mossy_cobblestone_slab
+execute if score @s Var1 matches 381 run setblock ~ ~ ~ mossy_cobblestone_stairs

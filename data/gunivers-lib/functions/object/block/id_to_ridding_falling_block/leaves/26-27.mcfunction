@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 26 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"birch_door"}}]}
-execute if score @s Var1 matches 27 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"birch_fence"}}]}
+execute if score @s Var1 matches 26 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"bamboo"}}]}
+execute if score @s Var1 matches 27 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"bamboo_sapling"}}]}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 244 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral_fan"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 245 run summon falling_block ~ ~ ~ {BlockState:{Name:"horn_coral_wall_fan"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 244 run summon falling_block ~ ~ ~ {BlockState:{Name:"granite_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 245 run summon falling_block ~ ~ ~ {BlockState:{Name:"granite_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

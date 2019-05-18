@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 316 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_stained_glass_pane"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 317 run summon falling_block ~ ~ ~ {BlockState:{Name:"lime_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 316 run summon falling_block ~ ~ ~ {BlockState:{Name:"lantern"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 317 run summon falling_block ~ ~ ~ {BlockState:{Name:"lapis_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

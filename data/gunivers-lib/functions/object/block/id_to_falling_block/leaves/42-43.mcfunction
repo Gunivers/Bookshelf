@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 42 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_concrete_powder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 43 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_glazed_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 42 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 43 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 528 run setblock ~ ~ ~ stripped_acacia_log
-execute if score @s Var1 matches 529 run setblock ~ ~ ~ stripped_acacia_wood
+execute if score @s Var1 matches 528 run setblock ~ ~ ~ red_carpet
+execute if score @s Var1 matches 529 run setblock ~ ~ ~ red_concrete

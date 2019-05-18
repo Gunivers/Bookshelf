@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 110 run summon falling_block ~ ~ ~ {BlockState:{Name:"coal_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 111 run summon falling_block ~ ~ ~ {BlockState:{Name:"coarse_dirt"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 110 run summon falling_block ~ ~ ~ {BlockState:{Name:"cartography_table"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 111 run summon falling_block ~ ~ ~ {BlockState:{Name:"carved_pumpkin"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 240 run setblock ~ ~ ~ heavy_weighted_pressure_plate
-execute if score @s Var1 matches 241 run setblock ~ ~ ~ hopper
+execute if score @s Var1 matches 240 run setblock ~ ~ ~ glowstone
+execute if score @s Var1 matches 241 run setblock ~ ~ ~ gold_block

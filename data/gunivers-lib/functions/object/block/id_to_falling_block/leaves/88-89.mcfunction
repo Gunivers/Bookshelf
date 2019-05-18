@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 88 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_column"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 89 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 88 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_bed"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 89 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_carpet"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

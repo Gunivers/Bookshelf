@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 460 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 461 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_wall_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 460 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_granite_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 461 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_granite_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

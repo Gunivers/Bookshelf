@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 532 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_dark_oak_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 533 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_dark_oak_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 532 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_mushroom"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 533 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_mushroom_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

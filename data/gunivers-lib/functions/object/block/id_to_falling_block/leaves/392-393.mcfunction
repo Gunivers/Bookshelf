@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 392 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 393 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_tulip"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 392 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_fence"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 393 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 94 run summon falling_block ~ ~ ~ {BlockState:{Name:"cake"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 95 run summon falling_block ~ ~ ~ {BlockState:{Name:"carrots"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 94 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_mushroom_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 95 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

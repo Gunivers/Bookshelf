@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 484 run setblock ~ ~ ~ repeating_command_block
-execute if score @s Var1 matches 485 run setblock ~ ~ ~ rose_bush
+execute if score @s Var1 matches 484 run setblock ~ ~ ~ potted_red_mushroom
+execute if score @s Var1 matches 485 run setblock ~ ~ ~ potted_red_tulip

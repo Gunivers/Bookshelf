@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 408 run setblock ~ ~ ~ potted_azure_bluet
-execute if score @s Var1 matches 409 run setblock ~ ~ ~ potted_birch_sapling
+execute if score @s Var1 matches 408 run setblock ~ ~ ~ oak_pressure_plate
+execute if score @s Var1 matches 409 run setblock ~ ~ ~ oak_sapling

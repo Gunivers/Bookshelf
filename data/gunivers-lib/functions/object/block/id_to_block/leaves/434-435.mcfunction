@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 434 run setblock ~ ~ ~ pumpkin
-execute if score @s Var1 matches 435 run setblock ~ ~ ~ pumpkin_stem
+execute if score @s Var1 matches 434 run setblock ~ ~ ~ petrified_oak_slab
+execute if score @s Var1 matches 435 run setblock ~ ~ ~ pink_banner

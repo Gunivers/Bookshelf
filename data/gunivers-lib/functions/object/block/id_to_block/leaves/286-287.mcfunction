@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 286 run setblock ~ ~ ~ light_blue_glazed_terracotta
-execute if score @s Var1 matches 287 run setblock ~ ~ ~ light_blue_shulker_box
+execute if score @s Var1 matches 286 run setblock ~ ~ ~ infested_cracked_stone_bricks
+execute if score @s Var1 matches 287 run setblock ~ ~ ~ infested_mossy_stone_bricks

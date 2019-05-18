@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 156 run setblock ~ ~ ~ dark_prismarine_stairs
-execute if score @s Var1 matches 157 run setblock ~ ~ ~ daylight_detector
+execute if score @s Var1 matches 156 run setblock ~ ~ ~ cyan_wall_banner
+execute if score @s Var1 matches 157 run setblock ~ ~ ~ cyan_wool

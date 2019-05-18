@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 306 run setblock ~ ~ ~ lilac
-execute if score @s Var1 matches 307 run setblock ~ ~ ~ lily_pad
+execute if score @s Var1 matches 306 run setblock ~ ~ ~ jungle_sapling
+execute if score @s Var1 matches 307 run setblock ~ ~ ~ jungle_sign

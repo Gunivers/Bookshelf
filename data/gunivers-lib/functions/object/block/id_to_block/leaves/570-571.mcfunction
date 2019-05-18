@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 570 run setblock ~ ~ ~ white_shulker_box
-execute if score @s Var1 matches 571 run setblock ~ ~ ~ white_stained_glass
+execute if score @s Var1 matches 570 run setblock ~ ~ ~ smooth_quartz_stairs
+execute if score @s Var1 matches 571 run setblock ~ ~ ~ smooth_red_sandstone

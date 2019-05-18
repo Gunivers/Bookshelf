@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 484 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeating_command_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 485 run summon falling_block ~ ~ ~ {BlockState:{Name:"rose_bush"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 484 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_mushroom"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 485 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_red_tulip"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

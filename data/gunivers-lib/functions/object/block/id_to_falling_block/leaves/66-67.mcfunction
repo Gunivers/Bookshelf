@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 66 run summon falling_block ~ ~ ~ {BlockState:{Name:"brain_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 67 run summon falling_block ~ ~ ~ {BlockState:{Name:"brain_coral_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 66 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_concrete_powder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 67 run summon falling_block ~ ~ ~ {BlockState:{Name:"blue_glazed_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

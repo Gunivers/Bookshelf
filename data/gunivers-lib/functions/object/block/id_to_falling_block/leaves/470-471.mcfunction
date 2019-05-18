@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 470 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_mushroom_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 471 run summon falling_block ~ ~ ~ {BlockState:{Name:"red_nether_bricks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 470 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_brown_mushroom"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 471 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_cactus"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

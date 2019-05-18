@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 230 run setblock ~ ~ ~ green_concrete
-execute if score @s Var1 matches 231 run setblock ~ ~ ~ green_concrete_powder
+execute if score @s Var1 matches 230 run setblock ~ ~ ~ fire_coral
+execute if score @s Var1 matches 231 run setblock ~ ~ ~ fire_coral_block

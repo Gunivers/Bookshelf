@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 424 run setblock ~ ~ ~ potted_red_tulip
-execute if score @s Var1 matches 425 run setblock ~ ~ ~ potted_spruce_sapling
+execute if score @s Var1 matches 424 run setblock ~ ~ ~ orange_shulker_box
+execute if score @s Var1 matches 425 run setblock ~ ~ ~ orange_stained_glass

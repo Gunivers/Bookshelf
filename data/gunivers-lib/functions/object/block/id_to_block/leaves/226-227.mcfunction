@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 226 run setblock ~ ~ ~ gray_wool
-execute if score @s Var1 matches 227 run setblock ~ ~ ~ green_banner
+execute if score @s Var1 matches 226 run setblock ~ ~ ~ end_stone_brick_wall
+execute if score @s Var1 matches 227 run setblock ~ ~ ~ farmland

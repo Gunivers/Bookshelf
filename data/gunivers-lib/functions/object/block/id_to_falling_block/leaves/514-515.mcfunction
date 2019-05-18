@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 514 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_pressure_plate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 515 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 514 run summon falling_block ~ ~ ~ {BlockState:{Name:"purpur_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 515 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

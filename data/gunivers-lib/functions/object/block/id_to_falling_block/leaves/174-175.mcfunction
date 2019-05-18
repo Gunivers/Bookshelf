@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 174 run summon falling_block ~ ~ ~ {BlockState:{Name:"detector_rail"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 175 run summon falling_block ~ ~ ~ {BlockState:{Name:"diamond_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 174 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 175 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_prismarine"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

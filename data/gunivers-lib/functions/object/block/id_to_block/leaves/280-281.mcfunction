@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 280 run setblock ~ ~ ~ lever
-execute if score @s Var1 matches 281 run setblock ~ ~ ~ light_blue_banner
+execute if score @s Var1 matches 280 run setblock ~ ~ ~ horn_coral_block
+execute if score @s Var1 matches 281 run setblock ~ ~ ~ horn_coral_fan
