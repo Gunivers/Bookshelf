@@ -14,7 +14,7 @@ scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 
-scoreboard objectives add Glib_R_OriT dummy
+scoreboard objectives add Glib_R_OriV dummy
 
 scoreboard objectives add Glib_Link_Parent dummy
 
@@ -35,10 +35,10 @@ scoreboard players operation @s Var3 -= @s Var1
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Orientation]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Old Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriT"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Old Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriV"}}]
 ### END DEBUG
 
-scoreboard players operation @s Var3 -= @s Glib_R_OriT
+scoreboard players operation @s Var3 -= @s Glib_R_OriV
 
 scoreboard players operation @s Var1 -= @s Var3
 

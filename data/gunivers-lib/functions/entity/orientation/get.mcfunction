@@ -7,18 +7,18 @@
 # MINECRAFT: 1.13
 
 # OUTPUT:
-# - OriP (score dummy)
-# - OriT (score dummy)
+# - OriH (score dummy)
+# - OriV (score dummy)
 
 # NOTE:
 #It was excessively more impressive in 1.12 ...
 
 # INIT:
-scoreboard objectives add OriT dummy
-scoreboard objectives add OriP dummy
+scoreboard objectives add OriV dummy
+scoreboard objectives add OriH dummy
 
 # CODE:
 #____________________________________________________________________________________________________
 
-execute store result score @s OriP run data get entity @s Rotation[0] 1
-execute store result score @s OriT run data get entity @s Rotation[1] 1
+execute store result score @s OriH run data get entity @s Rotation[0] 1
+execute store result score @s OriV run data get entity @s Rotation[1] 1

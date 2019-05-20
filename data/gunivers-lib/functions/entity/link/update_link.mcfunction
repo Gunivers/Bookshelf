@@ -18,8 +18,8 @@ scoreboard objectives add Glib_R_LocX dummy
 scoreboard objectives add Glib_R_LocY dummy
 scoreboard objectives add Glib_R_LocZ dummy
 
-scoreboard objectives add Glib_R_OriP dummy
-scoreboard objectives add Glib_R_OriT dummy
+scoreboard objectives add Glib_R_OriH dummy
+scoreboard objectives add Glib_R_OriV dummy
 
 scoreboard objectives add Glib_Link_Parent dummy
 
@@ -49,8 +49,8 @@ scoreboard players operation @s Glib_R_LocZ -= @s Var3
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 execute store result score @s Var2 run data get entity @s Rotation[1] 1000
 
-execute store result score @s Glib_R_OriT run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[0] 1000
-execute store result score @s Glib_R_OriP run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[1] 1000
+execute store result score @s Glib_R_OriV run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[0] 1000
+execute store result score @s Glib_R_OriH run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[1] 1000
 
-scoreboard players operation @s Glib_R_OriT -= @s Var1
-scoreboard players operation @s Glib_R_OriP -= @s Var2
+scoreboard players operation @s Glib_R_OriV -= @s Var1
+scoreboard players operation @s Glib_R_OriH -= @s Var2

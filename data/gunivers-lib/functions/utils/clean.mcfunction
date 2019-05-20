@@ -43,8 +43,8 @@ scoreboard objectives remove LocZ
 scoreboard objectives remove Res
 scoreboard objectives remove Constant
 	# ~~ Orientation ~~
-scoreboard objectives remove OriT
-scoreboard objectives remove OriP
+scoreboard objectives remove OriV
+scoreboard objectives remove OriH
 	# ~~ Path Finder ~~
 scoreboard objectives remove PathCost
 	# ~~ Relative Location ~~
@@ -52,8 +52,8 @@ scoreboard objectives remove Glib_R_LocX
 scoreboard objectives remove Glib_R_LocY
 scoreboard objectives remove Glib_R_LocZ
 	# ~~ Relative Orientation ~~
-scoreboard objectives remove Glib_R_OriT
-scoreboard objectives remove Glib_R_OriP
+scoreboard objectives remove Glib_R_OriV
+scoreboard objectives remove Glib_R_OriH
 	# ~~ Vars ~~
 scoreboard objectives remove Var1
 scoreboard objectives remove Var2

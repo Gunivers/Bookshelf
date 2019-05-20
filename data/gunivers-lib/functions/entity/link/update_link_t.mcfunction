@@ -12,7 +12,7 @@
 # INIT:
 scoreboard objectives add Var1 dummy
 
-scoreboard objectives add Glib_R_OriT dummy
+scoreboard objectives add Glib_R_OriV dummy
 
 scoreboard objectives add Glib_Link_Parent dummy
 
@@ -25,6 +25,6 @@ function gunivers-lib:entity/id/check
 
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 
-execute store result score @s Glib_R_OriT run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[0] 1000
+execute store result score @s Glib_R_OriV run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[0] 1000
 
-scoreboard players operation @s Glib_R_OriT -= @s Var1
+scoreboard players operation @s Glib_R_OriV -= @s Var1

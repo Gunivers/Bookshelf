@@ -13,7 +13,7 @@
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 
-scoreboard objectives add Glib_R_OriP dummy
+scoreboard objectives add Glib_R_OriH dummy
 
 scoreboard objectives add Glib_Link_Parent dummy
 
@@ -34,10 +34,10 @@ scoreboard players operation @s Var2 -= @s Var1
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Phi]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Old Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriP"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Old Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriH"}}]
 ### END DEBUG
 
-scoreboard players operation @s Var2 -= @s Glib_R_OriP
+scoreboard players operation @s Var2 -= @s Glib_R_OriH
 
 scoreboard players operation @s Var1 += @s Var2
 
