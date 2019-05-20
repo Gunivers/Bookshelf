@@ -11,4 +11,4 @@
 # CODE:
 #____________________________________________________________________________________________________
 
-execute summon armor_stand ~ ~ ~ {Tags:["StoreBuffer","Glib"],ArmorItems:[{},{},{id:"slime_ball",Count:1b,tag:{Memory:[]}}]}
+summon armor_stand ~ ~ ~ {Tags:["StoreBuffer","Glib"],ArmorItems:[{},{},{id:"slime_ball",Count:1b,tag:{Memory:[]}}]}
