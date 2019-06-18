@@ -38,7 +38,10 @@ tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 # Reactions #
 #-----------#
 
+scoreboard players set @s[tag=Collision] Var4 0
+
 execute if entity @s[tag=Collision,scores={Collision=1}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_1
 execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_2
+execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_3
 
 

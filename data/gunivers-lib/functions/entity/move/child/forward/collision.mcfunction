@@ -22,9 +22,10 @@ execute at @s[scores={CollisionLocal=1..,Var1=-89..89}] run function gunivers-li
 
 # REACTIONS
 
-execute if entity @s[tag=CollisionLocalX] run function gunivers-lib:entity/move/child/forward/collision_react_x
-execute if entity @s[tag=CollisionLocalY] run function gunivers-lib:entity/move/child/forward/collision_react_y
-execute if entity @s[tag=CollisionLocalZ] run function gunivers-lib:entity/move/child/forward/collision_react_z
+
+scoreboard players set @s[tag=Collision] Var4 0
+
+execute if entity @s[tag=CollisionLocal] run function gunivers-lib:entity/move/child/forward/collision_reactions/1
 
 # UPDATE
 
