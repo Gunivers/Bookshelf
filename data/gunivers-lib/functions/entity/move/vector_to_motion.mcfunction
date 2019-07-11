@@ -40,3 +40,5 @@ scoreboard players operation @s Var3 /= 1000 Constant
 execute as @s store result entity @s Motion[0] double 0.001 run scoreboard players get @s Var1
 execute as @s store result entity @s Motion[1] double 0.001 run scoreboard players get @s Var2
 execute as @s store result entity @s Motion[2] double 0.001 run scoreboard players get @s Var3
+
+execute as @s[scores={Collision=1..}] run function gunivers-lib:entity/move/child/by_motion/collision

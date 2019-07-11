@@ -18,3 +18,5 @@ kill @e[type=armor_stand,tag=Move_By_Vector]
 scoreboard players operation @s Var1 *= -1 Constant
 scoreboard players operation @s Var2 *= -1 Constant
 scoreboard players operation @s Var3 *= -1 Constant
+
+tag @s add Glib_Back_to_last_pos

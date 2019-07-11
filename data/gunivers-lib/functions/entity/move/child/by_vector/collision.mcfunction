@@ -29,10 +29,11 @@ tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 #------------------------#
 # CBack to last position #
 #------------------------#
+tag @s remove Glib_Back_to_last_pos
 
-# execute if entity @s[tag=CollisionX,tag=CollisionZ] run function gunivers-lib:entity/move/child/by_vector/last_position
-# execute if entity @s[tag=CollisionX,tag=CollisionY] run function gunivers-lib:entity/move/child/by_vector/last_position
-# execute if entity @s[tag=CollisionZ,tag=CollisionY] run function gunivers-lib:entity/move/child/by_vector/last_position
+execute if entity @s[tag=CollisionX,tag=CollisionZ] run function gunivers-lib:entity/move/child/by_vector/last_position
+execute if entity @s[tag=CollisionX,tag=CollisionY,tag=!Glib_Back_to_last_pos] run function gunivers-lib:entity/move/child/by_vector/last_position
+execute if entity @s[tag=CollisionZ,tag=CollisionY,tag=!Glib_Back_to_last_pos] run function gunivers-lib:entity/move/child/by_vector/last_position
 
 #-----------#
 # Reactions #
@@ -40,8 +41,8 @@ tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 
 scoreboard players set @s[tag=Collision] Var4 0
 
-execute if entity @s[tag=Collision,scores={Collision=1}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_1
-execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_2
-execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/by_vector/collision_reactions/collision_3
+execute if entity @s[tag=Collision,scores={Collision=1}] run function gunivers-lib:entity/move/child/collision_reactions/collision_1
+execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/collision_reactions/collision_2
+execute if entity @s[tag=Collision,scores={Collision=3}] run function gunivers-lib:entity/move/child/collision_reactions/collision_3
 
 
