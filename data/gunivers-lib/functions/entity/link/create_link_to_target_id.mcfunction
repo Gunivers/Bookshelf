@@ -93,30 +93,30 @@ scoreboard players operation @s Glib_R_OriH *= -1 Constant
 
 execute as @e[tag=IdMatch,limit=1,sort=nearest] run function gunivers-lib:entity/orientation/get
 
-tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
-tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}}]
+# tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}}]
 
 # Cos(Phi)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriH
 function gunivers-lib:math/cos
 scoreboard players operation @s Var4 = @s Res
-tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
 # Sin(Phi)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriH
 function gunivers-lib:math/sin
 scoreboard players operation @s Var5 = @s Res
-tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
 
 # Cos(Theta)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriV
 function gunivers-lib:math/cos
 scoreboard players operation @s Var6 = @s Res
-tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var6"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var6"}}]
 # Sin(Theta)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriV
 function gunivers-lib:math/sin
 scoreboard players operation @s Var7 = @s Res
-tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 
 
 
@@ -126,14 +126,14 @@ scoreboard players operation @s Var1 *= @s Var4
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Glib_L_LocX = @s Var1
 
-tellraw @a[tag=Debug] ["",{"text":"Calc -> ","color":"gray"},{"text":"cos(H)*X= ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocX"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Calc -> ","color":"gray"},{"text":"cos(H)*X= ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocX"}}]
 
 scoreboard players operation @s Var1 = @s Glib_R_LocZ
 scoreboard players operation @s Var1 *= @s Var5
 scoreboard players operation @s Var1 /= 1000 Constant
-scoreboard players operation @s Glib_L_LocX -= @s Var1
+scoreboard players operation @s Glib_L_LocX += @s Var1
 
-tellraw @a[tag=Debug] ["",{"text":"Left -> ","color":"gray"},{"text":"cos(H)*X + sin(H)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocX"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Left -> ","color":"gray"},{"text":"cos(H)*X + sin(H)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocX"}}]
 
 
 # Vector Up -> U = -sin(P)sin(T)*X + cos(T)*Y + cos(P)sin(T)*Z
@@ -157,7 +157,7 @@ scoreboard players operation @s Var1 *= @s Var7
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Glib_L_LocY += @s Var1
 
-tellraw @a[tag=Debug] ["",{"text":"Up -> ","color":"gray"},{"text":"-sin(H)sin(V)*X + cos(V)*Y + cos(H)sin(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocY"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Up -> ","color":"gray"},{"text":"-sin(H)sin(V)*X + cos(V)*Y + cos(H)sin(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocY"}}]
 
 # Vector Front -> F = -sin(P)cos(T)*X + sin(T)*Y + cos(P)cos(T)*Z
 scoreboard players operation @s Var1 = @s Glib_R_LocX
@@ -180,5 +180,5 @@ scoreboard players operation @s Var1 *= @s Var6
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Glib_L_LocZ += @s Var1
 
-tellraw @a[tag=Debug] ["",{"text":"Front -> ","color":"gray"},{"text":"-sin(H)cos(V)*X - sin(V)*Y + cos(H)cos(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocZ"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Front -> ","color":"gray"},{"text":"-sin(H)cos(V)*X - sin(V)*Y + cos(H)cos(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocZ"}}]
 

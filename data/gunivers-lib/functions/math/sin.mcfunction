@@ -28,13 +28,12 @@ scoreboard objectives add Res dummy
 
 # Convert to angle [-90;90]
 
-say Start Sin
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X = ","color":"red"},{"score":{"name":"@s","objective":"Var1"}}]
+# tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X = ","color":"red"},{"score":{"name":"@s","objective":"Var1"}}]
 scoreboard players operation @s Var1 += 90 Constant
 scoreboard players operation @s[scores={Var1=..-1}] Var1 *= Neg Constant
 scoreboard players operation @s[scores={Var1=360..}] Var1 %= 180 Constant
 scoreboard players operation @s Var1 -= 90 Constant
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"X % 180 = ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"X % 180 = ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
 # Retranscription of Var1 on interval [0;180[
 
@@ -44,13 +43,11 @@ scoreboard players operation @s[scores={Var1=..-1}] Var3 *= Neg Constant
 # Calcul Sin
 
 scoreboard players operation @s Res = @s Var3
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"A = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
 scoreboard players operation @s Res *= Neg Constant
 scoreboard players operation @s Res += 180 Constant
 scoreboard players operation @s Res *= @s Var3
 scoreboard players operation @s Res *= 4 Constant
 scoreboard players operation @s Res *= 1000 Constant
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"B = (-A+180)*A*4000 = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
 
 scoreboard players operation @s Var2 = @s Var3
 scoreboard players operation @s Var2 *= Neg Constant
@@ -58,10 +55,6 @@ scoreboard players operation @s Var2 += 180 Constant
 scoreboard players operation @s Var2 *= @s Var3
 scoreboard players operation @s Var2 *= Neg Constant
 scoreboard players operation @s Var2 += 40500 Constant
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"C = -(-A+180)*A+40500 = ","color":"red"},{"score":{"name":"@s","objective":"Var2"}}]
 scoreboard players operation @s Res /= @s Var2
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"B <- B/C = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
 
 scoreboard players operation @s[scores={Var1=..-1}] Res *= Neg Constant
-tellraw @a[tag=Debug] ["",{"text":"RESULT -> ","color":"gray"},{"text":"Res = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
-say End Sin
