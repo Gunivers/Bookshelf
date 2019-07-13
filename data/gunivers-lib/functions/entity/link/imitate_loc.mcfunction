@@ -48,9 +48,9 @@ scoreboard players operation @s Var6 -= @s Var3
 #tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
 ### END DEBUG
 
-scoreboard players operation @s Var4 -= @s Glib_R_LocX
-scoreboard players operation @s Var5 -= @s Glib_R_LocY
-scoreboard players operation @s Var6 -= @s Glib_R_LocZ
+scoreboard players operation @s Var4 += @s Glib_R_LocX
+scoreboard players operation @s Var5 += @s Glib_R_LocY
+scoreboard players operation @s Var6 += @s Glib_R_LocZ
 
 scoreboard players operation @s Var1 += @s Var4
 scoreboard players operation @s Var2 += @s Var5

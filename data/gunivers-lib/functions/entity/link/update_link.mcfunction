@@ -45,6 +45,10 @@ scoreboard players operation @s Glib_R_LocX -= @s Var1
 scoreboard players operation @s Glib_R_LocY -= @s Var2
 scoreboard players operation @s Glib_R_LocZ -= @s Var3
 
+scoreboard players operation @s Glib_R_LocX *= -1 Constant
+scoreboard players operation @s Glib_R_LocY *= -1 Constant
+scoreboard players operation @s Glib_R_LocZ *= -1 Constant
+
 #   Relative Orientation
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 execute store result score @s Var2 run data get entity @s Rotation[1] 1000
@@ -54,3 +58,6 @@ execute store result score @s Glib_R_OriH run data get entity @e[tag=IdMatch,lim
 
 scoreboard players operation @s Glib_R_OriV -= @s Var1
 scoreboard players operation @s Glib_R_OriH -= @s Var2
+
+scoreboard players operation @s Glib_R_OriV *= -1 Constant
+scoreboard players operation @s Glib_R_OriH *= -1 Constant

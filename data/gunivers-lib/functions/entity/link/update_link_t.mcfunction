@@ -28,3 +28,5 @@ execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 execute store result score @s Glib_R_OriV run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[0] 1000
 
 scoreboard players operation @s Glib_R_OriV -= @s Var1
+
+scoreboard players operation @s Glib_R_OriV *= -1 Constant

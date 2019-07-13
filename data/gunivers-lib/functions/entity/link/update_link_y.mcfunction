@@ -30,3 +30,5 @@ execute store result score @s Var1 run data get entity @s Pos[1] 1000
 execute store result score @s Glib_R_LocY run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[1] 1000
 
 scoreboard players operation @s Glib_R_LocY -= @s Var1
+
+scoreboard players operation @s Glib_R_LocY *= -1 Constant

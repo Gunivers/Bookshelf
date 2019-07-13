@@ -37,7 +37,7 @@ scoreboard players operation @s Var2 -= @s Var1
 #tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Old Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}}]
 ### END DEBUG
 
-scoreboard players operation @s Var2 -= @s Glib_R_LocY
+scoreboard players operation @s Var2 += @s Glib_R_LocY
 
 scoreboard players operation @s Var1 += @s Var2
 
