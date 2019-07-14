@@ -3,9 +3,11 @@ Credits of Hats
 Models by :
  - Sotshi
  - Faesharaa
+ - L'Ornithorynque
 
 Textures by :
  - Sotshi
  - Faesharaa
+ - L'Ornithorynque
 
 Textures also come from default Minecraft textures or Faithful 32 by Vattic.
