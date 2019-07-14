@@ -52,9 +52,9 @@ scoreboard players operation @s VectorZ -= @s Var3
 
 kill @e[tag=GetVec,type=armor_stand]
 
-scoreboard players set @s VectorSpeed 2000
+scoreboard players set @s VectorSpeed 1000
 
 ### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Vectors/Get_By_Actual_Orientation]=-","color":"green"}]
+tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Vectors/Get_As_To_At]=-","color":"green"}]
 tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
 ### END DEBUG
