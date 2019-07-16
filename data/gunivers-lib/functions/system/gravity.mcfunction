@@ -37,20 +37,19 @@ execute if entity @s[tag=!Glibe_Overrid_Config] run scoreboard players set Gravi
 scoreboard players operation @s Var7 = @s VectorX
 scoreboard players operation @s Var8 = @s VectorY
 scoreboard players operation @s Var9 = @s VectorZ
-tellraw @a[tag=Debug] ["",{"text":"--------------------------","color":"gray"}]
 
-scoreboard players set @s Var1 0
-scoreboard players set @s Var2 0
-scoreboard players set @s Var3 0
+tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/System/Gravity]=-","color":"green"}]
+tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":"   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":"   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
 
 execute at @s run function gunivers-lib:system/child/gravity/calcul-result
 tag @e[tag=SourceOfGravity] remove GravityCalculated
-tag @e[tag=SourceOfGravity] remove GravitySelect
-
 
 scoreboard players operation @s VectorX = @s Var7
 scoreboard players operation @s VectorY = @s Var8
 scoreboard players operation @s VectorZ = @s Var9
+
+tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":"   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":"   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}}]
+
 
 
 

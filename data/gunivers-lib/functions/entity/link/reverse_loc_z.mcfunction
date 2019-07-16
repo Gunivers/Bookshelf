@@ -41,6 +41,6 @@ scoreboard players operation @s Var6 -= @s Glib_R_LocZ
 
 scoreboard players operation @s Var1 -= @s Var6
 
-function gunivers-lib:entity/location/accurate/set_z
+function gunivers-lib:entity/location/accuracy/10-3/set_z
 
 function gunivers-lib:entity/link/update_link_z

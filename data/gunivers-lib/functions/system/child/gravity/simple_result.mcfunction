@@ -1,7 +1,7 @@
 execute at @s run particle end_rod ~ ~2 ~ 0 1 0 0 1 force
 tag @e[distance=1..,tag=SourceOfGravity,limit=1,tag=!GravityCalculated] add GravitySelect
 
-execute as @s at @e[tag=SourceOfGravity,limit=1,tag=GravitySelect] run function gunivers-lib:entity/location/accurate/get_relative_as_to_at
+execute as @s at @e[tag=SourceOfGravity,limit=1,tag=GravitySelect] run function gunivers-lib:entity/location/accuracy/10-3/get_relative_as_to_at
 
 tellraw @a[tag=Debug] ["",{"text":"TEST -> ","color":"gray"},{"text":"LocX: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}}]
 

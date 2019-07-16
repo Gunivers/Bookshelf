@@ -43,4 +43,4 @@ scoreboard players operation @s Var1 += @s Var2
 
 
 
-function gunivers-lib:entity/orientation/accurate/set_p
+function gunivers-lib:entity/orientation/accuracy/10-3/set_p

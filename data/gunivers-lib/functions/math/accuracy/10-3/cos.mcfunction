@@ -1,5 +1,5 @@
 # TITLE: Accurate Cos
-# PATH: Gunivers-Lib:Math/Accurate/Cos
+# PATH: Gunivers-Lib:Math/accuracy/10-3/Cos
 
 # AUTHOR: KubbyDev
 # CONTRIBUTORS:

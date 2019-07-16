@@ -5,7 +5,7 @@
 
 # CODE:
 
-execute at @s run function gunivers-lib:entity/location/accurate/get
+execute at @s run function gunivers-lib:entity/location/accuracy/10-3/get
 
 tellraw @a[tag=Debug] ["",{"text":"----------\nX: "},{"score":{"name":"@s","objective":"LocX"}},{"text":"\nY: "},{"score":{"name":"@s","objective":"LocY"}},{"text":"\nZ: "},{"score":{"name":"@s","objective":"LocZ"}}]
 

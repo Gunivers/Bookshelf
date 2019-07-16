@@ -56,4 +56,4 @@ scoreboard players operation @s Var1 += @s Var4
 scoreboard players operation @s Var2 += @s Var5
 scoreboard players operation @s Var3 += @s Var6
 
-function gunivers-lib:entity/location/accurate/set
+function gunivers-lib:entity/location/accuracy/10-3/set

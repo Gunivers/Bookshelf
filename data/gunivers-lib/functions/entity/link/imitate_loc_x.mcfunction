@@ -41,4 +41,4 @@ scoreboard players operation @s Var2 += @s Glib_R_LocX
 
 scoreboard players operation @s Var1 += @s Var2
 
-function gunivers-lib:entity/location/accurate/set_x
+function gunivers-lib:entity/location/accuracy/10-3/set_x

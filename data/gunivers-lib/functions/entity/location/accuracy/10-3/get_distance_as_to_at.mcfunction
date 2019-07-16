@@ -17,7 +17,7 @@
 # CODE:
 #____________________________________________________________________________________________________
 
-function gunivers-lib:entity/location/accurate/get_distance_squared_as_to_at
+function gunivers-lib:entity/location/accuracy/10-3/get_distance_squared_as_to_at
 
 scoreboard players operation @s Var1 = @s Res
 
