@@ -1,4 +1,4 @@
-# NAME: FIFO List - bufferToFifoList
+# NAME: FIFO List - bufferToFifoList 
 # PATH: gunivers-lib:collections/lists/fifo_list/buffer_to_fifo_list
 
 # AUTHOR: theogiraudet
@@ -13,4 +13,4 @@
 
 # CODE:
 
-data modify entity @s ArmorItems[2].tag.fifo set from entity @s ArmorItems[2].tag.fifo ArmorItems[2].tag.buffer
+data modify entity @s ArmorItems[2].tag.fifo set from entity @s ArmorItems[2].tag.buffer
