@@ -35,7 +35,7 @@ clear @s[tag=!Glib_Debug_Stick] debug_stick
 # Entity
 tellraw @s[tag=!Debug_E] ["",{"text":"      ","color":"gray"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Debug_E"},"hoverEvent":{"action":"show_text","value":"Show entity modules"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Debug_E"},"hoverEvent":{"action":"show_text","value":"Show entity modules"}}]
 tellraw @s[tag=Debug_E] ["",{"text":"      ","color":"gray"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_E"},"hoverEvent":{"action":"show_text","value":"Hide entity modules"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_E"},"hoverEvent":{"action":"show_text","value":"Hide entity modules"}}]
-execute if entity @s[tag=Debug_E] run function gunivers-lib:utils/debug/entity/_main_
+execute if entity @s[tag=Debug_E] run function gunivers-lib:utils/init/debug/entity/_main_
 
 # Object
 tellraw @s[tag=!Debug_O] ["",{"text":"      ","color":"gray"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Debug_O"},"hoverEvent":{"action":"show_text","value":"Show object modules"}},{"text":" Object","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Debug_O"},"hoverEvent":{"action":"show_text","value":"Show object modules"}}]
