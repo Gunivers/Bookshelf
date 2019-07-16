@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 170 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_slab
+execute if score @s Var1 matches 171 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_stairs

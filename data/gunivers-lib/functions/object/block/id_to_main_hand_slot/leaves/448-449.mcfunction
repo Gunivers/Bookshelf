@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 448 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand piston
+execute if score @s Var1 matches 449 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

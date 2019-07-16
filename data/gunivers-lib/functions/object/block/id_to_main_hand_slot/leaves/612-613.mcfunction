@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 612 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_birch_log
+execute if score @s Var1 matches 613 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_birch_wood

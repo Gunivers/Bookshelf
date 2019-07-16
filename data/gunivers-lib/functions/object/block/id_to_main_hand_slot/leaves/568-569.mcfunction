@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 568 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand smooth_quartz
+execute if score @s Var1 matches 569 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand smooth_quartz_slab

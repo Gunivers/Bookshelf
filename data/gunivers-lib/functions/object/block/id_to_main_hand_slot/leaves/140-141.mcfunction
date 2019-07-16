@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 140 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand creeper_head
+execute if score @s Var1 matches 141 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

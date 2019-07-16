@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 200 run replaceitem entity @e[tag=setHeadSlot] armor.head detector_rail
+execute if score @s Var1 matches 201 run replaceitem entity @e[tag=setHeadSlot] armor.head diamond_block

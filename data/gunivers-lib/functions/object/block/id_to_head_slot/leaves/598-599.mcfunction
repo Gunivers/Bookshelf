@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 598 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_wood
+execute if score @s Var1 matches 599 run replaceitem entity @e[tag=setHeadSlot] armor.head sticky_piston

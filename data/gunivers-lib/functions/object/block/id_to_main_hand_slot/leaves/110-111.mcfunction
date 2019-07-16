@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 110 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cartography_table
+execute if score @s Var1 matches 111 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand carved_pumpkin

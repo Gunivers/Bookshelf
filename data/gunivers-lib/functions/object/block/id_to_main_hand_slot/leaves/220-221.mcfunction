@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 220 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_portal_frame
+execute if score @s Var1 matches 221 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_rod

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 8 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_sapling
+execute if score @s Var1 matches 9 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_sign

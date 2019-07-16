@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 180 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_block
+execute if score @s Var1 matches 181 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_fan

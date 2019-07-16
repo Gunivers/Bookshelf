@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 250 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand gravel
+execute if score @s Var1 matches 251 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand gray_banner

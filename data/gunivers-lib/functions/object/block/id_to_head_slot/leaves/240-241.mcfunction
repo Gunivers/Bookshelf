@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 240 run replaceitem entity @e[tag=setHeadSlot] armor.head glowstone
+execute if score @s Var1 matches 241 run replaceitem entity @e[tag=setHeadSlot] armor.head gold_block

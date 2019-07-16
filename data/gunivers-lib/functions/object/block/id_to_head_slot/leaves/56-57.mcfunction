@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 56 run replaceitem entity @e[tag=setHeadSlot] armor.head black_stained_glass
+execute if score @s Var1 matches 57 run replaceitem entity @e[tag=setHeadSlot] armor.head black_stained_glass_pane

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 48 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_wood
+execute if score @s Var1 matches 49 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand black_banner

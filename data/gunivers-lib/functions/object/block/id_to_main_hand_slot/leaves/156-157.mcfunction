@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 156 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s Var1 matches 157 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cyan_wool

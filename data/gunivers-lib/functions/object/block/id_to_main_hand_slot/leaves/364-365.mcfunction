@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 364 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_banner
+execute if score @s Var1 matches 365 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_bed

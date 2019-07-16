@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 350 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lily_pad
+execute if score @s Var1 matches 351 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lime_banner

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 388 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mushroom_stem
+execute if score @s Var1 matches 389 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mycelium

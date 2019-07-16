@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 222 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_stone
+execute if score @s Var1 matches 223 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_stone_bricks

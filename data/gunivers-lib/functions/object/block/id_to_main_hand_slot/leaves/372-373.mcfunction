@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 372 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_stained_glass_pane
+execute if score @s Var1 matches 373 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_terracotta

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 104 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bubble_coral_fan
+execute if score @s Var1 matches 105 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 600 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stone
+execute if score @s Var1 matches 601 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stonecutter

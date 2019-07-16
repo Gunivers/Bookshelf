@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 318 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lapis_ore
+execute if score @s Var1 matches 319 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand large_fern

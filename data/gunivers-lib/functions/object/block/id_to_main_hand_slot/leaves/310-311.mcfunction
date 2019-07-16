@@ -1,0 +1,2 @@
+execute if score @s Var1 matches 310 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_trapdoor
+execute if score @s Var1 matches 311 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
