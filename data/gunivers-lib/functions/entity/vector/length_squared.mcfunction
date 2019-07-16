@@ -33,11 +33,11 @@ scoreboard players operation @s Res *= @s Res
 
 scoreboard players operation @s Var1 = @s VectorY
 scoreboard players operation @s Var1 *= @s Var1
-scoreboard players operation @s Res += Var1
+scoreboard players operation @s Res += @s Var1
 
 scoreboard players operation @s Var1 = @s VectorZ
 scoreboard players operation @s Var1 *= @s Var1
-scoreboard players operation @s Res += Var1
+scoreboard players operation @s Res += @s Var1
 
 
 
