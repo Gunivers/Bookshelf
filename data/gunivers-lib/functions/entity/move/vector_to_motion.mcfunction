@@ -29,10 +29,11 @@ scoreboard players operation @s Var1 = @s VectorX
 scoreboard players operation @s Var2 = @s VectorY
 scoreboard players operation @s Var3 = @s VectorZ
 
+
+# Apply speed modifier
 scoreboard players operation @s Var1 *= @s VectorSpeed
 scoreboard players operation @s Var2 *= @s VectorSpeed
 scoreboard players operation @s Var3 *= @s VectorSpeed
-
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Var2 /= 1000 Constant
 scoreboard players operation @s Var3 /= 1000 Constant

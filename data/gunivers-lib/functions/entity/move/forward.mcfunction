@@ -29,11 +29,11 @@ scoreboard objectives add VectorSpeedLocal dummy
 # CODE:
 #____________________________________________________________________________________________________
 
-scoreboard players operation @s VectorFront *= @s VectorSpeedLocal
-scoreboard players operation @s VectorFront /= 1000 Constant
-scoreboard players set @s VectorSpeedLocal 1000
-
 scoreboard players operation @s Var3 = @s VectorFront
+
+# Apply speed modifier
+scoreboard players operation @s Var3 *= @s VectorSpeed
+scoreboard players operation @s Var3 /= 1000 Constant
 
 # DEBUG
 execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/forward/main
