@@ -27,11 +27,15 @@ tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"ac
 
 
 # DEBUG RECORD
+
+
+
 tellraw @s[tag=Glib_Debug_Stick,tag=Glib_Debug_Disp_Tick] ["",{"text":"      ","color":"gray"},{"text":"[DEBUG TOOL]","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_Stick"},"hoverEvent":{"action":"show_text","value":"Disable debug tool"}},{"text":"   ","color":"gray"},{"text":"[Display ticks]\n","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_Disp_Tick"},"hoverEvent":{"action":"show_text","value":"Hide ticks"}}]
 tellraw @s[tag=Glib_Debug_Stick,tag=!Glib_Debug_Disp_Tick] ["",{"text":"      ","color":"gray"},{"text":"[DEBUG TOOL]","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_Stick"},"hoverEvent":{"action":"show_text","value":"Disable debug tool"}},{"text":"   ","color":"gray"},{"text":"[Display ticks]\n","color":"red","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Debug_Disp_Tick"},"hoverEvent":{"action":"show_text","value":"Display ticks"}}]
 
 tellraw @s[tag=!Glib_Debug_Stick] ["",{"text":"      ","color":"gray"},{"text":"[DEBUG TOOL]\n","color":"red","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Debug_Stick"},"hoverEvent":{"action":"show_text","value":"Enable debug tool"}}]
 clear @s[tag=!Glib_Debug_Stick] debug_stick
+
 # Entity
 tellraw @s[tag=!Debug_E] ["",{"text":"      ","color":"gray"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Debug_E"},"hoverEvent":{"action":"show_text","value":"Show entity modules"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Debug_E"},"hoverEvent":{"action":"show_text","value":"Show entity modules"}}]
 tellraw @s[tag=Debug_E] ["",{"text":"      ","color":"gray"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_E"},"hoverEvent":{"action":"show_text","value":"Hide entity modules"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_E"},"hoverEvent":{"action":"show_text","value":"Hide entity modules"}}]
