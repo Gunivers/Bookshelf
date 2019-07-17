@@ -15,13 +15,20 @@
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
+scoreboard objectives add Var4 dummy
 
 scoreboard objectives add PathCost dummy
+
+# CONFIG:
+# Possible moves -> 0 = terrestrial (like zombies), 1 = aerial (like bat). You can cofig your own possible moves file in entity/move/config/pathind/possible_moves/
+# and link your file to the system in entity/move/child/pathfind/source
+scoreboard players set @s[tag=!Glib_Override_Config] Var4 0
 
 # CODE:
 #____________________________________________________________________________________________________
 
 execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib_Pathfind_Source"]}
+scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] Var4 = @s Var4
 summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib_Pathfind_Target"]}
 
 execute as @e[tag=Glib_Pathfind_Source] run function gunivers-lib:entity/move/child/pathfind/source
