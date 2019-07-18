@@ -1,4 +1,4 @@
-tellraw @a ["",{"text":"DEBUG | ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Entity_Management"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Target Entity Manager","color":"green"}]
+tellraw @a ["",{"text":"█ DEBUG █ ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Entity_Management"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Target Entity Manager","color":"green"}]
 
 tag @e remove Debug_Entity_Manager_Selected
 function gunivers-lib:entity/id/check
