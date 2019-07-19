@@ -31,8 +31,6 @@ tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
 # Reactions #
 #-----------#
 
-execute if entity @s[tag=Collision,scores={Collision=1}] run function gunivers-lib:entity/move/child/collision_reactions/collision_1
-execute if entity @s[tag=Collision,scores={Collision=2}] run function gunivers-lib:entity/move/child/collision_reactions/collision_2
-execute if entity @s[tag=Collision,scores={Collision=3}] run function gunivers-lib:entity/move/child/collision_reactions/collision_3
+execute if entity @s[tag=Collision] run function gunivers-lib:entity/move/config/collision_reactions/_main_
 
 
