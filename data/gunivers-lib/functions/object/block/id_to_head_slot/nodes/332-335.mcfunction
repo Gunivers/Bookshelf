@@ -1,2 +1,0 @@
-execute if score @s Var1 matches ..333 run function gunivers-lib:object/block/id_to_head_slot/leaves/332-333
-execute if score @s Var1 matches 334.. run function gunivers-lib:object/block/id_to_head_slot/leaves/334-335

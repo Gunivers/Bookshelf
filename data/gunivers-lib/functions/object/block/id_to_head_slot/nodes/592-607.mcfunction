@@ -1,2 +1,0 @@
-execute if score @s Var1 matches ..599 run function gunivers-lib:object/block/id_to_head_slot/nodes/592-599
-execute if score @s Var1 matches 600.. run function gunivers-lib:object/block/id_to_head_slot/nodes/600-607

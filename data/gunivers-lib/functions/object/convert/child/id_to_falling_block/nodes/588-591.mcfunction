@@ -1,0 +1,2 @@
+execute if score @s Var1 matches ..589 run function gunivers-lib:object/convert/child/id_to_falling_block/leaves/588-589
+execute if score @s Var1 matches 590.. run function gunivers-lib:object/convert/child/id_to_falling_block/leaves/590-591

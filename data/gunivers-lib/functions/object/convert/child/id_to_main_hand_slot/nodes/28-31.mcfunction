@@ -1,0 +1,2 @@
+execute if score @s Var1 matches ..29 run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/28-29
+execute if score @s Var1 matches 30.. run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/30-31

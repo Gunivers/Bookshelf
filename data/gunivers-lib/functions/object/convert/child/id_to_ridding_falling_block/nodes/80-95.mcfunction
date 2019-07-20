@@ -1,0 +1,2 @@
+execute if score @s Var1 matches ..87 run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/80-87
+execute if score @s Var1 matches 88.. run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/88-95
