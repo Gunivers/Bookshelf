@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 110 run replaceitem entity @e[tag=setHeadSlot] armor.head cartography_table
-execute if score @s Var1 matches 111 run replaceitem entity @e[tag=setHeadSlot] armor.head carved_pumpkin
+execute if score @s ObjectId matches 110 run replaceitem entity @e[tag=setHeadSlot] armor.head cartography_table
+execute if score @s ObjectId matches 111 run replaceitem entity @e[tag=setHeadSlot] armor.head carved_pumpkin

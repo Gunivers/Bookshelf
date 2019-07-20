@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..403 run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/400-403
-execute if score @s Var1 matches 404.. run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/404-407
+execute if score @s ObjectId matches ..403 run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/400-403
+execute if score @s ObjectId matches 404.. run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/404-407

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 42 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sapling
-execute if score @s Var1 matches 43 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sign
+execute if score @s ObjectId matches 42 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sapling
+execute if score @s ObjectId matches 43 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sign

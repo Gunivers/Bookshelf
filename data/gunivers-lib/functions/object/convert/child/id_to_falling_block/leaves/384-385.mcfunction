@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 384 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_stone_brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 385 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_stone_brick_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 384 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_stone_brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 385 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_stone_brick_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

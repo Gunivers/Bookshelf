@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 634 run replaceitem entity @e[tag=setHeadSlot] armor.head tripwire_hook
-execute if score @s Var1 matches 635 run replaceitem entity @e[tag=setHeadSlot] armor.head tube_coral
+execute if score @s ObjectId matches 634 run replaceitem entity @e[tag=setHeadSlot] armor.head tripwire_hook
+execute if score @s ObjectId matches 635 run replaceitem entity @e[tag=setHeadSlot] armor.head tube_coral

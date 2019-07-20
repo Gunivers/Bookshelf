@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 400 run replaceitem entity @e[tag=setHeadSlot] armor.head note_block
-execute if score @s Var1 matches 401 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_button
+execute if score @s ObjectId matches 400 run replaceitem entity @e[tag=setHeadSlot] armor.head note_block
+execute if score @s ObjectId matches 401 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_button

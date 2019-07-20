@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..323 run function gunivers-lib:object/convert/child/id_to_head_slot/nodes/320-323
-execute if score @s Var1 matches 324.. run function gunivers-lib:object/convert/child/id_to_head_slot/nodes/324-327
+execute if score @s ObjectId matches ..323 run function gunivers-lib:object/convert/child/id_to_head_slot/nodes/320-323
+execute if score @s ObjectId matches 324.. run function gunivers-lib:object/convert/child/id_to_head_slot/nodes/324-327

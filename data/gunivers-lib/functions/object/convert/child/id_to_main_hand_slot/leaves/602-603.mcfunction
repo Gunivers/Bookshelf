@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 602 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stone_bricks
-execute if score @s Var1 matches 603 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stone_brick_slab
+execute if score @s ObjectId matches 602 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stone_bricks
+execute if score @s ObjectId matches 603 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stone_brick_slab

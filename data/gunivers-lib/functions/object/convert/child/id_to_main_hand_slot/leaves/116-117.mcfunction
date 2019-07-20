@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 116 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chipped_anvil
-execute if score @s Var1 matches 117 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chiseled_quartz_block
+execute if score @s ObjectId matches 116 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chipped_anvil
+execute if score @s ObjectId matches 117 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chiseled_quartz_block

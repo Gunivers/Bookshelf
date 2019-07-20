@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 192 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_horn_coral
-execute if score @s Var1 matches 193 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_horn_coral_block
+execute if score @s ObjectId matches 192 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_horn_coral
+execute if score @s ObjectId matches 193 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_horn_coral_block

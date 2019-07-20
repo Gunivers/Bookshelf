@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 102 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bubble_coral
-execute if score @s Var1 matches 103 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bubble_coral_block
+execute if score @s ObjectId matches 102 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bubble_coral
+execute if score @s ObjectId matches 103 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bubble_coral_block

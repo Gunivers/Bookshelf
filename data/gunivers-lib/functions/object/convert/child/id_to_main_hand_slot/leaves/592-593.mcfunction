@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 592 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_sapling
-execute if score @s Var1 matches 593 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_sign
+execute if score @s ObjectId matches 592 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_sapling
+execute if score @s ObjectId matches 593 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_sign

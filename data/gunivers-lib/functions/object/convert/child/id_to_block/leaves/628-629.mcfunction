@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 628 run setblock ~ ~ ~ tall_seagrass
-execute if score @s Var1 matches 629 run setblock ~ ~ ~ terracotta
+execute if score @s ObjectId matches 628 run setblock ~ ~ ~ tall_seagrass
+execute if score @s ObjectId matches 629 run setblock ~ ~ ~ terracotta

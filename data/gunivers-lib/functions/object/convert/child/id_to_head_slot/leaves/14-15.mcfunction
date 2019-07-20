@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 14 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_wood
-execute if score @s Var1 matches 15 run replaceitem entity @e[tag=setHeadSlot] armor.head activator_rail
+execute if score @s ObjectId matches 14 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_wood
+execute if score @s ObjectId matches 15 run replaceitem entity @e[tag=setHeadSlot] armor.head activator_rail

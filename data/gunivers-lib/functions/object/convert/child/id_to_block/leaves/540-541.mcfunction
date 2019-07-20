@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 540 run setblock ~ ~ ~ red_sandstone_slab
-execute if score @s Var1 matches 541 run setblock ~ ~ ~ red_sandstone_stairs
+execute if score @s ObjectId matches 540 run setblock ~ ~ ~ red_sandstone_slab
+execute if score @s ObjectId matches 541 run setblock ~ ~ ~ red_sandstone_stairs

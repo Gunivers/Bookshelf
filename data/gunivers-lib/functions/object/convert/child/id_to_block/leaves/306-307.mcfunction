@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 306 run setblock ~ ~ ~ jungle_sapling
-execute if score @s Var1 matches 307 run setblock ~ ~ ~ jungle_sign
+execute if score @s ObjectId matches 306 run setblock ~ ~ ~ jungle_sapling
+execute if score @s ObjectId matches 307 run setblock ~ ~ ~ jungle_sign

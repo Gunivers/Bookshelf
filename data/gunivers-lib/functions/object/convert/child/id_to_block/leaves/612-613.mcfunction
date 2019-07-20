@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 612 run setblock ~ ~ ~ stripped_birch_log
-execute if score @s Var1 matches 613 run setblock ~ ~ ~ stripped_birch_wood
+execute if score @s ObjectId matches 612 run setblock ~ ~ ~ stripped_birch_log
+execute if score @s ObjectId matches 613 run setblock ~ ~ ~ stripped_birch_wood

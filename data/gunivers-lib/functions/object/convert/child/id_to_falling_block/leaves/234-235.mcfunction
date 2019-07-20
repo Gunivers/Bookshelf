@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 234 run summon falling_block ~ ~ ~ {BlockState:{Name:"fletching_table"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 235 run summon falling_block ~ ~ ~ {BlockState:{Name:"flower_pot"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 234 run summon falling_block ~ ~ ~ {BlockState:{Name:"fletching_table"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 235 run summon falling_block ~ ~ ~ {BlockState:{Name:"flower_pot"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

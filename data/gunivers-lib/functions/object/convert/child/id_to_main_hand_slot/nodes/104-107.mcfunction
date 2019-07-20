@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..105 run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/104-105
-execute if score @s Var1 matches 106.. run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/106-107
+execute if score @s ObjectId matches ..105 run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/104-105
+execute if score @s ObjectId matches 106.. run function gunivers-lib:object/convert/child/id_to_main_hand_slot/leaves/106-107

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 196 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_tube_coral
-execute if score @s Var1 matches 197 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_tube_coral_block
+execute if score @s ObjectId matches 196 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_tube_coral
+execute if score @s ObjectId matches 197 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_tube_coral_block

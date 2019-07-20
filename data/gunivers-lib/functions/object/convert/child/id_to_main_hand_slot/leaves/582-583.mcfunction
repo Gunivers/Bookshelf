@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 582 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spawner
-execute if score @s Var1 matches 583 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sponge
+execute if score @s ObjectId matches 582 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spawner
+execute if score @s ObjectId matches 583 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sponge

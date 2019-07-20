@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 506 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_stained_glass
-execute if score @s Var1 matches 507 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_stained_glass_pane
+execute if score @s ObjectId matches 506 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_stained_glass
+execute if score @s ObjectId matches 507 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_stained_glass_pane

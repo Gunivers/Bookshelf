@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 60 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand black_wool
-execute if score @s Var1 matches 61 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blast_furnace
+execute if score @s ObjectId matches 60 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand black_wool
+execute if score @s ObjectId matches 61 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blast_furnace

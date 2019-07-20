@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 236 run summon falling_block ~ ~ ~ {BlockState:{Name:"frosted_ice"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 237 run summon falling_block ~ ~ ~ {BlockState:{Name:"furnace"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 236 run summon falling_block ~ ~ ~ {BlockState:{Name:"frosted_ice"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 237 run summon falling_block ~ ~ ~ {BlockState:{Name:"furnace"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

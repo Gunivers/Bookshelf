@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 178 run replaceitem entity @e[tag=setHeadSlot] armor.head daylight_detector
-execute if score @s Var1 matches 179 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_brain_coral
+execute if score @s ObjectId matches 178 run replaceitem entity @e[tag=setHeadSlot] armor.head daylight_detector
+execute if score @s ObjectId matches 179 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_brain_coral

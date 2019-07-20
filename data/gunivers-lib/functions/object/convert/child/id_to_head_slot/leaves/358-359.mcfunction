@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 358 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_stained_glass
-execute if score @s Var1 matches 359 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_stained_glass_pane
+execute if score @s ObjectId matches 358 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_stained_glass
+execute if score @s ObjectId matches 359 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_stained_glass_pane

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 474 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_dark_oak_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 475 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_dead_bush"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 474 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_dark_oak_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 475 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_dead_bush"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

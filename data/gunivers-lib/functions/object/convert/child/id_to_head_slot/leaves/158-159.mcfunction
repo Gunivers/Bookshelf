@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 158 run replaceitem entity @e[tag=setHeadSlot] armor.head damaged_anvil
-execute if score @s Var1 matches 159 run replaceitem entity @e[tag=setHeadSlot] armor.head dandelion
+execute if score @s ObjectId matches 158 run replaceitem entity @e[tag=setHeadSlot] armor.head damaged_anvil
+execute if score @s ObjectId matches 159 run replaceitem entity @e[tag=setHeadSlot] armor.head dandelion

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 250 run summon falling_block ~ ~ ~ {BlockState:{Name:"gravel"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 251 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 250 run summon falling_block ~ ~ ~ {BlockState:{Name:"gravel"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 251 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

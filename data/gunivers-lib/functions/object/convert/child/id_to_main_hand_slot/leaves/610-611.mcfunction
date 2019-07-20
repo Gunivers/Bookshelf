@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 610 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_log
-execute if score @s Var1 matches 611 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_wood
+execute if score @s ObjectId matches 610 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_log
+execute if score @s ObjectId matches 611 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_wood

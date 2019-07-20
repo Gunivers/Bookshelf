@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 178 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand daylight_detector
-execute if score @s Var1 matches 179 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral
+execute if score @s ObjectId matches 178 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand daylight_detector
+execute if score @s ObjectId matches 179 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral

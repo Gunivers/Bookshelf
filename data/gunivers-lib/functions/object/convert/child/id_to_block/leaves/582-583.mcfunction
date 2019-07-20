@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 582 run setblock ~ ~ ~ spawner
-execute if score @s Var1 matches 583 run setblock ~ ~ ~ sponge
+execute if score @s ObjectId matches 582 run setblock ~ ~ ~ spawner
+execute if score @s ObjectId matches 583 run setblock ~ ~ ~ sponge

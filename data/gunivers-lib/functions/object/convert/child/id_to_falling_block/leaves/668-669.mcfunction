@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 668 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 669 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_stained_glass"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 668 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 669 run summon falling_block ~ ~ ~ {BlockState:{Name:"yellow_stained_glass"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 416 run setblock ~ ~ ~ observer
-execute if score @s Var1 matches 417 run setblock ~ ~ ~ obsidian
+execute if score @s ObjectId matches 416 run setblock ~ ~ ~ observer
+execute if score @s ObjectId matches 417 run setblock ~ ~ ~ obsidian

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 556 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 557 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_wall"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 556 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 557 run summon falling_block ~ ~ ~ {BlockState:{Name:"sandstone_wall"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

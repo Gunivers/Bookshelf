@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 196 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 197 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 196 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 197 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_tube_coral_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
