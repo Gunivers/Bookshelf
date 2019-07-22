@@ -17,7 +17,7 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetRotation"]}
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 
 tp @e[type=armor_stand,tag=SetRotation,limit=1] @s
 

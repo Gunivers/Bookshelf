@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 516 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_pillar"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 517 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 516 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_pillar"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 517 run summon falling_block ~ ~ ~ {BlockState:{Name:"quartz_slab"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

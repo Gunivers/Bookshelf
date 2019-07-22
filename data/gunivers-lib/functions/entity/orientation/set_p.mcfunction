@@ -18,7 +18,7 @@ scoreboard objectives add Var1 dummy
 # CODE:
 #____________________________________________________________________________________________________
 
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetRotation"]}
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 
 tp @e[type=armor_stand,tag=SetRotation,limit=1] @s
 

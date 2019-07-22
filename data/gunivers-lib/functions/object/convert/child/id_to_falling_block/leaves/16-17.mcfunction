@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 16 run summon falling_block ~ ~ ~ {BlockState:{Name:"air"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"allium"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 16 run summon falling_block ~ ~ ~ {BlockState:{Name:"air"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 17 run summon falling_block ~ ~ ~ {BlockState:{Name:"allium"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

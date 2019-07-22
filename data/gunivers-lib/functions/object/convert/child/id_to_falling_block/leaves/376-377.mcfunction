@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 376 run summon falling_block ~ ~ ~ {BlockState:{Name:"magma_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 377 run summon falling_block ~ ~ ~ {BlockState:{Name:"melon"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 376 run summon falling_block ~ ~ ~ {BlockState:{Name:"magma_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 377 run summon falling_block ~ ~ ~ {BlockState:{Name:"melon"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

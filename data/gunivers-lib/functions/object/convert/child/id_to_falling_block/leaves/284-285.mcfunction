@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 284 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_chiseled_stone_bricks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 285 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_cobblestone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 284 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_chiseled_stone_bricks"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 285 run summon falling_block ~ ~ ~ {BlockState:{Name:"infested_cobblestone"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

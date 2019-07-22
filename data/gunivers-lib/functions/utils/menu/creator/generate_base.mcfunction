@@ -5,7 +5,7 @@ execute at @s run setworldspawn ~ ~ ~
 function gunivers-lib:utils/import/data
 function gunivers-lib:utils/import/constants
 
-execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib_Generate_Base"]}
+execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Glib_Generate_Base"]}
 tellraw @a ["",{"text":"\n"},{"text":"<","color":"black"},{"text":"Gunivers-Lib","color":"gold"},{"text":">","color":"black"},{"text":" Generating base platform...","color":"gray"},{"text":"\n "}]
 
 # Get extrem chunk point X

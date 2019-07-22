@@ -18,7 +18,7 @@
 #It was excessively more impressive in 1.12 ...
 
 # CODE:
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetRotation"]}
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 0.001 run scoreboard players get @s Var1
 execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 0.001 run scoreboard players get @s Var2
 tp @s @e[type=armor_stand,tag=SetRotation,limit=1]

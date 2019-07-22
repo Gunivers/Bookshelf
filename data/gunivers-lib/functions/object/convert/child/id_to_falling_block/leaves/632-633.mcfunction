@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 632 run summon falling_block ~ ~ ~ {BlockState:{Name:"trapped_chest"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 633 run summon falling_block ~ ~ ~ {BlockState:{Name:"tripwire"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 632 run summon falling_block ~ ~ ~ {BlockState:{Name:"trapped_chest"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 633 run summon falling_block ~ ~ ~ {BlockState:{Name:"tripwire"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

@@ -20,11 +20,11 @@
 tag @s remove Glib_InFrontOf
 
 #Génère des entités devant et sur les cotés de la tête de l'entité executant la fonction
-execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^ ^0.001 {Tags:["Glib_InFrontOf_Tmp","Glib_Front"]}
-execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^0.001 ^ ^ {Tags:["Glib_InFrontOf_Tmp"]}
-execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^-0.001 ^ ^ {Tags:["Glib_InFrontOf_Tmp"]}
-execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^0.001 ^ {Tags:["Glib_InFrontOf_Tmp"]}
-execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^-0.001 ^ {Tags:["Glib_InFrontOf_Tmp"]}
+execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^ ^0.001 {Tags:["Glib","Glib_InFrontOf_Tmp","Glib_Front"]}
+execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^0.001 ^ ^ {Tags:["Glib","Glib_InFrontOf_Tmp"]}
+execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^-0.001 ^ ^ {Tags:["Glib","Glib_InFrontOf_Tmp"]}
+execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^0.001 ^ {Tags:["Glib","Glib_InFrontOf_Tmp"]}
+execute at @s positioned ~ ~1.7 ~ run summon area_effect_cloud ^ ^-0.001 ^ {Tags:["Glib","Glib_InFrontOf_Tmp"]}
 
 # Séléctionne l'entité la plus proche de la cible. Si cette entité est celle qui se trouve devant la tête de l'entité executante, c'est que cette dernière regarde vers la cible
 execute as @e[tag=Glib_InFrontOf_Tmp,limit=1,sort=nearest] run tag @s add Selected

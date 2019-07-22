@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 390 run summon falling_block ~ ~ ~ {BlockState:{Name:"netherrack"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 391 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_bricks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 390 run summon falling_block ~ ~ ~ {BlockState:{Name:"netherrack"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 391 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_bricks"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

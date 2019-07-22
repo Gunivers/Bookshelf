@@ -29,7 +29,7 @@ execute store result score @s Var1 run data get entity @s Pos[0] 1000
 execute store result score @s Var2 run data get entity @s Pos[1] 1000
 execute store result score @s Var3 run data get entity @s Pos[2] 1000
 
-summon area_effect_cloud ~ ~ ~ {Tags:["Glib_Get_Distance"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Distance"]}
 
 execute store result score @s Var4 as @e[tag=Glib_Get_Distance] run data get entity @s Pos[0] 1000
 execute store result score @s Var5 as @e[tag=Glib_Get_Distance] run data get entity @s Pos[1] 1000

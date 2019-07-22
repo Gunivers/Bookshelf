@@ -27,7 +27,7 @@ scoreboard objectives add LocZ dummy
 #____________________________________________________________________________________________________
 
 
-summon area_effect_cloud ~ ~ ~ {Tags:["Glib_Get_Loc_Relative"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Loc_Relative"]}
 
 execute store result score @s LocX run data get entity @s Pos[0] 1
 execute store result score @s LocY run data get entity @s Pos[1] 1

@@ -6,7 +6,7 @@
 # CODE:
 
 # DEBUG
-execute at @s[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Debug"]}
+execute at @s[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
 # END DEBUG
 
 tag @s remove CollisionTest
@@ -24,7 +24,7 @@ scoreboard players operation @s Var3 = @s Var9
 execute if entity @s[type=!player,scores={Var4=1..}] at @s run function gunivers-lib:entity/move/child/by_vector/apply
 
 #Apply on player
-execute if entity @s[type=player,scores={Var4=1..}] at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Move_By_Vector"]}
+execute if entity @s[type=player,scores={Var4=1..}] at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Move_By_Vector"]}
 execute if entity @s[type=player,scores={Var4=1..}] at @s run tp @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] @s
 execute if entity @s[type=player,scores={Var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] Var1 = @s Var1
 execute if entity @s[type=player,scores={Var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] Var2 = @s Var2

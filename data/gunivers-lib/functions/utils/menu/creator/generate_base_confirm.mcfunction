@@ -1,7 +1,7 @@
 function gunivers-lib:utils/import/data
 function gunivers-lib:utils/import/constants
 
-execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib_Generate_Base"]}
+execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Glib_Generate_Base"]}
 
 # Get extrem chunk point X
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] store result score @s Data run data get entity @s Pos[0] 1

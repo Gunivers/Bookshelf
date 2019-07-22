@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 576 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_sandstone_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 577 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_stone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 576 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_sandstone_stairs"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 577 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_stone"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

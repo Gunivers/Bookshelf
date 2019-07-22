@@ -19,7 +19,7 @@
 # CODE:
 #____________________________________________________________________________________________________
 
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["SetLocation"]}
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
 
 tp @e[type=armor_stand,tag=SetLocation,limit=1] @s
 

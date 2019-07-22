@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 624 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"sugar_cane"}}]}
-execute if score @s ObjectId matches 625 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"sunflower"}}]}
+execute if score @s ObjectId matches 624 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["Glib","RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"sugar_cane"}}]}
+execute if score @s ObjectId matches 625 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["Glib","RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"sunflower"}}]}

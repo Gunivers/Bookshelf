@@ -1,2 +1,2 @@
-execute if score @s ObjectId matches 404 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence_gate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 405 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_leaves"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 404 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence_gate"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s ObjectId matches 405 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_leaves"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

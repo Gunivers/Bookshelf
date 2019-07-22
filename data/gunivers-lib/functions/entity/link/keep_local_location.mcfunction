@@ -26,7 +26,7 @@ scoreboard players operation @s TargetId = @s Glib_Link_Parent
 
 function gunivers-lib:entity/id/check
 
-execute at @e[tag=IdMatch,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["Glib_Link_Keep_Local_Location"]}
+execute at @e[tag=IdMatch,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Link_Keep_Local_Location"]}
 tp @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] @e[tag=IdMatch,limit=1,sort=nearest]
 
 scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorLeft = @s Glib_L_LocX
