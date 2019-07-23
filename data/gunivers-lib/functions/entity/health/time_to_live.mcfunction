@@ -17,7 +17,7 @@ scoreboard objectives add TTL dummy
 
 # CONFIGURATION:
 #     Default time to live (10s)
-scoreboard players set @s[scores={TTL=0}] TTL 200
+scoreboard players set @s[tag=!Glib_Overrid_Config,scores={TTL=0}] TTL 200
 #     Acton when time out
 execute as @s[scores={TTL=1}] at @e run kill @s
 
