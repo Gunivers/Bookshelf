@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 26 run summon falling_block ~ ~ ~ {BlockState:{Name:"bamboo"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 27 run summon falling_block ~ ~ ~ {BlockState:{Name:"bamboo_sapling"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 26 run summon falling_block ~ ~ ~ {BlockState:{Name:"bamboo"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 27 run summon falling_block ~ ~ ~ {BlockState:{Name:"bamboo_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

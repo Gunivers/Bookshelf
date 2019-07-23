@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 402 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_door"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 403 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 402 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_door"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 403 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

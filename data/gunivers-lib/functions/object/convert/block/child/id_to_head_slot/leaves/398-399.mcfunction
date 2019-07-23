@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 398 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_wart
-execute if score @s BlockId matches 399 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_wart_block
+execute if score @s Var1 matches 398 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_wart
+execute if score @s Var1 matches 399 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_wart_block

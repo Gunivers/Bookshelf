@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 130 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cobblestone_wall
-execute if score @s BlockId matches 131 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cobweb
+execute if score @s Var1 matches 130 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cobblestone_wall
+execute if score @s Var1 matches 131 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cobweb

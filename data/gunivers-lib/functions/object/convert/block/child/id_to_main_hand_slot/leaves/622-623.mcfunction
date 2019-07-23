@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 622 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_block
-execute if score @s BlockId matches 623 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_void
+execute if score @s Var1 matches 622 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_block
+execute if score @s Var1 matches 623 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_void

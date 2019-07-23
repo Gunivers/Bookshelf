@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 26 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bamboo
-execute if score @s BlockId matches 27 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s Var1 matches 26 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bamboo
+execute if score @s Var1 matches 27 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

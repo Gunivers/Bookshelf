@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 198 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_tube_coral_fan
-execute if score @s BlockId matches 199 run replaceitem entity @e[tag=setHeadSlot] armor.head air
+execute if score @s Var1 matches 198 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_tube_coral_fan
+execute if score @s Var1 matches 199 run replaceitem entity @e[tag=setHeadSlot] armor.head air

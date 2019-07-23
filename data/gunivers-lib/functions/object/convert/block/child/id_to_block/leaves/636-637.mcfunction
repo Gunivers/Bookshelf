@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 636 run setblock ~ ~ ~ tube_coral_block
-execute if score @s BlockId matches 637 run setblock ~ ~ ~ tube_coral_fan
+execute if score @s Var1 matches 636 run setblock ~ ~ ~ tube_coral_block
+execute if score @s Var1 matches 637 run setblock ~ ~ ~ tube_coral_fan

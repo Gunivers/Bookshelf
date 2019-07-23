@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 224 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_brick_slab"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 225 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_brick_stairs"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 224 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 225 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_brick_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

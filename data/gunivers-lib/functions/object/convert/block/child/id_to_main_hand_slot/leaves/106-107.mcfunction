@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 106 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cactus
-execute if score @s BlockId matches 107 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cake
+execute if score @s Var1 matches 106 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cactus
+execute if score @s Var1 matches 107 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cake

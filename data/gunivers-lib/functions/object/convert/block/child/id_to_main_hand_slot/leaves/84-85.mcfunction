@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 84 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brick_slab
-execute if score @s BlockId matches 85 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brick_stairs
+execute if score @s Var1 matches 84 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brick_slab
+execute if score @s Var1 matches 85 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brick_stairs

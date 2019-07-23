@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 502 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purple_concrete
-execute if score @s BlockId matches 503 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purple_concrete_powder
+execute if score @s Var1 matches 502 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purple_concrete
+execute if score @s Var1 matches 503 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purple_concrete_powder

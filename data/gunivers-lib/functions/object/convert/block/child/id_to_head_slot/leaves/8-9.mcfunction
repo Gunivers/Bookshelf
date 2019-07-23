@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 8 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sapling
-execute if score @s BlockId matches 9 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sign
+execute if score @s Var1 matches 8 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sapling
+execute if score @s Var1 matches 9 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sign

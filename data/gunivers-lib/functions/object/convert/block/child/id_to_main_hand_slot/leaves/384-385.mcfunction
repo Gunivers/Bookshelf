@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 384 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_stone_brick_slab
-execute if score @s BlockId matches 385 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_stone_brick_stairs
+execute if score @s Var1 matches 384 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_stone_brick_slab
+execute if score @s Var1 matches 385 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_stone_brick_stairs

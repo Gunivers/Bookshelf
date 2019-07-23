@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 248 run summon falling_block ~ ~ ~ {BlockState:{Name:"grass_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 249 run summon falling_block ~ ~ ~ {BlockState:{Name:"grass_path"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 248 run summon falling_block ~ ~ ~ {BlockState:{Name:"grass_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 249 run summon falling_block ~ ~ ~ {BlockState:{Name:"grass_path"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

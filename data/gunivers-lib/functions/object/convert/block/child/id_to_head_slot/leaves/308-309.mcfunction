@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 308 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_slab
-execute if score @s BlockId matches 309 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_stairs
+execute if score @s Var1 matches 308 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_slab
+execute if score @s Var1 matches 309 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_stairs

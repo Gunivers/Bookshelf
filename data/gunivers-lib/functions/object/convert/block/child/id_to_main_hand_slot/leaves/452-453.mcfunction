@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 452 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand podzol
-execute if score @s BlockId matches 453 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_andesite
+execute if score @s Var1 matches 452 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand podzol
+execute if score @s Var1 matches 453 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_andesite

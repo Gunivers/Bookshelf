@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 288 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_stone
-execute if score @s BlockId matches 289 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_stone_bricks
+execute if score @s Var1 matches 288 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_stone
+execute if score @s Var1 matches 289 run replaceitem entity @e[tag=setHeadSlot] armor.head infested_stone_bricks

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 570 run replaceitem entity @e[tag=setHeadSlot] armor.head smooth_quartz_stairs
-execute if score @s BlockId matches 571 run replaceitem entity @e[tag=setHeadSlot] armor.head smooth_red_sandstone
+execute if score @s Var1 matches 570 run replaceitem entity @e[tag=setHeadSlot] armor.head smooth_quartz_stairs
+execute if score @s Var1 matches 571 run replaceitem entity @e[tag=setHeadSlot] armor.head smooth_red_sandstone

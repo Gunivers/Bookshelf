@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 634 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand tripwire_hook
-execute if score @s BlockId matches 635 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand tube_coral
+execute if score @s Var1 matches 634 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand tripwire_hook
+execute if score @s Var1 matches 635 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand tube_coral

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 212 run summon falling_block ~ ~ ~ {BlockState:{Name:"dried_kelp_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 213 run summon falling_block ~ ~ ~ {BlockState:{Name:"dropper"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 212 run summon falling_block ~ ~ ~ {BlockState:{Name:"dried_kelp_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 213 run summon falling_block ~ ~ ~ {BlockState:{Name:"dropper"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

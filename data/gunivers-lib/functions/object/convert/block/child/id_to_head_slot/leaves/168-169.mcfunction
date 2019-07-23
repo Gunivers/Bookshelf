@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 168 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sapling
-execute if score @s BlockId matches 169 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sign
+execute if score @s Var1 matches 168 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sapling
+execute if score @s Var1 matches 169 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sign

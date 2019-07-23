@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 426 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_stained_glass_pane"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 427 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_terracotta"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 426 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_stained_glass_pane"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 427 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

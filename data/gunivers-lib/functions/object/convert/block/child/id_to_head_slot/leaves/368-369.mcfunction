@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 368 run replaceitem entity @e[tag=setHeadSlot] armor.head magenta_concrete_powder
-execute if score @s BlockId matches 369 run replaceitem entity @e[tag=setHeadSlot] armor.head magenta_glazed_terracotta
+execute if score @s Var1 matches 368 run replaceitem entity @e[tag=setHeadSlot] armor.head magenta_concrete_powder
+execute if score @s Var1 matches 369 run replaceitem entity @e[tag=setHeadSlot] armor.head magenta_glazed_terracotta

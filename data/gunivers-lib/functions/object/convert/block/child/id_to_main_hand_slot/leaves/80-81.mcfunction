@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 80 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral_fan
-execute if score @s BlockId matches 81 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s Var1 matches 80 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral_fan
+execute if score @s Var1 matches 81 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

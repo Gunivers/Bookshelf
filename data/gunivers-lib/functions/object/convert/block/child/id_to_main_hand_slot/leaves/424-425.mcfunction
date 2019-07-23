@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 424 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand orange_shulker_box
-execute if score @s BlockId matches 425 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand orange_stained_glass
+execute if score @s Var1 matches 424 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand orange_shulker_box
+execute if score @s Var1 matches 425 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand orange_stained_glass

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 490 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine
-execute if score @s BlockId matches 491 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine_bricks
+execute if score @s Var1 matches 490 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine
+execute if score @s Var1 matches 491 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine_bricks

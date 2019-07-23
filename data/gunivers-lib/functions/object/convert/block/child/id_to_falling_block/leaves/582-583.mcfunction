@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 582 run summon falling_block ~ ~ ~ {BlockState:{Name:"spawner"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 583 run summon falling_block ~ ~ ~ {BlockState:{Name:"sponge"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 582 run summon falling_block ~ ~ ~ {BlockState:{Name:"spawner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s Var1 matches 583 run summon falling_block ~ ~ ~ {BlockState:{Name:"sponge"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
