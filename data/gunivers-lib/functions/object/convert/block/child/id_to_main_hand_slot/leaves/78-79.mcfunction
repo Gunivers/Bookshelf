@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 78 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral
-execute if score @s Var1 matches 79 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral_block
+execute if score @s BlockId matches 78 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral
+execute if score @s BlockId matches 79 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand brain_coral_block

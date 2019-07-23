@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 226 run replaceitem entity @e[tag=setHeadSlot] armor.head end_stone_brick_wall
-execute if score @s Var1 matches 227 run replaceitem entity @e[tag=setHeadSlot] armor.head farmland
+execute if score @s BlockId matches 226 run replaceitem entity @e[tag=setHeadSlot] armor.head end_stone_brick_wall
+execute if score @s BlockId matches 227 run replaceitem entity @e[tag=setHeadSlot] armor.head farmland

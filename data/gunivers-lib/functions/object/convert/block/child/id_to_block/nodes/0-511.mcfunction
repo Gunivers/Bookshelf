@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..255 run function gunivers-lib:object/convert/block/child/block/nodes/0-255
-execute if score @s Var1 matches 256.. run function gunivers-lib:object/convert/block/child/block/nodes/256-511
+execute if score @s BlockId matches ..255 run function gunivers-lib:object/convert/block/child/block/nodes/0-255
+execute if score @s BlockId matches 256.. run function gunivers-lib:object/convert/block/child/block/nodes/256-511

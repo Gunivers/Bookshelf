@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 606 run replaceitem entity @e[tag=setHeadSlot] armor.head stone_button
-execute if score @s Var1 matches 607 run replaceitem entity @e[tag=setHeadSlot] armor.head stone_pressure_plate
+execute if score @s BlockId matches 606 run replaceitem entity @e[tag=setHeadSlot] armor.head stone_button
+execute if score @s BlockId matches 607 run replaceitem entity @e[tag=setHeadSlot] armor.head stone_pressure_plate

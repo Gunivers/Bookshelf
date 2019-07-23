@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 108 run summon falling_block ~ ~ ~ {BlockState:{Name:"campfire"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 109 run summon falling_block ~ ~ ~ {BlockState:{Name:"carrots"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 108 run summon falling_block ~ ~ ~ {BlockState:{Name:"campfire"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 109 run summon falling_block ~ ~ ~ {BlockState:{Name:"carrots"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

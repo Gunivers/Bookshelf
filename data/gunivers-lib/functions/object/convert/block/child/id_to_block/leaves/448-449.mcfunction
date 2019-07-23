@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 448 run setblock ~ ~ ~ piston
-execute if score @s Var1 matches 449 run setblock ~ ~ ~ piston_head
+execute if score @s BlockId matches 448 run setblock ~ ~ ~ piston
+execute if score @s BlockId matches 449 run setblock ~ ~ ~ piston_head

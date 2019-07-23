@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 606 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_button"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 607 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_pressure_plate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 606 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_button"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 607 run summon falling_block ~ ~ ~ {BlockState:{Name:"stone_pressure_plate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

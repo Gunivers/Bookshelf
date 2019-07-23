@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..81 run function gunivers-lib:object/convert/block/child/block/leaves/80-81
-execute if score @s Var1 matches 82.. run function gunivers-lib:object/convert/block/child/block/leaves/82-83
+execute if score @s BlockId matches ..81 run function gunivers-lib:object/convert/block/child/block/leaves/80-81
+execute if score @s BlockId matches 82.. run function gunivers-lib:object/convert/block/child/block/leaves/82-83

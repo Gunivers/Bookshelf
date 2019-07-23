@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 2 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_fence
-execute if score @s Var1 matches 3 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_fence_gate
+execute if score @s BlockId matches 2 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_fence
+execute if score @s BlockId matches 3 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_fence_gate

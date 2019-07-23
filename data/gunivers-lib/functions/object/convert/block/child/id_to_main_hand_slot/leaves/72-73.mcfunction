@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 72 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blue_stained_glass_pane
-execute if score @s Var1 matches 73 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blue_terracotta
+execute if score @s BlockId matches 72 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blue_stained_glass_pane
+execute if score @s BlockId matches 73 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand blue_terracotta

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 42 run setblock ~ ~ ~ birch_sapling
-execute if score @s Var1 matches 43 run setblock ~ ~ ~ birch_sign
+execute if score @s BlockId matches 42 run setblock ~ ~ ~ birch_sapling
+execute if score @s BlockId matches 43 run setblock ~ ~ ~ birch_sign

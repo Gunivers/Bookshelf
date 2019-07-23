@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..501 run function gunivers-lib:object/convert/block/child/id_to_ridding_falling_block/leaves/500-501
-execute if score @s Var1 matches 502.. run function gunivers-lib:object/convert/block/child/id_to_ridding_falling_block/leaves/502-503
+execute if score @s BlockId matches ..501 run function gunivers-lib:object/convert/block/child/id_to_ridding_falling_block/leaves/500-501
+execute if score @s BlockId matches 502.. run function gunivers-lib:object/convert/block/child/id_to_ridding_falling_block/leaves/502-503

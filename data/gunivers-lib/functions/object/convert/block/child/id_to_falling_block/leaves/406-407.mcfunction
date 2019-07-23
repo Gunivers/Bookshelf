@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 406 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 407 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_planks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 406 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 407 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_planks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

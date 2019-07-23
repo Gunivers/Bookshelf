@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 202 run replaceitem entity @e[tag=setHeadSlot] armor.head diamond_ore
-execute if score @s Var1 matches 203 run replaceitem entity @e[tag=setHeadSlot] armor.head diorite
+execute if score @s BlockId matches 202 run replaceitem entity @e[tag=setHeadSlot] armor.head diamond_ore
+execute if score @s BlockId matches 203 run replaceitem entity @e[tag=setHeadSlot] armor.head diorite

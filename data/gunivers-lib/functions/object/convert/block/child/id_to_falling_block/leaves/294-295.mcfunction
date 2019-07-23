@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 294 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_trapdoor"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 295 run summon falling_block ~ ~ ~ {BlockState:{Name:"jack_o_lantern"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 294 run summon falling_block ~ ~ ~ {BlockState:{Name:"iron_trapdoor"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 295 run summon falling_block ~ ~ ~ {BlockState:{Name:"jack_o_lantern"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

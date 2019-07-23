@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 396 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
-execute if score @s Var1 matches 397 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand nether_quartz_ore
+execute if score @s BlockId matches 396 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s BlockId matches 397 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand nether_quartz_ore

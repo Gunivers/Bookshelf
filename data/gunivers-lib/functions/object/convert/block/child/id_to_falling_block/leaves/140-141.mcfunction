@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 140 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 141 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_wall_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 140 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 141 run summon falling_block ~ ~ ~ {BlockState:{Name:"creeper_wall_head"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

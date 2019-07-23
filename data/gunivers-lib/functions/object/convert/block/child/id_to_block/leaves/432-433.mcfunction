@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 432 run setblock ~ ~ ~ packed_ice
-execute if score @s Var1 matches 433 run setblock ~ ~ ~ peony
+execute if score @s BlockId matches 432 run setblock ~ ~ ~ packed_ice
+execute if score @s BlockId matches 433 run setblock ~ ~ ~ peony

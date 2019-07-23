@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 416 run summon falling_block ~ ~ ~ {BlockState:{Name:"observer"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 417 run summon falling_block ~ ~ ~ {BlockState:{Name:"obsidian"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 416 run summon falling_block ~ ~ ~ {BlockState:{Name:"observer"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 417 run summon falling_block ~ ~ ~ {BlockState:{Name:"obsidian"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

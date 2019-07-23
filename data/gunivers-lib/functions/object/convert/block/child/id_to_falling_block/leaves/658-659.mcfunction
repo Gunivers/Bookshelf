@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 658 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_wool"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s Var1 matches 659 run summon falling_block ~ ~ ~ {BlockState:{Name:"wither_rose"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 658 run summon falling_block ~ ~ ~ {BlockState:{Name:"white_wool"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 659 run summon falling_block ~ ~ ~ {BlockState:{Name:"wither_rose"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

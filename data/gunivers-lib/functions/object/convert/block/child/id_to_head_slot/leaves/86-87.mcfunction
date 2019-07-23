@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 86 run replaceitem entity @e[tag=setHeadSlot] armor.head brick_wall
-execute if score @s Var1 matches 87 run replaceitem entity @e[tag=setHeadSlot] armor.head brown_banner
+execute if score @s BlockId matches 86 run replaceitem entity @e[tag=setHeadSlot] armor.head brick_wall
+execute if score @s BlockId matches 87 run replaceitem entity @e[tag=setHeadSlot] armor.head brown_banner

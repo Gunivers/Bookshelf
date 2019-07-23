@@ -1,2 +1,2 @@
-execute if score @s Var1 matches 624 run replaceitem entity @e[tag=setHeadSlot] armor.head sugar_cane
-execute if score @s Var1 matches 625 run replaceitem entity @e[tag=setHeadSlot] armor.head sunflower
+execute if score @s BlockId matches 624 run replaceitem entity @e[tag=setHeadSlot] armor.head sugar_cane
+execute if score @s BlockId matches 625 run replaceitem entity @e[tag=setHeadSlot] armor.head sunflower

@@ -1,2 +1,2 @@
-execute if score @s Var1 matches ..71 run function gunivers-lib:object/convert/block/child/block/nodes/64-71
-execute if score @s Var1 matches 72.. run function gunivers-lib:object/convert/block/child/block/nodes/72-79
+execute if score @s BlockId matches ..71 run function gunivers-lib:object/convert/block/child/block/nodes/64-71
+execute if score @s BlockId matches 72.. run function gunivers-lib:object/convert/block/child/block/nodes/72-79
