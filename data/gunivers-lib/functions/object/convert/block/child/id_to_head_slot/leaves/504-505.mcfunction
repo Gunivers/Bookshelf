@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 504 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_glazed_terracotta
+execute if score @s BlockId matches 505 run replaceitem entity @e[tag=setHeadSlot] armor.head purple_shulker_box

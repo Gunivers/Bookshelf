@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 160 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_button
+execute if score @s BlockId matches 161 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_door

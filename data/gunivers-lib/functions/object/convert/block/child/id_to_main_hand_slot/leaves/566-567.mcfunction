@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 566 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand smithing_table
+execute if score @s BlockId matches 567 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand smoker

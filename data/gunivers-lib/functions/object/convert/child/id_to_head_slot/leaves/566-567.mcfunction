@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 566 run replaceitem entity @e[tag=setHeadSlot] armor.head smithing_table
-execute if score @s ObjectId matches 567 run replaceitem entity @e[tag=setHeadSlot] armor.head smoker

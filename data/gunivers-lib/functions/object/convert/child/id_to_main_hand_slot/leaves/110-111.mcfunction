@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 110 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cartography_table
-execute if score @s ObjectId matches 111 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand carved_pumpkin

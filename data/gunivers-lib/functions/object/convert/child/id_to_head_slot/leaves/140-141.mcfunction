@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 140 run replaceitem entity @e[tag=setHeadSlot] armor.head creeper_head
-execute if score @s ObjectId matches 141 run replaceitem entity @e[tag=setHeadSlot] armor.head air

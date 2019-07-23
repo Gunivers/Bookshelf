@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 324 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand light_blue_bed
+execute if score @s BlockId matches 325 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand light_blue_carpet

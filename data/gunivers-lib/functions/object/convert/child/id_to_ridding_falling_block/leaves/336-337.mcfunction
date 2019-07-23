@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 336 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["Glib","RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"light_gray_bed"}}]}
-execute if score @s ObjectId matches 337 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["Glib","RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"light_gray_carpet"}}]}

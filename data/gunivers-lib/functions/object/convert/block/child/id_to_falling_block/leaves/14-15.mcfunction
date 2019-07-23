@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 14 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_wood"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 15 run summon falling_block ~ ~ ~ {BlockState:{Name:"activator_rail"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

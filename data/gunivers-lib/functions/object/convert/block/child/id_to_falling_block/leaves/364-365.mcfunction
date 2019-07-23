@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 364 run summon falling_block ~ ~ ~ {BlockState:{Name:"magenta_banner"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 365 run summon falling_block ~ ~ ~ {BlockState:{Name:"magenta_bed"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

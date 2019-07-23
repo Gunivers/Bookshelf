@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 146 run setblock ~ ~ ~ cyan_banner
-execute if score @s ObjectId matches 147 run setblock ~ ~ ~ cyan_bed

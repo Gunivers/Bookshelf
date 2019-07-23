@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 34 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_button
+execute if score @s BlockId matches 35 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_door

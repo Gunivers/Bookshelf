@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 498 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s BlockId matches 499 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purple_banner

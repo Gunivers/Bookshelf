@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches ..563 run function gunivers-lib:object/convert/child/id_to_block/nodes/560-563
-execute if score @s ObjectId matches 564.. run function gunivers-lib:object/convert/child/id_to_block/nodes/564-567

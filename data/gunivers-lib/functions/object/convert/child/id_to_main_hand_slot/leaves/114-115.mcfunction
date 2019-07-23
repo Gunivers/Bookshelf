@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 114 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chain_command_block
-execute if score @s ObjectId matches 115 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chest

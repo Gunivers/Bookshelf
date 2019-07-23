@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 590 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_planks
-execute if score @s ObjectId matches 591 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_pressure_plate

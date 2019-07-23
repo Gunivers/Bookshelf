@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 612 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_log"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 613 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_wood"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

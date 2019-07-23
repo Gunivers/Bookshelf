@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 408 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_pressure_plate
+execute if score @s BlockId matches 409 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_sapling

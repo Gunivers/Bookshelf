@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 434 run replaceitem entity @e[tag=setHeadSlot] armor.head petrified_oak_slab
+execute if score @s BlockId matches 435 run replaceitem entity @e[tag=setHeadSlot] armor.head pink_banner

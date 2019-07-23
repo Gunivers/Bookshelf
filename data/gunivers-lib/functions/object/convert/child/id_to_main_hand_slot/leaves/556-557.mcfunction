@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 556 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sandstone_stairs
-execute if score @s ObjectId matches 557 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sandstone_wall

@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 234 run summon falling_block ~ ~ ~ {BlockState:{Name:"fletching_table"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 235 run summon falling_block ~ ~ ~ {BlockState:{Name:"flower_pot"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

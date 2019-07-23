@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 394 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_brick_stairs
+execute if score @s BlockId matches 395 run replaceitem entity @e[tag=setHeadSlot] armor.head nether_brick_wall

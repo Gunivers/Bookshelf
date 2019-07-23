@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 278 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand hopper
-execute if score @s ObjectId matches 279 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand horn_coral

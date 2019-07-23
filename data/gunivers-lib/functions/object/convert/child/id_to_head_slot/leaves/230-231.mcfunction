@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 230 run replaceitem entity @e[tag=setHeadSlot] armor.head fire_coral
-execute if score @s ObjectId matches 231 run replaceitem entity @e[tag=setHeadSlot] armor.head fire_coral_block

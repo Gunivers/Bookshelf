@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 444 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_terracotta"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 445 run summon falling_block ~ ~ ~ {BlockState:{Name:"pink_tulip"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

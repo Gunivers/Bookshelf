@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 162 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_fence
+execute if score @s BlockId matches 163 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_fence_gate

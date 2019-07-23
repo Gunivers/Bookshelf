@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 206 run summon falling_block ~ ~ ~ {BlockState:{Name:"diorite_wall"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 207 run summon falling_block ~ ~ ~ {BlockState:{Name:"dirt"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

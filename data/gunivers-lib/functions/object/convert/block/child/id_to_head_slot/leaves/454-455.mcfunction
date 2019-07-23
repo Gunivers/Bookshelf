@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 454 run replaceitem entity @e[tag=setHeadSlot] armor.head polished_andesite_slab
+execute if score @s BlockId matches 455 run replaceitem entity @e[tag=setHeadSlot] armor.head polished_andesite_stairs

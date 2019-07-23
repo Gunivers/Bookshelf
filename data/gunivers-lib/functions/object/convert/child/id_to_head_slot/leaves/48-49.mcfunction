@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 48 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_wood
-execute if score @s ObjectId matches 49 run replaceitem entity @e[tag=setHeadSlot] armor.head black_banner

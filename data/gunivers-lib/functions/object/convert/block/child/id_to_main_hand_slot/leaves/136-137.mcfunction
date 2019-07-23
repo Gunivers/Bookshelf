@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 136 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand conduit
+execute if score @s BlockId matches 137 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cornflower

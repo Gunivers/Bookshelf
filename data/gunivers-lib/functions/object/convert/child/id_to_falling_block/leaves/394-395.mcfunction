@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 394 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_stairs"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 395 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_brick_wall"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

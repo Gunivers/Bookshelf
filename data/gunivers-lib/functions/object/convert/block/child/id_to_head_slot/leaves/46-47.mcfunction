@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 46 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_trapdoor
+execute if score @s BlockId matches 47 run replaceitem entity @e[tag=setHeadSlot] armor.head air

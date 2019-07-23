@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 462 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand poppy
+execute if score @s BlockId matches 463 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

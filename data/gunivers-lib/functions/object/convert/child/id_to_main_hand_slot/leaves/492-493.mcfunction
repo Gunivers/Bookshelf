@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 492 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand prismarine_brick_slab
-execute if score @s ObjectId matches 493 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand prismarine_brick_stairs

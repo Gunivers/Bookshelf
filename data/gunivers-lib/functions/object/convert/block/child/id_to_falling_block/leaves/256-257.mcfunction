@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 256 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_glazed_terracotta"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 257 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_shulker_box"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

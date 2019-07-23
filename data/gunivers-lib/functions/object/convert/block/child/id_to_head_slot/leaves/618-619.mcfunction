@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 618 run replaceitem entity @e[tag=setHeadSlot] armor.head stripped_oak_log
+execute if score @s BlockId matches 619 run replaceitem entity @e[tag=setHeadSlot] armor.head stripped_oak_wood

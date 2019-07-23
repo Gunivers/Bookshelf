@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches ..233 run function gunivers-lib:object/convert/child/id_to_head_slot/leaves/232-233
-execute if score @s ObjectId matches 234.. run function gunivers-lib:object/convert/child/id_to_head_slot/leaves/234-235

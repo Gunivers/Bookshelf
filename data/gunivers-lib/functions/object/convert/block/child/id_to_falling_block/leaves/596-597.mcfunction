@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 596 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_trapdoor"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 597 run summon falling_block ~ ~ ~ {BlockState:{Name:"spruce_wall_sign"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

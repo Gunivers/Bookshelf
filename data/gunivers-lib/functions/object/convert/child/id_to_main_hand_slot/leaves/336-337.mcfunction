@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 336 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand light_gray_bed
-execute if score @s ObjectId matches 337 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand light_gray_carpet

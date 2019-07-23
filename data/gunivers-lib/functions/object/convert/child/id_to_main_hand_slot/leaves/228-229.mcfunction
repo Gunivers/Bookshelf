@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 228 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand fern
-execute if score @s ObjectId matches 229 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

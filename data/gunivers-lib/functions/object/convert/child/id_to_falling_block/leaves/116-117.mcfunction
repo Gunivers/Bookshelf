@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 116 run summon falling_block ~ ~ ~ {BlockState:{Name:"chipped_anvil"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 117 run summon falling_block ~ ~ ~ {BlockState:{Name:"chiseled_quartz_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

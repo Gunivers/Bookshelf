@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 250 run replaceitem entity @e[tag=setHeadSlot] armor.head gravel
+execute if score @s BlockId matches 251 run replaceitem entity @e[tag=setHeadSlot] armor.head gray_banner

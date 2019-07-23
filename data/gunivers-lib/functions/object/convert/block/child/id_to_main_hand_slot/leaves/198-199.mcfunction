@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 198 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_tube_coral_fan
+execute if score @s BlockId matches 199 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

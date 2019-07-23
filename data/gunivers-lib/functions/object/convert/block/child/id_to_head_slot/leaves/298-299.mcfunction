@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 298 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_button
+execute if score @s BlockId matches 299 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_door

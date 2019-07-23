@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 230 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand fire_coral
-execute if score @s ObjectId matches 231 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand fire_coral_block

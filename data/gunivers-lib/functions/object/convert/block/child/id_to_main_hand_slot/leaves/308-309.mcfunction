@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 308 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_slab
+execute if score @s BlockId matches 309 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_stairs

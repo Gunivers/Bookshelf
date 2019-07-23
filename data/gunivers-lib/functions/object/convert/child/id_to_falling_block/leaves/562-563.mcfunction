@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 562 run summon falling_block ~ ~ ~ {BlockState:{Name:"shulker_box"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 563 run summon falling_block ~ ~ ~ {BlockState:{Name:"skeleton_skull"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

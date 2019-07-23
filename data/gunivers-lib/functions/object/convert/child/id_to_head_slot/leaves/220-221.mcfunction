@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 220 run replaceitem entity @e[tag=setHeadSlot] armor.head end_portal_frame
-execute if score @s ObjectId matches 221 run replaceitem entity @e[tag=setHeadSlot] armor.head end_rod

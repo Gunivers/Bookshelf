@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 76 run replaceitem entity @e[tag=setHeadSlot] armor.head bone_block
-execute if score @s ObjectId matches 77 run replaceitem entity @e[tag=setHeadSlot] armor.head bookshelf

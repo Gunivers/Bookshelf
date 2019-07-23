@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 534 run replaceitem entity @e[tag=setHeadSlot] armor.head red_nether_bricks
-execute if score @s ObjectId matches 535 run replaceitem entity @e[tag=setHeadSlot] armor.head red_nether_brick_slab

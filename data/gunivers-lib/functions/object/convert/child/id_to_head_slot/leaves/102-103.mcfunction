@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 102 run replaceitem entity @e[tag=setHeadSlot] armor.head bubble_coral
-execute if score @s ObjectId matches 103 run replaceitem entity @e[tag=setHeadSlot] armor.head bubble_coral_block

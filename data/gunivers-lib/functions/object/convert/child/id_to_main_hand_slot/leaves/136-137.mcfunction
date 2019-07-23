@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 136 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand conduit
-execute if score @s ObjectId matches 137 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cornflower

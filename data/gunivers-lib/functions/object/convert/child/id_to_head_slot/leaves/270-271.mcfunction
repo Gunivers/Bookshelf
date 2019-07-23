@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 270 run replaceitem entity @e[tag=setHeadSlot] armor.head green_stained_glass
-execute if score @s ObjectId matches 271 run replaceitem entity @e[tag=setHeadSlot] armor.head green_stained_glass_pane

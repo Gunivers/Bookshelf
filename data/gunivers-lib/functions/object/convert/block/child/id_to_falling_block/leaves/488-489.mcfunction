@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 488 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_wither_rose"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 489 run summon falling_block ~ ~ ~ {BlockState:{Name:"powered_rail"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

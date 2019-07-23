@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 492 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand prismarine_brick_slab
+execute if score @s BlockId matches 493 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand prismarine_brick_stairs

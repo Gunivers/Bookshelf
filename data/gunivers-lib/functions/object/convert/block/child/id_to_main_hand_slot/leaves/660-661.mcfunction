@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 660 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand wither_skeleton_skull
+execute if score @s BlockId matches 661 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

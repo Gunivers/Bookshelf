@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 0 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_button
-execute if score @s ObjectId matches 1 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_door

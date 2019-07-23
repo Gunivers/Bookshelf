@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 124 run summon falling_block ~ ~ ~ {BlockState:{Name:"coal_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 125 run summon falling_block ~ ~ ~ {BlockState:{Name:"coal_ore"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 320 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s BlockId matches 321 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lectern

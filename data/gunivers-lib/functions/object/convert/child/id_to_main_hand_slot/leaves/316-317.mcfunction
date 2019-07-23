@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 316 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lantern
-execute if score @s ObjectId matches 317 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lapis_block

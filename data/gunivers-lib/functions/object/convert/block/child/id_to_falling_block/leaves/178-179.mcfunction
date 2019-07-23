@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 178 run summon falling_block ~ ~ ~ {BlockState:{Name:"daylight_detector"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 179 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_brain_coral"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

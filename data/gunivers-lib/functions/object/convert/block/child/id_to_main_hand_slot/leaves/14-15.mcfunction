@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 14 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_wood
+execute if score @s BlockId matches 15 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand activator_rail

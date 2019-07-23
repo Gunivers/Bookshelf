@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 104 run replaceitem entity @e[tag=setHeadSlot] armor.head bubble_coral_fan
+execute if score @s BlockId matches 105 run replaceitem entity @e[tag=setHeadSlot] armor.head air

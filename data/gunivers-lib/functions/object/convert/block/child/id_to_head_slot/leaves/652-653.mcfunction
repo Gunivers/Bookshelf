@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 652 run replaceitem entity @e[tag=setHeadSlot] armor.head white_shulker_box
+execute if score @s BlockId matches 653 run replaceitem entity @e[tag=setHeadSlot] armor.head white_stained_glass

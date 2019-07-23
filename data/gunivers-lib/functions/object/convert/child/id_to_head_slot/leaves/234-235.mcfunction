@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 234 run replaceitem entity @e[tag=setHeadSlot] armor.head fletching_table
-execute if score @s ObjectId matches 235 run replaceitem entity @e[tag=setHeadSlot] armor.head flower_pot

@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 214 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand emerald_block
-execute if score @s ObjectId matches 215 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand emerald_ore

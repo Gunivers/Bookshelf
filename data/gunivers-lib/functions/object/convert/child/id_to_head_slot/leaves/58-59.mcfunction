@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 58 run replaceitem entity @e[tag=setHeadSlot] armor.head black_terracotta
-execute if score @s ObjectId matches 59 run replaceitem entity @e[tag=setHeadSlot] armor.head air

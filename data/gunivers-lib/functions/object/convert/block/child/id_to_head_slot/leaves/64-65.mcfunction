@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 64 run replaceitem entity @e[tag=setHeadSlot] armor.head blue_carpet
+execute if score @s BlockId matches 65 run replaceitem entity @e[tag=setHeadSlot] armor.head blue_concrete

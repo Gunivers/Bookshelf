@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 190 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_fire_coral_fan"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 191 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_fire_coral_wall_fan"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

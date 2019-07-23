@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 2 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_fence
+execute if score @s BlockId matches 3 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_fence_gate

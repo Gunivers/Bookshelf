@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 248 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand grass_block
-execute if score @s ObjectId matches 249 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand grass_path

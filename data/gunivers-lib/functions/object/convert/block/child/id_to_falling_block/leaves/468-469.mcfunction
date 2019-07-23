@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 468 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_birch_sapling"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 469 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_blue_orchid"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

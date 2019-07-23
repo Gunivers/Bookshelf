@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 4 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_leaves"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 5 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_log"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 58 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand black_terracotta
+execute if score @s BlockId matches 59 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 292 run replaceitem entity @e[tag=setHeadSlot] armor.head iron_door
+execute if score @s BlockId matches 293 run replaceitem entity @e[tag=setHeadSlot] armor.head iron_ore

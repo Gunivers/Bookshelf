@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 102 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s ObjectId matches 103 run summon falling_block ~ ~ ~ {BlockState:{Name:"bubble_coral_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

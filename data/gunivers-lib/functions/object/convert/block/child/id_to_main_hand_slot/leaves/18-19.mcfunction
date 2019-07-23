@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 18 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand andesite
+execute if score @s BlockId matches 19 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand andesite_slab

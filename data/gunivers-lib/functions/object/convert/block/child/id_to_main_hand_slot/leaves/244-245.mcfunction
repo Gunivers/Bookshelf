@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 244 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand granite_slab
+execute if score @s BlockId matches 245 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand granite_stairs

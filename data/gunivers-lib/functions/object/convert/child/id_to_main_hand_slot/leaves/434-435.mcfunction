@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 434 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand petrified_oak_slab
-execute if score @s ObjectId matches 435 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand pink_banner

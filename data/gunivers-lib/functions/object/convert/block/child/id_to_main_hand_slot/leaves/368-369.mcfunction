@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 368 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_concrete_powder
+execute if score @s BlockId matches 369 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_glazed_terracotta

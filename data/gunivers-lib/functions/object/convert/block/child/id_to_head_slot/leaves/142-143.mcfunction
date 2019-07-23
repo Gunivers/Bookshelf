@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 142 run replaceitem entity @e[tag=setHeadSlot] armor.head cut_red_sandstone
+execute if score @s BlockId matches 143 run replaceitem entity @e[tag=setHeadSlot] armor.head cut_red_sandstone_slab

@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 280 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand horn_coral_block
+execute if score @s BlockId matches 281 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand horn_coral_fan

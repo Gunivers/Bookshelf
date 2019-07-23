@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 588 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_leaves
+execute if score @s BlockId matches 589 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_log

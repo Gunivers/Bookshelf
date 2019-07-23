@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 300 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_fence
-execute if score @s ObjectId matches 301 run replaceitem entity @e[tag=setHeadSlot] armor.head jungle_fence_gate

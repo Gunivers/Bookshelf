@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 624 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sugar_cane
+execute if score @s BlockId matches 625 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sunflower

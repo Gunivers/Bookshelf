@@ -1,0 +1,2 @@
+execute if score @s BlockId matches ..619 run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/616-619
+execute if score @s BlockId matches 620.. run function gunivers-lib:object/convert/child/id_to_ridding_falling_block/nodes/620-623

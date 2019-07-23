@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 130 run summon falling_block ~ ~ ~ {BlockState:{Name:"cobblestone_wall"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 131 run summon falling_block ~ ~ ~ {BlockState:{Name:"cobweb"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 12 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_trapdoor
-execute if score @s ObjectId matches 13 run replaceitem entity @e[tag=setHeadSlot] armor.head air

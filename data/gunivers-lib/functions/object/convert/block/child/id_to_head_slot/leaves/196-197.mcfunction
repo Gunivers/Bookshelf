@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 196 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_tube_coral
+execute if score @s BlockId matches 197 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_tube_coral_block

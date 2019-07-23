@@ -29,7 +29,7 @@ tellraw @s ["",{"text":"            But you can help us create more!","color":"g
 tellraw @s ["",{"text":"            Just join us on our ","color":"gray"},{"text":"[Discord server]","color":"dark_aqua","clickEvent":{"action":"open_url","value":"https://discord.gg/E8qq6tN"},"hoverEvent":{"action":"show_text","value":"Click to join our Discord"}}]
 tellraw @s ["",{"text":"            ","color":"gray"}]
 
-execute as @e[tag=Glib_Example_System] at @s run function gunivers-lib:object/convert/id_to_block
+execute as @e[tag=Glib_Example_System] at @s run function gunivers-lib:object/convert/block/id_to_block
 kill @e[tag=Glib_Example_System]
 
 execute if entity @s[tag=Glib_Charge_BlackHole_System] run function gunivers-lib:utils/menu/creator/example_systems/blackhole

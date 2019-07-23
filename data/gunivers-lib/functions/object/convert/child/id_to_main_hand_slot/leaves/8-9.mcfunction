@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 8 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_sapling
-execute if score @s ObjectId matches 9 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_sign

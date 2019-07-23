@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 16 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s BlockId matches 17 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand allium

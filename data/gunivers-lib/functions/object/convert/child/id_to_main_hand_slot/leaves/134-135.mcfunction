@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 134 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand comparator
-execute if score @s ObjectId matches 135 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand composter

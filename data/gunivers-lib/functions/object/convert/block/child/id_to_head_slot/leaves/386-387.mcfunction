@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 386 run replaceitem entity @e[tag=setHeadSlot] armor.head mossy_stone_brick_wall
+execute if score @s BlockId matches 387 run replaceitem entity @e[tag=setHeadSlot] armor.head air

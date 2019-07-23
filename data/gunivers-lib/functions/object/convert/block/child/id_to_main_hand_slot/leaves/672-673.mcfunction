@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 672 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s BlockId matches 673 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand yellow_wool

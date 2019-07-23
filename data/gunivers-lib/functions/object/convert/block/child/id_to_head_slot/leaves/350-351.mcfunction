@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 350 run replaceitem entity @e[tag=setHeadSlot] armor.head lily_pad
+execute if score @s BlockId matches 351 run replaceitem entity @e[tag=setHeadSlot] armor.head lime_banner

@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 378 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
-execute if score @s ObjectId matches 379 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_cobblestone

@@ -1,0 +1,2 @@
+execute if score @s BlockId matches 76 run summon falling_block ~ ~ ~ {BlockState:{Name:"bone_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 77 run summon falling_block ~ ~ ~ {BlockState:{Name:"bookshelf"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}

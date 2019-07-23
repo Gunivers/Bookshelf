@@ -1,2 +1,0 @@
-execute if score @s ObjectId matches 560 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sea_lantern
-execute if score @s ObjectId matches 561 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sea_pickle
