@@ -39,4 +39,4 @@ kill @e[tag=Glib_Pathfind_Target]
 kill @e[tag=Glib_Pathfind_Source]
 
 execute if entity @s[tag=!Debug] run kill @e[tag=Glib_Pathfind,tag=!Glib_Pathfind_Rewind]
-execute if entity @s[tag=!Debug] as @e[tag=Glib_Pathfind] run data merge entity @s {ArmorItems:[{},{},{},{id:"air",Count:1b}]}
+execute if entity @s[tag=!Debug] as @e[tag=Glib_Pathfind] run data modify entity @s {ArmorItems:[{},{},{},{id:"air",Count:1b}]}
