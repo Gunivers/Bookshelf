@@ -9,6 +9,7 @@ scoreboard players operation @s Var3 < @e[tag=Glib_Pathfind_Rewind_Check] PathCo
 
 execute as @e[tag=Glib_Pathfind_Rewind_Check] if score @s PathCost = @e[tag=Glib_Pathfind_Rewind_Head,limit=1] Var3 run tag @s add Glib_Pathfind_Rewind_Head
 
+
 tag @s remove Glib_Pathfind_Rewind_Head
 tag @e remove Glib_Pathfind_Rewind_Check
 

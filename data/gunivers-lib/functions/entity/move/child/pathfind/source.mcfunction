@@ -1,5 +1,4 @@
 scoreboard players set @s PathCost 0
-scoreboard players set @e[tag=Glib_Pathfind_Target] Var2 500
 
 # Loop if locations doesn't match
 function gunivers-lib:entity/move/config/pathfind/possible_moves/main
