@@ -9,6 +9,20 @@
 # INPUT:
 # - TargetId
 
+# OUTPUT:
+# - Glib_R_LocX
+# - Glib_R_LocY
+# - Glib_R_LocZ
+
+# - Glib_L_LocX
+# - Glib_L_LocY
+# - Glib_L_LocZ
+
+# - Glib_R_OriV
+# - Glib_R_OriH
+
+# - Glib_Link_Parent
+
 # NOTE:
 # @s must have TargetId defined (equal to another entity id)
 

@@ -8,7 +8,6 @@
 
 # INIT:
 scoreboard objectives add Var1 dummy
-function gunivers-lib:utils/import/constant
 
 # OUTPUT:
 # - Temperature(score dummy)
