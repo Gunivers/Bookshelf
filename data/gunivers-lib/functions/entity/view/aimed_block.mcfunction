@@ -16,6 +16,9 @@
 # INIT:
 scoreboard objectives add Var1 dummy
 
+# CONFIG: Var1 -> Range*10 (10 blocs -> Var1 = 100): Max distance limit for raycast
+scoreboard players set @s[tag=Glib_Override_Config] Var1 100
+
 # CODE:
 #____________________________________________________________________________________________________
 
@@ -28,8 +31,8 @@ tp @e[tag=NewAimedBlock] @s
 execute at @s run tp @e[tag=NewAimedBlock] ~ ~1.7 ~
 
 # CONFIG: Var1 -> Range*10 (10 blocs -> Var1 = 100)
-scoreboard players set @e[tag=NewAimedBlock] Var1 100
-# END CONFIG
+scoreboard players operation @e[tag=NewAimedBlock] Var1 = @s Var1
+
 execute as @e[tag=NewAimedBlock] at @s run function gunivers-lib:entity/view/child/aimed_block_raycast
 execute as @e[tag=NewAimedBlock] at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 tag @e remove NewAimedBlock
