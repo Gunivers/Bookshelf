@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 480 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_orange_tulip"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 481 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_oxeye_daisy"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 480 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_orange_tulip"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 481 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_oxeye_daisy"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

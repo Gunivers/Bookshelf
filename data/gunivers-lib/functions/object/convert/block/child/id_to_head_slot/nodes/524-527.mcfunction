@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..525 run function gunivers-lib:object/convert/child/id_to_head_slot/leaves/524-525
-execute if score @s BlockId matches 526.. run function gunivers-lib:object/convert/child/id_to_head_slot/leaves/526-527
+execute if score @s BlockId matches ..525 run function gunivers-lib:object/convert/block/child/id_to_head_slot/leaves/524-525
+execute if score @s BlockId matches 526.. run function gunivers-lib:object/convert/block/child/id_to_head_slot/leaves/526-527

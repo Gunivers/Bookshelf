@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 432 run summon falling_block ~ ~ ~ {BlockState:{Name:"packed_ice"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 433 run summon falling_block ~ ~ ~ {BlockState:{Name:"peony"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 432 run summon falling_block ~ ~ ~ {BlockState:{Name:"packed_ice"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 433 run summon falling_block ~ ~ ~ {BlockState:{Name:"peony"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

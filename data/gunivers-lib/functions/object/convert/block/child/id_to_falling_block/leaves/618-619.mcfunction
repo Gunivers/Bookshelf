@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 618 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_log"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 619 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_wood"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 618 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 619 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_oak_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

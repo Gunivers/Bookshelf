@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..599 run function gunivers-lib:object/convert/child/id_to_falling_block/nodes/592-599
-execute if score @s BlockId matches 600.. run function gunivers-lib:object/convert/child/id_to_falling_block/nodes/600-607
+execute if score @s BlockId matches ..599 run function gunivers-lib:object/convert/block/child/id_to_falling_block/nodes/592-599
+execute if score @s BlockId matches 600.. run function gunivers-lib:object/convert/block/child/id_to_falling_block/nodes/600-607

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 180 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_brain_coral_block"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 181 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_brain_coral_fan"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 180 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_brain_coral_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 181 run summon falling_block ~ ~ ~ {BlockState:{Name:"dead_brain_coral_fan"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

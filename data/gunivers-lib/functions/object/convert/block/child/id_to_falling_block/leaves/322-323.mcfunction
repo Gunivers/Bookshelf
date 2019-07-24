@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 322 run summon falling_block ~ ~ ~ {BlockState:{Name:"lever"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 323 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_banner"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 322 run summon falling_block ~ ~ ~ {BlockState:{Name:"lever"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 323 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

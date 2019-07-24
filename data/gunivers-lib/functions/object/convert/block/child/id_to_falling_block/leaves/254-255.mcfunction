@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 254 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 255 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete_powder"},Tags:["Glib","fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 254 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s BlockId matches 255 run summon falling_block ~ ~ ~ {BlockState:{Name:"gray_concrete_powder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
