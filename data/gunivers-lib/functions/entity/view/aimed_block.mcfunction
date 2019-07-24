@@ -11,7 +11,7 @@
 # - Vars (module)
 
 # NOTE:
-#It was excessively more impressive in 1.12 ...
+#Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard ParentId and get the tag NewAimedBlock.
 
 # INIT:
 scoreboard objectives add Var1 dummy
