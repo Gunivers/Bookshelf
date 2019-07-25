@@ -27,8 +27,8 @@ execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tag
 tp @e[tag=NewRayCastEntity] @s
 execute at @s run tp @e[tag=NewRayCastEntity] ~ ~1.7 ~
 
-# CONFIG: Var1 -> Range*10 (10 blocks -> Var1 = 100)
-scoreboard players operation @e[tag=NewRayCastEntity] Var1 = @s Var1
+# CONFIG: Var1 -> Range*10 (10 blocs -> Var1 = 100)
+scoreboard players set @e[tag=NewRayCastEntity] Var1 1000
 # END CONFIG
 execute as @e[tag=NewRayCastEntity] at @s run function gunivers-lib:entity/view/child/aimed_entity_raycast
 execute as @e[tag=NewRayCastEntity] at @s run tag @e[tag=!NewRayCastEntity,distance=..0.1,sort=nearest,limit=1] add AimedEntity
