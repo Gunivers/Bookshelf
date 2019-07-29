@@ -14,4 +14,3 @@
 # CODE:
 
 data remove entity @e[tag=test,limit=1] ArmorItems[2].tag.fifo
-data remove entity @e[tag=test,limit=1] ArmorItems[2].tag.fifo_size

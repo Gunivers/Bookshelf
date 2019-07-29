@@ -16,4 +16,4 @@
 
 # CODE:
 
-execute store result score @s Var1 run data get entity @s ArmorItems[2].tag.fifo_size
+execute store result score @s Var1 run data get entity @s ArmorItems[2].tag.fifo
