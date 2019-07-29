@@ -112,6 +112,8 @@ scoreboard players set 118998 Constant 118998
 scoreboard players set 16807 Constant 16807
 scoreboard players set 307 Constant 307
 
+scoreboard players set 24000 Constant 24000
+
 #Random CLG
 scoreboard players set 17364 Constant 17364
 scoreboard players set 65521 Constant 65521

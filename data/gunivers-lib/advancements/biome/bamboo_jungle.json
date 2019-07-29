@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "bamboo_jungle": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:bamboo_jungle"
+			}
+			}
+        },
+		"rewards": {
+			"function": "gunivers-lib:entity/location/biome/bamboo_jungle"
+		
+		
+    }
+}

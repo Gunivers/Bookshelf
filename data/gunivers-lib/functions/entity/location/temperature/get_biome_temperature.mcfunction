@@ -3,8 +3,8 @@
 
 # AUTHOR: theogiraudet
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# VERSION: 1.1
+# MINECRAFT: 1.14
 
 # INIT:
 scoreboard objectives add Biome dummy
@@ -91,3 +91,5 @@ scoreboard players set @s[scores={Biome=69}] Temperature 110000000
 scoreboard players set @s[scores={Biome=70}] Temperature 200000000
 scoreboard players set @s[scores={Biome=71}] Temperature 200000000
 scoreboard players set @s[scores={Biome=72}] Temperature 200000000
+scoreboard players set @s[scores={Biome=73}] Temperature 95000000
+scoreboard players set @s[scores={Biome=74}] Temperature 95000000
