@@ -12,6 +12,9 @@ scoreboard players add @a Data 1
 execute as @a[tag=Glib_Init_Menu,scores={Data=1}] at @s run function gunivers-lib:utils/menu/main
 function gunivers-lib:utils/cache/cache_loop
 
+# Loop Schedule
+execute as @e[tag=HeadGlibCache] at @s run function gunivers-lib:utils/schedule/child/loop_schedule
+
 # Debug recorder
 execute as @a[tag=Glib_Debug_Stick] run function gunivers-lib:utils/menu/debug/debug_record
 execute as @p[tag=Glib_Debug,tag=!Glib_Init_Menu,tag=Glib_Debug_Disp_Tick] run function gunivers-lib:utils/menu/debug/display_tick
