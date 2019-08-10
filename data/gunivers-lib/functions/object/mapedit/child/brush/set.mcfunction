@@ -1,0 +1,1 @@
+execute at @s run function gunivers-lib:object/convert/block/id_to_block
