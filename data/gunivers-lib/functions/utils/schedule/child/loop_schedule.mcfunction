@@ -13,7 +13,7 @@
 #Get GameTick
 execute store result score @s Var0 run time query gametime
 
-function gunivers-lib:utils/cache/select_command_block
+function gunivers-lib:core/cache/select_command_block
 
 #Compare first scheduled command to the gametick
 execute as @e[tag=HeadGlibCache] at @s store result score @s Var1 run data get block ~ ~ ~2 RecordItem.tag.ScheduleCommands[0].GameTick 1

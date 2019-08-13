@@ -7,15 +7,15 @@
 # MINECRAFT: 1.14
 
 # REQUIEREMENTS:
-# - function gunivers-lib:utils/color/init
+# - gunivers-lib:utils/color/child/init (function)
 
 # INPUT:
-# - R (scoreboard dummy) Red component
-# - G (scoreboard dummy) Green component
-# - B (scoreboard dummy) Blue component
+# - R ~ Red component
+# - G ~ Green component
+# - B ~ Blue component
 
 # OUTPUT:
-# - Output (scoreboard dummy)
+# - Output
 
 # NOTE:
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.

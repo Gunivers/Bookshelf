@@ -1,5 +1,5 @@
 {
  "values": [
-	"gunivers-lib:utils/loop"
+	"gunivers-lib:core/loop"
  ]
 }

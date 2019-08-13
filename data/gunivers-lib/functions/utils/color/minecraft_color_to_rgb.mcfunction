@@ -7,15 +7,15 @@
 # MINECRAFT: 1.14
 
 # REQUIEREMENTS:
-# - function gunivers-lib:utils/color/init
+# - gunivers-lib:utils/color/child/init (function)
 
 # INPUT:
-# - Var1 (scoreboard dummy)
+# - Var1
 
 # OUTPUT:
-# - R (scoreboard dummy) Red component
-# - G (scoreboard dummy) Green component
-# - B (scoreboard dummy) Blue component
+# - R ~ Red component
+# - G ~ Green component
+# - B ~ Blue component
 
 # NOTE:
 # Convert Minecraft Color to RGB Color.

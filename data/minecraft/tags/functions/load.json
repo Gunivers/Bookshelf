@@ -1,5 +1,5 @@
 {
  "values": [
-	"gunivers-lib:utils/init"
+	"gunivers-lib:core/init"
  ]
 }

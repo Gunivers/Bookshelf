@@ -32,7 +32,7 @@ scoreboard objectives add Var2 dummy
 execute as @e[tag=ASGlibCache] if data entity @s ArmorItems[0].tag.Buffer.Id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
 
 execute as @e[tag=Valid] run function gunivers-lib:utils/schedule/child/compute_tick
-execute as @e[tag=Valid] run function gunivers-lib:utils/cache/select_jukebox
+execute as @e[tag=Valid] run function gunivers-lib:core/cache/select_jukebox
 
 execute as @e[tag=Valid] at @e[tag=HeadGlibCache] run data modify block ~ ~ ~ ArmorItems[0].tag.Buffer2 set value []
 execute as @e[tag=Valid] at @e[tag=HeadGlibCache] run data modify entity @s ArmorItems[0].tag.Buffer2 set from block ~ ~ ~ RecordItem.tag.ScheduleCommands

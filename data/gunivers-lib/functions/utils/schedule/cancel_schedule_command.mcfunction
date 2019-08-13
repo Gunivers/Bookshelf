@@ -11,7 +11,7 @@
 # NOTE: Allows to cancel scheduled command by the ID defined in the input. If several scheduled commands have the same ID, cancels the first occurrence found.
 
 # CODE:
-function gunivers-lib:utils/cache/select_jukebox
+function gunivers-lib:core/cache/select_jukebox
 
 execute at @e[tag=HeadGlibCache] run data modify entity @e[tag=ASGlibCache,limit=1] ArmorItems[0].tag.Buffer2 set from block ~ ~ ~ RecordItem.tag.ScheduleCommands
 execute as @e[tag=ASGlibCache] run data modify entity @s ArmorItems[0].tag.Buffer3 set value []
