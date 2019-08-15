@@ -2,7 +2,7 @@
 #   Init Menu Refresh Frenquency (20 = 1 seconde). If you use the lib in solo, you can refresh the menu all ticks.
 
 # Import constants
-function gunivers-lib:utils/import/constants
+function gunivers-lib:core/import/constants
 
 # Init menu refresh
 scoreboard objectives add Data dummy
