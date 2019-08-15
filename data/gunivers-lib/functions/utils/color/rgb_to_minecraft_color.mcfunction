@@ -15,15 +15,18 @@
 # - B ~ Blue component
 
 # OUTPUT:
-# - Output
+# - Res
+
+#INIT:
+function gunivers-lib:utils/color/init
 
 # NOTE:
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.
 
 # CODE:
-scoreboard players operation @s Output = @s R
-scoreboard players operation @s Output *= 65536 Constant
+scoreboard players operation @s Res = @s R
+scoreboard players operation @s Res *= 65536 Constant
 scoreboard players operation @s Var1 = @s G
 scoreboard players operation @s Var1 *= 256 Constant
-scoreboard players operation @s Output += @s Var1
-scoreboard players operation @s Output += @s B
+scoreboard players operation @s Res += @s Var1
+scoreboard players operation @s Res += @s B
