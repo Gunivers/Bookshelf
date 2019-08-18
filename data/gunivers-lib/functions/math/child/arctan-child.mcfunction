@@ -1,4 +1,4 @@
-# NAME: Arctan Child
+﻿# NAME: Arctan Child
 # CHILD OF: gunivers-lib:math/arctan
  
 # AUTHOR: KubbyDev 
@@ -39,7 +39,7 @@ scoreboard players operation @s Res *= 640 Constant
 scoreboard players operation @s Res += @s Var2
 scoreboard players operation @s Res *= 785 Constant
 
-#D�nominateur
+#Dénominateur
 scoreboard players operation @s Var2 = @s Var1
 scoreboard players operation @s Var2 *= 640 Constant
 

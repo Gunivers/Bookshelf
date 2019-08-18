@@ -20,9 +20,10 @@
 # NOTE:
 # Convert Minecraft Color to RGB Color.
 
-# CODE:
+#INIT:
+function gunivers-lib:utils/color/init
 
-# Red
+# CODE:
 scoreboard players operation @s R = @s Var1
 scoreboard players operation @s R /= 65536 Constant
 scoreboard players operation @s R %= 256 Constant
