@@ -3,6 +3,8 @@
 
 # AUTHOR: LeiRoF
 
+# CONTRIBUTOR: Syl2010
+
 # VERSION: 1.0
 # MINECRAFT: 1.13
 

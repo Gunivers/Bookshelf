@@ -1,7 +1,9 @@
 # NAME: Aimed block
 # PATH: gunivers-lib:entity/view/child/aimed_block_raycast
 
-#CHILD OF: gunivers-lib:entity/view/aimed_block
+# CONTRIBUTOR: Syl2010
+
+# CHILD OF: gunivers-lib:entity/view/aimed_block
 
 # CODE:
 tp @s ^ ^ ^0.1
