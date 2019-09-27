@@ -1,4 +1,4 @@
-﻿# NAME: Is in Cave
+# NAME: Is in Cave
 # PATH: gunivers-lib:entity/location/is_in_cave
 
 # AUTHOR: theogiraudet

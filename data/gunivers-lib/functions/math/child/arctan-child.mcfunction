@@ -1,4 +1,4 @@
-﻿# NAME: Arctan Child
+# NAME: Arctan Child
 # CHILD OF: gunivers-lib:math/arctan
  
 # AUTHOR: KubbyDev 
