@@ -8,7 +8,7 @@
 scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var7
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/forward/loop2
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/forward/loop2
 # -----
 
 

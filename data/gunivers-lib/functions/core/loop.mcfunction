@@ -10,10 +10,10 @@ scoreboard players set @a[scores={Data=5..}] Data 0
 scoreboard objectives add Data dummy
 scoreboard players add @a Data 1
 execute as @a[tag=Glib_Init_Menu,scores={Data=1}] at @s run function gunivers-lib:core/menu/main
-function gunivers-lib:utils/cache/cache_loop
+function gunivers-lib:core/utils/cache/cache_loop
 
 # Loop Schedule
-execute as @e[tag=HeadGlibCache] at @s run function gunivers-lib:utils/schedule/child/loop_schedule
+execute as @e[tag=HeadGlibCache] at @s run function gunivers-lib:core/utils/schedule/child/loop_schedule
 
 # Debug recorder
 execute as @a[tag=Glib_Debug_Stick] run function gunivers-lib:core/menu/debug/debug_record

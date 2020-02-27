@@ -24,7 +24,7 @@ scoreboard players set @s Var5 0
 
 # CODE:
 
-execute if score @s dmAddDamage matches 1.. run function gunivers-lib:utils/durability_modifier/child/unbreaking_calc_loop
+execute if score @s dmAddDamage matches 1.. run function gunivers-lib:core/utils/durability_modifier/child/unbreaking_calc_loop
 
 scoreboard players operation @s dmAddDamage = @s Var5
 scoreboard players reset @s Var5

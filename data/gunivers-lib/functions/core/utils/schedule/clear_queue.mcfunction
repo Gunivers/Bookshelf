@@ -9,5 +9,5 @@
 # NOTE: Clear the schedule queue.
 
 # CODE:
-function gunivers-lib:core/cache/select_jukebox
+function gunivers-lib:core/utils/cache/select_jukebox
 execute at @e[tag=HeadGlibCache] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands set value []

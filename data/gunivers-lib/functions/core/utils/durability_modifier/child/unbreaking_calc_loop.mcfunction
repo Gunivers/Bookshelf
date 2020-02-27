@@ -30,4 +30,4 @@ execute if entity @s[nbt={SelectedItem:{tag:{Enchantments:[{lvl:2s,id:"minecraft
 execute if entity @s[nbt={SelectedItem:{tag:{Enchantments:[{lvl:3s,id:"minecraft:unbreaking"}]}}}] if score @s Res matches ..25 run scoreboard players add @s Var5 1
 
 scoreboard players remove @s dmAddDamage 1
-execute if score @s dmAddDamage matches 1.. run function gunivers-lib:utils/durability_modifier/child/unbreaking_calc_loop
+execute if score @s dmAddDamage matches 1.. run function gunivers-lib:core/utils/durability_modifier/child/unbreaking_calc_loop

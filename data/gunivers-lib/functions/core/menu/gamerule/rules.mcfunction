@@ -19,7 +19,7 @@
 
 
 # CODE:
-function gunivers-lib:utils/import/data
+function gunivers-lib:core/utils/import/data
 
 tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Menu_Rules"},"hoverEvent":{"action":"show_text","value":"Exit Game Rules"}},{"text":"   ","color":"gold"},{"text":"Game Rules","underlined":true,"color":"gold"},{"text":"\n "}]
 

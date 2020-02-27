@@ -15,7 +15,7 @@
 # If the executing entity is not a valid Memory, do nothing.
 
 #INIT:
-function gunivers-lib:utils/memory/child/init
+function gunivers-lib:core/utils/memory/child/init
 
 # CODE:
 
@@ -23,7 +23,7 @@ function gunivers-lib:utils/memory/child/init
 execute if entity @s[tag=Memory,tag=Glib] if data entity @s ArmorItems[0].tag.Buffer1 if data entity @s ArmorItems[0].tag.Buffer2 run tag @s add Valid
 execute if entity @s[tag=Valid] run data modify entity @s ArmorItems[0].tag.Buffer3 set value []
 #Rec
-execute if entity @s[tag=Valid] run function gunivers-lib:utils/memory/child/save_rec
+execute if entity @s[tag=Valid] run function gunivers-lib:core/utils/memory/child/save_rec
 
 #Refill the memory
 execute if entity @s[tag=Valid] run data modify entity @s ArmorItems[0].tag.Memory prepend from entity @s ArmorItems[0].tag.Buffer3[]

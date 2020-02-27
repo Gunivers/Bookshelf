@@ -18,7 +18,7 @@
 # - Res
 
 #INIT:
-function gunivers-lib:utils/color/init
+function gunivers-lib:core/utils/color/init
 
 # NOTE:
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.

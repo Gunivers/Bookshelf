@@ -52,7 +52,7 @@ scoreboard players operation @s VectorSpeedLocal = @s VectorSpeed
 
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/local_vectors/convert_from_vectors/1
+execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/local_vectors/convert_from_vectors/1
 ### END DEBUG
 
 # Cos(Theta)
@@ -76,7 +76,7 @@ function gunivers-lib:math/sin
 scoreboard players operation @s Var7 = @s Res
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/local_vectors/convert_from_vectors/2
+execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/local_vectors/convert_from_vectors/2
 ### END DEBUG
 
 
@@ -137,5 +137,5 @@ scoreboard players operation @s VectorFront -= @s Var1
 scoreboard players set @s VectorSpeed 1000
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/local_vectors/convert_from_vectors/3
+execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/local_vectors/convert_from_vectors/3
 ### END DEBUG

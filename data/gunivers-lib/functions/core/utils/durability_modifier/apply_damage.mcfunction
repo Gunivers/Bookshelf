@@ -26,12 +26,12 @@ scoreboard players set @s Var5 0
 scoreboard objectives add dmAddDamage dummy
 scoreboard players set @s Var5 0
 
-execute unless entity @s[nbt={SelectedItem:{tag:{}}}] run function gunivers-lib:utils/durability_modifier/child/fix_missing_tag
+execute unless entity @s[nbt={SelectedItem:{tag:{}}}] run function gunivers-lib:core/utils/durability_modifier/child/fix_missing_tag
 
 execute store result score @s Var5 run data get entity @s SelectedItem.tag.Damage
 scoreboard players operation @s Var5 += @s dmAddDamage
 execute store result entity @s SelectedItem.tag.Damage int 1 run scoreboard players get @s Var5
 
 scoreboard players reset @s Var5
-execute at @s run function gunivers-lib:utils/durability_modifier/child/fix_break
+execute at @s run function gunivers-lib:core/utils/durability_modifier/child/fix_break
 scoreboard players set @s dmAddDamage 0

@@ -17,6 +17,6 @@
 # If the executing entity is not a valid Memory, gives an arbitrary result.
 
 # CODE:
-function gunivers-lib:utils/memory/get
+function gunivers-lib:core/utils/memory/get
 execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res 1
 execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res 0

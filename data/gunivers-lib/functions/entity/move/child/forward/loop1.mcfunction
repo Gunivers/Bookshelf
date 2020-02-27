@@ -19,7 +19,7 @@ tag @s[scores={Var3=..-1001}] add MoveLoop
 
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/forward/loop1
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/forward/loop1
 # -----
 
 

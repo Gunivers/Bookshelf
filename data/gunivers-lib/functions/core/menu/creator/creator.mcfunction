@@ -22,5 +22,5 @@ tellraw @s ["",{"text":"      ","color":"gray"}]
 
 execute as @s[tag=Glib_Menu_Examples] at @s run function gunivers-lib:core/menu/creator/examples
 
-execute as @s[tag=Glib_Menu_Cache_Ghost] at @s run function gunivers-lib:core/cache/generate_module_ghost
+execute as @s[tag=Glib_Menu_Cache_Ghost] at @s run function gunivers-lib:core/utils/cache/generate_module_ghost
 execute as @s[tag=Glib_Menu_Platform_Confirm] at @s run function gunivers-lib:core/menu/creator/generate_base_confirm

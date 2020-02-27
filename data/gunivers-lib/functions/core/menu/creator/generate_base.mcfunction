@@ -2,7 +2,7 @@ tag @s remove Glib_Menu_Platform_Confirm
 
 execute at @s run setworldspawn ~ ~ ~
 
-function gunivers-lib:utils/import/data
+function gunivers-lib:core/utils/import/data
 function gunivers-lib:core/import/constants
 
 execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Glib_Generate_Base"]}

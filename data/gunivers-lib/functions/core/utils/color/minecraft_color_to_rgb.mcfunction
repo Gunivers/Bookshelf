@@ -21,7 +21,7 @@
 # Convert Minecraft Color to RGB Color.
 
 #INIT:
-function gunivers-lib:utils/color/init
+function gunivers-lib:core/utils/color/init
 
 # CODE:
 scoreboard players operation @s R = @s Var1

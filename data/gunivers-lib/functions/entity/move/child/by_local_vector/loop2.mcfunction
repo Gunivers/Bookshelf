@@ -10,7 +10,7 @@ scoreboard players operation @s[scores={Var4=1..}] Var2 = @s Var8
 scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/by_local_vector/3
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/by_local_vector/3
 # -----
 
 execute at @s run function gunivers-lib:entity/move/child/by_local_vector/apply

@@ -36,7 +36,7 @@ scoreboard players operation @s Var3 *= @s VectorSpeed
 scoreboard players operation @s Var3 /= 1000 Constant
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/forward/main
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/forward/main
 # -----
 
 scoreboard players set @s Var4 1

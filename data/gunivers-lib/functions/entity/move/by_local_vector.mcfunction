@@ -47,7 +47,7 @@ scoreboard players operation @s Var2 /= 1000 Constant
 scoreboard players operation @s Var3 /= 1000 Constant
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/by_local_vector/1
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/by_local_vector/1
 # -----
 
 
@@ -64,7 +64,7 @@ scoreboard players add @s[tag=FactorIncrease] Var4 1
 
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:utils/debug/entity/move/by_local_vector/2
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function gunivers-lib:core/utils/debug/entity/move/by_local_vector/2
 # -----
 
 execute if entity @s[tag=FactorIncrease] run function gunivers-lib:entity/move/child/by_local_vector/loop1
