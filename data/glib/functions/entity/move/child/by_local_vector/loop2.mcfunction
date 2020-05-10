@@ -1,10 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_local_vector/loop2
-
-# CHILD OF: Glib:Entity/move/Child/by_local_vector
-
-# CODE:
-
 scoreboard players operation @s[scores={Var4=1..}] Var1 = @s Var7
 scoreboard players operation @s[scores={Var4=1..}] Var2 = @s Var8
 scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var9

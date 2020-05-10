@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/flower_forest"
+			"function": "glib:entity/location/child/biome/flower_forest"
 		
 		
     }

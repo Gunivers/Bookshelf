@@ -1,14 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_vector/collision_detect_neg_x
-
-# CHILD OF: Glib:Entity/move/by_vector
-
-# CODE:
-
-#----------------#
-# Collision on X #
-#----------------#
-
 tag @s add CollisionY
 
 summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Tmp_Collision_Detection"]}

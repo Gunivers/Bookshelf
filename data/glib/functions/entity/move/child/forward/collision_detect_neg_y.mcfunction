@@ -1,14 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/forward/collision_detect_neg_y
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:
-
-#----------------#
-# Collision on Y #
-#----------------#
-
 tag @s add CollisionLocalY
 
 execute if block ~ ~-1 ~ air run tag @s remove CollisionLocalY

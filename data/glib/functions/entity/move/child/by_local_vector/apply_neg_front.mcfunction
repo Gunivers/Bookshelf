@@ -1,12 +1,3 @@
-# NAME: Move Entity By Local Vector
-# PATH: glib:entity/move/child/by_local_vector/apply
-
-# CHILD OF: glib:entity/move/by_local_vector
-
-# CODE:
-
-# Front negative
-
 execute at @s run tp @s[scores={Var3=..-512}] ^ ^ ^-0.512
 scoreboard players add @s[scores={Var3=..-512}] Var3 512
 execute at @s run tp @s[scores={Var3=..-256}] ^ ^ ^-0.256

@@ -1,13 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_vector/collision
-
-# CHILD OF: Glib:Entity/move/by_vector
-
-# CODE:
-
-#----------------#
-# Collision on X #
-#----------------#
 execute as @s[scores={Collision=1..}] at @s run function glib:entity/move/child/by_vector/collision_detect_x
 tag @s[scores={Collision=1..},tag=CollisionX] add Collision
 
@@ -42,5 +32,3 @@ execute if entity @s[tag=CollisionZ,tag=CollisionY,tag=!Glib_Back_to_last_pos] r
 scoreboard players set @s[tag=Collision] Var4 0
 
 execute if entity @s[tag=Collision] run function glib:entity/move/config/collision_reactions/_main_
-
-

@@ -1,10 +1,3 @@
-# NAME: Move Entity Forward
-# PATH: Glib:Entity/move/child/forward/loop1
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:____________________________________________________________________________________________________
-
 tag @s remove FactorIncrease
 
 tag @s[scores={Var3=1001..}] add FactorIncrease
@@ -24,4 +17,3 @@ execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] 
 
 
 execute as @s[tag=MoveLoop] at @s run function glib:entity/move/child/forward/loop1
-

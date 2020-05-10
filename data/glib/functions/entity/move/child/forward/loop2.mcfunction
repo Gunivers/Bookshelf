@@ -1,10 +1,3 @@
-# NAME: Move Entity Forward
-# PATH: Glib:Entity/move/child/forward/loop2
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:
-
 scoreboard players operation @s[scores={Var4=1..}] Var3 = @s Var7
 
 # DEBUG

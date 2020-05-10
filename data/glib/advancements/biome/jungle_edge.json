@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/jungle_edge"
+			"function": "glib:entity/location/child/biome/jungle_edge"
 		
 		
     }

@@ -1,16 +1,18 @@
-# NAME: Move Entity Forward
-# PATH: glib:entity/move/forward
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/move/forward
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
+# Note:
 
-# INPUT:
-# - VectorFront (score dummy)
-# - VectorSpeedLocal (score dummy)
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -26,8 +28,11 @@ scoreboard objectives add Collision dummy
 scoreboard objectives add VectorLeft dummy
 scoreboard objectives add VectorSpeedLocal dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Var3 = @s VectorFront
 
@@ -42,11 +47,8 @@ execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Init_Menu] 
 scoreboard players set @s Var4 1
 tag @s add FactorIncrease
 
-
 execute if entity @s[tag=FactorIncrease] run function glib:entity/move/child/forward/loop1
 
 scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var3
 
 function glib:entity/move/child/forward/loop2
-
-

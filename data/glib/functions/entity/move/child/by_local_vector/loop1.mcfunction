@@ -1,9 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_local_vector/loop1
-
-# CHILD OF: Glib:Entity/move/Child/by_local_vector
-
-# CODE:
 tag @s remove FactorIncrease
 
 tag @s[scores={Var1=1001..}] add FactorIncrease
@@ -33,4 +27,3 @@ tag @s[scores={Var2=..-1001}] add MoveLoop
 tag @s[scores={Var3=..-1001}] add MoveLoop
 
 execute as @s[tag=MoveLoop] at @s run function glib:entity/move/child/by_local_vector/loop1
-

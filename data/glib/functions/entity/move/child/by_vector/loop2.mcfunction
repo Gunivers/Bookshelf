@@ -1,10 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_vector/loop2
-
-# CHILD OF: Glib:Entity/move/by_vector
-
-# CODE:
-
 # DEBUG
 execute at @s[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
 # END DEBUG

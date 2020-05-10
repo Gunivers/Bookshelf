@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/wooded_badlands_plateau"
+			"function": "glib:entity/location/child/biome/wooded_badlands_plateau"
 		
 		
     }

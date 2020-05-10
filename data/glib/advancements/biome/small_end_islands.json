@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/small_end_islands"
+			"function": "glib:entity/location/child/biome/small_end_islands"
 		
 		
     }

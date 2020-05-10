@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/bamboo_jungle"
+			"function": "glib:entity/location/child/biome/bamboo_jungle"
 		
 		
     }

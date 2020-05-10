@@ -1,18 +1,18 @@
-# NAME: Move Entity By Vector
-# PATH: glib:entity/move/by_local_vector
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/move/by_local_vector
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
+# Note:
 
-# INPUT:
-# - VectorLeft (score dummy)
-# - VectorUp (score dummy)
-# - VectorFront (score dummy)
-# - VectorSpeedLocal (score dummy)
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -30,9 +30,11 @@ scoreboard objectives add VectorUp dummy
 scoreboard objectives add VectorFront dummy
 scoreboard objectives add VectorSpeedLocal dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
 
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Var1 = @s VectorLeft
 scoreboard players operation @s Var2 = @s VectorUp
@@ -50,7 +52,6 @@ scoreboard players operation @s Var3 /= 1000 Constant
 execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function glib:core/utils/debug/entity/move/by_local_vector/1
 # -----
 
-
 scoreboard players set @s Var4 0
 
 tag @s remove FactorIncrease
@@ -61,7 +62,6 @@ tag @s[scores={Var1=..-1001}] add FactorIncrease
 tag @s[scores={Var2=..-1001}] add FactorIncrease
 tag @s[scores={Var3=..-1001}] add FactorIncrease
 scoreboard players add @s[tag=FactorIncrease] Var4 1
-
 
 # DEBUG
 execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function glib:core/utils/debug/entity/move/by_local_vector/2
@@ -74,5 +74,3 @@ scoreboard players operation @s[scores={Var4=1..}] Var8 = @s Var2
 scoreboard players operation @s[scores={Var4=1..}] Var9 = @s Var3
 
 function glib:entity/move/child/by_local_vector/loop2
-
-

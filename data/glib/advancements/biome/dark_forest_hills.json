@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/dark_forest_hills"
+			"function": "glib:entity/location/child/biome/dark_forest_hills"
 		
 		
     }

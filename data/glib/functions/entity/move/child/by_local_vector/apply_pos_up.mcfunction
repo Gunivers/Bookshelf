@@ -1,12 +1,3 @@
-# NAME: Move Entity By Local Vector
-# PATH: glib:entity/move/child/by_local_vector/apply
-
-# CHILD OF: glib:entity/move/by_local_vector
-
-# CODE:
-
-# Up positive
-
 execute at @s run tp @s[scores={Var2=512..}] ^ ^0.512 ^
 scoreboard players remove @s[scores={Var2=512..}] Var2 512
 execute at @s run tp @s[scores={Var2=256..}] ^ ^0.256 ^

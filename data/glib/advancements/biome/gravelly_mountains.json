@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/gravelly_mountains"
+			"function": "glib:entity/location/child/biome/gravelly_mountains"
 		
 		
     }

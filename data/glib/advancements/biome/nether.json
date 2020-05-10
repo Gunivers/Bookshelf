@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/nether"
+			"function": "glib:entity/location/child/biome/nether"
 		
 		
     }

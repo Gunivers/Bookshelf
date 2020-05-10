@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/warm_ocean"
+			"function": "glib:entity/location/child/biome/warm_ocean"
 		
 		
     }

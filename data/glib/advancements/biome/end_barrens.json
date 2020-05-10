@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/end_barrens"
+			"function": "glib:entity/location/child/biome/end_barrens"
 		
 		
     }

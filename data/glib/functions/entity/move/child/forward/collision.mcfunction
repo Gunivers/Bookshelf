@@ -1,12 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/forward/collision
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:____________________________________________________________________________________________________
-
-# DETECTION
-
 execute store result score @s Var1 run data get entity @s Rotation[0] 1
 execute store result score @s Var2 run data get entity @s Rotation[1] 1
 #     Detect X

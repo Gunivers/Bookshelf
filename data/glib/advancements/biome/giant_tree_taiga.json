@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/giant_tree_taiga"
+			"function": "glib:entity/location/child/biome/giant_tree_taiga"
 		
 		
     }

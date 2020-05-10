@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/plains" 
+			"function": "glib:entity/location/child/biome/plains" 
 		
 		
     }

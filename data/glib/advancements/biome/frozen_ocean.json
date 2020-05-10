@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/frozen_ocean"
+			"function": "glib:entity/location/child/biome/frozen_ocean"
 		
 		
     }

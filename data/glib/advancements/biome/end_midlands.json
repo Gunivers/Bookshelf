@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/end_midlands"
+			"function": "glib:entity/location/child/biome/end_midlands"
 		
 		
     }

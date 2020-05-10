@@ -1,18 +1,18 @@
-# NAME: Vector to Motion
-# PATH: glib:entity/move/vector_to_motion
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/move/vector_to_motion
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
+# Note:
 
-# INPUT:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-# - VectorSpeed (score dummy)
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -22,13 +22,15 @@ scoreboard objectives add VectorY dummy
 scoreboard objectives add VectorZ dummy
 scoreboard objectives add VectorSpeed dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Var1 = @s VectorX
 scoreboard players operation @s Var2 = @s VectorY
 scoreboard players operation @s Var3 = @s VectorZ
-
 
 # Apply speed modifier
 scoreboard players operation @s Var1 *= @s VectorSpeed

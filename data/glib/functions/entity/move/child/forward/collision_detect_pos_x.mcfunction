@@ -1,14 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/forward/collision_detect_pos_x
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:
-
-#----------------#
-# Collision on X #
-#----------------#
-
 tag @s add CollisionLocalX
 
 execute if block ~1 ~ ~ air run tag @s remove CollisionLocalX

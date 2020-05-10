@@ -1,21 +1,24 @@
-# NAME: Get Location
-# PATH: glib:entity/location/get
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/get_y
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: It was excessively more impressive in 1.12...
 
-# OUTPUT:
-# - LocY (score dummy)
-
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add LocY dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 execute store result score @s LocY run data get entity @s Pos[1] 1000

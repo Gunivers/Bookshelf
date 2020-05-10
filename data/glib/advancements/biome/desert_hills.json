@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/desert_hills"
+			"function": "glib:entity/location/child/biome/desert_hills"
 		
 		
     }

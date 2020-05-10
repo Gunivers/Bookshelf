@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/sunflower_plains"
+			"function": "glib:entity/location/child/biome/sunflower_plains"
 		
 		
     }

@@ -1,9 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/by_vector/loop1
-
-# CHILD OF: Glib:Entity/move/by_vector
-
-# CODE:
 tag @s remove FactorIncrease
 
 execute if entity @s[scores={Var5=1..}] run scoreboard players operation @s Var5 *= -1 Constant
@@ -27,4 +21,3 @@ execute at @s[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] run summon falling
 
 
 execute as @s[tag=FactorIncrease] at @s run function glib:entity/move/child/by_vector/loop1
-

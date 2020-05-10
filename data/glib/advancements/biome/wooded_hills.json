@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/wooded_hills"
+			"function": "glib:entity/location/child/biome/wooded_hills"
 		
 		
     }

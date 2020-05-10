@@ -1,13 +1,3 @@
-# NAME: Move Entity By Vector
-# PATH: Glib:Entity/move/child/forward/collision_detect_neg_z
-
-# CHILD OF: Glib:Entity/move/forward
-
-# CODE:
-
-#----------------#
-# Collision on Z #
-#----------------#
 tag @s add CollisionLocalZ
 
 execute if block ~ ~ ~-1 air run tag @s remove CollisionLocalZ

@@ -1,10 +1,3 @@
-# NAME: Update Chain Unique Identifier - Plug
-# PATH: glib:entity/id/child/updatecuid-plug
-
-# CHILD OF:
-# - glib:entity/id/child/updatecuid-check
-
-# CODE:
 scoreboard players remove @e[tag=HasToMove] Id 1
 
 tag @e[scores={Id=1},tag=UpdateCUID] add CorrectCUID

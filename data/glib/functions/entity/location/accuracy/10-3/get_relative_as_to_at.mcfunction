@@ -1,20 +1,18 @@
-# NAME: Get Location
-# PATH: glib:entity/location/get
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/get_relative_as_to_at
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: It was excessively more impressive in 1.12...
 
-# OUTPUT:
-# - LocX (score dummy)
-# - LocY (score dummy)
-# - LocZ (score dummy)
-
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add Glib_R_LocX dummy
 scoreboard objectives add Glib_R_LocY dummy
 scoreboard objectives add Glib_R_LocZ dummy
@@ -23,9 +21,11 @@ scoreboard objectives add LocX dummy
 scoreboard objectives add LocY dummy
 scoreboard objectives add LocZ dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
 
+#__________________________________________________
+# CODE
 
 summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Loc_Relative"]}
 

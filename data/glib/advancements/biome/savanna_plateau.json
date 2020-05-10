@@ -8,7 +8,7 @@
 			}
         },
 		"rewards": {
-			"function": "glib:entity/location/biome/savanna_plateau"
+			"function": "glib:entity/location/child/biome/savanna_plateau"
 		
 		
     }

@@ -1,11 +1,3 @@
-# NAME: Update Chain Unique Identifier - Check
-# PATH: glib:entity/id/child/updatecuid-check
-
-# CHILD OF:
-# - glib:entity/id/updatecuid
-
-# CODE:
-#The entities with the same score as the CUID vitual player have now 0
 scoreboard players operation @e[tag=UpdateCUID] Id -= CUID Data
 
 #Catches one entity with the searched Id
