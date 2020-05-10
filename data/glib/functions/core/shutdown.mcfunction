@@ -1,18 +1,25 @@
-# NAME: Shutdown
-# PATH: glib:utils
+##__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: A~Z
+# Authors: A~Z
+# Contributors:
+# MC Version:
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
-
-# INPUT: /
-# OUTPUT: /
-
-# NOTE:
+# Original path: glib:core/shutdown
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/core
+# Note:
 # Remove the gunivers-lib trailing scores, then unload it.
 # See glib:core/clean for more.
 
-# CODE:
+#__________________________________________________
+# INIT
+
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
+
 function glib:core/clean
 datapack disable gunivers-lib

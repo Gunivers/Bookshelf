@@ -1,5 +1,3 @@
-#Import Constant
-
 # Note: This score contains useful constants like:
 # - Values from -2 to 25
 # - Trigonometric values Pi and x*Pi/4 (in degrees)
@@ -90,8 +88,8 @@ scoreboard players set 10000 Constant 10000
 scoreboard players set 18000 Constant 18000
 scoreboard players set 23026 Constant 23026
 scoreboard players set 28125 Constant 28125
-scoreboard players set 32400 Constant 32400 
-scoreboard players set 36000 Constant 36000 
+scoreboard players set 32400 Constant 32400
+scoreboard players set 36000 Constant 36000
 scoreboard players set 40500 Constant 40500
 scoreboard players set 65536 Constant 65536
 scoreboard players set 90000 Constant 90000

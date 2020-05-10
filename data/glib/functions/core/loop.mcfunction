@@ -1,5 +1,5 @@
-# CONFIG
-#   Init Menu Refresh Frenquency (20 = 1 seconde). If you use the lib in solo, you can refresh the menu all ticks.
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
 # Import constants
 function glib:core/import/constants

@@ -1,13 +1,13 @@
 # NAME: sphere
 # PATH: glib:object/mapedit/sphere
- 
-# AUTHOR: xam74er1
- 
-# VERSION: 0.1 
-# MINECRAFT: 1.14.X 
 
-# INPUT: 
-# - Centre Location  : 
+# AUTHOR: xam74er1
+
+# VERSION: 0.1
+# MINECRAFT: 1.14.X
+
+# INPUT:
+# - Centre Location  :
 #	- Centre_X (score dummy)
 #	- Centre_Y (score dummy)
 # 	- Centre_Z (score dummy)
@@ -21,13 +21,13 @@
 # - Rayon
 #	Rayon (score dummy)
 
-# OUTPUT: 
-# - Block place bettwen Location 1 and Location 2 
- 
-# OUTPUT: 
+# OUTPUT:
+# - Block place bettwen Location 1 and Location 2
+
+# OUTPUT:
 # - Generate a full sphere at the center of rayon eguale to the scoreboard
- 
-# NOTE: 
+
+# NOTE:
 # For place the centre use function glib:object/mapedit/center
 
 #Ini
@@ -39,7 +39,7 @@ scoreboard objectives add SphereSum dummy
 scoreboard objectives add Rayon2 dummy
 
 
-#On place les point 
+#On place les point
 
 scoreboard players operation @s Pos_xd = @s Centre_X
 scoreboard players operation @s Pos_xd += @s Rayon
@@ -78,7 +78,7 @@ execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=near
 
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] BlockId = @s BlockId
 
-#3 corespon a la sphere 
+#3 corespon a la sphere
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 3
 
 
@@ -87,10 +87,10 @@ execute as @e[tag=spawnSET] at @s store result entity @s Pos[0] double 1 run sco
 execute as @e[tag=spawnSET] at @s store result entity @s Pos[1] double 1 run scoreboard players get @s Set_Y
 execute as @e[tag=spawnSET] at @s store result entity @s Pos[2] double 1 run scoreboard players get @s Set_Z
 
-#On ajout 1 au nb de set en cour 
+#On ajout 1 au nb de set en cour
 scoreboard players add setCount Set_Option 1
 
-#tag @e[tag=spawnSET] remove spawnSET 
+#tag @e[tag=spawnSET] remove spawnSET
 
-#On lance toute la procedure 
+#On lance toute la procedure
 function glib:object/mapedit/child/set/repeate

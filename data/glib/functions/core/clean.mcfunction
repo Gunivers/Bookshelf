@@ -1,23 +1,30 @@
-# NAME: Clean
-# PATH: glib:core/clean
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: A~Z
+# Authors: A~Z
+# Contributors:
+# MC Version:
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.14
-
-# INPUT: /
-# OUTPUT: /
-
-# NOTE:
-# Please be aware that using this function will delete each and every score used by the gunivers-lib,
-# thus losing all data which may have been stored on them WITHOUT ANY POSSIBILITY OF RETRIEVAL.
+# Original path: glib:core/clean
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/core
+# Note:
+# - Please be aware that using this function will delete each and every score used by the gunivers-lib,
+#   thus losing all data which may have been stored on them WITHOUT ANY POSSIBILITY OF RETRIEVAL.
 #
-# If you intent on disabling the gunivers-lib for now but may reuse it later with saved data, unload it without activating this function.
-# Otherwise, if you want to remove it for good, use the shutdown function who will call this then unload the gunivers-lib in the same tick, 
-# avoiding recreation of some scores.
+# - If you intent on disabling the gunivers-lib for now but may reuse it later with saved data, unload it without activating this function.
+# - Otherwise, if you want to remove it for good, use the shutdown function who will call this then unload the gunivers-lib in the same tick,
+#   avoiding recreation of some scores.
 
-# CODE:
+#__________________________________________________
+# INIT
+
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
+
 	# ~~ Bool ~~
 scoreboard objectives remove Output
 scoreboard objectives remove Input

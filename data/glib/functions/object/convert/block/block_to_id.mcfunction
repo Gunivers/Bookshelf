@@ -1,24 +1,25 @@
-# NAME: Block to Id
-# PATH: glib: glib:functions/object/block/block_to_id
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
-# CONTRIBUTORS: (optional)
-# - LeiRoF
+# Authors: theogiraudet
+# Contributors: Leirof
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:object/convert/block/block_to_id
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
+# Note:
 
-# Output:
-# - BlockId (score dummy)
+#__________________________________________________
+# INIT
 
-# NOTE: Allow to get the id of the block at the position of the entity
+scoreboard objectives add Var1 dummy
 
-# INIT:
-scoreboard objectives add BlockId dummy
+#__________________________________________________
+# CONFIG
 
-# CODE:
-#____________________________________________________________________________________________________
-
+#__________________________________________________
+# CODE
 
 scoreboard players set @s BlockId 0
 execute unless block ~ ~ ~ #glib:group/group0 run scoreboard players add @s BlockId 512
