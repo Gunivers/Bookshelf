@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/location/set_z
+# Original path: glib:entity/location/accuracy/10-3/set_z
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
 # Note: It was excessively more impressive in 1.12...
 

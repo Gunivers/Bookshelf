@@ -1,24 +1,26 @@
-# NAME: Get Rotation
-# PATH: glib:entity/rotation/get
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/orientation/accuracy/10-3/get
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Note: It was excessively more impressive in 1.12 ...
 
-# OUTPUT:
-# - OriH (score dummy)
-# - OriV (score dummy)
+#__________________________________________________
+# INIT
 
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
-# INIT:
 scoreboard objectives add OriV dummy
 scoreboard objectives add OriH dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 execute store result score @s OriH run data get entity @s Rotation[0] 1000
 execute store result score @s OriV run data get entity @s Rotation[1] 1000

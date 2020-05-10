@@ -6,15 +6,14 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/orientation/get
+# Original path: glib:entity/orientation/set_v
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
 # Note: It was excessively more impressive in 1.12 ...
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add OriV dummy
-scoreboard objectives add OriH dummy
+scoreboard objectives add Var1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -22,5 +21,10 @@ scoreboard objectives add OriH dummy
 #__________________________________________________
 # CODE
 
-execute store result score @s OriH run data get entity @s Rotation[0] 1
-execute store result score @s OriV run data get entity @s Rotation[1] 1
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
+
+tp @e[type=armor_stand,tag=SetRotation,limit=1] @s
+
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 1 run scoreboard players get @s Var1
+tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
+kill @e[type=armor_stand,tag=SetRotation,limit=1]

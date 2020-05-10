@@ -1,28 +1,26 @@
-# NAME: Normalize Orientation
-# PATH: glib:entity/orientation/normalize
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
-# CONTRIBUTORS: 
-# - KubbyDev
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.12
+# Original path: glib:entity/orientation/normalize
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Note:
 
-# INPUT:
-# - Phi (score dummy)
-# - Theta (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Phi (score dummy)
-# - Theta (score dummy)
-
-# INIT:
 scoreboard objectives add OriV dummy
 scoreboard objectives add OriH dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
 
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s OriV %= 180 Constant
 scoreboard players operation @s OriH %= 360 Constant

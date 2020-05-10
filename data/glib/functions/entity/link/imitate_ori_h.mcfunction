@@ -43,4 +43,4 @@ scoreboard players operation @s Var2 -= @s Glib_R_OriV
 
 scoreboard players operation @s Var1 += @s Var2
 
-function glib:entity/orientation/accuracy/10-3/set_t
+function glib:entity/orientation/accuracy/10-3/set_h

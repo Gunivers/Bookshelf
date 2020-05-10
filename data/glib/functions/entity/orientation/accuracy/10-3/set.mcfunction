@@ -1,23 +1,27 @@
-# NAME: Set Rotation
-# PATH: gunivers-Lib:entity/rotation/advanced/set
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/orientation/accuracy/10-3/set
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Note: It was excessively more impressive in 1.12 ...
 
-# REQUIREMENTS:
-# - gunivers-Lib:utils/import/var
-# - gunivers-Lib:utils/import/rotation
+#__________________________________________________
+# INIT
 
-# INPUT:
-# - Var1 (score dummy)
-# - Var2 (score dummy)
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
 
-# NOTE:
-#It was excessively more impressive in 1.12 ...
+#__________________________________________________
+# CONFIG
 
-# CODE:
+#__________________________________________________
+# CODE
+
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 0.001 run scoreboard players get @s Var1
 execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 0.001 run scoreboard players get @s Var2
