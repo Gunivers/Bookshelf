@@ -1,19 +1,25 @@
-#AUTHOR: Kikipunk
-#PATH: gunivers-lib/math/random
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-#NAME: Random
+# Authors: Kikipunk
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-#VERSION: 4.0
-#MINECRAFT: 1.13+
+# Original path: glib:math/random
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 
-# OUTPUT
-# - Res (score)
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Res dummy
 
-#CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 #Random MC
 summon area_effect_cloud ~ ~1 ~ {Tags:["Glib","Glib_Random"],Age:1}

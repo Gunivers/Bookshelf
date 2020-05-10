@@ -1,21 +1,14 @@
-# NAME: Not and gate
-# PATH: glib:math/bool/logic-gate/nand
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 0.1
-# MINECRAFT: 1.13
-
-# REQUIEREMENTS:
-# - bool (function : glib:utils/import/bool)
-
-# INPUT:
-# - Input[1 to 9] in Input (fakePlayer in score dummy) 2 scores minimum
-
-# OUTPUT:
-# - Output1 in Output (fakePlayer in score dummy)
-
-# NOTE:
+# Original path: glib:math/bool/logic-gate/nand
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 # Return 0 if all the fakePlayer's scores are equal to 1 else return 1. Unspecified scores worth 1 by default and therefore not influence the equation.
 # If no entry is initialized then return -1.
 # At this end of the function, all inputs are clear.
@@ -29,7 +22,18 @@
 #|       1 |       1 |      0 |
 #+---------+---------+--------+
 
-# CODE:
+#__________________________________________________
+# INIT
+
+scoreboard objectives add Input dummy
+scoreboard objectives add Output dummy
+
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
+
 function glib:math/bool/clearoutput
 function glib:math/bool/logic-gate/and
 scoreboard players operation Input1 Input = Output1 Output

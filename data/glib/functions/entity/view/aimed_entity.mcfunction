@@ -1,23 +1,25 @@
-# NAME: Aimed entity
-# PATH: glib:entity/view/aimed_entity
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/view/aimed_entity
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Note:
 
-# REQUIREMENTS:
-# - Id (module)
-# - Vars (module)
+#__________________________________________________
+# INIT
 
-# NOTE:
-#Allows to give the AimedEntity tag to the entity targeted by the executing entity. The targeted entity retrieves the ID of the executing entity in the scoreboard ParentId.
-
-# INIT:
 scoreboard objectives add Var1 dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s TargetId = @s Id
 tag @s add Executor

@@ -1,9 +1,3 @@
-# NAME: Square Root
-# PATH: glib:math/child/sqrt_loop
-
-# CHILD OF: glib:math/sqrt
-
-# CODE:
 scoreboard players operation @s Var3 = @s Res
 scoreboard players operation @s Var3 *= @s Res
 scoreboard players operation @s Var2 /= 2 Constant

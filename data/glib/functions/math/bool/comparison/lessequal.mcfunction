@@ -1,26 +1,29 @@
-# NAME: Less than or equal to
-# PATH: glib:math/bool/comparison/lessequal
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 0.1
-# MINECRAFT: 1.13
+# Original path: glib:math/bool/comparison/lessequal
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
+# - At this end of the function, all inputs are clear.
+# - Return 1 if Input1 <= Input2 else return 0
 
-# REQUIEREMENTS:
-# - bool (function : glib:utils/import/bool)
+#__________________________________________________
+# INIT
 
-# INPUT:
-# - Input1 in Input (fakePlayer in score dummy)
-# - Input2 in Input (fakePlayer in score dummy)
+scoreboard objectives add Input dummy
+scoreboard objectives add Output dummy
 
-# OUTPUT:
-# - Output1 in Output (fakePlayer in score dummy)
+#__________________________________________________
+# CONFIG
 
-# NOTE:
-# Return 1 if Input1 <= Input2 else return 0
-# At this end of the function, all inputs are clear.
+#__________________________________________________
+# CODE
 
-# CODE:
 function glib:math/bool/clearoutput
 execute if score Input1 Input <= Input2 Input run scoreboard players set Output1 Output 1
 execute if score Input1 Input > Input2 Input run scoreboard players set Output1 Output 0

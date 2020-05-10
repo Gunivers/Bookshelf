@@ -1,30 +1,28 @@
-# TITLE: Sin
-# PATH: glib:math/sin
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13.X
+# Original path: glib:math/sin
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note: The input is the angle in degrees. The result is scaled by 1000
 
-# INPUT:
-# - Var1 (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
-
-#Note:
-# - Var1 must be in interval [0;360]
-# - The result is rounded 10^-3
-
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
 
+#__________________________________________________
+# CODE
 
 # Convert to angle [-90;90]
 

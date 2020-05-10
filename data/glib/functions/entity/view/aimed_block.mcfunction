@@ -1,28 +1,28 @@
-# NAME: Aimed block
-# PATH: glib:entity/view/aimed_block
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors: Syl2010
+# MC Version: 1.13
+# Last check:
 
-# CONTRIBUTOR: Syl2010
+# Original path: glib:entity/view/aimed_block
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Note: Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard ParentId and get the tag NewAimedBlock.
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+#__________________________________________________
+# INIT
 
-# REQUIREMENTS:
-# - Id (module)
-# - Vars (module)
-
-# NOTE:
-#Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard ParentId and get the tag NewAimedBlock.
-
-# INIT:
 scoreboard objectives add Var1 dummy
 
-# CONFIG: Var1 -> Range*10 (10 blocs -> Var1 = 100): Max distance limit for raycast
+#__________________________________________________
+# CONFIG
+
+# Var1 -> Range*10 (10 blocs -> Var1 = 100): Max distance limit for raycast
 scoreboard players set @s[tag=!Glib_Override_Config] Var1 100
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s TargetId = @s Id
 function glib:entity/id/check_parent

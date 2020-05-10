@@ -1,24 +1,27 @@
-# TITLE: Accurate Cos
-# PATH: Glib:Math/accuracy/10-3/Cos
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: KubbyDev
-# CONTRIBUTORS:
-# - LeiRoF
+# Authors: KubbyDev
+# Contributors: Leirof
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13+
+# Original path: glib:math/accuracy/10-3/cos
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 
-# INPUT:
-# - Var1 (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
-#Note:
-# - Var1 must be in interval [0;360000]
+#__________________________________________________
+# CONFIG
 
-# CONFIGURATION:
-
+#__________________________________________________
 # CODE
 
 # Retranscription of Var3 on interval [0;9000[

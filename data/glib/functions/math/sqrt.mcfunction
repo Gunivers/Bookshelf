@@ -1,25 +1,28 @@
-# NAME: Square Root
-# PATH: glib:math/sqrt
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13.X
+# Original path: glib:math/sqrt
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 
-# INPUT:
-# - Var1 (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
-
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players set @s[scores={Var1=..1}] Var2 1
 execute if entity @s[scores={Var1=2..}] run function glib:math/get_next_pow2

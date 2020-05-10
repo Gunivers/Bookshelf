@@ -1,28 +1,29 @@
-# NAME: Arccos
-# PATH: glib:math/arccos
- 
-# AUTHOR: KubbyDev 
- 
-# VERSION: 0.1 
-# MINECRAFT: 1.13.X 
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# INPUT: 
-# - Var1 (score dummy)
- 
-# OUTPUT: 
-# - Res (score dummy) 
- 
-# NOTE:  
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
+
+# Original path: glib:math/arscos
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 # - This function returns acos(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)
 # - Rounds the result to the nearest integer
 
-# INIT:
+#__________________________________________________
+# INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Res dummy
 
+#__________________________________________________
+# CONFIG
 
-# CODE: 
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Var2 = @s Var1
 scoreboard players operation @s[scores={Var2=..-1}] Var2 *= -1 Constant

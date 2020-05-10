@@ -1,26 +1,26 @@
-# NAME: Get Next Pow 2
-# PATH: glib:math/get_next_pow2
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13.X
+# Original path: glib:math/
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note: Return the next power 2 of the number
 
-# INPUT:
-# - Var1 (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
-
-# NOTE:
-# - Return the next power 2 of the number
-
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players set @s Res 1
 execute if score @s Res < @s Var1 run function glib:math/child/get_next_pow2_loop

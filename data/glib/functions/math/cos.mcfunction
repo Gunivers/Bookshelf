@@ -1,28 +1,28 @@
-# NAME: Cosinus
-# PATH: glib:math/cos
- 
-# AUTHOR: LeiRoF
- 
-# VERSION: 1.0
-# MINECRAFT: 1.13.X 
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# INPUT: 
-# - Var1 (score dummy)
- 
-# OUTPUT: 
-# - Res (score dummy) 
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# NOTE:
-# - The input is the angle in degrees. The result is scaled by 1000
+# Original path: glib:math/cos
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note: The input is the angle in degrees. The result is scaled by 1000
 
-# INIT:
+#__________________________________________________
+# INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 # Convert to angle [0;360]
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"INPUT: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}}]
@@ -60,5 +60,3 @@ scoreboard players operation @s Res /= @s Var2
 scoreboard players operation @s[scores={Var1=90..269}] Res *= Neg Constant
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
-
-

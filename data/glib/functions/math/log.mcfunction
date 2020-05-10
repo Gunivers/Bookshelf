@@ -1,24 +1,22 @@
-#AUTHOR: KubbyDev
-#PATH: glib:math/log
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-#NAME: Log (natural log)
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-#VERSION: 1.0
-#MINECRAFT: 1.13.X
-
-#INPUT: 
-# - Var1 (the input *10 ^ 3)
-
-#OUTPUT:
-# - Res (the output *10 ^ 4)
-
-#NOTE:
+# Original path: glib:math/log
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]). If you want log(0.5), input 500
 # - The output values are scaled by 10 000. They are the exact result +- 0.002 (The maximum error is 0.0017, 90% of the errors are < 0.001)
 # - Thanks to this guy for the formula used in this function: https://math.stackexchange.com/questions/977586/is-there-an-approximation-to-the-natural-log-function-at-large-values
 # - If you input 0 the function returns log(0.001), if you input a negative value it returns log(-x)
 
-# INIT:
+#__________________________________________________
+# INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -29,18 +27,21 @@ scoreboard objectives add Var7 dummy
 scoreboard objectives add Var8 dummy
 scoreboard objectives add Res dummy
 
-#CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 # Not defined values
 scoreboard players set @s[scores={Var1=0}] Var1 1
-scoreboard players operation @s[scores={Var1=..-1}] Var1 *= -1 Constant  	
+scoreboard players operation @s[scores={Var1=..-1}] Var1 *= -1 Constant
 
 # Var4 = x (* 1000)
-scoreboard players operation @s Var4 = @s Var1 
+scoreboard players operation @s Var4 = @s Var1
 
 # Var2 = n+2
-execute if entity @s[scores={Var4=..1000}] run scoreboard players remove @s Var1 1  	
+execute if entity @s[scores={Var4=..1000}] run scoreboard players remove @s Var1 1
 scoreboard players set @s Var2 0
 execute unless entity @s[scores={Var4=1}] run function glib:math/child/log-digits
 execute if entity @s[scores={Var4=1001..}] run scoreboard players remove @s Var2 1
@@ -101,6 +102,3 @@ scoreboard players operation @s Res += @s Var7
 
 # Small adjustment to increase average accuracy
 scoreboard players add @s Res 7
-
-
-

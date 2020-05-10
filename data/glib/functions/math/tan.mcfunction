@@ -1,20 +1,28 @@
-# TITLE: Tan
-# PATH: glib:math/tan
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: KubbyDev
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.1
-# MINECRAFT: 1.13.X
+# Original path: glib:math/tan
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note: The input is the angle in degrees. The result is scaled by 1000. Angle must be on interval [0;360]
 
-# INPUT:
-# - Var1 (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
+scoreboard objectives add Var1 dummy
+scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
+scoreboard objectives add Res dummy
 
-#Note:
-# - Var1 must be in interval [0;360]
-# - The result is rounded 10^-3
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 # INIT:
 scoreboard objectives add Var4 dummy
@@ -33,4 +41,3 @@ function glib:math/sin
 
 scoreboard players operation @s Res *= 1000 Constant
 scoreboard players operation @s Res /= @s Var4
-

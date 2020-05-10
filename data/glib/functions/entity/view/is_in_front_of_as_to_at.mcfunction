@@ -1,21 +1,23 @@
-# NAME: Is in front of
-# PATH: glib:entity/view/is_in_front_of
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13+
+# Original path: glib:entity/view/is_in_front_of_as_to_at
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Note:
 
-# INPUT
-# none
+#__________________________________________________
+# INIT
 
-# OUTPUT
-# - Glib_InFrontOf (tag)
+#__________________________________________________
+# CONFIG
 
-# NOTE: This system was made to a "normal" player with FOV set to 90
-
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CODE
 
 tag @s remove Glib_InFrontOf
 

@@ -1,22 +1,28 @@
-# NAME: Can see
-# PATH: glib:entity/view/can_see
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13+
+# Original path: glib:entity/view/can_see
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Note:
 
-# INPUT
-# none
+#__________________________________________________
+# INIT
 
-# OUTPUT
-# - Glib_CanSee (tag)
+scoreboard objectives add Var1 dummy
 
-# CONFIG: Var1 -> Range*2 (1 blocs -> Var1 = 2)
+#__________________________________________________
+# CONFIG
+
+#Var1 -> Range*2 (1 blocs -> Var1 = 2)
 scoreboard players set @s[tag=!Glib_Override_Config] Var1 200
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CODE
 
 tag @s remove Glib_CanSee
 
@@ -32,4 +38,3 @@ execute as @e[tag=Glib_CanSee_Aim] at @s run function glib:entity/view/child/can
 execute at @e[tag=Glib_CanSee_Aim] if entity @e[tag=Glib_CanSee_Target,distance=..1] run tag @s add Glib_CanSee
 
 kill @e[tag=Glib_CanSee_Tmp]
-

@@ -1,27 +1,28 @@
-# NAME: Pow
-# PATH: glib:math/pow
- 
-# AUTHOR: Theogiraudet/Oromis
-# CONTRIBUTORS: 
-# - KubbyDev
- 
-# VERSION: 1.1
-# MINECRAFT: 1.13.X
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# INPUT: 
-# - Var1 (score dummy)  The number
-# - Var2 (score dummy)  The exponent
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# OUTPUT: 
-# - Res (score dummy) 
+# Original path: glib:math/pow
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Note:
 
-# INIT:
+#__________________________________________________
+# INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 scoreboard objectives add Res dummy
 
-# CODE: 
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Res = @s Var1
 scoreboard players operation @s Var3 = @s Var2

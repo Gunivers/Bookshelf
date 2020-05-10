@@ -1,10 +1,3 @@
-# NAME: gcd-loop
-# PATH: glib:math/child/gcd-loop
-
-# CHILD OF: glib:math/gcd
-
-# CODE:
-
 scoreboard players operation @s Var3 %= @s Res
 
 tag @s[scores={Var3=0}] add PGCDfound
