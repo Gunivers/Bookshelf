@@ -1,18 +1,18 @@
-# NAME: Get Distance
-# PATH: glib:entity/location/get_distance_as_to_at
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/get_distance_squared_as_to_at
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: It was excessively more impressive in 1.12...
 
-# OUTPUT:
-# - Res (score dummy)
-
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -22,8 +22,11 @@ scoreboard objectives add Var6 dummy
 
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 execute store result score @s Var1 run data get entity @s Pos[0] 1
 execute store result score @s Var2 run data get entity @s Pos[1] 1

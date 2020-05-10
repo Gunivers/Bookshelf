@@ -1,14 +1,21 @@
-# NAME: Is in Cave
-# PATH: glib:entity/location/is_in_cave
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.14
+# Original path: glib:entity/location/is_in_cave
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: Return 1 if the entity is in a cave, 0 else.
 
-# OUTPUT:
-# - Res (score dummy)
+#__________________________________________________
+# INIT
 
-# NOTE:
-# Return 1 if the entity is in a cave, 0 else.
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 execute store result score @s Res if block ~ ~ ~ cave_air

@@ -1,22 +1,25 @@
-# NAME: Set Location
-# PATH: glib:entity/location/set
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 2.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/set_z
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: It was excessively more impressive in 1.12...
 
-# INPUT:
-# - Var1 (score dummy)
-
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add Var1 dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
 

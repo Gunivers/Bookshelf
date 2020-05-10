@@ -1,24 +1,24 @@
-# NAME: Get Distance
-# PATH: glib:entity/location/get_distance_as_to_at
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/get_distance_as_to_at
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Note: It was excessively more impressive in 1.12...
 
-# OUTPUT:
-# - Res (score dummy)
-
-# NOTE:
-#It was excessively more impressive in 1.12 ...
-
+#__________________________________________________
 # INIT
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 function glib:entity/location/get_distance_squared_as_to_at
-
 scoreboard players operation @s Var1 = @s Res
-
 function glib:math/sqrt

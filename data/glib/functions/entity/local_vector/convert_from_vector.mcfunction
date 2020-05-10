@@ -1,24 +1,18 @@
-# NAME: Get Vector
-# PATH: glib:entity/local_vectors/convert_from_vector
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/local_vectors/convert_from_vector
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#local-vector
+# Note:
 
-# OUTPUT:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-# - VectorSpeed (score dummy)
-
-# OUTPUT:
-# - VectorLeft (score dummy)
-# - VectorUp (score dummy)
-# - VectorFront (score dummy)
-# - VectorSpeedLocal (score dummy)
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
 scoreboard objectives add VectorZ dummy
@@ -41,15 +35,16 @@ scoreboard objectives add Var9 dummy
 
 scoreboard objectives add Res dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 execute store result score @s Var8 run data get entity @s Rotation[0] 1
 execute store result score @s Var9 run data get entity @s Rotation[1] 1
 
-
 scoreboard players operation @s VectorSpeedLocal = @s VectorSpeed
-
 
 ### DEBUG
 execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/1
@@ -92,7 +87,6 @@ scoreboard players operation @s Var1 *= @s Var5
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorLeft -= @s Var1
 
-
 # Vector Up
 scoreboard players operation @s Var1 = @s VectorY
 scoreboard players operation @s Var1 *= @s Var6
@@ -128,11 +122,6 @@ scoreboard players operation @s Var1 = @s VectorY
 scoreboard players operation @s Var1 *= @s Var7
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorFront -= @s Var1
-
-
-
-
-
 
 scoreboard players set @s VectorSpeed 1000
 
