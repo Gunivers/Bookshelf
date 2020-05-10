@@ -1,0 +1,2 @@
+execute if score @s BlockId matches ..97 run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/96-97
+execute if score @s BlockId matches 98.. run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/98-99

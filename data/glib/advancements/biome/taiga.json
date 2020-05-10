@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "taiga": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:taiga"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/taiga" 
+		
+		
+    }
+}
+

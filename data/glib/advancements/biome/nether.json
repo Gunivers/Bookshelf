@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "nether": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:nether"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/nether"
+		
+		
+    }
+}

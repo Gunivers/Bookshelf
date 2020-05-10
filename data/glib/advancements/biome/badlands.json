@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "badlands": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:badlands"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/badlands"
+		
+		
+    }
+}

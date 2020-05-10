@@ -1,0 +1,2 @@
+execute if score @s BlockId matches ..645 run function glib:object/convert/block/child/id_to_falling_block/leaves/644-645
+execute if score @s BlockId matches 646.. run function glib:object/convert/block/child/id_to_falling_block/leaves/646-647

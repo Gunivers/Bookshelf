@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "sunflower_plains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:sunflower_plains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/sunflower_plains"
+		
+		
+    }
+}

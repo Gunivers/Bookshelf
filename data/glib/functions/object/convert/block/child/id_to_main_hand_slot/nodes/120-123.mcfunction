@@ -1,0 +1,2 @@
+execute if score @s BlockId matches ..121 run function glib:object/convert/block/child/id_to_main_hand_slot/leaves/120-121
+execute if score @s BlockId matches 122.. run function glib:object/convert/block/child/id_to_main_hand_slot/leaves/122-123

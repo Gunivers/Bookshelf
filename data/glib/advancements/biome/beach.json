@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "beach": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:beach"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/beach"
+		
+		
+    }
+}

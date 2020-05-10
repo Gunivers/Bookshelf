@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "bamboo_jungle_hills": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:bamboo_jungle_hills"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/bamboo_jungle_hills"
+		
+		
+    }
+}

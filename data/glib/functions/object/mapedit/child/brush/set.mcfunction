@@ -1,0 +1,1 @@
+execute at @s run function glib:object/convert/block/id_to_block

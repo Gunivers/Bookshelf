@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "plains": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:plains"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/plains" 
+		
+		
+    }
+}

@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values": [
+		"#minecraft:saplings",
+		"#minecraft:leaves",
+		"#glib:vegetals/flowers",
+		"#glib:vegetals/grass",
+		"#glib:vegetals/mushroom",
+		"#glib:vegetals/farming",
+		"minecraft:dead_bush",
+		"minecraft:sea_pickle",
+		"minecraft:lily_pad",
+		"minecraft:vine"
+	]
+}

@@ -1,2 +1,0 @@
-execute if score @s BlockId matches ..147 run function gunivers-lib:object/convert/block/child/id_to_falling_block/nodes/144-147
-execute if score @s BlockId matches 148.. run function gunivers-lib:object/convert/block/child/id_to_falling_block/nodes/148-151

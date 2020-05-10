@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "cold_ocean": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:cold_ocean"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/cold_ocean"
+		
+		
+    }
+}

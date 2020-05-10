@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "desert": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:desert"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/desert" 
+		
+		
+    }
+}

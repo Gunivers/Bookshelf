@@ -1,0 +1,2 @@
+execute if score @s BlockId matches ..67 run function glib:object/convert/block/child/id_to_block/nodes/64-67
+execute if score @s BlockId matches 68.. run function glib:object/convert/block/child/id_to_block/nodes/68-71

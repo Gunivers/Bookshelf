@@ -1,2 +1,0 @@
-execute if score @s BlockId matches ..657 run function gunivers-lib:object/convert/block/child/id_to_block/leaves/656-657
-execute if score @s BlockId matches 658.. run function gunivers-lib:object/convert/block/child/id_to_block/leaves/658-659

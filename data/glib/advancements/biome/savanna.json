@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "savanna": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:savanna"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/savanna" 
+		
+		
+    }
+}
+

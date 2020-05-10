@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "river": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:river"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/river" 
+		
+		
+    }
+}
+

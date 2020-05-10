@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "shattered_savanna": {
+            "trigger": "minecraft:location",
+			"conditions": {
+				"biome": "minecraft:shattered_savanna"
+			}
+			}
+        },
+		"rewards": {
+			"function": "glib:entity/location/biome/shattered_savanna"
+		
+		
+    }
+}
