@@ -1,33 +1,35 @@
-# Calcul Vectors Normalizer
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# @Author: Leirof
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# Version: 2.0
-# Minecraft Version: 1.13+
+# Original path: glib:entity/vector/normalize
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Note:
 
-# Input values:
-# - VectorX (score dummy)
-# - Vectory (score dummy)
-# - Vectorz (score dummy)
-
-# Output values:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
+scoreboard objectives add Var3 dummy
 
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
 scoreboard objectives add VectorZ dummy
 scoreboard objectives add VectorSpeed dummy
 
-# CONFIG:
+#__________________________________________________
+# CONFIG
+
+# The final vector will have this length
 scoreboard players set @s[tag=!Glib_Override_Config] VectorSpeed 1000
 
-# Note: Cette fonction permet de redefinir des vecteurs de mouvement correctes à partir de 3 vecteurs basiques (coordonnées relatvies par exemple)
+#__________________________________________________
+# CODE
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Vectors/Normalize]=-","color":"green"}]

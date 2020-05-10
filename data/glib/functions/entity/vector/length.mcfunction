@@ -1,27 +1,26 @@
-# NAME: Get Length
-# PATH: glib:entity/vectors/getlength
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: KubbyDev
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/vector/length
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Note:
 
-# INPUT:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
+#__________________________________________________
+# CONFIG
 
-# NOTE:
-
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CODE
 
 function glib:entity/vector/length_squared
 
 scoreboard players operation @s Var1 = @s Res
 
 function glib:math/sqrt
-

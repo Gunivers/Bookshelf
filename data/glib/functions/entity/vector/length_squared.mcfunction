@@ -1,23 +1,18 @@
-# NAME: Get Length Squared
-# PATH: glib:entity/vectors/getlengthsquared
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: KubbyDev
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/vector/length_squared
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Note:
 
-# INPUT:
-# - VectorX (score dummy)
-# - VectorY (score dummy)
-# - VectorZ (score dummy)
+#__________________________________________________
+# INIT
 
-# OUTPUT:
-# - Res (score dummy)
-
-# NOTE:
-# This function does not calculate the vector length but its square, so the real length is the square root of the output
-
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Res dummy
 
@@ -25,8 +20,11 @@ scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
 scoreboard objectives add VectorZ dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s Res = @s VectorX
 scoreboard players operation @s Res *= @s Res
@@ -38,6 +36,3 @@ scoreboard players operation @s Res += @s Var1
 scoreboard players operation @s Var1 = @s VectorZ
 scoreboard players operation @s Var1 *= @s Var1
 scoreboard players operation @s Res += @s Var1
-
-
-

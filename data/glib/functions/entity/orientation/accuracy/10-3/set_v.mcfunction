@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glibentity/orientation/accuracy/10-3/set_v
+# Original path: glib:entity/orientation/accuracy/10-3/set_v
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
 # Note: It was excessively more impressive in 1.12 ...
 

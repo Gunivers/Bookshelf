@@ -1,17 +1,18 @@
-# NAME: Get Vector
-# PATH: glib:entity/local_vectors/convert_from_vector
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/vector/convert_from_local_vector
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Note:
 
-# OUTPUT:
-# - VectorLeft (score dummy)
-# - VectorUp (score dummy)
-# - VectorFront (score dummy)
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -32,12 +33,14 @@ scoreboard objectives add VectorUp dummy
 scoreboard objectives add VectorFront dummy
 scoreboard objectives add VectorSpeedLocal dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 execute store result score @s Var8 run data get entity @s Rotation[0] 1
 execute store result score @s Var9 run data get entity @s Rotation[1] 1
-
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Local_Vectors/Convert_From_Vector]=-","color":"green"}]
@@ -69,7 +72,6 @@ scoreboard players operation @s Var7 = @s Res
 tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 ### END DEBUG
 
-
 # Vector Left
 scoreboard players operation @s Var1 = @s VectorX
 scoreboard players operation @s Var1 *= @s Var4
@@ -81,7 +83,6 @@ scoreboard players operation @s Var1 = @s VectorZ
 scoreboard players operation @s Var1 *= @s Var5
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorLeft -= @s Var1
-
 
 # Vector Up
 scoreboard players operation @s Var1 = @s VectorY
@@ -118,7 +119,6 @@ scoreboard players operation @s Var1 = @s VectorY
 scoreboard players operation @s Var1 *= @s Var7
 scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s VectorFront -= @s Var1
-
 
 scoreboard players operation @s VectorSpeed = @s VectorSpeedLocal
 
