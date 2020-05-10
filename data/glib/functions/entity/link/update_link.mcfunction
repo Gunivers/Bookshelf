@@ -1,15 +1,18 @@
-# NAME: Update link
-# PATH: glib:entity/link/update link
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/link/update_link
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
 
-# NOTE:
-# @s must be linked to an entity
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -23,14 +26,15 @@ scoreboard objectives add Glib_R_OriV dummy
 
 scoreboard objectives add Glib_Link_Parent dummy
 
+#__________________________________________________
+# CONFIG
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s TargetId = @s Glib_Link_Parent
 
 function glib:entity/id/check
-
 
 #   Relative Position
 execute store result score @s Var1 run data get entity @s Pos[0] 1000
@@ -62,9 +66,6 @@ scoreboard players operation @s Glib_R_OriH -= @s Var2
 scoreboard players operation @s Glib_R_OriV *= -1 Constant
 scoreboard players operation @s Glib_R_OriH *= -1 Constant
 
-
-
-
 execute as @e[tag=IdMatch,limit=1,sort=nearest] run function glib:entity/orientation/get
 
 # tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
@@ -92,8 +93,6 @@ function glib:math/sin
 scoreboard players operation @s Var7 = @s Res
 # tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 
-
-
 # Vector Left -> L = cos(P)*X + sin(P)*Z
 scoreboard players operation @s Var1 = @s Glib_R_LocX
 scoreboard players operation @s Var1 *= @s Var4
@@ -108,7 +107,6 @@ scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Glib_L_LocX += @s Var1
 
 # tellraw @a[tag=Debug] ["",{"text":"Left -> ","color":"gray"},{"text":"cos(H)*X + sin(H)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocX"}}]
-
 
 # Vector Up -> U = -sin(P)sin(T)*X + cos(T)*Y + cos(P)sin(T)*Z
 scoreboard players operation @s Var1 = @s Glib_R_LocX
@@ -155,4 +153,3 @@ scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Glib_L_LocZ += @s Var1
 
 # tellraw @a[tag=Debug] ["",{"text":"Front -> ","color":"gray"},{"text":"-sin(H)cos(V)*X - sin(V)*Y + cos(H)cos(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"Glib_L_LocZ"}}]
-

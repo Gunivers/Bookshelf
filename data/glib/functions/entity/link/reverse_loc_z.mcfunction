@@ -1,35 +1,35 @@
-# NAME: Reverse X
-# PATH: glib:entity/link/reverse_loc
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/link/reverse_loc_z
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
 
-# NOTE:
-# @s must be linked to an entity
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var6 dummy
-
 scoreboard objectives add Glib_R_LocZ dummy
-
 scoreboard objectives add Glib_Link_Parent dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s TargetId = @s Glib_Link_Parent
-
 function glib:entity/id/check
-
 
 #   Relative Position
 execute store result score @s Var1 run data get entity @s Pos[2] 1000
-
 execute store result score @s Var6 run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[2] 1000
-
 scoreboard players operation @s Var6 -= @s Var1
 
 ### DEBUG
@@ -38,9 +38,6 @@ scoreboard players operation @s Var6 -= @s Var1
 ### END DEBUG
 
 scoreboard players operation @s Var6 -= @s Glib_R_LocZ
-
 scoreboard players operation @s Var1 -= @s Var6
-
 function glib:entity/location/accuracy/10-3/set_z
-
 function glib:entity/link/update_link_z

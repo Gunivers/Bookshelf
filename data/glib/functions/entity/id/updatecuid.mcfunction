@@ -1,20 +1,26 @@
-# NAME: Update Chain Unique Identifier
-# PATH: glib:entity/id/Updatecuid
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: KubbyDev
+# Authors: KubbyDev
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/id/Updatecuid
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Note:
 
-# OUTPUT:
-# - Id (score dummy)
-
+#__________________________________________________
 # INIT
+
 scoreboard objectives add Data dummy
 scoreboard objectives add Id dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players set CUID Data 1
 tag @e[scores={Id=1..}] add UpdateCUID

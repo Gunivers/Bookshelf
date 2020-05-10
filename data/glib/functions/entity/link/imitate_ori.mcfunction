@@ -1,15 +1,18 @@
-# NAME: Imitate Theta
-# PATH: glib:entity/link/imitate_ori_t
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: LeiRoF
+# Authors: Leirof
+# Contributors:
+# MC Version: 1.13
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/link/imitate_ori
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
 
-# NOTE:
-# @s must be linked to an entity
+#__________________________________________________
+# INIT
 
-# INIT:
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
@@ -17,17 +20,16 @@ scoreboard objectives add Var4 dummy
 
 scoreboard objectives add Glib_R_OriV dummy
 scoreboard objectives add Glib_R_OriH dummy
-
 scoreboard objectives add Glib_Link_Parent dummy
 
-# CODE:
-#____________________________________________________________________________________________________
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
 
 scoreboard players operation @s TargetId = @s Glib_Link_Parent
-
-
 function glib:entity/id/check
-
 
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 execute store result score @s Var2 run data get entity @s Rotation[1] 1000
@@ -49,7 +51,5 @@ scoreboard players operation @s Var4 -= @s Glib_R_OriH
 
 scoreboard players operation @s Var1 += @s Var3
 scoreboard players operation @s Var2 += @s Var4
-
-
 
 function glib:entity/orientation/accuracy/10-3/set
