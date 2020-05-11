@@ -5,9 +5,7 @@
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTORS:
-Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑, @A~Z, @Redcoal, @Syl2010
-
-Models: @Sotshi, @Faesharaa, @L'Ornithorynque
+Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑, @A~Z, @Redcoal, @Syl2010, @Kikipunk, @Loumardes
 
 # TITLE:
 Gunivers-Lib
@@ -24,4 +22,4 @@ Gunivers-Lib has already several mathematical functions and some functions used 
 # MOTIVE:
 This library is a substantial assisstance to the developers CMD wishing to create complex systems/maps. Therefore, this library provides a great leap in the command block "technology" and opens up new perspectives.
 
-Link of the official article (in french): https://gunivers.net/gunivers-lib/ 
+Link of the official article (in french): https://gunivers.net/gunivers-lib/
