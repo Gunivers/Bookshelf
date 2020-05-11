@@ -29,7 +29,6 @@ scoreboard players set @s[tag=!Glib_Override_Config] Var4 0
 
 # Maximum number of tests (default: 500)
 scoreboard players set @s[tag=!Glib_Override_Config] Var2 500
-scoreboard players set LeiRoF Res 0
 
 #__________________________________________________
 # CODE
