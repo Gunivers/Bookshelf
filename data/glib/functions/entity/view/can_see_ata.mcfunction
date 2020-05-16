@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/view/can_see
+# Original path: glib:entity/view/can_see_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
 # Note:
 

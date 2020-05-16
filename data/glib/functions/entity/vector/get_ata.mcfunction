@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/vector/get_as_to_at
+# Original path: glib:entity/vector/get_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Note:
 

@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/move/pathfinding_as_to_at
+# Original path: glib:entity/move/pathfinding_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
 # Note: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 

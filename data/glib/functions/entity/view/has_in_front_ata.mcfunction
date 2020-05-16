@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/view/is_in_front_of_as_to_at
+# Original path: glib:entity/view/has_in_front_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
 # Note:
 
