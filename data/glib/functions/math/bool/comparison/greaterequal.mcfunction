@@ -13,6 +13,9 @@
 # - At this end of the function, all inputs are clear.
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Input dummy

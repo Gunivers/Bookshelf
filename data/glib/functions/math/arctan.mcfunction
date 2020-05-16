@@ -13,11 +13,14 @@
 # - Rounds the result to the nearest integer
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -29,7 +32,7 @@ scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
 scoreboard objectives add Var5 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 # CODE:
 
@@ -40,4 +43,4 @@ scoreboard players operation @s Var1 *= @s Var5
 
 function glib:math/child/arctan-child
 
-scoreboard players operation @s Res *= @s Var5
+scoreboard players operation @s Res1 *= @s Var5

@@ -14,6 +14,9 @@
 # NOTE:
 # Break the item hold in hand if his durability reach 0 or less
 
+# PARAMETERS
+
+#__________________________________________________
 # INIT:
 scoreboard objectives add Var5 dummy
 scoreboard players set @s Var5 0

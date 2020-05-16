@@ -11,6 +11,9 @@
 # Note:
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
@@ -51,22 +54,22 @@ tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Theta: ",
 # Cos(Theta)
 scoreboard players operation @s Var1 = @s Var8
 function glib:math/cos
-scoreboard players operation @s Var4 = @s Res
+scoreboard players operation @s Var4 = @s Res1
 
 # Sin(Theta)
 scoreboard players operation @s Var1 = @s Var8
 function glib:math/sin
-scoreboard players operation @s Var5 = @s Res
+scoreboard players operation @s Var5 = @s Res1
 
 # Cos(Phi)
 scoreboard players operation @s Var1 = @s Var9
 function glib:math/cos
-scoreboard players operation @s Var6 = @s Res
+scoreboard players operation @s Var6 = @s Res1
 
 # Sin(Phi)
 scoreboard players operation @s Var1 = @s Var9
 function glib:math/sin
-scoreboard players operation @s Var7 = @s Res
+scoreboard players operation @s Var7 = @s Res1
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]

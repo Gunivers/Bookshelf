@@ -6,6 +6,9 @@
 # VERSION: 1.1
 # MINECRAFT: 1.14
 
+# PARAMETERS
+
+#__________________________________________________
 # INIT:
 scoreboard objectives add Biome dummy
 scoreboard objectives add Temperature dummy

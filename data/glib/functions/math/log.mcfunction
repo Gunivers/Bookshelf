@@ -15,6 +15,9 @@
 # - If you input 0 the function returns log(0.001), if you input a negative value it returns log(-x)
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
@@ -25,7 +28,7 @@ scoreboard objectives add Var5 dummy
 scoreboard objectives add Var6 dummy
 scoreboard objectives add Var7 dummy
 scoreboard objectives add Var8 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -50,7 +53,7 @@ execute if entity @s[scores={Var4=1001..}] run scoreboard players remove @s Var2
 scoreboard players operation @s Var7 = @s Var2
 scoreboard players remove @s Var7 3
 
-# Res = 10^(n-1) (* 1000)
+# Res1 = 10^(n-1) (* 1000)
 scoreboard players set @s Var1 10
 function glib:math/pow
 
@@ -59,20 +62,20 @@ function glib:math/pow
 # y = (a-1)/(a+1), a = x/10^(n-1) => y = (x-10^(n-1))/(x+10^(n-1))
 # Var5 = y (* 10 000)
 scoreboard players operation @s Var5 = @s Var4
-scoreboard players operation @s Var5 -= @s Res
-scoreboard players operation @s Var4 += @s Res
+scoreboard players operation @s Var5 -= @s Res1
+scoreboard players operation @s Var4 += @s Res1
 # We change the orders of magnitude to have the best possible accuracy
 # Calculation of the multipliers
 # Var8 = 10^(5-Var7)
 # Var6 = 10^(Var7-1)
-scoreboard players operation @s Var6 = @s Res
+scoreboard players operation @s Var6 = @s Res1
 scoreboard players operation @s Var6 /= 10000 Constant
 scoreboard players set @s Var2 5
 scoreboard players operation @s Var2 -= @s Var7
 function glib:math/pow
 scoreboard players set @s Var8 1
 execute if entity @s[scores={Var7=6}] run scoreboard players operation @s Var5 /= 10 Constant
-execute unless entity @s[scores={Var7=5..6}] run scoreboard players operation @s Var8 = @s Res
+execute unless entity @s[scores={Var7=5..6}] run scoreboard players operation @s Var8 = @s Res1
 # Modification of the orders of magnitude
 scoreboard players operation @s Var5 *= @s Var8
 execute if entity @s[scores={Var5=1..}] run scoreboard players add @s Var5 50000
@@ -94,11 +97,11 @@ function glib:math/child/log-loop
 
 # Last calculation
 # log(x) ~ Sp + (n-1)*log(10)
-scoreboard players operation @s Res = @s Var6
-scoreboard players operation @s Res *= 2 Constant
+scoreboard players operation @s Res1 = @s Var6
+scoreboard players operation @s Res1 *= 2 Constant
 scoreboard players operation @s Var7 *= 2302585 Constant
 scoreboard players operation @s Var7 /= 100 Constant
-scoreboard players operation @s Res += @s Var7
+scoreboard players operation @s Res1 += @s Var7
 
 # Small adjustment to increase average accuracy
-scoreboard players add @s Res 7
+scoreboard players add @s Res1 7

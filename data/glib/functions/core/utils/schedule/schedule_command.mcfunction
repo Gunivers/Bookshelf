@@ -9,11 +9,11 @@
 # MINECRAFT: 1.14
 
 # INPUT: @e[tag=ASGlibCache] ArmorItems[0].tag.Buffer
-# OUTPUT: @e[tag=ASGlibCache] Res
+# OUTPUT: @e[tag=ASGlibCache] Res1
 
-# NOTE: Allows to schedule the execution of a command. 
-#	Unlike the schedule command, this system allows to schedule commands (and not only functions) and it is possible to schedule several times the same command. 
-#	If a command is registered in a tick where commands are already registered, adds the command after those already registered. 
+# NOTE: Allows to schedule the execution of a command.
+#	Unlike the schedule command, this system allows to schedule commands (and not only functions) and it is possible to schedule several times the same command.
+#	If a command is registered in a tick where commands are already registered, adds the command after those already registered.
 #	This system takes 4 parameters (required):
 #	  - Id: the id of the scheduled command (not necessarily unique).
 #	  - Command: the command to be executed.

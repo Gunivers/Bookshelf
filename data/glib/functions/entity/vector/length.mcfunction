@@ -11,6 +11,9 @@
 # Note:
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -21,6 +24,6 @@
 
 function glib:entity/vector/length_squared
 
-scoreboard players operation @s Var1 = @s Res
+scoreboard players operation @s Var1 = @s Res1
 
 function glib:math/sqrt

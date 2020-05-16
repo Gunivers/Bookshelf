@@ -13,6 +13,9 @@
 # - Return 1 if Input1 <= Input2 else return 0
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Input dummy

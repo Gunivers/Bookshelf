@@ -14,6 +14,9 @@
 # - If you input 0 the function returns log(0.001), if you input a negative value it returns log(-x)
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -23,5 +26,5 @@
 # CODE
 
 function glib:math/log
-scoreboard players operation @s Res *= 10000 Constant
-scoreboard players operation @s Res /= 6931 Constant
+scoreboard players operation @s Res1 *= 10000 Constant
+scoreboard players operation @s Res1 /= 6931 Constant

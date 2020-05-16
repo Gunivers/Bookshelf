@@ -11,6 +11,9 @@
 # Note: @s must have Glib_Link_Parent defined (equal to another entity id)
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy

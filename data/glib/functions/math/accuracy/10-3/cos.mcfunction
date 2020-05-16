@@ -11,12 +11,15 @@
 # Note:
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -36,15 +39,15 @@ scoreboard players operation @s[scores={Var1=270000..}] Var3 += 36000 Constant
 
 # Calcul Cos
 
-scoreboard players operation @s Res = @s Var3
-scoreboard players operation @s Res *= @s Res
-scoreboard players operation @s Res *= 4 Constant
-scoreboard players operation @s Res *= Neg Constant
-scoreboard players operation @s Res += 324000000 Constant
+scoreboard players operation @s Res1 = @s Var3
+scoreboard players operation @s Res1 *= @s Res1
+scoreboard players operation @s Res1 *= 4 Constant
+scoreboard players operation @s Res1 *= Neg Constant
+scoreboard players operation @s Res1 += 324000000 Constant
 scoreboard players operation @s Var2 = @s Var3
 scoreboard players operation @s Var2 *= @s Var2
 scoreboard players operation @s Var2 += 324000000 Constant
 scoreboard players operation @s Var2 /= 1000 Constant
-scoreboard players operation @s Res /= @s Var2
+scoreboard players operation @s Res1 /= @s Var2
 
-scoreboard players operation @s[scores={Var1=90000..269999}] Res *= Neg Constant
+scoreboard players operation @s[scores={Var1=90000..269999}] Res1 *= Neg Constant

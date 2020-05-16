@@ -11,6 +11,9 @@
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
@@ -20,7 +23,7 @@ scoreboard objectives add Var4 dummy
 scoreboard objectives add Var5 dummy
 scoreboard objectives add Var6 dummy
 
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -48,6 +51,6 @@ scoreboard players operation @s Var4 *= @s Var4
 scoreboard players operation @s Var5 *= @s Var5
 scoreboard players operation @s Var6 *= @s Var6
 
-scoreboard players operation @s Res = @s Var4
-scoreboard players operation @s Res += @s Var5
-scoreboard players operation @s Res += @s Var6
+scoreboard players operation @s Res1 = @s Var4
+scoreboard players operation @s Res1 += @s Var5
+scoreboard players operation @s Res1 += @s Var6

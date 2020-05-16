@@ -18,5 +18,5 @@
 
 # CODE:
 function glib:core/utils/memory/get
-execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res 1
-execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res 0
+execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res1 1
+execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res1 0

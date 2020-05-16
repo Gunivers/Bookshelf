@@ -11,6 +11,9 @@
 # Note: @s must have Glib_Link_Parent defined (equal to another entity id)
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
@@ -74,23 +77,23 @@ execute as @e[tag=IdMatch,limit=1,sort=nearest] run function glib:entity/orienta
 # Cos(Phi)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriH
 function glib:math/cos
-scoreboard players operation @s Var4 = @s Res
+scoreboard players operation @s Var4 = @s Res1
 # tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
 # Sin(Phi)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriH
 function glib:math/sin
-scoreboard players operation @s Var5 = @s Res
+scoreboard players operation @s Var5 = @s Res1
 # tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
 
 # Cos(Theta)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriV
 function glib:math/cos
-scoreboard players operation @s Var6 = @s Res
+scoreboard players operation @s Var6 = @s Res1
 # tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var6"}}]
 # Sin(Theta)
 scoreboard players operation @s Var1 = @e[tag=IdMatch,limit=1,sort=nearest] OriV
 function glib:math/sin
-scoreboard players operation @s Var7 = @s Res
+scoreboard players operation @s Var7 = @s Res1
 # tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=IdMatch,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 
 # Vector Left -> L = cos(P)*X + sin(P)*Z

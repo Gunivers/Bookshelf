@@ -16,6 +16,9 @@
 # NOTE:
 # Add or remove the damage value contains into dmAddDamage score to the the item hold in the entity source hand
 
+# PARAMETERS
+
+#__________________________________________________
 # INIT:
 scoreboard objectives add Var5 dummy
 scoreboard objectives add dmAddDamage dummy

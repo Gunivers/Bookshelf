@@ -4,7 +4,10 @@
 # Import constants
 function glib:core/import/constants
 
-# Init menu refresh
+# PARAMETERS
+
+#__________________________________________________
+# INIT menu refresh
 scoreboard objectives add Data dummy
 scoreboard players set @a[scores={Data=5..}] Data 0
 scoreboard objectives add Data dummy

@@ -11,6 +11,9 @@
 # Note: This system works automatically thanks to advancements. It detects the biome where the player (only) are and assign an id to each biome. You can find the list of id in /banks/list/Biomes. To disable this system, delete "biome" folder.
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Biome dummy

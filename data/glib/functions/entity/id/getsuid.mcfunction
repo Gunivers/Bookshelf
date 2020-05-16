@@ -11,6 +11,9 @@
 # Note: Gives a unique identifier to the source entity
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Data dummy

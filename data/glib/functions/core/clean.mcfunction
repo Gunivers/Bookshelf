@@ -17,6 +17,9 @@
 #   avoiding recreation of some scores.
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -47,7 +50,6 @@ scoreboard objectives remove LocX
 scoreboard objectives remove LocY
 scoreboard objectives remove LocZ
 	# ~~ Math ~~
-scoreboard objectives remove Res
 scoreboard objectives remove Constant
 	# ~~ Orientation ~~
 scoreboard objectives remove OriV
@@ -72,6 +74,15 @@ scoreboard objectives remove Var6
 scoreboard objectives remove Var7
 scoreboard objectives remove Var8
 scoreboard objectives remove Var9
+scoreboard objectives remove Res1
+scoreboard objectives remove Res2
+scoreboard objectives remove Res3
+scoreboard objectives remove Res4
+scoreboard objectives remove Res5
+scoreboard objectives remove Res6
+scoreboard objectives remove Res7
+scoreboard objectives remove Res8
+scoreboard objectives remove Res9
 	# ~~ Vectors ~~
 scoreboard objectives remove VectorX
 scoreboard objectives remove VectorY

@@ -11,12 +11,15 @@
 # Note: The input is the angle in degrees. The result is scaled by 1000
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -40,12 +43,12 @@ scoreboard players operation @s[scores={Var1=..-1}] Var3 *= Neg Constant
 
 # Calcul Sin
 
-scoreboard players operation @s Res = @s Var3
-scoreboard players operation @s Res *= Neg Constant
-scoreboard players operation @s Res += 180 Constant
-scoreboard players operation @s Res *= @s Var3
-scoreboard players operation @s Res *= 4 Constant
-scoreboard players operation @s Res *= 1000 Constant
+scoreboard players operation @s Res1 = @s Var3
+scoreboard players operation @s Res1 *= Neg Constant
+scoreboard players operation @s Res1 += 180 Constant
+scoreboard players operation @s Res1 *= @s Var3
+scoreboard players operation @s Res1 *= 4 Constant
+scoreboard players operation @s Res1 *= 1000 Constant
 
 scoreboard players operation @s Var2 = @s Var3
 scoreboard players operation @s Var2 *= Neg Constant
@@ -53,6 +56,6 @@ scoreboard players operation @s Var2 += 180 Constant
 scoreboard players operation @s Var2 *= @s Var3
 scoreboard players operation @s Var2 *= Neg Constant
 scoreboard players operation @s Var2 += 40500 Constant
-scoreboard players operation @s Res /= @s Var2
+scoreboard players operation @s Res1 /= @s Var2
 
-scoreboard players operation @s[scores={Var1=..-1}] Res *= Neg Constant
+scoreboard players operation @s[scores={Var1=..-1}] Res1 *= Neg Constant

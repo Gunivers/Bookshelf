@@ -11,12 +11,15 @@
 # Note:
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -24,8 +27,8 @@ scoreboard objectives add Res dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Res = @s Var1
+scoreboard players operation @s Res1 = @s Var1
 scoreboard players operation @s Var3 = @s Var2
 
-execute if entity @s[scores={Var3=0}] run scoreboard players set @s Res 1
+execute if entity @s[scores={Var3=0}] run scoreboard players set @s Res1 1
 execute if entity @s[scores={Var3=2..}] run function glib:math/child/pow-loop

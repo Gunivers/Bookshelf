@@ -1,4 +1,4 @@
-scoreboard players operation @s Res += @s Var3
+scoreboard players operation @s Res1 += @s Var3
 scoreboard players add @s Var2 1
 scoreboard players operation @s Var3 /= @s Var2
 scoreboard players operation @s Var3 *= @s Var1

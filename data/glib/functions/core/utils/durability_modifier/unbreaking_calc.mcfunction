@@ -16,6 +16,9 @@
 # NOTE:
 # Recalculate dmAddDamage with the unreabreaking's enchantement calculation
 
+# PARAMETERS
+
+#__________________________________________________
 # INIT:
 scoreboard objectives add Var5 dummy
 scoreboard objectives add dmAddDamage dummy

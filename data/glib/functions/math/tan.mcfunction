@@ -11,12 +11,15 @@
 # Note: The input is the angle in degrees. The result is scaled by 1000. Angle must be on interval [0;360]
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy
 scoreboard objectives add Var2 dummy
 scoreboard objectives add Var3 dummy
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -24,6 +27,9 @@ scoreboard objectives add Res dummy
 #__________________________________________________
 # CODE
 
+# PARAMETERS
+
+#__________________________________________________
 # INIT:
 scoreboard objectives add Var4 dummy
 scoreboard objectives add Var5 dummy
@@ -34,10 +40,10 @@ scoreboard players operation @s Var5 = @s Var1
 
 function glib:math/cos
 
-scoreboard players operation @s Var4 = @s Res
+scoreboard players operation @s Var4 = @s Res1
 scoreboard players operation @s Var1 = @s Var5
 
 function glib:math/sin
 
-scoreboard players operation @s Res *= 1000 Constant
-scoreboard players operation @s Res /= @s Var4
+scoreboard players operation @s Res1 *= 1000 Constant
+scoreboard players operation @s Res1 /= @s Var4

@@ -11,6 +11,9 @@
 # Note: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add Var1 dummy

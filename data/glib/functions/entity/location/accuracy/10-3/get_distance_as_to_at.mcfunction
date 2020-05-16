@@ -11,6 +11,9 @@
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -21,6 +24,6 @@
 
 function glib:entity/location/accuracy/10-3/get_distance_squared_as_to_at
 
-scoreboard players operation @s Var1 = @s Res
+scoreboard players operation @s Var1 = @s Res1
 
 function glib:math/sqrt

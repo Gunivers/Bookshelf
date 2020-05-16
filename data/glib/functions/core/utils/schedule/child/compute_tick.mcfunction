@@ -31,6 +31,6 @@ execute unless entity @s[tag=Match] if score @s Var2 matches 0 run scoreboard pl
 
 execute store result score @s Var0 run time query gametime
 scoreboard players operation @s Var0 += @s Var1
-scoreboard players operation @s Res = @s Var0
+scoreboard players operation @s Res1 = @s Var0
 
 tag @s[tag=Match] remove Match

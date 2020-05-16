@@ -11,6 +11,9 @@
 # Note:
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 scoreboard objectives add VectorX dummy
@@ -33,7 +36,7 @@ scoreboard objectives add Var7 dummy
 scoreboard objectives add Var8 dummy
 scoreboard objectives add Var9 dummy
 
-scoreboard objectives add Res dummy
+scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -53,22 +56,22 @@ execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVec
 # Cos(Theta)
 scoreboard players operation @s Var1 = @s Var8
 function glib:math/cos
-scoreboard players operation @s Var4 = @s Res
+scoreboard players operation @s Var4 = @s Res1
 
 # Sin(Theta)
 scoreboard players operation @s Var1 = @s Var8
 function glib:math/sin
-scoreboard players operation @s Var5 = @s Res
+scoreboard players operation @s Var5 = @s Res1
 
 # Cos(Phi)
 scoreboard players operation @s Var1 = @s Var9
 function glib:math/cos
-scoreboard players operation @s Var6 = @s Res
+scoreboard players operation @s Var6 = @s Res1
 
 # Sin(Phi)
 scoreboard players operation @s Var1 = @s Var9
 function glib:math/sin
-scoreboard players operation @s Var7 = @s Res
+scoreboard players operation @s Var7 = @s Res1
 
 ### DEBUG
 execute if entity @a[tag=Glib_Debug,tag=Debug_Entity_LocalVectors_ConvertFromVectors,tag=!Glib_Init_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/2

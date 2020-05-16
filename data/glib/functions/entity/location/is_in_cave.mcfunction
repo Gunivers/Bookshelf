@@ -11,6 +11,9 @@
 # Note: Return 1 if the entity is in a cave, 0 else.
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -18,4 +21,4 @@
 
 #__________________________________________________
 # CODE
-execute store result score @s Res if block ~ ~ ~ cave_air
+execute store result score @s Res1 if block ~ ~ ~ cave_air

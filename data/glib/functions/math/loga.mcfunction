@@ -17,6 +17,9 @@
 # - if you input var2 = 1000 (corresponds to 1), the function will return non sense values because log_1(x) is not definied
 
 #__________________________________________________
+# PARAMETERS
+
+#__________________________________________________
 # INIT
 
 #__________________________________________________
@@ -32,11 +35,11 @@ function glib:math/log
 
 # We save log a on Var9
 scoreboard players operation @s Var1 = @s Var9
-scoreboard players operation @s Var9 = @s Res
+scoreboard players operation @s Var9 = @s Res1
 
 # Then we calculate log x
 function glib:math/log
-scoreboard players operation @s Res *= 10000 Constant
+scoreboard players operation @s Res1 *= 10000 Constant
 
 # And divide by log a
-scoreboard players operation @s Res /= @s Var9
+scoreboard players operation @s Res1 /= @s Var9
