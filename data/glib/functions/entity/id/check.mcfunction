@@ -13,10 +13,14 @@
 #__________________________________________________
 # PARAMETERS
 
+# Output: IdMatch (tag): On every entities that have the same Id as @s TargetId
+# Output: IdUpper (tag): On every entities that have an Id socre upper than @s TargetId
+# Output: IdUpper (tag): On every entities that have an Id socre lower than @s TargetId
+# Output: IdChecker (tag): On @s
+
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
 scoreboard objectives add Id dummy
 scoreboard objectives add TargetId dummy
 
@@ -31,11 +35,11 @@ tag @e remove IdUpper
 tag @e remove IdLower
 tag @e remove IdChecker
 
-execute as @e run scoreboard players operation @s Var1 = @s Id
-scoreboard players operation @e Var1 -= @s TargetId
-tag @e[scores={Var1=0}] add IdMatch
-tag @e[scores={Var1=..-1}] add IdUpper
-tag @e[scores={Var1=-1..}] add IdLower
+scoreboard players operation @e Id -= @s TargetId
+tag @e[scores={Id=0}] add IdMatch
+tag @e[scores={Id=..-1}] add IdLower
+tag @e[scores={Id=-1..}] add IdUpper
+scoreboard players operation @e Id += @s TargetId
 tag @s add IdChecker
 
 tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Id_Check] ["",{"text":"█ DEBUG █ ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Entity_Id_Check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Id Check","color":"green"}]

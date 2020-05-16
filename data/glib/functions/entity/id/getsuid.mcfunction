@@ -9,9 +9,12 @@
 # Original path: entity/id/getsuid
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
 # Note: Gives a unique identifier to the source entity
+# - To reset SUID, set the entity score "SUID" at 0 and make it execute this function.
 
 #__________________________________________________
 # PARAMETERS
+
+# Output: SUID (score): Simple Unique ID
 
 #__________________________________________________
 # INIT

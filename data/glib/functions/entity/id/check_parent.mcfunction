@@ -13,6 +13,11 @@
 #__________________________________________________
 # PARAMETERS
 
+# Output: ParentIdMatch (tag): On every entities that have the same ParentId as @s TargetId
+# Output: ParentIdUpper (tag): On every entities that have an ParentId socre upper than @s TargetId
+# Output: ParentIdUpper (tag): On every entities that have an ParentId socre lower than @s TargetId
+# Output: ParentIdChecker (tag): On @s
+
 #__________________________________________________
 # INIT
 
@@ -31,8 +36,8 @@ tag @e remove ParentIdLower
 tag @e remove ParentIdChecker
 scoreboard players operation @e ParentId -= @s TargetId
 tag @e[scores={ParentId=0}] add ParentIdMatch
-tag @e[scores={ParentId=..-1}] add ParentIdUpper
-tag @e[scores={ParentId=-1..}] add ParentIdLower
+tag @e[scores={ParentId=..-1}] add ParentIdLower
+tag @e[scores={ParentId=-1..}] add ParentIdUpper
 tag @s add ParentIdChecker
 scoreboard players operation @e ParentId += @s TargetId
 

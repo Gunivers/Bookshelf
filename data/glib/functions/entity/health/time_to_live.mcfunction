@@ -8,10 +8,12 @@
 
 # Original path: glib:entity/health/time_to_live
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#health
-# Note:
+# Note: You need to execute this function each tick on every entity on wich you want to apply a TTL. Default TTL: 10s
 
 #__________________________________________________
 # PARAMETERS
+
+# Input: TTL (score): Time to live (the entity is killed if it's score matches 1 ou -1)
 
 #__________________________________________________
 # INIT
