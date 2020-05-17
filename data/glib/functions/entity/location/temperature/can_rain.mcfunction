@@ -1,18 +1,30 @@
-# NAME: Can Rain
-# PATH: glib:entity/location/temperature/cain_rain
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.14
+# Last check:
 
-# VERSION: 1.0
-# MINECRAFT: 1.13
+# Original path: glib:entity/location/temperature/can_snow
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#temperature
+# Note: Allow to know if can rain at the position of the player. Return 1 if possible, else 0.
 
-# OUTPUT:
-# - Var1
+#__________________________________________________
+# PARAMETERS
 
-# NOTE: Allow to know if can rain at the position of the player. Return 1 if possible, else 0.
+# Output: Glib_CanRain (tag)
 
-# CODE:
+#__________________________________________________
+# INIT
+
+#__________________________________________________
+# CONFIG
+
+#__________________________________________________
+# CODE
+
 execute as @s run function glib:entity/location/temperature/get_biome_temperature
-execute if score @s Temperature matches 15000000..95000000 run tag @s add Glib_Can_Rain
-execute if score @s Temperature matches 100000000.. run tag @s remove Glib_Can_Rain
-execute if score @s Temperature matches 14000000.. run tag @s remove Glib_Can_Rain
+execute if score @s Temperature matches 15000000..95000000 run tag @s add Glib_CanRain
+execute if score @s Temperature matches 100000000.. run tag @s remove Glib_CanRain
+execute if score @s Temperature matches 14000000.. run tag @s remove Glib_CanRain

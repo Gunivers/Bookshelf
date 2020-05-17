@@ -6,12 +6,22 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/vector/convert_from_local_vector
+# Original path: glib:entity/vector/from_local_vector
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Note:
 
 #__________________________________________________
 # PARAMETERS
+
+# Input: VectorX (score dummy)
+# Input: VectorY (score dummy)
+# Input: VectorZ (score dummy)
+# Input: VectorSpeed (score dummy)
+
+# Output: VectorLeft (score dummy)
+# Output: VectorUp (score dummy)
+# Output: VectorFront (score dummy)
+# Output: VectorSpeedLocal (score dummy)
 
 #__________________________________________________
 # INIT

@@ -1,25 +1,32 @@
-# NAME: Biome Temperature
-# PATH: glib:entity/location/Temperature/get_biome_temperature
+#__________________________________________________
+# INFO     Copyright © 2020 Gunivers.
 
-# AUTHOR: theogiraudet
+# Authors: theogiraudet
+# Contributors:
+# MC Version: 1.14
+# Last check:
 
-# VERSION: 1.1
-# MINECRAFT: 1.14
-
-# PARAMETERS
+# Original path: glib:entity/location/temperature/get_biome_temperature
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#temperature
+# Note: Allow to get the temperature of the player's biome at y = 62 (sea level).
+#		The format of the result is "temperature * 10^8", based on the wiki values.
 
 #__________________________________________________
-# INIT:
+# PARAMETERS
+
+# Output: Temperature (score dummy)
+
+#__________________________________________________
+# INIT
+
 scoreboard objectives add Biome dummy
 scoreboard objectives add Temperature dummy
 
-# OUTPUT:
-# - Temperature(score dummy)
+#__________________________________________________
+# CONFIG
 
-# NOTE: Allow to get the temperature of the player's biome at y = 62 (sea level).
-#		The format of the result is "temperature * 10^8", based on the wiki values.
-
-# CODE:
+#__________________________________________________
+# CODE
 
 scoreboard players set @s[scores={Biome=0}] Temperature 50000000
 scoreboard players set @s[scores={Biome=1}] Temperature 80000000

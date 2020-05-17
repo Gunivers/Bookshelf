@@ -22,7 +22,7 @@ scoreboard objectives add Var1 dummy
 # CONFIG
 
 #Var1 -> Range*2 (1 blocs -> Var1 = 2)
-scoreboard players set @s[tag=!Glib_Override_Config] Var1 200
+scoreboard players set @s[tag=!Glib_OverrideConfig] Var1 200
 
 #__________________________________________________
 # CODE

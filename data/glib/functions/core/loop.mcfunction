@@ -22,3 +22,9 @@ execute as @e[tag=HeadGlibCache] at @s run function glib:core/utils/schedule/chi
 execute as @a[tag=Glib_Debug_Stick] run function glib:core/menu/debug/debug_record
 execute as @p[tag=Glib_Debug,tag=!Glib_Init_Menu,tag=Glib_Debug_Disp_Tick] run function glib:core/menu/debug/display_tick
 execute as @p[tag=Glib_Debug,tag=Debug_Entity_Management,tag=!Glib_Init_Menu] at @s run function glib:core/menu/debug/entity/target_entity_manager
+
+# Glib_Id for debug
+scoreboard objectives add Glib_Id dummy
+scoreboard players add @s Glib_Id 0
+execute if entity @s[scores={Glib_Id=0}] run scoreboard players add Glib_Id Data 1
+execute if entity @s[scores={Glib_Id=0}] run scoreboard players operation @s Glib_Id = Glib_Id Data

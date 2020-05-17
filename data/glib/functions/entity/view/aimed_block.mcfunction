@@ -22,7 +22,7 @@ scoreboard objectives add Var1 dummy
 # CONFIG
 
 # Var1 -> Range*10 (10 blocs -> Var1 = 100): Max distance limit for raycast
-scoreboard players set @s[tag=!Glib_Override_Config] Var1 100
+scoreboard players set @s[tag=!Glib_OverrideConfig] Var1 100
 
 #__________________________________________________
 # CODE

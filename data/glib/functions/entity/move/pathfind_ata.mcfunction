@@ -28,10 +28,10 @@ scoreboard objectives add PathCost dummy
 
 # Possible moves -> 0 = terrestrial (like zombies), 1 = aerial (like bat). You can cofig your own possible moves file in entity/move/config/pathind/possible_moves/
 # and link your file to the system in entity/move/child/pathfind/source
-scoreboard players set @s[tag=!Glib_Override_Config] Var4 0
+scoreboard players set @s[tag=!Glib_OverrideConfig] Var4 0
 
 # Maximum number of tests (default: 500)
-scoreboard players set @s[tag=!Glib_Override_Config] Var2 500
+scoreboard players set @s[tag=!Glib_OverrideConfig] Var2 500
 
 #__________________________________________________
 # CODE

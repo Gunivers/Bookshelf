@@ -37,7 +37,7 @@ scoreboard objectives add VectorSpeed dummy
 # CONFIG
 
 # Manage precision of collision detection (1000 = 1 block). More the system is accurate and more it will be heavy to run.
-scoreboard players set @s[tag=!Glib_Override_Config] Var5 500
+scoreboard players set @s[tag=!Glib_OverrideConfig] Var5 500
 
 #__________________________________________________
 # CODE
