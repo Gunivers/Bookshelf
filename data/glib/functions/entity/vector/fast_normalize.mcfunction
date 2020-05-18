@@ -35,7 +35,7 @@ scoreboard objectives add Res4 dummy
 #__________________________________________________
 # CONFIG
 
-# The final vector will have this length
+# The final vector will have (almost) this length
 scoreboard players set @s[tag=!Glib_OverrideConfig] Var1 1000
 
 #__________________________________________________
