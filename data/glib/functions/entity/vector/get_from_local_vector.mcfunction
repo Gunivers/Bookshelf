@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/vector/from_local_vector
+# Original path: glib:entity/vector/get_from_local_vector
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Note:
 

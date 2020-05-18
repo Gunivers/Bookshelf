@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/local_vector/convert_from_vector
+# Original path: glib:entity/local-vector/get_from_relative_vector
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#local-vector
 # Note:
 

@@ -6,8 +6,8 @@
 # MC Version: 1.15
 # Last check:
 
-# Original path: glib:entity/vector/from_res123
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#convert
+# Original path: glib:entity/vector/edit/from_res123
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Note:
 
 #__________________________________________________
