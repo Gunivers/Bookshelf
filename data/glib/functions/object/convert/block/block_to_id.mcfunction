@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add BlockId dummy
 
 #__________________________________________________
 # CONFIG
