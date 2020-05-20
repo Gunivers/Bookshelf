@@ -1,1 +1,1 @@
-tellraw @a[tag=Glib_Debug] [{"text":"------------------------------","color":"green"}]
+tellraw @a[tag=Glib_Debug] [{"text":"< ------------------------------","color":"green"}]

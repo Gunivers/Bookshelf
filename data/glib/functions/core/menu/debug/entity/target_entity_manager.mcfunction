@@ -1,6 +1,6 @@
 tag @e[distance=0.1..] remove Glib_Debug_entity.target_entity_manager
 
-execute if entity @a[tag=Glib_Debug_entity.target_entity_manager] run tellraw @a[tag=Glib_Debug] [{"text":"[Glib_Debug] glib:entity/target_entity_manager","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove Glib_Debug_entity.target_entity_manager"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
+execute if entity @a[tag=Glib_Debug_entity.target_entity_manager] run tellraw @a[tag=Glib_Debug] [{"text":"> DEBUG | glib:entity/target_entity_manager","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove Glib_Debug_entity.target_entity_manager"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
 
 tag @e remove Glib_Debug_entity.entity_manager_selected
 
