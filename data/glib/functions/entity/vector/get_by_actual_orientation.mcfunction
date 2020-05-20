@@ -50,8 +50,9 @@ kill @e[tag=GetVec,type=area_effect_cloud]
 
 scoreboard players set @s VectorSpeed 1000
 
-### DEBUG
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Vector_Get_By_Orientation] ["",{"text":"█ DEBUG █ ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Entity_Vector_Get_By_Orientation"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Vector Get_By_Actuel_Orientation","color":"green"}]
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Vector_Get_By_Orientation] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}}]
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Vector_Get_By_Orientation] ["",{"text":"RESULT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
-### END DEBUG
+# Start Debug
+execute if entity @a[tag=Glib_Debug_entity.vector.get_by_actual_orientation] run tellraw @a[tag=Glib_Debug] [{"text":"[Glib_Debug] glib:entity/vector/get_by_actual_orientation","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove Glib_Debug_entity.vector.get_by_actual_orientation"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
+execute if entity @a[tag=Glib_Debug_entity.vector.get_by_actual_orientation] run function glib:core/debug/message/info/entity_info
+execute if entity @a[tag=Glib_Debug_entity.vector.get_by_actual_orientation] run function glib:entity/vector/debug/display_vector
+execute if entity @a[tag=Glib_Debug_entity.vector.get_by_actual_orientation] run function glib:core/debug/message/info/end_debug
+# End Debug

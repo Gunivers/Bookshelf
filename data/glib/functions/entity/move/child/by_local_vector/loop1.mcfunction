@@ -14,7 +14,7 @@ scoreboard players operation @s[tag=FactorIncrease] Var3 /= 2 Constant
 
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Init_Menu] run function glib:core/utils/debug/entity/move/by_local_vector/2
+execute if entity @a[tag=Glib_Debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/by_local_vector/2
 # -----
 
 tag @s remove MoveLoop

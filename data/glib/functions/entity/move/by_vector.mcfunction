@@ -45,10 +45,10 @@ scoreboard players set @s[tag=!Glib_OverrideConfig] Var5 500
 scoreboard players set @s[scores={Var5=1001..}] Var5 1000
 scoreboard players set @s[scores={Var5=..-1}] Var5 1000
 
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"█ DEBUG █ ","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Move_By_Vector"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Move By_Vector","color":"green"}]
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"[Glib_Debug] ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Move_By_Vector"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Move By_Vector","color":"green"}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}}]
 
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
 
 # Copy of vectors
 scoreboard players operation @s Var1 = @s VectorX
@@ -63,17 +63,17 @@ scoreboard players operation @s Var1 /= 1000 Constant
 scoreboard players operation @s Var2 /= 1000 Constant
 scoreboard players operation @s Var3 /= 1000 Constant
 
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"APPLY SPEED -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"APPLY SPEED -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}}]
 
 scoreboard players set @s Var4 1
 
 # Divide vector
 execute if entity @s run function glib:entity/move/child/by_vector/loop1
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"BREAK -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}},{"text":".   Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Precision: ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"BREAK -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Var3"}},{"text":".   Factor: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Precision: ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
 
 scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var1
 scoreboard players operation @s[scores={Var4=1..}] Var8 = @s Var2
 scoreboard players operation @s[scores={Var4=1..}] Var9 = @s Var3
 
 function glib:entity/move/child/by_vector/loop2
-tellraw @a[tag=Glib_Debug,tag=Debug_Entity_Move_By_Vector] ["",{"text":"RETURN -> ","color":"gray"},{"text":"Factor (must be 0): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
+tellraw @a[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] ["",{"text":"RETURN -> ","color":"gray"},{"text":"Factor (must be 0): ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]

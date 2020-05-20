@@ -1,0 +1,4 @@
+tellraw @s[tag=!Glib_Debug_entity.id.] ["",{"text":"        | ","color":"blue"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Debug_entity.id."},"hoverEvent":{"action":"show_text","value":"Show id functions"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Debug_entity.id."},"hoverEvent":{"action":"show_text","value":"Show id functions"}}]
+tellraw @s[tag=Glib_Debug_entity.id.] ["",{"text":"        | ","color":"blue"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_entity.id."},"hoverEvent":{"action":"show_text","value":"Hide id functions"}},{"text":" Id","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_entity.id."},"hoverEvent":{"action":"show_text","value":"Hide id functions"}}]
+
+execute if entity @s[tag=Glib_Debug_entity.id.] run function glib:core/menu/debug/entity/id/check

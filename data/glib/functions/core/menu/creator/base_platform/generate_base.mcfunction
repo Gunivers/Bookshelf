@@ -1,4 +1,4 @@
-tag @s remove Glib_Menu_Platform_Confirm
+tag @s remove Glib_Creator_platform
 
 execute at @s run setworldspawn ~ ~ ~
 
