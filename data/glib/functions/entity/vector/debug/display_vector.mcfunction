@@ -1,0 +1,1 @@
+tellraw @a[tag=Glib_Debug] [{"text":"   VectorX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"VectorX"},"color":"gold"},{"text":" VectorY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"VectorY"},"color":"gold"},{"text":" VectorZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"VectorZ"},"color":"gold"}]

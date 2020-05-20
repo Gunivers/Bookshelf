@@ -19,8 +19,8 @@ function glib:core/utils/cache/cache_loop
 execute as @e[tag=HeadGlibCache] at @s run function glib:core/utils/schedule/child/loop_schedule
 
 # Debug recorder
-execute as @a[tag=Glib_Debug_Stick] run function glib:core/menu/debug/debug_record
-execute as @p[tag=Glib_Debug,tag=!Glib_Init_Menu,tag=Glib_Debug_Disp_Tick] run function glib:core/menu/debug/display_tick
+execute as @a[tag=Glib_Debug_Stick] run function glib:core/menu/debug/debug_stick
+execute as @p[tag=Glib_Debug,tag=!Glib_Init_Menu,tag=Glib_Debug_Disp_Tick] run function glib:core/debug/display_tick
 execute as @p[tag=Glib_Debug,tag=Debug_Entity_Management,tag=!Glib_Init_Menu] at @s run function glib:core/menu/debug/entity/target_entity_manager
 
 # Glib_Id for debug
