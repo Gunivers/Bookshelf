@@ -30,6 +30,6 @@ jobs:
           host: play.gunivers.net
           port: 5657
           user: contact.gunivers@gmail.com|gunivers-lib
-          password: ${{ secrets.GLIB_SFTP_PASSWORD }}
+          password: ${{ secrets.GUNIVERS_USER_PASSWORD }}
           remote_path: /world/datapacks/Gunivers-Lib/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**
