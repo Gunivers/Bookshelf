@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -21,6 +21,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 10
       # Deploys to the server
       - name: deploy
         uses:  swznd/sftp-deploy@master
@@ -30,3 +32,4 @@ jobs:
           user: contact.gunivers@gmail.com|gunivers-lib
           password: ${{ secrets.GLIB_SFTP_PASSWORD }}
           remote_path: /world/datapacks/Gunivers-Lib/
+          ignore: .github/**,.gitignore,**/.gitignore,**/.git/**
