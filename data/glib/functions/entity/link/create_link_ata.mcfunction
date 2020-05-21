@@ -45,16 +45,17 @@ scoreboard objectives add Glib_Link_Parent dummy
 #__________________________________________________
 # CODE
 
-tag @e[limit=1,sort=nearest] add Target
+tag @e remove Glib_Link_Target
+tag @e[limit=1,sort=nearest] add Glib_Link_Target
 
 #   Relative Position
 execute store result score @s Var1 run data get entity @s Pos[0] 1000
 execute store result score @s Var2 run data get entity @s Pos[1] 1000
 execute store result score @s Var3 run data get entity @s Pos[2] 1000
 
-execute store result score @s Glib_R_LocX run data get entity @e[tag=Target] Pos[0] 1000
-execute store result score @s Glib_R_LocY run data get entity @e[tag=Target] Pos[1] 1000
-execute store result score @s Glib_R_LocZ run data get entity @e[tag=Target] Pos[2] 1000
+execute store result score @s Glib_R_LocX run data get entity @e[tag=Glib_Link_Target,limit=1] Pos[0] 1000
+execute store result score @s Glib_R_LocY run data get entity @e[tag=Glib_Link_Target,limit=1] Pos[1] 1000
+execute store result score @s Glib_R_LocZ run data get entity @e[tag=Glib_Link_Target,limit=1] Pos[2] 1000
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Create_Link_By_Target_Id]=-","color":"green"}]
@@ -74,8 +75,8 @@ scoreboard players operation @s Glib_R_LocZ *= -1 Constant
 execute store result score @s Var1 run data get entity @s Rotation[0] 1000
 execute store result score @s Var2 run data get entity @s Rotation[1] 1000
 
-execute store result score @s Glib_R_OriV run data get entity @e[tag=Target] Rotation[0] 1000
-execute store result score @s Glib_R_OriH run data get entity @e[tag=Target] Rotation[1] 1000
+execute store result score @s Glib_R_OriV run data get entity @e[tag=Glib_Link_Target,limit=1] Rotation[0] 1000
+execute store result score @s Glib_R_OriH run data get entity @e[tag=Glib_Link_Target,limit=1] Rotation[1] 1000
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Child Theta: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":".   Child Phi: ","color":"red"},{"score":{"name":"@s","objective":"Var2"}}]
@@ -93,32 +94,32 @@ scoreboard players operation @s Glib_R_OriH *= -1 Constant
 #tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Diff Theta: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriV"}},{"text":".   Diff Phi: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_OriH"}}]
 ### END DEBUG
 
-execute as @e[tag=Target] run function glib:entity/orientation/get
+execute as @e[tag=Glib_Link_Target] run function glib:entity/orientation/get
 
 # tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
-# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriH"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriV"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriH"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriV"}}]
 
 # Cos(Phi)
-scoreboard players operation @s Var1 = @e[tag=Target] OriH
+scoreboard players operation @s Var1 = @e[tag=Glib_Link_Target] OriH
 function glib:math/cos
 scoreboard players operation @s Var4 = @s Res1
-# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var4"}}]
 # Sin(Phi)
-scoreboard players operation @s Var1 = @e[tag=Target] OriH
+scoreboard players operation @s Var1 = @e[tag=Glib_Link_Target] OriH
 function glib:math/sin
 scoreboard players operation @s Var5 = @s Res1
-# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var5"}}]
 
 # Cos(Theta)
-scoreboard players operation @s Var1 = @e[tag=Target] OriV
+scoreboard players operation @s Var1 = @e[tag=Glib_Link_Target] OriV
 function glib:math/cos
 scoreboard players operation @s Var6 = @s Res1
-# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var6"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var6"}}]
 # Sin(Theta)
-scoreboard players operation @s Var1 = @e[tag=Target] OriV
+scoreboard players operation @s Var1 = @e[tag=Glib_Link_Target] OriV
 function glib:math/sin
 scoreboard players operation @s Var7 = @s Res1
-# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=Target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=Glib_Link_Target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"Var7"}}]
 
 # Vector Left -> L = cos(P)*X + sin(P)*Z
 scoreboard players operation @s Var1 = @s Glib_R_LocX

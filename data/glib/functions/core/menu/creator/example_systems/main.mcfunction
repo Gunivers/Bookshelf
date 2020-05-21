@@ -12,19 +12,8 @@ tellraw @s ["",{"text":"            But you can help us create more!","color":"g
 tellraw @s ["",{"text":"            Just join us on our ","color":"gray"},{"text":"[Discord server]","color":"dark_aqua","clickEvent":{"action":"open_url","value":"https://discord.gg/E8qq6tN"},"hoverEvent":{"action":"show_text","value":"Click to join our Discord"}}]
 
 
-# Non-destructive placement system
-execute as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run scoreboard players operation @s Var1 = @s BlockId
-execute as @e[tag=Glib_Example_System] at @s run function glib:object/convert/block/id_to_block
-kill @e[tag=Glib_Example_System]
 
-execute positioned ~ ~1.7 ~ run summon armor_stand ^ ^ ^5 {Small:1,Marker:1,Invisible:1,NoGravity:1,Tags:["Glib","Glib_Example_System"]}
-execute as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run function glib:object/convert/block/block_to_id
 
 # Call system creator
 execute if entity @s[tag=Glib_Creator_system.blackhole] run function glib:core/menu/creator/example_systems/systems/blackhole
 execute if entity @s[tag=Glib_Creator_system.lgdir] run function glib:core/menu/creator/example_systems/systems/lgdir
-
-# Validation
-execute if entity @s[tag=Glib_Creator_Valid_System] as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run setblock ~ ~1 ~ redstone_block
-execute if entity @s[tag=Glib_Creator_Valid_System] as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run function glib:object/convert/block/id_to_block
-execute if entity @s[tag=Glib_Creator_Valid_System] run tag @s remove Glib_Creator_Valid_System

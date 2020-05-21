@@ -29,6 +29,7 @@ tellraw @s [{"text":"\n   "},{"text":">","color":"blue","clickEvent":{"action":"
 tellraw @s [{"text":"\n   "},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}},{"text":" ","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}},{"text":"Informations","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}}]
 
 
+function glib:core/menu/creator/place_system/remove
 execute as @s[tag=Glib_Menu.Debug] at @s run function glib:core/menu/debug/main
 execute as @s[tag=Glib_Menu.Creator] at @s run function glib:core/menu/creator/main
 execute as @s[tag=Glib_Menu.Rules] at @s run function glib:core/menu/gamerule/rules
