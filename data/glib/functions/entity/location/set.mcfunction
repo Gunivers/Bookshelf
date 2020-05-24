@@ -26,7 +26,7 @@ scoreboard objectives add Var3 dummy
 #__________________________________________________
 # CODE
 
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
+summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
 
 tp @e[type=armor_stand,tag=SetLocation,limit=1] @s
 
