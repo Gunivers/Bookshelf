@@ -74,6 +74,7 @@ scoreboard objectives remove Var6
 scoreboard objectives remove Var7
 scoreboard objectives remove Var8
 scoreboard objectives remove Var9
+scoreboard objectives remove Res0
 scoreboard objectives remove Res1
 scoreboard objectives remove Res2
 scoreboard objectives remove Res3
