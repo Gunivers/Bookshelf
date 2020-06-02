@@ -8,7 +8,7 @@
 
 # Original path: glib:entity/location/spreadplayers
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity
-# Note: Return 1 if the entity is in a cave, 0 else.
+# Note: Spread an entity based on CenterX, CenterZ and Radius scores
 
 #__________________________________________________
 # PARAMETERS
