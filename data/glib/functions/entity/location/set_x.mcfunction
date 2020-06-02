@@ -24,10 +24,9 @@ scoreboard objectives add Var1 dummy
 #__________________________________________________
 # CODE
 
-summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
+tag @s add SetLocation
+execute if entity @s[type=minecraft:player] run summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
+execute if entity @s[type=minecraft:player] as @e[tag=SetLocation,limit=1] run function glib:entity/location/child/set_x_player
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 1 run scoreboard players add @s Var1 0
+tag @s remove SetLocation
 
-tp @e[type=armor_stand,tag=SetLocation,limit=1] @s
-
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 1 run scoreboard players get @s Var1
-tp @s @e[type=armor_stand,tag=SetLocation,limit=1]
-kill @e[type=armor_stand,tag=SetLocation,limit=1]

@@ -26,12 +26,10 @@ scoreboard objectives add Var3 dummy
 #__________________________________________________
 # CODE
 
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
-
-tp @e[type=armor_stand,tag=SetLocation,limit=1] @s
-
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[0] double 0.001 run scoreboard players get @s Var1
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[1] double 0.001 run scoreboard players get @s Var2
-execute store result entity @e[type=armor_stand,tag=SetLocation,limit=1] Pos[2] double 0.001 run scoreboard players get @s Var3
-tp @s @e[type=armor_stand,tag=SetLocation,limit=1]
-kill @e[type=armor_stand,tag=SetLocation,limit=1]
+tag @s add tp
+execute if entity @s[type=minecraft:player] run summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
+execute if entity @s[type=minecraft:player] as @e[tag=SetLocation,limit=1] run function glib:entity/location/accuracy/10-3/child/set_player
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 0.001 run scoreboard players add @s Var1 0
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 0.001 run scoreboard players add @s Var2 0
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[2] double 0.001 run scoreboard players add @s Var3 0
+tag @s remove tp
