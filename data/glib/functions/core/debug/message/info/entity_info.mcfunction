@@ -1,1 +1,1 @@
-tellraw @a[tag=Glib_Debug] [{"text":"   Entity: ","color":"dark_gray"},{"selector":"@s","color":"gold"},{"text":" glib.debug.id: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.debug.id"},"color":"gold"}]
+tellraw @a[tag=glib.debug] [{"text":"   Entity: ","color":"dark_gray"},{"selector":"@s","color":"gold"},{"text":" glib.debug.id: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.debug.id"},"color":"gold"}]

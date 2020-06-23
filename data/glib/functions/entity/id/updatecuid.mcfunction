@@ -16,7 +16,6 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.data dummy
 scoreboard objectives add glib.id dummy
 
 #__________________________________________________

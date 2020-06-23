@@ -1,7 +1,7 @@
 scoreboard players operation @s[scores={glib.var4=1..}] glib.var3 = @s glib.var7
 
 # DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/forward/loop2
+execute if entity @a[tag=glib.debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/forward/loop2
 # -----
 
 

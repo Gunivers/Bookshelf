@@ -44,7 +44,7 @@ scoreboard players set @s[tag=!glib.config.override] glib.var 1000
 
 
 ### DEBUG
-execute if score @s VectorX matches 2147483.. run tellraw @a[tag=Glib_Debug] ["",{"text":"[ERROR] VectorX too high, int overflow\n - glib:entity/vector/fast_normalize","color":"green"},{"text":" - Entity: ","color":"dark_red"},{"selector":"@s","color":"dark_red"},{"text":" glib.debug.id: ","color":"dark_red"},{"score":{"name":"@s","objective":"glib.debug.id"},"color":"dark_red"}]
+execute if score @s VectorX matches 2147483.. run tellraw @a[tag=glib.debug] ["",{"text":"[ERROR] VectorX too high, int overflow\n - glib:entity/vector/fast_normalize","color":"green"},{"text":" - Entity: ","color":"dark_red"},{"selector":"@s","color":"dark_red"},{"text":" glib.debug.id: ","color":"dark_red"},{"score":{"name":"@s","objective":"glib.debug.id"},"color":"dark_red"}]
 ### END DEBUG
 
 function glib:entity/vector/length_squared

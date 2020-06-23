@@ -28,7 +28,7 @@
 #__________________________________________________
 # CODE
 
-  # ~~ Glib_Debug_global ~~
+  # ~~ glib.debug.global ~~
 scoreboard objectives remove glib.data
 scoreboard objectives remove glib.config
 scoreboard objectives remove glib.const

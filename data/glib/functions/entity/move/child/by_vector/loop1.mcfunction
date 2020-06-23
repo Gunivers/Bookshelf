@@ -16,7 +16,7 @@ scoreboard players operation @s[tag=FactorIncrease] glib.var2 /= 2 glib.const
 scoreboard players operation @s[tag=FactorIncrease] glib.var3 /= 2 glib.const
 
 # DEBUG
-execute at @s[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
+execute at @s[tag=glib.debug,tag=glib.debug.entity.move.by_vector] run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_fence"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
 # END DEBUG
 
 

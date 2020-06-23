@@ -1,32 +1,38 @@
 #__________________________________________________
 # INFO     Copyright © 2020 Gunivers.
 
-# Import constants
+#__________________________________________________
+# INIT
+scoreboard objectives add glib.data dummy
+scoreboard objectives add glib.config dummy
+scoreboard objectives add glib.const dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.res dummy
+
+scoreboard objectives add glib.debug.id dummy
+
 function glib:core/import/constants
 
-# PARAMETERS
-
 #__________________________________________________
-# INIT menu refresh
-scoreboard objectives add Data dummy
+# CODE
 
+# Glib Menu
+execute if score menu.refresh glib.data matches 5.. run scoreboard players set menu.refresh glib.data
+scoreboard players add menu.refresh glib.data 1
+execute if score menu.refresh glib.data matches 1 run run function glib:core/menu/main
 
-scoreboard players set @a[scores={Data=5..}] Data 0
-scoreboard objectives add Data dummy
-scoreboard players add @a Data 1
-execute as @a[tag=Glib_Menu,scores={Data=1}] at @s run function glib:core/menu/main
+# Cache
 function glib:core/utils/cache/cache_loop
 
 # Loop Schedule
 execute as @e[tag=Glib_Cache_Head] at @s run function glib:core/utils/schedule/child/loop_schedule
 
-# Debug recorder
-execute as @a[tag=Glib_Debug_Stick] run function glib:core/menu/debug/debug_stick
-execute as @a[tag=Glib_Debug,tag=Glib_Debug_global.display.tick] run function glib:core/debug/display_tick
-execute as @a[tag=Glib_Debug,tag=Glib_Debug_entity.target_entity_manager,limit=1] at @s run function glib:core/menu/debug/entity/target_entity_manager
+# Debug Recorder
+execute as @a[tag=glib.debug.Stick] run function glib:core/menu/debug/debug_stick
+execute as @a[tag=glib.debug,tag=glib.debug.global.display.tick] run function glib:core/debug/display_tick
+execute as @a[tag=glib.debug,tag=glib.debug.entity.target_entity_manager,limit=1] at @s run function glib:core/menu/debug/entity/target_entity_manager
 
-# glib.debug.id for debug
-scoreboard objectives add glib.debug.id dummy
+# Debug Id
 scoreboard players add @e glib.debug.id 0
-execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players add glib.debug.id Data 1
-execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation @s glib.debug.id = glib.debug.id Data
+execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players add debug.id glib.data 1
+execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation @s glib.debug.id = debug.id glib.data

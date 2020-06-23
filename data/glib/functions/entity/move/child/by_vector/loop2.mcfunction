@@ -1,5 +1,5 @@
 # DEBUG
-execute at @s[tag=Glib_Debug,tag=Glib_Debug_entity.move.by_vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
+execute at @s[tag=glib.debug,tag=glib.debug.entity.move.by_vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
 # END DEBUG
 
 tag @s remove CollisionTest

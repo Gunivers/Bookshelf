@@ -50,7 +50,7 @@ execute store result score @s glib.var9 run data get entity @s Rotation[1] 1
 scoreboard players operation @s VectorSpeedLocal = @s VectorSpeed
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Glib_Debug_entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/1
+execute if entity @a[tag=glib.debug,tag=glib.debug.entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/1
 ### END DEBUG
 
 # Cos(Theta)
@@ -74,7 +74,7 @@ function glib:math/sin
 scoreboard players operation @s glib.var7 = @s glib.res
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Glib_Debug_entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/2
+execute if entity @a[tag=glib.debug,tag=glib.debug.entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/2
 ### END DEBUG
 
 
@@ -129,5 +129,5 @@ scoreboard players operation @s VectorFront -= @s glib.var
 scoreboard players set @s VectorSpeed 1000
 
 ### DEBUG
-execute if entity @a[tag=Glib_Debug,tag=Glib_Debug_entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/3
+execute if entity @a[tag=glib.debug,tag=glib.debug.entity.local_vector.get_from_relative_vector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/local_vectors/convert_from_vectors/3
 ### END DEBUG
