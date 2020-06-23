@@ -28,17 +28,22 @@
 #__________________________________________________
 # CODE
 
+  # ~~ Glib_Debug_global ~~
+scoreboard objectives remove glib.data
+scoreboard objectives remove glib.config
+scoreboard objectives remove glib.const
+scoreboard objectives remove glib.var
+scoreboard objectives remove glib.res
+
+
 	# ~~ Bool ~~
 scoreboard objectives remove Output
 scoreboard objectives remove Input
 scoreboard objectives remove Memory
-	# ~~ Constants & Data~~
-scoreboard objectives remove Constant
-scoreboard objectives remove Data
-	# ~~ Id ~~
-scoreboard objectives remove Id
-scoreboard objectives remove TargetId
-scoreboard objectives remove ParentId
+	# ~~ glib.id ~~
+scoreboard objectives remove glib.id
+scoreboard objectives remove glib.id.target
+scoreboard objectives remove glib.id.parent
 	# ~~ Local Vectors ~~
 scoreboard objectives remove VectorLeft
 scoreboard objectives remove VectorUp
@@ -49,41 +54,18 @@ scoreboard objectives remove CollisionLocal
 scoreboard objectives remove LocX
 scoreboard objectives remove LocY
 scoreboard objectives remove LocZ
-	# ~~ Math ~~
-scoreboard objectives remove Constant
 	# ~~ Orientation ~~
 scoreboard objectives remove OriV
 scoreboard objectives remove OriH
 	# ~~ Path Finder ~~
 scoreboard objectives remove PathCost
 	# ~~ Relative Location ~~
-scoreboard objectives remove Glib_R_LocX
-scoreboard objectives remove Glib_R_LocY
-scoreboard objectives remove Glib_R_LocZ
+scoreboard objectives remove glib.link.r.x
+scoreboard objectives remove glib.link.r.y
+scoreboard objectives remove glib.link.r.z
 	# ~~ Relative Orientation ~~
-scoreboard objectives remove Glib_R_OriV
-scoreboard objectives remove Glib_R_OriH
-	# ~~ Vars ~~
-scoreboard objectives remove Var0
-scoreboard objectives remove Var1
-scoreboard objectives remove Var2
-scoreboard objectives remove Var3
-scoreboard objectives remove Var4
-scoreboard objectives remove Var5
-scoreboard objectives remove Var6
-scoreboard objectives remove Var7
-scoreboard objectives remove Var8
-scoreboard objectives remove Var9
-scoreboard objectives remove Res0
-scoreboard objectives remove Res1
-scoreboard objectives remove Res2
-scoreboard objectives remove Res3
-scoreboard objectives remove Res4
-scoreboard objectives remove Res5
-scoreboard objectives remove Res6
-scoreboard objectives remove Res7
-scoreboard objectives remove Res8
-scoreboard objectives remove Res9
+scoreboard objectives remove glib.link.r.v
+scoreboard objectives remove glib.link.r.h
 	# ~~ Vectors ~~
 scoreboard objectives remove VectorX
 scoreboard objectives remove VectorY

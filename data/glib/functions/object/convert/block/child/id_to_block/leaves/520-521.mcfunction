@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 520 run setblock ~ ~ ~ redstone_block
-execute if score @s BlockId matches 521 run setblock ~ ~ ~ redstone_lamp
+execute if score @s glib.block.id matches 520 run setblock ~ ~ ~ redstone_block
+execute if score @s glib.block.id matches 521 run setblock ~ ~ ~ redstone_lamp

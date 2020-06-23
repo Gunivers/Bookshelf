@@ -16,13 +16,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add glib.var dummy
 
 #__________________________________________________
 # CONFIG
 
-#Var1 -> Range*2 (1 blocs -> Var1 = 2)
-scoreboard players set @s[tag=!Glib_OverrideConfig] Var1 200
+#glib.var -> Range*2 (1 blocs -> glib.var = 2)
+scoreboard players set @s[tag=!glib.config.override] glib.var 200
 
 #__________________________________________________
 # CODE
@@ -34,7 +34,7 @@ summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_CanSee_Target","Glib_CanSee_T
 
 execute as @e[tag=Glib_CanSee_Aim] positioned as @s facing entity @e[tag=Glib_CanSee_Target,limit=1,sort=nearest] feet run tp @s ~ ~ ~ ~ ~
 
-scoreboard players operation @e[tag=Glib_CanSee_Aim] Var1 = @s Var1
+scoreboard players operation @e[tag=Glib_CanSee_Aim] glib.var = @s glib.var
 
 execute as @e[tag=Glib_CanSee_Aim] at @s run function glib:entity/view/child/can_see-loop
 

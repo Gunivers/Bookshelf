@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Data dummy
-scoreboard objectives add Id dummy
+scoreboard objectives add glib.data dummy
+scoreboard objectives add glib.id dummy
 
 #__________________________________________________
 # CONFIG
@@ -25,10 +25,10 @@ scoreboard objectives add Id dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set CUID Data 1
-tag @e[scores={Id=1..}] add UpdateCUID
+scoreboard players set id.chain glib.data 1
+tag @e[scores={glib.id=1..}] add glib.id.chain.update
 
 function glib:entity/id/child/updatecuid-check
 
-tag @e remove UpdateCUID
-tag @e remove CorrectCUID
+tag @e remove glib.id.chain.update
+tag @e remove glib.id.chain.correct

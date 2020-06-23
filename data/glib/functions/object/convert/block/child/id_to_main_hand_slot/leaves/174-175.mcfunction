@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 174 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_wood
-execute if score @s BlockId matches 175 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_prismarine
+execute if score @s glib.block.id matches 174 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_wood
+execute if score @s glib.block.id matches 175 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_prismarine

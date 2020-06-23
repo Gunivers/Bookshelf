@@ -13,16 +13,16 @@
 #__________________________________________________
 # PARAMETERS
 
-# Output: IdMatch (tag): On every entities that have the same Id as @s TargetId
-# Output: IdUpper (tag): On every entities that have an Id socre upper than @s TargetId
-# Output: IdUpper (tag): On every entities that have an Id socre lower than @s TargetId
-# Output: IdChecker (tag): On @s
+# Output: glib.id.match (tag): On every entities that have the same glib.id as @s glib.id.target
+# Output: glib.id.upper (tag): On every entities that have an glib.id socre upper than @s glib.id.target
+# Output: glib.id.upper (tag): On every entities that have an glib.id socre lower than @s glib.id.target
+# Output: glib.id.checker (tag): On @s
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Id dummy
-scoreboard objectives add TargetId dummy
+scoreboard objectives add glib.id dummy
+scoreboard objectives add glib.id.target dummy
 
 #__________________________________________________
 # CONFIG
@@ -30,22 +30,22 @@ scoreboard objectives add TargetId dummy
 #__________________________________________________
 # CODE
 
-tag @e remove IdMatch
-tag @e remove IdUpper
-tag @e remove IdLower
-tag @e remove IdChecker
+tag @e remove glib.id.match
+tag @e remove glib.id.upper
+tag @e remove glib.id.lower
+tag @e remove glib.id.checker
 
-scoreboard players operation @e Id -= @s TargetId
-tag @e[scores={Id=0}] add IdMatch
-tag @e[scores={Id=..-1}] add IdLower
-tag @e[scores={Id=-1..}] add IdUpper
-scoreboard players operation @e Id += @s TargetId
-tag @s add IdChecker
+scoreboard players operation @e glib.id -= @s glib.id.target
+tag @e[scores={glib.id=0}] add glib.id.match
+tag @e[scores={glib.id=..-1}] add glib.id.lower
+tag @e[scores={glib.id=-1..}] add glib.id.upper
+scoreboard players operation @e glib.id += @s glib.id.target
+tag @s add glib.id.checker
 
 # Start Debug
-execute if entity @a[tag=Glib_Debug_entity.id.check] run tellraw @a[tag=Glib_Debug] ["",{"text":"[Glib_Debug] ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_entity.id.check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Id Check","color":"green"}]
-execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=IdChecker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":"   Checker","color":"red"}]
-execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=IdMatch,tag=!IdChecker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":"   Match","color":"red"}]
-execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=IdUpper,tag=!IdChecker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":"   Upper","color":"red"}]
-execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=IdLower,tag=!IdChecker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   Id: ","color":"red"},{"score":{"name":"@s","objective":"Id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"Var1"}},{"text":"   Lower","color":"red"}]
+execute if entity @a[tag=Glib_Debug_entity.id.check] run tellraw @a[tag=Glib_Debug] ["",{"text":"[Glib_Debug] ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Debug_entity.id.check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity glib.id Check","color":"green"}]
+execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=glib.id.checker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   glib.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"glib.var"}},{"text":"   Checker","color":"red"}]
+execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=glib.id.match,tag=!glib.id.checker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   glib.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"glib.var"}},{"text":"   Match","color":"red"}]
+execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=glib.id.upper,tag=!glib.id.checker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   glib.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"glib.var"}},{"text":"   Upper","color":"red"}]
+execute if entity @a[tag=Glib_Debug_entity.id.check] as @e[tag=glib.id.lower,tag=!glib.id.checker] run tellraw @a[tag=Glib_Debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   glib.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"glib.var"}},{"text":"   Lower","color":"red"}]
 # End Debug

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 180 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_block
-execute if score @s BlockId matches 181 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_fan
+execute if score @s glib.block.id matches 180 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_block
+execute if score @s glib.block.id matches 181 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_brain_coral_fan

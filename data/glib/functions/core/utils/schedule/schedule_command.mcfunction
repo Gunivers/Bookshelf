@@ -9,27 +9,27 @@
 # MINECRAFT: 1.14
 
 # INPUT: @e[tag=Glib_Cache_Source] ArmorItems[0].tag.Buffer
-# OUTPUT: @e[tag=Glib_Cache_Source] Res1
+# OUTPUT: @e[tag=Glib_Cache_Source] glib.res
 
 # NOTE: Allows to schedule the execution of a command.
 #	Unlike the schedule command, this system allows to schedule commands (and not only functions) and it is possible to schedule several times the same command.
 #	If a command is registered in a tick where commands are already registered, adds the command after those already registered.
 #	This system takes 4 parameters (required):
-#	  - Id: the id of the scheduled command (not necessarily unique).
+#	  - glib.id: the id of the scheduled command (not necessarily unique).
 #	  - Command: the command to be executed.
 #	  - Timer: the time to wait before executing.
 #	  - TimeUnit: the unit of the specified time (tick, second or minute).
 #	Returns the execution tick of the registered command.
 #	Example of utilisation:
-#		data modify entity @e[tag=Glib_Cache_Source,limit=1] ArmorItems[0].tag.Buffer set value {Command:"say Slime",Timer:5,TimeUnit:"second",Id:"T01"}
+#		data modify entity @e[tag=Glib_Cache_Source,limit=1] ArmorItems[0].tag.Buffer set value {Command:"say Slime",Timer:5,TimeUnit:"second",glib.id:"T01"}
 #		function glib:core/utils/schedule/schedule_command
 
 # CODE:
 scoreboard objectives add Var0 dummy
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
 
-execute as @e[tag=Glib_Cache_Source] if data entity @s ArmorItems[0].tag.Buffer.Id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
+execute as @e[tag=Glib_Cache_Source] if data entity @s ArmorItems[0].tag.Buffer.glib.id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
 
 execute as @e[tag=Valid] run function glib:core/utils/schedule/child/compute_tick
 execute as @e[tag=Valid] run function glib:core/utils/cache/select_jukebox

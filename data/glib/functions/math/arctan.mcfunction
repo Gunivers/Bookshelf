@@ -18,9 +18,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,19 +28,19 @@ scoreboard objectives add Res1 dummy
 #__________________________________________________
 # CODE
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var5 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.res dummy
 
 # CODE:
 
-scoreboard players set @s Var5 1
-scoreboard players set @s[scores={Var1=..-1}] Var5 -1
+scoreboard players set @s glib.var5 1
+scoreboard players set @s[scores={glib.var=..-1}] glib.var5 -1
 
-scoreboard players operation @s Var1 *= @s Var5
+scoreboard players operation @s glib.var *= @s glib.var5
 
 function glib:math/child/arctan-child
 
-scoreboard players operation @s Res1 *= @s Var5
+scoreboard players operation @s glib.res *= @s glib.var5

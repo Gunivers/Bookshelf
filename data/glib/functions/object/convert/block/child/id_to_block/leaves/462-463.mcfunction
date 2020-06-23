@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 462 run setblock ~ ~ ~ poppy
-execute if score @s BlockId matches 463 run setblock ~ ~ ~ potatoes
+execute if score @s glib.block.id matches 462 run setblock ~ ~ ~ poppy
+execute if score @s glib.block.id matches 463 run setblock ~ ~ ~ potatoes

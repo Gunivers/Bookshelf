@@ -18,8 +18,8 @@ function glib:core/utils/cache/select_jukebox
 execute at @s run setblock ~ ~ ~-2 chain_command_block[facing=up]{UpdateLastExecution:0b,auto:1b}
 
 #Compare
-execute at @s store result score @s Var1 run data get block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].GameTick 1
-execute at @s if score @s Var0 = @s Var1 run tag @s add isEqual
+execute at @s store result score @s glib.var run data get block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].GameTick 1
+execute at @s if score @s Var0 = @s glib.var run tag @s add isEqual
 
 #If is equal
 execute at @s if entity @s[tag=isEqual] run data modify block ~ ~ ~-2 Command set from block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].Command

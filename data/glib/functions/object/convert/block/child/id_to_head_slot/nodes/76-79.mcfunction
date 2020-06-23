@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..77 run function glib:object/convert/block/child/id_to_head_slot/leaves/76-77
-execute if score @s BlockId matches 78.. run function glib:object/convert/block/child/id_to_head_slot/leaves/78-79
+execute if score @s glib.block.id matches ..77 run function glib:object/convert/block/child/id_to_head_slot/leaves/76-77
+execute if score @s glib.block.id matches 78.. run function glib:object/convert/block/child/id_to_head_slot/leaves/78-79

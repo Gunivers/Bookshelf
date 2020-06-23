@@ -9,5 +9,5 @@
 
 # CODE:
 tag @e[tag=New,tag=Memory,tag=Glib] remove New
-execute as @e[tag=Memory,tag=Glib] store result score @s Var1 run data get entity @s Tags
-kill @e[tag=Memory,tag=Glib,scores={Var1=2}]
+execute as @e[tag=Memory,tag=Glib] store result score @s glib.var run data get entity @s Tags
+kill @e[tag=Memory,tag=Glib,scores={glib.var=2}]

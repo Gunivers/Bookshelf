@@ -8,7 +8,7 @@
 
 # Original path: glib:entity/link/update_link_z
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
+# Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
 # PARAMETERS
@@ -16,9 +16,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add glib.var dummy
 scoreboard objectives add Glib_R_LocZ dummy
-scoreboard objectives add Glib_Link_Parent dummy
+scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
 # CONFIG
@@ -26,15 +26,15 @@ scoreboard objectives add Glib_Link_Parent dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s TargetId = @s Glib_Link_Parent
+scoreboard players operation @s glib.id.target = @s glib.link.to
 
 function glib:entity/id/check
 
 #   Relative Position
-execute store result score @s Var1 run data get entity @s Pos[2] 1000
+execute store result score @s glib.var run data get entity @s Pos[2] 1000
 
-execute store result score @s Glib_R_LocZ run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[2] 1000
+execute store result score @s Glib_R_LocZ run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
 
-scoreboard players operation @s Glib_R_LocZ -= @s Var1
+scoreboard players operation @s Glib_R_LocZ -= @s glib.var
 
-scoreboard players operation @s Glib_R_LocZ *= -1 Constant
+scoreboard players operation @s Glib_R_LocZ *= -1 glib.const

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 48 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 49 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 48 run summon falling_block ~ ~ ~ {BlockState:{Name:"birch_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 49 run summon falling_block ~ ~ ~ {BlockState:{Name:"black_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var4 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var4 dummy
 
 scoreboard objectives add PathCost dummy
 
@@ -28,18 +28,18 @@ scoreboard objectives add PathCost dummy
 
 # Possible moves -> 0 = terrestrial (like zombies), 1 = aerial (like bat). You can cofig your own possible moves file in entity/move/config/pathind/possible_moves/
 # and link your file to the system in entity/move/child/pathfind/source
-scoreboard players set @s[tag=!Glib_OverrideConfig] Var4 0
+scoreboard players set @s[tag=!glib.config.override] glib.var4 0
 
 # Maximum number of tests (default: 500)
-scoreboard players set @s[tag=!Glib_OverrideConfig] Var2 500
+scoreboard players set @s[tag=!glib.config.override] glib.var2 500
 
 #__________________________________________________
 # CODE
 
 execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Source"]}
 summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Target"]}
-scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] Var4 = @s Var4
-scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] Var2 = @s Var2
+scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] glib.var4 = @s glib.var4
+scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] glib.var2 = @s glib.var2
 
 execute as @e[tag=Glib_Pathfind_Source] run function glib:entity/move/child/pathfind/source
 

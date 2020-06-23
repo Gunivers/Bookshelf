@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add glib.var dummy
 
 #__________________________________________________
 # CONFIG
@@ -27,5 +27,5 @@ scoreboard objectives add Var1 dummy
 tag @s add tp
 execute if entity @s[type=minecraft:player] run summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
 execute if entity @s[type=minecraft:player] as @e[tag=SetLocation,limit=1] run function glib:entity/location/accuracy/10-3/child/set_x_player
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 0.001 run scoreboard players add @s Var1 0
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 0.001 run scoreboard players add @s glib.var 0
 tag @s remove tp

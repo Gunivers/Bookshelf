@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 468 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
-execute if score @s BlockId matches 469 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s glib.block.id matches 468 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s glib.block.id matches 469 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

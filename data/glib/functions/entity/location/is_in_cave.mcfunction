@@ -21,4 +21,4 @@
 
 #__________________________________________________
 # CODE
-execute store result score @s Res1 if block ~ ~ ~ cave_air
+execute store result score @s glib.res if block ~ ~ ~ cave_air

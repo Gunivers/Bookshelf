@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.res dummy
 
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
@@ -29,13 +29,13 @@ scoreboard objectives add VectorZ dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Res1 = @s VectorX
-scoreboard players operation @s Res1 *= @s Res1
+scoreboard players operation @s glib.res = @s VectorX
+scoreboard players operation @s glib.res *= @s glib.res
 
-scoreboard players operation @s Var1 = @s VectorY
-scoreboard players operation @s Var1 *= @s Var1
-scoreboard players operation @s Res1 += @s Var1
+scoreboard players operation @s glib.var = @s VectorY
+scoreboard players operation @s glib.var *= @s glib.var
+scoreboard players operation @s glib.res += @s glib.var
 
-scoreboard players operation @s Var1 = @s VectorZ
-scoreboard players operation @s Var1 *= @s Var1
-scoreboard players operation @s Res1 += @s Var1
+scoreboard players operation @s glib.var = @s VectorZ
+scoreboard players operation @s glib.var *= @s glib.var
+scoreboard players operation @s glib.res += @s glib.var

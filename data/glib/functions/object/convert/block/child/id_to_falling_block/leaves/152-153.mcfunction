@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 152 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 153 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_stained_glass"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 152 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 153 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_stained_glass"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

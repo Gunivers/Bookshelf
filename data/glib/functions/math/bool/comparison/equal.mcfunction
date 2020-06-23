@@ -29,5 +29,5 @@ scoreboard objectives add Output dummy
 
 function glib:math/bool/clearoutput
 execute if score Input1 Input = Input2 Input run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant run scoreboard players set Output1 Output 0
+execute if score Output1 Output = -1 glib.const run scoreboard players set Output1 Output 0
 function glib:math/bool/clearinput

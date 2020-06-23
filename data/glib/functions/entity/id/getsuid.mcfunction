@@ -19,8 +19,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Data dummy
-scoreboard objectives add Id dummy
+scoreboard objectives add glib.data dummy
+scoreboard objectives add glib.id dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,7 +28,7 @@ scoreboard objectives add Id dummy
 #__________________________________________________
 # CODE
 
-scoreboard players add @s Id 0
+scoreboard players add @s glib.id 0
 
-execute if entity @s[scores={Id=0}] run scoreboard players add SUID Data 1
-execute if entity @s[scores={Id=0}] run scoreboard players operation @s Id = SUID Data
+execute if entity @s[scores={glib.id=0}] run scoreboard players add id.simple glib.data 1
+execute if entity @s[scores={glib.id=0}] run scoreboard players operation @s glib.id = id.simple glib.data

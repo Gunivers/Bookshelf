@@ -19,14 +19,14 @@
 # 	- Pos_zf (score dummy)
 
 # - Original ID: ID of the block who need to replace 
-#   OriginalId (score dummy)
+#   glib.original.id (score dummy)
 
 # - Block ID :  ID of the new block 
-#	BlockId (score dummy)
+#	glib.block.id (score dummy)
 
 #
 # OUTPUT: 
-# - If the block is egale to OriginalId we replace them by ReplaceId
+# - If the block is egale to glib.original.id we replace them by glib.replace.id
  
 # NOTE: 
 # To take the postion you can use : function glib:object/mapedit/pos1 and function glib:object/mapedit/pos1
@@ -37,10 +37,10 @@
 scoreboard objectives add BrushID dummy
 
 #ReplaceID  id du nouveaux block placer 
-scoreboard objectives add ReplaceId dummy
+scoreboard objectives add glib.replace.id dummy
 
 # id du block a remplacer
-scoreboard objectives add OriginalId dummy
+scoreboard objectives add glib.original.id dummy
 
 scoreboard objectives add ActualBlockID dummy
 #--------------------
@@ -51,10 +51,10 @@ function glib:object/mapedit/child/set/ini
 
 
 #id du nouveaux block 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] ReplaceId = @s BlockId
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] BlockId = @s BlockId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.replace.id = @s glib.block.id
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.block.id = @s glib.block.id
 #ID du block a remplacer 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] OriginalId = @s OriginalId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.original.id = @s glib.original.id
 
 #1 corespon au setblock
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 2

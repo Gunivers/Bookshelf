@@ -38,17 +38,17 @@ scoreboard objectives add Output dummy
 # CODE
 
 function glib:math/bool/clearoutput
-execute if score Input1 Input = -1 Constant if score Input2 Input = -1 Constant if score Input3 Input = -1 Constant if score Input4 Input = -1 Constant if score Input5 Input = -1 Constant if score Input6 Input = -1 Constant if score Input7 Input = -1 Constant if score Input8 Input = -1 Constant if score Input9 Input = -1 Constant run scoreboard players set Output1 Output -2
+execute if score Input1 Input = -1 glib.const if score Input2 Input = -1 glib.const if score Input3 Input = -1 glib.const if score Input4 Input = -1 glib.const if score Input5 Input = -1 glib.const if score Input6 Input = -1 glib.const if score Input7 Input = -1 glib.const if score Input8 Input = -1 glib.const if score Input9 Input = -1 glib.const run scoreboard players set Output1 Output -2
 function glib:math/bool/set0
-execute if score Output1 Output = -1 Constant if score Input1 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input2 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input3 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input4 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input5 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input6 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input7 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input8 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant if score Input9 Input = 1 Constant run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 Constant run scoreboard players set Output1 Output 0
-execute if score Output1 Output = -2 Constant run scoreboard players set Output1 Output -1
+execute if score Output1 Output = -1 glib.const if score Input1 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input2 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input3 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input4 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input5 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input6 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input7 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input8 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const if score Input9 Input = 1 glib.const run scoreboard players set Output1 Output 1
+execute if score Output1 Output = -1 glib.const run scoreboard players set Output1 Output 0
+execute if score Output1 Output = -2 glib.const run scoreboard players set Output1 Output -1
 function glib:math/bool/clearinput

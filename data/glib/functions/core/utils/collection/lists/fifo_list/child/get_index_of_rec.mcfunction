@@ -11,8 +11,8 @@
 
 # CODE:
 
-execute store success score @s Var3 store result score @s Var2 run data get entity @s ArmorItems[2].tag.fifo[0]
-execute if score @s[scores={Var3=1}] Var5 = @s Var2 run scoreboard players set @s Var4 1
-execute unless entity @s[scores={Var4=1}] run scoreboard players add @s Res1 1
-execute unless entity @s[scores={Var4=1}] run function glib:collection/lists/fifo_list/pop
-execute unless entity @s[scores={Var4=1}] if entity @s[scores={Var3=1}] run function glib:collection/lists/fifo_list/get_index_of_rec
+execute store success score @s glib.var3 store result score @s glib.var2 run data get entity @s ArmorItems[2].tag.fifo[0]
+execute if score @s[scores={glib.var3=1}] glib.var5 = @s glib.var2 run scoreboard players set @s glib.var4 1
+execute unless entity @s[scores={glib.var4=1}] run scoreboard players add @s glib.res 1
+execute unless entity @s[scores={glib.var4=1}] run function glib:collection/lists/fifo_list/pop
+execute unless entity @s[scores={glib.var4=1}] if entity @s[scores={glib.var3=1}] run function glib:collection/lists/fifo_list/get_index_of_rec

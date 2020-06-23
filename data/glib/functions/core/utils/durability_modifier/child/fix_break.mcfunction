@@ -18,74 +18,74 @@
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add Var5 dummy
-scoreboard players set @s Var5 0
+scoreboard objectives add glib.var5 dummy
+scoreboard players set @s glib.var5 0
 
 # CODE:
 
-execute store result score @s Var5 run data get entity @s SelectedItem.tag.Damage
+execute store result score @s glib.var5 run data get entity @s SelectedItem.tag.Damage
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_axe" }},scores={Var5=59..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_axe"  }},scores={Var5=131..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_axe" }},scores={Var5=32..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_axe"   }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_axe"}},scores={Var5=1561..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_axe" }},scores={glib.var5=59..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_axe"  }},scores={glib.var5=131..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_axe" }},scores={glib.var5=32..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_axe"   }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_axe"}},scores={glib.var5=1561..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_shovel" }},scores={Var5=59..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_shovel"  }},scores={Var5=131..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_shovel" }},scores={Var5=32..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_shovel"   }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_shovel"}},scores={Var5=1561..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_shovel" }},scores={glib.var5=59..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_shovel"  }},scores={glib.var5=131..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_shovel" }},scores={glib.var5=32..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_shovel"   }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_shovel"}},scores={glib.var5=1561..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_pickaxe" }},scores={Var5=59..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_pickaxe"  }},scores={Var5=131..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_pickaxe" }},scores={Var5=32..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_pickaxe"   }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}},scores={Var5=1561..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_pickaxe" }},scores={glib.var5=59..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_pickaxe"  }},scores={glib.var5=131..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_pickaxe" }},scores={glib.var5=32..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_pickaxe"   }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}},scores={glib.var5=1561..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_hoe" }},scores={Var5=59..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_hoe"  }},scores={Var5=131..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_hoe" }},scores={Var5=32..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_hoe"   }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_hoe"}},scores={Var5=1561..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_hoe" }},scores={glib.var5=59..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_hoe"  }},scores={glib.var5=131..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_hoe" }},scores={glib.var5=32..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_hoe"   }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_hoe"}},scores={glib.var5=1561..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_sword" }},scores={Var5=59..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_sword"  }},scores={Var5=131..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_sword" }},scores={Var5=32..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_sword"   }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_sword"}},scores={Var5=1561..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_sword" }},scores={glib.var5=59..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:stone_sword"  }},scores={glib.var5=131..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_sword" }},scores={glib.var5=32..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_sword"   }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_sword"}},scores={glib.var5=1561..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_helmet"    }},scores={Var5=55..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_chestplate"}},scores={Var5=80..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_leggings"  }},scores={Var5=75..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_boots"     }},scores={Var5=65..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_helmet"    }},scores={glib.var5=55..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_chestplate"}},scores={glib.var5=80..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_leggings"  }},scores={glib.var5=75..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:leather_boots"     }},scores={glib.var5=65..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_helmet"    }},scores={Var5=165..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_chestplate"}},scores={Var5=240..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_leggings"  }},scores={Var5=225..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_boots"     }},scores={Var5=195..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_helmet"    }},scores={glib.var5=165..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_chestplate"}},scores={glib.var5=240..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_leggings"  }},scores={glib.var5=225..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:chainmail_boots"     }},scores={glib.var5=195..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_helmet"    }},scores={Var5=77..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_chestplate"}},scores={Var5=112..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_leggings"  }},scores={Var5=105..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_boots"     }},scores={Var5=91..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_helmet"    }},scores={glib.var5=77..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_chestplate"}},scores={glib.var5=112..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_leggings"  }},scores={glib.var5=105..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:golden_boots"     }},scores={glib.var5=91..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_helmet"    }},scores={Var5=165..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_chestplate"}},scores={Var5=240..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_leggings"  }},scores={Var5=225..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_boots"     }},scores={Var5=195..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_helmet"    }},scores={glib.var5=165..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_chestplate"}},scores={glib.var5=240..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_leggings"  }},scores={glib.var5=225..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:iron_boots"     }},scores={glib.var5=195..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_helmet"    }},scores={Var5=363..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_chestplate"}},scores={Var5=528..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_leggings"  }},scores={Var5=495..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_boots"     }},scores={Var5=429..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_helmet"    }},scores={glib.var5=363..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_chestplate"}},scores={glib.var5=528..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_leggings"  }},scores={glib.var5=495..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:diamond_boots"     }},scores={glib.var5=429..}] run tag @s add BreakItem
 
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:bow"            }},scores={Var5=384..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:trident"        }},scores={Var5=250..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:fishing_rod"    }},scores={Var5=64..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:flint_and_steel"}},scores={Var5=64..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:shears"         }},scores={Var5=238..}] run tag @s add BreakItem
-execute if entity @s[nbt={SelectedItem:{id:"minecraft:turtle_helmet"  }},scores={Var5=275..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:bow"            }},scores={glib.var5=384..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:trident"        }},scores={glib.var5=250..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:fishing_rod"    }},scores={glib.var5=64..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:flint_and_steel"}},scores={glib.var5=64..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:shears"         }},scores={glib.var5=238..}] run tag @s add BreakItem
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:turtle_helmet"  }},scores={glib.var5=275..}] run tag @s add BreakItem
 
 
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:wooden_axe" }},tag=BreakItem] anchored eyes run particle minecraft:item wooden_axe ^-0.2 ^-0.20 ^0.3 0.1 0.1 0.1 0.05 8 normal @s
@@ -154,4 +154,4 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:turtle_helmet"  }},tag=Bre
 execute if entity @s[tag=BreakItem] run replaceitem entity @s weapon.mainhand minecraft:air
 execute if entity @s[tag=BreakItem] run playsound minecraft:item.shield.break player @a ~ ~ ~
 tag @s[tag=BreakItem] remove BreakItem
-scoreboard players reset @s Var5
+scoreboard players reset @s glib.var5

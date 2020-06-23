@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..301 run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/300-301
-execute if score @s BlockId matches 302.. run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/302-303
+execute if score @s glib.block.id matches ..301 run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/300-301
+execute if score @s glib.block.id matches 302.. run function glib:object/convert/block/child/id_to_ridding_falling_block/leaves/302-303

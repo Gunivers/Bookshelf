@@ -26,5 +26,5 @@
 # CODE
 
 function glib:math/log
-scoreboard players operation @s Res1 *= 10000 Constant
-scoreboard players operation @s Res1 /= 6931 Constant
+scoreboard players operation @s glib.res *= 10000 glib.const
+scoreboard players operation @s glib.res /= 6931 glib.const

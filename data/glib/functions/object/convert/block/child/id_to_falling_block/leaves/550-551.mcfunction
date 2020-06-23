@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 550 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 551 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeating_command_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 550 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeater"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 551 run summon falling_block ~ ~ ~ {BlockState:{Name:"repeating_command_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

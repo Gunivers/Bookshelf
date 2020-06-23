@@ -10,7 +10,7 @@
 # - Vars (module)
 
 # Output:
-# - Var1 (dummy)
+# - glib.var (dummy)
 
 # NOTE: Clear the FIFO list.
 

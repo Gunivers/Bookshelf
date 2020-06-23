@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 24 run replaceitem entity @e[tag=setHeadSlot] armor.head air
-execute if score @s BlockId matches 25 run replaceitem entity @e[tag=setHeadSlot] armor.head azure_bluet
+execute if score @s glib.block.id matches 24 run replaceitem entity @e[tag=setHeadSlot] armor.head air
+execute if score @s glib.block.id matches 25 run replaceitem entity @e[tag=setHeadSlot] armor.head azure_bluet

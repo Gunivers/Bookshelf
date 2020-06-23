@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 406 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_log
-execute if score @s BlockId matches 407 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_planks
+execute if score @s glib.block.id matches 406 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_log
+execute if score @s glib.block.id matches 407 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_planks

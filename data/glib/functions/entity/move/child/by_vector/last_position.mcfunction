@@ -1,6 +1,6 @@
-scoreboard players operation @s Var1 *= -1 Constant
-scoreboard players operation @s Var2 *= -1 Constant
-scoreboard players operation @s Var3 *= -1 Constant
+scoreboard players operation @s glib.var *= -1 glib.const
+scoreboard players operation @s glib.var2 *= -1 glib.const
+scoreboard players operation @s glib.var3 *= -1 glib.const
 
 #Apply on entity
 execute if entity @s[type=!player] at @s run function glib:entity/move/child/by_vector/apply
@@ -15,8 +15,8 @@ execute if entity @s[type=player] at @s as @e[type=armor_stand,tag=Move_By_Vecto
 execute if entity @s[type=player] at @s run tp @s @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest]
 kill @e[type=armor_stand,tag=Move_By_Vector]
 
-scoreboard players operation @s Var1 *= -1 Constant
-scoreboard players operation @s Var2 *= -1 Constant
-scoreboard players operation @s Var3 *= -1 Constant
+scoreboard players operation @s glib.var *= -1 glib.const
+scoreboard players operation @s glib.var2 *= -1 glib.const
+scoreboard players operation @s glib.var3 *= -1 glib.const
 
 tag @s add Glib_Back_to_last_pos

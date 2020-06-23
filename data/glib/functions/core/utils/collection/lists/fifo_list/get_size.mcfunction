@@ -10,10 +10,10 @@
 # - Vars (module)
 
 # Output:
-# - Var1 (dummy)
+# - glib.var (dummy)
 
 # NOTE: Get the size of the FIFO list if the FIFO list exit, do not change the score otherwise.
 
 # CODE:
 
-execute store result score @s Var1 run data get entity @s ArmorItems[2].tag.fifo
+execute store result score @s glib.var run data get entity @s ArmorItems[2].tag.fifo

@@ -29,17 +29,17 @@
 # CODE
 
 # We save the x to calculate log x later, and calculate log a
-scoreboard players operation @s Var9 = @s Var1
-scoreboard players operation @s Var1 = @s Var2
+scoreboard players operation @s glib.var9 = @s glib.var
+scoreboard players operation @s glib.var = @s glib.var2
 function glib:math/log
 
-# We save log a on Var9
-scoreboard players operation @s Var1 = @s Var9
-scoreboard players operation @s Var9 = @s Res1
+# We save log a on glib.var9
+scoreboard players operation @s glib.var = @s glib.var9
+scoreboard players operation @s glib.var9 = @s glib.res
 
 # Then we calculate log x
 function glib:math/log
-scoreboard players operation @s Res1 *= 10000 Constant
+scoreboard players operation @s glib.res *= 10000 glib.const
 
 # And divide by log a
-scoreboard players operation @s Res1 /= @s Var9
+scoreboard players operation @s glib.res /= @s glib.var9

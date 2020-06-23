@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 138 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cracked_stone_bricks
-execute if score @s BlockId matches 139 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand crafting_table
+execute if score @s glib.block.id matches 138 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cracked_stone_bricks
+execute if score @s glib.block.id matches 139 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand crafting_table

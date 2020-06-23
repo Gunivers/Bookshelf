@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 276 run summon falling_block ~ ~ ~ {BlockState:{Name:"hay_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 277 run summon falling_block ~ ~ ~ {BlockState:{Name:"heavy_weighted_pressure_plate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 276 run summon falling_block ~ ~ ~ {BlockState:{Name:"hay_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 277 run summon falling_block ~ ~ ~ {BlockState:{Name:"heavy_weighted_pressure_plate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

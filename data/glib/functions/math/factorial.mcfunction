@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -27,6 +27,6 @@ scoreboard objectives add Res1 dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Var2 = @s Var1
-scoreboard players set @s Res1 1
+scoreboard players operation @s glib.var2 = @s glib.var
+scoreboard players set @s glib.res 1
 function glib:math/child/factorial-loop

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 114 run summon falling_block ~ ~ ~ {BlockState:{Name:"chain_command_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 115 run summon falling_block ~ ~ ~ {BlockState:{Name:"chest"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 114 run summon falling_block ~ ~ ~ {BlockState:{Name:"chain_command_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 115 run summon falling_block ~ ~ ~ {BlockState:{Name:"chest"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

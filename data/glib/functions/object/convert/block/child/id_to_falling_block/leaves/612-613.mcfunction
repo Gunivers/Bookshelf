@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 612 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 613 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 612 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 613 run summon falling_block ~ ~ ~ {BlockState:{Name:"stripped_birch_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

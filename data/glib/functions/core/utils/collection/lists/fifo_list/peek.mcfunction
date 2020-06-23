@@ -10,11 +10,11 @@
 # - Vars (module)
 
 # Output:
-# - Var1 (dummy)
+# - glib.var (dummy)
 
 # NOTE: Get the first value inserted in the list. This value isn't deleted after being returned.
 
 # CODE:
 
 function glib:collection/lists/fifo_list/has_storage_medium
-execute store result score @s[scores={Var2=1}] Var1 run data get entity @s ArmorItems[2].tag.fifo[0]
+execute store result score @s[scores={glib.var2=1}] glib.var run data get entity @s ArmorItems[2].tag.fifo[0]

@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add BlockId dummy
+scoreboard objectives add glib.block.id dummy
 
 #__________________________________________________
 # CONFIG
@@ -24,14 +24,14 @@ scoreboard objectives add BlockId dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set @s BlockId 0
-execute unless block ~ ~ ~ #glib:group/group0 run scoreboard players add @s BlockId 512
-execute unless block ~ ~ ~ #glib:group/group1 run scoreboard players add @s BlockId 256
-execute unless block ~ ~ ~ #glib:group/group2 run scoreboard players add @s BlockId 128
-execute unless block ~ ~ ~ #glib:group/group3 run scoreboard players add @s BlockId 64
-execute unless block ~ ~ ~ #glib:group/group4 run scoreboard players add @s BlockId 32
-execute unless block ~ ~ ~ #glib:group/group5 run scoreboard players add @s BlockId 16
-execute unless block ~ ~ ~ #glib:group/group6 run scoreboard players add @s BlockId 8
-execute unless block ~ ~ ~ #glib:group/group7 run scoreboard players add @s BlockId 4
-execute unless block ~ ~ ~ #glib:group/group8 run scoreboard players add @s BlockId 2
-execute unless block ~ ~ ~ #glib:group/group9 run scoreboard players add @s BlockId 1
+scoreboard players set @s glib.block.id 0
+execute unless block ~ ~ ~ #glib:group/group0 run scoreboard players add @s glib.block.id 512
+execute unless block ~ ~ ~ #glib:group/group1 run scoreboard players add @s glib.block.id 256
+execute unless block ~ ~ ~ #glib:group/group2 run scoreboard players add @s glib.block.id 128
+execute unless block ~ ~ ~ #glib:group/group3 run scoreboard players add @s glib.block.id 64
+execute unless block ~ ~ ~ #glib:group/group4 run scoreboard players add @s glib.block.id 32
+execute unless block ~ ~ ~ #glib:group/group5 run scoreboard players add @s glib.block.id 16
+execute unless block ~ ~ ~ #glib:group/group6 run scoreboard players add @s glib.block.id 8
+execute unless block ~ ~ ~ #glib:group/group7 run scoreboard players add @s glib.block.id 4
+execute unless block ~ ~ ~ #glib:group/group8 run scoreboard players add @s glib.block.id 2
+execute unless block ~ ~ ~ #glib:group/group9 run scoreboard players add @s glib.block.id 1

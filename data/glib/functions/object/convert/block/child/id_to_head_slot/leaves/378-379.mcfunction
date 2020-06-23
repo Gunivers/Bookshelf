@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 378 run replaceitem entity @e[tag=setHeadSlot] armor.head air
-execute if score @s BlockId matches 379 run replaceitem entity @e[tag=setHeadSlot] armor.head mossy_cobblestone
+execute if score @s glib.block.id matches 378 run replaceitem entity @e[tag=setHeadSlot] armor.head air
+execute if score @s glib.block.id matches 379 run replaceitem entity @e[tag=setHeadSlot] armor.head mossy_cobblestone

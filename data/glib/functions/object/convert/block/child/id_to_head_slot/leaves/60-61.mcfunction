@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 60 run replaceitem entity @e[tag=setHeadSlot] armor.head black_wool
-execute if score @s BlockId matches 61 run replaceitem entity @e[tag=setHeadSlot] armor.head blast_furnace
+execute if score @s glib.block.id matches 60 run replaceitem entity @e[tag=setHeadSlot] armor.head black_wool
+execute if score @s glib.block.id matches 61 run replaceitem entity @e[tag=setHeadSlot] armor.head blast_furnace

@@ -4,10 +4,10 @@ tag @s add Glib_Pathfind_Rewind_Head
 tag @e[tag=Glib_Pathfind,tag=!Glib_Pathfind_Rewind,distance=0.1..1.5] add Glib_Pathfind_Rewind_Check
 
 
-scoreboard players operation @s Var3 > @e[tag=Glib_Pathfind_Rewind_Check] PathCost
-scoreboard players operation @s Var3 < @e[tag=Glib_Pathfind_Rewind_Check] PathCost
+scoreboard players operation @s glib.var3 > @e[tag=Glib_Pathfind_Rewind_Check] PathCost
+scoreboard players operation @s glib.var3 < @e[tag=Glib_Pathfind_Rewind_Check] PathCost
 
-execute as @e[tag=Glib_Pathfind_Rewind_Check] if score @s PathCost = @e[tag=Glib_Pathfind_Rewind_Head,limit=1] Var3 run tag @s add Glib_Pathfind_Rewind_Head
+execute as @e[tag=Glib_Pathfind_Rewind_Check] if score @s PathCost = @e[tag=Glib_Pathfind_Rewind_Head,limit=1] glib.var3 run tag @s add Glib_Pathfind_Rewind_Head
 
 
 tag @s remove Glib_Pathfind_Rewind_Head

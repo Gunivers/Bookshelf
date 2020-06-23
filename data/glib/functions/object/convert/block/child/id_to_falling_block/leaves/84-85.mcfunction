@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 84 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 85 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 84 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 85 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

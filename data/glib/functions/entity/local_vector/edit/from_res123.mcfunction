@@ -13,9 +13,9 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: Res1 (score dummy)
-# Input: Res2 (score dummy)
-# Input: Res3 (score dummy)
+# Input: glib.res (score dummy)
+# Input: glib.res2 (score dummy)
+# Input: glib.res3 (score dummy)
 
 # Output: VectorX (score dummy)
 # Output: VectorY (score dummy)
@@ -24,9 +24,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Res1 dummy
-scoreboard objectives add Res2 dummy
-scoreboard objectives add Res3 dummy
+scoreboard objectives add glib.res dummy
+scoreboard objectives add glib.res2 dummy
+scoreboard objectives add glib.res3 dummy
 
 scoreboard objectives add VectorLeft dummy
 scoreboard objectives add VectorUp dummy
@@ -38,6 +38,6 @@ scoreboard objectives add VectorFront dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s VectorLeft = @s Res1
-scoreboard players operation @s VectorUp = @s Res2
-scoreboard players operation @s VectorFront = @s Res3
+scoreboard players operation @s VectorLeft = @s glib.res
+scoreboard players operation @s VectorUp = @s glib.res2
+scoreboard players operation @s VectorFront = @s glib.res3

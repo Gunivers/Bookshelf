@@ -23,5 +23,5 @@
 # CODE
 
 function glib:entity/location/get_distance_squared_ata
-scoreboard players operation @s Var1 = @s Res1
+scoreboard players operation @s glib.var = @s glib.res
 function glib:math/sqrt

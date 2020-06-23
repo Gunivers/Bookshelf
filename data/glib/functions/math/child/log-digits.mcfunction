@@ -1,4 +1,4 @@
-scoreboard players operation @s Var1 /= 10 Constant
-scoreboard players add @s Var2 1
+scoreboard players operation @s glib.var /= 10 glib.const
+scoreboard players add @s glib.var2 1
 
-execute unless entity @s[scores={Var1=0}] run function glib:math/child/log-digits
+execute unless entity @s[scores={glib.var=0}] run function glib:math/child/log-digits

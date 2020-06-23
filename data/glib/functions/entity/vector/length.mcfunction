@@ -24,6 +24,6 @@
 
 function glib:entity/vector/length_squared
 
-scoreboard players operation @s Var1 = @s Res1
+scoreboard players operation @s glib.var = @s glib.res
 
 function glib:math/sqrt

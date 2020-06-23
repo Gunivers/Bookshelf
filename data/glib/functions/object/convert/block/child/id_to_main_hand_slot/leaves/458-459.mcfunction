@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 458 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_diorite_stairs
-execute if score @s BlockId matches 459 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_granite
+execute if score @s glib.block.id matches 458 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_diorite_stairs
+execute if score @s glib.block.id matches 459 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_granite

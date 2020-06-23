@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 32 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
-execute if score @s BlockId matches 33 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bell
+execute if score @s glib.block.id matches 32 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air
+execute if score @s glib.block.id matches 33 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bell

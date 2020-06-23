@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -27,17 +27,17 @@ scoreboard objectives add Res1 dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set @s[scores={Var1=..1}] Var2 1
-execute if entity @s[scores={Var1=2..}] run function glib:math/get_next_pow2
-scoreboard players operation @s Var2 = @s Res1
+scoreboard players set @s[scores={glib.var=..1}] glib.var2 1
+execute if entity @s[scores={glib.var=2..}] run function glib:math/get_next_pow2
+scoreboard players operation @s glib.var2 = @s glib.res
 
-scoreboard players set @s Res1 1
-scoreboard players operation @s Var3 = @s Res1
-scoreboard players operation @s Var3 *= @s Res1
+scoreboard players set @s glib.res 1
+scoreboard players operation @s glib.var3 = @s glib.res
+scoreboard players operation @s glib.var3 *= @s glib.res
 
-execute if entity @s[scores={Var2=2..}] unless score @s Var3 = @s Var1 run function glib:math/child/sqrt_loop
+execute if entity @s[scores={glib.var2=2..}] unless score @s glib.var3 = @s glib.var run function glib:math/child/sqrt_loop
 
-scoreboard players operation @s Var3 = @s Res1
-scoreboard players operation @s Var3 *= @s Res1
+scoreboard players operation @s glib.var3 = @s glib.res
+scoreboard players operation @s glib.var3 *= @s glib.res
 
-execute if score @s Var3 > @s Var1 run scoreboard players remove Res1 1
+execute if score @s glib.var3 > @s glib.var run scoreboard players remove glib.res 1

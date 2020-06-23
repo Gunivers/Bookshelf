@@ -24,6 +24,6 @@
 
 function glib:entity/location/accuracy/10-3/get_distance_squared_as_to_at
 
-scoreboard players operation @s Var1 = @s Res1
+scoreboard players operation @s glib.var = @s glib.res
 
 function glib:math/sqrt

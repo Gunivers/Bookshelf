@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 582 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spawner
-execute if score @s BlockId matches 583 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sponge
+execute if score @s glib.block.id matches 582 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spawner
+execute if score @s glib.block.id matches 583 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sponge

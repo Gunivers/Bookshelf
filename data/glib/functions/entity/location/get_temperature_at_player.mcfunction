@@ -22,7 +22,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add glib.var dummy
 
 #__________________________________________________
 # CONFIG
@@ -32,8 +32,8 @@ scoreboard objectives add Var1 dummy
 
 execute as @s run function glib:entity/location/get_biome_temperature
 execute as @s run function glib:entity/location/get
-scoreboard players set @s Var1 0
-execute if score @s LocY matches 63.. run scoreboard players operation @s Var1 = @s LocY
-execute if score @s LocY matches 63.. run scoreboard players operation @s Var1 -= 62 Constant
-execute if score @s LocY matches 63.. run scoreboard players operation @s Var1 *= 166667 Constant
-execute if score @s LocY matches 63.. run scoreboard players operation @s Temperature -= @s Var1
+scoreboard players set @s glib.var 0
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var = @s LocY
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var -= 62 glib.const
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var *= 166667 glib.const
+execute if score @s LocY matches 63.. run scoreboard players operation @s Temperature -= @s glib.var

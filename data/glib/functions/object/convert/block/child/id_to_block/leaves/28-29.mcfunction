@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 28 run setblock ~ ~ ~ barrel
-execute if score @s BlockId matches 29 run setblock ~ ~ ~ barrier
+execute if score @s glib.block.id matches 28 run setblock ~ ~ ~ barrel
+execute if score @s glib.block.id matches 29 run setblock ~ ~ ~ barrier

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 482 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_pink_tulip"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 483 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_poppy"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 482 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_pink_tulip"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 483 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_poppy"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

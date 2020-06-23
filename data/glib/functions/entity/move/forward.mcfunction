@@ -16,15 +16,15 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Var5 dummy
-scoreboard objectives add Var6 dummy
-scoreboard objectives add Var7 dummy
-scoreboard objectives add Var8 dummy
-scoreboard objectives add Var9 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var7 dummy
+scoreboard objectives add glib.var8 dummy
+scoreboard objectives add glib.var9 dummy
 
 scoreboard objectives add Collision dummy
 
@@ -37,21 +37,21 @@ scoreboard objectives add VectorSpeedLocal dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Var3 = @s VectorFront
+scoreboard players operation @s glib.var3 = @s VectorFront
 
 # Apply speed modifier
-scoreboard players operation @s Var3 *= @s VectorSpeed
-scoreboard players operation @s Var3 /= 1000 Constant
+scoreboard players operation @s glib.var3 *= @s VectorSpeed
+scoreboard players operation @s glib.var3 /= 1000 glib.const
 
 # DEBUG
 execute if entity @a[tag=Glib_Debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/forward/main
 # -----
 
-scoreboard players set @s Var4 1
+scoreboard players set @s glib.var4 1
 tag @s add FactorIncrease
 
 execute if entity @s[tag=FactorIncrease] run function glib:entity/move/child/forward/loop1
 
-scoreboard players operation @s[scores={Var4=1..}] Var7 = @s Var3
+scoreboard players operation @s[scores={glib.var4=1..}] glib.var7 = @s glib.var3
 
 function glib:entity/move/child/forward/loop2

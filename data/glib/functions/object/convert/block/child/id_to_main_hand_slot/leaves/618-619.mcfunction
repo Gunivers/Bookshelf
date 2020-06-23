@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 618 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_oak_log
-execute if score @s BlockId matches 619 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_oak_wood
+execute if score @s glib.block.id matches 618 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_oak_log
+execute if score @s glib.block.id matches 619 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_oak_wood

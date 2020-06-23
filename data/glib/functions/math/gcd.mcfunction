@@ -16,11 +16,11 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,16 +28,16 @@ scoreboard objectives add Res1 dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Var3 = @s Var1
-scoreboard players operation @s Var3 -= @s Var2
+scoreboard players operation @s glib.var3 = @s glib.var
+scoreboard players operation @s glib.var3 -= @s glib.var2
 
-scoreboard players operation @s[scores={Var3=1..}] Res1 = @s Var2
-scoreboard players operation @s[scores={Var3=1..}] Var3 = @s Var1
+scoreboard players operation @s[scores={glib.var3=1..}] glib.res = @s glib.var2
+scoreboard players operation @s[scores={glib.var3=1..}] glib.var3 = @s glib.var
 
-scoreboard players operation @s[scores={Var3=..-1}] Res1 = @s Var1
-scoreboard players operation @s[scores={Var3=..-1}] Var3 = @s Var2
+scoreboard players operation @s[scores={glib.var3=..-1}] glib.res = @s glib.var
+scoreboard players operation @s[scores={glib.var3=..-1}] glib.var3 = @s glib.var2
 
-tag @s[scores={Var3=0}] add PGCDfound
+tag @s[scores={glib.var3=0}] add PGCDfound
 
 execute at @s[tag=!PGCDfound] run function glib:math/child/gcd-loop
 

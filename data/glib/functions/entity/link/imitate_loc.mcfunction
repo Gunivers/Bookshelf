@@ -8,7 +8,7 @@
 
 # Original path: glib:entity/link/imitate_loc
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
+# Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
 # PARAMETERS
@@ -16,18 +16,18 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Var5 dummy
-scoreboard objectives add Var6 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var5 dummy
 
-scoreboard objectives add Glib_R_LocX dummy
-scoreboard objectives add Glib_R_LocY dummy
-scoreboard objectives add Glib_R_LocZ dummy
+scoreboard objectives add glib.link.r.x dummy
+scoreboard objectives add glib.link.r.y dummy
+scoreboard objectives add glib.link.r.z dummy
 
-scoreboard objectives add Glib_Link_Parent dummy
+scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
 # CONFIG
@@ -35,36 +35,36 @@ scoreboard objectives add Glib_Link_Parent dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s TargetId = @s Glib_Link_Parent
+scoreboard players operation @s glib.id.target = @s glib.link.to
 
 function glib:entity/id/check
 
 #   Relative Position
-execute store result score @s Var1 run data get entity @s Pos[0] 1000
-execute store result score @s Var2 run data get entity @s Pos[1] 1000
-execute store result score @s Var3 run data get entity @s Pos[2] 1000
+execute store result score @s glib.var run data get entity @s Pos[0] 1000
+execute store result score @s glib.var2 run data get entity @s Pos[1] 1000
+execute store result score @s glib.var3 run data get entity @s Pos[2] 1000
 
-execute store result score @s Var4 run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[0] 1000
-execute store result score @s Var5 run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[1] 1000
-execute store result score @s Var6 run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Pos[2] 1000
+execute store result score @s glib.var4 run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[0] 1000
+execute store result score @s glib.var5 run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[1] 1000
+execute store result score @s glib.var5 run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
 
-scoreboard players operation @s Var4 -= @s Var1
-scoreboard players operation @s Var5 -= @s Var2
-scoreboard players operation @s Var6 -= @s Var3
+scoreboard players operation @s glib.var4 -= @s glib.var
+scoreboard players operation @s glib.var5 -= @s glib.var2
+scoreboard players operation @s glib.var5 -= @s glib.var3
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Loc]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"Var4"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocX"}}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"Var5"}},{"text":".   Old Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocY"}}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"Var6"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"Glib_R_LocZ"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}},{"text":".   Old Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.y"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
 ### END DEBUG
 
-scoreboard players operation @s Var4 += @s Glib_R_LocX
-scoreboard players operation @s Var5 += @s Glib_R_LocY
-scoreboard players operation @s Var6 += @s Glib_R_LocZ
+scoreboard players operation @s glib.var4 += @s glib.link.r.x
+scoreboard players operation @s glib.var5 += @s glib.link.r.y
+scoreboard players operation @s glib.var5 += @s glib.link.r.z
 
-scoreboard players operation @s Var1 += @s Var4
-scoreboard players operation @s Var2 += @s Var5
-scoreboard players operation @s Var3 += @s Var6
+scoreboard players operation @s glib.var += @s glib.var4
+scoreboard players operation @s glib.var2 += @s glib.var5
+scoreboard players operation @s glib.var3 += @s glib.var5
 
 function glib:entity/location/accuracy/10-3/set

@@ -13,16 +13,16 @@
 #__________________________________________________
 # PARAMETERS
 
-# Output: ParentIdMatch (tag): On every entities that have the same ParentId as @s TargetId
-# Output: ParentIdUpper (tag): On every entities that have an ParentId socre upper than @s TargetId
-# Output: ParentIdUpper (tag): On every entities that have an ParentId socre lower than @s TargetId
-# Output: ParentIdChecker (tag): On @s
+
+# Output: glib.id.parent.match (tag): On every entities that have the same glib.id.parent as id.target glib.var
+# Output: glib.id.parent.upper (tag): On every entities that have an glib.id.parent socre upper than id.target glib.var
+# Output: glib.id.parent.upper (tag): On every entities that have an glib.id.parent socre lower than id.target glib.var
+# Output: glib.id.parent.checker (tag): On @s
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add ParentId dummy
-scoreboard objectives add TargetId dummy
+scoreboard objectives add glib.id.parent dummy
 
 #__________________________________________________
 # CONFIG
@@ -30,19 +30,19 @@ scoreboard objectives add TargetId dummy
 #__________________________________________________
 # CODE
 
-tag @e remove ParentIdMatch
-tag @e remove ParentIdUpper
-tag @e remove ParentIdLower
-tag @e remove ParentIdChecker
-scoreboard players operation @e ParentId -= @s TargetId
-tag @e[scores={ParentId=0}] add ParentIdMatch
-tag @e[scores={ParentId=..-1}] add ParentIdLower
-tag @e[scores={ParentId=-1..}] add ParentIdUpper
-tag @s add ParentIdChecker
-scoreboard players operation @e ParentId += @s TargetId
+tag @e[tag=glib.id.parent.match] remove glib.id.parent.match
+tag @e[tag=glib.id.parent.upper] remove glib.id.parent.upper
+tag @e[tag=glib.id.parent.lower] remove glib.id.parent.lower
+tag @e[tag=glib.id.parent.checker] remove glib.id.parent.checker
+scoreboard players operation @e glib.id.parent -= id.target glib.var
+tag @e[scores={glib.id.parent=0}] add glib.id.parent.match
+tag @e[scores={glib.id.parent=..-1}] add glib.id.parent.lower
+tag @e[scores={glib.id.parent=-1..}] add glib.id.parent.upper
+tag @s add glib.id.parent.checker
+scoreboard players operation @e glib.id.parent += id.target glib.var
 
-#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"ParentId"},"color":"none"},{"text":" TargetId: ","color":"none"},{"score":{"name":"@s","objective":"TargetId"},"color":"none"}]
-#tellraw @a ["",{"text":"[DEBUG] ","color":"red"},{"text":"Match: "},{"selector":"@e[tag=ParentIdMatch]"}]
-#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Upper: "},{"selector":"@e[tag=ParentIdUpper]"}]
-#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Lower: "},{"selector":"@e[tag=ParentIdLower]"}]
-#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Checker: "},{"selector":"@e[tag=ParentIdChecker]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"ID: ","color":"none"},{"score":{"name":"@s","objective":"glib.id.parent"},"color":"none"},{"text":" glib.id.target: ","color":"none"},{"score":{"name":"@s","objective":"glib.id.target"},"color":"none"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"red"},{"text":"Match: "},{"selector":"@e[tag=glib.id.parent.match]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Upper: "},{"selector":"@e[tag=glib.id.parent.upper]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Lower: "},{"selector":"@e[tag=glib.id.parent.lower]"}]
+#tellraw @a ["",{"text":"[DEBUG] ","color":"green"},{"text":"Checker: "},{"selector":"@e[tag=glib.id.parent.checker]"}]

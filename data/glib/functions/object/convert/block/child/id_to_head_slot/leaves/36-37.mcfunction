@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 36 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_fence
-execute if score @s BlockId matches 37 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_fence_gate
+execute if score @s glib.block.id matches 36 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_fence
+execute if score @s glib.block.id matches 37 run replaceitem entity @e[tag=setHeadSlot] armor.head birch_fence_gate

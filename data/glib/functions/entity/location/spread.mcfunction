@@ -12,53 +12,53 @@
 
 #__________________________________________________
 # PARAMETERS
-#Var4: CenterX
-#Var5: CenterZ 
-#Var6: Radius
+#glib.var4: CenterX
+#glib.var5: CenterZ 
+#glib.var5: Radius
 #__________________________________________________
 # INIT
-scoreboard objectives add Res1 dummy
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
+scoreboard objectives add glib.res dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
 
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Var5 dummy
-scoreboard objectives add Var6 dummy
-scoreboard objectives add Var7 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var7 dummy
 
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
-scoreboard players operation @s Var7 = @s Var6
-scoreboard players operation @s Var7 *= 2 Constant
-scoreboard players operation @s Var7 += 1 Constant
+scoreboard players operation @s glib.var7 = @s glib.var5
+scoreboard players operation @s glib.var7 *= 2 glib.const
+scoreboard players operation @s glib.var7 += 1 glib.const
 
 #Random
 function glib:math/random
-scoreboard players operation @s Res1 %= @s Var7 
+scoreboard players operation @s glib.res %= @s glib.var7 
 
-scoreboard players set @s Var1 0
-execute if score @s Res1 > @s Var6 run scoreboard players operation @s Var1 -= @s Res1
-execute if score @s Res1 > @s Var6 run scoreboard players operation @s Var1 /= 2 Constant
-execute if score @s Res1 <= @s Var6 run scoreboard players operation @s Var1 = @s Res1
+scoreboard players set @s glib.var 0
+execute if score @s glib.res > @s glib.var5 run scoreboard players operation @s glib.var -= @s glib.res
+execute if score @s glib.res > @s glib.var5 run scoreboard players operation @s glib.var /= 2 glib.const
+execute if score @s glib.res <= @s glib.var5 run scoreboard players operation @s glib.var = @s glib.res
 
-scoreboard players operation @s Var1 += @s Var4
+scoreboard players operation @s glib.var += @s glib.var4
 
 #Random
 function glib:math/random
-scoreboard players operation @s Res1 %= @s Var7 
+scoreboard players operation @s glib.res %= @s glib.var7 
 
-scoreboard players set @s Var3 0
-execute if score @s Res1 > @s Var6 run scoreboard players operation @s Var3 -= @s Res1
-execute if score @s Res1 > @s Var6 run scoreboard players operation @s Var3 /= 2 Constant
-execute if score @s Res1 <= @s Var6 run scoreboard players operation @s Var3 = @s Res1
+scoreboard players set @s glib.var3 0
+execute if score @s glib.res > @s glib.var5 run scoreboard players operation @s glib.var3 -= @s glib.res
+execute if score @s glib.res > @s glib.var5 run scoreboard players operation @s glib.var3 /= 2 glib.const
+execute if score @s glib.res <= @s glib.var5 run scoreboard players operation @s glib.var3 = @s glib.res
 
-scoreboard players operation @s Var3 += @s Var5
+scoreboard players operation @s glib.var3 += @s glib.var5
 
-execute store result score @s Var2 run data get entity @s Pos[1] 1
+execute store result score @s glib.var2 run data get entity @s Pos[1] 1
 
 function glib:entity/location/set
 

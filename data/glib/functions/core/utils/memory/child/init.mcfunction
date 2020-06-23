@@ -4,5 +4,5 @@
 # AUTHOR: theogiraudet
 
 # CODE:
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.res dummy

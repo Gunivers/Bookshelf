@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 10 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_slab
-execute if score @s BlockId matches 11 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_stairs
+execute if score @s glib.block.id matches 10 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_slab
+execute if score @s glib.block.id matches 11 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand acacia_stairs

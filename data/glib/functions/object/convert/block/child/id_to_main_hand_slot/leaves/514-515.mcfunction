@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 514 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purpur_stairs
-execute if score @s BlockId matches 515 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand quartz_block
+execute if score @s glib.block.id matches 514 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purpur_stairs
+execute if score @s glib.block.id matches 515 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand quartz_block

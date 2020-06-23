@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..101 run function glib:object/convert/block/child/id_to_block/leaves/100-101
-execute if score @s BlockId matches 102.. run function glib:object/convert/block/child/id_to_block/leaves/102-103
+execute if score @s glib.block.id matches ..101 run function glib:object/convert/block/child/id_to_block/leaves/100-101
+execute if score @s glib.block.id matches 102.. run function glib:object/convert/block/child/id_to_block/leaves/102-103

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 120 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chiseled_stone_bricks
-execute if score @s BlockId matches 121 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chorus_flower
+execute if score @s glib.block.id matches 120 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chiseled_stone_bricks
+execute if score @s glib.block.id matches 121 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand chorus_flower

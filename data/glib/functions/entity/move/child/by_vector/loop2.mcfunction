@@ -10,23 +10,23 @@ execute as @s[scores={Collision=1..},tag=CollisionFront] at @s run function glib
 execute as @s[scores={Collision=1..},tag=CollisionTest] at @s run function glib:entity/move/child/by_vector/collision
 
 #Apply on entity
-scoreboard players operation @s Var1 = @s Var7
-scoreboard players operation @s Var2 = @s Var8
-scoreboard players operation @s Var3 = @s Var9
+scoreboard players operation @s glib.var = @s glib.var7
+scoreboard players operation @s glib.var2 = @s glib.var8
+scoreboard players operation @s glib.var3 = @s glib.var9
 
-execute if entity @s[type=!player,scores={Var4=1..}] at @s run function glib:entity/move/child/by_vector/apply
+execute if entity @s[type=!player,scores={glib.var4=1..}] at @s run function glib:entity/move/child/by_vector/apply
 
 #Apply on player
-execute if entity @s[type=player,scores={Var4=1..}] at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Move_By_Vector"]}
-execute if entity @s[type=player,scores={Var4=1..}] at @s run tp @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] @s
-execute if entity @s[type=player,scores={Var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] Var1 = @s Var1
-execute if entity @s[type=player,scores={Var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] Var2 = @s Var2
-execute if entity @s[type=player,scores={Var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] Var3 = @s Var3
-execute if entity @s[type=player,scores={Var4=1..}] at @s as @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] at @s run function glib:entity/move/child/by_vector/apply
-execute if entity @s[type=player,scores={Var4=1..}] at @s run tp @s @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest]
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Move_By_Vector"]}
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run tp @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] @s
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] glib.var = @s glib.var
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] glib.var2 = @s glib.var2
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] glib.var3 = @s glib.var3
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s as @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] at @s run function glib:entity/move/child/by_vector/apply
+execute if entity @s[type=player,scores={glib.var4=1..}] at @s run tp @s @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest]
 kill @e[type=armor_stand,tag=Move_By_Vector]
 
 
-scoreboard players remove @s Var4 1
+scoreboard players remove @s glib.var4 1
 
-execute as @s[scores={Var4=1..}] at @s run function glib:entity/move/child/by_vector/loop2
+execute as @s[scores={glib.var4=1..}] at @s run function glib:entity/move/child/by_vector/loop2

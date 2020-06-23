@@ -1,6 +1,6 @@
-scoreboard players remove @e[tag=HasToMove] Id 1
+scoreboard players remove @e[tag=HasToMove] glib.id 1
 
-tag @e[scores={Id=1},tag=UpdateCUID] add CorrectCUID
-execute as @e[tag=CorrectCUID] run tag @e remove HasToMove
+tag @e[scores={glib.id=1},tag=glib.id.chain.update] add glib.id.chain.correct
+execute as @e[tag=glib.id.chain.correct] run tag @e remove HasToMove
 
 execute as @e[tag=HasToMove,limit=1] run function glib:entity/id/child/updatecuid-plug

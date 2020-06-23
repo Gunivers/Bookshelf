@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 0 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_button
-execute if score @s BlockId matches 1 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_door
+execute if score @s glib.block.id matches 0 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_button
+execute if score @s glib.block.id matches 1 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_door

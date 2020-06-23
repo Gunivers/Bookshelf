@@ -1,2 +1,2 @@
-execute if score @s BlockId matches ..163 run function glib:object/convert/block/child/id_to_block/nodes/160-163
-execute if score @s BlockId matches 164.. run function glib:object/convert/block/child/id_to_block/nodes/164-167
+execute if score @s glib.block.id matches ..163 run function glib:object/convert/block/child/id_to_block/nodes/160-163
+execute if score @s glib.block.id matches 164.. run function glib:object/convert/block/child/id_to_block/nodes/164-167

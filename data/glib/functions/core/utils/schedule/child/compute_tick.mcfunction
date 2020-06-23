@@ -11,26 +11,26 @@
 # NOTE: Convert the specified time in Buffer.Timer to tick depending on the specified time unit and adds it to the current gametick.
 
 # CODE:
-execute store result score @s Var1 run data get entity @s ArmorItems[0].tag.Buffer.Timer
+execute store result score @s glib.var run data get entity @s ArmorItems[0].tag.Buffer.Timer
 
 #Is Tick
 data modify entity @s ArmorItems[0].tag.Buffer2 set value "tick"
-execute store success score @s Var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
-execute if score @s Var2 matches 0 run tag @s add Match
+execute store success score @s glib.var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
+execute if score @s glib.var2 matches 0 run tag @s add Match
 
 #Is Second
 execute unless entity @s[tag=Match] run data modify entity @s ArmorItems[0].tag.Buffer2 set value "second"
-execute unless entity @s[tag=Match] store success score @s Var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
-execute unless entity @s[tag=Match] if score @s Var2 matches 0 run scoreboard players operation @s Var1 *= 20 Constant
-execute unless entity @s[tag=Match] if score @s Var2 matches 0 run tag @s add Match
+execute unless entity @s[tag=Match] store success score @s glib.var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
+execute unless entity @s[tag=Match] if score @s glib.var2 matches 0 run scoreboard players operation @s glib.var *= 20 glib.const
+execute unless entity @s[tag=Match] if score @s glib.var2 matches 0 run tag @s add Match
 
 #Is Day
 execute unless entity @s[tag=Match] run data modify entity @s ArmorItems[0].tag.Buffer2 set value "day"
-execute unless entity @s[tag=Match] store success score @s Var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
-execute unless entity @s[tag=Match] if score @s Var2 matches 0 run scoreboard players operation @s Var1 *= 24000 Constant
+execute unless entity @s[tag=Match] store success score @s glib.var2 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
+execute unless entity @s[tag=Match] if score @s glib.var2 matches 0 run scoreboard players operation @s glib.var *= 24000 glib.const
 
 execute store result score @s Var0 run time query gametime
-scoreboard players operation @s Var0 += @s Var1
-scoreboard players operation @s Res1 = @s Var0
+scoreboard players operation @s Var0 += @s glib.var
+scoreboard players operation @s glib.res = @s Var0
 
 tag @s[tag=Match] remove Match

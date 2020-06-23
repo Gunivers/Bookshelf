@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -25,5 +25,5 @@ scoreboard objectives add Res1 dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set @s Res1 1
-execute if score @s Res1 < @s Var1 run function glib:math/child/get_next_pow2_loop
+scoreboard players set @s glib.res 1
+execute if score @s glib.res < @s glib.var run function glib:math/child/get_next_pow2_loop

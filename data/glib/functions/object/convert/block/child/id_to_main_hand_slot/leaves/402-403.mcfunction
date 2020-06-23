@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 402 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_door
-execute if score @s BlockId matches 403 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_fence
+execute if score @s glib.block.id matches 402 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_door
+execute if score @s glib.block.id matches 403 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand oak_fence

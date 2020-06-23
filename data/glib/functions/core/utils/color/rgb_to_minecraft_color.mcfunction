@@ -15,7 +15,7 @@
 # - B ~ Blue component
 
 # OUTPUT:
-# - Res1
+# - glib.res
 
 #INIT:
 function glib:core/utils/color/init
@@ -24,9 +24,9 @@ function glib:core/utils/color/init
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.
 
 # CODE:
-scoreboard players operation @s Res1 = @s R
-scoreboard players operation @s Res1 *= 65536 Constant
-scoreboard players operation @s Var1 = @s G
-scoreboard players operation @s Var1 *= 256 Constant
-scoreboard players operation @s Res1 += @s Var1
-scoreboard players operation @s Res1 += @s B
+scoreboard players operation @s glib.res = @s R
+scoreboard players operation @s glib.res *= 65536 glib.const
+scoreboard players operation @s glib.var = @s G
+scoreboard players operation @s glib.var *= 256 glib.const
+scoreboard players operation @s glib.res += @s glib.var
+scoreboard players operation @s glib.res += @s B

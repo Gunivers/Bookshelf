@@ -10,7 +10,7 @@
 # - @s ArmorItems[0].tag.Buffer1 ~ Variable Name (NBT)
 
 # OUTPUT:
-# - Var1
+# - glib.var
 
 # NOTE:
 # Return 1 if the variable exists, 0 else.
@@ -18,5 +18,5 @@
 
 # CODE:
 function glib:core/utils/memory/get
-execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res1 1
-execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s Res1 0
+execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s glib.res 1
+execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s glib.res 0

@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -31,19 +31,19 @@ scoreboard objectives add Res1 dummy
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Var5 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.var5 dummy
 
 # CODE
 
-scoreboard players operation @s Var5 = @s Var1
+scoreboard players operation @s glib.var5 = @s glib.var
 
 function glib:math/cos
 
-scoreboard players operation @s Var4 = @s Res1
-scoreboard players operation @s Var1 = @s Var5
+scoreboard players operation @s glib.var4 = @s glib.res
+scoreboard players operation @s glib.var = @s glib.var5
 
 function glib:math/sin
 
-scoreboard players operation @s Res1 *= 1000 Constant
-scoreboard players operation @s Res1 /= @s Var4
+scoreboard players operation @s glib.res *= 1000 glib.const
+scoreboard players operation @s glib.res /= @s glib.var4

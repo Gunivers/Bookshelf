@@ -10,7 +10,7 @@
 
 # NOTE:
 data modify entity @s ArmorItems[0].tag.Buffer4 set from entity @s ArmorItems[0].tag.Buffer
-execute store success score @s Var0 run data modify entity @s ArmorItems[0].tag.Buffer4 set from entity @s ArmorItems[0].tag.Buffer2[0].Id
+execute store success score @s Var0 run data modify entity @s ArmorItems[0].tag.Buffer4 set from entity @s ArmorItems[0].tag.Buffer2[0].glib.id
 
 execute if score @s Var0 matches 0 run data remove entity @s ArmorItems[0].tag.Buffer2[0]
 

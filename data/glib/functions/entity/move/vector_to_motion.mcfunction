@@ -16,9 +16,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
 
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
@@ -31,20 +31,20 @@ scoreboard objectives add VectorSpeed dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s Var1 = @s VectorX
-scoreboard players operation @s Var2 = @s VectorY
-scoreboard players operation @s Var3 = @s VectorZ
+scoreboard players operation @s glib.var = @s VectorX
+scoreboard players operation @s glib.var2 = @s VectorY
+scoreboard players operation @s glib.var3 = @s VectorZ
 
 # Apply speed modifier
-scoreboard players operation @s Var1 *= @s VectorSpeed
-scoreboard players operation @s Var2 *= @s VectorSpeed
-scoreboard players operation @s Var3 *= @s VectorSpeed
-scoreboard players operation @s Var1 /= 1000 Constant
-scoreboard players operation @s Var2 /= 1000 Constant
-scoreboard players operation @s Var3 /= 1000 Constant
+scoreboard players operation @s glib.var *= @s VectorSpeed
+scoreboard players operation @s glib.var2 *= @s VectorSpeed
+scoreboard players operation @s glib.var3 *= @s VectorSpeed
+scoreboard players operation @s glib.var /= 1000 glib.const
+scoreboard players operation @s glib.var2 /= 1000 glib.const
+scoreboard players operation @s glib.var3 /= 1000 glib.const
 
-execute as @s store result entity @s Motion[0] double 0.001 run scoreboard players get @s Var1
-execute as @s store result entity @s Motion[1] double 0.001 run scoreboard players get @s Var2
-execute as @s store result entity @s Motion[2] double 0.001 run scoreboard players get @s Var3
+execute as @s store result entity @s Motion[0] double 0.001 run scoreboard players get @s glib.var
+execute as @s store result entity @s Motion[1] double 0.001 run scoreboard players get @s glib.var2
+execute as @s store result entity @s Motion[2] double 0.001 run scoreboard players get @s glib.var3
 
 execute as @s[scores={Collision=1..}] run function glib:entity/move/child/by_motion/collision

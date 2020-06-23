@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 2 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 3 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence_gate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 2 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 3 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_fence_gate"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

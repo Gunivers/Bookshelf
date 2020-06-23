@@ -20,15 +20,15 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Var3 dummy
-scoreboard objectives add Var4 dummy
-scoreboard objectives add Var5 dummy
-scoreboard objectives add Var6 dummy
-scoreboard objectives add Var7 dummy
-scoreboard objectives add Var8 dummy
-scoreboard objectives add Res1 dummy
+scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var7 dummy
+scoreboard objectives add glib.var8 dummy
+scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # CONFIG
@@ -37,71 +37,71 @@ scoreboard objectives add Res1 dummy
 # CODE
 
 # Not defined values
-scoreboard players set @s[scores={Var1=0}] Var1 1
-scoreboard players operation @s[scores={Var1=..-1}] Var1 *= -1 Constant
+scoreboard players set @s[scores={glib.var=0}] glib.var 1
+scoreboard players operation @s[scores={glib.var=..-1}] glib.var *= -1 glib.const
 
-# Var4 = x (* 1000)
-scoreboard players operation @s Var4 = @s Var1
+# glib.var4 = x (* 1000)
+scoreboard players operation @s glib.var4 = @s glib.var
 
-# Var2 = n+2
-execute if entity @s[scores={Var4=..1000}] run scoreboard players remove @s Var1 1
-scoreboard players set @s Var2 0
-execute unless entity @s[scores={Var4=1}] run function glib:math/child/log-digits
-execute if entity @s[scores={Var4=1001..}] run scoreboard players remove @s Var2 1
+# glib.var2 = n+2
+execute if entity @s[scores={glib.var4=..1000}] run scoreboard players remove @s glib.var 1
+scoreboard players set @s glib.var2 0
+execute unless entity @s[scores={glib.var4=1}] run function glib:math/child/log-digits
+execute if entity @s[scores={glib.var4=1001..}] run scoreboard players remove @s glib.var2 1
 
-# Var7 = n-1
-scoreboard players operation @s Var7 = @s Var2
-scoreboard players remove @s Var7 3
+# glib.var7 = n-1
+scoreboard players operation @s glib.var7 = @s glib.var2
+scoreboard players remove @s glib.var7 3
 
-# Res1 = 10^(n-1) (* 1000)
-scoreboard players set @s Var1 10
+# glib.res = 10^(n-1) (* 1000)
+scoreboard players set @s glib.var 10
 function glib:math/pow
 
 # Calculation of y
 
 # y = (a-1)/(a+1), a = x/10^(n-1) => y = (x-10^(n-1))/(x+10^(n-1))
-# Var5 = y (* 10 000)
-scoreboard players operation @s Var5 = @s Var4
-scoreboard players operation @s Var5 -= @s Res1
-scoreboard players operation @s Var4 += @s Res1
+# glib.var5 = y (* 10 000)
+scoreboard players operation @s glib.var5 = @s glib.var4
+scoreboard players operation @s glib.var5 -= @s glib.res
+scoreboard players operation @s glib.var4 += @s glib.res
 # We change the orders of magnitude to have the best possible accuracy
 # Calculation of the multipliers
-# Var8 = 10^(5-Var7)
-# Var6 = 10^(Var7-1)
-scoreboard players operation @s Var6 = @s Res1
-scoreboard players operation @s Var6 /= 10000 Constant
-scoreboard players set @s Var2 5
-scoreboard players operation @s Var2 -= @s Var7
+# glib.var8 = 10^(5-glib.var7)
+# glib.var5 = 10^(glib.var7-1)
+scoreboard players operation @s glib.var5 = @s glib.res
+scoreboard players operation @s glib.var5 /= 10000 glib.const
+scoreboard players set @s glib.var2 5
+scoreboard players operation @s glib.var2 -= @s glib.var7
 function glib:math/pow
-scoreboard players set @s Var8 1
-execute if entity @s[scores={Var7=6}] run scoreboard players operation @s Var5 /= 10 Constant
-execute unless entity @s[scores={Var7=5..6}] run scoreboard players operation @s Var8 = @s Res1
+scoreboard players set @s glib.var8 1
+execute if entity @s[scores={glib.var7=6}] run scoreboard players operation @s glib.var5 /= 10 glib.const
+execute unless entity @s[scores={glib.var7=5..6}] run scoreboard players operation @s glib.var8 = @s glib.res
 # Modification of the orders of magnitude
-scoreboard players operation @s Var5 *= @s Var8
-execute if entity @s[scores={Var5=1..}] run scoreboard players add @s Var5 50000
-execute if entity @s[scores={Var5=..-1}] run scoreboard players remove @s Var5 50000
-scoreboard players operation @s Var8 /= 10000 Constant
-execute if entity @s[scores={Var7=..0}] run scoreboard players operation @s Var4 *= @s Var8
-execute if entity @s[scores={Var7=2..}] run scoreboard players operation @s Var4 /= @s Var6
+scoreboard players operation @s glib.var5 *= @s glib.var8
+execute if entity @s[scores={glib.var5=1..}] run scoreboard players add @s glib.var5 50000
+execute if entity @s[scores={glib.var5=..-1}] run scoreboard players remove @s glib.var5 50000
+scoreboard players operation @s glib.var8 /= 10000 glib.const
+execute if entity @s[scores={glib.var7=..0}] run scoreboard players operation @s glib.var4 *= @s glib.var8
+execute if entity @s[scores={glib.var7=2..}] run scoreboard players operation @s glib.var4 /= @s glib.var5
 # Division of x-10^(n-1) by x+10^(n-1)
-scoreboard players operation @s Var5 /= @s Var4
-scoreboard players operation @s Var1 = @s Var5
+scoreboard players operation @s glib.var5 /= @s glib.var4
+scoreboard players operation @s glib.var = @s glib.var5
 
 # Calculation of Sp
 
-# Var6 = Sp (* 10 000)
-scoreboard players set @s Var2 1
-scoreboard players set @s Var6 0
-scoreboard players operation @s Var3 = @s Var1
+# glib.var5 = Sp (* 10 000)
+scoreboard players set @s glib.var2 1
+scoreboard players set @s glib.var5 0
+scoreboard players operation @s glib.var3 = @s glib.var
 function glib:math/child/log-loop
 
 # Last calculation
 # log(x) ~ Sp + (n-1)*log(10)
-scoreboard players operation @s Res1 = @s Var6
-scoreboard players operation @s Res1 *= 2 Constant
-scoreboard players operation @s Var7 *= 2302585 Constant
-scoreboard players operation @s Var7 /= 100 Constant
-scoreboard players operation @s Res1 += @s Var7
+scoreboard players operation @s glib.res = @s glib.var5
+scoreboard players operation @s glib.res *= 2 glib.const
+scoreboard players operation @s glib.var7 *= 2302585 glib.const
+scoreboard players operation @s glib.var7 /= 100 glib.const
+scoreboard players operation @s glib.res += @s glib.var7
 
 # Small adjustment to increase average accuracy
-scoreboard players add @s Res1 7
+scoreboard players add @s glib.res 7

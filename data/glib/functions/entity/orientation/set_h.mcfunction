@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var1 dummy
+scoreboard objectives add glib.var dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,6 +28,6 @@ summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 
 tp @e[type=armor_stand,tag=SetRotaton,limit=1] @s
 
-execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s Var1
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var
 tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
 kill @e[type=armor_stand,tag=SetRotation,limit=1]

@@ -10,13 +10,13 @@
 # - Vars (module)
 
 # INPUT:
-# - Var1 (dummy)
+# - glib.var (dummy)
 
 # NOTE: Add a value to the list. Override the buffer.
 
 # CODE:
 
 function glib:collection/lists/fifo_list/has_storage_medium
-execute store result entity @s[scores={Var2=1}] ArmorItems[2].tag.buffer int 1 run scoreboard players get @s Var1
-data modify entity @s[scores={Var2=1}] ArmorItems[2].tag.fifo append from entity @s ArmorItems[2].tag.buffer
+execute store result entity @s[scores={glib.var2=1}] ArmorItems[2].tag.buffer int 1 run scoreboard players get @s glib.var
+data modify entity @s[scores={glib.var2=1}] ArmorItems[2].tag.fifo append from entity @s ArmorItems[2].tag.buffer
 data remove entity @s ArmorItems[2].tag.buffer

@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 158 run summon falling_block ~ ~ ~ {BlockState:{Name:"damaged_anvil"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 159 run summon falling_block ~ ~ ~ {BlockState:{Name:"dandelion"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 158 run summon falling_block ~ ~ ~ {BlockState:{Name:"damaged_anvil"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 159 run summon falling_block ~ ~ ~ {BlockState:{Name:"dandelion"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

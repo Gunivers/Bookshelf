@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 296 run summon falling_block ~ ~ ~ {BlockState:{Name:"jigsaw"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 297 run summon falling_block ~ ~ ~ {BlockState:{Name:"jukebox"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 296 run summon falling_block ~ ~ ~ {BlockState:{Name:"jigsaw"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 297 run summon falling_block ~ ~ ~ {BlockState:{Name:"jukebox"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

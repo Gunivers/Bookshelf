@@ -8,7 +8,7 @@
 
 # Original path: glib:entity/link/update_link_v
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Note: @s must have Glib_Link_Parent defined (equal to another entity id)
+# Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
 # PARAMETERS
@@ -16,9 +16,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Var2 dummy
-scoreboard objectives add Glib_R_OriH dummy
-scoreboard objectives add Glib_Link_Parent dummy
+scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.link.r.h dummy
+scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
 # CONFIG
@@ -26,14 +26,14 @@ scoreboard objectives add Glib_Link_Parent dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s TargetId = @s Glib_Link_Parent
+scoreboard players operation @s glib.id.target = @s glib.link.to
 
 function glib:entity/id/check
 
-execute store result score @s Var2 run data get entity @s Rotation[1] 1000
+execute store result score @s glib.var2 run data get entity @s Rotation[1] 1000
 
-execute store result score @s Glib_R_OriH run data get entity @e[tag=IdMatch,limit=1,sort=nearest] Rotation[1] 1000
+execute store result score @s glib.link.r.h run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[1] 1000
 
-scoreboard players operation @s Glib_R_OriH -= @s Var2
+scoreboard players operation @s glib.link.r.h -= @s glib.var2
 
-scoreboard players operation @s Glib_R_OriH *= -1 Constant
+scoreboard players operation @s glib.link.r.h *= -1 glib.const

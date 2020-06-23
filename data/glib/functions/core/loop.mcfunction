@@ -9,6 +9,8 @@ function glib:core/import/constants
 #__________________________________________________
 # INIT menu refresh
 scoreboard objectives add Data dummy
+
+
 scoreboard players set @a[scores={Data=5..}] Data 0
 scoreboard objectives add Data dummy
 scoreboard players add @a Data 1
@@ -23,8 +25,8 @@ execute as @a[tag=Glib_Debug_Stick] run function glib:core/menu/debug/debug_stic
 execute as @a[tag=Glib_Debug,tag=Glib_Debug_global.display.tick] run function glib:core/debug/display_tick
 execute as @a[tag=Glib_Debug,tag=Glib_Debug_entity.target_entity_manager,limit=1] at @s run function glib:core/menu/debug/entity/target_entity_manager
 
-# Glib_Id for debug
-scoreboard objectives add Glib_Id dummy
-scoreboard players add @e Glib_Id 0
-execute as @e[scores={Glib_Id=0},limit=1] run scoreboard players add Glib_Id Data 1
-execute as @e[scores={Glib_Id=0},limit=1] run scoreboard players operation @s Glib_Id = Glib_Id Data
+# glib.debug.id for debug
+scoreboard objectives add glib.debug.id dummy
+scoreboard players add @e glib.debug.id 0
+execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players add glib.debug.id Data 1
+execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation @s glib.debug.id = glib.debug.id Data

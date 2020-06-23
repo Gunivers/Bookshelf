@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 580 run summon falling_block ~ ~ ~ {BlockState:{Name:"snow_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 581 run summon falling_block ~ ~ ~ {BlockState:{Name:"soul_sand"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 580 run summon falling_block ~ ~ ~ {BlockState:{Name:"snow_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 581 run summon falling_block ~ ~ ~ {BlockState:{Name:"soul_sand"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

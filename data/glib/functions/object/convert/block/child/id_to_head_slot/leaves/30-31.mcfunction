@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 30 run replaceitem entity @e[tag=setHeadSlot] armor.head beacon
-execute if score @s BlockId matches 31 run replaceitem entity @e[tag=setHeadSlot] armor.head bedrock
+execute if score @s glib.block.id matches 30 run replaceitem entity @e[tag=setHeadSlot] armor.head beacon
+execute if score @s glib.block.id matches 31 run replaceitem entity @e[tag=setHeadSlot] armor.head bedrock

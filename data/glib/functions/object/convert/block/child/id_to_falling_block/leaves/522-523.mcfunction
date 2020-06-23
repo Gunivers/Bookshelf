@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 522 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 523 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 522 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 523 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

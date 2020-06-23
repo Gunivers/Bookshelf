@@ -25,8 +25,8 @@ scoreboard objectives add OriH dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s OriV %= 180 Constant
-scoreboard players operation @s OriH %= 360 Constant
+scoreboard players operation @s OriV %= 180 glib.const
+scoreboard players operation @s OriH %= 360 glib.const
 
 scoreboard players add @s[scores={OriV=..-1}] OriV 180
 scoreboard players add @s[scores={OriH=..-1}] OriH 360

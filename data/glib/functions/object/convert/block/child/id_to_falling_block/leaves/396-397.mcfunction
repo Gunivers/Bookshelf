@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 396 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_portal"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s BlockId matches 397 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_quartz_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 396 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_portal"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.block.id matches 397 run summon falling_block ~ ~ ~ {BlockState:{Name:"nether_quartz_ore"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

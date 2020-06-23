@@ -10,7 +10,7 @@
 # - glib:utils/color/child/init (function)
 
 # INPUT:
-# - Var1
+# - glib.var
 
 # OUTPUT:
 # - R ~ Red component
@@ -24,13 +24,13 @@
 function glib:core/utils/color/init
 
 # CODE:
-scoreboard players operation @s R = @s Var1
-scoreboard players operation @s R /= 65536 Constant
-scoreboard players operation @s R %= 256 Constant
+scoreboard players operation @s R = @s glib.var
+scoreboard players operation @s R /= 65536 glib.const
+scoreboard players operation @s R %= 256 glib.const
 
-scoreboard players operation @s G = @s Var1
-scoreboard players operation @s G /= 256 Constant
-scoreboard players operation @s G %= 256 Constant
+scoreboard players operation @s G = @s glib.var
+scoreboard players operation @s G /= 256 glib.const
+scoreboard players operation @s G %= 256 glib.const
 
-scoreboard players operation @s B = @s Var1
-scoreboard players operation @s B %= 256 Constant
+scoreboard players operation @s B = @s glib.var
+scoreboard players operation @s B %= 256 glib.const

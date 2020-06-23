@@ -1,2 +1,2 @@
-execute if score @s BlockId matches 446 run setblock ~ ~ ~ pink_wall_banner
-execute if score @s BlockId matches 447 run setblock ~ ~ ~ pink_wool
+execute if score @s glib.block.id matches 446 run setblock ~ ~ ~ pink_wall_banner
+execute if score @s glib.block.id matches 447 run setblock ~ ~ ~ pink_wool
