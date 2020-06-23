@@ -19,7 +19,6 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.data dummy
 scoreboard objectives add glib.id dummy
 
 #__________________________________________________
@@ -32,3 +31,7 @@ scoreboard players add @s glib.id 0
 
 execute if entity @s[scores={glib.id=0}] run scoreboard players add id.simple glib.data 1
 execute if entity @s[scores={glib.id=0}] run scoreboard players operation @s glib.id = id.simple glib.data
+
+tag @s add glib.id.set
+tag @s remove glib.id.type.cuid
+tag @s add glib.id.type.suid

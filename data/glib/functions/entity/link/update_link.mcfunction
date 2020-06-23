@@ -72,29 +72,29 @@ scoreboard players operation @s glib.link.r.h *= -1 glib.const
 execute as @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:entity/orientation/get
 
 # tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.y"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
-# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriH"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriV"}}]
+# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}}]
 
 # Cos(Phi)
-scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] OriH
+scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.h
 function glib:math/cos
 scoreboard players operation @s glib.var4 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
 # Sin(Phi)
-scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] OriH
+scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.h
 function glib:math/sin
 scoreboard players operation @s glib.var5 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriH"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}}]
 
 # Cos(Theta)
-scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] OriV
+scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.v
 function glib:math/cos
 scoreboard players operation @s glib.var5 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}}]
 # Sin(Theta)
-scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] OriV
+scoreboard players operation @s glib.var = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.v
 function glib:math/sin
 scoreboard players operation @s glib.var7 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var7"}}]
+# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var7"}}]
 
 # Vector Left -> L = cos(P)*X + sin(P)*Z
 scoreboard players operation @s glib.var = @s glib.link.r.x

@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add OriV dummy
-scoreboard objectives add OriH dummy
+scoreboard objectives add glib.ori.v dummy
+scoreboard objectives add glib.ori.h dummy
 
 #__________________________________________________
 # CONFIG
@@ -25,5 +25,5 @@ scoreboard objectives add OriH dummy
 #__________________________________________________
 # CODE
 
-execute store result score @s OriH run data get entity @s Rotation[0] 1000
-execute store result score @s OriV run data get entity @s Rotation[1] 1000
+execute store result score @s glib.ori.h run data get entity @s Rotation[0] 1000
+execute store result score @s glib.ori.v run data get entity @s Rotation[1] 1000

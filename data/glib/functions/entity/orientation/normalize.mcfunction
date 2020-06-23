@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add OriV dummy
-scoreboard objectives add OriH dummy
+scoreboard objectives add glib.ori.v dummy
+scoreboard objectives add glib.ori.h dummy
 
 #__________________________________________________
 # CONFIG
@@ -25,8 +25,8 @@ scoreboard objectives add OriH dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s OriV %= 180 glib.const
-scoreboard players operation @s OriH %= 360 glib.const
+scoreboard players operation @s glib.ori.v %= 180 glib.const
+scoreboard players operation @s glib.ori.h %= 360 glib.const
 
-scoreboard players add @s[scores={OriV=..-1}] OriV 180
-scoreboard players add @s[scores={OriH=..-1}] OriH 360
+scoreboard players add @s[scores={glib.ori.v=..-1}] glib.ori.v 180
+scoreboard players add @s[scores={glib.ori.h=..-1}] glib.ori.h 360

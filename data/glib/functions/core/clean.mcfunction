@@ -35,6 +35,8 @@ scoreboard objectives remove glib.const
 scoreboard objectives remove glib.var
 scoreboard objectives remove glib.res
 
+scoreboard objectives remove glib.debug.id
+
 
 	# ~~ Bool ~~
 scoreboard objectives remove Output
@@ -55,8 +57,8 @@ scoreboard objectives remove LocX
 scoreboard objectives remove LocY
 scoreboard objectives remove LocZ
 	# ~~ Orientation ~~
-scoreboard objectives remove OriV
-scoreboard objectives remove OriH
+scoreboard objectives remove glib.ori.v
+scoreboard objectives remove glib.ori.h
 	# ~~ Path Finder ~~
 scoreboard objectives remove PathCost
 	# ~~ Relative Location ~~

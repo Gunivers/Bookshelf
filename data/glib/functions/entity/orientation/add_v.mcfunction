@@ -27,7 +27,7 @@ scoreboard objectives add glib.var dummy
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 data modify entity @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] Rotation set from entity @s Rotation
 execute as @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] at @s run function glib:entity/orientation/get
-scoreboard players operation @s glib.var += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] OriV
+scoreboard players operation @s glib.var += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.v
 
 
 execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 1 run scoreboard players get @s glib.var
