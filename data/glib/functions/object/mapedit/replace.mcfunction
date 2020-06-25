@@ -47,7 +47,7 @@ scoreboard objectives add ActualBlockID dummy
 
 #On initlise tout (factorisation )
 
-function glib:object/mapedit/zzz_child/set/ini
+function glib_child:object/mapedit/set/ini
 
 
 #id du nouveaux block 
@@ -70,4 +70,4 @@ scoreboard players add setCount Set_Option 1
 #tag @e[tag=spawnSET] remove spawnSET 
 
 #On lance toute la procedure 
-function glib:object/mapedit/zzz_child/set/repeate
+function glib_child:object/mapedit/set/repeate

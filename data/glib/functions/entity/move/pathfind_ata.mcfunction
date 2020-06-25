@@ -42,7 +42,7 @@ summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pa
 scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] glib.var3 = @s glib.var3
 scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] glib.var1 = @s glib.var1
 
-execute as @e[tag=Glib_Pathfind_Source] run function glib:entity/move/zzz_child/pathfind/source
+execute as @e[tag=Glib_Pathfind_Source] run function glib_child:entity/move/pathfind/source
 
 # Clear
 kill @e[tag=Glib_Pathfind_Target]

@@ -51,8 +51,8 @@ execute if entity @a[tag=glib.debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run f
 scoreboard players set @s glib.var3 1
 tag @s add FactorIncrease
 
-execute if entity @s[tag=FactorIncrease] run function glib:entity/move/zzz_child/forward/loop1
+execute if entity @s[tag=FactorIncrease] run function glib_child:entity/move/forward/loop1
 
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var6 = @s glib.var2
 
-function glib:entity/move/zzz_child/forward/loop2
+function glib_child:entity/move/forward/loop2

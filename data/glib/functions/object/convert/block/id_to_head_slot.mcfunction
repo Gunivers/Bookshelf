@@ -25,5 +25,5 @@ scoreboard objectives add glib.var0 dummy
 #__________________________________________________
 # CODE
 
-execute if score @s glib.var0 matches ..511 run function glib:object/convert/block/zzz_child/id_to_head_slot/nodes/0-511
-execute if score @s glib.var0 matches 512.. run function glib:object/convert/block/zzz_child/id_to_head_slot/nodes/512-675
+execute if score @s glib.var0 matches ..511 run function glib_child:object/convert/block/id_to_head_slot/nodes/0-511
+execute if score @s glib.var0 matches 512.. run function glib_child:object/convert/block/id_to_head_slot/nodes/512-675

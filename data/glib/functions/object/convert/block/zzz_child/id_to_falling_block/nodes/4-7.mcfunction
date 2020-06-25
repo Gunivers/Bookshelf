@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches ..5 run function glib:object/convert/block/zzz_child/id_to_falling_block/leaves/4-5
-execute if score @s glib.block.id matches 6.. run function glib:object/convert/block/zzz_child/id_to_falling_block/leaves/6-7

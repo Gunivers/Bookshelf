@@ -1,1 +1,0 @@
-tellraw @a[tag=glib.debug] [{"text":"   Entity: ","color":"red"},{"selector":"@s","color":"green"},{"text":" glib.debug.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.debug.id"},"color":"green"}]

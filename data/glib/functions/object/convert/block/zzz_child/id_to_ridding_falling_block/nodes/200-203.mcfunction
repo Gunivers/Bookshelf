@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches ..201 run function glib:object/convert/block/zzz_child/id_to_ridding_falling_block/leaves/200-201
-execute if score @s glib.block.id matches 202.. run function glib:object/convert/block/zzz_child/id_to_ridding_falling_block/leaves/202-203

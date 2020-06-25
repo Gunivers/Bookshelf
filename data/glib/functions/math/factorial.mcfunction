@@ -30,4 +30,4 @@ scoreboard objectives add glib.res0 dummy
 
 scoreboard players operation @s glib.var1 = @s glib.var0
 scoreboard players set @s glib.res0 1
-function glib:math/zzz_child/factorial-loop
+function glib_child:math/factorial-loop

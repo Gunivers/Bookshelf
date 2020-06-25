@@ -39,6 +39,6 @@ execute at @s run tp @e[tag=NewAimedBlock] ~ ~1.7 ~
 # CONFIG: glib.var0 -> Range*10 (10 blocks -> glib.var0 = 100)
 scoreboard players operation @e[tag=NewAimedBlock] glib.var0 = @s glib.var0
 
-execute as @e[tag=NewAimedBlock] at @s run function glib:entity/view/zzz_child/aimed_block_raycast
+execute as @e[tag=NewAimedBlock] at @s run function glib_child:entity/view/aimed_block_raycast
 execute as @e[tag=NewAimedBlock] at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 tag @e remove NewAimedBlock

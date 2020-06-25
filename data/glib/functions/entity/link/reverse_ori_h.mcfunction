@@ -43,5 +43,5 @@ scoreboard players operation @s glib.var2 -= @s glib.var0
 
 scoreboard players operation @s glib.var2 -= @s glib.link.r.v
 scoreboard players operation @s glib.var0 -= @s glib.var2
-function glib:entity/orientation/zzz_accuracy/10-3/set_h
+function glib_accuracy:10-3/entity/orientation/set_h
 function glib:entity/link/update_link_t

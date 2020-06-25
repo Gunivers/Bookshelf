@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches ..29 run function glib:object/convert/block/zzz_child/id_to_block/leaves/28-29
-execute if score @s glib.block.id matches 30.. run function glib:object/convert/block/zzz_child/id_to_block/leaves/30-31

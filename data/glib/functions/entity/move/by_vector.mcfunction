@@ -69,12 +69,12 @@ tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"APP
 scoreboard players set @s glib.var3 1
 
 # Divide vector
-execute if entity @s run function glib:entity/move/zzz_child/by_vector/loop1
+execute if entity @s run function glib_child:entity/move/by_vector/loop1
 tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"BREAK -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var2"}},{"text":".   Factor: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Precision: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
 
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var6 = @s glib.var0
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var7 = @s glib.var1
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var8 = @s glib.var2
 
-function glib:entity/move/zzz_child/by_vector/loop2
+function glib_child:entity/move/by_vector/loop2
 tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"RETURN -> ","color":"gray"},{"text":"Factor (must be 0): ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}}]

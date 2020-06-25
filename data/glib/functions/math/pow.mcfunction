@@ -32,4 +32,4 @@ scoreboard players operation @s glib.res0 = @s glib.var0
 scoreboard players operation @s glib.var2 = @s glib.var1
 
 execute if entity @s[scores={glib.var2=0}] run scoreboard players set @s glib.res0 1
-execute if entity @s[scores={glib.var2=2..}] run function glib:math/zzz_child/pow-loop
+execute if entity @s[scores={glib.var2=2..}] run function glib_child:math/pow-loop

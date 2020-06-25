@@ -36,7 +36,7 @@ execute at @s run tp @e[tag=NewRayCastEntity] ~ ~1.7 ~
 # CONFIG: glib.var0 -> Range*10 (10 blocs -> glib.var0 = 100)
 scoreboard players set @e[tag=NewRayCastEntity] glib.var0 1000
 # END CONFIG
-execute as @e[tag=NewRayCastEntity] at @s run function glib:entity/view/zzz_child/aimed_entity_raycast
+execute as @e[tag=NewRayCastEntity] at @s run function glib_child:entity/view/aimed_entity_raycast
 execute as @e[tag=NewRayCastEntity] at @s run tag @e[tag=!NewRayCastEntity,distance=..0.1,sort=nearest,limit=1] add AimedEntity
 execute at @e[tag=NewRayCastEntity] run scoreboard players operation @e[tag=AimedEntity] glib.id.parent = @s glib.id
 kill @e[tag=NewRayCastEntity]

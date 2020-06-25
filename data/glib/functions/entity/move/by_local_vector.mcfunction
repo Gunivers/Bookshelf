@@ -71,10 +71,10 @@ scoreboard players add @s[tag=FactorIncrease] glib.var3 1
 execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/by_local_vector/2
 # -----
 
-execute if entity @s[tag=FactorIncrease] run function glib:entity/move/zzz_child/by_local_vector/loop1
+execute if entity @s[tag=FactorIncrease] run function glib_child:entity/move/by_local_vector/loop1
 
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var6 = @s glib.var0
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var7 = @s glib.var1
 scoreboard players operation @s[scores={glib.var3=1..}] glib.var8 = @s glib.var2
 
-function glib:entity/move/zzz_child/by_local_vector/loop2
+function glib_child:entity/move/by_local_vector/loop2

@@ -29,7 +29,7 @@ scoreboard objectives add glib.var2 dummy
 
 tag @s add SetLocation
 execute if entity @s[type=minecraft:player] run summon armor_stand ~ ~200 ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetLocation"]}
-execute if entity @s[type=minecraft:player] as @e[tag=SetLocation,limit=1] run function glib:entity/location/zzz_child/set_player
+execute if entity @s[type=minecraft:player] as @e[tag=SetLocation,limit=1] run function glib_child:entity/location/set_player
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 1 run scoreboard players add @s glib.var0 0
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 1 run scoreboard players add @s glib.var1 0
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[2] double 1 run scoreboard players add @s glib.var2 0

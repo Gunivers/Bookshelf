@@ -37,4 +37,4 @@ scoreboard players operation @s glib.var2 = @s glib.var0
 scoreboard players operation @s glib.var2 *= 10 glib.const
 scoreboard players set @s glib.var1 1
 
-function glib:math/zzz_child/exp-loop
+function glib_child:math/exp-loop

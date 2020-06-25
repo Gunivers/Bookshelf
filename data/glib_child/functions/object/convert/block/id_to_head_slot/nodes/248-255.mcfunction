@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..251 run function glib_child:object/convert/block/id_to_head_slot/nodes/248-251
+execute if score @s glib.block.id matches 252.. run function glib_child:object/convert/block/id_to_head_slot/nodes/252-255

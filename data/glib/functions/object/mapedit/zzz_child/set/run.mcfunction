@@ -5,10 +5,10 @@
 #3 sphere
 #4 esphere
 
-execute if score @s BrushID matches 1 run function glib:object/mapedit/zzz_child/brush/set
-execute if score @s BrushID matches 2 run function glib:object/mapedit/zzz_child/brush/replace
-execute if score @s BrushID matches 3 run function glib:object/mapedit/zzz_child/brush/sphere
-execute if score @s BrushID matches 4 run function glib:object/mapedit/zzz_child/brush/esphere
+execute if score @s BrushID matches 1 run function glib_child:object/mapedit/brush/set
+execute if score @s BrushID matches 2 run function glib_child:object/mapedit/brush/replace
+execute if score @s BrushID matches 3 run function glib_child:object/mapedit/brush/sphere
+execute if score @s BrushID matches 4 run function glib_child:object/mapedit/brush/esphere
 
 scoreboard players add @s Set_X 1
 

@@ -48,4 +48,4 @@ scoreboard players operation @s glib.var1 += @s glib.link.r.z
 
 scoreboard players operation @s glib.var0 += @s glib.var1
 
-function glib:entity/location/zzz_accuracy/10-3/set_z
+function glib_accuracy:10-3/entity/location/set_z
