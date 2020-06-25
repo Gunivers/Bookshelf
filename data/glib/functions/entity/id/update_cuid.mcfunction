@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/id/Updatecuid
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Parallelizable: global
 # Note:
 
 #__________________________________________________

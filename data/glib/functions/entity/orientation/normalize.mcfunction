@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/orientation/normalize
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________

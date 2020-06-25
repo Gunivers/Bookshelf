@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/get_biome_temperature
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: Allow to get the temperature of the player's biome at y = 62 (sea level).
 #		The format of the result is "temperature * 10^8", based on the wiki values.
 

@@ -8,6 +8,7 @@
 
 # Original path: glib:object/convert/block/block_to_id
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________

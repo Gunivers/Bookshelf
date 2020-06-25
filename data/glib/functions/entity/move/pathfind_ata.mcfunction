@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/move/pathfinding_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
+# Parallelizable: <true/false/global>
 # Note: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 
 #__________________________________________________
@@ -16,10 +17,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var2 dummy
 scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
 
 scoreboard objectives add PathCost dummy
 
@@ -28,18 +29,18 @@ scoreboard objectives add PathCost dummy
 
 # Possible moves -> 0 = terrestrial (like zombies), 1 = aerial (like bat). You can cofig your own possible moves file in entity/move/config/pathind/possible_moves/
 # and link your file to the system in entity/move/child/pathfind/source
-scoreboard players set @s[tag=!glib.config.override] glib.var4 0
+scoreboard players set @s[tag=!glib.config.override] glib.var3 0
 
 # Maximum number of tests (default: 500)
-scoreboard players set @s[tag=!glib.config.override] glib.var2 500
+scoreboard players set @s[tag=!glib.config.override] glib.var1 500
 
 #__________________________________________________
 # CODE
 
 execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Source"]}
 summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Target"]}
-scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] glib.var4 = @s glib.var4
-scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] glib.var2 = @s glib.var2
+scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] glib.var3 = @s glib.var3
+scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] glib.var1 = @s glib.var1
 
 execute as @e[tag=Glib_Pathfind_Source] run function glib:entity/move/child/pathfind/source
 

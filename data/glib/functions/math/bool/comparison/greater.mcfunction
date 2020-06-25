@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/comparison/greater
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # - Return 1 if Input1 > Input2 else return 0
 # - At this end of the function, all inputs are clear.

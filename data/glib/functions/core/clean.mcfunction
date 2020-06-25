@@ -8,6 +8,7 @@
 
 # Original path: glib:core/clean
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/core
+# Parallelizable: <true/false/global>
 # Note:
 # - Please be aware that using this function will delete each and every score used by the gunivers-lib,
 #   thus losing all data which may have been stored on them WITHOUT ANY POSSIBILITY OF RETRIEVAL.
@@ -32,8 +33,26 @@
 scoreboard objectives remove glib.data
 scoreboard objectives remove glib.config
 scoreboard objectives remove glib.const
-scoreboard objectives remove glib.var
-scoreboard objectives remove glib.res
+scoreboard objectives remove glib.var0
+scoreboard objectives remove glib.var1
+scoreboard objectives remove glib.var2
+scoreboard objectives remove glib.var3
+scoreboard objectives remove glib.var4
+scoreboard objectives remove glib.var5
+scoreboard objectives remove glib.var6
+scoreboard objectives remove glib.var7
+scoreboard objectives remove glib.var8
+scoreboard objectives remove glib.var9
+scoreboard objectives remove glib.res0
+scoreboard objectives remove glib.res1
+scoreboard objectives remove glib.res2
+scoreboard objectives remove glib.res3
+scoreboard objectives remove glib.res4
+scoreboard objectives remove glib.res5
+scoreboard objectives remove glib.res6
+scoreboard objectives remove glib.res7
+scoreboard objectives remove glib.res8
+scoreboard objectives remove glib.res9
 
 scoreboard objectives remove glib.debug.id
 

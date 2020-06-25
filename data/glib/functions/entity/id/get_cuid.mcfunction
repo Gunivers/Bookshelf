@@ -8,13 +8,14 @@
 
 # Original path: glib:entity/id/Getcuid
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Parallelizable: true
 # Note: Gives a unique identifier to the source entity.
 # - To reset CUID, set the entity score "CUID" at 0 and make it execute this function.
 
 #__________________________________________________
 # PARAMETERS
 
-# Output: CUID (score): Chain Unique ID
+# Output: @s glib.id (score): Chain Unique ID
 
 #__________________________________________________
 # INIT

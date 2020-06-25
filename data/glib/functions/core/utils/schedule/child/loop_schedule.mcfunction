@@ -16,8 +16,8 @@ execute store result score @s Var0 run time query gametime
 function glib:core/utils/cache/select_command_block
 
 #Compare first scheduled command to the gametick
-execute as @e[tag=Glib_Cache_Head] at @s store result score @s glib.var run data get block ~ ~ ~2 RecordItem.tag.ScheduleCommands[0].GameTick 1
-execute as @e[tag=Glib_Cache_Head] at @s if score @s Var0 = @s glib.var run tag @s add isEqual
+execute as @e[tag=Glib_Cache_Head] at @s store result score @s glib.var0 run data get block ~ ~ ~2 RecordItem.tag.ScheduleCommands[0].GameTick 1
+execute as @e[tag=Glib_Cache_Head] at @s if score @s Var0 = @s glib.var0 run tag @s add isEqual
 
 #If match, prepare and active the command-block buffer for execute the command(s)
 execute at @e[tag=Glib_Cache_Head,tag=isEqual] run data modify block ~ ~1 ~ UpdateLastExecution set value 0

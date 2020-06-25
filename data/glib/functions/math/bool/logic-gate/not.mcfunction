@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/logic-gate/not
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # Return 1 if Input1 worth 0 and 0 if Input1 worth 1.
 # If no entry is initialized then return -1.

@@ -20,14 +20,14 @@
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add glib.var5 dummy
+scoreboard objectives add glib.var4 dummy
 scoreboard objectives add dmAddDamage dummy
 scoreboard players add @s dmAddDamage 0
-scoreboard players set @s glib.var5 0
+scoreboard players set @s glib.var4 0
 
 # CODE:
 
 execute if score @s dmAddDamage matches 1.. run function glib:core/utils/durability_modifier/child/unbreaking_calc_loop
 
-scoreboard players operation @s dmAddDamage = @s glib.var5
-scoreboard players reset @s glib.var5
+scoreboard players operation @s dmAddDamage = @s glib.var4
+scoreboard players reset @s glib.var4

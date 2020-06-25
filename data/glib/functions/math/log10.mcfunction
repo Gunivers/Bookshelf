@@ -8,6 +8,7 @@
 
 # Original path: glib:math/log10
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]). If you want log10(0.5), input 500
 # - The output values are scaled by 10 000. They are the exact result +- 0.001 (The maximum error is 0.0008)
@@ -26,5 +27,5 @@
 # CODE
 
 function glib:math/log
-scoreboard players operation @s glib.res *= 10000 glib.const
-scoreboard players operation @s glib.res /= 23026 glib.const
+scoreboard players operation @s glib.res0 *= 10000 glib.const
+scoreboard players operation @s glib.res0 /= 23026 glib.const

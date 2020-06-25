@@ -1,14 +1,14 @@
 tag @s remove FactorIncrease
 
-tag @s[scores={glib.var3=1001..}] add FactorIncrease
-tag @s[scores={glib.var3=..-1001}] add FactorIncrease
-scoreboard players add @s[tag=FactorIncrease] glib.var4 1
-scoreboard players operation @s[tag=FactorIncrease] glib.var3 /= 2 glib.const
+tag @s[scores={glib.var2=1001..}] add FactorIncrease
+tag @s[scores={glib.var2=..-1001}] add FactorIncrease
+scoreboard players add @s[tag=FactorIncrease] glib.var3 1
+scoreboard players operation @s[tag=FactorIncrease] glib.var2 /= 2 glib.const
 
 tag @s remove MoveLoop
 
-tag @s[scores={glib.var3=1001..}] add MoveLoop
-tag @s[scores={glib.var3=..-1001}] add MoveLoop
+tag @s[scores={glib.var2=1001..}] add MoveLoop
+tag @s[scores={glib.var2=..-1001}] add MoveLoop
 
 
 # DEBUG

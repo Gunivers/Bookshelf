@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/view/aimed_block
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Parallelizable: <true/false/global>
 # Note: Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard glib.id.parent and get the tag NewAimedBlock.
 
 #__________________________________________________
@@ -16,13 +17,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
 
-# glib.var -> Range*10 (10 blocs -> glib.var = 100): Max distance limit for raycast
-scoreboard players set @s[tag=!glib.config.override] glib.var 100
+# glib.var0 -> Range*10 (10 blocs -> glib.var0 = 100): Max distance limit for raycast
+scoreboard players set @s[tag=!glib.config.override] glib.var0 100
 
 #__________________________________________________
 # CODE
@@ -35,8 +36,8 @@ scoreboard players operation @e[tag=NewAimedBlock] glib.id.parent = @s glib.id
 tp @e[tag=NewAimedBlock] @s
 execute at @s run tp @e[tag=NewAimedBlock] ~ ~1.7 ~
 
-# CONFIG: glib.var -> Range*10 (10 blocks -> glib.var = 100)
-scoreboard players operation @e[tag=NewAimedBlock] glib.var = @s glib.var
+# CONFIG: glib.var0 -> Range*10 (10 blocks -> glib.var0 = 100)
+scoreboard players operation @e[tag=NewAimedBlock] glib.var0 = @s glib.var0
 
 execute as @e[tag=NewAimedBlock] at @s run function glib:entity/view/child/aimed_block_raycast
 execute as @e[tag=NewAimedBlock] at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~

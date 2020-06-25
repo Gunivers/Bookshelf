@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/vector/normalize
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -36,7 +37,7 @@ scoreboard objectives add glib.res4 dummy
 # CONFIG
 
 # The final vector will have (almost) this length
-scoreboard players set @s[tag=!glib.config.override] glib.var 1000
+scoreboard players set @s[tag=!glib.config.override] glib.var0 1000
 
 #__________________________________________________
 # CODE
@@ -53,9 +54,9 @@ scoreboard players operation @s VectorX *= 1000 glib.const
 scoreboard players operation @s VectorY *= 1000 glib.const
 scoreboard players operation @s VectorZ *= 1000 glib.const
 
-scoreboard players operation @s VectorX /= @s glib.res
-scoreboard players operation @s VectorY /= @s glib.res
-scoreboard players operation @s VectorZ /= @s glib.res
+scoreboard players operation @s VectorX /= @s glib.res0
+scoreboard players operation @s VectorY /= @s glib.res0
+scoreboard players operation @s VectorZ /= @s glib.res0
 
 ### DEBUG
 tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]

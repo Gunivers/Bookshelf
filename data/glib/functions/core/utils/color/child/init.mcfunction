@@ -16,5 +16,5 @@
 scoreboard objectives add R dummy
 scoreboard objectives add G dummy
 scoreboard objectives add B dummy
-scoreboard objectives add glib.res dummy
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.res0 dummy
+scoreboard objectives add glib.var0 dummy

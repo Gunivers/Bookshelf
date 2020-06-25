@@ -19,12 +19,12 @@
 # CODE:
 
 #If is empty
-execute store result score @s glib.var run data get entity @s ArmorItems[0].tag.Buffer2
-execute if score @s glib.var matches 0 run tag @s add isLower
+execute store result score @s glib.var0 run data get entity @s ArmorItems[0].tag.Buffer2
+execute if score @s glib.var0 matches 0 run tag @s add isLower
 
 #Comparison
-execute store result score @s glib.var run data get entity @s ArmorItems[0].tag.Buffer2[0].GameTick 1
-execute if score @s Var0 < @s glib.var run tag @s add isLower
+execute store result score @s glib.var0 run data get entity @s ArmorItems[0].tag.Buffer2[0].GameTick 1
+execute if score @s Var0 < @s glib.var0 run tag @s add isLower
 
 #If is lower or equal
 execute unless entity @s[tag=isLower] run data modify entity @s ArmorItems[0].tag.Buffer3 append from entity @s ArmorItems[0].tag.Buffer2[0]

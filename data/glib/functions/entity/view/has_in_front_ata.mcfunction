@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/view/has_in_front_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________

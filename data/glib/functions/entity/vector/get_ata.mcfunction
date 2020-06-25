@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/vector/get_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,9 +17,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
 
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy
@@ -31,18 +32,18 @@ scoreboard objectives add VectorSpeed dummy
 #__________________________________________________
 # CODE
 
-execute store result score @s glib.var run data get entity @s Pos[0] 1000
-execute store result score @s glib.var2 run data get entity @s Pos[1] 1000
-execute store result score @s glib.var3 run data get entity @s Pos[2] 1000
+execute store result score @s glib.var0 run data get entity @s Pos[0] 1000
+execute store result score @s glib.var1 run data get entity @s Pos[1] 1000
+execute store result score @s glib.var2 run data get entity @s Pos[2] 1000
 
 summon armor_stand ~ ~ ~ {Tags:["Glib","GetVec"],Invisible:1}
 execute store result score @s VectorX run data get entity @e[type=armor_stand,tag=GetVec,limit=1] Pos[0] 1000
 execute store result score @s VectorY run data get entity @e[type=armor_stand,tag=GetVec,limit=1] Pos[1] 1000
 execute store result score @s VectorZ run data get entity @e[type=armor_stand,tag=GetVec,limit=1] Pos[2] 1000
 
-scoreboard players operation @s VectorX -= @s glib.var
-scoreboard players operation @s VectorY -= @s glib.var2
-scoreboard players operation @s VectorZ -= @s glib.var3
+scoreboard players operation @s VectorX -= @s glib.var0
+scoreboard players operation @s VectorY -= @s glib.var1
+scoreboard players operation @s VectorZ -= @s glib.var2
 
 kill @e[tag=GetVec,type=armor_stand]
 

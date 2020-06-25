@@ -8,6 +8,7 @@
 
 # Original path: glib:object/convert/block/id_to_block
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG

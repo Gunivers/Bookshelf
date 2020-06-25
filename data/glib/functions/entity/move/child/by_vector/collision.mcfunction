@@ -29,6 +29,6 @@ execute if entity @s[tag=CollisionZ,tag=CollisionY,tag=!Glib_Back_to_last_pos] r
 # Reactions #
 #-----------#
 
-scoreboard players set @s[tag=Collision] glib.var4 0
+scoreboard players set @s[tag=Collision] glib.var3 0
 
 execute if entity @s[tag=Collision] run function glib:entity/move/config/collision_reactions/_main_

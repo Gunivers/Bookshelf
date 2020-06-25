@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/logic-gate/nand
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # Return 0 if all the fakePlayer's scores are equal to 1 else return 1. Unspecified scores worth 1 by default and therefore not influence the equation.
 # If no entry is initialized then return -1.

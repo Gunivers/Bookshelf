@@ -8,6 +8,7 @@
 
 # Original path: glib:math/random
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.res dummy
+scoreboard objectives add glib.res0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -26,7 +27,7 @@ scoreboard objectives add glib.res dummy
 
 #Random MC
 summon area_effect_cloud ~ ~1 ~ {Tags:["Glib","Glib_Random"],Age:1}
-execute store result score @s glib.res run data get entity @e[type=area_effect_cloud,tag=Glib_Random,limit=1] UUIDMost 0.00000000023283064
+execute store result score @s glib.res0 run data get entity @e[type=area_effect_cloud,tag=Glib_Random,limit=1] UUIDMost 0.00000000023283064
 kill @e[type=area_effect_cloud,tag=Glib_Random]
 
 # tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]

@@ -3,13 +3,13 @@
         "nether": {
             "trigger": "minecraft:location",
 			"conditions": {
-				"biome": "minecraft:nether"
+				"biome": "minecraft:nether_wastes"
 			}
 			}
         },
 		"rewards": {
 			"function": "glib:entity/location/child/biome/nether"
-		
-		
+
+
     }
 }

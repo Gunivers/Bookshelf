@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/link/update_link_z
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Parallelizable: <true/false/global>
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 scoreboard objectives add Glib_R_LocZ dummy
 scoreboard objectives add glib.link.to dummy
 
@@ -31,10 +32,10 @@ scoreboard players operation @s glib.id.target = @s glib.link.to
 function glib:entity/id/check
 
 #   Relative Position
-execute store result score @s glib.var run data get entity @s Pos[2] 1000
+execute store result score @s glib.var0 run data get entity @s Pos[2] 1000
 
 execute store result score @s Glib_R_LocZ run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
 
-scoreboard players operation @s Glib_R_LocZ -= @s glib.var
+scoreboard players operation @s Glib_R_LocZ -= @s glib.var0
 
 scoreboard players operation @s Glib_R_LocZ *= -1 glib.const

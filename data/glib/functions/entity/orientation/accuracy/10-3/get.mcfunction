@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/orientation/accuracy/10-3/get
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12 ...
 
 #__________________________________________________

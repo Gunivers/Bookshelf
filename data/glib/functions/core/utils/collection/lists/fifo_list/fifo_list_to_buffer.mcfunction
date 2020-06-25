@@ -14,4 +14,4 @@
 # CODE:
 
 function glib:collection/lists/fifo_list/has_storage_medium
-data modify entity @s[scores={glib.var2=1}] ArmorItems[2].tag.buffer set from entity @s ArmorItems[2].tag.fifo
+data modify entity @s[scores={glib.var1=1}] ArmorItems[2].tag.buffer set from entity @s ArmorItems[2].tag.fifo

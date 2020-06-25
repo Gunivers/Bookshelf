@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/flip-flop/rs
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # - Input1 is R entry to reset the memory.
 # - Input2 is S entry to set the memory.
@@ -44,18 +45,18 @@ function glib:math/bool/clearoutput
 scoreboard players add @s Memory 0
 execute if score Input1 Input = -1 glib.const if score Input2 Input = -1 glib.const run scoreboard players set Output1 Output -2
 execute if score Input1 Input = 1 glib.const if score Input2 Input = 1 glib.const run scoreboard players set Output1 Output -2
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var = Input2 Input
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var0 = Input2 Input
 execute if score Output1 Output >= -1 glib.const run function glib:math/bool/logic-gate/not
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var2 = Output1 Output
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var1 = Output1 Output
 execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input1 Input = Output1 Output
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var0
 execute if score Output1 Output >= -1 glib.const run function glib:math/bool/logic-gate/and
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var = Output1 Output
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation @s glib.var0 = Output1 Output
 execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input1 Input = @s Memory
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var2
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var1
 execute if score Output1 Output >= -1 glib.const run function glib:math/bool/logic-gate/and
 execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input1 Input = Output1 Output
-execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var
+execute if score Output1 Output >= -1 glib.const run scoreboard players operation Input2 Input = @s glib.var0
 execute if score Output1 Output >= -1 glib.const run function glib:math/bool/logic-gate/or
 execute if score Output1 Output >= 0 glib.const run scoreboard players operation @s Memory = Output1 Output
 execute if score Output1 Output = -2 glib.const run scoreboard players set Output1 Output -1

@@ -8,6 +8,7 @@
 
 # Original path: glib:math/divide
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note: Allows to retrieve the value rounded to the integer near of a normal division.
 
 #__________________________________________________
@@ -16,10 +17,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.res dummy
+scoreboard objectives add glib.res0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -27,18 +28,18 @@ scoreboard objectives add glib.res dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.var3 = @s glib.var
-scoreboard players operation @s glib.var3 %= @s glib.var2
-tag @s[scores={glib.var3=0}] add CantApply
+scoreboard players operation @s glib.var2 = @s glib.var0
+scoreboard players operation @s glib.var2 %= @s glib.var1
+tag @s[scores={glib.var2=0}] add CantApply
 
-scoreboard players operation @s[tag=!CantApply] glib.var3 = @s glib.var
-scoreboard players operation @s[tag=!CantApply] glib.var3 *= 10 glib.const
-scoreboard players operation @s[tag=!CantApply] glib.var3 /= @s glib.var2
-scoreboard players operation @s[tag=!CantApply] glib.var3 %= 10 glib.const
+scoreboard players operation @s[tag=!CantApply] glib.var2 = @s glib.var0
+scoreboard players operation @s[tag=!CantApply] glib.var2 *= 10 glib.const
+scoreboard players operation @s[tag=!CantApply] glib.var2 /= @s glib.var1
+scoreboard players operation @s[tag=!CantApply] glib.var2 %= 10 glib.const
 
-scoreboard players operation @s glib.res = @s glib.var
-scoreboard players operation @s glib.res /= @s glib.var2
-scoreboard players add @s[scores={glib.var3=5..},tag=!CantApply] glib.res 1
-scoreboard players remove @s[scores={glib.var3=..-5},tag=!CantApply] glib.res 1
+scoreboard players operation @s glib.res0 = @s glib.var0
+scoreboard players operation @s glib.res0 /= @s glib.var1
+scoreboard players add @s[scores={glib.var2=5..},tag=!CantApply] glib.res0 1
+scoreboard players remove @s[scores={glib.var2=..-5},tag=!CantApply] glib.res0 1
 
 tag @s remove CantApply

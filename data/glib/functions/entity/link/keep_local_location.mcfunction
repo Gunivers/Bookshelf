@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/link/keep_local_location
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Parallelizable: <true/false/global>
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________

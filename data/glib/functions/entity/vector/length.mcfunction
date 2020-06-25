@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/vector/length
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -24,6 +25,6 @@
 
 function glib:entity/vector/length_squared
 
-scoreboard players operation @s glib.var = @s glib.res
+scoreboard players operation @s glib.var0 = @s glib.res0
 
 function glib:math/sqrt

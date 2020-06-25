@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/can_snow
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: Allow to know if can rain at the position of the player. Return 1 if possible, else 0.
 
 #__________________________________________________

@@ -8,6 +8,7 @@
 
 # Original path: glib:math/tan
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note: The input is the angle in degrees. The result is scaled by 1000. Angle must be on interval [0;360]
 
 #__________________________________________________
@@ -16,10 +17,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.res dummy
+scoreboard objectives add glib.res0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -31,19 +32,19 @@ scoreboard objectives add glib.res dummy
 
 #__________________________________________________
 # INIT:
+scoreboard objectives add glib.var3 dummy
 scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var5 dummy
 
 # CODE
 
-scoreboard players operation @s glib.var5 = @s glib.var
+scoreboard players operation @s glib.var4 = @s glib.var0
 
 function glib:math/cos
 
-scoreboard players operation @s glib.var4 = @s glib.res
-scoreboard players operation @s glib.var = @s glib.var5
+scoreboard players operation @s glib.var3 = @s glib.res0
+scoreboard players operation @s glib.var0 = @s glib.var4
 
 function glib:math/sin
 
-scoreboard players operation @s glib.res *= 1000 glib.const
-scoreboard players operation @s glib.res /= @s glib.var4
+scoreboard players operation @s glib.res0 *= 1000 glib.const
+scoreboard players operation @s glib.res0 /= @s glib.var3

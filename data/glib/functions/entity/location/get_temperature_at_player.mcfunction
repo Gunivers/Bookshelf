@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/get_temperature_at_player
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: Allow to get the temperature at the altitude of the player.
 #		The format of the result is :
 #		temperature = biome_temperature * 10^8 - altitude_factor
@@ -22,7 +23,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -32,8 +33,8 @@ scoreboard objectives add glib.var dummy
 
 execute as @s run function glib:entity/location/get_biome_temperature
 execute as @s run function glib:entity/location/get
-scoreboard players set @s glib.var 0
-execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var = @s LocY
-execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var -= 62 glib.const
-execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var *= 166667 glib.const
-execute if score @s LocY matches 63.. run scoreboard players operation @s Temperature -= @s glib.var
+scoreboard players set @s glib.var0 0
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var0 = @s LocY
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var0 -= 62 glib.const
+execute if score @s LocY matches 63.. run scoreboard players operation @s glib.var0 *= 166667 glib.const
+execute if score @s LocY matches 63.. run scoreboard players operation @s Temperature -= @s glib.var0

@@ -8,6 +8,7 @@
 
 # Original path: glib:math/loga
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]).
 # - The output values are scaled by 10 000. The accuracy depends on the base. If the base is close to 1
@@ -29,17 +30,17 @@
 # CODE
 
 # We save the x to calculate log x later, and calculate log a
-scoreboard players operation @s glib.var9 = @s glib.var
-scoreboard players operation @s glib.var = @s glib.var2
+scoreboard players operation @s glib.var8 = @s glib.var0
+scoreboard players operation @s glib.var0 = @s glib.var1
 function glib:math/log
 
-# We save log a on glib.var9
-scoreboard players operation @s glib.var = @s glib.var9
-scoreboard players operation @s glib.var9 = @s glib.res
+# We save log a on glib.var8
+scoreboard players operation @s glib.var0 = @s glib.var8
+scoreboard players operation @s glib.var8 = @s glib.res0
 
 # Then we calculate log x
 function glib:math/log
-scoreboard players operation @s glib.res *= 10000 glib.const
+scoreboard players operation @s glib.res0 *= 10000 glib.const
 
 # And divide by log a
-scoreboard players operation @s glib.res /= @s glib.var9
+scoreboard players operation @s glib.res0 /= @s glib.var8

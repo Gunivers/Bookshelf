@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/orientation/add
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12 ...
 
 #__________________________________________________
@@ -16,8 +17,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
-scoreboard objectives add glib.var2 dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var1 dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,11 +29,11 @@ scoreboard objectives add glib.var2 dummy
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 tp @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] @s
 execute as @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] at @s run function glib:entity/orientation/get
-scoreboard players operation @s glib.var += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.h
-scoreboard players operation @s glib.var2 += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.v
+scoreboard players operation @s glib.var0 += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.h
+scoreboard players operation @s glib.var1 += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.v
 
 
-execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var
-execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 1 run scoreboard players get @s glib.var2
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var0
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 1 run scoreboard players get @s glib.var1
 tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
 kill @e[type=armor_stand,tag=SetRotation,limit=1]

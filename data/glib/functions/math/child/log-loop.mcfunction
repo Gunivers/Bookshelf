@@ -2,20 +2,20 @@
 # In minecraft we don't have infinite accuracy so p is not definied,
 # but we stop suming when the term is < 1
 
-scoreboard players operation @s glib.res = @s glib.var3
-scoreboard players operation @s glib.res /= @s glib.var2
-scoreboard players operation @s glib.var5 += @s glib.res
-scoreboard players add @s glib.var2 2
+scoreboard players operation @s glib.res0 = @s glib.var2
+scoreboard players operation @s glib.res0 /= @s glib.var1
+scoreboard players operation @s glib.var4 += @s glib.res0
+scoreboard players add @s glib.var1 2
 
 # Calculation of y^(var2)
-scoreboard players operation @s glib.var3 *= @s glib.var
-execute if entity @s[scores={glib.var3=1..}] run scoreboard players add @s glib.var3 5000
-execute if entity @s[scores={glib.var3=..-1}] run scoreboard players remove @s glib.var3 5000
-scoreboard players operation @s glib.var3 /= 10000 glib.const
-scoreboard players operation @s glib.var3 *= @s glib.var
-execute if entity @s[scores={glib.var3=1..}] run scoreboard players add @s glib.var3 5000
-execute if entity @s[scores={glib.var3=..-1}] run scoreboard players remove @s glib.var3 5000
-scoreboard players operation @s glib.var3 /= 10000 glib.const
+scoreboard players operation @s glib.var2 *= @s glib.var0
+execute if entity @s[scores={glib.var2=1..}] run scoreboard players add @s glib.var2 5000
+execute if entity @s[scores={glib.var2=..-1}] run scoreboard players remove @s glib.var2 5000
+scoreboard players operation @s glib.var2 /= 10000 glib.const
+scoreboard players operation @s glib.var2 *= @s glib.var0
+execute if entity @s[scores={glib.var2=1..}] run scoreboard players add @s glib.var2 5000
+execute if entity @s[scores={glib.var2=..-1}] run scoreboard players remove @s glib.var2 5000
+scoreboard players operation @s glib.var2 /= 10000 glib.const
 
 # If it is useful to continue
-execute unless entity @s[scores={glib.res=-1..1}] run function glib:math/child/log-loop
+execute unless entity @s[scores={glib.res0=-1..1}] run function glib:math/child/log-loop

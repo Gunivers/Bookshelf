@@ -7,13 +7,15 @@
 # Last check: 1.15.2
 
 # Original path: glib:entity/health/time_to_live
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#health
+# Documentation: $1
+# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: You need to execute this function each tick on every entity on wich you want to apply a glib.ttl. Default glib.ttl: 10s
 
 #__________________________________________________
 # PARAMETERS
 
-# Input: glib.ttl (score): Time to live (the entity is killed if it's score matches 1 ou -1)
+# Input: @s glib.ttl (score): Time to live (the entity is killed if it's score reach 0)
 
 #__________________________________________________
 # INIT

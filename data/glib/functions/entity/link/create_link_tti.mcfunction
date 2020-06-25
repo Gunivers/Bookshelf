@@ -6,9 +6,9 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:entity/link/update_link
+# Original path: glib:entity/link/create_link_to_target_id
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Parallelizable: <true/false/global>
+# Parallelizable: false
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
@@ -17,16 +17,16 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-
 scoreboard objectives add glib.link.r.x dummy
 scoreboard objectives add glib.link.r.y dummy
 scoreboard objectives add glib.link.r.z dummy
 
-scoreboard objectives add glib.link.r.h dummy
+scoreboard objectives add glib.link.l.x dummy
+scoreboard objectives add glib.link.l.y dummy
+scoreboard objectives add glib.link.l.z dummy
+
 scoreboard objectives add glib.link.r.v dummy
+scoreboard objectives add glib.link.r.h dummy
 
 scoreboard objectives add glib.link.to dummy
 
@@ -35,8 +35,6 @@ scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
 # CODE
-
-scoreboard players operation @s glib.id.target = @s glib.link.to
 
 function glib:entity/id/check
 
@@ -48,6 +46,12 @@ execute store result score @s glib.var2 run data get entity @s Pos[2] 1000
 execute store result score @s glib.link.r.x run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[0] 1000
 execute store result score @s glib.link.r.y run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[1] 1000
 execute store result score @s glib.link.r.z run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
+
+### DEBUG
+#tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Create_Link_By_Target_glib.id]=-","color":"green"}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Child X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}},{"text":".   Child Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Child Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var2"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Parent X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}},{"text":".   Parent Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.y"}},{"text":".   Parent Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
+### END DEBUG
 
 scoreboard players operation @s glib.link.r.x -= @s glib.var0
 scoreboard players operation @s glib.link.r.y -= @s glib.var1
@@ -64,11 +68,21 @@ execute store result score @s glib.var1 run data get entity @s Rotation[1] 1000
 execute store result score @s glib.link.r.v run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[0] 1000
 execute store result score @s glib.link.r.h run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[1] 1000
 
+### DEBUG
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Child Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}},{"text":".   Child Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Parent Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.v"}},{"text":".   Parent Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.h"}}]
+### END DEBUG
+
 scoreboard players operation @s glib.link.r.v -= @s glib.var0
 scoreboard players operation @s glib.link.r.h -= @s glib.var1
 
 scoreboard players operation @s glib.link.r.v *= -1 glib.const
 scoreboard players operation @s glib.link.r.h *= -1 glib.const
+
+### DEBUG
+#tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Diff X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}},{"text":".   Diff Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.y"}},{"text":".   Diff Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
+#tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Diff Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.v"}},{"text":".   Diff Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.h"}}]
+### END DEBUG
 
 execute as @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:entity/orientation/get
 

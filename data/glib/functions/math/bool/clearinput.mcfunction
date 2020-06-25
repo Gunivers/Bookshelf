@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/clearinput
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________

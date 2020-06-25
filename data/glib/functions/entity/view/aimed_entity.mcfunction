@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/view/aimed_entity
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -32,8 +33,8 @@ execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tag
 tp @e[tag=NewRayCastEntity] @s
 execute at @s run tp @e[tag=NewRayCastEntity] ~ ~1.7 ~
 
-# CONFIG: glib.var -> Range*10 (10 blocs -> glib.var = 100)
-scoreboard players set @e[tag=NewRayCastEntity] glib.var 1000
+# CONFIG: glib.var0 -> Range*10 (10 blocs -> glib.var0 = 100)
+scoreboard players set @e[tag=NewRayCastEntity] glib.var0 1000
 # END CONFIG
 execute as @e[tag=NewRayCastEntity] at @s run function glib:entity/view/child/aimed_entity_raycast
 execute as @e[tag=NewRayCastEntity] at @s run tag @e[tag=!NewRayCastEntity,distance=..0.1,sort=nearest,limit=1] add AimedEntity

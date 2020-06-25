@@ -8,25 +8,26 @@
 
 # Original path: glib:entity/local_vector/edit/from_res123
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#local-vector
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
 # PARAMETERS
 
-# Input: VectorX (score dummy)
-# Input: VectorY (score dummy)
-# Input: VectorZ (score dummy)
+# Input: glib.res0 (score dummy)
+# Input: glib.res2 (score dummy)
+# Input: glib.res3 (score dummy)
 
-# Output: glib.var (score dummy)
-# Output: glib.var2 (score dummy)
-# Output: glib.var3 (score dummy)
+# Output: VectorX (score dummy)
+# Output: VectorY (score dummy)
+# Output: VectorZ (score dummy)
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
+scoreboard objectives add glib.res0 dummy
+scoreboard objectives add glib.res2 dummy
+scoreboard objectives add glib.res3 dummy
 
 scoreboard objectives add VectorLeft dummy
 scoreboard objectives add VectorUp dummy
@@ -38,6 +39,6 @@ scoreboard objectives add VectorFront dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.var = @s VectorLeft
-scoreboard players operation @s glib.var2 = @s VectorUp
-scoreboard players operation @s glib.var3 = @s VectorFront
+scoreboard players operation @s VectorLeft = @s glib.res0
+scoreboard players operation @s VectorUp = @s glib.res2
+scoreboard players operation @s VectorFront = @s glib.res3

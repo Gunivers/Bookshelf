@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/get_distance_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
@@ -23,5 +24,5 @@
 # CODE
 
 function glib:entity/location/get_distance_squared_ata
-scoreboard players operation @s glib.var = @s glib.res
+scoreboard players operation @s glib.var0 = @s glib.res0
 function glib:math/sqrt

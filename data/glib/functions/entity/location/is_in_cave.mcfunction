@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/is_in_cave
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: Return 1 if the entity is in a cave, 0 else.
 
 #__________________________________________________
@@ -21,4 +22,4 @@
 
 #__________________________________________________
 # CODE
-execute store result score @s glib.res if block ~ ~ ~ cave_air
+execute store result score @s glib.res0 if block ~ ~ ~ cave_air

@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/link/create_link_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
+# Parallelizable: <true/false/global>
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
@@ -15,8 +16,6 @@
 
 #__________________________________________________
 # INIT
-
-scoreboard objectives add glib.var dummy
 
 scoreboard objectives add glib.link.r.x dummy
 scoreboard objectives add glib.link.r.y dummy
@@ -45,23 +44,23 @@ tag @e[limit=1,sort=nearest] add glib.link.target
 #-------------------#
 
 function glib.entity/location/accuracy/10-3/get
-scoreboard players operation @s glib.link.r.x = location.x.10-3 glib.var
-scoreboard players operation @s glib.link.r.y = location.y.10-3 glib.var
-scoreboard players operation @s glib.link.r.z = location.z.10-3 glib.var
+scoreboard players operation @s glib.link.r.x = location.x.10-3 glib.var0
+scoreboard players operation @s glib.link.r.y = location.y.10-3 glib.var0
+scoreboard players operation @s glib.link.r.z = location.z.10-3 glib.var0
 
 execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/location/accuracy/10-3/get
-scoreboard players operation @s glib.link.r.x -= location.x.10-3 glib.var
-scoreboard players operation @s glib.link.r.y -= location.y.10-3 glib.var
-scoreboard players operation @s glib.link.r.z -= location.z.10-3 glib.var
+scoreboard players operation @s glib.link.r.x -= location.x.10-3 glib.var0
+scoreboard players operation @s glib.link.r.y -= location.y.10-3 glib.var0
+scoreboard players operation @s glib.link.r.z -= location.z.10-3 glib.var0
 
 # Relative Orientation
 function glib.entity/orientation/accuracy/10-3/get
-scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var
-scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var
+scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var0
+scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var0
 
 execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/orientation/accuracy/10-3/get
-scoreboard players operation @s glib.link.r.h -= orientation.h.10-3 glib.var
-scoreboard players operation @s glib.link.r.v -= orientation.v.10-3 glib.var
+scoreboard players operation @s glib.link.r.h -= orientation.h.10-3 glib.var0
+scoreboard players operation @s glib.link.r.v -= orientation.v.10-3 glib.var0
 
 #----------------#
 # Local Position #
@@ -69,84 +68,74 @@ scoreboard players operation @s glib.link.r.v -= orientation.v.10-3 glib.var
 
 execute as @e[tag=glib.link.target] run function glib:entity/orientation/get
 
-# Cos(Phi)
-scoreboard players operation math.angle glib.var = orientation.h glib.var
+# Cos(h)
+scoreboard players operation math.angle glib.var0 = orientation.h glib.var0
 function glib:math/cos
-scoreboard players operation link.cos.h glib.var = cos glib.res
+scoreboard players operation link.cos.h glib.var0 = cos glib.res0
 
-# Sin(Phi)
-# REDONDANT - scoreboard players operation math.angle glib.var = orientation.h glib.var
+# Sin(h)
+# REDONDANT - scoreboard players operation math.angle glib.var0 = orientation.h glib.var0
 function glib:math/sin
-scoreboard players operation @s glib.var5 = @s glib.res
+scoreboard players operation link.sin.h glib.var0 = @s glib.res0
 
-# Cos(Theta)
-scoreboard players operation @s glib.var = @e[tag=glib.link.target] OriV
+# Cos(v)
+scoreboard players operation math.angle glib.var0 = orientation.h glib.var0
 function glib:math/cos
-scoreboard players operation @s glib.var5 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.link.target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var5"}}]
-# Sin(Theta)
-scoreboard players operation @s glib.var = @e[tag=glib.link.target] OriV
+scoreboard players operation link.cos.v glib.var0 = @s glib.res0
+
+# Sin(v)
+# REDONDANT - scoreboard players operation math.angle glib.var0 = orientation.h glib.var0
 function glib:math/sin
-scoreboard players operation @s glib.var7 = @s glib.res
-# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.link.target]","objective":"OriV"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var7"}}]
+scoreboard players operation link.sin.v glib.var0 = @s glib.res0
 
-# Vector Left -> L = cos(P)*X + sin(P)*Z
-scoreboard players operation @s glib.var = @s glib.link.r.x
-scoreboard players operation @s glib.var *= @s glib.var4
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.x = @s glib.var
 
-# tellraw @a[tag=Debug] ["",{"text":"Calc -> ","color":"gray"},{"text":"cos(H)*X= ","color":"red"},{"score":{"name":"@s","objective":"glib.link.l.x"}}]
 
-scoreboard players operation @s glib.var = @s glib.link.r.z
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.x += @s glib.var
+# Vector Left -> L = cos(h)*X + sin(h)*Z
+scoreboard players operation @s glib.link.l.x = @s glib.link.r.x
+scoreboard players operation @s glib.link.l.x *= link.cos.h glib.var0
+scoreboard players operation @s glib.link.l.x /= 1000 glib.const
 
-# tellraw @a[tag=Debug] ["",{"text":"Left -> ","color":"gray"},{"text":"cos(H)*X + sin(H)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.l.x"}}]
+scoreboard players operation tmp glib.var0 = @s glib.link.r.z
+scoreboard players operation tmp glib.var0 *= link.sin.h glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation @s glib.link.l.x += tmp glib.var0
 
-# Vector Up -> U = -sin(P)sin(T)*X + cos(T)*Y + cos(P)sin(T)*Z
-scoreboard players operation @s glib.var = @s glib.link.r.x
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= @s glib.var7
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= -1 glib.const
-scoreboard players operation @s glib.link.l.y = @s glib.var
+# Vector Up -> U = -sin(h)sin(v)*X + cos(v)*Y + cos(h)sin(v)*Z
+scoreboard players operation @s glib.link.l.y = @s glib.link.r.x
+scoreboard players operation @s glib.link.l.y *= link.sin.h glib.var0
+scoreboard players operation @s glib.link.l.y /= 1000 glib.const
+scoreboard players operation @s glib.link.l.y *= link.sin.v glib.var0
+scoreboard players operation @s glib.link.l.y /= 1000 glib.const
+scoreboard players operation @s glib.link.l.y *= -1 glib.const
 
-scoreboard players operation @s glib.var = @s glib.link.r.y
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.y += @s glib.var
+scoreboard players operation tmp glib.var0 = @s glib.link.r.y
+scoreboard players operation tmp glib.var0 *= link.cos.v glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation @s glib.link.l.y += tmp glib.var0
 
-scoreboard players operation @s glib.var = @s glib.link.r.z
-scoreboard players operation @s glib.var *= @s glib.var4
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= @s glib.var7
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.y += @s glib.var
+scoreboard players operation tmp glib.var0 = @s glib.link.r.z
+scoreboard players operation tmp glib.var0 *= link.cos.h glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation tmp glib.var0 *= link.sin.v glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation @s glib.link.l.y += tmp glib.var0
 
-# tellraw @a[tag=Debug] ["",{"text":"Up -> ","color":"gray"},{"text":"-sin(H)sin(V)*X + cos(V)*Y + cos(H)sin(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.l.y"}}]
+# Vector Front -> F = -sin(h)cos(v)*X + sin(v)*Y + cos(h)cos(v)*Z
+scoreboard players operation @s glib.link.l.z = @s glib.link.r.x
+scoreboard players operation @s glib.link.l.z *= link.sin.h glib.var0
+scoreboard players operation @s glib.link.l.z /= 1000 glib.const
+scoreboard players operation @s glib.link.l.z *= link.cos.v glib.var0
+scoreboard players operation @s glib.link.l.z /= 1000 glib.const
+scoreboard players operation @s glib.link.l.z *= -1 glib.const
 
-# Vector Front -> F = -sin(P)cos(T)*X + sin(T)*Y + cos(P)cos(T)*Z
-scoreboard players operation @s glib.var = @s glib.link.r.x
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= -1 glib.const
-scoreboard players operation @s glib.link.l.z = @s glib.var
+scoreboard players operation tmp glib.var0 = @s glib.link.r.y
+scoreboard players operation tmp glib.var0 *= link.sin.v glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation @s glib.link.l.z -= tmp glib.var0
 
-scoreboard players operation @s glib.var = @s glib.link.r.y
-scoreboard players operation @s glib.var *= @s glib.var7
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.z -= @s glib.var
-
-scoreboard players operation @s glib.var = @s glib.link.r.z
-scoreboard players operation @s glib.var *= @s glib.var4
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.var *= @s glib.var5
-scoreboard players operation @s glib.var /= 1000 glib.const
-scoreboard players operation @s glib.link.l.z += @s glib.var
-
-# tellraw @a[tag=Debug] ["",{"text":"Front -> ","color":"gray"},{"text":"-sin(H)cos(V)*X - sin(V)*Y + cos(H)cos(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.l.z"}}]
+scoreboard players operation tmp glib.var0 = @s glib.link.r.z
+scoreboard players operation tmp glib.var0 *= link.cos.h glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation tmp glib.var0 *= link.cos.v glib.var0
+scoreboard players operation tmp glib.var0 /= 1000 glib.const
+scoreboard players operation @s glib.link.l.z += tmp glib.var0

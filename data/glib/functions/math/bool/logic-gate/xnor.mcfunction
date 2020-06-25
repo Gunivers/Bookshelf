@@ -8,6 +8,7 @@
 
 # Original path: glib:math/bool/logic-gate/xnor
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Parallelizable: <true/false/global>
 # Note:
 # Return 0 if an odd number of the fakePlayer's scores are equal to 1 else return 1. Unspecified scores worth 0 by default and therefore not influence the equation.
 # If no entry is initialized then return -1.

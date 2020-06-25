@@ -8,6 +8,7 @@
 
 # Original path: glib:core/shutdown
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/core
+# Parallelizable: <true/false/global>
 # Note:
 # Remove the gunivers-lib trailing scores, then unload it.
 # See glib:core/clean for more.

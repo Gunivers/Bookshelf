@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/location/accuracy/10-3/get_distance_as_to_at
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
@@ -24,6 +25,6 @@
 
 function glib:entity/location/accuracy/10-3/get_distance_squared_as_to_at
 
-scoreboard players operation @s glib.var = @s glib.res
+scoreboard players operation @s glib.var0 = @s glib.res0
 
 function glib:math/sqrt

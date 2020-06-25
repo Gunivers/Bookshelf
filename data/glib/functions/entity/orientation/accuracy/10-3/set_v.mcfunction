@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/orientation/accuracy/10-3/set_v
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12 ...
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,6 +29,6 @@ summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
 
 tp @e[type=armor_stand,tag=SetRotation,limit=1] @s
 
-execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 0.001 run scoreboard players get @s glib.var
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[1] float 0.001 run scoreboard players get @s glib.var0
 tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
 kill @e[type=armor_stand,tag=SetRotation,limit=1]

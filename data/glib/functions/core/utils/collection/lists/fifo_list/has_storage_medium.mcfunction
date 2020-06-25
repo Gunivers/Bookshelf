@@ -10,11 +10,11 @@
 # - Vars (module)
 
 # Output:
-# - glib.var2 (dummy)
+# - glib.var1 (dummy)
 
 # NOTE: Return 0 if the current entity don't have storage medium (slime_ball) for the FIFO list in his armor.legs slot, 1 else.
 
 # CODE:
 
-scoreboard players set @s glib.var2 0
-scoreboard players set @s[nbt={ArmorItems:[{},{},{id:"minecraft:slime_ball",Count:1b}]}] glib.var2 1
+scoreboard players set @s glib.var1 0
+scoreboard players set @s[nbt={ArmorItems:[{},{},{id:"minecraft:slime_ball",Count:1b}]}] glib.var1 1

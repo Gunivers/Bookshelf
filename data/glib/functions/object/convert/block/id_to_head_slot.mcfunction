@@ -8,6 +8,7 @@
 
 # Original path: glib:object/convert/block/id_to_head_slot
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -24,5 +25,5 @@ scoreboard objectives add glib.var dummy
 #__________________________________________________
 # CODE
 
-execute if score @s glib.var matches ..511 run function glib:object/convert/block/child/id_to_head_slot/nodes/0-511
-execute if score @s glib.var matches 512.. run function glib:object/convert/block/child/id_to_head_slot/nodes/512-675
+execute if score @s glib.var0 matches ..511 run function glib:object/convert/block/child/id_to_head_slot/nodes/0-511
+execute if score @s glib.var0 matches 512.. run function glib:object/convert/block/child/id_to_head_slot/nodes/512-675

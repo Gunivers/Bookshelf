@@ -8,6 +8,7 @@
 
 # Original path: glib:entity/view/can_see_ata
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Parallelizable: <true/false/global>
 # Note:
 
 #__________________________________________________
@@ -16,13 +17,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
 
-#glib.var -> Range*2 (1 blocs -> glib.var = 2)
-scoreboard players set @s[tag=!glib.config.override] glib.var 200
+#glib.var0 -> Range*2 (1 blocs -> glib.var0 = 2)
+scoreboard players set @s[tag=!glib.config.override] glib.var0 200
 
 #__________________________________________________
 # CODE
@@ -34,7 +35,7 @@ summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_CanSee_Target","Glib_CanSee_T
 
 execute as @e[tag=Glib_CanSee_Aim] positioned as @s facing entity @e[tag=Glib_CanSee_Target,limit=1,sort=nearest] feet run tp @s ~ ~ ~ ~ ~
 
-scoreboard players operation @e[tag=Glib_CanSee_Aim] glib.var = @s glib.var
+scoreboard players operation @e[tag=Glib_CanSee_Aim] glib.var0 = @s glib.var0
 
 execute as @e[tag=Glib_CanSee_Aim] at @s run function glib:entity/view/child/can_see-loop
 
