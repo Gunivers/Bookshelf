@@ -54,6 +54,6 @@ scoreboard players set @s VectorSpeed 1000
 # Start Debug
 execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run tellraw @a[tag=glib.debug] [{"text":"> DEBUG | glib:entity/vector/get_by_actual_orientation","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.entity.vector.get_by_actual_orientation"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
 execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib:core/debug/message/info/entity_info
-execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib:entity/vector/debug/display_vector
+execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib:entity/vector/zzz_debug/display_vector
 execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib:core/debug/message/info/end_debug
 # End Debug

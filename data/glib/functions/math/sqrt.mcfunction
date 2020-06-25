@@ -36,7 +36,7 @@ scoreboard players set @s glib.res0 1
 scoreboard players operation @s glib.var2 = @s glib.res0
 scoreboard players operation @s glib.var2 *= @s glib.res0
 
-execute if entity @s[scores={glib.var1=2..}] unless score @s glib.var2 = @s glib.var0 run function glib:math/child/sqrt_loop
+execute if entity @s[scores={glib.var1=2..}] unless score @s glib.var2 = @s glib.var0 run function glib:math/zzz_child/sqrt_loop
 
 scoreboard players operation @s glib.var2 = @s glib.res0
 scoreboard players operation @s glib.var2 *= @s glib.res0

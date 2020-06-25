@@ -28,7 +28,7 @@ scoreboard objectives add glib.id dummy
 scoreboard players set id.chain glib.data 1
 tag @e[scores={glib.id=1..}] add glib.id.chain.update
 
-function glib:entity/id/child/updatecuid-check
+function glib:entity/id/zzz_child/updatecuid-check
 
 tag @e remove glib.id.chain.update
 tag @e remove glib.id.chain.correct

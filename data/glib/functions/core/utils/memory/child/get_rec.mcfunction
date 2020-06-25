@@ -1,5 +1,5 @@
 # NAME: Get Variable - Child
-# PATH: glib:utils/memory/child/get_rec
+# PATH: glib:utils/memory/zzz_child/get_rec
 
 # AUTHOR: theogiraudet
 
@@ -10,4 +10,4 @@ execute store success score @s glib.var0 run data modify entity @s ArmorItems[0]
 execute if score @s glib.var0 matches 0 run data modify entity @s ArmorItems[0].tag.Output set from entity @s ArmorItems[0].tag.Buffer2[0].Value
 execute if score @s glib.var0 matches 1 run data remove entity @s ArmorItems[0].tag.Buffer2[0]
 execute if score @s glib.var0 matches 1 run data modify entity @s ArmorItems[0].tag.Buffer1 set from entity @s ArmorItems[0].tag.Buffer3
-execute if score @s glib.var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib:core/utils/memory/child/get_rec
+execute if score @s glib.var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib:core/utils/memory/zzz_child/get_rec

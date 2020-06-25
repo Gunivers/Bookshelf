@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..425 run function glib:object/convert/block/zzz_child/id_to_main_hand_slot/leaves/424-425
+execute if score @s glib.block.id matches 426.. run function glib:object/convert/block/zzz_child/id_to_main_hand_slot/leaves/426-427

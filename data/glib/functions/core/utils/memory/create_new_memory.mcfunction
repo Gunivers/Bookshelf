@@ -12,4 +12,4 @@
 
 # CODE:
 summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Marker:1b,Tags:["Glib","New","Memory"],ArmorItems:[{id:"minecraft:slime_ball",Count:1b,tag:{Memory:[]}},{},{},{}]}
-schedule function glib:core/utils/memory/child/remove_new_tag 1t
+schedule function glib:core/utils/memory/zzz_child/remove_new_tag 1t

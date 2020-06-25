@@ -1,5 +1,5 @@
 # NAME: Remove "New" Tag
-# PATH: glib:utils/memory/child/remove_new_tag
+# PATH: glib:utils/memory/zzz_child/remove_new_tag
 
 # AUTHOR: theogiraudet
 

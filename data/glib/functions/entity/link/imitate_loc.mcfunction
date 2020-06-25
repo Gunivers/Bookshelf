@@ -68,4 +68,4 @@ scoreboard players operation @s glib.var0 += @s glib.var3
 scoreboard players operation @s glib.var1 += @s glib.var4
 scoreboard players operation @s glib.var2 += @s glib.var4
 
-function glib:entity/location/accuracy/10-3/set
+function glib:entity/location/zzz_accuracy/10-3/set

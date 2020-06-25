@@ -43,22 +43,22 @@ tag @e[limit=1,sort=nearest] add glib.link.target
 # Relative Position #
 #-------------------#
 
-function glib.entity/location/accuracy/10-3/get
+function glib.entity/location/zzz_accuracy/10-3/get
 scoreboard players operation @s glib.link.r.x = location.x.10-3 glib.var0
 scoreboard players operation @s glib.link.r.y = location.y.10-3 glib.var0
 scoreboard players operation @s glib.link.r.z = location.z.10-3 glib.var0
 
-execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/location/accuracy/10-3/get
+execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/location/zzz_accuracy/10-3/get
 scoreboard players operation @s glib.link.r.x -= location.x.10-3 glib.var0
 scoreboard players operation @s glib.link.r.y -= location.y.10-3 glib.var0
 scoreboard players operation @s glib.link.r.z -= location.z.10-3 glib.var0
 
 # Relative Orientation
-function glib.entity/orientation/accuracy/10-3/get
+function glib.entity/orientation/zzz_accuracy/10-3/get
 scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var0
 scoreboard players operation @s glib.link.r.h = orientation.h.10-3 glib.var0
 
-execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/orientation/accuracy/10-3/get
+execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/orientation/zzz_accuracy/10-3/get
 scoreboard players operation @s glib.link.r.h -= orientation.h.10-3 glib.var0
 scoreboard players operation @s glib.link.r.v -= orientation.v.10-3 glib.var0
 

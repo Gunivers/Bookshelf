@@ -1,5 +1,5 @@
 # NAME: Loop Schedule
-# PATH: glib:utils/schedule/child/loop_schedule
+# PATH: glib:utils/schedule/zzz_child/loop_schedule
 
 # AUTHOR: theogiraudet
 
@@ -21,5 +21,5 @@ execute as @e[tag=Glib_Cache_Head] at @s if score @s Var0 = @s glib.var0 run tag
 
 #If match, prepare and active the command-block buffer for execute the command(s)
 execute at @e[tag=Glib_Cache_Head,tag=isEqual] run data modify block ~ ~1 ~ UpdateLastExecution set value 0
-execute at @e[tag=Glib_Cache_Head,tag=isEqual] run data modify block ~ ~1 ~ Command set value "execute as @e[tag=Glib_Cache_Head] at @s run function glib:core/utils/schedule/child/execute_commands"
+execute at @e[tag=Glib_Cache_Head,tag=isEqual] run data modify block ~ ~1 ~ Command set value "execute as @e[tag=Glib_Cache_Head] at @s run function glib:core/utils/schedule/zzz_child/execute_commands"
 execute at @e[tag=Glib_Cache_Head,tag=isEqual] run data modify block ~ ~ ~ auto set value 1b

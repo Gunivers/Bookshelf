@@ -33,7 +33,7 @@ scoreboard objectives add BrushID dummy
 
 #On initlise tout (factorisation )
 
-function glib:object/mapedit/child/set/ini
+function glib:object/mapedit/zzz_child/set/ini
 
 
 
@@ -54,4 +54,4 @@ scoreboard players add setCount Set_Option 1
 #tag @e[tag=spawnSET] remove spawnSET 
 
 #On lance toute la procedure 
-function glib:object/mapedit/child/set/repeate
+function glib:object/mapedit/zzz_child/set/repeate

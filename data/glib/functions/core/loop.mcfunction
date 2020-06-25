@@ -43,7 +43,7 @@ execute if score menu.refresh glib.data matches 1 run function glib:core/menu/ma
 function glib:core/utils/cache/cache_loop
 
 # Loop Schedule
-execute as @e[tag=Glib_Cache_Head] at @s run function glib:core/utils/schedule/child/loop_schedule
+execute as @e[tag=Glib_Cache_Head] at @s run function glib:core/utils/schedule/zzz_child/loop_schedule
 
 # Debug Recorder
 execute as @a[tag=glib.debug.Stick] run function glib:core/menu/debug/debug_stick

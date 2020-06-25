@@ -42,6 +42,6 @@ scoreboard players set @s[scores={glib.var0=..-1}] glib.var4 -1
 
 scoreboard players operation @s glib.var0 *= @s glib.var4
 
-function glib:math/child/arctan-child
+function glib:math/zzz_child/arctan-child
 
 scoreboard players operation @s glib.res0 *= @s glib.var4

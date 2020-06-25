@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..299 run function glib:object/convert/block/zzz_child/id_to_falling_block/nodes/296-299
+execute if score @s glib.block.id matches 300.. run function glib:object/convert/block/zzz_child/id_to_falling_block/nodes/300-303

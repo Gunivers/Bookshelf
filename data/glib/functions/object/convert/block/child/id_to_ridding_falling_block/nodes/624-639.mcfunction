@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches ..631 run function glib:object/convert/block/child/id_to_ridding_falling_block/nodes/624-631
-execute if score @s glib.block.id matches 632.. run function glib:object/convert/block/child/id_to_ridding_falling_block/nodes/632-639

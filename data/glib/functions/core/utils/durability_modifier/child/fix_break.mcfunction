@@ -1,5 +1,5 @@
 # NAME: Item Break Fixer
-# PATH: glib:utils/durability_modifier/child/fix_break
+# PATH: glib:utils/durability_modifier/zzz_child/fix_break
 
 # AUTHOR: Syl2010
 

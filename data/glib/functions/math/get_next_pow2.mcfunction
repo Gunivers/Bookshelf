@@ -27,4 +27,4 @@ scoreboard objectives add glib.res0 dummy
 # CODE
 
 scoreboard players set @s glib.res0 1
-execute if score @s glib.res0 < @s glib.var0 run function glib:math/child/get_next_pow2_loop
+execute if score @s glib.res0 < @s glib.var0 run function glib:math/zzz_child/get_next_pow2_loop

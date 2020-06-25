@@ -31,13 +31,13 @@ scoreboard objectives add glib.var1 dummy
 
 execute as @e[tag=Glib_Cache_Source] if data entity @s ArmorItems[0].tag.Buffer.glib.id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
 
-execute as @e[tag=Valid] run function glib:core/utils/schedule/child/compute_tick
+execute as @e[tag=Valid] run function glib:core/utils/schedule/zzz_child/compute_tick
 execute as @e[tag=Valid] run function glib:core/utils/cache/select_jukebox
 
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ ArmorItems[0].tag.Buffer2 set value []
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify entity @s ArmorItems[0].tag.Buffer2 set from block ~ ~ ~ RecordItem.tag.ScheduleCommands
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify entity @s ArmorItems[0].tag.Buffer3 set value []
-execute as @e[tag=Valid] run function glib:core/utils/schedule/child/schedule_command_rec
+execute as @e[tag=Valid] run function glib:core/utils/schedule/zzz_child/schedule_command_rec
 
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands set from entity @s ArmorItems[0].tag.Buffer2
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands prepend from entity @s ArmorItems[0].tag.Buffer3[]

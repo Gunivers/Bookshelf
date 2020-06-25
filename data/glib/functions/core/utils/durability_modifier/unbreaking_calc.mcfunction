@@ -27,7 +27,7 @@ scoreboard players set @s glib.var4 0
 
 # CODE:
 
-execute if score @s dmAddDamage matches 1.. run function glib:core/utils/durability_modifier/child/unbreaking_calc_loop
+execute if score @s dmAddDamage matches 1.. run function glib:core/utils/durability_modifier/zzz_child/unbreaking_calc_loop
 
 scoreboard players operation @s dmAddDamage = @s glib.var4
 scoreboard players reset @s glib.var4

@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..99 run function glib:object/convert/block/zzz_child/id_to_main_hand_slot/nodes/96-99
+execute if score @s glib.block.id matches 100.. run function glib:object/convert/block/zzz_child/id_to_main_hand_slot/nodes/100-103

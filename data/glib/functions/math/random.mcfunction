@@ -17,8 +17,6 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.res0 dummy
-
 #__________________________________________________
 # CONFIG
 
@@ -26,8 +24,8 @@ scoreboard objectives add glib.res0 dummy
 # CODE
 
 #Random MC
-summon area_effect_cloud ~ ~1 ~ {Tags:["Glib","Glib_Random"],Age:1}
-execute store result score @s glib.res0 run data get entity @e[type=area_effect_cloud,tag=Glib_Random,limit=1] UUIDMost 0.00000000023283064
-kill @e[type=area_effect_cloud,tag=Glib_Random]
+summon area_effect_cloud ~ ~1 ~ {Tags:["glib","glib.random"],Age:1}
+execute store result score @s glib.res0 run data get entity @e[type=area_effect_cloud,tag=glib.random,limit=1] UUID[0]
+kill @e[type=area_effect_cloud,tag=glib.random]
 
-# tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
+# tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"glib.res0"}}]

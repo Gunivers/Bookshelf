@@ -1,5 +1,5 @@
 # NAME: Init
-# PATH: glib:utils/memory/child/init
+# PATH: glib:utils/memory/zzz_child/init
 
 # AUTHOR: theogiraudet
 

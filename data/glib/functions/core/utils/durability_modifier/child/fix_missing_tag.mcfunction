@@ -1,5 +1,5 @@
 # NAME: Missing Tag Fixer
-# PATH: glib:utils/durability_modifier/child/fix_missing_tag
+# PATH: glib:utils/durability_modifier/zzz_child/fix_missing_tag
 
 # AUTHOR: Syl2010
 

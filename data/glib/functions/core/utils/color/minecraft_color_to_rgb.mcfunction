@@ -7,7 +7,7 @@
 # MINECRAFT: 1.14
 
 # REQUIEREMENTS:
-# - glib:utils/color/child/init (function)
+# - glib:utils/color/zzz_child/init (function)
 
 # INPUT:
 # - glib.var0

@@ -1,5 +1,5 @@
 # NAME: Cancel Schedule Command Rec
-# PATH: glib:utils/schedule/child/cancel_schedule_command_rec
+# PATH: glib:utils/schedule/zzz_child/cancel_schedule_command_rec
 
 # AUTHOR: theogiraudet
 
@@ -16,4 +16,4 @@ execute if score @s Var0 matches 0 run data remove entity @s ArmorItems[0].tag.B
 
 execute if score @s Var0 matches 1 run data modify entity @s ArmorItems[0].tag.Buffer3 append from entity @s ArmorItems[0].tag.Buffer2[0]
 execute if score @s Var0 matches 1 run data remove entity @s ArmorItems[0].tag.Buffer2[0]
-execute if score @s Var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib:core/utils/schedule/child/cancel_schedule_command_rec
+execute if score @s Var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib:core/utils/schedule/zzz_child/cancel_schedule_command_rec

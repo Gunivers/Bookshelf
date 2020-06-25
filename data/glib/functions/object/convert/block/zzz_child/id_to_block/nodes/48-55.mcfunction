@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..51 run function glib:object/convert/block/zzz_child/id_to_block/nodes/48-51
+execute if score @s glib.block.id matches 52.. run function glib:object/convert/block/zzz_child/id_to_block/nodes/52-55
