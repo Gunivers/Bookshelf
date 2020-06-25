@@ -1,8 +1,8 @@
 tag @s add CollisionZ
 
 #Detection
-execute at @s[scores={VectorZ=1..}] if block ~ ~ ~0.5 #glib:no_collision run tag @s remove CollisionZ
-execute at @s[scores={VectorZ=..1}] if block ~ ~ ~-0.5 #glib:no_collision run tag @s remove CollisionZ
+execute at @s[scores={VectorZ=1..}] if block ~ ~ ~0.5 #glib:system/entity/move/by_vector/ignore_hitbox run tag @s remove CollisionZ
+execute at @s[scores={VectorZ=..1}] if block ~ ~ ~-0.5 #glib:system/entity/move/by_vector/ignore_hitbox run tag @s remove CollisionZ
 tag @s[scores={VectorZ=0}] remove CollisionZ
 
 #DEBUG
