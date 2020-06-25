@@ -15,7 +15,7 @@
 # At this end of the function, all inputs are clear.
 #Truth table:
 #+-------+--------+
-#| Input | Output |
+#| glib.var0 | glib.var0 |
 #+-------+--------+
 #|     0 |      1 |
 #|     1 |      0 |
@@ -27,8 +27,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Input dummy
-scoreboard objectives add Output dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -37,7 +37,7 @@ scoreboard objectives add Output dummy
 # CODE
 
 function glib:math/bool/clearoutput
-execute if score Input1 Input = -1 glib.const run scoreboard players set Output1 Output -1
-execute if score Input1 Input = 1 glib.const run scoreboard players set Output1 Output 0
-execute if score Input1 Input = 0 glib.const run scoreboard players set Output1 Output 1
+execute if score Input1 glib.var0 = -1 glib.const run scoreboard players set Output1 glib.var0 -1
+execute if score Input1 glib.var0 = 1 glib.const run scoreboard players set Output1 glib.var0 0
+execute if score Input1 glib.var0 = 0 glib.const run scoreboard players set Output1 glib.var0 1
 function glib:math/bool/clearinput

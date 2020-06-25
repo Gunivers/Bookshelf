@@ -15,7 +15,7 @@
 # At this end of the function, all inputs are clear.
 #Truth table:
 #+---------+---------+--------+
-#| Input A | Input B | Output |
+#| glib.var0 A | glib.var0 B | glib.var0 |
 #+---------+---------+--------+
 #|       0 |       0 |      1 |
 #|       0 |       1 |      0 |
@@ -29,8 +29,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Input dummy
-scoreboard objectives add Output dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -40,6 +40,6 @@ scoreboard objectives add Output dummy
 
 function glib:math/bool/clearoutput
 function glib:math/bool/logic-gate/or
-scoreboard players operation Input1 Input = Output1 Output
+scoreboard players operation Input1 glib.var0 = Output1 Output
 function glib:math/bool/logic-gate/not
 function glib:math/bool/clearinput

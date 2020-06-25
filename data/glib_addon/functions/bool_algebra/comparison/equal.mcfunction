@@ -19,8 +19,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Input dummy
-scoreboard objectives add Output dummy
+scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.var0 dummy
 
 #__________________________________________________
 # CONFIG
@@ -29,6 +29,6 @@ scoreboard objectives add Output dummy
 # CODE
 
 function glib:math/bool/clearoutput
-execute if score Input1 Input = Input2 Input run scoreboard players set Output1 Output 1
-execute if score Output1 Output = -1 glib.const run scoreboard players set Output1 Output 0
+execute if score Input1 glib.var0 = Input2 glib.var0 run scoreboard players set Output1 glib.var0 1
+execute if score Output1 glib.var0 = -1 glib.const run scoreboard players set Output1 glib.var0 0
 function glib:math/bool/clearinput

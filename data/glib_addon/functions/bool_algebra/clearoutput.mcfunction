@@ -23,12 +23,12 @@
 #__________________________________________________
 # CODE
 
-scoreboard players set Output1 Output -1
-scoreboard players set Output2 Output -1
-scoreboard players set Output3 Output -1
-scoreboard players set Output4 Output -1
-scoreboard players set Output5 Output -1
-scoreboard players set Output6 Output -1
-scoreboard players set Output7 Output -1
-scoreboard players set Output8 Output -1
-scoreboard players set Output9 Output -1
+scoreboard players set Output1 glib.var0 -1
+scoreboard players set Output2 glib.var0 -1
+scoreboard players set Output3 glib.var0 -1
+scoreboard players set Output4 glib.var0 -1
+scoreboard players set Output5 glib.var0 -1
+scoreboard players set Output6 glib.var0 -1
+scoreboard players set Output7 glib.var0 -1
+scoreboard players set Output8 glib.var0 -1
+scoreboard players set Output9 glib.var0 -1
