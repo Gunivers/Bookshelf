@@ -2,8 +2,8 @@ tag @s remove Glib_Creator_platform
 
 execute at @s run setworldspawn ~ ~ ~
 
-function glib:core/utils/import/data
-function glib:core/import/constants
+function glib:utils/import/data
+function glib_core:import/constants
 
 execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Glib_Generate_Base"]}
 tellraw @a ["",{"text":"\n"},{"text":"<","color":"black"},{"text":"Gunivers-Lib","color":"gold"},{"text":">","color":"black"},{"text":" Generating base platform...","color":"gray"},{"text":"\n "}]

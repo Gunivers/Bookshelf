@@ -29,7 +29,7 @@ scoreboard objectives add glib.res9 dummy
 
 scoreboard objectives add glib.debug.id dummy
 
-function glib:core/import/constants
+function glib_core:import/constants
 
 #__________________________________________________
 # CODE
@@ -37,18 +37,18 @@ function glib:core/import/constants
 # Glib Menu
 execute if score menu.refresh glib.data matches 5.. run scoreboard players set menu.refresh glib.data
 scoreboard players add menu.refresh glib.data 1
-execute if score menu.refresh glib.data matches 1 run function glib:core/menu/main
+execute if score menu.refresh glib.data matches 1 run function glib_core:menu/main
 
 # Cache
-function glib:core/utils/cache/cache_loop
+function glib:utils/cache/cache_loop
 
 # Loop Schedule
 execute as @e[tag=Glib_Cache_Head] at @s run function glib_child:core/utils/schedule/loop_schedule
 
 # Debug Recorder
-execute as @a[tag=glib.debug.Stick] run function glib:core/menu/debug/debug_stick
+execute as @a[tag=glib.debug.Stick] run function glib_core:menu/debug/debug_stick
 execute as @a[tag=glib.debug,tag=glib.debug.global.display.tick] run function glib:core/debug/display_tick
-execute as @a[tag=glib.debug,tag=glib.debug.entity.target_entity_manager,limit=1] at @s run function glib:core/menu/debug/entity/target_entity_manager
+execute as @a[tag=glib.debug,tag=glib.debug.entity.target_entity_manager,limit=1] at @s run function glib_core:menu/debug/entity/target_entity_manager
 
 # Debug Id
 scoreboard players add @e glib.debug.id 0

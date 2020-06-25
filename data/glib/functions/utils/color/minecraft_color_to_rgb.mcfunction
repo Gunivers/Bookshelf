@@ -21,7 +21,7 @@
 # Convert Minecraft Color to RGB Color.
 
 #INIT:
-function glib:core/utils/color/init
+function glib:utils/color/init
 
 # CODE:
 scoreboard players operation @s R = @s glib.var0

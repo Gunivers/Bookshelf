@@ -1,4 +1,4 @@
 tellraw @s[tag=!glib.debug.entity._Vector] ["",{"text":"        | ","color":"blue"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity._Vector"},"hoverEvent":{"action":"show_text","value":"Show vectors functions"}},{"text":" Vector","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity._Vector"},"hoverEvent":{"action":"show_text","value":"Show vector functions"}}]
 tellraw @s[tag=glib.debug.entity._Vector] ["",{"text":"        | ","color":"blue"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity._Vector"},"hoverEvent":{"action":"show_text","value":"Hide vectors functions"}},{"text":" Vector","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity._Vector"},"hoverEvent":{"action":"show_text","value":"Hide vector functions"}}]
 
-execute if entity @s[tag=glib.debug.entity._Vector] run function glib:core/menu/debug/entity/vector/get_by_actual_orientation
+execute if entity @s[tag=glib.debug.entity._Vector] run function glib_core:menu/debug/entity/vector/get_by_actual_orientation

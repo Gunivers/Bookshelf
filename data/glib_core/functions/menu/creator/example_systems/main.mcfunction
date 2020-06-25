@@ -15,5 +15,5 @@ tellraw @s ["",{"text":"            Just join us on our ","color":"gray"},{"text
 
 
 # Call system creator
-execute if entity @s[tag=Glib_Creator_system.blackhole] run function glib:core/menu/creator/example_systems/systems/blackhole
-execute if entity @s[tag=Glib_Creator_system.lgdir] run function glib:core/menu/creator/example_systems/systems/lgdir
+execute if entity @s[tag=Glib_Creator_system.blackhole] run function glib_core:menu/creator/example_systems/systems/blackhole
+execute if entity @s[tag=Glib_Creator_system.lgdir] run function glib_core:menu/creator/example_systems/systems/lgdir

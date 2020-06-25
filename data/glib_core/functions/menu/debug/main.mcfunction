@@ -19,7 +19,7 @@ tellraw @s[tag=glib.debug.core.] ["",{"text":"         There is no debug here fo
 # Entity
 tellraw @s[tag=!glib.debug.entity.] ["",{"text":"      ","color":"gray"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity."},"hoverEvent":{"action":"show_text","value":"Show section"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity."},"hoverEvent":{"action":"show_text","value":"Show entity modules"}}]
 tellraw @s[tag=glib.debug.entity.] ["",{"text":"      ","color":"gray"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity."},"hoverEvent":{"action":"show_text","value":"Hide section"}},{"text":" Entity","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity."},"hoverEvent":{"action":"show_text","value":"Hide entity modules"}}]
-execute if entity @s[tag=glib.debug.entity.] run function glib:core/menu/debug/entity/main
+execute if entity @s[tag=glib.debug.entity.] run function glib_core:menu/debug/entity/main
 
 # Math
 tellraw @s[tag=!glib.debug.math.] ["",{"text":"      ","color":"gray"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.math."},"hoverEvent":{"action":"show_text","value":"Show section"}},{"text":" Math","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.math."},"hoverEvent":{"action":"show_text","value":"Show math functions"}}]

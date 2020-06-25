@@ -18,7 +18,7 @@
 # - glib.res0
 
 #INIT:
-function glib:core/utils/color/init
+function glib:utils/color/init
 
 # NOTE:
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.

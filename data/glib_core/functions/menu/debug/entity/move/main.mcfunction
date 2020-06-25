@@ -1,4 +1,4 @@
 tellraw @s[tag=!glib.debug.entity.Move] ["",{"text":"        | ","color":"blue"},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity.Move"},"hoverEvent":{"action":"show_text","value":"Show move functions"}},{"text":" Move","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add glib.debug.entity.Move"},"hoverEvent":{"action":"show_text","value":"Show move functions"}}]
 tellraw @s[tag=glib.debug.entity.Move] ["",{"text":"        | ","color":"blue"},{"text":"x","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity.Move"},"hoverEvent":{"action":"show_text","value":"Hide move functions"}},{"text":" Move","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s remove glib.debug.entity.Move"},"hoverEvent":{"action":"show_text","value":"Hide move functions"}}]
 
-execute if entity @s[tag=glib.debug.entity.Move] run function glib:core/menu/debug/entity/move/by_vector
+execute if entity @s[tag=glib.debug.entity.Move] run function glib_core:menu/debug/entity/move/by_vector

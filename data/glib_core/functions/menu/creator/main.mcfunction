@@ -21,9 +21,9 @@ tellraw @s ["",{"text":"\n      > ","color":"red","clickEvent":{"action":"open_u
 tellraw @s ["",{"text":"      ","color":"gray"}]
 
 
-execute as @s[tag=Glib_Creator_system.] at @s run function glib:core/menu/creator/example_systems/main
-execute as @s[tag=Glib_Creator_platform] at @s run function glib:core/menu/creator/base_platform/generate_base_confirm
-execute as @s[tag=Glib_Creator_system.cache.place] at @s run function glib:core/menu/creator/define_cache/place
-execute as @s[tag=Glib_Creator_system.cache.remove] at @s run function glib:core/menu/creator/define_cache/remove
+execute as @s[tag=Glib_Creator_system.] at @s run function glib_core:menu/creator/example_systems/main
+execute as @s[tag=Glib_Creator_platform] at @s run function glib_core:menu/creator/base_platform/generate_base_confirm
+execute as @s[tag=Glib_Creator_system.cache.place] at @s run function glib_core:menu/creator/define_cache/place
+execute as @s[tag=Glib_Creator_system.cache.remove] at @s run function glib_core:menu/creator/define_cache/remove
 
-#execute as @s[tag=Glib_Creator_system.cache] at @s run function glib:core/utils/cache/generate_module_ghost
+#execute as @s[tag=Glib_Creator_system.cache] at @s run function glib:utils/cache/generate_module_ghost

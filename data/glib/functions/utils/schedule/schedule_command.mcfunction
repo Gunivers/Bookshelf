@@ -22,7 +22,7 @@
 #	Returns the execution tick of the registered command.
 #	Example of utilisation:
 #		data modify entity @e[tag=Glib_Cache_Source,limit=1] ArmorItems[0].tag.Buffer set value {Command:"say Slime",Timer:5,TimeUnit:"second",glib.id:"T01"}
-#		function glib:core/utils/schedule/schedule_command
+#		function glib:utils/schedule/schedule_command
 
 # CODE:
 scoreboard objectives add Var0 dummy
@@ -32,7 +32,7 @@ scoreboard objectives add glib.var1 dummy
 execute as @e[tag=Glib_Cache_Source] if data entity @s ArmorItems[0].tag.Buffer.glib.id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
 
 execute as @e[tag=Valid] run function glib_child:core/utils/schedule/compute_tick
-execute as @e[tag=Valid] run function glib:core/utils/cache/select_jukebox
+execute as @e[tag=Valid] run function glib:utils/cache/select_jukebox
 
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ ArmorItems[0].tag.Buffer2 set value []
 execute as @e[tag=Valid] at @e[tag=Glib_Cache_Head] run data modify entity @s ArmorItems[0].tag.Buffer2 set from block ~ ~ ~ RecordItem.tag.ScheduleCommands

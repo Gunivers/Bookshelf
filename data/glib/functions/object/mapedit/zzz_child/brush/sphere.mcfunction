@@ -22,4 +22,4 @@ scoreboard players operation @s SphereCalc *= @s SphereCalc
 scoreboard players operation @s SphereSum += @s SphereCalc
 
 
-execute if score @s SphereSum <= @s Rayon2 run execute at @s run function glib:object/convert/block/id_to_block
+execute if score @s SphereSum <= @s Rayon2 run execute at @s run function glib:object/block/convert/id_to_block

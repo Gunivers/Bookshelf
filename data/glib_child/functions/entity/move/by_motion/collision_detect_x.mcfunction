@@ -1,8 +1,8 @@
 tag @s add CollisionX
 
 #Detection
-execute at @s[scores={VectorX=1..}] if block ~0.5 ~ ~ #glib:system/entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
-execute at @s[scores={VectorX=..1}] if block ~-0.5 ~ ~ #glib:system/entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
+execute at @s[scores={VectorX=1..}] if block ~0.5 ~ ~ #glib_child:entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
+execute at @s[scores={VectorX=..1}] if block ~-0.5 ~ ~ #glib_child:entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
 tag @s[scores={VectorX=0}] remove CollisionX
 
 #DEBUG

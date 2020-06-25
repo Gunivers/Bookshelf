@@ -9,5 +9,5 @@
 # NOTE: Clear the schedule queue.
 
 # CODE:
-function glib:core/utils/cache/select_jukebox
+function glib:utils/cache/select_jukebox
 execute at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands set value []

@@ -5,7 +5,7 @@ execute at @s as @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limi
 execute store result entity @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] Pos[0] double 0.001 run scoreboard players operation @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] LocX += @s glib.var6
 
 #Detection
-execute at @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] if block ~ ~ ~ #glib:system/entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
+execute at @e[type=area_effect_cloud,tag=Glib_Tmp_Collision_Detection,limit=1,sort=nearest] if block ~ ~ ~ #glib_child:entity/move/by_vector/ignore_hitbox run tag @s remove CollisionX
 tag @s[scores={VectorX=0}] remove CollisionX
 
 #DEBUG

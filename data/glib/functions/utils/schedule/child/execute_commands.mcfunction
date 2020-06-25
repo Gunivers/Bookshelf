@@ -13,7 +13,7 @@
 # CODE:
 tag @s remove isEqual
 
-function glib:core/utils/cache/select_jukebox
+function glib:utils/cache/select_jukebox
 
 execute at @s run setblock ~ ~ ~-2 chain_command_block[facing=up]{UpdateLastExecution:0b,auto:1b}
 

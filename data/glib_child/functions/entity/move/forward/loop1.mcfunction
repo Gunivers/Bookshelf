@@ -12,7 +12,7 @@ tag @s[scores={glib.var2=..-1001}] add MoveLoop
 
 
 # DEBUG
-execute if entity @a[tag=glib.debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run function glib:core/utils/debug/entity/move/forward/loop1
+execute if entity @a[tag=glib.debug,tag=Debug_Move_Forward,tag=!Glib_Menu] run function glib:utils/debug/entity/move/forward/loop1
 # -----
 
 

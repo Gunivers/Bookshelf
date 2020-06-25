@@ -17,6 +17,6 @@
 # If the executing entity is not a valid Memory, gives an arbitrary result.
 
 # CODE:
-function glib:core/utils/memory/get
+function glib:utils/memory/get
 execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s glib.res0 1
 execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s glib.res0 0

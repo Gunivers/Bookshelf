@@ -29,11 +29,11 @@ tellraw @s [{"text":"\n   "},{"text":">","color":"blue","clickEvent":{"action":"
 tellraw @s [{"text":"\n   "},{"text":">","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}},{"text":" ","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}},{"text":"Informations","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Menu.Informations"},"hoverEvent":{"action":"show_text","value":"More informations about Gunivers-Lib and us"}}]
 
 
-function glib:core/menu/creator/place_system/remove
-execute as @s[tag=Glib_Menu.Debug] at @s run function glib:core/menu/debug/main
-execute as @s[tag=Glib_Menu.Creator] at @s run function glib:core/menu/creator/main
-execute as @s[tag=Glib_Menu.Rules] at @s run function glib:core/menu/gamerule/rules
-execute as @s[tag=Glib_Menu.Informations] at @s run function glib:core/menu/informations
+function glib_core:menu/creator/place_system/remove
+execute as @s[tag=Glib_Menu.Debug] at @s run function glib_core:menu/debug/main
+execute as @s[tag=Glib_Menu.Creator] at @s run function glib_core:menu/creator/main
+execute as @s[tag=Glib_Menu.Rules] at @s run function glib_core:menu/gamerule/rules
+execute as @s[tag=Glib_Menu.Informations] at @s run function glib_core:menu/informations
 
 tellraw @s[tag=Glib_Menu_Exit] ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n"},{"text":"     Thanks for using Gunivers-Lib !\n\n\n     Good luck for your project !","color":"gold"},{"text":"\n\n\n____________________","color":"black"}]
 tag @s[tag=Glib_Menu_Exit] remove Glib_Menu

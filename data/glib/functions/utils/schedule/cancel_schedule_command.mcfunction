@@ -11,7 +11,7 @@
 # NOTE: Allows to cancel scheduled command by the ID defined in the input. If several scheduled commands have the same ID, cancels the first occurrence found.
 
 # CODE:
-function glib:core/utils/cache/select_jukebox
+function glib:utils/cache/select_jukebox
 
 execute at @e[tag=Glib_Cache_Head] run data modify entity @e[tag=Glib_Cache_Source,limit=1] ArmorItems[0].tag.Buffer2 set from block ~ ~ ~ RecordItem.tag.ScheduleCommands
 execute as @e[tag=Glib_Cache_Source] run data modify entity @s ArmorItems[0].tag.Buffer3 set value []
