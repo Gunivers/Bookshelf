@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:cooked_cod",
+		"minecraft:cooked_salmon",
+		"minecraft:cooked_chicken",
+		"minecraft:cooked_mutton",
+		"minecraft:cooked_rabbit",
+		"minecraft:cooked_beef"
+	]
+}
