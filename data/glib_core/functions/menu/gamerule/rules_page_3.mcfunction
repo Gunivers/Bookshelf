@@ -47,4 +47,4 @@ execute if score menu.rules.mobSpawning glib.data matches 0 run tellraw @s ["",{
 
 
 # Pages
-tellraw @s ["",{"text":"\n      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Menu.Rules.Page_3"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"3/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Menu.Rules.Page_4"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
+tellraw @s ["",{"text":"\n      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove glib.menu.Rules.Page_3"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"3/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add glib.menu.Rules.Page_4"},"hoverEvent":{"action":"show_text","value":"Next page"}}]

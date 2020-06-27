@@ -47,4 +47,4 @@ execute if score menu.rules.entityDrops glib.data matches 0 run tellraw @s ["",{
 
 
 # Pages
-tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Menu.Rules.Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
+tellraw @s ["",{"text":"\n      [<]","color":"gray"},{"text":" "},{"text":"1/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add glib.menu.Rules.Page_2"},"hoverEvent":{"action":"show_text","value":"Next page"}}]

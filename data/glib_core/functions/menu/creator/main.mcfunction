@@ -1,5 +1,5 @@
 # Title
-tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Menu.Creator"},"hoverEvent":{"action":"show_text","value":"Exit crator tools"}},{"text":"   ","color":"gold"},{"text":"Creator Tools","underlined":true,"color":"gold"},{"text":"\n "}]
+tellraw @s ["",{"text":"\n   x","bold":true,"color":"dark_red","clickEvent":{"action":"run_command","value":"/tag @s remove glib.menu.Creator"},"hoverEvent":{"action":"show_text","value":"Exit crator tools"}},{"text":"   ","color":"gold"},{"text":"Creator Tools","underlined":true,"color":"gold"},{"text":"\n "}]
 
 # Exampl systems
 tellraw @s [{"text":"      >","color":"blue","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Creator_system."},"hoverEvent":{"action":"show_text","value":"View examples systems"}},{"text":" ","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Creator_system."},"hoverEvent":{"action":"show_text","value":"View examples systems"}},{"text":"Example systems","color":"gray","clickEvent":{"action":"run_command","value":"/tag @s add Glib_Creator_system."},"hoverEvent":{"action":"show_text","value":"View examples systems"}}]

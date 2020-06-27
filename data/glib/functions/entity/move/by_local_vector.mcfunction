@@ -53,7 +53,7 @@ scoreboard players operation @s glib.var1 /= 1000 glib.const
 scoreboard players operation @s glib.var2 /= 1000 glib.const
 
 # DEBUG
-execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Menu] run function glib:utils/debug/entity/move/by_local_vector/1
+execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!glib.menu] run function glib:utils/debug/entity/move/by_local_vector/1
 # -----
 
 scoreboard players set @s glib.var3 0
@@ -68,7 +68,7 @@ tag @s[scores={glib.var2=..-1001}] add FactorIncrease
 scoreboard players add @s[tag=FactorIncrease] glib.var3 1
 
 # DEBUG
-execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!Glib_Menu] run function glib:utils/debug/entity/move/by_local_vector/2
+execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!glib.menu] run function glib:utils/debug/entity/move/by_local_vector/2
 # -----
 
 execute if entity @s[tag=FactorIncrease] run function glib_child:entity/move/by_local_vector/loop1

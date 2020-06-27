@@ -46,4 +46,4 @@ tellraw @s ["",{"text":"      - Spawn Radius: ","color":"gray","clickEvent":{"ac
 
 
 # Pages
-tellraw @s ["",{"text":"\n      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove Glib_Menu.Rules.Page_4"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"4/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add Glib_Menu.Rules.Page_5"},"hoverEvent":{"action":"show_text","value":"Next page"}}]
+tellraw @s ["",{"text":"\n      [<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s remove glib.menu.Rules.Page_4"},"hoverEvent":{"action":"show_text","value":"Previous page"}},{"text":" "},{"text":"4/5","color":"gray"},{"text":" "},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @p add glib.menu.Rules.Page_5"},"hoverEvent":{"action":"show_text","value":"Next page"}}]

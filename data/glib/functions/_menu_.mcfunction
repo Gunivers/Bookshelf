@@ -8,5 +8,5 @@
 
 # CODE:
 gamerule commandBlockOutput false
-tag @s add Glib_Menu
-execute as @s[tag=Glib_Menu] at @s run function glib_core:menu/main
+tag @s add glib.menu
+execute as @s[tag=glib.menu] at @s run function glib_core:menu/main

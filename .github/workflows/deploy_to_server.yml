@@ -31,5 +31,5 @@ jobs:
           port: 5657
           user: contact.gunivers@gmail.com|gunivers-lib
           password: ${{ secrets.GUNIVERS_USER_PASSWORD }}
-          remote_path: /world/datapacks/Gunivers-Lib/
+          remote_path: /Glib - TestZone/datapacks/Gunivers-Lib/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**
