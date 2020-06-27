@@ -27,7 +27,7 @@ jobs:
       - name: deploy
         uses:  swznd/sftp-deploy@master
         with:
-          host: play.gunivers.net
+          host: ${{ secrets.GLIB_SFTP_IP }}
           port: 5657
           user: ${{ secrets.GLIB_SFTP_USER }}
           password: ${{ secrets.GLIB_SFTP_PASSWORD }}
