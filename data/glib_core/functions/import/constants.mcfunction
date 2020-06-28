@@ -87,6 +87,7 @@ scoreboard players set 1024 glib.const 1024
 scoreboard players set 2048 glib.const 2048
 scoreboard players set 4000 glib.const 4000
 scoreboard players set 4096 glib.const 4096
+scoreboard players set 6500 glib.const 6500
 scoreboard players set 6931 glib.const 6931
 scoreboard players set 10000 glib.const 10000
 scoreboard players set 11500 glib.const 11500
@@ -104,6 +105,7 @@ scoreboard players set 65521 glib.const 65521
 scoreboard players set 65536 glib.const 65536
 scoreboard players set 90000 glib.const 90000
 scoreboard players set 100000 glib.const 100000
+scoreboard players set 117500 glib.const 117500
 scoreboard players set 118998 glib.const 118998
 scoreboard players set 166667 glib.const 166667
 scoreboard players set 180000 glib.const 180000
