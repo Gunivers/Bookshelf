@@ -9,6 +9,7 @@
 
 scoreboard objectives add glib.const dummy
 
+# Classic numbers
 scoreboard players set Neg glib.const -1
 scoreboard players set -2 glib.const -2
 scoreboard players set -1 glib.const -1
@@ -38,6 +39,7 @@ scoreboard players set 22 glib.const 22
 scoreboard players set 23 glib.const 23
 scoreboard players set 24 glib.const 24
 scoreboard players set 25 glib.const 25
+scoreboard players set 26 glib.const 26
 scoreboard players set 29 glib.const 29
 scoreboard players set 30 glib.const 30
 scoreboard players set 31 glib.const 31
@@ -74,6 +76,7 @@ scoreboard players set 212 glib.const 212
 scoreboard players set 225 glib.const 225
 scoreboard players set 256 glib.const 256
 scoreboard players set 270 glib.const 270
+scoreboard players set 307 glib.const 307
 scoreboard players set 315 glib.const 315
 scoreboard players set 360 glib.const 360
 scoreboard players set 512 glib.const 512
@@ -82,18 +85,25 @@ scoreboard players set 785 glib.const 785
 scoreboard players set 1000 glib.const 1000
 scoreboard players set 1024 glib.const 1024
 scoreboard players set 2048 glib.const 2048
+scoreboard players set 4000 glib.const 4000
 scoreboard players set 4096 glib.const 4096
 scoreboard players set 6931 glib.const 6931
 scoreboard players set 10000 glib.const 10000
+scoreboard players set 15500 glib.const 15500
+scoreboard players set 16807 glib.const 16807
+scoreboard players set 17364 glib.const 17364
 scoreboard players set 18000 glib.const 18000
 scoreboard players set 23026 glib.const 23026
+scoreboard players set 24000 glib.const 24000
 scoreboard players set 28125 glib.const 28125
 scoreboard players set 32400 glib.const 32400
 scoreboard players set 36000 glib.const 36000
 scoreboard players set 40500 glib.const 40500
+scoreboard players set 65521 glib.const 65521
 scoreboard players set 65536 glib.const 65536
 scoreboard players set 90000 glib.const 90000
 scoreboard players set 100000 glib.const 100000
+scoreboard players set 118998 glib.const 118998
 scoreboard players set 166667 glib.const 166667
 scoreboard players set 180000 glib.const 180000
 scoreboard players set 270000 glib.const 270000
@@ -102,17 +112,8 @@ scoreboard players set 2302585 glib.const 2302585
 scoreboard players set 405000000 glib.const 405000000
 scoreboard players set 324000000 glib.const 324000000
 
+# Particular numbers
 scoreboard players set Pi glib.const 3142
 scoreboard players set Pi2 glib.const 314
 scoreboard players set Pi3 glib.const 3142
 scoreboard players set Pi6 glib.const 3141593
-
-scoreboard players set 118998 glib.const 118998
-scoreboard players set 16807 glib.const 16807
-scoreboard players set 307 glib.const 307
-
-scoreboard players set 24000 glib.const 24000
-
-#Random CLG
-scoreboard players set 17364 glib.const 17364
-scoreboard players set 65521 glib.const 65521
