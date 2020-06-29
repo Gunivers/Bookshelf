@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 15336 run setblock ~ ~ ~ spruce_fence[east=false,north=false,south=true,waterlogged=true,west=true]
+execute if score @s BlockId matches 15337 run setblock ~ ~ ~ spruce_fence[east=false,north=false,south=true,waterlogged=true,west=false]
+execute if score @s BlockId matches 15338 run setblock ~ ~ ~ spruce_fence[east=false,north=false,south=true,waterlogged=false,west=true]

@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 1410 run setblock ~ ~ ~ blackstone_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s BlockId matches 1411 run setblock ~ ~ ~ blackstone_wall[east=none,north=low,south=none,up=true,waterlogged=true,west=none]
+execute if score @s BlockId matches 1412 run setblock ~ ~ ~ blackstone_wall[east=none,north=low,south=none,up=true,waterlogged=true,west=low]

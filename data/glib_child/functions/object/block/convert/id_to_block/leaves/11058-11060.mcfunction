@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 11058 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s BlockId matches 11059 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 11060 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=true]

@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 15489 run setblock ~ ~ ~ spruce_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 15490 run setblock ~ ~ ~ spruce_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 15491 run setblock ~ ~ ~ spruce_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]

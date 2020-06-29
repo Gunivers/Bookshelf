@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 1323 run setblock ~ ~ ~ blackstone_stairs[facing=south,half=top,shape=outer_right,waterlogged=true]
+execute if score @s BlockId matches 1324 run setblock ~ ~ ~ blackstone_stairs[facing=south,half=top,shape=outer_right,waterlogged=false]
+execute if score @s BlockId matches 1325 run setblock ~ ~ ~ blackstone_stairs[facing=south,half=bottom,shape=straight,waterlogged=true]

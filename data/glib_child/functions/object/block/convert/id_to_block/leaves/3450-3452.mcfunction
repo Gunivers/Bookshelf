@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 3450 run setblock ~ ~ ~ crimson_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=true]
+execute if score @s BlockId matches 3451 run setblock ~ ~ ~ crimson_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=false]
+execute if score @s BlockId matches 3452 run setblock ~ ~ ~ crimson_trapdoor[facing=north,half=bottom,open=true,powered=false,waterlogged=true]

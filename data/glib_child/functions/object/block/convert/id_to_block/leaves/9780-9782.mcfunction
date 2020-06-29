@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 9780 run setblock ~ ~ ~ oak_trapdoor[facing=north,half=top,open=false,powered=true,waterlogged=false]
+execute if score @s BlockId matches 9781 run setblock ~ ~ ~ oak_trapdoor[facing=north,half=top,open=false,powered=false,waterlogged=true]
+execute if score @s BlockId matches 9782 run setblock ~ ~ ~ oak_trapdoor[facing=north,half=top,open=false,powered=false,waterlogged=false]

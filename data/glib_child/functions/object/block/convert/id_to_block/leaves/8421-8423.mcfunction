@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 8421 run setblock ~ ~ ~ nether_brick_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=none]
+execute if score @s BlockId matches 8422 run setblock ~ ~ ~ nether_brick_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=low]
+execute if score @s BlockId matches 8423 run setblock ~ ~ ~ nether_brick_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=tall]

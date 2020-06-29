@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 2790 run setblock ~ ~ ~ cobblestone_wall[east=none,north=none,south=tall,up=false,waterlogged=true,west=low]
+execute if score @s BlockId matches 2791 run setblock ~ ~ ~ cobblestone_wall[east=none,north=none,south=tall,up=false,waterlogged=true,west=tall]
+execute if score @s BlockId matches 2792 run setblock ~ ~ ~ cobblestone_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=none]

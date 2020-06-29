@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 13776 run setblock ~ ~ ~ red_nether_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=low]
+execute if score @s BlockId matches 13777 run setblock ~ ~ ~ red_nether_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=tall]
+execute if score @s BlockId matches 13778 run setblock ~ ~ ~ red_nether_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=false,west=none]

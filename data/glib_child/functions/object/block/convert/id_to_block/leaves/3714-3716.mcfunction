@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 3714 run setblock ~ ~ ~ dark_oak_fence[east=true,north=false,south=true,waterlogged=true,west=true]
+execute if score @s BlockId matches 3715 run setblock ~ ~ ~ dark_oak_fence[east=true,north=false,south=true,waterlogged=true,west=false]
+execute if score @s BlockId matches 3716 run setblock ~ ~ ~ dark_oak_fence[east=true,north=false,south=true,waterlogged=false,west=true]

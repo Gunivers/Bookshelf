@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 13446 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=true,south=true,up=false,west=true]
+execute if score @s BlockId matches 13447 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=true,south=true,up=false,west=false]
+execute if score @s BlockId matches 13448 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=true,south=false,up=true,west=true]

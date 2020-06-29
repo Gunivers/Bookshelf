@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 6453 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=true]
+execute if score @s BlockId matches 6454 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=false]
+execute if score @s BlockId matches 6455 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=false,powered=true,waterlogged=true]

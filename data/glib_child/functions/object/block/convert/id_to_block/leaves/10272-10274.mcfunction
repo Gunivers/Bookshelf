@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 10272 run setblock ~ ~ ~ polished_blackstone_brick_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 10273 run setblock ~ ~ ~ polished_blackstone_brick_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 10274 run setblock ~ ~ ~ polished_blackstone_brick_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=false]

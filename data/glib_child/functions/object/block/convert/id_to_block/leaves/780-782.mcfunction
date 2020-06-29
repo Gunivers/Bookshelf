@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 780 run setblock ~ ~ ~ andesite_wall[east=tall,north=tall,south=low,up=false,waterlogged=false,west=tall]
+execute if score @s BlockId matches 781 run setblock ~ ~ ~ andesite_wall[east=tall,north=tall,south=tall,up=true,waterlogged=true,west=none]
+execute if score @s BlockId matches 782 run setblock ~ ~ ~ andesite_wall[east=tall,north=tall,south=tall,up=true,waterlogged=true,west=low]

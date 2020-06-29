@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 1170 run setblock ~ ~ ~ birch_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=false]
+execute if score @s BlockId matches 1171 run setblock ~ ~ ~ birch_stairs[facing=south,half=bottom,shape=outer_right,waterlogged=true]
+execute if score @s BlockId matches 1172 run setblock ~ ~ ~ birch_stairs[facing=south,half=bottom,shape=outer_right,waterlogged=false]

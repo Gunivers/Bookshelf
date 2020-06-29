@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 3843 run setblock ~ ~ ~ dark_oak_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 3844 run setblock ~ ~ ~ dark_oak_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 3845 run setblock ~ ~ ~ dark_oak_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=false]

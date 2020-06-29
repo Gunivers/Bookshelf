@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 4296 run setblock ~ ~ ~ diorite_wall[east=none,north=none,south=tall,up=true,waterlogged=true,west=low]
+execute if score @s BlockId matches 4297 run setblock ~ ~ ~ diorite_wall[east=none,north=none,south=tall,up=true,waterlogged=true,west=tall]
+execute if score @s BlockId matches 4298 run setblock ~ ~ ~ diorite_wall[east=none,north=none,south=tall,up=true,waterlogged=false,west=none]

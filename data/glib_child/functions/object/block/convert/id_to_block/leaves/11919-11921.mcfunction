@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 11919 run setblock ~ ~ ~ purpur_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]
+execute if score @s BlockId matches 11920 run setblock ~ ~ ~ purpur_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s BlockId matches 11921 run setblock ~ ~ ~ purpur_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]

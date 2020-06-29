@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 7422 run setblock ~ ~ ~ mossy_cobblestone_wall[east=none,north=none,south=none,up=false,waterlogged=true,west=low]
+execute if score @s BlockId matches 7423 run setblock ~ ~ ~ mossy_cobblestone_wall[east=none,north=none,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s BlockId matches 7424 run setblock ~ ~ ~ mossy_cobblestone_wall[east=none,north=none,south=none,up=false,waterlogged=false,west=none]

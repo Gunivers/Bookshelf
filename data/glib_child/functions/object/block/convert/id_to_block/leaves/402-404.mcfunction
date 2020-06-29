@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 402 run setblock ~ ~ ~ andesite_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 403 run setblock ~ ~ ~ andesite_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 404 run setblock ~ ~ ~ andesite_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=false]

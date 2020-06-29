@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 2655 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=true,south=true,up=false,west=false]
+execute if score @s BlockId matches 2656 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=true,south=false,up=true,west=true]
+execute if score @s BlockId matches 2657 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=true,south=false,up=true,west=false]

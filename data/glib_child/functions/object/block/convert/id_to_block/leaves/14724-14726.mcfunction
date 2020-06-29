@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 14724 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s BlockId matches 14725 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=none]
+execute if score @s BlockId matches 14726 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=low]

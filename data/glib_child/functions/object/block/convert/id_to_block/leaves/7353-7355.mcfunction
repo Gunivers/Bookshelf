@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 7353 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=true]
+execute if score @s BlockId matches 7354 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s BlockId matches 7355 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=south,half=top,shape=straight,waterlogged=true]

@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 10152 run setblock ~ ~ ~ polished_andesite_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 10153 run setblock ~ ~ ~ polished_andesite_stairs[facing=west,half=top,shape=inner_right,waterlogged=false]
+execute if score @s BlockId matches 10154 run setblock ~ ~ ~ polished_andesite_stairs[facing=west,half=top,shape=outer_left,waterlogged=true]

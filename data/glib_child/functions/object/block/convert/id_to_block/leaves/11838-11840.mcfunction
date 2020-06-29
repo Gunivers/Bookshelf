@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 11838 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=true,south=false,waterlogged=false,west=true]
+execute if score @s BlockId matches 11839 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=true,south=false,waterlogged=false,west=false]
+execute if score @s BlockId matches 11840 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=false,south=true,waterlogged=true,west=true]

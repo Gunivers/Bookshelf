@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 16737 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+execute if score @s BlockId matches 16738 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s BlockId matches 16739 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=false]

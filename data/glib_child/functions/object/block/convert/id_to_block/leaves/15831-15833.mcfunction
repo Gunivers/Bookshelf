@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 15831 run setblock ~ ~ ~ stone_brick_wall[east=low,north=none,south=tall,up=true,waterlogged=false,west=low]
+execute if score @s BlockId matches 15832 run setblock ~ ~ ~ stone_brick_wall[east=low,north=none,south=tall,up=true,waterlogged=false,west=tall]
+execute if score @s BlockId matches 15833 run setblock ~ ~ ~ stone_brick_wall[east=low,north=none,south=tall,up=false,waterlogged=true,west=none]

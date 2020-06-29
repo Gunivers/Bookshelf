@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 4923 run setblock ~ ~ ~ end_stone_brick_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=low]
+execute if score @s BlockId matches 4924 run setblock ~ ~ ~ end_stone_brick_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=tall]
+execute if score @s BlockId matches 4925 run setblock ~ ~ ~ end_stone_brick_wall[east=low,north=low,south=tall,up=true,waterlogged=true,west=none]

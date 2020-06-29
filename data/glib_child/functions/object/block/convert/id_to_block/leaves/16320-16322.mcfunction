@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 16320 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=true,south=false,west=true]
+execute if score @s BlockId matches 16321 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=true,south=false,west=false]
+execute if score @s BlockId matches 16322 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=false,south=true,west=true]

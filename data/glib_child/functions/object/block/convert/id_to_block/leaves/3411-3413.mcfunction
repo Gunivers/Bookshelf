@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 3411 run setblock ~ ~ ~ crimson_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s BlockId matches 3412 run setblock ~ ~ ~ crimson_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 3413 run setblock ~ ~ ~ crimson_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=true]

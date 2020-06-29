@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 1944 run setblock ~ ~ ~ brick_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=false]
+execute if score @s BlockId matches 1945 run setblock ~ ~ ~ brick_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s BlockId matches 1946 run setblock ~ ~ ~ brick_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=false]

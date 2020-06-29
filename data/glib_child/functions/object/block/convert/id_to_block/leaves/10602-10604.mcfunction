@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 10602 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=tall,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s BlockId matches 10603 run setblock ~ ~ ~ polished_blackstone_button[face=floor,facing=north,powered=true]
+execute if score @s BlockId matches 10604 run setblock ~ ~ ~ polished_blackstone_button[face=floor,facing=north,powered=false]

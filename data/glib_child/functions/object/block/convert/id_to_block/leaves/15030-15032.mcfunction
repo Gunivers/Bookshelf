@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 15030 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s BlockId matches 15031 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s BlockId matches 15032 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=false]

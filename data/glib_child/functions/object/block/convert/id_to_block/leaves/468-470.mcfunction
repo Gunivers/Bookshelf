@@ -1,0 +1,3 @@
+execute if score @s BlockId matches 468 run setblock ~ ~ ~ andesite_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s BlockId matches 469 run setblock ~ ~ ~ andesite_wall[east=none,north=none,south=none,up=true,waterlogged=true,west=none]
+execute if score @s BlockId matches 470 run setblock ~ ~ ~ andesite_wall[east=none,north=none,south=none,up=true,waterlogged=true,west=low]
