@@ -8,7 +8,7 @@
 
 # Original path: glib:math/arcsin
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note:
 # - This function returns asin(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)
 # - Rounds the result to the nearest integer
@@ -16,12 +16,11 @@
 #__________________________________________________
 # PARAMETERS
 
+# Input: @s glib.var0 (score): scalar on interval [-1000;1000]
+# Output: @s glib.res0 (score): angle on interval [-90;90]
+
 #__________________________________________________
 # INIT
-
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.res0 dummy
 
 #__________________________________________________
 # CONFIG

@@ -8,13 +8,16 @@
 
 # Original path: glib:math/arscos
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note:
 # - This function returns acos(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)
 # - Rounds the result to the nearest integer
 
 #__________________________________________________
 # PARAMETERS
+
+# Input: @s glib.var0 (score): scalar on interval [-1000;1000]
+# Output: @s glib.res0 (score): angle on interval [0;180]
 
 #__________________________________________________
 # INIT
@@ -119,6 +122,6 @@ scoreboard players set @s[scores={glib.var1=998}] glib.res0 3
 scoreboard players set @s[scores={glib.var1=999}] glib.res0 2
 scoreboard players set @s[scores={glib.var1=1000}] glib.res0 0
 
-scoreboard players set @s[scores={glib.var0=..-1}] glib.var1 180
-scoreboard players operation @s[scores={glib.var0=..-1}] glib.var1 -= @s glib.res0
-scoreboard players operation @s[scores={glib.var0=..-1}] glib.res0 = @s glib.var1
+scoreboard players set math.arccos glib.var0 180
+scoreboard players operation math.arccos glib.var0 -= @s glib.res0
+scoreboard players operation @s[scores={glib.var0=..-1}] glib.res0 = math.arccos glib.var0
