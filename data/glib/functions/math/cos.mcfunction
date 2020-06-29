@@ -8,7 +8,7 @@
 
 # Original path: glib:math/cos
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: The input is the angle in degrees. The result is scaled by 1000
 
 #__________________________________________________
