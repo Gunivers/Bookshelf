@@ -31,5 +31,5 @@ jobs:
           port: 5657
           user: ${{ secrets.GLIB_SFTP_USER }}
           password: ${{ secrets.GLIB_SFTP_PASSWORD }}
-          remote_path: /Glib-TestZone/datapacks/Gunivers-Lib/
+          remote_path: /Glib-Sandbox/datapacks/Gunivers-Lib/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**
