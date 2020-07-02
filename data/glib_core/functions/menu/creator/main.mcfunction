@@ -26,4 +26,4 @@ execute as @s[tag=Glib_Creator_platform] at @s run function glib_core:menu/creat
 execute as @s[tag=Glib_Creator_system.cache.place] at @s run function glib_core:menu/creator/define_cache/place
 execute as @s[tag=Glib_Creator_system.cache.remove] at @s run function glib_core:menu/creator/define_cache/remove
 
-#execute as @s[tag=Glib_Creator_system.cache] at @s run function glib:utils/cache/generate_module_ghost
+#execute as @s[tag=Glib_Creator_system.cache] at @s run function glib:cache/generate_module_ghost

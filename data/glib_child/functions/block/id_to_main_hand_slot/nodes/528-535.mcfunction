@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..531 run function glib_child:convert/block/id_to_main_hand_slot/nodes/528-531
+execute if score @s glib.block.id matches 532.. run function glib_child:convert/block/id_to_main_hand_slot/nodes/532-535

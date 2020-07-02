@@ -6,5 +6,5 @@ execute if entity @s[tag=Glib_Creator_Valid_System] run tag @s remove Glib_Creat
 
 # Non-destructive placement system
 function glib_core:menu/creator/place_system/main
-execute as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run setblock ~ ~ ~ minecraft:structure_block[mode=load]{name:"glib:utils/example_systems/lgdir",sizeX:2,sizeY:11,sizeZ:4,ignoreEntities:0b,posX:0,posY:1,posZ:0,metadata:"",mirror:"NONE",powered:0b,seed:0L,author:"?",rotation:"NONE",mode:"LOAD",integrity:1.0f,showair:0b,showboundingbox:1b}
+execute as @e[tag=Glib_Example_System,limit=1,sort=nearest] at @s run setblock ~ ~ ~ minecraft:structure_block[mode=load]{name:"glib:example_systems/lgdir",sizeX:2,sizeY:11,sizeZ:4,ignoreEntities:0b,posX:0,posY:1,posZ:0,metadata:"",mirror:"NONE",powered:0b,seed:0L,author:"?",rotation:"NONE",mode:"LOAD",integrity:1.0f,showair:0b,showboundingbox:1b}
 function glib_core:menu/creator/place_system/validation

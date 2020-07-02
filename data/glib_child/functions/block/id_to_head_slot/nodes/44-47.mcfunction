@@ -1,0 +1,2 @@
+execute if score @s glib.block.id matches ..45 run function glib_child:convert/block/id_to_head_slot/leaves/44-45
+execute if score @s glib.block.id matches 46.. run function glib_child:convert/block/id_to_head_slot/leaves/46-47

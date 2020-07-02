@@ -2,7 +2,7 @@ tag @s remove Glib_Creator_platform
 
 execute at @s run setworldspawn ~ ~ ~
 
-function glib:utils/import/data
+function glib:import/data
 function glib_core:import/constants
 
 execute at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Glib_Generate_Base"]}
@@ -26,39 +26,39 @@ scoreboard players operation @e[type=armor_stand,tag=Glib_Generate_Base] glib.da
 tag @e[type=armor_stand,tag=Glib_Generate_Base,limit=1,scores={glib.data=..-1}] remove glib.generate.base.posNeg
 execute store result entity @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] Pos[2] double 1 run scoreboard players get @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] glib.data
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~-1 ~ redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~ air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~-1 ~-16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~-16 air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~-1 ~ redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~ air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~-1 ~-16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~-16 air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~-1 ~16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~ ~ ~16 air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~ structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~-1 ~ redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~ air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~-1 ~16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~16 air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~-16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~-1 ~-16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~16 ~ ~-16 air
 
-execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:utils/base_plateforme_cell",id:"glib:utils/structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
+execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~16 structure_block{ignoreEntities:1b,powered:0b,posX:0,mode:"LOAD",posY:-1,sizeX:16,posZ:0,integrity:1.0f,showair:0b,name:"glib:base_plateforme_cell",id:"glib:structure_block",sizeY:1,sizeZ:16,showboundingbox:1b}
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~-1 ~16 redstone_block
 execute as @e[type=armor_stand,tag=Glib_Generate_Base,limit=1] at @s run setblock ~-16 ~ ~16 air
 
