@@ -6,7 +6,7 @@
 # MC Version: 1.15
 # Last check:
 
-# Original path: glib:vector/edit/from_res123
+# Original path: glib:vector/classic/edit/from_res123
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Parallelizable: <true/false/global>
 # Note:
@@ -14,9 +14,9 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: VectorX (score dummy)
-# Input: VectorY (score dummy)
-# Input: VectorZ (score dummy)
+# Input: glib.vectorX (score dummy)
+# Input: glib.vectorY (score dummy)
+# Input: glib.vectorZ (score dummy)
 
 # Output: glib.var0 (score dummy)
 # Output: glib.var1 (score dummy)
@@ -29,9 +29,9 @@ scoreboard objectives add glib.var0 dummy
 scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var2 dummy
 
-scoreboard objectives add VectorX dummy
-scoreboard objectives add VectorY dummy
-scoreboard objectives add VectorZ dummy
+scoreboard objectives add glib.vectorX dummy
+scoreboard objectives add glib.vectorY dummy
+scoreboard objectives add glib.vectorZ dummy
 
 #__________________________________________________
 # CONFIG
@@ -39,6 +39,6 @@ scoreboard objectives add VectorZ dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.var0 = @s VectorX
-scoreboard players operation @s glib.var1 = @s VectorY
-scoreboard players operation @s glib.var2 = @s VectorZ
+scoreboard players operation @s glib.var0 = @s glib.vectorX
+scoreboard players operation @s glib.var1 = @s glib.vectorY
+scoreboard players operation @s glib.var2 = @s glib.vectorZ

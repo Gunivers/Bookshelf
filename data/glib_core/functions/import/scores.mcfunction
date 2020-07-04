@@ -1,6 +1,8 @@
 scoreboard objectives add glib.data dummy [{"text":"GLib ","color":"gold"},{"text":"Data","color":"dark_gray"}]
 scoreboard objectives add glib.config dummy [{"text":"GLib ","color":"gold"},{"text":"Config","color":"dark_gray"}]
 scoreboard objectives add glib.const dummy [{"text":"GLib ","color":"gold"},{"text":"Constants","color":"dark_gray"}]
+
+scoreboard objectives add glib.tmp dummy [{"text":"GLib ","color":"gold"},{"text":"Tmp","color":"dark_gray"}]
 scoreboard objectives add glib.var0 dummy [{"text":"GLib ","color":"gold"},{"text":"Var0","color":"dark_gray"}]
 scoreboard objectives add glib.var1 dummy [{"text":"GLib ","color":"gold"},{"text":"Var1","color":"dark_gray"}]
 scoreboard objectives add glib.var2 dummy [{"text":"GLib ","color":"gold"},{"text":"Var2","color":"dark_gray"}]
@@ -22,4 +24,4 @@ scoreboard objectives add glib.res7 dummy [{"text":"GLib ","color":"gold"},{"tex
 scoreboard objectives add glib.res8 dummy [{"text":"GLib ","color":"gold"},{"text":"Res8","color":"dark_gray"}]
 scoreboard objectives add glib.res9 dummy [{"text":"GLib ","color":"gold"},{"text":"Res9","color":"dark_gray"}]
 
-scoreboard objectives add glib.debug.id dummy [{"text":"GLib ","color":"gold"},{"text":"Debug IDs","color":"dark_gray"}]
+scoreboard objectives add glib.debug dummy [{"text":"GLib ","color":"gold"},{"text":"Debug","color":"dark_gray"}]

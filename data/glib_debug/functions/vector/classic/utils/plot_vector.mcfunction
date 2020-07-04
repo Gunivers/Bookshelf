@@ -16,4 +16,5 @@ execute as @e[tag=glib.debug.plot_vector,limit=1,sort=nearest] run function glib
 
 execute at @e[tag=glib.debug.plot_vector,limit=1,sort=nearest] run function glib_debug:global/draw/line_0.1_ata
 
+scoreboard players reset @e[tag=glib.debug.plot_vector,limit=1,sort=nearest,type=!player]
 kill @e[tag=glib.debug.plot_vector,limit=1,sort=nearest,type=!player]

@@ -6,7 +6,7 @@
 # MC Version: 1.15
 # Last check:
 
-# Original path: glib:vector/edit/from_res123
+# Original path: glib:vector/classic/edit/from_res123
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
 # Parallelizable: <true/false/global>
 # Note:
@@ -18,20 +18,16 @@
 # Input: glib.res2 (score dummy)
 # Input: glib.res3 (score dummy)
 
-# Output: VectorX (score dummy)
-# Output: VectorY (score dummy)
-# Output: VectorZ (score dummy)
+# Output: glib.vectorX (score dummy)
+# Output: glib.vectorY (score dummy)
+# Output: glib.vectorZ (score dummy)
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.res0 dummy
-scoreboard objectives add glib.res2 dummy
-scoreboard objectives add glib.res3 dummy
-
-scoreboard objectives add VectorX dummy
-scoreboard objectives add VectorY dummy
-scoreboard objectives add VectorZ dummy
+scoreboard objectives add glib.vectorX dummy
+scoreboard objectives add glib.vectorY dummy
+scoreboard objectives add glib.vectorZ dummy
 
 #__________________________________________________
 # CONFIG
@@ -39,6 +35,6 @@ scoreboard objectives add VectorZ dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s VectorX = @s glib.res0
-scoreboard players operation @s VectorY = @s glib.res2
-scoreboard players operation @s VectorZ = @s glib.res3
+scoreboard players operation @s glib.vectorX = @s glib.res0
+scoreboard players operation @s glib.vectorY = @s glib.res1
+scoreboard players operation @s glib.vectorZ = @s glib.res2
