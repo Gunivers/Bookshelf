@@ -14,12 +14,16 @@
 #__________________________________________________
 # PARAMETERS
 
-# Output: @s Res0 (score) : Vector X
-# Output: @s Res1 (score) : Vector Y
-# Output: @s Res2 (score) : Vector Z
+# Output: glib.vectorX (score dummy)
+# Output: glib.vectorY (score dummy)
+# Output: glib.vectorZ (score dummy)
 
 #__________________________________________________
 # INIT
+
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -27,20 +31,20 @@
 #__________________________________________________
 # CODE
 
-execute store result score ref.x glib.var0 run data get entity @s Pos[0] 1000
-execute store result score ref.y glib.var0 run data get entity @s Pos[1] 1000
-execute store result score ref.z glib.var0 run data get entity @s Pos[2] 1000
+execute store result score ref.x glib run data get entity @s Pos[0] 1000
+execute store result score ref.y glib run data get entity @s Pos[1] 1000
+execute store result score ref.z glib run data get entity @s Pos[2] 1000
 
 execute at @s run summon area_effect_cloud ^ ^ ^1 {Tags:["Glib","GetVec"]}
-execute store result score @s glib.res0 run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[0] 1000
-execute store result score @s glib.res1 run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[1] 1000
-execute store result score @s glib.res2 run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[2] 1000
+execute store result score @s glib.vectorX run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[0] 1000
+execute store result score @s glib.vectorY run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[1] 1000
+execute store result score @s glib.vectorZ run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[2] 1000
 
 
 
-scoreboard players operation @s glib.res0 -= ref.x glib.var0
-scoreboard players operation @s glib.res1 -= ref.y glib.var0
-scoreboard players operation @s glib.res2 -= ref.z glib.var0
+scoreboard players operation @s glib.vectorX -= ref.x glib
+scoreboard players operation @s glib.vectorY -= ref.y glib
+scoreboard players operation @s glib.vectorZ -= ref.z glib
 
 kill @e[tag=GetVec,type=area_effect_cloud]
 

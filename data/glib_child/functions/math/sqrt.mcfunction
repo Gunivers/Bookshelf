@@ -19,23 +19,23 @@
 #__________________________________________________
 
 # B /= 2
-scoreboard players operation math.sqrt.B glib.tmp /= 2 glib.const
+scoreboard players operation math.sqrt.B glib /= 2 glib.const
 
 # C = A^2
-scoreboard players operation math.sqrt.C glib.tmp = math.sqrt.A glib.tmp
-scoreboard players operation math.sqrt.C glib.tmp *= math.sqrt.A glib.tmp
+scoreboard players operation math.sqrt.C glib = math.sqrt.A glib
+scoreboard players operation math.sqrt.C glib *= math.sqrt.A glib
 
 #    if   (                         C < X                  ){                                 A += B                                     }
-execute if score math.sqrt.C glib.tmp < math.sqrt.X glib.tmp run scoreboard players operation math.sqrt.A glib.tmp += math.sqrt.B glib.tmp
+execute if score math.sqrt.C glib < math.sqrt.X glib run scoreboard players operation math.sqrt.A glib += math.sqrt.B glib
 
 #    if   (                         C > X                  ){                                 A -= B                                     }
-execute if score math.sqrt.C glib.tmp > math.sqrt.X glib.tmp run scoreboard players operation math.sqrt.A glib.tmp -= math.sqrt.B glib.tmp
+execute if score math.sqrt.C glib > math.sqrt.X glib run scoreboard players operation math.sqrt.A glib -= math.sqrt.B glib
 
 # Diff = A^2 - X
-scoreboard players operation math.sqrt.diff glib.tmp = math.sqrt.A glib.tmp
-scoreboard players operation math.sqrt.diff glib.tmp *= math.sqrt.A glib.tmp
-scoreboard players operation math.sqrt.diff glib.tmp -= math.sqrt.X glib.tmp
+scoreboard players operation math.sqrt.diff glib = math.sqrt.A glib
+scoreboard players operation math.sqrt.diff glib *= math.sqrt.A glib
+scoreboard players operation math.sqrt.diff glib -= math.sqrt.X glib
 
 
 # while(                  Diff != 0                   &&                 B > 1                  ){                  run                 }
-execute unless score math.sqrt.diff glib.tmp matches 0 if score math.sqrt.B glib.tmp matches 2.. run function glib_child:math/sqrt
+execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function glib_child:math/sqrt

@@ -10,6 +10,8 @@ function glib_core:import/constants
 #__________________________________________________
 # CODE
 
+function glib_core:security
+
 # Glib Menu
 execute if score menu.refresh glib.data matches 10.. run scoreboard players set menu.refresh glib.data 0
 scoreboard players add menu.refresh glib.data 1

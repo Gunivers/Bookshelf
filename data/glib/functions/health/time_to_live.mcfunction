@@ -7,7 +7,6 @@
 # Last check: 1.15.2
 
 # Original path: glib:health/time_to_live
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#health
 # Parallelizable: true
 # Note: You need to execute this function each tick on every entity on wich you want to apply a glib.ttl. Default glib.ttl: 10s
 
@@ -19,7 +18,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.ttl dummy
+scoreboard objectives add glib.ttl dummy [{"text":"GLib ","color":"gold"},{"text":"Time to Live","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -27,7 +26,7 @@ scoreboard objectives add glib.ttl dummy
 #     Default time to live (10s). Default TTL must be in negative.
 scoreboard players set @s[tag=!glib.config.override,scores={glib.ttl=0}] glib.ttl -200
 #     Acton when time out
-execute as @s[tag=glib.ttl.timeOut] run glib:health/safe_kill
+execute as @s[tag=glib.ttl.timeOut] run function glib:health/safe_kill
 
 #__________________________________________________
 # CODE

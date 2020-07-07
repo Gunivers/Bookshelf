@@ -29,20 +29,12 @@
 #__________________________________________________
 # CODE
 
-  # ~~ glib.debug.global ~~
-scoreboard objectives remove glib.data
+  # ~~ Global ~~
+scoreboard objectives remove glib
 scoreboard objectives remove glib.config
 scoreboard objectives remove glib.const
-scoreboard objectives remove glib.var0
-scoreboard objectives remove glib.var1
-scoreboard objectives remove glib.var2
-scoreboard objectives remove glib.var3
-scoreboard objectives remove glib.var4
-scoreboard objectives remove glib.var5
-scoreboard objectives remove glib.var6
-scoreboard objectives remove glib.var7
-scoreboard objectives remove glib.var8
-scoreboard objectives remove glib.var9
+scoreboard objectives remove glib.data
+scoreboard objectives remove glib.debug
 scoreboard objectives remove glib.res0
 scoreboard objectives remove glib.res1
 scoreboard objectives remove glib.res2
@@ -53,43 +45,49 @@ scoreboard objectives remove glib.res6
 scoreboard objectives remove glib.res7
 scoreboard objectives remove glib.res8
 scoreboard objectives remove glib.res9
+scoreboard objectives remove glib.var0
+scoreboard objectives remove glib.var1
+scoreboard objectives remove glib.var2
+scoreboard objectives remove glib.var3
+scoreboard objectives remove glib.var4
+scoreboard objectives remove glib.var5
+scoreboard objectives remove glib.var6
+scoreboard objectives remove glib.var7
+scoreboard objectives remove glib.var8
+scoreboard objectives remove glib.var9
 
-scoreboard objectives remove glib.debug.id
+  # ~~ Health ~~
+scoreboard objectives remove glib.ttl
 
-
-	# ~~ Bool ~~
-scoreboard objectives remove Output
-scoreboard objectives remove Input
-scoreboard objectives remove Memory
-	# ~~ glib.id ~~
+	# ~~ Id ~~
 scoreboard objectives remove glib.id
 scoreboard objectives remove glib.id.target
 scoreboard objectives remove glib.id.parent
-	# ~~ Local Vectors ~~
-scoreboard objectives remove VectorLeft
-scoreboard objectives remove VectorUp
-scoreboard objectives remove VectorFront
-scoreboard objectives remove VectorSpeedLocal
-scoreboard objectives remove CollisionLocal
-	# ~~ Location ~~
-scoreboard objectives remove LocX
-scoreboard objectives remove LocY
-scoreboard objectives remove LocZ
-	# ~~ Orientation ~~
-scoreboard objectives remove glib.ori.v
-scoreboard objectives remove glib.ori.h
-	# ~~ Path Finder ~~
-scoreboard objectives remove PathCost
-	# ~~ Relative Location ~~
+
+ # ~~ Link ~~
 scoreboard objectives remove glib.link.r.x
 scoreboard objectives remove glib.link.r.y
 scoreboard objectives remove glib.link.r.z
-	# ~~ Relative Orientation ~~
 scoreboard objectives remove glib.link.r.v
 scoreboard objectives remove glib.link.r.h
+scoreboard objectives remove glib.link.l.x
+scoreboard objectives remove glib.link.l.y
+scoreboard objectives remove glib.link.l.z
+
+	# ~~ Location ~~
+scoreboard objectives remove glib.locX
+scoreboard objectives remove glib.locY
+scoreboard objectives remove glib.locZ
+
+	# ~~ Orientation ~~
+scoreboard objectives remove glib.ori.v
+scoreboard objectives remove glib.ori.h
+
 	# ~~ Vectors ~~
-scoreboard objectives remove VectorX
-scoreboard objectives remove VectorY
-scoreboard objectives remove VectorZ
-scoreboard objectives remove VectorSpeed
-scoreboard objectives remove Collision
+scoreboard objectives remove glib.vectorX
+scoreboard objectives remove glib.vectorY
+scoreboard objectives remove glib.vectorZ
+scoreboard objectives remove glib.vectorLeft
+scoreboard objectives remove glib.vectorUp
+scoreboard objectives remove glib.vectorFront
+scoreboard objectives remove glib.collision

@@ -46,25 +46,25 @@
 
 
 # Negative number exception
-scoreboard players operation math.sqrt.X glib.tmp = @s glib.var0
-execute if score math.sqrt.X glib.tmp matches ..-1 run scoreboard players operation math.sqrt.X glib.tmp *= -1 glib.const
+scoreboard players operation math.sqrt.X glib = @s glib.var0
+execute if score math.sqrt.X glib matches ..-1 run scoreboard players operation math.sqrt.X glib *= -1 glib.const
 
 # A = 0
-scoreboard players set math.sqrt.A glib.tmp 0
+scoreboard players set math.sqrt.A glib 0
 
 # B = 32768 // limit max X
-scoreboard players set math.sqrt.B glib.tmp 32768
+scoreboard players set math.sqrt.B glib 32768
 
 # Diff = A^2 - X
-scoreboard players set math.sqrt.diff glib.tmp 0
-scoreboard players operation math.sqrt.diff glib.tmp -= math.sqrt.X glib.tmp
+scoreboard players set math.sqrt.diff glib 0
+scoreboard players operation math.sqrt.diff glib -= math.sqrt.X glib
 
 
 # while(                  Diff != 0                   &&                 B > 1                  ){               run              }
-execute unless score math.sqrt.diff glib.tmp matches 0 if score math.sqrt.B glib.tmp matches 2.. run function glib_child:math/sqrt
+execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function glib_child:math/sqrt
 
 # return
-scoreboard players operation @s glib.res0 = math.sqrt.A glib.tmp
+scoreboard players operation @s glib.res0 = math.sqrt.A glib
 
 #__________________________________________________
 # DEBUG

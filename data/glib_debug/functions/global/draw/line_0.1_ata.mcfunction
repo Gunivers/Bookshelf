@@ -10,7 +10,7 @@ execute as @e[tag=glib.debug.draw_line,limit=1,sort=nearest] at @s facing entity
 
 execute as @e[tag=glib.debug.draw_line.dest] run function glib:health/safe_kill
 
-scoreboard players set debug.draw_line glib.tmp 200
+scoreboard players set debug.draw_line glib 200
 execute unless entity @e[tag=glib.debug.draw_line,distance=..0.5] as @e[tag=glib.debug.draw_line,limit=1,sort=nearest] run function glib_child:debug/global/draw/line_0.1
 
 execute as @e[tag=glib.debug.draw_line,limit=1,sort=nearest] run function glib:health/safe_kill

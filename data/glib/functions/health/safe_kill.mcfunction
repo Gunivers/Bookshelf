@@ -7,7 +7,6 @@
 # Last check:
 
 # Original path: glib:health/safe_kill
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#health
 # Parallelizable: true
 
 #__________________________________________________

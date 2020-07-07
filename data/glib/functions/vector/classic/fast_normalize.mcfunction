@@ -14,16 +14,20 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: glib.var0 (score dummy)
-# Input: glib.var1 (score dummy)
-# Input: glib.var2 (score dummy)
+# Input: glib.vectorX (score dummy)
+# Input: glib.vectorY (score dummy)
+# Input: glib.vectorZ (score dummy)
 
-# Output: glib.res0 (score dummy)
-# Output: glib.res1 (score dummy)
-# Output: glib.res2 (score dummy)
+# Output: glib.vectorX (score dummy)
+# Output: glib.vectorY (score dummy)
+# Output: glib.vectorZ (score dummy)
 
 #__________________________________________________
 # INIT
+
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,26 +38,22 @@ execute unless entity @s[tag=glib.config.override] run scoreboard players set ve
 #__________________________________________________
 # CODE
 
-scoreboard players operation vector.fastNormalize.X glib.tmp = @s glib.var0
-scoreboard players operation vector.fastNormalize.Y glib.tmp = @s glib.var1
-scoreboard players operation vector.fastNormalize.Z glib.tmp = @s glib.var2
+scoreboard players operation vector.fastNormalize.X glib = @s glib.vectorX
+scoreboard players operation vector.fastNormalize.Y glib = @s glib.vectorY
+scoreboard players operation vector.fastNormalize.Z glib = @s glib.vectorZ
 
-execute if score vector.fastNormalize.X glib.tmp matches ..-1 run scoreboard players operation vector.fastNormalize.X glib.tmp *= -1 glib.const
-execute if score vector.fastNormalize.Y glib.tmp matches ..-1 run scoreboard players operation vector.fastNormalize.Y glib.tmp *= -1 glib.const
-execute if score vector.fastNormalize.Z glib.tmp matches ..-1 run scoreboard players operation vector.fastNormalize.Z glib.tmp *= -1 glib.const
+execute if score vector.fastNormalize.X glib matches ..-1 run scoreboard players operation vector.fastNormalize.X glib *= -1 glib.const
+execute if score vector.fastNormalize.Y glib matches ..-1 run scoreboard players operation vector.fastNormalize.Y glib *= -1 glib.const
+execute if score vector.fastNormalize.Z glib matches ..-1 run scoreboard players operation vector.fastNormalize.Z glib *= -1 glib.const
 
-scoreboard players operation vector.fastNormalize.max glib.tmp = vector.fastNormalize.X glib.tmp
-execute if score vector.fastNormalize.Y glib.tmp > vector.fastNormalize.max glib.tmp run scoreboard players operation vector.fastNormalize.max glib.tmp = vector.fastNormalize.Y glib.tmp
-execute if score vector.fastNormalize.Z glib.tmp > vector.fastNormalize.max glib.tmp run scoreboard players operation vector.fastNormalize.max glib.tmp = vector.fastNormalize.Z glib.tmp
+scoreboard players operation vector.fastNormalize.max glib = vector.fastNormalize.X glib
+execute if score vector.fastNormalize.Y glib > vector.fastNormalize.max glib run scoreboard players operation vector.fastNormalize.max glib = vector.fastNormalize.Y glib
+execute if score vector.fastNormalize.Z glib > vector.fastNormalize.max glib run scoreboard players operation vector.fastNormalize.max glib = vector.fastNormalize.Z glib
 
-scoreboard players operation @s glib.res0 = @s glib.var0
-scoreboard players operation @s glib.res1 = @s glib.var1
-scoreboard players operation @s glib.res2 = @s glib.var2
+scoreboard players operation @s glib.vectorX *= vector.fastNormalization.lenght glib.config
+scoreboard players operation @s glib.vectorY *= vector.fastNormalization.lenght glib.config
+scoreboard players operation @s glib.vectorZ *= vector.fastNormalization.lenght glib.config
 
-scoreboard players operation @s glib.res0 *= vector.fastNormalization.lenght glib.config
-scoreboard players operation @s glib.res1 *= vector.fastNormalization.lenght glib.config
-scoreboard players operation @s glib.res2 *= vector.fastNormalization.lenght glib.config
-
-scoreboard players operation @s glib.res0 /= vector.fastNormalize.max glib.tmp
-scoreboard players operation @s glib.res1 /= vector.fastNormalize.max glib.tmp
-scoreboard players operation @s glib.res2 /= vector.fastNormalize.max glib.tmp
+scoreboard players operation @s glib.vectorX /= vector.fastNormalize.max glib
+scoreboard players operation @s glib.vectorY /= vector.fastNormalize.max glib
+scoreboard players operation @s glib.vectorZ /= vector.fastNormalize.max glib

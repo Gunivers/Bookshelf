@@ -26,8 +26,8 @@
 # INIT
 
 scoreboard objectives add glib.res0 dummy
+scoreboard objectives add glib.res1 dummy
 scoreboard objectives add glib.res2 dummy
-scoreboard objectives add glib.res3 dummy
 
 scoreboard objectives add VectorLeft dummy
 scoreboard objectives add VectorUp dummy
@@ -40,5 +40,5 @@ scoreboard objectives add VectorFront dummy
 # CODE
 
 scoreboard players operation @s VectorLeft = @s glib.res0
-scoreboard players operation @s VectorUp = @s glib.res2
-scoreboard players operation @s VectorFront = @s glib.res3
+scoreboard players operation @s VectorUp = @s glib.res1
+scoreboard players operation @s VectorFront = @s glib.res2

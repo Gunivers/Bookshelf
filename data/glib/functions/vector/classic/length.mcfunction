@@ -14,8 +14,18 @@
 #__________________________________________________
 # PARAMETERS
 
+# Input: glib.vectorX (score dummy)
+# Input: glib.vectorY (score dummy)
+# Input: glib.vectorZ (score dummy)
+
+# Output: glib.res0 (score dummy)
+
 #__________________________________________________
 # INIT
+
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -23,10 +33,15 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation vector.length.var0 glib.tmp = @s glib.var0
+# Backup of Var0
+scoreboard players operation vector.length.var0 glib = @s glib.var0
 
+# Get lenght^2
 function glib:vector/classic/length_squared
+
+# sqrt(legnth^2)
 scoreboard players operation @s glib.var0 = @s glib.res0
 function glib:math/sqrt
 
-scoreboard players operation @s glib.var0 = vector.length.var0 glib.tmp
+# Restoring Var0
+scoreboard players operation @s glib.var0 = vector.length.var0 glib

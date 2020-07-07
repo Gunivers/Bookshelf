@@ -14,12 +14,16 @@
 #__________________________________________________
 # PARAMETERS
 
-# Output: @s Res0 (score) : Vector X
-# Output: @s Res1 (score) : Vector Y
-# Output: @s Res2 (score) : Vector Z
+# Output: glib.vectorX (score dummy)
+# Output: glib.vectorY (score dummy)
+# Output: glib.vectorZ (score dummy)
 
 #__________________________________________________
 # INIT
+
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -27,18 +31,18 @@
 #__________________________________________________
 # CODE
 
-execute store result score vectorX glib.var0 run data get entity @s Pos[0] 1000
-execute store result score vectorY glib.var0 run data get entity @s Pos[1] 1000
-execute store result score vectorZ glib.var0 run data get entity @s Pos[2] 1000
+execute store result score refX glib run data get entity @s Pos[0] 1000
+execute store result score refY glib run data get entity @s Pos[1] 1000
+execute store result score refZ glib run data get entity @s Pos[2] 1000
 
 summon armor_stand ~ ~ ~ {Tags:["glib","glib.getVector"],Invisible:1}
-execute store result score @s glib.res0 run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[0] 1000
-execute store result score @s glib.res1 run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[1] 1000
-execute store result score @s glib.res2 run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[2] 1000
+execute store result score @s glib.vectorX run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[0] 1000
+execute store result score @s glib.vectorY run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[1] 1000
+execute store result score @s glib.vectorZ run data get entity @e[type=armor_stand,tag=glib.getVector,limit=1] Pos[2] 1000
 
-scoreboard players operation @s glib.res0 -= vectorX glib.var0
-scoreboard players operation @s glib.res1 -= vectorY glib.var0
-scoreboard players operation @s glib.res2 -= vectorZ glib.var0
+scoreboard players operation @s glib.vectorX -= refX glib
+scoreboard players operation @s glib.vectorY -= refY glib
+scoreboard players operation @s glib.vectorZ -= refZ glib
 
 kill @e[tag=glib.getVector,type=armor_stand]
 
