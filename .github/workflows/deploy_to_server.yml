@@ -6,9 +6,9 @@ name: Deploy
 # events but only for the master branch
 on:
   push:
-    branches: [ server ]
+    branches: [ server-disabled ]
   pull_request:
-    branches: [ server ]
+    branches: [ server-disabled ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
