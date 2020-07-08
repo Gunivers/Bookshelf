@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 320 run summon falling_block ~ ~ ~ {BlockState:{Name:"lava"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 321 run summon falling_block ~ ~ ~ {BlockState:{Name:"lectern"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 34 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_button
-execute if score @s glib.block.id matches 35 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_door

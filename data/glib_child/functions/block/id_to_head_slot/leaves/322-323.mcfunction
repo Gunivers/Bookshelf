@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 322 run replaceitem entity @e[tag=setHeadSlot] armor.head lever
-execute if score @s glib.block.id matches 323 run replaceitem entity @e[tag=setHeadSlot] armor.head light_blue_banner

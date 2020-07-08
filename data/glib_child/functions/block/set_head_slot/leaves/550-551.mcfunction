@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 550 run replaceitem entity @e[tag=setHeadSlot] armor.head repeater
+execute if score @s glib.blockId matches 551 run replaceitem entity @e[tag=setHeadSlot] armor.head repeating_command_block

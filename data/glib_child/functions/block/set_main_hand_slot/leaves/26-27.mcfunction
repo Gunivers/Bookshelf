@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 26 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand bamboo
+execute if score @s glib.blockId matches 27 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 168 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_sapling"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 169 run summon falling_block ~ ~ ~ {BlockState:{Name:"dark_oak_sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

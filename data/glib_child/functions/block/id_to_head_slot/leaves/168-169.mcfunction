@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 168 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sapling
-execute if score @s glib.block.id matches 169 run replaceitem entity @e[tag=setHeadSlot] armor.head dark_oak_sign

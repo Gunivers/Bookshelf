@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 242 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand gold_ore
-execute if score @s glib.block.id matches 243 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand granite

@@ -37,7 +37,7 @@ scoreboard objectives add glib.link.to dummy
 # CODE:
 #____________________________________________________________________________________________________
 
-scoreboard players operation @s glib.id.target = @s glib.link.to
+scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 execute store result score @s glib.var0 run data get entity @s Rotation[0] 1000

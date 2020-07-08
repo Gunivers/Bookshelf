@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 532 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand red_mushroom
-execute if score @s glib.block.id matches 533 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand red_mushroom_block

@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 184 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_bubble_coral_block
-execute if score @s glib.block.id matches 185 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_bubble_coral_fan

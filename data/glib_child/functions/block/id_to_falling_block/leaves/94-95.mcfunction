@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 94 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_mushroom_block"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 95 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_shulker_box"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

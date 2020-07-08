@@ -16,15 +16,16 @@
 
 # Input: id.target glib.var0 (score)
 # Input: @e glib.id (score)
-# Output: @e glib.id.match (tag): On every entities that have the same glib.id as @s glib.id.target
-# Output: @e glib.id.upper (tag): On every entities that have an glib.id socre upper than @s glib.id.target
-# Output: @e glib.id.upper (tag): On every entities that have an glib.id socre lower than @s glib.id.target
+# Output: @e glib.id.match (tag): On every entities that have the same glib.id as @s glib.targetId
+# Output: @e glib.id.upper (tag): On every entities that have an glib.id socre upper than @s glib.targetId
+# Output: @e glib.id.upper (tag): On every entities that have an glib.id socre lower than @s glib.targetId
 # Output: @s glib.id.checker (tag) : if executed on an entity
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.id dummy
+scoreboard objectives add glib.id dummy [{"text":"GLib ","color":"gold"},{"text":"ID","color":"dark_gray"}]
+scoreboard objectives add glib.targetId dummy [{"text":"GLib ","color":"gold"},{"text":"Target ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -37,11 +38,11 @@ tag @e[tag=glib.id.upper] remove glib.id.upper
 tag @e[tag=glib.id.lower] remove glib.id.lower
 tag @e[tag=glib.id.checker] remove glib.id.checker
 
-scoreboard players operation @e glib.id -= id.target glib.var0
+scoreboard players operation @e glib.id -=  @s glib.targetId
 tag @e[scores={glib.id=0}] add glib.id.match
 tag @e[scores={glib.id=..-1}] add glib.id.lower
 tag @e[scores={glib.id=-1..}] add glib.id.upper
-scoreboard players operation @e glib.id += id.target glib.var0
+scoreboard players operation @e glib.id +=  @s glib.targetId
 tag @s add glib.id.checker
 
 # Start Debug

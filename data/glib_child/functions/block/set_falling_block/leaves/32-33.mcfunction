@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 32 run summon falling_block ~ ~ ~ {BlockState:{Name:"beetroots"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 33 run summon falling_block ~ ~ ~ {BlockState:{Name:"bell"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

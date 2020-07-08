@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 318 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand lapis_ore
-execute if score @s glib.block.id matches 319 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand large_fern

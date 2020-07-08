@@ -6,9 +6,8 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:block/convert/id_to_ridding_falling_block
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
-# Parallelizable: <true/false/global>
+# Original path: glib:block/set_ridding_falling_block
+# Parallelizable: true
 # Note:
 
 #__________________________________________________
@@ -17,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.blockId dummy [{"text":"GLib ","color":"gold"},{"text":"Block ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -25,5 +24,5 @@ scoreboard objectives add glib.var0 dummy
 #__________________________________________________
 # CODE
 
-execute if score @s glib.var0 matches ..511 run function glib_child:convert/block/id_to_ridding_falling_block/nodes/0-511
-execute if score @s glib.var0 matches 512.. run function glib_child:convert/block/id_to_ridding_falling_block/nodes/512-675
+execute if score @s glib.blockId matches ..511 run function glib_child:block/set_ridding_falling_block/nodes/0-511
+execute if score @s glib.blockId matches 512.. run function glib_child:block/set_ridding_falling_block/nodes/512-675

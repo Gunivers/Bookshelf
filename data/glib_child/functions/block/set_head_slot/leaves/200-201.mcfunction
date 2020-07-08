@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 200 run replaceitem entity @e[tag=setHeadSlot] armor.head detector_rail
+execute if score @s glib.blockId matches 201 run replaceitem entity @e[tag=setHeadSlot] armor.head diamond_block

@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 640 run replaceitem entity @e[tag=setHeadSlot] armor.head vine
-execute if score @s glib.block.id matches 641 run replaceitem entity @e[tag=setHeadSlot] armor.head air

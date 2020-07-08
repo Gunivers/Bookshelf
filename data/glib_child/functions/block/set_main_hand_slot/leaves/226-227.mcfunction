@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 226 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_stone_brick_wall
+execute if score @s glib.blockId matches 227 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand farmland

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 12 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_trapdoor
+execute if score @s glib.blockId matches 13 run replaceitem entity @e[tag=setHeadSlot] armor.head air

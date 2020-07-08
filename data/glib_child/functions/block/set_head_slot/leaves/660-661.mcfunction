@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 660 run replaceitem entity @e[tag=setHeadSlot] armor.head wither_skeleton_skull
+execute if score @s glib.blockId matches 661 run replaceitem entity @e[tag=setHeadSlot] armor.head air

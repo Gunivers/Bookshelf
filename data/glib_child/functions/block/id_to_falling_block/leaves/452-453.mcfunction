@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 452 run summon falling_block ~ ~ ~ {BlockState:{Name:"podzol"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 453 run summon falling_block ~ ~ ~ {BlockState:{Name:"polished_andesite"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

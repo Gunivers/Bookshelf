@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 198 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_tube_coral_fan
-execute if score @s glib.block.id matches 199 run replaceitem entity @e[tag=setHeadSlot] armor.head air

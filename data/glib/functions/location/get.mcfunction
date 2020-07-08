@@ -7,8 +7,7 @@
 # Last check:
 
 # Original path: glib:location/get
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________

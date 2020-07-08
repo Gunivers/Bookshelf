@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 42 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sapling
+execute if score @s glib.blockId matches 43 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_sign

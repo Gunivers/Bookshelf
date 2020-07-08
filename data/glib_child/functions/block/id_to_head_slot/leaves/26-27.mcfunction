@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 26 run replaceitem entity @e[tag=setHeadSlot] armor.head bamboo
-execute if score @s glib.block.id matches 27 run replaceitem entity @e[tag=setHeadSlot] armor.head air

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 40 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_planks
+execute if score @s glib.blockId matches 41 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand birch_pressure_plate

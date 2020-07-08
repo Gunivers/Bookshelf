@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 388 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mushroom_stem
-execute if score @s glib.block.id matches 389 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mycelium

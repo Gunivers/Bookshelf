@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 22 run replaceitem entity @e[tag=setHeadSlot] armor.head anvil
-execute if score @s glib.block.id matches 23 run replaceitem entity @e[tag=setHeadSlot] armor.head air

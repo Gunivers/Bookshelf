@@ -1,4 +1,4 @@
-q#__________________________________________________
+#__________________________________________________
 # INFO     Copyright © 2020 Gunivers.
 
 # Authors: theogiraudet
@@ -6,9 +6,8 @@ q#__________________________________________________
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:block/convert/block_to_id
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/object#block
-# Parallelizable: <true/false/global>
+# Original path: glib:block/get
+# Parallelizable: true
 # Note:
 
 #__________________________________________________
@@ -17,7 +16,7 @@ q#__________________________________________________
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.block.id dummy
+scoreboard objectives add glib.blockId dummy [{"text":"GLib ","color":"gold"},{"text":"Block ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -25,14 +24,14 @@ scoreboard objectives add glib.block.id dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set @s glib.block.id 0
-execute unless block ~ ~ ~ #glib_child:convert/group0 run scoreboard players add @s glib.block.id 512
-execute unless block ~ ~ ~ #glib_child:convert/group1 run scoreboard players add @s glib.block.id 256
-execute unless block ~ ~ ~ #glib_child:convert/group2 run scoreboard players add @s glib.block.id 128
-execute unless block ~ ~ ~ #glib_child:convert/group3 run scoreboard players add @s glib.block.id 64
-execute unless block ~ ~ ~ #glib_child:convert/group4 run scoreboard players add @s glib.block.id 32
-execute unless block ~ ~ ~ #glib_child:convert/group5 run scoreboard players add @s glib.block.id 16
-execute unless block ~ ~ ~ #glib_child:convert/group6 run scoreboard players add @s glib.block.id 8
-execute unless block ~ ~ ~ #glib_child:convert/group7 run scoreboard players add @s glib.block.id 4
-execute unless block ~ ~ ~ #glib_child:convert/group8 run scoreboard players add @s glib.block.id 2
-execute unless block ~ ~ ~ #glib_child:convert/group9 run scoreboard players add @s glib.block.id 1
+scoreboard players set @s glib.blockId 0
+execute unless block ~ ~ ~ #glib_child:block/group0 run scoreboard players add @s glib.blockId 512
+execute unless block ~ ~ ~ #glib_child:block/group1 run scoreboard players add @s glib.blockId 256
+execute unless block ~ ~ ~ #glib_child:block/group2 run scoreboard players add @s glib.blockId 128
+execute unless block ~ ~ ~ #glib_child:block/group3 run scoreboard players add @s glib.blockId 64
+execute unless block ~ ~ ~ #glib_child:block/group4 run scoreboard players add @s glib.blockId 32
+execute unless block ~ ~ ~ #glib_child:block/group5 run scoreboard players add @s glib.blockId 16
+execute unless block ~ ~ ~ #glib_child:block/group6 run scoreboard players add @s glib.blockId 8
+execute unless block ~ ~ ~ #glib_child:block/group7 run scoreboard players add @s glib.blockId 4
+execute unless block ~ ~ ~ #glib_child:block/group8 run scoreboard players add @s glib.blockId 2
+execute unless block ~ ~ ~ #glib_child:block/group9 run scoreboard players add @s glib.blockId 1

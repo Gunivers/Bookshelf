@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 390 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand netherrack
+execute if score @s glib.blockId matches 391 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand nether_bricks

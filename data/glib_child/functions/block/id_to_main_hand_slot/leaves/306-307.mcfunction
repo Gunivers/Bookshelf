@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 306 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_sapling
-execute if score @s glib.block.id matches 307 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_sign

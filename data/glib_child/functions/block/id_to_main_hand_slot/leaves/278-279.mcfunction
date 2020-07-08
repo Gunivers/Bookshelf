@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 278 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand hopper
-execute if score @s glib.block.id matches 279 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand horn_coral

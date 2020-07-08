@@ -61,8 +61,8 @@ scoreboard objectives remove glib.ttl
 
 	# ~~ Id ~~
 scoreboard objectives remove glib.id
-scoreboard objectives remove glib.id.target
-scoreboard objectives remove glib.id.parent
+scoreboard objectives remove glib.targetId
+scoreboard objectives remove glib.parentId
 
  # ~~ Link ~~
 scoreboard objectives remove glib.link.r.x

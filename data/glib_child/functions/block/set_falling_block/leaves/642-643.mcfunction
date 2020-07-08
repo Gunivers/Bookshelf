@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 642 run summon falling_block ~ ~ ~ {BlockState:{Name:"wall_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 643 run summon falling_block ~ ~ ~ {BlockState:{Name:"water"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 578 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand smooth_stone_slab
+execute if score @s glib.blockId matches 579 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand snow

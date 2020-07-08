@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 432 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand packed_ice
-execute if score @s glib.block.id matches 433 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand peony

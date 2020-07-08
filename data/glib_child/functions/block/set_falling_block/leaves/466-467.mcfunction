@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 466 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_azure_bluet"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 467 run summon falling_block ~ ~ ~ {BlockState:{Name:"potted_bamboo"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

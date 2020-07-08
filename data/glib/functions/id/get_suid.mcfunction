@@ -20,7 +20,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.id dummy
+scoreboard objectives add glib.id dummy [{"text":"GLib ","color":"gold"},{"text":"ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

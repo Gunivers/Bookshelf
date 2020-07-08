@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 100 run replaceitem entity @e[tag=setHeadSlot] armor.head brown_wool
+execute if score @s glib.blockId matches 101 run replaceitem entity @e[tag=setHeadSlot] armor.head air

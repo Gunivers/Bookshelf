@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 268 run replaceitem entity @e[tag=setHeadSlot] armor.head green_glazed_terracotta
+execute if score @s glib.blockId matches 269 run replaceitem entity @e[tag=setHeadSlot] armor.head green_shulker_box

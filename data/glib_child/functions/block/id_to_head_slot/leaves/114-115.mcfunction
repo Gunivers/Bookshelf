@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 114 run replaceitem entity @e[tag=setHeadSlot] armor.head chain_command_block
-execute if score @s glib.block.id matches 115 run replaceitem entity @e[tag=setHeadSlot] armor.head chest

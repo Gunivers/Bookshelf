@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 240 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand glowstone
-execute if score @s glib.block.id matches 241 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand gold_block

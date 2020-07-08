@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 408 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_pressure_plate
+execute if score @s glib.blockId matches 409 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_sapling

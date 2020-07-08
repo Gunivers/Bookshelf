@@ -17,18 +17,18 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.r.x dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Relative position X","color":"dark_gray"}]
-scoreboard objectives add glib.link.r.y dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Relative position Y","color":"dark_gray"}]
-scoreboard objectives add glib.link.r.z dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Relative position Z","color":"dark_gray"}]
+scoreboard objectives add glib.link.r.x dummy [{"text":"GLib ","color":"gold"},{"text":"Relative position X","color":"dark_gray"}]
+scoreboard objectives add glib.link.r.y dummy [{"text":"GLib ","color":"gold"},{"text":"Relative position Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.r.z dummy [{"text":"GLib ","color":"gold"},{"text":"Relative position Z","color":"dark_gray"}]
 
-scoreboard objectives add glib.link.l.x dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Local position X","color":"dark_gray"}]
-scoreboard objectives add glib.link.l.y dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Local position Y","color":"dark_gray"}]
-scoreboard objectives add glib.link.l.z dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Local position Z","color":"dark_gray"}]
+scoreboard objectives add glib.link.l.x dummy [{"text":"GLib ","color":"gold"},{"text":"Local position X","color":"dark_gray"}]
+scoreboard objectives add glib.link.l.y dummy [{"text":"GLib ","color":"gold"},{"text":"Local position Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.l.z dummy [{"text":"GLib ","color":"gold"},{"text":"Local position Z","color":"dark_gray"}]
 
-scoreboard objectives add glib.link.r.v dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Relative orientation V","color":"dark_gray"}]
-scoreboard objectives add glib.link.r.h dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Relative orientation H","color":"dark_gray"}]
+scoreboard objectives add glib.link.r.v dummy [{"text":"GLib ","color":"gold"},{"text":"Relative orientation V","color":"dark_gray"}]
+scoreboard objectives add glib.link.r.h dummy [{"text":"GLib ","color":"gold"},{"text":"Relative orientation H","color":"dark_gray"}]
 
-scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Link - Linked to","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

@@ -7,8 +7,7 @@
 # Last check:
 
 # Original path: glib:location/get_distance_squared_ata
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
@@ -17,41 +16,28 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
-
-scoreboard objectives add glib.res0 dummy
-
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
-execute store result score @s glib.var0 run data get entity @s Pos[0] 1
-execute store result score @s glib.var1 run data get entity @s Pos[1] 1
-execute store result score @s glib.var2 run data get entity @s Pos[2] 1
+# Backup
+scoreboard players operation location.getDistance.locX glib = @s glib.locX
+scoreboard players operation location.getDistance.locY glib = @s glib.locY
+scoreboard players operation location.getDistance.locZ glib = @s glib.locZ
 
-summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Distance"]}
+function glib:location/get_relative_ata
 
-execute store result score @s glib.var3 as @e[tag=Glib_Get_Distance] run data get entity @s Pos[0] 1
-execute store result score @s glib.var4 as @e[tag=Glib_Get_Distance] run data get entity @s Pos[1] 1
-execute store result score @s glib.var4 as @e[tag=Glib_Get_Distance] run data get entity @s Pos[2] 1
+scoreboard players operation @s glib.locX *= @s glib.locX
+scoreboard players operation @s glib.locY *= @s glib.locY
+scoreboard players operation @s glib.locZ *= @s glib.locZ
 
-kill @e[tag=Glib_Get_Distance]
+scoreboard players operation @s glib.res0 = @s glib.locX
+scoreboard players operation @s glib.res0 += @s glib.locY
+scoreboard players operation @s glib.res0 += @s glib.locZ
 
-scoreboard players operation @s glib.var3 -= @s glib.var0
-scoreboard players operation @s glib.var4 -= @s glib.var1
-scoreboard players operation @s glib.var4 -= @s glib.var2
-
-scoreboard players operation @s glib.var3 *= @s glib.var3
-scoreboard players operation @s glib.var4 *= @s glib.var4
-scoreboard players operation @s glib.var4 *= @s glib.var4
-
-scoreboard players operation @s glib.res0 = @s glib.var3
-scoreboard players operation @s glib.res0 += @s glib.var4
-scoreboard players operation @s glib.res0 += @s glib.var4
+# Restore
+scoreboard players operation @s glib.locX = location.getDistance.locX glib
+scoreboard players operation @s glib.locY = location.getDistance.locY glib
+scoreboard players operation @s glib.locZ = location.getDistance.locZ glib

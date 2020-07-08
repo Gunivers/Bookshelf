@@ -18,7 +18,7 @@
 # 	- Pos_zf (score dummy)
 
 # - Block ID
-#	glib.block.id (score dummy)
+#	glib.blockId (score dummy)
 #
 # OUTPUT: 
 # - Block place bettwen Location 1 and Location 2 
@@ -37,7 +37,7 @@ function glib_child:mapedit/set/ini
 
 
 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.block.id = @s glib.block.id
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.blockId = @s glib.blockId
 
 #1 corespon au setblock
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 1

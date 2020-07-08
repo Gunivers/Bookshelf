@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 1566..1574 run function glib_child:block/convert/child/id_to_block/nodes/1566-1574
-execute if score @s BlockId matches 1575..1583 run function glib_child:block/convert/child/id_to_block/nodes/1575-1583
-execute if score @s BlockId matches 1584..1592 run function glib_child:block/convert/child/id_to_block/nodes/1584-1592

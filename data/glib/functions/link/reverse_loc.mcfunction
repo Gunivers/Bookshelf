@@ -36,7 +36,7 @@ scoreboard objectives add glib.link.to dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.id.target = @s glib.link.to
+scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 #   Relative Position

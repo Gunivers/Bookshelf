@@ -22,7 +22,7 @@
 #   glib.original.id (score dummy)
 
 # - Block ID :  ID of the new block 
-#	glib.block.id (score dummy)
+#	glib.blockId (score dummy)
 
 #
 # OUTPUT: 
@@ -51,8 +51,8 @@ function glib_child:mapedit/set/ini
 
 
 #id du nouveaux block 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.replace.id = @s glib.block.id
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.block.id = @s glib.block.id
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.replace.id = @s glib.blockId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.blockId = @s glib.blockId
 #ID du block a remplacer 
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.original.id = @s glib.original.id
 

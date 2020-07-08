@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 220 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_portal_frame
-execute if score @s glib.block.id matches 221 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_rod

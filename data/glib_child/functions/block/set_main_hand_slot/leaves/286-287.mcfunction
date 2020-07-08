@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 286 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand infested_cracked_stone_bricks
+execute if score @s glib.blockId matches 287 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand infested_mossy_stone_bricks

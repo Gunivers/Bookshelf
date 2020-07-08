@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 146 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 147 run summon falling_block ~ ~ ~ {BlockState:{Name:"cyan_bed"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

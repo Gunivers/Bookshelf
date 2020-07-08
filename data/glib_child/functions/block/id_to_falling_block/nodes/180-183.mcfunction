@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches ..181 run function glib_child:convert/block/id_to_falling_block/leaves/180-181
-execute if score @s glib.block.id matches 182.. run function glib_child:convert/block/id_to_falling_block/leaves/182-183

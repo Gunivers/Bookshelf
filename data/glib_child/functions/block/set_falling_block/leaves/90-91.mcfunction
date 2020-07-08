@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 90 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_concrete"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 91 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_concrete_powder"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

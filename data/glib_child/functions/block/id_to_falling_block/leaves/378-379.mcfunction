@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 378 run summon falling_block ~ ~ ~ {BlockState:{Name:"melon_stem"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 379 run summon falling_block ~ ~ ~ {BlockState:{Name:"mossy_cobblestone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

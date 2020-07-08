@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 14 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_wood
-execute if score @s glib.block.id matches 15 run replaceitem entity @e[tag=setHeadSlot] armor.head activator_rail

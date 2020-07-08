@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches ..351 run function glib_child:block/set_ridding_falling_block/nodes/320-351
+execute if score @s glib.blockId matches 352.. run function glib_child:block/set_ridding_falling_block/nodes/352-383

@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 552 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand rose_bush
-execute if score @s glib.block.id matches 553 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand sand

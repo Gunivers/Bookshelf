@@ -27,7 +27,7 @@ scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
 # CODE
-scoreboard players operation @s glib.id.target = @s glib.link.to
+scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 execute at @e[tag=glib.id.match,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Link_Keep_Local_Location"]}

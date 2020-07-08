@@ -1,14 +1,13 @@
 #__________________________________________________
 # INFO     Copyright © 2020 Gunivers.
 
-# Authors: Leirof
+# Authors: theogiraudet
 # Contributors:
 # MC Version: 1.13
 # Last check:
 
 # Original path: glib:location/is_in_cave
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: Return 1 if the entity is in a cave, 0 else.
 
 #__________________________________________________
@@ -22,4 +21,5 @@
 
 #__________________________________________________
 # CODE
+
 execute store result score @s glib.res0 if block ~ ~ ~ cave_air

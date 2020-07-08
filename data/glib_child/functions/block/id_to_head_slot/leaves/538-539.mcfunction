@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 538 run replaceitem entity @e[tag=setHeadSlot] armor.head red_sand
-execute if score @s glib.block.id matches 539 run replaceitem entity @e[tag=setHeadSlot] armor.head red_sandstone

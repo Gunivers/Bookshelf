@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 138 run replaceitem entity @e[tag=setHeadSlot] armor.head cracked_stone_bricks
-execute if score @s glib.block.id matches 139 run replaceitem entity @e[tag=setHeadSlot] armor.head crafting_table

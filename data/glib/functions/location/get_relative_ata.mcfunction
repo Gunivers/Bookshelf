@@ -7,8 +7,7 @@
 # Last check:
 
 # Original path: glib:location/get_relative_ata
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
@@ -17,13 +16,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.r.x dummy
-scoreboard objectives add glib.link.r.y dummy
-scoreboard objectives add glib.link.r.z dummy
-
-scoreboard objectives add LocX dummy
-scoreboard objectives add LocY dummy
-scoreboard objectives add LocZ dummy
+scoreboard objectives add glib.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
+scoreboard objectives add glib.locY dummy [{"text":"GLib ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
+scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -31,16 +26,13 @@ scoreboard objectives add LocZ dummy
 #__________________________________________________
 # CODE
 
-summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Loc_Relative"]}
+execute at @s run function glib:location/get
 
-execute store result score @s LocX run data get entity @s Pos[0] 1
-execute store result score @s LocY run data get entity @s Pos[1] 1
-execute store result score @s LocZ run data get entity @s Pos[2] 1
+function glib_config:default_entity
+execute as @e[tag=glib.new] run function glib:location/get
 
-execute store result score @s glib.link.r.x run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[0] 1
-execute store result score @s glib.link.r.y run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[1] 1
-execute store result score @s glib.link.r.z run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[2] 1
+scoreboard players operation @s glib.locX -= @e[tag=glib.new,limit=1,sort=nearest] glib.locX
+scoreboard players operation @s glib.locY -= @e[tag=glib.new,limit=1,sort=nearest] glib.locY
+scoreboard players operation @s glib.locZ -= @e[tag=glib.new,limit=1,sort=nearest] glib.locZ
 
-scoreboard players operation @s glib.link.r.x -= @s LocX
-scoreboard players operation @s glib.link.r.y -= @s LocY
-scoreboard players operation @s glib.link.r.z -= @s LocZ
+execute as @e[tag=glib.new] run function glib:health/safe_kill

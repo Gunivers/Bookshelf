@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 222 run replaceitem entity @e[tag=setHeadSlot] armor.head end_stone
-execute if score @s glib.block.id matches 223 run replaceitem entity @e[tag=setHeadSlot] armor.head end_stone_bricks

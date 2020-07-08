@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 274 run replaceitem entity @e[tag=setHeadSlot] armor.head green_wool
+execute if score @s glib.blockId matches 275 run replaceitem entity @e[tag=setHeadSlot] armor.head grindstone

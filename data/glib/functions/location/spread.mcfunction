@@ -13,53 +13,56 @@
 
 #__________________________________________________
 # PARAMETERS
+
 #glib.var3: CenterX
-#glib.var4: CenterZ 
-#glib.var4: Radius
+#glib.var4: CenterZ
+#glib.var5: Radius
+
 #__________________________________________________
 # INIT
-scoreboard objectives add glib.res0 dummy
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var6 dummy
 
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
-scoreboard players operation @s glib.var6 = @s glib.var4
+
+# Backup
+scoreboard players operation location.spread.locX glib = @s glib.locX
+scoreboard players operation location.spread.locY glib = @s glib.locY
+scoreboard players operation location.spread.locZ glib = @s glib.locZ
+
+scoreboard players operation @s glib.var6 = @s glib.var5
 scoreboard players operation @s glib.var6 *= 2 glib.const
 scoreboard players operation @s glib.var6 += 1 glib.const
 
 #Random
 function glib:math/random
-scoreboard players operation @s glib.res0 %= @s glib.var6 
+scoreboard players operation @s glib.res0 %= @s glib.var6
 
-scoreboard players set @s glib.var0 0
-execute if score @s glib.res0 > @s glib.var4 run scoreboard players operation @s glib.var0 -= @s glib.res0
-execute if score @s glib.res0 > @s glib.var4 run scoreboard players operation @s glib.var0 /= 2 glib.const
-execute if score @s glib.res0 <= @s glib.var4 run scoreboard players operation @s glib.var0 = @s glib.res0
+scoreboard players set @s glib.locX 0
+execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locX -= @s glib.res0
+execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locX /= 2 glib.const
+execute if score @s glib.res0 <= @s glib.var5 run scoreboard players operation @s glib.locX = @s glib.res0
 
-scoreboard players operation @s glib.var0 += @s glib.var3
+scoreboard players operation @s glib.locX += @s glib.var3
 
 #Random
 function glib:math/random
-scoreboard players operation @s glib.res0 %= @s glib.var6 
+scoreboard players operation @s glib.res0 %= @s glib.var6
 
-scoreboard players set @s glib.var2 0
-execute if score @s glib.res0 > @s glib.var4 run scoreboard players operation @s glib.var2 -= @s glib.res0
-execute if score @s glib.res0 > @s glib.var4 run scoreboard players operation @s glib.var2 /= 2 glib.const
-execute if score @s glib.res0 <= @s glib.var4 run scoreboard players operation @s glib.var2 = @s glib.res0
+scoreboard players set @s glib.locZ 0
+execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locZ -= @s glib.res0
+execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locZ /= 2 glib.const
+execute if score @s glib.res0 <= @s glib.var5 run scoreboard players operation @s glib.locZ = @s glib.res0
 
-scoreboard players operation @s glib.var2 += @s glib.var4
+scoreboard players operation @s glib.locZ += @s glib.var4
 
-execute store result score @s glib.var1 run data get entity @s Pos[1] 1
+execute store result score @s glib.locY run data get entity @s Pos[1] 1
 
 function glib:location/set
 
+# Restore
+scoreboard players operation @s glib.locX = location.spread.locX glib
+scoreboard players operation @s glib.locY = location.spread.locY glib
+scoreboard players operation @s glib.locZ = location.spread.locZ glib

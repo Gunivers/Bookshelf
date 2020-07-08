@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 370 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_shulker_box
+execute if score @s glib.blockId matches 371 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magenta_stained_glass

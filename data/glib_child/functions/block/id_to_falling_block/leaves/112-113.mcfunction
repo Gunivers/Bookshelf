@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 112 run summon falling_block ~ ~ ~ {BlockState:{Name:"cauldron"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.block.id matches 113 run summon falling_block ~ ~ ~ {BlockState:{Name:"cave_air"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

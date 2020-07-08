@@ -1,2 +1,0 @@
-execute if score @s glib.block.id matches 586 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_fence
-execute if score @s glib.block.id matches 587 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand spruce_fence_gate
