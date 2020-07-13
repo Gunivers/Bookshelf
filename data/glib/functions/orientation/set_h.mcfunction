@@ -4,11 +4,10 @@
 # Authors: theogiraudet
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:orientation/set_h
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: It was excessively more impressive in 1.12 ...
 
 #__________________________________________________
@@ -17,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
+scoreboard objectives add glib.oriH dummy
 
 #__________________________________________________
 # CONFIG
@@ -25,10 +24,7 @@ scoreboard objectives add glib.var0 dummy
 #__________________________________________________
 # CODE
 
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
+execute at @s run function glib_config:default_entity
 
-tp @e[type=armor_stand,tag=SetRotaton,limit=1] @s
-
-execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var0
-tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
-kill @e[type=armor_stand,tag=SetRotation,limit=1]
+execute store result entity @e[tag=glib.new,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.oriH
+tp @s @e[tag=glib.new,limit=1]

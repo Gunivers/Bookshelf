@@ -29,10 +29,7 @@ scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 #   Relative Position
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"----------: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locX"},"color":"gold"}]
 execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/location/get_x
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locX"},"color":"gold"}]
 scoreboard players operation @s glib.locX += @s glib.link.rx
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locX"},"color":"gold"}]
 
 function glib_accuracy:10-3/location/set_x

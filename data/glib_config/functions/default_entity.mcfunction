@@ -1,4 +1,4 @@
-execute as @e[tag=glib.new] run glib:health/safe_kill
+execute as @e[tag=glib.new] run function glib:health/safe_kill
 summon area_effect_cloud ~ 0 ~ {Tags:["glib","glib.new"],NoGravity:1,Duration:999999}
 # summon armor_stand ~ 0 ~ {Tags:["glib","glib.new"],NoGravity:1,Invisible:1,Marker:1}
 

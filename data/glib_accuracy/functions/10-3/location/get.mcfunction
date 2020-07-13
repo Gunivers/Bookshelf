@@ -24,4 +24,4 @@
 
 function glib_accuracy:10-3/location/get_x
 function glib_accuracy:10-3/location/get_y
-function glib_accuracy:10-3/location/get_Z
+function glib_accuracy:10-3/location/get_z

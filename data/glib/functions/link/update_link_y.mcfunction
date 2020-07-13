@@ -28,14 +28,11 @@ scoreboard objectives add glib.link.to dummy
 # CODE
 
 scoreboard players operation @s glib.targetId = @s glib.link.to
-
 function glib:id/check
 
-#   Relative Position
-execute store result score @s glib.var0 run data get entity @s Pos[1] 1000
+# Relative Position
+execute at @s run function glib_accuracy:10-3/location/get_y
+scoreboard players operation @s glib.link.ry = @s glib.locY
 
-execute store result score @s glib.link.ry run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[1] 1000
-
-scoreboard players operation @s glib.link.ry -= @s glib.var0
-
-scoreboard players operation @s glib.link.ry *= -1 glib.const
+execute at @e[tag=glib.id.match] run function glib_accuracy:10-3/location/get_y
+scoreboard players operation @s glib.link.ry -= @s glib.locY

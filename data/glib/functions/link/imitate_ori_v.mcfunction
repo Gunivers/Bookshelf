@@ -28,7 +28,7 @@ scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
-#   Relative Position
+#   Relative Orientation
 execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/orientation/get_v
 scoreboard players operation @s glib.oriV += @s glib.link.rv
 

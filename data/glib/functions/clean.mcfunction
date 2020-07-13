@@ -73,6 +73,7 @@ scoreboard objectives remove glib.link.rh
 scoreboard objectives remove glib.link.lx
 scoreboard objectives remove glib.link.ly
 scoreboard objectives remove glib.link.lz
+scoreboard objectives remove glib.link.to
 
 	# ~~ Location ~~
 scoreboard objectives remove glib.locX

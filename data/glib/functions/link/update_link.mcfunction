@@ -17,63 +17,21 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-
-scoreboard objectives add glib.link.rx dummy
-scoreboard objectives add glib.link.ry dummy
-scoreboard objectives add glib.link.rz dummy
-
-scoreboard objectives add glib.link.rh dummy
-scoreboard objectives add glib.link.rv dummy
-
-scoreboard objectives add glib.link.to dummy
-
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.targetId = @s glib.link.to
+function glib:link/update_link_x
+function glib:link/update_link_y
+function glib:link/update_link_z
+function glib:link/update_link_h
+function glib:link/update_link_v
 
-function glib:id/check
 
-#   Relative Position
-execute store result score @s glib.var0 run data get entity @s Pos[0] 1000
-execute store result score @s glib.var1 run data get entity @s Pos[1] 1000
-execute store result score @s glib.var2 run data get entity @s Pos[2] 1000
-
-execute store result score @s glib.link.rx run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[0] 1000
-execute store result score @s glib.link.ry run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[1] 1000
-execute store result score @s glib.link.rz run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
-
-scoreboard players operation @s glib.link.rx -= @s glib.var0
-scoreboard players operation @s glib.link.ry -= @s glib.var1
-scoreboard players operation @s glib.link.rz -= @s glib.var2
-
-scoreboard players operation @s glib.link.rx *= -1 glib.const
-scoreboard players operation @s glib.link.ry *= -1 glib.const
-scoreboard players operation @s glib.link.rz *= -1 glib.const
-
-#   Relative Orientation
-execute store result score @s glib.var0 run data get entity @s Rotation[0] 1000
-execute store result score @s glib.var1 run data get entity @s Rotation[1] 1000
-
-execute store result score @s glib.link.rv run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[0] 1000
-execute store result score @s glib.link.rh run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[1] 1000
-
-scoreboard players operation @s glib.link.rv -= @s glib.var0
-scoreboard players operation @s glib.link.rh -= @s glib.var1
-
-scoreboard players operation @s glib.link.rv *= -1 glib.const
-scoreboard players operation @s glib.link.rh *= -1 glib.const
 
 execute as @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:orientation/get
-
-# tellraw @a[tag=Debug] ["",{"text":"----------\nLoc -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rx"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.ry"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rz"}}]
-# tellraw @a[tag=Debug] ["",{"text":"Ori -> ","color":"gray"},{"text":"H: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":".   V: ","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}}]
 
 # Cos(Phi)
 scoreboard players operation @s glib.var0 = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.h

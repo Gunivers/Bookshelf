@@ -60,7 +60,7 @@ execute at @s run function glib_accuracy:10-3/orientation/get
 scoreboard players operation @s glib.link.rh = @s glib.oriH
 scoreboard players operation @s glib.link.rh = @s glib.oriV
 
-execute as @e[tag=glib.link.target] at @s run function glib_accuracy:10-3/orientation/get
+execute at @e[tag=glib.link.target] run function glib_accuracy:10-3/orientation/get
 scoreboard players operation @s glib.link.rh -= @s glib.oriH
 scoreboard players operation @s glib.link.rv -= @s glib.oriV
 
