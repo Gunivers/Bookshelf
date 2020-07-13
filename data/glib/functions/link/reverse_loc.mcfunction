@@ -24,9 +24,9 @@ scoreboard objectives add glib.var3 dummy
 scoreboard objectives add glib.var4 dummy
 scoreboard objectives add glib.var4 dummy
 
-scoreboard objectives add glib.link.r.x dummy
-scoreboard objectives add glib.link.r.y dummy
-scoreboard objectives add glib.link.r.z dummy
+scoreboard objectives add glib.link.rx dummy
+scoreboard objectives add glib.link.ry dummy
+scoreboard objectives add glib.link.rz dummy
 
 scoreboard objectives add glib.link.to dummy
 
@@ -54,14 +54,14 @@ scoreboard players operation @s glib.var4 -= @s glib.var2
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Loc]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.y"}}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rx"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.ry"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rz"}}]
 ### END DEBUG
 
-scoreboard players operation @s glib.var3 -= @s glib.link.r.x
-scoreboard players operation @s glib.var4 -= @s glib.link.r.y
-scoreboard players operation @s glib.var4 -= @s glib.link.r.z
+scoreboard players operation @s glib.var3 -= @s glib.link.rx
+scoreboard players operation @s glib.var4 -= @s glib.link.ry
+scoreboard players operation @s glib.var4 -= @s glib.link.rz
 
 scoreboard players operation @s glib.var0 -= @s glib.var3
 scoreboard players operation @s glib.var1 -= @s glib.var4

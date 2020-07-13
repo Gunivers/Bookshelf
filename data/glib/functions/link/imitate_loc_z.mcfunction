@@ -19,7 +19,7 @@
 
 scoreboard objectives add glib.var0 dummy
 scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.link.r.z dummy
+scoreboard objectives add glib.link.rz dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -41,10 +41,10 @@ scoreboard players operation @s glib.var1 -= @s glib.var0
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Z]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.z"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rz"}}]
 ### END DEBUG
 
-scoreboard players operation @s glib.var1 += @s glib.link.r.z
+scoreboard players operation @s glib.var1 += @s glib.link.rz
 
 scoreboard players operation @s glib.var0 += @s glib.var1
 

@@ -18,7 +18,7 @@
 # INIT
 
 scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.link.r.h dummy
+scoreboard objectives add glib.link.rh dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -33,8 +33,8 @@ function glib:id/check
 
 execute store result score @s glib.var1 run data get entity @s Rotation[1] 1000
 
-execute store result score @s glib.link.r.h run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[1] 1000
+execute store result score @s glib.link.rh run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[1] 1000
 
-scoreboard players operation @s glib.link.r.h -= @s glib.var1
+scoreboard players operation @s glib.link.rh -= @s glib.var1
 
-scoreboard players operation @s glib.link.r.h *= -1 glib.const
+scoreboard players operation @s glib.link.rh *= -1 glib.const

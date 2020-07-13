@@ -65,14 +65,14 @@ scoreboard objectives remove glib.targetId
 scoreboard objectives remove glib.parentId
 
  # ~~ Link ~~
-scoreboard objectives remove glib.link.r.x
-scoreboard objectives remove glib.link.r.y
-scoreboard objectives remove glib.link.r.z
-scoreboard objectives remove glib.link.r.v
-scoreboard objectives remove glib.link.r.h
-scoreboard objectives remove glib.link.l.x
-scoreboard objectives remove glib.link.l.y
-scoreboard objectives remove glib.link.l.z
+scoreboard objectives remove glib.link.rx
+scoreboard objectives remove glib.link.ry
+scoreboard objectives remove glib.link.rz
+scoreboard objectives remove glib.link.rv
+scoreboard objectives remove glib.link.rh
+scoreboard objectives remove glib.link.lx
+scoreboard objectives remove glib.link.ly
+scoreboard objectives remove glib.link.lz
 
 	# ~~ Location ~~
 scoreboard objectives remove glib.locX

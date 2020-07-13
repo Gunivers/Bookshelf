@@ -20,7 +20,7 @@
 scoreboard objectives add glib.var0 dummy
 scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.link.r.h dummy
+scoreboard objectives add glib.link.rh dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -42,10 +42,10 @@ scoreboard players operation @s glib.var3 -= @s glib.var1
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Orientation]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.h"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rh"}}]
 ### END DEBUG
 
-scoreboard players operation @s glib.var3 -= @s glib.link.r.h
+scoreboard players operation @s glib.var3 -= @s glib.link.rh
 scoreboard players operation @s glib.var1 -= @s glib.var3
 function glib_accuracy:10-3/orientation/set_v
 function glib:link/update_link_p

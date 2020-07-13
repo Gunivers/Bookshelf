@@ -17,9 +17,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.l.x dummy
-scoreboard objectives add glib.link.l.y dummy
-scoreboard objectives add glib.link.l.z dummy
+scoreboard objectives add glib.link.lx dummy
+scoreboard objectives add glib.link.ly dummy
+scoreboard objectives add glib.link.lz dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -33,9 +33,9 @@ function glib:id/check
 execute at @e[tag=glib.id.match,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Link_Keep_Local_Location"]}
 tp @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] @e[tag=glib.id.match,limit=1,sort=nearest]
 
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorLeft = @s glib.link.l.x
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorUp = @s glib.link.l.y
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorFront = @s glib.link.l.z
+scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorLeft = @s glib.link.lx
+scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorUp = @s glib.link.ly
+scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorFront = @s glib.link.lz
 scoreboard players set @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorSpeedLocal 1000
 
 execute as @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] at @s run function glib:move/by_local_vector

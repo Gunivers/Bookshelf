@@ -19,7 +19,7 @@
 
 scoreboard objectives add glib.var0 dummy
 scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.link.r.x dummy
+scoreboard objectives add glib.link.rx dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -40,10 +40,10 @@ scoreboard players operation @s glib.var1 -= @s glib.var0
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_X]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rx"}}]
 ### END DEBUG
 
-scoreboard players operation @s glib.var1 += @s glib.link.r.x
+scoreboard players operation @s glib.var1 += @s glib.link.rx
 
 scoreboard players operation @s glib.var0 += @s glib.var1
 

@@ -19,7 +19,7 @@
 
 scoreboard objectives add glib.var0 dummy
 scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.link.r.x dummy
+scoreboard objectives add glib.link.rx dummy
 scoreboard objectives add glib.link.to dummy
 
 #__________________________________________________
@@ -38,10 +38,10 @@ scoreboard players operation @s glib.var3 -= @s glib.var0
 
 ### DEBUG
 #tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Loc]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.r.x"}}]
+#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Old Relative X: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rx"}}]
 ### END DEBUG
 
-scoreboard players operation @s glib.var3 -= @s glib.link.r.x
+scoreboard players operation @s glib.var3 -= @s glib.link.rx
 scoreboard players operation @s glib.var0 -= @s glib.var3
 function glib_accuracy:10-3/location/set_x
 function glib:link/update_link_x
