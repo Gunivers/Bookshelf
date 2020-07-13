@@ -38,11 +38,11 @@ tag @e[tag=glib.id.upper] remove glib.id.upper
 tag @e[tag=glib.id.lower] remove glib.id.lower
 tag @e[tag=glib.id.checker] remove glib.id.checker
 
-scoreboard players operation @e glib.id -=  @s glib.targetId
+scoreboard players operation @e glib.id -= @s glib.targetId
 tag @e[scores={glib.id=0}] add glib.id.match
 tag @e[scores={glib.id=..-1}] add glib.id.lower
 tag @e[scores={glib.id=-1..}] add glib.id.upper
-scoreboard players operation @e glib.id +=  @s glib.targetId
+scoreboard players operation @e glib.id += @s glib.targetId
 tag @s add glib.id.checker
 
 # Start Debug

@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add LocY dummy
+scoreboard objectives add glib.locY dummy [{"text":"GLib ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -25,4 +25,6 @@ scoreboard objectives add LocY dummy
 #__________________________________________________
 # CODE
 
-execute store result score @s LocY run data get entity @s Pos[1] 1000
+function glib_config:default_entity
+
+execute store result score @s glib.locY run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[1] 1000

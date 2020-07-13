@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib_accuracy:10-3/location/get
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 
 #__________________________________________________
@@ -23,6 +22,6 @@
 #__________________________________________________
 # CODE
 
-execute store result score @s glib.res0 run data get entity @s Pos[0] 1000
-execute store result score @s glib.res1 run data get entity @s Pos[1] 1000
-execute store result score @s glib.res2 run data get entity @s Pos[2] 1000
+function glib_accuracy:10-3/location/get_x
+function glib_accuracy:10-3/location/get_y
+function glib_accuracy:10-3/location/get_Z

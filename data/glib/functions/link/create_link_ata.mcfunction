@@ -45,24 +45,24 @@ scoreboard players operation @s glib.link.to = @e[limit=1,sort=nearest] glib.id
 # Relative Position #
 #-------------------#
 
-function glib.entity/location/zzz_accuracy/10-3/get
-scoreboard players operation @s glib.link.rx = location.x.10-3 glib.var0
-scoreboard players operation @s glib.link.ry = location.y.10-3 glib.var0
-scoreboard players operation @s glib.link.rz = location.z.10-3 glib.var0
+execute at @s run function glib_accuracy:10-3/location/get
+scoreboard players operation @s glib.link.rx = @s glib.locX
+scoreboard players operation @s glib.link.ry = @s glib.locY
+scoreboard players operation @s glib.link.rz = @s glib.locZ
 
-execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/location/zzz_accuracy/10-3/get
-scoreboard players operation @s glib.link.rx -= location.x.10-3 glib.var0
-scoreboard players operation @s glib.link.ry -= location.y.10-3 glib.var0
-scoreboard players operation @s glib.link.rz -= location.z.10-3 glib.var0
+execute at @e[tag=glib.link.target] run function glib_accuracy:10-3/location/get
+scoreboard players operation @s glib.link.rx -= @s glib.locX
+scoreboard players operation @s glib.link.ry -= @s glib.locY
+scoreboard players operation @s glib.link.rz -= @s glib.locZ
 
 # Relative Orientation
-function glib.entity/orientation/zzz_accuracy/10-3/get
-scoreboard players operation @s glib.link.rh = orientation.h.10-3 glib.var0
-scoreboard players operation @s glib.link.rh = orientation.h.10-3 glib.var0
+execute at @s run function glib_accuracy:10-3/orientation/get
+scoreboard players operation @s glib.link.rh = @s glib.oriH
+scoreboard players operation @s glib.link.rh = @s glib.oriV
 
-execute as @e[tag=glib.link.target,limit=1] at @s run function glib.entity/orientation/zzz_accuracy/10-3/get
-scoreboard players operation @s glib.link.rh -= orientation.h.10-3 glib.var0
-scoreboard players operation @s glib.link.rv -= orientation.v.10-3 glib.var0
+execute as @e[tag=glib.link.target] at @s run function glib_accuracy:10-3/orientation/get
+scoreboard players operation @s glib.link.rh -= @s glib.oriH
+scoreboard players operation @s glib.link.rv -= @s glib.oriV
 
 #----------------#
 # Local Position #

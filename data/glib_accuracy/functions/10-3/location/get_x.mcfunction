@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add LocX dummy
+scoreboard objectives add glib.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -25,4 +25,6 @@ scoreboard objectives add LocX dummy
 #__________________________________________________
 # CODE
 
-execute store result score @s LocX run data get entity @s Pos[0] 1000
+function glib_config:default_entity
+
+execute store result score @s glib.locX run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[0] 1000
