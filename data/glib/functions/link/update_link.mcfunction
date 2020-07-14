@@ -29,89 +29,43 @@ function glib:link/update_link_z
 function glib:link/update_link_h
 function glib:link/update_link_v
 
+# Start Backup
+scoreboard players operation backup.updateLink.var0 glib = @s glib.var0
+scoreboard players operation backup.updateLink.var1 glib = @s glib.var1
+scoreboard players operation backup.updateLink.var2 glib = @s glib.var2
+scoreboard players operation backup.updateLink.var3 glib = @s glib.var3
+scoreboard players operation backup.updateLink.var4 glib = @s glib.var4
+scoreboard players operation backup.updateLink.res0 glib = @s glib.res0
+scoreboard players operation backup.updateLink.res1 glib = @s glib.res1
+scoreboard players operation backup.updateLink.res2 glib = @s glib.res2
+scoreboard players operation backup.updateLink.oriH glib = @s glib.oriH
+scoreboard players operation backup.updateLink.oriV glib = @s glib.oriV
+# End Backup
 
-
-execute as @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:orientation/get
-
-# Cos(Phi)
-scoreboard players operation @s glib.var0 = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.h
-function glib:math/cos
-scoreboard players operation @s glib.var3 = @s glib.res0
-# tellraw @a[tag=Debug] ["",{"text":"CosH -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}}]
-# Sin(Phi)
-scoreboard players operation @s glib.var0 = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.h
-function glib:math/sin
-scoreboard players operation @s glib.var4 = @s glib.res0
-# tellraw @a[tag=Debug] ["",{"text":"SinH -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.h"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
-
-# Cos(Theta)
-scoreboard players operation @s glib.var0 = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.v
-function glib:math/cos
-scoreboard players operation @s glib.var4 = @s glib.res0
-# tellraw @a[tag=Debug] ["",{"text":"CosV -> ","color":"gray"},{"text":"Cos(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
-# Sin(Theta)
-scoreboard players operation @s glib.var0 = @e[tag=glib.id.match,limit=1,sort=nearest] glib.ori.v
-function glib:math/sin
-scoreboard players operation @s glib.var6 = @s glib.res0
-# tellraw @a[tag=Debug] ["",{"text":"SinV -> ","color":"gray"},{"text":"Sin(","color":"red"},{"score":{"name":"@e[tag=glib.id.match,limit=1,sort=nearest]","objective":"glib.ori.v"}},{"text":") = ","color":"red"},{"score":{"name":"@s","objective":"glib.var6"}}]
-
-# Vector Left -> L = cos(P)*X + sin(P)*Z
+# Calcul
 scoreboard players operation @s glib.var0 = @s glib.link.rx
-scoreboard players operation @s glib.var0 *= @s glib.var3
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.lx = @s glib.var0
+scoreboard players operation @s glib.var1 = @s glib.link.ry
+scoreboard players operation @s glib.var2 = @s glib.link.rz
 
-# tellraw @a[tag=Debug] ["",{"text":"Calc -> ","color":"gray"},{"text":"cos(H)*X= ","color":"red"},{"score":{"name":"@s","objective":"glib.link.lx"}}]
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:orientation/get
+scoreboard players operation @s glib.var3 = @s glib.oriH
+scoreboard players operation @s glib.var4 = @s glib.oriV
 
-scoreboard players operation @s glib.var0 = @s glib.link.rz
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.lx += @s glib.var0
+function glib:math/basis_rotation_3d
 
-# tellraw @a[tag=Debug] ["",{"text":"Left -> ","color":"gray"},{"text":"cos(H)*X + sin(H)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.lx"}}]
+scoreboard players operation @s glib.link.lx = @s glib.res0
+scoreboard players operation @s glib.link.ly = @s glib.res1
+scoreboard players operation @s glib.link.lz = @s glib.res2
 
-# Vector Up -> U = -sin(P)sin(T)*X + cos(T)*Y + cos(P)sin(T)*Z
-scoreboard players operation @s glib.var0 = @s glib.link.rx
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= @s glib.var6
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= -1 glib.const
-scoreboard players operation @s glib.link.ly = @s glib.var0
-
-scoreboard players operation @s glib.var0 = @s glib.link.ry
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.ly += @s glib.var0
-
-scoreboard players operation @s glib.var0 = @s glib.link.rz
-scoreboard players operation @s glib.var0 *= @s glib.var3
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= @s glib.var6
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.ly += @s glib.var0
-
-# tellraw @a[tag=Debug] ["",{"text":"Up -> ","color":"gray"},{"text":"-sin(H)sin(V)*X + cos(V)*Y + cos(H)sin(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.ly"}}]
-
-# Vector Front -> F = -sin(P)cos(T)*X + sin(T)*Y + cos(P)cos(T)*Z
-scoreboard players operation @s glib.var0 = @s glib.link.rx
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= -1 glib.const
-scoreboard players operation @s glib.link.lz = @s glib.var0
-
-scoreboard players operation @s glib.var0 = @s glib.link.ry
-scoreboard players operation @s glib.var0 *= @s glib.var6
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.lz -= @s glib.var0
-
-scoreboard players operation @s glib.var0 = @s glib.link.rz
-scoreboard players operation @s glib.var0 *= @s glib.var3
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= @s glib.var4
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.link.lz += @s glib.var0
-
-# tellraw @a[tag=Debug] ["",{"text":"Front -> ","color":"gray"},{"text":"-sin(H)cos(V)*X - sin(V)*Y + cos(H)cos(V)*Z = ","color":"red"},{"score":{"name":"@s","objective":"glib.link.lz"}}]
+# Start Restore
+scoreboard players operation @s glib.var0 = backup.updateLink.var0 glib
+scoreboard players operation @s glib.var1 = backup.updateLink.var1 glib
+scoreboard players operation @s glib.var2 = backup.updateLink.var2 glib
+scoreboard players operation @s glib.var3 = backup.updateLink.var3 glib
+scoreboard players operation @s glib.var4 = backup.updateLink.var4 glib
+scoreboard players operation @s glib.res0 = backup.updateLink.res0 glib
+scoreboard players operation @s glib.res1 = backup.updateLink.res1 glib
+scoreboard players operation @s glib.res2 = backup.updateLink.res2 glib
+scoreboard players operation @s glib.oriH = backup.updateLink.oriH glib
+scoreboard players operation @s glib.oriV = backup.updateLink.oriV glib
+# End Restore

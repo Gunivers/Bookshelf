@@ -17,7 +17,6 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var1 dummy
 scoreboard objectives add glib.link.rh dummy
 scoreboard objectives add glib.link.to dummy
 

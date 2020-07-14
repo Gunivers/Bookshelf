@@ -27,4 +27,3 @@ scoreboard objectives add glib.oriH dummy
 execute at @s run function glib_config:default_entity
 
 execute store result entity @e[tag=glib.new,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.oriH
-tp @s @e[tag=glib.new,limit=1]

@@ -30,15 +30,15 @@ scoreboard objectives add glib.link.to dummy
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
-execute at @e[tag=glib.id.match,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Link_Keep_Local_Location"]}
-tp @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] @e[tag=glib.id.match,limit=1,sort=nearest]
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run summon area_effect_cloud ~ ~ ~ {Tags:["glib","glib.link.keepLocalLocation"]}
+tp @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] @e[tag=glib.id.match,limit=1,sort=nearest]
 
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorLeft = @s glib.link.lx
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorUp = @s glib.link.ly
-scoreboard players operation @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorFront = @s glib.link.lz
-scoreboard players set @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] VectorSpeedLocal 1000
+scoreboard players operation @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] VectorLeft = @s glib.link.lx
+scoreboard players operation @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] VectorUp = @s glib.link.ly
+scoreboard players operation @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] VectorFront = @s glib.link.lz
+scoreboard players set @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] VectorSpeedLocal 1000
 
-execute as @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] at @s run function glib:move/by_local_vector
+execute as @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] at @s run function glib:move/by_local_vector
 
-execute positioned as @e[tag=Glib_Link_Keep_Local_Location,limit=1,sort=nearest] run tp @s ~ ~ ~
-kill @e[tag=Glib_Link_Keep_Local_Location]
+execute positioned as @e[tag=glib.link.keepLocalLocation,limit=1,sort=nearest] run tp @s ~ ~ ~
+kill @e[tag=glib.link.keepLocalLocation]

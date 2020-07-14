@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:link/reverse_loc_z
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
@@ -17,10 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.link.rz dummy
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.rz dummy [{"text":"GLib ","color":"gold"},{"text":"Relative location Z","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -28,20 +25,30 @@ scoreboard objectives add glib.link.to dummy
 #__________________________________________________
 # CODE
 
+# Start Backup
+scoreboard players operation backup.link.reverse.LocZ glib = @s glib.locZ
+# End Backup
+
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
-#   Relative Position
-execute store result score @s glib.var0 run data get entity @s Pos[2] 1000
-execute store result score @s glib.var4 run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Pos[2] 1000
-scoreboard players operation @s glib.var4 -= @s glib.var0
+# Relative Position
+execute at @s run function glib_accuracy:10-3/location/get_z
+scoreboard players operation link.reverseLoc.diff glib = @s glib.locZ
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/location/get_z
+scoreboard players operation link.reverseLoc.diff glib -= @s glib.locZ
 
-### DEBUG
-#tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Loc]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Old Relative Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rz"}}]
-### END DEBUG
+# Calcul difference
+scoreboard players operation link.reverseLoc.diff glib -= @s glib.link.rz
 
-scoreboard players operation @s glib.var4 -= @s glib.link.rz
-scoreboard players operation @s glib.var0 -= @s glib.var4
+# Update link
+scoreboard players operation link.reverseLoc.diff glib *= 2 glib.const
+scoreboard players operation @s glib.link.rz += link.reverseLoc.diff glib
+
+# Set new position
+scoreboard players operation @s glib.locZ += @s glib.link.rz
 function glib_accuracy:10-3/location/set_z
-function glib:link/update_link_z
+
+# Start Restore
+scoreboard players operation @s glib.locZ = backup.link.reverse.LocZ glib
+# End Restore

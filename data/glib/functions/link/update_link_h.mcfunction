@@ -29,7 +29,6 @@ scoreboard objectives add glib.link.to dummy
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
-
 # Relative Orientation
 execute at @s run function glib_accuracy:10-3/orientation/get_h
 scoreboard players operation @s glib.link.rh = @s glib.oriH
