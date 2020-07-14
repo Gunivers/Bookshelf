@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check: 1.16.1
 
-# Original path: glib:orientation/get
+# Original path: glib:orientation/get_v
 # Parallelizable: true
 # Note: It was excessively more impressive in 1.12 ...
 
@@ -16,11 +16,13 @@
 #__________________________________________________
 # INIT
 
+scoreboard objectives add glib.oriV dummy
+
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
+function glib_config:default_entity
 
-function glib:orientation/get_h
-function glib:orientation/get_v
+execute store result score @s glib.oriV run data get entity @e[tag=glib.new,limit=1,sort=nearest] Rotation[1] 1

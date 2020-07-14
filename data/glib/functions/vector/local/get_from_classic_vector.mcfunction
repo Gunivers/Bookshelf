@@ -24,99 +24,55 @@
 #__________________________________________________
 # INIT
 
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+
+scoreboard objectives add glib.vectorLeft dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Left","color":"dark_gray"}]
+scoreboard objectives add glib.vectorUp dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Up","color":"dark_gray"}]
+scoreboard objectives add glib.vectorFront dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
+
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
-scoreboard players operation vectorX glib = @s glib.var0
-scoreboard players operation vectorY glib = @s glib.var1
-scoreboard players operation vectorZ glib = @s glib.var1
+# Backup
+scoreboard players operation backup.localVector.var0 glib = @s glib.var0
+scoreboard players operation backup.localVector.var1 glib = @s glib.var1
+scoreboard players operation backup.localVector.var2 glib = @s glib.var2
+scoreboard players operation backup.localVector.var3 glib = @s glib.var3
+scoreboard players operation backup.localVector.var4 glib = @s glib.var4
+scoreboard players operation backup.localVector.res0 glib = @s glib.res0
+scoreboard players operation backup.localVector.res1 glib = @s glib.res1
+scoreboard players operation backup.localVector.res2 glib = @s glib.res2
+scoreboard players operation backup.localVector.oriH glib = @s glib.oriH
+scoreboard players operation backup.localVector.oriV glib = @s glib.oriV
 
-execute store result score glib.vector.get_from_local.h glib run data get entity @s Rotation[0] 1
-execute store result score glib.vector.get_from_local.v glib run data get entity @s Rotation[1] 1
+# Calcul
+scoreboard players operation @s glib.var0 = @s glib.vectorX
+scoreboard players operation @s glib.var1 = @s glib.vectorY
+scoreboard players operation @s glib.var2 = @s glib.vectorZ
 
-### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Local_Vectors/Convert_From_Vector]=-","color":"green"}]
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.vectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.vectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.vectorZ"}}]
-tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.var7"}},{"text":".   Phi: ","color":"red"},{"score":{"name":"@s","objective":"glib.var8"}}]
-### END DEBUG
+execute at @s run function glib:orientation/get
+scoreboard players operation @s glib.var3 = @s glib.oriH
+scoreboard players operation @s glib.var4 = @s glib.oriV
 
-# Cos(Theta)
-scoreboard players operation @s glib.var0 = glib.vector.get_from_local.h glib
-function glib:math/cos
-scoreboard players operation glib.cos.h glib = @s glib.res0
+function glib:math/basis_rotation_3d
 
-# Sin(Theta)
-scoreboard players operation @s glib.var0 = glib.vector.get_from_local.h glib
-function glib:math/sin
-scoreboard players operation glib.sin.h glib = @s glib.res0
+scoreboard players operation @s glib.vectorLeft = @s glib.res0
+scoreboard players operation @s glib.vectorUp = @s glib.res1
+scoreboard players operation @s glib.vectorFront = @s glib.res2
 
-# Cos(Phi)
-scoreboard players operation @s glib.var0 = glib.vector.get_from_local.v glib
-function glib:math/cos
-scoreboard players operation glib.cos.v glib = @s glib.res0
-
-# Sin(Phi)
-scoreboard players operation @s glib.var0 = glib.vector.get_from_local.v glib
-function glib:math/sin
-scoreboard players operation glib.sin.v glib = @s glib.res0
-
-### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"text":"Cos(Theta): ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Sin(Theta): ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Cos(Phi): ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}},{"text":".   Sin(Phi): ","color":"red"},{"score":{"name":"@s","objective":"glib.var6"}}]
-### END DEBUG
-
-# Vector Left
-scoreboard players operation @s glib.var0 = vectorX glib
-scoreboard players operation @s glib.var0 *= glib.cos.h glib
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var0 *= Neg glib.const
-scoreboard players operation @s glib.res0 = @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorZ glib
-scoreboard players operation @s glib.var0 *= glib.sin.h glib
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.res0 -= @s glib.var0
-
-# Vector Up
-scoreboard players operation @s glib.var0 = vectorY glib
-scoreboard players operation @s glib.var0 *= glib.cos.v glib
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.res1 = @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorZ glib
-scoreboard players operation @s glib.var0 *= glib.sin.v glib
-scoreboard players operation @s glib.var0 *= glib.cos.h glib
-scoreboard players operation @s glib.var0 /= 1000000 glib.const
-scoreboard players operation @s glib.res1 += @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorZ glib
-scoreboard players operation @s glib.var0 *= glib.sin.v glib
-scoreboard players operation @s glib.var0 *= glib.sin.h glib
-scoreboard players operation @s glib.var0 /= 1000000 glib.const
-scoreboard players operation @s glib.res1 -= @s glib.var0
-
-# Vector Front
-scoreboard players operation @s glib.var0 = vectorZ glib
-scoreboard players operation @s glib.var0 *= glib.cos.v glib
-scoreboard players operation @s glib.var0 *= glib.cos.h glib
-scoreboard players operation @s glib.var0 /= 1000000 glib.const
-scoreboard players operation @s glib.res1 = @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorX glib
-scoreboard players operation @s glib.var0 *= glib.cos.v glib
-scoreboard players operation @s glib.var0 *= glib.sin.h glib
-scoreboard players operation @s glib.var0 /= 1000000 glib.const
-scoreboard players operation @s glib.res1 -= @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorY glib
-scoreboard players operation @s glib.var0 *= glib.sin.v glib
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.res1 -= @s glib.var0
-
-scoreboard players operation @s glib.var0 = vectorX glib
-
-### DEBUG
-tellraw @a[tag=Debug] ["",{"text":"OUTPUT -> ","color":"gray"},{"text":"Left: ","color":"red"},{"score":{"name":"@s","objective":"VectorLeft"}},{"text":".   Up: ","color":"red"},{"score":{"name":"@s","objective":"VectorUp"}},{"text":".   Front: ","color":"red"},{"score":{"name":"@s","objective":"VectorFront"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
-### END DEBUG
+# Restore
+scoreboard players operation @s glib.var0 = backup.localVector.var0 glib
+scoreboard players operation @s glib.var1 = backup.localVector.var1 glib
+scoreboard players operation @s glib.var2 = backup.localVector.var2 glib
+scoreboard players operation @s glib.var3 = backup.localVector.var3 glib
+scoreboard players operation @s glib.var4 = backup.localVector.var4 glib
+scoreboard players operation @s glib.res0 = backup.localVector.res0 glib
+scoreboard players operation @s glib.res1 = backup.localVector.res1 glib
+scoreboard players operation @s glib.res2 = backup.localVector.res2 glib
+scoreboard players operation @s glib.oriH = backup.localVector.oriH glib
+scoreboard players operation @s glib.oriV = backup.localVector.oriV glib
