@@ -1,8 +1,11 @@
-execute if entity @s[scores={glib.var0=1..}] run function glib_child:move/by_local_vector/apply_pos_left
-execute if entity @s[scores={glib.var0=..-1}] run function glib_child:move/by_local_vector/apply_neg_left
+say 2
+tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorZ: ","color":"dark_gray"},{"score":{"name":"move.vectorZ.tmp","objective":"glib"},"color":"gold"}]
 
-execute if entity @s[scores={glib.var1=1..}] run function glib_child:move/by_local_vector/apply_pos_up
-execute if entity @s[scores={glib.var1=..-1}] run function glib_child:move/by_local_vector/apply_neg_up
+execute if score move.vectorX.tmp glib matches 1.. run function glib_child:move/by_local_vector/apply_pos_left
+execute if score move.vectorX.tmp glib matches ..-1 run function glib_child:move/by_local_vector/apply_neg_left
 
-execute if entity @s[scores={glib.var2=1..}] run function glib_child:move/by_local_vector/apply_pos_front
-execute if entity @s[scores={glib.var2=..-1}] run function glib_child:move/by_local_vector/apply_neg_front
+execute if score move.vectorY.tmp glib matches 1.. run function glib_child:move/by_local_vector/apply_pos_up
+execute if score move.vectorY.tmp glib matches ..-1 run function glib_child:move/by_local_vector/apply_neg_up
+
+execute if score move.vectorZ.tmp glib matches 1.. run function glib_child:move/by_local_vector/apply_pos_front
+execute if score move.vectorZ.tmp glib matches ..-1 run function glib_child:move/by_local_vector/apply_neg_front

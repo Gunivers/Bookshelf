@@ -11,6 +11,6 @@ execute at @s[scores={glib.collision=1..}] run function glib_child:move/forward/
 
 scoreboard players remove @s glib.var3 1
 
-tag @s remove Move-Loop2
-tag @s[scores={glib.var3=1..}] add Move-Loop2
-execute as @s[tag=Move-Loop2] at @s run function glib_child:move/forward/loop2
+tag @s remove glib.move.loop2
+tag @s[scores={glib.var3=1..}] add glib.move.loop2
+execute as @s[tag=glib.move.loop2] at @s run function glib_child:move/forward/loop2
