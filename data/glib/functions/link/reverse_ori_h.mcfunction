@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:link/reverse_ori_h
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________
@@ -17,11 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.link.rv dummy
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.rh dummy [{"text":"GLib ","color":"gold"},{"text":"Relative orientation H","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -29,19 +25,30 @@ scoreboard objectives add glib.link.to dummy
 #__________________________________________________
 # CODE
 
+# Start Backup
+scoreboard players operation backup.link.reverse.oriH glib = @s glib.oriH
+# End Backup
+
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
-execute store result score @s glib.var0 run data get entity @s Rotation[0] 1000
-execute store result score @s glib.var2 run data get entity @e[tag=glib.id.match,limit=1,sort=nearest] Rotation[0] 1000
-scoreboard players operation @s glib.var2 -= @s glib.var0
+# Relative Position
+execute at @s run function glib_accuracy:10-3/orientation/get_h
+scoreboard players operation link.reverseLoc.diff glib = @s glib.oriH
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/orientation/get_h
+scoreboard players operation link.reverseLoc.diff glib -= @s glib.oriH
 
-### DEBUG
-#tellraw @a[tag=Debug] ["",{"text":"-=[Debug Entity/Link/Imitate_Orientation]=-","color":"green"}]
-#tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"text":"New Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Old Relative Theta: ","color":"red"},{"score":{"name":"@s","objective":"glib.link.rv"}}]
-### END DEBUG
+# Calcul difference
+scoreboard players operation link.reverseLoc.diff glib -= @s glib.link.rh
 
-scoreboard players operation @s glib.var2 -= @s glib.link.rv
-scoreboard players operation @s glib.var0 -= @s glib.var2
+# Update link
+scoreboard players operation link.reverseLoc.diff glib *= 2 glib.const
+scoreboard players operation @s glib.link.rh += link.reverseLoc.diff glib
+
+# Set new position
+scoreboard players operation @s glib.oriH += @s glib.link.rh
 function glib_accuracy:10-3/orientation/set_h
-function glib:link/update_link_t
+
+# Start Restore
+scoreboard players operation @s glib.oriH = backup.link.reverse.oriH glib
+# End Restore

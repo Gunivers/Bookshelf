@@ -1,11 +1,11 @@
-# Collision on X
+# glib.collision on X
 
-scoreboard players operation @s[tag=CollisionX] VectorX *= -1 glib.const
+scoreboard players operation @s[tag=glib.collisionX] VectorX *= -1 glib.const
 
-# Collision on Y
+# glib.collision on Y
 
-scoreboard players operation @s[tag=CollisionY] VectorY *= -1 glib.const
+scoreboard players operation @s[tag=glib.collisionY] VectorY *= -1 glib.const
 
-# Collision on Z
+# glib.collision on Z
 
-scoreboard players operation @s[tag=CollisionZ] VectorZ *= -1 glib.const
+scoreboard players operation @s[tag=glib.collisionZ] VectorZ *= -1 glib.const

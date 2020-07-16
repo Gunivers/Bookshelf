@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:link/create_link_to_target_id
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Parallelizable: false
+# Parallelizable: true
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________

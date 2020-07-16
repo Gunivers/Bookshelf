@@ -118,4 +118,4 @@ scoreboard players operation basisRot glib /= 1000 glib.const
 scoreboard players operation @s glib.res2 -= basisRot glib
 
 
-# tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"},{"text":" VectorUp: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res1"},"color":"gold"},{"text":" VectorFront: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
+# tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"glib.vectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"},{"text":" glib.vectorUp: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res1"},"color":"gold"},{"text":" glib.vectorFront: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]

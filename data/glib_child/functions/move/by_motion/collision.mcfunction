@@ -1,24 +1,24 @@
-tag @s remove Collision
+tag @s remove glib.collision
 
-execute as @s[scores={Collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_x
-tag @s[scores={Collision=1..},tag=CollisionX] add Collision
-
-#----------------#
-# Collision on Y #
-#----------------#
-
-execute as @s[scores={Collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_y
-tag @s[scores={Collision=1..},tag=CollisionY] add Collision
+execute as @s[scores={glib.collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_x
+tag @s[scores={glib.collision=1..},tag=glib.collisionX] add glib.collision
 
 #----------------#
-# Collision on Z #
+# glib.collision on Y #
 #----------------#
 
-execute as @s[scores={Collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_z
-tag @s[scores={Collision=1..},tag=CollisionZ] add Collision
+execute as @s[scores={glib.collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_y
+tag @s[scores={glib.collision=1..},tag=glib.collisionY] add glib.collision
+
+#----------------#
+# glib.collision on Z #
+#----------------#
+
+execute as @s[scores={glib.collision=1..}] at @s run function glib_child:move/by_motion/collision_detect_z
+tag @s[scores={glib.collision=1..},tag=glib.collisionZ] add glib.collision
 
 #-----------#
 # Reactions #
 #-----------#
 
-execute if entity @s[tag=Collision] run function glib_config:move/collision_reactions/_main_
+execute if entity @s[tag=glib.collision] run function glib_config:move/collision_reactions/_main_

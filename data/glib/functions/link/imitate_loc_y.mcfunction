@@ -25,6 +25,8 @@ scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"
 #__________________________________________________
 # CODE
 
+data merge entity @s[type=!player] {NoGravity:1}
+
 scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 

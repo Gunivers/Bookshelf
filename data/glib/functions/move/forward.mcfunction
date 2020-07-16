@@ -27,9 +27,9 @@ scoreboard objectives add glib.var6 dummy
 scoreboard objectives add glib.var7 dummy
 scoreboard objectives add glib.var8 dummy
 
-scoreboard objectives add Collision dummy
+scoreboard objectives add glib.collision dummy
 
-scoreboard objectives add VectorLeft dummy
+scoreboard objectives add glib.vectorLeft dummy
 scoreboard objectives add VectorSpeedLocal dummy
 
 #__________________________________________________
@@ -38,7 +38,7 @@ scoreboard objectives add VectorSpeedLocal dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.var2 = @s VectorFront
+scoreboard players operation @s glib.var2 = @s glib.vectorFront
 
 # Apply speed modifier
 scoreboard players operation @s glib.var2 *= @s VectorSpeed

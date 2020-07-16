@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:move/by_local_vector
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note:
 
 #__________________________________________________
@@ -17,21 +16,11 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var6 dummy
-scoreboard objectives add glib.var7 dummy
-scoreboard objectives add glib.var8 dummy
+scoreboard objectives add glib.collision dummy
 
-scoreboard objectives add Collision dummy
-
-scoreboard objectives add VectorLeft dummy
-scoreboard objectives add VectorUp dummy
-scoreboard objectives add VectorFront dummy
+scoreboard objectives add glib.vectorLeft dummy
+scoreboard objectives add glib.vectorLeft dummy
+scoreboard objectives add glib.vectorFront dummy
 scoreboard objectives add VectorSpeedLocal dummy
 
 #__________________________________________________
@@ -40,17 +29,9 @@ scoreboard objectives add VectorSpeedLocal dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s glib.var0 = @s VectorLeft
-scoreboard players operation @s glib.var1 = @s VectorUp
-scoreboard players operation @s glib.var2 = @s VectorFront
-
-# Apply speed modifier
-scoreboard players operation @s glib.var0 *= @s VectorSpeedLocal
-scoreboard players operation @s glib.var1 *= @s VectorSpeedLocal
-scoreboard players operation @s glib.var2 *= @s VectorSpeedLocal
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var1 /= 1000 glib.const
-scoreboard players operation @s glib.var2 /= 1000 glib.const
+scoreboard players operation @s glib.var0 = @s glib.vectorLeft
+scoreboard players operation @s glib.var1 = @s glib.vectorLeft
+scoreboard players operation @s glib.var2 = @s glib.vectorFront
 
 # DEBUG
 execute if entity @a[tag=glib.debug,tag=Debug_Move_ByLocalVector,tag=!glib.menu] run function glib:debug/move/by_local_vector/1

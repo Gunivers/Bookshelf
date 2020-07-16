@@ -1,11 +1,11 @@
-# Collision on X
+# glib.collision on X
 
-scoreboard players set @s[tag=CollisionX] VectorX 0
+scoreboard players set @s[tag=glib.collisionX] VectorX 0
 
-# Collision on Y
+# glib.collision on Y
 
-scoreboard players set @s[tag=CollisionY] VectorY 0
+scoreboard players set @s[tag=glib.collisionY] VectorY 0
 
-# Collision on Z
+# glib.collision on Z
 
-scoreboard players set @s[tag=CollisionZ] VectorZ 0
+scoreboard players set @s[tag=glib.collisionZ] VectorZ 0

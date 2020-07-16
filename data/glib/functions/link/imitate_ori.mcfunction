@@ -4,11 +4,10 @@
 # Authors: Leirof
 # Contributors:
 # MC Version: 1.13
-# Last check:
+# Last check: 1.16.1
 
 # Original path: glib:link/imitate_ori
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#link
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: @s must have glib.link.to defined (equal to another entity id)
 
 #__________________________________________________

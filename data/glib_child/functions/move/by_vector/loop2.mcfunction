@@ -2,12 +2,12 @@
 execute at @s[tag=glib.debug,tag=glib.debug.entity.move.by_vector] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
 # END DEBUG
 
-tag @s remove CollisionTest
-tag @s[tag=CollisionFront,tag=!Collision] add CollisionTest
-execute as @s[scores={Collision=1..}] at @s run function glib_child:move/by_vector/collision_detect_front
-tag @s remove Collision
-execute as @s[scores={Collision=1..},tag=CollisionFront] at @s run function glib_child:move/by_vector/collision
-execute as @s[scores={Collision=1..},tag=CollisionTest] at @s run function glib_child:move/by_vector/collision
+tag @s remove glib.collisionTest
+tag @s[tag=glib.collisionFront,tag=!glib.collision] add glib.collisionTest
+execute as @s[scores={glib.collision=1..}] at @s run function glib_child:move/by_vector/collision_detect_front
+tag @s remove glib.collision
+execute as @s[scores={glib.collision=1..},tag=glib.collisionFront] at @s run function glib_child:move/by_vector/collision
+execute as @s[scores={glib.collision=1..},tag=glib.collisionTest] at @s run function glib_child:move/by_vector/collision
 
 #Apply on entity
 scoreboard players operation @s glib.var0 = @s glib.var6

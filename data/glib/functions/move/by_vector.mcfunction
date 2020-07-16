@@ -27,7 +27,7 @@ scoreboard objectives add glib.var6 dummy
 scoreboard objectives add glib.var7 dummy
 scoreboard objectives add glib.var8 dummy
 
-scoreboard objectives add Collision dummy
+scoreboard objectives add glib.collision dummy
 
 scoreboard objectives add VectorX dummy
 scoreboard objectives add VectorY dummy

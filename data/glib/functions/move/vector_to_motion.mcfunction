@@ -48,4 +48,4 @@ execute as @s store result entity @s Motion[0] double 0.001 run scoreboard playe
 execute as @s store result entity @s Motion[1] double 0.001 run scoreboard players get @s glib.var1
 execute as @s store result entity @s Motion[2] double 0.001 run scoreboard players get @s glib.var2
 
-execute as @s[scores={Collision=1..}] run function glib_child:move/by_motion/collision
+execute as @s[scores={glib.collision=1..}] run function glib_child:move/by_motion/collision

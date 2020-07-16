@@ -7,7 +7,7 @@ execute if entity @a[tag=glib.debug,tag=Debug_Move_Forward,tag=!glib.menu] run f
 
 execute at @s run function glib_child:move/forward/apply
 
-execute at @s[scores={CollisionLocal=1..}] run function glib_child:move/forward/collision
+execute at @s[scores={glib.collision=1..}] run function glib_child:move/forward/collision
 
 scoreboard players remove @s glib.var3 1
 

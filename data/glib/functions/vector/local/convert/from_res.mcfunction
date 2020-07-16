@@ -29,9 +29,9 @@ scoreboard objectives add glib.res0 dummy
 scoreboard objectives add glib.res1 dummy
 scoreboard objectives add glib.res2 dummy
 
-scoreboard objectives add VectorLeft dummy
-scoreboard objectives add VectorUp dummy
-scoreboard objectives add VectorFront dummy
+scoreboard objectives add glib.vectorLeft dummy
+scoreboard objectives add glib.vectorUp dummy
+scoreboard objectives add glib.vectorFront dummy
 
 #__________________________________________________
 # CONFIG
@@ -39,6 +39,6 @@ scoreboard objectives add VectorFront dummy
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s VectorLeft = @s glib.res0
-scoreboard players operation @s VectorUp = @s glib.res1
-scoreboard players operation @s VectorFront = @s glib.res2
+scoreboard players operation @s glib.vectorLeft = @s glib.res0
+scoreboard players operation @s glib.vectorUp = @s glib.res1
+scoreboard players operation @s glib.vectorFront = @s glib.res2
