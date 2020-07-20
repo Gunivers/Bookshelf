@@ -17,5 +17,3 @@ execute if score move.vectorZ.tmp glib matches 4.. run scoreboard players remove
 execute at @s if score move.vectorZ.tmp glib matches 2.. run tp @s ^ ^ ^0.002
 execute if score move.vectorZ.tmp glib matches 2.. run scoreboard players remove move.vectorZ.tmp glib 2
 execute at @s if score move.vectorZ.tmp glib matches 1.. run tp @s ^ ^ ^0.001
-
-say 3

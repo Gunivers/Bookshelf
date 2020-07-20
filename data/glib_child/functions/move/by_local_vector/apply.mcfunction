@@ -1,6 +1,3 @@
-say 2
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorZ: ","color":"dark_gray"},{"score":{"name":"move.vectorZ.tmp","objective":"glib"},"color":"gold"}]
-
 execute if score move.vectorX.tmp glib matches 1.. run function glib_child:move/by_local_vector/apply_pos_left
 execute if score move.vectorX.tmp glib matches ..-1 run function glib_child:move/by_local_vector/apply_neg_left
 
