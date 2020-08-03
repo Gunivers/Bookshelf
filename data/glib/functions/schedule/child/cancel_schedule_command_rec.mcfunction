@@ -16,4 +16,4 @@ execute if score @s Var0 matches 0 run data remove entity @s ArmorItems[0].tag.B
 
 execute if score @s Var0 matches 1 run data modify entity @s ArmorItems[0].tag.Buffer3 append from entity @s ArmorItems[0].tag.Buffer2[0]
 execute if score @s Var0 matches 1 run data remove entity @s ArmorItems[0].tag.Buffer2[0]
-execute if score @s Var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib_child:core/schedule/cancel_schedule_command_rec
+execute if score @s Var0 matches 1 if data entity @s ArmorItems[0].tag.Buffer2[0] run function glib_child:default/core/schedule/cancel_schedule_command_rec

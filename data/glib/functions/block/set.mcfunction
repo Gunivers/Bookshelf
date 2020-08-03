@@ -24,6 +24,6 @@ scoreboard objectives add glib.blockId dummy [{"text":"GLib ","color":"gold"},{"
 #__________________________________________________
 # CODE
 
-execute if score @s glib.blockId matches 0..6560 run function glib_child:block/set/nodes/0-6560
-execute if score @s glib.blockId matches 6561..13121 run function glib_child:block/set/nodes/6561-13121
-execute if score @s glib.blockId matches 13122..17103 run function glib_child:block/set/nodes/13122-17103
+execute if score @s glib.blockId matches 0..6560 run function glib_child:default/block/set/nodes/0-6560
+execute if score @s glib.blockId matches 6561..13121 run function glib_child:default/block/set/nodes/6561-13121
+execute if score @s glib.blockId matches 13122..17103 run function glib_child:default/block/set/nodes/13122-17103

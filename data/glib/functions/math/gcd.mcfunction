@@ -40,6 +40,6 @@ scoreboard players operation @s[scores={glib.var2=..-1}] glib.var2 = @s glib.var
 
 tag @s[scores={glib.var2=0}] add PGCDfound
 
-execute at @s[tag=!PGCDfound] run function glib_child:math/gcd-loop
+execute at @s[tag=!PGCDfound] run function glib_child:default/math/gcd-loop
 
 tag @s remove PGCDfound

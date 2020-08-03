@@ -30,7 +30,7 @@ scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"tex
 #__________________________________________________
 # CODE
 
-execute if entity @s[type=minecraft:player] run function glib_child:location/set/player
+execute if entity @s[type=minecraft:player] run function glib_child:default/location/set/player
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 1 run scoreboard players add @s glib.locX 0
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 1 run scoreboard players add @s glib.locY 0
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[2] double 1 run scoreboard players add @s glib.locZ 0

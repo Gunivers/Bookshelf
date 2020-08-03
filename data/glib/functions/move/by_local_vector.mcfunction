@@ -38,7 +38,7 @@ tag @s add glib.move.loop1
 execute if score vectorLeft glib matches -1000..1000 if score vectorUp glib matches -1000..1000 if score vectorFront glib matches -1000..1000 run tag @s remove glib.move.loop1
 
 scoreboard players set move.factor glib 1
-execute if entity @s[tag=glib.move.loop1] run function glib_child:move/by_local_vector/loop1
+execute if entity @s[tag=glib.move.loop1] run function glib_child:default/move/by_local_vector/loop1
 
 # Apply movement
-function glib_child:move/by_local_vector/loop2
+function glib_child:default/move/by_local_vector/loop2

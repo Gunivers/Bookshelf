@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches ..111 run function glib_child:default/block/set_falling_block/nodes/96-111
+execute if score @s glib.blockId matches 112.. run function glib_child:default/block/set_falling_block/nodes/112-127

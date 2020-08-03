@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches ..533 run function glib_child:block/set_main_hand_slot/leaves/532-533
-execute if score @s glib.blockId matches 534.. run function glib_child:block/set_main_hand_slot/leaves/534-535

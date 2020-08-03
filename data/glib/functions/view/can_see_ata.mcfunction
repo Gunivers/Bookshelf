@@ -35,7 +35,7 @@ execute as @e[tag=glib.canSee.aim] positioned as @s facing entity @e[tag=glib.ca
 
 scoreboard players operation @e[tag=glib.canSee.aim] glib.var0 = @s glib.var0
 
-execute as @e[tag=glib.canSee.aim] at @s run function glib_child:view/can_see-loop
+execute as @e[tag=glib.canSee.aim] at @s run function glib_child:default/view/can_see-loop
 
 execute at @e[tag=glib.canSee.aim] if entity @e[tag=glib.canSee.target,distance=..1] run tag @s add glib_CanSee
 

@@ -22,7 +22,7 @@ execute if score menu.rules.commandBlockOutput glib.data matches 1 as @a[tag=gli
 function glib:cache/cache_loop
 
 # Loop Schedule
-execute as @e[tag=Glib_Cache_Head] at @s run function glib_child:core/schedule/loop_schedule
+execute as @e[tag=Glib_Cache_Head] at @s run function glib_child:default/core/schedule/loop_schedule
 
 # Debug Recorder
 execute as @a[tag=glib.debug.stick] run function glib_core:menu/debug/debug_stick

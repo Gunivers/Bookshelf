@@ -23,7 +23,7 @@ function glib:collection/lists/fifo_list/fifo_list_to_buffer
 scoreboard players set @s glib.res0 0
 scoreboard players set @s glib.var3 0
 scoreboard players operation @s glib.var4 = @s glib.var0
-function glib_child:collection/lists/fifo_list/get_index_of_rec
+function glib_child:default/collection/lists/fifo_list/get_index_of_rec
 function glib:collection/lists/fifo_list/buffer_to_fifo_list
 data remove entity @s ArmorItems[2].tag.buffer
 execute if entity @s[scores={glib.var3=0}] run scoreboard players set @s glib.res0 -1

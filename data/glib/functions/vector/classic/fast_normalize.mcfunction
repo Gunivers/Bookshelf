@@ -34,6 +34,7 @@ scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"
 
 # The final vector will have (almost) this length
 execute unless entity @s[tag=glib.config.override] run scoreboard players set vector.fastNormalization.lenght glib.config 1000
+tag @s[tag=glib.config.override] remove glib.config.override
 
 #__________________________________________________
 # CODE
@@ -57,3 +58,7 @@ scoreboard players operation @s glib.vectorZ *= vector.fastNormalization.lenght 
 scoreboard players operation @s glib.vectorX /= vector.fastNormalize.max glib
 scoreboard players operation @s glib.vectorY /= vector.fastNormalize.max glib
 scoreboard players operation @s glib.vectorZ /= vector.fastNormalize.max glib
+
+scoreboard players set @s glib.res0 1000
+scoreboard players operation @s glib.res0 *= vector.fastNormalization.lenght glib.config
+scoreboard players operation @s glib.res0 /= vector.fastNormalize.max glib

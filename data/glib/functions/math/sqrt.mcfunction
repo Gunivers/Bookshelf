@@ -71,7 +71,7 @@ scoreboard players operation math.sqrt.diff glib -= math.sqrt.X glib
 
 
 # while(                  Diff != 0                   &&                 B > 1                  ){               run              }
-execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function glib_child:math/sqrt
+execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function glib_child:default/math/sqrt
 
 # return
 scoreboard players operation @s glib.res0 = math.sqrt.A glib

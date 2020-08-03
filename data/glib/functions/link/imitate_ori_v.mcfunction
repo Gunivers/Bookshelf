@@ -29,7 +29,7 @@ scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 #   Relative Orientation
-execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/orientation/get_v
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_acc:10-3/orientation/get_v
 scoreboard players operation @s glib.oriV += @s glib.link.rv
 
-function glib_accuracy:10-3/orientation/set_v
+function glib_acc:10-3/orientation/set_v

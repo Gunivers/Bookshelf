@@ -17,64 +17,74 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var6 dummy
-scoreboard objectives add glib.var7 dummy
-scoreboard objectives add glib.var8 dummy
+scoreboard objectives add glib.collision dummy [{"text":"GLib ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
+scoreboard objectives add glib.precision dummy [{"text":"GLib ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
 
-scoreboard objectives add glib.collision dummy
-
-scoreboard objectives add VectorX dummy
-scoreboard objectives add VectorY dummy
-scoreboard objectives add VectorZ dummy
-scoreboard objectives add VectorSpeed dummy
+scoreboard objectives add glib.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add glib.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
 
-# Manage precision of collision detection (1000 = 1 block). More the system is accurate and more it will be heavy to run.
-scoreboard players set @s[tag=!glib.config.override] glib.var4 500
+# Manage precision of collision detection (1000 = 1 block, 500 = 0.5 blocks). More the system is accurate and more it will be heavy to run.
+scoreboard players set @s[tag=!glib.config.override] glib.precision 2000
+tag @s[tag=glib.config.override] remove glib.config.override
 
 #__________________________________________________
 # CODE
 
-scoreboard players set @s[scores={glib.var4=1001..}] glib.var4 1000
-scoreboard players set @s[scores={glib.var4=..-1}] glib.var4 1000
+# Absurd values security
+#scoreboard players set @s[scores={glib.var4=1001..}] glib.precision 1000
+scoreboard players set @s[scores={glib.precision=..-1}] glib.precision 1000
 
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"[glib.debug] ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove Debug_Move_By_Vector"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity Move By_Vector","color":"green"}]
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   glib.id: ","color":"red"},{"score":{"name":"@s","objective":"glib.id"}}]
+# Backup
+scoreboard players operation backup.move.vectorX glib = @s glib.vectorX
+scoreboard players operation backup.move.vectorY glib = @s glib.vectorY
+scoreboard players operation backup.move.vectorZ glib = @s glib.vectorZ
+scoreboard players operation backup.move.res0 glib = @s glib.res0
 
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"INPUT -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"VectorX"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"VectorY"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"VectorZ"}},{"text":".   Speed: ","color":"red"},{"score":{"name":"@s","objective":"VectorSpeed"}}]
+# Start Debug
+#tellraw @a ["",{"text":"X: "},{"score":{"name":"@s","objective":"glib.vectorX"}},{"text":" Y: "},{"score":{"name":"@s","objective":"glib.vectorY"}},{"text":" Z: "},{"score":{"name":"@s","objective":"glib.vectorZ"}}]
+# End Debug
 
-# Copy of vectors
-scoreboard players operation @s glib.var0 = @s VectorX
-scoreboard players operation @s glib.var1 = @s VectorY
-scoreboard players operation @s glib.var2 = @s VectorZ
+# Decomposition in sum of vector with parameters <= glib.precision
+tag @s add glib.config.override
+scoreboard players operation vector.fastNormalization.lenght glib.config = @s glib.precision
+function glib:vector/classic/fast_normalize
+scoreboard players operation move.vectorX glib = @s glib.vectorX
+scoreboard players operation move.vectorY glib = @s glib.vectorY
+scoreboard players operation move.vectorZ glib = @s glib.vectorZ
 
-# Apply speed modifier
-scoreboard players operation @s glib.var0 *= @s VectorSpeed
-scoreboard players operation @s glib.var1 *= @s VectorSpeed
-scoreboard players operation @s glib.var2 *= @s VectorSpeed
-scoreboard players operation @s glib.var0 /= 1000 glib.const
-scoreboard players operation @s glib.var1 /= 1000 glib.const
-scoreboard players operation @s glib.var2 /= 1000 glib.const
+# Apply movement
+scoreboard players set move.decomposition.factor glib 1000
+scoreboard players operation move.decomposition.factor glib /= @s glib.res0
+scoreboard players operation move.decomposition.factor.save glib = move.decomposition.factor glib
+# Start Debug
+#tellraw @a ["",{"text":"X: "},{"score":{"name":"move.vectorX","objective":"glib"}},{"text":" Y: "},{"score":{"name":"move.vectorY","objective":"glib"}},{"text":" Z: "},{"score":{"name":"move.vectorZ","objective":"glib"}},{"text":" Dec: "},{"score":{"name":"move.decomposition.factor","objective":"glib"}}]
+# End Debug
+execute at @s if score move.decomposition.factor glib matches 1.. run function glib_child:default/move/by_vector/loop
 
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"APPLY SPEED -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var2"}}]
+# Rest of decomposition
+scoreboard players operation move.vectorX glib *= move.decomposition.factor.save glib
+scoreboard players operation move.vectorY glib *= move.decomposition.factor.save glib
+scoreboard players operation move.vectorZ glib *= move.decomposition.factor.save glib
+scoreboard players operation move.vectorX glib -= backup.move.vectorX glib
+scoreboard players operation move.vectorY glib -= backup.move.vectorY glib
+scoreboard players operation move.vectorZ glib -= backup.move.vectorZ glib
+scoreboard players operation move.vectorX glib *= -1 glib.const
+scoreboard players operation move.vectorY glib *= -1 glib.const
+scoreboard players operation move.vectorZ glib *= -1 glib.const
 
-scoreboard players set @s glib.var3 1
+# Start Debug
+#tellraw @a ["",{"text":"X: "},{"score":{"name":"move.vectorX","objective":"glib"}},{"text":" Y: "},{"score":{"name":"move.vectorY","objective":"glib"}},{"text":" Z: "},{"score":{"name":"move.vectorZ","objective":"glib"}},{"text":" Dec: "},{"score":{"name":"move.decomposition.factor","objective":"glib"}}]
+# End Debug
 
-# Divide vector
-execute if entity @s run function glib_child:move/by_vector/loop1
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"BREAK -> ","color":"gray"},{"text":"X: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}},{"text":".   Y: ","color":"red"},{"score":{"name":"@s","objective":"glib.var1"}},{"text":".   Z: ","color":"red"},{"score":{"name":"@s","objective":"glib.var2"}},{"text":".   Factor: ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}},{"text":".   Precision: ","color":"red"},{"score":{"name":"@s","objective":"glib.var4"}}]
+# Apply movement for the rest
+execute at @s run function glib_child:default/move/by_vector/loop
 
-scoreboard players operation @s[scores={glib.var3=1..}] glib.var6 = @s glib.var0
-scoreboard players operation @s[scores={glib.var3=1..}] glib.var7 = @s glib.var1
-scoreboard players operation @s[scores={glib.var3=1..}] glib.var8 = @s glib.var2
-
-function glib_child:move/by_vector/loop2
-tellraw @a[tag=glib.debug,tag=glib.debug.entity.move.by_vector] ["",{"text":"RETURN -> ","color":"gray"},{"text":"Factor (must be 0): ","color":"red"},{"score":{"name":"@s","objective":"glib.var3"}}]
+# Restore
+scoreboard players operation @s glib.vectorX = backup.move.vectorX glib
+scoreboard players operation @s glib.vectorY = backup.move.vectorY glib
+scoreboard players operation @s glib.vectorZ = backup.move.vectorZ glib
+scoreboard players operation @s glib.res0 = backup.move.res0 glib

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches ..653 run function glib_child:default/block/set_falling_block/leaves/652-653
+execute if score @s glib.blockId matches 654.. run function glib_child:default/block/set_falling_block/leaves/654-655

@@ -63,7 +63,7 @@ scoreboard players operation @s Pos_zf -= @s Rayon
 
 #On initlise tout (factorisation )
 
-function glib_child:mapedit/set/ini
+function glib_child:default/mapedit/set/ini
 
 
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Rayon = @s Rayon
@@ -93,4 +93,4 @@ scoreboard players add setCount Set_Option 1
 #tag @e[tag=spawnSET] remove spawnSET
 
 #On lance toute la procedure
-function glib_child:mapedit/set/repeate
+function glib_child:default/mapedit/set/repeate

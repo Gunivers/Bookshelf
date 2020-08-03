@@ -37,6 +37,6 @@ execute at @s run tp @e[tag=glib.aimedBlock.new] ~ ~1.7 ~
 # CONFIG: glib.var0 -> Range*10 (10 blocks -> glib.var0 = 100)
 scoreboard players operation @e[tag=glib.aimedBlock.new] glib.var0 = @s glib.var0
 
-execute as @e[tag=glib.aimedBlock.new] at @s run function glib_child:view/aimed_block_raycast
+execute as @e[tag=glib.aimedBlock.new] at @s run function glib_child:default/view/aimed_block_raycast
 execute as @e[tag=glib.aimedBlock.new] at @s align xyz positioned ~0.5 ~0.5 ~0.5 run tp @s ~ ~ ~
 tag @e remove glib.aimedBlock.new

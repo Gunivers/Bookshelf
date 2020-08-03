@@ -31,7 +31,7 @@ scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 #   Relative Position
-execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_accuracy:10-3/location/get_y
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_acc:10-3/location/get_y
 scoreboard players operation @s glib.locY += @s glib.link.ry
 
-function glib_accuracy:10-3/location/set_y
+function glib_acc:10-3/location/set_y

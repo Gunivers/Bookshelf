@@ -7,16 +7,15 @@
 # Last check:
 
 # Original path: glib:location/spread
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: Spread an entity based on CenterX, CenterZ and Radius scores
 
 #__________________________________________________
 # PARAMETERS
 
-#glib.var3: CenterX
-#glib.var4: CenterZ
-#glib.var5: Radius
+#glib.var0: CenterX
+#glib.var1: CenterZ
+#glib.var2: Radius
 
 #__________________________________________________
 # INIT
@@ -32,7 +31,7 @@ scoreboard players operation location.spread.locX glib = @s glib.locX
 scoreboard players operation location.spread.locY glib = @s glib.locY
 scoreboard players operation location.spread.locZ glib = @s glib.locZ
 
-scoreboard players operation @s glib.var6 = @s glib.var5
+scoreboard players operation @s glib.var6 = @s glib.var2
 scoreboard players operation @s glib.var6 *= 2 glib.const
 scoreboard players operation @s glib.var6 += 1 glib.const
 
@@ -41,22 +40,22 @@ function glib:math/random
 scoreboard players operation @s glib.res0 %= @s glib.var6
 
 scoreboard players set @s glib.locX 0
-execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locX -= @s glib.res0
-execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locX /= 2 glib.const
-execute if score @s glib.res0 <= @s glib.var5 run scoreboard players operation @s glib.locX = @s glib.res0
+execute if score @s glib.res0 > @s glib.var2 run scoreboard players operation @s glib.locX -= @s glib.res0
+execute if score @s glib.res0 > @s glib.var2 run scoreboard players operation @s glib.locX /= 2 glib.const
+execute if score @s glib.res0 <= @s glib.var2 run scoreboard players operation @s glib.locX = @s glib.res0
 
-scoreboard players operation @s glib.locX += @s glib.var3
+scoreboard players operation @s glib.locX += @s glib.var0
 
 #Random
 function glib:math/random
 scoreboard players operation @s glib.res0 %= @s glib.var6
 
 scoreboard players set @s glib.locZ 0
-execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locZ -= @s glib.res0
-execute if score @s glib.res0 > @s glib.var5 run scoreboard players operation @s glib.locZ /= 2 glib.const
-execute if score @s glib.res0 <= @s glib.var5 run scoreboard players operation @s glib.locZ = @s glib.res0
+execute if score @s glib.res0 > @s glib.var2 run scoreboard players operation @s glib.locZ -= @s glib.res0
+execute if score @s glib.res0 > @s glib.var2 run scoreboard players operation @s glib.locZ /= 2 glib.const
+execute if score @s glib.res0 <= @s glib.var2 run scoreboard players operation @s glib.locZ = @s glib.res0
 
-scoreboard players operation @s glib.locZ += @s glib.var4
+scoreboard players operation @s glib.locZ += @s glib.var1
 
 execute store result score @s glib.locY run data get entity @s Pos[1] 1
 
