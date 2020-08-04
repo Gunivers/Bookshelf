@@ -32,9 +32,9 @@ scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"tex
 # CODE
 
 # Backup
-scoreboard players operation backup.location.add.locX glib = @s glib.locX
-scoreboard players operation backup.location.add.locY glib = @s glib.locY
-scoreboard players operation backup.location.add.locZ glib = @s glib.locZ
+scoreboard players operation #backup.location.add.locX glib = @s glib.locX
+scoreboard players operation #backup.location.add.locY glib = @s glib.locY
+scoreboard players operation #backup.location.add.locZ glib = @s glib.locZ
 
 execute at @s run function glib_config:default_entity
 tag @e[tag=glib.new,limit=1] add glib.location.add.tmp
@@ -49,6 +49,6 @@ execute as @e[tag=glib.location.add.tmp] at @s run function glib:health/safe_kil
 function glib_acc:10-3/location/set
 
 # Restore
-scoreboard players operation @s glib.locX = backup.location.add.locX glib
-scoreboard players operation @s glib.locY = backup.location.add.locY glib
-scoreboard players operation @s glib.locZ = backup.location.add.locZ glib
+scoreboard players operation @s glib.locX = #backup.location.add.locX glib
+scoreboard players operation @s glib.locY = #backup.location.add.locY glib
+scoreboard players operation @s glib.locZ = #backup.location.add.locZ glib

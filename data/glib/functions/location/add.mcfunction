@@ -32,9 +32,9 @@ scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"tex
 # CODE
 
 # Backup
-scoreboard players operation backup.location.add.locX glib = @s glib.locX
-scoreboard players operation backup.location.add.locY glib = @s glib.locY
-scoreboard players operation backup.location.add.locZ glib = @s glib.locZ
+scoreboard players operation #backup.location.add.locX glib = @s glib.locX
+scoreboard players operation #backup.location.add.locY glib = @s glib.locY
+scoreboard players operation #backup.location.add.locZ glib = @s glib.locZ
 
 execute at @s run function glib_config:default_entity
 tag @e[tag=glib.new,limit=1] add glib.location.add.tmp
@@ -52,6 +52,6 @@ execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] doubl
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[2] double 1 run scoreboard players add @s glib.locZ 0
 
 # Restore
-scoreboard players operation @s glib.locX = backup.location.add.locX glib
-scoreboard players operation @s glib.locY = backup.location.add.locY glib
-scoreboard players operation @s glib.locZ = backup.location.add.locZ glib
+scoreboard players operation @s glib.locX = #backup.location.add.locX glib
+scoreboard players operation @s glib.locY = #backup.location.add.locY glib
+scoreboard players operation @s glib.locZ = #backup.location.add.locZ glib

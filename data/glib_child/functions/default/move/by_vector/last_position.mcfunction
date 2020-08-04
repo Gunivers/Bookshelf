@@ -1,22 +1,27 @@
-scoreboard players operation @s glib.var0 *= -1 glib.const
-scoreboard players operation @s glib.var1 *= -1 glib.const
-scoreboard players operation @s glib.var2 *= -1 glib.const
+#__________________________________________________
+# Reverse current vector
 
-#Apply on entity
-execute if entity @s[type=!player] at @s run function glib_child:default/move/by_vector/apply
+scoreboard players operation move.vectorX glib *= -1 glib.const
+scoreboard players operation move.vectorX glib *= -1 glib.const
+scoreboard players operation move.vectorX glib *= -1 glib.const
 
-#Apply on player
-execute if entity @s[type=player] at @s run summon armor_stand ~ ~ ~ {Invisible:1,Tags:["Glib","Move_By_Vector"]}
-execute if entity @s[type=player] at @s run tp @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] @s
-execute if entity @s[type=player] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] VectorX = @s VectorX
-execute if entity @s[type=player] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] VectorY = @s VectorY
-execute if entity @s[type=player] at @s run scoreboard players operation @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] VectorZ = @s VectorZ
-execute if entity @s[type=player] at @s as @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest] at @s run function glib_child:default/move/by_vector/apply
-execute if entity @s[type=player] at @s run tp @s @e[type=armor_stand,tag=Move_By_Vector,limit=1,sort=nearest]
-kill @e[type=armor_stand,tag=Move_By_Vector]
+#__________________________________________________
+# Apply
 
-scoreboard players operation @s glib.var0 *= -1 glib.const
-scoreboard players operation @s glib.var1 *= -1 glib.const
-scoreboard players operation @s glib.var2 *= -1 glib.const
+scoreboard players operation @s glib.locX = move.vectorX glib
+scoreboard players operation @s glib.locY = move.vectorY glib
+scoreboard players operation @s glib.locZ = move.vectorZ glib
 
-tag @s add Glib_Back_to_last_pos
+function glib_acc:10-3/location/add
+
+#__________________________________________________
+# Restore current vector
+
+scoreboard players operation move.vectorX glib *= -1 glib.const
+scoreboard players operation move.vectorX glib *= -1 glib.const
+scoreboard players operation move.vectorX glib *= -1 glib.const
+
+#__________________________________________________
+# Signal
+
+tag @s add glib.move.by_vector.back_to_last_pos
