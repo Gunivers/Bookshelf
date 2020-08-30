@@ -1,6 +1,6 @@
 tag @s add glib.collisionY
 
-execute if block ~ ~1 ~ air run tag @s remove glib.collisionY
+execute if block ~ ~1 ~ #glib_child:move/by_vector/ignore_hitbox run tag @s remove glib.collisionY
 
 tag @s[tag=glib.collisionY] add glib.collision
 

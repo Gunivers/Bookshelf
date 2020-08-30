@@ -19,7 +19,7 @@ execute at @s[scores={UseCarrot=1}] run tp @e[tag=Projectile,tag=!Old,limit=1,so
 execute at @s[scores={UseCarrot=1}] run tp @e[tag=Projectile,tag=!Old,limit=1,sort=nearest] ~ ~1.7 ~
 scoreboard players set @s UseCarrot 0
 
-execute as @e[tag=Projectile,tag=!Old] run function glib:vector/classic/get_by_actual_orientation 
+execute as @e[tag=Projectile,tag=!Old] run function glib:vector/classic/get_by_actual_orientation
 scoreboard players set @e[tag=Projectile,tag=!Old] glib.collision 1
 
 tag @e[tag=Projectile] add Old

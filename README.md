@@ -5,7 +5,7 @@
 @theogiraudet/Oromis, @LeiRoF
 
 # CONTRIBUTORS:
-Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑, @A~Z, @Redcoal, @Syl2010, @Kikipunk, @Loumardes
+Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗𝖚𝖓𝖊𝖑, @A~Z, @Redcoal, @Syl2010, @Kikipunk, @Loumardes 
 
 # TITLE:
 Gunivers-Lib
