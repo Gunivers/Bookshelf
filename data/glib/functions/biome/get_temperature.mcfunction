@@ -31,6 +31,7 @@ scoreboard objectives add glib.var0 dummy
 # CODE
 
 scoreboard players set @s glib.var0 0
+function glib:biome/get_biome_temperature
 execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 = @s glib.locY
 execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 -= 62 glib.const
 execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 *= 166667 glib.const
