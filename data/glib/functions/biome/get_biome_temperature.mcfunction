@@ -3,24 +3,23 @@
 
 # Authors: theogiraudet
 # Contributors:
-# MC Version: 1.14
-# Last check:
+# MC Version: 1.1
+# Last check: 1.16.2
 
 # Original path: glib:biome/get_biome_temperature
 # Parallelizable: true
-# Note: Allow to get the glib.temperature of the player's glib.biome at y = 62 (sea level).
-#		The format of the result is "glib.temperature * 10^8", based on the wiki values.
+# Note: Allow to get the temperature at the entity location biome at y = 62 (sea level).
+#		The format of the result is "temperature * 10^8", based on the biome data values.
 
 #__________________________________________________
 # PARAMETERS
 
-# Output: glib.biome (score dummy)
 # Output: glib.temperature (score dummy)
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.biome dummy
+scoreboard objectives add glib.temperature dummy
 
 #__________________________________________________
 # CONFIG
@@ -28,78 +27,82 @@ scoreboard objectives add glib.biome dummy
 #__________________________________________________
 # CODE
 
-scoreboard players set @s[scores={glib.biome=0}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=1}] glib.temperature 80000000
-scoreboard players set @s[scores={glib.biome=2}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=3}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=4}] glib.temperature 70000000
-scoreboard players set @s[scores={glib.biome=5}] glib.temperature 25000000
-scoreboard players set @s[scores={glib.biome=6}] glib.temperature 80000000
-scoreboard players set @s[scores={glib.biome=7}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=8}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=9}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=10}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=11}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=12}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=13}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=14}] glib.temperature 90000000
-scoreboard players set @s[scores={glib.biome=15}] glib.temperature 90000000
-scoreboard players set @s[scores={glib.biome=16}] glib.temperature 80000000
-scoreboard players set @s[scores={glib.biome=17}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=18}] glib.temperature 70000000
-scoreboard players set @s[scores={glib.biome=19}] glib.temperature 25000000
-scoreboard players set @s[scores={glib.biome=20}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=21}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=22}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=23}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=24}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=25}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=26}] glib.temperature 5000000
-scoreboard players set @s[scores={glib.biome=27}] glib.temperature 60000000
-scoreboard players set @s[scores={glib.biome=28}] glib.temperature 60000000
-scoreboard players set @s[scores={glib.biome=29}] glib.temperature 70000000
-scoreboard players set @s[scores={glib.biome=30}] glib.temperature -50000000
-scoreboard players set @s[scores={glib.biome=31}] glib.temperature -50000000
-scoreboard players set @s[scores={glib.biome=32}] glib.temperature 30000000
-scoreboard players set @s[scores={glib.biome=33}] glib.temperature 30000000
-scoreboard players set @s[scores={glib.biome=34}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=35}] glib.temperature 120000000
-scoreboard players set @s[scores={glib.biome=36}] glib.temperature 120000000
-scoreboard players set @s[scores={glib.biome=37}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=38}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=39}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=40}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=41}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=42}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=43}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=44}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=45}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=46}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=47}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=48}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=49}] glib.temperature 50000000
-scoreboard players set @s[scores={glib.biome=50}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=51}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=52}] glib.temperature 80000000
-scoreboard players set @s[scores={glib.biome=53}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=54}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=55}] glib.temperature 70000000
-scoreboard players set @s[scores={glib.biome=56}] glib.temperature 25000000
-scoreboard players set @s[scores={glib.biome=57}] glib.temperature 80000000
-scoreboard players set @s[scores={glib.biome=58}] glib.temperature 0
-scoreboard players set @s[scores={glib.biome=59}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=60}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=61}] glib.temperature 60000000
-scoreboard players set @s[scores={glib.biome=62}] glib.temperature 60000000
-scoreboard players set @s[scores={glib.biome=63}] glib.temperature 70000000
-scoreboard players set @s[scores={glib.biome=64}] glib.temperature -50000000
-scoreboard players set @s[scores={glib.biome=65}] glib.temperature 25000000
-scoreboard players set @s[scores={glib.biome=66}] glib.temperature 25000000
-scoreboard players set @s[scores={glib.biome=67}] glib.temperature 20000000
-scoreboard players set @s[scores={glib.biome=68}] glib.temperature 110000000
-scoreboard players set @s[scores={glib.biome=69}] glib.temperature 110000000
-scoreboard players set @s[scores={glib.biome=70}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=71}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=72}] glib.temperature 200000000
-scoreboard players set @s[scores={glib.biome=73}] glib.temperature 95000000
-scoreboard players set @s[scores={glib.biome=74}] glib.temperature 95000000
+execute if predicate glib:object/biome/get/badlands run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/badlands_plateau run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/bamboo_jungle run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/bamboo_jungle_hills run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/basalt_deltas run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/beach run scoreboard players set @s glib.temperature 80000000
+execute if predicate glib:object/biome/get/birch_forest run scoreboard players set @s glib.temperature 60000000
+execute if predicate glib:object/biome/get/birch_forest_hills run scoreboard players set @s glib.temperature 60000000
+execute if predicate glib:object/biome/get/cold_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/crimson_forest run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/dark_forest run scoreboard players set @s glib.temperature 70000000
+execute if predicate glib:object/biome/get/dark_forest_hills run scoreboard players set @s glib.temperature 70000000
+execute if predicate glib:object/biome/get/deep_cold_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/deep_frozen_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/deep_lukewarm_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/deep_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/deep_warm_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/desert run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/desert_hills run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/desert_lakes run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/end_barrens run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/end_highlands run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/end_midlands run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/eroded_badlands run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/flower_forest run scoreboard players set @s glib.temperature 70000000
+execute if predicate glib:object/biome/get/forest run scoreboard players set @s glib.temperature 70000000
+execute if predicate glib:object/biome/get/frozen_ocean run scoreboard players set @s glib.temperature 0
+execute if predicate glib:object/biome/get/frozen_river run scoreboard players set @s glib.temperature 0
+execute if predicate glib:object/biome/get/giant_spruce_taiga run scoreboard players set @s glib.temperature 25000000
+execute if predicate glib:object/biome/get/giant_spruce_taiga_hills run scoreboard players set @s glib.temperature 25000000
+execute if predicate glib:object/biome/get/giant_tree_taiga run scoreboard players set @s glib.temperature 30000000
+execute if predicate glib:object/biome/get/giant_tree_taiga_hills run scoreboard players set @s glib.temperature 30000000
+execute if predicate glib:object/biome/get/gravelly_mountains run scoreboard players set @s glib.temperature 20000000
+execute if predicate glib:object/biome/get/ice_spikes run scoreboard players set @s glib.temperature 0
+execute if predicate glib:object/biome/get/jungle run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/jungle_edge run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/jungle_hills run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/lukewarm_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/modified_badlands_plateau run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/modified_gravelly_mountains run scoreboard players set @s glib.temperature 20000000
+execute if predicate glib:object/biome/get/modified_jungle run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/modified_jungle_edge run scoreboard players set @s glib.temperature 95000000
+execute if predicate glib:object/biome/get/modified_wooded_badlands_plateau run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/mountains run scoreboard players set @s glib.temperature 20000000
+execute if predicate glib:object/biome/get/mountain_edge run scoreboard players set @s glib.temperature 20000000
+execute if predicate glib:object/biome/get/mushroom_fields run scoreboard players set @s glib.temperature 90000000
+execute if predicate glib:object/biome/get/mushroom_field_shore run scoreboard players set @s glib.temperature 90000000
+execute if predicate glib:object/biome/get/nether_wastes run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/plains run scoreboard players set @s glib.temperature 80000000
+execute if predicate glib:object/biome/get/river run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/savanna run scoreboard players set @s glib.temperature 120000000
+execute if predicate glib:object/biome/get/savanna_plateau run scoreboard players set @s glib.temperature 100000000
+execute if predicate glib:object/biome/get/shattered_savanna run scoreboard players set @s glib.temperature 110000000
+execute if predicate glib:object/biome/get/shattered_savanna_plateau run scoreboard players set @s glib.temperature 100000000
+execute if predicate glib:object/biome/get/small_end_islands run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/snowy_beach run scoreboard players set @s glib.temperature 5000000
+execute if predicate glib:object/biome/get/snowy_mountains run scoreboard players set @s glib.temperature 0
+execute if predicate glib:object/biome/get/snowy_taiga run scoreboard players set @s glib.temperature -50000000
+execute if predicate glib:object/biome/get/snowy_taiga_hills run scoreboard players set @s glib.temperature -50000000
+execute if predicate glib:object/biome/get/snowy_taiga_mountains run scoreboard players set @s glib.temperature -50000000
+execute if predicate glib:object/biome/get/snowy_tundra run scoreboard players set @s glib.temperature 0
+execute if predicate glib:object/biome/get/soul_sand_valley run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/stone_shore run scoreboard players set @s glib.temperature 20000000
+execute if predicate glib:object/biome/get/sunflower_plains run scoreboard players set @s glib.temperature 80000000
+execute if predicate glib:object/biome/get/swamp run scoreboard players set @s glib.temperature 80000000
+execute if predicate glib:object/biome/get/swamp_hills run scoreboard players set @s glib.temperature 80000000
+execute if predicate glib:object/biome/get/taiga run scoreboard players set @s glib.temperature 25000000
+execute if predicate glib:object/biome/get/taiga_hills run scoreboard players set @s glib.temperature 25000000
+execute if predicate glib:object/biome/get/taiga_mountains run scoreboard players set @s glib.temperature 25000000
+execute if predicate glib:object/biome/get/tall_birch_forest run scoreboard players set @s glib.temperature 60000000
+execute if predicate glib:object/biome/get/tall_birch_hills run scoreboard players set @s glib.temperature 60000000
+execute if predicate glib:object/biome/get/the_end run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/the_void run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/warm_ocean run scoreboard players set @s glib.temperature 50000000
+execute if predicate glib:object/biome/get/warped_forest run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/wooded_badlands_plateau run scoreboard players set @s glib.temperature 200000000
+execute if predicate glib:object/biome/get/wooded_hills run scoreboard players set @s glib.temperature 70000000
+execute if predicate glib:object/biome/get/wooded_mountains run scoreboard players set @s glib.temperature 20000000
