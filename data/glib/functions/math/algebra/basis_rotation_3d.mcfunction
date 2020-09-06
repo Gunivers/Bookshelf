@@ -13,16 +13,16 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s Var0 (score) : Vector in base with orientation x , y
-# Input: @s Var1 (score) : Vector in base with orientation x , y
-# Input: @s Var2 (score) : Vector in base with orientation x , y
+# Input: @s glib.var0 (score) : Component X of the vector in base with orientation x , y
+# Input: @s glib.var1 (score) : Component Y of the vector in base with orientation x , y
+# Input: @s glib.var2 (score) : Component Z of the vector in base with orientation x , y
 
-# Input: @s Var3 (score) : Horizontal rotation (a)
-# Input: @s Var4 (score) : Vertical rotation (b)
+# Input: @s glib.var3 (score) : Horizontal rotation (a)
+# Input: @s glib.var4 (score) : Vertical rotation (b)
 
-# Output: @s Res0 (score) : Vector in base with orientation x+a , y+b
-# Output: @s Res1 (score) : Vector in base with orientation x+a , y+b
-# Output: @s Res2 (score) : Vector in base with orientation x+a , y+b
+# Output: @s glib.res0 (score) : Component X' of the vector in base with orientation x+a , y+b
+# Output: @s glib.res1 (score) : Component Y' of the vector in base with orientation x+a , y+b
+# Output: @s glib.res2 (score) : Component Z' of the vector in base with orientation x+a , y+b
 
 #__________________________________________________
 # INIT
@@ -47,22 +47,22 @@ scoreboard players operation basisRot.v glib = @s glib.var4
 
 # Cos(Theta)
 scoreboard players operation @s glib.var0 = basisRot.h glib
-function glib:math/cos
+function glib:math/trig/cos
 scoreboard players operation glib.cos.h glib = @s glib.res0
 
 # Sin(Theta)
 scoreboard players operation @s glib.var0 = basisRot.h glib
-function glib:math/sin
+function glib:math/trig/sin
 scoreboard players operation glib.sin.h glib = @s glib.res0
 
 # Cos(Phi)
 scoreboard players operation @s glib.var0 = basisRot.v glib
-function glib:math/cos
+function glib:math/trig/cos
 scoreboard players operation glib.cos.v glib = @s glib.res0
 
 # Sin(Phi)
 scoreboard players operation @s glib.var0 = basisRot.v glib
-function glib:math/sin
+function glib:math/trig/sin
 scoreboard players operation glib.sin.v glib = @s glib.res0
 
 # Vector Left

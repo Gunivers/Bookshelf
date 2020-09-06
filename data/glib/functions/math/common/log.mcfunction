@@ -56,7 +56,7 @@ scoreboard players remove @s glib.var6 3
 
 # glib.res0 = 10^(n-1) (* 1000)
 scoreboard players set @s glib.var0 10
-function glib:math/pow
+function glib:math/common/pow
 
 # Calculation of y
 
@@ -73,7 +73,7 @@ scoreboard players operation @s glib.var4 = @s glib.res0
 scoreboard players operation @s glib.var4 /= 10000 glib.const
 scoreboard players set @s glib.var1 5
 scoreboard players operation @s glib.var1 -= @s glib.var6
-function glib:math/pow
+function glib:math/common/pow
 scoreboard players set @s glib.var7 1
 execute if entity @s[scores={glib.var6=6}] run scoreboard players operation @s glib.var4 /= 10 glib.const
 execute unless entity @s[scores={glib.var6=5..6}] run scoreboard players operation @s glib.var7 = @s glib.res0

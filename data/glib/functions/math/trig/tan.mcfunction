@@ -39,12 +39,12 @@ scoreboard objectives add glib.var4 dummy
 
 scoreboard players operation @s glib.var4 = @s glib.var0
 
-function glib:math/cos
+function glib:math/trig/cos
 
 scoreboard players operation @s glib.var3 = @s glib.res0
 scoreboard players operation @s glib.var0 = @s glib.var4
 
-function glib:math/sin
+function glib:math/trig/sin
 
 scoreboard players operation @s glib.res0 *= 1000 glib.const
 scoreboard players operation @s glib.res0 /= @s glib.var3

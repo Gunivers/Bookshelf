@@ -55,7 +55,7 @@ scoreboard players operation math.sqrt.X glib = @s glib.var0
 scoreboard players set math.sqrt.A glib 0
 
 # B = 32768 // limit max X
-function glib:math/get_next_pow2
+function glib:math/special/get_next_pow2
 scoreboard players operation math.sqrt.B glib = @s res0
 execute if entity @s[tag=!glib.math.getNextPow2.intOverflow] run scoreboard players operation math.sqrt.B glib = @s glib.res0
 execute if entity @s[tag=glib.math.getNextPow2.intOverflow] run scoreboard players set math.sqrt.B glib 65536
