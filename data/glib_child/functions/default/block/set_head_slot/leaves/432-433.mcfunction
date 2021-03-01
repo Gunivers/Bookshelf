@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 432 run replaceitem entity @e[tag=setHeadSlot] armor.head packed_ice
-execute if score @s glib.blockId matches 433 run replaceitem entity @e[tag=setHeadSlot] armor.head peony

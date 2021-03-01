@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 532 run replaceitem entity @e[tag=setHeadSlot] armor.head red_mushroom
-execute if score @s glib.blockId matches 533 run replaceitem entity @e[tag=setHeadSlot] armor.head red_mushroom_block

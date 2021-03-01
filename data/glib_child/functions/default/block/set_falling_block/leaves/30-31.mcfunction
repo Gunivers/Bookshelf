@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 30 run summon falling_block ~ ~ ~ {BlockState:{Name:"beacon"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 31 run summon falling_block ~ ~ ~ {BlockState:{Name:"bedrock"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

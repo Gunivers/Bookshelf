@@ -61,7 +61,7 @@ execute if score @s glib.var1 > @s glib.var0 run scoreboard players operation @s
 scoreboard players set @s glib.res0 0
 scoreboard players set @s glib.var2 1
 
-function glib_child:default/math/bitwise/and-loop
+function glib:math/child/bitwise/and-loop
 
 execute if entity @s[tag=glib.math.bitwise.and.negative_operands] run scoreboard players operation @s glib.var0 = @s glib.res0
 execute if entity @s[tag=glib.math.bitwise.and.negative_operands] run function glib:math/bitwise/two_complement

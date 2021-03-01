@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 432 run summon falling_block ~ ~ ~ {BlockState:{Name:"packed_ice"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 433 run summon falling_block ~ ~ ~ {BlockState:{Name:"peony"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

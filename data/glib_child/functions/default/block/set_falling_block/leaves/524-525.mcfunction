@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 524 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_wall_torch"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 525 run summon falling_block ~ ~ ~ {BlockState:{Name:"redstone_wire"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

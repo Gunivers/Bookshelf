@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 454 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_andesite_slab
+execute if score @s glib.blockId matches 455 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand polished_andesite_stairs

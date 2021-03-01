@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 376 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand magma_block
-execute if score @s glib.blockId matches 377 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand melon

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 212 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dried_kelp_block
+execute if score @s glib.blockId matches 213 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dropper

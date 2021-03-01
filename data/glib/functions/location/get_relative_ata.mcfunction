@@ -28,7 +28,7 @@ scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"tex
 
 execute at @s run function glib:location/get
 
-function glib_config:default_entity
+function glib_utils:default_entity
 execute as @e[tag=glib.new] run function glib:location/get
 
 scoreboard players operation @s glib.locX -= @e[tag=glib.new,limit=1,sort=nearest] glib.locX

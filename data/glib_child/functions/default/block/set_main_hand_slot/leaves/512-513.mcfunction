@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 512 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purpur_pillar
-execute if score @s glib.blockId matches 513 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand purpur_slab

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 324 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_bed"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 325 run summon falling_block ~ ~ ~ {BlockState:{Name:"light_blue_carpet"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

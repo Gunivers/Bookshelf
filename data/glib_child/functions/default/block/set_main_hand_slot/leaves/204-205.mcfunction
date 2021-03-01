@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 204 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand diorite_slab
-execute if score @s glib.blockId matches 205 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand diorite_stairs

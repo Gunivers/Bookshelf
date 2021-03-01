@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 414 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_wall_sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 415 run summon falling_block ~ ~ ~ {BlockState:{Name:"oak_wood"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

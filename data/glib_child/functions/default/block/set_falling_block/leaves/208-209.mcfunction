@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 208 run summon falling_block ~ ~ ~ {BlockState:{Name:"dispenser"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 209 run summon falling_block ~ ~ ~ {BlockState:{Name:"dragon_egg"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

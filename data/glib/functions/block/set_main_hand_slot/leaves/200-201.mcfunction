@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 200 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand detector_rail
+execute if score @s glib.blockId matches 201 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand diamond_block

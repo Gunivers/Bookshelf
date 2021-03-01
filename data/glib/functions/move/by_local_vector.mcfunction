@@ -55,7 +55,7 @@ function glib:vector/local/fast_normalize
 scoreboard players set move.decomposition.factor glib 1000
 scoreboard players operation move.decomposition.factor glib /= @s glib.res0
 scoreboard players operation move.decomposition.factor.save glib = move.decomposition.factor glib
-execute at @s if score move.decomposition.factor glib matches 1.. run function glib_child:default/move/by_local_vector/loop
+execute at @s if score move.decomposition.factor glib matches 1.. run function glib:move/by_local_vector/child/loop
 
 # Rest of decomposition
 
@@ -72,7 +72,7 @@ scoreboard players operation move.vectorZ glib *= -1 glib.const
 # Apply movement for the rest
 
 tag @s add glib.move.by_vector.rest
-execute at @s run function glib_child:default/move/by_local_vector/loop
+execute at @s run function glib:move/by_local_vector/child/loop
 tag @s remove glib.move.by_vector.rest
 
 # Restore

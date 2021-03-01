@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 384 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"mossy_stone_brick_slab"}}]}
-execute if score @s glib.blockId matches 385 run summon armor_stand ~ ~ ~ {NoGravity:1,Marker:1,Invisible:1,Tags:["RiddingFallingBlockGL"],Small:1,Passengers:[{id:"falling_block",Time:-9999,BlockState:{Name:"mossy_stone_brick_stairs"}}]}

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 274 run summon falling_block ~ ~ ~ {BlockState:{Name:"green_wool"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 275 run summon falling_block ~ ~ ~ {BlockState:{Name:"grindstone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 426 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_stained_glass_pane"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 427 run summon falling_block ~ ~ ~ {BlockState:{Name:"orange_terracotta"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

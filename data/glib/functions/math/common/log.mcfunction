@@ -47,7 +47,7 @@ scoreboard players operation @s glib.var3 = @s glib.var0
 # glib.var1 = n+2
 execute if entity @s[scores={glib.var3=..1000}] run scoreboard players remove @s glib.var0 1
 scoreboard players set @s glib.var1 0
-execute unless entity @s[scores={glib.var3=1}] run function glib_child:default/math/log-digits
+execute unless entity @s[scores={glib.var3=1}] run function glib:math/child/log-digits
 execute if entity @s[scores={glib.var3=1001..}] run scoreboard players remove @s glib.var1 1
 
 # glib.var6 = n-1
@@ -94,7 +94,7 @@ scoreboard players operation @s glib.var0 = @s glib.var4
 scoreboard players set @s glib.var1 1
 scoreboard players set @s glib.var4 0
 scoreboard players operation @s glib.var2 = @s glib.var0
-function glib_child:default/math/log-loop
+function glib:math/child/log-loop
 
 # Last calculation
 # log(x) ~ Sp + (n-1)*log(10)

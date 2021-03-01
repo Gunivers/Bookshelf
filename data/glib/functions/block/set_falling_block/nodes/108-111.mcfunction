@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches ..109 run function glib:block/set_falling_block/leaves/108-109
+execute if score @s glib.blockId matches 110.. run function glib:block/set_falling_block/leaves/110-111

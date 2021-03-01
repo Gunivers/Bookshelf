@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 302 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_leaves"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 303 run summon falling_block ~ ~ ~ {BlockState:{Name:"jungle_log"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

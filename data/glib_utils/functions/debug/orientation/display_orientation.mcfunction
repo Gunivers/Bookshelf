@@ -1,0 +1,1 @@
+tellraw @a[tag=glib.debug] [{"text":"   glib.ori.h: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.ori.h"},"color":"gold"},{"text":" glib.ori.v: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.ori.v"},"color":"gold"}]

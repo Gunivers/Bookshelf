@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 560 run summon falling_block ~ ~ ~ {BlockState:{Name:"sea_lantern"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 561 run summon falling_block ~ ~ ~ {BlockState:{Name:"sea_pickle"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

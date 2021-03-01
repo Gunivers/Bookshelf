@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 8 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sapling
+execute if score @s glib.blockId matches 9 run replaceitem entity @e[tag=setHeadSlot] armor.head acacia_sign

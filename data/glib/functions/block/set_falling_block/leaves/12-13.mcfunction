@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 12 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_trapdoor"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 13 run summon falling_block ~ ~ ~ {BlockState:{Name:"acacia_wall_sign"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

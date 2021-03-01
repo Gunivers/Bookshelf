@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 664 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand yellow_carpet
+execute if score @s glib.blockId matches 665 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand yellow_concrete

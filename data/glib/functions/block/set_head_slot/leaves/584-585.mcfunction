@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 584 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_button
+execute if score @s glib.blockId matches 585 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_door

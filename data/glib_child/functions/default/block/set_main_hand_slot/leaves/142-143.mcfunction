@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 142 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cut_red_sandstone
-execute if score @s glib.blockId matches 143 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cut_red_sandstone_slab

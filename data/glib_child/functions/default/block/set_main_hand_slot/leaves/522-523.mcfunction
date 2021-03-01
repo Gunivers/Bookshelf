@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 522 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand redstone_ore
-execute if score @s glib.blockId matches 523 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand redstone_torch

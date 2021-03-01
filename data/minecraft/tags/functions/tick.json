@@ -1,5 +1,5 @@
 {
  "values": [
-	"glib_core:loop"
+	"glib_utils:loop"
  ]
 }

@@ -66,7 +66,7 @@ scoreboard players operation @s glib.var0 -= @s glib.var3
 scoreboard players operation @s glib.var1 -= @s glib.var4
 scoreboard players operation @s glib.var2 -= @s glib.var4
 
-function glib_acc:10-3/location/set
+function glib:location/set/accuracy/10-3
 
 function glib:link/update_link_x
 function glib:link/update_link_y

@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 622 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_block
+execute if score @s glib.blockId matches 623 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand structure_void

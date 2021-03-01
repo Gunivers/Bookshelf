@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 610 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_log
+execute if score @s glib.blockId matches 611 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand stripped_acacia_wood

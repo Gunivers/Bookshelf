@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 516 run replaceitem entity @e[tag=setHeadSlot] armor.head quartz_pillar
+execute if score @s glib.blockId matches 517 run replaceitem entity @e[tag=setHeadSlot] armor.head quartz_slab

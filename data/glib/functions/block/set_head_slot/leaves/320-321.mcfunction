@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 320 run replaceitem entity @e[tag=setHeadSlot] armor.head air
+execute if score @s glib.blockId matches 321 run replaceitem entity @e[tag=setHeadSlot] armor.head lectern

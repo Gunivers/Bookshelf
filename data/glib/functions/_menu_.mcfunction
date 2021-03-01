@@ -9,4 +9,4 @@
 # CODE:
 gamerule commandBlockOutput false
 tag @s add glib.menu
-execute as @s[tag=glib.menu] at @s run function glib_core:menu/main
+execute as @s[tag=glib.menu] at @s run function glib_utils:menu/main

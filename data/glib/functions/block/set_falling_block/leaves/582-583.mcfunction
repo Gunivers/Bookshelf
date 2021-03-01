@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 582 run summon falling_block ~ ~ ~ {BlockState:{Name:"spawner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
+execute if score @s glib.blockId matches 583 run summon falling_block ~ ~ ~ {BlockState:{Name:"sponge"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

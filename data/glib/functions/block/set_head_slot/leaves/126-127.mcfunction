@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 126 run replaceitem entity @e[tag=setHeadSlot] armor.head coarse_dirt
+execute if score @s glib.blockId matches 127 run replaceitem entity @e[tag=setHeadSlot] armor.head cobblestone

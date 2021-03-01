@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 298 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_button
-execute if score @s glib.blockId matches 299 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand jungle_door

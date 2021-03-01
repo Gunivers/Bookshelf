@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 400 run replaceitem entity @e[tag=setHeadSlot] armor.head note_block
+execute if score @s glib.blockId matches 401 run replaceitem entity @e[tag=setHeadSlot] armor.head oak_button

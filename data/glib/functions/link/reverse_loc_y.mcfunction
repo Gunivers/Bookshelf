@@ -35,9 +35,9 @@ scoreboard players operation @s glib.targetId = @s glib.link.to
 function glib:id/check
 
 # Relative Position
-execute at @s run function glib_acc:10-3/location/get_y
+execute at @s run function glib:location/get_y/accuracy/10-3
 scoreboard players operation link.reverseLoc.diff glib = @s glib.locY
-execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib_acc:10-3/location/get_y
+execute at @e[tag=glib.id.match,limit=1,sort=nearest] run function glib:location/get_y/accuracy/10-3
 scoreboard players operation link.reverseLoc.diff glib -= @s glib.locY
 
 # Calcul difference
@@ -49,7 +49,7 @@ scoreboard players operation @s glib.link.ry += link.reverseLoc.diff glib
 
 # Set new position
 scoreboard players operation @s glib.locY += @s glib.link.ry
-function glib_acc:10-3/location/set_y
+function glib:location/set_y/accuracy/10-3
 
 # Start Restore
 scoreboard players operation @s glib.locY = backup.link.reverse.LocY glib

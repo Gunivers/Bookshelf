@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches ..233 run function glib:block/set_head_slot/leaves/232-233
+execute if score @s glib.blockId matches 234.. run function glib:block/set_head_slot/leaves/234-235

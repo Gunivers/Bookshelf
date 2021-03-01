@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 238 run replaceitem entity @e[tag=setHeadSlot] armor.head glass
+execute if score @s glib.blockId matches 239 run replaceitem entity @e[tag=setHeadSlot] armor.head glass_pane

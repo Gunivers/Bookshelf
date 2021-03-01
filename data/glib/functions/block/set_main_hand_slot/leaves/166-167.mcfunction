@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 166 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_planks
+execute if score @s glib.blockId matches 167 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dark_oak_pressure_plate

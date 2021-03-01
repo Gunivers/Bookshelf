@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 178 run replaceitem entity @e[tag=setHeadSlot] armor.head daylight_detector
-execute if score @s glib.blockId matches 179 run replaceitem entity @e[tag=setHeadSlot] armor.head dead_brain_coral

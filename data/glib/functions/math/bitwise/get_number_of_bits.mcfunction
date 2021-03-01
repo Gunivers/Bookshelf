@@ -38,4 +38,4 @@ scoreboard objectives add glib.res0 dummy
 execute if score @s glib.var0 matches ..-1 run scoreboard players operation @s glib.var0 *= -1 glib.const
 scoreboard players set @s glib.var1 1
 scoreboard players set @s glib.res0 0
-execute if score @s glib.var0 >= @s glib.var1 run function glib_child:default/math/bitwise/get_number_of_bits-loop
+execute if score @s glib.var0 >= @s glib.var1 run function glib:math/child/bitwise/get_number_of_bits-loop

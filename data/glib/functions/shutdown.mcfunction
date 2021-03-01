@@ -25,5 +25,5 @@
 #__________________________________________________
 # CODE
 
-function glib:core/clean
+function glib:clean
 datapack disable gunivers-lib

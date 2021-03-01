@@ -36,9 +36,9 @@ scoreboard players operation glib.entity.location.fast_set glib.var0 = @s glib.l
 scoreboard players operation glib.entity.location.fast_set glib.var1 = @s glib.locY
 scoreboard players operation glib.entity.location.fast_set glib.var2 = @s glib.locZ
 
-execute if score @s glib.locX matches 1.. run function glib_child:default/location/fast_set/x_p
-execute if score @s glib.locX matches ..-1 run function glib_child:default/location/fast_set/x_n
-execute if score @s glib.locY matches 1.. run function glib_child:default/location/fast_set/y_p
-execute if score @s glib.locY matches ..-1 run function glib_child:default/location/fast_set/y_n
-execute if score @s glib.locZ matches 1.. run function glib_child:default/location/fast_set/z_p
-execute if score @s glib.locZ matches ..-1 run function glib_child:default/location/fast_set/z_n
+execute if score @s glib.locX matches 1.. run function glib:location/fast_set/child/x_p
+execute if score @s glib.locX matches ..-1 run function glib:location/fast_set/child/x_n
+execute if score @s glib.locY matches 1.. run function glib:location/fast_set/child/y_p
+execute if score @s glib.locY matches ..-1 run function glib:location/fast_set/child/y_n
+execute if score @s glib.locZ matches 1.. run function glib:location/fast_set/child/z_p
+execute if score @s glib.locZ matches ..-1 run function glib:location/fast_set/child/z_n

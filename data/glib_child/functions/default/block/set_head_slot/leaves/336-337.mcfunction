@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 336 run replaceitem entity @e[tag=setHeadSlot] armor.head light_gray_bed
-execute if score @s glib.blockId matches 337 run replaceitem entity @e[tag=setHeadSlot] armor.head light_gray_carpet
