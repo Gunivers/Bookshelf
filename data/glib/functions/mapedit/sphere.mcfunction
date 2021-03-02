@@ -33,10 +33,10 @@
 #Ini
 
 
-scoreboard objectives add BrushID dummy
-scoreboard objectives add SphereCalc dummy
-scoreboard objectives add SphereSum dummy
-scoreboard objectives add Rayon2 dummy
+scoreboard objectives add BrushID dummy [{"text":"GLib ","color":"gold"},{"text":"BrushID","color":"dark_gray"}]
+scoreboard objectives add SphereCalc dummy [{"text":"GLib ","color":"gold"},{"text":"SphereCalc","color":"dark_gray"}]
+scoreboard objectives add SphereSum dummy [{"text":"GLib ","color":"gold"},{"text":"SphereSum","color":"dark_gray"}]
+scoreboard objectives add Rayon2 dummy [{"text":"GLib ","color":"gold"},{"text":"Radius 2","color":"dark_gray"}]
 
 
 #On place les point

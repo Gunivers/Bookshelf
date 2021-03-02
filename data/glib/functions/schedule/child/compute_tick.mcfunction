@@ -29,8 +29,8 @@ execute unless entity @s[tag=Match] run data modify entity @s ArmorItems[0].tag.
 execute unless entity @s[tag=Match] store success score @s glib.var1 run data modify entity @s ArmorItems[0].tag.Buffer2 set from entity @s ArmorItems[0].tag.Buffer.TimeUnit
 execute unless entity @s[tag=Match] if score @s glib.var1 matches 0 run scoreboard players operation @s glib.var0 *= 24000 glib.const
 
-execute store result score @s Var0 run time query gametime
-scoreboard players operation @s Var0 += @s glib.var0
-scoreboard players operation @s glib.res0 = @s Var0
+execute store result score @s glib.var0 run time query gametime
+scoreboard players operation @s glib.var0 += @s glib.var0
+scoreboard players operation @s glib.res0 = @s glib.var0
 
 tag @s[tag=Match] remove Match

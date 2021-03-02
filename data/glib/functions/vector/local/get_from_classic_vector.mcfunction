@@ -14,9 +14,9 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s Var0 (score) : Local Vector Left
-# Input: @s Var1 (score) : Local Vector Up
-# Input: @s Var2 (score) : Local Vector Front
+# Input: @s glib.var0 (score) : Local Vector Left
+# Input: @s glib.var1 (score) : Local Vector Up
+# Input: @s glib.var2 (score) : Local Vector Front
 # Output: @s Res0 (score) : Vector X
 # Output: @s Res1 (score) : Vector Y
 # Output: @s Res2 (score) : Vector Z

@@ -8,26 +8,26 @@
 
 # INPUT:
 # - Enchantable item hold in hand (item)
-# - dmAddDamage (score dummy)
+# - glib.dmAddDamage (score dummy)
 
 # OUTPUT:
-# - dmAddDamage (score dummy)
+# - glib.dmAddDamage (score dummy)
 
 # NOTE:
-# Recalculate dmAddDamage with the unreabreaking's enchantement calculation
+# Recalculate glib.dmAddDamage with the unreabreaking's enchantement calculation
 
 # PARAMETERS
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add dmAddDamage dummy
-scoreboard players add @s dmAddDamage 0
+
+scoreboard objectives add glib.dmAddDamage dummy [{"text":"GLib ","color":"gold"},{"text":"dmAddDamage","color":"dark_gray"}]
+scoreboard players add @s glib.dmAddDamage 0
 scoreboard players set @s glib.var4 0
 
 # CODE:
 
-execute if score @s dmAddDamage matches 1.. run function glib_child:default/core/durability_modifier/unbreaking_calc_loop
+execute if score @s glib.dmAddDamage matches 1.. run function glib_child:default/core/durability_modifier/unbreaking_calc_loop
 
-scoreboard players operation @s dmAddDamage = @s glib.var4
+scoreboard players operation @s glib.dmAddDamage = @s glib.var4
 scoreboard players reset @s glib.var4

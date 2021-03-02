@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add Glib_R_LocZ dummy
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.rz dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Z","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

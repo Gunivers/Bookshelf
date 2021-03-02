@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.ry dummy
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.ry dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

@@ -2,20 +2,20 @@
 
 #initiliser
 
-scoreboard objectives add Set_Pos_xd dummy
-scoreboard objectives add Set_Pos_yd dummy
-scoreboard objectives add Set_Pos_zd dummy
-scoreboard objectives add Set_Pos_xf dummy
-scoreboard objectives add Set_Pos_yf dummy
-scoreboard objectives add Set_Pos_zf dummy
+scoreboard objectives add Set_Pos_xd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos X d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_yd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Y d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_zd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Z d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_xf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos X f","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_yf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Y f","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_zf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Z f","color":"dark_gray"}]
 
-scoreboard objectives add Set_X dummy
-scoreboard objectives add Set_Y dummy
-scoreboard objectives add Set_Z dummy
+scoreboard objectives add Set_X dummy [{"text":"GLib ","color":"gold"},{"text":"Set X","color":"dark_gray"}]
+scoreboard objectives add Set_Y dummy [{"text":"GLib ","color":"gold"},{"text":"Set Y","color":"dark_gray"}]
+scoreboard objectives add Set_Z dummy [{"text":"GLib ","color":"gold"},{"text":"Set Z","color":"dark_gray"}]
 
-#Pour chaque parti on affect le plus petit des 2 valleur de sorte que xd<=xf , yd <=yf ect 
+#Pour chaque parti on affect le plus petit des 2 valleur de sorte que xd<=xf , yd <=yf ect
 
-#Pour le debut 
+#Pour le debut
 
 scoreboard players operation @s Set_Pos_xd = @s Pos_xd
 scoreboard players operation @s Set_Pos_xd < @s Pos_xf
@@ -28,7 +28,7 @@ scoreboard players operation @s Set_Pos_zd < @s Pos_zf
 
 
 
-#Pour la fin 
+#Pour la fin
 scoreboard players operation @s Set_Pos_xf = @s Pos_xd
 scoreboard players operation @s Set_Pos_xf > @s Pos_xf
 
@@ -38,12 +38,12 @@ scoreboard players operation @s Set_Pos_yf > @s Pos_yf
 scoreboard players operation @s Set_Pos_zf = @s Pos_zd
 scoreboard players operation @s Set_Pos_zf > @s Pos_zf
 
-#Summon de l'entitier 
+#Summon de l'entitier
 
 execute at @s run summon minecraft:armor_stand ~ ~ ~ {CustomNameVisible:1b,NoGravity:1b,Invisible:0b,Tags:["Glib","spawnSET"],CustomName:"{\"text\":\"SetAS\"}"}
 
-#On transfet les score 
-#Par la suite on aura plutieure entite ave un systeme id 
+#On transfet les score
+#Par la suite on aura plutieure entite ave un systeme id
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Set_Pos_xd = @s Set_Pos_xd
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Set_Pos_yd = @s Set_Pos_yd
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Set_Pos_zd = @s Set_Pos_zd

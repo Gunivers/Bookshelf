@@ -16,18 +16,11 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
+scoreboard objectives add glib.link.rx dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative X","color":"dark_gray"}]
+scoreboard objectives add glib.link.ry dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.rz dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Z","color":"dark_gray"}]
 
-scoreboard objectives add glib.link.rx dummy
-scoreboard objectives add glib.link.ry dummy
-scoreboard objectives add glib.link.rz dummy
-
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

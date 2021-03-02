@@ -17,13 +17,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.r.x dummy
-scoreboard objectives add glib.link.r.y dummy
-scoreboard objectives add glib.link.r.z dummy
+scoreboard objectives add glib.link.rx dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative X","color":"dark_gray"}]
+scoreboard objectives add glib.link.ry dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.rz dummy [{"text":"GLib ","color":"gold"},{"text":"Link Relative Z","color":"dark_gray"}]
 
-scoreboard objectives add LocX dummy
-scoreboard objectives add LocY dummy
-scoreboard objectives add LocZ dummy
+scoreboard objectives add glib.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
+scoreboard objectives add glib.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
+scoreboard objectives add glib.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -33,14 +33,14 @@ scoreboard objectives add LocZ dummy
 
 summon area_effect_cloud ~ ~ ~ {Tags:["Glib","Glib_Get_Loc_Relative"]}
 
-execute store result score @s LocX run data get entity @s Pos[0] 1000
-execute store result score @s LocY run data get entity @s Pos[1] 1000
-execute store result score @s LocZ run data get entity @s Pos[2] 1000
+execute store result score @s glib.locX run data get entity @s Pos[0] 1000
+execute store result score @s glib.locX run data get entity @s Pos[1] 1000
+execute store result score @s glib.locX run data get entity @s Pos[2] 1000
 
-execute store result score @s glib.link.r.x run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[0] 1000
-execute store result score @s glib.link.r.y run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[1] 1000
-execute store result score @s glib.link.r.z run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[2] 1000
+execute store result score @s glib.link.rx run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[0] 1000
+execute store result score @s glib.link.ry run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[1] 1000
+execute store result score @s glib.link.rz run data get entity @e[tag=Glib_Get_Loc_Relative,limit=1] Pos[2] 1000
 
-scoreboard players operation @s glib.link.r.x -= @s LocX
-scoreboard players operation @s glib.link.r.y -= @s LocY
-scoreboard players operation @s glib.link.r.z -= @s LocZ
+scoreboard players operation @s glib.link.rx -= @s glib.locX
+scoreboard players operation @s glib.link.ry -= @s glib.locX
+scoreboard players operation @s glib.link.rz -= @s glib.locX

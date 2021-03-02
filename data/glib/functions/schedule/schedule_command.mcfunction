@@ -25,9 +25,6 @@
 #		function glib:schedule/schedule_command
 
 # CODE:
-scoreboard objectives add Var0 dummy
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
 
 execute as @e[tag=Glib_Cache_Source] if data entity @s ArmorItems[0].tag.Buffer.glib.id if data entity @s ArmorItems[0].tag.Buffer.Timer if data entity @s ArmorItems[0].tag.Buffer.TimeUnit if data entity @s ArmorItems[0].tag.Buffer.Command run tag @s add Valid
 

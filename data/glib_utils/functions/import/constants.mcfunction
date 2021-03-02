@@ -7,8 +7,6 @@
 # - Prime numbers to 100
 # - Others: log(10)*10^6, log(10)*10^4, log(2)*10^4
 
-scoreboard objectives add glib.const dummy
-
 # Classic numbers
 scoreboard players set Neg glib.const -1
 scoreboard players set -2 glib.const -2

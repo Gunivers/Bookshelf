@@ -19,7 +19,7 @@ execute at @s run setblock ~ ~ ~-2 chain_command_block[facing=up]{UpdateLastExec
 
 #Compare
 execute at @s store result score @s glib.var0 run data get block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].GameTick 1
-execute at @s if score @s Var0 = @s glib.var0 run tag @s add isEqual
+execute at @s if score @s glib.var0 = @s glib.var0 run tag @s add isEqual
 
 #If is equal
 execute at @s if entity @s[tag=isEqual] run data modify block ~ ~ ~-2 Command set from block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].Command

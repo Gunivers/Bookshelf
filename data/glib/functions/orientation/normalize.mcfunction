@@ -17,8 +17,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.ori.v dummy
-scoreboard objectives add glib.ori.h dummy
+scoreboard objectives add glib.ori.v dummy [{"text":"GLib ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
+scoreboard objectives add glib.ori.h dummy [{"text":"GLib ","color":"gold"},{"text":"Orientation H","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

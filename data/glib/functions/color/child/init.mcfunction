@@ -13,8 +13,6 @@
 # INITialize Color Convertor system.
 
 # CODE:
-scoreboard objectives add R dummy
-scoreboard objectives add G dummy
-scoreboard objectives add B dummy
-scoreboard objectives add glib.res0 dummy
-scoreboard objectives add glib.var0 dummy
+scoreboard objectives add R dummy [{"text":"GLib ","color":"gold"},{"text":"Red","color":"dark_gray"}]
+scoreboard objectives add G dummy [{"text":"GLib ","color":"gold"},{"text":"Green","color":"dark_gray"}]
+scoreboard objectives add B dummy [{"text":"GLib ","color":"gold"},{"text":"Blue","color":"dark_gray"}]

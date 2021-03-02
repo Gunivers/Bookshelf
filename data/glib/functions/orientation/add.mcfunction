@@ -17,8 +17,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
+
+
 
 #__________________________________________________
 # CONFIG

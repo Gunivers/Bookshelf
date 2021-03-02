@@ -18,7 +18,7 @@
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add glib.var4 dummy
+
 scoreboard players set @s glib.var4 0
 
 # CODE:

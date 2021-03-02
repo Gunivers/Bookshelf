@@ -33,7 +33,7 @@ scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"
 #__________________________________________________
 # CODE
 
-# Backup of Var0
+# Backup of glib.var0
 scoreboard players operation vector.length.var0 glib = @s glib.var0
 
 # Get lenght^2
@@ -43,5 +43,5 @@ function glib:vector/classic/length_squared
 scoreboard players operation @s glib.var0 = @s glib.res0
 function glib:math/sqrt
 
-# Restoring Var0
+# Restoring glib.var0
 scoreboard players operation @s glib.var0 = vector.length.var0 glib

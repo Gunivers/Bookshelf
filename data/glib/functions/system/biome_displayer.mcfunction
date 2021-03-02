@@ -1,4 +1,4 @@
-scoreboard objectives add glib.biome dummy
+scoreboard objectives add glib.biome dummy [{"text":"GLib ","color":"gold"},{"text":"Biome","color":"dark_gray"}]
 
 execute as @a[scores={glib.biome=0}] run title @s actionbar {"color":"gold","text":"You are in a Ocean biome"}
 execute as @a[scores={glib.biome=1}] run title @s actionbar {"color":"gold","text":"You are in a Plains biome"}

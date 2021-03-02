@@ -10,13 +10,13 @@
 
 # INPUT:
 # - Damaging item hold in hand (item)
-# - dmAddDamage (score dummy)
+# - glib.dmAddDamage (score dummy)
 
 # OUTPUT:
 # - glib.var4 (score dummy)
 
 # NOTE:
-# Transfer 1 dmAddDamage to glib.var4 with the unreabreaking's enchantement random
+# Transfer 1 glib.dmAddDamage to glib.var4 with the unreabreaking's enchantement random
 
 # CODE:
 
@@ -29,5 +29,5 @@ execute if entity @s[nbt={SelectedItem:{tag:{Enchantments:[{lvl:1s,id:"minecraft
 execute if entity @s[nbt={SelectedItem:{tag:{Enchantments:[{lvl:2s,id:"minecraft:unbreaking"}]}}}] if score @s glib.res0 matches ..33 run scoreboard players add @s glib.var4 1
 execute if entity @s[nbt={SelectedItem:{tag:{Enchantments:[{lvl:3s,id:"minecraft:unbreaking"}]}}}] if score @s glib.res0 matches ..25 run scoreboard players add @s glib.var4 1
 
-scoreboard players remove @s dmAddDamage 1
-execute if score @s dmAddDamage matches 1.. run function glib_child:default/core/durability_modifier/unbreaking_calc_loop
+scoreboard players remove @s glib.dmAddDamage 1
+execute if score @s glib.dmAddDamage matches 1.. run function glib_child:default/core/durability_modifier/unbreaking_calc_loop

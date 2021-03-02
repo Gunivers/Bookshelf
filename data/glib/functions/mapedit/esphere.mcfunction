@@ -1,13 +1,13 @@
 # NAME: esphere
 # PATH: glib:mapedit/sphere
- 
-# AUTHOR: xam74er1
- 
-# VERSION: 0.1 
-# MINECRAFT: 1.14.X 
 
-# INPUT: 
-# - Centre Location  : 
+# AUTHOR: xam74er1
+
+# VERSION: 0.1
+# MINECRAFT: 1.14.X
+
+# INPUT:
+# - Centre Location  :
 #	- Centre_X (score dummy)
 #	- Centre_Y (score dummy)
 # 	- Centre_Z (score dummy)
@@ -21,22 +21,22 @@
 # - Rayon
 #	Rayon (score dummy)
 
-# OUTPUT: 
+# OUTPUT:
 # - Generate a empty sphere at the center of rayon eguale to the scoreboard
- 
-# NOTE: 
+
+# NOTE:
 # For place the centre use function glib:mapedit/center
 
 #Ini
 
 
-scoreboard objectives add BrushID dummy
-scoreboard objectives add SphereCalc dummy
-scoreboard objectives add SphereSum dummy
-scoreboard objectives add Rayon2 dummy
+scoreboard objectives add BrushID dummy [{"text":"GLib ","color":"gold"},{"text":"BrushID","color":"dark_gray"}]
+scoreboard objectives add SphereCalc dummy [{"text":"GLib ","color":"gold"},{"text":"SphereCalc","color":"dark_gray"}]
+scoreboard objectives add SphereSum dummy [{"text":"GLib ","color":"gold"},{"text":"SphereSum","color":"dark_gray"}]
+scoreboard objectives add Rayon2 dummy [{"text":"GLib ","color":"gold"},{"text":"Radius 2","color":"dark_gray"}]
 
 
-#On place les point 
+#On place les point
 
 scoreboard players operation @s Pos_xd = @s Centre_X
 scoreboard players operation @s Pos_xd += @s Rayon
@@ -76,7 +76,7 @@ execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=near
 
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] glib.blockId = @s glib.blockId
 
-#3 corespon a la sphere 
+#3 corespon a la sphere
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 4
 
 
@@ -85,10 +85,10 @@ execute as @e[tag=spawnSET] at @s store result entity @s Pos[0] double 1 run sco
 execute as @e[tag=spawnSET] at @s store result entity @s Pos[1] double 1 run scoreboard players get @s Set_Y
 execute as @e[tag=spawnSET] at @s store result entity @s Pos[2] double 1 run scoreboard players get @s Set_Z
 
-#On ajout 1 au nb de set en cour 
+#On ajout 1 au nb de set en cour
 scoreboard players add setCount Set_Option 1
 
-#tag @e[tag=spawnSET] remove spawnSET 
+#tag @e[tag=spawnSET] remove spawnSET
 
-#On lance toute la procedure 
+#On lance toute la procedure
 function glib:mapedit/set/repeate

@@ -17,14 +17,14 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.var0 dummy
-scoreboard objectives add glib.var1 dummy
-scoreboard objectives add glib.var2 dummy
-scoreboard objectives add glib.var3 dummy
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add glib.var4 dummy
 
-scoreboard objectives add glib.res0 dummy
+
+
+
+
+
+
+
 
 #__________________________________________________
 # CONFIG

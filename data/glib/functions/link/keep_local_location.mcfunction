@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add glib.link.lx dummy
-scoreboard objectives add glib.link.ly dummy
-scoreboard objectives add glib.link.lz dummy
-scoreboard objectives add glib.link.to dummy
+scoreboard objectives add glib.link.lx dummy [{"text":"GLib ","color":"gold"},{"text":"Link Local X","color":"dark_gray"}]
+scoreboard objectives add glib.link.ly dummy [{"text":"GLib ","color":"gold"},{"text":"Link Local Y","color":"dark_gray"}]
+scoreboard objectives add glib.link.lz dummy [{"text":"GLib ","color":"gold"},{"text":"Link Local Z","color":"dark_gray"}]
+scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

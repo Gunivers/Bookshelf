@@ -7,34 +7,31 @@
 # MINECRAFT: 1.14
 
 # INPUT:
-# - dmAddDamage (score dummy)
+# - glib.dmAddDamage (score dummy)
 # - Damaging item hold in hand (item)
 
 # OUTPUT:
 # - SelectedItem.tag.Damage (NBT)
 
 # NOTE:
-# Add or remove the damage value contains into dmAddDamage score to the the item hold in the entity source hand
+# Add or remove the damage value contains into glib.dmAddDamage score to the the item hold in the entity source hand
 
 # PARAMETERS
 
 #__________________________________________________
 # INIT:
-scoreboard objectives add glib.var4 dummy
-scoreboard objectives add dmAddDamage dummy
-scoreboard players set @s glib.var4 0
 
+scoreboard objectives add glib.dmAddDamage dummy [{"text":"GLib ","color":"gold"},{"text":"dmAddDamage","color":"dark_gray"}]
+
+#__________________________________________________
 # CODE:
-
-scoreboard objectives add dmAddDamage dummy
-scoreboard players set @s glib.var4 0
 
 execute unless entity @s[nbt={SelectedItem:{tag:{}}}] run function glib_child:default/core/durability_modifier/fix_missing_tag
 
 execute store result score @s glib.var4 run data get entity @s SelectedItem.tag.Damage
-scoreboard players operation @s glib.var4 += @s dmAddDamage
+scoreboard players operation @s glib.var4 += @s glib.dmAddDamage
 execute store result entity @s SelectedItem.tag.Damage int 1 run scoreboard players get @s glib.var4
 
 scoreboard players reset @s glib.var4
 execute at @s run function glib_child:default/core/durability_modifier/fix_break
-scoreboard players set @s dmAddDamage 0
+scoreboard players set @s glib.dmAddDamage 0
