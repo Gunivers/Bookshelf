@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"minecraft:turtle_shell",
+		"minecraft:turtle_helmet",
 		"minecraft:elytra"
 	]
 }

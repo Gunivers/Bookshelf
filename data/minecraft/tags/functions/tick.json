@@ -1,5 +1,6 @@
 {
  "values": [
-	"glib_utils:loop"
+	"glib_utils:loop",
+  "glib:hello"
  ]
 }
