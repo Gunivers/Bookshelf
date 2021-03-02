@@ -30,4 +30,4 @@
 
 scoreboard players operation @s glib.var1 = @s glib.var0
 scoreboard players set @s glib.res0 1
-function glib:math/child/factorial-loop
+function glib:math/common/factorial/child/loop

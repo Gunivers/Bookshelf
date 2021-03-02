@@ -4,4 +4,4 @@ scoreboard players operation @s glib.var2 /= @s glib.var1
 scoreboard players operation @s glib.var2 *= @s glib.var0
 scoreboard players operation @s glib.var2 /= 100 glib.const
 
-execute unless entity @s[scores={glib.var2=0}] run function glib:math/child/exp
+execute unless entity @s[scores={glib.var2=0}] run function glib:math/common/exp/child/exp

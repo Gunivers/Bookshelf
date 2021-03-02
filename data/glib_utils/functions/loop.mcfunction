@@ -3,7 +3,7 @@
 
 #__________________________________________________
 # INIT
-say 1
+
 function glib_utils:import/scores
 function glib_utils:import/constants
 

@@ -26,7 +26,7 @@
 scoreboard players set @s glib.res0 1
 scoreboard players set @s glib.res1 0
 
-execute if score @s glib.var0 matches 0..1073741824 if score @s glib.res0 < @s glib.var0 run function glib:math/child/get_next_pow2_loop
+execute if score @s glib.var0 matches 0..1073741824 if score @s glib.res0 < @s glib.var0 run function glib:math/special/get_next_pow2/child/loop
 
 tag @s remove glib.math.getNextPow2.intOverflow
 tag @s remove glib.math.getNextPow2.wrongParameter

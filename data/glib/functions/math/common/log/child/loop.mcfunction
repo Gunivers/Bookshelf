@@ -18,4 +18,4 @@ execute if entity @s[scores={glib.var2=..-1}] run scoreboard players remove @s g
 scoreboard players operation @s glib.var2 /= 10000 glib.const
 
 # If it is useful to continue
-execute unless entity @s[scores={glib.res0=-1..1}] run function glib:math/child/log-loop
+execute unless entity @s[scores={glib.res0=-1..1}] run function glib:math/common/log/child/loop
