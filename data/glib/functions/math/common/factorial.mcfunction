@@ -17,11 +17,6 @@
 #__________________________________________________
 # INIT
 
-
-
-
-
-
 #__________________________________________________
 # CONFIG
 
@@ -31,3 +26,5 @@
 scoreboard players operation @s glib.var1 = @s glib.var0
 scoreboard players set @s glib.res0 1
 function glib:math/common/factorial/child/loop
+
+scoreboard players set @s[scores={glib.var0=0}] glib.res0 1

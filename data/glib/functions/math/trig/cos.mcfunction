@@ -17,50 +17,47 @@
 #__________________________________________________
 # INIT
 
-
-
-
-
-
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
+
 # Convert to angle [0;360]
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"INPUT: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}}]
 
-scoreboard players operation @s[scores={glib.var0=..-1}] glib.var0 *= Neg glib.const
-scoreboard players operation @s[scores={glib.var0=360..}] glib.var0 %= 360 glib.const
+scoreboard players operation VAR0 glib = @s glib.var0
+execute if score VAR0 glib matches ..-1 run scoreboard players operation VAR0 glib *= Neg glib.const
+execute if score VAR0 glib matches 360.. run scoreboard players operation VAR0 glib %= 360 glib.const
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"MODULO: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}}]
 
 # Retranscription of glib.var0 on interval [0;90[
 
-scoreboard players operation @s glib.var2 = @s glib.var0
-scoreboard players operation @s[scores={glib.var0=90..179}] glib.var2 *= Neg glib.const
-scoreboard players operation @s[scores={glib.var0=90..179}] glib.var2 += 180 glib.const
-scoreboard players operation @s[scores={glib.var0=180..269}] glib.var2 -= 180 glib.const
-scoreboard players operation @s[scores={glib.var0=270..}] glib.var2 *= Neg glib.const
-scoreboard players operation @s[scores={glib.var0=270..}] glib.var2 += 360 glib.const
+scoreboard players operation VAR2 glib = VAR0 glib
+execute if score VAR0 glib matches 90..179 run scoreboard players operation VAR2 glib *= Neg glib.const
+execute if score VAR0 glib matches 90..179 run scoreboard players operation VAR2 glib += 180 glib.const
+execute if score VAR0 glib matches 180..269 run scoreboard players operation VAR2 glib -= 180 glib.const
+execute if score VAR0 glib matches 270.. run scoreboard players operation VAR2 glib *= Neg glib.const
+execute if score VAR0 glib matches 270.. run scoreboard players operation VAR2 glib += 360 glib.const
 
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"0-90: ","color":"red"},{"score":{"name":"@s","objective":"glib.var0"}}]
 
 # Calcul Cos
 
-scoreboard players operation @s glib.res0 = @s glib.var2
+scoreboard players operation @s glib.res0 = VAR2 glib
 scoreboard players operation @s glib.res0 *= @s glib.res0
 scoreboard players operation @s glib.res0 *= 4 glib.const
 scoreboard players operation @s glib.res0 *= Neg glib.const
 scoreboard players operation @s glib.res0 += 32400 glib.const
 scoreboard players operation @s glib.res0 *= 1000 glib.const
-scoreboard players operation @s glib.var1 = @s glib.var2
-scoreboard players operation @s glib.var1 *= @s glib.var1
-scoreboard players operation @s glib.var1 += 32400 glib.const
-scoreboard players operation @s glib.res0 /= @s glib.var1
+scoreboard players operation VAR1 glib = VAR2 glib
+scoreboard players operation VAR1 glib *= VAR1 glib
+scoreboard players operation VAR1 glib += 32400 glib.const
+scoreboard players operation @s glib.res0 /= VAR1 glib
 
-scoreboard players operation @s[scores={glib.var0=90..269}] glib.res0 *= Neg glib.const
+execute if score VAR0 glib matches 90..269 run scoreboard players operation @s glib.res0 *= Neg glib.const
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
