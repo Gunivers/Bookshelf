@@ -13,7 +13,7 @@ function glib_utils:import/constants
 function glib_utils:security
 
 # Glib Menu
-execute if score menu.refresh glib.data matches 10.. run scoreboard players set menu.refresh glib.data 0
+execute if score menu.refresh glib.data matches 20.. run scoreboard players set menu.refresh glib.data 0
 scoreboard players add menu.refresh glib.data 1
 execute unless score menu.rules.commandBlockOutput glib.data matches 1 if score menu.refresh glib.data matches 1 as @a[tag=glib.menu] run function glib_utils:menu/main
 execute if score menu.rules.commandBlockOutput glib.data matches 1 as @a[tag=glib.menu] run function glib_utils:menu/main
