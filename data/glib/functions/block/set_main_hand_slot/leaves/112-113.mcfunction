@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 112 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cauldron
-execute if score @s glib.blockId matches 113 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

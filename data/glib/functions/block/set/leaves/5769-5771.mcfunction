@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 5769 run setblock ~ ~ ~ granite_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=low]
-execute if score @s BlockId matches 5770 run setblock ~ ~ ~ granite_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=tall]
-execute if score @s BlockId matches 5771 run setblock ~ ~ ~ granite_wall[east=none,north=none,south=low,up=false,waterlogged=true,west=none]

@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 7956 run setblock ~ ~ ~ mossy_stone_brick_wall[east=low,north=none,south=low,up=false,waterlogged=false,west=low]
-execute if score @s BlockId matches 7957 run setblock ~ ~ ~ mossy_stone_brick_wall[east=low,north=none,south=low,up=false,waterlogged=false,west=tall]
-execute if score @s BlockId matches 7958 run setblock ~ ~ ~ mossy_stone_brick_wall[east=low,north=none,south=tall,up=true,waterlogged=true,west=none]

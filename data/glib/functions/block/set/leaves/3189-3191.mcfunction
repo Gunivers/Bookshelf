@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 3189 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=right,open=true,powered=false]
-execute if score @s BlockId matches 3190 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=right,open=false,powered=true]
-execute if score @s BlockId matches 3191 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=right,open=false,powered=false]

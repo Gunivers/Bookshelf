@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 12027 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=true]
-execute if score @s BlockId matches 12028 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s BlockId matches 12029 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=true]

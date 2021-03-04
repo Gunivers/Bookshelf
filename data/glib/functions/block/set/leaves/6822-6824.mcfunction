@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 6822 run setblock ~ ~ ~ jungle_trapdoor[facing=west,half=top,open=false,powered=true,waterlogged=false]
-execute if score @s BlockId matches 6823 run setblock ~ ~ ~ jungle_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=true]
-execute if score @s BlockId matches 6824 run setblock ~ ~ ~ jungle_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]

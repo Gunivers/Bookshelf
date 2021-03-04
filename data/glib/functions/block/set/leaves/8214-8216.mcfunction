@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 8214 run setblock ~ ~ ~ mushroom_stem[down=false,east=false,north=true,south=false,up=true,west=true]
-execute if score @s BlockId matches 8215 run setblock ~ ~ ~ mushroom_stem[down=false,east=false,north=true,south=false,up=true,west=false]
-execute if score @s BlockId matches 8216 run setblock ~ ~ ~ mushroom_stem[down=false,east=false,north=true,south=false,up=false,west=true]

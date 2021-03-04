@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 6738 run setblock ~ ~ ~ jungle_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s BlockId matches 6739 run setblock ~ ~ ~ jungle_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=true]
-execute if score @s BlockId matches 6740 run setblock ~ ~ ~ jungle_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=false]

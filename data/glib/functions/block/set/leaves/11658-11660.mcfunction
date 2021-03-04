@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 11658 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=none,up=true,waterlogged=false,west=tall]
-execute if score @s BlockId matches 11659 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=none]
-execute if score @s BlockId matches 11660 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=low]

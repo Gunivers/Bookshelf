@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 3663 run setblock ~ ~ ~ dark_oak_door[facing=south,half=upper,hinge=right,open=true,powered=false]
-execute if score @s BlockId matches 3664 run setblock ~ ~ ~ dark_oak_door[facing=south,half=upper,hinge=right,open=false,powered=true]
-execute if score @s BlockId matches 3665 run setblock ~ ~ ~ dark_oak_door[facing=south,half=upper,hinge=right,open=false,powered=false]

@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 222 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_stone
-execute if score @s glib.blockId matches 223 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand end_stone_bricks

@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 15573 run setblock ~ ~ ~ spruce_trapdoor[facing=east,half=bottom,open=true,powered=true,waterlogged=false]
-execute if score @s BlockId matches 15574 run setblock ~ ~ ~ spruce_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=true]
-execute if score @s BlockId matches 15575 run setblock ~ ~ ~ spruce_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=false]

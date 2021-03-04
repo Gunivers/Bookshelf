@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 2190 run setblock ~ ~ ~ brick_wall[east=low,north=tall,south=low,up=false,waterlogged=false,west=none]
-execute if score @s BlockId matches 2191 run setblock ~ ~ ~ brick_wall[east=low,north=tall,south=low,up=false,waterlogged=false,west=low]
-execute if score @s BlockId matches 2192 run setblock ~ ~ ~ brick_wall[east=low,north=tall,south=low,up=false,waterlogged=false,west=tall]

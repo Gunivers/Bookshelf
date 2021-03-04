@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 99 run setblock ~ ~ ~ acacia_fence[east=true,north=false,south=true,waterlogged=false,west=false]
-execute if score @s BlockId matches 100 run setblock ~ ~ ~ acacia_fence[east=true,north=false,south=false,waterlogged=true,west=true]
-execute if score @s BlockId matches 101 run setblock ~ ~ ~ acacia_fence[east=true,north=false,south=false,waterlogged=true,west=false]

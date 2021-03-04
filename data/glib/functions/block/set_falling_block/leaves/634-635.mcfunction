@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 634 run summon falling_block ~ ~ ~ {BlockState:{Name:"tripwire_hook"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 635 run summon falling_block ~ ~ ~ {BlockState:{Name:"tube_coral"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

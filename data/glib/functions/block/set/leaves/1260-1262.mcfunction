@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 1260 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=bottom,open=false,powered=false,waterlogged=false]
-execute if score @s BlockId matches 1261 run setblock ~ ~ ~ birch_trapdoor[facing=east,half=top,open=true,powered=true,waterlogged=true]
-execute if score @s BlockId matches 1262 run setblock ~ ~ ~ birch_trapdoor[facing=east,half=top,open=true,powered=true,waterlogged=false]

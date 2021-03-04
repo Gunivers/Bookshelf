@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 3258 run setblock ~ ~ ~ crimson_fence[east=true,north=false,south=true,waterlogged=false,west=true]
-execute if score @s BlockId matches 3259 run setblock ~ ~ ~ crimson_fence[east=true,north=false,south=true,waterlogged=false,west=false]
-execute if score @s BlockId matches 3260 run setblock ~ ~ ~ crimson_fence[east=true,north=false,south=false,waterlogged=true,west=true]

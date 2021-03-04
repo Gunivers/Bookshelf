@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 11271 run setblock ~ ~ ~ prismarine_brick_stairs[facing=north,half=top,shape=straight,waterlogged=true]
-execute if score @s BlockId matches 11272 run setblock ~ ~ ~ prismarine_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]
-execute if score @s BlockId matches 11273 run setblock ~ ~ ~ prismarine_brick_stairs[facing=north,half=top,shape=inner_left,waterlogged=true]

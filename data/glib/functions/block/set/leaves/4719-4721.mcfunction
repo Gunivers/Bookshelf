@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 4719 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=top,shape=inner_left,waterlogged=true]
-execute if score @s BlockId matches 4720 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]
-execute if score @s BlockId matches 4721 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]

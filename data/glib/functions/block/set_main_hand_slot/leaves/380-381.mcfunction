@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 380 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_cobblestone_slab
-execute if score @s glib.blockId matches 381 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand mossy_cobblestone_stairs

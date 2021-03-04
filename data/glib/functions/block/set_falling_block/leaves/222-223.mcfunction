@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 222 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 223 run summon falling_block ~ ~ ~ {BlockState:{Name:"end_stone_bricks"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

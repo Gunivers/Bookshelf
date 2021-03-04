@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 106 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cactus
-execute if score @s glib.blockId matches 107 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand cake

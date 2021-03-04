@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 640 run summon falling_block ~ ~ ~ {BlockState:{Name:"vine"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 641 run summon falling_block ~ ~ ~ {BlockState:{Name:"void_air"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 4047 run setblock ~ ~ ~ dark_prismarine_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]
-execute if score @s BlockId matches 4048 run setblock ~ ~ ~ dark_prismarine_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=true]
-execute if score @s BlockId matches 4049 run setblock ~ ~ ~ dark_prismarine_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]

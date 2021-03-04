@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 270 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand green_stained_glass
-execute if score @s glib.blockId matches 271 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand green_stained_glass_pane

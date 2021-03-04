@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 492 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine_brick_slab
-execute if score @s glib.blockId matches 493 run replaceitem entity @e[tag=setHeadSlot] armor.head prismarine_brick_stairs

@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 11181 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=top,shape=outer_right,waterlogged=true]
-execute if score @s BlockId matches 11182 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=top,shape=outer_right,waterlogged=false]
-execute if score @s BlockId matches 11183 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=bottom,shape=straight,waterlogged=true]

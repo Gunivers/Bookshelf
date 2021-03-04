@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 6342 run setblock ~ ~ ~ iron_bars[east=false,north=false,south=false,waterlogged=true,west=false]
-execute if score @s BlockId matches 6343 run setblock ~ ~ ~ iron_bars[east=false,north=false,south=false,waterlogged=false,west=true]
-execute if score @s BlockId matches 6344 run setblock ~ ~ ~ iron_bars[east=false,north=false,south=false,waterlogged=false,west=false]

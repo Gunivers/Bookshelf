@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 4221 run setblock ~ ~ ~ diorite_stairs[facing=south,half=bottom,shape=straight,waterlogged=true]
-execute if score @s BlockId matches 4222 run setblock ~ ~ ~ diorite_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
-execute if score @s BlockId matches 4223 run setblock ~ ~ ~ diorite_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=true]

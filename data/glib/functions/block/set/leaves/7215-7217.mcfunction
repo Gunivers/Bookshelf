@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 7215 run setblock ~ ~ ~ lime_stained_glass_pane[east=false,north=false,south=true,waterlogged=true,west=true]
-execute if score @s BlockId matches 7216 run setblock ~ ~ ~ lime_stained_glass_pane[east=false,north=false,south=true,waterlogged=true,west=false]
-execute if score @s BlockId matches 7217 run setblock ~ ~ ~ lime_stained_glass_pane[east=false,north=false,south=true,waterlogged=false,west=true]

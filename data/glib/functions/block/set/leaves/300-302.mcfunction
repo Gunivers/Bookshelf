@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 300 run setblock ~ ~ ~ acacia_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=true]
-execute if score @s BlockId matches 301 run setblock ~ ~ ~ acacia_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=false]
-execute if score @s BlockId matches 302 run setblock ~ ~ ~ acacia_trapdoor[facing=north,half=bottom,open=true,powered=false,waterlogged=true]

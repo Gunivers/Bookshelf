@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 2022 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=none]
-execute if score @s BlockId matches 2023 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=low]
-execute if score @s BlockId matches 2024 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=tall]

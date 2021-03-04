@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 238 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand glass
-execute if score @s glib.blockId matches 239 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand glass_pane

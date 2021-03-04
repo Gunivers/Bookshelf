@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 2721 run setblock ~ ~ ~ cobblestone_stairs[facing=west,half=top,shape=inner_left,waterlogged=true]
-execute if score @s BlockId matches 2722 run setblock ~ ~ ~ cobblestone_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]
-execute if score @s BlockId matches 2723 run setblock ~ ~ ~ cobblestone_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]

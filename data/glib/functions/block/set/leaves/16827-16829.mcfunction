@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 16827 run setblock ~ ~ ~ warped_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=true]
-execute if score @s BlockId matches 16828 run setblock ~ ~ ~ warped_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=false]
-execute if score @s BlockId matches 16829 run setblock ~ ~ ~ warped_trapdoor[facing=east,half=bottom,open=false,powered=true,waterlogged=true]

@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 588 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_leaves
-execute if score @s glib.blockId matches 589 run replaceitem entity @e[tag=setHeadSlot] armor.head spruce_log

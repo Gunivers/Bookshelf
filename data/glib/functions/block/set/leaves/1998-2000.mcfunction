@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 1998 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=none,up=false,waterlogged=false,west=none]
-execute if score @s BlockId matches 1999 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=none,up=false,waterlogged=false,west=low]
-execute if score @s BlockId matches 2000 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=none,up=false,waterlogged=false,west=tall]

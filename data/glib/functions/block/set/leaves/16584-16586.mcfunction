@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 16584 run setblock ~ ~ ~ warped_fence[east=true,north=false,south=true,waterlogged=true,west=false]
-execute if score @s BlockId matches 16585 run setblock ~ ~ ~ warped_fence[east=true,north=false,south=true,waterlogged=false,west=true]
-execute if score @s BlockId matches 16586 run setblock ~ ~ ~ warped_fence[east=true,north=false,south=true,waterlogged=false,west=false]

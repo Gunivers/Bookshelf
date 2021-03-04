@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 572 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_red_sandstone_slab"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 573 run summon falling_block ~ ~ ~ {BlockState:{Name:"smooth_red_sandstone_stairs"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

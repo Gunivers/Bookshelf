@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 6606 run setblock ~ ~ ~ jungle_fence[east=false,north=false,south=true,waterlogged=true,west=false]
-execute if score @s BlockId matches 6607 run setblock ~ ~ ~ jungle_fence[east=false,north=false,south=true,waterlogged=false,west=true]
-execute if score @s BlockId matches 6608 run setblock ~ ~ ~ jungle_fence[east=false,north=false,south=true,waterlogged=false,west=false]

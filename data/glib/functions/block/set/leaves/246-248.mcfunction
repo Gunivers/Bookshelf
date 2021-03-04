@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 246 run setblock ~ ~ ~ acacia_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=true]
-execute if score @s BlockId matches 247 run setblock ~ ~ ~ acacia_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=false]
-execute if score @s BlockId matches 248 run setblock ~ ~ ~ acacia_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=true]

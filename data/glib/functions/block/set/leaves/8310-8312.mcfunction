@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 8310 run setblock ~ ~ ~ nether_brick_stairs[facing=west,half=top,shape=straight,waterlogged=false]
-execute if score @s BlockId matches 8311 run setblock ~ ~ ~ nether_brick_stairs[facing=west,half=top,shape=inner_left,waterlogged=true]
-execute if score @s BlockId matches 8312 run setblock ~ ~ ~ nether_brick_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]

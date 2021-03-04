@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 86 run summon falling_block ~ ~ ~ {BlockState:{Name:"brick_wall"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}
-execute if score @s glib.blockId matches 87 run summon falling_block ~ ~ ~ {BlockState:{Name:"brown_banner"},Tags:["fallingBlockGL"],NoGravity:0,Time:50}

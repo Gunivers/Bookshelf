@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 50 run replaceitem entity @e[tag=setHeadSlot] armor.head black_bed
-execute if score @s glib.blockId matches 51 run replaceitem entity @e[tag=setHeadSlot] armor.head black_carpet

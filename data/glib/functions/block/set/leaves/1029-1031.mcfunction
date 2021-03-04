@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 1029 run setblock ~ ~ ~ birch_fence[east=false,north=true,south=false,waterlogged=true,west=true]
-execute if score @s BlockId matches 1030 run setblock ~ ~ ~ birch_fence[east=false,north=true,south=false,waterlogged=true,west=false]
-execute if score @s BlockId matches 1031 run setblock ~ ~ ~ birch_fence[east=false,north=true,south=false,waterlogged=false,west=true]

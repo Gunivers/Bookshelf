@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 194 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand dead_horn_coral_fan
-execute if score @s glib.blockId matches 195 run replaceitem entity @e[tag=setMainHandSlot] weapon.mainhand air

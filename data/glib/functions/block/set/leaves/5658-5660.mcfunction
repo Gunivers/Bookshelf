@@ -1,3 +1,0 @@
-execute if score @s BlockId matches 5658 run setblock ~ ~ ~ glass_pane[east=false,north=false,south=true,waterlogged=false,west=false]
-execute if score @s BlockId matches 5659 run setblock ~ ~ ~ glass_pane[east=false,north=false,south=false,waterlogged=true,west=true]
-execute if score @s BlockId matches 5660 run setblock ~ ~ ~ glass_pane[east=false,north=false,south=false,waterlogged=true,west=false]
