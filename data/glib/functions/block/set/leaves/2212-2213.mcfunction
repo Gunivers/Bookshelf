@@ -1,0 +1,2 @@
+execute if score @s glib.blockId matches 2212 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=8,powered=false]
+execute if score @s glib.blockId matches 2213 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=9,powered=true]
