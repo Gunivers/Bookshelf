@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 5539 run setblock ~ ~ ~ oak_fence[east=false,north=true,south=true,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 5540 run setblock ~ ~ ~ oak_fence[east=false,north=true,south=true,waterlogged=true,west=false]
-execute if score @s glib.blockId matches 5541 run setblock ~ ~ ~ oak_fence[east=false,north=true,south=true,waterlogged=false,west=true]

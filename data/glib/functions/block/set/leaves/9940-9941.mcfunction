@@ -1,2 +1,0 @@
-execute if score @s glib.blockId matches 9940 run setblock ~ ~ ~ crimson_door[facing=south,half=upper,hinge=left,open=false,powered=false]
-execute if score @s glib.blockId matches 9941 run setblock ~ ~ ~ crimson_door[facing=south,half=upper,hinge=right,open=true,powered=true]

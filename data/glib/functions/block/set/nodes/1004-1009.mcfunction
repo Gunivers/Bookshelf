@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 1004..1006 run function glib:block/set/leaves/1004-1006
-execute if score @s glib.blockId matches 1007..1008 run function glib:block/set/leaves/1007-1008
-execute if score @s glib.blockId matches 1009..1009 run function glib:block/set/leaves/1009-1009
