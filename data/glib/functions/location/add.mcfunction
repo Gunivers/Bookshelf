@@ -1,6 +1,6 @@
 
 #__________________________________________________
-# INFO     Copyright © 2020 Gunivers.
+# INFO     Copyright © 2021 Altearn.
 
 # Authors: Leirof
 # Contributors:
