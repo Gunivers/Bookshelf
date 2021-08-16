@@ -1,0 +1,3 @@
+execute if score @s glib.blockId matches 2426..2434 run function glib:block/set/nodes/2426-2434
+execute if score @s glib.blockId matches 2435..2443 run function glib:block/set/nodes/2435-2443
+execute if score @s glib.blockId matches 2444..2452 run function glib:block/set/nodes/2444-2452

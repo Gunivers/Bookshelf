@@ -4,7 +4,7 @@
 # Authors: theogiraudet & leirof
 # Contributors:
 # MC Version: 1.13
-# Last check: 1.17
+# Last check: 1.15.2
 
 # Original path: glib:orientation/add
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
@@ -25,13 +25,12 @@
 #__________________________________________________
 # CODE
 
-function glib_utils:default_entity
-tag @e[tag=glib.new,limit=1] add orientation
-tag @e[tag=orientation,limit=1] remove glib.new
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:1,Tags:["Glib","SetRotation"]}
+tp @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] @s
+execute as @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] at @s run function glib:orientation/get
+scoreboard players operation @s glib.var0 += @e[tag=Glib,tag=SetRotation,limit=1,sort=nearest] glib.ori.h
 
-execute as @e[tag=orientation,limit=1] at @s run function glib:orientation/get
-scoreboard players operation @s glib.var0 += @e[tag=orientation,limit=1] glib.oriH
 
-execute store result entity @e[tag=orientation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var0
-tp @s @e[tag=orientation,limit=1]
-kill @e[tag=orientation]
+execute store result entity @e[type=armor_stand,tag=SetRotation,limit=1] Rotation[0] float 1 run scoreboard players get @s glib.var0
+tp @s @e[type=armor_stand,tag=SetRotation,limit=1]
+kill @e[type=armor_stand,tag=SetRotation,limit=1]
