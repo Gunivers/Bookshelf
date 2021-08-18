@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 15563 run setblock ~ ~ ~ warped_fence_gate[facing=west,open=false,powered=true]
+execute if score @s glib.blockVarId matches 15564 run setblock ~ ~ ~ warped_fence_gate[facing=west,open=false,powered=false]
+execute if score @s glib.blockVarId matches 15565 run setblock ~ ~ ~ warped_fence_gate[facing=east,open=true,powered=true]
+execute if score @s glib.blockVarId matches 15566 run setblock ~ ~ ~ warped_fence_gate[facing=east,open=true,powered=false]
+execute if score @s glib.blockVarId matches 15567 run setblock ~ ~ ~ warped_fence_gate[facing=east,open=false,powered=true]

@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 1965 run setblock ~ ~ ~ fire[age=14,east=false,north=true,south=false,up=true,west=false]
-execute if score @s glib.blockId matches 1966 run setblock ~ ~ ~ fire[age=14,east=false,north=true,south=false,up=false,west=true]
-execute if score @s glib.blockId matches 1967 run setblock ~ ~ ~ fire[age=14,east=false,north=true,south=false,up=false,west=false]

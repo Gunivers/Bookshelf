@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 4766 run setblock ~ ~ ~ iron_bars[east=true,north=true,south=true,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 4767 run setblock ~ ~ ~ iron_bars[east=true,north=true,south=true,waterlogged=true,west=false]
-execute if score @s glib.blockId matches 4768 run setblock ~ ~ ~ iron_bars[east=true,north=true,south=true,waterlogged=false,west=true]
-execute if score @s glib.blockId matches 4769 run setblock ~ ~ ~ iron_bars[east=true,north=true,south=true,waterlogged=false,west=false]
-execute if score @s glib.blockId matches 4770 run setblock ~ ~ ~ iron_bars[east=true,north=true,south=false,waterlogged=true,west=true]

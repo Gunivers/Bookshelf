@@ -1,0 +1,4 @@
+execute if score @s glib.blockVarId matches 19472 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=tall,south=none,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockVarId matches 19473 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=tall,south=none,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockVarId matches 19474 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=tall,south=none,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockVarId matches 19475 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=tall,south=none,up=true,waterlogged=false,west=none]

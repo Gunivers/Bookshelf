@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 5853 run setblock ~ ~ ~ command_block[conditional=true,facing=west]
+execute if score @s glib.blockVarId matches 5854 run setblock ~ ~ ~ command_block[conditional=true,facing=up]
+execute if score @s glib.blockVarId matches 5855 run setblock ~ ~ ~ command_block[conditional=true,facing=down]
+execute if score @s glib.blockVarId matches 5856 run setblock ~ ~ ~ command_block[conditional=false,facing=north]
+execute if score @s glib.blockVarId matches 5857 run setblock ~ ~ ~ command_block[conditional=false,facing=east]

@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 14642 run setblock ~ ~ ~ end_stone_brick_wall[east=tall,north=low,south=tall,up=false,waterlogged=false,west=none]
+execute if score @s glib.blockVarId matches 14643 run setblock ~ ~ ~ end_stone_brick_wall[east=tall,north=low,south=tall,up=false,waterlogged=false,west=low]
+execute if score @s glib.blockVarId matches 14644 run setblock ~ ~ ~ end_stone_brick_wall[east=tall,north=low,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockVarId matches 14645 run setblock ~ ~ ~ end_stone_brick_wall[east=tall,north=tall,south=none,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockVarId matches 14646 run setblock ~ ~ ~ end_stone_brick_wall[east=tall,north=tall,south=none,up=true,waterlogged=true,west=low]

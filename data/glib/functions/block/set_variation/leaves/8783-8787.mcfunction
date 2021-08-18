@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 8783 run setblock ~ ~ ~ acacia_fence_gate[facing=west,open=false,powered=false]
+execute if score @s glib.blockVarId matches 8784 run setblock ~ ~ ~ acacia_fence_gate[facing=west,open=true,powered=true]
+execute if score @s glib.blockVarId matches 8785 run setblock ~ ~ ~ acacia_fence_gate[facing=west,open=true,powered=false]
+execute if score @s glib.blockVarId matches 8786 run setblock ~ ~ ~ acacia_fence_gate[facing=west,open=false,powered=true]
+execute if score @s glib.blockVarId matches 8787 run setblock ~ ~ ~ acacia_fence_gate[facing=west,open=false,powered=false]

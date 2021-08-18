@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 10039 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=west,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockVarId matches 10040 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=west,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockVarId matches 10041 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=west,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockVarId matches 10042 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockVarId matches 10043 run setblock ~ ~ ~ smooth_red_sandstone_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]

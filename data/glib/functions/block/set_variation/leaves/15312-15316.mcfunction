@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 15312 run setblock ~ ~ ~ warped_slab[type=double,waterlogged=false]
+execute if score @s glib.blockVarId matches 15313 run setblock ~ ~ ~ crimson_pressure_plate[powered=true]
+execute if score @s glib.blockVarId matches 15314 run setblock ~ ~ ~ crimson_pressure_plate[powered=false]
+execute if score @s glib.blockVarId matches 15315 run setblock ~ ~ ~ warped_pressure_plate[powered=true]
+execute if score @s glib.blockVarId matches 15316 run setblock ~ ~ ~ warped_pressure_plate[powered=false]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 33 run setblock ~ ~ ~ bedrock
-execute if score @s glib.blockId matches 34 run setblock ~ ~ ~ water[level=0]
-execute if score @s glib.blockId matches 35 run setblock ~ ~ ~ water[level=1]
+execute if score @s glib.blockId matches 33 run setblock ~ ~ ~ iron_ore
+execute if score @s glib.blockId matches 34 run setblock ~ ~ ~ deepslate_iron_ore
+execute if score @s glib.blockId matches 35 run setblock ~ ~ ~ coal_ore

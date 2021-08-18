@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 190 run setblock ~ ~ ~ jungle_leaves[distance=1,persistent=true]
-execute if score @s glib.blockId matches 191 run setblock ~ ~ ~ jungle_leaves[distance=1,persistent=false]
-execute if score @s glib.blockId matches 192 run setblock ~ ~ ~ jungle_leaves[distance=2,persistent=true]
+execute if score @s glib.blockId matches 190 run setblock ~ ~ ~ redstone_wall_torch
+execute if score @s glib.blockId matches 191 run setblock ~ ~ ~ stone_button
+execute if score @s glib.blockId matches 192 run setblock ~ ~ ~ snow

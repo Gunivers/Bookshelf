@@ -7,7 +7,7 @@
 # Last check: 1.15.2
 
 # Original path: glib:id/check_parent
-# Documentation: $1
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Latest#Id
 # Parallelizable: false
 # Note:
 

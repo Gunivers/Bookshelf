@@ -6,8 +6,8 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:id/Getcuid
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Original path: glib:id/get_cuid
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Latest#Id
 # Parallelizable: true
 # Note: Gives a unique identifier to the source entity.
 # - To reset CUID, set the entity score "CUID" at 0 and make it execute this function.

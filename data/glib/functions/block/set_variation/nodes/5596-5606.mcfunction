@@ -1,0 +1,3 @@
+execute if score @s glib.blockVarId matches 5596..5598 run function glib:block/set/leaves/5596-5598
+execute if score @s glib.blockVarId matches 5599..5601 run function glib:block/set/leaves/5599-5601
+execute if score @s glib.blockVarId matches 5602..5606 run function glib:block/set/leaves/5602-5606

@@ -1,0 +1,3 @@
+execute if score @s glib.blockVarId matches 11605..11613 run function glib:block/set/nodes/11605-11613
+execute if score @s glib.blockVarId matches 11614..11622 run function glib:block/set/nodes/11614-11622
+execute if score @s glib.blockVarId matches 11623..11633 run function glib:block/set/nodes/11623-11633

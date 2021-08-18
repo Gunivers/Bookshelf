@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 19749 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=low,south=none,up=false,waterlogged=false,west=low]
+execute if score @s glib.blockVarId matches 19750 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=low,south=none,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockVarId matches 19751 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=low,south=low,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockVarId matches 19752 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=low,south=low,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockVarId matches 19753 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=low,south=low,up=true,waterlogged=true,west=tall]

@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 3844 run setblock ~ ~ ~ dark_oak_wall_sign[facing=south,waterlogged=true]
+execute if score @s glib.blockVarId matches 3845 run setblock ~ ~ ~ dark_oak_wall_sign[facing=south,waterlogged=false]
+execute if score @s glib.blockVarId matches 3846 run setblock ~ ~ ~ dark_oak_wall_sign[facing=west,waterlogged=true]
+execute if score @s glib.blockVarId matches 3847 run setblock ~ ~ ~ dark_oak_wall_sign[facing=west,waterlogged=false]
+execute if score @s glib.blockVarId matches 3848 run setblock ~ ~ ~ dark_oak_wall_sign[facing=east,waterlogged=true]

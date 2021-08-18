@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 379 run setblock ~ ~ ~ note_block[instrument=basedrum,note=24,powered=true]
-execute if score @s glib.blockId matches 380 run setblock ~ ~ ~ note_block[instrument=basedrum,note=24,powered=false]
-execute if score @s glib.blockId matches 381 run setblock ~ ~ ~ note_block[instrument=snare,note=0,powered=true]
+execute if score @s glib.blockId matches 379 run setblock ~ ~ ~ gray_stained_glass_pane
+execute if score @s glib.blockId matches 380 run setblock ~ ~ ~ light_gray_stained_glass_pane
+execute if score @s glib.blockId matches 381 run setblock ~ ~ ~ cyan_stained_glass_pane

@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 497 run setblock ~ ~ ~ note_block[instrument=bass,note=8,powered=true]
+execute if score @s glib.blockVarId matches 498 run setblock ~ ~ ~ note_block[instrument=bass,note=8,powered=false]
+execute if score @s glib.blockVarId matches 499 run setblock ~ ~ ~ note_block[instrument=bass,note=9,powered=true]
+execute if score @s glib.blockVarId matches 500 run setblock ~ ~ ~ note_block[instrument=bass,note=9,powered=false]
+execute if score @s glib.blockVarId matches 501 run setblock ~ ~ ~ note_block[instrument=bass,note=10,powered=true]

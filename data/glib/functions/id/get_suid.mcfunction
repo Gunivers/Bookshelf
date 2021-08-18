@@ -6,16 +6,17 @@
 # MC Version: 1.13
 # Last check: 1.15.2
 
-# Original path: entity/id/getsuid
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Original path: glib:id/get_suid
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Latest#Id
 # Parallelizable: true
+
 # Note: Gives a unique identifier to the source entity
 # - To reset SUID, set the entity score "SUID" at 0 and make it execute this function.
 
 #__________________________________________________
 # PARAMETERS
 
-# Output: SUID (score): Simple Unique ID
+# Output : glib.id (score) : Simple Unique ID
 
 #__________________________________________________
 # INIT

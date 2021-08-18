@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 12441..12449 run function glib:block/set/nodes/12441-12449
-execute if score @s glib.blockId matches 12450..12458 run function glib:block/set/nodes/12450-12458
-execute if score @s glib.blockId matches 12459..12467 run function glib:block/set/nodes/12459-12467

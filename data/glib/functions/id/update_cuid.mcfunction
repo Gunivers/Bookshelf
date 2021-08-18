@@ -6,9 +6,10 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib:id/Updatecuid
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Original path: glib:id/Update_cuid
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Latest#Id
 # Parallelizable: global
+
 # Note:
 
 #__________________________________________________

@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 9286 run setblock ~ ~ ~ dark_oak_door[facing=west,half=lower,hinge=left,open=false,powered=true]
+execute if score @s glib.blockVarId matches 9287 run setblock ~ ~ ~ dark_oak_door[facing=west,half=lower,hinge=left,open=false,powered=false]
+execute if score @s glib.blockVarId matches 9288 run setblock ~ ~ ~ dark_oak_door[facing=west,half=lower,hinge=right,open=true,powered=true]
+execute if score @s glib.blockVarId matches 9289 run setblock ~ ~ ~ dark_oak_door[facing=west,half=lower,hinge=right,open=true,powered=false]
+execute if score @s glib.blockVarId matches 9290 run setblock ~ ~ ~ dark_oak_door[facing=west,half=lower,hinge=right,open=false,powered=true]

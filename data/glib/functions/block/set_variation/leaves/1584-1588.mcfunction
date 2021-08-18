@@ -1,0 +1,5 @@
+execute if score @s glib.blockVarId matches 1584 run setblock ~ ~ ~ fire[age=2,east=false,north=false,south=true,up=true,west=true]
+execute if score @s glib.blockVarId matches 1585 run setblock ~ ~ ~ fire[age=2,east=false,north=false,south=true,up=true,west=false]
+execute if score @s glib.blockVarId matches 1586 run setblock ~ ~ ~ fire[age=2,east=false,north=false,south=true,up=false,west=true]
+execute if score @s glib.blockVarId matches 1587 run setblock ~ ~ ~ fire[age=2,east=false,north=false,south=true,up=false,west=false]
+execute if score @s glib.blockVarId matches 1588 run setblock ~ ~ ~ fire[age=2,east=false,north=false,south=false,up=true,west=true]
