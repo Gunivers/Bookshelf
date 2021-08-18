@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 4095 run setblock ~ ~ ~ cake[bites=2]
-execute if score @s glib.blockVarId matches 4096 run setblock ~ ~ ~ cake[bites=3]
-execute if score @s glib.blockVarId matches 4097 run setblock ~ ~ ~ cake[bites=4]
-execute if score @s glib.blockVarId matches 4098 run setblock ~ ~ ~ cake[bites=5]
-execute if score @s glib.blockVarId matches 4099 run setblock ~ ~ ~ cake[bites=6]

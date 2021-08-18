@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 17738 run setblock ~ ~ ~ sculk_sensor[power=3,waterlogged=true]
-execute if score @s glib.blockVarId matches 17739 run setblock ~ ~ ~ sculk_sensor[power=3,waterlogged=false]
-execute if score @s glib.blockVarId matches 17740 run setblock ~ ~ ~ sculk_sensor[power=3,waterlogged=true]
-execute if score @s glib.blockVarId matches 17741 run setblock ~ ~ ~ sculk_sensor[power=3,waterlogged=false]
-execute if score @s glib.blockVarId matches 17742 run setblock ~ ~ ~ sculk_sensor[power=4,waterlogged=true]

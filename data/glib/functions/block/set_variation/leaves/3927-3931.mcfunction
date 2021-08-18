@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 3927 run setblock ~ ~ ~ iron_door[facing=east,half=upper,hinge=left,open=false,powered=false]
-execute if score @s glib.blockVarId matches 3928 run setblock ~ ~ ~ iron_door[facing=east,half=upper,hinge=right,open=true,powered=true]
-execute if score @s glib.blockVarId matches 3929 run setblock ~ ~ ~ iron_door[facing=east,half=upper,hinge=right,open=true,powered=false]
-execute if score @s glib.blockVarId matches 3930 run setblock ~ ~ ~ iron_door[facing=east,half=upper,hinge=right,open=false,powered=true]
-execute if score @s glib.blockVarId matches 3931 run setblock ~ ~ ~ iron_door[facing=east,half=upper,hinge=right,open=false,powered=false]

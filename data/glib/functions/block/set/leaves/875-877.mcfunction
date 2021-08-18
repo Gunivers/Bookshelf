@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 875 run setblock ~ ~ ~ cobbled_deepslate_wall
-execute if score @s glib.blockId matches 876 run setblock ~ ~ ~ polished_deepslate
-execute if score @s glib.blockId matches 877 run setblock ~ ~ ~ polished_deepslate_stairs
+execute if score @s glib.blockId matches 875 run setblock ~ ~ ~ note_block[instrument=cow_bell,note=22,powered=true]
+execute if score @s glib.blockId matches 876 run setblock ~ ~ ~ note_block[instrument=cow_bell,note=22,powered=false]
+execute if score @s glib.blockId matches 877 run setblock ~ ~ ~ note_block[instrument=cow_bell,note=23,powered=true]

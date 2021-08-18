@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 5268 run setblock ~ ~ ~ nether_brick_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockVarId matches 5269 run setblock ~ ~ ~ nether_brick_stairs[facing=south,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockVarId matches 5270 run setblock ~ ~ ~ nether_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockVarId matches 5271 run setblock ~ ~ ~ nether_brick_stairs[facing=south,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockVarId matches 5272 run setblock ~ ~ ~ nether_brick_stairs[facing=south,half=top,shape=inner_left,waterlogged=false]

@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 5685 run setblock ~ ~ ~ spruce_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=false]
-execute if score @s glib.blockVarId matches 5686 run setblock ~ ~ ~ spruce_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=true]
-execute if score @s glib.blockVarId matches 5687 run setblock ~ ~ ~ spruce_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockVarId matches 5688 run setblock ~ ~ ~ spruce_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockVarId matches 5689 run setblock ~ ~ ~ spruce_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=false]

@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 18577 run setblock ~ ~ ~ cave_vines[age=6,berries=true]
+execute if score @s glib.blockId matches 18578 run setblock ~ ~ ~ cave_vines[age=6,berries=false]
+execute if score @s glib.blockId matches 18579 run setblock ~ ~ ~ cave_vines[age=7,berries=true]
+execute if score @s glib.blockId matches 18580 run setblock ~ ~ ~ cave_vines[age=7,berries=false]
+execute if score @s glib.blockId matches 18581 run setblock ~ ~ ~ cave_vines[age=8,berries=true]

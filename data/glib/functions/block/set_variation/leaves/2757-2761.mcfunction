@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 2757 run setblock ~ ~ ~ redstone_wire[east=side,north=side,power=7,south=side,west=side]
-execute if score @s glib.blockVarId matches 2758 run setblock ~ ~ ~ redstone_wire[east=side,north=side,power=7,south=side,west=none]
-execute if score @s glib.blockVarId matches 2759 run setblock ~ ~ ~ redstone_wire[east=side,north=side,power=7,south=none,west=up]
-execute if score @s glib.blockVarId matches 2760 run setblock ~ ~ ~ redstone_wire[east=side,north=side,power=7,south=none,west=side]
-execute if score @s glib.blockVarId matches 2761 run setblock ~ ~ ~ redstone_wire[east=side,north=side,power=7,south=none,west=none]

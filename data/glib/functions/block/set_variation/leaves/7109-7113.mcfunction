@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 7109 run setblock ~ ~ ~ white_stained_glass_pane[east=false,north=false,south=false,waterlogged=true,west=true]
-execute if score @s glib.blockVarId matches 7110 run setblock ~ ~ ~ white_stained_glass_pane[east=false,north=false,south=false,waterlogged=true,west=false]
-execute if score @s glib.blockVarId matches 7111 run setblock ~ ~ ~ white_stained_glass_pane[east=false,north=false,south=false,waterlogged=false,west=true]
-execute if score @s glib.blockVarId matches 7112 run setblock ~ ~ ~ white_stained_glass_pane[east=false,north=false,south=false,waterlogged=false,west=false]
-execute if score @s glib.blockVarId matches 7113 run setblock ~ ~ ~ orange_stained_glass_pane[east=true,north=true,south=true,waterlogged=true,west=true]

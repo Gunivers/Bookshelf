@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 1082 run setblock ~ ~ ~ white_bed[facing=north,occupied=true,part=foot]
-execute if score @s glib.blockVarId matches 1083 run setblock ~ ~ ~ white_bed[facing=north,occupied=false,part=head]
-execute if score @s glib.blockVarId matches 1084 run setblock ~ ~ ~ white_bed[facing=north,occupied=false,part=foot]
-execute if score @s glib.blockVarId matches 1085 run setblock ~ ~ ~ white_bed[facing=south,occupied=true,part=head]
-execute if score @s glib.blockVarId matches 1086 run setblock ~ ~ ~ white_bed[facing=south,occupied=true,part=foot]

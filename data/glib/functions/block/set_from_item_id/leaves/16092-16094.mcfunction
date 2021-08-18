@@ -1,0 +1,3 @@
+execute if score @s glib.itemId matches 16092 run setblock ~ ~ ~ lodestone
+execute if score @s glib.itemId matches 16093 run setblock ~ ~ ~ blackstone
+execute if score @s glib.itemId matches 16094 run setblock ~ ~ ~ blackstone_stairs

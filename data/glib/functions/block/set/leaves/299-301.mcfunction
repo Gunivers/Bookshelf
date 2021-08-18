@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 299 run setblock ~ ~ ~ potted_acacia_sapling
-execute if score @s glib.blockId matches 300 run setblock ~ ~ ~ potted_dark_oak_sapling
-execute if score @s glib.blockId matches 301 run setblock ~ ~ ~ potted_fern
+execute if score @s glib.blockId matches 299 run setblock ~ ~ ~ note_block[instrument=harp,note=9,powered=true]
+execute if score @s glib.blockId matches 300 run setblock ~ ~ ~ note_block[instrument=harp,note=9,powered=false]
+execute if score @s glib.blockId matches 301 run setblock ~ ~ ~ note_block[instrument=harp,note=10,powered=true]

@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 9369 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=true,south=false,up=false,west=false]
-execute if score @s glib.blockVarId matches 9370 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=false,south=true,up=true,west=true]
-execute if score @s glib.blockVarId matches 9371 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=false,south=true,up=true,west=false]
-execute if score @s glib.blockVarId matches 9372 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=false,south=true,up=false,west=true]
-execute if score @s glib.blockVarId matches 9373 run setblock ~ ~ ~ chorus_plant[down=false,east=false,north=false,south=true,up=false,west=false]

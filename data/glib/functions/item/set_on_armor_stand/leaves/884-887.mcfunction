@@ -1,0 +1,4 @@
+execute if score @s glib.itemId matches 884 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:skeleton_horse_spawn_egg",Count:1b}]}
+execute if score @s glib.itemId matches 885 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:skeleton_skull",Count:1b}]}
+execute if score @s glib.itemId matches 886 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:skeleton_spawn_egg",Count:1b}]}
+execute if score @s glib.itemId matches 887 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:skull_banner_pattern",Count:1b}]}

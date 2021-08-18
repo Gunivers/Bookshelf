@@ -1,0 +1,5 @@
+execute if score @s glib.itemId matches 740 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:pointed_dripstone",Count:1b}]}
+execute if score @s glib.itemId matches 741 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:poisonous_potato",Count:1b}]}
+execute if score @s glib.itemId matches 742 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:polar_bear_spawn_egg",Count:1b}]}
+execute if score @s glib.itemId matches 743 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:polished_andesite",Count:1b}]}
+execute if score @s glib.itemId matches 744 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:polished_andesite_slab",Count:1b}]}

@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 14725 run setblock ~ ~ ~ diorite_wall[east=none,north=low,south=none,up=false,waterlogged=true,west=tall]
-execute if score @s glib.blockVarId matches 14726 run setblock ~ ~ ~ diorite_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=none]
-execute if score @s glib.blockVarId matches 14727 run setblock ~ ~ ~ diorite_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockVarId matches 14728 run setblock ~ ~ ~ diorite_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockVarId matches 14729 run setblock ~ ~ ~ diorite_wall[east=none,north=low,south=low,up=true,waterlogged=true,west=none]

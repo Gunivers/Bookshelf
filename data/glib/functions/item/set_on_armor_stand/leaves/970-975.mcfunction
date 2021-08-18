@@ -1,0 +1,6 @@
+execute if score @s glib.itemId matches 970 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:stripped_oak_wood",Count:1b}]}
+execute if score @s glib.itemId matches 971 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:stripped_spruce_log",Count:1b}]}
+execute if score @s glib.itemId matches 972 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:stripped_spruce_wood",Count:1b}]}
+execute if score @s glib.itemId matches 973 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:stripped_warped_hyphae",Count:1b}]}
+execute if score @s glib.itemId matches 974 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:stripped_warped_stem",Count:1b}]}
+execute if score @s glib.itemId matches 975 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:structure_block",Count:1b}]}

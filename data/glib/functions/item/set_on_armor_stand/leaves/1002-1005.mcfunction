@@ -1,0 +1,4 @@
+execute if score @s glib.itemId matches 1002 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:turtle_egg",Count:1b}]}
+execute if score @s glib.itemId matches 1003 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:turtle_helmet",Count:1b}]}
+execute if score @s glib.itemId matches 1004 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:turtle_spawn_egg",Count:1b}]}
+execute if score @s glib.itemId matches 1005 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:twisting_vines",Count:1b}]}

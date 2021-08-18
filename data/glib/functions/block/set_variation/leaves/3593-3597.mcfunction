@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 3593 run setblock ~ ~ ~ jungle_sign[rotation=13,waterlogged=false]
-execute if score @s glib.blockVarId matches 3594 run setblock ~ ~ ~ jungle_sign[rotation=14,waterlogged=true]
-execute if score @s glib.blockVarId matches 3595 run setblock ~ ~ ~ jungle_sign[rotation=14,waterlogged=false]
-execute if score @s glib.blockVarId matches 3596 run setblock ~ ~ ~ jungle_sign[rotation=15,waterlogged=true]
-execute if score @s glib.blockVarId matches 3597 run setblock ~ ~ ~ jungle_sign[rotation=15,waterlogged=false]

@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 1333 run setblock ~ ~ ~ black_bed[facing=east,occupied=true,part=head]
-execute if score @s glib.blockVarId matches 1334 run setblock ~ ~ ~ black_bed[facing=east,occupied=true,part=foot]
-execute if score @s glib.blockVarId matches 1335 run setblock ~ ~ ~ black_bed[facing=east,occupied=false,part=head]
-execute if score @s glib.blockVarId matches 1336 run setblock ~ ~ ~ black_bed[facing=east,occupied=false,part=foot]
-execute if score @s glib.blockVarId matches 1337 run setblock ~ ~ ~ powered_rail[powered=true,shape=north_south,waterlogged=true]

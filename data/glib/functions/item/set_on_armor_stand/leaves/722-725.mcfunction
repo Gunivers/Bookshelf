@@ -1,0 +1,4 @@
+execute if score @s glib.itemId matches 722 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:pillager_spawn_egg",Count:1b}]}
+execute if score @s glib.itemId matches 723 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:pink_banner",Count:1b}]}
+execute if score @s glib.itemId matches 724 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:pink_bed",Count:1b}]}
+execute if score @s glib.itemId matches 725 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:pink_candle",Count:1b}]}

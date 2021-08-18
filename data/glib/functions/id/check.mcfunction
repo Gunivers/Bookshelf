@@ -7,8 +7,8 @@
 # Last check: 1.15.2
 
 # Original path: glib:id/check
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Latest#Id
-# Parallelizable: false
+# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Parallelizable: global
 # Note:
 
 #__________________________________________________

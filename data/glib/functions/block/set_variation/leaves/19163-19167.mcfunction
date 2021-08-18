@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 19163 run setblock ~ ~ ~ polished_deepslate_stairs[facing=east,half=top,shape=inner_right,waterlogged=false]
-execute if score @s glib.blockVarId matches 19164 run setblock ~ ~ ~ polished_deepslate_stairs[facing=east,half=top,shape=outer_left,waterlogged=true]
-execute if score @s glib.blockVarId matches 19165 run setblock ~ ~ ~ polished_deepslate_stairs[facing=east,half=top,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockVarId matches 19166 run setblock ~ ~ ~ polished_deepslate_stairs[facing=east,half=top,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockVarId matches 19167 run setblock ~ ~ ~ polished_deepslate_stairs[facing=east,half=top,shape=outer_right,waterlogged=false]

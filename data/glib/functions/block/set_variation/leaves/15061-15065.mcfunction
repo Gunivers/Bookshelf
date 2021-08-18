@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 15061 run setblock ~ ~ ~ blast_furnace[facing=north,lit=true]
-execute if score @s glib.blockVarId matches 15062 run setblock ~ ~ ~ blast_furnace[facing=north,lit=false]
-execute if score @s glib.blockVarId matches 15063 run setblock ~ ~ ~ blast_furnace[facing=south,lit=true]
-execute if score @s glib.blockVarId matches 15064 run setblock ~ ~ ~ blast_furnace[facing=south,lit=false]
-execute if score @s glib.blockVarId matches 15065 run setblock ~ ~ ~ blast_furnace[facing=west,lit=true]

@@ -1,0 +1,4 @@
+execute if score @s glib.itemId matches 798 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:purple_stained_glass",Count:1b}]}
+execute if score @s glib.itemId matches 799 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:purple_stained_glass_pane",Count:1b}]}
+execute if score @s glib.itemId matches 800 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:purple_terracotta",Count:1b}]}
+execute if score @s glib.itemId matches 801 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:purple_wool",Count:1b}]}

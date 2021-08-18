@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 9788 run setblock ~ ~ ~ horn_coral[waterlogged=true]
+execute if score @s glib.blockId matches 9789 run setblock ~ ~ ~ horn_coral[waterlogged=false]
+execute if score @s glib.blockId matches 9790 run setblock ~ ~ ~ dead_tube_coral_fan[waterlogged=true]
+execute if score @s glib.blockId matches 9791 run setblock ~ ~ ~ dead_tube_coral_fan[waterlogged=false]
+execute if score @s glib.blockId matches 9792 run setblock ~ ~ ~ dead_brain_coral_fan[waterlogged=true]

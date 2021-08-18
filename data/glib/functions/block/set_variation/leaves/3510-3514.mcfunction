@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 3510 run setblock ~ ~ ~ birch_sign[rotation=4,waterlogged=true]
-execute if score @s glib.blockVarId matches 3511 run setblock ~ ~ ~ birch_sign[rotation=4,waterlogged=false]
-execute if score @s glib.blockVarId matches 3512 run setblock ~ ~ ~ birch_sign[rotation=5,waterlogged=true]
-execute if score @s glib.blockVarId matches 3513 run setblock ~ ~ ~ birch_sign[rotation=5,waterlogged=false]
-execute if score @s glib.blockVarId matches 3514 run setblock ~ ~ ~ birch_sign[rotation=6,waterlogged=true]

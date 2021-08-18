@@ -1,0 +1,4 @@
+execute if score @s glib.itemId matches 474 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:hopper_minecart",Count:1b}]}
+execute if score @s glib.itemId matches 475 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:horn_coral",Count:1b}]}
+execute if score @s glib.itemId matches 476 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:horn_coral_block",Count:1b}]}
+execute if score @s glib.itemId matches 477 run summon armor_stand ~ ~ ~ {NoGravity:1b,ShowArms:1b,Marker:1b,Invisible:0b,Small:1b,Tags:["glib.new","glib"],HandItems:[{id:"minecraft:horn_coral_fan",Count:1b}]}

@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 7026 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockVarId matches 7027 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockVarId matches 7028 run setblock ~ ~ ~ quartz_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockVarId matches 7029 run setblock ~ ~ ~ activator_rail[powered=true,shape=north_south,waterlogged=true]
-execute if score @s glib.blockVarId matches 7030 run setblock ~ ~ ~ activator_rail[powered=true,shape=north_south,waterlogged=false]

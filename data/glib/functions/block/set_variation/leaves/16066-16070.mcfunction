@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 16066 run setblock ~ ~ ~ beehive[facing=west]
-execute if score @s glib.blockVarId matches 16067 run setblock ~ ~ ~ beehive[facing=west]
-execute if score @s glib.blockVarId matches 16068 run setblock ~ ~ ~ beehive[facing=west]
-execute if score @s glib.blockVarId matches 16069 run setblock ~ ~ ~ beehive[facing=west]
-execute if score @s glib.blockVarId matches 16070 run setblock ~ ~ ~ beehive[facing=west]

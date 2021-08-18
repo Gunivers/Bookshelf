@@ -1,5 +1,0 @@
-execute if score @s glib.blockVarId matches 5351 run setblock ~ ~ ~ end_portal_frame[eye=true,facing=north]
-execute if score @s glib.blockVarId matches 5352 run setblock ~ ~ ~ end_portal_frame[eye=true,facing=south]
-execute if score @s glib.blockVarId matches 5353 run setblock ~ ~ ~ end_portal_frame[eye=true,facing=west]
-execute if score @s glib.blockVarId matches 5354 run setblock ~ ~ ~ end_portal_frame[eye=true,facing=east]
-execute if score @s glib.blockVarId matches 5355 run setblock ~ ~ ~ end_portal_frame[eye=false,facing=north]

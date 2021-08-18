@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 18326 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=east,half=bottom,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 18327 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 18328 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 18329 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 18330 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=true]
