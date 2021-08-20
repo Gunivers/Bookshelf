@@ -1,1 +1,7 @@
+execute if score @s glib.itemId matches 238 run summon item ~ ~ ~ {Item:{id:"minecraft:crossbow",Count:1b}}
+execute if score @s glib.itemId matches 239 run summon item ~ ~ ~ {Item:{id:"minecraft:crying_obsidian",Count:1b}}
+execute if score @s glib.itemId matches 240 run summon item ~ ~ ~ {Item:{id:"minecraft:cut_copper",Count:1b}}
+execute if score @s glib.itemId matches 241 run summon item ~ ~ ~ {Item:{id:"minecraft:cut_copper_slab",Count:1b}}
+execute if score @s glib.itemId matches 242 run summon item ~ ~ ~ {Item:{id:"minecraft:cut_copper_stairs",Count:1b}}
+execute if score @s glib.itemId matches 243 run summon item ~ ~ ~ {Item:{id:"minecraft:cut_red_sandstone",Count:1b}}
 execute at @s run scoreboard players operation @e[type=item,tag=glib.new,limit=1,sort=nearest] glib.parentId = @s glib.id
