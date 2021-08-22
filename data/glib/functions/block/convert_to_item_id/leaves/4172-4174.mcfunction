@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 4172..4172 run scoreboard players set @s glib.itemId 567
-execute if score @s glib.blockId matches 4173..4173 run scoreboard players set @s glib.itemId 256
-execute if score @s glib.blockId matches 4174..4174 run scoreboard players set @s glib.itemId 798
