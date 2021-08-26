@@ -1,4 +1,4 @@
-execute if score @s glib.blockId matches 8463..8466 run scoreboard players set @s glib.itemId 67
+execute if score @s glib.blockId matches 8463..8463 run scoreboard players set @s glib.itemId 67
 execute if score @s glib.blockId matches 8467..8467 run scoreboard players set @s glib.itemId 840
 execute if score @s glib.blockId matches 8468..8468 run scoreboard players set @s glib.itemId 169
 execute if score @s glib.blockId matches 8469..8469 run scoreboard players set @s glib.itemId 243
