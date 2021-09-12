@@ -2,6 +2,9 @@
 
 `glib:vector/` : Les vecteurs servent à définir la trajectoire d'une entité. Ainsi, ils permettent de gérer des projectiles facilement, en offrant la possibilité de faire subir des collision, d'imiter la gravité, le vent etc ... Ils sont toujours difinits avec un facteur 10^3 (1000 = 1 bloc/tick).
 
+* [Classic](Classic.md)
+* [Local](Local.md)
+
 ## **Local**
 
 `glib:vector/local/` :  Les vecteurs locaux sont des vecteurs qui utilisent la base définie selon l'orientation de l'entité, correspondant aux puissances (^). Ainsi, un vecteur position en local (1000,3000,5000) correspondra à la position ^1 ^3 ^5
