@@ -1,3 +1,7 @@
+# **Vector**
+
+`glib:vector/` : Les vecteurs servent à définir la trajectoire d'une entité. Ainsi, ils permettent de gérer des projectiles facilement, en offrant la possibilité de faire subir des collision, d'imiter la gravité, le vent etc ... Ils sont toujours difinits avec un facteur 10^3 (1000 = 1 bloc/tick).
+
 ## **Classic**
 
 `glib:vector/classic/` :  Les vecteurs classiques sont des vecteurs qui utilisent la base par défaut du jeu, correspondant aux tilds (\~). Ainsi, un vecteur position classique (1000,3000,5000) correspondra à la position \~1 \~3 \~5
