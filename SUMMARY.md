@@ -1,5 +1,5 @@
 # Summary
 
-* [Test1](public/Test1.md)
-* [Test2](public/Test2.html)
-* [Test2](Test3.md)
+* [Test1](Test1.md)
+* [Test2](Test2.html)
+* [Test3](Test3.md)
