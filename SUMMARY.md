@@ -1,5 +1,9 @@
 # Summary
 
+* [FAQ](FAQ.md)
+* [Contribute](CONTRIBUTING.md)
+* [License](LICENSE.md)
+
 ## Modules
 
 * [Biome](docs/Biome.md)
@@ -21,9 +25,3 @@
     * [Classic](docs/Vector/Classic.md)
     * [Local](docs/Vector/Local.md)
 * [View](docs/View.md)
-
-## Other
-
-* [Contribute](CONTRIBUTING.md)
-* [FAQ](FAQ.md)
-* [License](LICENSE.md)
