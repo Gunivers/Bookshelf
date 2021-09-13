@@ -1,5 +1,7 @@
 # Summary
 
+# Modules
+
 * [Biome](docs/Biome.md)
 * [Block](docs/Block.md)
 * [Health](docs/Health.md)
@@ -19,3 +21,8 @@
     * [Classic](docs/Vector/Classic.md)
     * [Local](docs/Vector/Local.md)
 * [View](docs/View.md)
+
+# Other
+
+* [Contribute](CONTRIBUTING.md)
+* [License](LICENSE.md)
