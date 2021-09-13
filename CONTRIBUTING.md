@@ -6,7 +6,7 @@ The Gunivers-Lib is a community project and can therefore be developed by severa
 
 > Note: this convention is deprecated. The new conventions currently only available in french [here](https://project.gunivers.net/projects/gunivers-lib/wiki/Development_convention_FR)
 
-\[\[_TOC_\]\]
+[[_TOC_]]
 
 # **Tree Structure**
 
