@@ -1,6 +1,6 @@
 # Summary
 
-# Modules
+## Modules
 
 * [Biome](docs/Biome.md)
 * [Block](docs/Block.md)
@@ -22,7 +22,8 @@
     * [Local](docs/Vector/Local.md)
 * [View](docs/View.md)
 
-# Other
+## Other
 
 * [Contribute](CONTRIBUTING.md)
+* [FAQ](FAQ.md)
 * [License](LICENSE.md)
