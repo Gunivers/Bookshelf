@@ -15,16 +15,6 @@ gitbook:
     - calibre --version
   allow_failure: false
 
-# the 'lint' job will test the markdown syntax
-lint:
-  stage: test
-  script:
-    - 'echo "node version: $(node -v)"'
-    - echo "markdownlint version:" $(markdownlint -V)
-    - markdownlint --config ./markdownlint.json README.md
-    - markdownlint --config ./markdownlint.json *.md
-  allow_failure: true
-
 # the 'html' job will build your document in html format
 html:
   stage: build

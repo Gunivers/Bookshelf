@@ -6,4 +6,4 @@ Of course you can! The only thing we ask is that you get proper credit. If you a
 
 ## How did you do some functions?
 
-We have set up a dedicated space on this site and on Discord to share the things we do, and especially how we do them so that everyone can learn to do the same. You can find this space here: <https://project.gunivers.net/projects/learn>
+We have set up a dedicated space on this site and on Discord to share the things we do, and especially how we do them so that everyone can learn to do the same. You can find this space here: https://project.gunivers.net/projects/ressources/wiki/Datapacks

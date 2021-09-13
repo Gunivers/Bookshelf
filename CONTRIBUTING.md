@@ -109,8 +109,6 @@ Some functions require parameters that are usually fixed. However, the function 
 
 As you can see in several files, some lines in the configuration part call the "Glib_OverrideConfig" tag. It allows you not to rewrite the score values (or other) if they have been voluntarily set to another value. So, if you want to use something else than the default value for a function, add the "Glib_OverrideConfig" tag before executing the function, then remove this tag immediately afterwards.
 
-![](https://old-project.gunivers.net/api/v3/attachments/45/content)
-
 ## **Comments**
 
 The development of the Gunivers-Lib is collaborative, which means that other people can read the code. Moreover, the Gunivers-Lib is also meant to be pedagogical and accessible to people curious about the way the functions of the Gunivers-Lib work. Therefore, it is important to make it understood by other developers or users, and this, in addition to the documentation, also goes through the commentary of the code. Thus, it is important to regularly and cleanly comment on functions in order to explain how the function works.
@@ -138,10 +136,6 @@ tellraw @a[tag=Glib_Debug] [{"text":"   <MESSAGE>","color":"red"}]
 
 For readability, all lines except this \[ERROR\] container must have a 3 space indentation.
 
-Allowing for displays similar to this one:
-
-![](https://old-project.gunivers.net/api/v3/attachments/41/content)
-
 Lines of code concerning error messages must be preceded by `# Start Error` and followed by `# End Error` in order to be removed by a program.
 
 ### **Debug messages**
@@ -159,10 +153,6 @@ In order to distinguish between nested function debugs, this debug must be follo
 ```plaintext
 execute if entity @a[tag=Glib_Debug_<TAG_PATH>] run function glib:core/debug/message/info/end_debug
 ```
-
-In order to achieve a result similar to this:
-
-![](https://old-project.gunivers.net/api/v3/attachments/42/content)
 
 Lines of code concerning debug messages should be preceded by `# Start Debug` and followed by `# End Debug` in order to be removed by a program.
 
