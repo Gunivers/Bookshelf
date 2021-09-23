@@ -24,4 +24,4 @@
 * [Vector](docs/Vector.md)
     * [Classic](docs/Vector/Classic.md)
     * [Local](docs/Vector/Local.md)
-* [View](docs/View.md) 
+* [View](docs/View.md)
