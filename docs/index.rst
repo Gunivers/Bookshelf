@@ -53,7 +53,7 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
     :maxdepth: 3
     :caption: Info
 
-    Constributing
+    Contributing
     FAQ
 
 .. toctree::
