@@ -21,7 +21,7 @@ targeted
 - a pathfinding system
 - or a system allowing the management of vectors to give very
 customized trajectories to your entities, which can be deflected by the
-wind, bounce on blocks etc ...
+wind, bounce on blocks etc...
 
 Because a short video is better than a long speech:
 https://www.youtube.com/watch?v=E2nKYEvjETk
