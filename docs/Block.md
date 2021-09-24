@@ -1,4 +1,4 @@
-# **Block**
+# Block
 
 `glib:block/` : Systèmes permettant de manipuler les blocs
 

@@ -1,6 +1,6 @@
-# **Link**
+# Link
 
-Les fonctions "Link" permettent de lier une entité à une autre. Ce lien consiste à conserver la positions et l'orentation relative entre les deux entités, permettant ensuite d'imiter ou d'inverser les déplacements et rotations de l'entité parente.
+`glib:link/`: Les fonctions "Link" permettent de lier une entité à une autre. Ce lien consiste à conserver la positions et l'orentation relative entre les deux entités, permettant ensuite d'imiter ou d'inverser les déplacements et rotations de l'entité parente.
 
 * `create_link_tti` : Permet de créer le lien entre deux entités.
   * Le score `glib.targetId` de l'entité executante doit correspondre au score `glib.id` de l'entité à laquelle elle va être liée.

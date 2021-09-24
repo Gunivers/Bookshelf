@@ -1,4 +1,4 @@
-# **Biome**
+# Biome
 
 * `can_rain` : Determine si il peut pleuvoir ou non.
   * Necessite que le score `glib.temperature` soit définit sur l'entité exécutante

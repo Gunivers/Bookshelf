@@ -1,4 +1,4 @@
-# **Health**
+# Health
 
 `glib:health/` : Gestion par scoreboard de la vie d'une entité.
 

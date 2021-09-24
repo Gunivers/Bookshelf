@@ -1,4 +1,4 @@
-# **Item**
+# Item
 
 `glib:item/` : Systèmes permettant de manipuler les items
 

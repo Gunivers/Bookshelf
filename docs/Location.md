@@ -1,6 +1,6 @@
-# **Location**
+# Location
 
-Les fonctions "Location" permettent de gérer la position des entités via des scores. Il est ainsi possible de détecter la position d'une entité ou bien de placer cette dernière à une position définie par un score.
+`glib:location/`: Les fonctions "Location" permettent de gérer la position des entités via des scores. Il est ainsi possible de détecter la position d'une entité ou bien de placer cette dernière à une position définie par un score.
 
 * `add` : Additionne la position passée via les scores `glib.loc[X,Y,Z]` à celle où la commande à été executé, puis téléporte l'entité à cette nouvelle position.
   * Exemple :

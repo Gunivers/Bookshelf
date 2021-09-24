@@ -1,4 +1,4 @@
-# **Id**
+# Id
 
 `glib:id/` : La gestion d'ID des entités permet d'identifier précisément une entité. Utile par exemple dans le cas d'un jeu de tir pour savoir qui tire sur qui.
 

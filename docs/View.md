@@ -1,4 +1,4 @@
-# **View**
+# View
 
 `glib:view/` :Les fonctions view permettent d'obtenir certaines informations pratique sur ce que voit ou ce que vise l'entité.
 

@@ -1,4 +1,4 @@
-# **Move**
+# Move
 
 `glib:move/` : Ce dossier contient toutes les focntions relative au mouvement de l'entité.
 
