@@ -12,11 +12,19 @@ The Gunivers-Libs is a community project and can therefore be developed by sever
 │  ├─ 📁 <function1>
 │  │  ├─ 📁 accuracy
 │  │  │  │  # Same function, but with another precision, ex:
-│  │  │  ├─ 📄 10-3
+│  │  │  ├─ 📄 10-3.mcfunction
 │  │  │  └─ 📄 ...
-│  │  └─ 📁 child
-│  │     │  # sub-functions, ex:
-│  │     ├─ 📄 loop
+│  │  ├─ 📁 child
+│  │  │  │  # sub-functions, not destined to be executed by the user, ex:
+│  │  │  ├─ 📄 loop.mcfunction
+│  │  │  └─ 📄 ...
+│  │  ├─ 📁 config
+│  │  │  │  # mcfunction editable by the user to allwo him to customize the function behavior, ex:
+│  │  │  ├─ 📄 entity_concerned.mcfunction
+│  │  │  └─ 📄 ...
+│  │  └─ 📁 debug
+│  │     │  # tools dedicated to debug a system, ex:
+│  │     ├─ 📄 print.mcfunction
 │  │     └─ 📄 ...
 │  ├─ 📁 <function2>
 │  ├─ 📄 <function1>
@@ -35,13 +43,21 @@ The Gunivers-Lib respects a certain tree structure which can be similar to the J
 * A function is equal to an unique utility, so we should not hesitate to decompose its functions in order to make it more readable and to promote the reusability of the code. In addition to these few constraints, the developer is free to organize his files as he wishes as long as it remains coherent and understandable.
 * In some folders are "_.mcfunction" functions. The main purpose of these functions is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the functions of a particular folder but a list of the different existing categories. These functions can be added in all folders, and may contain some explanations about the category in question (tellraw command) or a redirection to the section of the documentation related to the category.
 
-### Sub-functions
+### "Accuracy" folders
 
-In function's dedicated folders, you can find differents folders:
+They allow to manage the precision of the functions. Minecraft allowing to store only integers, to use decimals, you have to be clever. Thus, a function in "accuracy/10-3" will be a function which will see its parameters (at least most of them), multiplied by 1000 to be able to store 3 digits after the decimal point (3.14159 \* 10^3 = 3141.59, which gives 3141 once in a score). Not all functions have an equivalent in the above specifications. If you need a function with a precision that is not supported, contact us on our Discord, a dev will do that quickly ;)
 
-* **"Accuracy" folders:** they allow to manage the precision of the functions. Minecraft allowing to store only integers, to use decimals, you have to be clever. Thus, a function in "accuracy/10-3" will be a function which will see its parameters (at least most of them), multiplied by 1000 to be able to store 3 digits after the decimal point (3.14159 \* 10^3 = 3141.59, which gives 3141 once in a score). Not all functions have an equivalent in the above specifications. If you need a function with a precision that is not supported, contact us on our Discord, a dev will do that quickly ;)
-* **"Config" folders:** the lib has several systems that manage different behavior (e.g. pathfinding, a bat will not have the same behavior as a villager). You will then find a "main" file that will list the different files and call the right one according to a certain condition. This allows the user of the lib to create his own behavior by copying an existing behavior file, adapting it, and linking it to the system via the "main" file.
-* **"Debug" folders:** the "debug" folders contain functions that are intended to display a certain number of parameters specific to the folder in which they are located (e.g. debug in the vector folder will display the different vectors). These functions are usually called by other functions but can also be executed by the user in order to debug one of his systems at a specific location.
+### "Child" folder
+
+Child folder contain every function used by other functions to make them works. These functions are not supposed to be executed or edited by the user.
+
+### "Config" folders:
+
+The lib has several systems that manage different behavior (e.g. pathfinding, a bat will not have the same behavior as a villager). You will then find a "main" file that will list the different files and call the right one according to a certain condition. This allows the user of the lib to create his own behavior by copying an existing behavior file, adapting it, and linking it to the system via the "main" file.
+
+### "Debug" folders:
+
+The "debug" folders contain functions that are intended to display a certain number of parameters specific to the folder in which they are located (e.g. debug in the vector folder will display the different vectors). These functions are usually called by other functions but can also be executed by the user in order to debug one of his systems at a specific location.
 
 ## **File format**
 
