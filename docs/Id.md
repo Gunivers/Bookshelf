@@ -1,87 +1,97 @@
 # Id
 
-`glib:id/` : La gestion d'ID des entités permet d'identifier précisément une entité. Utile par exemple dans le cas d'un jeu de tir pour savoir qui tire sur qui.
+`glib:id/` : The management of entity IDs allows to identify precisely an entity. Useful for example in the case of a shooting game to know who is shooting at whom.
 
-* `check` : Permet de comparer les scores `glib.id` des entités avec le score `glib.targetId` de l'entité ayant exécuté la fonction.
-  * Cette dernière reçoit le tag `glib.id.checker`.
-  * Les autres entités reçoivent le tag
-    * `glib.id.upper` si leur `glib.id` est supérieur au `glib.targetId`
-    * `glib.id.lower` si leur `glib.id` est inférieur au `glib.targetId`
-    * `glib.id.match` si leur `glib.id` est égal au `glib.targetId`
-  * Exemple:
+**Check ID**
 
-Trouver l'entité (ou les entités) ayant l'ID 3:
+`check` : Allows to compare the `glib.id` scores of the entities with the `glib.targetId` score of the entity having executed the function.
+* The latter receives the tag `glib.id.checker`.
+* The other entities receive the tag
+  * `glib.id.upper` if their `glib.id` is higher than the `glib.targetId`.
+  * `glib.id.lower` if their `glib.id` is lower than the `glib.targetId`.
+  * `glib.id.match` if their `glib.id` is equal to `glib.targetId`
 
+*Example:*
+
+Find the entity (or entities) with ID 3:
 ```
-# Une fois
+# Once
 scoreboard players set @s glib.targetId 3
 function glib:id/check
 
-# Voir le résultat
-execute unless entity @e[tag=glib.id.match] run tellraw @a [{"text":"Aucune entité trouvée :'(","color":"dark_gray"}]
-execute as @e[tag=glib.id.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"Hey ! C'est moi que tu cherche ?","color":"dark_gray"}]
+# See the result
+execute unless entity @e[tag=glib.id.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
+execute as @e[tag=glib.id.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
 ```
 
-* `check_parent` : Permet de comparer les scores `glib.parentId` des entités avec le score `glib.id.target` de l'entité ayant exécuté la fonction.
-  * Cette dernière reçoit le tag `glib.parentId.checker`.
-  * Les autres entités reçoivent le tag
-    * `glib.parentId.upper` si leur glib.id.parent est supérieur au id.target (glib.var)
-    * `glib.parentId.lower` si leur glib.id.parent est inférieur au id.target (glib.var)
-    * `glib.parentId.match` si leur glib.id.parent est égal au id.target (glib.var)
-  * Exemple:
+**Check parent ID**
 
-Trouver toutes les entités enfant de Bob:
+`check_parent` : Compares the `glib.parentId` scores of the entities with the `glib.id.target` score of the entity that executed the function.
+* The latter receives the tag `glib.parentId.checker`.
+* The other entities receive the tag
+  * `glib.parentId.upper` if their glib.id.parent is higher than the id.target (glib.var)
+  * `glib.parentId.lower` if their glib.id.parent is lower than the id.target (glib.var)
+  * `glib.parentId.match` if their glib.id.parent is equal to the id.target (glib.var)
 
+*Example:*
+
+Find all child entities of Bob:
 ```
-# Une fois
+# Once
 execute as @e[name=Bob,limit=1] run scoreboard players operation @s glib.targetId = @s glib.id
 function glib:id/check_parent
 
-# Voir le résultat
-execute unless entity @e[tag=glib.parentId.match] run tellraw @a [{"text":"Aucune entité trouvée :'(","color":"dark_gray"}]
-execute as @e[tag=glib.parentId.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"Hey ! C'est moi que tu cherche ?","color":"dark_gray"}]
+# See the result
+execute unless entity @e[tag=glib.parentId.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
+execute as @e[tag=glib.parentId.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
 ```
 
-* `get_suid` : (Simple Unique ID) Permet à l'entité exécutant la fonction d'obtenir un score `glib.id` différent de toutes les autres entités ayant déjà exécuté la fonction.
-  * Retourne l'ID sur le score glib.id de l'entité exécutante.
-  * Donne le tag `glib.id.set` et `glib.id.type.suid` aux entités ayant déjà exécute la fonction
-  * Exemple:
+**Get simple unique ID**
 
-Donner un ID à tous les joueurs:
+`get_suid` : (Simple Unique ID) Allows the entity executing the function to get a `glib.id` score different from all other entities that have already executed the function.
+* Returns the ID on the glib.id score of the executing entity.
+* Gives the tag `glib.id.set` and `glib.id.type.suid` to the entities that have already executed the function
 
+*Example:*
+
+Give an ID to all players:
 ```
-# En boucle pour donner un ID aux joueurs qui se connectent
+# In a loop to give an ID to the players who connect
 execute as @a[tag=!glib.id.set] run function glib:id/get_suid
 
-# Voir le résultat
+# See the result
 scoreboard objective setdisplay sidebar glib.id
 ```
 
-* `get_cuid` : (Chain Unique ID) Permet à l'entité exécutant la fonction d'obtenir un score `glib.id` différent de toutes les autres entités ayant déjà exécuté la fonction. La différence avec `get_suid` se trouve dans la façon dont les scores sont attribués.
-  * Les scores ID sont attribué dynamiquement en fonction des scores disponibles, de sorte à former une chaine. Ainsi, si il y a 5 entité, elles seront numéroté de 1 à 5, sans "trou". Pour ne pas que cette chaine puisse être rompue, il faut également exécuter la fonction `update_cuid` en boucle.
-  * Retourne l'ID sur le score glib.id de l'entité exécutante.
-  * Donne le tag `glib.id.set` et `glib.id.type.cuid` aux entités ayant déjà exécute la fonction
-  * Exemple
+**Get chain unique ID**
 
-Donner un ID à tous les joueurs:
+`get_cuid` : (Chain Unique ID) Allows the entity running the function to get a score `glib.id` different from all other entities that have already run the function. The difference with `get_suid` is in the way the scores are assigned.
+* ID scores are assigned dynamically based on the available scores, so that they form a string. So, if there are 5 entities, they will be numbered from 1 to 5, without any "hole". In order not to break this string, you must also execute the `update_cuid` function in a loop.
+* Returns the ID on the glib.id score of the executing entity.
+* Give the tag `glib.id.set` and `glib.id.type.cuid` to the entities that have already executed the function
 
+*Example:*
+
+Give an ID to all players:
 ```
-# En boucle pour donner un ID aux joueurs qui se connectent
+# In a loop to give an ID to the players who connect
 execute as @a[tag=!glib.id.set] run function glib:id/get_cuid
 
-# Voir le résultat
+# See the result
 scoreboard objective setdisplay sidebar glib.id
 ```
 
-* `update_cuid` : Permet d'actualiser tous les CUID des entités. S'execute de façon globale (l'entité source n'a pas d'importance, l’exécuter plusieurs fois par tick n'aura aucun effet)
-  * Exemple:
+**Update chain unique ID**
 
-Maintenir la chaine d'ID sans trous ni doublons:
+`update_cuid` : Allows to update all the CUID of the entities. Executes globally (the source entity does not matter, executing it multiple times per tick will have no effect)
 
+*Example:*
+
+Keep the ID string free of holes and duplicates:
 ```
-# A executer une fois à chaque début de tick
+# To be executed once at the beginning of each tick
 function glib:id/update_cuid
 
-# Voir le résultat
+# See the result
 scoreboard objective setdisplay sidebar glib.id
 ```

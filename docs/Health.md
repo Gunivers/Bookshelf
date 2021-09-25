@@ -1,50 +1,52 @@
 # Health
 
-`glib:health/` : Gestion par scoreboard de la vie d'une entité.
+`glib:health/`: Management by scoreboard of the life of an entity.
 
-* `safe_kill` : Permet de supprimer proprement une entité. Cette fonction efface les scores de l'entité et la téléporte à la couche 0 avant de la tuer.
-  * Les joueurs ne peuvent pas être kill
-  * Les entités portant le tag `glib.permanen`t ne peuvent pas être kill
-  * Il est recommandé de mettre le tag `glib.permanent` à toutes les entités décoratives (tableaux, item frames etc ...)
-  * Exemple:
+**Safe kill**
 
-Tuer tous les zombies:
+`safe_kill`: Allows to cleanly delete an entity. This function erases the scores of the entity and teleports it to layer 0 before killing it.
+* Players cannot be killed
+* Entities with the tag `glib.permanen`t cannot be killed
+* It is recommended to put the `glib.permanent` tag to all decorative entities (arrays, item frames etc ...)
 
+*Example:*
+
+Kill all zombies:
 ```
-# Une fois
+# Once
 execute as @e[type=zombie] run function glib:health/safe_kill
 ```
 
-* `time_to_live` : Permet de définir le temps de vie des entités.
-  * Par défaut, ce temps est de 10 secondes (= 200 ticks)
-  * L'entité vivra avant de se voir appliqué l'action de fin de vie (defaut: function glib:health/safe_kill).
-  * Avant de se voir appliquer l'action de fin de vie, l'entité recevra le tag `glib.ttl.timeOut` durant 1 tick
-  * Vous pouvez modifier chacun des valeurs par défaut en ouvrant le fichier et en vous rendant dans la partie "CONFIG" \*\*
-  * Exemple:
+**Time to live**
 
-Donner un temps de vie de 10 secondes aux Creepers:
+`time_to_live`: Allows to define the time of life of the entities.
+* By default, this time is 10 seconds (= 200 ticks)
+* The entity will live before being applied the end of life action (default: function glib:health/safe_kill).
+* Before being applied the end of life action, the entity will receive the tag `glib.ttl.timeOut` during 1 tick
+* You can change each of the default values by opening the file and going to the "CONFIG" section.
 
+*Example:*
+
+Give the Creepers a 10 second life time:
 ```
-# A chaque tick
+# At each tick
 execute as @e[type=creeper] run function glib:health/time_to_live
 ```
 
-Donner un temps de vie de 20 secondes aux Vaches:
-
+Give a time to live of 20 seconds to the Creepers:
 ```
-# Au moins une fois
+# At least once
 scoreboard players set @e[type=cow,tag=glib.ttl.default] glib.ttl 400
-# A chaque tick
+# At each tick
 execute as @e[type=cow] run function glib:time_to_live
 ```
 
-Donner un effet d'explosions aux Creepers en fin de vie
-
+Give an explosion effect to Creepers at the end of their life
 ```
-# A chaque tick
+# At each tick
 execute as @e[type=creeper] run function glib:health/time_to_live
 execute as @e[tag=glib.ttl.timeOut] at @s run playsound minecraft:entity.generic.explode master @a
-execute as @e[tag=glib.ttl.timeOut] at @s run particle minecraft:explosion_emitter ~ ~ ~
+execute as @e[tag=glib.ttl.timeOut] at @s run article minecraft:explosion_emitter ~ ~ ~
 ```
 
-Attention: si la fonction TTL est appelée 2 fois sur une même entité, son temps de vie diminura 2 fois plus vite.
+> Warning: if the TTL function is called twice on the same entity, its lifetime will decrease twice as fast.

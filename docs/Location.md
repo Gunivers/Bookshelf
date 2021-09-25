@@ -1,12 +1,14 @@
 # Location
 
-`glib:location/`: Les fonctions "Location" permettent de gérer la position des entités via des scores. Il est ainsi possible de détecter la position d'une entité ou bien de placer cette dernière à une position définie par un score.
+`glib:location/`: The "Location" functions allow to manage the position of entities via scores. It is thus possible to detect the position of an entity or to place it at a position defined by a score.
 
-* `add` : Additionne la position passée via les scores `glib.loc[X,Y,Z]` à celle où la commande à été executé, puis téléporte l'entité à cette nouvelle position.
-  * Exemple :
+**Add up coordinates**
 
-Déplacer Aypierre de 3 blocs sur l'axe X, -2 sur l'axe Y et 5 sur l'ace Z
+`add`: Adds the position passed via the scores `glib.loc[X,Y,Z]` to the one where the command was executed, then teleports the entity to this new position.
 
+*Example:*
+
+Move Aypierre by 3 blocks on the X axis, -2 on the Y axis and 5 on the Z axis
 ```
 scoreboard players set Aypierre glib.locX 3
 scoreboard players set Aypierre glib.locY -2
@@ -14,14 +16,14 @@ scoreboard players set Aypierre glib.locZ 5
 execute as Aypierre at @s run function glib:location/add
 ```
 
-* `fast_set`<span dir=""> : Modifie la position de l'entité exécutante pour la placer aux coordonnées X,Y et Z respectivement indiquées par les scores </span>`glib.loc[X,Y,Z]`<span dir="">. Pour l'utilisateur, cette fonction s'utilise de la même façon que la fonction </span>`set`<span dir=""> et produit les mêmes résultats. Les différences sont:</span>
-  * Cette fonction passe par une succession de téléportations et non via la modification de NBT, ce qui la rend plus lourde à exécuter
-  * Permet d'éviter le problème de latence d'affichage de la position des entités après les modifications de leur NBT (en particulier quand il y a un grand nombre d'entités).
-  * Le système est limité à des positions présentes entre -32000 et +32000 sur chacun des axes.
-  * Exemple:
+`fast_set`<span dir="">: Changes the position of the executing entity to the X,Y and Z coordinates respectively indicated by the scores </span>`glib.loc[X,Y,Z]`<span dir="">. To the user, this function is used in the same way as the </span>`set`<span dir=""> function and produces the same results. The differences are:</span>
+* This function goes through a succession of teleports and not via NBT modification, which makes it more cumbersome to execute
+* It avoids the problem of latency in displaying the position of entities after modifications of their NBT (especially when there is a large number of entities).
+* The system is limited to positions between -32000 and +32000 on each axis.
 
-Placer Boblennon à la coordonnée -5 63 26 (cas absurde car la position est hard-codé, donc un simple /tp suffirait, mais ici les scores peuvent être modifié contrairement aux paramètres d'une commande /tp)
+*Example:*
 
+Place Boblennon at coordinate -5 63 26 (absurd case because the position is hard-coded, so a simple /tp would suffice, but here the scores can be modified unlike the parameters of a /tp command)
 ```
 scoreboard players set Boblennon glib.locX -5
 scoreboard players set Boblennon glib.locY 63
@@ -29,93 +31,107 @@ scoreboard players set Boblennon glib.locZ 26
 execute as Boblennon run function glib:location/fast_set
 ```
 
-* `get` : Détecte la position de l'entité (coordonnées)
-  * Stock les valeurs sur les scores `glib.loc[X,Y,Z]` avec une précision 1:1.
-  * Exemple:
+**Get location**
 
-Detecter et afficher la position de l'araignée la plus proche:
+`get` : Detect the position of the entity (coordinates)
+* Stores the values on the scores `glib.loc[X,Y,Z]` with a precision of 1:1.
 
+*Example:*
+
+Detect and display the position of the nearest spider:
 ```
-# Une fois
+# Once
 execute as @e[type=spider,limit=1,sort=nearest] run function glib:location/get
-tellraw @a [{"text":"X = ","color":"dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]","objective":"glib.locX"},"color":"gold"},{"text":", Y = ","color":"dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]","objective":"glib.locY"},"color":"gold"}{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]","objective":"glib.locZ"},"color":"gold"}]
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib.locZ"}, "color": "gold"}]
 ```
 
-* `get_distance_ata` : Calcul la distance séparant l'entité source de la position d’exécution de la fonction.
-  * Le résultat est renvoyé sur le score `glib.res0`.
-  * Attention, cette fonction fait appel à `get_distance_squared_ata`, sur laquelle elle applique l'opération math/sqrt. Elle est donc relativement lourde et est soumis à la même contrainte que `get_distance_squared_as_to_at` sur la taille des entiers.
-  * Exemple:
+**Get distance "as to at"**
 
-Caluler la distance entre vous et le mouton le plus proche:
+`get_distance_ata` : Calculates the distance between the source entity and the execution position of the function.
+* The result is returned on the score `glib.res0`.
+* Be careful, this function calls `get_distance_squared_ata`, on which it applies the math/sqrt operation. It is therefore relatively heavy and is subject to the same constraint as `get_distance_squared_as_to_at` on integer size.
 
+*Example:*
+
+Calculate the distance between you and the nearest sheep:
 ```
-# Une fois
+# Once
 execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib:location/get_distance_ata
-tellraw @a [{"text":"Distance : ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
-* `get_distance_squared_ata` : Calcul la distance élevée au carré séparant l'entité source de la position d’exécution de la fonction.
-  * Le résultat est renvoyé sur le score `glib.res0`.
-  * Attention, la tailel des scores sur Minecraft représentent la taille d'une variable int en java. Cette dernière est immense, mais pas illimité. Or, les calculs faisant intervenir des puissance donnent des résultats pouvant très vite monter à des résultats dépassant les milliards, dépassant du même coup la limite de taille de la variable. Le jeu n'aura alors pas d'autre choix que de faire "boucler" la valeur (si vous dépassez la limite de 1, la variable passera en négatif).
-  * Exemple:
+**Get distance squared "as to at"**
 
-Caluler la distance au carré entre vous et le mouton le plus proche:
+`get_distance_squared_ata` : Calculates the squared distance between the source entity and the execution position of the function.
+* The result is returned on the score `glib.res0`.
+* Attention, the scores on Minecraft represent the size of an int variable in java. The latter is huge, but not unlimited. However, calculations involving powers give results that can quickly rise to more than billions, exceeding the size limit of the variable. The game will then have no choice but to "loop" the value (if you exceed the limit of 1, the variable will go negative).
 
+*Example:*
+
+Calculate the squared distance between you and the nearest sheep:
 ```
-# Une fois
+# Once
 execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib:location/get_distance_squared_ata
-tellraw @a [{"text":"Distance^2 : ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
-* `get_relative_ata` : Permet d'obtenir la position de l'entité source, relativement à la position d’exécution de la fonction.
-  * Le résultat est ensuite placé sur les scores `glib.loc[X,Y,Z]`.
-  * Exemple:
+**Get relative corrdinates "as to at"**
 
-Obtenir votre position relativement au Creeper le plus proche:
+`get_relative_ata` : Allows to obtain the position of the source entity, relative to the execution position of the function.
+* The result is then placed on the scores `glib.loc[X,Y,Z]`.
 
+*Example:*
+
+Get your position relative to the nearest Creeper:
 ```
-# Une fois
+# Once
 execute as @s at @e[type=creeper,limit=1,sort=nearest] run function glib:location/get_relative_ata
-tellraw @a [{"text":"Position relative : X=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locX"},"color":"gold"},{"text":", Y=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locZ"},"color":"gold"}]
+tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.locX"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locZ"},"color":"gold"}]
 ```
 
-* is_in_cave : Permet de savoir si l'endroit indiqué par la mosition d'execution de la fonction se situe dans une cave.
-  * Stock le résultat sur glib.res0 (1 si dans une cave, 0 sinon)
-  * Exemple
+**Is in cave?**
 
-Savoir si les squelettes sont dans des caves ou non:
+`is_in_cave`: Allows to know if the location indicated by the execution mosition of the function is located in a cellar.
+  * Stores the result on glib.res0 (1 if in a cellar, 0 otherwise)
 
+*Example:*
+
+To know if the skeletons are in cellars or not:
 ```
-# Une fois
+# Once
 execute as @e[type=skeleton] at @s run function glib:location/is_in_cave
 
-# Voir le résultat:
+# See the result:
 effect give @e[type=skeleton,scores={glib.res0=1}] glowing 1 1 true
 ```
 
-* `set` : Permet de placer l'entité à une coordonnée précise donnée via les scores `glib.loc[X,Y,Z]`.
-  * Cette fonction possède des déclinaisons sur x, y et z, utile pour les joueurs, pour qui la position ne peut pas être modifié directement via la commande /data.
-  * Exemple:
+**Set location**
 
-Se téléporter en 15 100 25
+`set`: Allows to place the entity at a precise coordinate given via the scores `glib.loc[X,Y,Z]`.
+* This function has variations on x, y and z, useful for players, for whom the position can not be changed directly via the /data command.
 
+*Example:*
+
+Teleport in 15 100 25
 ```
-# Une fois
+# Once
 scoreboard players set @s glib.locX 15
 scoreboard players set @s glib.locY 100
 scoreboard players set @s glib.locZ 25
 function glib:location/set
 ```
 
-* `spread` : Permet de téléporter aléatoirement une entité dans une zone donnée.
-  * La différence avec la commande spreadplayers, c'est que cette fonction ne téléporte pas sur le bloc le plus haut, elle ne modifie tout simplement pas la position Y de l'entité
-  * Prend en paramètres les scores `glib.var[0,1,2]` correspondant respectivement aux coordonnées X et Z, ainsi qu'au rayon de la zone dans laquelle l'entité sera téléporté.
-  * Exemple:
+**Spread entity**
 
-Se téléporter dans une zone de 10 blocs de rayon, ayant pour centre la coordonnée X=15, Z=25
+`spread` : Allows to randomly teleport an entity in a given area.
+* The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y position of the entity
+* Takes as parameters the scores `glib.var[0,1,2]` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
 
+*Example:*
+
+Teleport to an area with a radius of 10 blocks, having as its center the coordinate X=15, Z=25
 ```
-# Une fois
+# Once
 scoreboard players set @s glib.var0 15
 scoreboard players set @s glib.var1 25
 scoreboard players set @s glib.var2 10

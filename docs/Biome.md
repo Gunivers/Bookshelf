@@ -1,78 +1,88 @@
 # Biome
 
-* `can_rain` : Determine si il peut pleuvoir ou non.
-  * Necessite que le score `glib.temperature` soit définit sur l'entité exécutante
-  * Retourne le tag `glib.canRain` si il peut pleuvoir.
-  * Exemple:
+**Can it rain?**
 
-Savoir si il peut pleuvoir là où se trouvent les joueurs
+`can_rain`: Determine if it can rain or not.
+* Requires that the `glib.temperature` score is defined on the executing entity
+* Returns the tag `glib.canRain` if it can rain.
 
+*Example:*
+
+Knowing if it can rain where the players are
 ```
-# Une fois
+# Once
 execute as @a run glib:biome/get
 execute as @a run glib:biome/get_temperature
 execute as @a run glib:biome/can_rain
 
-# Voir le résultat
-execute as @a[tag=glib.canRain] run say Chez moi il peut pleuvoir !
-execute as @a[tag=!glib.canRain] run say Chez moi il ne pleut jamais...
+# See the result
+execute as @a[tag=glib.canRain] run say At my house it can rain!
+execute as @a[tag=!glib.canRain] run say In my house it never rains...
 ```
 
-* `can_snow` : Determine si il peut neiger ou non.
-  * Necessite que le score `glib.temperature` soit définit sur l'entité exécutante
-  * Retourne le tag `glib.canSnow` si il peut pleuvoir.
-  * Exemple:
+**Can it snow?**
 
-Savoir si il peut pleuvoir là où se trouvent les joueurs
+`can_snow`: Determine if it can snow or not.
+* Requires the `glib.temperature` score to be set on the running entity
+* Returns the tag `glib.canSnow` if it can rain.
 
+*Example:*
+
+Knowing if it can rain where the players are
 ```
-# Une fois
+# Once
 execute as @a run glib:biome/get
 execute as @a run glib:biome/get_temperature
 execute as @a run glib:biome/can_snow
 
-# Voir le résultat
-execute as @a[tag=glib.canRain] run say Chez moi il peut neiger !
-execute as @a[tag=!glib.canRain] run say Chez moi il ne neige jamais...
+# See the result
+execute as @a[tag=glib.canRain] run say Chez moi il ne peut neiger!
+execute as @a[tag=!glib.canRain] run say Where I live it never snows...
 ```
 
-* `get` : Détecte le biome dans lequel se situe l'entité courante et le stock dans le score `glib.biome` de l'entité (cf. [liste des Biomes](https://project.gunivers.net/projects/gunivers-lib/wiki/Biome_ID)).
-  * Exemple:
+**Get biome ID**
 
-Obtenir le biome dans lequel se trouve chaque villageois
+`get`: Detects the biome in which the current entity is located and stores it in the `glib.biome` score of the entity (see [list of Biomes](https://project.gunivers.net/projects/gunivers-lib/wiki/Biome_ID)).
 
+*Example:*
+
+Get the biome in which each villager is located.
 ```
-# Une fois
+# Once
 execute as @e[type=villager] run glib:biome/get
 
-# Voir le résultat
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"Mon biome: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.biome"},"color":"gold"}]
+# See the result
+tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"Mon biome: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.biome"},"color":"gold"}]
 ```
 
-* `get_biome_temperature` : Permet de récupérer la température du biome à la position d'execution de la fonction.
-  * Le résultat sera stocké sur le score `glib.temperature`
-  * Exemple:
+**Get biome temperature**
 
-Obtenir la température du biome dans lequel se trouve chaque poulpe
+`get_biome_temperature`: Allows to retrieve the temperature of the biome at the execution position of the function.
+* The result will be stored on the score `glib.temperature`
+  
+*Example:*
 
+Get the temperature of the biome in which each octopus is located
 ```
-# Une fois
+# Once
 execute as @e[type=squid] run glib:biome/get_biome_temperature
 
-# Voir le résultat
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"La température de mon biome: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.biome"},"color":"gold"}]
+# See the result
+tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "The temperature of my biome: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.biome"}, "color": "gold"}]
 ```
 
-* `get_temperature` : Permet de récupérer la température à la position d'execution de la fonction en tenant compte de la température du biome et de son altitude.
-  * Le résultat sera stocké sur le score `glib.temperature`
-  * Exemple:
+**Get block temperature**
 
-Obtenir la température au niveau de chaque ours polaire
+`get_temperature`: Allows to retrieve the temperature at the execution position of the function taking into account the temperature of the biome and its altitude.
+* The result will be stored on the score `glib.temperature`
 
+*Example:*
+
+Get the temperature at each polar bear
 ```
-# Une fois
+# Once
 execute as @e[type=polar_bear] run glib:biome/get_temperature
 
-# Voir le résultat
-tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"La température là où je suis: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.biome"},"color":"gold"}]
+# See the result
+tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "The temperature where I am: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.biome"}, "color": "gold"}]
 ```
