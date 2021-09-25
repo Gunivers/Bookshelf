@@ -27,6 +27,7 @@ The Gunivers-Libs is a community project and can therefore be developed by sever
 │  │     ├─ 📄 print.mcfunction
 │  │     └─ 📄 ...
 │  ├─ 📁 <function2>
+│  ├─ 📄 _.mcfunction
 │  ├─ 📄 <function1>
 │  └─ 📄 <function2>
 ├─ 📁 <module2>
@@ -39,7 +40,6 @@ The Gunivers-Libs is a community project and can therefore be developed by sever
 The Gunivers-Lib respects a certain tree structure which can be similar to the Java packages. The added systems must therefore be positioned in these various folders according to their usefulness. If no root folder seems appropriate for the addition of a category of functions, it can be considered, with the agreement of the project managers, to add a new folder. A category must respect a particular structure:
 
 * Functions and folders must respect the Snake Case typographical convention, which consists of writing a set of words entirely in lower case and separated by an underscore (_). The name must be explicit as to the purpose of the function or folder and must be as short as possible. It is possible to put abbreviations in a name as long as they are recognized. Example: Square Root -> sqrt, Block to ID -> block_to_id
-* Any function not intended for use by the user must be located in a folder named "child", in the directory with the same name as the function. We can quote for example functions whose only purpose is recursivity, or sub-functions called themselves by the functions available to the user.
 * A function is equal to an unique utility, so we should not hesitate to decompose its functions in order to make it more readable and to promote the reusability of the code. In addition to these few constraints, the developer is free to organize his files as he wishes as long as it remains coherent and understandable.
 * In some folders are "_.mcfunction" functions. The main purpose of these functions is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the functions of a particular folder but a list of the different existing categories. These functions can be added in all folders, and may contain some explanations about the category in question (tellraw command) or a redirection to the section of the documentation related to the category.
 
