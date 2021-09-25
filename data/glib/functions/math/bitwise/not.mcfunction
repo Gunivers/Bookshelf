@@ -7,7 +7,7 @@
 # Last check: 1.16.2
 
 # Original path: glib:math/bitwise/not
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Functions#Bitwise
+# Documentation: https://glib-core.readthedocs.io//Functions#Bitwise
 # Parallelizable: true
 # Note:
 # - This function returns the bit negation of the number

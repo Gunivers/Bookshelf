@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:location/spread
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity
+# Documentation: https://glib-core.readthedocs.io//entity
 # Parallelizable: <true/false/global>
 # Note: Spread an entity based on CenterX, CenterZ and Radius scores
 

@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/divide
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note: Allows to retrieve the value rounded to the integer near of a normal division.
 

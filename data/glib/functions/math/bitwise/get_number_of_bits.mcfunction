@@ -8,7 +8,7 @@
 # Last check: 1.16.2
 
 # Original path: glib:math/bitwise/get_number_of_bits
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Functions#Bitwise
+# Documentation: https://glib-core.readthedocs.io//Functions#Bitwise
 # Parallelizable: true
 # Note:
 # - This function returns the number of bits of the absolute value of the input

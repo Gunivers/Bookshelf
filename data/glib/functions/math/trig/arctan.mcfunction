@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/arctan
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: true
 # Note:
 # - This function returns atan(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)

@@ -7,7 +7,7 @@
 # Last check: 1.15.2
 
 # Original path: glib:id/check
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Documentation: https://glib-core.readthedocs.io//entity#id
 # Parallelizable: global
 # Note:
 

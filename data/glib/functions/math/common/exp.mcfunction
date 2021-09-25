@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/exp
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 # - glib.var0 is the input of the function, multiplied by 100 to allow 2 digits (input 123 to calculate exp(1.23))

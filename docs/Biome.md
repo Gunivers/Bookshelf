@@ -42,7 +42,7 @@ execute as @a[tag=!glib.canRain] run say Where I live it never snows...
 
 **Get biome ID**
 
-`get`: Detects the biome in which the current entity is located and stores it in the `glib.biome` score of the entity (see [list of Biomes](https://project.gunivers.net/projects/gunivers-lib/wiki/Biome_ID)).
+`get`: Detects the biome in which the current entity is located and stores it in the `glib.biome` score of the entity (see [list of Biomes](https://glib-core.readthedocs.io//Biome_ID)).
 
 *Example:*
 

@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/sin
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note: The input is the angle in degrees. The result is scaled by 1000
 

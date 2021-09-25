@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/pow
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 

@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:orientation/normalize
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Documentation: https://glib-core.readthedocs.io//entity#orientation
 # Parallelizable: <true/false/global>
 # Note:
 

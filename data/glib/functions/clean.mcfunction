@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:core/clean
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/core
+# Documentation: https://glib-core.readthedocs.io//core
 # Parallelizable: <true/false/global>
 # Note:
 # - Please be aware that using this function will delete each and every score used by the gunivers-lib,

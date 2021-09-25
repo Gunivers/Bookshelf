@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:math/trig/sin/accuracy/10-3
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
+# Documentation: https://glib-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 
