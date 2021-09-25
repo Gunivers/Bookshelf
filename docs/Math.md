@@ -6,7 +6,7 @@ glib:math/`: The "Math" functions, as their name suggests, are for doing math. B
 
 `glib:math/algebra`: this folder allows you to perform algebra operations
 
-**Basic rotation
+**Basic rotation**
 
 `basis_rotation_3d`: Allows to obtain the equivalent of the vector passed in parameter in a base with a different orientation. Useful to convert an absolute/relative position into a local position for a given entity.
 

@@ -1,61 +1,49 @@
 # Contribute
 
-The Gunivers-Lib is a community project and can therefore be developed by several people at the same time. To keep the project clean and coherent, it is necessary for the different developers to respect certain conventions when developing functions.
+The Gunivers-Libs is a community project and can therefore be developed by several people at the same time. To keep the project clean and coherent, it is necessary for the different developers to respect certain conventions when developing functions.
 
-> Everything concerning the development of the Data Pack must be in English, so this concerns the typography of folders and functions, the names of scoreboards, tags, entities, teams (etc) or even the comments and documentation within a function.
-
-> Note: this convention is deprecated. The new conventions currently only available in french [here](https://project.gunivers.net/projects/gunivers-lib/wiki/Development_convention_FR)
+> Everything concerning the development of the Data Pack must be in English, so this concerns the typography of folders and functions, the names of scoreboards, tags, entities, teams etc. or even the comments and documentation within a function.
 
 ## **Tree Structure**
 
-> In this case, a category of functions is defined by a set of functions that share the same folder and therefore have a common utility, such as manipulating an object in a given way.
+```
+📁functions
+├─ 📁 <module1>
+│  ├─ 📁 <function1>
+│  │  ├─ 📁 accuracy
+│  │  │  │  # Same function, but with another precision, ex:
+│  │  │  ├─ 📄 10-3
+│  │  │  └─ 📄 ...
+│  │  └─ 📁 child
+│  │     │  # sub-functions, ex:
+│  │     ├─ 📄 loop
+│  │     └─ 📄 ...
+│  ├─ 📁 <function2>
+│  ├─ 📄 <function1>
+│  └─ 📄 <function2>
+├─ 📁 <module2>
+│  └─ ...
+└─ ...
+```
+
+> Predicates, structures, lott tables etc. must respect the same structure.
 
 The Gunivers-Lib respects a certain tree structure which can be similar to the Java packages. The added systems must therefore be positioned in these various folders according to their usefulness. If no root folder seems appropriate for the addition of a category of functions, it can be considered, with the agreement of the project managers, to add a new folder. A category must respect a particular structure:
 
 * Functions and folders must respect the Snake Case typographical convention, which consists of writing a set of words entirely in lower case and separated by an underscore (_). The name must be explicit as to the purpose of the function or folder and must be as short as possible. It is possible to put abbreviations in a name as long as they are recognized. Example: Square Root -> sqrt, Block to ID -> block_to_id
-* Any function not intended for use by the user must be located in a folder named "child", in the directory of the category in question. We can quote for example functions whose only purpose is recursivity, or sub-functions called themselves by the functions available to the user.
-* A function is equal to a utility, so we should not hesitate to decompose its functions in order to make it more readable and to promote the reusability of the code. In addition to these few constraints, the developer is free to organize his files as he wishes as long as it remains coherent and understandable.
-* In some folders are "_.mcfunction" functions. The main purpose of these functions is to reorganize the display of the Gunivers-Lib folders during the self-completion proposed by Brigadier. Thus, the first proposals are not all the functions of a particular folder but a list of the different existing categories. These functions can be added in all folders, and may contain some explanations about the category in question (tellraw command) or a redirection to the section of the documentation related to the category.
+* Any function not intended for use by the user must be located in a folder named "child", in the directory with the same name as the function. We can quote for example functions whose only purpose is recursivity, or sub-functions called themselves by the functions available to the user.
+* A function is equal to an unique utility, so we should not hesitate to decompose its functions in order to make it more readable and to promote the reusability of the code. In addition to these few constraints, the developer is free to organize his files as he wishes as long as it remains coherent and understandable.
+* In some folders are "_.mcfunction" functions. The main purpose of these functions is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the functions of a particular folder but a list of the different existing categories. These functions can be added in all folders, and may contain some explanations about the category in question (tellraw command) or a redirection to the section of the documentation related to the category.
+* In function' dedicated folders:
+    * **"Accuracy" folders:** they allow to manage the precision of the functions. Minecraft allowing to store only integers, to use decimals, you have to be clever. Thus, a function in "accuracy/10-3" will be a function which will see its parameters (at least most of them), multiplied by 1000 to be able to store 3 digits after the decimal point (3.14159 \* 10^3 = 3141.59, which gives 3141 once in a score). Not all functions have an equivalent in the above specifications. If you need a function with a precision that is not supported, contact us on our Discord, a dev will do that quickly ;)
+    * **"Config" folders:** the lib has several systems that manage different behavior (e.g. pathfinding, a bat will not have the same behavior as a villager). You will then find a "main" file that will list the different files and call the right one according to a certain condition. This allows the user of the lib to create his own behavior by copying an existing behavior file, adapting it, and linking it to the system via the "main" file.
+    * **"Debug" folders:** the "debug" folders contain functions that are intended to display a certain number of parameters specific to the folder in which they are located (e.g. debug in the vector folder will display the different vectors). These functions are usually called by other functions but can also be executed by the user in order to debug one of his systems at a specific location.
 
-### **"Accuracy" folders**
-
-They allow to manage the precision of the functions. Minecraft allowing to store only integers, to use decimals, you have to be clever. Thus, a function in "accuracy/10-3" will be a function which will see its parameters (at least most of them), multiplied by 1000 to be able to store 3 digits after the decimal point (3.14159 \* 1000 = 3141.59, which gives 3141 once in a score). Not all functions have an equivalent in the above specifications. If you need a function with a precision that is not supported, contact us on our Discord, a dev will do that quickly ;)
-
-### **"Child" folders**
-
-This is a way to store functions that have no interest to be used alone, but can be used by the different functions of the lib. So they do not necessarily respect the conventions of the lib because they can be made for a specific purpose.
-
-### **"Config" folders**
-
-The lib has several systems that manage different behavior (e.g. pathfinding, a bat will not have the same behavior as a villager). You will then find a "main" file that will list the different files and call the right one according to a certain condition. This allows the user of the lib to create his own behavior by copying an existing behavior file, adapting it, and linking it to the system via the "main" file.
-
-### **"Edit" folders**
-
-It allows, for those functions that have the use of it, to convert elements from one form to another. Usually this is a way of simplifying the code, for example:
-
-```plaintext
-function glib:entity/vector/edit/to_var123
-function glib:entity/vector/normalize
-function glib:entity/vector/edit/from_res123
-```
-
-Will allow the VectorX, VectorY and VectorZ scans to be passed in the Var1, Var2 and Var3 scores respectively. From there, the normalize function executes and produces the scores Res1, Res2 and Res3. These scors can then be replaced in VectorX, VectorY and VectorZ.
-
-### **"Debug" folders**
-
-The "debug" folders contain functions that are intended to display a certain number of parameters specific to the folder in which they are located (e.g. debug in the vector folder will display the different vectors). These functions are usually called by other functions but can also be executed by the user in order to debug one of his systems at a specific location.
-
-### **"Test" folders**
-
-If you are on the Dev version, you will be able to see "test" folders. These are used to... test! They are mainly dedicated to the lib developers and allow to quickly perform accurate diagnostics on some systems and thus be able to provide an efficient support.
-
-## **Organization of a function**
-
-### **Header**
+## **File format**
 
 All the functions of the Gunivers-Lib implement documentation to describe for other developers as well as for users what the function is for and how to use it. This is what this one looks like:
 
-```plaintext
+```
 #__________________________________________________
 ## INFO     Copyright © 2020 Gunivers.
 
@@ -122,7 +110,7 @@ Where <tag_path> is the path to the function after the namespace, replacing the 
 
 * Example: `glib:entity/vector/get_from_actual_orientation` becomes `entity.vector.get_from_actual_orientation`
 
-#### **Error Messages**
+**Error Messages**
 
 Error tellraws must be displayed to all players with the Glib_Debug tag and must be in this form:
 
@@ -136,7 +124,7 @@ For readability, all lines except this \[ERROR\] container must have a 3 space i
 
 Lines of code concerning error messages must be preceded by `## Start Error` and followed by `## End Error` in order to be removed by a program.
 
-#### **Debug messages**
+**Debug messages**
 
 In the same logic, debug messages must be conditioned to an additional tag linked to the path of the function concerned and must start with:
 
@@ -154,10 +142,12 @@ execute if entity @a[tag=Glib_Debug_<TAG_PATH>] run function glib:core/debug/mes
 
 Lines of code concerning debug messages should be preceded by `## Start Debug` and followed by `## End Debug` in order to be removed by a program.
 
-### **Special functions**
+## **Special functions**
 
-#### **The "ata" functions**
+**The "ata" functions**
 
 This is a reduction of "as to at". Several functions require 2 positions to work (example: retrieve the distance between 2 points) or an entity and a position. To simplify the use, no need to pass 3 scores for each position. You will be able to place an entity on point 1 (if it is useful), then execute the function on point 2 by executing it on the entity on point 1.
 
-* Example: `execute as Boblennon positioned 10 60 35 run function glib:entity/move/pathfinding_ata` will calculate a path from Boblennon to the 10 60 35 coordinate.
+**The "tti" functions**
+
+This is a reduction of "to target id". Several functions require 2 a source and a target entity (example: get a vector to another entity). To simplify the use, no need to always use the `id/check` function.
