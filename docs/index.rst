@@ -1,7 +1,7 @@
 Glib-Core
 =========
 
-.. figure:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
+.. figure:: http://gunivers.net/wp-content/uploads/2021/09/outro-gif.gif
    :alt: 
 
 The Gunivers-libs is a series of tool datapacks, that group together all
@@ -31,9 +31,6 @@ https://www.youtube.com/watch?v=E2nKYEvjETk
    deepl.com and may contain mistakes. If you find one of these
    mistakes, you can report it to us on "our Discord":
    https://discord.gg/E8qq6tN
-
-.. figure:: http://gunivers.net/wp-content/uploads/2021/09/outro-gif.gif
-   :alt: 
 
 Credits
 =======
