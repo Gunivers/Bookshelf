@@ -32,6 +32,9 @@ https://www.youtube.com/watch?v=E2nKYEvjETk
    mistakes, you can report it to us on "our Discord":
    https://discord.gg/E8qq6tN
 
+.. figure:: http://gunivers.net/wp-content/uploads/2021/09/outro-gif.gif
+   :alt: 
+
 Credits
 =======
 
