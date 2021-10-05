@@ -1,7 +1,7 @@
 Glib-Core
 =========
 
-.. figure:: http://gunivers.net/wp-content/uploads/2021/09/outro-gif.gif
+.. figure:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
    :alt: 
 
 The Gunivers-libs is a series of tool datapacks, that group together all
