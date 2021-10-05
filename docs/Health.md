@@ -6,7 +6,7 @@
 
 `safe_kill`: Allows to cleanly delete an entity. This function erases the scores of the entity and teleports it to layer 0 before killing it.
 * Players cannot be killed
-* Entities with the tag `glib.permanen`t cannot be killed
+* Entities with the tag `glib.permanent` cannot be killed
 * It is recommended to put the `glib.permanent` tag to all decorative entities (arrays, item frames etc ...)
 
 *Example:*
