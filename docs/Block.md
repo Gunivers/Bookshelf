@@ -2,7 +2,7 @@
 
 `glib:block/`: Systems for manipulating blocks
 
-You need to install the block converter addon: https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter
+You need to install the block converter addon: [https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter](https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter)
 
 **Get block ID**
 
