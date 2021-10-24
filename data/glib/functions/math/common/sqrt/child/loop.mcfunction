@@ -25,10 +25,10 @@ scoreboard players operation math.sqrt.B glib /= 2 glib.const
 scoreboard players operation math.sqrt.C glib = math.sqrt.A glib
 scoreboard players operation math.sqrt.C glib *= math.sqrt.A glib
 
-#    if   (                         C < X                  ){                                 A += B                                     }
+#    if  (                    C < X                  ){                             A += B                               }
 execute if score math.sqrt.C glib < math.sqrt.X glib run scoreboard players operation math.sqrt.A glib += math.sqrt.B glib
 
-#    if   (                         C > X                  ){                                 A -= B                                     }
+#    if  (                    C > X                  ){                             A -= B                               }
 execute if score math.sqrt.C glib > math.sqrt.X glib run scoreboard players operation math.sqrt.A glib -= math.sqrt.B glib
 
 # Diff = A^2 - X
