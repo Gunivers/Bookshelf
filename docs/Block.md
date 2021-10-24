@@ -2,6 +2,8 @@
 
 `glib:block/`: Systems for manipulating blocks
 
+You need to install the block converter addon: https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter
+
 **Get block ID**
 
 `get` : Gives the executing entity a score corresponding to a unique identifier of the block + blockstate located where the function is executed.

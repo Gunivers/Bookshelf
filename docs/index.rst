@@ -1,8 +1,7 @@
 Glib-Core
 =========
 
-.. figure:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
-   :alt: 
+.. image:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
 
 The Gunivers-libs is a series of tool datapacks, that group together all
 the functions and systems that can be used in your maps, to simplify
@@ -58,13 +57,11 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
 
 .. toctree::
     :maxdepth: 2
-    :caption: Modules
+    :caption: Native modules
 
     Biome
-    Block
     Health
     Id
-    Item
     Link
     Location
     Math
@@ -72,3 +69,10 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
     Orientation
     Vector
     View
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Addon modules
+
+    Block
+    Item

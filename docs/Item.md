@@ -2,6 +2,8 @@
 
 `glib:item/` : Systems allowing to manipulate items
 
+You need to install the block converter addon: https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter
+
 **Get item ID**
 
 `get`: Gives to the item executing the function a score corresponding to a unique identifier corresponding to its nature.
