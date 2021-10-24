@@ -63,7 +63,7 @@ Find the local vector corresponding to the vector X=1000, Y=0, Z=0
 scoreboard players set @s glib.vectorX 1000
 scoreboard players set @s glib.vectorY 0
 scoreboard players set @s glib.vectorZ 0
-function glib:vector/get_from_classic_vector
+function glib:vector/classic/get_from_classic_vector
 
 # Display the result
 tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib. vectorLeft"}, "color": "gold"},{"text": "VectorUp: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. vectorUp"}, "color": "gold"},{"text":" VectorFront: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.vectorFront"}, "color": "gold"}]
