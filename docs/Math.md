@@ -31,7 +31,7 @@ scoreboard players operation @s glib.var3 = @s glib.oriH
 scoreboard players operation @s glib.var4 = @s glib.oriV
 
 # Perform the basic rotation
-function glib:math/basis_rotation_3d
+function glib:math/algebra/basis_rotation_3d
 
 # See the result
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
@@ -56,7 +56,7 @@ scoreboard players operation @s glib.var3 *= -1 glib.const
 scoreboard players operation @s glib.var4 *= -1 glib.const
 
 # Perform the basic rotation
-function glib:math/basis_rotation_3d
+function glib:math/algebra/basis_rotation_3d
 
 # See the result
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
@@ -194,7 +194,7 @@ Calculate 9 / 5:
 # Once
 scoreboard players set @s glib.var0 9
 scoreboard players set @s glib.var1 5
-function glib:math/divide
+function glib:math/common/divide
 tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -211,7 +211,7 @@ Calculate exp(3):
 ```
 # Once
 scoreboard players set @s glib.var0 300
-function glib:math/exp
+function glib:math/common/exp
 tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -225,7 +225,7 @@ Compute 3!
 ```
 # Once
 scoreboard players set @s glib.var0 3
-function glib:math/factorial
+function glib:math/common/factorial
 tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -240,7 +240,7 @@ Calculate the greatest common denominator between 16 and 12 :
 # Once
 scoreboard players set @s glib.var0 16
 scoreboard players set @s glib.var1 12
-function glib:math/gcd
+function glib:math/common/gcd
 tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -256,7 +256,7 @@ Calculate ln(28):
 ```
 # Once
 scoreboard players set @s glib.var0 28000
-function glib:math/log
+function glib:math/common/log
 tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -272,7 +272,7 @@ Calculate log2(28):
 ```
 # Once
 scoreboard players set @s glib.var0 28000
-function glib:math/log2
+function glib:math/common/log2
 tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -288,7 +288,7 @@ Calculate log10(28):
 ```
 # Once
 scoreboard players set @s glib.var0 28000
-function glib:math/log10
+function glib:math/common/log10
 tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -305,7 +305,7 @@ Calculate log4(28):
 # Once
 scoreboard players set @s glib.var0 28000
 scoreboard players set @s glib.var1 4
-function glib:math/loga
+function glib:math/common/loga
 tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -320,7 +320,7 @@ Compute 2^6:
 # Once
 scoreboard players set @s glib.var0 2
 scoreboard players set @s glib.var1 6
-function glib:math/pow
+function glib:math/common/pow
 tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -337,7 +337,7 @@ Calculate and display the square root of 42:
 ```
 # Once
 scoreboard players set @s glib.var0 42
-function glib:math/sqrt
+function glib:math/common/sqrt
 tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -355,7 +355,7 @@ Find the power of 2 greater than 43
 ```
 # Once
 scoreboard players set @s glib.var0 43
-function glib:math/get_next_pow2
+function glib:math/special/get_next_pow2
 tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -370,7 +370,7 @@ tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name"
 Get and display a random number between 0 and 100:
 ```
 # Once
-function glib:math/random
+function glib:math/special/random
 scoreboard players operation @s glib.res0 %= 101 glib.const
 tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
@@ -393,7 +393,7 @@ Calculate and display the arccos of 0,42
 ```
 # Once
 scoreboard players set @s glib.var0 420
-function glib:math/arccos
+function glib:math/trig/arccos
 tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -410,7 +410,7 @@ Calculate and display the arcsinus of 0.42
 ```
 # Once
 scoreboard players set @s glib.var0 420
-function glib:math/arcsin
+function glib:math/trig/arcsin
 tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -427,7 +427,7 @@ Calculate and display the arctan of 0.42
 ```
 # Once
 scoreboard players set @s glib.var0 420
-function glib:math/arctan
+function glib:math/trig/arctan
 tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 ```
 
@@ -444,7 +444,7 @@ Calculate and display the cosine of 42
 ```
 # Once
 scoreboard players set @s glib.var0 42
-function glib:math/cos
+function glib:math/trig/cos
 tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -461,7 +461,7 @@ Calculate and display the sine of 42
 ```
 # Once
 scoreboard players set @s glib.var0 42
-function glib:math/sin
+function glib:math/trig/sin
 tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
@@ -476,6 +476,6 @@ Calculate and display the tengeante of 42
 ```
 # Once
 scoreboard players set @s glib.var0 42
-function glib:math/tan
+function glib:math/trig/tan
 tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
