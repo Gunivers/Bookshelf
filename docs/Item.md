@@ -1,47 +1,55 @@
-# **Item**
+# Item
 
-`glib:item/` : Systèmes permettant de manipuler les items
+`glib:item/` : Systems allowing to manipulate items
 
-* `get` : Donne à l'item executant la fonction un score correspondant à un identifiant unique correspondant à sa nature.
-  * Le résultat est stocké sur le score `glib.itemId`
-  * Doit être executé sur un item uniquement
-  * Exemple : 
+You need to install the block converter addon: [https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter](https://gitlab.com/Altearn/minecraft/datapack/Glibs/addons/block-converter)
 
-Faire en sorte que tous les items présent dans le monde aient leur identifiant indiqué par leur score `glib.itemId`
+**Get item ID**
 
+`get`: Gives to the item executing the function a score corresponding to a unique identifier corresponding to its nature.
+* The result is stored on the score `glib.itemId`
+* Must be executed on an item only
+
+*Example:* 
+
+Make sure that all the items in the world have their identifier indicated by their score `glib.itemId`
 ```
-# Une fois
+# Once
 execute as @e[type=item] run function glib:item/get
 
-# Voir le résultat
+# See the result
 scoreboard objectives setdisplay sidebar glib.itemId
 ```
 
-* set : Créé un item correspondant à l'identifiant stocké sur l'entité executante.
-  * L'identifiant doit être donén via le score `glib.itemId`
-  * Exemple :
+**Set item from ID**
 
-Faire en sorte que le joueur nommé Steve créé un item devant lui, correspondant à l'identifiant qu'il a d'indiqué sur son score `glib.itemId`
+`set`: Create an item corresponding to the identifier stored on the executing entity.
+* The identifier must be given via the score `glib.itemId``.
 
+*Example:*
+
+Make the player named Steve create an item in front of him, corresponding to the identifier he has given on his score `glib.itemId`
 ```
-# Une fois
-execute as Steve at @s anchored eyes positioned ^ ^ ^1 run function glib:item/set
+# Once
+execute as Steve at @s anchored eyes positioned ^ ^1 run function glib:item/set
 
-# Voir le résultat
-# Regarder devant Steve
+# See the result
+# Look in front of Steve
 ```
 
-* `convert_to_block` : Converti un identifiant d'item stocké sur l'entité executante en identifiant de block
-  * L'identifiant de l'item doit être indiqué par le score `glib.itemId`
-  * L'identifiant du bloc sera stocké sur le score `glib.blockId`
-  * Exemple :
+**Convert item ID to block ID**
 
-Faire en sorte que le joueur nommé Steve obtienne l'identifiant du bloc correspondant à l'item qui est indiqué par son score `glib.itemId`
+`convert_to_block`: Convert an item id stored on the executing entity to a block id
+* The item identifier must be indicated by the `glib.itemId` score
+* The block identifier will be stored on the score `glib.blockId`
 
+*Example:*
+
+Make the player named Steve get the block identifier corresponding to the item that is indicated by his score `glib.itemId`
 ```
-# Une fois
+# Once
 execute as Steve run function glib:item/convert_to_block
 
-# Voir le résultat
+# See the result
 scoreboard objectives setdisplay sidebar glib.blockId
 ```

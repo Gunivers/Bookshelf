@@ -7,7 +7,7 @@
 # Last check: 1.16
 
 # Original path: glib:object/biome/get
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Functions#Biome
+# Documentation: https://glib-core.readthedocs.io//Functions#Biome
 # Parallelizable: true
 # Note: Detect the biome where the command is executed and assign an id to each biome. You can find the list of id in https://test.gunivers.net/projects/gunivers-lib/wiki/Biome_ID.
 

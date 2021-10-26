@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:view/aimed_entity
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Documentation: https://glib-core.readthedocs.io//entity#view
 # Parallelizable: <true/false/global>
 # Note:
 

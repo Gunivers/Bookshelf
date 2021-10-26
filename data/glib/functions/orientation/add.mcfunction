@@ -7,7 +7,7 @@
 # Last check: 1.15.2
 
 # Original path: glib:orientation/add
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#orientation
+# Documentation: https://glib-core.readthedocs.io//entity#orientation
 # Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12 ...
 

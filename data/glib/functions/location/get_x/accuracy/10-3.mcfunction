@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:location/get_x/accuracy/10-3
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#location
+# Documentation: https://glib-core.readthedocs.io//entity#location
 # Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12...
 

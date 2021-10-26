@@ -7,7 +7,7 @@
 # Last check: 1.15.2
 
 # Original path: entity/id/getsuid
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#id
+# Documentation: https://glib-core.readthedocs.io//entity#id
 # Parallelizable: true
 # Note: Gives a unique identifier to the source entity
 # - To reset SUID, set the entity score "SUID" at 0 and make it execute this function.

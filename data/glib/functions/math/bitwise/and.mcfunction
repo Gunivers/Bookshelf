@@ -7,7 +7,7 @@
 # Last check: 1.16.2
 
 # Original path: glib:math/bitwise/and
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Functions#Bitwise
+# Documentation: https://glib-core.readthedocs.io//Functions#Bitwise
 # Parallelizable: true
 # Note:
 # - This function returns the and bitwise between the two numbers.

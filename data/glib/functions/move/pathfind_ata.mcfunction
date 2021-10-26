@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:move/pathfinding_ata
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#move
+# Documentation: https://glib-core.readthedocs.io//entity#move
 # Parallelizable: <true/false/global>
 # Note: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 

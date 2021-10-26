@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:vector/classic/get_by_actual_orientation
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#vector
+# Documentation: https://glib-core.readthedocs.io//entity#vector
 # Parallelizable: <true/false/global>
 # Note:
 

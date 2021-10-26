@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:location/set_y
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/Functions#Location
+# Documentation: https://glib-core.readthedocs.io//Functions#Location
 # Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 

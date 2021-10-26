@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: glib:view/aimed_block
-# Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/entity#view
+# Documentation: https://glib-core.readthedocs.io//entity#view
 # Parallelizable: <true/false/global>
 # Note: Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard glib.parentId and get the tag glib.aimedBlock.new.
 
