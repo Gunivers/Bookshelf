@@ -57,11 +57,13 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
 
 .. toctree::
     :maxdepth: 2
-    :caption: Native modules
+    :caption: Modules
 
     Biome
+    Block
     Health
     Id
+    Item
     Link
     Location
     Math
@@ -69,10 +71,3 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
     Orientation
     Vector
     View
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Addon modules
-
-    Block
-    Item
