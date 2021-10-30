@@ -1,6 +1,6 @@
 tag @s add glib.collisionY
 
-function glib_utils:default_entity
+function gutils:default_entity
 
 scoreboard players set @e[tag=glib.new] glib.locX 0
 scoreboard players operation @e[tag=glib.new] glib.locY = move.vectorY glib

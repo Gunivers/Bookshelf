@@ -24,7 +24,7 @@ scoreboard objectives add glib.oriH dummy [{"text":"GLib ","color":"gold"},{"tex
 #__________________________________________________
 # CODE
 
-execute at @s run function glib_utils:default_entity
+execute at @s run function gutils:default_entity
 
 execute store result entity @e[tag=glib.new,limit=1] Rotation[0] float 0.001 run scoreboard players get @s glib.oriH
 tp @s @e[tag=glib.new,limit=1]

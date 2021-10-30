@@ -25,6 +25,6 @@ scoreboard objectives add glib.locZ dummy [{"text":"GLib ","color":"gold"},{"tex
 #__________________________________________________
 # CODE
 
-function glib_utils:default_entity
+function gutils:default_entity
 
 execute store result score @s glib.locZ run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[2] 1000

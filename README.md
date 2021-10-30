@@ -15,7 +15,7 @@ Because a short video is better than a long speech: https://www.youtube.com/watc
 * Main article : https://gunivers.net/gunivers-lib/
 * Note : In order to save time, this traduction was mostly made with deepl.com and may contain mistakes. If you find one of these mistakes, you can report it to us on "our Discord": https://discord.gg/E8qq6tN
 
--> [Start explore](SUMMARY.md)
+-> [Start explore](https://glib-core.readthedocs.io/)
 
 # Credits
 

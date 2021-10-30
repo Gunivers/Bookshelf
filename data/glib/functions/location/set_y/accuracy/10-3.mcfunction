@@ -28,7 +28,7 @@ tag @e[tag=glib.setLocation] remove glib.setLocation
 tag @s add glib.setLocation
 
 # Player
-execute if entity @s[type=minecraft:player] run function glib_utils:default_entity
+execute if entity @s[type=minecraft:player] run function gutils:default_entity
 execute if entity @s[type=minecraft:player] as @e[tag=glib.new,limit=1] run function glib:location/set_y/accuracy/10-3/player
 
 # Non-player

@@ -6,7 +6,7 @@ tag @s add glib.collisionFront
 #__________________________________________________
 # Create new tmp entity
 
-function glib_utils:default_entity
+function gutils:default_entity
 
 #__________________________________________________
 # Calcul next position

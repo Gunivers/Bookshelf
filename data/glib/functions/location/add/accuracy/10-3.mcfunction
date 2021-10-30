@@ -36,7 +36,7 @@ scoreboard players operation #backup.location.add.locX glib = @s glib.locX
 scoreboard players operation #backup.location.add.locY glib = @s glib.locY
 scoreboard players operation #backup.location.add.locZ glib = @s glib.locZ
 
-execute at @s run function glib_utils:default_entity
+execute at @s run function gutils:default_entity
 tag @e[tag=glib.new,limit=1] add glib.location.add.tmp
 tag @e[tag=glib.location.add.tmp] remove glib.new
 execute as @e[tag=glib.location.add.tmp] at @s run function glib:location/get/accuracy/10-3

@@ -1,6 +1,6 @@
 tag @s add glib.collisionZ
 
-function glib_utils:default_entity
+function gutils:default_entity
 
 scoreboard players set @e[tag=glib.new] glib.locX 0
 scoreboard players set @e[tag=glib.new] glib.locY 0
