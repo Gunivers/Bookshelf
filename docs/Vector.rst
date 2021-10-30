@@ -14,7 +14,7 @@ Get vector by actual orientation
 
 .. note::
 
-    This function require the `Location <Location.rst>`_ module.
+    This function require the `Location`_ module.
 
 ``get_by_actual_orientation``: Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores ``glib.vector[X,Y,Z]`` (each between -1000 and 1000).
 
@@ -32,7 +32,7 @@ Get vector "as to at"
 
 .. note::
 
-    This function require the `Location <Location.rst>`_ module.
+    This function require the `Location <Location>`_ module.
 
 ``get_ata``: Compute a vector from the source entity to the execution position of the function.
 
@@ -50,7 +50,7 @@ Get vector lenght
 
 .. note::
 
-    This function require the `Math <Math.rst>`_ module.
+    This function require the `Math <Math.html>`_ module.
 
 ``get_lenght``: compute the norm of the vector and store it on the score ``glib.res0``
 
@@ -80,7 +80,7 @@ Convert classic to local vector
 
 .. note::
 
-    This function require the `Math <Math.rst>`_ module.
+    This function require the `Math <Math.html>`_ module.
 
 ``get_from_classic_vector``: Allows to convert a "normal" vector (using the relative reference frame) into local coordinates (using the local reference frame)
 * Takes the 3 scores ``glib.vector[X,Y,Z]`` as input
