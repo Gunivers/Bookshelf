@@ -1,5 +1,5 @@
 {
  "values": [
-    "glib:load"
+    "glib.core:load"
  ]
 }

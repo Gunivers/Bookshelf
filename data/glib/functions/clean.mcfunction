@@ -6,7 +6,7 @@
 # MC Version:
 # Last check:
 
-# Original path: glib:core/clean
+# Original path: glib.core:clean
 # Documentation: https://glib-core.readthedocs.io//core
 # Parallelizable: <true/false/global>
 # Note:

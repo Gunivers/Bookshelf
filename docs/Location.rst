@@ -1,7 +1,7 @@
 Location
 ========
 
-``glib:location/``: The "Location" functions allow to manage the
+``glib.location:``: The "Location" functions allow to manage the
 position of entities via scores. It is thus possible to detect the
 position of an entity or to place it at a position defined by a score.
 

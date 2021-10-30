@@ -2,7 +2,7 @@
 Move
 ****
 
-``glib:move/``: This folder contains all the functions related to the
+``glib.move:``: This folder contains all the functions related to the
 movement of the entity.
 
 Move using local vector

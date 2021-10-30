@@ -2,7 +2,7 @@
 Math
 ****
 
-``glib:math/``: The "Math" functions, as their name suggests, are for
+``glib.math:``: The "Math" functions, as their name suggests, are for
 doing math. Before you run away remembering your indigestible and
 incomprehensible lessons that you had to endure at school, you should
 know that here, you won't need to do any math (in fact, it's the purpose

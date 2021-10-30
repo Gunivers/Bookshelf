@@ -2,7 +2,7 @@
 Health
 ******
 
-``glib:health/``: Management by scoreboard of the life of an entity.
+``glib.health:``: Management by scoreboard of the life of an entity.
 
 Safe kill
 ~~~~~~~~~

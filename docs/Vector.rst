@@ -2,7 +2,7 @@
 Vector
 ******
 
-``glib:vector/``: Vectors are used to define the trajectory of an entity. Thus, they allow to manage projectiles easily, offering the possibility to make them undergo collisions, to imitate gravity, wind etc ... They are always defined with a 10^3 factor (1000 = 1 block/tick).
+``glib.vector:``: Vectors are used to define the trajectory of an entity. Thus, they allow to manage projectiles easily, offering the possibility to make them undergo collisions, to imitate gravity, wind etc ... They are always defined with a 10^3 factor (1000 = 1 block/tick).
 
 Classic
 =======
@@ -14,7 +14,7 @@ Get vector by actual orientation
 
 .. note::
 
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Location <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-location>`_ datapack in order to use this function.
+    This function require the `Location <Location.rst>`_ module.
 
 ``get_by_actual_orientation``: Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores ``glib.vector[X,Y,Z]`` (each between -1000 and 1000).
 
@@ -32,7 +32,7 @@ Get vector "as to at"
 
 .. note::
 
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Location <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-location>`_ datapack in order to use this function.
+    This function require the `Location <Location.rst>`_ module.
 
 ``get_ata``: Compute a vector from the source entity to the execution position of the function.
 
@@ -50,7 +50,7 @@ Get vector lenght
 
 .. note::
 
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Math <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/math>`_ datapack in order to use this function.
+    This function require the `Math <Math.rst>`_ module.
 
 ``get_lenght``: compute the norm of the vector and store it on the score ``glib.res0``
 
@@ -80,7 +80,7 @@ Convert classic to local vector
 
 .. note::
 
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Math <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/math>`_ datapack in order to use this function.
+    This function require the `Math <Math.rst>`_ module.
 
 ``get_from_classic_vector``: Allows to convert a "normal" vector (using the relative reference frame) into local coordinates (using the local reference frame)
 * Takes the 3 scores ``glib.vector[X,Y,Z]`` as input

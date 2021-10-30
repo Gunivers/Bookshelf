@@ -2,7 +2,7 @@
 View
 ****
 
-``glib:view/``:The view functions allow to get some practical information about what the entity sees or aims.
+``glib.view:``:The view functions allow to get some practical information about what the entity sees or aims.
 
 **Get aimed block**
 

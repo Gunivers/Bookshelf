@@ -57,17 +57,30 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
 
 .. toctree::
     :maxdepth: 2
-    :caption: Modules
+    :caption: Libs
 
     Biome
     Block
+    Cache
+    Color
     Health
     Id
     Item
     Link
     Location
+    MapEdit
     Math
+    Memory
     Move
     Orientation
+    Schedule
+    Time
     Vector
     View
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Systems
+
+    BiomeDisplayer
+    LGdir

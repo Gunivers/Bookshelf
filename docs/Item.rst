@@ -2,7 +2,7 @@
 Item
 ****
 
-``glib:item/`` : Systems allowing to manipulate items
+``glib.item:`` : Systems allowing to manipulate items
 
 Get item ID
 ~~~~~~~~~~~

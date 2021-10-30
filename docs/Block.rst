@@ -2,7 +2,7 @@
 Block
 *****
 
-``glib:block/``: Systems for manipulating blocks
+``glib.block:``: Systems for manipulating blocks
 
 Get block ID
 ~~~~~~~~~~~~

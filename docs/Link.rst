@@ -1,7 +1,7 @@
 Link
 ====
 
-``glib:link/``: The "Link" functions allow to link an entity to another.
+``glib.link:``: The "Link" functions allow to link an entity to another.
 This link consists in preserving the position and the relative
 orentation between the two entities, allowing then to imitate or to
 reverse the movements and rotations of the parent entity.

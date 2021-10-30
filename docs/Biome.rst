@@ -2,7 +2,7 @@
 Biome
 *****
 
-``glib:biome/`` all function concerning biome properties.
+``glib.biome:`` all function concerning biome properties.
 
 Can it rain?
 ~~~~~~~~~~~~
