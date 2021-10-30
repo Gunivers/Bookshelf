@@ -13,11 +13,6 @@ other things) raycasting with this lib. This system is essentially based
 on trigonometry. But again, nothing complicated, everything is already
 done ;)
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Math <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/math>`_ datapack in order to use this module.
-
-
 Algebra
 =======
 

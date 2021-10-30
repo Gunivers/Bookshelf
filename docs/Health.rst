@@ -4,10 +4,6 @@ Health
 
 ``glib:health/``: Management by scoreboard of the life of an entity.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Health <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-health>`_ datapack in order to use this module.
-
 Safe kill
 ~~~~~~~~~
 

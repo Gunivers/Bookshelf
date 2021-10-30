@@ -4,10 +4,6 @@ Item
 
 ``glib:item/`` : Systems allowing to manipulate items
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Block and Item Converter <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/block-and-item-converter>`_ datapack in order to use this module.
-
 Get item ID
 ~~~~~~~~~~~
 

@@ -5,10 +5,6 @@ Orientation
 ``glib:orientation/``: This folder contains functions that facilitate
 the management of the orientation of entities.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Location <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-location>`_ datapack in order to use this module.
-
 Get orientation
 ~~~~~~~~~~~~~~~
 

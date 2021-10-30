@@ -6,10 +6,6 @@ This link consists in preserving the position and the relative
 orentation between the two entities, allowing then to imitate or to
 reverse the movements and rotations of the parent entity.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Link <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-link>`_ datapack in order to use this module.
-
 Create link to target ID
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

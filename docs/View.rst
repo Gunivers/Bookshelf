@@ -4,10 +4,6 @@ View
 
 ``glib:view/``:The view functions allow to get some practical information about what the entity sees or aims.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity View <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-view>`_ datapack in order to use this module.
-
 **Get aimed block**
 
 ``aimed_block``: Places an armor_stand having the tag ``glib.aimedBlock`` and a score ``glib.parentId`` corresponding to the Id of the running entity.

@@ -5,10 +5,6 @@ Location
 position of entities via scores. It is thus possible to detect the
 position of an entity or to place it at a position defined by a score.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Location <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-location>`_ datapack in order to use this module.
-
 Add up coordinates
 ~~~~~~~~~~~~~~~~~~
 

@@ -6,11 +6,6 @@ ID
 an entity. Useful for example in the case of a shooting game to know who
 is shooting at whom.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity ID <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-id>`_ datapack in order to use this module.
-
-
 Check ID
 ~~~~~~~~
 

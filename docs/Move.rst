@@ -5,10 +5,6 @@ Move
 ``glib:move/``: This folder contains all the functions related to the
 movement of the entity.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Entity Movement <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/entity-movement>`_ datapack in order to use this module.
-
 Move using local vector
 ~~~~~~~~~~~~~~~~~~~~~~~
 

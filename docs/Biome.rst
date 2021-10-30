@@ -4,10 +4,6 @@ Biome
 
 ``glib:biome/`` all function concerning biome properties.
 
-.. note::
-
-    If you are not using the `Glib-Core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_, you need to install the `Biome <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/addons/biome>`_ datapack in order to use this module.
-
 Can it rain?
 ~~~~~~~~~~~~
 
