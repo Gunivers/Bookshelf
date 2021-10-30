@@ -14,7 +14,7 @@ Get vector by actual orientation
 
 .. note::
 
-    This function require the `Location`_ module.
+    This function require the `Location <Location.html>`_ module.
 
 ``get_by_actual_orientation``: Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores ``glib.vector[X,Y,Z]`` (each between -1000 and 1000).
 
@@ -32,7 +32,7 @@ Get vector "as to at"
 
 .. note::
 
-    This function require the `Location <Location>`_ module.
+    This function require the `Location <Location.html>`_ module.
 
 ``get_ata``: Compute a vector from the source entity to the execution position of the function.
 
