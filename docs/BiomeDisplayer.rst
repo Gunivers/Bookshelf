@@ -2,8 +2,10 @@
 Biome Displayer
 ***************
 
-No documentation here...
+This system allow to display the biome you're in in the action bar.
 
-.. note::
+To enable this system, you just need to execute the following command in a loop:
 
-    This is a communautary project. Writing docs can take a lot of time and creators don't ever have this time. You can help us by contributing to the project on the `Gitlab repository <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_ and by joining us on `Discord <https://discord.gg/E8qq6tN>`_
+.. code-block::
+
+    function gsys.biome_displayer:main
