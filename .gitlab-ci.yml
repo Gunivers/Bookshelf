@@ -1,0 +1,28 @@
+image: alpine:latest
+ 
+before_script:
+  - apk add openssh
+  - apk add --no-cache lftp
+  - mkdir /root/.ssh
+  - chmod 700 /root/.ssh
+  - touch /root/.ssh/known_hosts
+  - chmod 600 /root/.ssh/known_hosts
+
+deploy-latest:
+  stage: deploy
+  script:
+    - ssh-keyscan -p 5658 -H $HOST >> /root/.ssh/known_hosts
+    - echo -n $CI_COMMIT_SHORT_SHA > latest.txt
+    - echo -n $CI_COMMIT_SHORT_SHA > available.txt
+    - lftp -e "rm datapacks/dev/$CI_COMMIT_BRANCH/$CI_COMMIT_SHORT_SHA/available.txt; mirror -e -P 4 --transfer-all --exclude .git  --exclude latest.txt --reverse -X .* --verbose ./ datapacks/dev/$CI_COMMIT_BRANCH/$CI_COMMIT_SHORT_SHA/; put -O datapacks/dev/$CI_COMMIT_BRANCH/ ./latest.txt; put -O datapacks/dev/$CI_COMMIT_BRANCH/$CI_COMMIT_SHORT_SHA/ ./available.txt; quit" -u $USER,$PASSWORD sftp://$HOST -p 5658
+  only:
+    - branches
+
+deploy-tag:
+  stage: deploy
+  script:
+    - ssh-keyscan -p 5658 -H $HOST >> /root/.ssh/known_hosts
+    - echo -n $CI_COMMIT_SHORT_SHA > available.txt
+    - lftp -e "rm datapacks/release/$CI_COMMIT_TAG/available.txt; mirror -e -P 4 --transfer-all --exclude .git  --exclude available.txt --reverse -X .* --verbose ./ datapacks/release/$CI_COMMIT_TAG/; put -O datapacks/release/$CI_COMMIT_TAG/ ./available.txt; quit" -u $USER,$PASSWORD sftp://$HOST -p 5658
+  only:
+    - tags
