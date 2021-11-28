@@ -8,9 +8,11 @@ Contribute
 
 The Gunivers-Libs is a community project and can therefore be developed by several people at the same time. To keep the project clean and coherent, it is necessary for the different developers to respect certain conventions when developing functions.
 
-.. note::
+To contribute, you must
 
-   Everything concerning the development of the Data Pack must be in English, so this concerns the typography of folders and functions, the names of scoreboards, tags, entities, teams etc. or even the comments and documentation within a function.
+- Know the structure of a minecraft datapack (5-10 min to learn on internet)
+- Know the basic usage of git projects (20-30 min to learn on internet)
+- Be accessible to answer questions about your work
 
 Definitions
 ===========
