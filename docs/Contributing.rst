@@ -14,6 +14,10 @@ To contribute, you must
 - Know the basic usage of git projects (20-30 min to learn on internet)
 - Be accessible to answer questions about your work
 
+**GitLab repository**: `https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core <https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core>`_
+
+**Discord server**: `https://discord.gg/E8qq6tN <https://discord.gg/E8qq6tN>`_
+
 Definitions
 ===========
 
