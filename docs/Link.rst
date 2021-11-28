@@ -9,21 +9,19 @@ reverse the movements and rotations of the parent entity.
 Create link to target ID
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-``create_link_tti``: Allows to create the link between two entities. \*
-The ``glib.targetId`` score of the executing entity must match the
-``glib.id`` score of the entity to which it will be linked. \* Multiple
-entities can be linked to a single entity (generally recommended for
-armor\_stand structures). \* The child entity (having performed the
-function) will then have 9 distinct scores: \*
-``glib.link.r[x,y,z,h,v]`` representing the relative coordinates
-(position + orientation) \* ``glib.link.l[x,y,z]`` representing local
-coordinates (position only) \* ``glib.link.to`` identifies the entity to
-which it is linked \* These scores should generally not be modified
-because they are used as parameters for other link functions.
+``create_link_tti``: Allows to create the link between two entities.
+* The ``glib.targetId`` score of the executing entity must match the
+``glib.id`` score of the entity to which it will be linked.
+* Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
+* The child entity (having performed the function) will then have 9 distinct scores:
+   * ``glib.link.r[x,y,z,h,v]`` representing the relative coordinates (position + orientation)
+   * ``glib.link.l[x,y,z]`` representing local coordinates (position only)
+   * ``glib.link.to`` identifies the entity to which it is linked
+* These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
 
-Link all armor\_stand to the entity with ID 3
+Link all armor_stand to the entity with ID 3
 
 ::
 
@@ -38,21 +36,20 @@ Link all armor\_stand to the entity with ID 3
 Create link "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~
 
-``create_link_ata``: In the same way as create\_link\_to\_target\_id,
+``create_link_ata``: In the same way as ``create_link_to_target_id``,
 this function creates a link between the entity executing the function
-and the entity closest to the execution position. \* Multiple entities
-can be linked to a single entity (generally recommended for armor\_stand
-structures). \* The child entity (having executed the function) will
-then have 9 distinct scores: \* ``glib.link.r[x,y,z,h,v]`` representing
-the relative coordinates (position + orientation) \*
-``glib.link.l[x,y,z]`` representing local coordinates (position only) \*
-``glib.link.to`` identifies the entity to which it is linked \* These
-scores should generally not be modified because they are used as
-parameters for other link functions.
+and the entity closest to the execution position.
+
+* Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
+* The child entity (having executed the function) will then have 9 distinct scores:
+   * ``glib.link.r[x,y,z,h,v]`` representing the relative coordinates (position + orientation)
+   * ``glib.link.l[x,y,z]`` representing local coordinates (position only)
+   * ``glib.link.to`` identifies the entity to which it is linked
+* These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
 
-Link all armor\_stand to the nearest sheep
+Link all armor_stand to the nearest sheep
 
 ::
 
@@ -68,12 +65,13 @@ Imitate location
 
 ``imitate_loc``: Allows to replace the entity at its relative position.
 This operation repeated in a loop is to imitate the movements of the
-parent entity. \* This function also has declinations on x, y and z to
-allow you to imitate the movements on one or two chosen axes.
+parent entity.
+
+* This function also has declinations on x, y and z to allow you to imitate the movements on one or two chosen axes.
 
 *Example:*
 
-Make armor\_stands mimic your moves
+Make armor_stands mimic your moves
 
 ::
 
@@ -93,7 +91,7 @@ Imitate orientation
    only the horizontal or vertical rotation.
 -  Example:
 
-Make armor\_stands mimic your orientation changes
+Make armor_stands mimic your orientation changes
 
 ::
 
@@ -105,15 +103,13 @@ Make armor\_stands mimic your orientation changes
 
 ``keep_local_location``: Allows to keep the local position corresponding
 to the position of the child entity in the repository of the parent
-entity. \* This reference frame, unlike the relative coordinates, takes
-into account the orientation of the entity. Thus, when the parent entity
-turns on itself, the child entity will turn around it keeping its
-distance and the angle formed between the direction of the parent
-entity's look and the parent->child vector.
+entity.
+
+* This reference frame, unlike the relative coordinates, takes into account the orientation of the entity. Thus, when the parent entity turns on itself, the child entity will turn around it keeping its distance and the angle formed between the direction of the parent entity's look and the parent->child vector.
 
 *Example:*
 
-Make the armor\_stands lock to your orientation
+Make the armor_stands lock to your orientation
 
 ::
 
@@ -127,13 +123,13 @@ Reverse location
 ~~~~~~~~~~~~~~~~
 
 ``reverse_loc``: Allows to determine the displacement made by the parent
-entity, and reproduce it in the opposite direction. \* This function
-also has declinations on x, y and z to allow you to reverse the
-movements that on one or two axes chosen.
+entity, and reproduce it in the opposite direction.
+
+* This function also has declinations on x, y and z to allow you to reverse the movements that on one or two axes chosen.
 
 *Example:*
 
-Make the armor\_stands do the opposite of your moves
+Make the armor_stands do the opposite of your moves
 
 ::
 
@@ -147,13 +143,13 @@ Reverse orientation
 ~~~~~~~~~~~~~~~~~~~
 
 ``reverse_ori``: Allows you to determine the rotation performed by the
-parent entity, and reproduce it in the opposite direction. \* This
-function also has variations on h and v to allow you to reverse only the
-horizontal or vertical rotation.
+parent entity, and reproduce it in the opposite direction.
+
+* This function also has variations on h and v to allow you to reverse only the horizontal or vertical rotation.
 
 *Example:*
 
-Make the armor\_stands mimic your movements
+Make the armor_stands mimic your movements
 
 ::
 
@@ -171,13 +167,13 @@ entities. If you only use immitation and/or local position keeping
 functions, this function will not be of any use to you. On the other
 hand, if you change the position of the child entity automatically, you
 will have to update the link so that your operation is not cancelled the
-next time you call the link function. \* The link functions of the lib
-automatically call the update functions if necessary (example: reverse
-functions). No need to manage this on your side.
+next time you call the link function.
+
+* The link functions of the lib automatically call the update functions if necessary (example: reverse functions). No need to manage this on your side.
 
 *Example:*
 
-Update the armor\_stands link
+Update the armor_stands link
 
 ::
 
