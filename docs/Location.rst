@@ -24,16 +24,14 @@ axis
     scoreboard players set Aypierre glib.locZ 5
     execute as Aypierre at @s run function glib:location/add
 
-``fast_set``\ : Changes the position of the executing entity to the X,Y
-and Z coordinates respectively indicated by the scores
-\ ``glib.loc[X,Y,Z]``\ . To the user, this function is used in the same
-way as the \ ``set``\  function and produces the same results. The
-differences are: \* This function goes through a succession of teleports
-and not via NBT modification, which makes it more cumbersome to execute
-\* It avoids the problem of latency in displaying the position of
-entities after modifications of their NBT (especially when there is a
-large number of entities). \* The system is limited to positions between
--32000 and +32000 on each axis.
+``fast_set``: Changes the position of the executing entity to the X,Y
+and Z coordinates respectively indicated by the scores ``glib.loc[X,Y,Z]``. To the user, this function is used in the same
+way as the ``set`` function and produces the same results. The
+differences are:
+
+* This function goes through a succession of teleports and not via NBT modification, which makes it more cumbersome to execute
+* It avoids the problem of latency in displaying the position of entities after modifications of their NBT (especially when there is a large number of entities).
+* The system is limited to positions between -32000 and +32000 on each axis.
 
 *Example:*
 
@@ -51,8 +49,9 @@ modified unlike the parameters of a /tp command)
 Get location
 ~~~~~~~~~~~~
 
-``get`` : Detect the position of the entity (coordinates) \* Stores the
-values on the scores ``glib.loc[X,Y,Z]`` with a precision of 1:1.
+``get`` : Detect the position of the entity (coordinates)
+
+* Stores the values on the scores ``glib.loc[X,Y,Z]`` with a precision of 1:1.
 
 *Example:*
 
@@ -68,11 +67,10 @@ Get distance "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ``get_distance_ata`` : Calculates the distance between the source entity
-and the execution position of the function. \* The result is returned on
-the score ``glib.res0``. \* Be careful, this function calls
-``get_distance_squared_ata``, on which it applies the math/sqrt
-operation. It is therefore relatively heavy and is subject to the same
-constraint as ``get_distance_squared_as_to_at`` on integer size.
+and the execution position of the function.
+
+* The result is returned on the score ``glib.res0``.
+* * Be careful, this function calls ``get_distance_squared_ata``, on which it applies the math/sqrt operation. It is therefore relatively heavy and is subject to the same constraint as ``get_distance_squared_as_to_at`` on integer size.
 
 *Example:*
 
@@ -88,13 +86,17 @@ Get distance squared "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``get_distance_squared_ata`` : Calculates the squared distance between
-the source entity and the execution position of the function. \* The
-result is returned on the score ``glib.res0``. \* Attention, the scores
-on Minecraft represent the size of an int variable in java. The latter
-is huge, but not unlimited. However, calculations involving powers give
-results that can quickly rise to more than billions, exceeding the size
-limit of the variable. The game will then have no choice but to "loop"
-the value (if you exceed the limit of 1, the variable will go negative).
+the source entity and the execution position of the function.
+
+* The result is returned on the score ``glib.res0``.
+
+.. warning::
+    
+    The scores on Minecraft represent the size of an int variable in java. The latter
+    is huge, but not unlimited. However, calculations involving powers give
+    results that can quickly rise to more than billions, exceeding the size
+    limit of the variable. The game will then have no choice but to "loop"
+    the value (if you exceed the limit of 1, the variable will go negative).
 
 *Example:*
 
@@ -110,8 +112,9 @@ Get relative corrdinates "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``get_relative_ata`` : Allows to obtain the position of the source
-entity, relative to the execution position of the function. \* The
-result is then placed on the scores ``glib.loc[X,Y,Z]``.
+entity, relative to the execution position of the function.
+
+* The result is then placed on the scores ``glib.loc[X,Y,Z]``.
 
 *Example:*
 
@@ -127,8 +130,9 @@ Is in cave?
 ~~~~~~~~~~~
 
 ``is_in_cave``: Allows to know if the location indicated by the
-execution mosition of the function is located in a cellar. \* Stores the
-result on glib.res0 (1 if in a cellar, 0 otherwise)
+execution mosition of the function is located in a cellar.
+
+* Stores the result on glib.res0 (1 if in a cellar, 0 otherwise)
 
 *Example:*
 
@@ -146,9 +150,9 @@ Set location
 ~~~~~~~~~~~~
 
 ``set``: Allows to place the entity at a precise coordinate given via
-the scores ``glib.loc[X,Y,Z]``. \* This function has variations on x, y
-and z, useful for players, for whom the position can not be changed
-directly via the /data command.
+the scores ``glib.loc[X,Y,Z]``.
+
+* This function has variations on x, y and z, useful for players, for whom the position can not be changed directly via the /data command.
 
 *Example:*
 
@@ -165,13 +169,11 @@ Teleport in 15 100 25
 Spread entity
 ~~~~~~~~~~~~~
 
-``spread`` : Allows to randomly teleport an entity in a given area. \*
-The difference with the spreadplayers command is that this function does
-not teleport to the highest block, it simply does not change the Y
-position of the entity \* Takes as parameters the scores
-``glib.var[0,1,2]`` corresponding respectively to the X and Z
-coordinates, as well as to the radius of the area in which the entity
-will be teleported.
+``spread`` : Allows to randomly teleport an entity in a given area.
+
+* The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y
+position of the entity
+* Takes as parameters the scores ``glib.var[0,1,2]`` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
 
 *Example:*
 
