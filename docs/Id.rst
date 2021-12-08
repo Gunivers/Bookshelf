@@ -54,7 +54,7 @@ Find all child entities of Bob:
 
     # Once
     execute as @e[name=Bob,limit=1] run scoreboard players operation @s glib.targetId = @s glib.id
-    function glib:id/check_parent
+    function glib.id:check_parent
 
     # See the result
     execute unless entity @e[tag=glib.parentId.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
@@ -78,7 +78,7 @@ Give an ID to all players:
 ::
 
     # In a loop to give an ID to the players who connect
-    execute as @a[tag=!glib.id.set] run function glib:id/get_suid
+    execute as @a[tag=!glib.id.set] run function glib.id:get_suid
 
     # See the result
     scoreboard objective setdisplay sidebar glib.id
@@ -102,7 +102,7 @@ Give an ID to all players:
 ::
 
     # In a loop to give an ID to the players who connect
-    execute as @a[tag=!glib.id.set] run function glib:id/get_cuid
+    execute as @a[tag=!glib.id.set] run function glib.id:get_cuid
 
     # See the result
     scoreboard objective setdisplay sidebar glib.id
@@ -121,7 +121,7 @@ Keep the ID string free of holes and duplicates:
 ::
 
     # To be executed once at the beginning of each tick
-    function glib:id/update_cuid
+    function glib.id:update_cuid
 
     # See the result
     scoreboard objective setdisplay sidebar glib.id
