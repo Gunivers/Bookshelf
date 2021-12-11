@@ -18,7 +18,7 @@ Make the player named Steve retrieve the block id under his feet.
 ::
 
     # Once
-    execute as Steve at @s positioned ~ ~-1 ~ run function glib:block/get
+    execute as Steve at @s positioned ~ ~-1 ~ run function glib.block:get
 
     # See the result
     scoreboard objectives setdisplay sidebar glib.blockId
@@ -37,7 +37,7 @@ Make the player named Steve put the block on top of him, corresponding to the id
 ::
 
     # Once
-    execute as Steve at @s positioned ~ ~2 ~ run function glib:block/set
+    execute as Steve at @s positioned ~ ~2 ~ run function glib.block:set
 
     # See the result
     # Look above Steve
@@ -57,7 +57,7 @@ Make the player named Steve get the item identifier corresponding to the block t
 ::
 
     # Once
-    execute as Steve run function glib:block/convert_to_item
+    execute as Steve run function glib.block:convert_to_item
 
     # See the result
     scoreboard objectives setdisplay sidebar glib.itemId

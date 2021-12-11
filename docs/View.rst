@@ -15,7 +15,7 @@ Place in entity on the aimed block:
 ::
 
     # Once
-    function glib:view/aimed_block
+    function glib.view:aimed_block
 
 Get aimed entity
 ~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ Place in entity on the targeted block:
 ::
 
     # Once
-    function glib:view/aimed_entity
+    function glib.view:aimed_entity
 
 Can see "as to at"
 ~~~~~~~~~~~~~~~~~~
@@ -43,7 +43,7 @@ Knowing whether an entity sees you:
 ::
 
     # Once
-    execute as @e at @s run function glib:view/has_in_front_ata
+    execute as @e at @s run function glib.view:has_in_front_ata
 
 Has in front "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,4 +57,4 @@ Know if the position 0 5 0 is in front of you:
 ::
 
     # Once
-    execute as @s positioned 0 5 0 run function glib:view/has_in_front_ata
+    execute as @s positioned 0 5 0 run function glib.view:has_in_front_ata

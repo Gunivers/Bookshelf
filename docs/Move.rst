@@ -33,7 +33,7 @@ Apply a movement of 0.3 blocks per tick to the left to all boats:
     scoreboard players set @e[type=boat] glib.vectorFront 0
 
     # In loop
-    execute as @e[type=boat] run function glib:move/by_local_vector
+    execute as @e[type=boat] run function glib.move:by_local_vector
 
 Move by classic vector
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +72,7 @@ Apply a movement of 0.3 blocks per tick in the X direction to all boats
     scoreboard players set @e[type=boat] glib.vectorZ 0
 
     # In loop
-    execute as @e[type=boat] run function glib:move/by_vector
+    execute as @e[type=boat] run function glib.move:by_vector
 
 Take into account collisions and make the boat stop, with a precision of
 0.1 block:
@@ -88,7 +88,7 @@ Take into account collisions and make the boat stop, with a precision of
     scoreboard players set @e[type=boat] glib.precision 100
 
     # In loop
-    execute as @e[type=boat] run function glib:move/by_vector
+    execute as @e[type=boat] run function glib.move:by_vector
 
 Move forward
 ~~~~~~~~~~~~
@@ -116,7 +116,7 @@ Apply a movement of 0.3 blocks per tick forward to all boats:
     scoreboard players set @e[type=boat] glib.vectorFront 300
 
     # In a loop
-    execute as @e[type=boat] run function glib:move/forward
+    execute as @e[type=boat] run function glib.move:forward
 
 Find a path "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -137,7 +137,7 @@ Find the path to the nearest armor_stand:
 ::
 
     # Once
-    execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function glib:move/pathfind_ata
+    execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function glib.move:pathfind_ata
 
 Convert vector to motion
 ~~~~~~~~~~~~~~~~~~~~~~~~

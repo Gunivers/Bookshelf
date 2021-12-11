@@ -16,7 +16,7 @@ done ;)
 Algebra
 =======
 
-``glib:math/algebra``: this folder allows you to perform algebra
+``glib.math:algebra``: this folder allows you to perform algebra
 operations
 
 Basic rotation
@@ -50,12 +50,12 @@ coordinate (^? ^? ^?)
     scoreboard players set @s glib.var2 10000
 
     # Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
-    function glib:orientation/get
+    function glib.orientation:get
     scoreboard players operation @s glib.var3 = @s glib.oriH
     scoreboard players operation @s glib.var4 = @s glib.oriV
 
     # Perform the basic rotation
-    function glib:math/algebra/basis_rotation_3d
+    function glib.math:algebra/basis_rotation_3d
 
     # See the result
     tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
@@ -73,7 +73,7 @@ coordinates ~X ~Y ~Z (also called "classical" vector in this library)
     scoreboard players set @s glib.var2 1000
 
     # Get the orientation
-    function glib:orientation/get
+    function glib.orientation:get
     scoreboard players operation @s glib.var3 = @s glib.oriH
     scoreboard players operation @s glib.var4 = @s glib.oriV
 
@@ -82,7 +82,7 @@ coordinates ~X ~Y ~Z (also called "classical" vector in this library)
     scoreboard players operation @s glib.var4 *= -1 glib.const
 
     # Perform the basic rotation
-    function glib:math/algebra/basis_rotation_3d
+    function glib.math:algebra/basis_rotation_3d
 
     # See the result
     tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
@@ -90,7 +90,7 @@ coordinates ~X ~Y ~Z (also called "classical" vector in this library)
 Bitwise
 =======
 
-``glib:math/bitwise``: This folder contains various bitwise operators to
+``glib.math:bitwise``: This folder contains various bitwise operators to
 apply to scores.
 
 logical AND
@@ -113,7 +113,7 @@ Calculate and display -9 & 57
     # Once
     scoreboard players set @s glib.var0 -9
     scoreboard players set @s glib.var1 57
-    function glib:math/bitwise/and
+    function glib.math:bitwise/and
     tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Get number of bits
@@ -135,7 +135,7 @@ Calculate and display the number of bits of 12
 
     # Once
     scoreboard players set @s glib.var0 12
-    function glib:math/bitwise/get_number_of_bits
+    function glib.math:bitwise/get_number_of_bits
     tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 logical NOT
@@ -155,7 +155,7 @@ Calculate and display ~452
 
     # Once
     scoreboard players set @s glib.var0 452
-    function glib:math/bitwise/not
+    function glib.math:bitwise/not
     tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 OR logic
@@ -178,7 +178,7 @@ Calculate and display -9 \| 57.
     # Once
     scoreboard players set @s glib.var0 -9
     scoreboard players set @s glib.var1 57
-    function glib:math/bitwise/gold
+    function glib.math:bitwise/gold
     tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Complement to 2
@@ -198,7 +198,7 @@ Calculate and display the two's complement of 12
 
     # Once
     scoreboard players set @s glib.var0 12
-    function glib:math/bitwise/to_complement
+    function glib.math:bitwise/to_complement
     tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 OR exclusive
@@ -222,13 +222,13 @@ Calculate and display -9 ^ 57
     # Once
     scoreboard players set @s glib.var0 -9
     scoreboard players set @s glib.var1 57
-    function glib:math/bitwise/xor
+    function glib.math:bitwise/xor
     tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Common
 ======
 
-``glib:math/common/``: this folder contains the usual math functions
+``glib.math:common/``: this folder contains the usual math functions
 
 Rounded division
 ~~~~~~~~~~~~~~~~
@@ -249,7 +249,7 @@ Calculate 9 / 5:
     # Once
     scoreboard players set @s glib.var0 9
     scoreboard players set @s glib.var1 5
-    function glib:math/common/divide
+    function glib.math:common/divide
     tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Exponential
@@ -273,7 +273,7 @@ Calculate exp(3):
 
     # Once
     scoreboard players set @s glib.var0 300
-    function glib:math/common/exp
+    function glib.math:common/exp
     tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Factorial
@@ -291,7 +291,7 @@ Compute 3!
 
     # Once
     scoreboard players set @s glib.var0 3
-    function glib:math/common/factorial
+    function glib.math:common/factorial
     tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Greatest common denominator
@@ -310,7 +310,7 @@ Calculate the greatest common denominator between 16 and 12 :
     # Once
     scoreboard players set @s glib.var0 16
     scoreboard players set @s glib.var1 12
-    function glib:math/common/gcd
+    function glib.math:common/gcd
     tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Neperian logarithm
@@ -331,7 +331,7 @@ Calculate ln(28):
 
     # Once
     scoreboard players set @s glib.var0 28000
-    function glib:math/common/log
+    function glib.math:common/log
     tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Logarithm in base 2
@@ -352,7 +352,7 @@ Calculate log2(28):
 
     # Once
     scoreboard players set @s glib.var0 28000
-    function glib:math/common/log2
+    function glib.math:common/log2
     tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Logarithm in base 10
@@ -373,7 +373,7 @@ Calculate log10(28):
 
     # Once
     scoreboard players set @s glib.var0 28000
-    function glib:math/common/log10
+    function glib.math:common/log10
     tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Logarithm in base a
@@ -396,7 +396,7 @@ Calculate log4(28):
     # Once
     scoreboard players set @s glib.var0 28000
     scoreboard players set @s glib.var1 4
-    function glib:math/common/loga
+    function glib.math:common/loga
     tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Power
@@ -416,7 +416,7 @@ Compute 2^6:
     # Once
     scoreboard players set @s glib.var0 2
     scoreboard players set @s glib.var1 6
-    function glib:math/common/pow
+    function glib.math:common/pow
     tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Square root
@@ -438,13 +438,13 @@ Calculate and display the square root of 42:
 
     # Once
     scoreboard players set @s glib.var0 42
-    function glib:math/common/sqrt
+    function glib.math:common/sqrt
     tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Special
 =======
 
-``glib:math/special/``: this folder contains functions that are of
+``glib.math:special/``: this folder contains functions that are of
 special interest in algortihms (but not or not much in formal
 mathematics)
 
@@ -463,7 +463,7 @@ Find the power of 2 greater than 43
 
     # Once
     scoreboard players set @s glib.var0 43
-    function glib:math/special/get_next_pow2
+    function glib.math:special/get_next_pow2
     tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Random number generator
@@ -483,7 +483,7 @@ Get and display a random number between 0 and 100:
 ::
 
     # Once
-    function glib:math/special/random
+    function glib.math:special/random
     scoreboard players operation @s glib.res0 %= 101 glib.const
     tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
@@ -494,7 +494,7 @@ Get and display a random number between 0 and 100:
 Trig
 ====
 
-``glib:math/trig/``: this folder contains basic trigonometry functions,
+``glib.math:trig/``: this folder contains basic trigonometry functions,
 opening a lot of doors to creative possibilities in Minecraft.
 
 Arccosinus
@@ -515,7 +515,7 @@ Calculate and display the arccos of 0,42
 
     # Once
     scoreboard players set @s glib.var0 420
-    function glib:math/trig/arccos
+    function glib.math:trig/arccos
     tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Arcsinus
@@ -536,7 +536,7 @@ Calculate and display the arcsinus of 0.42
 
     # Once
     scoreboard players set @s glib.var0 420
-    function glib:math/trig/arcsin
+    function glib.math:trig/arcsin
     tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Arctangent
@@ -558,7 +558,7 @@ Calculate and display the arctan of 0.42
 
     # Once
     scoreboard players set @s glib.var0 420
-    function glib:math/trig/arctan
+    function glib.math:trig/arctan
     tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
 
 Cosine
@@ -580,7 +580,7 @@ Calculate and display the cosine of 42
 
     # Once
     scoreboard players set @s glib.var0 42
-    function glib:math/trig/cos
+    function glib.math:trig/cos
     tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Sinus
@@ -602,7 +602,7 @@ Calculate and display the sine of 42
 
     # Once
     scoreboard players set @s glib.var0 42
-    function glib:math/trig/sin
+    function glib.math:trig/sin
     tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 ``tan``: Compute the tangeant of an angle between 0 and 360
@@ -621,6 +621,6 @@ Calculate and display the tengeante of 42
 
     # Once
     scoreboard players set @s glib.var0 42
-    function glib:math/trig/tan
+    function glib.math:trig/tan
     tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 

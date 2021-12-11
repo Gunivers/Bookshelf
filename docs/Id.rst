@@ -27,7 +27,7 @@ Find the entity (or entities) with ID 3:
 
     # Once
     scoreboard players set @s glib.targetId 3
-    function glib:id/check
+    function glib.id:check
 
     # See the result
     execute unless entity @e[tag=glib.id.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]

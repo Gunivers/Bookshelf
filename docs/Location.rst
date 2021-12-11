@@ -22,7 +22,7 @@ axis
     scoreboard players set Aypierre glib.locX 3
     scoreboard players set Aypierre glib.locY -2
     scoreboard players set Aypierre glib.locZ 5
-    execute as Aypierre at @s run function glib:location/add
+    execute as Aypierre at @s run function glib.location:add
 
 ``fast_set``: Changes the position of the executing entity to the X,Y
 and Z coordinates respectively indicated by the scores ``glib.loc[X,Y,Z]``. To the user, this function is used in the same
@@ -44,7 +44,7 @@ modified unlike the parameters of a /tp command)
     scoreboard players set Boblennon glib.locX -5
     scoreboard players set Boblennon glib.locY 63
     scoreboard players set Boblennon glib.locZ 26
-    execute as Boblennon run function glib:location/fast_set
+    execute as Boblennon run function glib.location:fast_set
 
 Get location
 ~~~~~~~~~~~~
@@ -60,7 +60,7 @@ Detect and display the position of the nearest spider:
 ::
 
     # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function glib:location/get
+    execute as @e[type=spider,limit=1,sort=nearest] run function glib.location:get
     tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib.locZ"}, "color": "gold"}]
 
 Get distance "as to at"
@@ -79,7 +79,7 @@ Calculate the distance between you and the nearest sheep:
 ::
 
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib:location/get_distance_ata
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib.location:get_distance_ata
     tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Get distance squared "as to at"
@@ -105,7 +105,7 @@ Calculate the squared distance between you and the nearest sheep:
 ::
 
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib:location/get_distance_squared_ata
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib.location:get_distance_squared_ata
     tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
 Get relative corrdinates "as to at"
@@ -123,7 +123,7 @@ Get your position relative to the nearest Creeper:
 ::
 
     # Once
-    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function glib:location/get_relative_ata
+    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function glib.location:get_relative_ata
     tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.locX"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locZ"},"color":"gold"}]
 
 Is in cave?
@@ -141,7 +141,7 @@ To know if the skeletons are in cellars or not:
 ::
 
     # Once
-    execute as @e[type=skeleton] at @s run function glib:location/is_in_cave
+    execute as @e[type=skeleton] at @s run function glib.location:is_in_cave
 
     # See the result:
     effect give @e[type=skeleton,scores={glib.res0=1}] glowing 1 1 true
@@ -164,7 +164,7 @@ Teleport in 15 100 25
     scoreboard players set @s glib.locX 15
     scoreboard players set @s glib.locY 100
     scoreboard players set @s glib.locZ 25
-    function glib:location/set
+    function glib.location:set
 
 Spread entity
 ~~~~~~~~~~~~~
@@ -186,5 +186,5 @@ coordinate X=15, Z=25
     scoreboard players set @s glib.var0 15
     scoreboard players set @s glib.var1 25
     scoreboard players set @s glib.var2 10
-    function glib:location/spread
+    function glib.location:spread
 

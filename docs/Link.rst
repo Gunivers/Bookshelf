@@ -27,7 +27,7 @@ Link all armor_stand to the entity with ID 3
 
     # Once
     scorebaord players set @e[type=armor_stand] glib.targetId 3
-    execute as @e[type=armor_stand] run function glib:link/create_link_tti
+    execute as @e[type=armor_stand] run function glib.link:create_link_tti
 
     # See the result
     # In loop
@@ -54,7 +54,7 @@ Link all armor_stand to the nearest sheep
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function glib.link:create_link_ata
 
     # See the result
     # In loop
@@ -76,10 +76,10 @@ Make armor_stands mimic your moves
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @s run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib:link/imitate_loc
+    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_loc
 
 Imitate orientation
 ~~~~~~~~~~~~~~~~~~~
@@ -96,10 +96,10 @@ Make armor_stands mimic your orientation changes
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @s run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib:link/imitate_ori
+    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_ori
 
 ``keep_local_location``: Allows to keep the local position corresponding
 to the position of the child entity in the repository of the parent
@@ -114,10 +114,10 @@ Make the armor_stands lock to your orientation
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @s run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib:link/keep_local_location
+    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:keep_local_location
 
 Reverse location
 ~~~~~~~~~~~~~~~~
@@ -134,10 +134,10 @@ Make the armor_stands do the opposite of your moves
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @s run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib:link/reverse_loc
+    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_loc
 
 Reverse orientation
 ~~~~~~~~~~~~~~~~~~~
@@ -154,10 +154,10 @@ Make the armor_stands mimic your movements
 ::
 
     # Once
-    execute as @e[type=armor_stand] at @s run function glib:link/create_link_ata
+    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib:link/reverse_ori
+    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_ori
 
 Update link
 ~~~~~~~~~~~
@@ -178,7 +178,7 @@ Update the armor_stands link
 ::
 
     # Once
-    execute as @e[type=armor_stand] run function glib:link/update_link
+    execute as @e[type=armor_stand] run function glib.link:update_link
 
     # See the result
     # In a loop
