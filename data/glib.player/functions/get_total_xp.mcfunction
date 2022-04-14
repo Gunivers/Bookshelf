@@ -7,7 +7,7 @@
 ## Last check:
 
 ## Original path: glib.player:get_total_xp
-## Documentation:
+## Documentation: https://glib-core.readthedocs.io/en/latest/Player.html#total-xp
 ## Note:
 
 #__________________________________________________
@@ -18,7 +18,6 @@
 #__________________________________________________
 ## INIT
 
-scoreboard objectives add glib.xp dummy [{"text":"GLib ","color":"gold"},{"text":"XP","color":"dark_gray"}]
 scoreboard objectives add glib.xp dummy [{"text":"GLib ","color":"gold"},{"text":"XP","color":"dark_gray"}]
 
 #__________________________________________________
