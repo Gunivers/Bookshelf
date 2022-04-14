@@ -47,6 +47,66 @@ Add you 1234 XP
     # run the add function here
     function glib.xp:get_total_points
 
+Get bar
+~~~~~~~~
+
+``get_bar``: Get the portion of the bar filled
+
+-  The percentage of the bar filled is returned on the score ``glib.res0``
+-  Due to the division, the result is rounded to the lowest integer. If you want to round to the nearest integer, use the function `get_bar_rounded`
+
+*Example:*
+
+Get the portion filled in your XP bar
+
+::
+
+    # Once
+    glib.xp:get_bar
+
+    # See the result
+    scoreboard obective setdisplay sidebar glib.res0
+
+Get bar rounded
+~~~~~~~~~~~~~~~
+
+``get_bar_rounded``: Get the portion of the bar filled
+
+-  The percentage of the bar filled is returned on the score ``glib.res0``
+-  This function require the module `glib.math`
+
+*Example:*
+
+Get the portion filled in your XP bar
+
+::
+
+    # Once
+    glib.xp:get_bar_rounded
+
+    # See the result
+    scoreboard obective setdisplay sidebar glib.res0
+
+Set bar
+~~~~~~~~~~
+
+``set_bar``: Fill partially the XP bar
+
+-  Take the percentage of the bar filled via the ``glib.var0`` score
+
+*Example:*
+
+Fill your bar at 50%
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 50
+    glib.xp:set_bar
+
+    # See the result
+    # look at your XP bar in survival mode
+
 Set levels
 ~~~~~~~~~~
 

@@ -14,7 +14,7 @@
 #__________________________________________________
 ## PARAMETERS
 
-## Input: glib.var0 (score): LEVELS to set to the player
+## Input: glib.var0 (score): levels to set to the player
 
 #__________________________________________________
 ## INIT
