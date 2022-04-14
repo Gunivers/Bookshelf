@@ -68,6 +68,7 @@ scoreboard players set 90 glib.const 90
 scoreboard players set 97 glib.const 97
 scoreboard players set 100 glib.const 100
 scoreboard players set 101 glib.const 101
+scoreboard players set 112 glib.const 112
 scoreboard players set 120 glib.const 120
 scoreboard players set 128 glib.const 128
 scoreboard players set 135 glib.const 135

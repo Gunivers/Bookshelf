@@ -1,4 +1,4 @@
-# For level 1 to 16, XP =  REST + 6*LEVEL + LEVEL^2
+# For level 1 to 15, XP =  REST + 6*LEVEL + LEVEL^2
 #                                 ^^^^^^^^^^^^^^^^^
 
 scoreboard players operation TMP glib = LEVELS glib

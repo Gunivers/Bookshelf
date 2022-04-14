@@ -73,11 +73,11 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
     Memory
     Move
     Orientation
-    Player
     Schedule
     Time
     Vector
     View
+    XP
 
 .. toctree::
     :maxdepth: 2

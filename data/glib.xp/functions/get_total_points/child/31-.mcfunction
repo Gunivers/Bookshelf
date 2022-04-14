@@ -1,4 +1,4 @@
-# For level 17 to 31, XP =  REST +  1/2 * (9*LEVEL^2 + 197*LEVEL + 2584)
+# For level 31 to 40, XP =  REST +  1/2 * (9*LEVEL^2 + 197*LEVEL + 2584)
 #                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 scoreboard players remove LEVELS glib 29

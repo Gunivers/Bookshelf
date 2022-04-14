@@ -6,8 +6,8 @@
 ## MC Version: 1.18.2
 ## Last check:
 
-## Original path: glib.player:get_total_xp
-## Documentation: https://glib-core.readthedocs.io/en/latest/Player.html#total-xp
+## Original path: glib.xp:get_total_points
+## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#total-points
 ## Note:
 
 #__________________________________________________
@@ -29,6 +29,6 @@ scoreboard objectives add glib.xp dummy [{"text":"GLib ","color":"gold"},{"text"
 execute store result score @s glib.xp run xp query @s points
 execute store result score LEVELS glib run xp query @s levels
 
-execute if score LEVELS glib matches 1..15 run function glib.player:get_total_xp/child/1-15
-execute if score LEVELS glib matches 16..30 run function glib.player:get_total_xp/child/16-30
-execute if score LEVELS glib matches 31.. run function glib.player:get_total_xp/child/31-
+execute if score LEVELS glib matches 1..15 run function glib.xp:get_total_points/child/1-15
+execute if score LEVELS glib matches 16..30 run function glib.xp:get_total_points/child/16-30
+execute if score LEVELS glib matches 31.. run function glib.xp:get_total_points/child/31-
