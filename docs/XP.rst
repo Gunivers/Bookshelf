@@ -4,6 +4,113 @@ XP
 
 ``glib.xp:`` all function concerning the experience points and levels.
 
+Add levels
+~~~~~~~~~~
+
+``add_levels``: Add levels from a score
+
+-  Take the amount of levels to add on the score ``glib.var0``
+
+*Example:*
+
+Add you 123 levels
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 123
+    glib.xp:add_levels
+
+    # See the result
+    # look at your XP bar in survival mode
+
+Add points
+~~~~~~~~~~
+
+``add_points``: Add XP from a score
+
+-  Take the amount of XP to add on the score ``glib.var0``
+
+*Example:*
+
+Add you 1234 XP
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 1234
+    glib.xp:add_points
+
+    # See the result
+    function glib.xp:get_total_points
+    scoreboard objectives setdisplay sidebar glib.xp
+    # run the add function here
+    function glib.xp:get_total_points
+
+Set levels
+~~~~~~~~~~
+
+``set_levels``: Set levels from a score
+
+-  Take the amount of levels to set on the score ``glib.var0``
+
+*Example:*
+
+Set your level to 123
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 123
+    glib.xp:set_levels
+
+    # See the result
+    # look at your XP bar in survival mode
+
+Set points
+~~~~~~~~~~
+
+``set_points``: Set XP from a score
+
+-  Take the amount of XP to set on the score ``glib.var0``
+
+*Example:*
+
+Set your XP to 1234
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 1234
+    glib.xp:set_points
+
+    # See the result
+    function glib.xp:get_total_points
+    scoreboard objectives setdisplay sidebar glib.xp
+    # run the set function here
+    function glib.xp:get_total_points
+
+Set total points
+~~~~~~~~~~~~~~~~
+
+``set_total_points``: Set XP from a score
+
+-  Take the total amount of XP to set on the score ``glib.var0``
+
+*Example:*
+
+Set your total XP amount to 1234
+
+::
+
+    # Once
+    scoreboard players set @s glib.var0 1234
+    glib.xp:set_total_points
+
+    # See the result
+    function glib.xp:get_total_points
+    scoreboard objectives setdisplay sidebar glib.xp
+
 Level Points
 ~~~~~~~~~~~~
 
