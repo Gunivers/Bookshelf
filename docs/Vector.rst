@@ -7,7 +7,7 @@ Vector
 Classic
 =======
 
-``glib:vector/classic/``: Classic vectors are vectors that use the default base of the game, corresponding to tilds. Thus, a classic position vector (1000,3000,5000) will correspond to the position \~1 \~3 \~5
+``glib.vector:classic/``: Classic vectors are vectors that use the default base of the game, corresponding to tilds. Thus, a classic position vector (1000,3000,5000) will correspond to the position \~1 \~3 \~5
 
 Get vector by actual orientation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,7 +25,7 @@ Create, for each Creeper, a vector from their respective orientation
 ::
 
   # Once
-  execute as @e[type=creeper] run function glib:vector/classic/get_by_actual_orientation
+  execute as @e[type=creeper] run function glib.vector:classic/get_by_actual_orientation
 
 Get vector "as to at"
 ~~~~~~~~~~~~~~~~~~~~~
@@ -43,7 +43,7 @@ Create a vector that connects you to the nearest skeleton:
 ::
 
   # Once
-  execute as @s at @e[type=skeleton] run function glib:vector/classic/get_ata
+  execute as @s at @e[type=skeleton] run function glib.vector:classic/get_ata
 
 Get vector lenght
 ~~~~~~~~~~~~~~~~~
@@ -73,7 +73,7 @@ Fast normalize
 Local
 =====
 
-``glib:vector/local/``: Local vectors are vectors that use the base defined according to the orientation of the entity, corresponding to the powers (^). Thus, a position vector in local (1000,3000,5000) will correspond to the position ^1 ^3 ^5
+``glib.vector:local/``: Local vectors are vectors that use the base defined according to the orientation of the entity, corresponding to the powers (^). Thus, a position vector in local (1000,3000,5000) will correspond to the position ^1 ^3 ^5
 
 Convert classic to local vector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +96,7 @@ Find the local vector corresponding to the vector X=1000, Y=0, Z=0
   scoreboard players set @s glib.vectorX 1000
   scoreboard players set @s glib.vectorY 0
   scoreboard players set @s glib.vectorZ 0
-  function glib:vector/classic/get_from_classic_vector
+  function glib.vector:classic/get_from_classic_vector
 
   # Display the result
   tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib. vectorLeft"}, "color": "gold"},{"text": "VectorUp: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. vectorUp"}, "color": "gold"},{"text":" VectorFront: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.vectorFront"}, "color": "gold"}]
