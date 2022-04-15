@@ -7,14 +7,14 @@
 ## MC Version: 1.18.2
 ## Last check:
 
-## Original path: glib.xp:get_bar
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#get_bar
+## Original path: glib.xp:remove_points
+## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#remove_points
 ## Note:
 
 #__________________________________________________
 ## PARAMETERS
 
-## Output: glib.res0 (score): percentage of the bar filled
+## Input: glib.var0 (score): Points to remove to the player
 
 #__________________________________________________
 ## INIT
@@ -25,16 +25,18 @@
 #__________________________________________________
 ## CODE
 
+scoreboard players operation SAVE.RES0 glib = @s glib.res0
 scoreboard players operation SAVE.VAR0 glib = @s glib.var0
 
-execute store result score @s glib.var0 run xp query @s levels
-xp set @s 130 levels
-execute store result score POINTS glib run xp query @s points
+function glib.xp:get_total_points
 
-scoreboard players operation @s glib.res0 = POINTS glib
-scoreboard players operation @s glib.res0 *= 100 glib.const
-scoreboard players operation @s glib.res0 /= 1012 glib.const
+scoreboard players operation @s glib.var0 = @s glib.res0
+scoreboard players operation @s glib.var0 -= SAVE.VAR0 glib
 
-function glib.xp:set_levels
+xp set @s 0 levels
+xp set @s 0 points
 
+function glib.xp:add_points
+
+scoreboard players operation @s glib.res0 = SAVE.RES0 glib
 scoreboard players operation @s glib.var0 = SAVE.VAR0 glib

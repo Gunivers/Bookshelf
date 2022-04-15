@@ -18,15 +18,13 @@
 #__________________________________________________
 ## INIT
 
-scoreboard objectives add glib.xp dummy [{"text":"GLib ","color":"gold"},{"text":"XP","color":"dark_gray"}]
-
 #__________________________________________________
 ## CONFIG
 
 #__________________________________________________
 ## CODE
 
-execute store result score @s glib.xp run xp query @s points
+execute store result score @s glib.res0 run xp query @s points
 execute store result score LEVELS glib run xp query @s levels
 
 execute if score LEVELS glib matches 1..15 run function glib.xp:get_total_points/child/1-15

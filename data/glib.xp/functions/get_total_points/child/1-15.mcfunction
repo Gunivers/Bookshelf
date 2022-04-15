@@ -3,8 +3,8 @@
 
 scoreboard players operation TMP glib = LEVELS glib
 scoreboard players operation TMP glib *= 6 glib.const
-scoreboard players operation @s glib.xp += TMP glib
+scoreboard players operation @s glib.res0 += TMP glib
 
 scoreboard players operation TMP glib = LEVELS glib
 scoreboard players operation TMP glib *= LEVELS glib
-scoreboard players operation @s glib.xp += TMP glib
+scoreboard players operation @s glib.res0 += TMP glib

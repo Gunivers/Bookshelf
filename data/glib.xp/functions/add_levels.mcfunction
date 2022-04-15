@@ -27,7 +27,7 @@
 
 scoreboard players operation LEVELS glib = @s glib.var0
 
-execute if score LEVELS glib matches 124.. run function glib.xp:add_levels/child/loop
+execute if score LEVELS glib matches 128.. run function glib.xp:add_levels/child/128-
 
 execute if score LEVELS glib matches 64.. run xp add @s 64 levels
 execute if score LEVELS glib matches 64.. run scoreboard players remove LEVELS glib 64

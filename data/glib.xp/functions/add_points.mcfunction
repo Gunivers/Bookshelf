@@ -27,14 +27,8 @@
 
 scoreboard players operation POINTS glib = @s glib.var0
 
-execute if score POINTS glib matches 1024.. run function glib.xp:add_points/child/loop
+execute if score POINTS glib matches 128.. run function glib.xp:add_points/child/128-
 
-execute if score POINTS glib matches 512.. run xp add @s 512 points
-execute if score POINTS glib matches 512.. run scoreboard players remove POINTS glib 512
-execute if score POINTS glib matches 256.. run xp add @s 256 points
-execute if score POINTS glib matches 256.. run scoreboard players remove POINTS glib 256
-execute if score POINTS glib matches 128.. run xp add @s 128 points
-execute if score POINTS glib matches 128.. run scoreboard players remove POINTS glib 128
 execute if score POINTS glib matches 64.. run xp add @s 64 points
 execute if score POINTS glib matches 64.. run scoreboard players remove POINTS glib 64
 execute if score POINTS glib matches 32.. run xp add @s 32 points

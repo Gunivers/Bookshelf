@@ -3,7 +3,7 @@
 
 scoreboard players remove LEVELS glib 14
 
-scoreboard players operation @s glib.xp += 283 glib.const
+scoreboard players operation @s glib.res0 += 283 glib.const
 
 scoreboard players operation TMP glib = LEVELS glib
 scoreboard players operation TMP glib *= 59 glib.const
@@ -15,4 +15,4 @@ scoreboard players operation TMP2 glib *= 5 glib.const
 scoreboard players operation TMP glib += TMP2 glib
 scoreboard players operation TMP glib /= 2 glib.const
 
-scoreboard players operation @s glib.xp += TMP glib
+scoreboard players operation @s glib.res0 += TMP glib
