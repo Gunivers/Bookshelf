@@ -62,7 +62,7 @@ execute if entity @s[tag=glib.math.getNextPow2.intOverflow] run scoreboard playe
 execute if score @s glib.res0 matches 65536.. run scoreboard players set math.sqrt.B glib 65536
 
 execute if entity @a[tag=glib.debug.math.sqrt] run tellraw @a[tag=glib.debug] [{"text":"> DEBUG | glib.math:sqrt","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.math.sqrt"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
-execute if entity @e[tag=glib.debug.math.sqrt] run function glib.core:debug/global/message/info/entity_info
+execute if entity @e[tag=glib.debug.math.sqrt] run function glib.core:debug/message/info/entity_info
 execute if entity @e[tag=glib.debug.math.sqrt] run tellraw @a ["",{"text":"   B = ","color":"dark_gray"},{"score":{"name":"math.sqrt.B","objective":"glib"},"color":"gold"}]
 
 # Diff = A^2 - X
@@ -86,10 +86,10 @@ scoreboard players operation @s glib.res1 = math.sqrt.res1 glib
 # Start Debug
 
 execute if entity @e[tag=glib.debug.math.sqrt] run tellraw @a ["",{"text":"   x = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.var0"},"color":"gold"},{"text":" sqrt(x) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-execute if entity @a[tag=glib.debug.math.sqrt] run function glib.core:debug/global/message/info/end_debug
+execute if entity @a[tag=glib.debug.math.sqrt] run function glib.core:debug/message/info/end_debug
 # End Debug
 # Start Error
 execute if score @s glib.var0 matches ..-1 run tellraw @a[tag=glib.debug] [{"text":"ERROR | glib.math:sqrt","color":"red"}]
-execute if score @s glib.var0 matches ..-1 run function glib.core:debug/global/message/error/entity_info
+execute if score @s glib.var0 matches ..-1 run function glib.core:debug/message/error/entity_info
 execute if score @s glib.var0 matches ..-1 run tellraw @a[tag=glib.debug] [{"text":"   Forbiden parameter: input can't be negative. Assuming you want a complexe number...","color":"red"}]
 # End Error

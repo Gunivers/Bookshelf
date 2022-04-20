@@ -1,5 +1,5 @@
 {
  "values": [
-	"glib.core:loop"
+	"glib.core:tick"
  ]
 }

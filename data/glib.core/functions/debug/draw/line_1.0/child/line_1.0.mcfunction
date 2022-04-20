@@ -5,4 +5,4 @@ scoreboard players remove debug.draw_line glib 1
 
 execute if entity @s[distance=..0.5] run kill @s[type=!player]
 execute if score debug.draw_line glib.var0 matches ..0 run kill @s
-execute as @s unless entity @s[distance=..0.5] run function glib.core:debug/global/draw/line_0.5/child/line_0.5
+execute as @s unless entity @s[distance=..0.5] run function glib.core:debug/draw/line_1.0/child/line_1.0

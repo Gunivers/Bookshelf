@@ -38,19 +38,19 @@ execute if score @s glib.var0 matches ..-1 run tag @s add glib.math.getNextPow2.
 
 # Start Debug
 execute if entity @a[tag=glib.debug.math.getNextPow2] run tellraw @a[tag=glib.debug] [{"text":"> DEBUG | glib.math:get_next_pow2","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.math.sqrt"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
-execute if entity @e[tag=glib.debug.math.getNextPow2] run function glib.core:debug/global/message/info/entity_info
+execute if entity @e[tag=glib.debug.math.getNextPow2] run function glib.core:debug/message/info/entity_info
 execute if entity @e[tag=glib.debug.math.getNextPow2] run tellraw @a ["",{"text":"   x = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.var0"},"color":"gold"},{"text":" n = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res1"},"color":"gold"},{"text":" 2^n = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-execute if entity @a[tag=glib.debug.math.getNextPow2] run function glib.core:debug/global/message/info/end_debug
+execute if entity @a[tag=glib.debug.math.getNextPow2] run function glib.core:debug/message/info/end_debug
 # End Debug
 
 # Start Error
 execute if score @s glib.var0 matches ..-1 run tellraw @a[tag=glib.debug] [{"text":"ERROR | glib.math:get_next_pow2","color":"red"}]
-execute if score @s glib.var0 matches ..-1 run function glib.core:debug/global/message/error/entity_info
+execute if score @s glib.var0 matches ..-1 run function glib.core:debug/message/error/entity_info
 execute if score @s glib.var0 matches ..-1 run tellraw @a[tag=glib.debug] [{"text":"   Forbiden parameter: input can't be negative.","color":"red"}]
 # End Error
 
 # Start Error
 execute if score @s glib.var0 matches 1073741825.. run tellraw @a[tag=glib.debug] [{"text":"ERROR | glib.math:get_next_pow2","color":"red"}]
-execute if score @s glib.var0 matches 1073741825.. run function glib.core:debug/global/message/error/entity_info
+execute if score @s glib.var0 matches 1073741825.. run function glib.core:debug/message/error/entity_info
 execute if score @s glib.var0 matches 1073741825.. run tellraw @a[tag=glib.debug] [{"text":"   int overflow -> glib.var0 is too high!","color":"red"}]
 # End Error

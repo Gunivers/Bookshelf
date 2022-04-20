@@ -7,7 +7,7 @@ scoreboard objectives add glib.config dummy [{"text":"GLib ","color":"gold"},{"t
 # Constants
 scoreboard objectives add glib.const dummy [{"text":"GLib ","color":"gold"},{"text":"Constants","color":"dark_gray"}]
 
-# Fakeplayers data storage
+# Fakeplayers temporary data storage
 scoreboard objectives add glib dummy [{"text":"GLib ","color":"gold"},{"text":"Tmp","color":"dark_gray"}]
 
 # Debug data
