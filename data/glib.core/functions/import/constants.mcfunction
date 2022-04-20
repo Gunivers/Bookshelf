@@ -68,15 +68,18 @@ scoreboard players set 90 glib.const 90
 scoreboard players set 97 glib.const 97
 scoreboard players set 100 glib.const 100
 scoreboard players set 101 glib.const 101
+scoreboard players set 112 glib.const 112
 scoreboard players set 120 glib.const 120
 scoreboard players set 128 glib.const 128
 scoreboard players set 135 glib.const 135
 scoreboard players set 180 glib.const 180
+scoreboard players set 197 glib.const 197
 scoreboard players set 200 glib.const 200
 scoreboard players set 212 glib.const 212
 scoreboard players set 225 glib.const 225
 scoreboard players set 256 glib.const 256
 scoreboard players set 270 glib.const 270
+scoreboard players set 283 glib.const 283
 scoreboard players set 300 glib.const 300
 scoreboard players set 307 glib.const 307
 scoreboard players set 315 glib.const 315
@@ -93,6 +96,8 @@ scoreboard players set 800 glib.const 800
 scoreboard players set 900 glib.const 900
 scoreboard players set 1000 glib.const 1000
 scoreboard players set 1001 glib.const 1001
+scoreboard players set 1012 glib.const 1012
+scoreboard players set 1292 glib.const 1292
 scoreboard players set 1500 glib.const 1500
 scoreboard players set 1024 glib.const 1024
 scoreboard players set 2001 glib.const 2001

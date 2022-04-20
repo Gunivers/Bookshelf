@@ -8,12 +8,10 @@ FAQ
    you are even nicer, you can also leave us a feedbak or your
    suggestion to improve the lib. Then you can also make a donation to
    help us develop other projects but that only happens in my dreams
-   haha... \ |crying|
+   haha... :sob:
 
 -  **How did you do some functions?** We have set up a dedicated space
    on this site and on Discord to share the things we do, and especially
    how we do them so that everyone can learn to do the same. You can
    find this space here:
    https://project.gunivers.net/projects/ressources/wiki/Datapacks
-
-.. |crying| image:: https://project.gunivers.net/plugin_assets/redmine_ckeditor/ckeditor/plugins/smiley/images/cry_smile.png

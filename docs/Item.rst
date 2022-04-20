@@ -8,8 +8,10 @@ Get item ID
 ~~~~~~~~~~~
 
 ``get``: Gives to the item executing the function a score corresponding
-to a unique identifier corresponding to its nature. \* The result is
-stored on the score ``glib.itemId`` \* Must be executed on an item only
+to a unique identifier corresponding to its nature.
+
+* The result is stored on the score ``glib.itemId``
+* Must be executed on an item only
 
 *Example:* 
 
@@ -28,8 +30,9 @@ Set item from ID
 ~~~~~~~~~~~~~~~~
 
 ``set``: Create an item corresponding to the identifier stored on the
-executing entity. \* The identifier must be given via the score
-\`glib.itemId\`\`.
+executing entity.
+
+* The identifier must be given via the score ``glib.itemId``.
 
 *Example:*
 
@@ -49,9 +52,10 @@ Convert item ID to block ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``convert_to_block``: Convert an item id stored on the executing entity
-to a block id \* The item identifier must be indicated by the
-``glib.itemId`` score \* The block identifier will be stored on the
-score ``glib.blockId``
+to a block id
+
+* The item identifier must be indicated by the ``glib.itemId`` score
+* The block identifier will be stored on the score ``glib.blockId``
 
 *Example:*
 
