@@ -6,7 +6,6 @@ name: Deploy
 # events but only for the master branch
 on:
   push:
-    branches: test_CD
     tags:
       - '*'
 
