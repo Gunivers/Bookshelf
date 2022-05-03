@@ -5,7 +5,8 @@
 The Gunivers-libs is a modular library datapack designed to help mapmakers to implement common or complexe systems.
 
 <div align="center">
-[Watch the video](https://www.youtube.com/watch?v=E2nKYEvjETk)
+Watch the presentation video
+https://www.youtube.com/watch?v=E2nKYEvjETk
 </div>
 
 
