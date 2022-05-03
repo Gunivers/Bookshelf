@@ -12,17 +12,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Test
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
-
   # This workflow contains a single job called "deploy"
   deploy:
     # The type of runner that the job will run on
@@ -35,6 +24,12 @@ jobs:
         with:
           fetch-depth: 10
       # Deploys to the server
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Test
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
       - name: deploy
         uses:  swznd/sftp-deploy@master
         with:
@@ -42,5 +37,5 @@ jobs:
           port: ${{ secrets.SFTP_PORT }}
           user: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          remote_path: /datapack/release/${{ env.RELEASE_VERSION }}/
+          remote_path: /datapacks/release/${{ env.RELEASE_VERSION }}/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, generators/, docs/
