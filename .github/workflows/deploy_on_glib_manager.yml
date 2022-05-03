@@ -1,6 +1,6 @@
 on:
   push:
-    branch: test_CD
+    branches: test_CD
     tags:
       - '*'
 jobs:
