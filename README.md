@@ -5,18 +5,18 @@
 The Gunivers-libs is a modular library datapack designed to help mapmakers to implement common or complexe systems.
 
 <div align="center">
-Watch the presentation video\
+Watch the presentation video<br>
 https://www.youtube.com/watch?v=E2nKYEvjETk
 </div>
 
 
 # ⚙️ Features
 
-🧮 Mathematical functions (sin, cos, exp, log, sqrt...)
-🏷️ ID system for entities\
-🔀 Block <-> Score conversion system supporting BlockStates\
-🧠 Pathfinding and other NPC AI basic tools\
-🪃 Vectors management to give customized trajectories to your entities, which can be deflected by the wind, bounce on blocks etc.\
+🧮 Mathematical functions (sin, cos, exp, log, sqrt...)<br>
+🏷️ ID system for entities<br>
+🔀 Block <-> Score conversion system supporting BlockStates<br>
+🧠 Pathfinding and other NPC AI basic tools<br>
+🪃 Vectors management to give customized trajectories to your entities, which can be deflected by the wind, bounce on blocks etc.<br>
 📎 Entity Link to synchronize the movement of entities, create moving entity cohérent structures or adding mirrors effects
 
 And much more!
