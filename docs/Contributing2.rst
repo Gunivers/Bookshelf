@@ -74,6 +74,7 @@ The lib must respect this global structure:
 In this structure, you can find a "feature" file and it's associated folder. This "feature" représent a "minimal viable product" (something that have a specific utility but that can require to be a part of another system in order to work)
 
 Features files must respect this structure:
+
 ::
 
    📄 <featureName>
@@ -215,7 +216,7 @@ Where is the path to the function after the namespace, replacing the / with . (t
 
 Error tellraws must be displayed to all players with the glib.debug tag and must be in this form:
 
-.. code:: plaintext
+.. code::
 
     tellraw @a[tag=glib.debug] [{"text":"[ERROR] in <PATH>","color":"red"}]
     function glib:core/debug/message/error/entity_info
@@ -229,7 +230,7 @@ Lines of code concerning error messages must be preceded by ``## Start Error`` 
 
 In the same logic, debug messages must be conditioned to an additional tag linked to the path of the function concerned and must start with:
 
-.. code:: plaintext
+.. code::
 
    tellraw @a[tag=glib.debug.<TAG_PATH>] [{"text":"> DEBUG | <PATH>","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.<TAG_PATH>"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
 
@@ -237,7 +238,7 @@ In the same logic, debug messages must be conditioned to an additional tag linke
 
 In order to distinguish between nested function debugs, this debug must be followed by
 
-.. code:: plaintext
+.. code::
 
     execute if entity @a[tag=Glib_Debug_<TAG_PATH>] run function glib:core/debug/message/info/end_debug
 

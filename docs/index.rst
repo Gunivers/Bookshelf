@@ -1,5 +1,5 @@
-Glib-Core
-=========
+Glib Documentation
+==================
 
 .. image:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
 
@@ -52,7 +52,7 @@ Dev: @theogiraudet/Oromis, @LeiRoF, @Luludatra, @KubbyDev, @.𝖎𝖐𝖇𝖗�
     :maxdepth: 3
     :caption: Info
 
-    Contributing
+    Contributing.md
     FAQ
 
 .. toctree::
