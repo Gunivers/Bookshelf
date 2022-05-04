@@ -2,5 +2,3 @@ data/glib_wip/
 .vscode/
 docs/_build/
 docs/build/
-docs/make.bat
-docs/Makefile
