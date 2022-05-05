@@ -2,8 +2,6 @@
 Contribute
 ===
 
-Test
-
 :::{admonition} **Pour les francophones**
 :class: note
 Ce projet est réalisé principalement par des membres francophones mais à destination d'un public international. C'est pourquoi toute la lib ainsi que la documentation est en anglais.
@@ -20,26 +18,9 @@ To contribute, you must
 - Be accessible to answer questions about your work
 
 ---
-## 📜 Contents
-
-- [Getting started](#getting-started)
-  - [Definition](#definitions)
-  - [File nomenclature](#file-nomenclature)
-  - [Tree structure](#tree-structure)
-  - [File format](#file-format)
-- [Advanced stuff](#advanced-stuff)
-  - [Initialization](#initialization)
-  - [Configuration](#configuration)
-  - [Comments](#comments)
-  - [Debug](#debug)
-  - [Special functions](#special-functions)
-
-
-
----
 ## 👋 Getting started
 
-The only link you need to know : http://glib.gunivers.net. On this page, you can find:
+The only link you need to know : [glib.gunivers.net](http://glib.gunivers.net). On this page, you can find:
 - [The Github repo](https://github.com/Gunivers/Glib)
 - [Our Discord server](https://discord.gg/E8qq6tN)
 
@@ -126,36 +107,12 @@ Features files must respect this structure:
    The main file is the only file that is required. Other files/folders depends on the needs of the feature.
 :::
 
-<table>
-  <tr>
-    <th>"Accuracy" folders</th>
-    <td>They allow to manage the precision of the functions. Minecraft allowing to store only integers, to use decimals, you have to be clever. Thus, a function in "accuracy/10-3" will be a function which will see its parameters (at least most of them), multiplied by 1000 to be able to store 3 digits after the decimal point (3.14159 * 10^3 = 3141.59, which gives 3141 once in a score). Not all functions have an equivalent in the above specifications. If you need a function with a precision that is not supported, contact us on our Discord, a dev will do that quickly ;)</td>
-  </tr>
-  <tr>
-    <th>"Child" folder</th>
-    <td>Child folder contain every function used by other functions to make them
-    works. These functions are not supposed to be executed or edited by the
-    user.</td>
-  </tr>
-  <tr>
-    <th>"Config" folders</th>
-    <td>The lib has several systems that manage different behavior (e.g.
-    pathfinding, a bat will not have the same behavior as a villager). You
-    will then find a "main" file that will list the different files and call
-    the right one according to a certain condition. This allows the user of
-    the lib to create his own behavior by copying an existing behavior file,
-    adapting it, and linking it to the system via the "main" file.</td>
-  </tr>
-  <tr>
-    <th>"Debug" folders</th>
-    <td>The "debug" folders contain functions that are intended to display a
-    certain number of parameters specific to the folder in which they are
-    located (e.g. debug in the vector folder will display the different
-    vectors). These functions are usually called by other functions but can
-    also be executed by the user in order to debug one of his systems at a
-    specific location.</td>
-  </tr>
-</table>
+| Folder | Description |
+|:------:|:-----------:|
+| Accuracy | They allow to manage the precision of the functions.<br> Minecraft allowing to store only integers, to use decimals, you have to be clever.<br> Thus, a function in "accuracy/10-3" will be a function which will see its parameters<br> (at least most of them), multiplied by 1000 to be able to store 3 digits after the<br> decimal point (3.14159 * 10^3 = 3141.59, which gives 3141 once in a score).<br> Not all functions have an equivalent in the above specifications.<br> If you need a function with a precision that is not supported, contact us on our<br> Discord, a dev will do that quickly ;) |
+| Child    | Child folder contain every function used by other functions to make them works.<br> These functions are not supposed to be executed or edited by the user. |
+| Config   | The lib has several systems that manage different behavior (e.g. pathfinding,<br> a bat will not have the same behavior as a villager).<br> You will then find a "main" file that will list the different files and<br> call the right one according to a certain condition.<br> This allows the user of the lib to create his own<br> behavior by copying an existing behavior file, adapting it,<br> and linking it to the system via the "main" file. |
+| Debug    | The "debug" folders contain functions that are intended to display<br> a certain number of parameters specific to the folder<br> in which they are located<br> (e.g. debug in the vector folder will display the different vectors).<br> These functions are usually called by other functions but can also be executed<br> by the user in order to debug one of his systems at a specific location. |
 
 ---
 ### 📄 File format
@@ -196,36 +153,15 @@ for and how to use it. This is what this one looks like:
 
 We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:
 
-<table>
-  <tr>
-    <th>Authors</th>
-    <td>The list of authors of the function.</td>
-  </tr>
-  <tr>
-    <th>Contributors</th>
-    <td>The list of contributors to the function. A contributor is someone who helps to create the function without developing it (the one who gives a track to realize the function or the one who fixes a bug for example).</td>
-  </tr>
-  <tr>
-    <th>MC Version</th>
-    <td>Version of Minecraft for which the system was created.</td>
-  </tr>
-  <tr>
-    <th>*Last check</th>
-    <td>Version of Minecraft until which the system is certified functional.</td>
-  </tr>
-  <tr>
-    <th>Original pat</th>
-    <td>The path to the function so that it can be copied to a /function command.</td>
-  </tr>
-  <tr>
-    <th>Documentation</th>
-    <td>Link to the documentation of the function</td>
-  </tr>
-  <tr>
-    <th>Note</th>
-    <td>Allows you to provide additional information about the function such as a description of what the function does, how to use it if the use is particular, the behaviors of the function or the side effects of its use.</td>
-  </tr>
-</table>
+| Field | Description |
+|:-----:|:-----------:|
+| Authors | The list of authors of the function. |
+| Contributors | The list of contributors to the function.<br> A contributor is someone who helps to create the function<br> without developing it (the one who gives a track to realize the function<br> or the one who fixes a bug for example). |
+| MC Version | Version of Minecraft for which the system was created. |
+| Last check | Version of Minecraft until which the system is certified functional. |
+| Original path | The path to the function so that it can be copied to a /function command. |
+| Documentation | Link to the documentation of the function |
+| Note | Allows you to provide additional information about the function<br> such as a description of what the function does, how to use it if the use<br> is particular, the behaviors of the function or the side effects of its use. |
 
 ---
 ## 🤯 Advanced stuff
