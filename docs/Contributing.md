@@ -36,13 +36,16 @@ In order to speak with the same vocabulary, here is some words that have a speci
 - **Brigadier**: This is the command completer and highlighter of Minecraft that you can see when you enter a command in the chat. We define it here because most of people doesn't know that this system have a name.
 
 ---
-### 🏷️File nomenclature
+### 🏷️Nomenclature
 
 The Gunivers-Libs respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various folders (corresponding to a namespaces) according to their usefulness. If no namespace folder (i.e. module) seems appropriate for the addition of a feature, it can be considered to add a new namespace. A category must respect a particular structure:
 
--  Files and folders must respect the Snake Case typographical convention, which consists of writing a set of words entirely in lower case and separated by an underscore (*). The name must be explicit as to the purpose of the feature and must be as short as possible. It is possible to put abbreviations in a name as long as they are recognized. Example: Square Root -> sqrt, Block to Identifier -> block_to_id
+-  File and folders use the snake_case convention. Example: `my_function`
+-  Score objectives use the camelCase convention with the `glib.` prefix. Example: `glib.myScore`
+-  Fake players use the SCREAMING_SNAKE_CASE convention. Exemple: `MY_FAKE_PLAYER`. Add `#` before the name to hide the fake player in the scoreboard when there is no point to let it visible.
+-  Tags use the UpperCamelCase convention with the `glib.` prefix. Example: `glib.MyTag`
 -  A feature is equal to an unique utility, so we should not hesitate to decompose its features in MVP in order to make it more readable and to promote the reusability of the MVP. In addition to these few constraints, the contributor is free to organize his files as he wishes as long as it remains coherent and understandable, and it respect the global structure detailed below.
--  In some folders are files nammed "\_". The main purpose of these files is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "\_" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
+-  In some folders are files nammed "`_`". The main purpose of these files is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "`_`" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
 
 ---
 ### 🌳 Tree structure
@@ -124,32 +127,32 @@ for and how to use it. This is what this one looks like:
 
 ```
 #__________________________________________________
-## INFO     Copyright © 2021 Gunivers.
+# INFO     Copyright © 2021 Gunivers.
 
-## Authors:
-## Contributors: 
-## MC Version:
-## Last check:
+# Authors       :
+# Contributors  : 
+# MC Version    :
+# Last check    :
 
-## Original path:
-## Documentation:
-## Note:
-
-#__________________________________________________
-## PARAMETERS
-
-## Input: Foo (score): Lorem Ipsum
-## Input: Bar (tag): Lorem Ipsum
-## Output: Qux (score): Lorem Ipsum
+# Original path :
+# Documentation :
+# Note          :
 
 #__________________________________________________
-## INIT
+# PARAMETERS
+
+# Input  : Foo (score) : Lorem Ipsum
+# Input  : Bar (tag)   : Lorem Ipsum
+# Output : Qux (score) : Lorem Ipsum
 
 #__________________________________________________
-## CONFIG
+# INIT
 
 #__________________________________________________
-## CODE
+# CONFIG
+
+#__________________________________________________
+# CODE
 ```
 
 We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:
@@ -163,6 +166,46 @@ We can find various information about the function itself (the example is not ex
 | Original path | The path to the function so that it can be copied to a /function command. |
 | Documentation | Link to the documentation of the function |
 | Note | Allows you to provide additional information about the function<br> such as a description of what the function does, how to use it if the use<br> is particular, the behaviors of the function or the side effects of its use. |
+
+### 🎖️ Special scores
+
+This lib use global scores, that are automatically created:
+
+| Scores name | Description |
+|:------:|:-----------:|
+| `glib` | Dedicated to temporary storage (ex: fake players) |
+| `glib.config` | Allow to define the behavior of some systems |
+| `glib.const` | Contain a huge numer of fakeplayers with constant score value |
+| `glib.data` | Uses by the `glib.core` module.<br> Do not use it without knowing exactly what you are doing. |
+| `glib.debug` | Determine the behavior of debug features |
+| `glib.res[0-9]` | Default score for outputs |
+| `glib.var[0-9]` | Default score for inputs |
+
+### ♻️ Conservation principle
+
+> "Nothing is lost, nothing is created, everything is transformed" - Antoine Lavoisier
+
+The lib must have a minimum impact on the scores and other data in order to avoid some overwritings of data. It means that we should avoid as much as possible to : 
+
+- Create new scores
+- Delete scores (totally forbidden)
+- Avoid unnecessary scores rewriting
+
+To do so, each input - as well as other data used by the fonction - must be saved in the begining of the function (in a fake player for exemple) and restored at the end. Only the outputs of the functions should change.
+
+:::{note}
+This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.
+:::
+
+Also for scores, by default, the input and outputs should use respectively the scores `glib.var[0-9]` and `glib.res[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
+
+```
+# Multiply the X coordinate of the source entity and place the entity at the new location
+function glib.location:get
+scoreboard players operation @s glib.locX *= 2 glib.const
+function glib.location:set
+```
+In this exemple, the `get` function will return `glib.loc[X,Y,Z]` scores, that are also used as input for the `set` function.
 
 ---
 ## 🤯 Advanced stuff
