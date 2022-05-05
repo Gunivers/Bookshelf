@@ -21,6 +21,7 @@ To contribute, you must
 ## 👋 Getting started
 
 The only link you need to know : [glib.gunivers.net](http://glib.gunivers.net). On this page, you can find:
+
 - [The Github repo](https://github.com/Gunivers/Glib)
 - [Our Discord server](https://discord.gg/E8qq6tN)
 
