@@ -191,7 +191,7 @@ The lib must have a minimum impact on the scores and other data in order to avoi
 - Delete scores (totally forbidden)
 - Avoid unnecessary scores rewriting
 
-To do so, each input - as well as other data used by the fonction - must be saved in the begining of the function (in a fake player for exemple) and restored at the end. Only the outputs of the functions should change.
+To do so, each input - as well as other data used by the fonction - must be saved in the begining of the function (in a fake player for example) and restored at the end. Only the outputs of the functions should change.
 
 :::{note}
 This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.

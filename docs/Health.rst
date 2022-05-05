@@ -41,7 +41,7 @@ Give the Creepers a 10 second life time:
     # At each tick
     execute as @e[type=creeper] run function glib.health:time_to_live
 
-Give a time to live of 20 seconds to the Creepers:
+Give a time to live of 20 seconds to the Cow:
 
 ::
 

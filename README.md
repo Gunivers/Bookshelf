@@ -38,15 +38,17 @@ The only link you need to know, which contain all the usefull links and informat
 But to spare you 2 clicks, here is the most important links:
 - [Documentation](https://glib-core.readthedocs.io)
   - Including [FAQ](https://glib-core.readthedocs.io/en/latest/FAQ.html)
-- [Our Discord](https://glib-core.readthedocs.io)
+- [Our Discord](https://glib-core.readthedocs.io) 
+
+[![Discord server](https://discord.com/api/v8/guilds/125723125685026816/widget.png)](https://discord.gg/E8qq6tN)
 
 # 🏃 Motivation
 
-As developers, we know the importance of using libraries to avoid loosing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
+As developers, we know the importance of using libraries to avoid losing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
 
 That's why we created this library, to propose a lot of re-usable tools and try to convice mapmakers to become real developers by looking for and using the available tools.
 
-Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommand for talented creators to fork this project in order to make their own optized version of the lib.
+Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
 
 # 🤝 Follow and/or contribute
 

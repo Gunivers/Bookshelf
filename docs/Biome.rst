@@ -25,8 +25,8 @@ Knowing if it can rain where the players are
     execute as @a run glib.biome:can_rain
 
     # See the result
-    execute as @a[tag=glib.canRain] run say At my house it can rain!
-    execute as @a[tag=!glib.canRain] run say In my house it never rains...
+    execute as @a[tag=glib.canRain] run say Where I am, it can rain!
+    execute as @a[tag=!glib.canRain] run say Where I am, it never rains...
 
 Can it snow?
 ~~~~~~~~~~~~
@@ -49,8 +49,8 @@ Knowing if it can rain where the players are
     execute as @a run glib.biome:can_snow
 
     # See the result
-    execute as @a[tag=glib.canRain] run say Chez moi il ne peut neiger!
-    execute as @a[tag=!glib.canRain] run say Where I live it never snows...
+    execute as @a[tag=glib.canSnow] run say Where I am, it can rain!
+    execute as @a[tag=!glib.canSnow] run say Where I am, it never snows...
 
 Get biome ID
 ~~~~~~~~~~~~
