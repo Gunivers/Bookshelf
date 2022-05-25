@@ -4,7 +4,7 @@
 
 import os
 import math
-import item
+import src.item as item
 
 
 # Recursive function

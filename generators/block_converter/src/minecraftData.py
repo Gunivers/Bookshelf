@@ -4,9 +4,17 @@
 
 import os
 import re
-from block import Block
-from item import Item
-from blockState import BlockState
+from src.block import Block
+from src.item import Item
+from src.blockState import BlockState
+import re
+
+def getList(file):
+    with open(file,"r") as f:
+        list = []
+        for line in f:
+            list.append(line[0:-1])
+    return list
 
 def getBlockList(blockPath, verbose=False):
 
@@ -109,7 +117,7 @@ def getBlockList(blockPath, verbose=False):
         # Closing file
         blockFile.close()
     
-    blockList.sort(key=lambda x: int(x.id))
+    blockList.sort(key=lambda x: int(re.sub("[^0-9]", "", x.id)))
 
     listFile = open("lists/block_variations.txt","w+")
     for block in blockList:
@@ -189,16 +197,16 @@ def associateVirtualName(name):
 def associate(blockList, itemList, createVirtualItems = True):
 
     print("Associating blocks to items...")
-    defaultID = getDefaultID()
+    # defaultID = getDefaultID()
     
     # Associate blocks to their item
     for i in range(len(blockList)):
         for item in itemList:
             if associateName(blockList[i].name, "block") == associateName(item.name, "item"):
                 blockList[i].itemID = item.id
-        for name, id in defaultID.items():
-            if name == blockList[i].name:
-                blockList[i].defaultID = id
+        # for name, id in defaultID.items():
+        #     if name == blockList[i].name:
+        #         blockList[i].defaultID = id
 
     # Associate items to their block
     for i in range(len(itemList)):

@@ -4,7 +4,7 @@
 
 import math
 import os
-import predicateFormat
+import src.predicateFormat as predicateFormat
 
 def generate(blockList, functions_path, tags_path, function, verbose=False):
 
