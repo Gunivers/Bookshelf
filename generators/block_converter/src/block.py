@@ -4,9 +4,34 @@ class Property:
         self.value = value  # ex: south
 
 class BlockState:
-    def __init__(self, id, properties):
+    def __init__(self, block, id, properties):
         self.id = id                    # block variation
         self.properties = properties    # list of properties of this variation
+
+    def properties_to_dict(self):
+        prop = {}
+        for i in self.properties:
+            prop.update({i.name: i.value})
+        return prop
+
+    def toString(self):
+        # Creating command-ready string
+        setBlock = self.block.name
+        if self.properties != []:
+            setBlock += "["
+
+        # Concatenating all blockstates
+        for j in range(len(self.properties)):
+            setBlock += self.properties[j].key + "=" + self.properties[j].value + ","
+
+        # Removing last comma & adding the final string to the list
+        if setBlock[-1] == ",":
+            setBlock = setBlock[0:-1]
+
+        # print(setBlock + "]")
+        if self.properties != []: setBlock += "]"
+        
+        return setBlock
 
 class Block:
     all = {}
@@ -36,22 +61,3 @@ class Block:
         name = name.replace("tripwire","string")
         name = name.replace("beetroots","beetroot")
         return name
-
-    def toString(self):
-        # Creating command-ready string
-        setBlock = self.name
-        if self.blockStates != []:
-            setBlock += "["
-
-        # Concatenating all blockstates
-        for j in range(len(self.blockStates)):
-            setBlock += self.blockStates[j].key + "=" + self.blockStates[j].value + ","
-
-        # Removing last comma & adding the final string to the list
-        if setBlock[-1] == ",":
-            setBlock = setBlock[0:-1]
-
-        # print(setBlock + "]")
-        if self.blockStates != []:
-            setBlock += "]"
-        return setBlock

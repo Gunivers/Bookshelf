@@ -49,6 +49,9 @@ def getBlockList(file):
     blockList = []
 
     for block_name, block_properties in data.items():
+        newBlock = Block(None, block_name.replace("minecraft:",""), blockStates=None, firstBlockID=None, lastBlockID=None)
+        blockList.append(newBlock)
+
         blockStateList = []
         defaultID = None
         minID = None
@@ -62,16 +65,20 @@ def getBlockList(file):
 
             ID = state["id"]
 
-            blockStateList.append(BlockState(ID, propertyList))
+            blockStateList.append(BlockState(newBlock, ID, propertyList))
             
             if "default" in state:
                 if state["default"] == True:
                     defaultID = ID
 
-            if ID < minID or minID is None : minID = ID
-            if ID > maxID or maxID is None : maxID = ID
+            if minID is None or ID < minID: minID = ID
+            if maxID is None or ID > maxID: maxID = ID
 
-        blockList.append(Block(defaultID, block_name.replace("minecraft:",""), blockStateList, firstBlockID=minID, lastBlockID=maxID))
+        newBlock.defaultID = defaultID
+        newBlock.blockStates = blockStateList
+        newBlock.firstBlockID = minID
+        newBlock.lastBlockID = maxID
+        
     return blockList
 
 """
@@ -89,13 +96,15 @@ def associate():
     """
 
     for _, item in Item.all.items():
-        block = Block.all[item.neutralName()]
-        if block is not None:
+        try:
+            block = Block.all[item.neutralName()]
             block.itemID = item.id
             item.blockID = block.id
+        except: pass
 
     for _, block in Block.all.items():
-        item = Item.all[block.neutralName()]
-        if item is not None:
+        try:
+            item = Item.all[block.neutralName()]
             if item.blockID is None: item.blockID = block.id
             if block.itemID is None: block.itemID = item.id
+        except: pass

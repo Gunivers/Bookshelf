@@ -1,7 +1,7 @@
 
 class Item:
     all = {}
-    def __init__(self, id, name, firstBlockID = None, lastBlockID = None):
+    def __init__(self, id, name, blockID = None, firstBlockID = None, lastBlockID = None):
         self.id = id
         self.name = name
         self.blockID = blockID
