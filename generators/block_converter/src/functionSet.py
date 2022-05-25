@@ -5,6 +5,8 @@
 import os
 import math
 import src.item as item
+from src.block import *
+from src.item import *
 
 
 # Recursive function
@@ -16,18 +18,22 @@ def generate(blockList, path, function, branch=3, verbose=False, depth=0):
         print("Generating " + function + "...")
 
     if function == "id_to_block":
+        ObjectList = list(Block.all.values())
         mcfunctionName = "set"
         scoreboard = "glib.blockId"
         folder = "block/"
     elif function == "id_to_item":
+        ObjectList = list(Item.all.values())
         mcfunctionName = "set"
         scoreboard = "glib.itemId"
         folder = "item/"
     elif function == "block_id_to_item_id":
+        ObjectList = list(Block.all.values())
         mcfunctionName = "convert_to_item"
         scoreboard = "glib.blockId"
         folder = "block/"
     elif function == "item_id_to_block_id":
+        ObjectList = list(Item.all.values())
         mcfunctionName = "convert_to_block"
         scoreboard = "glib.itemId"
         folder = "item/"

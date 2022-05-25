@@ -5,25 +5,28 @@
 import math
 import os
 import src.predicateFormat as predicateFormat
+from src.block import *
+from src.item import *
 
-def generate(blockList, functions_path, tags_path, function, verbose=False):
-
-    N = len(blockList)
-    n = math.ceil(math.log(N/2,2))
-    group = []
+def generate(functions_path, tags_path, function, verbose=False):
 
     print("Generating " + function + "...")
 
     if function == "block_to_id":
+        ObjectList = list(Block.all.values())
         folder = "block/"
         mcfunctionName = "get"
         scoreboard = "glib.blockId"
     
     elif function == "item_to_id":
+        ObjectList = list(Item.all.values())
         folder = "item/"
         mcfunctionName = "get"
         scoreboard = "glib.itemId"
 
+    N = len(ObjectList)
+    n = math.ceil(math.log(N/2,2))
+    group = []
 
     # Create folders
     if not os.path.exists(tags_path + mcfunctionName):
@@ -48,32 +51,32 @@ def generate(blockList, functions_path, tags_path, function, verbose=False):
         group[i].write("\"condition\":\"minecraft:alternative\",")
         group[i].write("\"terms\":[")
 
-        newBlockList = []
-        for block in blockList:
-            # Composing group "i" with blocks that match: ID / (2^i) % 2 = 0
-            if math.floor(int(block.id)/(2**(i)))%2 == 0:
-                newBlockList.append(block)
+        newObjectList = []
+        for object in ObjectList:
+            # Composing group "i" with object that match: ID / (2^i) % 2 = 0
+            if math.floor(int(object.id)/(2**(i)))%2 == 0:
+                newObjectList.append(object)
 
-        # For blocks that match condition below (condition to be in the group i)
-        for block in newBlockList:
+        # For objects that match condition below (condition to be in the group i)
+        for object in newObjectList:
 
-            # Generating Block predicates
+            # Generating object predicates
             if function == "block_to_id":
                 blockStates = ""
                 # Concatenation of all blockstates in a json format
-                for property in block.blockStates:
+                for property in object.blockStates:
                     blockStates += "\"" + property.key + "\": \"" + property.value + "\""
-                    if property is not block.blockStates[-1]:
+                    if property is not object.blockStates[-1]:
                         blockStates += ","
                 # Writing condition
-                group[i].write(predicateFormat.getBlock().format(BlockName=block.name, BlockStates=blockStates))
+                group[i].write(predicateFormat.getBlock().format(BlockName=object.name, BlockStates=blockStates))
 
             # Generating predicate for items in entity's mainhand slot
             if function == "item_to_id":
-                group[i].write(predicateFormat.getItem().format(BlockName = block.name))
+                group[i].write(predicateFormat.getItem().format(BlockName = object.name))
 
             # Adding comma beetween all conditions to respect json format
-            if block is not newBlockList[-1]:
+            if object is not newObjectList[-1]:
                 group[i].write(",")
 
         # End of json file
