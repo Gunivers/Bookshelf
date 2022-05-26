@@ -108,7 +108,7 @@ def generate_SetItem(path, function, branch=3, objectList = None, verbose=False,
         # For each item in the list, create a command that summon the item if the score correspond to the item ID
         mcfunction = open(f"{path}/set/leaves/{objectList[0].id}-{objectList[-1].id}.mcfunction", "w+")
         for item in objectList:
-            mcfunction.write('execute if score @s glib.itemId matches ' + str(item.id) + ' run summon item ~ ~ ~ {"Item":{"id":"minecraft:' + item.name + '","Count":1b}}\n')
+            mcfunction.write('execute if score @s glib.itemId matches ' + str(item.id) + ' run summon item ~ ~ ~ {PickupDelay:999999,Tags:["glib.new"],"Item":{"id":"minecraft:' + item.name + '","Count":1b}}\n')
         mcfunction.write("scoreboard players operation @e[type=item,tag=glib.new,limit=1,sort=nearest] glib.parentId = @s glib.id\n")
 
     mcfunction.close()
