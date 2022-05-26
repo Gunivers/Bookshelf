@@ -2,4 +2,4 @@ execute if score @s glib.blockId matches 5017 run setblock ~ ~ ~ glow_lichen[dow
 execute if score @s glib.blockId matches 5018 run setblock ~ ~ ~ glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=true,west=false]
 execute if score @s glib.blockId matches 5019 run setblock ~ ~ ~ glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true]
 execute if score @s glib.blockId matches 5020 run setblock ~ ~ ~ glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=false]
-execute if score @s glib.blockId matches 5021 run setblock ~ ~ ~ oak_fence_gate[facing=north,open=true,powered=true]
+execute if score @s glib.blockId matches 5021 run setblock ~ ~ ~ oak_fence_gate[facing=north,in_wall=true,open=true,powered=true]

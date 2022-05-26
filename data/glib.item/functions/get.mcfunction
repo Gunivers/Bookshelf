@@ -1,31 +1,5 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
-
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.17
-# Last check: 1.17.1
-
-# Original path: glib.item:get
-# Documentation: https://glib-core.readthedocs.io/en/latest/Item.html#get-item-id
-
-#__________________________________________________
-# PARAMETERS
-
-# Output: glib.itemId (score): Item unique ID
-
-#__________________________________________________
-# INIT
-
 scoreboard objectives add glib.itemId dummy
 scoreboard players set @s glib.itemId 0
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-## CODE
-
 execute unless predicate glib.item:get/group_0 run scoreboard players add @s glib.itemId 1
 execute unless predicate glib.item:get/group_1 run scoreboard players add @s glib.itemId 2
 execute unless predicate glib.item:get/group_2 run scoreboard players add @s glib.itemId 4

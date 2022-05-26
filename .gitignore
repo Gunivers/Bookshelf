@@ -1,4 +1,10 @@
-data/glib_wip/
 .vscode/
+
+data/glib.wip/
+
 docs/_build/
 docs/build/
+
+generators/block_converter/Minecraft_generated_data/
+data/glib.block/
+data/glib.item/
