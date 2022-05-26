@@ -1,12 +1,13 @@
 class Property:
     def __init__(self, name, value):
-        self.name = name    # ex: facing
-        self.value = value  # ex: south
+        self.name  = name  # ex: facing
+        self.value = value # ex: south
 
 class BlockState:
     def __init__(self, block, id, properties):
-        self.id = id                    # block variation
-        self.properties = properties    # list of properties of this variation
+        self.block      = block      # parent block
+        self.id         = id         # block variation
+        self.properties = properties # list of properties of this variation
 
     def properties_to_dict(self):
         prop = {}
@@ -22,7 +23,7 @@ class BlockState:
 
         # Concatenating all blockstates
         for j in range(len(self.properties)):
-            setBlock += self.properties[j].key + "=" + self.properties[j].value + ","
+            setBlock += self.properties[j].name + "=" + self.properties[j].value + ","
 
         # Removing last comma & adding the final string to the list
         if setBlock[-1] == ",":
@@ -61,3 +62,12 @@ class Block:
         name = name.replace("tripwire","string")
         name = name.replace("beetroots","beetroot")
         return name
+
+    def get_all_variations():
+        blockStateList = []
+        for block in Block.all.values():
+            for blockState in block.blockStates:
+                if blockState.id is None: print(f"[WARNING] No ID found for {blockState.toString()}")
+                else: blockStateList.append(blockState)
+        blockStateList.sort(key=lambda x: x.id)
+        return blockStateList

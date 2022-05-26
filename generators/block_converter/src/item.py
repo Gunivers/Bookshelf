@@ -16,5 +16,8 @@ class Item:
         name = name.replace("_bucket","")
         return name
 
+    def toNBT(self):
+        return '{Item:{id:\"minecraft:' + self.name + '\"}}'
+
     def toString(self):
         return self.name

@@ -74,7 +74,8 @@ def getBlockList(file):
             if minID is None or ID < minID: minID = ID
             if maxID is None or ID > maxID: maxID = ID
 
-        newBlock.defaultID = defaultID
+        newBlock.id = defaultID
+        # newBlock.defaultID = defaultID
         newBlock.blockStates = blockStateList
         newBlock.firstBlockID = minID
         newBlock.lastBlockID = maxID

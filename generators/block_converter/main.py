@@ -76,16 +76,16 @@ minecraftData.associate()
 
 # Block module
 print("⚙️ Generating glib.block:set...")
-functionSet.generate(path = f"{path}/data/glib.block/functions",                                                  function = "id_to_block",         verbose=False)
+functionSet.generate_SetBlock(path = f"{path}/data/glib.block/functions",                                         function = "id_to_block",         verbose=False)
 print("⚙️ Generating glib.block:get...")
 functionGet.generate(path = f"{path}/data/glib.block/functions", tags_path= f"{path}/data/glib.block/predicates", function = "block_to_id",         verbose=False)
 print("⚙️ Generating glib.block:convert_to_item...")
-functionSet.generate(path= f"{path}/data/glib.block/functions",                                                   function = "block_id_to_item_id", verbose=False)
+functionSet.generate_BlockToItem(path= f"{path}/data/glib.block/functions",                                        function = "block_id_to_item_id", verbose=False)
 
 # Item module
 print("⚙️ Generating glib.item:set...")
-functionSet.generate(path = f"{path}/data/glib.item/functions",                                                   function = "id_to_item",          verbose=False)
+functionSet.generate_SetItem(path = f"{path}/data/glib.item/functions",                                           function = "id_to_item",          verbose=False)
 print("⚙️ Generating glib.item:get...")
 functionGet.generate(path = f"{path}/data/glib.item/functions",  tags_path= f"{path}/data/glib.item/predicates",  function = "item_to_id",          verbose=False)
 print("⚙️ Generating glib.item:convert_to_block...")
-functionSet.generate(path= f"{path}/data/glib.item/functions",                                                    function = "item_id_to_block_id", verbose=False)
+functionSet.generate_ItemToBlock(path= f"{path}/data/glib.item/functions",                                                    function = "item_id_to_block_id", verbose=False)

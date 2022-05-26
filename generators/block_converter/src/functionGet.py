@@ -11,10 +11,8 @@ import json
 
 def generate(path, tags_path, function, verbose=False):
 
-    print("Generating " + function + "...")
-
     if function == "block_to_id":
-        ObjectList = list(Block.all.values())
+        ObjectList = Block.get_all_variations()
         module = "glib.block"
         scoreboard = "glib.blockId"
     
@@ -51,25 +49,21 @@ def generate(path, tags_path, function, verbose=False):
         # Generating all conditions for blocks
         if function == "block_to_id":
             conditionList = []
-            for block in newObjectList:
-                for blockState in block.blockStates:
-                    conditionList.append({"condition":"minecraft:location_check","predicate":{"block":{
-                                            "blocks":[f"minecraft:{object.name}"],
-                                            "state": blockState.properties_to_dict()
-                                        }}})
+            for blockState in newObjectList:
+                conditionList.append({"condition":"minecraft:location_check","predicate":{"block":{"blocks":[f"minecraft:{blockState.block.name}"],"state": blockState.properties_to_dict()}}})
 
         # Generating all condition for items
         if function == "item_to_id":
             conditionList = []
             for item in newObjectList:
-                conditionList.append({"condition":"minecraft:entity_properties","entity":"this","predicate":{"type":"minecraft:item","nbt":{"Item":{"id":f"minecraft:{item.name}"}}}})
+                conditionList.append({"condition":"minecraft:alternative","terms":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"type":"minecraft:item","nbt":item.toNBT()}}]})
 
         # Completting the predicate
         content = [{"condition":"minecraft:alternative","terms":conditionList}]
 
         # Saving it
         with open(f"{tags_path}/get/group_{i}.json","w+") as f:
-            f.write(json.dumps(content))
+            f.write(json.dumps(content,indent=4))
 
     # Closing files
     functionGet.close()
