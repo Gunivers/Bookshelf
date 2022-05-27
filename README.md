@@ -9,7 +9,6 @@ Watch the presentation video<br>
 https://www.youtube.com/watch?v=E2nKYEvjETk
 </div>
 
-
 # ⚙️ Features
 
 🧮 Mathematical functions (sin, cos, exp, log, sqrt...)<br>
