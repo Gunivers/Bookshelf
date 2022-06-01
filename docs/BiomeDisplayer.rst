@@ -1,5 +1,5 @@
 ***************
-Biome Displayer
+🗺️ Biome Displayer
 ***************
 
 This system allow to display the biome you're in in the action bar.

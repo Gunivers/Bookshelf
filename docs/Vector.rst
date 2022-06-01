@@ -1,6 +1,6 @@
-******
-Vector
-******
+**********
+↗️ Vector
+**********
 
 ``glib.vector:``: Vectors are used to define the trajectory of an entity. Thus, they allow to manage projectiles easily, offering the possibility to make them undergo collisions, to imitate gravity, wind etc ... They are always defined with a 10^3 factor (1000 = 1 block/tick).
 
