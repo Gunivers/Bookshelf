@@ -1,6 +1,6 @@
-***
-FAQ
-***
+*******
+❓ FAQ
+*******
 
 -  **Can I use the lib in my map/server project?** Of course you can!
    The only thing we ask is that you get proper credit. If you are a

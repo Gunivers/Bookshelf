@@ -1,5 +1,5 @@
-Link
-====
+📎 Link
+========
 
 ``glib.link:``: The "Link" functions allow to link an entity to another.
 This link consists in preserving the position and the relative

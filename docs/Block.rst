@@ -1,6 +1,6 @@
-*****
-Block
-*****
+*********
+🧱 Block
+*********
 
 ``glib.block:``: Systems for manipulating blocks
 

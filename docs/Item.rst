@@ -1,6 +1,6 @@
-****
-Item
-****
+********
+⛏️ Item
+********
 
 ``glib.item:`` : Systems allowing to manipulate items
 

@@ -1,6 +1,6 @@
-****
-Math
-****
+********
+🧮 Math
+********
 
 ``glib.math:``: The "Math" functions, as their name suggests, are for
 doing math. Before you run away remembering your indigestible and

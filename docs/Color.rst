@@ -1,6 +1,6 @@
-*****
-Color
-*****
+*********
+🖍️ Color
+*********
 
 No documentation here...
 

@@ -1,6 +1,6 @@
-********
-Schedule
-********
+************
+⏲️ Schedule
+************
 
 No documentation here...
 

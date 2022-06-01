@@ -1,6 +1,6 @@
-**
-ID
-**
+******
+🏷️ ID
+******
 
 ``glib.id:`` : The management of entity IDs allows to identify precisely
 an entity. Useful for example in the case of a shooting game to know who

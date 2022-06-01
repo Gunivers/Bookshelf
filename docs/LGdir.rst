@@ -1,6 +1,6 @@
-*****
-LGdir
-*****
+*********
+🪃 LGdir
+*********
 
 This system allow to simply throw a projectile by right-clocking on a ``carrot_on_a_stick``.
 

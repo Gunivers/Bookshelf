@@ -1,5 +1,5 @@
-Location
-========
+📍 Location
+============
 
 ``glib.location:``: The "Location" functions allow to manage the
 position of entities via scores. It is thus possible to detect the

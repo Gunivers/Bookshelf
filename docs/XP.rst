@@ -1,6 +1,6 @@
-*****
-XP
-*****
+******
+🏅 XP
+******
 
 ``glib.xp:`` all function concerning the experience points and levels.
 

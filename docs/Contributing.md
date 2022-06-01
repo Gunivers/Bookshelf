@@ -1,5 +1,5 @@
 
-Contribute
+🤝 Contribute
 ===
 
 :::{admonition} **Pour les francophones**

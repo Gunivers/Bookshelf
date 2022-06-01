@@ -1,6 +1,6 @@
-*****
-Biome
-*****
+*********
+⛰️ Biome
+*********
 
 ``glib.biome:`` all function concerning biome properties.
 

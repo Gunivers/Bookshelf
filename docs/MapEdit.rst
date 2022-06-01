@@ -1,6 +1,6 @@
-*******
-MapEdit
-*******
+***********
+🌍 MapEdit
+***********
 
 No documentation here...
 

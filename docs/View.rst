@@ -1,6 +1,6 @@
-****
-View
-****
+********
+👀 View
+********
 
 ``glib.view:``:The view functions allow to get some practical information about what the entity sees or aims.
 

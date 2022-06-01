@@ -1,6 +1,6 @@
-******
-Health
-******
+**********
+❤️ Health
+**********
 
 ``glib.health:``: Management by scoreboard of the life of an entity.
 
