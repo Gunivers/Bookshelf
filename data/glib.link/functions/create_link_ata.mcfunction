@@ -35,9 +35,5 @@ scoreboard objectives add glib.link.to dummy [{"text":"GLib ","color":"gold"},{"
 #__________________________________________________
 # CODE
 
-tag @e remove glib.link.target
-tag @e[limit=1,sort=nearest] add glib.link.target
 scoreboard players operation @s glib.link.to = @e[limit=1,sort=nearest] glib.id
-tag @s add glib.linked
-
 function glib.link:update_link

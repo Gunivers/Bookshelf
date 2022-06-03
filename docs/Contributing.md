@@ -1,6 +1,4 @@
-
-🤝 Contribute
-===
+# 🤝 Contribute
 
 :::{admonition} **Pour les francophones**
 :class: note

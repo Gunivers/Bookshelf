@@ -29,16 +29,16 @@ function glib.link:update_link_h
 function glib.link:update_link_v
 
 # Start Backup
-scoreboard players operation backup.updateLink.var0 glib = @s glib.var0
-scoreboard players operation backup.updateLink.var1 glib = @s glib.var1
-scoreboard players operation backup.updateLink.var2 glib = @s glib.var2
-scoreboard players operation backup.updateLink.var3 glib = @s glib.var3
-scoreboard players operation backup.updateLink.var4 glib = @s glib.var4
-scoreboard players operation backup.updateLink.res0 glib = @s glib.res0
-scoreboard players operation backup.updateLink.res1 glib = @s glib.res1
-scoreboard players operation backup.updateLink.res2 glib = @s glib.res2
-scoreboard players operation backup.updateLink.oriH glib = @s glib.oriH
-scoreboard players operation backup.updateLink.oriV glib = @s glib.oriV
+scoreboard players operation #backup.updateLink.var0 glib = @s glib.var0
+scoreboard players operation #backup.updateLink.var1 glib = @s glib.var1
+scoreboard players operation #backup.updateLink.var2 glib = @s glib.var2
+scoreboard players operation #backup.updateLink.var3 glib = @s glib.var3
+scoreboard players operation #backup.updateLink.var4 glib = @s glib.var4
+scoreboard players operation #backup.updateLink.res0 glib = @s glib.res0
+scoreboard players operation #backup.updateLink.res1 glib = @s glib.res1
+scoreboard players operation #backup.updateLink.res2 glib = @s glib.res2
+scoreboard players operation #backup.updateLink.oriH glib = @s glib.oriH
+scoreboard players operation #backup.updateLink.oriV glib = @s glib.oriV
 # End Backup
 
 # Calcul
@@ -57,14 +57,14 @@ scoreboard players operation @s glib.link.ly = @s glib.res1
 scoreboard players operation @s glib.link.lz = @s glib.res2
 
 # Start Restore
-scoreboard players operation @s glib.var0 = backup.updateLink.var0 glib
-scoreboard players operation @s glib.var1 = backup.updateLink.var1 glib
-scoreboard players operation @s glib.var2 = backup.updateLink.var2 glib
-scoreboard players operation @s glib.var3 = backup.updateLink.var3 glib
-scoreboard players operation @s glib.var4 = backup.updateLink.var4 glib
-scoreboard players operation @s glib.res0 = backup.updateLink.res0 glib
-scoreboard players operation @s glib.res1 = backup.updateLink.res1 glib
-scoreboard players operation @s glib.res2 = backup.updateLink.res2 glib
-scoreboard players operation @s glib.oriH = backup.updateLink.oriH glib
-scoreboard players operation @s glib.oriV = backup.updateLink.oriV glib
+scoreboard players operation @s glib.var0 = #backup.updateLink.var0 glib
+scoreboard players operation @s glib.var1 = #backup.updateLink.var1 glib
+scoreboard players operation @s glib.var2 = #backup.updateLink.var2 glib
+scoreboard players operation @s glib.var3 = #backup.updateLink.var3 glib
+scoreboard players operation @s glib.var4 = #backup.updateLink.var4 glib
+scoreboard players operation @s glib.res0 = #backup.updateLink.res0 glib
+scoreboard players operation @s glib.res1 = #backup.updateLink.res1 glib
+scoreboard players operation @s glib.res2 = #backup.updateLink.res2 glib
+scoreboard players operation @s glib.oriH = #backup.updateLink.oriH glib
+scoreboard players operation @s glib.oriV = #backup.updateLink.oriV glib
 # End Restore
