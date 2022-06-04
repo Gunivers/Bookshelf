@@ -22,9 +22,15 @@ And much more!
 
 # 🔌Installation
 
-Go to the [Glib Manager](http://glib.gunivers.net) website to select the version and the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io).
+⚠️ **Do not download directly from Github**
 
-Once you download the ZIP file, simply put it into you world's "datapacks" folder and, in-game, execute the `/reload` command.
+This repository contain a lot of things that you probably don't need. Instead, go on the [Glib Manager](http://glib.gunivers.net) to select what you want to download.
+
+This project contain a library datapack and a map that is used as a test zone, wich can help new users to handle this tool. Also, the map show some possible features that are made possible thanks to the library datapack.
+
+| Install the Datapack | Install the map |
+| --- | --- |
+| Go on [Glib Manager](http://glib.gunivers.net)<br><br>Select the version you want (recommanded to use the last one)<br><br>On the right panel, select the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io)<br><br>Click on the "Download" button<br><br>Put the zip in the "datapacks" folder that you can find in your map folder.<br><br>In game, use `/reload` to load the datapack.| (coming soon) | 
 
 ⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that `enable-command-block` is set on `true` in you `server.properties` file.
 

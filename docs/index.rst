@@ -25,11 +25,26 @@ And much more!
 🔌Installation
 ===============
 
-Go to the `Glib Manager <http://glib.gunivers.net>`_ website to select the version and the modules you want to use. You can check the modules' content in the `Documentation <https://glib-core.readthedocs.io>`_.
+⚠️ **Do not download directly from Github**
 
-Once you download the ZIP file, simply put it into you world's "datapacks" folder and, in-game, execute the ``/reload`` command.
+This repository contain a lot of things that you probably don't need. Instead, go on the `Glib Manager <http://glib.gunivers.net>`_ to select what you want to download.
 
-⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that ``enable-command-block`` is set on ``true`` in you ``server.properties`` file.
+This project contain a library datapack and a map that is used as a test zone, wich can help new users to handle this tool. Also, the map show some possible features that are made possible thanks to the library datapack.
+
+**Install the datapack only**
+    #. Go on `Glib Manager <http://glib.gunivers.net>`_.
+    #. Select the version you want (recommanded to use the last one)
+    #. On the right panel, select the modules you want to use. You can check the modules' content in the `Documentation <https://glib-core.readthedocs.io>`_
+    #. Click on the "Download" button
+    #. Put the zip in the "datapacks" folder that you can find in your map folder.
+    #. In game, use `/reload` to load the datapack.
+
+or
+
+**Install the sandbox map (contain the datapack)**
+    - Coming soon
+
+⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that ``enable-command-block`` is set on ``true`` in you ``server.properties` file.
 
 ⚠️ **Some modules can be heavy**. Like the ``glib.block`` or ``glib.item`` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files.
 
