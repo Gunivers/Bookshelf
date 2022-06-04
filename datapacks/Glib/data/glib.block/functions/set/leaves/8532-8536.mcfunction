@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 8532 run setblock ~ ~ ~ red_sandstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 8533 run setblock ~ ~ ~ red_sandstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 8534 run setblock ~ ~ ~ red_sandstone_stairs[facing=east,half=top,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 8535 run setblock ~ ~ ~ red_sandstone_stairs[facing=east,half=top,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 8536 run setblock ~ ~ ~ red_sandstone_stairs[facing=east,half=top,shape=outer_left,waterlogged=true]
