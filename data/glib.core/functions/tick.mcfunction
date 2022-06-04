@@ -33,3 +33,8 @@ execute as @a[tag=glib.debug,tag=glib.debug.entity.target_entity_manager,limit=1
 scoreboard players add @e glib.debug.id 0
 execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players add debug.id glib.data 1
 execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation @s glib.debug.id = debug.id glib.data
+
+# Life time
+scoreboard players add @e glib.lifetime 1
+execute as @e[scores={glib.lifetime=-1}] run function glib.health:safe_kill
+kill @e[scores={glib.lifetime=-1},tag=!glib.health.safekill.excluded]

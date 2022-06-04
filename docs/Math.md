@@ -528,7 +528,7 @@ if necessary.
 
 ---
 
-### Trigonometry
+## Trigonometry
 
 `glib.math:trig/`: this folder contains basic trigonometry functions,
 opening a lot of doors to creative possibilities in Minecraft.

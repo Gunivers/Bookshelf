@@ -6,8 +6,7 @@ name: Deploy
 # events but only for the master branch
 on:
   push:
-    tags:
-      - '*'
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +33,7 @@ jobs:
         with:
           host: ${{ secrets.SFTP_IP }}
           port: ${{ secrets.SFTP_PORT }}
-          user: ${{ secrets.SFTP_USER }}
+          user: ${{ secrets.SFTP_SANDBOX_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          remote_path: /datapacks/release/${{ env.RELEASE_VERSION }}/
+          remote_path: /Glib-Sandbox/datapacks/Glib/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, generators/, docs/, .vscode/

@@ -176,6 +176,7 @@ This lib use global scores, that are automatically created:
 | `glib.const` | Contain a huge numer of fakeplayers with constant score value |
 | `glib.data` | Uses by the `glib.core` module.<br> Do not use it without knowing exactly what you are doing. |
 | `glib.debug` | Determine the behavior of debug features |
+| `glib.lifetime`| If positive (default behavior), count the number of tick the entity exist. If negative, determine the number of ticks the entity will live (killed when the score reach -1). This socre is automatically incremented each tick. |
 | `glib.res[0-9]` | Default score for outputs |
 | `glib.var[0-9]` | Default score for inputs |
 

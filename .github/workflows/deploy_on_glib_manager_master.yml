@@ -36,4 +36,4 @@ jobs:
           user: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
           remote_path: /datapacks/dev/${{ env.RELEASE_VERSION }}/
-          ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, generators/, docs/
+          ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, generators/, docs/, .vscode/

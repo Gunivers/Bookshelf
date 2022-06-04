@@ -21,6 +21,10 @@
 #__________________________________________________
 # CODE
 
+tag @e remove glib.health.safekill.excluded
+
 scoreboard players reset @s[type=!player,tag=!glib.permanent]
 tp @s[type=!player,tag=!glib.permanent] ~ 0 ~
 kill @s[type=!player,tag=!glib.permanent]
+
+tag @s add glib.health.safekill.excluded
