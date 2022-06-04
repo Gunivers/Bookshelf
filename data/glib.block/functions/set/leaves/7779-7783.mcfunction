@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 7779 run setblock ~ ~ ~ light[level=12,waterlogged=true]
-execute if score @s glib.blockId matches 7780 run setblock ~ ~ ~ light[level=12,waterlogged=false]
-execute if score @s glib.blockId matches 7781 run setblock ~ ~ ~ light[level=13,waterlogged=true]
-execute if score @s glib.blockId matches 7782 run setblock ~ ~ ~ light[level=13,waterlogged=false]
-execute if score @s glib.blockId matches 7783 run setblock ~ ~ ~ light[level=14,waterlogged=true]
