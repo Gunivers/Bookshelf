@@ -1,10 +1,23 @@
+advancements/
+data/
+DIM-1/
+DIM1/
+entities/
+generated/
+playerdata/
+poi/
+# region/
+stats/
+# level.dat
+level.dat_old
+session.lock
+uid.dat
+
 .vscode/
 
-data/glib.wip/
+datapacks/Glib/data/glib.wip/
 
 docs/_build/
 docs/build/
 
 generators/block_converter/Minecraft_generated_data/
-data/glib.block/
-data/glib.item/
