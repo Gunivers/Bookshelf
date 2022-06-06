@@ -45,7 +45,6 @@ entity.
 
 -  A block is in ~2 ~5 ~10 from me, I want to have this position in local
 coordinate (^? ^? ^?)
-
    ```
    # One time
 
@@ -68,7 +67,6 @@ coordinate (^? ^? ^?)
 
 -  I want to have a vector pointing to where I'm looking, but in relative
 coordinates ~X ~Y ~Z (also called "classical" vector in this library)
-
    ```
    # Once
 
@@ -124,7 +122,6 @@ apply to scores.
 *Example:*
 
 -  Calculate and display -9 & 57
-
    ```
    # Once
    scoreboard players set @s glib.var0 -9
@@ -148,7 +145,6 @@ the input
 *Example:*
 
 -  Calculate and display the number of bits of 12
-
    ```
    # Once
    scoreboard players set @s glib.var0 12
@@ -169,7 +165,6 @@ the input
 *Example:*
 
 -  Calculate and display ~452
-
    ```
    # Once
    scoreboard players set @s glib.var0 452
@@ -192,7 +187,6 @@ the input
 *Example:*
 
 -  Calculate and display -9 \| 57.
-
    ```
    # Once
    scoreboard players set @s glib.var0 -9
@@ -214,7 +208,6 @@ the input
 *Example:*
 
 -  Calculate and display the two's complement of 12
-
    ```
    # Once
    scoreboard players set @s glib.var0 12
@@ -238,7 +231,6 @@ numbers
 *Example:*
 
 -  Calculate and display -9 ^ 57
-
    ```
    # Once
    scoreboard players set @s glib.var0 -9
@@ -267,7 +259,6 @@ next whole number).
 *Example:*
 
 -  Calculate 9 / 5:
-
    ```
    # Once
    scoreboard players set @s glib.var0 9
@@ -295,7 +286,6 @@ the score `glib.var0` and return the result on the score `glib.res0`
 *Example:*
 
 -  Calculate exp(3):
-
    ```
    # Once
    scoreboard players set @s glib.var0 300
@@ -316,7 +306,6 @@ on the score `glib.var0` and return the result on the score
 *Example:*
 
 -  Compute 3!
-
    ```
    # Once
    scoreboard players set @s glib.var0 3
@@ -337,7 +326,6 @@ return the result on the score `glib.res0`.
 *Example:*
 
 -  Calculate the greatest common denominator between 16 and 12 :
-
    ```
    # Once
    scoreboard players set @s glib.var0 16
@@ -362,7 +350,6 @@ parameter on the score `glib.var0` and return the result on the score
 *Example:*
 
 -  Calculate ln(28):
-
    ```
    # Once
    scoreboard players set @s glib.var0 28000
@@ -384,7 +371,6 @@ parameter on the score `glib.var0` and return the result on the score
 *Example:*
 
 -  Calculate log2(28):
-
    ```
    # Once
    scoreboard players set @s glib.var0 28000
@@ -406,7 +392,6 @@ parameter on the score `glib.var0` and return the result on the score
 *Example:*
 
 -  Calculate log10(28):
-
    ```
    # Once
    scoreboard players set @s glib.var0 28000
@@ -429,7 +414,6 @@ the score `glib.var1` and returns the result on the score
 *Example:*
 
 -  Calculate log4(28):
-
    ```
    # Once
    scoreboard players set @s glib.var0 28000
@@ -450,7 +434,6 @@ score `glib.res0`
 *Example:*
 
 -  Compute 2^6:
-
    ```
    # Once
    scoreboard players set @s glib.var0 2
@@ -476,13 +459,12 @@ because 4^2 = 4x4 = 16) 
 *Example:*
 
 -  Calculate and display the square root of 42:
-
    ```
    # Once
    scoreboard players set @s glib.var0 42
    function glib.math:common/sqrt
    tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
 
@@ -505,7 +487,6 @@ result on `glib.res0`.
 *Example:*
 
 -  Find the power of 2 greater than 43
-
    ```
    # Once
    scoreboard players set @s glib.var0 43
@@ -527,7 +508,6 @@ result on `glib.res0`.
 *Example:*
 
 -  Get and display a random number between 0 and 100:
-
    ```
    # Once
    function glib.math:special/random
@@ -562,7 +542,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the arccos of 0,42
-
    ```
    # Once
    scoreboard players set @s glib.var0 420
@@ -586,7 +565,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the arcsinus of 0.42
-
    ```
    # Once
    scoreboard players set @s glib.var0 420
@@ -611,7 +589,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the arctan of 0.42
-
    ```
    # Once
    scoreboard players set @s glib.var0 420
@@ -634,7 +611,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the cosine of 42
-
    ```
    # Once
    scoreboard players set @s glib.var0 42
@@ -659,7 +635,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the sine of 42
-
    ```
    # Once
    scoreboard players set @s glib.var0 42
@@ -684,7 +659,6 @@ opening a lot of doors to creative possibilities in Minecraft.
 *Example:*
 
 -  Calculate and display the tengeante of 42
-
    ```
    # Once
    scoreboard players set @s glib.var0 42
