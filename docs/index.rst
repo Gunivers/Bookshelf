@@ -42,9 +42,9 @@ This project contain a library datapack and a map that is used as a test zone, w
 or
 
 **Install the sandbox map (contain the datapack)**
-    - Coming soon
+    - A clean installation process is coming soon. For now, you have to download the content of the Github repository and put it in the "map" folder. This repo contain all the modules of the lib so it's heavy. For this reason, we recommand you to go on ``play.gunivers.net``, where the map is already hosted.
 
-⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that ``enable-command-block`` is set on ``true`` in you ``server.properties` file.
+⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that ``enable-command-block`` is set on ``true`` in you ``server.properties`` file.
 
 ⚠️ **Some modules can be heavy**. Like the ``glib.block`` or ``glib.item`` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files.
 

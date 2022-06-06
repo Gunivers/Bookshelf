@@ -1,30 +1,29 @@
-📎 Link
-========
+# 📎 Link
 
-``glib.link:``: The "Link" functions allow to link an entity to another.
+`glib.link:`: The "Link" functions allow to link an entity to another.
 This link consists in preserving the position and the relative
 orentation between the two entities, allowing then to imitate or to
 reverse the movements and rotations of the parent entity.
 
-Create link to target ID
-~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
-``create_link_tti``: Allows to create the link between two entities.
-* The ``glib.targetId`` score of the executing entity must match the
-``glib.id`` score of the entity to which it will be linked.
+## Create link to target ID
+
+`create_link_tti`: Allows to create the link between two entities.
+* The `glib.targetId` score of the executing entity must match the
+`glib.id` score of the entity to which it will be linked.
 * Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 * The child entity (having performed the function) will then have 9 distinct scores:
-   * ``glib.link.r[x,y,z,h,v]`` representing the relative coordinates (position + orientation)
-   * ``glib.link.l[x,y,z]`` representing local coordinates (position only)
-   * ``glib.link.to`` identifies the entity to which it is linked
+   * `glib.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
+   * `glib.link.l[x,y,z]` representing local coordinates (position only)
+   * `glib.link.to` identifies the entity to which it is linked
 * These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
 
-Link all armor_stand to the entity with ID 3
+-  Link all armor_stand to the entity with ID 3
 
-::
-
+    ```
     # Once
     scorebaord players set @e[type=armor_stand] glib.targetId 3
     execute as @e[type=armor_stand] run function glib.link:create_link_tti
@@ -32,38 +31,41 @@ Link all armor_stand to the entity with ID 3
     # See the result
     # In loop
     execute as @e[type=armor_stand] run function glib_debug:link/display_link
+    ```
 
-Create link "as to at"
-~~~~~~~~~~~~~~~~~~~~~~
+---
 
-``create_link_ata``: In the same way as ``create_link_to_target_id``,
+## Create link "as to at"
+
+`create_link_ata`: In the same way as `create_link_to_target_id`,
 this function creates a link between the entity executing the function
 and the entity closest to the execution position.
 
 * Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 * The child entity (having executed the function) will then have 9 distinct scores:
-   * ``glib.link.r[x,y,z,h,v]`` representing the relative coordinates (position + orientation)
-   * ``glib.link.l[x,y,z]`` representing local coordinates (position only)
-   * ``glib.link.to`` identifies the entity to which it is linked
+   * `glib.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
+   * `glib.link.l[x,y,z]` representing local coordinates (position only)
+   * `glib.link.to` identifies the entity to which it is linked
 * These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
 
-Link all armor_stand to the nearest sheep
+-  Link all armor_stand to the nearest sheep
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function glib.link:create_link_ata
 
     # See the result
     # In loop
     execute as @e[type=armor_stand] run function glib_debug:link/display_link
+    ```
 
-Imitate location
-~~~~~~~~~~~~~~~~
+---
 
-``imitate_loc``: Allows to replace the entity at its relative position.
+### Imitate location
+
+`imitate_loc`: Allows to replace the entity at its relative position.
 This operation repeated in a loop is to imitate the movements of the
 parent entity.
 
@@ -71,37 +73,49 @@ parent entity.
 
 *Example:*
 
-Make armor_stands mimic your moves
+-  Make armor_stands mimic your moves
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
     execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_loc
+    ```
 
-Imitate orientation
-~~~~~~~~~~~~~~~~~~~
+<div align=center>
+    <a href="https://youtu.be/PmeUw8O2ZZU" align=center>
+        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
+    </a>
+</div>
 
--  ``immitate_ori``: Allows to replace the entity to its relative
+---
+
+## Imitate orientation
+
+-  `immitate_ori`: Allows to replace the entity to its relative
    orientation. This operation repeated in a loop is to imitate the
    rotations of the parent entity.
 -  This function also has variations on h and v to allow you to mimic
    only the horizontal or vertical rotation.
--  Example:
 
-Make armor_stands mimic your orientation changes
+*Example:*
 
-::
+-  Make armor_stands mimic your orientation changes
 
+    ```
     # Once
     execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
     execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_ori
+    ```
 
-``keep_local_location``: Allows to keep the local position corresponding
+---
+
+## Keep local location
+
+`keep_local_location`: Allows to keep the local position corresponding
 to the position of the child entity in the repository of the parent
 entity.
 
@@ -109,60 +123,69 @@ entity.
 
 *Example:*
 
-Make the armor_stands lock to your orientation
+-  Make the armor_stands lock to your orientation
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
     execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:keep_local_location
+    ```
 
-Reverse location
-~~~~~~~~~~~~~~~~
+---
 
-``reverse_loc``: Allows to determine the displacement made by the parent
+## Reverse location
+
+`reverse_loc`: Allows to determine the displacement made by the parent
 entity, and reproduce it in the opposite direction.
 
 * This function also has declinations on x, y and z to allow you to reverse the movements that on one or two axes chosen.
 
 *Example:*
 
-Make the armor_stands do the opposite of your moves
+-  Make the armor_stands do the opposite of your moves
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
     execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_loc
+    ```
 
-Reverse orientation
-~~~~~~~~~~~~~~~~~~~
+<div align=center>
+    <a href="https://youtu.be/BisY7Y_tLwg" align=center>
+        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
+    </a>
+</div>
 
-``reverse_ori``: Allows you to determine the rotation performed by the
+---
+
+## Reverse orientation
+
+`reverse_ori`: Allows you to determine the rotation performed by the
 parent entity, and reproduce it in the opposite direction.
 
 * This function also has variations on h and v to allow you to reverse only the horizontal or vertical rotation.
 
 *Example:*
 
-Make the armor_stands mimic your movements
+-   Make the armor_stands mimic your movements
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
 
     # In a loop
     execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_ori
+    ```
 
-Update link
-~~~~~~~~~~~
+---
 
-``update_link``: This function allows to update the link between
+## Update link
+
+`update_link`: This function allows to update the link between
 entities. If you only use immitation and/or local position keeping
 functions, this function will not be of any use to you. On the other
 hand, if you change the position of the child entity automatically, you
@@ -173,14 +196,13 @@ next time you call the link function.
 
 *Example:*
 
-Update the armor_stands link
+-   Update the armor_stands link
 
-::
-
+    ```
     # Once
     execute as @e[type=armor_stand] run function glib.link:update_link
 
     # See the result
     # In a loop
     execute as @e[tag=glib.linked] run function glib_debug:link/display_link
-
+    ```

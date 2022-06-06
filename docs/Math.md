@@ -11,6 +11,12 @@ other things) raycasting with this lib. This system is essentially based
 on trigonometry. But again, nothing complicated, everything is already
 done ;)
 
+<div align=center>
+    <a href="https://youtu.be/Bt0HKaOosqU" align=center>
+        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
+    </a>
+</div>
+
 ---
 
 ## Algebra
@@ -37,55 +43,55 @@ entity.
 
 *Examples:*
 
-A block is in ~2 ~5 ~10 from me, I want to have this position in local
+-  A block is in ~2 ~5 ~10 from me, I want to have this position in local
 coordinate (^? ^? ^?)
 
-```
-# One time
+   ```
+   # One time
 
-# Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-scoreboard players set @s glib.var0 2000
-scoreboard players set @s glib.var1 5000
-scoreboard players set @s glib.var2 10000
+   # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+   scoreboard players set @s glib.var0 2000
+   scoreboard players set @s glib.var1 5000
+   scoreboard players set @s glib.var2 10000
 
-# Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
-function glib.orientation:get
-scoreboard players operation @s glib.var3 = @s glib.oriH
-scoreboard players operation @s glib.var4 = @s glib.oriV
+   # Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
+   function glib.orientation:get
+   scoreboard players operation @s glib.var3 = @s glib.oriH
+   scoreboard players operation @s glib.var4 = @s glib.oriV
 
-# Perform the basic rotation
-function glib.math:algebra/basis_rotation_3d
+   # Perform the basic rotation
+   function glib.math:algebra/basis_rotation_3d
 
-# See the result
-tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
-```
+   # See the result
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
+   ```
 
-I want to have a vector pointing to where I'm looking, but in relative
+-  I want to have a vector pointing to where I'm looking, but in relative
 coordinates ~X ~Y ~Z (also called "classical" vector in this library)
 
-```
-# Once
+   ```
+   # Once
 
-# Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-scoreboard players set @s glib.var0 0
-scoreboard players set @s glib.var1 0
-scoreboard players set @s glib.var2 1000
+   # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+   scoreboard players set @s glib.var0 0
+   scoreboard players set @s glib.var1 0
+   scoreboard players set @s glib.var2 1000
 
-# Get the orientation
-function glib.orientation:get
-scoreboard players operation @s glib.var3 = @s glib.oriH
-scoreboard players operation @s glib.var4 = @s glib.oriV
+   # Get the orientation
+   function glib.orientation:get
+   scoreboard players operation @s glib.var3 = @s glib.oriH
+   scoreboard players operation @s glib.var4 = @s glib.oriV
 
-# Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-scoreboard players operation @s glib.var3 *= -1 glib.const
-scoreboard players operation @s glib.var4 *= -1 glib.const
+   # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
+   scoreboard players operation @s glib.var3 *= -1 glib.const
+   scoreboard players operation @s glib.var4 *= -1 glib.const
 
-# Perform the basic rotation
-function glib.math:algebra/basis_rotation_3d
+   # Perform the basic rotation
+   function glib.math:algebra/basis_rotation_3d
 
-# See the result
-tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
-```
+   # See the result
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
+   ```
 
 ---
 
@@ -93,6 +99,15 @@ tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objec
 
 `glib.math:bitwise`: This folder contains various bitwise operators to
 apply to scores.
+
+
+
+<div align=center>
+   <p> ⚠️ Euh, for your own safety, reduce the volume before watching this video ^^'</p>
+    <a href="https://youtu.be/itgPhvTMSZQ" align=center>
+        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
+    </a>
+</div>
 
 ---
 
@@ -108,15 +123,15 @@ apply to scores.
 
 *Example:*
 
-Calculate and display -9 & 57
+-  Calculate and display -9 & 57
 
-```
-# Once
-scoreboard players set @s glib.var0 -9
-scoreboard players set @s glib.var1 57
-function glib.math:bitwise/and
-tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 -9
+   scoreboard players set @s glib.var1 57
+   function glib.math:bitwise/and
+   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -132,14 +147,14 @@ the input
 
 *Example:*
 
-Calculate and display the number of bits of 12
+-  Calculate and display the number of bits of 12
 
-```
-# Once
-scoreboard players set @s glib.var0 12
-function glib.math:bitwise/get_number_of_bits
-tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 12
+   function glib.math:bitwise/get_number_of_bits
+   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -153,14 +168,14 @@ tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{
 
 *Example:*
 
-Calculate and display ~452
+-  Calculate and display ~452
 
-```
-# Once
-scoreboard players set @s glib.var0 452
-function glib.math:bitwise/not
-tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 452
+   function glib.math:bitwise/not
+   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -176,15 +191,15 @@ tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "obj
 
 *Example:*
 
-Calculate and display -9 \| 57.
+-  Calculate and display -9 \| 57.
 
-```
-# Once
-scoreboard players set @s glib.var0 -9
-scoreboard players set @s glib.var1 57
-function glib.math:bitwise/gold
-tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 -9
+   scoreboard players set @s glib.var1 57
+   function glib.math:bitwise/gold
+   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -198,14 +213,14 @@ tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "
 
 *Example:*
 
-Calculate and display the two's complement of 12
+-  Calculate and display the two's complement of 12
 
-```
-# Once
-scoreboard players set @s glib.var0 12
-function glib.math:bitwise/to_complement
-tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 12
+   function glib.math:bitwise/to_complement
+   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -222,15 +237,15 @@ numbers
 
 *Example:*
 
-Calculate and display -9 ^ 57
+-  Calculate and display -9 ^ 57
 
-```
-# Once
-scoreboard players set @s glib.var0 -9
-scoreboard players set @s glib.var1 57
-function glib.math:bitwise/xor
-tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 -9
+   scoreboard players set @s glib.var1 57
+   function glib.math:bitwise/xor
+   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ---
 
@@ -251,15 +266,15 @@ next whole number).
 
 *Example:*
 
-Calculate 9 / 5:
+-  Calculate 9 / 5:
 
-```
-# Once
-scoreboard players set @s glib.var0 9
-scoreboard players set @s glib.var1 5
-function glib.math:common/divide
-tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 9
+   scoreboard players set @s glib.var1 5
+   function glib.math:common/divide
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
 
@@ -279,14 +294,14 @@ the score `glib.var0` and return the result on the score `glib.res0`
 
 *Example:*
 
-Calculate exp(3):
+-  Calculate exp(3):
 
-```
-# Once
-scoreboard players set @s glib.var0 300
-function glib.math:common/exp
-tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 300
+   function glib.math:common/exp
+   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/exp.png)
 
@@ -300,14 +315,14 @@ on the score `glib.var0` and return the result on the score
 
 *Example:*
 
-Compute 3!
+-  Compute 3!
 
-```
-# Once
-scoreboard players set @s glib.var0 3
-function glib.math:common/factorial
-tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 3
+   function glib.math:common/factorial
+   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/factorial.png)
 
@@ -321,15 +336,15 @@ return the result on the score `glib.res0`.
 
 *Example:*
 
-Calculate the greatest common denominator between 16 and 12 :
+-  Calculate the greatest common denominator between 16 and 12 :
 
-```
-# Once
-scoreboard players set @s glib.var0 16
-scoreboard players set @s glib.var1 12
-function glib.math:common/gcd
-tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 16
+   scoreboard players set @s glib.var1 12
+   function glib.math:common/gcd
+   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/gcd.png)
 
@@ -346,14 +361,14 @@ parameter on the score `glib.var0` and return the result on the score
 
 *Example:*
 
-Calculate ln(28):
+-  Calculate ln(28):
 
-```
-# Once
-scoreboard players set @s glib.var0 28000
-function glib.math:common/log
-tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 28000
+   function glib.math:common/log
+   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -368,14 +383,14 @@ parameter on the score `glib.var0` and return the result on the score
 
 *Example:*
 
-Calculate log2(28):
+-  Calculate log2(28):
 
-```
-# Once
-scoreboard players set @s glib.var0 28000
-function glib.math:common/log2
-tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 28000
+   function glib.math:common/log2
+   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -390,14 +405,14 @@ parameter on the score `glib.var0` and return the result on the score
 
 *Example:*
 
-Calculate log10(28):
+-  Calculate log10(28):
 
-```
-# Once
-scoreboard players set @s glib.var0 28000
-function glib.math:common/log10
-tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 28000
+   function glib.math:common/log10
+   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -413,15 +428,15 @@ the score `glib.var1` and returns the result on the score
 
 *Example:*
 
-Calculate log4(28):
+-  Calculate log4(28):
 
-```
-# Once
-scoreboard players set @s glib.var0 28000
-scoreboard players set @s glib.var1 4
-function glib.math:common/loga
-tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 28000
+   scoreboard players set @s glib.var1 4
+   function glib.math:common/loga
+   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -434,15 +449,15 @@ score `glib.res0`
 
 *Example:*
 
-Compute 2^6:
+-  Compute 2^6:
 
-```
-# Once
-scoreboard players set @s glib.var0 2
-scoreboard players set @s glib.var1 6
-function glib.math:common/pow
-tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 2
+   scoreboard players set @s glib.var1 6
+   function glib.math:common/pow
+   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/power.png)
 
@@ -460,13 +475,13 @@ because 4^2 = 4x4 = 16) 
 
 *Example:*
 
-Calculate and display the square root of 42:
+-  Calculate and display the square root of 42:
 
-```
-# Once
-scoreboard players set @s glib.var0 42
-function glib.math:common/sqrt
-tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
+   # Once
+   scoreboard players set @s glib.var0 42
+   function glib.math:common/sqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
@@ -489,14 +504,14 @@ result on `glib.res0`.
 
 *Example:*
 
-Find the power of 2 greater than 43
+-  Find the power of 2 greater than 43
 
-```
-# Once
-scoreboard players set @s glib.var0 43
-function glib.math:special/get_next_pow2
-tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 43
+   function glib.math:special/get_next_pow2
+   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -511,18 +526,18 @@ tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name"
 
 *Example:*
 
-Get and display a random number between 0 and 100:
+-  Get and display a random number between 0 and 100:
 
-```
-# Once
-function glib.math:special/random
-scoreboard players operation @s glib.res0 %= 101 glib.const
-tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
+   # Once
+   function glib.math:special/random
+   scoreboard players operation @s glib.res0 %= 101 glib.const
+   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
 
-Beware: the score `glib.const` does not contain all possible
-values. Make sure the value you want to use exists and initialize it
-if necessary.
-```
+   Beware: the score `glib.const` does not contain all possible
+   values. Make sure the value you want to use exists and initialize it
+   if necessary.
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/random.png)
 
@@ -546,14 +561,14 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 *Example:*
 
-Calculate and display the arccos of 0,42
+-  Calculate and display the arccos of 0,42
 
-```
-# Once
-scoreboard players set @s glib.var0 420
-function glib.math:trig/arccos
-tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 420
+   function glib.math:trig/arccos
+   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
 
@@ -570,14 +585,14 @@ tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s"
 
 *Example:*
 
-Calculate and display the arcsinus of 0.42
+-  Calculate and display the arcsinus of 0.42
 
-```
-# Once
-scoreboard players set @s glib.var0 420
-function glib.math:trig/arcsin
-tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 420
+   function glib.math:trig/arcsin
+   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
 
@@ -595,14 +610,14 @@ tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s"
 
 *Example:*
 
-Calculate and display the arctan of 0.42
+-  Calculate and display the arctan of 0.42
 
-```
-# Once
-scoreboard players set @s glib.var0 420
-function glib.math:trig/arctan
-tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 420
+   function glib.math:trig/arctan
+   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   ```
 
 ---
 
@@ -618,14 +633,14 @@ tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s"
 
 *Example:*
 
-Calculate and display the cosine of 42
+-  Calculate and display the cosine of 42
 
-```
-# Once
-scoreboard players set @s glib.var0 42
-function glib.math:trig/cos
-tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 42
+   function glib.math:trig/cos
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
 
@@ -643,14 +658,14 @@ tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", 
 
 *Example:*
 
-Calculate and display the sine of 42
+-  Calculate and display the sine of 42
 
-```
-# Once
-scoreboard players set @s glib.var0 42
-function glib.math:trig/sin
-tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 42
+   function glib.math:trig/sin
+   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sin.png)
 
@@ -668,13 +683,13 @@ tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", 
 
 *Example:*
 
-Calculate and display the tengeante of 42
+-  Calculate and display the tengeante of 42
 
-```
-# Once
-scoreboard players set @s glib.var0 42
-function glib.math:trig/tan
-tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-```
+   ```
+   # Once
+   scoreboard players set @s glib.var0 42
+   function glib.math:trig/tan
+   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)

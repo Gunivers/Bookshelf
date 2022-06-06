@@ -30,7 +30,7 @@ This project contain a library datapack and a map that is used as a test zone, w
 
 | Install the datapack only | Install the sandbox map |
 | --- | --- |
-| 1. Go on [Glib Manager](http://glib.gunivers.net)<br>2. Select the version you want (recommanded to use the last one)<br>3. On the right panel, select the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io)<br>4. Click on the "Download" button<br>5. Put the zip in the "datapacks" folder that you can find in your map folder.<br>6. In game, use `/reload` to load the datapack.| (coming soon) | 
+| 1. Go on [Glib Manager](http://glib.gunivers.net)<br>2. Select the version you want (recommanded to use the last one)<br>3. On the right panel, select the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io)<br>4. Click on the "Download" button<br>5. Put the zip in the "datapacks" folder that you can find in your map folder.<br>6. In game, use `/reload` to load the datapack.| A clean installation process is coming soon.<br>For now, you have to download the content of the Github repository and put it in the "map" folder.<br>This repo contain all the modules of the lib so it's heavy.<br>For this reason, we recommand you to go on `play.gunivers.net`, where the map is already hosted. | 
 
 ⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that `enable-command-block` is set on `true` in you `server.properties` file.
 

@@ -2,6 +2,8 @@
 
 `glib.item:` : Systems allowing to manipulate items
 
+---
+
 ## Get item ID
 
 `get`: Gives to the item executing the function a score corresponding
@@ -23,6 +25,8 @@ execute as @e[type=item] run function glib:item/get
 scoreboard objectives setdisplay sidebar glib.itemId
 ```
 
+---
+
 ## Set item from ID
 
 `set`: Create an item corresponding to the identifier stored on the
@@ -38,13 +42,15 @@ corresponding to the identifier he has given on his score
 
 ```
 # Once
-execute as Steve at @s anchored eyes positioned ^ ^1 run function glib:item/set
+execute as Steve at @s anchored eyes positioned ^ ^ ^1 run function glib:item/set
 
 # See the result
 # Look in front of Steve
 ```
 
-## Convert item ID to block ID=
+---
+
+## Convert item ID to block ID
 
 `convert_to_block`: Convert an item id stored on the executing entity
 to a block id
@@ -66,7 +72,7 @@ scoreboard objectives setdisplay sidebar glib.blockId
 ```
 
 <div align=center>
-
-[![](https://gunivers.net/wp-content/uploads/2022/06/Item_to_block.png)](https://www.youtube.com/watch?v=c1agAFYpaaE)
-
+    <a href="https://www.youtube.com/watch?v=c1agAFYpaaE" align=center>
+        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
+    </a>
 </div>
