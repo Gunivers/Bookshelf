@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 10101 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=south,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 10102 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=south,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 10103 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=south,half=top,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 10101 run setblock ~ ~ ~ beetroots[age=1]
+execute if score @s glib.blockId matches 10102 run setblock ~ ~ ~ beetroots[age=2]
+execute if score @s glib.blockId matches 10103 run setblock ~ ~ ~ beetroots[age=3]

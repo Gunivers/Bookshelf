@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15212 run setblock ~ ~ ~ warped_stem[axis=x]
-execute if score @s glib.blockId matches 15213 run setblock ~ ~ ~ warped_stem[axis=y]
-execute if score @s glib.blockId matches 15214 run setblock ~ ~ ~ warped_stem[axis=z]
+execute if score @s glib.blockId matches 15212 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 15213 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 15214 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=low]

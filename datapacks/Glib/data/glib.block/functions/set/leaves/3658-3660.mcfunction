@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 3658 run setblock ~ ~ ~ oak_door[facing=south,half=lower,hinge=right,open=true,powered=true]
-execute if score @s glib.blockId matches 3659 run setblock ~ ~ ~ oak_door[facing=south,half=lower,hinge=right,open=true,powered=false]
-execute if score @s glib.blockId matches 3660 run setblock ~ ~ ~ oak_door[facing=south,half=lower,hinge=right,open=false,powered=true]
+execute if score @s glib.blockId matches 3658 run setblock ~ ~ ~ oak_sign[rotation=11,waterlogged=true]
+execute if score @s glib.blockId matches 3659 run setblock ~ ~ ~ oak_sign[rotation=11,waterlogged=false]
+execute if score @s glib.blockId matches 3660 run setblock ~ ~ ~ oak_sign[rotation=12,waterlogged=true]

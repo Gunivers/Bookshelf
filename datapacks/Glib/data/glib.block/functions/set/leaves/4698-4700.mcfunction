@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4698 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=false,south=false,up=true,west=true]
-execute if score @s glib.blockId matches 4699 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=false,south=false,up=true,west=false]
-execute if score @s glib.blockId matches 4700 run setblock ~ ~ ~ red_mushroom_block[down=false,east=false,north=false,south=false,up=false,west=true]
+execute if score @s glib.blockId matches 4698 run setblock ~ ~ ~ acacia_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=true]
+execute if score @s glib.blockId matches 4699 run setblock ~ ~ ~ acacia_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=false]
+execute if score @s glib.blockId matches 4700 run setblock ~ ~ ~ acacia_trapdoor[facing=south,half=bottom,open=true,powered=true,waterlogged=true]

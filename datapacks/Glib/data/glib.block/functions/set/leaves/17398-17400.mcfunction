@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 17398 run setblock ~ ~ ~ orange_candle[candles=3,lit=true,waterlogged=true]
-execute if score @s glib.blockId matches 17399 run setblock ~ ~ ~ orange_candle[candles=3,lit=true,waterlogged=false]
-execute if score @s glib.blockId matches 17400 run setblock ~ ~ ~ orange_candle[candles=3,lit=false,waterlogged=true]
+execute if score @s glib.blockId matches 17398 run setblock ~ ~ ~ blackstone_wall[east=tall,north=low,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 17399 run setblock ~ ~ ~ blackstone_wall[east=tall,north=low,south=low,up=false,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 17400 run setblock ~ ~ ~ blackstone_wall[east=tall,north=low,south=low,up=false,waterlogged=true,west=low]

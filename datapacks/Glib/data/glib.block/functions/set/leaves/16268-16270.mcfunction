@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16268 run setblock ~ ~ ~ blackstone_wall[east=none,north=tall,south=low,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 16269 run setblock ~ ~ ~ blackstone_wall[east=none,north=tall,south=low,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 16270 run setblock ~ ~ ~ blackstone_wall[east=none,north=tall,south=tall,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 16268 run setblock ~ ~ ~ crimson_pressure_plate[powered=true]
+execute if score @s glib.blockId matches 16269 run setblock ~ ~ ~ crimson_pressure_plate[powered=false]
+execute if score @s glib.blockId matches 16270 run setblock ~ ~ ~ warped_pressure_plate[powered=true]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 6337 run setblock ~ ~ ~ mossy_cobblestone_wall[east=low,north=low,south=none,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 6338 run setblock ~ ~ ~ mossy_cobblestone_wall[east=low,north=low,south=none,up=false,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 6339 run setblock ~ ~ ~ mossy_cobblestone_wall[east=low,north=low,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 6337 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 6338 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 6339 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=false,waterlogged=true,west=none]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9168 run setblock ~ ~ ~ jungle_door[facing=east,half=upper,hinge=right,open=true,powered=true]
-execute if score @s glib.blockId matches 9169 run setblock ~ ~ ~ jungle_door[facing=east,half=upper,hinge=right,open=true,powered=false]
-execute if score @s glib.blockId matches 9170 run setblock ~ ~ ~ jungle_door[facing=east,half=upper,hinge=right,open=false,powered=true]
+execute if score @s glib.blockId matches 9168 run setblock ~ ~ ~ smooth_sandstone
+execute if score @s glib.blockId matches 9169 run setblock ~ ~ ~ smooth_quartz
+execute if score @s glib.blockId matches 9170 run setblock ~ ~ ~ smooth_red_sandstone

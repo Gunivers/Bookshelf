@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 12733 run setblock ~ ~ ~ mossy_stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 12734 run setblock ~ ~ ~ mossy_stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 12735 run setblock ~ ~ ~ mossy_stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 12736 run setblock ~ ~ ~ mossy_stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 12737 run setblock ~ ~ ~ mossy_stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=tall]

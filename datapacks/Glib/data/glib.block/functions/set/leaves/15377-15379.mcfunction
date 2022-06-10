@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15377 run setblock ~ ~ ~ warped_fence[east=false,north=false,south=false,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 15378 run setblock ~ ~ ~ warped_fence[east=false,north=false,south=false,waterlogged=true,west=false]
-execute if score @s glib.blockId matches 15379 run setblock ~ ~ ~ warped_fence[east=false,north=false,south=false,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 15377 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 15378 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 15379 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=true,west=low]

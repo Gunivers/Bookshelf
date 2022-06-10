@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 10259 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=south,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 10260 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=south,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 10261 run setblock ~ ~ ~ mossy_cobblestone_stairs[facing=south,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 10259 run setblock ~ ~ ~ orange_glazed_terracotta[facing=north]
+execute if score @s glib.blockId matches 10260 run setblock ~ ~ ~ orange_glazed_terracotta[facing=south]
+execute if score @s glib.blockId matches 10261 run setblock ~ ~ ~ orange_glazed_terracotta[facing=west]

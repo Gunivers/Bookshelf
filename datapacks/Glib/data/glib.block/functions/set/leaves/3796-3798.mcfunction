@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 3796 run setblock ~ ~ ~ cobblestone_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=true]
-execute if score @s glib.blockId matches 3797 run setblock ~ ~ ~ cobblestone_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=false]
-execute if score @s glib.blockId matches 3798 run setblock ~ ~ ~ cobblestone_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 3796 run setblock ~ ~ ~ dark_oak_sign[rotation=0,waterlogged=true]
+execute if score @s glib.blockId matches 3797 run setblock ~ ~ ~ dark_oak_sign[rotation=0,waterlogged=false]
+execute if score @s glib.blockId matches 3798 run setblock ~ ~ ~ dark_oak_sign[rotation=1,waterlogged=true]

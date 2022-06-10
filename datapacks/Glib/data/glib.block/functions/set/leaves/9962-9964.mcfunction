@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9962 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 9963 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]
-execute if score @s glib.blockId matches 9964 run setblock ~ ~ ~ polished_granite_stairs[facing=west,half=top,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 9962 run setblock ~ ~ ~ chorus_plant[down=true,east=false,north=true,south=true,up=true,west=false]
+execute if score @s glib.blockId matches 9963 run setblock ~ ~ ~ chorus_plant[down=true,east=false,north=true,south=true,up=false,west=true]
+execute if score @s glib.blockId matches 9964 run setblock ~ ~ ~ chorus_plant[down=true,east=false,north=true,south=true,up=false,west=false]

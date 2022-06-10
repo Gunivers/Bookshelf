@@ -1,4 +1,4 @@
-execute if score @s glib.blockId matches 18774 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=none,south=none,up=true,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 18775 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=none,south=none,up=true,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 18776 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 18777 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 18774 run setblock ~ ~ ~ sculk_vein[down=true,east=true,north=true,south=true,up=false,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 18775 run setblock ~ ~ ~ sculk_vein[down=true,east=true,north=true,south=true,up=false,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 18776 run setblock ~ ~ ~ sculk_vein[down=true,east=true,north=true,south=true,up=false,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 18777 run setblock ~ ~ ~ sculk_vein[down=true,east=true,north=true,south=true,up=false,waterlogged=false,west=false]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 17933 run setblock ~ ~ ~ weathered_cut_copper_stairs[facing=south,half=top,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockId matches 17934 run setblock ~ ~ ~ weathered_cut_copper_stairs[facing=south,half=bottom,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 17935 run setblock ~ ~ ~ weathered_cut_copper_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 17933 run setblock ~ ~ ~ polished_blackstone_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 17934 run setblock ~ ~ ~ polished_blackstone_stairs[facing=east,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 17935 run setblock ~ ~ ~ polished_blackstone_stairs[facing=east,half=top,shape=straight,waterlogged=false]

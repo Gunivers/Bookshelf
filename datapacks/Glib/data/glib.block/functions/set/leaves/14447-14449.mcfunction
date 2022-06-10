@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 14447 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 14448 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=false,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 14449 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 14447 run setblock ~ ~ ~ andesite_wall[east=none,north=tall,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 14448 run setblock ~ ~ ~ andesite_wall[east=low,north=none,south=none,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 14449 run setblock ~ ~ ~ andesite_wall[east=low,north=none,south=none,up=true,waterlogged=true,west=low]

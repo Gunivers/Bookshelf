@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 1126 run setblock ~ ~ ~ magenta_bed[facing=east,occupied=true,part=foot]
-execute if score @s glib.blockId matches 1127 run setblock ~ ~ ~ magenta_bed[facing=east,occupied=false,part=head]
-execute if score @s glib.blockId matches 1128 run setblock ~ ~ ~ magenta_bed[facing=east,occupied=false,part=foot]
+execute if score @s glib.blockId matches 1126 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=23,powered=false]
+execute if score @s glib.blockId matches 1127 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=24,powered=true]
+execute if score @s glib.blockId matches 1128 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=24,powered=false]

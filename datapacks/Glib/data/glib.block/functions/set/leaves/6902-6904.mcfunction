@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 6902 run setblock ~ ~ ~ daylight_detector[inverted=true,power=2]
-execute if score @s glib.blockId matches 6903 run setblock ~ ~ ~ daylight_detector[inverted=true,power=3]
-execute if score @s glib.blockId matches 6904 run setblock ~ ~ ~ daylight_detector[inverted=true,power=4]
+execute if score @s glib.blockId matches 6902 run setblock ~ ~ ~ potted_acacia_sapling
+execute if score @s glib.blockId matches 6903 run setblock ~ ~ ~ potted_dark_oak_sapling
+execute if score @s glib.blockId matches 6904 run setblock ~ ~ ~ potted_mangrove_propagule

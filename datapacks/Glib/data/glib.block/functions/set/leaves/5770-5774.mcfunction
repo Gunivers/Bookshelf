@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 5770 run setblock ~ ~ ~ jungle_stairs[facing=north,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 5771 run setblock ~ ~ ~ jungle_stairs[facing=north,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 5772 run setblock ~ ~ ~ jungle_stairs[facing=north,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 5773 run setblock ~ ~ ~ jungle_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 5774 run setblock ~ ~ ~ jungle_stairs[facing=north,half=top,shape=inner_right,waterlogged=true]

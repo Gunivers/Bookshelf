@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 7416 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=false]
-execute if score @s glib.blockId matches 7417 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=true,south=true,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 7418 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=true,south=true,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 7416 run setblock ~ ~ ~ quartz_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 7417 run setblock ~ ~ ~ quartz_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 7418 run setblock ~ ~ ~ quartz_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=true]

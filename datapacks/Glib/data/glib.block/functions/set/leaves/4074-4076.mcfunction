@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4074 run setblock ~ ~ ~ polished_basalt[axis=x]
-execute if score @s glib.blockId matches 4075 run setblock ~ ~ ~ polished_basalt[axis=y]
-execute if score @s glib.blockId matches 4076 run setblock ~ ~ ~ polished_basalt[axis=z]
+execute if score @s glib.blockId matches 4074 run setblock ~ ~ ~ dark_oak_wall_sign[facing=south,waterlogged=true]
+execute if score @s glib.blockId matches 4075 run setblock ~ ~ ~ dark_oak_wall_sign[facing=south,waterlogged=false]
+execute if score @s glib.blockId matches 4076 run setblock ~ ~ ~ dark_oak_wall_sign[facing=west,waterlogged=true]

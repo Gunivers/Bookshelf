@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 18631 run setblock ~ ~ ~ big_dripleaf[facing=north,tilt=full,waterlogged=false]
-execute if score @s glib.blockId matches 18632 run setblock ~ ~ ~ big_dripleaf[facing=south,tilt=none,waterlogged=true]
-execute if score @s glib.blockId matches 18633 run setblock ~ ~ ~ big_dripleaf[facing=south,tilt=none,waterlogged=false]
+execute if score @s glib.blockId matches 18631 run setblock ~ ~ ~ amethyst_cluster[facing=down,waterlogged=true]
+execute if score @s glib.blockId matches 18632 run setblock ~ ~ ~ amethyst_cluster[facing=down,waterlogged=false]
+execute if score @s glib.blockId matches 18633 run setblock ~ ~ ~ large_amethyst_bud[facing=north,waterlogged=true]

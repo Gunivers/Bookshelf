@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11847 run setblock ~ ~ ~ red_sandstone_wall[east=none,north=tall,south=none,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 11848 run setblock ~ ~ ~ red_sandstone_wall[east=none,north=tall,south=none,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 11849 run setblock ~ ~ ~ red_sandstone_wall[east=none,north=tall,south=low,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 11847 run setblock ~ ~ ~ brick_wall[east=none,north=tall,south=tall,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 11848 run setblock ~ ~ ~ brick_wall[east=none,north=tall,south=tall,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 11849 run setblock ~ ~ ~ brick_wall[east=none,north=tall,south=tall,up=true,waterlogged=false,west=tall]

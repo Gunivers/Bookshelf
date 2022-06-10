@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 6018 run setblock ~ ~ ~ cobblestone_wall[east=low,north=low,south=none,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 6019 run setblock ~ ~ ~ cobblestone_wall[east=low,north=low,south=low,up=true,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 6020 run setblock ~ ~ ~ cobblestone_wall[east=low,north=low,south=low,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 6018 run setblock ~ ~ ~ spruce_stairs[facing=south,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 6019 run setblock ~ ~ ~ spruce_stairs[facing=south,half=top,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 6020 run setblock ~ ~ ~ spruce_stairs[facing=south,half=top,shape=inner_right,waterlogged=true]

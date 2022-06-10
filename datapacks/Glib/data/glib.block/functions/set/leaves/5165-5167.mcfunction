@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5165 run setblock ~ ~ ~ stone_brick_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 5166 run setblock ~ ~ ~ stone_brick_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 5167 run setblock ~ ~ ~ stone_brick_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 5165 run setblock ~ ~ ~ melon_stem[age=6]
+execute if score @s glib.blockId matches 5166 run setblock ~ ~ ~ melon_stem[age=7]
+execute if score @s glib.blockId matches 5167 run setblock ~ ~ ~ vine[east=true,north=true,south=true,up=true,west=true]

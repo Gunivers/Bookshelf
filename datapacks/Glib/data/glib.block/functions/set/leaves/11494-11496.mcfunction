@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11494 run setblock ~ ~ ~ prismarine_wall[east=none,north=low,south=low,up=true,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 11495 run setblock ~ ~ ~ prismarine_wall[east=none,north=low,south=low,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 11496 run setblock ~ ~ ~ prismarine_wall[east=none,north=low,south=low,up=false,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 11494 run setblock ~ ~ ~ red_nether_brick_stairs[facing=east,half=top,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 11495 run setblock ~ ~ ~ red_nether_brick_stairs[facing=east,half=top,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 11496 run setblock ~ ~ ~ red_nether_brick_stairs[facing=east,half=top,shape=outer_left,waterlogged=true]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 19788 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=tall,south=low,up=true,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 19789 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=tall,south=low,up=true,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 19790 run setblock ~ ~ ~ deepslate_tile_wall[east=low,north=tall,south=low,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 19788 run setblock ~ ~ ~ cobbled_deepslate_stairs[facing=north,half=top,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 19789 run setblock ~ ~ ~ cobbled_deepslate_stairs[facing=north,half=top,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 19790 run setblock ~ ~ ~ cobbled_deepslate_stairs[facing=north,half=top,shape=outer_right,waterlogged=true]

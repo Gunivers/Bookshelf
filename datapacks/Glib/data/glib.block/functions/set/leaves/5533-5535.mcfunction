@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5533 run setblock ~ ~ ~ tripwire[attached=true,disarmed=false,east=false,north=true,powered=false,south=true,west=true]
-execute if score @s glib.blockId matches 5534 run setblock ~ ~ ~ tripwire[attached=true,disarmed=false,east=false,north=true,powered=false,south=true,west=false]
-execute if score @s glib.blockId matches 5535 run setblock ~ ~ ~ tripwire[attached=true,disarmed=false,east=false,north=true,powered=false,south=false,west=true]
+execute if score @s glib.blockId matches 5533 run setblock ~ ~ ~ mud_brick_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 5534 run setblock ~ ~ ~ mud_brick_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 5535 run setblock ~ ~ ~ mud_brick_stairs[facing=north,half=bottom,shape=outer_left,waterlogged=true]

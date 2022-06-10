@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9590 run setblock ~ ~ ~ purple_shulker_box[facing=south]
-execute if score @s glib.blockId matches 9591 run setblock ~ ~ ~ purple_shulker_box[facing=west]
-execute if score @s glib.blockId matches 9592 run setblock ~ ~ ~ purple_shulker_box[facing=up]
+execute if score @s glib.blockId matches 9590 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=left,open=false,powered=false]
+execute if score @s glib.blockId matches 9591 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=right,open=true,powered=true]
+execute if score @s glib.blockId matches 9592 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=right,open=true,powered=false]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15708 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]
-execute if score @s glib.blockId matches 15709 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=true]
-execute if score @s glib.blockId matches 15710 run setblock ~ ~ ~ warped_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 15708 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 15709 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 15710 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=tall]

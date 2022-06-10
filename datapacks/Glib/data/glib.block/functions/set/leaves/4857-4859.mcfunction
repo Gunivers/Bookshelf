@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4857 run setblock ~ ~ ~ melon_stem[age=4]
-execute if score @s glib.blockId matches 4858 run setblock ~ ~ ~ melon_stem[age=5]
-execute if score @s glib.blockId matches 4859 run setblock ~ ~ ~ melon_stem[age=6]
+execute if score @s glib.blockId matches 4857 run setblock ~ ~ ~ mangrove_trapdoor[facing=east,half=top,open=false,powered=true,waterlogged=false]
+execute if score @s glib.blockId matches 4858 run setblock ~ ~ ~ mangrove_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=true]
+execute if score @s glib.blockId matches 4859 run setblock ~ ~ ~ mangrove_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=false]

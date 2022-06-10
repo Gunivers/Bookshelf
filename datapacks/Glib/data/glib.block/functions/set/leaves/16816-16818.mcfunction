@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16816 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 16817 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 16818 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 16816 run setblock ~ ~ ~ warped_door[facing=south,half=upper,hinge=left,open=true,powered=true]
+execute if score @s glib.blockId matches 16817 run setblock ~ ~ ~ warped_door[facing=south,half=upper,hinge=left,open=true,powered=false]
+execute if score @s glib.blockId matches 16818 run setblock ~ ~ ~ warped_door[facing=south,half=upper,hinge=left,open=false,powered=true]

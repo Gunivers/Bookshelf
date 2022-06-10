@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4592 run setblock ~ ~ ~ brown_mushroom_block[down=true,east=false,north=true,south=true,up=false,west=true]
-execute if score @s glib.blockId matches 4593 run setblock ~ ~ ~ brown_mushroom_block[down=true,east=false,north=true,south=true,up=false,west=false]
-execute if score @s glib.blockId matches 4594 run setblock ~ ~ ~ brown_mushroom_block[down=true,east=false,north=true,south=false,up=true,west=true]
+execute if score @s glib.blockId matches 4592 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=bottom,open=false,powered=true,waterlogged=true]
+execute if score @s glib.blockId matches 4593 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=bottom,open=false,powered=true,waterlogged=false]
+execute if score @s glib.blockId matches 4594 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=bottom,open=false,powered=false,waterlogged=true]

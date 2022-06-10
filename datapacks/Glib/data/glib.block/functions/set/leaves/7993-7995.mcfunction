@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 7993 run setblock ~ ~ ~ prismarine_brick_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockId matches 7994 run setblock ~ ~ ~ prismarine_brick_stairs[facing=east,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 7995 run setblock ~ ~ ~ prismarine_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 7993 run setblock ~ ~ ~ black_stained_glass_pane[east=false,north=true,south=false,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 7994 run setblock ~ ~ ~ black_stained_glass_pane[east=false,north=true,south=false,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 7995 run setblock ~ ~ ~ black_stained_glass_pane[east=false,north=true,south=false,waterlogged=false,west=false]

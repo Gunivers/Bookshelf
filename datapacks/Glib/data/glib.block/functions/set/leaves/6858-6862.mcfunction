@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 6858 run setblock ~ ~ ~ light_weighted_pressure_plate[power=6]
-execute if score @s glib.blockId matches 6859 run setblock ~ ~ ~ light_weighted_pressure_plate[power=7]
-execute if score @s glib.blockId matches 6860 run setblock ~ ~ ~ light_weighted_pressure_plate[power=8]
-execute if score @s glib.blockId matches 6861 run setblock ~ ~ ~ light_weighted_pressure_plate[power=9]
-execute if score @s glib.blockId matches 6862 run setblock ~ ~ ~ light_weighted_pressure_plate[power=10]

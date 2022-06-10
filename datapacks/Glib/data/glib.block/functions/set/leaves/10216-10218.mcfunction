@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 10216 run setblock ~ ~ ~ polished_diorite_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockId matches 10217 run setblock ~ ~ ~ polished_diorite_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockId matches 10218 run setblock ~ ~ ~ polished_diorite_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 10216 run setblock ~ ~ ~ cyan_shulker_box[facing=west]
+execute if score @s glib.blockId matches 10217 run setblock ~ ~ ~ cyan_shulker_box[facing=up]
+execute if score @s glib.blockId matches 10218 run setblock ~ ~ ~ cyan_shulker_box[facing=down]

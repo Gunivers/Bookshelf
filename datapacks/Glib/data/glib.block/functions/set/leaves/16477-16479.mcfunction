@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16477 run setblock ~ ~ ~ blackstone_wall[east=tall,north=tall,south=low,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 16478 run setblock ~ ~ ~ blackstone_wall[east=tall,north=tall,south=low,up=true,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 16479 run setblock ~ ~ ~ blackstone_wall[east=tall,north=tall,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 16477 run setblock ~ ~ ~ crimson_fence_gate[facing=south,in_wall=false,open=true,powered=false]
+execute if score @s glib.blockId matches 16478 run setblock ~ ~ ~ crimson_fence_gate[facing=south,in_wall=false,open=false,powered=true]
+execute if score @s glib.blockId matches 16479 run setblock ~ ~ ~ crimson_fence_gate[facing=south,in_wall=false,open=false,powered=false]

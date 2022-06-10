@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 8444 run setblock ~ ~ ~ purple_wall_banner[facing=south]
-execute if score @s glib.blockId matches 8445 run setblock ~ ~ ~ purple_wall_banner[facing=west]
-execute if score @s glib.blockId matches 8446 run setblock ~ ~ ~ purple_wall_banner[facing=east]
+execute if score @s glib.blockId matches 8444 run setblock ~ ~ ~ prismarine_brick_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 8445 run setblock ~ ~ ~ prismarine_brick_stairs[facing=south,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 8446 run setblock ~ ~ ~ prismarine_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]

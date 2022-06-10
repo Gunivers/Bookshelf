@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15218 run setblock ~ ~ ~ warped_hyphae[axis=x]
-execute if score @s glib.blockId matches 15219 run setblock ~ ~ ~ warped_hyphae[axis=y]
-execute if score @s glib.blockId matches 15220 run setblock ~ ~ ~ warped_hyphae[axis=z]
+execute if score @s glib.blockId matches 15218 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 15219 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 15220 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=true,waterlogged=false,west=low]

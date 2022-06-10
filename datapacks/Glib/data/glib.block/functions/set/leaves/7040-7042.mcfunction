@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 7040 run setblock ~ ~ ~ activator_rail[powered=true,shape=ascending_south,waterlogged=false]
-execute if score @s glib.blockId matches 7041 run setblock ~ ~ ~ activator_rail[powered=false,shape=north_south,waterlogged=true]
-execute if score @s glib.blockId matches 7042 run setblock ~ ~ ~ activator_rail[powered=false,shape=north_south,waterlogged=false]
+execute if score @s glib.blockId matches 7040 run setblock ~ ~ ~ acacia_button[face=floor,facing=west,powered=false]
+execute if score @s glib.blockId matches 7041 run setblock ~ ~ ~ acacia_button[face=floor,facing=east,powered=true]
+execute if score @s glib.blockId matches 7042 run setblock ~ ~ ~ acacia_button[face=floor,facing=east,powered=false]

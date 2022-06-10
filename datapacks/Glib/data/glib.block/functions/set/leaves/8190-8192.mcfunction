@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 8190 run setblock ~ ~ ~ magenta_banner[rotation=11]
-execute if score @s glib.blockId matches 8191 run setblock ~ ~ ~ magenta_banner[rotation=12]
-execute if score @s glib.blockId matches 8192 run setblock ~ ~ ~ magenta_banner[rotation=13]
+execute if score @s glib.blockId matches 8190 run setblock ~ ~ ~ mangrove_stairs[facing=south,half=top,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 8191 run setblock ~ ~ ~ mangrove_stairs[facing=south,half=top,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 8192 run setblock ~ ~ ~ mangrove_stairs[facing=south,half=top,shape=outer_right,waterlogged=true]

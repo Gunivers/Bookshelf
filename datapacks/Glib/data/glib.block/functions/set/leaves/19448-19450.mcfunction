@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 19448 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=low,south=low,up=true,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 19449 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=low,south=low,up=true,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 19450 run setblock ~ ~ ~ polished_deepslate_wall[east=tall,north=low,south=low,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 19448 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=true]
+execute if score @s glib.blockId matches 19449 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 19450 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=south,half=top,shape=straight,waterlogged=true]

@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 9231 run setblock ~ ~ ~ birch_fence_gate[facing=east,in_wall=false,open=true,powered=true]
+execute if score @s glib.blockId matches 9232 run setblock ~ ~ ~ birch_fence_gate[facing=east,in_wall=false,open=true,powered=false]
+execute if score @s glib.blockId matches 9233 run setblock ~ ~ ~ birch_fence_gate[facing=east,in_wall=false,open=false,powered=true]
+execute if score @s glib.blockId matches 9234 run setblock ~ ~ ~ birch_fence_gate[facing=east,in_wall=false,open=false,powered=false]
+execute if score @s glib.blockId matches 9235 run setblock ~ ~ ~ jungle_fence_gate[facing=north,in_wall=true,open=true,powered=true]

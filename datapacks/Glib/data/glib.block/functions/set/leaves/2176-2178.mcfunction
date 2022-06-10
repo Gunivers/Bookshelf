@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 2176 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=6,south=none,west=none]
-execute if score @s glib.blockId matches 2177 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=7,south=up,west=up]
-execute if score @s glib.blockId matches 2178 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=7,south=up,west=side]
+execute if score @s glib.blockId matches 2176 run setblock ~ ~ ~ fire[age=15,east=true,north=true,south=true,up=false,west=true]
+execute if score @s glib.blockId matches 2177 run setblock ~ ~ ~ fire[age=15,east=true,north=true,south=true,up=false,west=false]
+execute if score @s glib.blockId matches 2178 run setblock ~ ~ ~ fire[age=15,east=true,north=true,south=false,up=true,west=true]

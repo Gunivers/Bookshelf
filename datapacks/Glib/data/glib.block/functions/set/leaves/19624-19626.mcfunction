@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 19624 run setblock ~ ~ ~ deepslate_tile_wall[east=none,north=none,south=tall,up=true,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 19625 run setblock ~ ~ ~ deepslate_tile_wall[east=none,north=none,south=tall,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 19626 run setblock ~ ~ ~ deepslate_tile_wall[east=none,north=none,south=tall,up=false,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 19624 run setblock ~ ~ ~ lightning_rod[facing=south,powered=false,waterlogged=true]
+execute if score @s glib.blockId matches 19625 run setblock ~ ~ ~ lightning_rod[facing=south,powered=false,waterlogged=false]
+execute if score @s glib.blockId matches 19626 run setblock ~ ~ ~ lightning_rod[facing=west,powered=true,waterlogged=true]

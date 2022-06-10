@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 7457 run setblock ~ ~ ~ blue_stained_glass_pane[east=false,north=false,south=true,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 7458 run setblock ~ ~ ~ blue_stained_glass_pane[east=false,north=false,south=true,waterlogged=true,west=false]
-execute if score @s glib.blockId matches 7459 run setblock ~ ~ ~ blue_stained_glass_pane[east=false,north=false,south=true,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 7457 run setblock ~ ~ ~ activator_rail[powered=false,shape=ascending_east,waterlogged=false]
+execute if score @s glib.blockId matches 7458 run setblock ~ ~ ~ activator_rail[powered=false,shape=ascending_west,waterlogged=true]
+execute if score @s glib.blockId matches 7459 run setblock ~ ~ ~ activator_rail[powered=false,shape=ascending_west,waterlogged=false]

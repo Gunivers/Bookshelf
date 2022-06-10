@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16866 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=low,south=low,up=false,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 16867 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=low,south=low,up=false,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 16868 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=low,south=low,up=false,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 16866 run setblock ~ ~ ~ crimson_sign[rotation=1,waterlogged=true]
+execute if score @s glib.blockId matches 16867 run setblock ~ ~ ~ crimson_sign[rotation=1,waterlogged=false]
+execute if score @s glib.blockId matches 16868 run setblock ~ ~ ~ crimson_sign[rotation=2,waterlogged=true]

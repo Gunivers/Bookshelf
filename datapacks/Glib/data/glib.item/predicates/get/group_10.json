@@ -36,6 +36,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:acacia_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:acacia_door\"}}"
                         }
                     }
@@ -219,6 +232,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:air\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:allay_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -700,6 +726,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:birch_button\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:birch_chest_boat\"}}"
                         }
                     }
                 ]
@@ -3442,6 +3481,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:dark_oak_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:dark_oak_door\"}}"
                         }
                     }
@@ -4365,6 +4417,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:disc_fragment_5\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:dispenser\"}}"
                         }
                     }
@@ -4496,6 +4561,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:drowned_spawn_egg\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:echo_shard\"}}"
                         }
                     }
                 ]
@@ -5132,6 +5210,32 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:frog_spawn_egg\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:frogspawn\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:furnace\"}}"
                         }
                     }
@@ -5341,6 +5445,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:glowstone_dust\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:goat_horn\"}}"
                         }
                     }
                 ]
@@ -6666,6 +6783,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:jungle_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:jungle_door\"}}"
                         }
                     }
@@ -7927,6 +8057,227 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_button\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_door\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_fence\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_fence_gate\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_leaves\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_log\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_planks\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_pressure_plate\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_propagule\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_roots\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_sign\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_slab\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_stairs\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_trapdoor\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_wood\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:map\"}}"
                         }
                     }
@@ -8174,6 +8525,84 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud_brick_slab\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud_brick_stairs\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud_brick_wall\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud_bricks\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:muddy_mangrove_roots\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:mule_spawn_egg\"}}"
                         }
                     }
@@ -8227,6 +8656,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:music_disc_13\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:music_disc_5\"}}"
                         }
                     }
                 ]
@@ -8811,6 +9253,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:oak_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:oak_door\"}}"
                         }
                     }
@@ -9007,6 +9462,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:ocelot_spawn_egg\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:ochre_froglight\"}}"
                         }
                     }
                 ]
@@ -9279,6 +9747,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:packed_mud\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:painting\"}}"
                         }
                     }
@@ -9319,6 +9800,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:parrot_spawn_egg\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:pearlescent_froglight\"}}"
                         }
                     }
                 ]
@@ -10774,6 +11268,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:recovery_compass\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:red_banner\"}}"
                         }
                     }
@@ -11164,6 +11671,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:reinforced_deepslate\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:repeater\"}}"
                         }
                     }
@@ -11372,7 +11892,59 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:sculk\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:sculk_catalyst\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:sculk_sensor\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:sculk_shrieker\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:sculk_vein\"}}"
                         }
                     }
                 ]
@@ -12061,6 +12633,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:spruce_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:spruce_door\"}}"
                         }
                     }
@@ -12646,6 +13231,32 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:stripped_mangrove_log\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:stripped_mangrove_wood\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:stripped_oak_log\"}}"
                         }
                     }
@@ -12699,617 +13310,6 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:stripped_warped_hyphae\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_warped_stem\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:structure_block\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:structure_void\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sugar\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sugar_cane\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sunflower\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:suspicious_stew\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sweet_berries\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tall_grass\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:target\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:terracotta\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tinted_glass\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tipped_arrow\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tnt\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tnt_minecart\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:torch\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:totem_of_undying\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trader_llama_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trapped_chest\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trident\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tripwire_hook\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish_bucket\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral_block\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral_fan\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tuff\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:turtle_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:turtle_helmet\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:turtle_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:twisting_vines\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:vex_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:villager_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:vindicator_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:vine\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:wandering_trader_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_button\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_door\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_fence\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_fence_gate\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_fungus\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_fungus_on_a_stick\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_hyphae\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_nylium\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_planks\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_pressure_plate\"}}"
                         }
                     }
                 ]

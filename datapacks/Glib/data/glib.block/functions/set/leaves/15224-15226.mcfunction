@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15224 run setblock ~ ~ ~ warped_nylium
-execute if score @s glib.blockId matches 15225 run setblock ~ ~ ~ warped_fungus
-execute if score @s glib.blockId matches 15226 run setblock ~ ~ ~ warped_wart_block
+execute if score @s glib.blockId matches 15224 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 15225 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=false,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 15226 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=false,waterlogged=false,west=low]

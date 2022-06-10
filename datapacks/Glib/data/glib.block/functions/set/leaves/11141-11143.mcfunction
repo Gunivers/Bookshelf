@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11141 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=true,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 11142 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=true,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 11143 run setblock ~ ~ ~ brick_wall[east=none,north=none,south=tall,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 11141 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 11142 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 11143 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=false]

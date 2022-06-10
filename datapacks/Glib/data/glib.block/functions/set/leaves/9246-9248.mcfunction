@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9246 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=left,open=false,powered=true]
-execute if score @s glib.blockId matches 9247 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=left,open=false,powered=false]
-execute if score @s glib.blockId matches 9248 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=right,open=true,powered=true]
+execute if score @s glib.blockId matches 9246 run setblock ~ ~ ~ jungle_fence_gate[facing=south,in_wall=true,open=false,powered=false]
+execute if score @s glib.blockId matches 9247 run setblock ~ ~ ~ jungle_fence_gate[facing=south,in_wall=false,open=true,powered=true]
+execute if score @s glib.blockId matches 9248 run setblock ~ ~ ~ jungle_fence_gate[facing=south,in_wall=false,open=true,powered=false]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5950 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 5951 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 5952 run setblock ~ ~ ~ cobblestone_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 5950 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=false,north=true,powered=true,south=false,west=false]
+execute if score @s glib.blockId matches 5951 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=false,north=true,powered=false,south=true,west=true]
+execute if score @s glib.blockId matches 5952 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=false,north=true,powered=false,south=true,west=false]

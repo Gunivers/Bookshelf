@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 7826 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 7827 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 7828 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=true,waterlogged=false]
+execute if score @s glib.blockId matches 7826 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 7827 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=false]
+execute if score @s glib.blockId matches 7828 run setblock ~ ~ ~ purple_stained_glass_pane[east=false,north=true,south=true,waterlogged=true,west=true]

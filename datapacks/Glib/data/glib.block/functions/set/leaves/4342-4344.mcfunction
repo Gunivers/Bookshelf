@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4342 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=true]
-execute if score @s glib.blockId matches 4343 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 4344 run setblock ~ ~ ~ birch_trapdoor[facing=west,half=top,open=false,powered=true,waterlogged=true]
+execute if score @s glib.blockId matches 4342 run setblock ~ ~ ~ repeater[delay=1,facing=north,locked=false,powered=true]
+execute if score @s glib.blockId matches 4343 run setblock ~ ~ ~ repeater[delay=1,facing=north,locked=false,powered=false]
+execute if score @s glib.blockId matches 4344 run setblock ~ ~ ~ repeater[delay=1,facing=south,locked=true,powered=true]

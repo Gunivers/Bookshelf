@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 17777 run setblock ~ ~ ~ sculk_sensor[power=9,sculk_sensor_phase=cooldown,waterlogged=false]
-execute if score @s glib.blockId matches 17778 run setblock ~ ~ ~ sculk_sensor[power=10,sculk_sensor_phase=inactive,waterlogged=true]
-execute if score @s glib.blockId matches 17779 run setblock ~ ~ ~ sculk_sensor[power=10,sculk_sensor_phase=inactive,waterlogged=false]
+execute if score @s glib.blockId matches 17777 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 17778 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 17779 run setblock ~ ~ ~ polished_blackstone_brick_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=tall]

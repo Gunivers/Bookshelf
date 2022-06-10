@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 1498 run setblock ~ ~ ~ fire[age=0,east=true,north=true,south=true,up=false,west=true]
-execute if score @s glib.blockId matches 1499 run setblock ~ ~ ~ fire[age=0,east=true,north=true,south=true,up=false,west=false]
-execute if score @s glib.blockId matches 1500 run setblock ~ ~ ~ fire[age=0,east=true,north=true,south=false,up=true,west=true]
+execute if score @s glib.blockId matches 1498 run setblock ~ ~ ~ green_bed[facing=west,occupied=false,part=foot]
+execute if score @s glib.blockId matches 1499 run setblock ~ ~ ~ green_bed[facing=east,occupied=true,part=head]
+execute if score @s glib.blockId matches 1500 run setblock ~ ~ ~ green_bed[facing=east,occupied=true,part=foot]

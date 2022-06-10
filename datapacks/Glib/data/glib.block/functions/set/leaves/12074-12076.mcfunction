@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 12074 run setblock ~ ~ ~ red_sandstone_wall[east=tall,north=tall,south=low,up=false,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 12075 run setblock ~ ~ ~ red_sandstone_wall[east=tall,north=tall,south=low,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 12076 run setblock ~ ~ ~ red_sandstone_wall[east=tall,north=tall,south=low,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 12074 run setblock ~ ~ ~ prismarine_wall[east=none,north=none,south=none,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 12075 run setblock ~ ~ ~ prismarine_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 12076 run setblock ~ ~ ~ prismarine_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=low]

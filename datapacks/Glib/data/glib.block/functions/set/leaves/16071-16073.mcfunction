@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16071 run setblock ~ ~ ~ beehive[facing=west,honey_level=5]
-execute if score @s glib.blockId matches 16072 run setblock ~ ~ ~ beehive[facing=east,honey_level=0]
-execute if score @s glib.blockId matches 16073 run setblock ~ ~ ~ beehive[facing=east,honey_level=1]
+execute if score @s glib.blockId matches 16071 run setblock ~ ~ ~ bell[attachment=ceiling,facing=west,powered=true]
+execute if score @s glib.blockId matches 16072 run setblock ~ ~ ~ bell[attachment=ceiling,facing=west,powered=false]
+execute if score @s glib.blockId matches 16073 run setblock ~ ~ ~ bell[attachment=ceiling,facing=east,powered=true]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 1204 run setblock ~ ~ ~ gray_bed[facing=west,occupied=false,part=foot]
-execute if score @s glib.blockId matches 1205 run setblock ~ ~ ~ gray_bed[facing=east,occupied=true,part=head]
-execute if score @s glib.blockId matches 1206 run setblock ~ ~ ~ gray_bed[facing=east,occupied=true,part=foot]
+execute if score @s glib.blockId matches 1204 run setblock ~ ~ ~ note_block[instrument=banjo,note=12,powered=false]
+execute if score @s glib.blockId matches 1205 run setblock ~ ~ ~ note_block[instrument=banjo,note=13,powered=true]
+execute if score @s glib.blockId matches 1206 run setblock ~ ~ ~ note_block[instrument=banjo,note=13,powered=false]

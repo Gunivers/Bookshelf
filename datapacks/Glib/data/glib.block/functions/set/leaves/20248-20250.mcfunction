@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 20248 run setblock ~ ~ ~ deepslate_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 20249 run setblock ~ ~ ~ deepslate_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 20250 run setblock ~ ~ ~ deepslate_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 20248 run setblock ~ ~ ~ polished_deepslate_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 20249 run setblock ~ ~ ~ polished_deepslate_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 20250 run setblock ~ ~ ~ polished_deepslate_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false]

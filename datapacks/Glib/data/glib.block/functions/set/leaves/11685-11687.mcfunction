@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11685 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 11686 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 11687 run setblock ~ ~ ~ prismarine_wall[east=tall,north=none,south=tall,up=false,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 11685 run setblock ~ ~ ~ mossy_stone_brick_slab[type=bottom,waterlogged=false]
+execute if score @s glib.blockId matches 11686 run setblock ~ ~ ~ mossy_stone_brick_slab[type=double,waterlogged=true]
+execute if score @s glib.blockId matches 11687 run setblock ~ ~ ~ mossy_stone_brick_slab[type=double,waterlogged=false]

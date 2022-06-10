@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 18587 run setblock ~ ~ ~ white_candle_cake[lit=true]
+execute if score @s glib.blockId matches 18588 run setblock ~ ~ ~ white_candle_cake[lit=false]
+execute if score @s glib.blockId matches 18589 run setblock ~ ~ ~ orange_candle_cake[lit=true]
+execute if score @s glib.blockId matches 18590 run setblock ~ ~ ~ orange_candle_cake[lit=false]
+execute if score @s glib.blockId matches 18591 run setblock ~ ~ ~ magenta_candle_cake[lit=true]

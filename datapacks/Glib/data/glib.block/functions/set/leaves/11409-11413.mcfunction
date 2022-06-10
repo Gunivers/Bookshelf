@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 11409 run setblock ~ ~ ~ andesite_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 11410 run setblock ~ ~ ~ andesite_stairs[facing=east,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 11411 run setblock ~ ~ ~ andesite_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 11412 run setblock ~ ~ ~ andesite_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 11413 run setblock ~ ~ ~ andesite_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]

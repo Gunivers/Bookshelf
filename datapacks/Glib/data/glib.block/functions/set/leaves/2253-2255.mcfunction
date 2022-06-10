@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 2253 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=15,south=side,west=side]
-execute if score @s glib.blockId matches 2254 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=15,south=side,west=none]
-execute if score @s glib.blockId matches 2255 run setblock ~ ~ ~ redstone_wire[east=up,north=up,power=15,south=none,west=up]
+execute if score @s glib.blockId matches 2253 run setblock ~ ~ ~ oak_stairs[facing=west,half=top,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 2254 run setblock ~ ~ ~ oak_stairs[facing=west,half=top,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 2255 run setblock ~ ~ ~ oak_stairs[facing=west,half=top,shape=outer_left,waterlogged=false]

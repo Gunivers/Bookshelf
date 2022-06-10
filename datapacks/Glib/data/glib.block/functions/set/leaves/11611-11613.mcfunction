@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11611 run setblock ~ ~ ~ prismarine_wall[east=low,north=low,south=tall,up=true,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 11612 run setblock ~ ~ ~ prismarine_wall[east=low,north=low,south=tall,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 11613 run setblock ~ ~ ~ prismarine_wall[east=low,north=low,south=tall,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 11611 run setblock ~ ~ ~ diorite_stairs[facing=south,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 11612 run setblock ~ ~ ~ diorite_stairs[facing=south,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 11613 run setblock ~ ~ ~ diorite_stairs[facing=south,half=top,shape=inner_left,waterlogged=false]

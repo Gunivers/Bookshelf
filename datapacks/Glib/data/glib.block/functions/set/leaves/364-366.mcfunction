@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 364 run setblock ~ ~ ~ note_block[instrument=basedrum,note=16,powered=false]
-execute if score @s glib.blockId matches 365 run setblock ~ ~ ~ note_block[instrument=basedrum,note=17,powered=true]
-execute if score @s glib.blockId matches 366 run setblock ~ ~ ~ note_block[instrument=basedrum,note=17,powered=false]
+execute if score @s glib.blockId matches 364 run setblock ~ ~ ~ dark_oak_leaves[distance=5,persistent=false,waterlogged=true]
+execute if score @s glib.blockId matches 365 run setblock ~ ~ ~ dark_oak_leaves[distance=5,persistent=false,waterlogged=false]
+execute if score @s glib.blockId matches 366 run setblock ~ ~ ~ dark_oak_leaves[distance=6,persistent=true,waterlogged=true]

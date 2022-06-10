@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5365 run setblock ~ ~ ~ cocoa[age=0,facing=west]
-execute if score @s glib.blockId matches 5366 run setblock ~ ~ ~ cocoa[age=0,facing=east]
-execute if score @s glib.blockId matches 5367 run setblock ~ ~ ~ cocoa[age=1,facing=north]
+execute if score @s glib.blockId matches 5365 run setblock ~ ~ ~ brick_stairs[facing=north,half=top,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 5366 run setblock ~ ~ ~ brick_stairs[facing=north,half=top,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 5367 run setblock ~ ~ ~ brick_stairs[facing=north,half=top,shape=outer_right,waterlogged=true]

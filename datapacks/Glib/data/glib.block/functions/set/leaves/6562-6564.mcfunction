@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 6562 run setblock ~ ~ ~ oak_button[face=wall,facing=south,powered=true]
-execute if score @s glib.blockId matches 6563 run setblock ~ ~ ~ oak_button[face=wall,facing=south,powered=false]
-execute if score @s glib.blockId matches 6564 run setblock ~ ~ ~ oak_button[face=wall,facing=west,powered=true]
+execute if score @s glib.blockId matches 6562 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=tall,up=true,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 6563 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=tall,up=true,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 6564 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=tall,up=true,waterlogged=false,west=none]

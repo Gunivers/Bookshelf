@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15779 run setblock ~ ~ ~ warped_button[face=ceiling,facing=east,powered=true]
-execute if score @s glib.blockId matches 15780 run setblock ~ ~ ~ warped_button[face=ceiling,facing=east,powered=false]
-execute if score @s glib.blockId matches 15781 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=left,open=true,powered=true]
+execute if score @s glib.blockId matches 15779 run setblock ~ ~ ~ diorite_wall[east=low,north=none,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 15780 run setblock ~ ~ ~ diorite_wall[east=low,north=low,south=none,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 15781 run setblock ~ ~ ~ diorite_wall[east=low,north=low,south=none,up=true,waterlogged=true,west=low]

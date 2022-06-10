@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 15400 run setblock ~ ~ ~ crimson_trapdoor[facing=south,half=top,open=true,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 15401 run setblock ~ ~ ~ crimson_trapdoor[facing=south,half=top,open=false,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 15402 run setblock ~ ~ ~ crimson_trapdoor[facing=south,half=top,open=false,powered=true,waterlogged=false]
+execute if score @s glib.blockId matches 15400 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 15401 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 15402 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=low,up=false,waterlogged=true,west=none]

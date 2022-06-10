@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 10151 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 10152 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 10153 run setblock ~ ~ ~ mossy_stone_brick_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=true]
+execute if score @s glib.blockId matches 10151 run setblock ~ ~ ~ observer[facing=down,powered=true]
+execute if score @s glib.blockId matches 10152 run setblock ~ ~ ~ observer[facing=down,powered=false]
+execute if score @s glib.blockId matches 10153 run setblock ~ ~ ~ shulker_box[facing=north]

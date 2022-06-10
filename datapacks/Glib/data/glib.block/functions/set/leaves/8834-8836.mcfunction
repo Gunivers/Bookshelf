@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 8834 run setblock ~ ~ ~ spruce_fence[east=true,north=true,south=false,waterlogged=false,west=true]
-execute if score @s glib.blockId matches 8835 run setblock ~ ~ ~ spruce_fence[east=true,north=true,south=false,waterlogged=false,west=false]
-execute if score @s glib.blockId matches 8836 run setblock ~ ~ ~ spruce_fence[east=true,north=false,south=true,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 8834 run setblock ~ ~ ~ brown_banner[rotation=4]
+execute if score @s glib.blockId matches 8835 run setblock ~ ~ ~ brown_banner[rotation=5]
+execute if score @s glib.blockId matches 8836 run setblock ~ ~ ~ brown_banner[rotation=6]

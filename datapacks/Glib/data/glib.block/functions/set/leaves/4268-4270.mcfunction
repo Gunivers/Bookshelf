@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4268 run setblock ~ ~ ~ spruce_trapdoor[facing=south,half=bottom,open=true,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 4269 run setblock ~ ~ ~ spruce_trapdoor[facing=south,half=bottom,open=true,powered=true,waterlogged=false]
-execute if score @s glib.blockId matches 4270 run setblock ~ ~ ~ spruce_trapdoor[facing=south,half=bottom,open=true,powered=false,waterlogged=true]
+execute if score @s glib.blockId matches 4268 run setblock ~ ~ ~ sugar_cane[age=11]
+execute if score @s glib.blockId matches 4269 run setblock ~ ~ ~ sugar_cane[age=12]
+execute if score @s glib.blockId matches 4270 run setblock ~ ~ ~ sugar_cane[age=13]

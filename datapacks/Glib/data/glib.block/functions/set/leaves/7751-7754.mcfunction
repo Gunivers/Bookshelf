@@ -1,4 +1,4 @@
-execute if score @s glib.blockId matches 7751 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockId matches 7752 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockId matches 7753 run setblock ~ ~ ~ slime_block
-execute if score @s glib.blockId matches 7754 run setblock ~ ~ ~ barrier
+execute if score @s glib.blockId matches 7751 run setblock ~ ~ ~ light_gray_stained_glass_pane[east=true,north=true,south=true,waterlogged=false,west=false]
+execute if score @s glib.blockId matches 7752 run setblock ~ ~ ~ light_gray_stained_glass_pane[east=true,north=true,south=false,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 7753 run setblock ~ ~ ~ light_gray_stained_glass_pane[east=true,north=true,south=false,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 7754 run setblock ~ ~ ~ light_gray_stained_glass_pane[east=true,north=true,south=false,waterlogged=false,west=true]

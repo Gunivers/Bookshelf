@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 18152 run setblock ~ ~ ~ weathered_cut_copper_slab[type=bottom,waterlogged=true]
-execute if score @s glib.blockId matches 18153 run setblock ~ ~ ~ weathered_cut_copper_slab[type=bottom,waterlogged=false]
-execute if score @s glib.blockId matches 18154 run setblock ~ ~ ~ weathered_cut_copper_slab[type=double,waterlogged=true]
+execute if score @s glib.blockId matches 18152 run setblock ~ ~ ~ polished_blackstone_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 18153 run setblock ~ ~ ~ polished_blackstone_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=tall]
+execute if score @s glib.blockId matches 18154 run setblock ~ ~ ~ polished_blackstone_wall[east=low,north=low,south=tall,up=true,waterlogged=true,west=none]

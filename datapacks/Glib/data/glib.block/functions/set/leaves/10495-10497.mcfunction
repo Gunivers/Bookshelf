@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 10495 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=north,half=bottom,shape=outer_left,waterlogged=true]
-execute if score @s glib.blockId matches 10496 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=north,half=bottom,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockId matches 10497 run setblock ~ ~ ~ smooth_sandstone_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=true]
+execute if score @s glib.blockId matches 10495 run setblock ~ ~ ~ brain_coral_wall_fan[facing=east,waterlogged=true]
+execute if score @s glib.blockId matches 10496 run setblock ~ ~ ~ brain_coral_wall_fan[facing=east,waterlogged=false]
+execute if score @s glib.blockId matches 10497 run setblock ~ ~ ~ bubble_coral_wall_fan[facing=north,waterlogged=true]

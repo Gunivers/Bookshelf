@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 5435 run setblock ~ ~ ~ brick_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=true]
+execute if score @s glib.blockId matches 5436 run setblock ~ ~ ~ brick_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=false]
+execute if score @s glib.blockId matches 5437 run setblock ~ ~ ~ brick_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=true]
+execute if score @s glib.blockId matches 5438 run setblock ~ ~ ~ brick_stairs[facing=east,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 5439 run setblock ~ ~ ~ stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=true]

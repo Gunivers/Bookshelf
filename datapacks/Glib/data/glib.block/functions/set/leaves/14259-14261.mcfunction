@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 14259 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 14260 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 14261 run setblock ~ ~ ~ sandstone_wall[east=tall,north=none,south=low,up=true,waterlogged=true,west=none]
+execute if score @s glib.blockId matches 14259 run setblock ~ ~ ~ nether_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 14260 run setblock ~ ~ ~ nether_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 14261 run setblock ~ ~ ~ nether_brick_wall[east=tall,north=none,south=tall,up=true,waterlogged=false,west=tall]

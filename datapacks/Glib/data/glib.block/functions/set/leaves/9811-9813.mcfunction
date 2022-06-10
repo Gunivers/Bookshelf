@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9811 run setblock ~ ~ ~ dead_tube_coral_wall_fan[facing=north,waterlogged=false]
-execute if score @s glib.blockId matches 9812 run setblock ~ ~ ~ dead_tube_coral_wall_fan[facing=south,waterlogged=true]
-execute if score @s glib.blockId matches 9813 run setblock ~ ~ ~ dead_tube_coral_wall_fan[facing=south,waterlogged=false]
+execute if score @s glib.blockId matches 9811 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=left,open=true,powered=true]
+execute if score @s glib.blockId matches 9812 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=left,open=true,powered=false]
+execute if score @s glib.blockId matches 9813 run setblock ~ ~ ~ dark_oak_door[facing=north,half=upper,hinge=left,open=false,powered=true]

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5250 run setblock ~ ~ ~ nether_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 5251 run setblock ~ ~ ~ nether_brick_stairs[facing=north,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 5252 run setblock ~ ~ ~ nether_brick_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 5250 run setblock ~ ~ ~ glow_lichen[down=true,east=false,north=false,south=true,up=true,waterlogged=false,west=false]
+execute if score @s glib.blockId matches 5251 run setblock ~ ~ ~ glow_lichen[down=true,east=false,north=false,south=true,up=false,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 5252 run setblock ~ ~ ~ glow_lichen[down=true,east=false,north=false,south=true,up=false,waterlogged=true,west=false]

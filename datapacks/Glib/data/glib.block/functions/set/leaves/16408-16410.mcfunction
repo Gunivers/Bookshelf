@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16408 run setblock ~ ~ ~ blackstone_wall[east=tall,north=none,south=low,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 16409 run setblock ~ ~ ~ blackstone_wall[east=tall,north=none,south=low,up=false,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 16410 run setblock ~ ~ ~ blackstone_wall[east=tall,north=none,south=low,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 16408 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=true]
+execute if score @s glib.blockId matches 16409 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=true,powered=true,waterlogged=false]
+execute if score @s glib.blockId matches 16410 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=true,powered=false,waterlogged=true]

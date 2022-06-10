@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 2073 run setblock ~ ~ ~ oak_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 2074 run setblock ~ ~ ~ oak_stairs[facing=east,half=top,shape=inner_right,waterlogged=true]
-execute if score @s glib.blockId matches 2075 run setblock ~ ~ ~ oak_stairs[facing=east,half=top,shape=inner_right,waterlogged=false]
+execute if score @s glib.blockId matches 2073 run setblock ~ ~ ~ fire[age=11,east=false,north=false,south=true,up=false,west=false]
+execute if score @s glib.blockId matches 2074 run setblock ~ ~ ~ fire[age=11,east=false,north=false,south=false,up=true,west=true]
+execute if score @s glib.blockId matches 2075 run setblock ~ ~ ~ fire[age=11,east=false,north=false,south=false,up=true,west=false]

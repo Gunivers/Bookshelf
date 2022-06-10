@@ -1,0 +1,3 @@
+execute if score @s glib.blockId matches 6824..6824 run scoreboard players set @s glib.itemId 650
+execute if score @s glib.blockId matches 6825..6825 run scoreboard players set @s glib.itemId 650
+execute if score @s glib.blockId matches 6826..6826 run scoreboard players set @s glib.itemId 650

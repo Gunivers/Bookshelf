@@ -27,7 +27,7 @@ And much more!
 
 ⚠️ **Do not download directly from Github**
 
-This repository contain a lot of things that you probably don't need. Instead, go on the `Glib Manager <http://glib.gunivers.net>`_ to select what you want to download.
+This repository contain a lot of things that you probably don't need and the datapacks are not compressed. Instead, go on the `Glib Manager <http://glib.gunivers.net>`_ to select what you want to download.
 
 This project contain a library datapack and a map that is used as a test zone, wich can help new users to handle this tool. Also, the map show some possible features that are made possible thanks to the library datapack.
 

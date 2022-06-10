@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 5607 run setblock ~ ~ ~ tripwire[attached=false,disarmed=false,east=false,north=false,powered=false,south=false,west=true]
-execute if score @s glib.blockId matches 5608 run setblock ~ ~ ~ tripwire[attached=false,disarmed=false,east=false,north=false,powered=false,south=false,west=false]
-execute if score @s glib.blockId matches 5609 run setblock ~ ~ ~ emerald_block
+execute if score @s glib.blockId matches 5607 run setblock ~ ~ ~ nether_brick_fence[east=true,north=true,south=false,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 5608 run setblock ~ ~ ~ nether_brick_fence[east=true,north=true,south=false,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 5609 run setblock ~ ~ ~ nether_brick_fence[east=true,north=true,south=false,waterlogged=false,west=true]

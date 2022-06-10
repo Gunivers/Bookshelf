@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 19440 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 19441 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 19442 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 19443 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 19444 run setblock ~ ~ ~ waxed_exposed_cut_copper_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=true]

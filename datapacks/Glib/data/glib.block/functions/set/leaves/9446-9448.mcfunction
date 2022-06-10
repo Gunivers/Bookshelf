@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 9446 run setblock ~ ~ ~ purpur_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockId matches 9447 run setblock ~ ~ ~ purpur_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockId matches 9448 run setblock ~ ~ ~ purpur_stairs[facing=east,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 9446 run setblock ~ ~ ~ jungle_fence[east=false,north=true,south=true,waterlogged=false,west=false]
+execute if score @s glib.blockId matches 9447 run setblock ~ ~ ~ jungle_fence[east=false,north=true,south=false,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 9448 run setblock ~ ~ ~ jungle_fence[east=false,north=true,south=false,waterlogged=true,west=false]

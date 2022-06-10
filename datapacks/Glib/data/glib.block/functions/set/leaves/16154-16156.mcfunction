@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16154 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 16155 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 16156 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 16154 run setblock ~ ~ ~ soul_campfire[facing=west,lit=false,signal_fire=false,waterlogged=false]
+execute if score @s glib.blockId matches 16155 run setblock ~ ~ ~ soul_campfire[facing=east,lit=true,signal_fire=true,waterlogged=true]
+execute if score @s glib.blockId matches 16156 run setblock ~ ~ ~ soul_campfire[facing=east,lit=true,signal_fire=true,waterlogged=false]

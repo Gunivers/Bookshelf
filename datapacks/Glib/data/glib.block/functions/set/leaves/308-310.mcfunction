@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 308 run setblock ~ ~ ~ note_block[instrument=harp,note=13,powered=false]
-execute if score @s glib.blockId matches 309 run setblock ~ ~ ~ note_block[instrument=harp,note=14,powered=true]
-execute if score @s glib.blockId matches 310 run setblock ~ ~ ~ note_block[instrument=harp,note=14,powered=false]
+execute if score @s glib.blockId matches 308 run setblock ~ ~ ~ jungle_leaves[distance=5,persistent=false,waterlogged=true]
+execute if score @s glib.blockId matches 309 run setblock ~ ~ ~ jungle_leaves[distance=5,persistent=false,waterlogged=false]
+execute if score @s glib.blockId matches 310 run setblock ~ ~ ~ jungle_leaves[distance=6,persistent=true,waterlogged=true]

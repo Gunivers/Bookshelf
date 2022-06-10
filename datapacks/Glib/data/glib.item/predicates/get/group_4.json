@@ -36,6 +36,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:acacia_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:acacia_door\"}}"
                         }
                     }
@@ -205,7 +218,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:activator_rail\"}}"
+                            "nbt": "{Item:{id:\"minecraft:axolotl_bucket\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:axolotl_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -400,7 +426,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:beehive\"}}"
+                            "nbt": "{Item:{id:\"minecraft:birch_sapling\"}}"
                         }
                     }
                 ]
@@ -413,7 +439,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:beetroot\"}}"
+                            "nbt": "{Item:{id:\"minecraft:birch_sign\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:birch_slab\"}}"
                         }
                     }
                 ]
@@ -595,7 +634,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:black_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:blue_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -608,7 +647,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:black_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:blue_dye\"}}"
                         }
                     }
                 ]
@@ -621,7 +660,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:black_wool\"}}"
+                            "nbt": "{Item:{id:\"minecraft:blue_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -803,7 +842,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:bowl\"}}"
+                            "nbt": "{Item:{id:\"minecraft:brown_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -816,7 +855,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:brain_coral\"}}"
+                            "nbt": "{Item:{id:\"minecraft:brown_dye\"}}"
                         }
                     }
                 ]
@@ -829,7 +868,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:brain_coral_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:brown_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -1011,7 +1050,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:cactus\"}}"
+                            "nbt": "{Item:{id:\"minecraft:chainmail_helmet\"}}"
                         }
                     }
                 ]
@@ -1024,7 +1063,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:cake\"}}"
+                            "nbt": "{Item:{id:\"minecraft:chainmail_leggings\"}}"
                         }
                     }
                 ]
@@ -1037,7 +1076,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:calcite\"}}"
+                            "nbt": "{Item:{id:\"minecraft:charcoal\"}}"
                         }
                     }
                 ]
@@ -1219,7 +1258,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:chorus_fruit\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cobblestone_wall\"}}"
                         }
                     }
                 ]
@@ -1232,7 +1271,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:chorus_plant\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cobweb\"}}"
                         }
                     }
                 ]
@@ -1245,7 +1284,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:clay\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cocoa_beans\"}}"
                         }
                     }
                 ]
@@ -1427,7 +1466,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:cooked_porkchop\"}}"
+                            "nbt": "{Item:{id:\"minecraft:creeper_head\"}}"
                         }
                     }
                 ]
@@ -1440,7 +1479,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:cooked_rabbit\"}}"
+                            "nbt": "{Item:{id:\"minecraft:creeper_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -1453,7 +1492,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:cooked_salmon\"}}"
+                            "nbt": "{Item:{id:\"minecraft:crimson_button\"}}"
                         }
                     }
                 ]
@@ -1635,7 +1674,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:crimson_trapdoor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cyan_dye\"}}"
                         }
                     }
                 ]
@@ -1648,7 +1687,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:crossbow\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cyan_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -1661,7 +1700,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:crying_obsidian\"}}"
+                            "nbt": "{Item:{id:\"minecraft:cyan_shulker_box\"}}"
                         }
                     }
                 ]
@@ -1778,6 +1817,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:dark_oak_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:dark_oak_door\"}}"
                         }
                     }
@@ -1830,7 +1882,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dark_oak_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:dead_bubble_coral\"}}"
                         }
                     }
                 ]
@@ -1843,7 +1895,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dark_oak_planks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:dead_bubble_coral_block\"}}"
                         }
                     }
                 ]
@@ -1856,7 +1908,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dark_oak_pressure_plate\"}}"
+                            "nbt": "{Item:{id:\"minecraft:dead_bubble_coral_fan\"}}"
                         }
                     }
                 ]
@@ -1869,7 +1921,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dark_oak_sapling\"}}"
+                            "nbt": "{Item:{id:\"minecraft:dead_bush\"}}"
                         }
                     }
                 ]
@@ -2038,7 +2090,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:deepslate_brick_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:diamond\"}}"
                         }
                     }
                 ]
@@ -2051,7 +2103,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:deepslate_brick_wall\"}}"
+                            "nbt": "{Item:{id:\"minecraft:diamond_axe\"}}"
                         }
                     }
                 ]
@@ -2064,7 +2116,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:deepslate_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:diamond_block\"}}"
                         }
                     }
                 ]
@@ -2077,7 +2129,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:deepslate_coal_ore\"}}"
+                            "nbt": "{Item:{id:\"minecraft:diamond_boots\"}}"
                         }
                     }
                 ]
@@ -2246,7 +2298,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:diorite_wall\"}}"
+                            "nbt": "{Item:{id:\"minecraft:egg\"}}"
                         }
                     }
                 ]
@@ -2259,7 +2311,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dirt\"}}"
+                            "nbt": "{Item:{id:\"minecraft:elder_guardian_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -2272,7 +2324,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dirt_path\"}}"
+                            "nbt": "{Item:{id:\"minecraft:elytra\"}}"
                         }
                     }
                 ]
@@ -2285,7 +2337,33 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:dispenser\"}}"
+                            "nbt": "{Item:{id:\"minecraft:emerald\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:emerald_block\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:emerald_ore\"}}"
                         }
                     }
                 ]
@@ -2428,7 +2506,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:end_stone_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:filled_map\"}}"
                         }
                     }
                 ]
@@ -2441,7 +2519,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ender_chest\"}}"
+                            "nbt": "{Item:{id:\"minecraft:fire_charge\"}}"
                         }
                     }
                 ]
@@ -2454,7 +2532,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ender_eye\"}}"
+                            "nbt": "{Item:{id:\"minecraft:fire_coral\"}}"
                         }
                     }
                 ]
@@ -2467,7 +2545,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ender_pearl\"}}"
+                            "nbt": "{Item:{id:\"minecraft:fire_coral_block\"}}"
                         }
                     }
                 ]
@@ -2480,7 +2558,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:enderman_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:fire_coral_fan\"}}"
                         }
                     }
                 ]
@@ -2493,7 +2571,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:endermite_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:firework_rocket\"}}"
                         }
                     }
                 ]
@@ -2636,7 +2714,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:furnace\"}}"
+                            "nbt": "{Item:{id:\"minecraft:glow_squid_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -2649,7 +2727,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:furnace_minecart\"}}"
+                            "nbt": "{Item:{id:\"minecraft:glowstone\"}}"
                         }
                     }
                 ]
@@ -2662,7 +2740,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ghast_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:glowstone_dust\"}}"
                         }
                     }
                 ]
@@ -2675,7 +2753,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ghast_tear\"}}"
+                            "nbt": "{Item:{id:\"minecraft:goat_horn\"}}"
                         }
                     }
                 ]
@@ -2688,7 +2766,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:gilded_blackstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:goat_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -2701,7 +2779,46 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gold_block\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:gold_ingot\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:gold_nugget\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:gold_ore\"}}"
                         }
                     }
                 ]
@@ -2805,7 +2922,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:golden_horse_armor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_concrete\"}}"
                         }
                     }
                 ]
@@ -2818,7 +2935,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:golden_leggings\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -2831,7 +2948,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:golden_pickaxe\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_dye\"}}"
                         }
                     }
                 ]
@@ -2844,7 +2961,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:golden_shovel\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -2857,7 +2974,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:golden_sword\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_shulker_box\"}}"
                         }
                     }
                 ]
@@ -2870,7 +2987,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:granite\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_stained_glass\"}}"
                         }
                     }
                 ]
@@ -2883,7 +3000,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:granite_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_stained_glass_pane\"}}"
                         }
                     }
                 ]
@@ -2896,7 +3013,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:granite_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_terracotta\"}}"
                         }
                     }
                 ]
@@ -2909,7 +3026,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:granite_wall\"}}"
+                            "nbt": "{Item:{id:\"minecraft:gray_wool\"}}"
                         }
                     }
                 ]
@@ -3013,7 +3130,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_glazed_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:honeycomb\"}}"
                         }
                     }
                 ]
@@ -3026,7 +3143,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:honeycomb_block\"}}"
                         }
                     }
                 ]
@@ -3039,7 +3156,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_stained_glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:hopper\"}}"
                         }
                     }
                 ]
@@ -3052,7 +3169,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:hopper_minecart\"}}"
                         }
                     }
                 ]
@@ -3065,7 +3182,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:horn_coral\"}}"
                         }
                     }
                 ]
@@ -3078,7 +3195,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:green_wool\"}}"
+                            "nbt": "{Item:{id:\"minecraft:horn_coral_block\"}}"
                         }
                     }
                 ]
@@ -3091,7 +3208,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:grindstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:horn_coral_fan\"}}"
                         }
                     }
                 ]
@@ -3104,7 +3221,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:guardian_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:horse_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -3117,7 +3234,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:gunpowder\"}}"
+                            "nbt": "{Item:{id:\"minecraft:husk_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -3221,7 +3338,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:infested_stone_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:iron_shovel\"}}"
                         }
                     }
                 ]
@@ -3234,7 +3351,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ink_sac\"}}"
+                            "nbt": "{Item:{id:\"minecraft:iron_sword\"}}"
                         }
                     }
                 ]
@@ -3247,7 +3364,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_axe\"}}"
+                            "nbt": "{Item:{id:\"minecraft:iron_trapdoor\"}}"
                         }
                     }
                 ]
@@ -3260,7 +3377,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_bars\"}}"
+                            "nbt": "{Item:{id:\"minecraft:item_frame\"}}"
                         }
                     }
                 ]
@@ -3273,7 +3390,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:jack_o_lantern\"}}"
                         }
                     }
                 ]
@@ -3286,7 +3403,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_boots\"}}"
+                            "nbt": "{Item:{id:\"minecraft:jigsaw\"}}"
                         }
                     }
                 ]
@@ -3299,7 +3416,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_chestplate\"}}"
+                            "nbt": "{Item:{id:\"minecraft:jukebox\"}}"
                         }
                     }
                 ]
@@ -3312,7 +3429,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_door\"}}"
+                            "nbt": "{Item:{id:\"minecraft:jungle_boat\"}}"
                         }
                     }
                 ]
@@ -3325,7 +3442,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:iron_helmet\"}}"
+                            "nbt": "{Item:{id:\"minecraft:jungle_button\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:jungle_chest_boat\"}}"
                         }
                     }
                 ]
@@ -3416,7 +3546,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_pressure_plate\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lava_bucket\"}}"
                         }
                     }
                 ]
@@ -3429,7 +3559,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_sapling\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lead\"}}"
                         }
                     }
                 ]
@@ -3442,7 +3572,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_sign\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather\"}}"
                         }
                     }
                 ]
@@ -3455,7 +3585,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather_boots\"}}"
                         }
                     }
                 ]
@@ -3468,7 +3598,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather_chestplate\"}}"
                         }
                     }
                 ]
@@ -3481,7 +3611,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_trapdoor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather_helmet\"}}"
                         }
                     }
                 ]
@@ -3494,7 +3624,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:jungle_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather_horse_armor\"}}"
                         }
                     }
                 ]
@@ -3507,7 +3637,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:kelp\"}}"
+                            "nbt": "{Item:{id:\"minecraft:leather_leggings\"}}"
                         }
                     }
                 ]
@@ -3520,7 +3650,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:knowledge_book\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lectern\"}}"
                         }
                     }
                 ]
@@ -3533,7 +3663,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:ladder\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lever\"}}"
                         }
                     }
                 ]
@@ -3624,7 +3754,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_concrete_powder\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_gray_shulker_box\"}}"
                         }
                     }
                 ]
@@ -3637,7 +3767,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_dye\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_gray_stained_glass\"}}"
                         }
                     }
                 ]
@@ -3650,7 +3780,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_glazed_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_gray_stained_glass_pane\"}}"
                         }
                     }
                 ]
@@ -3663,7 +3793,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_gray_terracotta\"}}"
                         }
                     }
                 ]
@@ -3676,7 +3806,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_stained_glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_gray_wool\"}}"
                         }
                     }
                 ]
@@ -3689,7 +3819,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:light_weighted_pressure_plate\"}}"
                         }
                     }
                 ]
@@ -3702,7 +3832,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lightning_rod\"}}"
                         }
                     }
                 ]
@@ -3715,7 +3845,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_blue_wool\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lilac\"}}"
                         }
                     }
                 ]
@@ -3728,7 +3858,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_gray_banner\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lily_of_the_valley\"}}"
                         }
                     }
                 ]
@@ -3741,7 +3871,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:light_gray_bed\"}}"
+                            "nbt": "{Item:{id:\"minecraft:lily_pad\"}}"
                         }
                     }
                 ]
@@ -3832,7 +3962,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_dye\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -3845,7 +3975,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_glazed_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_dye\"}}"
                         }
                     }
                 ]
@@ -3858,7 +3988,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -3871,7 +4001,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_stained_glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_shulker_box\"}}"
                         }
                     }
                 ]
@@ -3884,7 +4014,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_stained_glass\"}}"
                         }
                     }
                 ]
@@ -3897,7 +4027,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_stained_glass_pane\"}}"
                         }
                     }
                 ]
@@ -3910,7 +4040,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lime_wool\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_terracotta\"}}"
                         }
                     }
                 ]
@@ -3923,7 +4053,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lingering_potion\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magenta_wool\"}}"
                         }
                     }
                 ]
@@ -3936,7 +4066,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:llama_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magma_block\"}}"
                         }
                     }
                 ]
@@ -3949,7 +4079,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:lodestone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:magma_cream\"}}"
                         }
                     }
                 ]
@@ -3975,7 +4105,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:map\"}}"
+                            "nbt": "{Item:{id:\"minecraft:mangrove_boat\"}}"
                         }
                     }
                 ]
@@ -3988,7 +4118,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:medium_amethyst_bud\"}}"
+                            "nbt": "{Item:{id:\"minecraft:mangrove_button\"}}"
                         }
                     }
                 ]
@@ -4001,7 +4131,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:melon\"}}"
+                            "nbt": "{Item:{id:\"minecraft:mangrove_chest_boat\"}}"
                         }
                     }
                 ]
@@ -4014,7 +4144,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:melon_seeds\"}}"
+                            "nbt": "{Item:{id:\"minecraft:mangrove_door\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mangrove_fence\"}}"
                         }
                     }
                 ]
@@ -4158,6 +4301,97 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:mossy_cobblestone_wall\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mossy_stone_brick_slab\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mossy_stone_brick_stairs\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mossy_stone_brick_wall\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mossy_stone_bricks\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:mud\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:music_disc_mellohi\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:music_disc_otherside\"}}"
                         }
                     }
                 ]
@@ -4352,7 +4586,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:nether_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:netherite_scrap\"}}"
                         }
                     }
                 ]
@@ -4365,7 +4599,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:nether_gold_ore\"}}"
+                            "nbt": "{Item:{id:\"minecraft:netherite_shovel\"}}"
                         }
                     }
                 ]
@@ -4431,6 +4665,19 @@
                         "predicate": {
                             "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:oak_button\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:oak_chest_boat\"}}"
                         }
                     }
                 ]
@@ -4547,7 +4794,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:oak_sign\"}}"
+                            "nbt": "{Item:{id:\"minecraft:orange_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -4560,7 +4807,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:oak_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:orange_shulker_box\"}}"
                         }
                     }
                 ]
@@ -4573,7 +4820,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:oak_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:orange_stained_glass\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:orange_stained_glass_pane\"}}"
                         }
                     }
                 ]
@@ -4703,6 +4963,19 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:packed_mud\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
                             "nbt": "{Item:{id:\"minecraft:painting\"}}"
                         }
                     }
@@ -4729,7 +5002,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:paper\"}}"
+                            "nbt": "{Item:{id:\"minecraft:pink_concrete\"}}"
                         }
                     }
                 ]
@@ -4742,7 +5015,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:parrot_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:pink_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -4755,7 +5028,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:peony\"}}"
+                            "nbt": "{Item:{id:\"minecraft:pink_dye\"}}"
                         }
                     }
                 ]
@@ -4768,7 +5041,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:petrified_oak_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:pink_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -4781,7 +5054,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:phantom_membrane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:pink_shulker_box\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:pink_stained_glass\"}}"
                         }
                     }
                 ]
@@ -4924,7 +5210,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_andesite\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_deepslate_stairs\"}}"
                         }
                     }
                 ]
@@ -4937,7 +5223,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_andesite_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_deepslate_wall\"}}"
                         }
                     }
                 ]
@@ -4950,7 +5236,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_andesite_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_diorite\"}}"
                         }
                     }
                 ]
@@ -4963,7 +5249,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_basalt\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_diorite_slab\"}}"
                         }
                     }
                 ]
@@ -4976,7 +5262,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_blackstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_diorite_stairs\"}}"
                         }
                     }
                 ]
@@ -4989,7 +5275,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:polished_blackstone_brick_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:polished_granite\"}}"
                         }
                     }
                 ]
@@ -5132,7 +5418,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_brick_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_candle\"}}"
                         }
                     }
                 ]
@@ -5145,7 +5431,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_brick_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_carpet\"}}"
                         }
                     }
                 ]
@@ -5158,7 +5444,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_concrete\"}}"
                         }
                     }
                 ]
@@ -5171,7 +5457,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_crystals\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_concrete_powder\"}}"
                         }
                     }
                 ]
@@ -5184,7 +5470,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_shard\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_dye\"}}"
                         }
                     }
                 ]
@@ -5197,7 +5483,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:prismarine_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:purple_glazed_terracotta\"}}"
                         }
                     }
                 ]
@@ -5340,7 +5626,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:quartz_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:raw_iron\"}}"
                         }
                     }
                 ]
@@ -5353,7 +5639,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:quartz_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:raw_iron_block\"}}"
                         }
                     }
                 ]
@@ -5366,7 +5652,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:quartz_pillar\"}}"
+                            "nbt": "{Item:{id:\"minecraft:recovery_compass\"}}"
                         }
                     }
                 ]
@@ -5379,7 +5665,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:quartz_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:red_banner\"}}"
                         }
                     }
                 ]
@@ -5392,7 +5678,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:quartz_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:red_bed\"}}"
                         }
                     }
                 ]
@@ -5405,7 +5691,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:rabbit\"}}"
+                            "nbt": "{Item:{id:\"minecraft:red_candle\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:red_carpet\"}}"
                         }
                     }
                 ]
@@ -5535,7 +5834,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_nether_bricks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:redstone_torch\"}}"
                         }
                     }
                 ]
@@ -5548,7 +5847,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_sand\"}}"
+                            "nbt": "{Item:{id:\"minecraft:reinforced_deepslate\"}}"
                         }
                     }
                 ]
@@ -5561,7 +5860,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_sandstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:repeater\"}}"
                         }
                     }
                 ]
@@ -5574,7 +5873,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_sandstone_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:repeating_command_block\"}}"
                         }
                     }
                 ]
@@ -5587,7 +5886,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_sandstone_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:respawn_anchor\"}}"
                         }
                     }
                 ]
@@ -5600,7 +5899,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_sandstone_wall\"}}"
+                            "nbt": "{Item:{id:\"minecraft:rooted_dirt\"}}"
                         }
                     }
                 ]
@@ -5613,7 +5912,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:red_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:rose_bush\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:rotten_flesh\"}}"
                         }
                     }
                 ]
@@ -5730,7 +6042,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sandstone_wall\"}}"
+                            "nbt": "{Item:{id:\"minecraft:shulker_shell\"}}"
                         }
                     }
                 ]
@@ -5743,7 +6055,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:scaffolding\"}}"
+                            "nbt": "{Item:{id:\"minecraft:shulker_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -5756,7 +6068,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sculk_sensor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:silverfish_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -5769,7 +6081,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:scute\"}}"
+                            "nbt": "{Item:{id:\"minecraft:skeleton_horse_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -5782,7 +6094,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sea_lantern\"}}"
+                            "nbt": "{Item:{id:\"minecraft:skeleton_skull\"}}"
                         }
                     }
                 ]
@@ -5795,7 +6107,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sea_pickle\"}}"
+                            "nbt": "{Item:{id:\"minecraft:skeleton_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -5808,7 +6120,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:seagrass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:skull_banner_pattern\"}}"
                         }
                     }
                 ]
@@ -5821,7 +6133,59 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:shears\"}}"
+                            "nbt": "{Item:{id:\"minecraft:slime_ball\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:slime_block\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:slime_spawn_egg\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:small_amethyst_bud\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:small_dripleaf\"}}"
                         }
                     }
                 ]
@@ -5886,7 +6250,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_quartz_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:soul_soil\"}}"
                         }
                     }
                 ]
@@ -5899,7 +6263,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_quartz_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:soul_torch\"}}"
                         }
                     }
                 ]
@@ -5912,7 +6276,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_red_sandstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spawner\"}}"
                         }
                     }
                 ]
@@ -5925,7 +6289,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_red_sandstone_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spectral_arrow\"}}"
                         }
                     }
                 ]
@@ -5938,7 +6302,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_red_sandstone_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spider_eye\"}}"
                         }
                     }
                 ]
@@ -5951,7 +6315,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_sandstone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spider_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -5964,7 +6328,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_sandstone_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:splash_potion\"}}"
                         }
                     }
                 ]
@@ -5977,7 +6341,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_sandstone_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:sponge\"}}"
                         }
                     }
                 ]
@@ -5990,7 +6354,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_stone\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spore_blossom\"}}"
                         }
                     }
                 ]
@@ -6003,7 +6367,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:smooth_stone_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spruce_boat\"}}"
                         }
                     }
                 ]
@@ -6016,7 +6380,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:snow\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spruce_button\"}}"
                         }
                     }
                 ]
@@ -6029,7 +6393,20 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:snow_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:spruce_chest_boat\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:spruce_door\"}}"
                         }
                     }
                 ]
@@ -6081,7 +6458,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_brick_stairs\"}}"
                         }
                     }
                 ]
@@ -6094,7 +6471,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_planks\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_brick_wall\"}}"
                         }
                     }
                 ]
@@ -6107,7 +6484,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_pressure_plate\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_bricks\"}}"
                         }
                     }
                 ]
@@ -6120,7 +6497,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_sapling\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_button\"}}"
                         }
                     }
                 ]
@@ -6133,7 +6510,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_sign\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_hoe\"}}"
                         }
                     }
                 ]
@@ -6146,7 +6523,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_pickaxe\"}}"
                         }
                     }
                 ]
@@ -6159,7 +6536,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_pressure_plate\"}}"
                         }
                     }
                 ]
@@ -6172,7 +6549,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_trapdoor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_shovel\"}}"
                         }
                     }
                 ]
@@ -6185,7 +6562,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spruce_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_slab\"}}"
                         }
                     }
                 ]
@@ -6198,7 +6575,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:spyglass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_stairs\"}}"
                         }
                     }
                 ]
@@ -6211,7 +6588,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:squid_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stone_sword\"}}"
                         }
                     }
                 ]
@@ -6224,7 +6601,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stick\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stonecutter\"}}"
                         }
                     }
                 ]
@@ -6237,7 +6614,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:sticky_piston\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stray_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6289,7 +6666,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_acacia_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:stripped_warped_stem\"}}"
                         }
                     }
                 ]
@@ -6302,7 +6679,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_birch_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:structure_block\"}}"
                         }
                     }
                 ]
@@ -6315,7 +6692,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_birch_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:structure_void\"}}"
                         }
                     }
                 ]
@@ -6328,7 +6705,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_crimson_hyphae\"}}"
+                            "nbt": "{Item:{id:\"minecraft:sugar\"}}"
                         }
                     }
                 ]
@@ -6341,7 +6718,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_crimson_stem\"}}"
+                            "nbt": "{Item:{id:\"minecraft:sugar_cane\"}}"
                         }
                     }
                 ]
@@ -6354,7 +6731,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_dark_oak_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:sunflower\"}}"
                         }
                     }
                 ]
@@ -6367,7 +6744,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_dark_oak_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:suspicious_stew\"}}"
                         }
                     }
                 ]
@@ -6380,7 +6757,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_jungle_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:sweet_berries\"}}"
                         }
                     }
                 ]
@@ -6393,7 +6770,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_jungle_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tadpole_bucket\"}}"
                         }
                     }
                 ]
@@ -6406,7 +6783,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_oak_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tadpole_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6419,7 +6796,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_oak_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tall_grass\"}}"
                         }
                     }
                 ]
@@ -6432,7 +6809,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_spruce_log\"}}"
+                            "nbt": "{Item:{id:\"minecraft:target\"}}"
                         }
                     }
                 ]
@@ -6445,7 +6822,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:stripped_spruce_wood\"}}"
+                            "nbt": "{Item:{id:\"minecraft:terracotta\"}}"
                         }
                     }
                 ]
@@ -6458,7 +6835,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:torch\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tinted_glass\"}}"
                         }
                     }
                 ]
@@ -6471,7 +6848,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:totem_of_undying\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tipped_arrow\"}}"
                         }
                     }
                 ]
@@ -6484,163 +6861,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trader_llama_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trapped_chest\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:trident\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tripwire_hook\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish_bucket\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tropical_fish_spawn_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral_block\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tube_coral_fan\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:tuff\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:turtle_egg\"}}"
-                        }
-                    }
-                ]
-            },
-            {
-                "condition": "minecraft:alternative",
-                "terms": [
-                    {
-                        "condition": "minecraft:entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:turtle_helmet\"}}"
+                            "nbt": "{Item:{id:\"minecraft:tnt\"}}"
                         }
                     }
                 ]
@@ -6666,7 +6887,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_roots\"}}"
+                            "nbt": "{Item:{id:\"minecraft:twisting_vines\"}}"
                         }
                     }
                 ]
@@ -6679,7 +6900,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_sign\"}}"
+                            "nbt": "{Item:{id:\"minecraft:verdant_froglight\"}}"
                         }
                     }
                 ]
@@ -6692,7 +6913,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:vex_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6705,7 +6926,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:villager_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6718,7 +6939,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_stem\"}}"
+                            "nbt": "{Item:{id:\"minecraft:vindicator_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6731,7 +6952,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_trapdoor\"}}"
+                            "nbt": "{Item:{id:\"minecraft:vine\"}}"
                         }
                     }
                 ]
@@ -6744,7 +6965,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:warped_wart_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wandering_trader_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6757,7 +6978,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:water_bucket\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warden_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -6770,7 +6991,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:waxed_copper_block\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warped_button\"}}"
                         }
                     }
                 ]
@@ -6783,7 +7004,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:waxed_cut_copper\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warped_door\"}}"
                         }
                     }
                 ]
@@ -6796,7 +7017,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:waxed_cut_copper_slab\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warped_fence\"}}"
                         }
                     }
                 ]
@@ -6809,7 +7030,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:waxed_cut_copper_stairs\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warped_fence_gate\"}}"
                         }
                     }
                 ]
@@ -6822,7 +7043,33 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:waxed_exposed_copper\"}}"
+                            "nbt": "{Item:{id:\"minecraft:warped_fungus\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:warped_fungus_on_a_stick\"}}"
+                        }
+                    }
+                ]
+            },
+            {
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:item",
+                            "nbt": "{Item:{id:\"minecraft:warped_hyphae\"}}"
                         }
                     }
                 ]
@@ -6874,7 +7121,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_banner\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_oxidized_copper\"}}"
                         }
                     }
                 ]
@@ -6887,7 +7134,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_bed\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_oxidized_cut_copper\"}}"
                         }
                     }
                 ]
@@ -6900,7 +7147,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_candle\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_oxidized_cut_copper_slab\"}}"
                         }
                     }
                 ]
@@ -6913,7 +7160,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_carpet\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_oxidized_cut_copper_stairs\"}}"
                         }
                     }
                 ]
@@ -6926,7 +7173,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_concrete\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_weathered_copper\"}}"
                         }
                     }
                 ]
@@ -6939,7 +7186,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_concrete_powder\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_weathered_cut_copper\"}}"
                         }
                     }
                 ]
@@ -6952,7 +7199,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_dye\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_weathered_cut_copper_slab\"}}"
                         }
                     }
                 ]
@@ -6965,7 +7212,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_glazed_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:waxed_weathered_cut_copper_stairs\"}}"
                         }
                     }
                 ]
@@ -6978,7 +7225,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:weathered_copper\"}}"
                         }
                     }
                 ]
@@ -6991,7 +7238,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_stained_glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:weathered_cut_copper\"}}"
                         }
                     }
                 ]
@@ -7004,7 +7251,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:weathered_cut_copper_slab\"}}"
                         }
                     }
                 ]
@@ -7017,7 +7264,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:weathered_cut_copper_stairs\"}}"
                         }
                     }
                 ]
@@ -7030,7 +7277,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:white_tulip\"}}"
+                            "nbt": "{Item:{id:\"minecraft:weeping_vines\"}}"
                         }
                     }
                 ]
@@ -7082,7 +7329,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_dye\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wither_skeleton_skull\"}}"
                         }
                     }
                 ]
@@ -7095,7 +7342,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_glazed_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wither_skeleton_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -7108,7 +7355,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_shulker_box\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wolf_spawn_egg\"}}"
                         }
                     }
                 ]
@@ -7121,7 +7368,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_stained_glass\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wooden_axe\"}}"
                         }
                     }
                 ]
@@ -7134,7 +7381,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_stained_glass_pane\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wooden_hoe\"}}"
                         }
                     }
                 ]
@@ -7147,7 +7394,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_terracotta\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wooden_pickaxe\"}}"
                         }
                     }
                 ]
@@ -7160,7 +7407,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:yellow_wool\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wooden_shovel\"}}"
                         }
                     }
                 ]
@@ -7173,7 +7420,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zoglin_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:wooden_sword\"}}"
                         }
                     }
                 ]
@@ -7186,7 +7433,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zombie_head\"}}"
+                            "nbt": "{Item:{id:\"minecraft:writable_book\"}}"
                         }
                     }
                 ]
@@ -7199,7 +7446,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zombie_horse_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:written_book\"}}"
                         }
                     }
                 ]
@@ -7212,7 +7459,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zombie_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:yellow_banner\"}}"
                         }
                     }
                 ]
@@ -7225,7 +7472,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zombie_villager_spawn_egg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:yellow_bed\"}}"
                         }
                     }
                 ]
@@ -7238,7 +7485,7 @@
                         "entity": "this",
                         "predicate": {
                             "type": "minecraft:item",
-                            "nbt": "{Item:{id:\"minecraft:zombified_piglin_spawn_eg\"}}"
+                            "nbt": "{Item:{id:\"minecraft:yellow_candle\"}}"
                         }
                     }
                 ]
