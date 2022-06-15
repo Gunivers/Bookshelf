@@ -68,8 +68,7 @@ function to get a ``glib.id`` score different from all other entities
 that have already executed the function.
 
 * Returns the ID on the glib.id score of the executing entity.
-* Gives the tag ``glib.id.set`` and ``glib.id.type.suid`` to the entities that have already executed the
-function
+* Gives the tag ``glib.id.set`` and ``glib.id.type.suid`` to the entities that have already executed the function
 
 *Example:*
 

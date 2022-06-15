@@ -171,8 +171,7 @@ Spread entity
 
 ``spread`` : Allows to randomly teleport an entity in a given area.
 
-* The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y
-position of the entity
+* The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y position of the entity
 * Takes as parameters the scores ``glib.var[0,1,2]`` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
 
 *Example:*
