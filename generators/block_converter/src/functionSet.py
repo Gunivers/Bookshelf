@@ -30,7 +30,10 @@ def generate_SetBlock(path, function, branch=3, objectList = None, verbose=False
     if len(objectList) > 2 * branch:
 
         # Opening MCfunction's file
-        if depth == 0: mcfunction = open(f"{path}/set.mcfunction", "w+")
+        if depth == 0:
+            mcfunction = open(f"{path}/set.mcfunction", "w+")
+            mcfunction.write(f"scoreboard objectives add glib.blockId dummy\n")
+            mcfunction.write(f"scoreboard players set @s glib.blockId 0\n")
         else:          mcfunction = open(f"{path}/set/nodes/{objectList[0].id}-{objectList[-1].id}.mcfunction", "w+")
         
         # Getting the number of subgroups
@@ -82,7 +85,10 @@ def generate_SetItem(path, function, branch=3, objectList = None, verbose=False,
     if len(objectList) > 2 * branch:
 
         # Opening MCfunction's file
-        if depth == 0: mcfunction = open(f"{path}/set.mcfunction", "w+")
+        if depth == 0:
+            mcfunction = open(f"{path}/set.mcfunction", "w+")
+            mcfunction.write(f"scoreboard objectives add glib.itemId dummy\n")
+            mcfunction.write(f"scoreboard players set @s glib.itemId 0\n")
         else:          mcfunction = open(f"{path}/set/nodes/{objectList[0].id}-{objectList[-1].id}.mcfunction", "w+")
         
         # Getting the number of subgroups
@@ -139,7 +145,12 @@ def generate_BlockToItem(path, function, branch=3, objectList = None, verbose=Fa
     if len(objectList) > 2 * branch:
 
         # Opening MCfunction's file
-        if depth == 0: mcfunction = open(f"{path}/convert_to_item.mcfunction", "w+")
+        if depth == 0:
+            mcfunction = open(f"{path}/convert_to_item.mcfunction", "w+")
+            mcfunction.write(f"scoreboard objectives add glib.blockId dummy\n")
+            mcfunction.write(f"scoreboard objectives add glib.itemId dummy\n")
+            mcfunction.write(f"scoreboard players set @s glib.blockId 0\n")
+            mcfunction.write(f"scoreboard players set @s glib.itemId 0\n")
         else:          mcfunction = open(f"{path}/convert_to_item/nodes/{objectList[0].id}-{objectList[-1].id}.mcfunction", "w+")
         
         # Getting the number of subgroups
@@ -193,7 +204,12 @@ def generate_ItemToBlock(path, function, branch=3, objectList = None, verbose=Fa
     if len(objectList) > 2 * branch:
 
         # Opening MCfunction's file
-        if depth == 0: mcfunction = open(f"{path}/convert_to_block.mcfunction", "w+")
+        if depth == 0:
+            mcfunction = open(f"{path}/convert_to_block.mcfunction", "w+")
+            mcfunction.write(f"scoreboard objectives add glib.blockId dummy\n")
+            mcfunction.write(f"scoreboard objectives add glib.itemId dummy\n")
+            mcfunction.write(f"scoreboard players set @s glib.blockId 0\n")
+            mcfunction.write(f"scoreboard players set @s glib.itemId 0\n")
         else:          mcfunction = open(f"{path}/convert_to_block/nodes/{objectList[0].id}-{objectList[-1].id}.mcfunction", "w+")
         
         # Getting the number of subgroups

@@ -7,8 +7,7 @@
 # Last check:
 
 # Original path: glib.vector:classic/get_by_actual_orientation
-# Documentation: https://glib-core.readthedocs.io//entity#vector
-# Parallelizable: <true/false/global>
+# Documentation: https:/glibs.rtfd.io/Vector.html#get-vector-by-actual-orientation
 # Note:
 
 #__________________________________________________
@@ -31,28 +30,25 @@ scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"
 #__________________________________________________
 # CODE
 
-execute store result score ref.x glib run data get entity @s Pos[0] 1000
-execute store result score ref.y glib run data get entity @s Pos[1] 1000
-execute store result score ref.z glib run data get entity @s Pos[2] 1000
+tellraw @a [{"text":"----------"}]
 
-execute at @s run summon area_effect_cloud ^ ^ ^1 {Tags:["Glib","GetVec"]}
-execute store result score @s glib.vectorX run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[0] 1000
-execute store result score @s glib.vectorY run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[1] 1000
-execute store result score @s glib.vectorZ run data get entity @e[type=area_effect_cloud,tag=GetVec,limit=1] Pos[2] 1000
+execute store result score #ref.x glib run data get entity @s Pos[0] 1000
+execute store result score #ref.y glib run data get entity @s Pos[1] 1000
+execute store result score #ref.z glib run data get entity @s Pos[2] 1000
 
+tellraw @a ["",{"text":"Vector : "},{"score":{"name":"#ref.x","objective":"glib"}},{"text":" "},{"score":{"name":"#ref.y","objective":"glib"}},{"text":" "},{"score":{"name":"#ref.z","objective":"glib"}},{"text":" \u0020 \u0020 \u0020"}]
 
+execute positioned ^ ^ ^1 run function glib.core:default_entity
+execute store result score @s glib.vectorX run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[0] 1000
+execute store result score @s glib.vectorY run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[1] 1000
+execute store result score @s glib.vectorZ run data get entity @e[tag=glib.new,limit=1,sort=nearest] Pos[2] 1000
 
-scoreboard players operation @s glib.vectorX -= ref.x glib
-scoreboard players operation @s glib.vectorY -= ref.y glib
-scoreboard players operation @s glib.vectorZ -= ref.z glib
+tellraw @a ["",{"text":"Vector : "},{"score":{"name":"@s","objective":"glib.vectorX"}},{"text":" "},{"score":{"name":"@s","objective":"glib.vectorY"}},{"text":" "},{"score":{"name":"@s","objective":"glib.vectorZ"}},{"text":" \u0020 \u0020 \u0020"}]
 
-kill @e[tag=GetVec,type=area_effect_cloud]
+scoreboard players operation @s glib.vectorX -= #ref.x glib
+scoreboard players operation @s glib.vectorY -= #ref.y glib
+scoreboard players operation @s glib.vectorZ -= #ref.z glib
 
-scoreboard players set @s VectorSpeed 1000
+tellraw @a ["",{"text":"Vector : "},{"score":{"name":"@s","objective":"glib.vectorX"}},{"text":" "},{"score":{"name":"@s","objective":"glib.vectorY"}},{"text":" "},{"score":{"name":"@s","objective":"glib.vectorZ"}},{"text":" \u0020 \u0020 \u0020"}]
 
-# Start Debug
-execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run tellraw @a[tag=glib.debug] [{"text":"> DEBUG | glib.vector:classic/get_by_actual_orientation","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.entity.vector.get_by_actual_orientation"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
-execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib.core:debug/message/info/entity_info
-execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib.vector:classic/get_by_actual_orientation/debug/display_vector
-execute if entity @a[tag=glib.debug.entity.vector.get_by_actual_orientation] run function glib.core:debug/message/info/end_debug
-# End Debug
+kill @e[tag=glib.new]

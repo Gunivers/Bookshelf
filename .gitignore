@@ -6,9 +6,9 @@
 /generated/
 /playerdata/
 /poi/
-# region/
+/region/
 /stats/
-# level.dat
+level.dat
 /level.dat_old
 /session.lock
 /uid.dat

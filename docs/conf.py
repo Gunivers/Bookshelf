@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Gunivers-Lib'
+project = 'Glibs'
 copyright = '2022, Gunivers'
 author = 'Gunivers'
 

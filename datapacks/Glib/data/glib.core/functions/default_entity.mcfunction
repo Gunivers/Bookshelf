@@ -1,6 +1,11 @@
+# Clear old glib.new entities
 execute as @e[tag=glib.new] run function glib.health:safe_kill
-summon marker ~ 0 ~ {Tags:["glib","glib.new"]}
-# summon armor_stand ~ 0 ~ {Tags:["glib","glib.new"],NoGravity:1,Invisible:1,Marker:1}
 
+# Creating marker
+summon marker ~ ~ ~ {Tags:["glib","glib.new"]}
+
+# Putting the marker in the correct orientation
 tp @e[tag=glib.new] ~ ~ ~ ~ ~
+
+# Trying to link the creator of this entity
 scoreboard players operation @e[tag=glib.new,limit=1,sort=nearest] glib.id.parent = @s glib.id

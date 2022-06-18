@@ -1,4 +1,5 @@
-scoreboard objectives add glib.blockId dummy
+scoreboard objectives add glib.blockId dummy [{"text":"GLib ","color":"gold"},{"text":"Block ID","color":"dark_gray"}]
+
 scoreboard players set @s glib.blockId 0
 execute unless predicate glib.block:get/group_0 run scoreboard players add @s glib.blockId 1
 execute unless predicate glib.block:get/group_1 run scoreboard players add @s glib.blockId 2

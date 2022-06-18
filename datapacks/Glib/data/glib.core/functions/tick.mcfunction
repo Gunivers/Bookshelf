@@ -13,7 +13,7 @@ function glib.core:import/constants
 function glib.core:security
 
 # Glib Menu
-execute if score menu.refresh glib.data matches 20.. run scoreboard players set menu.refresh glib.data 0
+execute if score menu.refresh glib.data matches 5.. run scoreboard players set menu.refresh glib.data 0
 scoreboard players add menu.refresh glib.data 1
 execute unless score menu.rules.commandBlockOutput glib.data matches 1 if score menu.refresh glib.data matches 1 as @a[tag=glib.menu] run function glib.core:menu/main
 execute if score menu.rules.commandBlockOutput glib.data matches 1 as @a[tag=glib.menu] run function glib.core:menu/main
@@ -36,5 +36,6 @@ execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation
 
 # Life time
 scoreboard players add @e glib.lifetime 1
+tag @e remove glib.health.safekill.excluded
 execute as @e[scores={glib.lifetime=-1}] run function glib.health:safe_kill
 kill @e[scores={glib.lifetime=-1},tag=!glib.health.safekill.excluded]
