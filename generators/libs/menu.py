@@ -2,6 +2,8 @@ import os
 from numpy import *
 
 def build(menus, dest = "./menu.mcfunction"):
+    dir = os.path.split(dest)[0]
+    if not os.path.exists(dir): os.makedirs(dir)
     with open(dest, "w") as f:
         f.write(f"""# This function was automatically generated.\n\n""")
         for menu in menus:
@@ -16,6 +18,12 @@ def paged_menu( dest="./main.mcfunction",
                 group_tag = "glib.menu.active",
                 exit_msg = None
             ):
+
+    if items == []:
+        items.append(("Nothing here :/", "text"))
+    
+    dir = os.path.split(dest)[0]
+    if not os.path.exists(dir): os.makedirs(dir)
 
     i = 0
     page = 1
@@ -88,14 +96,14 @@ def paged_menu( dest="./main.mcfunction",
             menu.write(f"""tellraw @a[tag={menu_tag},scores={page_score}] {msg}\n""")
             
 
-        if i > maxLine-6:
+        if i > maxLine-6 and (page < n-1 or len(items)%(maxLine-5) > 0):
             page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page (or go to the last one)"}},{"text":f" {page} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page (or go back to the first one)"}}]).replace("'",'"')
 
             menu.write(f"""\ntellraw @a[tag={menu_tag},scores={page_score}] {page_msg}\n\n""")
             page += 1
             i = 0
             
-    if page > 1:
+    if page > 1 and len(items)%(maxLine-5) > 0:
         page_score = str({f"glib.menu.page = {n-1}"}).replace("'","")
         page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page (or go to the last one)"}},{"text":f" {n} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page (or go back to the first one)"}}]).replace("'",'"')
         menu.write(f"""\ntellraw @a[tag={menu_tag},scores={page_score}] {page_msg}\n\n""")
