@@ -45,38 +45,38 @@ If you want to contribute, please read at least the "Getting started" section in
     :caption: Info
 
     📥 Download <http://glib.gunivers.net>
-    Getting_Started
-    Contributing.md
-    FAQ
+    getting_started
+    contributing.md
+    faq
     💬 Discord <https://discord.gg/E8qq6tN>
 
 .. toctree::
     :maxdepth: 2
     :caption: Libs
 
-    Biome
-    Block
-    Cache
-    Color
-    Health
-    Id
-    Item
-    Link
-    Location
-    MapEdit
-    Math
-    Memory
-    Move
-    Orientation
-    Schedule
-    Time
-    Vector
-    View
-    XP
+    biome
+    block
+    cache
+    color
+    health
+    id
+    item
+    link
+    location
+    mapedit
+    math
+    memory
+    move
+    orientation
+    schedule
+    time
+    vector
+    view
+    xp
 
 .. toctree::
     :maxdepth: 2
     :caption: Systems
 
-    BiomeDisplayer
-    LGdir
+    biomedisplayer
+    lgdir

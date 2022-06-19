@@ -24,6 +24,7 @@ function glib.cache:cache_loop
 # Loop Schedule
 execute as @e[tag=Glib_Cache_Head] at @s run function glib_child:default/core/schedule/loop_schedule
 
+# Start Debug
 # Debug Recorder
 execute as @a[tag=glib.debug.stick] run function glib.core:menu/debug/debug_stick
 execute as @a[tag=glib.debug,tag=glib.debug.global.display_tick] run function glib.core:debug/display_tick
@@ -33,6 +34,7 @@ execute as @a[tag=glib.debug,tag=glib.debug.entity.target_entity_manager,limit=1
 scoreboard players add @e glib.debug.id 0
 execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players add debug.id glib.data 1
 execute as @e[scores={glib.debug.id=0},limit=1] run scoreboard players operation @s glib.debug.id = debug.id glib.data
+# End Debug
 
 # Life time
 scoreboard players add @e glib.lifetime 1

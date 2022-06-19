@@ -19,7 +19,7 @@ scoreboard objectives add lgdir.trigger minecraft.used:minecraft.carrot_on_a_sti
 #____________________________________________________________________________________________________
 
 # Summon the projectile when the item is right-clicked
-execute at @a[scores={lgdir.trigger=1}] run summon marker ~ ~ ~ {Tags:["lgdir","lgdir.projectile"]}
+execute at @a[scores={lgdir.trigger=1}] run summon marker ~ ~ ~ {Tags:["lgdir","lgdir.projectile","Debug","glib.debug.move.by_vector"]}
 execute at @a[scores={lgdir.trigger=1}] run playsound minecraft:item.trident.throw master @a[distance=..15] ~ ~ ~ 2 2 1
 
 # TP of the projectile on the shooting player to get his orientation (the summon command place the entity in default orientation)
@@ -44,8 +44,7 @@ scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] glib.vector
 scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] glib.vectorZ *= 2 glib.const
 
 # Setting collision to type "bounce on everything"
-# scoreboard players set @e[tag=lgdir.projectile,tag=!lgdir.old] glib.collision 1
-# Known issue on bounce
+scoreboard players set @e[tag=lgdir.projectile,tag=!lgdir.old] glib.collision 1
 
 execute as @e[tag=lgdir.projectile] run function glib.move:by_vector
 execute at @e[tag=lgdir.projectile] run particle dust 1 0 0 0.5 ~ ~ ~ 0.01 0.01 0.01 0 5 force

@@ -27,21 +27,25 @@ scoreboard objectives add glib.vectorZ dummy [{"text":"GLib ","color":"gold"},{"
 # CONFIG
 
 # Manage precision of collision detection (1000 = 1 block, 500 = 0.5 blocks). More the system is accurate and more it will be heavy to run.
-scoreboard players set @s[tag=!glib.config.override] glib.precision 1000
+scoreboard players set @s[tag=!glib.config.override] glib.precision -1
 tag @s[tag=glib.config.override] remove glib.config.override
 
 #__________________________________________________
 # CODE
 
 # Backup
-
 scoreboard players operation #backup.move.vectorX glib = @s glib.vectorX
 scoreboard players operation #backup.move.vectorY glib = @s glib.vectorY
 scoreboard players operation #backup.move.vectorZ glib = @s glib.vectorZ
 scoreboard players operation #backup.move.res0 glib = @s glib.res0
 
-# Absurd values security
+# Start Debug
+execute if score @s glib.precision matches ..-1 run tellraw @a[tag=glib.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"Error in glib.move:by_vector","color":"red","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+execute if score @s glib.precision matches ..-1 run tellraw @a[tag=glib.debug.move.by_vector] [{"text":"   Precision cannot be negative.","color":"gray"}]
+execute if score @s glib.precision matches ..-1 run tellraw @a[tag=glib.debug.move.by_vector] [{"text":" < ","bold":true,"color":"gold"}]
+# End Debug
 
+# Absurd values security
 scoreboard players set @s[scores={glib.precision=..-1}] glib.precision 1000
 
 # Decomposition in sum of vector with parameters <= glib.precision

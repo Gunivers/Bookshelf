@@ -176,6 +176,7 @@ This lib use global scores, that are automatically created:
 | `glib.const` | Contain a huge numer of fakeplayers with constant score value |
 | `glib.data` | Uses by the `glib.core` module.<br> Do not use it without knowing exactly what you are doing. |
 | `glib.debug` | Determine the behavior of debug features |
+| `glib.debug.id` | A built-in ID palced on every entities for debug purposes |
 | `glib.lifetime`| If positive (default behavior), count the number of tick the entity exist. If negative, determine the number of ticks the entity will live (killed when the score reach -1). This socre is automatically incremented each tick. |
 | `glib.res[0-9]` | Default score for outputs |
 | `glib.var[0-9]` | Default score for inputs |
@@ -237,48 +238,40 @@ documentation, also goes through the commentary of the code. Thus, it is importa
 ---
 ### 🪲 Debug
 
-It is possible to add debug lines anywhere in the code. However, these must be subject to conditions. For the debug to be displayed to a player, that player must have the tags;
+It is possible to add debug lines anywhere in the code. However, these must be subject to conditions. For the debug to be displayed to a player, that player must have the tag `glib.debug.<PATH>` where `<PATH>` is the path to the function. In the tags, this path is written ith `.` as separators. Example: `glib.vector:classic/get_ata` => `glib.debug.vector.classic.get_ata`
 
--  `Glib_Debug`
--  `Glib_Debug_<tag_path>`
+There is 3 different types of debug messages:
+- Error: which display every critical situation
+- Warning: for errors that can be managed by the libs
+- Record: to let the user know what happen during the execution of the system
 
-Where is the path to the function after the namespace, replacing the / with . (tag format requires)
+Every debug message must be visually opened using the following tellraws:
 
--  Example: `glib:entity/vector/get_from_actual_orientation` becomes `entity.vector.get_from_actual_orientation`
+- **Error without source entity**
+   ```
+   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"ERROR in <PATH>","color":"red","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   ```
 
-#### ❌ Error Messages
+- **Warning without source entity**
+   ```
+   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"WARNING in <PATH>","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   ```
 
-Error tellraws must be displayed to all players with the glib.debug tag and must be in this form:
+- **Record without source entity**
+   ```
+   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from <PATH>","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   ```
 
-```
-tellraw @a[tag=glib.debug] [{"text":"[ERROR] in <PATH>","color":"red"}]
-function glib:core/debug/message/error/entity_info
-tellraw @a[tag=glib.debug] [{"text":"   <MESSAGE>","color":"red"}]
-```
-
-For readability, all lines except this [ERROR] container must have a 3 space indentation.
-
-Lines of code concerning error messages must be preceded by ``## Start Error`` and followed by ``## End Error`` in order to be removed by a program.
-
-#### ❗Debug messages
-
-In the same logic, debug messages must be conditioned to an additional tag linked to the path of the function concerned and must start with:
-
-```
-tellraw @a[tag=glib.debug.<TAG_PATH>] [{"text":"> DEBUG | <PATH>","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove glib.debug.<TAG_PATH>"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
-
-execute as @e[tag=glib.debug.<TAG_PATH>] run function glib:core/debug/message/info/entity_info
-```
-
-In order to distinguish between nested function debugs, this debug must be followed by
+Also, all debugs must end with
 
 ```
-execute if entity @a[tag=Glib_Debug_<TAG_PATH>] run function glib:core/debug/message/info/end_debug
+tellraw @a[tag=glib.debug.<PATH>] ["",{"text":" <","bold":true,"color":"gold"}]
 ```
 
-Lines of code concerning debug messages should be preceded by ``## Start Debug`` and followed by ``## End Debug`` in order to be removed by a program.
+⚠️ All debugs must be preceded by ``# Start Debug`` and followed by ``# End Debug`` in order to be automatically commented by a program.
 
 --- 
+
 ### 🌟 Special functions
 
 #### 👉 The "ata" functions

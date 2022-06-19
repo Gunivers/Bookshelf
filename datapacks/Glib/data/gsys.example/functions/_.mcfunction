@@ -1,0 +1,2 @@
+tellraw @s [{"text": "[gsys.example documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io/en/latest/example.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
+scoreboard players set gsys.example glib.activeModule 1

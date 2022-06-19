@@ -1,3 +1,7 @@
+# Start Debug
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from glib.move:by_vector/child/loop","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+# End Debug
+
 #__________________________________________________
 # Get working vector
 
@@ -21,10 +25,16 @@ execute as @s[scores={glib.collision=1..}] at @s run function glib.move:by_vecto
 #__________________________________________________
 # Detect bloc on the 3 axes
 
-execute as @s[tag=glib.collisionFront] run tellraw @a ["",{"text":"   | CollisionFront"}]
 tag @s[tag=glib.collision] remove glib.collision
 tag @s[tag=glib.collisionTest] add glib.collisionFront
 execute as @s[scores={glib.collision=1..},tag=glib.collisionFront] at @s run function glib.move:by_vector/child/collision
+
+# Start Debug
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] ["",{"text":"    Collision detected : Front"}]
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] ["",{"text":"    Collision detected : X"}]
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] ["",{"text":"    Collision detected : Y"}]
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] ["",{"text":"    Collision detected : Z"}]
+# End Debug
 
 #__________________________________________________
 # Apply movement
@@ -39,3 +49,8 @@ execute if entity @s[tag=!glib.collision] run function glib.location:add/accurac
 
 scoreboard players remove move.decomposition.factor glib 1
 execute at @s if score move.decomposition.factor glib matches 1.. run function glib.move:by_vector/child/loop
+
+
+# Start Debug
+execute as @e[tag=glib.collision,tag=glib.debug.move.by_vector] run tellraw @a[tag=glib.debug.move.by_vector] ["",{"text":" <","bold":true,"color":"gold"}]
+# End Debug

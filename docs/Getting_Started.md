@@ -34,7 +34,7 @@ In this command block, you can enter the command of one of the following example
 
 - **LGdir** : this system allow you to shoot lasers. To shoot, take a `carrot_on_a_stick` and right-click on it!
     ```
-    function gsys.exampl:lgdir
+    function gsys.example:lgdir
     ```
 - **Drop to place** : this system allow you to place minecraft blocks by dropping the items instead of right clicking on it. Useless so essential!
     ```

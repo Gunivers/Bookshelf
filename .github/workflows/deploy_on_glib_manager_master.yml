@@ -31,7 +31,7 @@ jobs:
       - name: deploy
         uses:  swznd/sftp-deploy@master
         with:
-          local_path: '/datapacks/Glib/'
+          localPath: '/datapacks/Glib/'
           host: ${{ secrets.SFTP_IP }}
           port: ${{ secrets.SFTP_PORT }}
           user: ${{ secrets.SFTP_USER }}

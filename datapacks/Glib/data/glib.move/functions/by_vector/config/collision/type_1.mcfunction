@@ -1,8 +1,5 @@
 # Rebound
 
-tellraw @a ["",{"text":"   | Collision Reaction"}]
-execute as @s[tag=glib.collisionX] run tellraw @a ["",{"text":"   | Collision Reaction X"}]
-
 # glib.collision on X
 scoreboard players operation @s[tag=glib.collisionX] glib.vectorX *= -1 glib.const
 
