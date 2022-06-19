@@ -15,8 +15,7 @@ function glib.core:security
 # Glib Menu
 execute if score menu.refresh glib.data matches 5.. run scoreboard players set menu.refresh glib.data 0
 scoreboard players add menu.refresh glib.data 1
-execute unless score menu.rules.commandBlockOutput glib.data matches 1 if score menu.refresh glib.data matches 1 as @a[tag=glib.menu] run function glib.core:menu/main
-execute if score menu.rules.commandBlockOutput glib.data matches 1 as @a[tag=glib.menu] run function glib.core:menu/main
+execute if entity @a[tag=glib.menu.active] run function glib.core:menu
 
 # Cache
 function glib.cache:cache_loop

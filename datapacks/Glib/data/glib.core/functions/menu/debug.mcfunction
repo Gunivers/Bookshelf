@@ -1,15 +1,24 @@
 # This function was automatically generated.
 
+execute as @a[tag=glib.menu.debug,tag=!glib.menu.active] run playsound minecraft:item.book.page_turn master @s ~ ~ ~ 2 1 1
 tag @a[tag=glib.menu.debug] add glib.menu.active
 scoreboard players add @a[tag=glib.menu.debug] glib.menu.page 0
+execute as @a[tag=glib.menu.debug,tag=glib.menu.nextPage] run playsound minecraft:item.book.page_turn master @s ~ ~ ~ 2 1 1
+execute as @a[tag=glib.menu.debug,tag=glib.menu.previousPage] run playsound minecraft:item.book.page_turn master @s ~ ~ ~ 2 1 1
+execute as @a[tag=glib.menu.debug,tag=glib.menu.nextPage] run scoreboard players add @s glib.menu.page 1
+execute as @a[tag=glib.menu.debug,tag=glib.menu.previousPage] run scoreboard players remove @s glib.menu.page 1
 execute as @a[tag=glib.menu.debug] if score @s glib.menu.page matches ..-1 run scoreboard players set @s glib.menu.page 1
 execute as @a[tag=glib.menu.debug] if score @s glib.menu.page matches 2.. run scoreboard players set @s glib.menu.page 0
+tag @a[tag=glib.menu.debug] remove glib.menu.nextPage
+tag @a[tag=glib.menu.debug] remove glib.menu.previousPage
+execute as @a[tag=glib.menu.debug,tag=glib.menu] run playsound minecraft:item.book.page_turn master @s ~ ~ ~ 2 1 1
 tag @a[tag=glib.menu.debug] remove glib.menu
 tag @a[tag=glib.menu.debug.close] add glib.menu
+execute as @a[tag=glib.menu.debug.close] run playsound minecraft:item.book.page_turn master @s ~ ~ ~ 2 1 1
 tag @a[tag=glib.menu.debug.close] remove glib.menu.debug
 tag @a[tag=glib.menu.debug.close] remove glib.menu.debug.close
 
-tellraw @a[tag=glib.menu.debug] [{"text": "\n"}, {"text": " <", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.debug.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}, {"text": " Glib Menu / Debug", "color": "dark_aqua", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.debug.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}, {"text": "\n "}]
+tellraw @a[tag=glib.menu.debug] [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"}]
 
 
 # Page 1
@@ -44,7 +53,7 @@ tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 0},tag=glib.debug.memory
 tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 0},tag=!glib.debug.move] ["", {"text": "   glib.move: ", "color": "gray", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.debug.move"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}, {"text": "✗", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.debug.move"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}]
 tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 0},tag=glib.debug.move] ["", {"text": "   glib.move: ", "color": "gray", "clickEvent": {"action": "run_command", "value": "/tag @s remove glib.debug.move"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}, {"text": "✔", "color": "green", "clickEvent": {"action": "run_command", "value": "/tag @s remove glib.debug.move"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}]
 
-tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 0}] [{"text": "\n      Page ", "color": "dark_aqua"}, {"text": "[<]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/scoreboard players remove @s glib.menu.page 1"}, "hoverEvent": {"action": "show_text", "contents": "Previous page (or go to the last one)"}}, {"text": " 1 / 2 ", "color": "dark_aqua"}, {"text": "[>]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/scoreboard players add @s glib.menu.page 1"}, "hoverEvent": {"action": "show_text", "contents": "Next page (or go back to the first one)"}}]
+tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 0}] [{"text": "\n   Page ", "color": "dark_aqua"}, {"text": "[<]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.previousPage"}, "hoverEvent": {"action": "show_text", "contents": "Previous page (or go to the last one)"}}, {"text": " 1 / 2 ", "color": "dark_aqua"}, {"text": "[>]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.nextPage"}, "hoverEvent": {"action": "show_text", "contents": "Next page (or go back to the first one)"}}]
 
 
 # Page 2
@@ -68,5 +77,7 @@ tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 1},tag=glib.debug.exampl
 tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 1},tag=!glib.debug.lgdir] ["", {"text": "   gsys.lgdir: ", "color": "gray", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.debug.lgdir"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}, {"text": "✗", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.debug.lgdir"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}]
 tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 1},tag=glib.debug.lgdir] ["", {"text": "   gsys.lgdir: ", "color": "gray", "clickEvent": {"action": "run_command", "value": "/tag @s remove glib.debug.lgdir"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}, {"text": "✔", "color": "green", "clickEvent": {"action": "run_command", "value": "/tag @s remove glib.debug.lgdir"}, "hoverEvent": {"action": "show_text", "contents": "Click to change the value"}}]
 
-tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 1}] [{"text": "\n\n\n\n\n\n\n   Page ", "color": "dark_aqua"}, {"text": "[<]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/scoreboard players remove @s glib.menu.page 1"}, "hoverEvent": {"action": "show_text", "contents": "Previous page (or go to the last one)"}}, {"text": " 2 / 2 ", "color": "dark_aqua"}, {"text": "[>]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/scoreboard players add @s glib.menu.page 1"}, "hoverEvent": {"action": "show_text", "contents": "Next page (or go back to the first one)"}}]
+tellraw @a[tag=glib.menu.debug,scores={glib.menu.page = 1}] [{"text": "\n   Page ", "color": "dark_aqua"}, {"text": "[<]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.previousPage"}, "hoverEvent": {"action": "show_text", "contents": "Previous page (or go to the last one)"}}, {"text": " 2 / 2 ", "color": "dark_aqua"}, {"text": "[>]", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.nextPage"}, "hoverEvent": {"action": "show_text", "contents": "Next page (or go back to the first one)"}}]
 
+
+tellraw @a[tag=glib.menu.debug] [{"text": "\n"}, {"text": " < ", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.debug.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}, {"text": "Glib Menu / Debug", "color": "dark_aqua", "underlined": true, "bold": true, "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.debug.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}]
