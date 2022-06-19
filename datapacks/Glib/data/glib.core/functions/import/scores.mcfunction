@@ -16,6 +16,9 @@ scoreboard objectives add glib.debug dummy [{"text":"GLib ","color":"gold"},{"te
 # Lifetime
 scoreboard objectives add glib.lifetime dummy [{"text":"GLib ","color":"gold"},{"text":"Lifetime","color":"dark_gray"}]
 
+# Lifetime
+scoreboard objectives add glib.menu.page dummy [{"text":"GLib ","color":"gold"},{"text":"Menu Page","color":"dark_gray"}]
+
 # Inputs
 scoreboard objectives add glib.var0 dummy [{"text":"GLib ","color":"gold"},{"text":"Var0","color":"dark_gray"}]
 scoreboard objectives add glib.var1 dummy [{"text":"GLib ","color":"gold"},{"text":"Var1","color":"dark_gray"}]
