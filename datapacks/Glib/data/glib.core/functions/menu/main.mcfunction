@@ -22,6 +22,8 @@ tellraw @a[tag=glib.menu] [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"}]
 
 # Page 1
 
+tellraw @a[tag=glib.menu,scores={glib.menu.page = 0}] {"text": "   + Gamerules", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.gamerules"}, "hoverEvent": {"action": "show_text", "contents": "Click to open the sub-menu"}}
+tellraw @a[tag=glib.menu,scores={glib.menu.page = 0}] [{"text": "    ", "color": "gray"}]
 tellraw @a[tag=glib.menu,scores={glib.menu.page = 0}] {"text": "   + Debug", "color": "gold", "clickEvent": {"action": "run_command", "value": "/tag @s add glib.menu.debug"}, "hoverEvent": {"action": "show_text", "contents": "Click to open the sub-menu"}}
 tellraw @a[tag=glib.menu,scores={glib.menu.page = 0}] [{"text": "    ", "color": "gray"}]
 tellraw @a[tag=glib.menu,scores={glib.menu.page = 0}] [{"text": "   "}, {"text": "Documentation", "color": "blue", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io"}, "hoverEvent": {"action": "show_text", "contents": "Click to follow the link"}}, {"text": " ➥", "color": "blue"}]

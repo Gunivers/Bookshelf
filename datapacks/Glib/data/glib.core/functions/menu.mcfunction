@@ -34,3 +34,4 @@ execute if entity @a[tag=glib.menu.debug.view] run function glib.core:menu/debug
 execute if entity @a[tag=glib.menu.debug.xp] run function glib.core:menu/debug/xp
 execute if entity @a[tag=glib.menu.debug.example] run function glib.core:menu/debug/example
 execute if entity @a[tag=glib.menu.debug.lgdir] run function glib.core:menu/debug/lgdir
+execute if entity @a[tag=glib.menu.gamerules] run function glib.core:menu/gamerules

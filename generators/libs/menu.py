@@ -78,8 +78,8 @@ def paged_menu( dest="./main.mcfunction",
 
 
         if item[1] == "tag":
-            msg_add = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/tag @s add {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the value"}},{"text":"✗","color":"red","clickEvent":{"action":"run_command","value":f"/tag @s add {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the value"}}]).replace("'",'"')
-            msg_remove = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/tag @s remove {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the value"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":f"/tag @s remove {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the value"}}]).replace("'",'"')
+            msg_add = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/tag @s add {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to add the tag"}},{"text":"✗","color":"red","clickEvent":{"action":"run_command","value":f"/tag @s add {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to add the tag"}}]).replace("'",'"')
+            msg_remove = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/tag @s remove {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to remove the tag"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":f"/tag @s remove {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to remove the tag"}}]).replace("'",'"')
             menu.write(f"""tellraw @a[tag={menu_tag},scores={page_score},tag=!{item[2]}] {msg_add}\n""")
             menu.write(f"""tellraw @a[tag={menu_tag},scores={page_score},tag={item[2]}] {msg_remove}\n""")
 
@@ -94,10 +94,22 @@ def paged_menu( dest="./main.mcfunction",
         if item[1] == "submenu":
             msg = str({"text":f" \u0020 + {item[0]}","color":"gold","clickEvent":{"action":"run_command","value":f"/tag @s add {item[2]}"},"hoverEvent":{"action":"show_text","contents":"Click to open the sub-menu"}}).replace("'",'"')
             menu.write(f"""tellraw @a[tag={menu_tag},scores={page_score}] {msg}\n""")
-            
+
+        if item[1] == "gamerule":
+            menu.write(f"""execute store result score #gamerule glib run gamerule {item[0]}\n""")
+            if item[2] == "bool":
+                msg_enable = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/gamerule {item[0]} true"},"hoverEvent":{"action":"show_text","contents":"Click to enable the gamerule"}},{"text":"✗","color":"red","clickEvent":{"action":"run_command","value":f"/gamerule {item[0]} true"},"hoverEvent":{"action":"show_text","contents":"Click to enable the gamerule"}}]).replace("'",'"')
+                msg_disable = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"run_command","value":f"/gamerule {item[0]} false"},"hoverEvent":{"action":"show_text","contents":"Click to disable the gamerule"}},{"text":"✔","color":"green","clickEvent":{"action":"run_command","value":f"/gamerule {item[0]} false"},"hoverEvent":{"action":"show_text","contents":"Click to disable the gamerule"}}]).replace("'",'"')
+                menu.write(f"""execute if score #gamerule glib matches 0 run tellraw @a[tag={menu_tag},scores={page_score}] {msg_enable}\n""")
+                menu.write(f"""execute if score #gamerule glib matches 1 run tellraw @a[tag={menu_tag},scores={page_score}] {msg_disable}\n""")
+            elif item[2] == "integer":
+                msg = str(["",{"text":f" \u0020 {item[0]}: ","color":"gray","clickEvent":{"action":"suggest_command","value":f"/gamerule {item[0]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the gamerule value"}},{"score":{"name":"#gamerule","objective":"glib"},"color":"yellow","clickEvent":{"action":"suggest_command","value":f"/gamerule {item[0]}"},"hoverEvent":{"action":"show_text","contents":"Click to change the gamerule value"}}]).replace("'",'"')
+                menu.write(f"""tellraw @a[tag={menu_tag},scores={page_score}] {msg}\n""")
+
+
 
         if i > maxLine-6 and (page < n-1 or len(items)%(maxLine-5) > 0):
-            page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page (or go to the last one)"}},{"text":f" {page} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page (or go back to the first one)"}}]).replace("'",'"')
+            page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page"}},{"text":f" {page} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page"}}]).replace("'",'"')
 
             menu.write(f"""\ntellraw @a[tag={menu_tag},scores={page_score}] {page_msg}\n\n""")
             page += 1
@@ -105,7 +117,7 @@ def paged_menu( dest="./main.mcfunction",
             
     if page > 1 and len(items)%(maxLine-5) > 0:
         page_score = str({f"glib.menu.page = {n-1}"}).replace("'","")
-        page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page (or go to the last one)"}},{"text":f" {n} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page (or go back to the first one)"}}]).replace("'",'"')
+        page_msg = str([{"text":"\n \u0020 Page ","color":"dark_aqua"},{"text":"[<]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.previousPage"},"hoverEvent":{"action":"show_text","contents":"Previous page"}},{"text":f" {n} / {n} ","color":"dark_aqua"},{"text":"[>]","color":"gold","clickEvent":{"action":"run_command","value":"/tag @s add glib.menu.nextPage"},"hoverEvent":{"action":"show_text","contents":"Next page"}}]).replace("'",'"')
         menu.write(f"""\ntellraw @a[tag={menu_tag},scores={page_score}] {page_msg}\n\n""")
 
     # Title
