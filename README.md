@@ -4,11 +4,11 @@
 <br>
 <div align=center>
 
-<a href="https://glib.gunivers.net"><img src="https://gunivers.net/wp-content/uploads/2022/08/download.png" style="width:89px"></a>
+<a href="https://glib.gunivers.net"><img src="https://gunivers.net/wp-content/uploads/2022/08/download.png" style="width:64px"></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://glibs.rtfd.io"><img src="https://gunivers.net/wp-content/uploads/2022/08/search.png" style="width:89px"></a>
+<a href="https://glibs.rtfd.io"><img src="https://gunivers.net/wp-content/uploads/2022/08/search.png" style="width:64px"></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://discord.gg/E8qq6tN"><img src="https://gunivers.net/wp-content/uploads/2022/08/discord.png" style="width:89px"></a>
+<a href="https://discord.gg/E8qq6tN"><img src="https://gunivers.net/wp-content/uploads/2022/08/discord.png" style="width:64px"></a>
 
 </div>
 <br>
@@ -20,7 +20,7 @@ The Gunivers-libs is a modular library datapack designed to help mapmakers to im
 
 <div align="center">
 <a href="https://www.youtube.com/watch?v=E2nKYEvjETk">Watch the presentation video<br>
-<img src="https://gunivers.net/wp-content/uploads/2022/08/youtube.png" style="width:89px"></a>
+<img src="https://gunivers.net/wp-content/uploads/2022/08/youtube.png" style="width:64px"></a>
 </div>
 
 # ⚙️ Features
