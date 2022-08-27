@@ -1,7 +1,7 @@
 📚 Glibs Documentation
 ======================
 
-.. image:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
+.. image:: https://gunivers.net/wp-content/uploads/2022/08/Banner.png
 
 🔎 What is it?
 ==============
