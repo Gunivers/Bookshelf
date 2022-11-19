@@ -1,0 +1,2 @@
+This is Phi Project's shulker box loot table
+Link: https://github.com/MinecraftPhi/MinecraftPhi-modules

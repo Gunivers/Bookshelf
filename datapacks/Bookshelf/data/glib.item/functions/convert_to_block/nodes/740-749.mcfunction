@@ -1,0 +1,3 @@
+execute if score @s bs.itemId matches 740..742 run function bs.item:convert_to_block/leaves/740-742
+execute if score @s bs.itemId matches 743..745 run function bs.item:convert_to_block/leaves/743-745
+execute if score @s bs.itemId matches 746..749 run function bs.item:convert_to_block/leaves/746-749

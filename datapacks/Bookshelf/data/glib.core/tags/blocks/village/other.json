@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:smoker",
+		"minecraft:cartography_table",
+		"minecraft:brewing_stand",
+		"minecraft:fletching_table",
+		"minecraft:cauldron",
+		"minecraft:lectern",
+		"minecraft:stonecutter"
+	]
+}
