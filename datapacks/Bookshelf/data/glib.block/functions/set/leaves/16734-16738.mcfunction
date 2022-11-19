@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 16734 run setblock ~ ~ ~ warped_button[face=ceiling,facing=east,powered=true]
+execute if score @s glib.blockId matches 16735 run setblock ~ ~ ~ warped_button[face=ceiling,facing=east,powered=false]
+execute if score @s glib.blockId matches 16736 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=left,open=true,powered=true]
+execute if score @s glib.blockId matches 16737 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=left,open=true,powered=false]
+execute if score @s glib.blockId matches 16738 run setblock ~ ~ ~ crimson_door[facing=north,half=upper,hinge=left,open=false,powered=true]

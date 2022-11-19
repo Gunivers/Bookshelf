@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 16263 run setblock ~ ~ ~ warped_slab[type=top,waterlogged=false]
+execute if score @s glib.blockId matches 16264 run setblock ~ ~ ~ warped_slab[type=bottom,waterlogged=true]
+execute if score @s glib.blockId matches 16265 run setblock ~ ~ ~ warped_slab[type=bottom,waterlogged=false]
+execute if score @s glib.blockId matches 16266 run setblock ~ ~ ~ warped_slab[type=double,waterlogged=true]
+execute if score @s glib.blockId matches 16267 run setblock ~ ~ ~ warped_slab[type=double,waterlogged=false]

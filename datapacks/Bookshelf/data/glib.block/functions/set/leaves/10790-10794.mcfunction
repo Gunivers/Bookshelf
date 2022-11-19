@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 10790 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 10791 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 10792 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 10793 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
+execute if score @s glib.blockId matches 10794 run setblock ~ ~ ~ polished_diorite_stairs[facing=north,half=top,shape=inner_right,waterlogged=true]

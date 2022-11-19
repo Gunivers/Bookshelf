@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 3729 run setblock ~ ~ ~ birch_sign[rotation=14,waterlogged=false]
+execute if score @s glib.blockId matches 3730 run setblock ~ ~ ~ birch_sign[rotation=15,waterlogged=true]
+execute if score @s glib.blockId matches 3731 run setblock ~ ~ ~ birch_sign[rotation=15,waterlogged=false]
+execute if score @s glib.blockId matches 3732 run setblock ~ ~ ~ acacia_sign[rotation=0,waterlogged=true]
+execute if score @s glib.blockId matches 3733 run setblock ~ ~ ~ acacia_sign[rotation=0,waterlogged=false]

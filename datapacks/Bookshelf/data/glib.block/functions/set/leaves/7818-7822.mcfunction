@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 7818 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=true,south=false,waterlogged=false,west=true]
+execute if score @s glib.blockId matches 7819 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=true,south=false,waterlogged=false,west=false]
+execute if score @s glib.blockId matches 7820 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=true,waterlogged=true,west=true]
+execute if score @s glib.blockId matches 7821 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=true,waterlogged=true,west=false]
+execute if score @s glib.blockId matches 7822 run setblock ~ ~ ~ purple_stained_glass_pane[east=true,north=false,south=true,waterlogged=false,west=true]

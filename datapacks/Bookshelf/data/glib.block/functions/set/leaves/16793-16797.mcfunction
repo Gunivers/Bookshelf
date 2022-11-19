@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 16793 run setblock ~ ~ ~ crimson_door[facing=east,half=lower,hinge=left,open=true,powered=false]
+execute if score @s glib.blockId matches 16794 run setblock ~ ~ ~ crimson_door[facing=east,half=lower,hinge=left,open=false,powered=true]
+execute if score @s glib.blockId matches 16795 run setblock ~ ~ ~ crimson_door[facing=east,half=lower,hinge=left,open=false,powered=false]
+execute if score @s glib.blockId matches 16796 run setblock ~ ~ ~ crimson_door[facing=east,half=lower,hinge=right,open=true,powered=true]
+execute if score @s glib.blockId matches 16797 run setblock ~ ~ ~ crimson_door[facing=east,half=lower,hinge=right,open=true,powered=false]

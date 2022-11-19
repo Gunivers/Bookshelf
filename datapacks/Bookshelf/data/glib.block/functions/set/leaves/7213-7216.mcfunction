@@ -1,0 +1,4 @@
+execute if score @s glib.blockId matches 7213 run setblock ~ ~ ~ dragon_head[rotation=6]
+execute if score @s glib.blockId matches 7214 run setblock ~ ~ ~ dragon_head[rotation=7]
+execute if score @s glib.blockId matches 7215 run setblock ~ ~ ~ dragon_head[rotation=8]
+execute if score @s glib.blockId matches 7216 run setblock ~ ~ ~ dragon_head[rotation=9]

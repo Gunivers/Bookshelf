@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 10467 run setblock ~ ~ ~ dead_fire_coral_wall_fan[facing=south,waterlogged=true]
+execute if score @s glib.blockId matches 10468 run setblock ~ ~ ~ dead_fire_coral_wall_fan[facing=south,waterlogged=false]
+execute if score @s glib.blockId matches 10469 run setblock ~ ~ ~ dead_fire_coral_wall_fan[facing=west,waterlogged=true]
+execute if score @s glib.blockId matches 10470 run setblock ~ ~ ~ dead_fire_coral_wall_fan[facing=west,waterlogged=false]
+execute if score @s glib.blockId matches 10471 run setblock ~ ~ ~ dead_fire_coral_wall_fan[facing=east,waterlogged=true]

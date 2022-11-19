@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 19911 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=low,south=none,up=false,waterlogged=true,west=low]
+execute if score @s glib.blockId matches 19912 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=low,south=none,up=false,waterlogged=true,west=tall]
+execute if score @s glib.blockId matches 19913 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=none]
+execute if score @s glib.blockId matches 19914 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=low]
+execute if score @s glib.blockId matches 19915 run setblock ~ ~ ~ cobbled_deepslate_wall[east=none,north=low,south=none,up=false,waterlogged=false,west=tall]
