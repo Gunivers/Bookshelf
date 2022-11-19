@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 18322 run setblock ~ ~ ~ candle[candles=3,lit=true,waterlogged=false]
+execute if score @s glib.blockId matches 18323 run setblock ~ ~ ~ candle[candles=3,lit=false,waterlogged=true]
+execute if score @s glib.blockId matches 18324 run setblock ~ ~ ~ candle[candles=3,lit=false,waterlogged=false]
+execute if score @s glib.blockId matches 18325 run setblock ~ ~ ~ candle[candles=4,lit=true,waterlogged=true]
+execute if score @s glib.blockId matches 18326 run setblock ~ ~ ~ candle[candles=4,lit=true,waterlogged=false]

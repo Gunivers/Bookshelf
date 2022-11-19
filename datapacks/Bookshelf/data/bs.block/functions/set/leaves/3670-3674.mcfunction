@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 3670 run setblock ~ ~ ~ spruce_sign[rotation=1,waterlogged=true]
+execute if score @s glib.blockId matches 3671 run setblock ~ ~ ~ spruce_sign[rotation=1,waterlogged=false]
+execute if score @s glib.blockId matches 3672 run setblock ~ ~ ~ spruce_sign[rotation=2,waterlogged=true]
+execute if score @s glib.blockId matches 3673 run setblock ~ ~ ~ spruce_sign[rotation=2,waterlogged=false]
+execute if score @s glib.blockId matches 3674 run setblock ~ ~ ~ spruce_sign[rotation=3,waterlogged=true]

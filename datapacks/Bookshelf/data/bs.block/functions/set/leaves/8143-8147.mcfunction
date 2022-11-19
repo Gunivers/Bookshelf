@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 8143 run setblock ~ ~ ~ dark_oak_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]
+execute if score @s glib.blockId matches 8144 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=top,shape=straight,waterlogged=true]
+execute if score @s glib.blockId matches 8145 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+execute if score @s glib.blockId matches 8146 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
+execute if score @s glib.blockId matches 8147 run setblock ~ ~ ~ dark_oak_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]

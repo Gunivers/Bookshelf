@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 5936 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=false,south=true,west=false]
+execute if score @s glib.blockId matches 5937 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=false,south=false,west=true]
+execute if score @s glib.blockId matches 5938 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=true,powered=false,south=false,west=false]
+execute if score @s glib.blockId matches 5939 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=false,powered=true,south=true,west=true]
+execute if score @s glib.blockId matches 5940 run setblock ~ ~ ~ tripwire[attached=false,disarmed=true,east=true,north=false,powered=true,south=true,west=false]

@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 10379 run setblock ~ ~ ~ turtle_egg[eggs=1,hatch=0]
+execute if score @s glib.blockId matches 10380 run setblock ~ ~ ~ turtle_egg[eggs=1,hatch=1]
+execute if score @s glib.blockId matches 10381 run setblock ~ ~ ~ turtle_egg[eggs=1,hatch=2]
+execute if score @s glib.blockId matches 10382 run setblock ~ ~ ~ turtle_egg[eggs=2,hatch=0]
+execute if score @s glib.blockId matches 10383 run setblock ~ ~ ~ turtle_egg[eggs=2,hatch=1]

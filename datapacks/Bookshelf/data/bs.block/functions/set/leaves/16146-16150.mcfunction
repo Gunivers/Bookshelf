@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 16146 run setblock ~ ~ ~ soul_campfire[facing=south,lit=false,signal_fire=false,waterlogged=false]
+execute if score @s glib.blockId matches 16147 run setblock ~ ~ ~ soul_campfire[facing=west,lit=true,signal_fire=true,waterlogged=true]
+execute if score @s glib.blockId matches 16148 run setblock ~ ~ ~ soul_campfire[facing=west,lit=true,signal_fire=true,waterlogged=false]
+execute if score @s glib.blockId matches 16149 run setblock ~ ~ ~ soul_campfire[facing=west,lit=true,signal_fire=false,waterlogged=true]
+execute if score @s glib.blockId matches 16150 run setblock ~ ~ ~ soul_campfire[facing=west,lit=true,signal_fire=false,waterlogged=false]

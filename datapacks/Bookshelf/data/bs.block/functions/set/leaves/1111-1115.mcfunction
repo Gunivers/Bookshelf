@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 1111 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=16,powered=true]
+execute if score @s glib.blockId matches 1112 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=16,powered=false]
+execute if score @s glib.blockId matches 1113 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=17,powered=true]
+execute if score @s glib.blockId matches 1114 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=17,powered=false]
+execute if score @s glib.blockId matches 1115 run setblock ~ ~ ~ note_block[instrument=didgeridoo,note=18,powered=true]

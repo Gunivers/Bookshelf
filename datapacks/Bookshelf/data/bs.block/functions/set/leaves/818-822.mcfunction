@@ -1,0 +1,5 @@
+execute if score @s glib.blockId matches 818 run setblock ~ ~ ~ note_block[instrument=bell,note=19,powered=false]
+execute if score @s glib.blockId matches 819 run setblock ~ ~ ~ note_block[instrument=bell,note=20,powered=true]
+execute if score @s glib.blockId matches 820 run setblock ~ ~ ~ note_block[instrument=bell,note=20,powered=false]
+execute if score @s glib.blockId matches 821 run setblock ~ ~ ~ note_block[instrument=bell,note=21,powered=true]
+execute if score @s glib.blockId matches 822 run setblock ~ ~ ~ note_block[instrument=bell,note=21,powered=false]
