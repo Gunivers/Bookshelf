@@ -1,2 +1,0 @@
-tellraw @s [{"text": "[glib.biome documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io/en/latest/biome.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
-scoreboard players set glib.biome glib.activeModule 1
