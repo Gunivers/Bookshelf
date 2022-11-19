@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 21227..21229 run function glib.block:convert_to_item/leaves/21227-21229
-execute if score @s glib.blockId matches 21230..21232 run function glib.block:convert_to_item/leaves/21230-21232
-execute if score @s glib.blockId matches 21233..21235 run function glib.block:convert_to_item/leaves/21233-21235

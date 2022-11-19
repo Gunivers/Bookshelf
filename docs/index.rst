@@ -1,17 +1,17 @@
-📚 Glibs Documentation
-======================
+.. image:: https://gunivers.net/wp-content/uploads/2022/11/Banner.png
 
-.. image:: https://gunivers.net/wp-content/uploads/2020/08/Glibs_banner.jpg
+📚 Bookshelf Documentation
+==========================
 
 🔎 What is it?
-==============
+--------------
 
-The Gunivers-libs is a modular library datapack designed to help mapmakers to implement common or complexe systems.
+Bookshelf (previously Gunivers Libs) is a modular library datapack designed to help mapmakers to implement common or complexe systems.
 
 Watch the presentation video: https://www.youtube.com/watch?v=E2nKYEvjETk
 
 ⚙️ Features
-============
+-----------
 
 - 🧮 Mathematical functions (sin, cos, exp, log, sqrt...)
 - 🏷️ ID system for entities
@@ -23,7 +23,7 @@ Watch the presentation video: https://www.youtube.com/watch?v=E2nKYEvjETk
 And much more!
 
 🏃 Motivation
-==============
+-------------
 
 As developers, we know the importance of using libraries to avoid losing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
 
@@ -32,13 +32,14 @@ That's why we created this library, to propose a lot of re-usable tools and try 
 Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
 
 🤝 Follow and/or contribute
-============================
+---------------------------
 
 You can come on `our Discord <https://discord.gg/E8qq6tN>`_ server to talk with us and/or take part of the project!
 
 If you want to contribute, please read at least the "Getting started" section in the `"Contributing" page <https://glib-core.readthedocs.io/en/latest/contributing.html>`_ that contain all the development convention used in this project.
 
-
+📃 Contents
+-----------
 
 .. toctree::
     :maxdepth: 3
