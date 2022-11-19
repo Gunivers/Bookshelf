@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 8348 run setblock ~ ~ ~ prismarine_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 8349 run setblock ~ ~ ~ prismarine_stairs[facing=north,half=top,shape=inner_right,waterlogged=true]
-execute if score @s glib.blockId matches 8350 run setblock ~ ~ ~ prismarine_stairs[facing=north,half=top,shape=inner_right,waterlogged=false]
-execute if score @s glib.blockId matches 8351 run setblock ~ ~ ~ prismarine_stairs[facing=north,half=top,shape=outer_left,waterlogged=true]
-execute if score @s glib.blockId matches 8352 run setblock ~ ~ ~ prismarine_stairs[facing=north,half=top,shape=outer_left,waterlogged=false]

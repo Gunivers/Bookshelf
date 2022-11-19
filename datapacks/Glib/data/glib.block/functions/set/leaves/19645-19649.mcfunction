@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 19645 run setblock ~ ~ ~ pointed_dripstone[thickness=tip,vertical_direction=down,waterlogged=false]
-execute if score @s glib.blockId matches 19646 run setblock ~ ~ ~ pointed_dripstone[thickness=frustum,vertical_direction=up,waterlogged=true]
-execute if score @s glib.blockId matches 19647 run setblock ~ ~ ~ pointed_dripstone[thickness=frustum,vertical_direction=up,waterlogged=false]
-execute if score @s glib.blockId matches 19648 run setblock ~ ~ ~ pointed_dripstone[thickness=frustum,vertical_direction=down,waterlogged=true]
-execute if score @s glib.blockId matches 19649 run setblock ~ ~ ~ pointed_dripstone[thickness=frustum,vertical_direction=down,waterlogged=false]

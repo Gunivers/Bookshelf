@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 1434 run setblock ~ ~ ~ cyan_bed[facing=west,occupied=false,part=foot]
-execute if score @s glib.blockId matches 1435 run setblock ~ ~ ~ cyan_bed[facing=east,occupied=true,part=head]
-execute if score @s glib.blockId matches 1436 run setblock ~ ~ ~ cyan_bed[facing=east,occupied=true,part=foot]
-execute if score @s glib.blockId matches 1437 run setblock ~ ~ ~ cyan_bed[facing=east,occupied=false,part=head]
-execute if score @s glib.blockId matches 1438 run setblock ~ ~ ~ cyan_bed[facing=east,occupied=false,part=foot]
