@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 405 run setblock ~ ~ ~ azalea_leaves[distance=1,persistent=false,waterlogged=false]
-execute if score @s glib.blockId matches 406 run setblock ~ ~ ~ azalea_leaves[distance=2,persistent=true,waterlogged=true]
-execute if score @s glib.blockId matches 407 run setblock ~ ~ ~ azalea_leaves[distance=2,persistent=true,waterlogged=false]
-execute if score @s glib.blockId matches 408 run setblock ~ ~ ~ azalea_leaves[distance=2,persistent=false,waterlogged=true]
-execute if score @s glib.blockId matches 409 run setblock ~ ~ ~ azalea_leaves[distance=2,persistent=false,waterlogged=false]

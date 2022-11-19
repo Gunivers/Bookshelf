@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 16469 run setblock ~ ~ ~ crimson_fence_gate[facing=north,in_wall=false,open=true,powered=false]
-execute if score @s glib.blockId matches 16470 run setblock ~ ~ ~ crimson_fence_gate[facing=north,in_wall=false,open=false,powered=true]
-execute if score @s glib.blockId matches 16471 run setblock ~ ~ ~ crimson_fence_gate[facing=north,in_wall=false,open=false,powered=false]
-execute if score @s glib.blockId matches 16472 run setblock ~ ~ ~ crimson_fence_gate[facing=south,in_wall=true,open=true,powered=true]
-execute if score @s glib.blockId matches 16473 run setblock ~ ~ ~ crimson_fence_gate[facing=south,in_wall=true,open=true,powered=false]

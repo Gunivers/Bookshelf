@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 6554 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=low,up=true,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 6555 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=low,up=false,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 6556 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=low,up=false,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 6557 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=low,up=false,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 6558 run setblock ~ ~ ~ cobblestone_wall[east=tall,north=tall,south=low,up=false,waterlogged=false,west=none]

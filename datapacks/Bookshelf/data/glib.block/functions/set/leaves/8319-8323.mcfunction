@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 8319 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=true,waterlogged=false]
-execute if score @s glib.blockId matches 8320 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=true]
-execute if score @s glib.blockId matches 8321 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 8322 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=false,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 8323 run setblock ~ ~ ~ iron_trapdoor[facing=west,half=bottom,open=false,powered=true,waterlogged=false]

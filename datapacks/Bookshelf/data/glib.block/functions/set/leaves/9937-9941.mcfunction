@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 9937 run setblock ~ ~ ~ mangrove_door[facing=east,half=lower,hinge=right,open=false,powered=true]
-execute if score @s glib.blockId matches 9938 run setblock ~ ~ ~ mangrove_door[facing=east,half=lower,hinge=right,open=false,powered=false]
-execute if score @s glib.blockId matches 9939 run setblock ~ ~ ~ end_rod[facing=north]
-execute if score @s glib.blockId matches 9940 run setblock ~ ~ ~ end_rod[facing=east]
-execute if score @s glib.blockId matches 9941 run setblock ~ ~ ~ end_rod[facing=south]

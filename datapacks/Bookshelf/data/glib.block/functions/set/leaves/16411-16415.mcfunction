@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 16411 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=true,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 16412 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=false,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 16413 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=false,powered=true,waterlogged=false]
-execute if score @s glib.blockId matches 16414 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=true]
-execute if score @s glib.blockId matches 16415 run setblock ~ ~ ~ warped_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]
