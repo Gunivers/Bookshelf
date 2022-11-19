@@ -1,0 +1,2 @@
+tellraw @s [{"text": "[bs.health documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io/en/latest/health.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
+scoreboard players set bs.health bs.activeModule 1

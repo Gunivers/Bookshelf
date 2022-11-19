@@ -1,0 +1,2 @@
+tellraw @s [{"text": "[bs.view documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io/en/latest/view.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
+scoreboard players set bs.view bs.activeModule 1
