@@ -1,14 +1,14 @@
 📍 Location
 ============
 
-``glib.location:``: The "Location" functions allow to manage the
+``bs.location:``: The "Location" functions allow to manage the
 position of entities via scores. It is thus possible to detect the
 position of an entity or to place it at a position defined by a score.
 
 Add up coordinates
 ~~~~~~~~~~~~~~~~~~
 
-``add``: Adds the position passed via the scores ``glib.loc[X,Y,Z]`` to
+``add``: Adds the position passed via the scores ``bs.loc[X,Y,Z]`` to
 the one where the command was executed, then teleports the entity to
 this new position.
 
@@ -19,13 +19,13 @@ axis
 
 ::
 
-    scoreboard players set Aypierre glib.locX 3
-    scoreboard players set Aypierre glib.locY -2
-    scoreboard players set Aypierre glib.locZ 5
-    execute as Aypierre at @s run function glib.location:add
+    scoreboard players set Aypierre bs.locX 3
+    scoreboard players set Aypierre bs.locY -2
+    scoreboard players set Aypierre bs.locZ 5
+    execute as Aypierre at @s run function bs.location:add
 
 ``fast_set``: Changes the position of the executing entity to the X,Y
-and Z coordinates respectively indicated by the scores ``glib.loc[X,Y,Z]``. To the user, this function is used in the same
+and Z coordinates respectively indicated by the scores ``bs.loc[X,Y,Z]``. To the user, this function is used in the same
 way as the ``set`` function and produces the same results. The
 differences are:
 
@@ -41,17 +41,17 @@ modified unlike the parameters of a /tp command)
 
 ::
 
-    scoreboard players set Boblennon glib.locX -5
-    scoreboard players set Boblennon glib.locY 63
-    scoreboard players set Boblennon glib.locZ 26
-    execute as Boblennon run function glib.location:fast_set
+    scoreboard players set Boblennon bs.locX -5
+    scoreboard players set Boblennon bs.locY 63
+    scoreboard players set Boblennon bs.locZ 26
+    execute as Boblennon run function bs.location:fast_set
 
 Get location
 ~~~~~~~~~~~~
 
 ``get`` : Detect the position of the entity (coordinates)
 
-* Stores the values on the scores ``glib.loc[X,Y,Z]`` with a precision of 1:1.
+* Stores the values on the scores ``bs.loc[X,Y,Z]`` with a precision of 1:1.
 
 *Example:*
 
@@ -60,8 +60,8 @@ Detect and display the position of the nearest spider:
 ::
 
     # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function glib.location:get
-    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "glib.locZ"}, "color": "gold"}]
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.locZ"}, "color": "gold"}]
 
 Get distance "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +69,7 @@ Get distance "as to at"
 ``get_distance_ata`` : Calculates the distance between the source entity
 and the execution position of the function.
 
-* The result is returned on the score ``glib.res0``.
+* The result is returned on the score ``bs.res0``.
 * * Be careful, this function calls ``get_distance_squared_ata``, on which it applies the math/sqrt operation. It is therefore relatively heavy and is subject to the same constraint as ``get_distance_squared_as_to_at`` on integer size.
 
 *Example:*
@@ -79,8 +79,8 @@ Calculate the distance between you and the nearest sheep:
 ::
 
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib.location:get_distance_ata
-    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata
+    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
 
 Get distance squared "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +88,7 @@ Get distance squared "as to at"
 ``get_distance_squared_ata`` : Calculates the squared distance between
 the source entity and the execution position of the function.
 
-* The result is returned on the score ``glib.res0``.
+* The result is returned on the score ``bs.res0``.
 
 .. warning::
     
@@ -105,8 +105,8 @@ Calculate the squared distance between you and the nearest sheep:
 ::
 
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function glib.location:get_distance_squared_ata
-    tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata
+    tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
 
 Get relative corrdinates "as to at"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,7 +114,7 @@ Get relative corrdinates "as to at"
 ``get_relative_ata`` : Allows to obtain the position of the source
 entity, relative to the execution position of the function.
 
-* The result is then placed on the scores ``glib.loc[X,Y,Z]``.
+* The result is then placed on the scores ``bs.loc[X,Y,Z]``.
 
 *Example:*
 
@@ -123,8 +123,8 @@ Get your position relative to the nearest Creeper:
 ::
 
     # Once
-    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function glib.location:get_relative_ata
-    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.locX"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.locZ"},"color":"gold"}]
+    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata
+    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.locX"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locZ"},"color":"gold"}]
 
 Is in cave?
 ~~~~~~~~~~~
@@ -132,7 +132,7 @@ Is in cave?
 ``is_in_cave``: Allows to know if the location indicated by the
 execution mosition of the function is located in a cellar.
 
-* Stores the result on glib.res0 (1 if in a cellar, 0 otherwise)
+* Stores the result on bs.res0 (1 if in a cellar, 0 otherwise)
 
 *Example:*
 
@@ -141,16 +141,16 @@ To know if the skeletons are in cellars or not:
 ::
 
     # Once
-    execute as @e[type=skeleton] at @s run function glib.location:is_in_cave
+    execute as @e[type=skeleton] at @s run function bs.location:is_in_cave
 
     # See the result:
-    effect give @e[type=skeleton,scores={glib.res0=1}] glowing 1 1 true
+    effect give @e[type=skeleton,scores={bs.res0=1}] glowing 1 1 true
 
 Set location
 ~~~~~~~~~~~~
 
 ``set``: Allows to place the entity at a precise coordinate given via
-the scores ``glib.loc[X,Y,Z]``.
+the scores ``bs.loc[X,Y,Z]``.
 
 * This function has variations on x, y and z, useful for players, for whom the position can not be changed directly via the /data command.
 
@@ -161,10 +161,10 @@ Teleport in 15 100 25
 ::
 
     # Once
-    scoreboard players set @s glib.locX 15
-    scoreboard players set @s glib.locY 100
-    scoreboard players set @s glib.locZ 25
-    function glib.location:set
+    scoreboard players set @s bs.locX 15
+    scoreboard players set @s bs.locY 100
+    scoreboard players set @s bs.locZ 25
+    function bs.location:set
 
 Spread entity
 ~~~~~~~~~~~~~
@@ -172,7 +172,7 @@ Spread entity
 ``spread`` : Allows to randomly teleport an entity in a given area.
 
 * The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y position of the entity
-* Takes as parameters the scores ``glib.var[0,1,2]`` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
+* Takes as parameters the scores ``bs.var[0,1,2]`` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
 
 *Example:*
 
@@ -182,8 +182,8 @@ coordinate X=15, Z=25
 ::
 
     # Once
-    scoreboard players set @s glib.var0 15
-    scoreboard players set @s glib.var1 25
-    scoreboard players set @s glib.var2 10
-    function glib.location:spread
+    scoreboard players set @s bs.var0 15
+    scoreboard players set @s bs.var1 25
+    scoreboard players set @s bs.var2 10
+    function bs.location:spread
 

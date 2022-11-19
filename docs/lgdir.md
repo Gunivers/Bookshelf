@@ -5,7 +5,7 @@ This system allow to simply throw a projectile by right-clocking on a ``carrot_o
 To enable this system, you just need to execute the following command in a loop:
 
 ```
-function gsys.lgdir:main
+function bs.lgdir:main
 ```
 
 <div align=center>

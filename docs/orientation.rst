@@ -2,7 +2,7 @@
 🧭 Orientation
 ***************
 
-``glib.orientation:``: This folder contains functions that facilitate
+``bs.orientation:``: This folder contains functions that facilitate
 the management of the orientation of entities.
 
 Get orientation

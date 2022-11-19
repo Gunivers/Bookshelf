@@ -1,6 +1,6 @@
 # 📎 Link
 
-`glib.link:`: The "Link" functions allow to link an entity to another.
+`bs.link:`: The "Link" functions allow to link an entity to another.
 This link consists in preserving the position and the relative
 orentation between the two entities, allowing then to imitate or to
 reverse the movements and rotations of the parent entity.
@@ -10,13 +10,13 @@ reverse the movements and rotations of the parent entity.
 ## Create link to target ID
 
 `create_link_tti`: Allows to create the link between two entities.
-* The `glib.targetId` score of the executing entity must match the
-`glib.id` score of the entity to which it will be linked.
+* The `bs.targetId` score of the executing entity must match the
+`bs.id` score of the entity to which it will be linked.
 * Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 * The child entity (having performed the function) will then have 9 distinct scores:
-   * `glib.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
-   * `glib.link.l[x,y,z]` representing local coordinates (position only)
-   * `glib.link.to` identifies the entity to which it is linked
+   * `bs.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
+   * `bs.link.l[x,y,z]` representing local coordinates (position only)
+   * `bs.link.to` identifies the entity to which it is linked
 * These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
@@ -25,8 +25,8 @@ reverse the movements and rotations of the parent entity.
 
     ```
     # Once
-    scorebaord players set @e[type=armor_stand] glib.targetId 3
-    execute as @e[type=armor_stand] run function glib.link:create_link_tti
+    scorebaord players set @e[type=armor_stand] bs.targetId 3
+    execute as @e[type=armor_stand] run function bs.link:create_link_tti
 
     # See the result
     # In loop
@@ -43,9 +43,9 @@ and the entity closest to the execution position.
 
 * Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 * The child entity (having executed the function) will then have 9 distinct scores:
-   * `glib.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
-   * `glib.link.l[x,y,z]` representing local coordinates (position only)
-   * `glib.link.to` identifies the entity to which it is linked
+   * `bs.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
+   * `bs.link.l[x,y,z]` representing local coordinates (position only)
+   * `bs.link.to` identifies the entity to which it is linked
 * These scores should generally not be modified because they are used as parameters for other link functions.
 
 *Example:*
@@ -54,7 +54,7 @@ and the entity closest to the execution position.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function bs.link:create_link_ata
 
     # See the result
     # In loop
@@ -77,10 +77,10 @@ parent entity.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @s run function bs.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_loc
+    execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:imitate_loc
     ```
 
 <div align=center>
@@ -105,10 +105,10 @@ parent entity.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @s run function bs.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:imitate_ori
+    execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:imitate_ori
     ```
 
 ---
@@ -127,10 +127,10 @@ entity.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @s run function bs.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:keep_local_location
+    execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:keep_local_location
     ```
 
 ---
@@ -148,10 +148,10 @@ entity, and reproduce it in the opposite direction.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @s run function bs.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_loc
+    execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:reverse_loc
     ```
 
 <div align=center>
@@ -175,10 +175,10 @@ parent entity, and reproduce it in the opposite direction.
 
     ```
     # Once
-    execute as @e[type=armor_stand] at @s run function glib.link:create_link_ata
+    execute as @e[type=armor_stand] at @s run function bs.link:create_link_ata
 
     # In a loop
-    execute as @e[type=armor_stand,tag=glib.linked] run function glib.link:reverse_ori
+    execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:reverse_ori
     ```
 
 ---
@@ -200,9 +200,9 @@ next time you call the link function.
 
     ```
     # Once
-    execute as @e[type=armor_stand] run function glib.link:update_link
+    execute as @e[type=armor_stand] run function bs.link:update_link
 
     # See the result
     # In a loop
-    execute as @e[tag=glib.linked] run function glib_debug:link/display_link
+    execute as @e[tag=bs.linked] run function glib_debug:link/display_link
     ```

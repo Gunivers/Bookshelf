@@ -5,7 +5,7 @@ This system allow to display the biome you're in in the action bar.
 To enable this system, you just need to execute the following command in a loop:
 
 ```
-function gsys.biome_displayer:main
+function bs.biome_displayer:main
 ```
 
 <div align=center>
