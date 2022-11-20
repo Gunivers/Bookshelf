@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 4324 run setblock ~ ~ ~ nether_portal[axis=z]
-execute if score @s glib.blockId matches 4325 run setblock ~ ~ ~ carved_pumpkin[facing=north]
-execute if score @s glib.blockId matches 4326 run setblock ~ ~ ~ carved_pumpkin[facing=south]
+execute if score @s bs.blockId matches 4324 run setblock ~ ~ ~ nether_portal[axis=z]
+execute if score @s bs.blockId matches 4325 run setblock ~ ~ ~ carved_pumpkin[facing=north]
+execute if score @s bs.blockId matches 4326 run setblock ~ ~ ~ carved_pumpkin[facing=south]
