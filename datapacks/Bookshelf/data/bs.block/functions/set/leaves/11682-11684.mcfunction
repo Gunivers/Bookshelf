@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11682 run setblock ~ ~ ~ mossy_stone_brick_slab[type=top,waterlogged=true]
-execute if score @s glib.blockId matches 11683 run setblock ~ ~ ~ mossy_stone_brick_slab[type=top,waterlogged=false]
-execute if score @s glib.blockId matches 11684 run setblock ~ ~ ~ mossy_stone_brick_slab[type=bottom,waterlogged=true]
+execute if score @s bs.blockId matches 11682 run setblock ~ ~ ~ mossy_stone_brick_slab[type=top,waterlogged=true]
+execute if score @s bs.blockId matches 11683 run setblock ~ ~ ~ mossy_stone_brick_slab[type=top,waterlogged=false]
+execute if score @s bs.blockId matches 11684 run setblock ~ ~ ~ mossy_stone_brick_slab[type=bottom,waterlogged=true]

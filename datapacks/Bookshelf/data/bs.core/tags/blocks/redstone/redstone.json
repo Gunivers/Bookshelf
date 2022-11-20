@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"#glib.core:redstone/pressure_plates",
+		"#bs.core:redstone/pressure_plates",
 		"#minecraft:buttons",
 		"minecraft:redstone_wire",
 		"minecraft:lever",

@@ -6,7 +6,7 @@
 # MC Version:
 # Last check:
 
-# Original path: glib.core:clean
+# Original path: bs.core:clean
 # Documentation: https://glib-core.readthedocs.io//core
 # Parallelizable: <true/false/global>
 # Note:
@@ -31,64 +31,64 @@
 
   # ~~ Global ~~
 scoreboard objectives remove glib
-scoreboard objectives remove glib.config
-scoreboard objectives remove glib.const
-scoreboard objectives remove glib.data
-scoreboard objectives remove glib.debug
-scoreboard objectives remove glib.res0
-scoreboard objectives remove glib.res1
-scoreboard objectives remove glib.res2
-scoreboard objectives remove glib.res3
-scoreboard objectives remove glib.res4
-scoreboard objectives remove glib.res5
-scoreboard objectives remove glib.res6
-scoreboard objectives remove glib.res7
-scoreboard objectives remove glib.res8
-scoreboard objectives remove glib.res9
-scoreboard objectives remove glib.var0
-scoreboard objectives remove glib.var1
-scoreboard objectives remove glib.var2
-scoreboard objectives remove glib.var3
-scoreboard objectives remove glib.var4
-scoreboard objectives remove glib.var5
-scoreboard objectives remove glib.var6
-scoreboard objectives remove glib.var7
-scoreboard objectives remove glib.var8
-scoreboard objectives remove glib.var9
+scoreboard objectives remove bs.config
+scoreboard objectives remove bs.const
+scoreboard objectives remove bs.data
+scoreboard objectives remove bs.debug
+scoreboard objectives remove bs.res0
+scoreboard objectives remove bs.res1
+scoreboard objectives remove bs.res2
+scoreboard objectives remove bs.res3
+scoreboard objectives remove bs.res4
+scoreboard objectives remove bs.res5
+scoreboard objectives remove bs.res6
+scoreboard objectives remove bs.res7
+scoreboard objectives remove bs.res8
+scoreboard objectives remove bs.res9
+scoreboard objectives remove bs.var0
+scoreboard objectives remove bs.var1
+scoreboard objectives remove bs.var2
+scoreboard objectives remove bs.var3
+scoreboard objectives remove bs.var4
+scoreboard objectives remove bs.var5
+scoreboard objectives remove bs.var6
+scoreboard objectives remove bs.var7
+scoreboard objectives remove bs.var8
+scoreboard objectives remove bs.var9
 
   # ~~ Health ~~
-scoreboard objectives remove glib.ttl
+scoreboard objectives remove bs.ttl
 
 	# ~~ Id ~~
-scoreboard objectives remove glib.id
-scoreboard objectives remove glib.targetId
-scoreboard objectives remove glib.parentId
+scoreboard objectives remove bs.id
+scoreboard objectives remove bs.targetId
+scoreboard objectives remove bs.parentId
 
  # ~~ Link ~~
-scoreboard objectives remove glib.link.rx
-scoreboard objectives remove glib.link.ry
-scoreboard objectives remove glib.link.rz
-scoreboard objectives remove glib.link.rv
-scoreboard objectives remove glib.link.rh
-scoreboard objectives remove glib.link.lx
-scoreboard objectives remove glib.link.ly
-scoreboard objectives remove glib.link.lz
-scoreboard objectives remove glib.link.to
+scoreboard objectives remove bs.link.rx
+scoreboard objectives remove bs.link.ry
+scoreboard objectives remove bs.link.rz
+scoreboard objectives remove bs.link.rv
+scoreboard objectives remove bs.link.rh
+scoreboard objectives remove bs.link.lx
+scoreboard objectives remove bs.link.ly
+scoreboard objectives remove bs.link.lz
+scoreboard objectives remove bs.link.to
 
 	# ~~ Location ~~
-scoreboard objectives remove glib.locX
-scoreboard objectives remove glib.locY
-scoreboard objectives remove glib.locZ
+scoreboard objectives remove bs.locX
+scoreboard objectives remove bs.locY
+scoreboard objectives remove bs.locZ
 
 	# ~~ Orientation ~~
-scoreboard objectives remove glib.ori.v
-scoreboard objectives remove glib.ori.h
+scoreboard objectives remove bs.ori.v
+scoreboard objectives remove bs.ori.h
 
 	# ~~ Vectors ~~
-scoreboard objectives remove glib.vectorX
-scoreboard objectives remove glib.vectorY
-scoreboard objectives remove glib.vectorZ
-scoreboard objectives remove glib.vectorLeft
-scoreboard objectives remove glib.vectorUp
-scoreboard objectives remove glib.vectorFront
-scoreboard objectives remove glib.collision
+scoreboard objectives remove bs.vectorX
+scoreboard objectives remove bs.vectorY
+scoreboard objectives remove bs.vectorZ
+scoreboard objectives remove bs.vectorLeft
+scoreboard objectives remove bs.vectorUp
+scoreboard objectives remove bs.vectorFront
+scoreboard objectives remove bs.collision

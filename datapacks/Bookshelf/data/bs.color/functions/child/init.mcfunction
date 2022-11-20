@@ -1,5 +1,5 @@
 # NAME: Color Convertor - Initialization
-# PATH: glib.color:init
+# PATH: bs.color:init
 
 # AUTHOR: theogiraudet
 

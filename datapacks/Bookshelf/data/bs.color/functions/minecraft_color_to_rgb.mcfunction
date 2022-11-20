@@ -1,5 +1,5 @@
 # NAME: Minecraft Color to RGB
-# PATH: glib.color:minecraft_color_to_rgb
+# PATH: bs.color:minecraft_color_to_rgb
 
 # AUTHOR: theogiraudet
 
@@ -10,7 +10,7 @@
 # - glib_child:color/init (function)
 
 # INPUT:
-# - glib.var0
+# - bs.var0
 
 # OUTPUT:
 # - R ~ Red component
@@ -24,13 +24,13 @@
 function bs.color:init
 
 # CODE:
-scoreboard players operation @s R = @s glib.var0
-scoreboard players operation @s R /= 65536 glib.const
-scoreboard players operation @s R %= 256 glib.const
+scoreboard players operation @s R = @s bs.var0
+scoreboard players operation @s R /= 65536 bs.const
+scoreboard players operation @s R %= 256 bs.const
 
-scoreboard players operation @s G = @s glib.var0
-scoreboard players operation @s G /= 256 glib.const
-scoreboard players operation @s G %= 256 glib.const
+scoreboard players operation @s G = @s bs.var0
+scoreboard players operation @s G /= 256 bs.const
+scoreboard players operation @s G %= 256 bs.const
 
-scoreboard players operation @s B = @s glib.var0
-scoreboard players operation @s B %= 256 glib.const
+scoreboard players operation @s B = @s bs.var0
+scoreboard players operation @s B %= 256 bs.const

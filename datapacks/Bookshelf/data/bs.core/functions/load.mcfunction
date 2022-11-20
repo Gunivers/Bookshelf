@@ -1,7 +1,7 @@
 tellraw @a [{"text":"\n Thank you for using Glibs!\n","color":"dark_aqua","bold":true},{"text":" Share us your creations on twitter! ","color":"gray","bold":false},{"text":"@Gunivers_\n\n","color":"gold","bold":false,"clickEvent":{"action":"open_url","value":"https://twitter.com/Gunivers_"},"hoverEvent":{"action":"show_text","contents":"Visit our Twitter page"}},{"text":" > Open menu\n","color":"gold","bold":false,"clickEvent":{"action":"run_command","value":"/function bs:menu"},"hoverEvent":{"action":"show_text","contents":"Click to open the Glibs menu"}}]
 
-scoreboard objectives add glib.activeModule dummy [{"text":"GLib ","color":"gold"},{"text":"Active Modules","color":"dark_gray"}]
-scoreboard players reset * glib.activeModule
+scoreboard objectives add bs.activeModule dummy [{"text":"GLib ","color":"gold"},{"text":"Active Modules","color":"dark_gray"}]
+scoreboard players reset * bs.activeModule
 
 # Module list
 function bs.biome:_
