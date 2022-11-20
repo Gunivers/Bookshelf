@@ -16,11 +16,11 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
+scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Left","color":"dark_gray"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Up","color":"dark_gray"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
+scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
+scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
+scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

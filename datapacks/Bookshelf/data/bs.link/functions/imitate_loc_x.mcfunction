@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative position X","color":"dark_gray"}]
-scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
+scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position X","color":"aqua"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Linked to","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

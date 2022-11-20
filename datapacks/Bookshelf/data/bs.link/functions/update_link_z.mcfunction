@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Relative Z","color":"dark_gray"}]
-scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
+scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Relative Z","color":"aqua"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link To","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

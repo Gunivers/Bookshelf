@@ -1,4 +1,4 @@
-scoreboard objectives add bs.biome dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Biome","color":"dark_gray"}]
+scoreboard objectives add bs.biome dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Biome","color":"aqua"}]
 
 execute as @a[scores={bs.biome=0}] run title @s actionbar {"color":"gold","text":"You are in a Ocean biome"}
 execute as @a[scores={bs.biome=1}] run title @s actionbar {"color":"gold","text":"You are in a Plains biome"}

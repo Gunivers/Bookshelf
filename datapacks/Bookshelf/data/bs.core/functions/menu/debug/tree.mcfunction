@@ -25,4 +25,4 @@ tellraw @a[tag=bs.menu.debug.tree] [{"text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 
 tellraw @a[tag=bs.menu.debug.tree,scores={bs.menu.page = 0}] [{"text": "   Nothing here :/", "color": "gray"}]
 
-tellraw @a[tag=bs.menu.debug.tree] [{"text": "\n"}, {"text": " < ", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add bs.menu.debug.tree.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}, {"text": "bs Menu / Debug / tree", "color": "dark_aqua", "underlined": true, "bold": true, "clickEvent": {"action": "run_command", "value": "/tag @s add bs.menu.debug.tree.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}]
+tellraw @a[tag=bs.menu.debug.tree] [{"text": "\n"}, {"text": " < ", "color": "red", "clickEvent": {"action": "run_command", "value": "/tag @s add bs.menu.debug.tree.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}, {"text": "Bookshelf Menu / Debug / tree", "color": "dark_aqua", "underlined": true, "bold": true, "clickEvent": {"action": "run_command", "value": "/tag @s add bs.menu.debug.tree.close"}, "hoverEvent": {"action": "show_text", "contents": "Go back"}}]

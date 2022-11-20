@@ -16,10 +16,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.lx dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Local X","color":"dark_gray"}]
-scoreboard objectives add bs.link.ly dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Local Y","color":"dark_gray"}]
-scoreboard objectives add bs.link.lz dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Local Z","color":"dark_gray"}]
-scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
+scoreboard objectives add bs.link.lx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Local X","color":"aqua"}]
+scoreboard objectives add bs.link.ly dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Local Y","color":"aqua"}]
+scoreboard objectives add bs.link.lz dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Local Z","color":"aqua"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link To","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

@@ -1,4 +1,4 @@
-scoreboard objectives add bs.itemId dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Item ID","color":"dark_gray"}]
+scoreboard objectives add bs.itemId dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Item ID","color":"aqua"}]
 
 scoreboard players set @s bs.itemId 0
 execute unless predicate bs.item:get/group_0 run scoreboard players add @s bs.itemId 1

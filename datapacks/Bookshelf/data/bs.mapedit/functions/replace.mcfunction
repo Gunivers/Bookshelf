@@ -34,15 +34,15 @@
 
 #Ini
 
-scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"gold"},{"text":"BrushID","color":"dark_gray"}]
+scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"BrushID","color":"aqua"}]
 
 #ReplaceID  id du nouveaux block placer
-scoreboard objectives add bs.replace.id dummy  [{"text":"Bookshelf ","color":"gold"},{"text":"Replace ID","color":"dark_gray"}]
+scoreboard objectives add bs.replace.id dummy  [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Replace ID","color":"aqua"}]
 
 # id du block a remplacer
-scoreboard objectives add bs.original.id dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Original ID","color":"dark_gray"}]
+scoreboard objectives add bs.original.id dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Original ID","color":"aqua"}]
 
-scoreboard objectives add ActualBlockID dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Actual Block ID","color":"dark_gray"}]
+scoreboard objectives add ActualBlockID dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Actual Block ID","color":"aqua"}]
 #--------------------
 
 #On initlise tout (factorisation )

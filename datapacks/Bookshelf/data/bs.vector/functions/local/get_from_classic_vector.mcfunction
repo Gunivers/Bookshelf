@@ -24,13 +24,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Left","color":"dark_gray"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Up","color":"dark_gray"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
+scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
+scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
+scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

@@ -17,8 +17,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.ori.v dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
-scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation H","color":"dark_gray"}]
+scoreboard objectives add bs.ori.v dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation V","color":"aqua"}]
+scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

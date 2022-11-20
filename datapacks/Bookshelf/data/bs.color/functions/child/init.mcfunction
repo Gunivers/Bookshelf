@@ -13,6 +13,6 @@
 # INITialize Color Convertor system.
 
 # CODE:
-scoreboard objectives add R dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Red","color":"dark_gray"}]
-scoreboard objectives add G dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Green","color":"dark_gray"}]
-scoreboard objectives add B dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Blue","color":"dark_gray"}]
+scoreboard objectives add R dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Red","color":"aqua"}]
+scoreboard objectives add G dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Green","color":"aqua"}]
+scoreboard objectives add B dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Blue","color":"aqua"}]

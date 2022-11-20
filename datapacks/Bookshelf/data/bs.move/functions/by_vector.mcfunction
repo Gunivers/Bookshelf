@@ -16,12 +16,12 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
-scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
+scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Collision Type","color":"aqua"}]
+scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

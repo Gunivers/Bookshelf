@@ -16,11 +16,11 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Relative X","color":"dark_gray"}]
-scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Relative Y","color":"dark_gray"}]
-scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link Relative Z","color":"dark_gray"}]
+scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Relative X","color":"aqua"}]
+scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Relative Y","color":"aqua"}]
+scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link Relative Z","color":"aqua"}]
 
-scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Link To","color":"dark_gray"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Link To","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

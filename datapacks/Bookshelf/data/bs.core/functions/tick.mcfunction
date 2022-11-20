@@ -12,7 +12,7 @@ function bs.core:import/constants
 
 function bs.core:security
 
-# bs Menu
+# Bookshelf Menu
 execute if score menu.refresh bs.data matches 5.. run scoreboard players set menu.refresh bs.data 0
 scoreboard players add menu.refresh bs.data 1
 execute if entity @a[tag=bs.menu.active] run function bs.core:menu

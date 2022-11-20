@@ -30,10 +30,10 @@
 #Ini
 
 
-scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"gold"},{"text":"BrushID","color":"dark_gray"}]
-scoreboard objectives add SphereCalc dummy [{"text":"Bookshelf ","color":"gold"},{"text":"SphereCalc","color":"dark_gray"}]
-scoreboard objectives add SphereSum dummy [{"text":"Bookshelf ","color":"gold"},{"text":"SphereSum","color":"dark_gray"}]
-scoreboard objectives add Rayon2 dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Radius 2","color":"dark_gray"}]
+scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"BrushID","color":"aqua"}]
+scoreboard objectives add SphereCalc dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"SphereCalc","color":"aqua"}]
+scoreboard objectives add SphereSum dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"SphereSum","color":"aqua"}]
+scoreboard objectives add Rayon2 dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Radius 2","color":"aqua"}]
 
 
 #On place les point

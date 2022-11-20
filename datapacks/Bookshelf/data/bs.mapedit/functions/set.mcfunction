@@ -29,7 +29,7 @@
 #Ini
 
 
-scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Brush ID","color":"dark_gray"}]
+scoreboard objectives add BrushID dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Brush ID","color":"aqua"}]
 
 #On initlise tout (factorisation )
 

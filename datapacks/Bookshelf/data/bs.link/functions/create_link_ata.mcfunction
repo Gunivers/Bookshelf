@@ -16,18 +16,18 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative position X","color":"dark_gray"}]
-scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative position Y","color":"dark_gray"}]
-scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative position Z","color":"dark_gray"}]
+scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position X","color":"aqua"}]
+scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position Y","color":"aqua"}]
+scoreboard objectives add bs.link.rz dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position Z","color":"aqua"}]
 
-scoreboard objectives add bs.link.lx dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Local position X","color":"dark_gray"}]
-scoreboard objectives add bs.link.ly dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Local position Y","color":"dark_gray"}]
-scoreboard objectives add bs.link.lz dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Local position Z","color":"dark_gray"}]
+scoreboard objectives add bs.link.lx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Local position X","color":"aqua"}]
+scoreboard objectives add bs.link.ly dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Local position Y","color":"aqua"}]
+scoreboard objectives add bs.link.lz dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Local position Z","color":"aqua"}]
 
-scoreboard objectives add bs.link.rv dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative orientation V","color":"dark_gray"}]
-scoreboard objectives add bs.link.rh dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative orientation H","color":"dark_gray"}]
+scoreboard objectives add bs.link.rv dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative orientation V","color":"aqua"}]
+scoreboard objectives add bs.link.rh dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative orientation H","color":"aqua"}]
 
-scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Linked to","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

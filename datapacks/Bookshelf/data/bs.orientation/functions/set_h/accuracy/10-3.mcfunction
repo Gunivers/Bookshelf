@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation H","color":"dark_gray"}]
+scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

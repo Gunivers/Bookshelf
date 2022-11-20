@@ -19,11 +19,11 @@
 # The positon was place on the score of the entity who execute the function
 #INI
 
-scoreboard objectives add Centre_X dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Center X","color":"dark_gray"}]
-scoreboard objectives add Centre_Y dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Center Y","color":"dark_gray"}]
-scoreboard objectives add Centre_Z dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Center Z","color":"dark_gray"}]
+scoreboard objectives add Centre_X dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Center X","color":"aqua"}]
+scoreboard objectives add Centre_Y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Center Y","color":"aqua"}]
+scoreboard objectives add Centre_Z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Center Z","color":"aqua"}]
 
-scoreboard objectives add Rayon dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Radius","color":"dark_gray"}]
+scoreboard objectives add Rayon dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Radius","color":"aqua"}]
 
 
 #Position X Y Z du debut

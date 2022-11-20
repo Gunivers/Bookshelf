@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
+scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

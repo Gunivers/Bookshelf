@@ -19,7 +19,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.temperature dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Temperature","color":"dark_gray"}]
+scoreboard objectives add bs.temperature dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Temperature","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

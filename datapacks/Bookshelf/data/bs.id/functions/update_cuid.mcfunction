@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.id dummy [{"text":"Bookshelf ","color":"gold"},{"text":"ID","color":"dark_gray"}]
+scoreboard objectives add bs.id dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"ID","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG

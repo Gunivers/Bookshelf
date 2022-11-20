@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add PathCost dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Path Cost","color":"dark_gray"}]
+scoreboard objectives add PathCost dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Path Cost","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
