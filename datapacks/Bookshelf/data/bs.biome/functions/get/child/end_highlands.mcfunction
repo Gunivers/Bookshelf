@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 42
-advancement revoke @s only glib.biome:end_highlands
+scoreboard players set @s bs.biome 42
+advancement revoke @s only bs.biome:end_highlands

@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 54
-advancement revoke @s only glib.biome:gravelly_mountains
+scoreboard players set @s bs.biome 54
+advancement revoke @s only bs.biome:gravelly_mountains

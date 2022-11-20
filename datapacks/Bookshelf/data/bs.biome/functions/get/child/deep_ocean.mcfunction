@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 24
-advancement revoke @s only glib.biome:deep_ocean
+scoreboard players set @s bs.biome 24
+advancement revoke @s only bs.biome:deep_ocean

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 18649..18657 run function bs.block:convert_to_item/nodes/18649-18657
-execute if score @s glib.blockId matches 18658..18666 run function bs.block:convert_to_item/nodes/18658-18666
-execute if score @s glib.blockId matches 18667..18676 run function bs.block:convert_to_item/nodes/18667-18676
+execute if score @s bs.blockId matches 18649..18657 run function bs.block:convert_to_item/nodes/18649-18657
+execute if score @s bs.blockId matches 18658..18666 run function bs.block:convert_to_item/nodes/18658-18666
+execute if score @s bs.blockId matches 18667..18676 run function bs.block:convert_to_item/nodes/18667-18676

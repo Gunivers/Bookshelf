@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 53
-advancement revoke @s only glib.biome:desert_lakes
+scoreboard players set @s bs.biome 53
+advancement revoke @s only bs.biome:desert_lakes

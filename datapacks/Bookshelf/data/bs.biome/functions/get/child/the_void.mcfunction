@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 51
-advancement revoke @s only glib.biome:the_void
+scoreboard players set @s bs.biome 51
+advancement revoke @s only bs.biome:the_void

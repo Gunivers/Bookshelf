@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 9
-advancement revoke @s only glib.biome:the_end
+scoreboard players set @s bs.biome 9
+advancement revoke @s only bs.biome:the_end

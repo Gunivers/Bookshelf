@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 39
-advancement revoke @s only glib.biome:badlands_plateau
+scoreboard players set @s bs.biome 39
+advancement revoke @s only bs.biome:badlands_plateau

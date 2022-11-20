@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 11
-advancement revoke @s only glib.biome:frozen_river
+scoreboard players set @s bs.biome 11
+advancement revoke @s only bs.biome:frozen_river

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 13726 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=low]
-execute if score @s glib.blockId matches 13727 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=tall]
-execute if score @s glib.blockId matches 13728 run setblock ~ ~ ~ mud_brick_wall[east=none,north=low,south=none,up=true,waterlogged=true,west=none]
+execute if score @s bs.blockId matches 13726 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=low]
+execute if score @s bs.blockId matches 13727 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=tall,up=false,waterlogged=false,west=tall]
+execute if score @s bs.blockId matches 13728 run setblock ~ ~ ~ mud_brick_wall[east=none,north=low,south=none,up=true,waterlogged=true,west=none]

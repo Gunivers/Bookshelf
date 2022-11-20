@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 68
-advancement revoke @s only glib.biome:shattered_savanna
+scoreboard players set @s bs.biome 68
+advancement revoke @s only bs.biome:shattered_savanna

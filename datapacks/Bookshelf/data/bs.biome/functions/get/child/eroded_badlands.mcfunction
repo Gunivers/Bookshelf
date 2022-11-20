@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 70
-advancement revoke @s only glib.biome:eroded_badlands
+scoreboard players set @s bs.biome 70
+advancement revoke @s only bs.biome:eroded_badlands

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 16728 run setblock ~ ~ ~ warped_button[face=ceiling,facing=north,powered=true]
-execute if score @s glib.blockId matches 16729 run setblock ~ ~ ~ warped_button[face=ceiling,facing=north,powered=false]
-execute if score @s glib.blockId matches 16730 run setblock ~ ~ ~ warped_button[face=ceiling,facing=south,powered=true]
+execute if score @s bs.blockId matches 16728 run setblock ~ ~ ~ warped_button[face=ceiling,facing=north,powered=true]
+execute if score @s bs.blockId matches 16729 run setblock ~ ~ ~ warped_button[face=ceiling,facing=north,powered=false]
+execute if score @s bs.blockId matches 16730 run setblock ~ ~ ~ warped_button[face=ceiling,facing=south,powered=true]

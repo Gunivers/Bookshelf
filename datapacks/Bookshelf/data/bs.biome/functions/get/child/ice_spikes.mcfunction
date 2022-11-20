@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 58
-advancement revoke @s only glib.biome:ice_spikes
+scoreboard players set @s bs.biome 58
+advancement revoke @s only bs.biome:ice_spikes

@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 17111 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 17112 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 17113 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_right,waterlogged=true]
+execute if score @s bs.blockId matches 17111 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=true]
+execute if score @s bs.blockId matches 17112 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_left,waterlogged=false]
+execute if score @s bs.blockId matches 17113 run setblock ~ ~ ~ blackstone_stairs[facing=east,half=top,shape=inner_right,waterlogged=true]

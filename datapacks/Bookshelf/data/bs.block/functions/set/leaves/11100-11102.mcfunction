@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 11100 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 11101 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 11102 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=true]
+execute if score @s bs.blockId matches 11100 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=straight,waterlogged=true]
+execute if score @s bs.blockId matches 11101 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+execute if score @s bs.blockId matches 11102 run setblock ~ ~ ~ stone_stairs[facing=east,half=bottom,shape=inner_left,waterlogged=true]

@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 17
-advancement revoke @s only glib.biome:desert_hills
+scoreboard players set @s bs.biome 17
+advancement revoke @s only bs.biome:desert_hills

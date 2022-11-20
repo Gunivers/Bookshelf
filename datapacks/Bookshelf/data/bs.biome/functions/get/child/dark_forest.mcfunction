@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 29
-advancement revoke @s only glib.biome:dark_forest
+scoreboard players set @s bs.biome 29
+advancement revoke @s only bs.biome:dark_forest

@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 23
-advancement revoke @s only glib.biome:jungle_edge
+scoreboard players set @s bs.biome 23
+advancement revoke @s only bs.biome:jungle_edge

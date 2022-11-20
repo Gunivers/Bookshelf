@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 43
-advancement revoke @s only glib.biome:end_barrens
+scoreboard players set @s bs.biome 43
+advancement revoke @s only bs.biome:end_barrens

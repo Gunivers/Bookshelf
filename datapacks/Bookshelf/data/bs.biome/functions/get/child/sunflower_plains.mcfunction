@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 52
-advancement revoke @s only glib.biome:sunflower_plains
+scoreboard players set @s bs.biome 52
+advancement revoke @s only bs.biome:sunflower_plains

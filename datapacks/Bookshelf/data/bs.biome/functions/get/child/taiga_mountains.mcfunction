@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 56
-advancement revoke @s only glib.biome:taiga_mountains
+scoreboard players set @s bs.biome 56
+advancement revoke @s only bs.biome:taiga_mountains

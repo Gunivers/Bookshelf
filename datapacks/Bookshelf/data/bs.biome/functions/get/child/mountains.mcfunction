@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 3
-advancement revoke @s only glib.biome:mountains
+scoreboard players set @s bs.biome 3
+advancement revoke @s only bs.biome:mountains

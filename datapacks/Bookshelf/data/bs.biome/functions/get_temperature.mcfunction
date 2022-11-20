@@ -6,7 +6,7 @@
 # MC Version: 1.14
 # Last check:
 
-# Original path: glib.biome:get_temperature_at_player
+# Original path: bs.biome:get_temperature_at_player
 # Parallelizable: true
 # Note: Allow to get the temperature at the altitude of the player.
 #		The format of the result is :
@@ -28,9 +28,9 @@
 #__________________________________________________
 # CODE
 
-scoreboard players set @s glib.var0 0
-function glib.biome:get_biome_temperature
-execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 = @s glib.locY
-execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 -= 62 glib.const
-execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.var0 *= 166667 glib.const
-execute if score @s glib.locY matches 63.. run scoreboard players operation @s glib.temperature -= @s glib.var0
+scoreboard players set @s bs.var0 0
+function bs.biome:get_biome_temperature
+execute if score @s bs.locY matches 63.. run scoreboard players operation @s bs.var0 = @s bs.locY
+execute if score @s bs.locY matches 63.. run scoreboard players operation @s bs.var0 -= 62 bs.const
+execute if score @s bs.locY matches 63.. run scoreboard players operation @s bs.var0 *= 166667 bs.const
+execute if score @s bs.locY matches 63.. run scoreboard players operation @s bs.temperature -= @s bs.var0

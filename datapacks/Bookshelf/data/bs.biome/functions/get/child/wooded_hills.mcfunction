@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 18
-advancement revoke @s only glib.biome:wooded_hills
+scoreboard players set @s bs.biome 18
+advancement revoke @s only bs.biome:wooded_hills

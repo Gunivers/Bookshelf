@@ -1,3 +1,3 @@
-execute if score @s glib.blockId matches 17949..17951 run function bs.block:convert_to_item/leaves/17949-17951
-execute if score @s glib.blockId matches 17952..17954 run function bs.block:convert_to_item/leaves/17952-17954
-execute if score @s glib.blockId matches 17955..17958 run function bs.block:convert_to_item/leaves/17955-17958
+execute if score @s bs.blockId matches 17949..17951 run function bs.block:convert_to_item/leaves/17949-17951
+execute if score @s bs.blockId matches 17952..17954 run function bs.block:convert_to_item/leaves/17952-17954
+execute if score @s bs.blockId matches 17955..17958 run function bs.block:convert_to_item/leaves/17955-17958

@@ -1,2 +1,2 @@
-scoreboard players set @s glib.biome 14
-advancement revoke @s only glib.biome:mushroom_fields
+scoreboard players set @s bs.biome 14
+advancement revoke @s only bs.biome:mushroom_fields
