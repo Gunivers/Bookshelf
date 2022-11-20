@@ -28,13 +28,13 @@ execute if entity @s[tag=bs.collisionZ,tag=bs.collisionY,tag=!bs.move.by_vector.
 #__________________________________________________
 # Reactions
 
-execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorX = #backup.move.vectorX glib
-execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorY = #backup.move.vectorY glib
-execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ glib
+execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorX = #backup.move.vectorX bs
+execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorY = #backup.move.vectorY bs
+execute if entity @s[tag=bs.collision] run scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs
 
-execute if entity @s[tag=bs.collision] run scoreboard players set move.decomposition.factor glib 0
+execute if entity @s[tag=bs.collision] run scoreboard players set move.decomposition.factor bs 0
 execute if entity @s[tag=bs.collision] run function bs.move:by_vector/config/collision/_main_
 
-execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorX glib = @s bs.vectorX
-execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorY glib = @s bs.vectorY
-execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorZ glib = @s bs.vectorZ
+execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorX bs = @s bs.vectorX
+execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorY bs = @s bs.vectorY
+execute if entity @s[tag=bs.collision] run scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorZ

@@ -21,4 +21,4 @@ tag @s[scores={bs.collision=1..},tag=bs.collisionZ] add bs.collision
 # Reactions #
 #-----------#
 
-execute if entity @s[tag=bs.collision] run function glib_config:move/collision_reactions/_main_
+execute if entity @s[tag=bs.collision] run function bs_config:move/collision_reactions/_main_

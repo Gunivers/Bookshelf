@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.vector:classic/get_ata
-# Documentation: https://glib-core.readthedocs.io//entity#vector
+# Documentation: https://bs-core.readthedocs.io//entity#vector
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -21,9 +21,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -31,18 +31,18 @@ scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"te
 #__________________________________________________
 # CODE
 
-execute store result score refX glib run data get entity @s Pos[0] 1000
-execute store result score refY glib run data get entity @s Pos[1] 1000
-execute store result score refZ glib run data get entity @s Pos[2] 1000
+execute store result score refX bs run data get entity @s Pos[0] 1000
+execute store result score refY bs run data get entity @s Pos[1] 1000
+execute store result score refZ bs run data get entity @s Pos[2] 1000
 
-summon armor_stand ~ ~ ~ {Tags:["glib","bs.getVector"],Invisible:1}
+summon armor_stand ~ ~ ~ {Tags:["bs","bs.getVector"],Invisible:1}
 execute store result score @s bs.vectorX run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[0] 1000
 execute store result score @s bs.vectorY run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[1] 1000
 execute store result score @s bs.vectorZ run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[2] 1000
 
-scoreboard players operation @s bs.vectorX -= refX glib
-scoreboard players operation @s bs.vectorY -= refY glib
-scoreboard players operation @s bs.vectorZ -= refZ glib
+scoreboard players operation @s bs.vectorX -= refX bs
+scoreboard players operation @s bs.vectorY -= refY bs
+scoreboard players operation @s bs.vectorZ -= refZ bs
 
 kill @e[tag=bs.getVector,type=armor_stand]
 

@@ -1,5 +1,5 @@
 # NAME: Remove "New" Tag
-# PATH: glib_child:memory/remove_new_tag
+# PATH: bs_child:memory/remove_new_tag
 
 # AUTHOR: theogiraudet
 
@@ -8,6 +8,6 @@
 #NOTE: Removes "New" tag of all Memories, deletes the Entity Memory if this doesn't have custom tag.
 
 # CODE:
-tag @e[tag=New,tag=Memory,tag=Glib] remove New
-execute as @e[tag=Memory,tag=Glib] store result score @s bs.var0 run data get entity @s Tags
-kill @e[tag=Memory,tag=Glib,scores={bs.var0=2}]
+tag @e[tag=New,tag=Memory,tag=bs] remove New
+execute as @e[tag=Memory,tag=bs] store result score @s bs.var0 run data get entity @s Tags
+kill @e[tag=Memory,tag=bs,scores={bs.var0=2}]

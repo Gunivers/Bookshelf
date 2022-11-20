@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:arcsin
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: true
 # Note:
 # - This function returns asin(x) in degrees, x must be in interval [-1000;1000] instead of [-1;1] (scaled by 1000)

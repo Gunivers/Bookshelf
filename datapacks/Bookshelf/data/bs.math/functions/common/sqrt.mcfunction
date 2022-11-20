@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:sqrt
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -34,7 +34,7 @@
 # B = 32769 // limit for X
 # Diff = A^2 - X
 #
-# While Diff != 0 && B > 1    // in glib_child:math/sqrt
+# While Diff != 0 && B > 1    // in bs_child:math/sqrt
 #    B /= 2
 #    if A^2 < X
 #       A += B
@@ -44,41 +44,41 @@
 #__________________________________________________
 
 # Backup
-scoreboard players operation math.sqrt.var0 glib = @s bs.var0
-scoreboard players operation math.sqrt.res1 glib = @s bs.res1
+scoreboard players operation math.sqrt.var0 bs = @s bs.var0
+scoreboard players operation math.sqrt.res1 bs = @s bs.res1
 
 # Negative number exception
 execute if score @s bs.var0 matches ..-1 run scoreboard players operation @s bs.var0 *= -1 bs.const
-scoreboard players operation math.sqrt.X glib = @s bs.var0
+scoreboard players operation math.sqrt.X bs = @s bs.var0
 
 # A = 0
-scoreboard players set math.sqrt.A glib 0
+scoreboard players set math.sqrt.A bs 0
 
 # B = 32768 // limit max X
 function bs.math:special/get_next_pow2
-scoreboard players operation math.sqrt.B glib = @s res0
-execute if entity @s[tag=!bs.math.getNextPow2.intOverflow] run scoreboard players operation math.sqrt.B glib = @s bs.res0
-execute if entity @s[tag=bs.math.getNextPow2.intOverflow] run scoreboard players set math.sqrt.B glib 65536
-execute if score @s bs.res0 matches 65536.. run scoreboard players set math.sqrt.B glib 65536
+scoreboard players operation math.sqrt.B bs = @s res0
+execute if entity @s[tag=!bs.math.getNextPow2.intOverflow] run scoreboard players operation math.sqrt.B bs = @s bs.res0
+execute if entity @s[tag=bs.math.getNextPow2.intOverflow] run scoreboard players set math.sqrt.B bs 65536
+execute if score @s bs.res0 matches 65536.. run scoreboard players set math.sqrt.B bs 65536
 
 execute if entity @a[tag=bs.debug.math.sqrt] run tellraw @a[tag=bs.debug] [{"text":"> DEBUG | bs.math:sqrt","color":"green","clickEvent":{"action":"run_command","value":"/tag @e remove bs.debug.math.sqrt"},"hoverEvent":{"action":"show_text","value":["",{"text":"Remove this debug"}]}}]
 execute if entity @e[tag=bs.debug.math.sqrt] run function bs.core:debug/message/info/entity_info
-execute if entity @e[tag=bs.debug.math.sqrt] run tellraw @a ["",{"text":"   B = ","color":"dark_gray"},{"score":{"name":"math.sqrt.B","objective":"glib"},"color":"gold"}]
+execute if entity @e[tag=bs.debug.math.sqrt] run tellraw @a ["",{"text":"   B = ","color":"dark_gray"},{"score":{"name":"math.sqrt.B","objective":"bs"},"color":"gold"}]
 
 # Diff = A^2 - X
-scoreboard players set math.sqrt.diff glib 0
-scoreboard players operation math.sqrt.diff glib -= math.sqrt.X glib
+scoreboard players set math.sqrt.diff bs 0
+scoreboard players operation math.sqrt.diff bs -= math.sqrt.X bs
 
 
 # while(                  Diff != 0                   &&                 B > 1                  ){               run              }
-execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function bs.math:common/sqrt/child/loop
+execute unless score math.sqrt.diff bs matches 0 if score math.sqrt.B bs matches 2.. run function bs.math:common/sqrt/child/loop
 
 # return
-scoreboard players operation @s bs.res0 = math.sqrt.A glib
+scoreboard players operation @s bs.res0 = math.sqrt.A bs
 
 # Restore
-scoreboard players operation @s bs.var0 = math.sqrt.var0 glib
-scoreboard players operation @s bs.res1 = math.sqrt.res1 glib
+scoreboard players operation @s bs.var0 = math.sqrt.var0 bs
+scoreboard players operation @s bs.res1 = math.sqrt.res1 bs
 
 #__________________________________________________
 # DEBUG

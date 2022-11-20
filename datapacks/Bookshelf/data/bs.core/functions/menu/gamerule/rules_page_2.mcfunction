@@ -1,5 +1,5 @@
 # NAME: Menu G-Lib
-# PATH: glib:menu
+# PATH: bs:menu
 
 # AUTHOR: LeiRoF
 

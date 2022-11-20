@@ -7,7 +7,7 @@
 ## Last check:
 
 ## Original path: bs.xp:get_total_points
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#total-points
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#total-points
 ## Note:
 
 #__________________________________________________
@@ -25,8 +25,8 @@
 ## CODE
 
 execute store result score @s bs.res0 run xp query @s points
-execute store result score LEVELS glib run xp query @s levels
+execute store result score LEVELS bs run xp query @s levels
 
-execute if score LEVELS glib matches 1..15 run function bs.xp:get_total_points/child/1-15
-execute if score LEVELS glib matches 16..30 run function bs.xp:get_total_points/child/16-30
-execute if score LEVELS glib matches 31.. run function bs.xp:get_total_points/child/31-
+execute if score LEVELS bs matches 1..15 run function bs.xp:get_total_points/child/1-15
+execute if score LEVELS bs matches 16..30 run function bs.xp:get_total_points/child/16-30
+execute if score LEVELS bs matches 31.. run function bs.xp:get_total_points/child/31-

@@ -19,23 +19,23 @@
 #__________________________________________________
 
 # B /= 2
-scoreboard players operation math.sqrt.B glib /= 2 bs.const
+scoreboard players operation math.sqrt.B bs /= 2 bs.const
 
 # C = A^2
-scoreboard players operation math.sqrt.C glib = math.sqrt.A glib
-scoreboard players operation math.sqrt.C glib *= math.sqrt.A glib
+scoreboard players operation math.sqrt.C bs = math.sqrt.A bs
+scoreboard players operation math.sqrt.C bs *= math.sqrt.A bs
 
 #    if  (                    C < X                  ){                             A += B                               }
-execute if score math.sqrt.C glib < math.sqrt.X glib run scoreboard players operation math.sqrt.A glib += math.sqrt.B glib
+execute if score math.sqrt.C bs < math.sqrt.X bs run scoreboard players operation math.sqrt.A bs += math.sqrt.B bs
 
 #    if  (                    C > X                  ){                             A -= B                               }
-execute if score math.sqrt.C glib > math.sqrt.X glib run scoreboard players operation math.sqrt.A glib -= math.sqrt.B glib
+execute if score math.sqrt.C bs > math.sqrt.X bs run scoreboard players operation math.sqrt.A bs -= math.sqrt.B bs
 
 # Diff = A^2 - X
-scoreboard players operation math.sqrt.diff glib = math.sqrt.A glib
-scoreboard players operation math.sqrt.diff glib *= math.sqrt.A glib
-scoreboard players operation math.sqrt.diff glib -= math.sqrt.X glib
+scoreboard players operation math.sqrt.diff bs = math.sqrt.A bs
+scoreboard players operation math.sqrt.diff bs *= math.sqrt.A bs
+scoreboard players operation math.sqrt.diff bs -= math.sqrt.X bs
 
 
 # while(                  Diff != 0                   &&                 B > 1                  ){                  run                 }
-execute unless score math.sqrt.diff glib matches 0 if score math.sqrt.B glib matches 2.. run function bs.math:common/sqrt/child/loop
+execute unless score math.sqrt.diff bs matches 0 if score math.sqrt.B bs matches 2.. run function bs.math:common/sqrt/child/loop

@@ -24,8 +24,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.targetId dummy [{"text":"GLib ","color":"gold"},{"text":"Target ID","color":"dark_gray"}]
-scoreboard objectives add bs.parentId dummy [{"text":"GLib ","color":"gold"},{"text":"Parent ID","color":"dark_gray"}]
+scoreboard objectives add bs.targetId dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Target ID","color":"dark_gray"}]
+scoreboard objectives add bs.parentId dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Parent ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

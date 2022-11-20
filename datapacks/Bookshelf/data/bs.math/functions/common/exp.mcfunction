@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:exp
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 # - bs.var0 is the input of the function, multiplied by 100 to allow 2 digits (input 123 to calculate exp(1.23))

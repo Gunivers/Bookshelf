@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:sin
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note: The input is the angle in degrees. The result is scaled by 1000
 

@@ -1,5 +1,5 @@
 # NAME: Init G-Lib
-# PATH: glib:init
+# PATH: bs:init
 
 # AUTHOR: LeiRoF
 

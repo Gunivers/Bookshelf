@@ -20,7 +20,7 @@ execute at @s[scores={bs.collision=1..,bs.oriH=-89..89}] run function bs.move:fo
 
 # REACTIONS
 
-execute if entity @s[tag=bs.collision] run scoreboard players set move.decomposition.factor glib 0
+execute if entity @s[tag=bs.collision] run scoreboard players set move.decomposition.factor bs 0
 execute if entity @s[tag=bs.collision] run function bs.move:forward/config/collision/_main_
 
 # UPDATE

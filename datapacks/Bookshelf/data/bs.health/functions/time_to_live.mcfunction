@@ -18,7 +18,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.ttl dummy [{"text":"GLib ","color":"gold"},{"text":"Time to Live","color":"dark_gray"}]
+scoreboard objectives add bs.ttl dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Time to Live","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

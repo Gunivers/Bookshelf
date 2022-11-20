@@ -8,7 +8,7 @@
 ## Last check:
 
 ## Original path: bs.xp:set_levels
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#set_levels
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#set_levels
 ## Note:
 
 #__________________________________________________

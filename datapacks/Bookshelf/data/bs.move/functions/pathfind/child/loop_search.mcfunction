@@ -1,13 +1,13 @@
-execute unless entity @e[tag=Glib_Pathfind_Stop] run function bs.move:pathfind/config/possible_moves/main
-scoreboard players operation @e[tag=Glib_Pathfind_Move] bs.var3 = @e[tag=Glib_Pathfind_Source,limit=1] bs.var3
+execute unless entity @e[tag=bs_Pathfind_Stop] run function bs.move:pathfind/config/possible_moves/main
+scoreboard players operation @e[tag=bs_Pathfind_Move] bs.var3 = @e[tag=bs_Pathfind_Source,limit=1] bs.var3
 
 #Stop Conditions
-execute as @e[tag=Glib_Pathfind_Target] at @s if entity @e[tag=Glib_Pathfind_Move,distance=..0.7] run tag @s add Glib_Pathfind_Found
-scoreboard players remove @e[tag=Glib_Pathfind_Target] bs.var1 1
+execute as @e[tag=bs_Pathfind_Target] at @s if entity @e[tag=bs_Pathfind_Move,distance=..0.7] run tag @s add bs_Pathfind_Found
+scoreboard players remove @e[tag=bs_Pathfind_Target] bs.var1 1
 scoreboard players add LeiRoF bs.res0 1
-tag @e[tag=Glib_Pathfind_Target,scores={bs.var1=..0},tag=!Glib_Pathfind_Found] add Glib_Pathfind_NotFound
-tag @e[tag=Glib_Pathfind_Found] add Glib_Pathfind_Stop
-tag @e[tag=Glib_Pathfind_NotFound] add Glib_Pathfind_Stop
+tag @e[tag=bs_Pathfind_Target,scores={bs.var1=..0},tag=!bs_Pathfind_Found] add bs_Pathfind_NotFound
+tag @e[tag=bs_Pathfind_Found] add bs_Pathfind_Stop
+tag @e[tag=bs_Pathfind_NotFound] add bs_Pathfind_Stop
 
 # Loop
-execute as @e[tag=Glib_Pathfind_Target,tag=!Glib_Pathfind_Stop] at @s as @e[tag=Glib_Pathfind_Move,tag=!Glib_Pathfind_Blocked,limit=1,sort=nearest] at @s run function bs.move:pathfind/child/loop_search
+execute as @e[tag=bs_Pathfind_Target,tag=!bs_Pathfind_Stop] at @s as @e[tag=bs_Pathfind_Move,tag=!bs_Pathfind_Blocked,limit=1,sort=nearest] at @s run function bs.move:pathfind/child/loop_search

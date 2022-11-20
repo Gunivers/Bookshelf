@@ -2,16 +2,16 @@
 
 #initiliser
 
-scoreboard objectives add Set_Pos_xd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos X d","color":"dark_gray"}]
-scoreboard objectives add Set_Pos_yd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Y d","color":"dark_gray"}]
-scoreboard objectives add Set_Pos_zd dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Z d","color":"dark_gray"}]
-scoreboard objectives add Set_Pos_xf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos X f","color":"dark_gray"}]
-scoreboard objectives add Set_Pos_yf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Y f","color":"dark_gray"}]
-scoreboard objectives add Set_Pos_zf dummy [{"text":"GLib ","color":"gold"},{"text":"Set Pos Z f","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_xd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos X d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_yd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos Y d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_zd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos Z d","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_xf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos X f","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_yf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos Y f","color":"dark_gray"}]
+scoreboard objectives add Set_Pos_zf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Pos Z f","color":"dark_gray"}]
 
-scoreboard objectives add Set_X dummy [{"text":"GLib ","color":"gold"},{"text":"Set X","color":"dark_gray"}]
-scoreboard objectives add Set_Y dummy [{"text":"GLib ","color":"gold"},{"text":"Set Y","color":"dark_gray"}]
-scoreboard objectives add Set_Z dummy [{"text":"GLib ","color":"gold"},{"text":"Set Z","color":"dark_gray"}]
+scoreboard objectives add Set_X dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set X","color":"dark_gray"}]
+scoreboard objectives add Set_Y dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Y","color":"dark_gray"}]
+scoreboard objectives add Set_Z dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Set Z","color":"dark_gray"}]
 
 #Pour chaque parti on affect le plus petit des 2 valleur de sorte que xd<=xf , yd <=yf ect
 
@@ -40,7 +40,7 @@ scoreboard players operation @s Set_Pos_zf > @s Pos_zf
 
 #Summon de l'entitier
 
-execute at @s run summon minecraft:armor_stand ~ ~ ~ {CustomNameVisible:1b,NoGravity:1b,Invisible:0b,Tags:["Glib","spawnSET"],CustomName:"{\"text\":\"SetAS\"}"}
+execute at @s run summon minecraft:armor_stand ~ ~ ~ {CustomNameVisible:1b,NoGravity:1b,Invisible:0b,Tags:["bs","spawnSET"],CustomName:"{\"text\":\"SetAS\"}"}
 
 #On transfet les score
 #Par la suite on aura plutieure entite ave un systeme id

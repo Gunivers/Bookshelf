@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.view:aimed_block
-# Documentation: https://glib-core.readthedocs.io//entity#view
+# Documentation: https://bs-core.readthedocs.io//entity#view
 # Parallelizable: <true/false/global>
 # Note: Summon a new entity in the block targeted by executing entity. The new entity retrieves the ID of the executing entity in the scoreboard bs.parentId and get the tag bs.aimedBlock.new.
 
@@ -29,7 +29,7 @@ scoreboard players set @s[tag=!bs.config.override] bs.var0 100
 scoreboard players operation @s bs.targetId = @s bs.id
 function bs.id:check_parent
 kill @e[tag=bs.aimedBlock,tag=bs.parentId.match]
-execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["glib","bs.aimedBlock","bs.aimedBlock.new"]}
+execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["bs","bs.aimedBlock","bs.aimedBlock.new"]}
 scoreboard players operation @e[tag=bs.aimedBlock.new] bs.parentId = @s bs.id
 tp @e[tag=bs.aimedBlock.new] @s
 execute at @s run tp @e[tag=bs.aimedBlock.new] ~ ~1.7 ~

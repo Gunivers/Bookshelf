@@ -1,5 +1,5 @@
 # NAME: Compute Tick
-# PATH: glib_child:schedule/compute_tick
+# PATH: bs_child:schedule/compute_tick
 
 # AUTHOR: theogiraudet
 

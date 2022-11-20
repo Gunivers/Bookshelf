@@ -2,7 +2,7 @@
 execute as @e[tag=bs.new] run function bs.health:safe_kill
 
 # Creating marker
-summon marker ~ ~ ~ {Tags:["glib","bs.new"]}
+summon marker ~ ~ ~ {Tags:["bs","bs.new"]}
 
 # Putting the marker in the correct orientation
 tp @e[tag=bs.new] ~ ~ ~ ~ ~

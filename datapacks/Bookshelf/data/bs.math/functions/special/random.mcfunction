@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:random
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -24,7 +24,7 @@
 # CODE
 
 #Random MC
-summon area_effect_cloud ~ ~1 ~ {Tags:["glib","bs.random"],Age:1}
+summon area_effect_cloud ~ ~1 ~ {Tags:["bs","bs.random"],Age:1}
 execute store result score @s bs.res0 run data get entity @e[type=area_effect_cloud,tag=bs.random,limit=1] UUID[0]
 kill @e[type=area_effect_cloud,tag=bs.random]
 

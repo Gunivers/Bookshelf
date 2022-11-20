@@ -11,9 +11,9 @@ function bs.core:default_entity
 #__________________________________________________
 # Calcul next position
 
-scoreboard players operation @e[tag=bs.new] bs.locX = move.vectorX glib
-scoreboard players operation @e[tag=bs.new] bs.locY = move.vectorY glib
-scoreboard players operation @e[tag=bs.new] bs.locZ = move.vectorZ glib
+scoreboard players operation @e[tag=bs.new] bs.locX = move.vectorX bs
+scoreboard players operation @e[tag=bs.new] bs.locY = move.vectorY bs
+scoreboard players operation @e[tag=bs.new] bs.locZ = move.vectorZ bs
 execute as @e[tag=bs.new] at @s run function bs.location:add/accuracy/10-3
 
 #__________________________________________________

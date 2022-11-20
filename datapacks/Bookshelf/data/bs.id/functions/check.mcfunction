@@ -7,7 +7,7 @@
 # Last check: 1.15.2
 
 # Original path: bs.id:check
-# Documentation: https://glib-core.readthedocs.io//entity#id
+# Documentation: https://bs-core.readthedocs.io//entity#id
 # Parallelizable: global
 # Note:
 
@@ -24,8 +24,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.id dummy [{"text":"GLib ","color":"gold"},{"text":"ID","color":"dark_gray"}]
-scoreboard objectives add bs.targetId dummy [{"text":"GLib ","color":"gold"},{"text":"Target ID","color":"dark_gray"}]
+scoreboard objectives add bs.id dummy [{"text":"Bookshelf ","color":"gold"},{"text":"ID","color":"dark_gray"}]
+scoreboard objectives add bs.targetId dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Target ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

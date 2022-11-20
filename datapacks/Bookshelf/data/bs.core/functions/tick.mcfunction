@@ -12,7 +12,7 @@ function bs.core:import/constants
 
 function bs.core:security
 
-# Glib Menu
+# bs Menu
 execute if score menu.refresh bs.data matches 5.. run scoreboard players set menu.refresh bs.data 0
 scoreboard players add menu.refresh bs.data 1
 execute if entity @a[tag=bs.menu.active] run function bs.core:menu
@@ -21,7 +21,7 @@ execute if entity @a[tag=bs.menu.active] run function bs.core:menu
 function bs.cache:cache_loop
 
 # Loop Schedule
-execute as @e[tag=Glib_Cache_Head] at @s run function glib_child:default/core/schedule/loop_schedule
+execute as @e[tag=bs_Cache_Head] at @s run function bs_child:default/core/schedule/loop_schedule
 
 # Start Debug
 # Debug Recorder

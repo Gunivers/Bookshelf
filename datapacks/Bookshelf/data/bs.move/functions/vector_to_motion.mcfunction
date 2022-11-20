@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.move:vector_to_motion
-# Documentation: https://glib-core.readthedocs.io//entity#move
+# Documentation: https://bs-core.readthedocs.io//entity#move
 # Parallelizable: <true/false/global>
 # Note:
 

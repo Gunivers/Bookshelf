@@ -1,18 +1,18 @@
 # For level 16 to 30, XP =  REST +  1/2 * (5*LEVEL^2 + 59*LEVEL + 566)
 #                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-scoreboard players remove LEVELS glib 14
+scoreboard players remove LEVELS bs 14
 
 scoreboard players operation @s bs.res0 += 283 bs.const
 
-scoreboard players operation TMP glib = LEVELS glib
-scoreboard players operation TMP glib *= 59 bs.const
+scoreboard players operation TMP bs = LEVELS bs
+scoreboard players operation TMP bs *= 59 bs.const
 
-scoreboard players operation TMP2 glib = LEVELS glib
-scoreboard players operation TMP2 glib *= LEVELS glib
-scoreboard players operation TMP2 glib *= 5 bs.const
+scoreboard players operation TMP2 bs = LEVELS bs
+scoreboard players operation TMP2 bs *= LEVELS bs
+scoreboard players operation TMP2 bs *= 5 bs.const
 
-scoreboard players operation TMP glib += TMP2 glib
-scoreboard players operation TMP glib /= 2 bs.const
+scoreboard players operation TMP bs += TMP2 bs
+scoreboard players operation TMP bs /= 2 bs.const
 
-scoreboard players operation @s bs.res0 += TMP glib
+scoreboard players operation @s bs.res0 += TMP bs

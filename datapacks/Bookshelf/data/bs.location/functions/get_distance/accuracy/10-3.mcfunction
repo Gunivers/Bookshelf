@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.location:get_distance_as_to_at/accuracy/10-3
-# Documentation: https://glib-core.readthedocs.io//entity#location
+# Documentation: https://bs-core.readthedocs.io//entity#location
 # Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12...
 

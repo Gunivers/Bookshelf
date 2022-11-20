@@ -7,7 +7,7 @@
 # MINECRAFT: 1.14
 
 # REQUIEREMENTS:
-# - glib_child:color/init (function)
+# - bs_child:color/init (function)
 
 # INPUT:
 # - R ~ Red component

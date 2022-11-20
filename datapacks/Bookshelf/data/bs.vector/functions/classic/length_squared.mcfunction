@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.vector:classic/length_squared
-# Documentation: https://glib-core.readthedocs.io//entity#vector
+# Documentation: https://bs-core.readthedocs.io//entity#vector
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -23,9 +23,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -33,15 +33,15 @@ scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"te
 #__________________________________________________
 # CODE
 
-scoreboard players operation vector.x2 glib = @s bs.vectorX
-scoreboard players operation vector.x2 glib *= @s bs.vectorX
+scoreboard players operation vector.x2 bs = @s bs.vectorX
+scoreboard players operation vector.x2 bs *= @s bs.vectorX
 
-scoreboard players operation vector.y2 glib = @s bs.vectorY
-scoreboard players operation vector.y2 glib *= @s bs.vectorY
+scoreboard players operation vector.y2 bs = @s bs.vectorY
+scoreboard players operation vector.y2 bs *= @s bs.vectorY
 
-scoreboard players operation vector.z2 glib = @s bs.vectorZ
-scoreboard players operation vector.z2 glib *= @s bs.vectorZ
+scoreboard players operation vector.z2 bs = @s bs.vectorZ
+scoreboard players operation vector.z2 bs *= @s bs.vectorZ
 
-scoreboard players operation @s bs.res0 = vector.x2 glib
-scoreboard players operation @s bs.res0 += vector.y2 glib
-scoreboard players operation @s bs.res0 += vector.z2 glib
+scoreboard players operation @s bs.res0 = vector.x2 bs
+scoreboard players operation @s bs.res0 += vector.y2 bs
+scoreboard players operation @s bs.res0 += vector.z2 bs

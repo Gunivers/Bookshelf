@@ -7,7 +7,7 @@
 # Last check: 1.16.2
 
 # Original path: bs.math:bitwise/not
-# Documentation: https://glib-core.readthedocs.io//Functions#Bitwise
+# Documentation: https://bs-core.readthedocs.io//Functions#Bitwise
 # Parallelizable: true
 # Note:
 # - This function returns the bit negation of the number

@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.rh dummy [{"text":"GLib ","color":"gold"},{"text":"Relative orientation H","color":"dark_gray"}]
-scoreboard objectives add bs.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
+scoreboard objectives add bs.link.rh dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative orientation H","color":"dark_gray"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

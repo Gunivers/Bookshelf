@@ -23,9 +23,9 @@
 # CODE
 
 # Backup
-scoreboard players operation location.getDistance.locX glib = @s bs.locX
-scoreboard players operation location.getDistance.locY glib = @s bs.locY
-scoreboard players operation location.getDistance.locZ glib = @s bs.locZ
+scoreboard players operation location.getDistance.locX bs = @s bs.locX
+scoreboard players operation location.getDistance.locY bs = @s bs.locY
+scoreboard players operation location.getDistance.locZ bs = @s bs.locZ
 
 function bs.location:get_relative_ata
 
@@ -38,6 +38,6 @@ scoreboard players operation @s bs.res0 += @s bs.locY
 scoreboard players operation @s bs.res0 += @s bs.locZ
 
 # Restore
-scoreboard players operation @s bs.locX = location.getDistance.locX glib
-scoreboard players operation @s bs.locY = location.getDistance.locY glib
-scoreboard players operation @s bs.locZ = location.getDistance.locZ glib
+scoreboard players operation @s bs.locX = location.getDistance.locX bs
+scoreboard players operation @s bs.locY = location.getDistance.locY bs
+scoreboard players operation @s bs.locZ = location.getDistance.locZ bs

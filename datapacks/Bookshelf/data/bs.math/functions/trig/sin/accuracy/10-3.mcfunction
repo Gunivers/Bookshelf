@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:trig/sin/accuracy/10-3
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 

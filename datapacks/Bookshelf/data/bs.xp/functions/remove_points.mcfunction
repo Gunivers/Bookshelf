@@ -8,7 +8,7 @@
 ## Last check:
 
 ## Original path: bs.xp:remove_points
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#remove_points
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#remove_points
 ## Note:
 
 #__________________________________________________
@@ -25,18 +25,18 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation SAVE.RES0 glib = @s bs.res0
-scoreboard players operation SAVE.VAR0 glib = @s bs.var0
+scoreboard players operation SAVE.RES0 bs = @s bs.res0
+scoreboard players operation SAVE.VAR0 bs = @s bs.var0
 
 function bs.xp:get_total_points
 
 scoreboard players operation @s bs.var0 = @s bs.res0
-scoreboard players operation @s bs.var0 -= SAVE.VAR0 glib
+scoreboard players operation @s bs.var0 -= SAVE.VAR0 bs
 
 xp set @s 0 levels
 xp set @s 0 points
 
 function bs.xp:add_points
 
-scoreboard players operation @s bs.res0 = SAVE.RES0 glib
-scoreboard players operation @s bs.var0 = SAVE.VAR0 glib
+scoreboard players operation @s bs.res0 = SAVE.RES0 bs
+scoreboard players operation @s bs.var0 = SAVE.VAR0 bs

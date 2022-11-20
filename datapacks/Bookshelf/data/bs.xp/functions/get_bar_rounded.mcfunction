@@ -8,7 +8,7 @@
 ## Last check:
 
 ## Original path: bs.xp:get_bar_rounded
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#get_bar_rounded
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#get_bar_rounded
 ## Note:
 
 #__________________________________________________
@@ -25,39 +25,39 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation SAVE.VAR0 glib = @s bs.var0
+scoreboard players operation SAVE.VAR0 bs = @s bs.var0
 
-execute store result score POINTS glib run xp query @s points
+execute store result score POINTS bs run xp query @s points
 execute store result score @s bs.var0 run xp query @s levels
 
 function bs.xp:get_level_points
 scoreboard players operation @s bs.var1 = @s bs.res0
 
-scoreboard players operation @s bs.var0 = POINTS glib
+scoreboard players operation @s bs.var0 = POINTS bs
 scoreboard players operation @s bs.var0 *= 100 bs.const
 
 function bs.math:common/divide
 
-scoreboard players operation @s bs.var0 = SAVE.VAR0 glib
+scoreboard players operation @s bs.var0 = SAVE.VAR0 bs
 
 
 
-scoreboard players operation SAVE.VAR0 glib = @s bs.var0
-scoreboard players operation SAVE.VAR1 glib = @s bs.var1
+scoreboard players operation SAVE.VAR0 bs = @s bs.var0
+scoreboard players operation SAVE.VAR1 bs = @s bs.var1
 
-execute store result score LEVELS glib run xp query @s levels
+execute store result score LEVELS bs run xp query @s levels
 xp set @s 130 levels
-execute store result score POINTS glib run xp query @s points
+execute store result score POINTS bs run xp query @s points
 
-scoreboard players operation @s bs.var0 = POINTS glib
+scoreboard players operation @s bs.var0 = POINTS bs
 scoreboard players operation @s bs.var0 *= 100 bs.const
 
 scoreboard players set @s bs.var1 1012
 
 function bs.math:common/divide
 
-scoreboard players operation @s bs.var0 = LEVELS glib
+scoreboard players operation @s bs.var0 = LEVELS bs
 function bs.xp:set_levels
 
-scoreboard players operation @s bs.var0 = SAVE.VAR0 glib
-scoreboard players operation @s bs.var1 = SAVE.VAR1 glib
+scoreboard players operation @s bs.var0 = SAVE.VAR0 bs
+scoreboard players operation @s bs.var1 = SAVE.VAR1 bs

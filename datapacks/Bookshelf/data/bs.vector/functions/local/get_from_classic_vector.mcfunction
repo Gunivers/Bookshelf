@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.vector:classic/get_from_local_vector
-# Documentation: https://glib-core.readthedocs.io//entity#vector
+# Documentation: https://bs-core.readthedocs.io//entity#vector
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -24,13 +24,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Left","color":"dark_gray"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Up","color":"dark_gray"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
+scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Left","color":"dark_gray"}]
+scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Up","color":"dark_gray"}]
+scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -39,16 +39,16 @@ scoreboard objectives add bs.vectorFront dummy [{"text":"GLib ","color":"gold"},
 # CODE
 
 # Backup
-scoreboard players operation backup.localVector.var0 glib = @s bs.var0
-scoreboard players operation backup.localVector.var1 glib = @s bs.var1
-scoreboard players operation backup.localVector.var2 glib = @s bs.var2
-scoreboard players operation backup.localVector.var3 glib = @s bs.var3
-scoreboard players operation backup.localVector.var4 glib = @s bs.var4
-scoreboard players operation backup.localVector.res0 glib = @s bs.res0
-scoreboard players operation backup.localVector.res1 glib = @s bs.res1
-scoreboard players operation backup.localVector.res2 glib = @s bs.res2
-scoreboard players operation backup.localVector.oriH glib = @s bs.oriH
-scoreboard players operation backup.localVector.oriV glib = @s bs.oriV
+scoreboard players operation backup.localVector.var0 bs = @s bs.var0
+scoreboard players operation backup.localVector.var1 bs = @s bs.var1
+scoreboard players operation backup.localVector.var2 bs = @s bs.var2
+scoreboard players operation backup.localVector.var3 bs = @s bs.var3
+scoreboard players operation backup.localVector.var4 bs = @s bs.var4
+scoreboard players operation backup.localVector.res0 bs = @s bs.res0
+scoreboard players operation backup.localVector.res1 bs = @s bs.res1
+scoreboard players operation backup.localVector.res2 bs = @s bs.res2
+scoreboard players operation backup.localVector.oriH bs = @s bs.oriH
+scoreboard players operation backup.localVector.oriV bs = @s bs.oriV
 
 # Calcul
 scoreboard players operation @s bs.var0 = @s bs.vectorX
@@ -66,13 +66,13 @@ scoreboard players operation @s bs.vectorUp = @s bs.res1
 scoreboard players operation @s bs.vectorFront = @s bs.res2
 
 # Restore
-scoreboard players operation @s bs.var0 = backup.localVector.var0 glib
-scoreboard players operation @s bs.var1 = backup.localVector.var1 glib
-scoreboard players operation @s bs.var2 = backup.localVector.var2 glib
-scoreboard players operation @s bs.var3 = backup.localVector.var3 glib
-scoreboard players operation @s bs.var4 = backup.localVector.var4 glib
-scoreboard players operation @s bs.res0 = backup.localVector.res0 glib
-scoreboard players operation @s bs.res1 = backup.localVector.res1 glib
-scoreboard players operation @s bs.res2 = backup.localVector.res2 glib
-scoreboard players operation @s bs.oriH = backup.localVector.oriH glib
-scoreboard players operation @s bs.oriV = backup.localVector.oriV glib
+scoreboard players operation @s bs.var0 = backup.localVector.var0 bs
+scoreboard players operation @s bs.var1 = backup.localVector.var1 bs
+scoreboard players operation @s bs.var2 = backup.localVector.var2 bs
+scoreboard players operation @s bs.var3 = backup.localVector.var3 bs
+scoreboard players operation @s bs.var4 = backup.localVector.var4 bs
+scoreboard players operation @s bs.res0 = backup.localVector.res0 bs
+scoreboard players operation @s bs.res1 = backup.localVector.res1 bs
+scoreboard players operation @s bs.res2 = backup.localVector.res2 bs
+scoreboard players operation @s bs.oriH = backup.localVector.oriH bs
+scoreboard players operation @s bs.oriV = backup.localVector.oriV bs

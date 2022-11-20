@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.location:get_x/accuracy/10-3
-# Documentation: https://glib-core.readthedocs.io//entity#location
+# Documentation: https://bs-core.readthedocs.io//entity#location
 # Parallelizable: <true/false/global>
 # Note: It was excessively more impressive in 1.12...
 
@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
+scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

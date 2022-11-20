@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.orientation:normalize
-# Documentation: https://glib-core.readthedocs.io//entity#orientation
+# Documentation: https://bs-core.readthedocs.io//entity#orientation
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -17,8 +17,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.ori.v dummy [{"text":"GLib ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
-scoreboard objectives add bs.ori.h dummy [{"text":"GLib ","color":"gold"},{"text":"Orientation H","color":"dark_gray"}]
+scoreboard objectives add bs.ori.v dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
+scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation H","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

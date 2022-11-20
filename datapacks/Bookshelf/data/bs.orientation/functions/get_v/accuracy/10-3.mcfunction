@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.oriV dummy [{"text":"GLib ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
+scoreboard objectives add bs.oriV dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Orientation V","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

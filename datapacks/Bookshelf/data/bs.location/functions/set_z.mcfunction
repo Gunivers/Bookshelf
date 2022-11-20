@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locZ dummy [{"text":"GLib ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
+scoreboard objectives add bs.locZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

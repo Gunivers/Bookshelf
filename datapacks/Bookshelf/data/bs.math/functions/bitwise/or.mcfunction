@@ -7,7 +7,7 @@
 # Last check: 1.16.2
 
 # Original path: bs.math:bitwise/or
-# Documentation: https://glib-core.readthedocs.io//Functions#Bitwise
+# Documentation: https://bs-core.readthedocs.io//Functions#Bitwise
 # Parallelizable: true
 # Note:
 # - This function returns the or bitwise between the two numbers.

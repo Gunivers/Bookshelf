@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.core:shutdown
-# Documentation: https://glib-core.readthedocs.io//core
+# Documentation: https://bs-core.readthedocs.io//core
 # Parallelizable: <true/false/global>
 # Note:
 # Remove the gunivers-lib trailing scores, then unload it.

@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:pow
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 

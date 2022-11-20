@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.view:can_see_ata
-# Documentation: https://glib-core.readthedocs.io//entity#view
+# Documentation: https://bs-core.readthedocs.io//entity#view
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -26,10 +26,10 @@ scoreboard players set @s[tag=!bs.config.override] bs.var0 200
 #__________________________________________________
 # CODE
 
-tag @s remove glib_CanSee
+tag @s remove bs_CanSee
 
-execute at @s run summon area_effect_cloud ~ ~1.7 ~ {Tags:["glib","bs.canSee.aim","bs.canSee.tmp"]}
-summon area_effect_cloud ~ ~ ~ {Tags:["glib","bs.canSee.target","bs.canSee.tmp"]}
+execute at @s run summon area_effect_cloud ~ ~1.7 ~ {Tags:["bs","bs.canSee.aim","bs.canSee.tmp"]}
+summon area_effect_cloud ~ ~ ~ {Tags:["bs","bs.canSee.target","bs.canSee.tmp"]}
 
 execute as @e[tag=bs.canSee.aim] positioned as @s facing entity @e[tag=bs.canSee.target,limit=1,sort=nearest] feet run tp @s ~ ~ ~ ~ ~
 

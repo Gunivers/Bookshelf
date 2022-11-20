@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:divide
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note: Allows to retrieve the value rounded to the integer near of a normal division.
 

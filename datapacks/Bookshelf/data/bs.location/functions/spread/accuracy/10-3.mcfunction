@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.location:spread
-# Documentation: https://glib-core.readthedocs.io//entity
+# Documentation: https://bs-core.readthedocs.io//entity
 # Parallelizable: <true/false/global>
 # Note: Spread an entity based on CenterX, CenterZ and Radius scores
 

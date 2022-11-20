@@ -10,4 +10,4 @@
 
 # CODE:
 function bs.cache:select_jukebox
-execute at @e[tag=Glib_Cache_Head] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands set value []
+execute at @e[tag=bs_Cache_Head] run data modify block ~ ~ ~ RecordItem.tag.ScheduleCommands set value []

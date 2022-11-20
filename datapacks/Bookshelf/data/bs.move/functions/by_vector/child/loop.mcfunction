@@ -1,17 +1,17 @@
 # Start Debug
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from bs.move:by_vector/child/loop","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from bs.move:by_vector/child/loop","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
 # End Debug
 
 #__________________________________________________
 # Get working vector
 
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX glib = @s bs.vectorX
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY glib = @s bs.vectorY
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ glib = @s bs.vectorZ
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vectorX
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vectorY
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vectorZ
 
 # Start Debug
-execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] at @s[distance=..30] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["Glib","Debug"]}
-execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] as @s[distance=..30] run tellraw @a ["",{"text":"   | X: "},{"score":{"name":"move.vectorX","objective":"glib"}},{"text":" Y: "},{"score":{"name":"move.vectorY","objective":"glib"}},{"text":" Z: "},{"score":{"name":"move.vectorZ","objective":"glib"}},{"text":" Dec: "},{"score":{"name":"move.decomposition.factor","objective":"glib"}}]
+execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] at @s[distance=..30] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["bs","Debug"]}
+execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] as @s[distance=..30] run tellraw @a ["",{"text":"   | X: "},{"score":{"name":"move.vectorX","objective":"bs"}},{"text":" Y: "},{"score":{"name":"move.vectorY","objective":"bs"}},{"text":" Z: "},{"score":{"name":"move.vectorZ","objective":"bs"}},{"text":" Dec: "},{"score":{"name":"move.decomposition.factor","objective":"bs"}}]
 # End Debug
 
 #__________________________________________________
@@ -39,16 +39,16 @@ execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=b
 #__________________________________________________
 # Apply movement
 
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locX = move.vectorX glib
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locY = move.vectorY glib
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locZ = move.vectorZ glib
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locX = move.vectorX bs
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locY = move.vectorY bs
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locZ = move.vectorZ bs
 execute if entity @s[tag=!bs.collision] run function bs.location:add/accuracy/10-3
 
 #__________________________________________________
 # Loop
 
-scoreboard players remove move.decomposition.factor glib 1
-execute at @s if score move.decomposition.factor glib matches 1.. run function bs.move:by_vector/child/loop
+scoreboard players remove move.decomposition.factor bs 1
+execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_vector/child/loop
 
 
 # Start Debug

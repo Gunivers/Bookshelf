@@ -1,5 +1,5 @@
 # NAME: Init
-# PATH: glib_child:memory/init
+# PATH: bs_child:memory/init
 
 # AUTHOR: theogiraudet
 

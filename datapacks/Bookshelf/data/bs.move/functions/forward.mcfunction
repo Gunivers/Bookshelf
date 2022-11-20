@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.move:forward
-# Documentation: https://glib-core.readthedocs.io//entity#move
+# Documentation: https://bs-core.readthedocs.io//entity#move
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -17,10 +17,10 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.collision dummy [{"text":"GLib ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
-scoreboard objectives add bs.precision dummy [{"text":"GLib ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
+scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
+scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
 
-scoreboard objectives add bs.vectorFront dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
+scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Front","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,8 +34,8 @@ tag @s[tag=bs.config.override] remove bs.config.override
 
 # Backup
 
-scoreboard players operation #backup.move.vectorZ glib = @s bs.vectorFront
-scoreboard players operation #backup.move.res0 glib = @s bs.res0
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorFront
+scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Absurd values security
 
@@ -44,27 +44,27 @@ scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
 
 # Decomposition in sum of vector with parameters <= bs.precision
 
-scoreboard players operation vector.fastNormalize.Z glib = @s bs.vectorFront
-execute if score vector.fastNormalize.Z glib matches ..-1 run scoreboard players operation vector.fastNormalize.Z glib *= -1 bs.const
-scoreboard players operation vector.fastNormalize.max glib = vector.fastNormalize.Z glib
+scoreboard players operation vector.fastNormalize.Z bs = @s bs.vectorFront
+execute if score vector.fastNormalize.Z bs matches ..-1 run scoreboard players operation vector.fastNormalize.Z bs *= -1 bs.const
+scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.Z bs
 scoreboard players operation @s bs.vectorFront *= @s bs.precision
-scoreboard players operation @s bs.vectorFront /= vector.fastNormalize.Z glib
+scoreboard players operation @s bs.vectorFront /= vector.fastNormalize.Z bs
 scoreboard players set @s bs.res0 1000
 scoreboard players operation @s bs.res0 *= @s bs.precision
-scoreboard players operation @s bs.res0 /= vector.fastNormalize.Z glib
+scoreboard players operation @s bs.res0 /= vector.fastNormalize.Z bs
 
 # Apply movement
 
-scoreboard players set move.decomposition.factor glib 1000
-scoreboard players operation move.decomposition.factor glib /= @s bs.res0
-scoreboard players operation move.decomposition.factor.save glib = move.decomposition.factor glib
-execute at @s if score move.decomposition.factor glib matches 1.. run function bs.move:forward/child/loop
+scoreboard players set move.decomposition.factor bs 1000
+scoreboard players operation move.decomposition.factor bs /= @s bs.res0
+scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
+execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:forward/child/loop
 
 # Rest of decomposition
 
-scoreboard players operation move.vectorZ glib *= move.decomposition.factor.save glib
-scoreboard players operation move.vectorZ glib -= #backup.move.vectorZ glib
-scoreboard players operation move.vectorZ glib *= -1 bs.const
+scoreboard players operation move.vectorZ bs *= move.decomposition.factor.save bs
+scoreboard players operation move.vectorZ bs -= #backup.move.vectorZ bs
+scoreboard players operation move.vectorZ bs *= -1 bs.const
 
 # Apply movement for the rest
 
@@ -74,5 +74,5 @@ tag @s remove bs.move.by_vector.rest
 
 # Restore
 
-scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ glib
-scoreboard players operation @s bs.res0 = backup.move.res0 glib
+scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs
+scoreboard players operation @s bs.res0 = backup.move.res0 bs

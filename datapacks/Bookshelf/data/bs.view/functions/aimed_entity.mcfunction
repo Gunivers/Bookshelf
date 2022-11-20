@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.view:aimed_entity
-# Documentation: https://glib-core.readthedocs.io//entity#view
+# Documentation: https://bs-core.readthedocs.io//entity#view
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -27,7 +27,7 @@ scoreboard players operation @s bs.targetId = @s bs.id
 tag @s add Executor
 function bs.id:check_parent
 kill @e[tag=bs.aimedEntity,tag=bs.parentId.match]
-execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["glib","bs.raycastEntity.new"]}
+execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["bs","bs.raycastEntity.new"]}
 tp @e[tag=bs.raycastEntity.new] @s
 execute at @s run tp @e[tag=bs.raycastEntity.new] ~ ~1.7 ~
 

@@ -27,9 +27,9 @@
 # CODE
 
 # Backup
-scoreboard players operation location.spread.locX glib = @s bs.locX
-scoreboard players operation location.spread.locY glib = @s bs.locY
-scoreboard players operation location.spread.locZ glib = @s bs.locZ
+scoreboard players operation location.spread.locX bs = @s bs.locX
+scoreboard players operation location.spread.locY bs = @s bs.locY
+scoreboard players operation location.spread.locZ bs = @s bs.locZ
 
 scoreboard players operation @s bs.var6 = @s bs.var2
 scoreboard players operation @s bs.var6 *= 2 bs.const
@@ -62,6 +62,6 @@ execute store result score @s bs.locY run data get entity @s Pos[1] 1
 function bs.location:set
 
 # Restore
-scoreboard players operation @s bs.locX = location.spread.locX glib
-scoreboard players operation @s bs.locY = location.spread.locY glib
-scoreboard players operation @s bs.locZ = location.spread.locZ glib
+scoreboard players operation @s bs.locX = location.spread.locX bs
+scoreboard players operation @s bs.locY = location.spread.locY bs
+scoreboard players operation @s bs.locZ = location.spread.locZ bs

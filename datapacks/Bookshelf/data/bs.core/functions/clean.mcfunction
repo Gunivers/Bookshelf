@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.core:clean
-# Documentation: https://glib-core.readthedocs.io//core
+# Documentation: https://bs-core.readthedocs.io//core
 # Parallelizable: <true/false/global>
 # Note:
 # - Please be aware that using this function will delete each and every score used by the gunivers-lib,
@@ -30,7 +30,7 @@
 # CODE
 
   # ~~ Global ~~
-scoreboard objectives remove glib
+scoreboard objectives remove bs
 scoreboard objectives remove bs.config
 scoreboard objectives remove bs.const
 scoreboard objectives remove bs.data

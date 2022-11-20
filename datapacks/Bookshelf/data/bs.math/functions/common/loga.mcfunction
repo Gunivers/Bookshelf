@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.math:loga
-# Documentation: https://glib-core.readthedocs.io//math
+# Documentation: https://bs-core.readthedocs.io//math
 # Parallelizable: <true/false/global>
 # Note:
 # - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]).

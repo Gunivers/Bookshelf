@@ -8,7 +8,7 @@
 ## Last check:
 
 ## Original path: bs.xp:remove_levels
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#remove_levels
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#remove_levels
 ## Note:
 
 #__________________________________________________
@@ -25,15 +25,15 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation SAVE.RES0 glib = @s bs.res0
-scoreboard players operation SAVE.VAR0 glib = @s bs.var0
+scoreboard players operation SAVE.RES0 bs = @s bs.res0
+scoreboard players operation SAVE.VAR0 bs = @s bs.var0
 
 execute store result score @s bs.var0 run xp query @s levels
-scoreboard players operation @s bs.var0 -= SAVE.VAR0 glib
+scoreboard players operation @s bs.var0 -= SAVE.VAR0 bs
 
 xp set @s 0 levels
 
 function bs.xp:add_levels
 
-scoreboard players operation @s bs.res0 = SAVE.RES0 glib
-scoreboard players operation @s bs.var0 = SAVE.VAR0 glib
+scoreboard players operation @s bs.res0 = SAVE.RES0 bs
+scoreboard players operation @s bs.var0 = SAVE.VAR0 bs

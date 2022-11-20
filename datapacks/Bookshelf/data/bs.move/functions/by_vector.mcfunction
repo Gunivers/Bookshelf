@@ -16,12 +16,12 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.collision dummy [{"text":"GLib ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
-scoreboard objectives add bs.precision dummy [{"text":"GLib ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
+scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Collision Type","color":"dark_gray"}]
+scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Precision Type","color":"dark_gray"}]
 
-scoreboard objectives add bs.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,13 +34,13 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # CODE
 
 # Backup
-scoreboard players operation #backup.move.vectorX glib = @s bs.vectorX
-scoreboard players operation #backup.move.vectorY glib = @s bs.vectorY
-scoreboard players operation #backup.move.vectorZ glib = @s bs.vectorZ
-scoreboard players operation #backup.move.res0 glib = @s bs.res0
+scoreboard players operation #backup.move.vectorX bs = @s bs.vectorX
+scoreboard players operation #backup.move.vectorY bs = @s bs.vectorY
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorZ
+scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Start Debug
-execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
 execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":"   Precision cannot be negative. Precision was set to 1000 (1 block).","color":"gray"}]
 execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" < ","bold":true,"color":"gold"}]
 # End Debug
@@ -56,23 +56,23 @@ function bs.vector:classic/fast_normalize
 
 # Apply movement
 
-scoreboard players set move.decomposition.factor glib 1000
-scoreboard players operation move.decomposition.factor glib /= @s bs.res0
-scoreboard players operation move.decomposition.factor.save glib = move.decomposition.factor glib
+scoreboard players set move.decomposition.factor bs 1000
+scoreboard players operation move.decomposition.factor bs /= @s bs.res0
+scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
 
-execute at @s if score move.decomposition.factor glib matches 1.. run function bs.move:by_vector/child/loop
+execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_vector/child/loop
 
 # Rest of decomposition
 
-scoreboard players operation move.vectorX glib *= move.decomposition.factor.save glib
-scoreboard players operation move.vectorY glib *= move.decomposition.factor.save glib
-scoreboard players operation move.vectorZ glib *= move.decomposition.factor.save glib
-scoreboard players operation move.vectorX glib -= #backup.move.vectorX glib
-scoreboard players operation move.vectorY glib -= #backup.move.vectorY glib
-scoreboard players operation move.vectorZ glib -= #backup.move.vectorZ glib
-scoreboard players operation move.vectorX glib *= -1 bs.const
-scoreboard players operation move.vectorY glib *= -1 bs.const
-scoreboard players operation move.vectorZ glib *= -1 bs.const
+scoreboard players operation move.vectorX bs *= move.decomposition.factor.save bs
+scoreboard players operation move.vectorY bs *= move.decomposition.factor.save bs
+scoreboard players operation move.vectorZ bs *= move.decomposition.factor.save bs
+scoreboard players operation move.vectorX bs -= #backup.move.vectorX bs
+scoreboard players operation move.vectorY bs -= #backup.move.vectorY bs
+scoreboard players operation move.vectorZ bs -= #backup.move.vectorZ bs
+scoreboard players operation move.vectorX bs *= -1 bs.const
+scoreboard players operation move.vectorY bs *= -1 bs.const
+scoreboard players operation move.vectorZ bs *= -1 bs.const
 
 # Apply movement for the rest
 
@@ -82,7 +82,7 @@ tag @s remove bs.move.by_vector.rest
 
 # Restore
 
-scoreboard players operation @s bs.vectorX = #backup.move.vectorX glib
-scoreboard players operation @s bs.vectorY = #backup.move.vectorY glib
-scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ glib
-scoreboard players operation @s bs.res0 = backup.move.res0 glib
+scoreboard players operation @s bs.vectorX = #backup.move.vectorX bs
+scoreboard players operation @s bs.vectorY = #backup.move.vectorY bs
+scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs
+scoreboard players operation @s bs.res0 = backup.move.res0 bs

@@ -16,8 +16,8 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.link.ry dummy [{"text":"GLib ","color":"gold"},{"text":"Relative location Y","color":"dark_gray"}]
-scoreboard objectives add bs.link.to dummy [{"text":"GLib ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
+scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Relative location Y","color":"dark_gray"}]
+scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Linked to","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -26,7 +26,7 @@ scoreboard objectives add bs.link.to dummy [{"text":"GLib ","color":"gold"},{"te
 # CODE
 
 # Start Backup
-scoreboard players operation backup.link.reverse.LocY glib = @s bs.locY
+scoreboard players operation backup.link.reverse.LocY bs = @s bs.locY
 # End Backup
 
 data merge entity @s[type=!player] {NoGravity:1}
@@ -36,21 +36,21 @@ function bs.id:check
 
 # Relative Position
 execute at @s run function bs.location:get_y/accuracy/10-3
-scoreboard players operation link.reverseLoc.diff glib = @s bs.locY
+scoreboard players operation link.reverseLoc.diff bs = @s bs.locY
 execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.location:get_y/accuracy/10-3
-scoreboard players operation link.reverseLoc.diff glib -= @s bs.locY
+scoreboard players operation link.reverseLoc.diff bs -= @s bs.locY
 
 # Calcul difference
-scoreboard players operation link.reverseLoc.diff glib -= @s bs.link.ry
+scoreboard players operation link.reverseLoc.diff bs -= @s bs.link.ry
 
 # Update link
-scoreboard players operation link.reverseLoc.diff glib *= 2 bs.const
-scoreboard players operation @s bs.link.ry += link.reverseLoc.diff glib
+scoreboard players operation link.reverseLoc.diff bs *= 2 bs.const
+scoreboard players operation @s bs.link.ry += link.reverseLoc.diff bs
 
 # Set new position
 scoreboard players operation @s bs.locY += @s bs.link.ry
 function bs.location:set_y/accuracy/10-3
 
 # Start Restore
-scoreboard players operation @s bs.locY = backup.link.reverse.LocY glib
+scoreboard players operation @s bs.locY = backup.link.reverse.LocY bs
 # End Restore

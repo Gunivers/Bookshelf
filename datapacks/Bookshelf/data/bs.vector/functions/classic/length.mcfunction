@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.vector:classic/length
-# Documentation: https://glib-core.readthedocs.io//entity#vector
+# Documentation: https://bs-core.readthedocs.io//entity#vector
 # Parallelizable: <true/false/global>
 # Note:
 
@@ -23,9 +23,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"GLib ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
+scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector X","color":"dark_gray"}]
+scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Y","color":"dark_gray"}]
+scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Vector Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,7 +34,7 @@ scoreboard objectives add bs.vectorZ dummy [{"text":"GLib ","color":"gold"},{"te
 # CODE
 
 # Backup of bs.var0
-scoreboard players operation vector.length.var0 glib = @s bs.var0
+scoreboard players operation vector.length.var0 bs = @s bs.var0
 
 # Get lenght^2
 function bs.vector:classic/length_squared
@@ -44,4 +44,4 @@ scoreboard players operation @s bs.var0 = @s bs.res0
 function bs.math:sqrt
 
 # Restoring bs.var0
-scoreboard players operation @s bs.var0 = vector.length.var0 glib
+scoreboard players operation @s bs.var0 = vector.length.var0 bs

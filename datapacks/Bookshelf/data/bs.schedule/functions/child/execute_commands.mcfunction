@@ -1,12 +1,12 @@
 # NAME: Execute Commands
-# PATH: glib_child:schedule/execute_commands
+# PATH: bs_child:schedule/execute_commands
 
 # AUTHOR: theogiraudet
 
 # VERSION: 1.0
 # MINECRAFT: 1.14
 
-# CHILD OF: glib_child:schedule/loop_schedule
+# CHILD OF: bs_child:schedule/loop_schedule
 
 # NOTE: Execute the command(s) if the gametick matches to the tick saved in first element of the schedule list.
 

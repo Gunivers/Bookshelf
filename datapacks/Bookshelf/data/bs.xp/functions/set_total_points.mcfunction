@@ -8,7 +8,7 @@
 ## Last check:
 
 ## Original path: bs.xp:set_total_points
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#set_total_points
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#set_total_points
 ## Note:
 
 #__________________________________________________

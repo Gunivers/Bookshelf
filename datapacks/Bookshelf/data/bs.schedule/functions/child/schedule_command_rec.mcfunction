@@ -1,5 +1,5 @@
 # NAME: Schedule Command Rec
-# PATH: glib_child:schedule/schedule_command_rec
+# PATH: bs_child:schedule/schedule_command_rec
 
 # AUTHOR: theogiraudet
 # CONTRIBUTOR:
@@ -36,5 +36,5 @@ execute if entity @s[tag=isLower] run data modify entity @s ArmorItems[0].tag.Bu
 execute if entity @s[tag=isLower] run data modify entity @s ArmorItems[0].tag.Buffer2[0].Command set from entity @s ArmorItems[0].tag.Buffer.Command
 execute if entity @s[tag=isLower] store result entity @s ArmorItems[0].tag.Buffer2[0].GameTick int 1 run scoreboard players get @s bs.var0
 
-execute unless entity @s[tag=isLower] run function glib_child:default/core/schedule/schedule_command_rec
+execute unless entity @s[tag=isLower] run function bs_child:default/core/schedule/schedule_command_rec
 tag @s remove isLower

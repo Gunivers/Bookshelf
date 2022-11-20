@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.id:Getcuid
-# Documentation: https://glib-core.readthedocs.io//entity#id
+# Documentation: https://bs-core.readthedocs.io//entity#id
 # Parallelizable: true
 # Note: Gives a unique identifier to the source entity.
 # - To reset CUID, set the entity score "CUID" at 0 and make it execute this function.
@@ -20,7 +20,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.id dummy [{"text":"GLib ","color":"gold"},{"text":"ID","color":"dark_gray"}]
+scoreboard objectives add bs.id dummy [{"text":"Bookshelf ","color":"gold"},{"text":"ID","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

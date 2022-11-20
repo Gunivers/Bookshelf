@@ -21,9 +21,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locX dummy [{"text":"GLib ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
-scoreboard objectives add bs.locY dummy [{"text":"GLib ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
-scoreboard objectives add bs.locZ dummy [{"text":"GLib ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
+scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location X","color":"dark_gray"}]
+scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
+scoreboard objectives add bs.locZ dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location Z","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -32,9 +32,9 @@ scoreboard objectives add bs.locZ dummy [{"text":"GLib ","color":"gold"},{"text"
 # CODE
 
 # Backup
-scoreboard players operation #backup.location.add.locX glib = @s bs.locX
-scoreboard players operation #backup.location.add.locY glib = @s bs.locY
-scoreboard players operation #backup.location.add.locZ glib = @s bs.locZ
+scoreboard players operation #backup.location.add.locX bs = @s bs.locX
+scoreboard players operation #backup.location.add.locY bs = @s bs.locY
+scoreboard players operation #backup.location.add.locZ bs = @s bs.locZ
 
 execute at @s run function bs.core:default_entity
 tag @e[tag=bs.new,limit=1] add bs.location.add.tmp
@@ -49,6 +49,6 @@ execute as @e[tag=bs.location.add.tmp] at @s run function bs.health:safe_kill
 function bs.location:set/accuracy/10-3
 
 # Restore
-scoreboard players operation @s bs.locX = #backup.location.add.locX glib
-scoreboard players operation @s bs.locY = #backup.location.add.locY glib
-scoreboard players operation @s bs.locZ = #backup.location.add.locZ glib
+scoreboard players operation @s bs.locX = #backup.location.add.locX bs
+scoreboard players operation @s bs.locY = #backup.location.add.locY bs
+scoreboard players operation @s bs.locZ = #backup.location.add.locZ bs

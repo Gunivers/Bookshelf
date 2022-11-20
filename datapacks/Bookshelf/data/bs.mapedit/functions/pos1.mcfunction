@@ -19,9 +19,9 @@
 # The positon was place on the score of the entity who execute the function
 #INI
 
-scoreboard objectives add Pos_xd dummy [{"text":"GLib ","color":"gold"},{"text":"Pos X d","color":"dark_gray"}]
-scoreboard objectives add Pos_yd dummy [{"text":"GLib ","color":"gold"},{"text":"Pos Y d","color":"dark_gray"}]
-scoreboard objectives add Pos_zd dummy [{"text":"GLib ","color":"gold"},{"text":"Pos Z d","color":"dark_gray"}]
+scoreboard objectives add Pos_xd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos X d","color":"dark_gray"}]
+scoreboard objectives add Pos_yd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos Y d","color":"dark_gray"}]
+scoreboard objectives add Pos_zd dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos Z d","color":"dark_gray"}]
 
 
 #Position X Y Z du debut

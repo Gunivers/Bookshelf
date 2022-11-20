@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.move:pathfinding_ata
-# Documentation: https://glib-core.readthedocs.io//entity#move
+# Documentation: https://bs-core.readthedocs.io//entity#move
 # Parallelizable: <true/false/global>
 # Note: This function create an invisible path with armor-stand. To see this path, add to yourself the "Debug" tag
 
@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add PathCost dummy [{"text":"GLib ","color":"gold"},{"text":"Path Cost","color":"dark_gray"}]
+scoreboard objectives add PathCost dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Path Cost","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG
@@ -32,16 +32,16 @@ scoreboard players set @s[tag=!bs.config.override] bs.var1 500
 #__________________________________________________
 # CODE
 
-execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Source"]}
-summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["Glib","Glib_Pathfind_Target"]}
-scoreboard players operation @e[tag=Glib_Pathfind_Source,limit=1] bs.var3 = @s bs.var3
-scoreboard players operation @e[tag=Glib_Pathfind_Target,limit=1] bs.var1 = @s bs.var1
+execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["bs","bs_Pathfind_Source"]}
+summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["bs","bs_Pathfind_Target"]}
+scoreboard players operation @e[tag=bs_Pathfind_Source,limit=1] bs.var3 = @s bs.var3
+scoreboard players operation @e[tag=bs_Pathfind_Target,limit=1] bs.var1 = @s bs.var1
 
-execute as @e[tag=Glib_Pathfind_Source] run function bs.move:pathfind/child/source
+execute as @e[tag=bs_Pathfind_Source] run function bs.move:pathfind/child/source
 
 # Clear
-kill @e[tag=Glib_Pathfind_Target]
-kill @e[tag=Glib_Pathfind_Source]
+kill @e[tag=bs_Pathfind_Target]
+kill @e[tag=bs_Pathfind_Source]
 
-execute if entity @s[tag=!Debug] run kill @e[tag=Glib_Pathfind,tag=!Glib_Pathfind_Rewind]
-execute if entity @s[tag=!Debug] as @e[tag=Glib_Pathfind] run data modify entity @s {ArmorItems:[{},{},{},{id:"air",Count:1b}]}
+execute if entity @s[tag=!Debug] run kill @e[tag=bs_Pathfind,tag=!bs_Pathfind_Rewind]
+execute if entity @s[tag=!Debug] as @e[tag=bs_Pathfind] run data modify entity @s {ArmorItems:[{},{},{},{id:"air",Count:1b}]}

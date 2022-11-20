@@ -7,7 +7,7 @@
 ## Last check:
 
 ## Original path: bs.xp:get_level_points
-## Documentation: https://glib-core.readthedocs.io/en/latest/XP.html#level-points
+## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#level-points
 ## Note:
 
 #__________________________________________________

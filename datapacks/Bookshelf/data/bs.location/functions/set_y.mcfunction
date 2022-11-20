@@ -7,7 +7,7 @@
 # Last check:
 
 # Original path: bs.location:set_y
-# Documentation: https://glib-core.readthedocs.io//Functions#Location
+# Documentation: https://bs-core.readthedocs.io//Functions#Location
 # Parallelizable: true
 # Note: It was excessively more impressive in 1.12...
 
@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locY dummy [{"text":"GLib ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
+scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Location Y","color":"dark_gray"}]
 
 #__________________________________________________
 # CONFIG

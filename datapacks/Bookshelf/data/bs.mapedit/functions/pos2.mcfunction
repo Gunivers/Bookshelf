@@ -17,9 +17,9 @@
 # NOTE:
 # The positon was place on the score of the entity who execute the function
 
-scoreboard objectives add Pos_xf dummy [{"text":"GLib ","color":"gold"},{"text":"Pos X f","color":"dark_gray"}]
-scoreboard objectives add Pos_yf dummy [{"text":"GLib ","color":"gold"},{"text":"Pos Y f","color":"dark_gray"}]
-scoreboard objectives add Pos_zf dummy [{"text":"GLib ","color":"gold"},{"text":"Pos Z f","color":"dark_gray"}]
+scoreboard objectives add Pos_xf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos X f","color":"dark_gray"}]
+scoreboard objectives add Pos_yf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos Y f","color":"dark_gray"}]
+scoreboard objectives add Pos_zf dummy [{"text":"Bookshelf ","color":"gold"},{"text":"Pos Z f","color":"dark_gray"}]
 
 #Postion X Y Z de la fin
 execute at @s store result score @s Pos_xf run data get entity @s Pos[0]
