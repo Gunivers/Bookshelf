@@ -6,7 +6,7 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: glib.math:arctan
+# Original path: bs.math:arctan
 # Documentation: https://project.gunivers.net/projects/gunivers-lib/wiki/math
 # Parallelizable: true
 # Note:
@@ -16,8 +16,8 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s glib.var0 (score): scalar on interval [-1000;1000]
-# Output: @s glib.res0 (score): angle on interval ]-90;90[
+# Input: @s bs.var0 (score): scalar on interval [-1000;1000]
+# Output: @s bs.res0 (score): angle on interval ]-90;90[
 
 #__________________________________________________
 # INIT
@@ -30,66 +30,66 @@
 
 # CODE:
 
-scoreboard players set math.arctan glib.var4 1
-scoreboard players set @s[scores={glib.var0=..-1}] glib.var4 -1
+scoreboard players set math.arctan bs.var4 1
+scoreboard players set @s[scores={bs.var0=..-1}] bs.var4 -1
 
-scoreboard players operation math.arctan glib.var0 = @s glib.var0
-scoreboard players operation math.arctan glib.var0 *= math.arctan glib.var4
+scoreboard players operation math.arctan bs.var0 = @s bs.var0
+scoreboard players operation math.arctan bs.var0 *= math.arctan bs.var4
 
 #Numerateur
-scoreboard players operation math.arctan glib.var2 = math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 *= math.arctan glib.var0
+scoreboard players operation math.arctan bs.var2 = math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 *= math.arctan bs.var0
 
-scoreboard players operation math.arctan glib.var1 = math.arctan glib.var2
+scoreboard players operation math.arctan bs.var1 = math.arctan bs.var2
 
-scoreboard players operation math.arctan glib.var2 *= math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 /= 1000 glib.const
+scoreboard players operation math.arctan bs.var2 *= math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 /= 1000 bs.const
 
-scoreboard players operation math.arctan glib.var1 += math.arctan glib.var2
+scoreboard players operation math.arctan bs.var1 += math.arctan bs.var2
 
-scoreboard players operation @s glib.res0 = math.arctan glib.var0
-scoreboard players operation @s glib.res0 *= 640 glib.const
+scoreboard players operation @s bs.res0 = math.arctan bs.var0
+scoreboard players operation @s bs.res0 *= 640 bs.const
 
-scoreboard players operation @s glib.res0 += math.arctan glib.var1
-scoreboard players operation @s glib.res0 *= 785 glib.const
+scoreboard players operation @s bs.res0 += math.arctan bs.var1
+scoreboard players operation @s bs.res0 *= 785 bs.const
 
 #Dénominateur
-scoreboard players operation math.arctan glib.var1 = math.arctan glib.var0
-scoreboard players operation math.arctan glib.var1 *= 640 glib.const
+scoreboard players operation math.arctan bs.var1 = math.arctan bs.var0
+scoreboard players operation math.arctan bs.var1 *= 640 bs.const
 
-scoreboard players operation math.arctan glib.var2 = math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 *= 1000 glib.const
+scoreboard players operation math.arctan bs.var2 = math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 *= 1000 bs.const
 
-scoreboard players operation math.arctan glib.var1 += math.arctan glib.var2
-scoreboard players add math.arctan glib.var1 1000000
+scoreboard players operation math.arctan bs.var1 += math.arctan bs.var2
+scoreboard players add math.arctan bs.var1 1000000
 
-scoreboard players operation math.arctan glib.var2 = math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 *= math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 *= 640 glib.const
-scoreboard players operation math.arctan glib.var2 /= 1000 glib.const
+scoreboard players operation math.arctan bs.var2 = math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 *= math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 *= 640 bs.const
+scoreboard players operation math.arctan bs.var2 /= 1000 bs.const
 
-scoreboard players operation math.arctan glib.var1 += math.arctan glib.var2
+scoreboard players operation math.arctan bs.var1 += math.arctan bs.var2
 
-scoreboard players operation math.arctan glib.var2 = math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 *= math.arctan glib.var0
+scoreboard players operation math.arctan bs.var2 = math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 *= math.arctan bs.var0
 
-scoreboard players operation math.arctan glib.var1 += math.arctan glib.var2
+scoreboard players operation math.arctan bs.var1 += math.arctan bs.var2
 
-scoreboard players operation math.arctan glib.var2 *= math.arctan glib.var0
-scoreboard players operation math.arctan glib.var2 /= 1000 glib.const
+scoreboard players operation math.arctan bs.var2 *= math.arctan bs.var0
+scoreboard players operation math.arctan bs.var2 /= 1000 bs.const
 
-scoreboard players operation math.arctan glib.var1 += math.arctan glib.var2
+scoreboard players operation math.arctan bs.var1 += math.arctan bs.var2
 
 #Division
-scoreboard players operation @s glib.res0 /= math.arctan glib.var1
-scoreboard players operation @s glib.res0 *= 2 glib.const
-scoreboard players add @s glib.res0 1
+scoreboard players operation @s bs.res0 /= math.arctan bs.var1
+scoreboard players operation @s bs.res0 *= 2 bs.const
+scoreboard players add @s bs.res0 1
 
-scoreboard players operation @s glib.res0 *= 18000 glib.const
-scoreboard players operation @s glib.res0 /= Pi2 glib.const
+scoreboard players operation @s bs.res0 *= 18000 bs.const
+scoreboard players operation @s bs.res0 /= Pi2 bs.const
 
 #Output
-scoreboard players operation @s glib.res0 *= math.arctan glib.var4
-scoreboard players operation @s glib.res0 /= 1000 glib.const
+scoreboard players operation @s bs.res0 *= math.arctan bs.var4
+scoreboard players operation @s bs.res0 /= 1000 bs.const
 
-tellraw @a ["",{"text":"Input: "},{"score":{"name":"@s","objective":"glib.res0"}},{"text":"Output: "},{"score":{"name":"@s","objective":"glib.res0"}}]
+tellraw @a ["",{"text":"Input: "},{"score":{"name":"@s","objective":"bs.res0"}},{"text":"Output: "},{"score":{"name":"@s","objective":"bs.res0"}}]

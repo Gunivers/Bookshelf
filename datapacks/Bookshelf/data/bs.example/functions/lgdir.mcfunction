@@ -7,7 +7,7 @@
 # MINECRAFT: 1.13+
 
 # NOTE: This system is just an example of what you can do with our library.
-#       By executing this function on every pleyers, each time they will use a carrot_on_a_stick, a basic projectile will be shot.
+#       By executing this function on every players, each time they will use a carrot_on_a_stick, a basic projectile will be shot.
 #       It is recommended to create your own function/command-block system that reproduce this function to adapt it to your project.
 
 # INIT

@@ -1,18 +1,18 @@
-function glib.core:default_entity
+function bs.core:default_entity
 
-tag @e[tag=glib.new,limit=1,sort=nearest] add glib.link.debug.display
+tag @e[tag=bs.new,limit=1,sort=nearest] add bs.link.debug.display
 
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorX = @s glib.link.rx
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorY = @s glib.link.ry
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorZ = @s glib.link.rz
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorX = @s bs.link.rx
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorY = @s bs.link.ry
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorZ = @s bs.link.rz
 
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorX /= 10 glib.const
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorY /= 10 glib.const
-scoreboard players operation @e[tag=glib.new,tag=glib.link.debug.display] glib.vectorZ /= 10 glib.const
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorX /= 10 bs.const
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorY /= 10 bs.const
+scoreboard players operation @e[tag=bs.new,tag=bs.link.debug.display] bs.vectorZ /= 10 bs.const
 
-scoreboard players set @e[tag=glib.new,tag=glib.link.debug.display] glib.lifetime -11
+scoreboard players set @e[tag=bs.new,tag=bs.link.debug.display] bs.lifetime -11
 
-tag @e[tag=glib.link.debug.display] remove glib.new
+tag @e[tag=bs.link.debug.display] remove bs.new
 
-execute as @e[tag=glib.link.debug.display] run function glib.move:by_vector
-execute as @e[tag=glib.link.debug.display] at @s run particle dust 0.196 0.588 0.980 0.3 ~ ~ ~
+execute as @e[tag=bs.link.debug.display] run function bs.move:by_vector
+execute as @e[tag=bs.link.debug.display] at @s run particle dust 0.196 0.588 0.980 0.3 ~ ~ ~
