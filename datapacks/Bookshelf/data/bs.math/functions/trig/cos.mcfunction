@@ -28,8 +28,7 @@
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"INPUT: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}}]
 
 scoreboard players operation VAR0 bs = @s bs.var0
-execute if score VAR0 bs matches ..-1 run scoreboard players operation VAR0 bs *= Neg bs.const
-execute if score VAR0 bs matches 360.. run scoreboard players operation VAR0 bs %= 360 bs.const
+scoreboard players operation VAR0 bs %= 360 bs.const
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"MODULO: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}}]
 
