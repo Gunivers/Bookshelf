@@ -1,6 +1,8 @@
 # 📎 Link
 
-`bs.link:`: The "Link" functions allow to link an entity to another.
+**`bs.link:_`**
+
+The "Link" functions allow to link an entity to another.
 This link consists in preserving the position and the relative
 orentation between the two entities, allowing then to imitate or to
 reverse the movements and rotations of the parent entity.
@@ -9,13 +11,17 @@ reverse the movements and rotations of the parent entity.
 
 ## Create link to target ID
 
-**`create_link_tti`: Allows to create the link between two entities.**
+**bs.link:`create_link_tti`**
 
-:Input:
-    **(score) `@s bs.targetId`** : score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
+Create a link between two entities : compute relative and local position and orientation in order to manipulate them later.
+
+:Inputs:
+
+    **(context) as @e[...]**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+
+    **(score) `@s bs.targetId`**: score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
 :Outputs:
-    The child entity (having performed the function) will then have 9 distinct scores
 
     **(score) `@s bs.link.r[x,y,z,h,v]`**: representing the relative coordinates (position + orientation)
 
@@ -23,11 +29,9 @@ reverse the movements and rotations of the parent entity.
 
     **(score) `@s bs.link.to`**: identifies the entity to which it is linked
 
-    These scores should generally not be modified because they are used as parameters for other link functions.
-
 :Example:
 
-    Link all armor_stand to the entity with ID 3 (see the [`ID`](id#get-simple-unique-id) module to know how to assign an ID to an entity)
+    Link all armor_stand to the entity with ID 3 (see the [`bs.id`](id) module to know how to assign an ID to an entity)
 
     ```
     # Once
@@ -39,33 +43,44 @@ reverse the movements and rotations of the parent entity.
     execute as @e[type=armor_stand] run function glib_debug:link/display_link
     ```
 
-:::{admonition} Dependencies
+```{note}
+The output scores should generally not be directly modified because they are used as parameters for other link functions. It is then recommanded to only use the bookshelf function to modify these scores.
+```
+
+```{admonition} Dependencies
 :class: important
 
 This function require the following modules to work properly:
-- [`location`](location)
-- [`orientation`](orientation)
-- [`id`](id)
-:::
+- [`bs.location`](location)
+- [`bs.orientation`](orientation)
+- [`bs.id`](id)
+```
 
 ---
 
 ## Create link "as to at"
 
-`create_link_ata`: In the same way as `create_link_to_target_id`,
-this function creates a link between the entity executing the function
-and the entity closest to the execution position.
+**bs.link:`create_link_ata`**
 
-* Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
-* The child entity (having executed the function) will then have 9 distinct scores:
-   * `bs.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
-   * `bs.link.l[x,y,z]` representing local coordinates (position only)
-   * `bs.link.to` identifies the entity to which it is linked
-* These scores should generally not be modified because they are used as parameters for other link functions.
+In the same way as `create_link_to_target_id`, this function creates a link between the entity executing the function and the entity closest to the execution position.
 
-*Example:*
+:Inputs:
 
--  Link all armor_stand to the nearest sheep
+    **(context) `as @e[...]`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+
+    **(context) `at @e[...]` or `positioned x y z`**: the execution position is the position of the parent entity (the function will take the nearest entity).
+
+:Outputs:
+
+    **(score) `@s bs.link.r[x,y,z,h,v]`**: representing the relative coordinates (position + orientation)
+
+    **(score) `@s bs.link.l[x,y,z]`**: representing local coordinates (position only)
+
+    **(score) `@s bs.link.to`** identifies the entity to which it is linked
+
+:Example:
+
+    Link all armor_stand to the nearest sheep
 
     ```
     # Once
@@ -76,9 +91,22 @@ and the entity closest to the execution position.
     execute as @e[type=armor_stand] run function glib_debug:link/display_link
     ```
 
+```{note}
+The output scores should generally not be directly modified because they are used as parameters for other link functions. It is then recommanded to only use the bookshelf function to modify these scores.
+```
+
+```{admonition} Dependencies
+:class: important
+
+This function require the following modules to work properly:
+- [`bs.location`](location)
+- [`bs.orientation`](orientation)
+- [`bs.id`](id)
+```
+
 ---
 
-### Imitate location
+## Imitate location
 
 `imitate_loc`: Allows to replace the entity at its relative position.
 This operation repeated in a loop is to imitate the movements of the
