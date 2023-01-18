@@ -21,7 +21,7 @@ reverse the movements and rotations of the parent entity.
 
 *Example:*
 
--  Link all armor_stand to the entity with ID 3 (see the `ID`module to know how to assign an ID to an entity)
+-  Link all armor_stand to the entity with ID 3 (see the [`ID`](id) module to know how to assign an ID to an entity)
 
     ```
     # Once
@@ -33,9 +33,13 @@ reverse the movements and rotations of the parent entity.
     execute as @e[type=armor_stand] run function glib_debug:link/display_link
     ```
 
-:::{important} Dependencies
+:::{admonition} Dependencies
+:class: important
+
 This function require the following modules to work:
-`location`, `orientation`, `id`
+- `location`
+- `orientation`
+- `id`
 :::
 
 ---
