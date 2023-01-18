@@ -11,21 +11,21 @@ reverse the movements and rotations of the parent entity.
 
 ## Create link to target ID
 
-**bs.link:`create_link_tti`**
+**`bs.link:create_link_tti`**
 
 Create a link between two entities : compute relative and local position and orientation in order to manipulate them later.
 
 :Inputs:
 
-    **(context) as @e[...]**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+    **(context) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
 
     **(score) `@s bs.targetId`**: score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
 :Outputs:
 
-    **(score) `@s bs.link.r[x,y,z,h,v]`**: representing the relative coordinates (position + orientation)
+    **(score) `@s bs.link.r<x|y|z|h|v>`**: representing the relative coordinates (position + orientation)
 
-    **(score) `@s bs.link.l[x,y,z]`**: representing local coordinates (position only)
+    **(score) `@s bs.link.l<x|y|z>`**: representing local coordinates (position only)
 
     **(score) `@s bs.link.to`**: identifies the entity to which it is linked
 
@@ -60,21 +60,21 @@ This function require the following modules to work properly:
 
 ## Create link "as to at"
 
-**bs.link:`create_link_ata`**
+**`bs.link:create_link_ata`**
 
 In the same way as `create_link_to_target_id`, this function creates a link between the entity executing the function and the entity closest to the execution position.
 
 :Inputs:
 
-    **(context) `as @e[...]`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+    **(context) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
 
-    **(context) `at @e[...]` or `positioned x y z`**: the execution position is the position of the parent entity (the function will take the nearest entity).
+    **(context) `at <entity>` or `positioned <x> <y> <z>`**: the execution position is the position of the parent entity (the function will take the nearest entity).
 
 :Outputs:
 
-    **(score) `@s bs.link.r[x,y,z,h,v]`**: representing the relative coordinates (position + orientation)
+    **(score) `@s bs.link.r<x|y|z|h|v>`**: representing the relative coordinates (position + orientation)
 
-    **(score) `@s bs.link.l[x,y,z]`**: representing local coordinates (position only)
+    **(score) `@s bs.link.l<x|y|z>`**: representing local coordinates (position only)
 
     **(score) `@s bs.link.to`** identifies the entity to which it is linked
 
