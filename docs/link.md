@@ -9,19 +9,25 @@ reverse the movements and rotations of the parent entity.
 
 ## Create link to target ID
 
-`create_link_tti`: Allows to create the link between two entities.
-* The `bs.targetId` score of the executing entity must match the
-`bs.id` score of the entity to which it will be linked.
-* Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
-* The child entity (having performed the function) will then have 9 distinct scores:
-   * `bs.link.r[x,y,z,h,v]` representing the relative coordinates (position + orientation)
-   * `bs.link.l[x,y,z]` representing local coordinates (position only)
-   * `bs.link.to` identifies the entity to which it is linked
-* These scores should generally not be modified because they are used as parameters for other link functions.
+**`create_link_tti`: Allows to create the link between two entities.**
 
-*Example:*
+:Input:
+    **(score) `@s bs.targetId`** : score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
--  Link all armor_stand to the entity with ID 3 (see the [`ID`](id) module to know how to assign an ID to an entity)
+:Outputs:
+    The child entity (having performed the function) will then have 9 distinct scores
+
+    **(score) `@s bs.link.r[x,y,z,h,v]`**: representing the relative coordinates (position + orientation)
+
+    **(score) `@s bs.link.l[x,y,z]`**: representing local coordinates (position only)
+
+    **(score) `@s bs.link.to`**: identifies the entity to which it is linked
+
+    These scores should generally not be modified because they are used as parameters for other link functions.
+
+:Example:
+
+    Link all armor_stand to the entity with ID 3 (see the [`ID`](id#get-simple-unique-id) module to know how to assign an ID to an entity)
 
     ```
     # Once
@@ -36,10 +42,10 @@ reverse the movements and rotations of the parent entity.
 :::{admonition} Dependencies
 :class: important
 
-This function require the following modules to work:
-- `location`
-- `orientation`
-- `id`
+This function require the following modules to work properly:
+- [`location`](location)
+- [`orientation`](orientation)
+- [`id`](id)
 :::
 
 ---
