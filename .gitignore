@@ -12,6 +12,7 @@ level.dat
 /level.dat_old
 /session.lock
 /uid.dat
+/venv/
 
 .vscode/
 

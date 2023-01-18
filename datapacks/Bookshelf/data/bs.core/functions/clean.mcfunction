@@ -7,10 +7,9 @@
 # Last check:
 
 # Original path: bs.core:clean
-# Documentation: https://bs-core.readthedocs.io//core
-# Parallelizable: <true/false/global>
+# Documentation: 
 # Note:
-# - Please be aware that using this function will delete each and every score used by the gunivers-lib,
+# - Please be aware that using this function will delete each and every score used by Bookshelf,
 #   thus losing all data which may have been stored on them WITHOUT ANY POSSIBILITY OF RETRIEVAL.
 #
 # - If you intent on disabling the gunivers-lib for now but may reuse it later with saved data, unload it without activating this function.
