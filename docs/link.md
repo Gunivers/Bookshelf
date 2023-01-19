@@ -31,9 +31,9 @@ Create a link between two entities : compute relative and local position and ori
 
 :Example:
 
-    Link all armor_stand to the entity with ID 3 (see the [`bs.id`](./id.md#get-simple-unique-id) module to know how to assign an ID to an entity)
+    Link all armor_stand to the entity with ID 3 (see the [`bs.id`](id) module to know how to assign an ID to an entity)
 
-    ``
+    ```
     # Once
     scorebaord players set @e[type=armor_stand] bs.targetId 3
     execute as @e[type=armor_stand] run function bs.link:create_link_tti
@@ -51,9 +51,9 @@ The output scores should generally not be directly modified because they are use
 :class: important
 
 This function require the following modules to work properly:
-- [`bs.location`](./location.md#location)
-- [`bs.orientation`](./orientation.md#orientation)
-- [`bs.id`](./id.md#id)
+- [`bs.location`](location)
+- [`bs.orientation`](orientation)
+- [`bs.id`](id)
 ```
 
 ---
@@ -99,9 +99,9 @@ The output scores should generally not be directly modified because they are use
 :class: important
 
 This function require the following modules to work properly:
-- [`bs.location`](./location.md#location)
-- [`bs.orientation`](./orientation.md#orientation)
-- [`bs.id`](./id.md#id)
+- [`bs.location`](location)
+- [`bs.orientation`](orientation)
+- [`bs.id`](id)
 ```
 
 ---
