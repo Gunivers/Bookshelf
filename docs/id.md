@@ -21,8 +21,11 @@ function.
 :Outputs:
 
     **(tag) `@s bs.id.checker`**: The entity that executed the function.
+    
     **(tag) `@e bs.id.upper`**: The entities whose `bs.id` score is higher than the `bs.targetId` score.
+    
     **(tag) `@e bs.id.lower`**: The entities whose `bs.id` score is lower than the `bs.targetId` score.
+    
     **(tag) `@e bs.id.match`**: The entities whose `bs.id` score is equal to the `bs.targetId` score.
 
 :Example:
@@ -67,24 +70,31 @@ execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector"
 
 ## Get simple unique ID
 
-`get_suid` : (Simple Unique ID) Allows the entity executing the
-function to get a `bs.id` score different from all other entities
-that have already executed the function.
+**`bs.id:get_suid`**
 
-* Returns the ID on the bs.id score of the executing entity.
-* Gives the tag `bs.id.set` and `bs.id.type.suid` to the entities that have already executed the function
+(Simple Unique ID) Allows the entity executing the function to get a `bs.id` score different from all other entities that have already executed the function.
 
-**Example:**
+:Input: None
 
-Give an ID to all players:
+:Outputs:
 
-```
-# In a loop to give an ID to the players who connect
-execute as @a[tag=!bs.id.set] run function bs.id:get_suid
+    **(score) `@s bs.id`**: The ID of the executing entity.
+    
+    **(tag) `@s bs.id.set`**: The entity that executed the function.
+    
+    **(tag) `@s bs.id.type.suid`**: The entity that executed the function.
 
-# See the result
-scoreboard objective setdisplay sidebar bs.id
-```
+:Example:
+
+    Give an ID to all players:
+
+    ```
+    # In a loop to give an ID to the players who connect
+    execute as @a[tag=!bs.id.set] run function bs.id:get_suid
+
+    # See the result
+    scoreboard objective setdisplay sidebar bs.id
+    ```
 
 # Get chain unique ID
 
