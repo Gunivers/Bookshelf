@@ -17,7 +17,7 @@ Create a link between two entities : compute relative and local position and ori
 
 :Inputs:
 
-    **(context) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+    **(execution) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
 
     **(score) `@s bs.targetId`**: score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
@@ -66,9 +66,9 @@ In the same way as `create_link_to_target_id`, this function creates a link betw
 
 :Inputs:
 
-    **(context) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
+    **(execution) `as <entities>`**: the link lead on a parent-child relation. The executing (source) entity must be the child.
 
-    **(context) `at <entity>` or `positioned <x> <y> <z>`**: the execution position is the position of the parent entity (the function will take the nearest entity).
+    **(execution) `at <entity>` or `positioned <x> <y> <z>`**: the execution position is the position of the parent entity (the function will take the nearest entity).
 
 :Outputs:
 

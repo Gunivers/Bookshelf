@@ -1,6 +1,6 @@
 # 🔧 Changelog
 
-## 1.19 - 2.0 - Bookshelf
+## (WIP) 1.19 - 2.0 - Bookshelf
 
 ```{admonition} Unstable
 :class: important

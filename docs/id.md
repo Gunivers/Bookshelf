@@ -16,6 +16,8 @@ function.
 
 :Inputs:
 
+    **(exeucution) `as <entity>`**: The entity that executed the function (check must be performed on one entity at a time)
+
     **(score) `@s bs.targetId`**: The ID to compare with the other entities.
 
 :Outputs:
@@ -74,7 +76,9 @@ execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector"
 
 (Simple Unique ID) Allows the entity executing the function to get a `bs.id` score different from all other entities that have already executed the function.
 
-:Input: None
+:Input:
+
+    **(execution) `as <entities>`**: The entities you want to assign an ID to.
 
 :Outputs:
 
