@@ -28,3 +28,5 @@ scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"dark_gray
 function bs.core:default_entity
 
 execute store result score @s bs.locY run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[1] 1000
+
+execute as @e[tag=bs.new] run function bs.health:safe_kill

@@ -1,20 +1,21 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers.
 
 # Authors: Leirof
 # Contributors:
-# MC Version: 1.15
-# Last check: 1.16.1
+
+# Version: 1.0.0
+# Created: N/D (1.15)
+# Last verification: 18/01/2023 (1.19.2)
+# Last modification: 18/01/2023 (1.19.2)
 
 # Original path: bs.link:create_link_ata
-# Parallelizable: true
+# Documentation: /docs/links.md#create-link-as-to-at
 # Note: @s must have bs.link.to defined (equal to another entity id)
 
-#__________________________________________________
-# PARAMETERS
+# PARAMETERS ------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+# INIT ------------------------------------------------------------------------
 
 scoreboard objectives add bs.link.rx dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position X","color":"aqua"}]
 scoreboard objectives add bs.link.ry dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Relative position Y","color":"aqua"}]
@@ -29,11 +30,13 @@ scoreboard objectives add bs.link.rh dummy [{"text":"Bookshelf ","color":"dark_g
 
 scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Linked to","color":"aqua"}]
 
-#__________________________________________________
-# CONFIG
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
+
+# Give an ID to the target if it doesn't have one
+execute as @e[limit=1,sort=nearest] unless score @s bs.id matches 1.. run function bs.id:get_suid
 
 scoreboard players operation @s bs.link.to = @e[limit=1,sort=nearest] bs.id
+
 function bs.link:update_link

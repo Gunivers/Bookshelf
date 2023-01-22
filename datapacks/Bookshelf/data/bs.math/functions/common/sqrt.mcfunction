@@ -1,47 +1,45 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2021 Altearn.
 
 # Authors: Leirof
 # Contributors:
-# MC Version: 1.13
-# Last check:
 
-# Original path: bs.math:sqrt
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: <true/false/global>
+# Version: 2.0.0
+# Created: ??/??/2018 (1.13)
+# Last verification:
+# Last modification:
+
+# Original path: bs.math:common/sqrt
+# Documentation: /docs/math.md#square_root
 # Note:
 
-#__________________________________________________
-# PARAMETERS
+# PARAMETERS ------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+# INIT ------------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-#                     SQRT
-#__________________________________________________
-# X := unkown number
-# A := search head
-# B := incrementor/decrementor
-#__________________________________________________
-# A = 2
-# B = 32769 // limit for X
-# Diff = A^2 - X
+#   -----------------------------------------------------
+#                    SQRT - principle
+#   -----------------------------------------------------
+#   X := unkown number
+#   A := search head
+#   B := incrementor/decrementor
+#   -----------------------------------------------------
+#   A = 2
+#   B = 32769 // limit for X
+#   Diff = A^2 - X
 #
-# While Diff != 0 && B > 1    // in bs_child:math/sqrt
-#    B /= 2
-#    if A^2 < X
+#   While Diff != 0 && B > 1    // in bs_child:math/sqrt
+#     B /= 2
+#     if A^2 < X
 #       A += B
-#    else
+#     else
 #       A -= B
-#    Diff = A^2 - X
-#__________________________________________________
+#     Diff = A^2 - X
+#   -----------------------------------------------------
 
 # Backup
 scoreboard players operation math.sqrt.var0 bs = @s bs.var0
@@ -70,7 +68,7 @@ scoreboard players set math.sqrt.diff bs 0
 scoreboard players operation math.sqrt.diff bs -= math.sqrt.X bs
 
 
-# while(                  Diff != 0                   &&                 B > 1                  ){               run              }
+# while(                             Diff != 0   &&                       B > 1      ){                 ...                    }
 execute unless score math.sqrt.diff bs matches 0 if score math.sqrt.B bs matches 2.. run function bs.math:common/sqrt/child/loop
 
 # return

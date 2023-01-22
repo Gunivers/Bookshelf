@@ -1,5 +1,5 @@
 #__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO     Copyright © 2023 Gunivers.
 
 # Authors: KubbyDev
 # Contributors:
@@ -30,8 +30,8 @@ scoreboard objectives add bs.id dummy [{"text":"Bookshelf ","color":"dark_gray"}
 
 scoreboard players add @s bs.id 0
 
-execute if entity @s[scores={bs.id=0}] run scoreboard players add id.simple bs.data 1
-execute if entity @s[scores={bs.id=0}] run scoreboard players operation @s bs.id = id.simple bs.data
+execute if entity @s[scores={bs.id=0}] run scoreboard players add ID.SIMPLE bs.data 1
+execute if entity @s[scores={bs.id=0}] run scoreboard players operation @s bs.id = ID.SIMPLE bs.data
 
 tag @s add bs.id.set
 tag @s remove bs.id.type.cuid
