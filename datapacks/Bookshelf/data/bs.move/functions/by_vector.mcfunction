@@ -39,23 +39,20 @@ scoreboard players operation #backup.move.vectorY bs = @s bs.vectorY
 scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorZ
 scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
-# Start Debug
-execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
-execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":"   Precision cannot be negative. Precision was set to 1000 (1 block).","color":"gray"}]
-execute if score @s bs.precision matches ..-1 run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" < ","bold":true,"color":"gold"}]
-# End Debug
+# Debug
+# execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+# execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":"   Precision cannot be negative. Precision was set to 1000 (1 block).","color":"gray"}]
+# execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":" < ","bold":true,"color":"gold"}]
 
 # Absurd values security
 scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
 
 # Decomposition in sum of vector with parameters <= bs.precision
-
 tag @s add bs.config.override
 scoreboard players operation vector.fastNormalization.lenght bs.config = @s bs.precision
 function bs.vector:classic/fast_normalize
 
 # Apply movement
-
 scoreboard players set move.decomposition.factor bs 1000
 scoreboard players operation move.decomposition.factor bs /= @s bs.res0
 scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
@@ -63,7 +60,6 @@ scoreboard players operation move.decomposition.factor.save bs = move.decomposit
 execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_vector/child/loop
 
 # Rest of decomposition
-
 scoreboard players operation move.vectorX bs *= move.decomposition.factor.save bs
 scoreboard players operation move.vectorY bs *= move.decomposition.factor.save bs
 scoreboard players operation move.vectorZ bs *= move.decomposition.factor.save bs
@@ -75,13 +71,11 @@ scoreboard players operation move.vectorY bs *= -1 bs.const
 scoreboard players operation move.vectorZ bs *= -1 bs.const
 
 # Apply movement for the rest
-
 tag @s add bs.move.by_vector.rest
 execute at @s run function bs.move:by_vector/child/loop
 tag @s remove bs.move.by_vector.rest
 
 # Restore
-
 scoreboard players operation @s bs.vectorX = #backup.move.vectorX bs
 scoreboard players operation @s bs.vectorY = #backup.move.vectorY bs
 scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs

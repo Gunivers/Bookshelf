@@ -29,16 +29,16 @@ function bs.link:update_link_h
 function bs.link:update_link_v
 
 # Start Backup
-scoreboard players operation #backup.updateLink.var0 bs = @s bs.var0
-scoreboard players operation #backup.updateLink.var1 bs = @s bs.var1
-scoreboard players operation #backup.updateLink.var2 bs = @s bs.var2
-scoreboard players operation #backup.updateLink.var3 bs = @s bs.var3
-scoreboard players operation #backup.updateLink.var4 bs = @s bs.var4
-scoreboard players operation #backup.updateLink.res0 bs = @s bs.res0
-scoreboard players operation #backup.updateLink.res1 bs = @s bs.res1
-scoreboard players operation #backup.updateLink.res2 bs = @s bs.res2
-scoreboard players operation #backup.updateLink.oriH bs = @s bs.oriH
-scoreboard players operation #backup.updateLink.oriV bs = @s bs.oriV
+scoreboard players operation #BACKUP.UPDATE_LINK.VAR0 bs = @s bs.var0
+scoreboard players operation #BACKUP.UPDATE_LINK.VAR1 bs = @s bs.var1
+scoreboard players operation #BACKUP.UPDATE_LINK.VAR2 bs = @s bs.var2
+scoreboard players operation #BACKUP.UPDATE_LINK.VAR3 bs = @s bs.var3
+scoreboard players operation #BACKUP.UPDATE_LINK.VAR4 bs = @s bs.var4
+scoreboard players operation #BACKUP.UPDATE_LINK.RES0 bs = @s bs.res0
+scoreboard players operation #BACKUP.UPDATE_LINK.RES1 bs = @s bs.res1
+scoreboard players operation #BACKUP.UPDATE_LINK.RES2 bs = @s bs.res2
+scoreboard players operation #BACKUP.UPDATE_LINK.ORIH bs = @s bs.oriH
+scoreboard players operation #BACKUP.UPDATE_LINK.ORIV bs = @s bs.oriV
 # End Backup
 
 # Calcul
@@ -50,21 +50,33 @@ execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.orientation:
 scoreboard players operation @s bs.var3 = @s bs.oriH
 scoreboard players operation @s bs.var4 = @s bs.oriV
 
-function bs.math:basis_rotation_3d
+# tellraw @a [{"score":{"name":"@s","objective":"bs.var0"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.var1"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.var2"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.var3"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.var4"}}]
+
+
+# f: rx, ry, rz, rh, rv -> lx, ly, lz
+function bs.math:algebra/basis_rotation_3d
+
+# tellraw @a [{"score":{"name":"@s","objective":"bs.res0"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.res1"}}]
+# tellraw @a [{"score":{"name":"@s","objective":"bs.res2"}}]
 
 scoreboard players operation @s bs.link.lx = @s bs.res0
 scoreboard players operation @s bs.link.ly = @s bs.res1
 scoreboard players operation @s bs.link.lz = @s bs.res2
 
 # Start Restore
-scoreboard players operation @s bs.var0 = #backup.updateLink.var0 bs
-scoreboard players operation @s bs.var1 = #backup.updateLink.var1 bs
-scoreboard players operation @s bs.var2 = #backup.updateLink.var2 bs
-scoreboard players operation @s bs.var3 = #backup.updateLink.var3 bs
-scoreboard players operation @s bs.var4 = #backup.updateLink.var4 bs
-scoreboard players operation @s bs.res0 = #backup.updateLink.res0 bs
-scoreboard players operation @s bs.res1 = #backup.updateLink.res1 bs
-scoreboard players operation @s bs.res2 = #backup.updateLink.res2 bs
-scoreboard players operation @s bs.oriH = #backup.updateLink.oriH bs
-scoreboard players operation @s bs.oriV = #backup.updateLink.oriV bs
+scoreboard players operation @s bs.var0 = #BACKUP.UPDATE_LINK.VAR0 bs
+scoreboard players operation @s bs.var1 = #BACKUP.UPDATE_LINK.VAR1 bs
+scoreboard players operation @s bs.var2 = #BACKUP.UPDATE_LINK.VAR2 bs
+scoreboard players operation @s bs.var3 = #BACKUP.UPDATE_LINK.VAR3 bs
+scoreboard players operation @s bs.var4 = #BACKUP.UPDATE_LINK.VAR4 bs
+scoreboard players operation @s bs.res0 = #BACKUP.UPDATE_LINK.RES0 bs
+scoreboard players operation @s bs.res1 = #BACKUP.UPDATE_LINK.RES1 bs
+scoreboard players operation @s bs.res2 = #BACKUP.UPDATE_LINK.RES2 bs
+scoreboard players operation @s bs.oriH = #BACKUP.UPDATE_LINK.ORIH bs
+scoreboard players operation @s bs.oriV = #BACKUP.UPDATE_LINK.ORIV bs
 # End Restore

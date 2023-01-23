@@ -1,3 +1,10 @@
+tellraw @a ["",{"text":"<"},{"text":"BookShelf","color":"dark_aqua"},{"text":"> Testing bs.id module..."}]
+
+#=============================================================================#
+#                                                                             #
+#                               GET_SUID                                      #
+#                                                                             #
+#=============================================================================#     
 
 # SETUP -----------------------------------------------------------------------
 
@@ -5,8 +12,6 @@ scoreboard players set NB_ENTITY_DIFF bs.unit_tests 0
 execute as @e run scoreboard players remove NB_ENTITY_DIFF bs.unit_tests 1
 
 scoreboard players operation ID.SIMPLE bs.unit_tests = ID.SIMPLE bs.data
-
-tellraw @a ["",{"text":"<"},{"text":"BookShelf","color":"dark_aqua"},{"text":"> Testing bs.id module..."}]
 
 # USAGE -----------------------------------------------------------------------
 

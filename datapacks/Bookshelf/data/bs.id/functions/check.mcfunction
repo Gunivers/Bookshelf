@@ -36,6 +36,8 @@ scoreboard objectives add bs.targetId dummy [{"text":"Bookshelf ","color":"dark_
 tag @e[tag=bs.id.match] remove bs.id.match
 tag @e[tag=bs.id.upper] remove bs.id.upper
 tag @e[tag=bs.id.lower] remove bs.id.lower
+
+# To deprecate
 tag @e[tag=bs.id.checker] remove bs.id.checker
 
 scoreboard players operation @e bs.id -= @s bs.targetId
@@ -43,12 +45,16 @@ tag @e[scores={bs.id=0}] add bs.id.match
 tag @e[scores={bs.id=..-1}] add bs.id.lower
 tag @e[scores={bs.id=-1..}] add bs.id.upper
 scoreboard players operation @e bs.id += @s bs.targetId
+
+# To deprecate
 tag @s add bs.id.checker
 
 # Start Debug
-execute if entity @a[tag=bs.debug.entity.id.check] run tellraw @a[tag=bs.debug] ["",{"text":"[bs.debug] ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.entity.id.check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"Entity bs.id Check","color":"green"}]
-execute if entity @a[tag=bs.debug.entity.id.check] as @e[tag=bs.id.checker] run tellraw @a[tag=bs.debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   bs.id: ","color":"red"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Checker","color":"red"}]
-execute if entity @a[tag=bs.debug.entity.id.check] as @e[tag=bs.id.match,tag=!bs.id.checker] run tellraw @a[tag=bs.debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   bs.id: ","color":"red"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Match","color":"red"}]
-execute if entity @a[tag=bs.debug.entity.id.check] as @e[tag=bs.id.upper,tag=!bs.id.checker] run tellraw @a[tag=bs.debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   bs.id: ","color":"red"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Upper","color":"red"}]
-execute if entity @a[tag=bs.debug.entity.id.check] as @e[tag=bs.id.lower,tag=!bs.id.checker] run tellraw @a[tag=bs.debug] ["",{"text":"ENTITY -> ","color":"gray"},{"text":"Name: ","color":"red"},{"selector":"@s"},{"text":"   bs.id: ","color":"red"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Lower","color":"red"}]
+tellraw @a[tag=bs.debug.id.check] ["",{"text":"> DEBUG | ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.id.check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"bs.id:check","color":"green"}]
+execute as @e[tag=bs.id.checker] run tellraw @a[tag=bs.debug.id.check] ["",{"text":"   TARGET: ","color":"gray"},{"score":{"name":"@s","objective":"bs.targetId"}}]
+execute as @e[tag=bs.id.checker] run tellraw @a[tag=bs.debug.id.check] ["",{"text":"   ENTITY: ","color":"gray"},{"text":"Name: ","color":"dark_aqua"},{"selector":"@s"},{"text":"   bs.id: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Checker","color":"dark_aqua"}]
+execute as @e[tag=bs.id.match] run tellraw @a[tag=bs.debug.id.check] ["",{"text":"   ENTITY: ","color":"gray"},{"text":"Name: ","color":"dark_aqua"},{"selector":"@s"},{"text":"   bs.id: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Match","color":"dark_aqua"}]
+execute as @e[tag=bs.id.upper] run tellraw @a[tag=bs.debug.id.check] ["",{"text":"   ENTITY: ","color":"gray"},{"text":"Name: ","color":"dark_aqua"},{"selector":"@s"},{"text":"   bs.id: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Upper","color":"dark_aqua"}]
+execute as @e[tag=bs.id.lower] run tellraw @a[tag=bs.debug.id.check] ["",{"text":"   ENTITY: ","color":"gray"},{"text":"Name: ","color":"dark_aqua"},{"selector":"@s"},{"text":"   bs.id: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.id"}},{"text":"   Result: ","color":"dark_aqua"},{"score":{"name":"@s","objective":"bs.var0"}},{"text":"   Lower","color":"dark_aqua"}]
+tellraw @a[tag=bs.debug.id.check] ["",{"text":"< DEBUG | ","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.id.check"},"hoverEvent":{"action":"show_text","value":"Click here to close this debug"}},{"text":"bs.id:check","color":"green"}]
 # End Debug

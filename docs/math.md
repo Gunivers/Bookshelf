@@ -1,6 +1,8 @@
 # 🧮 Math
 
-`bs.math:`: The "Math" functions, as their name suggests, are for
+**`bs.math:_`**
+
+The "Math" functions, as their name suggests, are for
 doing math. Before you run away remembering your indigestible and
 incomprehensible lessons that you had to endure at school, you should
 know that here, you won't need to do any math (in fact, it's the purpose
@@ -21,30 +23,37 @@ done ;)
 
 ## Algebra
 
-`bs.math:algebra`: this folder allows you to perform algebra
-operations
+**`bs.math:algebra/_`**
+
+This folder allows you to perform algebra operations
 
 ---
 
-### Basic rotation
+### Basis rotation 3D
 
-`basis_rotation_3d`: Allows to obtain the equivalent of the vector
+**`bs.math:algebra/basis_rotation_3d`**
+
+Allows to obtain the equivalent of the vector
 passed in parameter in a base with a different orientation. Useful to
 convert an absolute/relative position into a local position for a given
 entity.
 
--  Takes in parameter the scores `bs.var[0,1,2]` corresponding to
-   the X, Y and Z compositors of the vector in the starting base
--  Takes as parameter the scores `bs.var[3,4]` corresponding to the
-   difference in orientation of the bases, respectively horizontal (Phi)
-   and vertical (Theta) 
--  Returns the X', Y' and Z' components respectively on the scores
-   `bs.res[0,1,2]`
+:Inputs:
 
-*Examples:*
+   **(execution) `as <entities>`**: The entities you want to perform the computation on
 
--  A block is in ~2 ~5 ~10 from me, I want to have this position in local
-coordinate (^? ^? ^?)
+   **(scores) `@s bs.var<0|1|2>`**: Vector coordinates $(X,Y,Z)$ in the starting base
+
+   **(scores) `@s bs.var<3|4>`**: Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
+
+:Outputs:
+
+   **(scores) `bs.res<0|1|2>`** Vector coordinates $(X',Y',Z')$ in the target base
+
+:Examples:
+
+   A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?)
+   
    ```
    # One time
 
@@ -65,8 +74,8 @@ coordinate (^? ^? ^?)
    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res2"},"color":"gold"}]
    ```
 
--  I want to have a vector pointing to where I'm looking, but in relative
-coordinates ~X ~Y ~Z (also called "classical" vector in this library)
+   I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
+   
    ```
    # Once
 

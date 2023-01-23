@@ -24,4 +24,6 @@
 
 function bs.id:check
 
-execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.link:create_link_ata
+scoreboard players operation @s bs.link.to = @e[tag=bs.id.match,limit=1,sort=nearest] bs.id
+
+function bs.link:update_link

@@ -25,9 +25,9 @@ function.
     **(tag) `@s bs.id.checker`**: The entity that executed the function.
 
     ```{admonition} Future deprecation warning
-    :class: warning
+    :class: important
 
-    The `bs.id.checker` will no longer be given in the future. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
+    The `bs.id.checker` tag will no longer be given in the future. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
     ```
     
     **(tag) `@e bs.id.upper`**: The entities whose `bs.id` score is higher than the `bs.targetId` score.
@@ -93,9 +93,9 @@ execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector"
     **(tag) `@s bs.id.set`**: A tag to confirm the entity got a unique ID.
 
     ```{admonition} Future deprecation warning
-    :class: warning
+    :class: important
 
-    The `bs.id.set` will no longer be given in the future. Instead, you can check if the entity have an ID using `@e[scores={bs.id=1..}]`. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
+    The `bs.id.set` tag will no longer be given in the future. Instead, you can check if the entity have an ID using `@e[scores={bs.id=1..}]`. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
     ```
     
     **(tag) `@s bs.id.type.suid`**: The entity that executed the function.
