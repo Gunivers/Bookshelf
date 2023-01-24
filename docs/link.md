@@ -51,9 +51,10 @@ The output scores should generally not be directly modified because they are use
 :class: important
 
 This function require the following modules to work properly:
-- [`bs.location`](location)
-- [`bs.orientation`](orientation)
 - [`bs.id`](id)
+- [`bs.location`](location)
+- [`bs.math`](math)
+- [`bs.orientation`](orientation)
 ```
 
 ---
@@ -99,9 +100,10 @@ The output scores should generally not be directly modified because they are use
 :class: important
 
 This function require the following modules to work properly:
-- [`bs.location`](location)
-- [`bs.orientation`](orientation)
 - [`bs.id`](id)
+- [`bs.location`](location)
+- [`bs.math`](math)
+- [`bs.orientation`](orientation)
 ```
 
 ---

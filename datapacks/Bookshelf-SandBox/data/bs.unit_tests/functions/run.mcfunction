@@ -4,6 +4,7 @@ scoreboard objectives add bs.unit_tests dummy
 
 function bs.unit_tests:module/id
 function bs.unit_tests:module/link
+function bs.unit_tests:module/math
 
 scoreboard objectives remove bs.unit_tests
 

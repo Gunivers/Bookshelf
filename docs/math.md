@@ -252,22 +252,35 @@ numbers
 
 ## Common
 
-`bs.math:common/`: this folder contains the usual math functions
+**`bs.math:common/_`**
+
+This folder contains the usual math functions
 
 ---
 
 ### Rounded division
 
-`divide`: Allows you to divide one number by another by rounding the
+**`bs.math:common/divide`**
+
+Allows you to divide one number by another by rounding the
 result to the nearest whole number (where Minecraft rounds down to the
 next whole number).
 
--  Takes as input the scores `bs.var0` and `bs.var1`
--  Returns the result on the score `bs.res0`
+:Inputs:
 
-*Example:*
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
 
--  Calculate 9 / 5:
+   **(score) `bs.var0`**: the numerator
+
+   **(score) `bs.var1`**: the denominator
+
+:Output:
+
+   **(score) `bs.res0`**: the result of the division
+
+:Example:
+
+   Calculate 9 / 5:
    ```
    # Once
    scoreboard players set @s bs.var0 9
@@ -282,19 +295,29 @@ next whole number).
 
 ### Exponential
 
-`exp`: Compute the exponential of the number passed in parameter on
+**`bs.math:common/exp`**
+
+Compute the exponential of the number passed in parameter on
 the score `bs.var0` and return the result on the score `bs.res0`
 
--  In order to take into account a certain number of decimals,
-   `bs.var0` must be multiplied by 100 and `bs.res0` is
-   multiplied by 1000
--  Due to technical constraints, this system is limited to a bs.var0
-   within an interval of `[-6000,12000]` (i.e. `[-6;12]` in real
-   value)
+:Inputs:
 
-*Example:*
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
 
--  Calculate exp(3):
+   **(score) `bs.var0`**: the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
+
+   ```{admoinition} Technical limitation
+   :class: important
+   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
+   ```
+
+:Output:
+
+   **(score) `bs.res0`**: the result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate exp(3):
    ```
    # Once
    scoreboard players set @s bs.var0 300
@@ -303,6 +326,10 @@ the score `bs.var0` and return the result on the score `bs.res0`
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/exp.png)
+
+```{note}
+We are looking for a better implementation of this function. If you have any ideas, please join our [Discord server](https://discord.gg/E8qq6tN) to discuss with us!
+```
 
 ---
 
@@ -457,17 +484,23 @@ score `bs.res0`
 
 ### Square root
 
-`sqrt`: Compute the square root of the number (ex: Sqrt(16) = 4
-because 4^2 = 4x4 = 16) 
+**`bs.math:common/sqrt`**
 
--  Takes as parameter the score `bs.var0` greater than or equal to 0
-   (corresponding to a value with a precision of 1:1)
--  Returns the value of the cosine on the score `bs.res0` greater
-   than or equal to 0 (corresponding to a value with a precision of 1:1)
+Compute the square root of the number (ex: $\sqrt{16} = 4$ because $4^2 = 4 * 4 = 16$) 
 
-*Example:*
+:Inputs:
 
--  Calculate and display the square root of 42:
+   **(execution) `as <entity>`**: the entity you want to perform the calculation on
+
+   **(score) `bs.var0`**: the number you want to calculate the square root of
+
+:Output:
+
+   **(score) `bs.res0`**: the result of the calculation
+
+:Example:
+
+   Calculate and display $\sqrt{42}$
    ```
    # Once
    scoreboard players set @s bs.var0 42
