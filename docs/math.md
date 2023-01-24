@@ -270,17 +270,17 @@ next whole number).
 
    **(execution) `as <entities>`**: the entities you want to perform the operation on
 
-   **(score) `bs.var0`**: the numerator
+   **(score) `@s bs.var0`**: the numerator
 
-   **(score) `bs.var1`**: the denominator
+   **(score) `@s bs.var1`**: the denominator
 
 :Output:
 
-   **(score) `bs.res0`**: the result of the division
+   **(score) `@s bs.res0`**: the result of the division
 
 :Example:
 
-   Calculate 9 / 5:
+   Calculate $9/5$
    ```
    # Once
    scoreboard players set @s bs.var0 9
@@ -304,7 +304,7 @@ the score `bs.var0` and return the result on the score `bs.res0`
 
    **(execution) `as <entities>`**: the entities you want to perform the operation on
 
-   **(score) `bs.var0`**: the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
+   **(score) `@s bs.var0`**: the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
 
    ```{admoinition} Technical limitation
    :class: important
@@ -313,11 +313,11 @@ the score `bs.var0` and return the result on the score `bs.res0`
 
 :Output:
 
-   **(score) `bs.res0`**: the result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   **(score) `@s bs.res0`**: the result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
-   Calculate exp(3):
+   Calculate $exp(3)$
    ```
    # Once
    scoreboard players set @s bs.var0 300
@@ -486,17 +486,17 @@ score `bs.res0`
 
 **`bs.math:common/sqrt`**
 
-Compute the square root of the number (ex: $\sqrt{16} = 4$ because $4^2 = 4 * 4 = 16$) 
+Compute the square root of the number
 
 :Inputs:
 
-   **(execution) `as <entity>`**: the entity you want to perform the calculation on
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
 
-   **(score) `bs.var0`**: the number you want to calculate the square root of
+   **(score) `@s bs.var0`**: the number you want to calculate the square root of
 
 :Output:
 
-   **(score) `bs.res0`**: the result of the calculation
+   **(score) `@s bs.res0`**: the result of the calculation
 
 :Example:
 
