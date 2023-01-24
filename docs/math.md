@@ -306,7 +306,7 @@ the score `bs.var0` and return the result on the score `bs.res0`
 
    **(score) `@s bs.var0`**: the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
 
-   ```{admoinition} Technical limitation
+   ```{admonition} Technical limitation
    :class: important
    Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
    ```
