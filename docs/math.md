@@ -335,13 +335,29 @@ We are looking for a better implementation of this function. If you have any ide
 
 ### Factorial
 
-`factorial`: Compute the factorial of the number passed in parameter
-on the score `bs.var0` and return the result on the score
-`bs.res0`.
+**`bs.math:common/factorial`**
 
-*Example:*
+Compute the factorial of the number
 
--  Compute 3!
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the number to be factorialized
+
+   ```{admonition} Technical limitation
+   :class: important
+
+   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[0,12]`
+   ```
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the operation
+
+:Example:
+
+   Compute $3!$
    ```
    # Once
    scoreboard players set @s bs.var0 3
@@ -355,13 +371,25 @@ on the score `bs.var0` and return the result on the score
 
 ### Greatest common denominator
 
-`gcd`: Compute the greatest common denominator of the two numbers
-passed in parameter on the scores `bs.var0` and `bs.var1` then
-return the result on the score `bs.res0`.
+**`bs.math:common/gcd`**
 
-*Example:*
+Compute the greatest common denominator of two numbers
 
--  Calculate the greatest common denominator between 16 and 12 :
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the first number
+
+   **(score) `@s bs.var1`**: the second number
+
+:Output:
+
+   **(score) `@s bs.res0`**: the greatest common denominator
+
+:Example:
+
+   Calculate the greatest common denominator between 16 and 12
    ```
    # Once
    scoreboard players set @s bs.var0 16
@@ -376,16 +404,29 @@ return the result on the score `bs.res0`.
 
 ### Neperian logarithm
 
-`log`: Compute the Neperian logarithm (base e) of the number passed in
-parameter on the score `bs.var0` and return the result on the score
-`bs.res0`.
+**`bs.math:common/log`**
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+Compute the Neperian logarithm (base e) of a number
 
-*Example:*
+```{admonition} Issue reported
+:class: warning
 
--  Calculate ln(28):
+This function is not working properly. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+```
+
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $ln(28)$
    ```
    # Once
    scoreboard players set @s bs.var0 28000
@@ -397,16 +438,29 @@ parameter on the score `bs.var0` and return the result on the score
 
 ### Logarithm in base 2
 
-`log2`: Compute the logarithm in base 2 of the number passed in
-parameter on the score `bs.var0` and return the result on the score
-`bs.res0`.
+**`bs.math:common/log2`**
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+Compute the logarithm in base 2 of a number
 
-*Example:*
+```{admonition} Issue reported
+:class: warning
 
--  Calculate log2(28):
+This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+```
+
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $log_2(28)$:
    ```
    # Once
    scoreboard players set @s bs.var0 28000
@@ -418,16 +472,29 @@ parameter on the score `bs.var0` and return the result on the score
 
 ### Logarithm in base 10
 
-`log10`: Compute the logarithm in base 10 of the number passed in
-parameter on the score `bs.var0` and return the result on the score
-`bs.res0`.
+**`bs.math:common/log10`**
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+Compute the logarithm in base 10 of a number
 
-*Example:*
+```{admonition} Issue reported
+:class: warning
 
--  Calculate log10(28):
+This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+```
+
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $log_{10}(28)$
    ```
    # Once
    scoreboard players set @s bs.var0 28000
@@ -439,17 +506,31 @@ parameter on the score `bs.var0` and return the result on the score
 
 ### Logarithm in base a
 
-`loga`: Computes the logarithm of the number passed in parameter on
-the score `bs.var0` using as base the name passed in parameter on
-the score `bs.var1` and returns the result on the score
-`bs.res0`
+**`bs.math:common/loga`**
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+Computes the logarithm in base a of a number
 
-*Example:*
+```{admonition} Issue reported
+:class: warning
 
--  Calculate log4(28):
+This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+```
+
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the operation on
+
+   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+   **(score) `@s bs.var1`**: the base of the logarithm (not shifted)
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $log_4(28)$
    ```
    # Once
    scoreboard players set @s bs.var0 28000
@@ -462,14 +543,25 @@ the score `bs.var1` and returns the result on the score
 
 ### Power
 
-`pow`: Compute the product of the number passed in parameter on the
-score `bs.var0` raised to the power of the number passed in
-parameter on the score `bs.var1`, then return the result on the
-score `bs.res0`
+**`bs.math:common/pow`**
 
-*Example:*
+Compute $x^y$
 
--  Compute 2^6:
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the base
+
+   **(score) `@s bs.var1`**: the exponent
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the calculation
+
+:Example:
+
+   Compute $2^6$
    ```
    # Once
    scoreboard players set @s bs.var0 2
