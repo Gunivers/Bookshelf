@@ -2,16 +2,13 @@
 
 **`bs.math:_`**
 
-The "Math" functions, as their name suggests, are for
-doing math. Before you run away remembering your indigestible and
-incomprehensible lessons that you had to endure at school, you should
-know that here, you won't need to do any math (in fact, it's the purpose
-of the lib to simplify your life). Nevertheless, the following math
-functions are theoretical, but they are also what most other systems are
-based on. If you don't know what I mean, you can easily create (among
-other things) raycasting with this lib. This system is essentially based
-on trigonometry. But again, nothing complicated, everything is already
-done ;)
+The beatifull world of mathematics... **in Minecraft!**
+
+<div align=center>
+
+![](img/2023-01-27-22-55-18.png)
+
+</div>
 
 ```{button-link} https://youtu.be/Bt0HKaOosqU
 :color: primary

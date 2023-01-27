@@ -2,10 +2,21 @@
 
 **`bs.link:_`**
 
-The "Link" functions allow to link an entity to another.
-This link consists in preserving the position and the relative
-orentation between the two entities, allowing then to imitate or to
-reverse the movements and rotations of the parent entity.
+Link positions and orientations between entities and create coherent entity structures!
+
+<div align=center>
+
+![](img/2023-01-27-23-18-28.png)
+
+</div>
+
+```{button-link} https://www.youtube.com/watch?v=XuhVhfyVGko
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch a demo
+```
 
 ---
 

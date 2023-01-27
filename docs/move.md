@@ -3,6 +3,20 @@
 `bs.move:`: This folder contains all the functions related to the
 movement of the entity.
 
+<div align=center>
+
+![](img/2023-01-27-23-29-41.png)
+
+</div>
+
+```{button-link} https://youtu.be/KH3Q9F5j04I
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch a demo
+```
+
 ---
 
 ## Move using local vector

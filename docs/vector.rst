@@ -2,7 +2,20 @@
 ↗️ Vector
 **********
 
-``bs.vector:``: Vectors are used to define the trajectory of an entity. Thus, they allow to manage projectiles easily, offering the possibility to make them undergo collisions, to imitate gravity, wind etc ... They are always defined with a 10^3 factor (1000 = 1 block/tick).
+``bs.vector:_``
+
+Vector are fundamental and extremly powerfull tool to manage motions, forces and.. well... do physics!
+
+.. image:: img/2023-01-27-23-43-58.png
+
+
+
+.. button-link:: https://www.youtube.com/watch?v=IzASD7R80vQ
+    :color: primary
+    :shadow:
+    :align: center
+
+    :octicon:`device-camera-video` Watch the video
 
 Classic
 =======
