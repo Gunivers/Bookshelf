@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Bookshelf'
-copyright = '2022, Gunivers'
+copyright = '2023, Gunivers'
 author = 'Gunivers'
 
 # The full version, including alpha/beta/rc tags
@@ -30,7 +30,8 @@ author = 'Gunivers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'myst_parser'
+    'myst_parser',
+    'sphinx_design'
 ]
 myst_heading_anchors = 6
 

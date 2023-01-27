@@ -402,16 +402,20 @@ Compute the greatest common denominator of two numbers
 
 ---
 
-### Neperian logarithm
+### Logarithm
+
+::::{tab-set}
+
+:::{tab-item} Base e (Neperian)
 
 **`bs.math:common/log`**
 
 Compute the Neperian logarithm (base e) of a number
 
 ```{admonition} Issue reported
-:class: warning
+:class: error
 
-This function is not working properly. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+This function is not working properly. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
 ```
 
 :Inputs:
@@ -434,18 +438,17 @@ This function is not working properly. You can follow the issue resolution on [t
    tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
----
-
-### Logarithm in base 2
+:::
+:::{tab-item} Base 2
 
 **`bs.math:common/log2`**
 
 Compute the logarithm in base 2 of a number
 
 ```{admonition} Issue reported
-:class: warning
+:class: error
 
-This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
 ```
 
 :Inputs:
@@ -467,19 +470,17 @@ This function is based on the `log` one, so is not working properly either. You 
    function bs.math:common/log2
    tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
-
----
-
-### Logarithm in base 10
+:::
+:::{tab-item} Base 10
 
 **`bs.math:common/log10`**
 
 Compute the logarithm in base 10 of a number
 
 ```{admonition} Issue reported
-:class: warning
+:class: error
 
-This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
 ```
 
 :Inputs:
@@ -502,18 +503,17 @@ This function is based on the `log` one, so is not working properly either. You 
    tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
----
-
-### Logarithm in base a
+:::
+:::{tab-item} Base a
 
 **`bs.math:common/loga`**
 
 Computes the logarithm in base a of a number
 
 ```{admonition} Issue reported
-:class: warning
+:class: error
 
-This function is based on the `log` one, so is not working properly either. You can follow the issue resolution on [this page](https://github.com/Gunivers/Glibs/issues/25).
+This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
 ```
 
 :Inputs:
@@ -539,7 +539,8 @@ This function is based on the `log` one, so is not working properly either. You 
    tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
----
+:::
+::::
 
 ### Power
 
