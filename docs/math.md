@@ -13,11 +13,13 @@ other things) raycasting with this lib. This system is essentially based
 on trigonometry. But again, nothing complicated, everything is already
 done ;)
 
-<div align=center>
-    <a href="https://youtu.be/Bt0HKaOosqU" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/Bt0HKaOosqU
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 
@@ -107,14 +109,13 @@ entity.
 `bs.math:bitwise`: This folder contains various bitwise operators to
 apply to scores.
 
+```{button-link} https://youtu.be/itgPhvTMSZQ
+:color: primary
+:align: center
+:shadow:
 
-
-<div align=center>
-   <p> ⚠️ Euh, for your own safety, reduce the volume before watching this video ^^'</p>
-    <a href="https://youtu.be/itgPhvTMSZQ" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 

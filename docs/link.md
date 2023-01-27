@@ -128,11 +128,13 @@ parent entity.
     execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:imitate_loc
     ```
 
-<div align=center>
-    <a href="https://youtu.be/PmeUw8O2ZZU" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/PmeUw8O2ZZU
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 
@@ -199,11 +201,13 @@ entity, and reproduce it in the opposite direction.
     execute as @e[type=armor_stand,tag=bs.linked] run function bs.link:reverse_loc
     ```
 
-<div align=center>
-    <a href="https://youtu.be/BisY7Y_tLwg" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/BisY7Y_tLwg
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 

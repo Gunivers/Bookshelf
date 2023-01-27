@@ -141,11 +141,13 @@ source entity and the execution position of the function.
     execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function bs.move:pathfind_ata
     ```
 
-<div align=center>
-    <a href="https://youtu.be/xeLjHIQ0s1Q" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/xeLjHIQ0s1Q
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 

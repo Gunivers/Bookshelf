@@ -8,8 +8,10 @@ To enable this system, you just need to execute the following command in a loop:
 function bs.lgdir:main
 ```
 
-<div align=center>
-    <a href="https://youtu.be/SQOxXasdPJQ?t=173" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/SQOxXasdPJQ?t=173
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```

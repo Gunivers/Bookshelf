@@ -64,8 +64,10 @@ execute as Steve run function bs.block:convert_to_item
 scoreboard objectives setdisplay sidebar bs.itemId
 ```
 
-<div align=center>
-    <a href="https://youtu.be/4d-q02JPbaI" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/4d-q02JPbaI
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
