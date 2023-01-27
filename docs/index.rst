@@ -39,7 +39,7 @@ Bookshelf (previously Gunivers Libs) is a modular library datapack designed to h
         :link-type: doc
         :margin: 0 3 0 0
 
-        Block <-> Score <-> Item conversion systems!
+        Block :octicon:`arrow-switch` Score :octicon:`arrow-switch` Item conversion systems!
 
     .. grid-item-card:: 🧠 AI tools
         :link: move
