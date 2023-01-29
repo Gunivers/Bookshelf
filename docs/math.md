@@ -15,7 +15,7 @@ The beatifull world of mathematics... **in Minecraft!**
 :align: center
 :shadow:
 
-{octicon}`device-camera-video` Watch the video
+{octicon}`device-camera-video` Watch a demo
 ```
 
 ---
