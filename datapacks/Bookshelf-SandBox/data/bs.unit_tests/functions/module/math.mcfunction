@@ -4,6 +4,51 @@ summon armor_stand ~ ~ ~ {Tags:["bs.unitest"]}
 
 #=============================================================================#
 #                                                                             #
+#                       ALGEBRA/BASIS_ROTATION_3D                             #
+#                                                                             #
+#=============================================================================#
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 1000
+scoreboard players set @e[tag=bs.unitest] bs.var1 2000
+scoreboard players set @e[tag=bs.unitest] bs.var3 3000
+scoreboard players set @e[tag=bs.unitest] bs.var4 145
+scoreboard players set @e[tag=bs.unitest] bs.var5 -45
+execute as @e[tag=bs.unitest] run function bs.math:algebra/basis_rotation_3d
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 2287 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected x' = 2287, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res1 matches 107 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected y' = 107, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res1"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res2 matches 2849 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected z' = 2849, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res2"}}]
+
+#=============================================================================#
+#                                                                             #
+#                               TRIG/COS                                      #
+#                                                                             #
+#=============================================================================#
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 45
+execute as @e[tag=bs.unitest] run function bs.math:trig/cos
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 705..707 run tellraw @a [{"text":"[bs.math:trig/cos] expected cos(45) = 707e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 180
+execute as @e[tag=bs.unitest] run function bs.math:trig/cos
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -1000 run tellraw @a [{"text":"[bs.math:trig/cos] expected cos(180) = -1000e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+#=============================================================================#
+#                                                                             #
 #                             COMMON/DIVIDE                                   #
 #                                                                             #
 #=============================================================================#
@@ -225,6 +270,30 @@ execute as @e[tag=bs.unitest] run function bs.math:common/pow
 # RESULTS ----------------------------------------------------------------------
 
 execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 65536 run tellraw @a [{"text":"[bs.math:common/pow] expected 2^16 = 65536, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+#=============================================================================#
+#                                                                             #
+#                               TRIG/SIN                                      #
+#                                                                             #
+#=============================================================================#
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 45
+execute as @e[tag=bs.unitest] run function bs.math:trig/sin
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 705..707 run tellraw @a [{"text":"[bs.math:trig/sin] expected sin(45) = 707e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 270
+execute as @e[tag=bs.unitest] run function bs.math:trig/sin
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -1000 run tellraw @a [{"text":"[bs.math:trig/sin] expected sin(270) = -1000e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 #=============================================================================#
 #                                                                             #

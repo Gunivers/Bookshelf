@@ -50,7 +50,7 @@ scoreboard players operation @s bs.var0 = BASIS_ROT.V bs
 function bs.math:trig/sin
 scoreboard players operation SIN.V bs = @s bs.res0
 
-# Vector Left
+# X' = Z*sin(phi) + X*cos(phi)
 scoreboard players operation BASIS_ROT bs = BASIS_ROT.Z bs
 scoreboard players operation BASIS_ROT bs *= SIN.H bs
 scoreboard players operation BASIS_ROT bs /= 1000 bs.const
@@ -62,7 +62,7 @@ scoreboard players operation BASIS_ROT bs /= 1000 bs.const
 scoreboard players operation BASIS_ROT bs *= Neg bs.const
 scoreboard players operation @s bs.res0 -= BASIS_ROT bs
 
-# Vector Up
+# Y' = -X*sin(phi)*sin(theta) + Y*cos(theta) + Z*cos(phi)*sin(theta) 
 scoreboard players operation BASIS_ROT bs = BASIS_ROT.Y bs
 scoreboard players operation BASIS_ROT bs *= COS.V bs
 scoreboard players operation BASIS_ROT bs /= 1000 bs.const
@@ -82,7 +82,7 @@ scoreboard players operation BASIS_ROT bs *= SIN.H bs
 scoreboard players operation BASIS_ROT bs /= 1000 bs.const
 scoreboard players operation @s bs.res1 -= BASIS_ROT bs
 
-# Vector Front
+# Z' = - X*sin(phi)*cos(theta) - Y*sin(theta) + Z*cos(phi)*cos(theta)
 scoreboard players operation BASIS_ROT bs = BASIS_ROT.Z bs
 scoreboard players operation BASIS_ROT bs *= COS.V bs
 scoreboard players operation BASIS_ROT bs /= 1000 bs.const

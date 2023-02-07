@@ -658,7 +658,9 @@ result on `bs.res0`.
 
 ## Trigonometry
 
-`bs.math:trig/`: this folder contains basic trigonometry functions,
+**`bs.math:trig/_`**
+
+This folder contains basic trigonometry functions,
 opening a lot of doors to creative possibilities in Minecraft.
 
 ---
@@ -733,17 +735,22 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ### Cosine
 
-`cos`: Compute the cosine of an angle between 0 and 360
+**`bs.math:trig/cos`**
 
--  Takes as parameter the score `bs.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the cosine on the score `bs.res0` between
-   -1000 and 1000 (translating a value from -1 to 1 with a precision of
-   1:1000)
+Compute the cosine of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the cosine of 42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   **(score) `@s bs.var0`**: the angle in degrees
+
+:Outputs:
+
+   **(score) `@s bs.res0`**: the cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the cosine of 42
    ```
    # Once
    scoreboard players set @s bs.var0 42
@@ -755,19 +762,24 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ---
 
-### Sinus
+### Sine
 
-`sin`: Computes the sine of an angle between 0 and 360
+**`bs.math:trig/sin`**
 
--  Takes as parameter the score `bs.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the sine on the score `bs.res0` between
-   -1000 and 1000 (translating a value from -1 to 1 with a precision of
-   1:1000)
+Computes the sine of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the sine of 42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   **(score) `@s bs.var0`**: the angle in degrees
+
+:Outputs:
+
+   **(score) `@s bs.res0`**: the sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the sine of 42
    ```
    # Once
    scoreboard players set @s bs.var0 42

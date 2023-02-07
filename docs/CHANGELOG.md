@@ -27,3 +27,4 @@ This version contain breaking changes. In the following changelog, they are iden
 ### 🐛 Bug fixes
 
 - Orientation and location getters was not clearing the default entity, which sometimes cause bugs in systems that try to get the entity at the same location.
+- 💥 The `bs.math:trig.sin` function was actually cmputing -sin(x) instead of sin(x).
