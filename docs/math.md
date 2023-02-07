@@ -787,7 +787,7 @@ Computes the sine of an angle between 0 and 360
    tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/sin.png)
+![](img/2023-02-07-09-00-23.png)
 
 ---
 
