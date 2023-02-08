@@ -665,18 +665,25 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ---
 
-### Arccosinus
+### Arccosine
 
-`arccos`: Calculate the arccosinus of a value between -1 and 1
+**`bs.math:trgi/arccos`
 
--  Takes as parameter the score `bs.var0` between -1000 and 1000
-   (translating a value from -1 to 1 with a precision of 1:1000)
--  Returns the value of the arccosine on the score `bs.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Calculate the arccosinus of a value between -1 and 1
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arccos of 0,42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arccos of 0,42
    ```
    # Once
    scoreboard players set @s bs.var0 420
@@ -688,18 +695,25 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ---
 
-### Arcsinus
+### Arcsine
 
-`arcsin`: Compute the arcsinus of a value between -1 and 1
+**`bs.math:trg/arcsin`
 
--  Takes as parameter the score `bs.var0` between -1000 and 1000
-   (translating a value from -1 to 1 with a precision of 1:1000)
--  Returns the value of the arcsine on the score `bs.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Compute the arcsinus of a value between -1 and 1
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arcsinus of 0.42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arcsinus of 0.42
    ```
    # Once
    scoreboard players set @s bs.var0 420
@@ -713,23 +727,35 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ### Arctangent
 
-`arctan`: Compute the arctangent of a value between -infinite and
-+infinite
+**`bs.math:trig/arctan`
 
--  Takes as parameter the score `bs.var0` (translating a value with
-   a precision of 1:1000)
--  Returns the value of the arctangeant on the score `bs.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Compute the arctangent of a value between -infinite and +infinite
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arctan of 0.42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arctan of 0.42
    ```
    # Once
    scoreboard players set @s bs.var0 420
    function bs.math:trig/arctan
    tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
+
+```{admonition} Issue reported
+:class: warning
+
+This function is not working properly. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/30) resolution on Github.
+```
 
 ---
 
@@ -793,17 +819,23 @@ Computes the sine of an angle between 0 and 360
 
 ### Tangent
 
-`tan`: Compute the tangeant of an angle between 0 and 360
+**`bs.math:trig/tan`**
 
--  Takes as parameter the score `bs.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the tangeante on the score `bs.res0` between
-   -infinite and +infinite (translating a value with a precision of
-   1:1000)
+Compute the tangeant of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the tengeante of 42
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the angle in degrees (not shifted)
+
+:Outputs:
+
+   **(score) `@s bs.res0`**: the tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the tengeante of 42
    ```
    # Once
    scoreboard players set @s bs.var0 42
