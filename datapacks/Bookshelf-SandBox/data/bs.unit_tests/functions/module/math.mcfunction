@@ -321,6 +321,30 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 1183 run tellraw @
 
 #=============================================================================#
 #                                                                             #
+#                         SPECIAL/GET_NEXT_POW2                               #
+#                                                                             #
+#=============================================================================#
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 42
+execute as @e[tag=bs.unitest] run function bs.math:special/get_next_pow2
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 64 run tellraw @a [{"text":"[bs.math:special/get_next_pow2] expected next_pow2(42) = 64, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+# USAGE -----------------------------------------------------------------------
+
+scoreboard players set @e[tag=bs.unitest] bs.var0 4
+execute as @e[tag=bs.unitest] run function bs.math:special/get_next_pow2
+
+# RESULTS ----------------------------------------------------------------------
+
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 4 run tellraw @a [{"text":"[bs.math:special/get_next_pow2] expected next_pow2(4) = 4, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+
+#=============================================================================#
+#                                                                             #
 #                               COMMON/POW                                    #
 #                                                                             #
 #=============================================================================#

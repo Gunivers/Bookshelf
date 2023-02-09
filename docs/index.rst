@@ -99,6 +99,7 @@ If you want to contribute, please read at least the "Getting started" section in
     :caption: Libs
 
     biome
+    bitwise
     block
     cache
     color

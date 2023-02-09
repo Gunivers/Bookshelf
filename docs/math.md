@@ -107,153 +107,6 @@ This function is not working properly. You can follow the {octicon}`issue-opened
 
 ---
 
-## Bitwise
-
-`bs.math:bitwise`: This folder contains various bitwise operators to
-apply to scores.
-
-```{button-link} https://youtu.be/itgPhvTMSZQ
-:color: primary
-:align: center
-:shadow:
-
-{octicon}`device-camera-video` Watch the video
-```
-
----
-
-### logical AND
-
-`and`: Computes the bitwise conjunction of the two input numbers
-
--  Takes the scores `bs.var0` and `bs.var1` as parameters
--  Returns the value of the operation `bs.var0 & bs.var1` on the
-   score `bs.res0`.
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 & 57
-   ```
-   # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
-   function bs.math:bitwise/and
-   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
-### Get number of bits
-
-`get_number_of_bits`: Calculates the number of bits needed to store
-the input
-
--  Takes the score `bs.var0` as parameter
--  Returns the number of bits needed to store the input
--  If the input is negative, returns the number of bits needed to store
-   the absolute value of the number
-
-*Example:*
-
--  Calculate and display the number of bits of 12
-   ```
-   # Once
-   scoreboard players set @s bs.var0 12
-   function bs.math:bitwise/get_number_of_bits
-   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
-### logical NOT
-
-`not`: Computes the bit by bit negation of the input
-
--  Takes the score `bs.var0` as parameter
--  Returns the value of the operation `~bs.var0` on the score
-   `bs.res0`.
-
-*Example:*
-
--  Calculate and display ~452
-   ```
-   # Once
-   scoreboard players set @s bs.var0 452
-   function bs.math:bitwise/not
-   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
-### OR logic
-
-`or`: Computes the bit to bit disjunction of the two input numbers
-
--  Takes as parameters the scores `bs.var0` and `bs.var1`.
--  Returns the value of the operation `bs.var0 | bs.var1` on the
-   score `bs.res0`.
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 \| 57.
-   ```
-   # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
-   function bs.math:bitwise/gold
-   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
-### Complement to 2
-
-`two_complement`: Computes the two's complement of the input
-
--  Takes the score `bs.var0` as parameter
--  Returns the two's complement of `bs.var0` over the score
-   `bs.res0`.
-
-*Example:*
-
--  Calculate and display the two's complement of 12
-   ```
-   # Once
-   scoreboard players set @s bs.var0 12
-   function bs.math:bitwise/to_complement
-   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
-### OR exclusive
-
-`xor`: Computes the exclusive bit by bit disjunction of the two input
-numbers
-
--  Takes as parameters the scores `bs.var0` and `bs.var1`.
--  Returns the value of the operation `bs.var0 ^ bs.var1` on the
-   score `bs.res0`
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 ^ 57
-   ```
-   # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
-   function bs.math:bitwise/xor
-   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
-   ```
-
----
-
 ## Common
 
 **`bs.math:common/_`**
@@ -611,7 +464,9 @@ Compute the square root of the number
 
 ## Special
 
-`bs.math:special/`: this folder contains functions that are of
+**`bs.math:special/_`**
+
+This folder contains functions that are of
 special interest in algortihms (but not or not much in formal
 mathematics)
 
@@ -619,13 +474,24 @@ mathematics)
 
 ### Retrieve the next power of 2
 
-`get_next_pow2`: compute the power of 2 directly superior to the
-number given in parameter on the score `bs.var0` and return the
-result on `bs.res0`.
+**`bs.math:special/get_next_pow2`**
 
-*Example:*
+Compute the power of 2 directly superior to the
+number given in parameter.
 
--  Find the power of 2 greater than 43
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+   **(score) `@s bs.var0`**: the number from which you want to calculate the next power of 2
+
+:Output:
+
+   **(score) `@s bs.res0`**: the result of the calculation
+
+:Example:
+
+   Find the power of 2 greater than 43
    ```
    # Once
    scoreboard players set @s bs.var0 43
@@ -637,16 +503,27 @@ result on `bs.res0`.
 
 ### Random number generator
 
-`random`: Generates a random number and returns the result on the
-`bs.res0` score
+**`bs.math:special/random`**
 
--  To reduce this interval, execute the function then do a "modulo"
+Generates a random number
+
+:Inputs:
+
+   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+
+:Output:
+
+   **(score) `@s bs.res0`**: an integer random number between $-2^{31}$ and $2^{31}-1$
+
+   ```{tip}
+   To reduce this interval, execute the function then do a "modulo"
    operation on the result (random % 10 -> the random number will be
    included in the interval [0;9])
+   ```
 
-*Example:*
+:Example:
 
--  Get and display a random number between 0 and 100:
+   Get and display a random number between 0 and 100:
    ```
    # Once
    function bs.math:special/random
@@ -673,7 +550,7 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ### Arccosine
 
-**`bs.math:trgi/arccos`
+**`bs.math:trgi/arccos`**
 
 Calculate the arccosinus of a value between -1 and 1
 
@@ -703,7 +580,7 @@ Calculate the arccosinus of a value between -1 and 1
 
 ### Arcsine
 
-**`bs.math:trg/arcsin`
+**`bs.math:trg/arcsin`**
 
 Compute the arcsinus of a value between -1 and 1
 
@@ -733,7 +610,7 @@ Compute the arcsinus of a value between -1 and 1
 
 ### Arctangent
 
-**`bs.math:trig/arctan`
+**`bs.math:trig/arctan`**
 
 Compute the arctangent of a value between -infinite and +infinite
 
