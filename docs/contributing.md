@@ -1,19 +1,19 @@
 # 🤝 Contribute
 
-:::{admonition} **Pour les francophones**
+Bookshelf is a community project and can therefore be developed by several people at the same time. To keep the project clean and consistent, it is necessary for the different developers to respect some conventions when developing functions. In the following page, you can find all the Bookshelf standards. This standard is signed by the prefix "**`bs.`**" in the namespaces so you can identify all the datapacks that use it.
+
+To contribute on this project, you must
+
+- Know the structure of a minecraft datapack (5-10 min to learn on internet)
+- Know the basic usage of git projects (20-30 min to learn on internet)
+- Be accessible to answer questions about your work
+
+:::{admonition} **For french speakers**
 :class: note
 Ce projet est réalisé principalement par des membres francophones mais à destination d'un public international. C'est pourquoi toute la lib ainsi que la documentation est en anglais.
 
 Si vous souhaitez contribuer mais que votre anglais n'est pas au point, vous pouvez utiliser des outils comme [DeepL](https://DeepL.com) puis demander une vérification.
 :::
-
-The Gunivers-Libs is a community project and can therefore be developed by several people at the same time. To keep the project clean and coherent, it is necessary for the different developers to respect certain conventions when developing functions.
-
-To contribute, you must
-
-- Know the structure of a minecraft datapack (5-10 min to learn on internet)
-- Know the basic usage of git projects (20-30 min to learn on internet)
-- Be accessible to answer questions about your work
 
 ---
 ## 👋 Getting started
@@ -36,14 +36,14 @@ In order to speak with the same vocabulary, here is some words that have a speci
 ---
 ### 🏷️Nomenclature
 
-The Gunivers-Libs respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various folders (corresponding to a namespaces) according to their usefulness. If no namespace folder (i.e. module) seems appropriate for the addition of a feature, it can be considered to add a new namespace. A category must respect a particular structure:
+Bookshelf respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various folders (corresponding to a namespaces) according to their usefulness. If no namespace folder (i.e. module) seems appropriate for the addition of a feature, it can be considered to add a new namespace. A category must respect a particular structure:
 
 -  File and folders use the snake_case convention. Example: `my_function`
 -  Score objectives use the camelCase convention with the `bs.` prefix. Example: `bs.myScore`
 -  Fake players use the SCREAMING_SNAKE_CASE convention. Exemple: `MY_FAKE_PLAYER`. Add `#` before the name to hide the fake player in the scoreboard when there is no point to let it visible.
 -  Tags use the UpperCamelCase convention with the `bs.` prefix. Example: `bs.MyTag`
 -  A feature is equal to an unique utility, so we should not hesitate to decompose its features in MVP in order to make it more readable and to promote the reusability of the MVP. In addition to these few constraints, the contributor is free to organize his files as he wishes as long as it remains coherent and understandable, and it respect the global structure detailed below.
--  In some folders are files nammed "`_`". The main purpose of these files is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "`_`" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
+-  In some folders are files nammed "`_`". The main purpose of these files is to reorganize the display of Bookshelf folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "`_`" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
 
 ---
 ### 🌳 Tree structure
@@ -65,19 +65,6 @@ The lib must respect this global structure:
 
 :::{note}
    Functions, predicates, structures, loot tables etc. must respect the same structure.
-:::
-
-:::{important}
-
-   Modules can be separated in 2 types:
-   
-   - library: a set of tools for datapackers and/or builds for builders/terraformers
-   - system: ready-to-use system, for demos, mini-games or user interface that allow to configure a complex system
-   
-   The prefix of the namespace must be respectively:
-
-   - `bs.<moduleName>`
-   - `bs.<moduleName>`
 :::
 
 In this structure, you can find a "feature" file and it's associated folder. This "feature" représent a "minimal viable product" (something that have a specific utility but that can require to be a part of another system in order to work)
@@ -119,38 +106,31 @@ Features files must respect this structure:
 ---
 ### 📄 File format
 
-All the functions of the Gunivers-Lib implement documentation to
+All the functions of Bookshelf implement documentation to
 describe for other developers as well as for users what the function is
 for and how to use it. This is what this one looks like:
 
 ```
-#__________________________________________________
-# INFO     Copyright © 2021 Gunivers.
+# INFO --------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
 # Authors       :
 # Contributors  : 
-# MC Version    :
-# Last check    :
 
-# Original path :
-# Documentation :
+# Version: (system version)
+# Created: jj/mm/yyyy (minecraft version)
+# Last verification: jj/mm/yyyy (minecraft version)
+# Last modification: jj/mm/yyyy (minecraft version)
+
+# Original path : bs.path:to/function
+# Documentation : https://link.to/documentation/page
 # Note          :
 
-#__________________________________________________
-# PARAMETERS
+# INIT --------------------------------------------
 
-# Input  : Foo (score) : Lorem Ipsum
-# Input  : Bar (tag)   : Lorem Ipsum
-# Output : Qux (score) : Lorem Ipsum
+# CONFIG ------------------------------------------
 
-#__________________________________________________
-# INIT
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE --------------------------------------------
 ```
 
 We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:
@@ -232,7 +212,7 @@ As you can see in several files, some lines in the configuration part call the "
 ---
 ### 💭 Comments
 
-The development of the Gunivers-Libs is collaborative, which means that other people can read the code. Moreover, the Gunivers-Lib is also meant to be pedagogical and accessible to people curious about the way the functions of the Gunivers-Lib work. Therefore, it is important to make it understood by other developers or users, and this, in addition to the
+The development of Bookshelf is collaborative, which means that other people can read the code. Moreover, Bookshelf is also meant to be pedagogical and accessible to people curious about the way the functions of Bookshelf work. Therefore, it is important to make it understood by other developers or users, and this, in addition to the
 documentation, also goes through the commentary of the code. Thus, it is important to regularly and cleanly comment on functions in order to explain how the function works.
 
 ---
