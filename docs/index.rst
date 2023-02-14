@@ -8,12 +8,26 @@
 
 Bookshelf (previously Gunivers Libs) is a modular library datapack designed to help mapmakers to implement common or complexe systems.
 
-.. button-link:: https://www.youtube.com/watch?v=E2nKYEvjETk
-    :color: primary
-    :align: center
-    :shadow:
 
-    :octicon:`device-camera-video` Watch the presentation video
+.. grid:: 2
+
+    .. grid-item::
+
+        .. button-link:: getting_started.html
+            :color: primary
+            :align: right
+            :shadow:
+
+            👋 Get started!
+
+    .. grid-item::
+
+        .. button-link:: https://www.youtube.com/watch?v=E2nKYEvjETk
+            :color: primary
+            :align: left
+            :outline:
+
+            🎬 Watch trailer
 
 ⚙️ Features
 -----------

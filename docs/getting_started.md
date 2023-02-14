@@ -3,21 +3,48 @@
 ## 🔌Installation
 
 ::::{tab-set}
-:::{tab-item} Install the datapack only
+:::{tab-item} 📁 Install the datapack only
 
-1. Go on [Bookshelf Manager](http://bookshelf.gunivers.net)
-2. Select the version you want (recommanded to use the last one)
-3. On the right panel, select the modules you want to use. You can check the modules' content on this documentation. You can find the list of all the available modules on the left panel.
-4. Click on the "Download" button
-5. Put the zip in the "datapacks" folder that you can find in your map folder.
-6. In game, use `/reload` to load the datapack.
-   
+You can download the datapack on the Bookshelf Manager website:
+
+```{button-link} https://bookshelf.gunivers.net
+:align: center
+:color: primary
+:shadow:
+
+🔖 Bookshelf Manager
+```
+
+Once you have the datapack, simply drop it in the "datapacks" folder in your world's files. Then, in game, use `/reload` to load the datapack.
+
+```{admonition} You can take only what you need!
+:class: note
+
+As it is a big project with a lot of things included, you probably don't need everything. That's why we propose you to download it from the [Bookshelf Manager](https://bookshelf.gunivers.net). Moreover, some modules can be heavy, such as the `bs.block` or `bs.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files (minecraft limitations oblige).
+```
+
 :::
-:::{tab-item} Install the sandbox map
+:::{tab-item} 🌍 Install the Minecraft world
+
+```{admonition} Coming soon!
+:class: note
 
 A clean installation process is coming soon.
 
 For now, you have to download the content of the Github repository and put it in the "map" folder.<br>This repo contain all the modules of the lib so it's heavy.<br>For this reason, we recommand you to go on `play.gunivers.net`, where the map is already hosted.
+```
+
+:::
+:::{tab-item} 🖇️ Related library
+
+Bookshelf is a general library focus on accessibility, but there is other libraries that can be useful for you. Here is a list of forks of Bookshelf that have a different purpose and other libraries that might interest you:
+
+```{admonition} This section is empty :/
+:class: important
+
+You know a cool minecraft library? Share it with us on our [Discord server](https://discord.gg/E8qq6tN) to let us add it here!
+
+```
 
 :::
 ::::
@@ -26,13 +53,6 @@ For now, you have to download the content of the Github repository and put it in
 :class: important
 
 Be sure that "cheats" are enabled if you play in local. Or, if you are on a server, be sure that `enable-command-block` is set on `true` in you `server.properties` file.
-```
-
-
-```{admonition} Take only what you need!
-:class: tip
-
-This is a big project with a lot of things included and you probably don't need everything. That's why we propose you to download it from the [Bookshelf Manager](https://bookshelf.gunivers.net). Moreover, some modules can be heavy, such as the `bs.block` or `bs.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files (minecraft limitations oblige).
 ```
 
 ## 👶 First steps
