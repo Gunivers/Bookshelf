@@ -1,3 +1,5 @@
+tellraw @a [{"text":"digits"}]
+
 scoreboard players operation @s bs.var0 /= 10 bs.const
 scoreboard players add @s bs.var1 1
 

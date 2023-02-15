@@ -21,28 +21,20 @@
 #__________________________________________________
 # INIT
 
-
-
-
-
-
-
-
-
-
-
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
+tellraw @a [{"text":"log"}]
+
 # Not defined values
 scoreboard players set @s[scores={bs.var0=0}] bs.var0 1
 scoreboard players operation @s[scores={bs.var0=..-1}] bs.var0 *= -1 bs.const
 
 # bs.var3 = x (* 1000)
-scoreboard players operation @s bs.var3 = @s bs.var0
+scoreboard players operation @s bs.var3 = @s bs.var0 
 
 # bs.var1 = n+2
 execute if entity @s[scores={bs.var3=..1000}] run scoreboard players remove @s bs.var0 1
@@ -68,9 +60,9 @@ scoreboard players operation @s bs.var3 += @s bs.res0
 # We change the orders of magnitude to have the best possible accuracy
 # Calculation of the multipliers
 # bs.var7 = 10^(5-bs.var6)
-# bs.var4 = 10^(bs.var6-1)
-scoreboard players operation @s bs.var4 = @s bs.res0
-scoreboard players operation @s bs.var4 /= 10000 bs.const
+# bs.var5 = 10^(bs.var6-1)
+scoreboard players operation @s bs.var5 = @s bs.res0
+scoreboard players operation @s bs.var5 /= 10000 bs.const
 scoreboard players set @s bs.var1 5
 scoreboard players operation @s bs.var1 -= @s bs.var6
 function bs.math:common/pow
@@ -83,22 +75,22 @@ execute if entity @s[scores={bs.var4=1..}] run scoreboard players add @s bs.var4
 execute if entity @s[scores={bs.var4=..-1}] run scoreboard players remove @s bs.var4 50000
 scoreboard players operation @s bs.var7 /= 10000 bs.const
 execute if entity @s[scores={bs.var6=..0}] run scoreboard players operation @s bs.var3 *= @s bs.var7
-execute if entity @s[scores={bs.var6=2..}] run scoreboard players operation @s bs.var3 /= @s bs.var4
+execute if entity @s[scores={bs.var6=2..}] run scoreboard players operation @s bs.var3 /= @s bs.var5
 # Division of x-10^(n-1) by x+10^(n-1)
 scoreboard players operation @s bs.var4 /= @s bs.var3
 scoreboard players operation @s bs.var0 = @s bs.var4
 
 # Calculation of Sp
 
-# bs.var4 = Sp (* 10 000)
+# bs.var5 = Sp (* 10 000)
 scoreboard players set @s bs.var1 1
-scoreboard players set @s bs.var4 0
+scoreboard players set @s bs.var5 0
 scoreboard players operation @s bs.var2 = @s bs.var0
 function bs.math:common/log/child/loop
 
 # Last calculation
 # log(x) ~ Sp + (n-1)*log(10)
-scoreboard players operation @s bs.res0 = @s bs.var4
+scoreboard players operation @s bs.res0 = @s bs.var5
 scoreboard players operation @s bs.res0 *= 2 bs.const
 scoreboard players operation @s bs.var6 *= 2302585 bs.const
 scoreboard players operation @s bs.var6 /= 100 bs.const
@@ -106,3 +98,4 @@ scoreboard players operation @s bs.res0 += @s bs.var6
 
 # Small adjustment to increase average accuracy
 scoreboard players add @s bs.res0 7
+scoreboard players operation @s bs.res0 /= 10 bs.const

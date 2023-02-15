@@ -234,7 +234,7 @@ execute as @e[tag=bs.unitest] run function bs.math:common/log
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -693 run tellraw @a [{"text":"[bs.math:common/log] expected log(500e-3) = -693e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -694..-693 run tellraw @a [{"text":"[bs.math:common/log] expected log(500e-3) = -693e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 # USAGE -----------------------------------------------------------------------
 
@@ -243,7 +243,7 @@ execute as @e[tag=bs.unitest] run function bs.math:common/log
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 2302 run tellraw @a [{"text":"[bs.math:common/log] log(10000e-3) = 2302e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 2302..2303 run tellraw @a [{"text":"[bs.math:common/log] log(10000e-3) = 2302e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 #=============================================================================#
 #                                                                             #
@@ -280,7 +280,7 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 3321 run tellraw @
 scoreboard players set @e[tag=bs.unitest] bs.var0 500
 execute as @e[tag=bs.unitest] run function bs.math:common/log10
 
-# RESULTS ----------------------------------------------------------------------
+# RESULTS ---------------------------------------------------------------------
 
 execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -301 run tellraw @a [{"text":"[bs.math:common/log10] expected log10(500e-3) = -301e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 

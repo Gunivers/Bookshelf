@@ -2,9 +2,11 @@
 # In minecraft we don't have infinite accuracy so p is not definied,
 # but we stop suming when the term is < 1
 
+tellraw @a [{"text":"loop"}]
+
 scoreboard players operation @s bs.res0 = @s bs.var2
 scoreboard players operation @s bs.res0 /= @s bs.var1
-scoreboard players operation @s bs.var4 += @s bs.res0
+scoreboard players operation @s bs.var5 += @s bs.res0
 scoreboard players add @s bs.var1 2
 
 # Calculation of y^(var2)
