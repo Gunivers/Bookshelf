@@ -11,10 +11,10 @@ movement of the entity.
 
 ```{button-link} https://youtu.be/KH3Q9F5j04I
 :color: primary
-:align: center
+:align: right
 :shadow:
 
-{octicon}`device-camera-video` Watch a demo
+🎬 Watch a demo
 ```
 
 ---
@@ -186,3 +186,26 @@ own in the `by_vector/config/collision/` folder. By default, the
 precision of the collisions, stored on the Var5 score, is 500 (= 0,5
 blocks). }}
 :::
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

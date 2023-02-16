@@ -260,3 +260,26 @@ This is a reduction of "as to at". Several functions require 2 positions to work
 #### 🆔 The "tti" functions
 
 This is a reduction of "to target id". Several functions require 2 a source and a target entity (example: get a vector to another entity). To simplify the use, no need to always use the `id/check` function.
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

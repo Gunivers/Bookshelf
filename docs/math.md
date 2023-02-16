@@ -703,3 +703,26 @@ Compute the tangeant of an angle between 0 and 360
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

@@ -94,3 +94,26 @@ In this command block, you can enter the command of one of the following example
 :::{note}
 This section is in progress. If you have some ideas about how to improves the first steps with the Glibs, please share it on our [Discord server](https://discord.gg/E8qq6tN).
 :::
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
