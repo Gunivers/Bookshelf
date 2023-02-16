@@ -269,12 +269,6 @@ Compute the greatest common denominator of two numbers
 
 Compute the Neperian logarithm (base e) of a number
 
-```{admonition} Issue reported
-:class: error
-
-This function is not working properly. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
-```
-
 :Inputs:
 
    **(execution) `as <entities>`**: the entities you want to perform the operation on
@@ -302,12 +296,6 @@ This function is not working properly. You can follow the {octicon}`issue-opened
 
 Compute the logarithm in base 2 of a number
 
-```{admonition} Issue reported
-:class: error
-
-This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
-```
-
 :Inputs:
 
    **(execution) `as <entities>`**: the entities you want to perform the operation on
@@ -333,12 +321,6 @@ This function is based on the `log` one, so is not working properly either. You 
 **`bs.math:common/log10`**
 
 Compute the logarithm in base 10 of a number
-
-```{admonition} Issue reported
-:class: error
-
-This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
-```
 
 :Inputs:
 
@@ -366,12 +348,6 @@ This function is based on the `log` one, so is not working properly either. You 
 **`bs.math:common/loga`**
 
 Computes the logarithm in base a of a number
-
-```{admonition} Issue reported
-:class: error
-
-This function is based on the `log` one, so is not working properly either. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/25) resolution on Github.
-```
 
 :Inputs:
 

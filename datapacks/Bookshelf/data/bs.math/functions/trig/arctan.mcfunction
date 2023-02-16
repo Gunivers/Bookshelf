@@ -91,4 +91,4 @@ scoreboard players operation @s bs.res0 /= Pi2 bs.const
 #Output
 scoreboard players operation @s bs.res0 *= math.arctan bs.var4
 
-tellraw @a ["",{"text":"Input: "},{"score":{"name":"@s","objective":"bs.res0"}},{"text":"Output: "},{"score":{"name":"@s","objective":"bs.res0"}}]
+# tellraw @a ["",{"text":"Input: "},{"score":{"name":"@s","objective":"bs.res0"}},{"text":"Output: "},{"score":{"name":"@s","objective":"bs.res0"}}]

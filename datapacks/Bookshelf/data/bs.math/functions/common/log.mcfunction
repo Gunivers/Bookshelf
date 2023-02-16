@@ -27,8 +27,6 @@
 #__________________________________________________
 # CODE
 
-tellraw @a [{"text":"log"}]
-
 # Not defined values
 scoreboard players set @s[scores={bs.var0=0}] bs.var0 1
 scoreboard players operation @s[scores={bs.var0=..-1}] bs.var0 *= -1 bs.const

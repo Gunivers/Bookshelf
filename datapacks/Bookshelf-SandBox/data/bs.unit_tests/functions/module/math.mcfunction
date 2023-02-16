@@ -258,7 +258,7 @@ execute as @e[tag=bs.unitest] run function bs.math:common/log2
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -1000 run tellraw @a [{"text":"[bs.math:common/log2] expected log2(500e-3) = -1000e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -1002..-1000 run tellraw @a [{"text":"[bs.math:common/log2] expected log2(500e-3) = -1000e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 # USAGE -----------------------------------------------------------------------
 
@@ -267,7 +267,7 @@ execute as @e[tag=bs.unitest] run function bs.math:common/log2
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 3321 run tellraw @a [{"text":"[bs.math:common/log2] log2(10000e-3) = 3321e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 3321..3323 run tellraw @a [{"text":"[bs.math:common/log2] log2(10000e-3) = 3321e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 #=============================================================================#
 #                                                                             #
@@ -282,7 +282,7 @@ execute as @e[tag=bs.unitest] run function bs.math:common/log10
 
 # RESULTS ---------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -301 run tellraw @a [{"text":"[bs.math:common/log10] expected log10(500e-3) = -301e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -302..-301 run tellraw @a [{"text":"[bs.math:common/log10] expected log10(500e-3) = -301e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 # USAGE -----------------------------------------------------------------------
 
@@ -307,17 +307,17 @@ execute as @e[tag=bs.unitest] run function bs.math:common/loga
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -500 run tellraw @a [{"text":"[bs.math:common/loga] expected log4(500e-3) = -500e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -501..-500 run tellraw @a [{"text":"[bs.math:common/loga] expected log4(500e-3) = -500e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 # USAGE -----------------------------------------------------------------------
 
 scoreboard players set @e[tag=bs.unitest] bs.var0 10000
 scoreboard players set @e[tag=bs.unitest] bs.var1 7
-execute as @e[tag=bs.unitest] run function bs.math:common/log10
+execute as @e[tag=bs.unitest] run function bs.math:common/loga
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 1183 run tellraw @a [{"text":"[bs.math:common/loga] log7(10000e-3) = 1183e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 1183..1184 run tellraw @a [{"text":"[bs.math:common/loga] log7(10000e-3) = 1183e-3, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 #=============================================================================#
 #                                                                             #

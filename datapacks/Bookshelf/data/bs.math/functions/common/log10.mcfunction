@@ -26,6 +26,6 @@
 #__________________________________________________
 # CODE
 
-function bs.math:log
-scoreboard players operation @s bs.res0 *= 10000 bs.const
-scoreboard players operation @s bs.res0 /= 23026 bs.const
+function bs.math:common/log
+scoreboard players operation @s bs.res0 *= 1000 bs.const
+scoreboard players operation @s bs.res0 /= 2303 bs.const

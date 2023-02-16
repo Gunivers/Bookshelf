@@ -32,15 +32,22 @@
 # We save the x to calculate log x later, and calculate log a
 scoreboard players operation @s bs.var8 = @s bs.var0
 scoreboard players operation @s bs.var0 = @s bs.var1
-function bs.math:log
+scoreboard players operation @s bs.var0 *= 1000 bs.const
+# tellraw @a ["",{"text":"   b  = "},{"score":{"name":"@s","objective":"bs.var0"}}]
+function bs.math:common/log
+# tellraw @a ["",{"text":"ln(b) = "},{"score":{"name":"@s","objective":"bs.res0"}}]
 
 # We save log a on bs.var8
 scoreboard players operation @s bs.var0 = @s bs.var8
 scoreboard players operation @s bs.var8 = @s bs.res0
+# tellraw @a ["",{"text":"   a  = "},{"score":{"name":"@s","objective":"bs.var0"}}]
 
 # Then we calculate log x
-function bs.math:log
-scoreboard players operation @s bs.res0 *= 10000 bs.const
+function bs.math:common/log
+
+# tellraw @a ["",{"text":"ln(a) = "},{"score":{"name":"@s","objective":"bs.res0"}}]
+scoreboard players operation @s bs.res0 *= 1000 bs.const
 
 # And divide by log a
 scoreboard players operation @s bs.res0 /= @s bs.var8
+# tellraw @a ["",{"text":"  res = "},{"score":{"name":"@s","objective":"bs.res0"}}]
