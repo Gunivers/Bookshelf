@@ -151,7 +151,7 @@ This lib use global scores, that are automatically created:
 
 | Scores name | Description |
 |:------:|:-----------:|
-| `glib` | Dedicated to temporary storage (ex: fake players) |
+| `bs` | Dedicated to temporary storage (ex: fake players) |
 | `bs.config` | Allow to define the behavior of some systems |
 | `bs.const` | Contain a huge numer of fakeplayers with constant score value |
 | `bs.data` | Uses by the `bs.core` module.<br> Do not use it without knowing exactly what you are doing. |
@@ -199,8 +199,7 @@ Welcome in the dark side! 😈
 
 In order to make use as easy as possible, each function must limit its dependencies as much as possible. It must then declare each of the variables it uses in the "INIT" part. It is not necessary to initialize variables used by child functions because child functions are supposed to initialize them. On the other hand, it is forbidden to neglect a declaration for any other reason (example: "Var1 is already used everywhere").
 
-Some scores, used by the lib in a global way, do not need to be
-declared. You can find the list of global scores by [here](https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core/-/blob/master/data/bs.core/functions/import/scores.mcfunction). Also, in order to simplify arithmetical operations, the lib define plenty of constants stored on the score `bs.const`. You can find them [here](https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core/-/blob/master/data/bs.core/functions/import/constants.mcfunction). All constants used in the lib must be defined in this file.
+All the special scores doesn't need to be declared, they are automatically created by the lib. Also, in order to simplify arithmetical operations, the lib define plenty of constants stored on the score `bs.const`. You can find them in `bs.core/functions/import/constants.mcfunction`. All constants used in the lib must be defined in this file.
 
 ---
 ### 🔧 Configuration
