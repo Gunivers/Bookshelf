@@ -51,15 +51,19 @@ This function is not working properly. You can follow the {octicon}`issue-opened
 
 :Inputs:
 
-   **(execution) `as <entities>`**: The entities you want to perform the computation on
+   (execution) `as <entities>`
+   : The entities you want to perform the computation on
 
-   **(scores) `@s bs.var<0|1|2>`**: Vector coordinates $(X,Y,Z)$ in the starting base
+   (scores) `@s bs.var<0|1|2>`
+   : Vector coordinates $(X,Y,Z)$ in the starting base
 
-   **(scores) `@s bs.var<3|4>`**: Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
+   (scores) `@s bs.var<3|4>`
+   : Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
 
 :Outputs:
 
-   **(scores) `bs.res<0|1|2>`** Vector coordinates $(X',Y',Z')$ in the target base
+   (scores) `bs.res<0|1|2>`
+   : Vector coordinates $(X',Y',Z')$ in the target base
 
 :Examples:
 
@@ -131,15 +135,19 @@ next whole number).
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the numerator
+   (score) `@s bs.var0`
+   : the numerator
 
-   **(score) `@s bs.var1`**: the denominator
+   (score) `@s bs.var1`
+   : the denominator
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the division
+   (score) `@s bs.res0`
+   : the result of the division
 
 :Example:
 
@@ -165,9 +173,11 @@ the score `bs.var0` and return the result on the score `bs.res0`
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
 
    ```{admonition} Technical limitation
    :class: important
@@ -176,7 +186,8 @@ the score `bs.var0` and return the result on the score `bs.res0`
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.res0`
+   : the result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
@@ -204,9 +215,11 @@ Compute the factorial of the number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be factorialized
+   (score) `@s bs.var0`
+   : the number to be factorialized
 
    ```{admonition} Technical limitation
    :class: important
@@ -216,7 +229,8 @@ Compute the factorial of the number
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation
+   (score) `@s bs.res0`
+   : the result of the operation
 
 :Example:
 
@@ -240,15 +254,19 @@ Compute the greatest common denominator of two numbers
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the first number
+   (score) `@s bs.var0`
+   : the first number
 
-   **(score) `@s bs.var1`**: the second number
+   (score) `@s bs.var1`
+   : the second number
 
 :Output:
 
-   **(score) `@s bs.res0`**: the greatest common denominator
+   (score) `@s bs.res0`
+   : the greatest common denominator
 
 :Example:
 
@@ -277,13 +295,17 @@ Compute the Neperian logarithm (base e) of a number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   
+   (score) `@s bs.var0`
+   : the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.res0`
+   : the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
@@ -304,13 +326,16 @@ Compute the logarithm in base 2 of a number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.res0`
+   : the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
@@ -330,13 +355,16 @@ Compute the logarithm in base 10 of a number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.res0`
+   : the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
@@ -357,15 +385,19 @@ Computes the logarithm in base a of a number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the operation on
+   (execution) `as <entities>`
+   : the entities you want to perform the operation on
 
-   **(score) `@s bs.var0`**: the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-   **(score) `@s bs.var1`**: the base of the logarithm (not shifted)
+   (score) `@s bs.var1`
+   : the base of the logarithm (not shifted)
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.res0`
+   : the result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
 
@@ -389,15 +421,19 @@ Compute $x^y$
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the base
+   (score) `@s bs.var0`
+   : the base
 
-   **(score) `@s bs.var1`**: the exponent
+   (score) `@s bs.var1`
+   : the exponent
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation
+   (score) `@s bs.res0`
+   : the result of the calculation
 
 :Example:
 
@@ -422,13 +458,16 @@ Compute the square root of the number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the number you want to calculate the square root of
+   (score) `@s bs.var0`
+   : the number you want to calculate the square root of
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation
+   (score) `@s bs.res0`
+   : the result of the calculation
 
 :Example:
 
@@ -463,13 +502,16 @@ number given in parameter.
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the number from which you want to calculate the next power of 2
+   (score) `@s bs.var0`
+   : the number from which you want to calculate the next power of 2
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation
+   (score) `@s bs.res0`
+   : the result of the calculation
 
 :Example:
 
@@ -491,11 +533,13 @@ Generates a random number
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
 :Output:
 
-   **(score) `@s bs.res0`**: an integer random number between $-2^{31}$ and $2^{31}-1$
+   (score) `@s bs.res0`
+   : an integer random number between $-2^{31}$ and $2^{31}-1$
 
    ```{tip}
    To reduce this interval, execute the function then do a "modulo"
@@ -538,13 +582,16 @@ Calculate the arccosinus of a value between -1 and 1
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+   (score) `@s bs.res0`
+   : the result of the calculation, in degrees (not shifted)
 
 :Example:
 
@@ -568,13 +615,16 @@ Compute the arcsinus of a value between -1 and 1
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+   (score) `@s bs.res0`
+   : the result of the calculation, in degrees (not shifted)
 
 :Example:
 
@@ -604,13 +654,16 @@ This function is not working properly. You can follow the {octicon}`issue-opened
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   (score) `@s bs.var0`
+   : the value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   **(score) `@s bs.res0`**: the result of the calculation, in degrees (not shifted)
+   (score) `@s bs.res0`
+   : the result of the calculation, in degrees (not shifted)
 
 :Example:
 
@@ -632,12 +685,15 @@ Compute the cosine of an angle between 0 and 360
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
-   **(score) `@s bs.var0`**: the angle in degrees
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
+   (score) `@s bs.var0`
+   : the angle in degrees
 
 :Outputs:
 
-   **(score) `@s bs.res0`**: the cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+   (score) `@s bs.res0`
+   : the cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
 
@@ -661,12 +717,15 @@ Computes the sine of an angle between 0 and 360
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
-   **(score) `@s bs.var0`**: the angle in degrees
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
+   (score) `@s bs.var0`
+   : the angle in degrees
 
 :Outputs:
 
-   **(score) `@s bs.res0`**: the sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+   (score) `@s bs.res0`
+   : the sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
 
@@ -690,13 +749,16 @@ Compute the tangeant of an angle between 0 and 360
 
 :Inputs:
 
-   **(execution) `as <entities>`**: the entities you want to perform the calculation on
+   (execution) `as <entities>`
+   : the entities you want to perform the calculation on
 
-   **(score) `@s bs.var0`**: the angle in degrees (not shifted)
+   (score) `@s bs.var0`
+   : the angle in degrees (not shifted)
 
 :Outputs:
 
-   **(score) `@s bs.res0`**: the tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
+   (score) `@s bs.res0`
+   : the tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
 

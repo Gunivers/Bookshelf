@@ -16,13 +16,16 @@ function.
 
 :Inputs:
 
-    **(exeucution) `as <entity>`**: The entity that hold the target score (ID check must be performed on one entity at a time)
+    (execution) `as <entity>`
+    : The entity that hold the target score (ID check must be performed on one entity at a time)
 
-    **(score) `@s bs.targetId`**: The ID to compare with the other entities.
+    (score) `@s bs.targetId`
+    : The ID to compare with the other entities.
 
 :Outputs:
 
-    **(tag) `@s bs.id.checker`**: The entity that executed the function.
+    (tag) `@s bs.id.checker`
+    : The entity that executed the function.
 
     ```{admonition} Future deprecation warning
     :class: important
@@ -30,11 +33,14 @@ function.
     The `bs.id.checker` tag will no longer be given in the future. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
     ```
     
-    **(tag) `@e bs.id.upper`**: The entities whose `bs.id` score is higher than the `bs.targetId` score.
+    (tag) `@e bs.id.upper`
+    : The entities whose `bs.id` score is higher than the `bs.targetId` score.
     
-    **(tag) `@e bs.id.lower`**: The entities whose `bs.id` score is lower than the `bs.targetId` score.
+    (tag) `@e bs.id.lower`
+    : The entities whose `bs.id` score is lower than the `bs.targetId` score.
     
-    **(tag) `@e bs.id.match`**: The entities whose `bs.id` score is equal to the `bs.targetId` score.
+    (tag) `@e bs.id.match`
+    : The entities whose `bs.id` score is equal to the `bs.targetId` score.
 
 :Example:
 
@@ -84,13 +90,16 @@ execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector"
 
 :Input:
 
-    **(execution) `as <entities>`**: The entities you want to assign an ID to.
+    (execution) `as <entities>`
+    : The entities you want to assign an ID to.
 
 :Outputs:
 
-    **(score) `@s bs.id`**: The ID of the executing entity.
+    (score) `@s bs.id`
+    : The ID of the executing entity.
     
-    **(tag) `@s bs.id.set`**: A tag to confirm the entity got a unique ID.
+    (tag) `@s bs.id.set`
+    : A tag to confirm the entity got a unique ID.
 
     ```{admonition} Future deprecation warning
     :class: important
@@ -98,7 +107,8 @@ execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector"
     The `bs.id.set` tag will no longer be given in the future. Instead, you can check if the entity have an ID using `@e[scores={bs.id=1..}]`. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
     ```
     
-    **(tag) `@s bs.id.type.suid`**: The entity that executed the function.
+    (tag) `@s bs.id.type.suid`
+    : The entity that executed the function.
 
 :Example:
 
