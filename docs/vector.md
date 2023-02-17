@@ -20,6 +20,13 @@ Vector are fundamental and extremly powerfull tool to manage motions, forces and
 {octicon}`device-camera-video` Watch a demo
 ```
 
+```{epigraph}
+
+"With vectors, physics has found a magnificent language."
+
+-- Richard Feynman
+```
+
 ---
 
 ## Canonical

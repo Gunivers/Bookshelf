@@ -87,6 +87,12 @@ That's why we created this library, to propose a lot of re-usable tools and try 
 
 Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
 
+.. epigraph::
+
+    "I have seen further than others because I have stood on the shoulders of giants."
+
+    -- Isaac Newton
+
 🤝 Follow and/or contribute
 ---------------------------
 

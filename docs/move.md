@@ -17,6 +17,13 @@ movement of the entity.
 🎬 Watch a demo
 ```
 
+```{epigraph}
+
+"In the universe, everything is mouvement."
+
+-- Heraclite d'Ephèse
+```
+
 ---
 
 ## Move using local vector

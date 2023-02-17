@@ -2,6 +2,13 @@
 
 `bs.view:`:The view functions allow to get some practical information about what the entity sees or aims.
 
+```{epigraph}
+
+"Vision is the act of seeing things as they could be, not as they are."
+
+-- Gretchen Rubin
+```
+
 ---
 
 ## Get aimed block

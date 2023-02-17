@@ -18,6 +18,12 @@ The beatifull world of mathematics... **in Minecraft!**
 {octicon}`device-camera-video` Watch a demo
 ```
 
+```{epigraph}
+"Mathematics has very subtle inventions that can be of great service, both to satisfy the curious and to facilitate all arts and reduce the labor of men."
+
+-- René Descartes
+```
+
 ---
 
 ## Algebra
