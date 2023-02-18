@@ -462,7 +462,7 @@ Compute $x^y$
    : The entities you want to perform the calculation on
 
    (score) `@s bs.var0`
-   : The base, a number shited by 3 digits (1,2345 -> 1234)
+   : The base, a number shifted by 3 digits (1,2345 -> 1234)
 
    (score) `@s bs.var1`
    : The exponent, not shifted
@@ -470,7 +470,7 @@ Compute $x^y$
 :Output:
 
    (score) `@s bs.res0`
-   : The result of the calculation, a number shited by 3 digits (1,2345 -> 1234)
+   : The result of the calculation, a number shifted by 3 digits (1,2345 -> 1234)
 
 :Example:
 

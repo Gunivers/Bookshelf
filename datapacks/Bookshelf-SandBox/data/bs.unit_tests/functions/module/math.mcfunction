@@ -19,12 +19,12 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 0 run tellraw @a [
 
 # USAGE -----------------------------------------------------------------------
 
-scoreboard players set @e[tag=bs.unitest] bs.var0 1414
+scoreboard players set @e[tag=bs.unitest] bs.var0 -314
 execute as @e[tag=bs.unitest] run function bs.math:trig/arccos
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 45 run tellraw @a [{"text":"[bs.math:trig/arccos] expected arccos(1414e-3) = 45, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 108 run tellraw @a [{"text":"[bs.math:trig/arccos] expected arccos(-314e-3) = 108, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 #=============================================================================#
 #                                                                             #
@@ -43,12 +43,12 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 90 run tellraw @a 
 
 # USAGE -----------------------------------------------------------------------
 
-scoreboard players set @e[tag=bs.unitest] bs.var0 1414
+scoreboard players set @e[tag=bs.unitest] bs.var0 -314
 execute as @e[tag=bs.unitest] run function bs.math:trig/arcsin
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 45 run tellraw @a [{"text":"[bs.math:trig/arcsin] expected arcsin(1414e-3) = 45, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -18..-17 run tellraw @a [{"text":"[bs.math:trig/arcsin] expected arcsin(-314e-3) = -18, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 
 #=============================================================================#
@@ -68,12 +68,12 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 45 run tellraw @a 
 
 # USAGE -----------------------------------------------------------------------
 
-scoreboard players set @e[tag=bs.unitest] bs.var0 -5671
+scoreboard players set @e[tag=bs.unitest] bs.var0 -314
 execute as @e[tag=bs.unitest] run function bs.math:trig/arctan
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -80 run tellraw @a [{"text":"[bs.math:trig/arctan] expected arctan(-5671e-3) = -80, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -18..-17 run tellraw @a [{"text":"[bs.math:trig/arctan] expected arctan(-314e-3) = -17, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
 
 
 #=============================================================================#
