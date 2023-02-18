@@ -38,11 +38,11 @@ execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.rh matches -9000
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.rv matches -45000 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.rv = -45000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.rv"}}]
 
-execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lx matches -3000 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.lx = -3000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lx"}}]
+execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lx matches 3000 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.lx = 3000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lx"}}]
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.ly matches 705 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.ly = 705, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.ly"}}]
 
-execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches 2115 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.lz = 2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
+execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches -2115 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.lz = -2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
 
 
 kill @e[tag=bs.unitest]
@@ -95,11 +95,11 @@ execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.rh matches -9000
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.rv matches -45000 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.rv = -45000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.rv"}}]
 
-execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lx matches -3000 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.lx = -3000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lx"}}]
+execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lx matches 3000 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.lx = 3000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lx"}}]
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.ly matches 705 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.ly = 705, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.ly"}}]
 
-execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches 2115 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.lz = 2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
+execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches -2115 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.lz = -2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
 
 kill @e[tag=bs.unitest]
 

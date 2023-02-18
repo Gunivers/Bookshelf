@@ -43,12 +43,6 @@ passed in parameter in a base with a different orientation. Useful to
 convert an absolute/relative position into a local position for a given
 entity.
 
-```{admonition} Issue reported
-:class: warning
-
-This function is not working properly. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/31) resolution on Github.
-```
-
 :Inputs:
 
    (execution) `as <entities>`
@@ -685,12 +679,6 @@ Compute the arcsinus of a value between -1 and 1
 **`bs.math:trig/arctan`**
 
 Compute the arctangent of a value between -infinite and +infinite
-
-```{admonition} Issue reported
-:class: warning
-
-This function is not working properly. You can follow the {octicon}`issue-opened;1em;sd-text-info` [issue](https://github.com/Gunivers/Glibs/issues/30) resolution on Github.
-```
 
 :Inputs:
 
