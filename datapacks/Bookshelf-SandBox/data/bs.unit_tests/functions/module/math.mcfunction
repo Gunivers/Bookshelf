@@ -86,16 +86,16 @@ execute as @e[tag=bs.unitest] unless score @s bs.res0 matches -18..-17 run tellr
 
 scoreboard players set @e[tag=bs.unitest] bs.var0 1000
 scoreboard players set @e[tag=bs.unitest] bs.var1 2000
-scoreboard players set @e[tag=bs.unitest] bs.var3 3000
-scoreboard players set @e[tag=bs.unitest] bs.var4 145
-scoreboard players set @e[tag=bs.unitest] bs.var5 -45
+scoreboard players set @e[tag=bs.unitest] bs.var2 3000
+scoreboard players set @e[tag=bs.unitest] bs.var3 145
+scoreboard players set @e[tag=bs.unitest] bs.var4 -45
 execute as @e[tag=bs.unitest] run function bs.math:algebra/basis_rotation_3d
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 2287 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected x' = 2287, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
-execute as @e[tag=bs.unitest] unless score @s bs.res1 matches 107 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected y' = 107, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res1"}}]
-execute as @e[tag=bs.unitest] unless score @s bs.res2 matches 2849 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected z' = 2849, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res2"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 902 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected x' = 902, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res1 matches 3541 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected y' = 3541, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res1"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.res2 matches -721 run tellraw @a [{"text":"[bs.math:algebra/basis_rotation_3d] expected z' = -721, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res2"}}]
 
 #=============================================================================#
 #                                                                             #
