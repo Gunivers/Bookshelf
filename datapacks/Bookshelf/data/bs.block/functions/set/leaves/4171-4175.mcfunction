@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 4171 run setblock ~ ~ ~ iron_door[facing=east,half=lower,hinge=left,open=true,powered=false]
+execute if score @s bs.blockId matches 4172 run setblock ~ ~ ~ iron_door[facing=east,half=lower,hinge=left,open=false,powered=true]
+execute if score @s bs.blockId matches 4173 run setblock ~ ~ ~ iron_door[facing=east,half=lower,hinge=left,open=false,powered=false]
+execute if score @s bs.blockId matches 4174 run setblock ~ ~ ~ iron_door[facing=east,half=lower,hinge=right,open=true,powered=true]
+execute if score @s bs.blockId matches 4175 run setblock ~ ~ ~ iron_door[facing=east,half=lower,hinge=right,open=true,powered=false]

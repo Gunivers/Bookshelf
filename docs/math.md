@@ -1,270 +1,157 @@
 # 🧮 Math
 
-`glib.math:`: The "Math" functions, as their name suggests, are for
-doing math. Before you run away remembering your indigestible and
-incomprehensible lessons that you had to endure at school, you should
-know that here, you won't need to do any math (in fact, it's the purpose
-of the lib to simplify your life). Nevertheless, the following math
-functions are theoretical, but they are also what most other systems are
-based on. If you don't know what I mean, you can easily create (among
-other things) raycasting with this lib. This system is essentially based
-on trigonometry. But again, nothing complicated, everything is already
-done ;)
+**`bs.math:_`**
+
+The beatifull world of mathematics... **in Minecraft!**
 
 <div align=center>
-    <a href="https://youtu.be/Bt0HKaOosqU" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
+
+![](img/2023-01-27-22-55-18.png)
+
 </div>
+
+```{button-link} https://youtu.be/Bt0HKaOosqU
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch a demo
+```
+
+```{epigraph}
+"Mathematics has very subtle inventions that can be of great service, both to satisfy the curious and to facilitate all arts and reduce the labor of men."
+
+-- René Descartes
+```
 
 ---
 
 ## Algebra
 
-`glib.math:algebra`: this folder allows you to perform algebra
-operations
+**`bs.math:algebra/_`**
+
+This folder allows you to perform algebra operations
 
 ---
 
-### Basic rotation
+### Basis rotation 3D
 
-`basis_rotation_3d`: Allows to obtain the equivalent of the vector
+**`bs.math:algebra/basis_rotation_3d`**
+
+Allows to obtain the equivalent of the vector
 passed in parameter in a base with a different orientation. Useful to
 convert an absolute/relative position into a local position for a given
 entity.
 
--  Takes in parameter the scores `glib.var[0,1,2]` corresponding to
-   the X, Y and Z compositors of the vector in the starting base
--  Takes as parameter the scores `glib.var[3,4]` corresponding to the
-   difference in orientation of the bases, respectively horizontal (Phi)
-   and vertical (Theta) 
--  Returns the X', Y' and Z' components respectively on the scores
-   `glib.res[0,1,2]`
+:Inputs:
 
-*Examples:*
+   (execution) `as <entities>`
+   : The entities you want to perform the computation on
 
--  A block is in ~2 ~5 ~10 from me, I want to have this position in local
-coordinate (^? ^? ^?)
+   (scores) `@s bs.var<0|1|2>`
+   : Vector coordinates $(X,Y,Z)$ in the starting base
+
+   (scores) `@s bs.var<3|4>`
+   : Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
+
+:Outputs:
+
+   (scores) `bs.res<0|1|2>`
+   : Vector coordinates $(X',Y',Z')$ in the target base
+
+:Examples:
+
+   A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?)
+   
    ```
    # One time
 
    # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s glib.var0 2000
-   scoreboard players set @s glib.var1 5000
-   scoreboard players set @s glib.var2 10000
+   scoreboard players set @s bs.var0 2000
+   scoreboard players set @s bs.var1 5000
+   scoreboard players set @s bs.var2 10000
 
    # Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
-   function glib.orientation:get
-   scoreboard players operation @s glib.var3 = @s glib.oriH
-   scoreboard players operation @s glib.var4 = @s glib.oriV
+   function bs.orientation:get
+   scoreboard players operation @s bs.var3 = @s bs.oriH
+   scoreboard players operation @s bs.var4 = @s bs.oriV
 
    # Perform the basic rotation
-   function glib.math:algebra/basis_rotation_3d
+   function bs.math:algebra/basis_rotation_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res2"},"color":"gold"}]
    ```
 
--  I want to have a vector pointing to where I'm looking, but in relative
-coordinates ~X ~Y ~Z (also called "classical" vector in this library)
+   I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
+   
    ```
    # Once
 
    # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s glib.var0 0
-   scoreboard players set @s glib.var1 0
-   scoreboard players set @s glib.var2 1000
+   scoreboard players set @s bs.var0 0
+   scoreboard players set @s bs.var1 0
+   scoreboard players set @s bs.var2 1000
 
    # Get the orientation
-   function glib.orientation:get
-   scoreboard players operation @s glib.var3 = @s glib.oriH
-   scoreboard players operation @s glib.var4 = @s glib.oriV
+   function bs.orientation:get
+   scoreboard players operation @s bs.var3 = @s bs.oriH
+   scoreboard players operation @s bs.var4 = @s bs.oriV
 
    # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-   scoreboard players operation @s glib.var3 *= -1 glib.const
-   scoreboard players operation @s glib.var4 *= -1 glib.const
+   scoreboard players operation @s bs.var3 *= -1 bs.const
+   scoreboard players operation @s bs.var4 *= -1 bs.const
 
    # Perform the basic rotation
-   function glib.math:algebra/basis_rotation_3d
+   function bs.math:algebra/basis_rotation_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res2"},"color":"gold"}]
-   ```
-
----
-
-## Bitwise
-
-`glib.math:bitwise`: This folder contains various bitwise operators to
-apply to scores.
-
-
-
-<div align=center>
-   <p> ⚠️ Euh, for your own safety, reduce the volume before watching this video ^^'</p>
-    <a href="https://youtu.be/itgPhvTMSZQ" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
-
----
-
-### logical AND
-
-`and`: Computes the bitwise conjunction of the two input numbers
-
--  Takes the scores `glib.var0` and `glib.var1` as parameters
--  Returns the value of the operation `glib.var0 & glib.var1` on the
-   score `glib.res0`.
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 & 57
-   ```
-   # Once
-   scoreboard players set @s glib.var0 -9
-   scoreboard players set @s glib.var1 57
-   function glib.math:bitwise/and
-   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-   ```
-
----
-
-### Get number of bits
-
-`get_number_of_bits`: Calculates the number of bits needed to store
-the input
-
--  Takes the score `glib.var0` as parameter
--  Returns the number of bits needed to store the input
--  If the input is negative, returns the number of bits needed to store
-   the absolute value of the number
-
-*Example:*
-
--  Calculate and display the number of bits of 12
-   ```
-   # Once
-   scoreboard players set @s glib.var0 12
-   function glib.math:bitwise/get_number_of_bits
-   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-   ```
-
----
-
-### logical NOT
-
-`not`: Computes the bit by bit negation of the input
-
--  Takes the score `glib.var0` as parameter
--  Returns the value of the operation `~glib.var0` on the score
-   `glib.res0`.
-
-*Example:*
-
--  Calculate and display ~452
-   ```
-   # Once
-   scoreboard players set @s glib.var0 452
-   function glib.math:bitwise/not
-   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-   ```
-
----
-
-### OR logic
-
-`or`: Computes the bit to bit disjunction of the two input numbers
-
--  Takes as parameters the scores `glib.var0` and `glib.var1`.
--  Returns the value of the operation `glib.var0 | glib.var1` on the
-   score `glib.res0`.
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 \| 57.
-   ```
-   # Once
-   scoreboard players set @s glib.var0 -9
-   scoreboard players set @s glib.var1 57
-   function glib.math:bitwise/gold
-   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-   ```
-
----
-
-### Complement to 2
-
-`two_complement`: Computes the two's complement of the input
-
--  Takes the score `glib.var0` as parameter
--  Returns the two's complement of `glib.var0` over the score
-   `glib.res0`.
-
-*Example:*
-
--  Calculate and display the two's complement of 12
-   ```
-   # Once
-   scoreboard players set @s glib.var0 12
-   function glib.math:bitwise/to_complement
-   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
-   ```
-
----
-
-### OR exclusive
-
-`xor`: Computes the exclusive bit by bit disjunction of the two input
-numbers
-
--  Takes as parameters the scores `glib.var0` and `glib.var1`.
--  Returns the value of the operation `glib.var0 ^ glib.var1` on the
-   score `glib.res0`
--  If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-
-*Example:*
-
--  Calculate and display -9 ^ 57
-   ```
-   # Once
-   scoreboard players set @s glib.var0 -9
-   scoreboard players set @s glib.var1 57
-   function glib.math:bitwise/xor
-   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res2"},"color":"gold"}]
    ```
 
 ---
 
 ## Common
 
-`glib.math:common/`: this folder contains the usual math functions
+**`bs.math:common/_`**
+
+This folder contains the usual math functions
 
 ---
 
 ### Rounded division
 
-`divide`: Allows you to divide one number by another by rounding the
+**`bs.math:common/divide`**
+
+Allows you to divide one number by another by rounding the
 result to the nearest whole number (where Minecraft rounds down to the
 next whole number).
 
--  Takes as input the scores `glib.var0` and `glib.var1`
--  Returns the result on the score `glib.res0`
+:Inputs:
 
-*Example:*
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
 
--  Calculate 9 / 5:
+   (score) `@s bs.var0`
+   : The numerator
+
+   (score) `@s bs.var1`
+   : The denominator
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the division
+
+:Example:
+
+   Calculate $9/5$
    ```
    # Once
-   scoreboard players set @s glib.var0 9
-   scoreboard players set @s glib.var1 5
-   function glib.math:common/divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 9
+   scoreboard players set @s bs.var1 5
+   function bs.math:common/divide
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
@@ -273,44 +160,80 @@ next whole number).
 
 ### Exponential
 
-`exp`: Compute the exponential of the number passed in parameter on
-the score `glib.var0` and return the result on the score `glib.res0`
+**`bs.math:common/exp`**
 
--  In order to take into account a certain number of decimals,
-   `glib.var0` must be multiplied by 100 and `glib.res0` is
-   multiplied by 1000
--  Due to technical constraints, this system is limited to a glib.var0
-   within an interval of `[-6000,12000]` (i.e. `[-6;12]` in real
-   value)
+Compute the exponential of the number passed in parameter on
+the score `bs.var0` and return the result on the score `bs.res0`
 
-*Example:*
+:Inputs:
 
--  Calculate exp(3):
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
+
+   ```{admonition} Technical limitation
+   :class: important
+   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
+   ```
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $exp(3)$
    ```
    # Once
-   scoreboard players set @s glib.var0 300
-   function glib.math:common/exp
-   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 300
+   function bs.math:common/exp
+   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/exp.png)
+
+```{note}
+We are looking for a better implementation of this function. If you have any ideas, please join our [Discord server](https://discord.gg/E8qq6tN) to discuss with us!
+```
 
 ---
 
 ### Factorial
 
-`factorial`: Compute the factorial of the number passed in parameter
-on the score `glib.var0` and return the result on the score
-`glib.res0`.
+**`bs.math:common/factorial`**
 
-*Example:*
+Compute the factorial of the number
 
--  Compute 3!
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number to be factorialized
+
+   ```{admonition} Technical limitation
+   :class: important
+
+   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[0,12]`
+   ```
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the operation
+
+:Example:
+
+   Compute $3!$
    ```
    # Once
-   scoreboard players set @s glib.var0 3
-   function glib.math:common/factorial
-   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 3
+   function bs.math:common/factorial
+   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/factorial.png)
@@ -319,128 +242,243 @@ on the score `glib.var0` and return the result on the score
 
 ### Greatest common denominator
 
-`gcd`: Compute the greatest common denominator of the two numbers
-passed in parameter on the scores `glib.var0` and `glib.var1` then
-return the result on the score `glib.res0`.
+**`bs.math:common/gcd`**
 
-*Example:*
+Compute the greatest common denominator of two numbers
 
--  Calculate the greatest common denominator between 16 and 12 :
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   (score) `@s bs.var0`
+   : The first number
+
+   (score) `@s bs.var1`
+   : The second number
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The greatest common denominator
+
+:Example:
+
+   Calculate the greatest common denominator between 16 and 12
    ```
    # Once
-   scoreboard players set @s glib.var0 16
-   scoreboard players set @s glib.var1 12
-   function glib.math:common/gcd
-   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 16
+   scoreboard players set @s bs.var1 12
+   function bs.math:common/gcd
+   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/gcd.png)
 
 ---
 
-### Neperian logarithm
+### Logarithm
 
-`log`: Compute the Neperian logarithm (base e) of the number passed in
-parameter on the score `glib.var0` and return the result on the score
-`glib.res0`.
+::::{tab-set}
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+:::{tab-item} Base e (Neperian)
 
-*Example:*
+**`bs.math:common/log`**
 
--  Calculate ln(28):
+Compute the Neperian logarithm (base e) of a number
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   
+   (score) `@s bs.var0`
+   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $ln(28)$
    ```
    # Once
-   scoreboard players set @s glib.var0 28000
-   function glib.math:common/log
-   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 28000
+   function bs.math:common/log
+   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
----
+:::
+:::{tab-item} Base 2
 
-### Logarithm in base 2
+**`bs.math:common/log2`**
 
-`log2`: Compute the logarithm in base 2 of the number passed in
-parameter on the score `glib.var0` and return the result on the score
-`glib.res0`.
+Compute the logarithm in base 2 of a number
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+:Inputs:
 
-*Example:*
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
 
--  Calculate log2(28):
-   ```
-   # Once
-   scoreboard players set @s glib.var0 28000
-   function glib.math:common/log2
-   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
-   ```
+   (score) `@s bs.var0`
+   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
----
+:Output:
 
-### Logarithm in base 10
+   (score) `@s bs.res0`
+   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-`log10`: Compute the logarithm in base 10 of the number passed in
-parameter on the score `glib.var0` and return the result on the score
-`glib.res0`.
+:Example:
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
-
-*Example:*
-
--  Calculate log10(28):
+   Calculate $log_2(28)$:
    ```
    # Once
-   scoreboard players set @s glib.var0 28000
-   function glib.math:common/log10
-   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 28000
+   function bs.math:common/log2
+   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
+:::
+:::{tab-item} Base 10
 
----
+**`bs.math:common/log10`**
 
-### Logarithm in base a
+Compute the logarithm in base 10 of a number
 
-`loga`: Computes the logarithm of the number passed in parameter on
-the score `glib.var0` using as base the name passed in parameter on
-the score `glib.var1` and returns the result on the score
-`glib.res0`
+:Inputs:
 
--  For precision, the parameters of the function and the returned value
-   are multiplied by 1000 in order to store 3 decimals
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
 
-*Example:*
+   (score) `@s bs.var0`
+   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
--  Calculate log4(28):
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $log_{10}(28)$
    ```
    # Once
-   scoreboard players set @s glib.var0 28000
-   scoreboard players set @s glib.var1 4
-   function glib.math:common/loga
-   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 28000
+   function bs.math:common/log10
+   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
----
+:::
+:::{tab-item} Base a
+
+**`bs.math:common/loga`**
+
+Computes the logarithm in base a of a number
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+   (score) `@s bs.var1`
+   : The base of the logarithm (not shifted)
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Example:
+
+   Calculate $log_4(28)$
+   ```
+   # Once
+   scoreboard players set @s bs.var0 28000
+   scoreboard players set @s bs.var1 4
+   function bs.math:common/loga
+   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   ```
+
+:::
+::::
 
 ### Power
 
-`pow`: Compute the product of the number passed in parameter on the
-score `glib.var0` raised to the power of the number passed in
-parameter on the score `glib.var1`, then return the result on the
-score `glib.res0`
+::::{tab-set}
+:::{tab-item} Normal
 
-*Example:*
+**`bs.math:common/pow`**
 
--  Compute 2^6:
+Compute $x^y$
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The base
+
+   (score) `@s bs.var1`
+   : The exponent
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation
+
+:Example:
+
+   Compute $2^6$
    ```
    # Once
-   scoreboard players set @s glib.var0 2
-   scoreboard players set @s glib.var1 6
-   function glib.math:common/pow
-   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 2
+   scoreboard players set @s bs.var1 6
+   function bs.math:common/pow
+   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
+:::
+:::{tab-item} Scale 3
+
+
+**`bs.math:common/pow/scale/3`**
+
+Compute $x^y$
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The base, a number shifted by 3 digits (1,2345 -> 1234)
+
+   (score) `@s bs.var1`
+   : The exponent, not shifted
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation, a number shifted by 3 digits (1,2345 -> 1234)
+
+:Example:
+
+   Compute $2.345^6$
+   ```
+   # Once
+   scoreboard players set @s bs.var0 2345
+   scoreboard players set @s bs.var1 6
+   function bs.math:common/pow/scale/3
+   tellraw @a [{"text": "2.345^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   ```
+
+:::
+::::
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/power.png)
 
@@ -448,22 +486,31 @@ score `glib.res0`
 
 ### Square root
 
-`sqrt`: Compute the square root of the number (ex: Sqrt(16) = 4
-because 4^2 = 4x4 = 16) 
+**`bs.math:common/sqrt`**
 
--  Takes as parameter the score `glib.var0` greater than or equal to 0
-   (corresponding to a value with a precision of 1:1)
--  Returns the value of the cosine on the score `glib.res0` greater
-   than or equal to 0 (corresponding to a value with a precision of 1:1)
+Compute the square root of the number
 
-*Example:*
+:Inputs:
 
--  Calculate and display the square root of 42:
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The number you want to calculate the square root of
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation
+
+:Example:
+
+   Calculate and display $\sqrt{42}$
    ```
    # Once
-   scoreboard players set @s glib.var0 42
-   function glib.math:common/sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 42
+   function bs.math:common/sqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
@@ -472,7 +519,9 @@ because 4^2 = 4x4 = 16) 
 
 ## Special
 
-`glib.math:special/`: this folder contains functions that are of
+**`bs.math:special/_`**
+
+This folder contains functions that are of
 special interest in algortihms (but not or not much in formal
 mathematics)
 
@@ -480,41 +529,68 @@ mathematics)
 
 ### Retrieve the next power of 2
 
-`get_next_pow2`: compute the power of 2 directly superior to the
-number given in parameter on the score `glib.var0` and return the
-result on `glib.res0`.
+**`bs.math:special/get_next_pow2`**
 
-*Example:*
+Compute the power of 2 directly superior to the
+number given in parameter.
 
--  Find the power of 2 greater than 43
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The number from which you want to calculate the next power of 2
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation
+
+:Example:
+
+   Find the power of 2 greater than 43
    ```
    # Once
-   scoreboard players set @s glib.var0 43
-   function glib.math:special/get_next_pow2
-   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 43
+   function bs.math:special/get_next_pow2
+   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ---
 
 ### Random number generator
 
-`random`: Generates a random number and returns the result on the
-`glib.res0` score
+**`bs.math:special/random`**
 
--  To reduce this interval, execute the function then do a "modulo"
+Generates a random number
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+:Output:
+
+   (score) `@s bs.res0`
+   : An integer random number between $-2^{31}$ and $2^{31}-1$
+
+   ```{tip}
+   To reduce this interval, execute the function then do a "modulo"
    operation on the result (random % 10 -> the random number will be
    included in the interval [0;9])
+   ```
 
-*Example:*
+:Example:
 
--  Get and display a random number between 0 and 100:
+   Get and display a random number between 0 and 100:
    ```
    # Once
-   function glib.math:special/random
-   scoreboard players operation @s glib.res0 %= 101 glib.const
-   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   function bs.math:special/random
+   scoreboard players operation @s bs.res0 %= 101 bs.const
+   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
 
-   Beware: the score `glib.const` does not contain all possible
+   Beware: the score `bs.const` does not contain all possible
    values. Make sure the value you want to use exists and initialize it
    if necessary.
    ```
@@ -525,51 +601,73 @@ result on `glib.res0`.
 
 ## Trigonometry
 
-`glib.math:trig/`: this folder contains basic trigonometry functions,
+**`bs.math:trig/_`**
+
+This folder contains basic trigonometry functions,
 opening a lot of doors to creative possibilities in Minecraft.
 
 ---
 
-### Arccosinus
+### Arccosine
 
-`arccos`: Calculate the arccosinus of a value between -1 and 1
+**`bs.math:trgi/arccos`**
 
--  Takes as parameter the score `glib.var0` between -1000 and 1000
-   (translating a value from -1 to 1 with a precision of 1:1000)
--  Returns the value of the arccosine on the score `glib.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Calculate the arccosinus of a value between -1 and 1
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arccos of 0,42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arccos of 0,42
    ```
    # Once
-   scoreboard players set @s glib.var0 420
-   function glib.math:trig/arccos
-   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 420
+   function bs.math:trig/arccos
+   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
 
 ---
 
-### Arcsinus
+### Arcsine
 
-`arcsin`: Compute the arcsinus of a value between -1 and 1
+**`bs.math:trg/arcsin`**
 
--  Takes as parameter the score `glib.var0` between -1000 and 1000
-   (translating a value from -1 to 1 with a precision of 1:1000)
--  Returns the value of the arcsine on the score `glib.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Compute the arcsinus of a value between -1 and 1
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arcsinus of 0.42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arcsinus of 0.42
    ```
    # Once
-   scoreboard players set @s glib.var0 420
-   function glib.math:trig/arcsin
-   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 420
+   function bs.math:trig/arcsin
+   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
@@ -578,92 +676,149 @@ opening a lot of doors to creative possibilities in Minecraft.
 
 ### Arctangent
 
-`arctan`: Compute the arctangent of a value between -infinite and
-+infinite
+**`bs.math:trig/arctan`**
 
--  Takes as parameter the score `glib.var0` (translating a value with
-   a precision of 1:1000)
--  Returns the value of the arctangeant on the score `glib.res0`
-   (corresponding to an angle with a precision of 1:1 degree)
+Compute the arctangent of a value between -infinite and +infinite
 
-*Example:*
+:Inputs:
 
--  Calculate and display the arctan of 0.42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.res0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arctan of 0.42
    ```
    # Once
-   scoreboard players set @s glib.var0 420
-   function glib.math:trig/arctan
-   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"glib.res0"},"color":"gold"}]
+   scoreboard players set @s bs.var0 420
+   function bs.math:trig/arctan
+   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
    ```
 
 ---
 
 ### Cosine
 
-`cos`: Compute the cosine of an angle between 0 and 360
+**`bs.math:trig/cos`**
 
--  Takes as parameter the score `glib.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the cosine on the score `glib.res0` between
-   -1000 and 1000 (translating a value from -1 to 1 with a precision of
-   1:1000)
+Compute the cosine of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the cosine of 42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+   (score) `@s bs.var0`
+   : The angle in degrees
+
+:Outputs:
+
+   (score) `@s bs.res0`
+   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the cosine of 42
    ```
    # Once
-   scoreboard players set @s glib.var0 42
-   function glib.math:trig/cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 42
+   function bs.math:trig/cos
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
 
 ---
 
-### Sinus
+### Sine
 
-`sin`: Computes the sine of an angle between 0 and 360
+**`bs.math:trig/sin`**
 
--  Takes as parameter the score `glib.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the sine on the score `glib.res0` between
-   -1000 and 1000 (translating a value from -1 to 1 with a precision of
-   1:1000)
+Computes the sine of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the sine of 42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+   (score) `@s bs.var0`
+   : The angle in degrees
+
+:Outputs:
+
+   (score) `@s bs.res0`
+   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the sine of 42
    ```
    # Once
-   scoreboard players set @s glib.var0 42
-   function glib.math:trig/sin
-   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 42
+   function bs.math:trig/sin
+   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/sin.png)
+![](img/2023-02-07-09-00-23.png)
 
 ---
 
 ### Tangent
 
-`tan`: Compute the tangeant of an angle between 0 and 360
+**`bs.math:trig/tan`**
 
--  Takes as parameter the score `glib.var0` between 0 and 360
-   (corresponding to an angle with a precision of 1:1 degree)
--  Returns the value of the tangeante on the score `glib.res0` between
-   -infinite and +infinite (translating a value with a precision of
-   1:1000)
+Compute the tangeant of an angle between 0 and 360
 
-*Example:*
+:Inputs:
 
--  Calculate and display the tengeante of 42
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.var0`
+   : The angle in degrees (not shifted)
+
+:Outputs:
+
+   (score) `@s bs.res0`
+   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
+
+:Example:
+
+   Calculate and display the tengeante of 42
    ```
    # Once
-   scoreboard players set @s glib.var0 42
-   function glib.math:trig/tan
-   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "glib.res0"}, "color": "gold"}]
+   scoreboard players set @s bs.var0 42
+   function bs.math:trig/tan
+   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

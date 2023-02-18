@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 581 run setblock ~ ~ ~ note_block[instrument=snare,note=1,powered=true]
-execute if score @s glib.blockId matches 582 run setblock ~ ~ ~ note_block[instrument=snare,note=1,powered=false]
-execute if score @s glib.blockId matches 583 run setblock ~ ~ ~ note_block[instrument=snare,note=2,powered=true]
-execute if score @s glib.blockId matches 584 run setblock ~ ~ ~ note_block[instrument=snare,note=2,powered=false]
-execute if score @s glib.blockId matches 585 run setblock ~ ~ ~ note_block[instrument=snare,note=3,powered=true]

@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 552 run setblock ~ ~ ~ note_block[instrument=basedrum,note=11,powered=false]
+execute if score @s bs.blockId matches 553 run setblock ~ ~ ~ note_block[instrument=basedrum,note=12,powered=true]
+execute if score @s bs.blockId matches 554 run setblock ~ ~ ~ note_block[instrument=basedrum,note=12,powered=false]
+execute if score @s bs.blockId matches 555 run setblock ~ ~ ~ note_block[instrument=basedrum,note=13,powered=true]
+execute if score @s bs.blockId matches 556 run setblock ~ ~ ~ note_block[instrument=basedrum,note=13,powered=false]

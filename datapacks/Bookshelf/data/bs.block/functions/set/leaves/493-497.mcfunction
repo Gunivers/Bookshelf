@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 493 run setblock ~ ~ ~ note_block[instrument=harp,note=7,powered=true]
+execute if score @s bs.blockId matches 494 run setblock ~ ~ ~ note_block[instrument=harp,note=7,powered=false]
+execute if score @s bs.blockId matches 495 run setblock ~ ~ ~ note_block[instrument=harp,note=8,powered=true]
+execute if score @s bs.blockId matches 496 run setblock ~ ~ ~ note_block[instrument=harp,note=8,powered=false]
+execute if score @s bs.blockId matches 497 run setblock ~ ~ ~ note_block[instrument=harp,note=9,powered=true]

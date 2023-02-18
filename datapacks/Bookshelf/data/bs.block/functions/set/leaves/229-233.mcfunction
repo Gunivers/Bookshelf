@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 229 run setblock ~ ~ ~ oak_leaves[distance=6,persistent=false,waterlogged=false]
+execute if score @s bs.blockId matches 230 run setblock ~ ~ ~ oak_leaves[distance=7,persistent=true,waterlogged=true]
+execute if score @s bs.blockId matches 231 run setblock ~ ~ ~ oak_leaves[distance=7,persistent=true,waterlogged=false]
+execute if score @s bs.blockId matches 232 run setblock ~ ~ ~ oak_leaves[distance=7,persistent=false,waterlogged=true]
+execute if score @s bs.blockId matches 233 run setblock ~ ~ ~ oak_leaves[distance=7,persistent=false,waterlogged=false]

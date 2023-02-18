@@ -1,0 +1,37 @@
+# This function was automatically generated.
+
+execute if entity @a[tag=bs.menu] run function bs.core:menu/main
+execute if entity @a[tag=bs.menu.debug] run function bs.core:menu/debug
+execute if entity @a[tag=bs.menu.debug.biome] run function bs.core:menu/debug/biome
+execute if entity @a[tag=bs.menu.debug.block] run function bs.core:menu/debug/block
+execute if entity @a[tag=bs.menu.debug.cache] run function bs.core:menu/debug/cache
+execute if entity @a[tag=bs.menu.debug.color] run function bs.core:menu/debug/color
+execute if entity @a[tag=bs.menu.debug.health] run function bs.core:menu/debug/health
+execute if entity @a[tag=bs.menu.debug.id] run function bs.core:menu/debug/id
+execute if entity @a[tag=bs.menu.debug.id.cuid] run function bs.core:menu/debug/id/cuid
+execute if entity @a[tag=bs.menu.debug.item] run function bs.core:menu/debug/item
+execute if entity @a[tag=bs.menu.debug.link] run function bs.core:menu/debug/link
+execute if entity @a[tag=bs.menu.debug.location] run function bs.core:menu/debug/location
+execute if entity @a[tag=bs.menu.debug.mapedit] run function bs.core:menu/debug/mapedit
+execute if entity @a[tag=bs.menu.debug.mapedit.brush] run function bs.core:menu/debug/mapedit/brush
+execute if entity @a[tag=bs.menu.debug.math] run function bs.core:menu/debug/math
+execute if entity @a[tag=bs.menu.debug.math.algebra] run function bs.core:menu/debug/math/algebra
+execute if entity @a[tag=bs.menu.debug.math.bitwise] run function bs.core:menu/debug/math/bitwise
+execute if entity @a[tag=bs.menu.debug.math.common] run function bs.core:menu/debug/math/common
+execute if entity @a[tag=bs.menu.debug.math.special] run function bs.core:menu/debug/math/special
+execute if entity @a[tag=bs.menu.debug.math.trig] run function bs.core:menu/debug/math/trig
+execute if entity @a[tag=bs.menu.debug.memory] run function bs.core:menu/debug/memory
+execute if entity @a[tag=bs.menu.debug.move] run function bs.core:menu/debug/move
+execute if entity @a[tag=bs.menu.debug.move.by_motion] run function bs.core:menu/debug/move/by_motion
+execute if entity @a[tag=bs.menu.debug.orientation] run function bs.core:menu/debug/orientation
+execute if entity @a[tag=bs.menu.debug.schedule] run function bs.core:menu/debug/schedule
+execute if entity @a[tag=bs.menu.debug.time] run function bs.core:menu/debug/time
+execute if entity @a[tag=bs.menu.debug.tree] run function bs.core:menu/debug/tree
+execute if entity @a[tag=bs.menu.debug.vector] run function bs.core:menu/debug/vector
+execute if entity @a[tag=bs.menu.debug.vector.classic] run function bs.core:menu/debug/vector/classic
+execute if entity @a[tag=bs.menu.debug.vector.local] run function bs.core:menu/debug/vector/local
+execute if entity @a[tag=bs.menu.debug.view] run function bs.core:menu/debug/view
+execute if entity @a[tag=bs.menu.debug.xp] run function bs.core:menu/debug/xp
+execute if entity @a[tag=bs.menu.debug.example] run function bs.core:menu/debug/example
+execute if entity @a[tag=bs.menu.debug.lgdir] run function bs.core:menu/debug/lgdir
+execute if entity @a[tag=bs.menu.gamerules] run function bs.core:menu/gamerules

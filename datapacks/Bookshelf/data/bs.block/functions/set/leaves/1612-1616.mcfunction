@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 1612 run setblock ~ ~ ~ piston[extended=false,facing=up]
+execute if score @s bs.blockId matches 1613 run setblock ~ ~ ~ piston[extended=false,facing=down]
+execute if score @s bs.blockId matches 1614 run setblock ~ ~ ~ piston_head[type=normal,facing=north,short=true]
+execute if score @s bs.blockId matches 1615 run setblock ~ ~ ~ piston_head[type=sticky,facing=north,short=true]
+execute if score @s bs.blockId matches 1616 run setblock ~ ~ ~ piston_head[type=normal,facing=north,short=false]

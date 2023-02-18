@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 19733 run setblock ~ ~ ~ big_dripleaf[facing=south,tilt=full,waterlogged=false]
+execute if score @s bs.blockId matches 19734 run setblock ~ ~ ~ big_dripleaf[facing=west,tilt=none,waterlogged=true]
+execute if score @s bs.blockId matches 19735 run setblock ~ ~ ~ big_dripleaf[facing=west,tilt=none,waterlogged=false]
+execute if score @s bs.blockId matches 19736 run setblock ~ ~ ~ big_dripleaf[facing=west,tilt=unstable,waterlogged=true]
+execute if score @s bs.blockId matches 19737 run setblock ~ ~ ~ big_dripleaf[facing=west,tilt=unstable,waterlogged=false]

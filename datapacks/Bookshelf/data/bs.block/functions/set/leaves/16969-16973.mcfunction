@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 16969 run setblock ~ ~ ~ target[power=0]
+execute if score @s bs.blockId matches 16970 run setblock ~ ~ ~ target[power=1]
+execute if score @s bs.blockId matches 16971 run setblock ~ ~ ~ target[power=2]
+execute if score @s bs.blockId matches 16972 run setblock ~ ~ ~ target[power=3]
+execute if score @s bs.blockId matches 16973 run setblock ~ ~ ~ target[power=4]

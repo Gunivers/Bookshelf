@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 5171 run setblock ~ ~ ~ vine[east=true,north=true,south=false,up=true,west=true]
+execute if score @s bs.blockId matches 5172 run setblock ~ ~ ~ vine[east=true,north=true,south=false,up=true,west=false]
+execute if score @s bs.blockId matches 5173 run setblock ~ ~ ~ vine[east=true,north=true,south=false,up=false,west=true]
+execute if score @s bs.blockId matches 5174 run setblock ~ ~ ~ vine[east=true,north=true,south=false,up=false,west=false]
+execute if score @s bs.blockId matches 5175 run setblock ~ ~ ~ vine[east=true,north=false,south=true,up=true,west=true]

@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 9644 run setblock ~ ~ ~ birch_door[facing=south,half=lower,hinge=left,open=true,powered=false]
+execute if score @s bs.blockId matches 9645 run setblock ~ ~ ~ birch_door[facing=south,half=lower,hinge=left,open=false,powered=true]
+execute if score @s bs.blockId matches 9646 run setblock ~ ~ ~ birch_door[facing=south,half=lower,hinge=left,open=false,powered=false]
+execute if score @s bs.blockId matches 9647 run setblock ~ ~ ~ birch_door[facing=south,half=lower,hinge=right,open=true,powered=true]
+execute if score @s bs.blockId matches 9648 run setblock ~ ~ ~ birch_door[facing=south,half=lower,hinge=right,open=true,powered=false]

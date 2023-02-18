@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 12144 run setblock ~ ~ ~ prismarine_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=none]
-execute if score @s glib.blockId matches 12145 run setblock ~ ~ ~ prismarine_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=low]
-execute if score @s glib.blockId matches 12146 run setblock ~ ~ ~ prismarine_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=tall]
-execute if score @s glib.blockId matches 12147 run setblock ~ ~ ~ prismarine_wall[east=none,north=tall,south=none,up=true,waterlogged=false,west=none]
-execute if score @s glib.blockId matches 12148 run setblock ~ ~ ~ prismarine_wall[east=none,north=tall,south=none,up=true,waterlogged=false,west=low]

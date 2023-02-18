@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 16645 run setblock ~ ~ ~ warped_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=false]
-execute if score @s glib.blockId matches 16646 run setblock ~ ~ ~ warped_stairs[facing=south,half=bottom,shape=outer_right,waterlogged=true]
-execute if score @s glib.blockId matches 16647 run setblock ~ ~ ~ warped_stairs[facing=south,half=bottom,shape=outer_right,waterlogged=false]
-execute if score @s glib.blockId matches 16648 run setblock ~ ~ ~ warped_stairs[facing=west,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 16649 run setblock ~ ~ ~ warped_stairs[facing=west,half=top,shape=straight,waterlogged=false]

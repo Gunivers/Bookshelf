@@ -1,2 +1,0 @@
-tellraw @s [{"text": "[glib.math documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://glibs.rtfd.io/en/latest/math.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
-scoreboard players set glib.math glib.activeModule 1

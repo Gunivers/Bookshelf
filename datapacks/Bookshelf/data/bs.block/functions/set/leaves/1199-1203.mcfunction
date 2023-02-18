@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 1199 run setblock ~ ~ ~ note_block[instrument=banjo,note=10,powered=true]
+execute if score @s bs.blockId matches 1200 run setblock ~ ~ ~ note_block[instrument=banjo,note=10,powered=false]
+execute if score @s bs.blockId matches 1201 run setblock ~ ~ ~ note_block[instrument=banjo,note=11,powered=true]
+execute if score @s bs.blockId matches 1202 run setblock ~ ~ ~ note_block[instrument=banjo,note=11,powered=false]
+execute if score @s bs.blockId matches 1203 run setblock ~ ~ ~ note_block[instrument=banjo,note=12,powered=true]

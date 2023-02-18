@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 4496 run setblock ~ ~ ~ spruce_trapdoor[facing=north,half=bottom,open=false,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 4497 run setblock ~ ~ ~ spruce_trapdoor[facing=north,half=bottom,open=false,powered=true,waterlogged=false]
-execute if score @s glib.blockId matches 4498 run setblock ~ ~ ~ spruce_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=true]
-execute if score @s glib.blockId matches 4499 run setblock ~ ~ ~ spruce_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 4500 run setblock ~ ~ ~ spruce_trapdoor[facing=south,half=top,open=true,powered=true,waterlogged=true]

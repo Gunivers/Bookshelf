@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 847 run setblock ~ ~ ~ note_block[instrument=guitar,note=9,powered=true]
+execute if score @s bs.blockId matches 848 run setblock ~ ~ ~ note_block[instrument=guitar,note=9,powered=false]
+execute if score @s bs.blockId matches 849 run setblock ~ ~ ~ note_block[instrument=guitar,note=10,powered=true]
+execute if score @s bs.blockId matches 850 run setblock ~ ~ ~ note_block[instrument=guitar,note=10,powered=false]
+execute if score @s bs.blockId matches 851 run setblock ~ ~ ~ note_block[instrument=guitar,note=11,powered=true]

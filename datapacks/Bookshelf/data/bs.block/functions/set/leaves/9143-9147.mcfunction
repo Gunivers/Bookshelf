@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 9143 run setblock ~ ~ ~ quartz_slab[type=top,waterlogged=true]
+execute if score @s bs.blockId matches 9144 run setblock ~ ~ ~ quartz_slab[type=top,waterlogged=false]
+execute if score @s bs.blockId matches 9145 run setblock ~ ~ ~ quartz_slab[type=bottom,waterlogged=true]
+execute if score @s bs.blockId matches 9146 run setblock ~ ~ ~ quartz_slab[type=bottom,waterlogged=false]
+execute if score @s bs.blockId matches 9147 run setblock ~ ~ ~ quartz_slab[type=double,waterlogged=true]

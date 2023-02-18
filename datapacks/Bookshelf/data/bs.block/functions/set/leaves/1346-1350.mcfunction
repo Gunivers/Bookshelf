@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 1346 run setblock ~ ~ ~ yellow_bed[facing=north,occupied=false,part=foot]
+execute if score @s bs.blockId matches 1347 run setblock ~ ~ ~ yellow_bed[facing=south,occupied=true,part=head]
+execute if score @s bs.blockId matches 1348 run setblock ~ ~ ~ yellow_bed[facing=south,occupied=true,part=foot]
+execute if score @s bs.blockId matches 1349 run setblock ~ ~ ~ yellow_bed[facing=south,occupied=false,part=head]
+execute if score @s bs.blockId matches 1350 run setblock ~ ~ ~ yellow_bed[facing=south,occupied=false,part=foot]

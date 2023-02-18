@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 16086 run setblock ~ ~ ~ bell[attachment=double_wall,facing=south,powered=false]
+execute if score @s bs.blockId matches 16087 run setblock ~ ~ ~ bell[attachment=double_wall,facing=west,powered=true]
+execute if score @s bs.blockId matches 16088 run setblock ~ ~ ~ bell[attachment=double_wall,facing=west,powered=false]
+execute if score @s bs.blockId matches 16089 run setblock ~ ~ ~ bell[attachment=double_wall,facing=east,powered=true]
+execute if score @s bs.blockId matches 16090 run setblock ~ ~ ~ bell[attachment=double_wall,facing=east,powered=false]

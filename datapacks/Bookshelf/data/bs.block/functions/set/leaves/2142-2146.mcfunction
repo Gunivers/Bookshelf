@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 2142 run setblock ~ ~ ~ fire[age=14,east=true,north=true,south=true,up=true,west=true]
+execute if score @s bs.blockId matches 2143 run setblock ~ ~ ~ fire[age=14,east=true,north=true,south=true,up=true,west=false]
+execute if score @s bs.blockId matches 2144 run setblock ~ ~ ~ fire[age=14,east=true,north=true,south=true,up=false,west=true]
+execute if score @s bs.blockId matches 2145 run setblock ~ ~ ~ fire[age=14,east=true,north=true,south=true,up=false,west=false]
+execute if score @s bs.blockId matches 2146 run setblock ~ ~ ~ fire[age=14,east=true,north=true,south=false,up=true,west=true]

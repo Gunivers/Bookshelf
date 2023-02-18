@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 16528 run setblock ~ ~ ~ crimson_stairs[facing=north,half=top,shape=straight,waterlogged=true]
-execute if score @s glib.blockId matches 16529 run setblock ~ ~ ~ crimson_stairs[facing=north,half=top,shape=straight,waterlogged=false]
-execute if score @s glib.blockId matches 16530 run setblock ~ ~ ~ crimson_stairs[facing=north,half=top,shape=inner_left,waterlogged=true]
-execute if score @s glib.blockId matches 16531 run setblock ~ ~ ~ crimson_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 16532 run setblock ~ ~ ~ crimson_stairs[facing=north,half=top,shape=inner_right,waterlogged=true]

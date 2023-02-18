@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 18498 run setblock ~ ~ ~ purple_candle[candles=3,lit=true,waterlogged=false]
+execute if score @s bs.blockId matches 18499 run setblock ~ ~ ~ purple_candle[candles=3,lit=false,waterlogged=true]
+execute if score @s bs.blockId matches 18500 run setblock ~ ~ ~ purple_candle[candles=3,lit=false,waterlogged=false]
+execute if score @s bs.blockId matches 18501 run setblock ~ ~ ~ purple_candle[candles=4,lit=true,waterlogged=true]
+execute if score @s bs.blockId matches 18502 run setblock ~ ~ ~ purple_candle[candles=4,lit=true,waterlogged=false]

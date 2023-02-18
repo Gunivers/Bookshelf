@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 21117 run setblock ~ ~ ~ deepslate_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=low]
+execute if score @s bs.blockId matches 21118 run setblock ~ ~ ~ deepslate_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=tall]
+execute if score @s bs.blockId matches 21119 run setblock ~ ~ ~ deepslate_brick_wall[east=none,north=none,south=low,up=false,waterlogged=true,west=none]
+execute if score @s bs.blockId matches 21120 run setblock ~ ~ ~ deepslate_brick_wall[east=none,north=none,south=low,up=false,waterlogged=true,west=low]
+execute if score @s bs.blockId matches 21121 run setblock ~ ~ ~ deepslate_brick_wall[east=none,north=none,south=low,up=false,waterlogged=true,west=tall]

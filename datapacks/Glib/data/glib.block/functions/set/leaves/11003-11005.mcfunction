@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 11003 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s glib.blockId matches 11004 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=true]
-execute if score @s glib.blockId matches 11005 run setblock ~ ~ ~ end_stone_brick_stairs[facing=west,half=bottom,shape=inner_right,waterlogged=false]

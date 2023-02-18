@@ -1,2 +1,3 @@
 myst-parser
 sphinx-book-theme
+sphinx-design

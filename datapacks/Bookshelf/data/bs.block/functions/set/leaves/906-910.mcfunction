@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 906 run setblock ~ ~ ~ note_block[instrument=chime,note=13,powered=false]
+execute if score @s bs.blockId matches 907 run setblock ~ ~ ~ note_block[instrument=chime,note=14,powered=true]
+execute if score @s bs.blockId matches 908 run setblock ~ ~ ~ note_block[instrument=chime,note=14,powered=false]
+execute if score @s bs.blockId matches 909 run setblock ~ ~ ~ note_block[instrument=chime,note=15,powered=true]
+execute if score @s bs.blockId matches 910 run setblock ~ ~ ~ note_block[instrument=chime,note=15,powered=false]

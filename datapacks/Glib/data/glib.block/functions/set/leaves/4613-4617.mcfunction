@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 4613 run setblock ~ ~ ~ jungle_trapdoor[facing=north,half=top,open=true,powered=true,waterlogged=false]
-execute if score @s glib.blockId matches 4614 run setblock ~ ~ ~ jungle_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=true]
-execute if score @s glib.blockId matches 4615 run setblock ~ ~ ~ jungle_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]
-execute if score @s glib.blockId matches 4616 run setblock ~ ~ ~ jungle_trapdoor[facing=north,half=top,open=false,powered=true,waterlogged=true]
-execute if score @s glib.blockId matches 4617 run setblock ~ ~ ~ jungle_trapdoor[facing=north,half=top,open=false,powered=true,waterlogged=false]

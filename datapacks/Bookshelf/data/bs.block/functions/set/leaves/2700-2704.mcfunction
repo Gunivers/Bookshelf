@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 2700 run setblock ~ ~ ~ redstone_wire[east=up,north=none,power=11,south=up,west=side]
+execute if score @s bs.blockId matches 2701 run setblock ~ ~ ~ redstone_wire[east=up,north=none,power=11,south=up,west=none]
+execute if score @s bs.blockId matches 2702 run setblock ~ ~ ~ redstone_wire[east=up,north=none,power=11,south=side,west=up]
+execute if score @s bs.blockId matches 2703 run setblock ~ ~ ~ redstone_wire[east=up,north=none,power=11,south=side,west=side]
+execute if score @s bs.blockId matches 2704 run setblock ~ ~ ~ redstone_wire[east=up,north=none,power=11,south=side,west=none]

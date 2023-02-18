@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values": [
+		"#minecraft:saplings",
+		"#minecraft:leaves",
+		"#bs.core:vegetals/flowers",
+		"#bs.core:vegetals/grass",
+		"#bs.core:vegetals/mushroom",
+		"#bs.core:vegetals/farming",
+		"minecraft:dead_bush",
+		"minecraft:sea_pickle",
+		"minecraft:lily_pad",
+		"minecraft:vine"
+	]
+}

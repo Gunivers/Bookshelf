@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 9496 run setblock ~ ~ ~ dark_oak_fence[east=true,north=true,south=false,waterlogged=true,west=false]
-execute if score @s glib.blockId matches 9497 run setblock ~ ~ ~ dark_oak_fence[east=true,north=true,south=false,waterlogged=false,west=true]
-execute if score @s glib.blockId matches 9498 run setblock ~ ~ ~ dark_oak_fence[east=true,north=true,south=false,waterlogged=false,west=false]
-execute if score @s glib.blockId matches 9499 run setblock ~ ~ ~ dark_oak_fence[east=true,north=false,south=true,waterlogged=true,west=true]
-execute if score @s glib.blockId matches 9500 run setblock ~ ~ ~ dark_oak_fence[east=true,north=false,south=true,waterlogged=true,west=false]

@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 669 run setblock ~ ~ ~ note_block[instrument=hat,note=20,powered=true]
-execute if score @s glib.blockId matches 670 run setblock ~ ~ ~ note_block[instrument=hat,note=20,powered=false]
-execute if score @s glib.blockId matches 671 run setblock ~ ~ ~ note_block[instrument=hat,note=21,powered=true]
-execute if score @s glib.blockId matches 672 run setblock ~ ~ ~ note_block[instrument=hat,note=21,powered=false]
-execute if score @s glib.blockId matches 673 run setblock ~ ~ ~ note_block[instrument=hat,note=22,powered=true]

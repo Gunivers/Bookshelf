@@ -1,3 +1,0 @@
-execute if score @s glib.blockId matches 19475..19483 run function glib.block:convert_to_item/nodes/19475-19483
-execute if score @s glib.blockId matches 19484..19492 run function glib.block:convert_to_item/nodes/19484-19492
-execute if score @s glib.blockId matches 19493..19503 run function glib.block:convert_to_item/nodes/19493-19503

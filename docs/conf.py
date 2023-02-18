@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Glibs'
-copyright = '2022, Gunivers'
+project = 'Bookshelf'
+copyright = '2023, Gunivers'
 author = 'Gunivers'
 
 # The full version, including alpha/beta/rc tags
@@ -30,8 +30,10 @@ author = 'Gunivers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'myst_parser'
+    'myst_parser',
+    'sphinx_design'
 ]
+myst_heading_anchors = 6
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -58,9 +60,10 @@ html_theme_options = {
     "path_to_docs": "docs",
     "use_repository_button": True,
     "use_edit_page_button": True,
+  "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
 }
 
-html_logo = "Glib-logo.png"
+html_logo = "logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

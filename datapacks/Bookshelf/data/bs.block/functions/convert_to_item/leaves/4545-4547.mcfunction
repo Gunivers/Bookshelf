@@ -1,0 +1,3 @@
+execute if score @s bs.blockId matches 4545..4545 run scoreboard players set @s bs.itemId 983
+execute if score @s bs.blockId matches 4546..4546 run scoreboard players set @s bs.itemId 983
+execute if score @s bs.blockId matches 4547..4547 run scoreboard players set @s bs.itemId 983

@@ -1,5 +1,0 @@
-execute if score @s glib.blockId matches 15998 run setblock ~ ~ ~ barrel[facing=east,open=true]
-execute if score @s glib.blockId matches 15999 run setblock ~ ~ ~ barrel[facing=east,open=false]
-execute if score @s glib.blockId matches 16000 run setblock ~ ~ ~ barrel[facing=south,open=true]
-execute if score @s glib.blockId matches 16001 run setblock ~ ~ ~ barrel[facing=south,open=false]
-execute if score @s glib.blockId matches 16002 run setblock ~ ~ ~ barrel[facing=west,open=true]

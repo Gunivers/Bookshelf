@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 9291 run setblock ~ ~ ~ acacia_fence_gate[facing=east,in_wall=true,open=true,powered=true]
+execute if score @s bs.blockId matches 9292 run setblock ~ ~ ~ acacia_fence_gate[facing=east,in_wall=true,open=true,powered=false]
+execute if score @s bs.blockId matches 9293 run setblock ~ ~ ~ acacia_fence_gate[facing=east,in_wall=true,open=false,powered=true]
+execute if score @s bs.blockId matches 9294 run setblock ~ ~ ~ acacia_fence_gate[facing=east,in_wall=true,open=false,powered=false]
+execute if score @s bs.blockId matches 9295 run setblock ~ ~ ~ acacia_fence_gate[facing=east,in_wall=false,open=true,powered=true]

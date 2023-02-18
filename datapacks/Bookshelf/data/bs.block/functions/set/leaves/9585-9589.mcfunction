@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 9585 run setblock ~ ~ ~ spruce_door[facing=south,half=lower,hinge=right,open=false,powered=true]
+execute if score @s bs.blockId matches 9586 run setblock ~ ~ ~ spruce_door[facing=south,half=lower,hinge=right,open=false,powered=false]
+execute if score @s bs.blockId matches 9587 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=left,open=true,powered=true]
+execute if score @s bs.blockId matches 9588 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=left,open=true,powered=false]
+execute if score @s bs.blockId matches 9589 run setblock ~ ~ ~ spruce_door[facing=west,half=upper,hinge=left,open=false,powered=true]

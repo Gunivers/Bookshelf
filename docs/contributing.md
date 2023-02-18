@@ -1,24 +1,24 @@
 # 🤝 Contribute
 
-:::{admonition} **Pour les francophones**
+Bookshelf is a community project and can therefore be developed by several people at the same time. To keep the project clean and consistent, it is necessary for the different developers to respect some conventions when developing functions. In the following page, you can find all the Bookshelf standards. This standard is signed by the prefix "**`bs.`**" in the namespaces so you can identify all the datapacks that use it.
+
+To contribute on this project, you must
+
+- Know the structure of a minecraft datapack (5-10 min to learn on internet)
+- Know the basic usage of git projects (20-30 min to learn on internet)
+- Be accessible to answer questions about your work
+
+:::{admonition} **For french speakers**
 :class: note
 Ce projet est réalisé principalement par des membres francophones mais à destination d'un public international. C'est pourquoi toute la lib ainsi que la documentation est en anglais.
 
 Si vous souhaitez contribuer mais que votre anglais n'est pas au point, vous pouvez utiliser des outils comme [DeepL](https://DeepL.com) puis demander une vérification.
 :::
 
-The Gunivers-Libs is a community project and can therefore be developed by several people at the same time. To keep the project clean and coherent, it is necessary for the different developers to respect certain conventions when developing functions.
-
-To contribute, you must
-
-- Know the structure of a minecraft datapack (5-10 min to learn on internet)
-- Know the basic usage of git projects (20-30 min to learn on internet)
-- Be accessible to answer questions about your work
-
 ---
 ## 👋 Getting started
 
-The only link you need to know : [glib.gunivers.net](http://glib.gunivers.net). On this page, you can find:
+The only link you need to know : [bs.gunivers.net](http://bs.gunivers.net). On this page, you can find:
 
 - [The Github repo](https://github.com/Gunivers/Glib)
 - [Our Discord server](https://discord.gg/E8qq6tN)
@@ -36,14 +36,14 @@ In order to speak with the same vocabulary, here is some words that have a speci
 ---
 ### 🏷️Nomenclature
 
-The Gunivers-Libs respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various folders (corresponding to a namespaces) according to their usefulness. If no namespace folder (i.e. module) seems appropriate for the addition of a feature, it can be considered to add a new namespace. A category must respect a particular structure:
+Bookshelf respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various folders (corresponding to a namespaces) according to their usefulness. If no namespace folder (i.e. module) seems appropriate for the addition of a feature, it can be considered to add a new namespace. A category must respect a particular structure:
 
 -  File and folders use the snake_case convention. Example: `my_function`
--  Score objectives use the camelCase convention with the `glib.` prefix. Example: `glib.myScore`
+-  Score objectives use the camelCase convention with the `bs.` prefix. Example: `bs.myScore`
 -  Fake players use the SCREAMING_SNAKE_CASE convention. Exemple: `MY_FAKE_PLAYER`. Add `#` before the name to hide the fake player in the scoreboard when there is no point to let it visible.
--  Tags use the UpperCamelCase convention with the `glib.` prefix. Example: `glib.MyTag`
+-  Tags use the UpperCamelCase convention with the `bs.` prefix. Example: `bs.MyTag`
 -  A feature is equal to an unique utility, so we should not hesitate to decompose its features in MVP in order to make it more readable and to promote the reusability of the MVP. In addition to these few constraints, the contributor is free to organize his files as he wishes as long as it remains coherent and understandable, and it respect the global structure detailed below.
--  In some folders are files nammed "`_`". The main purpose of these files is to reorganize the display of the Gunivers-Libs folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "`_`" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
+-  In some folders are files nammed "`_`". The main purpose of these files is to reorganize the display of Bookshelf folders during the auto-completion proposed by Brigadier. Thus, the first proposals are not all the files of a particular folder but the folder itself, followed only by "`_`" (wich can be easily removed to allow to press 'tab' again and continue to explore the tree structure). These files can be added in all folders, and if possible, they may describe and/or represent, the category in question or a redirection to the section of the documentation related to the category.
 
 ---
 ### 🌳 Tree structure
@@ -65,19 +65,6 @@ The lib must respect this global structure:
 
 :::{note}
    Functions, predicates, structures, loot tables etc. must respect the same structure.
-:::
-
-:::{important}
-
-   Modules can be separated in 2 types:
-   
-   - library: a set of tools for datapackers and/or builds for builders/terraformers
-   - system: ready-to-use system, for demos, mini-games or user interface that allow to configure a complex system
-   
-   The prefix of the namespace must be respectively:
-
-   - `glib.<moduleName>`
-   - `gsys.<moduleName>`
 :::
 
 In this structure, you can find a "feature" file and it's associated folder. This "feature" représent a "minimal viable product" (something that have a specific utility but that can require to be a part of another system in order to work)
@@ -119,38 +106,31 @@ Features files must respect this structure:
 ---
 ### 📄 File format
 
-All the functions of the Gunivers-Lib implement documentation to
+All the functions of Bookshelf implement documentation to
 describe for other developers as well as for users what the function is
 for and how to use it. This is what this one looks like:
 
 ```
-#__________________________________________________
-# INFO     Copyright © 2021 Gunivers.
+# INFO --------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
 # Authors       :
 # Contributors  : 
-# MC Version    :
-# Last check    :
 
-# Original path :
-# Documentation :
+# Version: (system version)
+# Created: jj/mm/yyyy (minecraft version)
+# Last verification: jj/mm/yyyy (minecraft version)
+# Last modification: jj/mm/yyyy (minecraft version)
+
+# Original path : bs.path:to/function
+# Documentation : https://link.to/documentation/page
 # Note          :
 
-#__________________________________________________
-# PARAMETERS
+# INIT --------------------------------------------
 
-# Input  : Foo (score) : Lorem Ipsum
-# Input  : Bar (tag)   : Lorem Ipsum
-# Output : Qux (score) : Lorem Ipsum
+# CONFIG ------------------------------------------
 
-#__________________________________________________
-# INIT
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE --------------------------------------------
 ```
 
 We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:
@@ -171,15 +151,15 @@ This lib use global scores, that are automatically created:
 
 | Scores name | Description |
 |:------:|:-----------:|
-| `glib` | Dedicated to temporary storage (ex: fake players) |
-| `glib.config` | Allow to define the behavior of some systems |
-| `glib.const` | Contain a huge numer of fakeplayers with constant score value |
-| `glib.data` | Uses by the `glib.core` module.<br> Do not use it without knowing exactly what you are doing. |
-| `glib.debug` | Determine the behavior of debug features |
-| `glib.debug.id` | A built-in ID palced on every entities for debug purposes |
-| `glib.lifetime`| If positive (default behavior), count the number of tick the entity exist. If negative, determine the number of ticks the entity will live (killed when the score reach -1). This socre is automatically incremented each tick. |
-| `glib.res[0-9]` | Default score for outputs |
-| `glib.var[0-9]` | Default score for inputs |
+| `bs` | Dedicated to temporary storage (ex: fake players) |
+| `bs.config` | Allow to define the behavior of some systems |
+| `bs.const` | Contain a huge numer of fakeplayers with constant score value |
+| `bs.data` | Uses by the `bs.core` module.<br> Do not use it without knowing exactly what you are doing. |
+| `bs.debug` | Determine the behavior of debug features |
+| `bs.debug.id` | A built-in ID palced on every entities for debug purposes |
+| `bs.lifetime`| If positive (default behavior), count the number of tick the entity exist. If negative, determine the number of ticks the entity will live (killed when the score reach -1). This socre is automatically incremented each tick. |
+| `bs.res[0-9]` | Default score for outputs |
+| `bs.var[0-9]` | Default score for inputs |
 
 ### ♻️ Conservation principle
 
@@ -197,15 +177,15 @@ To do so, each input - as well as other data used by the fonction - must be save
 This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.
 :::
 
-Also for scores, by default, the input and outputs should use respectively the scores `glib.var[0-9]` and `glib.res[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
+Also for scores, by default, the input and outputs should use respectively the scores `bs.var[0-9]` and `bs.res[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
 
 ```
 # Multiply the X coordinate of the source entity and place the entity at the new location
-function glib.location:get
-scoreboard players operation @s glib.locX *= 2 glib.const
-function glib.location:set
+function bs.location:get
+scoreboard players operation @s bs.locX *= 2 bs.const
+function bs.location:set
 ```
-In this exemple, the `get` function will return `glib.loc[X,Y,Z]` scores, that are also used as input for the `set` function.
+In this exemple, the `get` function will return `bs.loc[X,Y,Z]` scores, that are also used as input for the `set` function.
 
 ---
 ## 🤯 Advanced stuff
@@ -219,26 +199,25 @@ Welcome in the dark side! 😈
 
 In order to make use as easy as possible, each function must limit its dependencies as much as possible. It must then declare each of the variables it uses in the "INIT" part. It is not necessary to initialize variables used by child functions because child functions are supposed to initialize them. On the other hand, it is forbidden to neglect a declaration for any other reason (example: "Var1 is already used everywhere").
 
-Some scores, used by the lib in a global way, do not need to be
-declared. You can find the list of global scores by [here](https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core/-/blob/master/data/glib.core/functions/import/scores.mcfunction). Also, in order to simplify arithmetical operations, the lib define plenty of constants stored on the score `glib.const`. You can find them [here](https://gitlab.com/Altearn/gunivers/minecraft/datapack/Glibs/glib-core/-/blob/master/data/glib.core/functions/import/constants.mcfunction). All constants used in the lib must be defined in this file.
+All the special scores doesn't need to be declared, they are automatically created by the lib. Also, in order to simplify arithmetical operations, the lib define plenty of constants stored on the score `bs.const`. You can find them in `bs.core/functions/import/constants.mcfunction`. All constants used in the lib must be defined in this file.
 
 ---
 ### 🔧 Configuration
 
 Some functions require parameters that are usually fixed. However, the function can manage other parameters and the user, in a particular case, may need to change this parameter. So we call them configuration parameters, which are parameters with a default value. These values are initialized in the "CONFIG" part.
 
-As you can see in several files, some lines in the configuration part call the "glib.config.override" tag. It allows you not to rewrite the score values (or other) if they have been voluntarily set to another value. So, if you want to use something else than the default value for a function, add the "glib.config.override" tag before executing the function, then remove this tag immediately afterwards.
+As you can see in several files, some lines in the configuration part call the "bs.config.override" tag. It allows you not to rewrite the score values (or other) if they have been voluntarily set to another value. So, if you want to use something else than the default value for a function, add the "bs.config.override" tag before executing the function, then remove this tag immediately afterwards.
 
 ---
 ### 💭 Comments
 
-The development of the Gunivers-Libs is collaborative, which means that other people can read the code. Moreover, the Gunivers-Lib is also meant to be pedagogical and accessible to people curious about the way the functions of the Gunivers-Lib work. Therefore, it is important to make it understood by other developers or users, and this, in addition to the
+The development of Bookshelf is collaborative, which means that other people can read the code. Moreover, Bookshelf is also meant to be pedagogical and accessible to people curious about the way the functions of Bookshelf work. Therefore, it is important to make it understood by other developers or users, and this, in addition to the
 documentation, also goes through the commentary of the code. Thus, it is important to regularly and cleanly comment on functions in order to explain how the function works.
 
 ---
 ### 🪲 Debug
 
-It is possible to add debug lines anywhere in the code. However, these must be subject to conditions. For the debug to be displayed to a player, that player must have the tag `glib.debug.<PATH>` where `<PATH>` is the path to the function. In the tags, this path is written ith `.` as separators. Example: `glib.vector:classic/get_ata` => `glib.debug.vector.classic.get_ata`
+It is possible to add debug lines anywhere in the code. However, these must be subject to conditions. For the debug to be displayed to a player, that player must have the tag `bs.debug.<PATH>` where `<PATH>` is the path to the function. In the tags, this path is written ith `.` as separators. Example: `bs.vector:classic/get_ata` => `bs.debug.vector.classic.get_ata`
 
 There is 3 different types of debug messages:
 - Error: which display every critical situation
@@ -249,23 +228,23 @@ Every debug message must be visually opened using the following tellraws:
 
 - **Error without source entity**
    ```
-   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"ERROR in <PATH>","color":"red","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"ERROR in <PATH>","color":"red","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 - **Warning without source entity**
    ```
-   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"WARNING in <PATH>","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"WARNING in <PATH>","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 - **Record without source entity**
    ```
-   tellraw @a[tag=glib.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from <PATH>","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove glib.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from <PATH>","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 Also, all debugs must end with
 
 ```
-tellraw @a[tag=glib.debug.<PATH>] ["",{"text":" <","bold":true,"color":"gold"}]
+tellraw @a[tag=bs.debug.<PATH>] ["",{"text":" <","bold":true,"color":"gold"}]
 ```
 
 ⚠️ All debugs must be preceded by ``# Start Debug`` and followed by ``# End Debug`` in order to be automatically commented by a program.
@@ -281,3 +260,26 @@ This is a reduction of "as to at". Several functions require 2 positions to work
 #### 🆔 The "tti" functions
 
 This is a reduction of "to target id". Several functions require 2 a source and a target entity (example: get a vector to another entity). To simplify the use, no need to always use the `id/check` function.
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

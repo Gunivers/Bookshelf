@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 1994 run setblock ~ ~ ~ fire[age=9,east=true,north=false,south=false,up=true,west=true]
+execute if score @s bs.blockId matches 1995 run setblock ~ ~ ~ fire[age=9,east=true,north=false,south=false,up=true,west=false]
+execute if score @s bs.blockId matches 1996 run setblock ~ ~ ~ fire[age=9,east=true,north=false,south=false,up=false,west=true]
+execute if score @s bs.blockId matches 1997 run setblock ~ ~ ~ fire[age=9,east=true,north=false,south=false,up=false,west=false]
+execute if score @s bs.blockId matches 1998 run setblock ~ ~ ~ fire[age=9,east=false,north=true,south=true,up=true,west=true]

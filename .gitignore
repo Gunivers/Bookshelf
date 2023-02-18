@@ -12,6 +12,7 @@ level.dat
 /level.dat_old
 /session.lock
 /uid.dat
+/venv/
 
 .vscode/
 
@@ -19,5 +20,7 @@ level.dat
 
 /docs/_build/
 /docs/build/
+/docs/_templates/
+/docs/_static/
 
 /generators/block_converter/Minecraft_generated_data/

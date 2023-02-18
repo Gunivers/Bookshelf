@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 994 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=7,powered=false]
+execute if score @s bs.blockId matches 995 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=8,powered=true]
+execute if score @s bs.blockId matches 996 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=8,powered=false]
+execute if score @s bs.blockId matches 997 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=9,powered=true]
+execute if score @s bs.blockId matches 998 run setblock ~ ~ ~ note_block[instrument=iron_xylophone,note=9,powered=false]

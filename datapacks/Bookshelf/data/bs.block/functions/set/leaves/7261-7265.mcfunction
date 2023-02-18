@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 7261 run setblock ~ ~ ~ trapped_chest[type=right,facing=east,waterlogged=true]
+execute if score @s bs.blockId matches 7262 run setblock ~ ~ ~ trapped_chest[type=right,facing=east,waterlogged=false]
+execute if score @s bs.blockId matches 7263 run setblock ~ ~ ~ light_weighted_pressure_plate[power=0]
+execute if score @s bs.blockId matches 7264 run setblock ~ ~ ~ light_weighted_pressure_plate[power=1]
+execute if score @s bs.blockId matches 7265 run setblock ~ ~ ~ light_weighted_pressure_plate[power=2]

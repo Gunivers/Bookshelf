@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 11674 run setblock ~ ~ ~ polished_granite_slab[type=double,waterlogged=true]
+execute if score @s bs.blockId matches 11675 run setblock ~ ~ ~ polished_granite_slab[type=double,waterlogged=false]
+execute if score @s bs.blockId matches 11676 run setblock ~ ~ ~ smooth_red_sandstone_slab[type=top,waterlogged=true]
+execute if score @s bs.blockId matches 11677 run setblock ~ ~ ~ smooth_red_sandstone_slab[type=top,waterlogged=false]
+execute if score @s bs.blockId matches 11678 run setblock ~ ~ ~ smooth_red_sandstone_slab[type=bottom,waterlogged=true]

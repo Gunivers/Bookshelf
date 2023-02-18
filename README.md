@@ -1,4 +1,4 @@
-![Glibs' banner](https://gunivers.net/wp-content/uploads/2022/08/Banner.png)
+![](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
 
 <br>
 <br>
@@ -13,10 +13,9 @@
 </div>
 <br>
 
-
 # 🔎 What is it?
 
-The Gunivers-libs is a modular library datapack designed to help mapmakers to implement common or complexe systems.
+Bookshelf (previously Gunivers Libs) is a modular library datapack designed to help mapmakers to implement common or complexe systems.
 
 <div align="center">
 <a href="https://www.youtube.com/watch?v=E2nKYEvjETk">Watch the presentation video<br>
@@ -38,17 +37,17 @@ And much more!
 
 ⚠️ **Do not download directly from Github**
 
-This repository contain a lot of things that you probably don't need and the datapacks are not compressed. Instead, go on the [Glib Manager](http://glib.gunivers.net) to select what you want to download.
+This repository contain a lot of things that you probably don't need and the datapacks are not compressed. Instead, go on the [Bookshelf Manager](http://glib.gunivers.net) to select what you want to download.
 
 This project contain a library datapack and a map that is used as a test zone, wich can help new users to handle this tool. Also, the map show some possible features that are made possible thanks to the library datapack.
 
 | Install the datapack only | Install the sandbox map |
 | --- | --- |
-| 1. Go on [Glib Manager](http://glib.gunivers.net)<br>2. Select the version you want (recommanded to use the last one)<br>3. On the right panel, select the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io)<br>4. Click on the "Download" button<br>5. Put the zip in the "datapacks" folder that you can find in your map folder.<br>6. In game, use `/reload` to load the datapack.| A clean installation process is coming soon.<br>For now, you have to download the content of the Github repository and put it in the "map" folder.<br>This repo contain all the modules of the lib so it's heavy.<br>For this reason, we recommand you to go on `play.gunivers.net`, where the map is already hosted. | 
+| 1. Go on [Bookshelf Manager](http://glib.gunivers.net)<br>2. Select the version you want (recommanded to use the last one)<br>3. On the right panel, select the modules you want to use. You can check the modules' content in the [Documentation](https://glib-core.readthedocs.io)<br>4. Click on the "Download" button<br>5. Put the zip in the "datapacks" folder that you can find in your map folder.<br>6. In game, use `/reload` to load the datapack.| A clean installation process is coming soon.<br>For now, you have to download the content of the Github repository and put it in the "map" folder.<br>This repo contain all the modules of the lib so it's heavy.<br>For this reason, we recommand you to go on `play.gunivers.net`, where the map is already hosted. | 
 
 ⚠️ **Be sure that "cheats" are enabled**. Or, if you are on a server, be sure that `enable-command-block` is set on `true` in you `server.properties` file.
 
-⚠️ **Some modules can be heavy**. Like the `glib.block` or `glib.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files.
+⚠️ **Some modules can be heavy**. Like the `bs.block` or `bs.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files.
 
 # 📚Documentation & Help
 

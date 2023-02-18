@@ -1,7 +1,28 @@
 # 🏃 Move
 
-`glib.move:`: This folder contains all the functions related to the
+`bs.move:`: This folder contains all the functions related to the
 movement of the entity.
+
+<div align=center>
+
+![](img/2023-01-27-23-29-41.png)
+
+</div>
+
+```{button-link} https://youtu.be/KH3Q9F5j04I
+:color: primary
+:align: right
+:shadow:
+
+🎬 Watch a demo
+```
+
+```{epigraph}
+
+"In the universe, everything is mouvement."
+
+-- Heraclite d'Ephèse
+```
 
 ---
 
@@ -12,7 +33,7 @@ on each axis of the local reference frame.
 
 * A vector of 1000 on an axis will lead to a movement of a block at each execution of the function.
 * The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* The system takes as input the 3 scores `glib.vector[Left,Up,Front]` (1000 <=> 1 block).
+* The system takes as input the 3 scores `bs.vector[Left,Up,Front]` (1000 <=> 1 block).
 
 :::{warning}
 The system does not include any speed limit. However, the
@@ -26,12 +47,12 @@ of blocks/tick at which the entity moves.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] glib.vectorLeft 300
-    scoreboard players set @e[type=boat] glib.vectorUp 0
-    scoreboard players set @e[type=boat] glib.vectorFront 0
+    scoreboard players set @e[type=boat] bs.vectorLeft 300
+    scoreboard players set @e[type=boat] bs.vectorUp 0
+    scoreboard players set @e[type=boat] bs.vectorFront 0
 
     # In loop
-    execute as @e[type=boat] run function glib.move:by_local_vector
+    execute as @e[type=boat] run function bs.move:by_local_vector
     ```
 
 ---
@@ -43,10 +64,10 @@ axis of the relative reference frame.
 
 * A vector of 1000 on an axis will lead to a movement of a block at each execution of the function.
 * The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* The system takes as input the 3 scores `glib.vector[X,Y,Z]` (1000 <=> 1 block) as well as the `glib.collision` score.
+* The system takes as input the 3 scores `bs.vector[X,Y,Z]` (1000 <=> 1 block) as well as the `bs.collision` score.
 * This last score allows to manage the behavior. If it is not filled in or equal to 0, the entity will cross all the blocks
 * Each behavior is defined via a dedicated file in `glib_config:move/by_vector/`
-* It is possible to manage the precision of collision detection by placing the tag `glib.config.override` on the entity and then changing its score `glib.precision` to the desired value (1000 <=> 1 block, 500 <=> 0.5 blocks)
+* It is possible to manage the precision of collision detection by placing the tag `bs.config.override` on the entity and then changing its score `bs.precision` to the desired value (1000 <=> 1 block, 500 <=> 0.5 blocks)
 * If the precision is higher than 1 block, the entity will have a certain probability to cross the walls of a block of thickness.
 
 :::{warning}
@@ -66,12 +87,12 @@ system will require to perform optimally.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] glib.vectorX 300
-    scoreboard players set @e[type=boat] glib.vectorY 0
-    scoreboard players set @e[type=boat] glib.vectorZ 0
+    scoreboard players set @e[type=boat] bs.vectorX 300
+    scoreboard players set @e[type=boat] bs.vectorY 0
+    scoreboard players set @e[type=boat] bs.vectorZ 0
 
     # In loop
-    execute as @e[type=boat] run function glib.move:by_vector
+    execute as @e[type=boat] run function bs.move:by_vector
     ```
 
 - Take into account collisions and make the boat stop, with a precision of
@@ -79,15 +100,15 @@ system will require to perform optimally.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] glib.vectorX 300
-    scoreboard players set @e[type=boat] glib.vectorY 0
-    scoreboard players set @e[type=boat] glib.vectorZ 0
-    scoreboard players set @e[type=boat] glib.collision 2
-    tag @e[type=boat] add glib.config.override
-    scoreboard players set @e[type=boat] glib.precision 100
+    scoreboard players set @e[type=boat] bs.vectorX 300
+    scoreboard players set @e[type=boat] bs.vectorY 0
+    scoreboard players set @e[type=boat] bs.vectorZ 0
+    scoreboard players set @e[type=boat] bs.collision 2
+    tag @e[type=boat] add bs.config.override
+    scoreboard players set @e[type=boat] bs.precision 100
 
     # In loop
-    execute as @e[type=boat] run function glib.move:by_vector
+    execute as @e[type=boat] run function bs.move:by_vector
     ```
 
 ---
@@ -95,11 +116,11 @@ system will require to perform optimally.
 ## Move forward
 
 `forward`: Allows to move the entity according to the direction
-towards which it looks and its vector `glib.vectorFront`
+towards which it looks and its vector `bs.vectorFront`
 
 * A vector of 1000 on an axis will cause a movement of one block at each execution of the function.
 * The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* * The system takes as input the 3 scores `glib.vector[Left,Up,Front]` (1000 <=> 1 block).
+* * The system takes as input the 3 scores `bs.vector[Left,Up,Front]` (1000 <=> 1 block).
 
 :::{warning}
 The system does not include any speed limit. However, the
@@ -113,10 +134,10 @@ of blocks/tick at which the entity moves.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] glib.vectorFront 300
+    scoreboard players set @e[type=boat] bs.vectorFront 300
 
     # In a loop
-    execute as @e[type=boat] run function glib.move:forward
+    execute as @e[type=boat] run function bs.move:forward
     ```
 
 --- 
@@ -126,8 +147,8 @@ of blocks/tick at which the entity moves.
 `pathfind_ata`: Allows to determine a path between the position of the
 source entity and the execution position of the function.
 
-* By default, the function will make 500 tests (defined via the `glib.var1` score). This limit allow to avoid the function taking too many ressources if the path is too complexe or impossible to find.
-* The behavior is defined by the variable `glib.var3` which, by default is 0, corresponding to a behavior of a zombie, creeper, skeleton or a player (terrestrial entity of size 1*2*1).
+* By default, the function will make 500 tests (defined via the `bs.var1` score). This limit allow to avoid the function taking too many ressources if the path is too complexe or impossible to find.
+* The behavior is defined by the variable `bs.var3` which, by default is 0, corresponding to a behavior of a zombie, creeper, skeleton or a player (terrestrial entity of size 1*2*1).
    * When it is set to 1, the behavior will be similar to a bat.
    * You can create your own behaviors at any time in the `pathfind/config/` folder and link them in the `main.mcfunction` file in the same folder.
 * The path is then defined by a succession of armor_stand with the tag "Glib_Pathfind_Rewind" and "Glib_Pathfind".
@@ -138,14 +159,16 @@ source entity and the execution position of the function.
 
     ```
     # Once
-    execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function glib.move:pathfind_ata
+    execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function bs.move:pathfind_ata
     ```
 
-<div align=center>
-    <a href="https://youtu.be/xeLjHIQ0s1Q" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
+```{button-link} https://youtu.be/xeLjHIQ0s1Q
+:color: primary
+:align: center
+:shadow:
+
+{octicon}`device-camera-video` Watch the video
+```
 
 ---
 
@@ -170,3 +193,26 @@ own in the `by_vector/config/collision/` folder. By default, the
 precision of the collisions, stored on the Var5 score, is 500 (= 0,5
 blocks). }}
 :::
+
+---
+
+# 💬 Did it help you?
+
+Feel free to leave your questions and feedbacks below!
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

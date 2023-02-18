@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 5347 run setblock ~ ~ ~ oak_fence_gate[facing=west,in_wall=false,open=true,powered=true]
+execute if score @s bs.blockId matches 5348 run setblock ~ ~ ~ oak_fence_gate[facing=west,in_wall=false,open=true,powered=false]
+execute if score @s bs.blockId matches 5349 run setblock ~ ~ ~ oak_fence_gate[facing=west,in_wall=false,open=false,powered=true]
+execute if score @s bs.blockId matches 5350 run setblock ~ ~ ~ oak_fence_gate[facing=west,in_wall=false,open=false,powered=false]
+execute if score @s bs.blockId matches 5351 run setblock ~ ~ ~ oak_fence_gate[facing=east,in_wall=true,open=true,powered=true]

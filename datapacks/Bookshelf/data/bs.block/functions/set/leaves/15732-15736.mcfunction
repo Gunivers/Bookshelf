@@ -1,0 +1,5 @@
+execute if score @s bs.blockId matches 15732 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=tall,up=true,waterlogged=true,west=none]
+execute if score @s bs.blockId matches 15733 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=tall,up=true,waterlogged=true,west=low]
+execute if score @s bs.blockId matches 15734 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=tall,up=true,waterlogged=true,west=tall]
+execute if score @s bs.blockId matches 15735 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=tall,up=true,waterlogged=false,west=none]
+execute if score @s bs.blockId matches 15736 run setblock ~ ~ ~ diorite_wall[east=none,north=tall,south=tall,up=true,waterlogged=false,west=low]
