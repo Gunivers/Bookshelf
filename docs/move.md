@@ -47,9 +47,9 @@ of blocks/tick at which the entity moves.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] bs.vectorLeft 300
-    scoreboard players set @e[type=boat] bs.vectorUp 0
-    scoreboard players set @e[type=boat] bs.vectorFront 0
+    scoreboard players set @e[type=boat] bs.vector.left 300
+    scoreboard players set @e[type=boat] bs.vector.up 0
+    scoreboard players set @e[type=boat] bs.vector.front 0
 
     # In loop
     execute as @e[type=boat] run function bs.move:by_local_vector
@@ -87,9 +87,9 @@ system will require to perform optimally.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] bs.vectorX 300
-    scoreboard players set @e[type=boat] bs.vectorY 0
-    scoreboard players set @e[type=boat] bs.vectorZ 0
+    scoreboard players set @e[type=boat] bs.vector.x 300
+    scoreboard players set @e[type=boat] bs.vector.y 0
+    scoreboard players set @e[type=boat] bs.vector.z 0
 
     # In loop
     execute as @e[type=boat] run function bs.move:by_vector
@@ -100,9 +100,9 @@ system will require to perform optimally.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] bs.vectorX 300
-    scoreboard players set @e[type=boat] bs.vectorY 0
-    scoreboard players set @e[type=boat] bs.vectorZ 0
+    scoreboard players set @e[type=boat] bs.vector.x 300
+    scoreboard players set @e[type=boat] bs.vector.y 0
+    scoreboard players set @e[type=boat] bs.vector.z 0
     scoreboard players set @e[type=boat] bs.collision 2
     tag @e[type=boat] add bs.config.override
     scoreboard players set @e[type=boat] bs.precision 100
@@ -116,7 +116,7 @@ system will require to perform optimally.
 ## Move forward
 
 `forward`: Allows to move the entity according to the direction
-towards which it looks and its vector `bs.vectorFront`
+towards which it looks and its vector `bs.vector.front`
 
 * A vector of 1000 on an axis will cause a movement of one block at each execution of the function.
 * The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
@@ -134,7 +134,7 @@ of blocks/tick at which the entity moves.
 
     ```
     # Once
-    scoreboard players set @e[type=boat] bs.vectorFront 300
+    scoreboard players set @e[type=boat] bs.vector.front 300
 
     # In a loop
     execute as @e[type=boat] run function bs.move:forward

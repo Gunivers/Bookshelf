@@ -49,7 +49,7 @@ Create, for each Creeper, a vector from their respective orientation
 
 ```
 # Once
-execute as @e[type=creeper] run function bs.vector:classic/get_by_actual_orientation
+execute as @e[type=creeper] run function bs.vector:get_by_actual_orientation
 ```
 
 ```{admonition} Dependencies
@@ -73,7 +73,7 @@ Create a vector that connects you to the nearest skeleton:
 
 ```
 # Once
-execute as @s at @e[type=skeleton] run function bs.vector:classic/get_ata
+execute as @s at @e[type=skeleton] run function bs.vector:get_ata
 ```
 
 ```{admonition} Dependencies
@@ -145,13 +145,13 @@ Find the local vector corresponding to the vector X=1000, Y=0, Z=0
 
 ```
 # Once
-scoreboard players set @s bs.vectorX 1000
-scoreboard players set @s bs.vectorY 0
-scoreboard players set @s bs.vectorZ 0
-function bs.vector:classic/get_from_classic_vector
+scoreboard players set @s bs.vector.x 1000
+scoreboard players set @s bs.vector.y 0
+scoreboard players set @s bs.vector.z 0
+function bs.vector:get_from_classic_vector
 
 # Display the result
-tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs. vectorLeft"}, "color": "gold"},{"text": "VectorUp: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. vectorUp"}, "color": "gold"},{"text":" VectorFront: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.vectorFront"}, "color": "gold"}]
+tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs. vectorLeft"}, "color": "gold"},{"text": "VectorUp: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. vectorUp"}, "color": "gold"},{"text":" VectorFront: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.vector.front"}, "color": "gold"}]
 ```
 
 ```{admonition} Dependencies

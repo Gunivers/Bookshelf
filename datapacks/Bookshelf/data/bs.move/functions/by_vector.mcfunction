@@ -19,9 +19,9 @@
 scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Collision Type","color":"aqua"}]
 scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
+scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
+scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
+scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,9 +34,9 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # CODE
 
 # Backup
-scoreboard players operation #backup.move.vectorX bs = @s bs.vectorX
-scoreboard players operation #backup.move.vectorY bs = @s bs.vectorY
-scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorZ
+scoreboard players operation #backup.move.vectorX bs = @s bs.vector.x
+scoreboard players operation #backup.move.vectorY bs = @s bs.vector.y
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
 scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Debug
@@ -50,7 +50,7 @@ scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
 # Decomposition in sum of vector with parameters <= bs.precision
 tag @s add bs.config.override
 scoreboard players operation vector.fastNormalization.lenght bs.config = @s bs.precision
-function bs.vector:classic/fast_normalize
+function bs.vector:fast_normalize
 
 # Apply movement
 scoreboard players set move.decomposition.factor bs 1000
@@ -76,7 +76,7 @@ execute at @s run function bs.move:by_vector/child/loop
 tag @s remove bs.move.by_vector.rest
 
 # Restore
-scoreboard players operation @s bs.vectorX = #backup.move.vectorX bs
-scoreboard players operation @s bs.vectorY = #backup.move.vectorY bs
-scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs
+scoreboard players operation @s bs.vector.x = #backup.move.vectorX bs
+scoreboard players operation @s bs.vector.y = #backup.move.vectorY bs
+scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
 scoreboard players operation @s bs.res0 = backup.move.res0 bs

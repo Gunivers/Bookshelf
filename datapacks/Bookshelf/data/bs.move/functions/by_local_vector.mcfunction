@@ -18,9 +18,9 @@
 
 scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
+scoreboard objectives add bs.vector.left dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
+scoreboard objectives add bs.vector.up dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
+scoreboard objectives add bs.vector.front dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -33,9 +33,9 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # CODE
 
 # Backup
-scoreboard players operation #backup.move.vectorX bs = @s bs.vectorLeft
-scoreboard players operation #backup.move.vectorY bs = @s bs.vectorUp
-scoreboard players operation #backup.move.vectorZ bs = @s bs.vectorFront
+scoreboard players operation #backup.move.vectorX bs = @s bs.vector.left
+scoreboard players operation #backup.move.vectorY bs = @s bs.vector.up
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.front
 scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Absurd values security
@@ -70,7 +70,7 @@ execute at @s run function bs.move:by_local_vector/child/loop
 tag @s remove bs.move.by_vector.rest
 
 # Restore
-scoreboard players operation @s bs.vectorX = #backup.move.vectorX bs
-scoreboard players operation @s bs.vectorY = #backup.move.vectorY bs
-scoreboard players operation @s bs.vectorZ = #backup.move.vectorZ bs
+scoreboard players operation @s bs.vector.x = #backup.move.vectorX bs
+scoreboard players operation @s bs.vector.y = #backup.move.vectorY bs
+scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
 scoreboard players operation @s bs.res0 = backup.move.res0 bs

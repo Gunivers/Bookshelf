@@ -111,7 +111,7 @@ describe for other developers as well as for users what the function is
 for and how to use it. This is what this one looks like:
 
 ```
-# INFO --------------------------------------------
+# INFO ------------------------------------------------------------------------
 # Copyright © 2023 Gunivers Community.
 
 # Authors       :
@@ -126,11 +126,11 @@ for and how to use it. This is what this one looks like:
 # Documentation : https://link.to/documentation/page
 # Note          :
 
-# INIT --------------------------------------------
+# INIT ------------------------------------------------------------------------
 
-# CONFIG ------------------------------------------
+# CONFIG ----------------------------------------------------------------------
 
-# CODE --------------------------------------------
+# CODE ------------------------------------------------------------------------
 ```
 
 We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:

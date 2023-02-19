@@ -1,9 +1,9 @@
 #__________________________________________________
 # Get working vector
 
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vectorLeft
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vectorUp
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vectorFront
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vector.left
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vector.up
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vector.front
 
 #__________________________________________________
 # Apply movement

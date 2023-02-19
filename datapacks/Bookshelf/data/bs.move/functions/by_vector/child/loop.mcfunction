@@ -5,9 +5,9 @@ execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=b
 #__________________________________________________
 # Get working vector
 
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vectorX
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vectorY
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vectorZ
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vector.x
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vector.y
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vector.z
 
 # Start Debug
 execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] at @s[distance=..30] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["bs","Debug"]}
