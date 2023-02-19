@@ -18,10 +18,6 @@
 
 scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vector.left dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
-scoreboard objectives add bs.vector.up dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
-scoreboard objectives add bs.vector.front dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
-
 #__________________________________________________
 # CONFIG
 
@@ -33,9 +29,9 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # CODE
 
 # Backup
-scoreboard players operation #backup.move.vectorX bs = @s bs.vector.left
-scoreboard players operation #backup.move.vectorY bs = @s bs.vector.up
-scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.front
+scoreboard players operation #backup.move.vectorX bs = @s bs.vector.x
+scoreboard players operation #backup.move.vectorY bs = @s bs.vector.y
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
 scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Absurd values security

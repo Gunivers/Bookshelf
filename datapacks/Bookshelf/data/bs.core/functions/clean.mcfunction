@@ -87,7 +87,4 @@ scoreboard objectives remove bs.ori.h
 scoreboard objectives remove bs.vector.x
 scoreboard objectives remove bs.vector.y
 scoreboard objectives remove bs.vector.z
-scoreboard objectives remove bs.vector.left
-scoreboard objectives remove bs.vector.up
-scoreboard objectives remove bs.vector.front
 scoreboard objectives remove bs.collision

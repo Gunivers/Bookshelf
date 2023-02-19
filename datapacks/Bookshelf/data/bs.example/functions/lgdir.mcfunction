@@ -36,7 +36,7 @@ execute at @a[scores={lgdir.trigger=1}] run tp @e[tag=lgdir.projectile,tag=!lgdi
 scoreboard players set @a lgdir.trigger 0
 
 # Getting projectile vector
-execute as @e[tag=lgdir.projectile,tag=!lgdir.old] at @s run function bs.vector:get_by_actual_orientation 
+execute as @e[tag=lgdir.projectile,tag=!lgdir.old] at @s run function bs.vector:get_from_orientation 
 
 # Multiplying the speed of the projectile
 scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] bs.vector.x *= 2 bs.const
