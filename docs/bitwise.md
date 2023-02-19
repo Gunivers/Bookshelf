@@ -64,7 +64,7 @@ Computes the bitwise conjunction of the two input numbers
 
 :Example:
 
-   Calculate and display -9 & 57
+   Calculate and display $-9 \times 57$
    ```
    # Once
    scoreboard players set @s bs.var0 -9
@@ -116,7 +116,7 @@ the input
 
 ## logical NOT
 
-**`not`**
+**`bs.bitwise:not`**
 
 Computes the bit by bit negation of the input
 
@@ -130,7 +130,7 @@ Computes the bit by bit negation of the input
 
 :Example:
 
-   Calculate and display ~452
+   Calculate and display $~452$
    ```
    # Once
    scoreboard players set @s bs.var0 452
@@ -142,17 +142,36 @@ Computes the bit by bit negation of the input
 
 ## OR logic
 
-`or`: Computes the bit to bit disjunction of the two input numbers
+**`bs.bitwise:or`**
 
--  Takes as parameters the scores `bs.var0` and `bs.var1`.
--  Returns the value of the operation `bs.var0 | bs.var1` on the
-   score `bs.res0`.
--  If one of the inputs is negative, the operation will be done between
+Computes the bit to bit disjunction of the two input numbers
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The first operand $a$
+
+   (score) `@s bs.var1`
+   : The second operand $b$
+
+   ```{admonition} Negative input
+   :class: hint
+      
+   If one of the inputs is negative, the operation will be done between
    the first operand and the two's complement of the second
+   ```
 
-*Example:*
+:Outputs:
 
--  Calculate and display -9 \| 57.
+   (score) `@s bs.res0`
+   : The result of the operation = $a + b$
+
+:Example:
+
+   Calculate and display $-9 + 57$.
    ```
    # Once
    scoreboard players set @s bs.var0 -9
@@ -165,15 +184,26 @@ Computes the bit by bit negation of the input
 
 ## Complement to 2
 
-`two_complement`: Computes the two's complement of the input
+**`bs.bitwise:two_complement`**
 
--  Takes the score `bs.var0` as parameter
--  Returns the two's complement of `bs.var0` over the score
-   `bs.res0`.
+Computes the two's complement of the input
 
-*Example:*
+:Inputs:
 
--  Calculate and display the two's complement of 12
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number you want to compute the two's complement
+
+:Outputs:
+
+   (score) `@s bs.res0`
+   : The two's complement of the input
+
+:Example:
+
+   Calculate and display the two's complement of 12
    ```
    # Once
    scoreboard players set @s bs.var0 12
@@ -185,18 +215,37 @@ Computes the bit by bit negation of the input
 
 ## OR exclusive
 
-`xor`: Computes the exclusive bit by bit disjunction of the two input
+**`bs.bitwise:xor`**
+
+Computes the exclusive bit by bit disjunction of the two input
 numbers
 
--  Takes as parameters the scores `bs.var0` and `bs.var1`.
--  Returns the value of the operation `bs.var0 ^ bs.var1` on the
-   score `bs.res0`
--  If one of the inputs is negative, the operation will be done between
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The first operand $a$
+
+   (score) `@s bs.var1`
+   : The second operand $b$
+
+   ```{admonition} Negative input
+   :class: hint
+      
+   If one of the inputs is negative, the operation will be done between
    the first operand and the two's complement of the second
+   ```
 
-*Example:*
+:Outputs:
 
--  Calculate and display -9 ^ 57
+   (score) `@s bs.res0`
+   : The result of the operation = $a \oplus b$
+
+:Example:
+
+   Calculate and display $-9 \oplus 57$.
    ```
    # Once
    scoreboard players set @s bs.var0 -9
