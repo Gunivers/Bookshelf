@@ -21,15 +21,14 @@
 #__________________________________________________
 # INIT
 
-
-
-
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.var0 *= -1 bs.const
-scoreboard players remove @s bs.var0 1
-scoreboard players operation @s bs.res0 = @s bs.var0
+scoreboard players operation #bs.bitwise.x bs.data = @s bs.var0
+
+scoreboard players operation #bs.bitwise.x bs.data *= -1 bs.const
+scoreboard players remove #bs.bitwise.x bs.data 1
+scoreboard players operation @s bs.res0 = #bs.bitwise.x bs.data

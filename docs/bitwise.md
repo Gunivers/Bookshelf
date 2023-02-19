@@ -1,7 +1,9 @@
 # 🖥️ Bitwise
 
-`bs.math:bitwise`: This folder contains various bitwise operators to
-apply to scores.
+**`bs.math:bitwise`**
+
+This folder contains various bitwise operators to
+*apply to scores.
 
 <div align=center>
 
@@ -23,21 +25,46 @@ _Friendly advice: decrease the volume before clicking_ 😅
 
 </div>
 
+```{epigraph}
+"Binary is a very simple numbering system, but it is incredibly powerful when used correctly."
+
+-- Alan Turing
+```
+
 ---
 
 ## logical AND
 
-`and`: Computes the bitwise conjunction of the two input numbers
+**`bs.bitwise:and`**
 
--  Takes the scores `bs.var0` and `bs.var1` as parameters
--  Returns the value of the operation `bs.var0 & bs.var1` on the
-   score `bs.res0`.
--  If one of the inputs is negative, the operation will be done between
+Computes the bitwise conjunction of the two input numbers
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The first operand $a$
+
+   (score) `@s bs.var1`
+   : The second operand $b$
+
+   ```{admonition} Negative input
+   :class: hint
+      
+   If one of the inputs is negative, the operation will be done between
    the first operand and the two's complement of the second
+   ```
 
-*Example:*
+:Outputs:
 
--  Calculate and display -9 & 57
+   (score) `@s bs.res0`
+   : The result of the operation = $a \times b$
+
+:Example:
+
+   Calculate and display -9 & 57
    ```
    # Once
    scoreboard players set @s bs.var0 -9
@@ -50,17 +77,34 @@ _Friendly advice: decrease the volume before clicking_ 😅
 
 ## Get number of bits
 
-`get_number_of_bits`: Calculates the number of bits needed to store
+**`get_number_of_bits`**
+
+Calculates the number of bits needed to store
 the input
 
--  Takes the score `bs.var0` as parameter
--  Returns the number of bits needed to store the input
--  If the input is negative, returns the number of bits needed to store
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number you want to know the number of bits
+
+:Outputs:
+
+   (score) `@s bs.res0`
+   : The number of bits needed to store the input
+
+   ```{admonition} Negative input
+   :class: hint
+      
+   If the input is negative, returns the number of bits needed to store
    the absolute value of the number
+   ```
 
-*Example:*
+:Example:
 
--  Calculate and display the number of bits of 12
+   Calculate and display the number of bits of 12
    ```
    # Once
    scoreboard players set @s bs.var0 12
@@ -72,15 +116,21 @@ the input
 
 ## logical NOT
 
-`not`: Computes the bit by bit negation of the input
+**`not`**
 
--  Takes the score `bs.var0` as parameter
--  Returns the value of the operation `~bs.var0` on the score
-   `bs.res0`.
+Computes the bit by bit negation of the input
 
-*Example:*
+:Inputs:
 
--  Calculate and display ~452
+   (execution) `as <entities>`
+   : The entities to perform the operation on
+
+   (score) `@s bs.var0`
+   : The number you want to negate
+
+:Example:
+
+   Calculate and display ~452
    ```
    # Once
    scoreboard players set @s bs.var0 452

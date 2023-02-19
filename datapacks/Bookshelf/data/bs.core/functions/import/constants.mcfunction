@@ -147,3 +147,4 @@ scoreboard players set Pi bs.const 3142
 scoreboard players set Pi2 bs.const 314
 scoreboard players set Pi3 bs.const 3142
 scoreboard players set Pi6 bs.const 3141593
+scoreboard players set MaxInt bs.const 2147483647

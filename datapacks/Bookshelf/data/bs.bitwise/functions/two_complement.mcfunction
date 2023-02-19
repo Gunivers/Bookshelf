@@ -28,9 +28,6 @@
 #__________________________________________________
 # INIT
 
-
-
-
 #__________________________________________________
 # CONFIG
 
@@ -39,7 +36,7 @@
 
 execute if score @s bs.var0 matches ..-1 run tag @s add bs.bitwise.two_complement.negative
 execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.var0 *= -1 bs.const
-scoreboard players operation @s bs.res0 = Max bs.const
+scoreboard players operation @s bs.res0 = MaxInt bs.const
 scoreboard players operation @s bs.res0 -= @s bs.var0
 scoreboard players add @s bs.res0 1
 execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.var0 *= -1 bs.const
