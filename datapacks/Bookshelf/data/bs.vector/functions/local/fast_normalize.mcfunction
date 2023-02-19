@@ -14,20 +14,20 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: bs.vectorLeft (score dummy)
-# Input: bs.vectorUp (score dummy)
-# Input: bs.vectorFront (score dummy)
+# Input: bs.vector.left (score dummy)
+# Input: bs.vector.up (score dummy)
+# Input: bs.vector.front (score dummy)
 
-# Output: bs.vectorLeft (score dummy)
-# Output: bs.vectorUp (score dummy)
-# Output: bs.vectorFront (score dummy)
+# Output: bs.vector.left (score dummy)
+# Output: bs.vector.up (score dummy)
+# Output: bs.vector.front (score dummy)
 
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
+scoreboard objectives add bs.vector.left dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
+scoreboard objectives add bs.vector.up dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
+scoreboard objectives add bs.vector.front dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -39,9 +39,9 @@ tag @s[tag=bs.config.override] remove bs.config.override
 #__________________________________________________
 # CODE
 
-scoreboard players operation vector.fastNormalize.X bs = @s bs.vectorLeft
-scoreboard players operation vector.fastNormalize.Y bs = @s bs.vectorUp
-scoreboard players operation vector.fastNormalize.Z bs = @s bs.vectorFront
+scoreboard players operation vector.fastNormalize.X bs = @s bs.vector.left
+scoreboard players operation vector.fastNormalize.Y bs = @s bs.vector.up
+scoreboard players operation vector.fastNormalize.Z bs = @s bs.vector.front
 
 execute if score vector.fastNormalize.X bs matches ..-1 run scoreboard players operation vector.fastNormalize.X bs *= -1 bs.const
 execute if score vector.fastNormalize.Y bs matches ..-1 run scoreboard players operation vector.fastNormalize.Y bs *= -1 bs.const
@@ -51,13 +51,13 @@ scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.
 execute if score vector.fastNormalize.Y bs > vector.fastNormalize.max bs run scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.Y bs
 execute if score vector.fastNormalize.Z bs > vector.fastNormalize.max bs run scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.Z bs
 
-scoreboard players operation @s bs.vectorLeft *= vector.fastNormalization.lenght bs.config
-scoreboard players operation @s bs.vectorUp *= vector.fastNormalization.lenght bs.config
-scoreboard players operation @s bs.vectorFront *= vector.fastNormalization.lenght bs.config
+scoreboard players operation @s bs.vector.left *= vector.fastNormalization.lenght bs.config
+scoreboard players operation @s bs.vector.up *= vector.fastNormalization.lenght bs.config
+scoreboard players operation @s bs.vector.front *= vector.fastNormalization.lenght bs.config
 
-scoreboard players operation @s bs.vectorLeft /= vector.fastNormalize.max bs
-scoreboard players operation @s bs.vectorUp /= vector.fastNormalize.max bs
-scoreboard players operation @s bs.vectorFront /= vector.fastNormalize.max bs
+scoreboard players operation @s bs.vector.left /= vector.fastNormalize.max bs
+scoreboard players operation @s bs.vector.up /= vector.fastNormalize.max bs
+scoreboard players operation @s bs.vector.front /= vector.fastNormalize.max bs
 
 scoreboard players set @s bs.res0 1000
 scoreboard players operation @s bs.res0 *= vector.fastNormalization.lenght bs.config

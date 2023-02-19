@@ -84,10 +84,10 @@ scoreboard objectives remove bs.ori.v
 scoreboard objectives remove bs.ori.h
 
 	# ~~ Vectors ~~
-scoreboard objectives remove bs.vectorX
-scoreboard objectives remove bs.vectorY
-scoreboard objectives remove bs.vectorZ
-scoreboard objectives remove bs.vectorLeft
-scoreboard objectives remove bs.vectorUp
-scoreboard objectives remove bs.vectorFront
+scoreboard objectives remove bs.vector.x
+scoreboard objectives remove bs.vector.y
+scoreboard objectives remove bs.vector.z
+scoreboard objectives remove bs.vector.left
+scoreboard objectives remove bs.vector.up
+scoreboard objectives remove bs.vector.front
 scoreboard objectives remove bs.collision

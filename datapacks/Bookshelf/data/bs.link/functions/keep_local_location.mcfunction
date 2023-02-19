@@ -33,9 +33,9 @@ function bs.id:check
 
 execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.core:default_entity
 
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vectorLeft = @s bs.link.lx
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vectorUp = @s bs.link.ly
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vectorFront = @s bs.link.lz
+scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.left = @s bs.link.lx
+scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.up = @s bs.link.ly
+scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.front = @s bs.link.lz
 scoreboard players set @e[tag=bs.new,limit=1,sort=nearest] VectorSpeedLocal 1000
 
 execute as @e[tag=bs.new,limit=1,sort=nearest] at @s run function bs.move:by_local_vector

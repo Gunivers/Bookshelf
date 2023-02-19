@@ -24,13 +24,13 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.vectorX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
-scoreboard objectives add bs.vectorY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
-scoreboard objectives add bs.vectorZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
+scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
+scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
+scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
-scoreboard objectives add bs.vectorLeft dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
-scoreboard objectives add bs.vectorUp dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
-scoreboard objectives add bs.vectorFront dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
+scoreboard objectives add bs.vector.left dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Left","color":"aqua"}]
+scoreboard objectives add bs.vector.up dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Up","color":"aqua"}]
+scoreboard objectives add bs.vector.front dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -51,9 +51,9 @@ scoreboard players operation backup.localVector.oriH bs = @s bs.oriH
 scoreboard players operation backup.localVector.oriV bs = @s bs.oriV
 
 # Calcul
-scoreboard players operation @s bs.var0 = @s bs.vectorX
-scoreboard players operation @s bs.var1 = @s bs.vectorY
-scoreboard players operation @s bs.var2 = @s bs.vectorZ
+scoreboard players operation @s bs.var0 = @s bs.vector.x
+scoreboard players operation @s bs.var1 = @s bs.vector.y
+scoreboard players operation @s bs.var2 = @s bs.vector.z
 
 execute at @s run function bs.orientation:get
 scoreboard players operation @s bs.var3 = @s bs.oriH
@@ -61,9 +61,9 @@ scoreboard players operation @s bs.var4 = @s bs.oriV
 
 function bs.math:basis_rotation_3d
 
-scoreboard players operation @s bs.vectorLeft = @s bs.res0
-scoreboard players operation @s bs.vectorUp = @s bs.res1
-scoreboard players operation @s bs.vectorFront = @s bs.res2
+scoreboard players operation @s bs.vector.left = @s bs.res0
+scoreboard players operation @s bs.vector.up = @s bs.res1
+scoreboard players operation @s bs.vector.front = @s bs.res2
 
 # Restore
 scoreboard players operation @s bs.var0 = backup.localVector.var0 bs

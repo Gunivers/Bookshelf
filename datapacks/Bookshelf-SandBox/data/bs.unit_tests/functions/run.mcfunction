@@ -6,6 +6,7 @@ function bs.unit_tests:module/bitwise
 function bs.unit_tests:module/id
 function bs.unit_tests:module/link
 function bs.unit_tests:module/math
+function bs.unit_tests:module/vector
 
 scoreboard objectives remove bs.unit_tests
 
