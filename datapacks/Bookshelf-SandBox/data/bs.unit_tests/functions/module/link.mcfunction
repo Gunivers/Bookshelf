@@ -1,5 +1,11 @@
 tellraw @a ["",{"text":"<"},{"text":"BookShelf","color":"dark_aqua"},{"text":"> Testing bs.link module..."}]
 
+# Creating test entities
+summon armor_stand 0 0 0 {Tags:["bs.unitest","parent"],CustomName:'{"text":"Parent"}', Invisible:1b, Marker:1b, NoGravity:1b}
+summon armor_stand 0 0 0 {Tags:["bs.unitest","child"],CustomName:'{"text":"Child"}', Invisible:1b, Marker:1b, NoGravity:1b}
+
+
+
 #=============================================================================#
 #                                                                             #
 #                          CREATE_LINK_ATA                                    #
@@ -13,13 +19,9 @@ execute as @e run scoreboard players remove NB_ENTITY_DIFF bs.unit_tests 1
 
 # USAGE -----------------------------------------------------------------------
 
-# Creating test entities
-summon armor_stand 0 0 0 {Tags:["bs.unitest","parent"],CustomName:'{"text":"Parent"}', Invisible:1b, Marker:1b, NoGravity:1b}
-summon armor_stand 0 0 0 {Tags:["bs.unitest","child"],CustomName:'{"text":"Child"}', Invisible:1b, Marker:1b, NoGravity:1b}
-
 # Setting orientations
-execute as @e[tag=bs.unitest,tag=child] at @s run tp @s ~1 ~2.314 ~3 0 0
-execute as @e[tag=bs.unitest,tag=parent] at @s run tp @s ~0 ~0.314 ~0 90 45
+execute as @e[tag=bs.unitest,tag=child] run tp @s ~1 ~2.314 ~3 0 0
+execute as @e[tag=bs.unitest,tag=parent] run tp @s ~0 ~0.314 ~0 90 45
 
 # Creating link
 execute as @e[tag=bs.unitest,tag=child] at @e[tag=bs.unitest,tag=parent] run function bs.link:create_link_ata
@@ -44,9 +46,6 @@ execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.ly matches 705 r
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches -2115 run tellraw @a [{"text":"[bs.link:create_link_ata] expected bs.link.lz = -2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
 
-
-kill @e[tag=bs.unitest]
-
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.link:create_link_ata] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]
 
@@ -64,16 +63,12 @@ execute as @e run scoreboard players remove NB_ENTITY_DIFF bs.unit_tests 1
 
 # USAGE -----------------------------------------------------------------------
 
-# Creating test entities
-summon armor_stand 0 0 0 {Tags:["bs.unitest","parent"],CustomName:'{"text":"Parent"}', Invisible:1b, Marker:1b, NoGravity:1b}
-summon armor_stand 0 0 0 {Tags:["bs.unitest","child"],CustomName:'{"text":"Child"}', Invisible:1b, Marker:1b, NoGravity:1b}
-
 # Giving the ID to the parent
 execute as @e[tag=bs.unitest,tag=parent] run function bs.id:get_suid
 
 # Setting orientation
-execute as @e[tag=bs.unitest,tag=child] at @s run tp @s ~1 ~2.314 ~3 0 0
-execute as @e[tag=bs.unitest,tag=parent] at @s run tp @s ~0 ~0.314 ~0 90 45
+execute as @e[tag=bs.unitest,tag=child] run tp @s ~1 ~2.314 ~3 0 0
+execute as @e[tag=bs.unitest,tag=parent] run tp @s ~0 ~0.314 ~0 90 45
 
 # Putting the target ID to the child
 scoreboard players operation @e[tag=bs.unitest,tag=child] bs.targetId = @e[tag=bs.unitest,tag=parent] bs.id
@@ -101,7 +96,11 @@ execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.ly matches 705 r
 
 execute as @e[tag=bs.unitest,tag=child] unless score @s bs.link.lz matches -2115 run tellraw @a [{"text":"[bs.link:create_link_tti] expected bs.link.lz = -2115, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.link.lz"}}]
 
-kill @e[tag=bs.unitest]
-
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.link:create_link_tti] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]
+
+
+
+#==============================================================================
+
+kill @e[tag=bs.unitest]

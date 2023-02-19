@@ -2,6 +2,7 @@ tellraw @a ["",{"text":"<"},{"text":"BookShelf","color":"dark_aqua"},{"text":"> 
 
 scoreboard objectives add bs.unit_tests dummy
 
+function bs.unit_tests:module/bitwise
 function bs.unit_tests:module/id
 function bs.unit_tests:module/link
 function bs.unit_tests:module/math

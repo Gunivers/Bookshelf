@@ -163,7 +163,11 @@ This lib use global scores, that are automatically created:
 
 ### ♻️ Conservation principle
 
-> "Nothing is lost, nothing is created, everything is transformed" - Antoine Lavoisier
+```{epigraph}
+"Nothing is lost, nothing is created, everything is transformed"
+
+-- Antoine Lavoisier
+```
 
 The lib must have a minimum impact on the scores and other data in order to avoid some overwritings of data. It means that we should avoid as much as possible to : 
 
