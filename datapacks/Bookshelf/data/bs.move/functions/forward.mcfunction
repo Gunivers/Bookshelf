@@ -20,7 +20,7 @@
 scoreboard objectives add bs.collision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Collision Type","color":"aqua"}]
 scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
 
-scoreboard objectives add bs.vector.front dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
+scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Front","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -34,7 +34,7 @@ tag @s[tag=bs.config.override] remove bs.config.override
 
 # Backup
 
-scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.front
+scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
 scoreboard players operation #backup.move.res0 bs = @s bs.res0
 
 # Absurd values security
@@ -44,11 +44,11 @@ scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
 
 # Decomposition in sum of vector with parameters <= bs.precision
 
-scoreboard players operation vector.fastNormalize.Z bs = @s bs.vector.front
+scoreboard players operation vector.fastNormalize.Z bs = @s bs.vector.z
 execute if score vector.fastNormalize.Z bs matches ..-1 run scoreboard players operation vector.fastNormalize.Z bs *= -1 bs.const
 scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.Z bs
-scoreboard players operation @s bs.vector.front *= @s bs.precision
-scoreboard players operation @s bs.vector.front /= vector.fastNormalize.Z bs
+scoreboard players operation @s bs.vector.z *= @s bs.precision
+scoreboard players operation @s bs.vector.z /= vector.fastNormalize.Z bs
 scoreboard players set @s bs.res0 1000
 scoreboard players operation @s bs.res0 *= @s bs.precision
 scoreboard players operation @s bs.res0 /= vector.fastNormalize.Z bs

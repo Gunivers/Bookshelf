@@ -1,7 +1,7 @@
 #__________________________________________________
 # Get working vector
 
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vector.front
+execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vector.z
 
 #__________________________________________________
 # Apply movement

@@ -31,7 +31,8 @@ author = 'Gunivers'
 # ones.
 extensions = [
     'myst_parser',
-    'sphinx_design'
+    'sphinx_design',
+    'sphinx_togglebutton'
 ]
 myst_heading_anchors = 6
 

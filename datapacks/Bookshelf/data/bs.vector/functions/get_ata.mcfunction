@@ -31,18 +31,18 @@ scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_
 #__________________________________________________
 # CODE
 
-execute store result score refX bs run data get entity @s Pos[0] 1000
-execute store result score refY bs run data get entity @s Pos[1] 1000
-execute store result score refZ bs run data get entity @s Pos[2] 1000
+execute store result score #vector.get_ata.origin.x bs.data run data get entity @s Pos[0] 1000
+execute store result score #vector.get_ata.origin.y bs.data run data get entity @s Pos[1] 1000
+execute store result score #vector.get_ata.origin.z bs.data run data get entity @s Pos[2] 1000
 
 summon armor_stand ~ ~ ~ {Tags:["bs","bs.getVector"],Invisible:1}
 execute store result score @s bs.vector.x run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[0] 1000
 execute store result score @s bs.vector.y run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[1] 1000
 execute store result score @s bs.vector.z run data get entity @e[type=armor_stand,tag=bs.getVector,limit=1] Pos[2] 1000
 
-scoreboard players operation @s bs.vector.x -= refX bs
-scoreboard players operation @s bs.vector.y -= refY bs
-scoreboard players operation @s bs.vector.z -= refZ bs
+scoreboard players operation @s bs.vector.x -= #vector.get_ata.origin.x bs.data
+scoreboard players operation @s bs.vector.y -= #vector.get_ata.origin.y bs.data
+scoreboard players operation @s bs.vector.z -= #vector.get_ata.origin.z bs.data
 
 kill @e[tag=bs.getVector,type=armor_stand]
 
