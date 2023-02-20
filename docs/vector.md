@@ -103,6 +103,9 @@ This function require the following modules to work properly:
 
 ## Get length
 
+::::{tab-set}
+:::{tab-item} Length
+
 **`bs.vector:length`**
 
 Compute the norm of the vector
@@ -140,6 +143,10 @@ Compute the norm of the vector
 :class: tip
 
 If you want to minimize the performance impact, we recomande you to use the `lenght_squared` function instead of this one when it's possible. In fact, computing the lenght of a vector require to perform square root operation which is not a simple task for a computer, especially in Minecraft.
+
+`lenght_squared` can often be used in the following cases:
+- You want to compare the length with a given one, then compute manually the square of the given value and compare it with the result of `lenght_squared`, which is faster than computing the real length.
+- You want to compare a vector length with another one, then you can compare the result of `lenght_squared` instead of computing the real length of both vectors.
 ```
 
 ```{admonition} Dependencies
@@ -148,10 +155,8 @@ If you want to minimize the performance impact, we recomande you to use the `len
 This function require the following modules to work properly:
 - [`bs.math`](math)
 ```
-
----
-
-## Get lenght squared
+:::
+:::{tab-item} Length squared
 
 **`bs.vector:lenght_squared`**
 
@@ -186,16 +191,15 @@ Compute the norm of the squared vector and store it on the score `bs.res0`.
     tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"}}]
     ```
 
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.math`](math)
-```
+:::
+::::
 
 ---
 
 ## Normalize
+
+::::{tab-set}
+:::{tab-item} Classic
 
 **`bs.vector:normalize`**
 
@@ -226,9 +230,15 @@ Allows to normalize the components of the vector by putting the length at 1000 (
 Normalization of vector doesn't often need to be accurate, so you can try first to use the `fast_normalize` function instead of this one. It is less accurate, but it avoid the square root computation so it is faster.
 ```
 
----
+```{admonition} Dependencies
+:class: dropdown
 
-## Fast normalize
+This function require the following modules to work properly:
+- [`bs.math`](math)
+```
+
+:::
+:::{tab-item} Fast
 
 **`bs.vector:fast_normalize`**
 
@@ -252,6 +262,9 @@ Allows to normalize the components of the vector by placing the largest componen
     
     (scores) `@s bs.vector.[x,y,z]`
     : The normalized vector components
+
+:::
+::::
 
 ---
 
