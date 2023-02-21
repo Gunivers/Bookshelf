@@ -48,15 +48,15 @@ entity.
    (execution) `as <entities>`
    : The entities you want to perform the computation on
 
-   (scores) `@s bs.var<0|1|2>`
+   (scores) `@s bs.in.<0|1|2>`
    : Vector coordinates $(X,Y,Z)$ in the starting base
 
-   (scores) `@s bs.var<3|4>`
+   (scores) `@s bs.in.<3|4>`
    : Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
 
 :Outputs:
 
-   (scores) `bs.res<0|1|2>`
+   (scores) `bs.out.<0|1|2>`
    : Vector coordinates $(X',Y',Z')$ in the target base
 
 :Examples:
