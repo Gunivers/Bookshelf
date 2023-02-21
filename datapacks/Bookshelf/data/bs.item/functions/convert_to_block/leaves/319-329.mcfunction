@@ -1,3 +1,3 @@
-execute if score @s bs.itemId matches 319 run scoreboard players set @s bs.blockId 1572
-execute if score @s bs.itemId matches 322 run scoreboard players set @s bs.blockId 3610
-execute if score @s bs.itemId matches 329 run scoreboard players set @s bs.blockId 3608
+execute if score @s bs.item.id matches 319 run scoreboard players set @s bs.block.id 1572
+execute if score @s bs.item.id matches 322 run scoreboard players set @s bs.block.id 3610
+execute if score @s bs.item.id matches 329 run scoreboard players set @s bs.block.id 3608

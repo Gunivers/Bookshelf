@@ -14,7 +14,7 @@
 #__________________________________________________
 ## PARAMETERS
 
-## Input: bs.var0 (score): value (in %) to set the bar to.
+## Input: bs.in.0 (score): value (in %) to set the bar to.
 
 #__________________________________________________
 ## INIT
@@ -25,20 +25,20 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation SAVE.RES0 bs = @s bs.res0
-scoreboard players operation PROGRESS bs = @s bs.var0
+scoreboard players operation SAVE.RES0 bs = @s bs.out.0
+scoreboard players operation PROGRESS bs = @s bs.in.0
 execute store result score LEVEL bs run xp query @s levels
 
 xp set @s 130 levels
 
-scoreboard players set @s bs.var0 1012
-scoreboard players operation @s bs.var0 *= PROGRESS bs
-scoreboard players operation @s bs.var0 /= 100 bs.const
-execute if score @s bs.var0 = @s bs.res0 run scoreboard players remove @s bs.var0 1
+scoreboard players set @s bs.in.0 1012
+scoreboard players operation @s bs.in.0 *= PROGRESS bs
+scoreboard players operation @s bs.in.0 /= 100 bs.const
+execute if score @s bs.in.0 = @s bs.out.0 run scoreboard players remove @s bs.in.0 1
 function bs.xp:set_points
 
-scoreboard players operation @s bs.var0 = LEVELS bs
+scoreboard players operation @s bs.in.0 = LEVELS bs
 function bs.xp:set_levels
 
-scoreboard players operation @s bs.res0 = SAVE.RES0 bs
-scoreboard players operation @s bs.var0 = PROGRESS bs
+scoreboard players operation @s bs.out.0 = SAVE.RES0 bs
+scoreboard players operation @s bs.in.0 = PROGRESS bs

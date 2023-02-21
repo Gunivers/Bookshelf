@@ -44,10 +44,10 @@ Computes the bitwise conjunction of the two input numbers
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The first operand $a$
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -59,7 +59,7 @@ Computes the bitwise conjunction of the two input numbers
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation = $a \times b$
 
 :Example:
@@ -67,10 +67,10 @@ Computes the bitwise conjunction of the two input numbers
    Calculate and display $-9 \times 57$
    ```
    # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
+   scoreboard players set @s bs.in.0 -9
+   scoreboard players set @s bs.in.1 57
    function bs.math:bitwise/and
-   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---
@@ -87,12 +87,12 @@ the input
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number you want to know the number of bits
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The number of bits needed to store the input
 
    ```{admonition} Negative input
@@ -107,9 +107,9 @@ the input
    Calculate and display the number of bits of 12
    ```
    # Once
-   scoreboard players set @s bs.var0 12
+   scoreboard players set @s bs.in.0 12
    function bs.math:bitwise/get_number_of_bits
-   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---
@@ -125,7 +125,7 @@ Computes the bit by bit negation of the input
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number you want to negate
 
 :Example:
@@ -133,9 +133,9 @@ Computes the bit by bit negation of the input
    Calculate and display $~452$
    ```
    # Once
-   scoreboard players set @s bs.var0 452
+   scoreboard players set @s bs.in.0 452
    function bs.math:bitwise/not
-   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---
@@ -151,10 +151,10 @@ Computes the bit to bit disjunction of the two input numbers
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The first operand $a$
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -166,7 +166,7 @@ Computes the bit to bit disjunction of the two input numbers
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation = $a + b$
 
 :Example:
@@ -174,10 +174,10 @@ Computes the bit to bit disjunction of the two input numbers
    Calculate and display $-9 + 57$.
    ```
    # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
+   scoreboard players set @s bs.in.0 -9
+   scoreboard players set @s bs.in.1 57
    function bs.math:bitwise/gold
-   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---
@@ -193,12 +193,12 @@ Computes the two's complement of the input
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number you want to compute the two's complement
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The two's complement of the input
 
 :Example:
@@ -206,9 +206,9 @@ Computes the two's complement of the input
    Calculate and display the two's complement of 12
    ```
    # Once
-   scoreboard players set @s bs.var0 12
+   scoreboard players set @s bs.in.0 12
    function bs.math:bitwise/to_complement
-   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---
@@ -225,10 +225,10 @@ numbers
    (execution) `as <entities>`
    : The entities to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The first operand $a$
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -240,7 +240,7 @@ numbers
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation = $a \oplus b$
 
 :Example:
@@ -248,10 +248,10 @@ numbers
    Calculate and display $-9 \oplus 57$.
    ```
    # Once
-   scoreboard players set @s bs.var0 -9
-   scoreboard players set @s bs.var1 57
+   scoreboard players set @s bs.in.0 -9
+   scoreboard players set @s bs.in.1 57
    function bs.math:bitwise/xor
-   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ---

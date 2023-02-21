@@ -4,10 +4,10 @@ tag @s add bs_Pathfind_Rewind_Head
 tag @e[tag=bs_Pathfind,tag=!bs_Pathfind_Rewind,distance=0.1..1.5] add bs_Pathfind_Rewind_Check
 
 
-scoreboard players operation @s bs.var2 > @e[tag=bs_Pathfind_Rewind_Check] PathCost
-scoreboard players operation @s bs.var2 < @e[tag=bs_Pathfind_Rewind_Check] PathCost
+scoreboard players operation @s bs.in.2 > @e[tag=bs_Pathfind_Rewind_Check] PathCost
+scoreboard players operation @s bs.in.2 < @e[tag=bs_Pathfind_Rewind_Check] PathCost
 
-execute as @e[tag=bs_Pathfind_Rewind_Check] if score @s PathCost = @e[tag=bs_Pathfind_Rewind_Head,limit=1] bs.var2 run tag @s add bs_Pathfind_Rewind_Head
+execute as @e[tag=bs_Pathfind_Rewind_Check] if score @s PathCost = @e[tag=bs_Pathfind_Rewind_Head,limit=1] bs.in.2 run tag @s add bs_Pathfind_Rewind_Head
 
 
 tag @s remove bs_Pathfind_Rewind_Head

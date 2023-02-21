@@ -24,18 +24,18 @@ scoreboard objectives add PathCost dummy [{"text":"Bookshelf ","color":"dark_gra
 
 # Possible moves -> 0 = terrestrial (like zombies), 1 = aerial (like bat). You can cofig your own possible moves file in entity/move/zzz_config/pathind/possible_moves/
 # and link your file to the system in entity/move/zzz_child/pathfind/source
-scoreboard players set @s[tag=!bs.config.override] bs.var3 0
+scoreboard players set @s[tag=!bs.config.override] bs.in.3 0
 
 # Maximum number of tests (default: 500)
-scoreboard players set @s[tag=!bs.config.override] bs.var1 500
+scoreboard players set @s[tag=!bs.config.override] bs.in.1 500
 
 #__________________________________________________
 # CODE
 
 execute at @s align x align y align z positioned ~0.5 ~ ~0.5 run summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["bs","bs_Pathfind_Source"]}
 summon armor_stand ~ ~ ~ {Invisible:0,Marker:0,NoGravity:1,Tags:["bs","bs_Pathfind_Target"]}
-scoreboard players operation @e[tag=bs_Pathfind_Source,limit=1] bs.var3 = @s bs.var3
-scoreboard players operation @e[tag=bs_Pathfind_Target,limit=1] bs.var1 = @s bs.var1
+scoreboard players operation @e[tag=bs_Pathfind_Source,limit=1] bs.in.3 = @s bs.in.3
+scoreboard players operation @e[tag=bs_Pathfind_Target,limit=1] bs.in.1 = @s bs.in.1
 
 execute as @e[tag=bs_Pathfind_Source] run function bs.move:pathfind/child/source
 

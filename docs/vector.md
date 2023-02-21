@@ -120,7 +120,7 @@ Compute the norm of the vector
 
 :Outputs:
 
-    (score) `@s bs.res0`
+    (score) `@s bs.out.0`
     : The vector length
 
 :Example:
@@ -136,7 +136,7 @@ Compute the norm of the vector
     execute as @s run function bs.vector:lenght
 
     # Display the result
-    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"}}]
+    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"}}]
     ```
 
 ```{admonition} Performance tip
@@ -160,7 +160,7 @@ This function require the following modules to work properly:
 
 **`bs.vector:lenght_squared`**
 
-Compute the norm of the squared vector and store it on the score `bs.res0`.
+Compute the norm of the squared vector and store it on the score `bs.out.0`.
 
 :Inputs:
 
@@ -172,7 +172,7 @@ Compute the norm of the squared vector and store it on the score `bs.res0`.
 
 :Outputs:
 
-    (score) `@s bs.res0`
+    (score) `@s bs.out.0`
     : The vector length squared
 
 :Example:
@@ -188,7 +188,7 @@ Compute the norm of the squared vector and store it on the score `bs.res0`.
     execute as @s run function bs.vector:lenght_squared
 
     # Display the result
-    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"}}]
+    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"}}]
     ```
 
 :::

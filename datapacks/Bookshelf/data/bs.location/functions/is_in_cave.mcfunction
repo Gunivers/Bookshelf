@@ -22,4 +22,4 @@
 #__________________________________________________
 # CODE
 
-execute store result score @s bs.res0 if block ~ ~ ~ cave_air
+execute store result score @s bs.out.0 if block ~ ~ ~ cave_air

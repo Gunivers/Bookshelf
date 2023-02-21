@@ -30,6 +30,6 @@ function bs.id:check
 
 #   Relative Orientation
 execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.orientation:get_v/accuracy/10-3
-scoreboard players operation @s bs.oriV += @s bs.link.rv
+scoreboard players operation @s bs.ori.v += @s bs.link.rv
 
 function bs.orientation:set_v/accuracy/10-3

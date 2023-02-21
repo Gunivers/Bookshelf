@@ -58,15 +58,15 @@ function.
 
 # Check parent ID
 
-`check_parent` : Compares the `bs.parentId` scores of the entities
+`check_parent` : Compares the `bs.id.parent` scores of the entities
 with the `bs.id.target` score of the entity that executed the
 function.
 
-* The latter receives the tag `bs.parentId.checker`.
+* The latter receives the tag `bs.id.parent.checker`.
 * The other entities receive the tag
-   * `bs.parentId.upper` if their score `bs.id.parent` is higher than the `id.targetId`
-   * `bs.parentId.lower` if their score `bs.id.parent` is lower than the `id.targetId`
-   * `bs.parentId.match` if their score `bs.id.parent` is equal to the `id.targetId`
+   * `bs.id.parent.upper` if their score `bs.id.parent` is higher than the `id.targetId`
+   * `bs.id.parent.lower` if their score `bs.id.parent` is lower than the `id.targetId`
+   * `bs.id.parent.match` if their score `bs.id.parent` is equal to the `id.targetId`
 
 **Example:**
 
@@ -78,8 +78,8 @@ execute as @e[name=Bob,limit=1] run scoreboard players operation @s bs.targetId 
 function bs.id:check_parent
 
 # See the result
-execute unless entity @e[tag=bs.parentId.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
-execute as @e[tag=bs.parentId.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
+execute unless entity @e[tag=bs.id.parent.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
+execute as @e[tag=bs.id.parent.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
 ```
 
 ## Get simple unique ID

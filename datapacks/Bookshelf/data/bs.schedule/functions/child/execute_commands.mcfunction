@@ -18,8 +18,8 @@ function bs.cache:select_jukebox
 execute at @s run setblock ~ ~ ~-2 chain_command_block[facing=up]{UpdateLastExecution:0b,auto:1b}
 
 #Compare
-execute at @s store result score @s bs.var0 run data get block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].GameTick 1
-execute at @s if score @s bs.var0 = @s bs.var0 run tag @s add isEqual
+execute at @s store result score @s bs.in.0 run data get block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].GameTick 1
+execute at @s if score @s bs.in.0 = @s bs.in.0 run tag @s add isEqual
 
 #If is equal
 execute at @s if entity @s[tag=isEqual] run data modify block ~ ~ ~-2 Command set from block ~ ~ ~ RecordItem.tag.ScheduleCommands[0].Command

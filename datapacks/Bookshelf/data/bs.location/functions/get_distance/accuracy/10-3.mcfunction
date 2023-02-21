@@ -25,6 +25,6 @@
 
 function bs.location:get_distance_squared_as_to_at/accuracy/10-3
 
-scoreboard players operation @s bs.var0 = @s bs.res0
+scoreboard players operation @s bs.in.0 = @s bs.out.0
 
 function bs.math:sqrt

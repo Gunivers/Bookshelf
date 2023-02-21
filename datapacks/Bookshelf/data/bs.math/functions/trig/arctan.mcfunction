@@ -19,7 +19,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #math.arctan.x bs.data = @s bs.var0
+scoreboard players operation #math.arctan.x bs.data = @s bs.in.0
 
 execute if score #math.arctan.x bs.data matches -718..718 run function bs.math:trig/arctan/child/below_718
 execute unless score #math.arctan.x bs.data matches -718..718 run function bs.math:trig/arctan/child/above_718

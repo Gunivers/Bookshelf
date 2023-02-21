@@ -24,12 +24,12 @@
 # CODE
 
 # angle + 90
-scoreboard players remove @s bs.var0 90
+scoreboard players remove @s bs.in.0 90
 
 function bs.math:trig/cos
 
 # restoring input angle
-scoreboard players add @s bs.var0 90
+scoreboard players add @s bs.in.0 90
 
 
 

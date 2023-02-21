@@ -29,11 +29,11 @@ execute if entity @s[tag=Valid] run function bs_child:default/core/memory/save_r
 execute if entity @s[tag=Valid] run data modify entity @s ArmorItems[0].tag.Memory prepend from entity @s ArmorItems[0].tag.Buffer3[]
 
 # If the Memory is empty
-execute if entity @s[tag=Valid] unless data entity @s ArmorItems[0].tag.Memory[0] run scoreboard players set @s bs.var0 1
+execute if entity @s[tag=Valid] unless data entity @s ArmorItems[0].tag.Memory[0] run scoreboard players set @s bs.in.0 1
 
 #If the recursive ends due to the empty memory, then the ID is not in the list therefore we add it at the beggining of the memory
-execute if entity @s[tag=Valid] if score @s bs.var0 matches 1 run say a
-execute if entity @s[tag=Valid] if score @s bs.var0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory prepend value {}
-execute if entity @s[tag=Valid] if score @s bs.var0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory[0].bs.id set from entity @s ArmorItems[0].tag.Buffer1
-execute if entity @s[tag=Valid] if score @s bs.var0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory[0].Value set from entity @s ArmorItems[0].tag.Buffer2
+execute if entity @s[tag=Valid] if score @s bs.in.0 matches 1 run say a
+execute if entity @s[tag=Valid] if score @s bs.in.0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory prepend value {}
+execute if entity @s[tag=Valid] if score @s bs.in.0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory[0].bs.id set from entity @s ArmorItems[0].tag.Buffer1
+execute if entity @s[tag=Valid] if score @s bs.in.0 matches 1 run data modify entity @s ArmorItems[0].tag.Memory[0].Value set from entity @s ArmorItems[0].tag.Buffer2
 tag @s remove Valid

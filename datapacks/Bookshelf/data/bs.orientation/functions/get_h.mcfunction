@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
+scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -25,6 +25,6 @@ scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"dark_gray
 # CODE
 function bs.core:default_entity
 
-execute store result score @s bs.oriH run data get entity @e[tag=bs.new,limit=1,sort=nearest] Rotation[0] 1
+execute store result score @s bs.ori.h run data get entity @e[tag=bs.new,limit=1,sort=nearest] Rotation[0] 1
 
 execute as @e[tag=bs.new] run function bs.health:safe_kill

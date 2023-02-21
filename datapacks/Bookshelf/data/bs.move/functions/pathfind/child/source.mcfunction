@@ -2,7 +2,7 @@ scoreboard players set @s PathCost 0
 
 # Loop if locations doesn't match
 function bs.move:pathfind/config/possible_moves/main
-scoreboard players operation @e[tag=bs_Pathfind_Move] bs.var3 = @e[tag=bs_Pathfind_Source,limit=1] bs.var3
+scoreboard players operation @e[tag=bs_Pathfind_Move] bs.in.3 = @e[tag=bs_Pathfind_Source,limit=1] bs.in.3
 execute at @s unless entity @s[tag=bs_Pathfind_Target,distance=..0.7] run function bs.move:pathfind/child/loop_search
 
 # Generate path

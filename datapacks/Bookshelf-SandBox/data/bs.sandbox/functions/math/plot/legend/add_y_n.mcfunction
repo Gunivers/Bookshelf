@@ -5,12 +5,12 @@ tag @s add bs.sandbox.plot.legend.y_n
 tag @s add bs.sandbox.plot.drawed
 tag @s remove bs.sandbox.plot.legend.new
 
-scoreboard players operation @s bs.locX = sandbox.plot.center.x bs.const
-scoreboard players operation @s bs.locY = sandbox.plot.center.y bs.const
-scoreboard players operation @s bs.locY -= sandbox.plot.size.y bs.const
-scoreboard players add @s bs.locY 100
-scoreboard players operation @s bs.locZ = sandbox.plot.center.z bs.const
-scoreboard players remove @s bs.locZ 1000
+scoreboard players operation @s bs.loc.x = sandbox.plot.center.x bs.const
+scoreboard players operation @s bs.loc.y = sandbox.plot.center.y bs.const
+scoreboard players operation @s bs.loc.y -= sandbox.plot.size.y bs.const
+scoreboard players add @s bs.loc.y 100
+scoreboard players operation @s bs.loc.z = sandbox.plot.center.z bs.const
+scoreboard players remove @s bs.loc.z 1000
 
 function bs.location:fast_set/accuracy/10-3
 

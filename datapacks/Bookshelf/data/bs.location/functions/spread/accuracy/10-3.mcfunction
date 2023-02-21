@@ -13,9 +13,9 @@
 
 #__________________________________________________
 # PARAMETERS
-#bs.var3: CenterX
-#bs.var4: CenterZ 
-#bs.var4: Radius
+#bs.in.3: CenterX
+#bs.in.4: CenterZ 
+#bs.in.4: Radius
 #__________________________________________________
 # INIT
 
@@ -33,33 +33,33 @@
 
 #__________________________________________________
 # CODE
-scoreboard players operation @s bs.var6 = @s bs.var4
-scoreboard players operation @s bs.var6 *= 2 bs.const
-scoreboard players operation @s bs.var6 += 1 bs.const
+scoreboard players operation @s bs.in.6 = @s bs.in.4
+scoreboard players operation @s bs.in.6 *= 2 bs.const
+scoreboard players operation @s bs.in.6 += 1 bs.const
 
 #Random
 function bs.math:random
-scoreboard players operation @s bs.res0 %= @s bs.var6 
+scoreboard players operation @s bs.out.0 %= @s bs.in.6 
 
-scoreboard players set @s bs.var0 0
-execute if score @s bs.res0 > @s bs.var4 run scoreboard players operation @s bs.var0 -= @s bs.res0
-execute if score @s bs.res0 > @s bs.var4 run scoreboard players operation @s bs.var0 /= 2 bs.const
-execute if score @s bs.res0 <= @s bs.var4 run scoreboard players operation @s bs.var0 = @s bs.res0
+scoreboard players set @s bs.in.0 0
+execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.0 -= @s bs.out.0
+execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.0 /= 2 bs.const
+execute if score @s bs.out.0 <= @s bs.in.4 run scoreboard players operation @s bs.in.0 = @s bs.out.0
 
-scoreboard players operation @s bs.var0 += @s bs.var3
+scoreboard players operation @s bs.in.0 += @s bs.in.3
 
 #Random
 function bs.math:random
-scoreboard players operation @s bs.res0 %= @s bs.var6 
+scoreboard players operation @s bs.out.0 %= @s bs.in.6 
 
-scoreboard players set @s bs.var2 0
-execute if score @s bs.res0 > @s bs.var4 run scoreboard players operation @s bs.var2 -= @s bs.res0
-execute if score @s bs.res0 > @s bs.var4 run scoreboard players operation @s bs.var2 /= 2 bs.const
-execute if score @s bs.res0 <= @s bs.var4 run scoreboard players operation @s bs.var2 = @s bs.res0
+scoreboard players set @s bs.in.2 0
+execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.2 -= @s bs.out.0
+execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.2 /= 2 bs.const
+execute if score @s bs.out.0 <= @s bs.in.4 run scoreboard players operation @s bs.in.2 = @s bs.out.0
 
-scoreboard players operation @s bs.var2 += @s bs.var4
+scoreboard players operation @s bs.in.2 += @s bs.in.4
 
-execute store result score @s bs.var1 run data get entity @s Pos[1] 1
+execute store result score @s bs.in.1 run data get entity @s Pos[1] 1
 
 function bs.location:set/accuracy/10-3
 

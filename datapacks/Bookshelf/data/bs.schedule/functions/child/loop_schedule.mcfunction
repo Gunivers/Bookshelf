@@ -11,13 +11,13 @@
 # CODE:
 
 #Get GameTick
-execute store result score @s bs.var0 run time query gametime
+execute store result score @s bs.in.0 run time query gametime
 
 function bs.cache:select_command_block
 
 #Compare first scheduled command to the gametick
-execute as @e[tag=bs_Cache_Head] at @s store result score @s bs.var0 run data get block ~ ~ ~2 RecordItem.tag.ScheduleCommands[0].GameTick 1
-execute as @e[tag=bs_Cache_Head] at @s if score @s bs.var0 = @s bs.var0 run tag @s add isEqual
+execute as @e[tag=bs_Cache_Head] at @s store result score @s bs.in.0 run data get block ~ ~ ~2 RecordItem.tag.ScheduleCommands[0].GameTick 1
+execute as @e[tag=bs_Cache_Head] at @s if score @s bs.in.0 = @s bs.in.0 run tag @s add isEqual
 
 #If match, prepare and active the command-block buffer for execute the command(s)
 execute at @e[tag=bs_Cache_Head,tag=isEqual] run data modify block ~ ~1 ~ UpdateLastExecution set value 0

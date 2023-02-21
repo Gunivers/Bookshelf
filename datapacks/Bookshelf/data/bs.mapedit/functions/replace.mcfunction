@@ -22,7 +22,7 @@
 #   bs.original.id (score dummy)
 
 # - Block ID :  ID of the new block
-#	bs.blockId (score dummy)
+#	bs.block.id (score dummy)
 
 #
 # OUTPUT:
@@ -51,8 +51,8 @@ function bs.mapedit:set/ini
 
 
 #id du nouveaux block
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.replace.id = @s bs.blockId
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.blockId = @s bs.blockId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.replace.id = @s bs.block.id
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.block.id = @s bs.block.id
 #ID du block a remplacer
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.original.id = @s bs.original.id
 

@@ -23,21 +23,21 @@
 # CODE
 
 # Backup
-scoreboard players operation location.getDistance.locX bs = @s bs.locX
-scoreboard players operation location.getDistance.locY bs = @s bs.locY
-scoreboard players operation location.getDistance.locZ bs = @s bs.locZ
+scoreboard players operation location.getDistance.locX bs = @s bs.loc.x
+scoreboard players operation location.getDistance.locY bs = @s bs.loc.y
+scoreboard players operation location.getDistance.locZ bs = @s bs.loc.z
 
 function bs.location:get_relative_ata
 
-scoreboard players operation @s bs.locX *= @s bs.locX
-scoreboard players operation @s bs.locY *= @s bs.locY
-scoreboard players operation @s bs.locZ *= @s bs.locZ
+scoreboard players operation @s bs.loc.x *= @s bs.loc.x
+scoreboard players operation @s bs.loc.y *= @s bs.loc.y
+scoreboard players operation @s bs.loc.z *= @s bs.loc.z
 
-scoreboard players operation @s bs.res0 = @s bs.locX
-scoreboard players operation @s bs.res0 += @s bs.locY
-scoreboard players operation @s bs.res0 += @s bs.locZ
+scoreboard players operation @s bs.out.0 = @s bs.loc.x
+scoreboard players operation @s bs.out.0 += @s bs.loc.y
+scoreboard players operation @s bs.out.0 += @s bs.loc.z
 
 # Restore
-scoreboard players operation @s bs.locX = location.getDistance.locX bs
-scoreboard players operation @s bs.locY = location.getDistance.locY bs
-scoreboard players operation @s bs.locZ = location.getDistance.locZ bs
+scoreboard players operation @s bs.loc.x = location.getDistance.locX bs
+scoreboard players operation @s bs.loc.y = location.getDistance.locY bs
+scoreboard players operation @s bs.loc.z = location.getDistance.locZ bs

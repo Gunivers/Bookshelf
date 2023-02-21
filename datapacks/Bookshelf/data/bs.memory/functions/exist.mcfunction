@@ -10,7 +10,7 @@
 # - @s ArmorItems[0].tag.Buffer1 ~ Variable Name (NBT)
 
 # OUTPUT:
-# - bs.var0
+# - bs.in.0
 
 # NOTE:
 # Return 1 if the variable exists, 0 else.
@@ -18,5 +18,5 @@
 
 # CODE:
 function bs.memory:get
-execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s bs.res0 1
-execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s bs.res0 0
+execute if data entity @s ArmorItems[0].tag.Output run scoreboard players set @s bs.out.0 1
+execute unless data entity @s ArmorItems[0].tag.Output run scoreboard players set @s bs.out.0 0

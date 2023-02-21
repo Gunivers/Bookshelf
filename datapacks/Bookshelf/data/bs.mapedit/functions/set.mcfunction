@@ -18,7 +18,7 @@
 # 	- Pos_zf (score dummy)
 
 # - Block ID
-#	bs.blockId (score dummy)
+#	bs.block.id (score dummy)
 #
 # OUTPUT:
 # - Block place bettwen Location 1 and Location 2
@@ -37,7 +37,7 @@ function bs.mapedit:set/ini
 
 
 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.blockId = @s bs.blockId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.block.id = @s bs.block.id
 
 #1 corespon au setblock
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 1

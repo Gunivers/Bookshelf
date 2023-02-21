@@ -13,7 +13,7 @@
 
 ## Get aimed block
 
-`aimed_block`: Places an armor_stand having the tag `bs.aimedBlock` and a score `bs.parentId` corresponding to the Id of the running entity.
+`aimed_block`: Places an armor_stand having the tag `bs.aimedBlock` and a score `bs.id.parent` corresponding to the Id of the running entity.
 
 *Example:*
 
@@ -28,7 +28,7 @@ function bs.view:aimed_block
 
 ## Get aimed entity
 
-`aimed_entity`: Gives the tag `bs.raycastEntity` and a score `bs.parentId` corresponding to the Id of the entity executing at the targeted entity by the player.
+`aimed_entity`: Gives the tag `bs.raycastEntity` and a score `bs.id.parent` corresponding to the Id of the entity executing at the targeted entity by the player.
 
 *Example:*
 

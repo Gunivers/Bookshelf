@@ -17,7 +17,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
+scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -26,4 +26,4 @@ scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"dark_gray
 # CODE
 
 execute if entity @s[type=minecraft:player] run function bs.location:set_y/child/player
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 1 run scoreboard players add @s bs.locY 0
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 1 run scoreboard players add @s bs.loc.y 0

@@ -1,3 +1,3 @@
-execute if score @s bs.blockId matches 9799..9826 run function bs.block:convert_to_item/nodes/9799-9826
-execute if score @s bs.blockId matches 9827..9854 run function bs.block:convert_to_item/nodes/9827-9854
-execute if score @s bs.blockId matches 9855..9883 run function bs.block:convert_to_item/nodes/9855-9883
+execute if score @s bs.block.id matches 9799..9826 run function bs.block:convert_to_item/nodes/9799-9826
+execute if score @s bs.block.id matches 9827..9854 run function bs.block:convert_to_item/nodes/9827-9854
+execute if score @s bs.block.id matches 9855..9883 run function bs.block:convert_to_item/nodes/9855-9883

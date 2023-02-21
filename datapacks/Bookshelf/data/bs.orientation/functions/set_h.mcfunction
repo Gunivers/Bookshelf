@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
+scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation H","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -26,4 +26,4 @@ scoreboard objectives add bs.oriH dummy [{"text":"Bookshelf ","color":"dark_gray
 
 execute at @s run function bs.core:default_entity
 
-execute store result entity @e[tag=bs.new,limit=1] Rotation[0] float 1 run scoreboard players get @s bs.oriH
+execute store result entity @e[tag=bs.new,limit=1] Rotation[0] float 1 run scoreboard players get @s bs.ori.h

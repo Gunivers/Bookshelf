@@ -18,7 +18,7 @@
 # Input: bs.vector.y (score dummy)
 # Input: bs.vector.z (score dummy)
 
-# Output: bs.res0 (score dummy)
+# Output: bs.out.0 (score dummy)
 
 #__________________________________________________
 # INIT
@@ -33,16 +33,16 @@ scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_
 #__________________________________________________
 # CODE
 
-# Backup of bs.var0
-scoreboard players operation vector.length.var0 bs.data = @s bs.var0
+# Backup of bs.in.0
+scoreboard players operation vector.length.var0 bs.data = @s bs.in.0
 
 # Get lenght^2
 function bs.vector:length_squared
 
 # sqrt(legnth^2)
-scoreboard players operation @s bs.var0 = @s bs.res0
-scoreboard players operation @s bs.var0 *= 1000 bs.const
+scoreboard players operation @s bs.in.0 = @s bs.out.0
+scoreboard players operation @s bs.in.0 *= 1000 bs.const
 function bs.math:common/sqrt
 
-# Restoring bs.var0
-scoreboard players operation @s bs.var0 = vector.length.var0 bs
+# Restoring bs.in.0
+scoreboard players operation @s bs.in.0 = vector.length.var0 bs

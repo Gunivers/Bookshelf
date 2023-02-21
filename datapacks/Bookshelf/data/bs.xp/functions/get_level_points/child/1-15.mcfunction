@@ -2,6 +2,6 @@
 #                                   ^^^^^^^^^^^
 say a
 
-scoreboard players operation @s bs.res0 = @s bs.var0
-scoreboard players operation @s bs.res0 *= 2 bs.const
-scoreboard players operation @s bs.res0 += 7 bs.const
+scoreboard players operation @s bs.out.0 = @s bs.in.0
+scoreboard players operation @s bs.out.0 *= 2 bs.const
+scoreboard players operation @s bs.out.0 += 7 bs.const

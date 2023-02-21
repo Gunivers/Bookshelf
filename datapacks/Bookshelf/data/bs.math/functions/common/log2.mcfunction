@@ -28,5 +28,5 @@
 
 function bs.math:common/log
 
-scoreboard players operation @s bs.res0 *= 1000 bs.const
-scoreboard players operation @s bs.res0 /= 693 bs.const
+scoreboard players operation @s bs.out.0 *= 1000 bs.const
+scoreboard players operation @s bs.out.0 /= 693 bs.const

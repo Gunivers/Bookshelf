@@ -34,26 +34,26 @@ scoreboard objectives remove bs.config
 scoreboard objectives remove bs.const
 scoreboard objectives remove bs.data
 scoreboard objectives remove bs.debug
-scoreboard objectives remove bs.res0
-scoreboard objectives remove bs.res1
-scoreboard objectives remove bs.res2
-scoreboard objectives remove bs.res3
-scoreboard objectives remove bs.res4
-scoreboard objectives remove bs.res5
-scoreboard objectives remove bs.res6
-scoreboard objectives remove bs.res7
-scoreboard objectives remove bs.res8
-scoreboard objectives remove bs.res9
-scoreboard objectives remove bs.var0
-scoreboard objectives remove bs.var1
-scoreboard objectives remove bs.var2
-scoreboard objectives remove bs.var3
-scoreboard objectives remove bs.var4
-scoreboard objectives remove bs.var5
-scoreboard objectives remove bs.var6
-scoreboard objectives remove bs.var7
-scoreboard objectives remove bs.var8
-scoreboard objectives remove bs.var9
+scoreboard objectives remove bs.out.0
+scoreboard objectives remove bs.out.1
+scoreboard objectives remove bs.out.2
+scoreboard objectives remove bs.out.3
+scoreboard objectives remove bs.out.4
+scoreboard objectives remove bs.out.5
+scoreboard objectives remove bs.out.6
+scoreboard objectives remove bs.out.7
+scoreboard objectives remove bs.out.8
+scoreboard objectives remove bs.out.9
+scoreboard objectives remove bs.in.0
+scoreboard objectives remove bs.in.1
+scoreboard objectives remove bs.in.2
+scoreboard objectives remove bs.in.3
+scoreboard objectives remove bs.in.4
+scoreboard objectives remove bs.in.5
+scoreboard objectives remove bs.in.6
+scoreboard objectives remove bs.in.7
+scoreboard objectives remove bs.in.8
+scoreboard objectives remove bs.in.9
 
   # ~~ Health ~~
 scoreboard objectives remove bs.ttl
@@ -61,7 +61,7 @@ scoreboard objectives remove bs.ttl
 	# ~~ Id ~~
 scoreboard objectives remove bs.id
 scoreboard objectives remove bs.targetId
-scoreboard objectives remove bs.parentId
+scoreboard objectives remove bs.id.parent
 
  # ~~ Link ~~
 scoreboard objectives remove bs.link.rx
@@ -75,9 +75,9 @@ scoreboard objectives remove bs.link.lz
 scoreboard objectives remove bs.link.to
 
 	# ~~ Location ~~
-scoreboard objectives remove bs.locX
-scoreboard objectives remove bs.locY
-scoreboard objectives remove bs.locZ
+scoreboard objectives remove bs.loc.x
+scoreboard objectives remove bs.loc.y
+scoreboard objectives remove bs.loc.z
 
 	# ~~ Orientation ~~
 scoreboard objectives remove bs.ori.v

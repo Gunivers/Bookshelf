@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.oriV dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation V","color":"aqua"}]
+scoreboard objectives add bs.ori.v dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Orientation V","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -26,5 +26,5 @@ scoreboard objectives add bs.oriV dummy [{"text":"Bookshelf ","color":"dark_gray
 
 execute at @s run function bs.core:default_entity
 
-execute store result entity @e[tag=bs.new,limit=1] Rotation[1] float 1 run scoreboard players get @s bs.oriV
+execute store result entity @e[tag=bs.new,limit=1] Rotation[1] float 1 run scoreboard players get @s bs.ori.v
 tp @s @e[tag=bs.new,limit=1]

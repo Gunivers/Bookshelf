@@ -1,4 +1,4 @@
-execute if score @s bs.itemId matches 136 run scoreboard players set @s bs.blockId 7488
-execute if score @s bs.itemId matches 137 run scoreboard players set @s bs.blockId 1650
-execute if score @s bs.itemId matches 138 run scoreboard players set @s bs.blockId 10415
-execute if score @s bs.itemId matches 139 run scoreboard players set @s bs.blockId 10398
+execute if score @s bs.item.id matches 136 run scoreboard players set @s bs.block.id 7488
+execute if score @s bs.item.id matches 137 run scoreboard players set @s bs.block.id 1650
+execute if score @s bs.item.id matches 138 run scoreboard players set @s bs.block.id 10415
+execute if score @s bs.item.id matches 139 run scoreboard players set @s bs.block.id 10398

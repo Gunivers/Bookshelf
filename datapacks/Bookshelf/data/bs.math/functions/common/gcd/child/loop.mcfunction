@@ -1,9 +1,9 @@
-scoreboard players operation @s bs.var2 %= @s bs.res0
+scoreboard players operation @s bs.in.2 %= @s bs.out.0
 
-tag @s[scores={bs.var2=0}] add PGCDfound
+tag @s[scores={bs.in.2=0}] add PGCDfound
 
-scoreboard players operation @s[tag=!PGCDfound] bs.var3 = @s bs.res0
-scoreboard players operation @s[tag=!PGCDfound] bs.res0 = @s bs.var2
-scoreboard players operation @s[tag=!PGCDfound] bs.var2 = @s bs.var3
+scoreboard players operation @s[tag=!PGCDfound] bs.in.3 = @s bs.out.0
+scoreboard players operation @s[tag=!PGCDfound] bs.out.0 = @s bs.in.2
+scoreboard players operation @s[tag=!PGCDfound] bs.in.2 = @s bs.in.3
 
 execute at @s[tag=!PGCDfound] run function bs.math:common/gcd/child/loop

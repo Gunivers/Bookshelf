@@ -14,7 +14,7 @@
 #__________________________________________________
 ## PARAMETERS
 
-## Input: bs.var0 (score): levels to add to the player
+## Input: bs.in.0 (score): levels to add to the player
 
 #__________________________________________________
 ## INIT
@@ -25,7 +25,7 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation LEVELS bs = @s bs.var0
+scoreboard players operation LEVELS bs = @s bs.in.0
 
 execute if score LEVELS bs matches 128.. run function bs.xp:add_levels/child/128-
 

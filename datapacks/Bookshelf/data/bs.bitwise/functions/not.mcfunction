@@ -15,8 +15,8 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s bs.var0 (score): number to negate
-# Output: @s bs.res0 (score): the negation of the number (~var0)
+# Input: @s bs.in.0 (score): number to negate
+# Output: @s bs.out.0 (score): the negation of the number (~var0)
 
 #__________________________________________________
 # INIT
@@ -27,8 +27,8 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation #bs.bitwise.x bs.data = @s bs.var0
+scoreboard players operation #bs.bitwise.x bs.data = @s bs.in.0
 
 scoreboard players operation #bs.bitwise.x bs.data *= -1 bs.const
 scoreboard players remove #bs.bitwise.x bs.data 1
-scoreboard players operation @s bs.res0 = #bs.bitwise.x bs.data
+scoreboard players operation @s bs.out.0 = #bs.bitwise.x bs.data

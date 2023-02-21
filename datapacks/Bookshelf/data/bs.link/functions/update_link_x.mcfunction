@@ -30,7 +30,7 @@ function bs.id:check
 
 # Relative Position
 execute at @s run function bs.location:get_x/accuracy/10-3
-scoreboard players operation @s bs.link.rx = @s bs.locX
+scoreboard players operation @s bs.link.rx = @s bs.loc.x
 
 execute at @e[tag=bs.id.match] run function bs.location:get_x/accuracy/10-3
-scoreboard players operation @s bs.link.rx -= @s bs.locX
+scoreboard players operation @s bs.link.rx -= @s bs.loc.x

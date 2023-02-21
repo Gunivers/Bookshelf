@@ -24,7 +24,7 @@
 #__________________________________________________
 ## CODE
 
-execute store result score @s bs.res0 run xp query @s points
+execute store result score @s bs.out.0 run xp query @s points
 execute store result score LEVELS bs run xp query @s levels
 
 execute if score LEVELS bs matches 1..15 run function bs.xp:get_total_points/child/1-15

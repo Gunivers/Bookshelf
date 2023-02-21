@@ -23,8 +23,8 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.var1 = @s bs.var0
-scoreboard players set @s bs.res0 1
+scoreboard players operation @s bs.in.1 = @s bs.in.0
+scoreboard players set @s bs.out.0 1
 function bs.math:common/factorial/child/loop
 
-scoreboard players set @s[scores={bs.var0=0}] bs.res0 1
+scoreboard players set @s[scores={bs.in.0=0}] bs.out.0 1

@@ -158,8 +158,8 @@ This lib use global scores, that are automatically created:
 | `bs.debug` | Determine the behavior of debug features |
 | `bs.debug.id` | A built-in ID palced on every entities for debug purposes |
 | `bs.lifetime`| If positive (default behavior), count the number of tick the entity exist. If negative, determine the number of ticks the entity will live (killed when the score reach -1). This socre is automatically incremented each tick. |
-| `bs.res[0-9]` | Default score for outputs |
-| `bs.var[0-9]` | Default score for inputs |
+| `bs.out.[0-9]` | Default score for outputs |
+| `bs.in.[0-9]` | Default score for inputs |
 
 ### ♻️ Conservation principle
 
@@ -181,12 +181,12 @@ To do so, each input - as well as other data used by the fonction - must be save
 This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.
 :::
 
-Also for scores, by default, the input and outputs should use respectively the scores `bs.var[0-9]` and `bs.res[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
+Also for scores, by default, the input and outputs should use respectively the scores `bs.in.[0-9]` and `bs.out.[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
 
 ```
 # Multiply the X coordinate of the source entity and place the entity at the new location
 function bs.location:get
-scoreboard players operation @s bs.locX *= 2 bs.const
+scoreboard players operation @s bs.loc.x *= 2 bs.const
 function bs.location:set
 ```
 In this exemple, the `get` function will return `bs.loc[X,Y,Z]` scores, that are also used as input for the `set` function.
