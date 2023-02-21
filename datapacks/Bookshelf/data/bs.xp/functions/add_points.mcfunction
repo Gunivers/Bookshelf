@@ -14,7 +14,7 @@
 #__________________________________________________
 ## PARAMETERS
 
-## Input: bs.var0 (score): Points to add to the player
+## Input: bs.in.0 (score): Points to add to the player
 
 #__________________________________________________
 ## INIT
@@ -25,7 +25,7 @@
 #__________________________________________________
 ## CODE
 
-scoreboard players operation POINTS bs = @s bs.var0
+scoreboard players operation POINTS bs = @s bs.in.0
 
 execute if score POINTS bs matches 128.. run function bs.xp:add_points/child/128-
 

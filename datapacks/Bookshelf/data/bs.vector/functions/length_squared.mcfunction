@@ -18,7 +18,7 @@
 # Input: bs.vector.y (score dummy)
 # Input: bs.vector.z (score dummy)
 
-# Output: bs.res0 (score dummy)
+# Output: bs.out.0 (score dummy)
 
 #__________________________________________________
 # INIT
@@ -42,9 +42,9 @@ scoreboard players operation #vector.y2 bs.data *= @s bs.vector.y
 scoreboard players operation #vector.z2 bs.data = @s bs.vector.z
 scoreboard players operation #vector.z2 bs.data *= @s bs.vector.z
 
-scoreboard players operation @s bs.res0 = #vector.x2 bs.data
-scoreboard players operation @s bs.res0 += #vector.y2 bs.data
-scoreboard players operation @s bs.res0 += #vector.z2 bs.data
+scoreboard players operation @s bs.out.0 = #vector.x2 bs.data
+scoreboard players operation @s bs.out.0 += #vector.y2 bs.data
+scoreboard players operation @s bs.out.0 += #vector.z2 bs.data
 
-scoreboard players operation @s bs.res0 /= 1000 bs.const
+scoreboard players operation @s bs.out.0 /= 1000 bs.const
 

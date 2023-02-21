@@ -8,9 +8,9 @@ scoreboard players operation move.vectorX bs *= -1 bs.const
 #__________________________________________________
 # Apply
 
-scoreboard players operation @s bs.locX = move.vectorX bs
-scoreboard players operation @s bs.locY = move.vectorY bs
-scoreboard players operation @s bs.locZ = move.vectorZ bs
+scoreboard players operation @s bs.loc.x = move.vectorX bs
+scoreboard players operation @s bs.loc.y = move.vectorY bs
+scoreboard players operation @s bs.loc.z = move.vectorZ bs
 
 function bs.location:add/accuracy/10-3
 

@@ -67,20 +67,20 @@ entity.
    # One time
 
    # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s bs.var0 2000
-   scoreboard players set @s bs.var1 5000
-   scoreboard players set @s bs.var2 10000
+   scoreboard players set @s bs.in.0 2000
+   scoreboard players set @s bs.in.1 5000
+   scoreboard players set @s bs.in.2 10000
 
    # Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
    function bs.orientation:get
-   scoreboard players operation @s bs.var3 = @s bs.oriH
-   scoreboard players operation @s bs.var4 = @s bs.oriV
+   scoreboard players operation @s bs.in.3 = @s bs.ori.h
+   scoreboard players operation @s bs.in.4 = @s bs.ori.v
 
    # Perform the basic rotation
    function bs.math:algebra/basis_rotation_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res2"},"color":"gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
    ```
 
    I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
@@ -89,24 +89,24 @@ entity.
    # Once
 
    # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s bs.var0 0
-   scoreboard players set @s bs.var1 0
-   scoreboard players set @s bs.var2 1000
+   scoreboard players set @s bs.in.0 0
+   scoreboard players set @s bs.in.1 0
+   scoreboard players set @s bs.in.2 1000
 
    # Get the orientation
    function bs.orientation:get
-   scoreboard players operation @s bs.var3 = @s bs.oriH
-   scoreboard players operation @s bs.var4 = @s bs.oriV
+   scoreboard players operation @s bs.in.3 = @s bs.ori.h
+   scoreboard players operation @s bs.in.4 = @s bs.ori.v
 
    # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-   scoreboard players operation @s bs.var3 *= -1 bs.const
-   scoreboard players operation @s bs.var4 *= -1 bs.const
+   scoreboard players operation @s bs.in.3 *= -1 bs.const
+   scoreboard players operation @s bs.in.4 *= -1 bs.const
 
    # Perform the basic rotation
    function bs.math:algebra/basis_rotation_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res2"},"color":"gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
    ```
 
 ---
@@ -132,15 +132,15 @@ next whole number).
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The numerator
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The denominator
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the division
 
 :Example:
@@ -148,10 +148,10 @@ next whole number).
    Calculate $9/5$
    ```
    # Once
-   scoreboard players set @s bs.var0 9
-   scoreboard players set @s bs.var1 5
+   scoreboard players set @s bs.in.0 9
+   scoreboard players set @s bs.in.1 5
    function bs.math:common/divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
@@ -163,24 +163,24 @@ next whole number).
 **`bs.math:common/exp`**
 
 Compute the exponential of the number passed in parameter on
-the score `bs.var0` and return the result on the score `bs.res0`
+the score `bs.in.0` and return the result on the score `bs.out.0`
 
 :Inputs:
 
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
 
    ```{admonition} Technical limitation
    :class: important
-   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
+   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
    ```
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
@@ -188,9 +188,9 @@ the score `bs.var0` and return the result on the score `bs.res0`
    Calculate $exp(3)$
    ```
    # Once
-   scoreboard players set @s bs.var0 300
+   scoreboard players set @s bs.in.0 300
    function bs.math:common/exp
-   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/exp.png)
@@ -212,18 +212,18 @@ Compute the factorial of the number
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be factorialized
 
    ```{admonition} Technical limitation
    :class: important
 
-   Due to the limit of integers that can be stored in a score, the interval of `bs.var0` is limited to `[0,12]`
+   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`
    ```
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation
 
 :Example:
@@ -231,9 +231,9 @@ Compute the factorial of the number
    Compute $3!$
    ```
    # Once
-   scoreboard players set @s bs.var0 3
+   scoreboard players set @s bs.in.0 3
    function bs.math:common/factorial
-   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/factorial.png)
@@ -251,15 +251,15 @@ Compute the greatest common denominator of two numbers
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The first number
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The second number
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The greatest common denominator
 
 :Example:
@@ -267,10 +267,10 @@ Compute the greatest common denominator of two numbers
    Calculate the greatest common denominator between 16 and 12
    ```
    # Once
-   scoreboard players set @s bs.var0 16
-   scoreboard players set @s bs.var1 12
+   scoreboard players set @s bs.in.0 16
+   scoreboard players set @s bs.in.1 12
    function bs.math:common/gcd
-   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/gcd.png)
@@ -293,12 +293,12 @@ Compute the Neperian logarithm (base e) of a number
    : The entities you want to perform the operation on
 
    
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
@@ -306,9 +306,9 @@ Compute the Neperian logarithm (base e) of a number
    Calculate $ln(28)$
    ```
    # Once
-   scoreboard players set @s bs.var0 28000
+   scoreboard players set @s bs.in.0 28000
    function bs.math:common/log
-   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
@@ -323,12 +323,12 @@ Compute the logarithm in base 2 of a number
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
@@ -336,9 +336,9 @@ Compute the logarithm in base 2 of a number
    Calculate $log_2(28)$:
    ```
    # Once
-   scoreboard players set @s bs.var0 28000
+   scoreboard players set @s bs.in.0 28000
    function bs.math:common/log2
-   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 :::
 :::{tab-item} Base 10
@@ -352,12 +352,12 @@ Compute the logarithm in base 10 of a number
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
@@ -365,9 +365,9 @@ Compute the logarithm in base 10 of a number
    Calculate $log_{10}(28)$
    ```
    # Once
-   scoreboard players set @s bs.var0 28000
+   scoreboard players set @s bs.in.0 28000
    function bs.math:common/log10
-   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
@@ -382,15 +382,15 @@ Computes the logarithm in base a of a number
    (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The base of the logarithm (not shifted)
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Example:
@@ -398,10 +398,10 @@ Computes the logarithm in base a of a number
    Calculate $log_4(28)$
    ```
    # Once
-   scoreboard players set @s bs.var0 28000
-   scoreboard players set @s bs.var1 4
+   scoreboard players set @s bs.in.0 28000
+   scoreboard players set @s bs.in.1 4
    function bs.math:common/loga
-   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
@@ -421,15 +421,15 @@ Compute $x^y$
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The base
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The exponent
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation
 
 :Example:
@@ -437,10 +437,10 @@ Compute $x^y$
    Compute $2^6$
    ```
    # Once
-   scoreboard players set @s bs.var0 2
-   scoreboard players set @s bs.var1 6
+   scoreboard players set @s bs.in.0 2
+   scoreboard players set @s bs.in.1 6
    function bs.math:common/pow
-   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 :::
 :::{tab-item} Scale 3
@@ -455,15 +455,15 @@ Compute $x^y$
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The base, a number shifted by 3 digits (1,2345 -> 1234)
 
-   (score) `@s bs.var1`
+   (score) `@s bs.in.1`
    : The exponent, not shifted
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation, a number shifted by 3 digits (1,2345 -> 1234)
 
 :Example:
@@ -471,10 +471,10 @@ Compute $x^y$
    Compute $2.345^6$
    ```
    # Once
-   scoreboard players set @s bs.var0 2345
-   scoreboard players set @s bs.var1 6
+   scoreboard players set @s bs.in.0 2345
+   scoreboard players set @s bs.in.1 6
    function bs.math:common/pow/scale/3
-   tellraw @a [{"text": "2.345^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "2.345^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 :::
@@ -495,12 +495,12 @@ Compute the square root of the number
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number you want to calculate the square root of
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation
 
 :Example:
@@ -508,9 +508,9 @@ Compute the square root of the number
    Calculate and display $\sqrt{42}$
    ```
    # Once
-   scoreboard players set @s bs.var0 42
+   scoreboard players set @s bs.in.0 42
    function bs.math:common/sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
@@ -539,12 +539,12 @@ number given in parameter.
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The number from which you want to calculate the next power of 2
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation
 
 :Example:
@@ -552,9 +552,9 @@ number given in parameter.
    Find the power of 2 greater than 43
    ```
    # Once
-   scoreboard players set @s bs.var0 43
+   scoreboard players set @s bs.in.0 43
    function bs.math:special/get_next_pow2
-   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ---
@@ -572,7 +572,7 @@ Generates a random number
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : An integer random number between $-2^{31}$ and $2^{31}-1$
 
    ```{tip}
@@ -587,8 +587,8 @@ Generates a random number
    ```
    # Once
    function bs.math:special/random
-   scoreboard players operation @s bs.res0 %= 101 bs.const
-   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   scoreboard players operation @s bs.out.0 %= 101 bs.const
+   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 
    Beware: the score `bs.const` does not contain all possible
    values. Make sure the value you want to use exists and initialize it
@@ -619,12 +619,12 @@ Calculate the arccosinus of a value between -1 and 1
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
 :Example:
@@ -632,9 +632,9 @@ Calculate the arccosinus of a value between -1 and 1
    Calculate and display the arccos of 0,42
    ```
    # Once
-   scoreboard players set @s bs.var0 420
+   scoreboard players set @s bs.in.0 420
    function bs.math:trig/arccos
-   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
@@ -652,12 +652,12 @@ Compute the arcsinus of a value between -1 and 1
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
 :Example:
@@ -665,9 +665,9 @@ Compute the arcsinus of a value between -1 and 1
    Calculate and display the arcsinus of 0.42
    ```
    # Once
-   scoreboard players set @s bs.var0 420
+   scoreboard players set @s bs.in.0 420
    function bs.math:trig/arcsin
-   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
@@ -685,12 +685,12 @@ Compute the arctangent of a value between -infinite and +infinite
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
 :Output:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
 :Example:
@@ -698,9 +698,9 @@ Compute the arctangent of a value between -infinite and +infinite
    Calculate and display the arctan of 0.42
    ```
    # Once
-   scoreboard players set @s bs.var0 420
+   scoreboard players set @s bs.in.0 420
    function bs.math:trig/arctan
-   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.res0"},"color":"gold"}]
+   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 ---
@@ -715,12 +715,12 @@ Compute the cosine of an angle between 0 and 360
 
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The angle in degrees
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
@@ -728,9 +728,9 @@ Compute the cosine of an angle between 0 and 360
    Calculate and display the cosine of 42
    ```
    # Once
-   scoreboard players set @s bs.var0 42
+   scoreboard players set @s bs.in.0 42
    function bs.math:trig/cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
@@ -747,12 +747,12 @@ Computes the sine of an angle between 0 and 360
 
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The angle in degrees
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
@@ -760,9 +760,9 @@ Computes the sine of an angle between 0 and 360
    Calculate and display the sine of 42
    ```
    # Once
-   scoreboard players set @s bs.var0 42
+   scoreboard players set @s bs.in.0 42
    function bs.math:trig/sin
-   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](img/2023-02-07-09-00-23.png)
@@ -780,12 +780,12 @@ Compute the tangeant of an angle between 0 and 360
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-   (score) `@s bs.var0`
+   (score) `@s bs.in.0`
    : The angle in degrees (not shifted)
 
 :Outputs:
 
-   (score) `@s bs.res0`
+   (score) `@s bs.out.0`
    : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
@@ -793,9 +793,9 @@ Compute the tangeant of an angle between 0 and 360
    Calculate and display the tengeante of 42
    ```
    # Once
-   scoreboard players set @s bs.var0 42
+   scoreboard players set @s bs.in.0 42
    function bs.math:trig/tan
-   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)

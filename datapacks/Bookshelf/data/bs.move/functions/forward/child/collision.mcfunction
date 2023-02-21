@@ -4,19 +4,19 @@ execute at @s run function bs.orientation:get
 
 # Detect X
 
-execute at @s[scores={bs.collision=1..,bs.oriH=1..179}] run function bs.move:forward/child/collision_detect_neg_x
-execute at @s[scores={bs.collision=1..,bs.oriH=-179..-1}] run function bs.move:forward/child/collision_detect_pos_x
+execute at @s[scores={bs.collision=1..,bs.ori.h=1..179}] run function bs.move:forward/child/collision_detect_neg_x
+execute at @s[scores={bs.collision=1..,bs.ori.h=-179..-1}] run function bs.move:forward/child/collision_detect_pos_x
 
 # Detect Y
 
-execute at @s[scores={bs.collision=1..,bs.oriV=1..}] run function bs.move:forward/child/collision_detect_neg_y
-execute at @s[scores={bs.collision=1..,bs.oriV=..-1}] run function bs.move:forward/child/collision_detect_pos_y
+execute at @s[scores={bs.collision=1..,bs.ori.v=1..}] run function bs.move:forward/child/collision_detect_neg_y
+execute at @s[scores={bs.collision=1..,bs.ori.v=..-1}] run function bs.move:forward/child/collision_detect_pos_y
 
 # Detect Z
 
-execute at @s[scores={bs.collision=1..,bs.oriH=..-91}] run function bs.move:forward/child/collision_detect_neg_z
-execute at @s[scores={bs.collision=1..,bs.oriH=91..}] run function bs.move:forward/child/collision_detect_neg_z
-execute at @s[scores={bs.collision=1..,bs.oriH=-89..89}] run function bs.move:forward/child/collision_detect_pos_z
+execute at @s[scores={bs.collision=1..,bs.ori.h=..-91}] run function bs.move:forward/child/collision_detect_neg_z
+execute at @s[scores={bs.collision=1..,bs.ori.h=91..}] run function bs.move:forward/child/collision_detect_neg_z
+execute at @s[scores={bs.collision=1..,bs.ori.h=-89..89}] run function bs.move:forward/child/collision_detect_pos_z
 
 # REACTIONS
 

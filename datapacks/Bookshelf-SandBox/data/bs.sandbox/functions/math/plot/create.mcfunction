@@ -20,9 +20,9 @@ tag @e[tag=bs.sandbox.plot,tag=bs.new] remove bs.new
 effect give @e[tag=bs.sandbox.plot.create] minecraft:glowing 999999 1 true
 
 # Normalize position
-execute as @e[tag=bs.sandbox.plot.create] store result score @s bs.var0 run data get entity @s Pos[0] 1000
+execute as @e[tag=bs.sandbox.plot.create] store result score @s bs.in.0 run data get entity @s Pos[0] 1000
 execute as @e[tag=bs.sandbox.plot.create] run function bs.sandbox:math/plot/normalize/x
-execute as @e[tag=bs.sandbox.plot.create] run scoreboard players operation @s bs.plot.x = @s bs.res0
+execute as @e[tag=bs.sandbox.plot.create] run scoreboard players operation @s bs.plot.x = @s bs.out.0
 scoreboard players set @e[tag=bs.sandbox.plot.create] bs.plot.y 0
 scoreboard players set @e[tag=bs.sandbox.plot.create] bs.plot.z 0
 

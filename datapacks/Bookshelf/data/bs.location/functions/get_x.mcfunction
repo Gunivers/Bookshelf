@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
+scoreboard objectives add bs.loc.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -26,6 +26,6 @@ scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"dark_gray
 
 function bs.core:default_entity
 
-execute store result score @s bs.locX run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[0] 1
+execute store result score @s bs.loc.x run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[0] 1
 
 execute as @e[tag=bs.new] run function bs.health:safe_kill

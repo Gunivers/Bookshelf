@@ -20,8 +20,8 @@
 #__________________________________________________
 # CONFIG
 
-#bs.var0 -> Range*2 (1 blocs -> bs.var0 = 2)
-scoreboard players set @s[tag=!bs.config.override] bs.var0 200
+#bs.in.0 -> Range*2 (1 blocs -> bs.in.0 = 2)
+scoreboard players set @s[tag=!bs.config.override] bs.in.0 200
 
 #__________________________________________________
 # CODE
@@ -33,7 +33,7 @@ summon area_effect_cloud ~ ~ ~ {Tags:["bs","bs.canSee.target","bs.canSee.tmp"]}
 
 execute as @e[tag=bs.canSee.aim] positioned as @s facing entity @e[tag=bs.canSee.target,limit=1,sort=nearest] feet run tp @s ~ ~ ~ ~ ~
 
-scoreboard players operation @e[tag=bs.canSee.aim] bs.var0 = @s bs.var0
+scoreboard players operation @e[tag=bs.canSee.aim] bs.in.0 = @s bs.in.0
 
 execute as @e[tag=bs.canSee.aim] at @s run function bs.view:can_see/child/can_see-loop
 

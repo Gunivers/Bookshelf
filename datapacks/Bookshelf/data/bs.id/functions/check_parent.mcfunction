@@ -15,17 +15,17 @@
 # PARAMETERS
 
 # Input: @s bs.targetId
-# Input: @e bs.parentId
-# Output: @e bs.parentId.match (tag): On every entities that have the same bs.parentId as id.target bs.var0
-# Output: @e bs.parentId.upper (tag): On every entities that have an bs.parentId socre upper than id.target bs.var0
-# Output: @e bs.parentId.upper (tag): On every entities that have an bs.parentId socre lower than id.target bs.var0
-# Output: @s bs.parentId.checker (tag)
+# Input: @e bs.id.parent
+# Output: @e bs.id.parent.match (tag): On every entities that have the same bs.id.parent as id.target bs.in.0
+# Output: @e bs.id.parent.upper (tag): On every entities that have an bs.id.parent socre upper than id.target bs.in.0
+# Output: @e bs.id.parent.upper (tag): On every entities that have an bs.id.parent socre lower than id.target bs.in.0
+# Output: @s bs.id.parent.checker (tag)
 
 #__________________________________________________
 # INIT
 
 scoreboard objectives add bs.targetId dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Target ID","color":"aqua"}]
-scoreboard objectives add bs.parentId dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Parent ID","color":"aqua"}]
+scoreboard objectives add bs.id.parent dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Parent ID","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -33,14 +33,14 @@ scoreboard objectives add bs.parentId dummy [{"text":"Bookshelf ","color":"dark_
 #__________________________________________________
 # CODE
 
-tag @e[tag=bs.parentId.match] remove bs.parentId.match
-tag @e[tag=bs.parentId.upper] remove bs.parentId.upper
-tag @e[tag=bs.parentId.lower] remove bs.parentId.lower
-tag @e[tag=bs.parentId.checker] remove bs.parentId.checker
+tag @e[tag=bs.id.parent.match] remove bs.id.parent.match
+tag @e[tag=bs.id.parent.upper] remove bs.id.parent.upper
+tag @e[tag=bs.id.parent.lower] remove bs.id.parent.lower
+tag @e[tag=bs.id.parent.checker] remove bs.id.parent.checker
 
-scoreboard players operation @e bs.parentId -= @s bs.targetId
-tag @e[scores={bs.parentId=0}] add bs.parentId.match
-tag @e[scores={bs.parentId=..-1}] add bs.parentId.lower
-tag @e[scores={bs.parentId=-1..}] add bs.parentId.upper
-tag @s add bs.parentId.checker
-scoreboard players operation @e bs.parentId += @s bs.targetId
+scoreboard players operation @e bs.id.parent -= @s bs.targetId
+tag @e[scores={bs.id.parent=0}] add bs.id.parent.match
+tag @e[scores={bs.id.parent=..-1}] add bs.id.parent.lower
+tag @e[scores={bs.id.parent=-1..}] add bs.id.parent.upper
+tag @s add bs.id.parent.checker
+scoreboard players operation @e bs.id.parent += @s bs.targetId

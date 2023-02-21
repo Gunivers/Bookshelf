@@ -2,9 +2,9 @@ tag @s add bs.collisionZ
 
 function bs.core:default_entity
 
-scoreboard players set @e[tag=bs.new] bs.locX 0
-scoreboard players set @e[tag=bs.new] bs.locY 0
-scoreboard players operation @e[tag=bs.new] bs.locZ = move.vectorZ bs
+scoreboard players set @e[tag=bs.new] bs.loc.x 0
+scoreboard players set @e[tag=bs.new] bs.loc.y 0
+scoreboard players operation @e[tag=bs.new] bs.loc.z = move.vectorZ bs
 execute as @e[tag=bs.new] at @s run function bs.location:add/accuracy/10-3
 
 #__________________________________________________

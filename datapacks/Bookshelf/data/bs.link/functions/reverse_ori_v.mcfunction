@@ -26,7 +26,7 @@ scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_g
 # CODE
 
 # Start Backup
-scoreboard players operation backup.link.reverse.oriV bs = @s bs.oriV
+scoreboard players operation backup.link.reverse.oriV bs = @s bs.ori.v
 # End Backup
 
 scoreboard players operation @s bs.targetId = @s bs.link.to
@@ -34,9 +34,9 @@ function bs.id:check
 
 # Relative Position
 execute at @s run function bs.orientation:get_v/accuracy/10-3
-scoreboard players operation link.reverseLoc.diff bs = @s bs.oriV
+scoreboard players operation link.reverseLoc.diff bs = @s bs.ori.v
 execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.orientation:get_v/accuracy/10-3
-scoreboard players operation link.reverseLoc.diff bs -= @s bs.oriV
+scoreboard players operation link.reverseLoc.diff bs -= @s bs.ori.v
 
 # Calcul difference
 scoreboard players operation link.reverseLoc.diff bs -= @s bs.link.rv
@@ -46,9 +46,9 @@ scoreboard players operation link.reverseLoc.diff bs *= 2 bs.const
 scoreboard players operation @s bs.link.rv += link.reverseLoc.diff bs
 
 # Set new position
-scoreboard players operation @s bs.oriV += @s bs.link.rv
+scoreboard players operation @s bs.ori.v += @s bs.link.rv
 function bs.orientation:set_v/accuracy/10-3
 
 # Start Restore
-scoreboard players operation @s bs.oriV = backup.link.reverse.oriV bs
+scoreboard players operation @s bs.ori.v = backup.link.reverse.oriV bs
 # End Restore

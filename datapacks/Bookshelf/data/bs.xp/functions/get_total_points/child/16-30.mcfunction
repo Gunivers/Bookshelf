@@ -3,7 +3,7 @@
 
 scoreboard players remove LEVELS bs 14
 
-scoreboard players operation @s bs.res0 += 283 bs.const
+scoreboard players operation @s bs.out.0 += 283 bs.const
 
 scoreboard players operation TMP bs = LEVELS bs
 scoreboard players operation TMP bs *= 59 bs.const
@@ -15,4 +15,4 @@ scoreboard players operation TMP2 bs *= 5 bs.const
 scoreboard players operation TMP bs += TMP2 bs
 scoreboard players operation TMP bs /= 2 bs.const
 
-scoreboard players operation @s bs.res0 += TMP bs
+scoreboard players operation @s bs.out.0 += TMP bs

@@ -9,7 +9,7 @@
 # MINECRAFT: 1.14
 
 # INPUT: @e[tag=bs_Cache_Source] ArmorItems[0].tag.Buffer
-# OUTPUT: @e[tag=bs_Cache_Source] bs.res0
+# OUTPUT: @e[tag=bs_Cache_Source] bs.out.0
 
 # NOTE: Allows to schedule the execution of a command.
 #	Unlike the schedule command, this system allows to schedule commands (and not only functions) and it is possible to schedule several times the same command.

@@ -25,7 +25,7 @@
 
 #Random MC
 summon area_effect_cloud ~ ~1 ~ {Tags:["bs","bs.random"],Age:1}
-execute store result score @s bs.res0 run data get entity @e[type=area_effect_cloud,tag=bs.random,limit=1] UUID[0]
+execute store result score @s bs.out.0 run data get entity @e[type=area_effect_cloud,tag=bs.random,limit=1] UUID[0]
 kill @e[type=area_effect_cloud,tag=bs.random]
 
-# tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.res0"}}]
+# tellraw @a ["",{"text":"[Debug] Result: ","color":"red"},{"score":{"name":"@s","objective":"bs.out.0"}}]

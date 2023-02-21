@@ -14,7 +14,7 @@
 #__________________________________________________
 ## PARAMETERS
 
-## Input: bs.var0 (score): levels to set to the player
+## Input: bs.in.0 (score): levels to set to the player
 
 #__________________________________________________
 ## INIT

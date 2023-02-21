@@ -15,7 +15,7 @@
 # - B ~ Blue component
 
 # OUTPUT:
-# - bs.res0
+# - bs.out.0
 
 #INIT:
 function bs.color:init
@@ -24,9 +24,9 @@ function bs.color:init
 # Convert RGB Color to Minecraft Color that can be used in NBT like Leather Armor.
 
 # CODE:
-scoreboard players operation @s bs.res0 = @s R
-scoreboard players operation @s bs.res0 *= 65536 bs.const
-scoreboard players operation @s bs.var0 = @s G
-scoreboard players operation @s bs.var0 *= 256 bs.const
-scoreboard players operation @s bs.res0 += @s bs.var0
-scoreboard players operation @s bs.res0 += @s B
+scoreboard players operation @s bs.out.0 = @s R
+scoreboard players operation @s bs.out.0 *= 65536 bs.const
+scoreboard players operation @s bs.in.0 = @s G
+scoreboard players operation @s bs.in.0 *= 256 bs.const
+scoreboard players operation @s bs.out.0 += @s bs.in.0
+scoreboard players operation @s bs.out.0 += @s B

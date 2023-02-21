@@ -28,8 +28,8 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.res0 = @s bs.var0
-scoreboard players operation @s bs.var2 = @s bs.var1
+scoreboard players operation @s bs.out.0 = @s bs.in.0
+scoreboard players operation @s bs.in.2 = @s bs.in.1
 
-execute if entity @s[scores={bs.var2=0}] run scoreboard players set @s bs.res0 1
-execute if entity @s[scores={bs.var2=2..}] run function bs.math:common/pow/child/loop
+execute if entity @s[scores={bs.in.2=0}] run scoreboard players set @s bs.out.0 1
+execute if entity @s[scores={bs.in.2=2..}] run function bs.math:common/pow/child/loop

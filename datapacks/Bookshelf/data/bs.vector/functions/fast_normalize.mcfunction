@@ -59,6 +59,6 @@ scoreboard players operation @s bs.vector.x /= #vector.fast_normalize.max bs.dat
 scoreboard players operation @s bs.vector.y /= #vector.fast_normalize.max bs.data
 scoreboard players operation @s bs.vector.z /= #vector.fast_normalize.max bs.data
 
-scoreboard players set @s bs.res0 1000
-scoreboard players operation @s bs.res0 *= vector.fast_normalize.length bs.config
-scoreboard players operation @s bs.res0 /= #vector.fast_normalize.max bs.data
+scoreboard players set @s bs.out.0 1000
+scoreboard players operation @s bs.out.0 *= vector.fast_normalize.length bs.config
+scoreboard players operation @s bs.out.0 /= #vector.fast_normalize.max bs.data

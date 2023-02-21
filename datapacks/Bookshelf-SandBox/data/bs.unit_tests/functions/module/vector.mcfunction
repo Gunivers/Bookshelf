@@ -182,7 +182,7 @@ execute as @e[tag=bs.unitest] run function bs.vector:length_squared
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 14000 run tellraw @a [{"text":"[bs.vector:length_squared] expected length^2 = 14000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches 14000 run tellraw @a [{"text":"[bs.vector:length_squared] expected length^2 = 14000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.out.0"}}]
 
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.vector:length_squared] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]
@@ -209,7 +209,7 @@ execute as @e[tag=bs.unitest] run function bs.vector:length
 
 # RESULTS ----------------------------------------------------------------------
 
-execute as @e[tag=bs.unitest] unless score @s bs.res0 matches 3741 run tellraw @a [{"text":"[bs.vector:length] expected length = 3741, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.res0"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches 3741 run tellraw @a [{"text":"[bs.vector:length] expected length = 3741, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.out.0"}}]
 
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.vector:length] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]

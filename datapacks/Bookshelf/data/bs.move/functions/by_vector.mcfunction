@@ -37,7 +37,7 @@ tag @s[tag=bs.config.override] remove bs.config.override
 scoreboard players operation #backup.move.vectorX bs = @s bs.vector.x
 scoreboard players operation #backup.move.vectorY bs = @s bs.vector.y
 scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
-scoreboard players operation #backup.move.res0 bs = @s bs.res0
+scoreboard players operation #backup.move.res0 bs = @s bs.out.0
 
 # Debug
 # execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
@@ -54,7 +54,7 @@ function bs.vector:fast_normalize
 
 # Apply movement
 scoreboard players set move.decomposition.factor bs 1000
-scoreboard players operation move.decomposition.factor bs /= @s bs.res0
+scoreboard players operation move.decomposition.factor bs /= @s bs.out.0
 scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
 
 execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_vector/child/loop
@@ -79,4 +79,4 @@ tag @s remove bs.move.by_vector.rest
 scoreboard players operation @s bs.vector.x = #backup.move.vectorX bs
 scoreboard players operation @s bs.vector.y = #backup.move.vectorY bs
 scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
-scoreboard players operation @s bs.res0 = backup.move.res0 bs
+scoreboard players operation @s bs.out.0 = backup.move.res0 bs

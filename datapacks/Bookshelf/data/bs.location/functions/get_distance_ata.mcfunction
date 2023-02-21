@@ -22,10 +22,10 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation location.getDistance.var0 bs = @s bs.var0
+scoreboard players operation location.getDistance.var0 bs = @s bs.in.0
 
 function bs.location:get_distance_squared_ata
-scoreboard players operation @s bs.var0 = @s bs.res0
+scoreboard players operation @s bs.in.0 = @s bs.out.0
 function bs.math:sqrt
 
-scoreboard players operation @s bs.var0 = location.getDistance.var0 bs
+scoreboard players operation @s bs.in.0 = location.getDistance.var0 bs

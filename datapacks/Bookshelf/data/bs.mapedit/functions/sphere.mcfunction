@@ -15,7 +15,7 @@
 
 
 # - Block ID
-#	bs.blockId (score dummy)
+#	bs.block.id (score dummy)
 #
 
 # - Rayon
@@ -76,7 +76,7 @@ execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=near
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Rayon2 = @s Rayon
 execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] Rayon2 *= @s Rayon
 
-execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.blockId = @s bs.blockId
+execute as @s run scoreboard players operation @e[tag=spawnSET,limit=1,sort=nearest] bs.block.id = @s bs.block.id
 
 #3 corespon a la sphere
 execute as @s run scoreboard players set @e[tag=spawnSET,limit=1,sort=nearest] BrushID 3

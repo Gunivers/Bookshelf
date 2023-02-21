@@ -19,8 +19,8 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s bs.var0 (score): number to negate
-# Output: @s bs.res0 (score): the negation of the number (~var0)
+# Input: @s bs.in.0 (score): number to negate
+# Output: @s bs.out.0 (score): the negation of the number (~var0)
 
 #__________________________________________________
 # INIT
@@ -35,7 +35,7 @@
 #__________________________________________________
 # CODE
 
-execute if score @s bs.var0 matches ..-1 run scoreboard players operation @s bs.var0 *= -1 bs.const
-scoreboard players set @s bs.var1 1
-scoreboard players set @s bs.res0 0
-execute if score @s bs.var0 >= @s bs.var1 run function bs.bitwise:get_number_of_bits/child/loop
+execute if score @s bs.in.0 matches ..-1 run scoreboard players operation @s bs.in.0 *= -1 bs.const
+scoreboard players set @s bs.in.1 1
+scoreboard players set @s bs.out.0 0
+execute if score @s bs.in.0 >= @s bs.in.1 run function bs.bitwise:get_number_of_bits/child/loop

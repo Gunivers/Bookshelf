@@ -37,14 +37,14 @@
 
 # CODE
 
-scoreboard players operation @s bs.var4 = @s bs.var0
+scoreboard players operation @s bs.in.4 = @s bs.in.0
 
 function bs.math:trig/cos
 
-scoreboard players operation @s bs.var3 = @s bs.res0
-scoreboard players operation @s bs.var0 = @s bs.var4
+scoreboard players operation @s bs.in.3 = @s bs.out.0
+scoreboard players operation @s bs.in.0 = @s bs.in.4
 
 function bs.math:trig/sin
 
-scoreboard players operation @s bs.res0 *= 1000 bs.const
-scoreboard players operation @s bs.res0 /= @s bs.var3
+scoreboard players operation @s bs.out.0 *= 1000 bs.const
+scoreboard players operation @s bs.out.0 /= @s bs.in.3

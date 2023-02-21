@@ -16,7 +16,7 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
+scoreboard objectives add bs.loc.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -32,5 +32,5 @@ execute if entity @s[type=minecraft:player] run function bs.core:default_entity
 execute if entity @s[type=minecraft:player] as @e[tag=bs.new,limit=1] run function bs.location:set_y/accuracy/10-3/player
 
 # Non-player
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 0.001 run scoreboard players add @s bs.locY 0
+execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 0.001 run scoreboard players add @s bs.loc.y 0
 tag @s remove bs.setLocation

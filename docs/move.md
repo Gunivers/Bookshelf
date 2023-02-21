@@ -147,8 +147,8 @@ of blocks/tick at which the entity moves.
 `pathfind_ata`: Allows to determine a path between the position of the
 source entity and the execution position of the function.
 
-* By default, the function will make 500 tests (defined via the `bs.var1` score). This limit allow to avoid the function taking too many ressources if the path is too complexe or impossible to find.
-* The behavior is defined by the variable `bs.var3` which, by default is 0, corresponding to a behavior of a zombie, creeper, skeleton or a player (terrestrial entity of size 1*2*1).
+* By default, the function will make 500 tests (defined via the `bs.in.1` score). This limit allow to avoid the function taking too many ressources if the path is too complexe or impossible to find.
+* The behavior is defined by the variable `bs.in.3` which, by default is 0, corresponding to a behavior of a zombie, creeper, skeleton or a player (terrestrial entity of size 1*2*1).
    * When it is set to 1, the behavior will be similar to a bat.
    * You can create your own behaviors at any time in the `pathfind/config/` folder and link them in the `main.mcfunction` file in the same folder.
 * The path is then defined by a succession of armor_stand with the tag "Glib_Pathfind_Rewind" and "Glib_Pathfind".

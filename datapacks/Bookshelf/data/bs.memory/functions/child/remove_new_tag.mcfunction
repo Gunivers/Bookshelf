@@ -9,5 +9,5 @@
 
 # CODE:
 tag @e[tag=New,tag=Memory,tag=bs] remove New
-execute as @e[tag=Memory,tag=bs] store result score @s bs.var0 run data get entity @s Tags
-kill @e[tag=Memory,tag=bs,scores={bs.var0=2}]
+execute as @e[tag=Memory,tag=bs] store result score @s bs.in.0 run data get entity @s Tags
+kill @e[tag=Memory,tag=bs,scores={bs.in.0=2}]

@@ -28,37 +28,37 @@
 #__________________________________________________
 # CODE
 
-# Retranscription of bs.var2 on interval [0;18000[
+# Retranscription of bs.in.2 on interval [0;18000[
 
-# tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"X = ","color":"red"},{"score":{"name":"@s","objective":"bs.var0"}}]
+# tellraw @a[tag=Debug] ["",{"text":"INPUT -> ","color":"gray"},{"X = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.0"}}]
 
-scoreboard players operation @s bs.var2 = @s bs.var0
-scoreboard players operation @s bs.var2 /= 10 bs.const
-scoreboard players operation @s[scores={bs.var2=18000}] bs.var2 -= 18000 bs.const
+scoreboard players operation @s bs.in.2 = @s bs.in.0
+scoreboard players operation @s bs.in.2 /= 10 bs.const
+scoreboard players operation @s[scores={bs.in.2=18000}] bs.in.2 -= 18000 bs.const
 
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"X % 180 = ","color":"red"},{"score":{"name":"@s","objective":"bs.var2"}}]
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"X % 180 = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.2"}}]
 
 # Calcul Sin
 
-scoreboard players operation @s bs.res0 = @s bs.var2
-scoreboard players operation @s bs.res0 *= Neg bs.const
-scoreboard players operation @s bs.res0 += 18000 bs.const
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.var1"}}]
-scoreboard players operation @s bs.res0 *= @s bs.var2
-scoreboard players operation @s bs.res0 *= 4 bs.const
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.var1"}}]
+scoreboard players operation @s bs.out.0 = @s bs.in.2
+scoreboard players operation @s bs.out.0 *= Neg bs.const
+scoreboard players operation @s bs.out.0 += 18000 bs.const
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
+scoreboard players operation @s bs.out.0 *= @s bs.in.2
+scoreboard players operation @s bs.out.0 *= 4 bs.const
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 
-scoreboard players operation @s bs.var1 = @s bs.var2
-scoreboard players operation @s bs.var1 *= Neg bs.const
-scoreboard players operation @s bs.var1 += 18000 bs.const
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.var1"}}]
-scoreboard players operation @s bs.var1 *= @s bs.var2
-scoreboard players operation @s bs.var1 *= Neg bs.const
-scoreboard players operation @s bs.var1 += 405000000 bs.const
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.var1"}}]
-scoreboard players operation @s bs.var1 /= 1000 bs.const
-scoreboard players operation @s bs.res0 /= @s bs.var1
-# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.var1"}}]
+scoreboard players operation @s bs.in.1 = @s bs.in.2
+scoreboard players operation @s bs.in.1 *= Neg bs.const
+scoreboard players operation @s bs.in.1 += 18000 bs.const
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
+scoreboard players operation @s bs.in.1 *= @s bs.in.2
+scoreboard players operation @s bs.in.1 *= Neg bs.const
+scoreboard players operation @s bs.in.1 += 405000000 bs.const
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
+scoreboard players operation @s bs.in.1 /= 1000 bs.const
+scoreboard players operation @s bs.out.0 /= @s bs.in.1
+# tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 
-scoreboard players operation @s[scores={bs.var0=180000}] bs.res0 *= Neg bs.const
+scoreboard players operation @s[scores={bs.in.0=180000}] bs.out.0 *= Neg bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"Sin(X) = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]

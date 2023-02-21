@@ -16,9 +16,9 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.locX dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
-scoreboard objectives add bs.locY dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
-scoreboard objectives add bs.locZ dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
+scoreboard objectives add bs.loc.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
+scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
+scoreboard objectives add bs.loc.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
@@ -29,20 +29,20 @@ scoreboard objectives add bs.locZ dummy [{"text":"Bookshelf ","color":"dark_gray
 #tellraw @a ["",{"text":"Debug | bs.location:get_relative_ata","color":"green"}]
 
 execute at @s run function bs.location:get
-#tellraw @a [{"text":"\n \u0020 Source - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locX"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locY"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locZ"},"color":"gold"}]
+#tellraw @a [{"text":"\n \u0020 Source - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 
-scoreboard players operation AT_X bs = @s bs.locX
-scoreboard players operation AT_Y bs = @s bs.locY
-scoreboard players operation AT_Z bs = @s bs.locZ
+scoreboard players operation AT_X bs = @s bs.loc.x
+scoreboard players operation AT_Y bs = @s bs.loc.y
+scoreboard players operation AT_Z bs = @s bs.loc.z
 
 function bs.location:get
-#tellraw @a [{"text":"\n \u0020 Dest - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locX"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locY"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locZ"},"color":"gold"}]
+#tellraw @a [{"text":"\n \u0020 Dest - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 
-scoreboard players operation @s bs.locX -= AT_X bs
-scoreboard players operation @s bs.locY -= AT_Y bs
-scoreboard players operation @s bs.locZ -= AT_Z bs
+scoreboard players operation @s bs.loc.x -= AT_X bs
+scoreboard players operation @s bs.loc.y -= AT_Y bs
+scoreboard players operation @s bs.loc.z -= AT_Z bs
 
-#tellraw @a [{"text":"\n \u0020 Res - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locX"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locY"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locZ"},"color":"gold"}]
+#tellraw @a [{"text":"\n \u0020 Res - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 
 
 execute as @e[tag=bs.new] run function bs.health:safe_kill

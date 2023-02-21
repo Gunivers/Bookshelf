@@ -39,9 +39,9 @@ execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=b
 #__________________________________________________
 # Apply movement
 
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locX = move.vectorX bs
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locY = move.vectorY bs
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.locZ = move.vectorZ bs
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.x = move.vectorX bs
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.y = move.vectorY bs
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.z = move.vectorZ bs
 execute if entity @s[tag=!bs.collision] run function bs.location:add/accuracy/10-3
 
 #__________________________________________________

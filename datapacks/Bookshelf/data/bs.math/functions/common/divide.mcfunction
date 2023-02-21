@@ -23,18 +23,18 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.var2 = @s bs.var0
-scoreboard players operation @s bs.var2 %= @s bs.var1
-tag @s[scores={bs.var2=0}] add CantApply
+scoreboard players operation @s bs.in.2 = @s bs.in.0
+scoreboard players operation @s bs.in.2 %= @s bs.in.1
+tag @s[scores={bs.in.2=0}] add CantApply
 
-scoreboard players operation @s[tag=!CantApply] bs.var2 = @s bs.var0
-scoreboard players operation @s[tag=!CantApply] bs.var2 *= 10 bs.const
-scoreboard players operation @s[tag=!CantApply] bs.var2 /= @s bs.var1
-scoreboard players operation @s[tag=!CantApply] bs.var2 %= 10 bs.const
+scoreboard players operation @s[tag=!CantApply] bs.in.2 = @s bs.in.0
+scoreboard players operation @s[tag=!CantApply] bs.in.2 *= 10 bs.const
+scoreboard players operation @s[tag=!CantApply] bs.in.2 /= @s bs.in.1
+scoreboard players operation @s[tag=!CantApply] bs.in.2 %= 10 bs.const
 
-scoreboard players operation @s bs.res0 = @s bs.var0
-scoreboard players operation @s bs.res0 /= @s bs.var1
-scoreboard players add @s[scores={bs.var2=5..},tag=!CantApply] bs.res0 1
-scoreboard players remove @s[scores={bs.var2=..-5},tag=!CantApply] bs.res0 1
+scoreboard players operation @s bs.out.0 = @s bs.in.0
+scoreboard players operation @s bs.out.0 /= @s bs.in.1
+scoreboard players add @s[scores={bs.in.2=5..},tag=!CantApply] bs.out.0 1
+scoreboard players remove @s[scores={bs.in.2=..-5},tag=!CantApply] bs.out.0 1
 
 tag @s remove CantApply

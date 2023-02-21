@@ -35,7 +35,7 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # Backup
 
 scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
-scoreboard players operation #backup.move.res0 bs = @s bs.res0
+scoreboard players operation #backup.move.res0 bs = @s bs.out.0
 
 # Absurd values security
 
@@ -49,14 +49,14 @@ execute if score vector.fastNormalize.Z bs matches ..-1 run scoreboard players o
 scoreboard players operation vector.fastNormalize.max bs = vector.fastNormalize.Z bs
 scoreboard players operation @s bs.vector.z *= @s bs.precision
 scoreboard players operation @s bs.vector.z /= vector.fastNormalize.Z bs
-scoreboard players set @s bs.res0 1000
-scoreboard players operation @s bs.res0 *= @s bs.precision
-scoreboard players operation @s bs.res0 /= vector.fastNormalize.Z bs
+scoreboard players set @s bs.out.0 1000
+scoreboard players operation @s bs.out.0 *= @s bs.precision
+scoreboard players operation @s bs.out.0 /= vector.fastNormalize.Z bs
 
 # Apply movement
 
 scoreboard players set move.decomposition.factor bs 1000
-scoreboard players operation move.decomposition.factor bs /= @s bs.res0
+scoreboard players operation move.decomposition.factor bs /= @s bs.out.0
 scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
 execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:forward/child/loop
 
@@ -75,4 +75,4 @@ tag @s remove bs.move.by_vector.rest
 # Restore
 
 scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
-scoreboard players operation @s bs.res0 = backup.move.res0 bs
+scoreboard players operation @s bs.out.0 = backup.move.res0 bs

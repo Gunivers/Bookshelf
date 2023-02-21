@@ -9,20 +9,20 @@
 `get`: Gives to the item executing the function a score corresponding
 to a unique identifier corresponding to its nature.
 
-- The result is stored on the score `bs.itemId`
+- The result is stored on the score `bs.item.id`
 - Must be executed on an item only
 
 *Example:* 
 
 Make sure that all the items in the world have their identifier
-indicated by their score `bs.itemId`
+indicated by their score `bs.item.id`
 
 ```
 # Once
 execute as @e[type=item] run function bs:item/get
 
 # See the result
-scoreboard objectives setdisplay sidebar bs.itemId
+scoreboard objectives setdisplay sidebar bs.item.id
 ```
 
 ---
@@ -32,13 +32,13 @@ scoreboard objectives setdisplay sidebar bs.itemId
 `set`: Create an item corresponding to the identifier stored on the
 executing entity.
 
-- The identifier must be given via the score `bs.itemId`.
+- The identifier must be given via the score `bs.item.id`.
 
 *Example:*
 
 Make the player named Steve create an item in front of him,
 corresponding to the identifier he has given on his score
-`bs.itemId`
+`bs.item.id`
 
 ```
 # Once
@@ -55,20 +55,20 @@ execute as Steve at @s anchored eyes positioned ^ ^ ^1 run function bs:item/set
 `convert_to_block`: Convert an item id stored on the executing entity
 to a block id
 
-- The item identifier must be indicated by the ``bs.itemId`` score
-- The block identifier will be stored on the score ``bs.blockId``
+- The item identifier must be indicated by the ``bs.item.id`` score
+- The block identifier will be stored on the score ``bs.block.id``
 
 *Example:*
 
 Make the player named Steve get the block identifier corresponding to
-the item that is indicated by his score ``bs.itemId``
+the item that is indicated by his score ``bs.item.id``
 
 ```
 # Once
 execute as Steve run function bs:item/convert_to_block
 
 # See the result
-scoreboard objectives setdisplay sidebar bs.blockId
+scoreboard objectives setdisplay sidebar bs.block.id
 ```
 
 <div align=center>

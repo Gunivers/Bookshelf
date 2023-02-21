@@ -16,9 +16,9 @@ Move Aypierre by 3 blocks on the X axis, -2 on the Y axis and 5 on the Z
 axis
 
 ```
-scoreboard players set Aypierre bs.locX 3
-scoreboard players set Aypierre bs.locY -2
-scoreboard players set Aypierre bs.locZ 5
+scoreboard players set Aypierre bs.loc.x 3
+scoreboard players set Aypierre bs.loc.y -2
+scoreboard players set Aypierre bs.loc.z 5
 execute as Aypierre at @s run function bs.location:add
 ```
 
@@ -35,7 +35,7 @@ Detect and display the position of the nearest spider:
 ```
 # Once
 execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get
-tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.locZ"}, "color": "gold"}]
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
 ```
 
 ## Get distance "as to at"
@@ -43,7 +43,7 @@ tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spi
 `get_distance_ata`: Calculates the distance between the source entity
 and the execution position of the function.
 
-* The result is returned on the score `bs.res0`.
+* The result is returned on the score `bs.out.0`.
 * * Be careful, this function calls `get_distance_squared_ata`, on which it applies the math/sqrt operation. It is therefore relatively heavy and is subject to the same constraint as `get_distance_squared_as_to_at` on integer size.
 
 *Example:*
@@ -53,7 +53,7 @@ Calculate the distance between you and the nearest sheep:
 ```
 # Once
 execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata
-tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 ```
 
 ## Get distance squared "as to at"
@@ -61,7 +61,7 @@ tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", 
 `get_distance_squared_ata` : Calculates the squared distance between
 the source entity and the execution position of the function.
 
-* The result is returned on the score `bs.res0`.
+* The result is returned on the score `bs.out.0`.
 
 ```{warning} 
 
@@ -79,7 +79,7 @@ Calculate the squared distance between you and the nearest sheep:
 ```
 # Once
 execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata
-tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.res0"}, "color": "gold"}]
+tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 ```
 
 ## Get relative corrdinates "as to at"
@@ -96,7 +96,7 @@ Get your position relative to the nearest Creeper:
 ```
 # Once
 execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata
-tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.locX"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.locZ"},"color":"gold"}]
+tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 ```
 
 ## Is in cave?
@@ -104,7 +104,7 @@ tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"
 `is_in_cave`: Allows to know if the location indicated by the
 execution mosition of the function is located in a cellar.
 
-* Stores the result on bs.res0 (1 if in a cellar, 0 otherwise)
+* Stores the result on bs.out.0 (1 if in a cellar, 0 otherwise)
 
 *Example:*
 
@@ -115,7 +115,7 @@ To know if the skeletons are in cellars or not:
 execute as @e[type=skeleton] at @s run function bs.location:is_in_cave
 
 # See the result:
-effect give @e[type=skeleton,scores={bs.res0=1}] glowing 1 1 true
+effect give @e[type=skeleton,scores={bs.out.0=1}] glowing 1 1 true
 ```
 
 ## Set location
@@ -134,9 +134,9 @@ Teleport in 15 100 25
 
 ```
 # Once
-scoreboard players set @s bs.locX 15
-scoreboard players set @s bs.locY 100
-scoreboard players set @s bs.locZ 25
+scoreboard players set @s bs.loc.x 15
+scoreboard players set @s bs.loc.y 100
+scoreboard players set @s bs.loc.z 25
 function bs.location:set
 ```
 
@@ -159,9 +159,9 @@ is hard-coded, so a simple /tp would suffice, but here the scores can be
 modified unlike the parameters of a /tp command)
 
 ```
-scoreboard players set Boblennon bs.locX -5
-scoreboard players set Boblennon bs.locY 63
-scoreboard players set Boblennon bs.locZ 26
+scoreboard players set Boblennon bs.loc.x -5
+scoreboard players set Boblennon bs.loc.y 63
+scoreboard players set Boblennon bs.loc.z 26
 execute as Boblennon run function bs.location:fast_set
 ```
 
@@ -173,7 +173,7 @@ execute as Boblennon run function bs.location:fast_set
 `spread`: Allows to randomly teleport an entity in a given area.
 
 * The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y position of the entity
-* Takes as parameters the scores `bs.var[0,1,2]` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
+* Takes as parameters the scores `bs.in.[0,1,2]` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
 
 *Example:*
 
@@ -182,9 +182,9 @@ coordinate X=15, Z=25
 
 ```
 # Once
-scoreboard players set @s bs.var0 15
-scoreboard players set @s bs.var1 25
-scoreboard players set @s bs.var2 10
+scoreboard players set @s bs.in.0 15
+scoreboard players set @s bs.in.1 25
+scoreboard players set @s bs.in.2 10
 function bs.location:spread
 ```
 

@@ -21,7 +21,7 @@ execute if score #math.arctan.x bs.data matches ..-1 run scoreboard players oper
 
 
 # Result (offset - numerator / denominator)
-scoreboard players operation @s bs.res0 = #math.arctan.numerator bs.data
-scoreboard players operation @s bs.res0 /= #math.arctan.denominator bs.data
-scoreboard players operation @s bs.res0 *= -1 bs.const
-scoreboard players operation @s bs.res0 += #math.arctan.offset bs.data
+scoreboard players operation @s bs.out.0 = #math.arctan.numerator bs.data
+scoreboard players operation @s bs.out.0 /= #math.arctan.denominator bs.data
+scoreboard players operation @s bs.out.0 *= -1 bs.const
+scoreboard players operation @s bs.out.0 += #math.arctan.offset bs.data

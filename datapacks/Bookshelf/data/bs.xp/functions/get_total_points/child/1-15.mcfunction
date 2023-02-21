@@ -3,8 +3,8 @@
 
 scoreboard players operation TMP bs = LEVELS bs
 scoreboard players operation TMP bs *= 6 bs.const
-scoreboard players operation @s bs.res0 += TMP bs
+scoreboard players operation @s bs.out.0 += TMP bs
 
 scoreboard players operation TMP bs = LEVELS bs
 scoreboard players operation TMP bs *= LEVELS bs
-scoreboard players operation @s bs.res0 += TMP bs
+scoreboard players operation @s bs.out.0 += TMP bs

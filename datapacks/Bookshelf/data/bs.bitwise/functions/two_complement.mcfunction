@@ -22,8 +22,8 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s bs.var0 (score): number to two's complete
-# Output: @s bs.res0 (score): the two's complete of a number
+# Input: @s bs.in.0 (score): number to two's complete
+# Output: @s bs.out.0 (score): the two's complete of a number
 
 #__________________________________________________
 # INIT
@@ -34,10 +34,10 @@
 #__________________________________________________
 # CODE
 
-execute if score @s bs.var0 matches ..-1 run tag @s add bs.bitwise.two_complement.negative
-execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.var0 *= -1 bs.const
-scoreboard players operation @s bs.res0 = MaxInt bs.const
-scoreboard players operation @s bs.res0 -= @s bs.var0
-scoreboard players add @s bs.res0 1
-execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.var0 *= -1 bs.const
+execute if score @s bs.in.0 matches ..-1 run tag @s add bs.bitwise.two_complement.negative
+execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.in.0 *= -1 bs.const
+scoreboard players operation @s bs.out.0 = MaxInt bs.const
+scoreboard players operation @s bs.out.0 -= @s bs.in.0
+scoreboard players add @s bs.out.0 1
+execute if entity @s[tag=bs.bitwise.two_complement.negative] run scoreboard players operation @s bs.in.0 *= -1 bs.const
 tag @s remove bs.bitwise.two_complement.negative

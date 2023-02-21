@@ -29,16 +29,16 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.var2 = @s bs.var0
-scoreboard players operation @s bs.var2 -= @s bs.var1
+scoreboard players operation @s bs.in.2 = @s bs.in.0
+scoreboard players operation @s bs.in.2 -= @s bs.in.1
 
-scoreboard players operation @s[scores={bs.var2=1..}] bs.res0 = @s bs.var1
-scoreboard players operation @s[scores={bs.var2=1..}] bs.var2 = @s bs.var0
+scoreboard players operation @s[scores={bs.in.2=1..}] bs.out.0 = @s bs.in.1
+scoreboard players operation @s[scores={bs.in.2=1..}] bs.in.2 = @s bs.in.0
 
-scoreboard players operation @s[scores={bs.var2=..-1}] bs.res0 = @s bs.var0
-scoreboard players operation @s[scores={bs.var2=..-1}] bs.var2 = @s bs.var1
+scoreboard players operation @s[scores={bs.in.2=..-1}] bs.out.0 = @s bs.in.0
+scoreboard players operation @s[scores={bs.in.2=..-1}] bs.in.2 = @s bs.in.1
 
-tag @s[scores={bs.var2=0}] add PGCDfound
+tag @s[scores={bs.in.2=0}] add PGCDfound
 
 execute at @s[tag=!PGCDfound] run function bs.math:common/gcd/child/loop
 
