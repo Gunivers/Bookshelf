@@ -31,7 +31,7 @@ Create a link between two entities : compute relative and local position and ori
     (execution) `as <entities>`
     : The link lead on a parent-child relation. The executing (source) entity must be the child.
 
-    (score) `@s bs.targetId`
+    (score) `@s bs.id.target`
     : Score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
 :Outputs:
@@ -51,7 +51,7 @@ Create a link between two entities : compute relative and local position and ori
 
     ```
     # Once
-    scorebaord players set @e[type=armor_stand] bs.targetId 3
+    scorebaord players set @e[type=armor_stand] bs.id.target 3
     execute as @e[type=armor_stand] run function bs.link:create_link_tti
 
     # See the result

@@ -25,7 +25,7 @@ scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_g
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.targetId = @s bs.link.to
+scoreboard players operation @s bs.id.target = @s bs.link.to
 function bs.id:check
 
 # Relative Orientation

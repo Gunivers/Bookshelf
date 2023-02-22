@@ -31,7 +31,7 @@ scoreboard players operation backup.link.reverse.LocY bs = @s bs.loc.y
 
 data merge entity @s[type=!player] {NoGravity:1}
 
-scoreboard players operation @s bs.targetId = @s bs.link.to
+scoreboard players operation @s bs.id.target = @s bs.link.to
 function bs.id:check
 
 # Relative Position

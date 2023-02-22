@@ -11,7 +11,7 @@ is shooting at whom.
 **`bs.id:check`**
 
 Allows to compare the ``bs.id`` scores of the entities
-with the ``bs.targetId`` score of the entity having executed the
+with the ``bs.id.target`` score of the entity having executed the
 function.
 
 :Inputs:
@@ -19,7 +19,7 @@ function.
     (execution) `as <entity>`
     : The entity that hold the target score (ID check must be performed on one entity at a time)
 
-    (score) `@s bs.targetId`
+    (score) `@s bs.id.target`
     : The ID to compare with the other entities.
 
 :Outputs:
@@ -34,13 +34,13 @@ function.
     ```
     
     (tag) `@e bs.id.upper`
-    : The entities whose `bs.id` score is higher than the `bs.targetId` score.
+    : The entities whose `bs.id` score is higher than the `bs.id.target` score.
     
     (tag) `@e bs.id.lower`
-    : The entities whose `bs.id` score is lower than the `bs.targetId` score.
+    : The entities whose `bs.id` score is lower than the `bs.id.target` score.
     
     (tag) `@e bs.id.match`
-    : The entities whose `bs.id` score is equal to the `bs.targetId` score.
+    : The entities whose `bs.id` score is equal to the `bs.id.target` score.
 
 :Example:
 
@@ -48,7 +48,7 @@ function.
 
     ```
     # Once
-    scoreboard players set @s bs.targetId 3
+    scoreboard players set @s bs.id.target 3
     function bs.id:check
 
     # See the result
@@ -74,7 +74,7 @@ Find all child entities of Bob:
 
 ```
 # Once
-execute as @e[name=Bob,limit=1] run scoreboard players operation @s bs.targetId = @s bs.id
+execute as @e[name=Bob,limit=1] run scoreboard players operation @s bs.id.target = @s bs.id
 function bs.id:check_parent
 
 # See the result

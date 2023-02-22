@@ -71,7 +71,7 @@ execute as @e[tag=bs.unitest,tag=child] run tp @s ~1 ~2.314 ~3 0 0
 execute as @e[tag=bs.unitest,tag=parent] run tp @s ~0 ~0.314 ~0 90 45
 
 # Putting the target ID to the child
-scoreboard players operation @e[tag=bs.unitest,tag=child] bs.targetId = @e[tag=bs.unitest,tag=parent] bs.id
+scoreboard players operation @e[tag=bs.unitest,tag=child] bs.id.target = @e[tag=bs.unitest,tag=parent] bs.id
 
 # Creating link
 execute as @e[tag=bs.unitest,tag=child] run function bs.link:create_link_tti
