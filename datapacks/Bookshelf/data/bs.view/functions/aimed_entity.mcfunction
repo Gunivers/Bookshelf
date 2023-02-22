@@ -23,7 +23,7 @@
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.targetId = @s bs.id
+scoreboard players operation @s bs.id.target = @s bs.id
 tag @s add Executor
 function bs.id:check_parent
 kill @e[tag=bs.aimedEntity,tag=bs.id.parent.match]

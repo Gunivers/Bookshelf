@@ -60,7 +60,7 @@ scoreboard objectives remove bs.ttl
 
 	# ~~ Id ~~
 scoreboard objectives remove bs.id
-scoreboard objectives remove bs.targetId
+scoreboard objectives remove bs.id.target
 scoreboard objectives remove bs.id.parent
 
  # ~~ Link ~~

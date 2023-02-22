@@ -26,7 +26,7 @@ scoreboard players set @s[tag=!bs.config.override] bs.in.0 100
 #__________________________________________________
 # CODE
 
-scoreboard players operation @s bs.targetId = @s bs.id
+scoreboard players operation @s bs.id.target = @s bs.id
 function bs.id:check_parent
 kill @e[tag=bs.aimedBlock,tag=bs.id.parent.match]
 execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["bs","bs.aimedBlock","bs.aimedBlock.new"]}
