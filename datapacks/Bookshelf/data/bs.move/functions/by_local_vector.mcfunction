@@ -16,57 +16,83 @@
 #__________________________________________________
 # INIT
 
-scoreboard objectives add bs.precision dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Precision Type","color":"aqua"}]
+scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
+scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
+scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
 #__________________________________________________
 # CONFIG
 
-# Manage precision of collision detection (1000 = 1 block, 500 = 0.5 blocks). More the system is accurate and more it will be heavy to run.
-scoreboard players set @s[tag=!bs.config.override] bs.precision 1000
-tag @s[tag=bs.config.override] remove bs.config.override
-
 #__________________________________________________
 # CODE
 
+### DEBUG
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":"> Bookshelf | ","color":"dark_aqua","bold":"true"},{"text":"Record from bs.move:by_local_vector","color":"green","bold":"false","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.move.by_local_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] ["",{"text":" 1) Vector X: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.x"},"color":"aqua"},{"text":" Vector Y: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.y"},"color":"aqua"},{"text":" Vector Z: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.z"},"color":"aqua"}]
+### END DEBUG
+
 # Backup
-scoreboard players operation #backup.move.vectorX bs = @s bs.vector.x
-scoreboard players operation #backup.move.vectorY bs = @s bs.vector.y
-scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
-scoreboard players operation #backup.move.res0 bs = @s bs.out.0
+scoreboard players operation #move.by_local_vector.backup.vector.x bs.data = @s bs.vector.x
+scoreboard players operation #move.by_local_vector.backup.vector.y bs.data = @s bs.vector.y
+scoreboard players operation #move.by_local_vector.backup.vector.z bs.data = @s bs.vector.z
+scoreboard players operation ##move.by_local_vector.backup.out.0 bs.data = @s bs.out.0
 
-# Absurd values security
-scoreboard players set @s[scores={bs.precision=1001..}] bs.precision 1000
-scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
+# Compute how many unitary vector we need to compose the vector
+function bs.vector:max_component
+scoreboard players operation #move.by_local_vector.quotient bs.data = @s bs.out.0
+scoreboard players operation #move.by_local_vector.quotient bs.data /= 1023 bs.const
 
-# Decomposition in sum of vector with parameters <= bs.precision
+# Decomposition in sum of vector with parameters <= 1023
 tag @s add bs.config.override
-scoreboard players operation vector.fastNormalization.lenght bs.config = @s bs.precision
-function bs.vector:local/fast_normalize
+scoreboard players operation vector.fast_normalize.length bs.config = 1023 bs.const
 
-# Apply movement
-scoreboard players set move.decomposition.factor bs 1000
-scoreboard players operation move.decomposition.factor bs /= @s bs.out.0
-scoreboard players operation move.decomposition.factor.save bs = move.decomposition.factor bs
-execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_local_vector/child/loop
+### DEBUG
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":" 2) Call bs.vector:fast_normalize","color":"gray"}]
+###
+
+function bs.vector:fast_normalize
+
+scoreboard players operation #move.by_local_vector.normed_vector.x bs.data = @s bs.vector.x
+scoreboard players operation #move.by_local_vector.normed_vector.y bs.data = @s bs.vector.y
+scoreboard players operation #move.by_local_vector.normed_vector.z bs.data = @s bs.vector.z
+
+### DEBUG
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":" 3) Norm length: ","color":"gray"},{"score":{"name":"vector.fast_normalize.length","objective":"bs.bs.config"},"color":"aqua"},{"text":" Quotient: ","color":"gray"},{"score":{"name":"#move.by_local_vector.quotient","objective":"bs.data"},"color":"aqua"},{"text":" Factor: ","color":"gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"aqua"}]
+
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":" 4) Vector X: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.x"},"color":"aqua"},{"text":" Vector Y: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.y"},"color":"aqua"},{"text":" Vector Z: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.z"},"color":"aqua"}]
+
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":" 5) Starting main loop","color":"gray"}]
+### END DEBUG
+
+# Loop over unitary vectors
+scoreboard players operation #move.by_local_vector.quotient.save bs.data = #move.by_local_vector.quotient bs.data
+execute at @s if score #move.by_local_vector.quotient bs.data matches 1.. run function bs.move:by_local_vector/child/loop
 
 # Rest of decomposition
-scoreboard players operation move.vectorX bs *= move.decomposition.factor.save bs
-scoreboard players operation move.vectorY bs *= move.decomposition.factor.save bs
-scoreboard players operation move.vectorZ bs *= move.decomposition.factor.save bs
-scoreboard players operation move.vectorX bs -= #backup.move.vectorX bs
-scoreboard players operation move.vectorY bs -= #backup.move.vectorY bs
-scoreboard players operation move.vectorZ bs -= #backup.move.vectorZ bs
-scoreboard players operation move.vectorX bs *= -1 bs.const
-scoreboard players operation move.vectorY bs *= -1 bs.const
-scoreboard players operation move.vectorZ bs *= -1 bs.const
+scoreboard players operation @s bs.vector.x = #move.by_local_vector.backup.vector.x bs.data
+scoreboard players operation @s bs.vector.y = #move.by_local_vector.backup.vector.y bs.data
+scoreboard players operation @s bs.vector.z = #move.by_local_vector.backup.vector.z bs.data
+
+scoreboard players operation @s bs.vector.x %= #move.by_local_vector.normed_vector.x bs.data
+scoreboard players operation @s bs.vector.y %= #move.by_local_vector.normed_vector.y bs.data
+scoreboard players operation @s bs.vector.z %= #move.by_local_vector.normed_vector.z bs.data
+
+### DEBUG
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] ["",{"text":" 6) Vector X: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.x"},"color":"aqua"},{"text":" Vector Y: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.y"},"color":"aqua"},{"text":" Vector Z: ","color":"gray"},{"score":{"name":"@s","objective":"bs.vector.z"},"color":"aqua"}]
+
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] [{"text":" 7) Starting rest loop","color":"gray"}]
+### END DEBUG
 
 # Apply movement for the rest
-tag @s add bs.move.by_vector.rest
 execute at @s run function bs.move:by_local_vector/child/loop
-tag @s remove bs.move.by_vector.rest
 
 # Restore
-scoreboard players operation @s bs.vector.x = #backup.move.vectorX bs
-scoreboard players operation @s bs.vector.y = #backup.move.vectorY bs
-scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
-scoreboard players operation @s bs.out.0 = backup.move.res0 bs
+scoreboard players operation @s bs.vector.x = #move.by_local_vector.backup.vector.x bs.data
+scoreboard players operation @s bs.vector.y = #move.by_local_vector.backup.vector.y bs.data
+scoreboard players operation @s bs.vector.z = #move.by_local_vector.backup.vector.z bs.data
+scoreboard players operation @s bs.out.0 = #move.by_local_vector.backup.out.0 bs.data
+
+### DEBUG
+tellraw @a[tag=bs.debug.move.by_local_vector,tag=!bs.menu.active] ["",{"text":"<","bold":true,"color":"dark_aqua"}]
+### END DEBUG

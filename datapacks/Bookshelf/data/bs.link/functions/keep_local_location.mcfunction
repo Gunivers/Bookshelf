@@ -33,11 +33,15 @@ function bs.id:check
 
 execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.core:default_entity
 
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.x = @s bs.link.lx
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.y = @s bs.link.ly
-scoreboard players operation @e[tag=bs.new,limit=1,sort=nearest] bs.vector.z = @s bs.link.lz
+tag @e[tag=bs.new] add bs.link.keep_local_location.setter
+tag @e[tag=bs.new] remove bs.new
 
-execute as @e[tag=bs.new,limit=1,sort=nearest] at @s run function bs.move:by_local_vector
+scoreboard players operation @e[tag=bs.link.keep_local_location.setter,limit=1,sort=nearest] bs.vector.x = @s bs.link.lx
+scoreboard players operation @e[tag=bs.link.keep_local_location.setter,limit=1,sort=nearest] bs.vector.y = @s bs.link.ly
+scoreboard players operation @e[tag=bs.link.keep_local_location.setter,limit=1,sort=nearest] bs.vector.z = @s bs.link.lz
 
-execute positioned as @e[tag=bs.new,limit=1,sort=nearest] run tp @s ~ ~ ~
-kill @e[tag=bs.new]
+execute as @e[tag=bs.link.keep_local_location.setter,limit=1,sort=nearest] at @s run function bs.move:by_local_vector
+
+execute positioned as @e[tag=bs.link.keep_local_location.setter,limit=1,sort=nearest] run tp @s ~ ~ ~
+
+kill @e[tag=bs.link.keep_local_location.setter]

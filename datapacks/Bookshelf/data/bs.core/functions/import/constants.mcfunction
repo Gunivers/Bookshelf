@@ -98,6 +98,8 @@ scoreboard players set 900 bs.const 900
 scoreboard players set 1000 bs.const 1000
 scoreboard players set 1001 bs.const 1001
 scoreboard players set 1012 bs.const 1012
+scoreboard players set 1023 bs.const 1023
+scoreboard players set 1024 bs.const 1024
 scoreboard players set 1292 bs.const 1292
 scoreboard players set 1500 bs.const 1500
 scoreboard players set 1024 bs.const 1024
