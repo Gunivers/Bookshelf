@@ -48,15 +48,15 @@ entity.
    (execution) `as <entities>`
    : The entities you want to perform the computation on
 
-   (scores) `@s bs.in.<0|1|2>`
+   (scores) `@s bs.in.[0,1,2]`
    : Vector coordinates $(X,Y,Z)$ in the starting base
 
-   (scores) `@s bs.in.<3|4>`
+   (scores) `@s bs.in.[3,4]`
    : Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
 
 :Outputs:
 
-   (scores) `bs.out.<0|1|2>`
+   (scores) `bs.out.[0,1,2]`
    : Vector coordinates $(X',Y',Z')$ in the target base
 
 :Examples:
@@ -802,9 +802,13 @@ Compute the tangeant of an angle between 0 and 360
 
 ---
 
-# 💬 Did it help you?
+<div align=center>
+
+**💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
+
+</div>
 
 <script src="https://giscus.app/client.js"
         data-repo="Gunivers/Glibs"

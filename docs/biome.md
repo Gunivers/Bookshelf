@@ -105,9 +105,13 @@ tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "The tempera
 
 ---
 
-# 💬 Did it help you?
+<div align=center>
+
+**💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
+
+</div>
 
 <script src="https://giscus.app/client.js"
         data-repo="Gunivers/Glibs"
