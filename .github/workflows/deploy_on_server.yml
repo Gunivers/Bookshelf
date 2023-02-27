@@ -37,3 +37,16 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           remote_path: /Glib-Sandbox/
           ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, /advancements/, /data/, /DIM-1/, /DIM1/, /entities/, /generated/, /playerdata/, /poi/, /region/ /stats/, /level.dat, /level.dat_old, /session.lock, /uid.dat, /docs/, /generators/
+      - name: Restart server
+        env:
+          SERVER_RESTART_ENDPOINT: ${{ secrets.SERVER_RESTART_ENDPOINT }}
+          SERVER_RESTART_BEARER: ${{ secrets.SERVER_RESTART_BEARER }}
+        run: |
+          curl $SERVER_RESTART_ENDPOINT \
+            -H 'Accept: application/json' \
+            -H 'Content-Type: application/json' \
+            -H 'Authorization: Bearer $SERVER_RESTART_BEARER' \
+            -X POST \
+            -d '{
+            "signal": "restart"
+            }'
