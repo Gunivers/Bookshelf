@@ -42,11 +42,11 @@ jobs:
           SERVER_RESTART_ENDPOINT: ${{ secrets.SERVER_RESTART_ENDPOINT }}
           SERVER_RESTART_BEARER: ${{ secrets.SERVER_RESTART_BEARER }}
         run: |
-          curl $SERVER_RESTART_ENDPOINT \
-            -H 'Accept: application/json' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer $SERVER_RESTART_BEARER' \
-            -X POST \
-            -d '{
-            "signal": "restart"
-            }'
+          server_full_status=$(curl "$SERVER_RESTART_ENDPOINT/resources" -H 'Accept: application/json'  -H 'Content-Type: application/json' -H "Authorization: Bearer $SERVER_RESTART_BEARER" -X GET)
+          server_power_status=$(jq -r '.attributes.current_state' <<<"$server_full_status")
+          if [ $server_power_status = 'running' ]; then
+            echo "Bookshelf's test server is online, restarting it to apply updates"
+            curl "$SERVER_RESTART_ENDPOINT/power" -H 'Accept: application/json' -H 'Content-Type: application/json' -H "Authorization: Bearer $SERVER_RESTART_BEARER" -X POST -d '{"signal": "restart"}'
+          else
+            echo "Bookshelf's test server is offline, it will not be started"
+          fi
