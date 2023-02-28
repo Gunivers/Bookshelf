@@ -516,9 +516,9 @@ Compute the square root of the number
 ```{admonition} How does it work?
 :class: dropdown
 
-This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^31-1 = 2,147,483,647$, the maximum square root is $\sqrt(2,147,483,647) ~= 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer (N being the number of iteration) until finding the square root.
+This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^{31}-1 = 2,147,483,647$, the maximum square root is $\sqrt{2,147,483,647} \approx 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer ($N$ being the number of iterations) until finding the square root.
 
-As this algorithm converge using a $2^N$ iterator, the convergeance occure in $log_2\text{max limit}) = log_2(46,340) ~= 16$ iterations.
+As this algorithm converge using a $2^N$ iterator, the convergeance occure in $N=\log_2(\text{max limit}) = log_2(46,340) \approx 16$ iterations.
 
 <div align=center>
 <div style="max-width:200px">
@@ -721,6 +721,23 @@ Compute the arctangent of a value between -infinite and +infinite
    tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
+```{admonition} How does it work?
+:class: dropdown
+
+This function use two approximations to calculate the arctangent of a value:
+
+$$
+\begin{cases}
+\tan(x) = \left(\frac \pi 2 \frac x {|x|} - 4 \frac x {4x^2 + 1}\right)\frac \pi {180} &\forall |x| \geq 0.72\\
+\tan(x) = \left( x - \frac {x^3} 3 + \frac {x^5} 5 \right)\frac \pi {180} & \forall |x| < 0.72
+\end{cases}
+$$
+
+![](img/2023-02-28-18-21-51.png)
+```
+
+![](img/2023-02-28-18-34-44.png)
+
 ---
 
 ### Cosine
@@ -750,6 +767,12 @@ Compute the cosine of an angle between 0 and 360
    function bs.math:trig/cos
    tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+```{admonition} How does it work?
+:class: dropdown
+
+This function use the property $cos(x) = sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
+```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
 
@@ -782,6 +805,26 @@ Computes the sine of an angle between 0 and 360
    function bs.math:trig/sin
    tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+```{admonition} How does it work?
+:class: dropdown
+
+This function use the Bhaskara approximation which tell us that
+
+$$
+\sin(x) \approx \frac{4x(180-x)}{40500-x(180-x)} \quad \forall x \in [0, 180]
+$$
+
+From this relation, and using the properties
+- $\sin(-x) = -\sin(x)$ (antisymetry)
+- $\sin(x+360) = \sin(x)$ (periodicity)
+
+We can compute the sine of any angle.
+
+![](img/2023-02-28-18-34-11.png)
+
+
+```
 
 ![](img/2023-02-07-09-00-23.png)
 
