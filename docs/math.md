@@ -513,6 +513,24 @@ Compute the square root of the number
    tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
+```{admonition} How does it work?
+:class: dropdown
+
+This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^31-1 = 2,147,483,647$, the maximum square root is $\sqrt(2,147,483,647) ~= 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer (N being the number of iteration) until finding the square root.
+
+As this algorithm converge using a $2^N$ iterator, the convergeance occure in $log_2\text{max limit}) = log_2(46,340) ~= 16$ iterations.
+
+<div align=center>
+<div style="max-width:200px">
+
+![](img/2023-02-28-08-14-34.png)
+
+</div>
+</div>
+
+For a conveniant reason, instead of taking half of the maximum limite, we take the first power of two that is above. In this way, every division by $2^N$ lead to an integer number. 
+```
+
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
 
 ---

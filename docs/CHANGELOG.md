@@ -11,6 +11,8 @@ This version contain breaking changes. In the following changelog, they are iden
 ### ➕ Addition
 
 - There is now a changelog! 🎉
+- Added `bs.vector:get_by_motion` function
+- Added a scale 3 variation to the `bs.math:common/exp` function
 - (WIP) Added unit tests to ensure that the library is working as expected before each release.
 
 ### 🔁 Tweaks
