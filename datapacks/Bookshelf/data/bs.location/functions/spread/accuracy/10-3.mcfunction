@@ -59,7 +59,7 @@ execute if score @s bs.out.0 <= @s bs.in.4 run scoreboard players operation @s b
 
 scoreboard players operation @s bs.in.2 += @s bs.in.4
 
-execute store result score @s bs.in.1 run data get entity @s Pos[1] 1
+execute store result score @s bs.in.1 run data get entity @s Pos[1] 1000
 
 function bs.location:set/accuracy/10-3
 
