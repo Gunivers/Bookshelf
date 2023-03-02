@@ -1,4 +1,4 @@
 myst-parser
-sphinx-book-theme==1.0.0
+sphinx-book-theme==0.3.3
 sphinx-design
 sphinx-togglebutton
