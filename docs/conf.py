@@ -63,20 +63,20 @@ html_theme_options = {
     "use_edit_page_button": True,
     "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
     "logo": {
-        "image_dark": "_static/logo-bookshelf.png",
+        "image_dark": "img/logo-bookshelf.png",
         "text": "Bookshelf",  # Uncomment to try text with logo
     },
     "icon_links": [
         {
             "name": "Gunivers",
             "url": "https://gunivers.net",
-            "icon": "_static/logo-gunivers.png",
+            "icon": "img/logo-gunivers.png",
             "type": "local",
         },
         {
             "name": "Discord server",
             "url": "https://discord.gg/E8qq6tN",
-            "icon": "_static/logo-discord.png",
+            "icon": "img/logo-discord.png",
             "type": "local",
         },
         {
@@ -87,7 +87,7 @@ html_theme_options = {
     ]
 }
 
-html_logo = "_static/logo-bookshelf.png"
+html_logo = "img/logo-bookshelf.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
