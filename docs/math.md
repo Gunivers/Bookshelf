@@ -52,7 +52,16 @@ entity.
    : Vector coordinates $(X,Y,Z)$ in the starting base
 
    (scores) `@s bs.in.[3,4]`
-   : Horizontal (along $\hat{z}$) and vertical (along $\hat{\phi}$) rotation (in degree) from the starting base
+   : Horizontal angle $\phi$ (along $\hat{y}$) and vertical angle $\theta$ (along $\hat{\phi}$) rotation (in degree) from the starting base
+
+   ```{admonition} Basis system
+   :class: info
+
+   This system use the Minecraft coordinate system. Thus:
+   - $\hat{y}$ is the vertical axis.
+   - $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
+   - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane. 
+   ```
 
 :Outputs:
 
@@ -518,7 +527,7 @@ Compute the square root of the number
 
 This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^{31}-1 = 2,147,483,647$, the maximum square root is $\sqrt{2,147,483,647} \approx 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer ($N$ being the number of iterations) until finding the square root.
 
-As this algorithm converge using a $2^N$ iterator, the convergeance occure in $N=\log_2(\text{max limit}) = log_2(46,340) \approx 16$ iterations.
+As this algorithm converge using a $2^N$ iterator, the convergeance occure in $N=\log_2(\text{max limit}) = \log_2(46,340) \approx 16$ iterations.
 
 <div align=center>
 <div style="max-width:200px">
@@ -750,6 +759,7 @@ Compute the cosine of an angle between 0 and 360
 
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
+
    (score) `@s bs.in.0`
    : The angle in degrees
 
@@ -771,7 +781,7 @@ Compute the cosine of an angle between 0 and 360
 ```{admonition} How does it work?
 :class: dropdown
 
-This function use the property $cos(x) = sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
+This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
 ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
@@ -788,6 +798,7 @@ Computes the sine of an angle between 0 and 360
 
    (execution) `as <entities>`
    : The entities you want to perform the calculation on
+
    (score) `@s bs.in.0`
    : The angle in degrees
 
