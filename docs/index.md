@@ -3,7 +3,12 @@ html_theme.sidebar_secondary.remove: true
 html_theme.sidebar_primary.remove: true
 ---
 
-# ![](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
+<div align=center>
+
+
+# ![Bookshelf](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
+
+</div>
 
 
 
@@ -105,9 +110,9 @@ Thus, this lib is not made to propose the best optimized functions or the more a
 
 ## 🤝 Follow and/or contribute
 
-You can come on `our Discord <https://discord.gg/E8qq6tN>`_ server to talk with us and/or take part of the project!
+You can come on [our Discord](https://discord.gg/E8qq6tN) server to talk with us and/or take part of the project!
 
-If you want to contribute, please read at least the "Getting started" section in the `"Contributing" page <https://glib-core.readthedocs.io/en/latest/contributing.html>`_ that contain all the development convention used in this project.
+If you want to contribute, please read at least the "Getting started" section in the ["Contributing" page](https://glib-core.readthedocs.io/en/latest/contributing.html) that contain all the development convention used in this project.
 
 ````{toctree}
 :hidden:
