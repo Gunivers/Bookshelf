@@ -1,3 +1,7 @@
+---
+html_theme.sidebar_secondary.remove: true
+---
+
 # ❓ FAQ
 
 -  **Can I use the lib in my map/server project? What about copyrights?**
