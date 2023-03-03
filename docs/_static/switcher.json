@@ -1,0 +1,37 @@
+[
+    {
+      "name": "dev",
+      "version": "latest",
+      "url": "https://bookshelf.docs.gunivers.net/en/latest/"
+    },
+    {
+      "name": "1.19-1.0 Wild",
+      "version": "1.19",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.19-1.0_wild/"
+    },
+    {
+      "name": "1.18-1.1 Spaghetti",
+      "version": "1.18",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.18-1.1_spaghetti/"
+    },
+    {
+      "name": "1.17-1.1 Amethyst",
+      "version": "1.17",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.17/"
+    },
+    {
+      "name": "1.16-1.0 Nether",
+      "version": "1.16",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.16/"
+    },
+    {
+      "name": "1.14-1.0 Village",
+      "version": "1.14",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.14/"
+    },
+    {
+      "name": "1.12-1.0 Color",
+      "version": "1.12",
+      "url": "https://bookshelf.docs.gunivers.net/en/1.12/"
+    }
+  ]
