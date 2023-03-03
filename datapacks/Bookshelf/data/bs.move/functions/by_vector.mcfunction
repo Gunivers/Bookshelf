@@ -27,7 +27,7 @@ scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_
 # CONFIG
 
 # Manage precision of collision detection (1000 = 1 block, 500 = 0.5 blocks). More the system is accurate and more it will be heavy to run.
-scoreboard players set @s[tag=!bs.config.override] bs.precision -1
+scoreboard players set @s[tag=!bs.config.override] bs.precision 1000
 tag @s[tag=bs.config.override] remove bs.config.override
 
 #__________________________________________________
@@ -43,9 +43,6 @@ scoreboard players operation #backup.move.res0 bs = @s bs.out.0
 # execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","bold":true,"color":"dark_aqua"},{"text":" | ","color":"black"},{"text":"WARNING in bs.move:by_vector","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
 # execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":"   Precision cannot be negative. Precision was set to 1000 (1 block).","color":"gray"}]
 # execute if score @s bs.precision matches ..-1 run tellraw @a [{"text":" < ","bold":true,"color":"gold"}]
-
-# Absurd values security
-scoreboard players set @s[scores={bs.precision=..-1}] bs.precision 1000
 
 # Decomposition in sum of vector with parameters <= bs.precision
 tag @s add bs.config.override
