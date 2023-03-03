@@ -107,12 +107,10 @@ If you want to contribute, please read at least the "Getting started" section in
     :maxdepth: 3
     :caption: Info
 
-    📥 Download <http://bs.gunivers.net>
     getting_started
     contributing.md
     faq
     CHANGELOG.md
-    💬 Discord <https://discord.gg/E8qq6tN>
 
 .. toctree::
     :maxdepth: 2
