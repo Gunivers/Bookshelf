@@ -1,7 +1,8 @@
 # 🏃 Move
 
-`bs.move:`: This folder contains all the functions related to the
-movement of the entity.
+**`bs.move:_`**
+
+Make your entity move exactly the way you want them to!
 
 <div align=center>
 
@@ -26,64 +27,101 @@ movement of the entity.
 
 ---
 
-## Move using local vector
+## Move using vector
 
-`by_local_vector`: Allows to move the entity according to its vector
-on each axis of the local reference frame.
+::::{tab-set}
+:::{tab-item} Canonical
 
-* A vector of 1000 on an axis will lead to a movement of a block at each execution of the function.
-* The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* The system takes as input the 3 scores `bs.vector[Left,Up,Front]` (1000 <=> 1 block).
+**`bs.move:by_vector`**
 
-:::{warning}
-The system does not include any speed limit. However, the
-resources consumed by this function are proportional to the number
-of blocks/tick at which the entity moves.
-:::
+Allows to move the entity according to its vector on each
+axis of the game.
 
-*Example:*
+:Inputs:
 
-- Apply a movement of 0.3 blocks per tick to the left to all boats:
+    (execution) `as <entity>`
+    : The entity to move
 
-    ```
-    # Once
-    scoreboard players set @e[type=boat] bs.vector.x 300
-    scoreboard players set @e[type=boat] bs.vector.y 0
-    scoreboard players set @e[type=boat] bs.vector.z 0
+    (scores) `@s bs.vector.[x,y,z]`
+    : The local vector you want the entity to move on (respectively left, up and forward vectors), shifted by 3 digits (1000 $\rightarrow$ move by 1 block)
 
-    # In loop
-    execute as @e[type=boat] run function bs.move:by_local_vector
-    ```
+    (scores) `@s bs.collision`
+    : The collision behavior. Here is built-in behaviors:
 
----
+        - `0` (default): The entity will cross all the blocks
+        - `-1`: The entity will bounce on all the solid blocks
+        - `-2`: The entity will stick and slide on the surface it will encounter
+        - `-3`: The entity will stick and stop on all the solid blocks
+        - `-4`: The entity will bounce on solid blocks and reduce the total speed by 2
 
-## Move by classic vector
+        ````{admonition} Create your own behavior!
+        :class: dropdown
 
-`by_vector`: Allows to move the entity according to its vector on each
-axis of the relative reference frame.
+        It is possible to create your own collision behavior by creating a function callable via `glib.config:move/by_vector/collision` in which you call the collision function according to the corresponding `bs.collision` score.
 
-* A vector of 1000 on an axis will lead to a movement of a block at each execution of the function.
-* The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* The system takes as input the 3 scores `bs.vector[X,Y,Z]` (1000 <=> 1 block) as well as the `bs.collision` score.
-* This last score allows to manage the behavior. If it is not filled in or equal to 0, the entity will cross all the blocks
-* Each behavior is defined via a dedicated file in `glib_config:move/by_vector/`
-* It is possible to manage the precision of collision detection by placing the tag `bs.config.override` on the entity and then changing its score `bs.precision` to the desired value (1000 <=> 1 block, 500 <=> 0.5 blocks)
-* If the precision is higher than 1 block, the entity will have a certain probability to cross the walls of a block of thickness.
+        This `collision.mcfunction` file should looks like this:
+        ```mcfunction
+        execute if score @s bs.collision matches 1.. run function glib_config:move/by_vector/collision_type/1
+        execute if score @s bs.collision matches 2.. run function glib_config:move/by_vector/collision_type/2
+        execute if score @s bs.collision matches 3.. run function glib_config:move/by_vector/collision_type/3
+        ...
+        ```
 
-:::{warning}
-The system does not include any speed limit. However, the
-collision accuracy breaks the vector into multiple vectors with a
-length corresponding to the detection accuracy. The system will then
-enter a loop to restore the initial vector by successively applying
-the "vector pieces". Thus, the longer the length of the vector
-compared to the collision detection accuracy, the more resources the
-system will require to perform optimally.
-:::
+        While your collision type functions should describe the behavior of your collisions, such as the follwing examples:
 
-*Examples:*
+        - Perfect bounce:
 
-- Apply a movement of 0.3 blocks per tick in the X direction to all boats
-(simulating a sea current):
+            ```mcfunction
+            scoreboard players operation @s[tag=bs.collisionX] bs.vector.x *= -1 bs.const
+            scoreboard players operation @s[tag=bs.collisionY] bs.vector.y *= -1 bs.const
+            scoreboard players operation @s[tag=bs.collisionZ] bs.vector.z *= -1 bs.const
+            ```
+        
+        - Stop on collision:
+
+            ```mcfunction
+            scoreboard players set @s[tag=bs.collision] bs.vector.x 0
+            scoreboard players set @s[tag=bs.collision] bs.vector.y 0
+            scoreboard players set @s[tag=bs.collision] bs.vector.z 0
+            ```
+
+        - Slide on surface:
+
+            ```mcfunction
+            scoreboard players set @s[tag=bs.collisionX] bs.vector.x 0
+            scoreboard players set @s[tag=bs.collisionY] bs.vector.y 0
+            scoreboard players set @s[tag=bs.collisionZ] bs.vector.z 0
+            ```
+
+        - Bounce and reduce the total speed by 2
+
+            ```mcfunction
+            scoreboard players operation @s[tag=bs.collisionX] bs.vector.x *= -1 bs.const
+            scoreboard players operation @s[tag=bs.collisionY] bs.vector.y *= -1 bs.const
+            scoreboard players operation @s[tag=bs.collisionZ] bs.vector.z *= -1 bs.const
+
+            scoreboard players operation @s[tag=bs.collision] bs.vector.x /= 2 bs.const
+            scoreboard players operation @s[tag=bs.collision] bs.vector.y /= 2 bs.const
+            scoreboard players operation @s[tag=bs.collision] bs.vector.z /= 2 bs.const
+            ```
+        ````
+    
+        ````{admonition} Configure the precision of collision detection
+        :class: dropdown
+
+        (tag) `@s bs.config.override` & (score) `@s bs.precision`
+        : You can change the collision detection precision by placing the tag `bs.config.override` on the entity and then changing its score `bs.precision` to the desired value (1000 $\rightarrow$ 1 block, 500 $\rightarrow$ 0.5 blocks, etc.). By default, it is set to 1000 for performance reasons. You can decrease it to reduce the space between two iterations of the movement loop, which increase the sampling rate of the collision detection. We recommande to not go below 100, which is 1/10 of a block and is usually enough for most of applications.
+        ````
+
+
+:Outputs:
+
+    (state) @s position
+    : The new position of the entity
+
+:Examples:
+
+    Apply a movement of 0.3 blocks per tick in the X direction to all boats (simulating a sea current):
 
     ```
     # Once
@@ -95,8 +133,7 @@ system will require to perform optimally.
     execute as @e[type=boat] run function bs.move:by_vector
     ```
 
-- Take into account collisions and make the boat stop, with a precision of
-0.1 block:
+    Take into account collisions and make the boat stop, with a precision of 0.1 block:
 
     ```
     # Once
@@ -110,6 +147,54 @@ system will require to perform optimally.
     # In loop
     execute as @e[type=boat] run function bs.move:by_vector
     ```
+
+:::
+:::{tab-item} Local
+
+**`bs.move:by_local_vector`**
+
+Allows to move the entity according to its vector
+on each axis of the local reference frame.
+
+:Inputs:
+
+    (execution) `as <entity>`
+    : The entity to move
+
+    (scores) `bs.vector.[x,y,z]`
+    : The local vector you want the entity to move on (respectively left, up and forward vectors), shifted by 3 digits (1000 $\rightarrow$ move by 1 block)
+
+:Outputs:
+
+    (state) @s position
+    : The new position of the entity
+
+
+
+:Example:
+
+    Apply a movement of 0.3 blocks per tick to the left to all boats:
+
+    ```
+    # Once
+    scoreboard players set @e[type=boat] bs.vector.x 300
+    scoreboard players set @e[type=boat] bs.vector.y 0
+    scoreboard players set @e[type=boat] bs.vector.z 0
+
+    # In loop
+    execute as @e[type=boat] run function bs.move:by_local_vector
+    ```
+
+:::
+::::
+
+```{admonition} Performance tip
+:class: tip
+
+The system does not include any speed limit. However, the
+resources consumed by this function are proportional to the number
+of blocks/tick at which the entity moves.
+```
 
 ---
 

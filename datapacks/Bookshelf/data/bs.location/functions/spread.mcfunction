@@ -36,7 +36,7 @@ scoreboard players operation @s bs.in.6 *= 2 bs.const
 scoreboard players operation @s bs.in.6 += 1 bs.const
 
 #Random
-function bs.math:random
+function bs.math:special/random
 scoreboard players operation @s bs.out.0 %= @s bs.in.6
 
 scoreboard players set @s bs.loc.x 0
@@ -47,7 +47,7 @@ execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s b
 scoreboard players operation @s bs.loc.x += @s bs.in.0
 
 #Random
-function bs.math:random
+function bs.math:special/random
 scoreboard players operation @s bs.out.0 %= @s bs.in.6
 
 scoreboard players set @s bs.loc.z 0
