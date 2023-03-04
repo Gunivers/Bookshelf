@@ -35,6 +35,10 @@ if not version_match or version_match.isdigit():
 
 html_theme = 'pydata_sphinx_theme'
 
+# html_css_files = [
+#     'credits.css',
+# ]
+
 html_context = {
     "github_user": "Gunivers",
     "github_repo": "Bookshelf",

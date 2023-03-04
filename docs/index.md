@@ -125,3 +125,4 @@ modules/all
 contribute/index
 faq
 CHANGELOG
+credits
