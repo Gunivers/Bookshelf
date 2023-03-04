@@ -4,13 +4,18 @@ html_theme.sidebar_secondary.remove: true
 
 # ❓ FAQ
 
--  **Can I use the lib in my map/server project? What about copyrights?**
+## Can I use the lib in my map/server project?
 
-   Of course! The lib is made for you to use it in your projects!
+Of course! The lib is made for you to use it in your projects!
 
-   The lib is under a license that allows you to use it in your projects without any problem. You can also modify it for your personal use and distribute a map or a datapack that uses the lib without any problem. If you do so, please don't hesitate to share us your creation in order to let us know how you use the lib (and let us give some additional visibility to your project)! 😍
+A mention of Bookshelf and/or Gunivers in a message of thanks is always welcome. Contribute to make the open-source world a respectful place! 🤗
 
-   Also, a mention of Gunivers in a message of thanks is always welcome. Contribute to make the open-source world a respectful place! 🤗
+Also, don't hesitate to share us your creation in order to let us know how you use the lib (and let us give you some additional visibility to your project)! 😍
+
+## What about copyrights?
+
+The lib is under a license that allows you to use and modify it for your personal use and distribute a map or a datapack that uses the lib without any problem as long as you don't make money on it.
+
 
 ```{button-link} https://discord.gg/E8qq6tN
 :color: primary
