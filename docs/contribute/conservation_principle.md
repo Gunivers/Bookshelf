@@ -30,4 +30,4 @@ function bs.location:get
 scoreboard players operation @s bs.loc.x *= 2 bs.const
 function bs.location:set
 ```
-In this exemple, the `get` function will return `bs.loc[X,Y,Z]` scores, that are also used as input for the `set` function.
+In this exemple, the `get` function will return `bs.loc.[x,y,z]` scores, that are also used as input for the `set` function.

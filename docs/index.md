@@ -125,4 +125,4 @@ modules/all
 contribute/index
 faq
 CHANGELOG
-credits
+special-thanks

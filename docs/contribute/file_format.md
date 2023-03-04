@@ -37,8 +37,10 @@ We can find various information about the function itself (the example is not ex
 |:-----:|:-----------:|
 | Authors | The list of authors of the function. |
 | Contributors | The list of contributors to the function.<br> A contributor is someone who helps to create the function<br> without developing it (the one who gives a track to realize the function<br> or the one who fixes a bug for example). |
-| MC Version | Version of Minecraft for which the system was created. |
-| Last check | Version of Minecraft until which the system is certified functional. |
+| Version | Version version of the system, composed by 2 numbers: major version and minor version (`major.minor`). Minor is a change in a part of the code while major is a function overhaul.` |
+| Created | Date and minecraft version in which the system was originally created (for history purpose) |
+| Last verification | Date and minecraft version in which the system was checked for the last time |
+| Last modification | Date and minecraft version in which the system was modified for the last time |
 | Original path | The path to the function so that it can be copied to a /function command. |
 | Documentation | Link to the documentation of the function |
 | Note | Allows you to provide additional information about the function<br> such as a description of what the function does, how to use it if the use<br> is particular, the behaviors of the function or the side effects of its use. |

@@ -15,23 +15,23 @@ Every debug message must be visually opened using the following tellraws:
 
 - **Error without source entity**
    ```
-   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"ERROR in <PATH>","color":"red","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":"> Bookshelf | ","color":"dark_aqua"},{"text":"ERROR in <PATH>","color":"red","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 - **Warning without source entity**
    ```
-   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"WARNING in <PATH>","color":"yellow","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":"> Bookshelf | ","color":"dark_aqua"},{"text":"WARNING in <PATH>","color":"yellow","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 - **Record without source entity**
    ```
-   tellraw @a[tag=bs.debug.<PATH>] [{"text":" > ","bold":true,"color":"gold"},{"text":"Glib","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from <PATH>","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+   tellraw @a[tag=bs.debug.<PATH>] [{"text":"> Bookshelf | ","color":"dark_aqua"},{"text":"Record from <PATH>","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.<PATH>"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
    ```
 
 Also, all debugs must end with
 
 ```
-tellraw @a[tag=bs.debug.<PATH>] ["",{"text":" <","bold":true,"color":"gold"}]
+tellraw @a[tag=bs.debug.<PATH>] [{"text":"<","color":"dark_aqua"}]
 ```
 
-⚠️ All debugs must be preceded by ``# Start Debug`` and followed by ``# End Debug`` in order to be automatically commented by a program.
+⚠️ All debugs must be preceded by ``### Debug`` and followed by ``### End Debug`` in order to be automatically commented by a program.
