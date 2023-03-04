@@ -1,12 +1,14 @@
 ---
 html_theme.sidebar_secondary.remove: true
 html_theme.sidebar_primary.remove: true
+sd_hide_title: true
 ---
 
 <div align=center>
 
+# Bookshelf
 
-# ![Bookshelf](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
+![Bookshelf](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
 
 </div>
 
@@ -119,7 +121,7 @@ If you want to contribute, please read at least the "Getting started" section in
 :maxdepth: 1
 
 getting_started
-modules/index.rst
-contributing.md
+modules/all
+contribute/index
 faq
-CHANGELOG.md
+CHANGELOG

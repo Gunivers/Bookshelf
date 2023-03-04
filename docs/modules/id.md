@@ -56,7 +56,7 @@ function.
     execute as @e[tag=bs.id.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
     ```
 
-# Check parent ID
+## Check parent ID
 
 `check_parent` : Compares the `bs.id.parent` scores of the entities
 with the `bs.id.target` score of the entity that executed the
@@ -122,7 +122,7 @@ execute as @e[tag=bs.id.parent.match] run tellraw @a ["",{"text":"<"},{"selector
     scoreboard objective setdisplay sidebar bs.id
     ```
 
-# Get chain unique ID
+## Get chain unique ID
 
 `get_cuid` : (Chain Unique ID) Allows the entity running the function
 to get a score `bs.id` different from all other entities that have
@@ -145,7 +145,7 @@ execute as @a[tag=!bs.id.set] run function bs.id:get_cuid
 scoreboard objective setdisplay sidebar bs.id
 ```
 
-# Update chain unique ID
+## Update chain unique ID
 
 `update_cuid` : Allows to update all the CUID of the entities.
 Executes globally (the source entity does not matter, executing it

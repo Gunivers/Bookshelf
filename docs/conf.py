@@ -13,7 +13,8 @@ html_favicon = "_static/logo-bookshelf.png"
 extensions = [
     'myst_parser',
     'sphinx_design',
-    'sphinx_togglebutton'
+    'sphinx_togglebutton',
+    'sphinx_copybutton',
 ]
 myst_heading_anchors = 6
 templates_path = ['_templates']

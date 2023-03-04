@@ -54,8 +54,10 @@ And much more!
 
 ```{toctree}
 :hidden:
+:caption: All modules
 
 biome
+biomedisplayer
 bitwise
 block
 cache
@@ -63,6 +65,7 @@ color
 health
 id
 item
+lgdir
 link
 location
 mapedit
@@ -72,9 +75,17 @@ move
 orientation
 schedule
 time
+tree
 vector
 view
 xp
-lgdir
-biomedisplayer
+```
+
+```{toctree}
+:caption: Filter by content
+:maxdepth: 1
+
+libs
+systems
+banks
 ```
