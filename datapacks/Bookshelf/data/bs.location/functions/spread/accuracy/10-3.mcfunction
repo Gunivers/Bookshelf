@@ -69,6 +69,5 @@ execute store result score @s bs.loc.y run data get entity @s Pos[1] 1000
 
 
 # Tp, then tp again over the world surface and block centered
-tellraw @a ["",{"score":{"name":"@s","objective":"bs.loc.x"}},"/",{"score":{"name":"@s","objective":"bs.loc.z"}}]
 function bs.location:set/accuracy/10-3
 execute at @s positioned over world_surface align xz run tp ~0.5 ~ ~0.5
