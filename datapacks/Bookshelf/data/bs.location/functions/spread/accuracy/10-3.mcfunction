@@ -3,63 +3,62 @@
 
 # Authors: A2va
 # Contributors:
-# MC Version: 1.13
+# MC Version: 1.19.4
 # Last check:
 
 # Original path: bs.location:spread
-# Documentation: https://bs-core.readthedocs.io//entity
-# Parallelizable: <true/false/global>
+# Parallelizable: true
 # Note: Spread an entity based on CenterX, CenterZ and Radius scores
 
 #__________________________________________________
 # PARAMETERS
-#bs.in.3: CenterX
-#bs.in.4: CenterZ 
-#bs.in.4: Radius
+
+#bs.in.0: CenterX
+#bs.in.1: CenterZ
+#bs.in.2: Radius
+
 #__________________________________________________
 # INIT
-
-
-
-
-
-
-
-
-
 
 #__________________________________________________
 # CONFIG
 
 #__________________________________________________
 # CODE
-scoreboard players operation @s bs.in.6 = @s bs.in.4
-scoreboard players operation @s bs.in.6 *= 2 bs.const
-scoreboard players operation @s bs.in.6 += 1 bs.const
+
+# From radius to diameter
+scoreboard players operation @s bs.in.3 = @s bs.in.2 
+scoreboard players operation @s bs.in.3 *= 2 bs.const
+scoreboard players operation @s bs.in.3 += 1 bs.const
 
 #Random
-function bs.math:random
-scoreboard players operation @s bs.out.0 %= @s bs.in.6 
+function bs.math:special/random
+scoreboard players operation @s bs.out.0 %= @s bs.in.3
 
-scoreboard players set @s bs.in.0 0
-execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.0 -= @s bs.out.0
-execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.0 /= 2 bs.const
-execute if score @s bs.out.0 <= @s bs.in.4 run scoreboard players operation @s bs.in.0 = @s bs.out.0
+# Compute coord on X axis
+scoreboard players set @s bs.loc.x 0
+execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.x -= @s bs.out.0
+execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.x /= 2 bs.const
+execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s bs.loc.x = @s bs.out.0
 
-scoreboard players operation @s bs.in.0 += @s bs.in.3
+# Use center x with fixed offset
+scoreboard players operation @s bs.loc.x += @s bs.in.4
 
 #Random
-function bs.math:random
-scoreboard players operation @s bs.out.0 %= @s bs.in.6 
+function bs.math:special/random
+scoreboard players operation @s bs.out.0 %= @s bs.in.3
 
-scoreboard players set @s bs.in.2 0
-execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.2 -= @s bs.out.0
-execute if score @s bs.out.0 > @s bs.in.4 run scoreboard players operation @s bs.in.2 /= 2 bs.const
-execute if score @s bs.out.0 <= @s bs.in.4 run scoreboard players operation @s bs.in.2 = @s bs.out.0
+# Compute coord on Z axis
+scoreboard players set @s bs.loc.z 0
+execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.z -= @s bs.out.0
+execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.z /= 2 bs.const
+execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s bs.loc.z = @s bs.out.0
 
-scoreboard players operation @s bs.in.2 += @s bs.in.4
+scoreboard players operation @s bs.loc.z += @s bs.in.1
 
-execute store result score @s bs.in.1 run data get entity @s Pos[1] 1
+execute store result score @s bs.loc.y run data get entity @s Pos[1] 1
 
+
+# Tp, then tp again over the world surface and block centered
 function bs.location:set/accuracy/10-3
-
+execute at @s positioned over world_surface align xz run tp ~0.5 ~ ~0.5
