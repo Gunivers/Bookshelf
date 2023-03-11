@@ -249,7 +249,7 @@ Allows to randomly teleport an entity in a given area.
 ```{admonition} What if we put a negative radius?
 :class: tip
 
-Obviously, it doesn't make sens to have a negative radius. However, during tests, we tried for you... and it have a surprisingly cool effect!
+Obviously, it doesn't make sense to have a negative radius. However, during tests, we tried for you... and it have a surprisingly cool effect!
 
 Due to mathematical properties in the computation that are performed, if you put a negative radius, your entites will be teleported somewhere between `(x,z)` and `(x+radius,z+radius)` instead of `(x-radius,z-radius)` and `(x+radius,z+radius)`.
 

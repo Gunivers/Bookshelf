@@ -32,3 +32,4 @@ This version contain breaking changes. In the following changelog, they are iden
 - Fixed `bs.math:trig/arctan` function
 - Fixed `bs.move:by_local_vector` function
 - Fixed `bs.bitwise:two_complement` function
+- Fixed `bs.location:spread` - Thanks to A2va in https://github.com/Gunivers/Bookshelf/pull/41
