@@ -170,7 +170,7 @@ execute as Boblennon run function bs.location:fast_set
 
 ## Spread entity
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Normal
 
@@ -179,33 +179,33 @@ execute as Boblennon run function bs.location:fast_set
 Allows to randomly teleport an entity in a given area.
 
 :Inputs:
+  
+  (execution) `as <entities>`
+  : The entities you want to spread
 
-        (execution) `as <entities>`
-        : The entities you want to spread
+  (score) `@s bs.in.[0,1]`
+  : Repectively the X and Z coordinates of the center of the area (in blocks)
 
-        (score) `@s bs.in.[0,1]`
-        : Repectively the X and Z coordinates of the center of the area (in blocks)
-
-        (score) `@s bs.in.2`
-        : The radius of the area (in blocks)
+  (score) `@s bs.in.2`
+  : The radius of the area (in blocks)
 
 :Outputs:
 
-        (state) @s location
-        : The entity was moved to a random position in the area
+  (state) @s location
+  : The entity was moved to a random position in the area
 
 :Example:
 
-        Teleport to an area with a radius of 10 blocks, having as its center the
-        coordinate X=15, Z=25
+  Teleport to an area with a radius of 10 blocks, having as its center the
+  coordinate X=15, Z=25
 
-        ```
-        # Once
-        scoreboard players set @s bs.in.0 15
-        scoreboard players set @s bs.in.1 25
-        scoreboard players set @s bs.in.2 10
-        function bs.location:spread
-        ```
+  ```
+  # Once
+  scoreboard players set @s bs.in.0 15
+  scoreboard players set @s bs.in.1 25
+  scoreboard players set @s bs.in.2 10
+  function bs.location:spread
+  ```
 
 :::
 
@@ -217,34 +217,36 @@ Allows to randomly teleport an entity in a given area.
 
 :Inputs:
 
-        (execution) `as <entities>`
-        : The entities you want to spread
+  (execution) `as <entities>`
+  : The entities you want to spread
 
-        (score) `@s bs.in.[0,1]`
-        : Repectively the X and Z coordinates of the center of the area (in milliblocks)
+  (score) `@s bs.in.[0,1]`
+  : Repectively the X and Z coordinates of the center of the area (in milliblocks)
 
-        (score) `@s bs.in.2`
-        : The radius of the area (in milliblocks)
+  (score) `@s bs.in.2`
+  : The radius of the area (in milliblocks)
 
 :Outputs:
 
-        (state) @s location
-        : The entity was moved to a random position in the area
+  (state) @s location
+  : The entity was moved to a random position in the area
 
 :Example:
 
-        Teleport to an area with a radius of 10.003 blocks, having as its center the
-        coordinate X=15.1, Z=25.502
+  Teleport to an area with a radius of 10.003 blocks, having as its center the coordinate X=15.1, Z=25.502
 
-        ```
-        # Once
-        scoreboard players set @s bs.in.0 15100
-        scoreboard players set @s bs.in.1 25502
-        scoreboard players set @s bs.in.2 10003
-        function bs.location:spread/accuracy/10-3
-        ```
+  ```
+  # Once
+  scoreboard players set @s bs.in.0 15100
+  scoreboard players set @s bs.in.1 25502
+  scoreboard players set @s bs.in.2 10003
+  function bs.location:spread/accuracy/10-3
+  ```
 
-```{admionition} What if we put a negative radius?
+:::
+::::
+
+```{admonition} What if we put a negative radius?
 :class: tip
 
 Obviously, it doesn't make sens to have a negative radius. However, during tests, we tried for you... and it have a surprisingly cool effect!
