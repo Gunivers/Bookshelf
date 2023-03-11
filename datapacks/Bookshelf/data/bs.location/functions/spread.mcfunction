@@ -61,9 +61,6 @@ scoreboard players operation @s bs.loc.z += @s bs.in.5
 
 execute at @s run function bs.location:get_y
 
-scoreboard players add @s bs.loc.x 1
-scoreboard players add @s bs.loc.z 1
-
 # Tp, then tp again over the world surface and block centered
 function bs.location:set
 execute at @s positioned over world_surface align xz run tp ~0.5 ~ ~0.5

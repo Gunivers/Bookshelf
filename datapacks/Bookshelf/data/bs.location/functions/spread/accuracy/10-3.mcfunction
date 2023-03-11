@@ -30,7 +30,7 @@ scoreboard players operation @s bs.in.5 -= 1000 bs.const
 # From radius to diameter
 scoreboard players operation @s bs.in.3 = @s bs.in.2 
 scoreboard players operation @s bs.in.3 *= 2 bs.const
-scoreboard players operation @s bs.in.3 += 1 bs.const
+scoreboard players operation @s bs.in.3 += 1000 bs.const
 
 #Random
 function bs.math:special/random
