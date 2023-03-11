@@ -1,30 +1,24 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: A2va
-# Contributors:
-# MC Version: 1.19.4
-# Last check:
+# Authors       : A2va
+# Contributors  : 
+# - Leirof
 
-# Original path: bs.location:spread
-# Parallelizable: true
-# Note: Spread an entity based on CenterX, CenterZ and Radius scores
+# Version: 2.0
+# Created: 05/03/2023 (1.19.4)
+# Last verification: 05/03/2023 (1.19.4)
+# Last modification: 05/03/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:spread
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#spread
+# Note          : Spread an entity based on CenterX, CenterZ and Radius scores
 
-#bs.in.0: CenterX
-#bs.in.1: CenterZ
-#bs.in.2: Radius
+# INIT ------------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
 # Centering the entity introduces an one block offset
 scoreboard players operation @s bs.in.4 = @s bs.in.0
@@ -65,8 +59,10 @@ execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s b
 
 scoreboard players operation @s bs.loc.z += @s bs.in.5
 
-execute store result score @s bs.loc.y run data get entity @s Pos[1] 1000
+execute at @s run function bs.location:get_y/accuracy/10-3
 
+scoreboard players add @s bs.loc.x 1000
+scoreboard players add @s bs.loc.z 1000
 
 # Tp, then tp again over the world surface and block centered
 function bs.location:set/accuracy/10-3

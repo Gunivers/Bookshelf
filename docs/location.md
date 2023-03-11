@@ -170,23 +170,79 @@ execute as Boblennon run function bs.location:fast_set
 
 ## Spread entity
 
-`spread`: Allows to randomly teleport an entity in a given area.
+:::{tab-set}
 
-* The difference with the spreadplayers command is that this function does not teleport to the highest block, it simply does not change the Y position of the entity
-* Takes as parameters the scores `bs.in.[0,1,2]` corresponding respectively to the X and Z coordinates, as well as to the radius of the area in which the entity will be teleported.
+:::{tab-item} Normal
 
-*Example:*
+**`bs.location:spread`**
 
-Teleport to an area with a radius of 10 blocks, having as its center the
-coordinate X=15, Z=25
+Allows to randomly teleport an entity in a given area.
 
-```
-# Once
-scoreboard players set @s bs.in.0 15
-scoreboard players set @s bs.in.1 25
-scoreboard players set @s bs.in.2 10
-function bs.location:spread
-```
+:Inputs:
+
+        (execution) `as <entities>`
+        : The entities you want to spread
+
+        (score) `@s bs.in.[0,1]`
+        : Repectively the X and Z coordinates of the center of the area (in blocks)
+
+        (score) `@s bs.in.2`
+        : The radius of the area (in blocks)
+
+:Outputs:
+
+        (state) @s location
+        : The entity was moved to a random position in the area
+
+:Example:
+
+        Teleport to an area with a radius of 10 blocks, having as its center the
+        coordinate X=15, Z=25
+
+        ```
+        # Once
+        scoreboard players set @s bs.in.0 15
+        scoreboard players set @s bs.in.1 25
+        scoreboard players set @s bs.in.2 10
+        function bs.location:spread
+        ```
+
+:::
+
+:::{tab-item} Scale 3
+
+**`bs.location:spread/accuracy/10-3`**
+
+Allows to randomly teleport an entity in a given area.
+
+:Inputs:
+
+        (execution) `as <entities>`
+        : The entities you want to spread
+
+        (score) `@s bs.in.[0,1]`
+        : Repectively the X and Z coordinates of the center of the area (in milliblocks)
+
+        (score) `@s bs.in.2`
+        : The radius of the area (in milliblocks)
+
+:Outputs:
+
+        (state) @s location
+        : The entity was moved to a random position in the area
+
+:Example:
+
+        Teleport to an area with a radius of 10.003 blocks, having as its center the
+        coordinate X=15.1, Z=25.502
+
+        ```
+        # Once
+        scoreboard players set @s bs.in.0 15100
+        scoreboard players set @s bs.in.1 25502
+        scoreboard players set @s bs.in.2 10003
+        function bs.location:spread/accuracy/10-3
+        ```
 
 ---
 
