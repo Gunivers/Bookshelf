@@ -1,67 +1,57 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright :copyright: 2023 Gunivers Community.
 
-# Authors: A2va
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : A2va
+# Contributors  : 
+# - Leirof
 
-# Original path: bs.location:spread
-# Parallelizable: true
-# Note: Spread an entity based on CenterX, CenterZ and Radius scores
+# Version: 2.0
+# Created: 05/03/2023 (1.19.4)
+# Last verification: 11/03/2023 (1.19.4)
+# Last modification: 11/03/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:spread
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#spread
+# Note          : Spread an entity based on CenterX, CenterZ and Radius scores
 
-#bs.in.0: CenterX
-#bs.in.1: CenterZ
-#bs.in.2: Radius
+# INIT ------------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# CODE
+scoreboard players operation #location.spread.backup.out.0 bs.data = @s bs.out.0
 
-# Backup
-scoreboard players operation location.spread.locX bs = @s bs.loc.x
-scoreboard players operation location.spread.locY bs = @s bs.loc.y
-scoreboard players operation location.spread.locZ bs = @s bs.loc.z
+scoreboard players operation #location.spread.x bs.data = @s bs.in.0
+scoreboard players operation #location.spread.z bs.data = @s bs.in.1
 
-scoreboard players operation @s bs.in.6 = @s bs.in.2
-scoreboard players operation @s bs.in.6 *= 2 bs.const
-scoreboard players operation @s bs.in.6 += 1 bs.const
+# From radius to diameter
+scoreboard players operation #location.spread.radius bs.data = @s bs.in.2 
+scoreboard players operation #location.spread.radius bs.data *= 2 bs.const
+scoreboard players operation #location.spread.radius bs.data += 1 bs.const
 
-#Random
-function bs.math:random
-scoreboard players operation @s bs.out.0 %= @s bs.in.6
+# Random
+function bs.math:special/random
+scoreboard players operation @s bs.out.0 %= #location.spread.radius bs.data
+scoreboard players operation @s bs.out.0 -= @s bs.in.2
 
-scoreboard players set @s bs.loc.x 0
-execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.x -= @s bs.out.0
-execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.x /= 2 bs.const
-execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s bs.loc.x = @s bs.out.0
-
-scoreboard players operation @s bs.loc.x += @s bs.in.0
+# Compute coord on x axis
+scoreboard players operation @s bs.loc.x = #location.spread.x bs.data
+scoreboard players operation @s bs.loc.x += @s bs.out.0
 
 #Random
-function bs.math:random
-scoreboard players operation @s bs.out.0 %= @s bs.in.6
+function bs.math:special/random
+scoreboard players operation @s bs.out.0 %= #location.spread.radius bs.data
+scoreboard players operation @s bs.out.0 -= @s bs.in.2
 
-scoreboard players set @s bs.loc.z 0
-execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.z -= @s bs.out.0
-execute if score @s bs.out.0 > @s bs.in.2 run scoreboard players operation @s bs.loc.z /= 2 bs.const
-execute if score @s bs.out.0 <= @s bs.in.2 run scoreboard players operation @s bs.loc.z = @s bs.out.0
+# Compute coord on x axis
+scoreboard players operation @s bs.loc.z = #location.spread.z bs.data
+scoreboard players operation @s bs.loc.z += @s bs.out.0
 
-scoreboard players operation @s bs.loc.z += @s bs.in.1
+execute at @s run function bs.location:get_y
 
-execute store result score @s bs.loc.y run data get entity @s Pos[1] 1
-
+# Tp, then tp again over the world surface and block centered
 function bs.location:set
+execute at @s positioned over world_surface align xz run tp ~0.5 ~ ~0.5
 
-# Restore
-scoreboard players operation @s bs.loc.x = location.spread.locX bs
-scoreboard players operation @s bs.loc.y = location.spread.locY bs
-scoreboard players operation @s bs.loc.z = location.spread.locZ bs
+scoreboard players operation @s bs.out.0 = #location.spread.backup.out.0 bs.data
