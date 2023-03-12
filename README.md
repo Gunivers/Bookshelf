@@ -21,7 +21,7 @@ Bookshelf (previously Gunivers Libs) is a highly accessible modular library data
 
 <h3>
 
-<a href="https://glib.gunivers.net">🎬 Watch presentation video</a>
+<a href="https://www.youtube.com/watch?v=E2nKYEvjETk">🎬 Watch presentation video</a>
 
 </h3>
 
