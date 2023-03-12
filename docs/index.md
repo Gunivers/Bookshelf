@@ -8,7 +8,13 @@ sd_hide_title: true
 
 # Bookshelf
 
-![Bookshelf](https://gunivers.net/wp-content/uploads/2022/11/Banner.png)
+```{image} _static/banner_light.png
+:class: only-light
+```
+
+```{image} _static/banner_dark.png
+:class: only-dark
+```
 
 </div>
 

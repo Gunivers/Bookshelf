@@ -1,0 +1,17 @@
+html[data-theme="light"] {
+    --pst-color-primary: #3296fa;
+    --pst-color-secondary: #fa9632;
+    --sd-color-card-border-hover: var(--pst-color-primary);
+    --pst-color-primary-highlight: var(--pst-color-secondary);
+}
+
+html[data-theme="dark"] {
+    --pst-color-primary: #3296fa;
+    --pst-color-secondary: #fa9632;
+    --sd-color-card-border-hover: var(--pst-color-primary);
+    --pst-color-primary-highlight: var(--pst-color-secondary);
+}
+
+a.headerlink {
+    color: var(--pst-color-secondary);
+}
