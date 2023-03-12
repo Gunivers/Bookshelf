@@ -22,7 +22,7 @@ sd_hide_title: true
 
 ## 🔎 What is it?
 
-Bookshelf (previously Gunivers Libs) is a modular library datapack designed to help mapmakers to implement common or complexe systems.
+Bookshelf (previously Gunivers Libs) is a highly accessible modular library datapack, designed to help mapmakers to quickly & easily implement complexe systems in their maps.
 
 
 ::::{grid} 2
@@ -120,7 +120,7 @@ Thus, this lib is not made to propose the best optimized functions or the more a
 
 You can come on [our Discord](https://discord.gg/E8qq6tN) server to talk with us and/or take part of the project!
 
-If you want to contribute, please read at least the "Getting started" section in the ["Contributing" page](https://glib-core.readthedocs.io/en/latest/contributing.html) that contain all the development convention used in this project.
+If you want to contribute, please read at least the "Getting started" section in the ["Contributing" page](https://bookshelf.docs.gunivers.net/en/latest/contributing.html) that contain all the development convention used in this project.
 
 ````{toctree}
 :hidden:
