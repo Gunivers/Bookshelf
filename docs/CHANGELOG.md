@@ -23,6 +23,9 @@ This version contain breaking changes. In the following changelog, they are iden
 - (WIP) Improved documentation style (inspired from Numpy doc)
 - 💥 `bs.math:log` now give output shifted by 3 digits (3,14159 -> 3141) instead of 4 to be more consistant with other mathematical functions.
 - 💥 Merged LGdir and BiomeDetector systems in `bs.example` module
+- 💥 Merged all `bs.math` submodules. All math function are now at the root of the `bs.math` namespace.
+- 💥 Moved `bs.health:safe_kill` to `bs.core:entity/safe_kill`
+- 💥 Moved `bs.core:default_entity` to `bs.core:entity/summon`
 
 ### 🐛 Bug fixes
 
