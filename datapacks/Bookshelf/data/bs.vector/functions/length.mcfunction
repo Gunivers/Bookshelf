@@ -42,7 +42,7 @@ function bs.vector:length_squared
 # sqrt(legnth^2)
 scoreboard players operation @s bs.in.0 = @s bs.out.0
 scoreboard players operation @s bs.in.0 *= 1000 bs.const
-function bs.math:common/sqrt
+function bs.math:sqrt
 
 # Restoring bs.in.0
 scoreboard players operation @s bs.in.0 = vector.length.var0 bs

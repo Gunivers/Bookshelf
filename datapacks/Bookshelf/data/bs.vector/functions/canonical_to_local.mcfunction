@@ -55,7 +55,7 @@ execute at @s run function bs.orientation:get
 scoreboard players operation @s bs.in.3 = @s bs.ori.h
 scoreboard players operation @s bs.in.4 = @s bs.ori.v
 
-function bs.math:algebra/basis_rotation_3d
+function bs.math:basis_rotation_3d
 
 scoreboard players operation @s bs.vector.x = @s bs.out.0
 scoreboard players operation @s bs.vector.y = @s bs.out.1

@@ -31,7 +31,7 @@ scoreboard players operation #location.spread.radius bs.data *= 2 bs.const
 scoreboard players operation #location.spread.radius bs.data += 1 bs.const
 
 # Random
-function bs.math:special/random
+function bs.math:random
 scoreboard players operation @s bs.out.0 %= #location.spread.radius bs.data
 scoreboard players operation @s bs.out.0 -= @s bs.in.2
 
@@ -40,7 +40,7 @@ scoreboard players operation @s bs.loc.x = #location.spread.x bs.data
 scoreboard players operation @s bs.loc.x += @s bs.out.0
 
 #Random
-function bs.math:special/random
+function bs.math:random
 scoreboard players operation @s bs.out.0 %= #location.spread.radius bs.data
 scoreboard players operation @s bs.out.0 -= @s bs.in.2
 

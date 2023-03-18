@@ -58,7 +58,7 @@ scoreboard players operation @s bs.in.4 = @s bs.ori.v
 
 
 # f: rx, ry, rz, rh, rv -> lx, ly, lz
-function bs.math:algebra/basis_rotation_3d
+function bs.math:basis_rotation_3d
 
 # tellraw @a [{"score":{"name":"@s","objective":"bs.out.0"}}]
 # tellraw @a [{"score":{"name":"@s","objective":"bs.out.1"}}]

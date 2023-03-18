@@ -36,7 +36,7 @@ scoreboard players operation @s bs.in.1 = @s bs.out.0
 scoreboard players operation @s bs.in.0 = POINTS bs
 scoreboard players operation @s bs.in.0 *= 100 bs.const
 
-function bs.math:common/divide
+function bs.math:divide
 
 scoreboard players operation @s bs.in.0 = SAVE.VAR0 bs
 
@@ -54,7 +54,7 @@ scoreboard players operation @s bs.in.0 *= 100 bs.const
 
 scoreboard players set @s bs.in.1 1012
 
-function bs.math:common/divide
+function bs.math:divide
 
 scoreboard players operation @s bs.in.0 = LEVELS bs
 function bs.xp:set_levels

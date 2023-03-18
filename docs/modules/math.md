@@ -26,17 +26,123 @@ The beatifull world of mathematics... **in Minecraft!**
 
 ---
 
-## Algebra
+## Arccosine
 
-**`bs.math:algebra/_`**
+**`bs.math:trgi/arccos`**
 
-This folder allows you to perform algebra operations
+Calculate the arccosinus of a value between -1 and 1
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.in.0`
+   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.out.0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arccos of 0,42
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 420
+   function bs.math:arccos
+   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   ```
+
+![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
 
 ---
 
-### Basis rotation 3D
+## Arcsine
 
-**`bs.math:algebra/basis_rotation_3d`**
+**`bs.math:trg/arcsin`**
+
+Compute the arcsinus of a value between -1 and 1
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.in.0`
+   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.out.0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arcsinus of 0.42
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 420
+   function bs.math:arcsin
+   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   ```
+
+![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
+
+---
+
+## Arctangent
+
+**`bs.math:arctan`**
+
+Compute the arctangent of a value between -infinite and +infinite
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.in.0`
+   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+
+:Output:
+
+   (score) `@s bs.out.0`
+   : The result of the calculation, in degrees (not shifted)
+
+:Example:
+
+   Calculate and display the arctan of 0.42
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 420
+   function bs.math:arctan
+   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   ```
+
+```{admonition} How does it work?
+:class: dropdown
+
+This function use two approximations to calculate the arctangent of a value:
+
+$$
+\begin{cases}
+\tan(x) = \left(\frac \pi 2 \frac x {|x|} - 4 \frac x {4x^2 + 1}\right)\frac \pi {180} &\forall |x| \geq 0.72\\
+\tan(x) = \left( x - \frac {x^3} 3 + \frac {x^5} 5 \right)\frac \pi {180} & \forall |x| < 0.72
+\end{cases}
+$$
+
+![](img/2023-02-28-18-21-51.png)
+```
+
+![](img/2023-02-28-18-34-44.png)
+
+---
+
+## Basis rotation 3D
+
+**`bs.math:basis_rotation_3d`**
 
 Allows to obtain the equivalent of the vector
 passed in parameter in a base with a different orientation. Useful to
@@ -86,7 +192,7 @@ entity.
    scoreboard players operation @s bs.in.4 = @s bs.ori.v
 
    # Perform the basic rotation
-   function bs.math:algebra/basis_rotation_3d
+   function bs.math:basis_rotation_3d
 
    # See the result
    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
@@ -112,7 +218,7 @@ entity.
    scoreboard players operation @s bs.in.4 *= -1 bs.const
 
    # Perform the basic rotation
-   function bs.math:algebra/basis_rotation_3d
+   function bs.math:basis_rotation_3d
 
    # See the result
    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. res1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
@@ -120,56 +226,48 @@ entity.
 
 ---
 
-## Common
+## Cosine
 
-**`bs.math:common/_`**
+**`bs.math:cos`**
 
-This folder contains the usual math functions
-
----
-
-### Rounded division
-
-**`bs.math:common/divide`**
-
-Allows you to divide one number by another by rounding the
-result to the nearest whole number (where Minecraft rounds down to the
-next whole number).
+Compute the cosine of an angle between 0 and 360
 
 :Inputs:
 
    (execution) `as <entities>`
-   : The entities you want to perform the operation on
+   : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
-   : The numerator
+   : The angle in degrees
 
-   (score) `@s bs.in.1`
-   : The denominator
-
-:Output:
+:Outputs:
 
    (score) `@s bs.out.0`
-   : The result of the division
+   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
 :Example:
 
-   Calculate $9/5$
+   Calculate and display the cosine of 42
    ```
    # Once
-   scoreboard players set @s bs.in.0 9
-   scoreboard players set @s bs.in.1 5
-   function bs.math:common/divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set @s bs.in.0 42
+   function bs.math:cos
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
+```{admonition} How does it work?
+:class: dropdown
+
+This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
+```
+
+![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
 
 ---
 
-### Exponential
+## Exponential
 
-**`bs.math:common/exp`**
+**`bs.math:exp`**
 
 Compute the exponential of the number passed in parameter on
 the score `bs.in.0` and return the result on the score `bs.out.0`
@@ -198,7 +296,7 @@ the score `bs.in.0` and return the result on the score `bs.out.0`
    ```
    # Once
    scoreboard players set @s bs.in.0 300
-   function bs.math:common/exp
+   function bs.math:exp
    tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
@@ -210,9 +308,9 @@ We are looking for a better implementation of this function. If you have any ide
 
 ---
 
-### Factorial
+## Factorial
 
-**`bs.math:common/factorial`**
+**`bs.math:factorial`**
 
 Compute the factorial of the number
 
@@ -241,7 +339,7 @@ Compute the factorial of the number
    ```
    # Once
    scoreboard players set @s bs.in.0 3
-   function bs.math:common/factorial
+   function bs.math:factorial
    tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
@@ -249,9 +347,9 @@ Compute the factorial of the number
 
 ---
 
-### Greatest common denominator
+## Greatest common denominator
 
-**`bs.math:common/gcd`**
+**`bs.math:gcd`**
 
 Compute the greatest common denominator of two numbers
 
@@ -278,7 +376,7 @@ Compute the greatest common denominator of two numbers
    # Once
    scoreboard players set @s bs.in.0 16
    scoreboard players set @s bs.in.1 12
-   function bs.math:common/gcd
+   function bs.math:gcd
    tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
@@ -286,13 +384,13 @@ Compute the greatest common denominator of two numbers
 
 ---
 
-### Logarithm
+## Logarithm
 
 ::::{tab-set}
 
 :::{tab-item} Base e (Neperian)
 
-**`bs.math:common/log`**
+**`bs.math:log`**
 
 Compute the Neperian logarithm (base e) of a number
 
@@ -316,14 +414,14 @@ Compute the Neperian logarithm (base e) of a number
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
-   function bs.math:common/log
+   function bs.math:log
    tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
 :::{tab-item} Base 2
 
-**`bs.math:common/log2`**
+**`bs.math:log2`**
 
 Compute the logarithm in base 2 of a number
 
@@ -346,13 +444,13 @@ Compute the logarithm in base 2 of a number
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
-   function bs.math:common/log2
+   function bs.math:log2
    tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 :::
 :::{tab-item} Base 10
 
-**`bs.math:common/log10`**
+**`bs.math:log10`**
 
 Compute the logarithm in base 10 of a number
 
@@ -375,14 +473,14 @@ Compute the logarithm in base 10 of a number
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
-   function bs.math:common/log10
+   function bs.math:log10
    tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
 :::{tab-item} Base a
 
-**`bs.math:common/loga`**
+**`bs.math:loga`**
 
 Computes the logarithm in base a of a number
 
@@ -409,19 +507,19 @@ Computes the logarithm in base a of a number
    # Once
    scoreboard players set @s bs.in.0 28000
    scoreboard players set @s bs.in.1 4
-   function bs.math:common/loga
+   function bs.math:loga
    tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
 :::
 ::::
 
-### Power
+## Power
 
 ::::{tab-set}
 :::{tab-item} Normal
 
-**`bs.math:common/pow`**
+**`bs.math:pow`**
 
 Compute $x^y$
 
@@ -448,14 +546,14 @@ Compute $x^y$
    # Once
    scoreboard players set @s bs.in.0 2
    scoreboard players set @s bs.in.1 6
-   function bs.math:common/pow
+   function bs.math:pow
    tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 :::
 :::{tab-item} Scale 3
 
 
-**`bs.math:common/pow/scale/3`**
+**`bs.math:pow/scale/3`**
 
 Compute $x^y$
 
@@ -482,7 +580,7 @@ Compute $x^y$
    # Once
    scoreboard players set @s bs.in.0 2345
    scoreboard players set @s bs.in.1 6
-   function bs.math:common/pow/scale/3
+   function bs.math:pow/scale/3
    tellraw @a [{"text": "2.345^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
@@ -493,102 +591,9 @@ Compute $x^y$
 
 ---
 
-### Square root
+## Random
 
-**`bs.math:common/sqrt`**
-
-Compute the square root of the number
-
-:Inputs:
-
-   (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The number you want to calculate the square root of
-
-:Output:
-
-   (score) `@s bs.out.0`
-   : The result of the calculation
-
-:Example:
-
-   Calculate and display $\sqrt{42}$
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 42
-   function bs.math:common/sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-```{admonition} How does it work?
-:class: dropdown
-
-This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^{31}-1 = 2,147,483,647$, the maximum square root is $\sqrt{2,147,483,647} \approx 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer ($N$ being the number of iterations) until finding the square root.
-
-As this algorithm converge using a $2^N$ iterator, the convergeance occure in $N=\log_2(\text{max limit}) = \log_2(46,340) \approx 16$ iterations.
-
-<div align=center>
-<div style="max-width:200px">
-
-![](img/2023-02-28-08-14-34.png)
-
-</div>
-</div>
-
-For a conveniant reason, instead of taking half of the maximum limite, we take the first power of two that is above. In this way, every division by $2^N$ lead to an integer number. 
-```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
-
----
-
-## Special
-
-**`bs.math:special/_`**
-
-This folder contains functions that are of
-special interest in algortihms (but not or not much in formal
-mathematics)
-
----
-
-### Retrieve the next power of 2
-
-**`bs.math:special/get_next_pow2`**
-
-Compute the power of 2 directly superior to the
-number given in parameter.
-
-:Inputs:
-
-   (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The number from which you want to calculate the next power of 2
-
-:Output:
-
-   (score) `@s bs.out.0`
-   : The result of the calculation
-
-:Example:
-
-   Find the power of 2 greater than 43
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 43
-   function bs.math:special/get_next_pow2
-   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
-   ```
-
----
-
-### Random number generator
-
-**`bs.math:special/random`**
+**`bs.math:random`**
 
 Generates a random number
 
@@ -613,7 +618,7 @@ Generates a random number
    Get and display a random number between 0 and 100:
    ```
    # Once
-   function bs.math:special/random
+   function bs.math:random
    scoreboard players operation @s bs.out.0 %= 101 bs.const
    tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 
@@ -626,20 +631,12 @@ Generates a random number
 
 ---
 
-## Trigonometry
+## Retrieve the next power of 2
 
-**`bs.math:trig/_`**
+**`bs.math:get_next_pow2`**
 
-This folder contains basic trigonometry functions,
-opening a lot of doors to creative possibilities in Minecraft.
-
----
-
-### Arccosine
-
-**`bs.math:trgi/arccos`**
-
-Calculate the arccosinus of a value between -1 and 1
+Compute the power of 2 directly superior to the
+number given in parameter.
 
 :Inputs:
 
@@ -647,150 +644,67 @@ Calculate the arccosinus of a value between -1 and 1
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
-   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   : The number from which you want to calculate the next power of 2
 
 :Output:
 
    (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
+   : The result of the calculation
 
 :Example:
 
-   Calculate and display the arccos of 0,42
+   Find the power of 2 greater than 43
    ```
    # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:trig/arccos
-   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set @s bs.in.0 43
+   function bs.math:get_next_pow2
+   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
 
 ---
 
-### Arcsine
+## Rounded division
 
-**`bs.math:trg/arcsin`**
+**`bs.math:divide`**
 
-Compute the arcsinus of a value between -1 and 1
+Allows you to divide one number by another by rounding the
+result to the nearest whole number (where Minecraft rounds down to the
+next whole number).
 
 :Inputs:
 
    (execution) `as <entities>`
-   : The entities you want to perform the calculation on
+   : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
-   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+   : The numerator
+
+   (score) `@s bs.in.1`
+   : The denominator
 
 :Output:
 
    (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
+   : The result of the division
 
 :Example:
 
-   Calculate and display the arcsinus of 0.42
+   Calculate $9/5$
    ```
    # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:trig/arcsin
-   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set @s bs.in.0 9
+   scoreboard players set @s bs.in.1 5
+   function bs.math:divide
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
+![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
 
 ---
 
-### Arctangent
+## Sine
 
-**`bs.math:trig/arctan`**
-
-Compute the arctangent of a value between -infinite and +infinite
-
-:Inputs:
-
-   (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
-
-:Output:
-
-   (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
-
-:Example:
-
-   Calculate and display the arctan of 0.42
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:trig/arctan
-   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
-   ```
-
-```{admonition} How does it work?
-:class: dropdown
-
-This function use two approximations to calculate the arctangent of a value:
-
-$$
-\begin{cases}
-\tan(x) = \left(\frac \pi 2 \frac x {|x|} - 4 \frac x {4x^2 + 1}\right)\frac \pi {180} &\forall |x| \geq 0.72\\
-\tan(x) = \left( x - \frac {x^3} 3 + \frac {x^5} 5 \right)\frac \pi {180} & \forall |x| < 0.72
-\end{cases}
-$$
-
-![](img/2023-02-28-18-21-51.png)
-```
-
-![](img/2023-02-28-18-34-44.png)
-
----
-
-### Cosine
-
-**`bs.math:trig/cos`**
-
-Compute the cosine of an angle between 0 and 360
-
-:Inputs:
-
-   (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The angle in degrees
-
-:Outputs:
-
-   (score) `@s bs.out.0`
-   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
-
-:Example:
-
-   Calculate and display the cosine of 42
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 42
-   function bs.math:trig/cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-```{admonition} How does it work?
-:class: dropdown
-
-This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
-```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
-
----
-
-### Sine
-
-**`bs.math:trig/sin`**
+**`bs.math:sin`**
 
 Computes the sine of an angle between 0 and 360
 
@@ -813,7 +727,7 @@ Computes the sine of an angle between 0 and 360
    ```
    # Once
    scoreboard players set @s bs.in.0 42
-   function bs.math:trig/sin
+   function bs.math:sin
    tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
@@ -841,9 +755,60 @@ We can compute the sine of any angle.
 
 ---
 
-### Tangent
+## Square root
 
-**`bs.math:trig/tan`**
+**`bs.math:sqrt`**
+
+Compute the square root of the number
+
+:Inputs:
+
+   (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.in.0`
+   : The number you want to calculate the square root of
+
+:Output:
+
+   (score) `@s bs.out.0`
+   : The result of the calculation
+
+:Example:
+
+   Calculate and display $\sqrt{42}$
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 42
+   function bs.math:sqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   ```
+
+```{admonition} How does it work?
+:class: dropdown
+
+This system rely on a very simple mathematical concept called dichotomy. As the maximum number that a score can handle is $2^{31}-1 = 2,147,483,647$, the maximum square root is $\sqrt{2,147,483,647} \approx 46,340$. Also, we are dealing with only integer number, so we have a finite number of possible square root. The idea is then to take a number at half of the maximum limit and compute the square of this number. If it is upper thant the input, then we decrease our selected number by a quarter of the maximum limit (and if it's lower, we increase it). We do this operation again and again by increasing/decreasing with $2^N$ time the maximum numer ($N$ being the number of iterations) until finding the square root.
+
+As this algorithm converge using a $2^N$ iterator, the convergeance occure in $N=\log_2(\text{max limit}) = \log_2(46,340) \approx 16$ iterations.
+
+<div align=center>
+<div style="max-width:200px">
+
+![](img/2023-02-28-08-14-34.png)
+
+</div>
+</div>
+
+For a conveniant reason, instead of taking half of the maximum limite, we take the first power of two that is above. In this way, every division by $2^N$ lead to an integer number. 
+```
+
+![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
+
+---
+
+## Tangent
+
+**`bs.math:tan`**
 
 Compute the tangeant of an angle between 0 and 360
 
@@ -866,7 +831,7 @@ Compute the tangeant of an angle between 0 and 360
    ```
    # Once
    scoreboard players set @s bs.in.0 42
-   function bs.math:trig/tan
+   function bs.math:tan
    tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
