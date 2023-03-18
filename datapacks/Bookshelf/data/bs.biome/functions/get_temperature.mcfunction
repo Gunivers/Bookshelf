@@ -33,4 +33,4 @@ function bs.biome:get_biome_temperature
 execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 = @s bs.loc.y
 execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 -= 62 bs.const
 execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 *= 166667 bs.const
-execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.temperature -= @s bs.in.0
+execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.biome.temp -= @s bs.in.0

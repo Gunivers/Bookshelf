@@ -26,6 +26,10 @@ This version contain breaking changes. In the following changelog, they are iden
 - 💥 Merged all `bs.math` submodules. All math function are now at the root of the `bs.math` namespace.
 - 💥 Moved `bs.health:safe_kill` to `bs.core:entity/safe_kill`
 - 💥 Moved `bs.core:default_entity` to `bs.core:entity/summon`
+- 💥 Refactored `bs.biome` variable names to match the development standards:
+  - (score) `bs.temperature` $\rightarrow$ `bs.biome.temp`
+  - (tag) `bs.canRain` $\rightarrow$ `bs.biome.CanRain`
+  - (tag) `bs.canSnow` $\rightarrow$ `bs.biome.CanSnow`
 
 ### 🐛 Bug fixes
 

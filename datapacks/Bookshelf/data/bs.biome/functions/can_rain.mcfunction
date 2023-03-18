@@ -13,8 +13,8 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s bs.temperature (score)
-# Output: @s bs.canRain (tag)
+# Input: @s bs.biome.temp (score)
+# Output: @s bs.biome.CanRain (tag)
 
 #__________________________________________________
 # INIT
@@ -25,6 +25,6 @@
 #__________________________________________________
 # CODE
 
-execute if score @s bs.temperature matches 15000000..95000000 run tag @s add bs.canRain
-execute if score @s bs.temperature matches 100000000.. run tag @s remove bs.canRain
-execute if score @s bs.temperature matches 14000000.. run tag @s remove bs.canRain
+execute if score @s bs.biome.temp matches 15000000..95000000 run tag @s add bs.biome.CanRain
+execute if score @s bs.biome.temp matches 100000000.. run tag @s remove bs.biome.CanRain
+execute if score @s bs.biome.temp matches ..14000000 run tag @s remove bs.biome.CanRain

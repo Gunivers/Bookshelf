@@ -21,7 +21,7 @@ This function allow to create a new default Bookshelf entity (currently markers)
 
 :Output:
 
-    **(state) a new entity was created
+    **(state) a new entity was created**
     : It can be identified by the tag `bs.new` and that is automatically cleared if it is not used anymore. A new call to the function will clear every entity wearing the tag `bs.new`
 
 ---
