@@ -1,6 +1,6 @@
 tag @s add bs.collisionX
 
-function bs.core:default_entity
+function bs.core:entity/summon
 
 scoreboard players operation @e[tag=bs.new] bs.loc.x = move.vectorX bs
 scoreboard players set @e[tag=bs.new] bs.loc.y 0

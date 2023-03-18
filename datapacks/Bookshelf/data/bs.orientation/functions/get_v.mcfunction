@@ -24,8 +24,8 @@ scoreboard objectives add bs.ori.v dummy [{"text":"Bookshelf ","color":"dark_gra
 #__________________________________________________
 # CODE
 
-function bs.core:default_entity
+function bs.core:entity/summon
 
 execute store result score @s bs.ori.v run data get entity @e[tag=bs.new,limit=1,sort=nearest] Rotation[1] 1
 
-execute as @e[tag=bs.new] run function bs.health:safe_kill
+execute as @e[tag=bs.new] run function bs.core:entity/safe_kill

@@ -24,6 +24,6 @@ scoreboard objectives add bs.ori.h dummy [{"text":"Bookshelf ","color":"dark_gra
 #__________________________________________________
 # CODE
 
-execute at @s run function bs.core:default_entity
+execute at @s run function bs.core:entity/summon
 
 execute store result entity @e[tag=bs.new,limit=1] Rotation[0] float 1 run scoreboard players get @s bs.ori.h

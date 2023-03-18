@@ -36,7 +36,7 @@ execute store result score #vector.get_by_orientation.origin.z bs.data run data 
 
 # tellraw @a ["",{"text":"Origin : "},{"score":{"name":"#vector.get_by_orientation.origin.x","objective":"bs.data"}},{"text":" "},{"score":{"name":"#vector.get_by_orientation.origin.y","objective":"bs.data"}},{"text":" "},{"score":{"name":"#vector.get_by_orientation.origin.z","objective":"bs.data"}},{"text":" \u0020 \u0020 \u0020"}]
 
-execute at @s positioned ^ ^ ^1 run function bs.core:default_entity
+execute at @s positioned ^ ^ ^1 run function bs.core:entity/summon
 execute store result score @s bs.vector.x run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[0] 1000
 execute store result score @s bs.vector.y run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[1] 1000
 execute store result score @s bs.vector.z run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[2] 1000

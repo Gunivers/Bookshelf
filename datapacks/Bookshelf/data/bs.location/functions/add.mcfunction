@@ -36,7 +36,7 @@ scoreboard players operation #backup.location.add.locX bs = @s bs.loc.x
 scoreboard players operation #backup.location.add.locY bs = @s bs.loc.y
 scoreboard players operation #backup.location.add.locZ bs = @s bs.loc.z
 
-execute at @s run function bs.core:default_entity
+execute at @s run function bs.core:entity/summon
 tag @e[tag=bs.new,limit=1] add bs.location.add.tmp
 tag @e[tag=bs.location.add.tmp] remove bs.new
 execute as @e[tag=bs.location.add.tmp] at @s run function bs.location:get
@@ -44,7 +44,7 @@ execute as @e[tag=bs.location.add.tmp] at @s run function bs.location:get
 scoreboard players operation @s bs.loc.x += @e[tag=bs.location.add.tmp,limit=1] bs.loc.x
 scoreboard players operation @s bs.loc.y += @e[tag=bs.location.add.tmp,limit=1] bs.loc.y
 scoreboard players operation @s bs.loc.z += @e[tag=bs.location.add.tmp,limit=1] bs.loc.z
-execute as @e[tag=bs.location.add.tmp] at @s run function bs.health:safe_kill
+execute as @e[tag=bs.location.add.tmp] at @s run function bs.core:entity/safe_kill
 
 execute if entity @s[type=minecraft:player] run function bs.location:set/child/player
 execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 1 run scoreboard players add @s bs.loc.x 0

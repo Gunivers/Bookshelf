@@ -25,8 +25,8 @@ scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gra
 #__________________________________________________
 # CODE
 
-function bs.core:default_entity
+function bs.core:entity/summon
 
 execute store result score @s bs.loc.y run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[1] 1000
 
-execute as @e[tag=bs.new] run function bs.health:safe_kill
+execute as @e[tag=bs.new] run function bs.core:entity/safe_kill

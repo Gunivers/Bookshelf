@@ -6,7 +6,7 @@ tag @s add bs.collisionFront
 #__________________________________________________
 # Create new tmp entity
 
-function bs.core:default_entity
+function bs.core:entity/summon
 
 #__________________________________________________
 # Calcul next position

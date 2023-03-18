@@ -1,5 +1,5 @@
 # Clear old bs.new entities
-execute as @e[tag=bs.new] run function bs.health:safe_kill
+execute as @e[tag=bs.new] run function bs.core:entity/safe_kill
 
 # Creating marker
 summon marker ~ ~ ~ {Tags:["bs","bs.new"]}

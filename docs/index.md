@@ -127,7 +127,7 @@ If you want to contribute, please read at least the "Getting started" section in
 :maxdepth: 1
 
 getting_started
-modules/all
+modules
 contribute/index
 faq
 CHANGELOG

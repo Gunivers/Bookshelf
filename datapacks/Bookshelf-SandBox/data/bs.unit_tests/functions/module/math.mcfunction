@@ -445,4 +445,4 @@ execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches -5671..-5623 run 
 
 #=============================================================================#
 
-execute as @e[tag=bs.unitest] run function bs.health:safe_kill
+execute as @e[tag=bs.unitest] run function bs.core:entity/safe_kill

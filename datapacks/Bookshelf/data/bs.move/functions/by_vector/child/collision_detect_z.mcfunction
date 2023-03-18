@@ -1,6 +1,6 @@
 tag @s add bs.collisionZ
 
-function bs.core:default_entity
+function bs.core:entity/summon
 
 scoreboard players set @e[tag=bs.new] bs.loc.x 0
 scoreboard players set @e[tag=bs.new] bs.loc.y 0

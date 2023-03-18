@@ -28,7 +28,7 @@ tag @e[tag=bs.setLocation] remove bs.setLocation
 tag @s add bs.setLocation
 
 # Player
-execute if entity @s[type=minecraft:player] run function bs.core:default_entity
+execute if entity @s[type=minecraft:player] run function bs.core:entity/summon
 execute if entity @s[type=minecraft:player] as @e[tag=bs.new,limit=1] run function bs.location:set_y/accuracy/10-3/player
 
 # Non-player

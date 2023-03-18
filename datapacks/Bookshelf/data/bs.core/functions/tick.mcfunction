@@ -38,5 +38,5 @@ execute as @e[scores={bs.debug.id=0},limit=1] run scoreboard players operation @
 # Life time
 scoreboard players add @e bs.lifetime 1
 tag @e remove bs.health.safekill.excluded
-execute as @e[scores={bs.lifetime=-1}] run function bs.health:safe_kill
+execute as @e[scores={bs.lifetime=-1}] run function bs.core:entity/safe_kill
 kill @e[scores={bs.lifetime=-1},tag=!bs.health.safekill.excluded]

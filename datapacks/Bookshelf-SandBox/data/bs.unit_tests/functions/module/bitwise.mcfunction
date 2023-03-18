@@ -155,4 +155,4 @@ execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches -50 run tellraw @
 
 #=============================================================================#
 
-execute as @e[tag=bs.unitest] run function bs.health:safe_kill
+execute as @e[tag=bs.unitest] run function bs.core:entity/safe_kill

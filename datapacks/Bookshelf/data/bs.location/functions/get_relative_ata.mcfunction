@@ -45,4 +45,4 @@ scoreboard players operation @s bs.loc.z -= AT_Z bs
 #tellraw @a [{"text":"\n \u0020 Res - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 
 
-execute as @e[tag=bs.new] run function bs.health:safe_kill
+execute as @e[tag=bs.new] run function bs.core:entity/safe_kill

@@ -31,7 +31,7 @@ scoreboard objectives add bs.link.to dummy [{"text":"Bookshelf ","color":"dark_g
 scoreboard players operation @s bs.id.target = @s bs.link.to
 function bs.id:check
 
-execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.core:default_entity
+execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.core:entity/summon
 
 tag @e[tag=bs.new] add bs.link.keep_local_location.setter
 tag @e[tag=bs.new] remove bs.new

@@ -26,7 +26,7 @@ scoreboard objectives add bs.ttl dummy [{"text":"Bookshelf ","color":"dark_gray"
 #     Default time to live (10s). Default TTL must be in negative.
 scoreboard players set @s[tag=!bs.config.override,scores={bs.ttl=0}] bs.ttl -200
 #     Acton when time out
-execute as @s[tag=bs.ttl.timeOut] run function bs.health:safe_kill
+execute as @s[tag=bs.ttl.timeOut] run function bs.core:entity/safe_kill
 
 #__________________________________________________
 # CODE

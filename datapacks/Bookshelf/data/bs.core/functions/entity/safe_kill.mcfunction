@@ -6,7 +6,7 @@
 # MC Version: 1.16.1
 # Last check:
 
-# Original path: bs.health:safe_kill
+# Original path: bs.core:entity/safe_kill
 # Parallelizable: true
 
 #__________________________________________________
@@ -21,8 +21,10 @@
 #__________________________________________________
 # CODE
 
+tag @e[tag=bs.core.entity.safekill.excluded] remove bs.core.entity.safekill.excluded
+
 scoreboard players reset @s[type=!player,tag=!bs.permanent]
 tp @s[type=!player,tag=!bs.permanent] ~ 0 ~
 kill @s[type=!player,tag=!bs.permanent]
 
-tag @s add bs.health.safekill.excluded
+tag @s add bs.core.entity.safekill.excluded

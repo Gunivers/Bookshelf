@@ -1,4 +1,4 @@
-function bs.core:default_entity
+function bs.core:entity/summon
 
 tag @e[tag=bs.new,limit=1,sort=nearest] add bs.link.debug.display
 
