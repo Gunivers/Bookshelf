@@ -19,11 +19,11 @@ Bookshelf (previously Gunivers Libs) is a highly accessible modular library data
 
 <div align=center>
 
-<h2>
+<h3>
 
-<a href="https://glib.gunivers.net">🎬 Watch presentation video</a>
+<a href="https://www.youtube.com/watch?v=E2nKYEvjETk">🎬 Watch presentation video</a>
 
-</h2>
+</h3>
 
 </div>
 
@@ -38,19 +38,6 @@ Bookshelf (previously Gunivers Libs) is a highly accessible modular library data
 
 And much more!
 
-# 👋 Get started
-
-<div align=center>
-
-<h2>
-
-<a href="https://glib.gunivers.net">📥 Download</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://bookshelf.docs.gunivers.net">📚 Learn how to use it</a>
-
-</h2>
-
-</div>
-
-
 # 🏃 Motivation
 
 As developers, we know the importance of using libraries to avoid losing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
@@ -59,3 +46,15 @@ That's why we created this library, to propose a lot of re-usable tools and try 
 
 Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
 
+
+# 👋 Get started
+
+<div align=center>
+
+<h3>
+
+<a href="https://glib.gunivers.net">📥 Download</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://bookshelf.docs.gunivers.net">📚 How to use it?</a>
+
+</h3>
+
+</div>
