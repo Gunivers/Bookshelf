@@ -14,15 +14,15 @@ Determine if it can rain or not.
 
 :Inputs:
 
-    **(execution) `as <entities>`**
+    (execution) `as <entities>`
     : The entities that carry the score `bs.biome.temp` you want to check if it can rain.
 
-    **(score) `bs.biome.temp`**
+    (score) `bs.biome.temp`
     : The temperature (usualy, the one where the entity is located. You have to get it first)
 
 :Output:
 
-    **(tag) `@s bs.biome.CanRain`**
+    (tag) `@s bs.biome.CanRain`
     : This tag is given if it can rain according to the temperature.
 
 :Example:
@@ -50,15 +50,15 @@ Determine if it can snow or not.
 
 :Inputs:
 
-    **(execution) `as <entities>`**
+    (execution) `as <entities>`
     : The entities that carry the score `bs.biome.temp` you want to check if it can snow.
 
-    **(score) `bs.biome.temp`**
+    (score) `bs.biome.temp`
     : The temperature (usualy, the one where the entity is located. You have to get it first)
 
 :Output:
 
-    **(tag) `@s bs.biome.CanSnow`**
+    (tag) `@s bs.biome.CanSnow`
     : This tag is given if it can snow according to the temperature.
 
 :Example:
@@ -86,15 +86,15 @@ Get the biome ID.
 
 :Inputs:
 
-    **(execution) `as <entities>`**
+    (execution) `as <entities>`
     : The entity on which you want to store the biome ID.
 
-    **(execution) `at <entity>` or `positioned <x> <y> <z>`**
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the biome ID.
 
 :Output:
 
-    **(score) `bs.biome`**
+    (score) `bs.biome`
     : The biome ID.
 
 :Example:
@@ -123,15 +123,15 @@ biome at the execution position of the function.
 
 :Inputs:
 
-    **(execution) `as <entities>`**
+    (execution) `as <entities>`
     : The entity on which you want to store the temperature.
 
-    **(execution) `at <entity>` or `positioned <x> <y> <z>`**
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the temperature.
 
 :Output:
 
-    **(score) `bs.biome.temp`**
+    (score) `bs.biome.temp`
     : The temperature of the biome.
 
 :Example:
@@ -157,15 +157,15 @@ biome and its altitude.
 
 :Inputs:
 
-    **(execution) `as <entities>`**
+    (execution) `as <entities>`
     : The entity on which you want to store the temperature.
 
-    **(execution) `at <entity>` or `positioned <x> <y> <z>`**
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the temperature.
 
 :Output:
 
-    **(score) `bs.biome.temp`**
+    (score) `bs.biome.temp`
     : The temperature of the biome.
 
 :Example:

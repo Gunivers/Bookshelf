@@ -34,9 +34,9 @@ scoreboard players operation #BACKUP.UPDATE_LINK.VAR1 bs = @s bs.in.1
 scoreboard players operation #BACKUP.UPDATE_LINK.VAR2 bs = @s bs.in.2
 scoreboard players operation #BACKUP.UPDATE_LINK.VAR3 bs = @s bs.in.3
 scoreboard players operation #BACKUP.UPDATE_LINK.VAR4 bs = @s bs.in.4
-scoreboard players operation #BACKUP.UPDATE_LINK.RES0 bs = @s bs.out.0
-scoreboard players operation #BACKUP.UPDATE_LINK.RES1 bs = @s bs.out.1
-scoreboard players operation #BACKUP.UPDATE_LINK.RES2 bs = @s bs.out.2
+scoreboard players operation #BACKUP.UPDATE_LINK.OUT.0 bs = @s bs.out.0
+scoreboard players operation #BACKUP.UPDATE_LINK.OUT.1 bs = @s bs.out.1
+scoreboard players operation #BACKUP.UPDATE_LINK.OUT.2 bs = @s bs.out.2
 scoreboard players operation #BACKUP.UPDATE_LINK.ORIH bs = @s bs.ori.h
 scoreboard players operation #BACKUP.UPDATE_LINK.ORIV bs = @s bs.ori.v
 # End Backup
@@ -74,9 +74,9 @@ scoreboard players operation @s bs.in.1 = #BACKUP.UPDATE_LINK.VAR1 bs
 scoreboard players operation @s bs.in.2 = #BACKUP.UPDATE_LINK.VAR2 bs
 scoreboard players operation @s bs.in.3 = #BACKUP.UPDATE_LINK.VAR3 bs
 scoreboard players operation @s bs.in.4 = #BACKUP.UPDATE_LINK.VAR4 bs
-scoreboard players operation @s bs.out.0 = #BACKUP.UPDATE_LINK.RES0 bs
-scoreboard players operation @s bs.out.1 = #BACKUP.UPDATE_LINK.RES1 bs
-scoreboard players operation @s bs.out.2 = #BACKUP.UPDATE_LINK.RES2 bs
+scoreboard players operation @s bs.out.0 = #BACKUP.UPDATE_LINK.OUT.0 bs
+scoreboard players operation @s bs.out.1 = #BACKUP.UPDATE_LINK.OUT.1 bs
+scoreboard players operation @s bs.out.2 = #BACKUP.UPDATE_LINK.OUT.2 bs
 scoreboard players operation @s bs.ori.h = #BACKUP.UPDATE_LINK.ORIH bs
 scoreboard players operation @s bs.ori.v = #BACKUP.UPDATE_LINK.ORIV bs
 # End Restore

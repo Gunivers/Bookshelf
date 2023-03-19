@@ -1,32 +1,27 @@
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-## Original path: bs.xp:get_total_points
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#total-points
-## Note:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-#__________________________________________________
-## PARAMETERS
+# Original path : bs.xp:get_total_points
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
+# Note          :
 
-## Output: bs.xp (score): Total XP of the player
+# INIT ------------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## CONFIG
-
-#__________________________________________________
-## CODE
+# CODE ------------------------------------------------------------------------
 
 execute store result score @s bs.out.0 run xp query @s points
-execute store result score LEVELS bs run xp query @s levels
+execute store result score #xp.levels bs.data run xp query @s levels
 
-execute if score LEVELS bs matches 1..15 run function bs.xp:get_total_points/child/1-15
-execute if score LEVELS bs matches 16..30 run function bs.xp:get_total_points/child/16-30
-execute if score LEVELS bs matches 31.. run function bs.xp:get_total_points/child/31-
+execute if score #xp.levels bs.data matches 1..15 run function bs.xp:get_total_points/child/1-15
+execute if score #xp.levels bs.data matches 16..30 run function bs.xp:get_total_points/child/16-30
+execute if score #xp.levels bs.data matches 31.. run function bs.xp:get_total_points/child/31-

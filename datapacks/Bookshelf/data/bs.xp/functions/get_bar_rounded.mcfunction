@@ -1,63 +1,54 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# Authors       : Leirof
+# Contributors  : 
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-## Original path: bs.xp:get_bar_rounded
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#get_bar_rounded
-## Note:
+# Original path : bs.xp:get_bar_rounded
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
+# Note          :
 
-#__________________________________________________
-## PARAMETERS
+# INIT ------------------------------------------------------------------------
 
-## Output: bs.out.0 (score): percentage of the bar filled
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-## CONFIG
+scoreboard players operation #xp.backup.in.0 bs.data = @s bs.in.0
+scoreboard players operation #xp.backup.in.1 bs.data = @s bs.in.1
 
-#__________________________________________________
-## CODE
-
-scoreboard players operation SAVE.VAR0 bs = @s bs.in.0
-
-execute store result score POINTS bs run xp query @s points
+execute store result score #xp.points bs.data run xp query @s points
 execute store result score @s bs.in.0 run xp query @s levels
 
 function bs.xp:get_level_points
 scoreboard players operation @s bs.in.1 = @s bs.out.0
 
-scoreboard players operation @s bs.in.0 = POINTS bs
+scoreboard players operation @s bs.in.0 = #xp.points bs.data
 scoreboard players operation @s bs.in.0 *= 100 bs.const
 
 function bs.math:divide
 
-scoreboard players operation @s bs.in.0 = SAVE.VAR0 bs
+scoreboard players operation @s bs.in.0 = #xp.backup.in.0 bs.data
 
 
-
-scoreboard players operation SAVE.VAR0 bs = @s bs.in.0
-scoreboard players operation SAVE.VAR1 bs = @s bs.in.1
-
-execute store result score LEVELS bs run xp query @s levels
+execute store result score #xp.levels bs.data run xp query @s levels
 xp set @s 130 levels
-execute store result score POINTS bs run xp query @s points
+execute store result score #xp.points bs.data run xp query @s points
 
-scoreboard players operation @s bs.in.0 = POINTS bs
+scoreboard players operation @s bs.in.0 = #xp.points bs.data
 scoreboard players operation @s bs.in.0 *= 100 bs.const
 
 scoreboard players set @s bs.in.1 1012
 
 function bs.math:divide
 
-scoreboard players operation @s bs.in.0 = LEVELS bs
+scoreboard players operation @s bs.in.0 = #xp.levels bs.data
 function bs.xp:set_levels
 
-scoreboard players operation @s bs.in.0 = SAVE.VAR0 bs
-scoreboard players operation @s bs.in.1 = SAVE.VAR1 bs
+scoreboard players operation @s bs.in.0 = #xp.backup.in.0 bs.data
+scoreboard players operation @s bs.in.1 = #xp.backup.in.1 bs.data

@@ -1,29 +1,23 @@
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-## Original path: bs.xp:get_level_points
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#level-points
-## Note:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-#__________________________________________________
-## PARAMETERS
+# Original path : bs.xp:get_level_points
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
+# Note          :
 
-## Input: bs.in.0 (score): Considered level
-## Output: bs.out.0 (score): Number of point needed to pass to the next level
+# INIT ------------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## CONFIG
-
-#__________________________________________________
-## CODE
+# CODE ------------------------------------------------------------------------
 
 execute if score @s bs.in.0 matches 0 run scoreboard players set @s bs.out.0 7
 

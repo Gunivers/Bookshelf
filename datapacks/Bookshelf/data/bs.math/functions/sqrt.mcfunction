@@ -43,7 +43,7 @@
 
 # Backup
 scoreboard players operation math.sqrt.var0 bs = @s bs.in.0
-scoreboard players operation math.sqrt.res1 bs = @s bs.out.1
+scoreboard players operation math.sqrt.out.1 bs = @s bs.out.1
 
 # Negative number exception
 execute if score @s bs.in.0 matches ..-1 run scoreboard players operation @s bs.in.0 *= -1 bs.const
@@ -54,7 +54,7 @@ scoreboard players set math.sqrt.A bs 0
 
 # B = 32768 // limit max X
 function bs.math:get_next_pow2
-scoreboard players operation math.sqrt.B bs = @s res0
+scoreboard players operation math.sqrt.B bs = @s bs.out.0
 execute if entity @s[tag=!bs.math.getNextPow2.intOverflow] run scoreboard players operation math.sqrt.B bs = @s bs.out.0
 execute if entity @s[tag=bs.math.getNextPow2.intOverflow] run scoreboard players set math.sqrt.B bs 65536
 execute if score @s bs.out.0 matches 65536.. run scoreboard players set math.sqrt.B bs 65536
@@ -76,7 +76,7 @@ scoreboard players operation @s bs.out.0 = math.sqrt.A bs
 
 # Restore
 scoreboard players operation @s bs.in.0 = math.sqrt.var0 bs
-scoreboard players operation @s bs.out.1 = math.sqrt.res1 bs
+scoreboard players operation @s bs.out.1 = math.sqrt.out.1 bs
 
 #__________________________________________________
 # DEBUG

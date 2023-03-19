@@ -14,13 +14,6 @@
 #__________________________________________________
 # PARAMETERS
 
-# Input: @s bs.in.0 (score) : Local Vector Left
-# Input: @s bs.in.1 (score) : Local Vector Up
-# Input: @s bs.in.2 (score) : Local Vector Front
-# Output: @s Res0 (score) : Vector X
-# Output: @s Res1 (score) : Vector Y
-# Output: @s Res2 (score) : Vector Z
-
 #__________________________________________________
 # INIT
 
@@ -40,9 +33,9 @@ scoreboard players operation #vector.caninical_to_local.backup.var1 bs.data = @s
 scoreboard players operation #vector.caninical_to_local.backup.var2 bs.data = @s bs.in.2
 scoreboard players operation #vector.caninical_to_local.backup.var3 bs.data = @s bs.in.3
 scoreboard players operation #vector.caninical_to_local.backup.var4 bs.data = @s bs.in.4
-scoreboard players operation #vector.caninical_to_local.backup.res0 bs.data = @s bs.out.0
-scoreboard players operation #vector.caninical_to_local.backup.res1 bs.data = @s bs.out.1
-scoreboard players operation #vector.caninical_to_local.backup.res2 bs.data = @s bs.out.2
+scoreboard players operation #vector.caninical_to_local.backup.out.0 bs.data = @s bs.out.0
+scoreboard players operation #vector.caninical_to_local.backup.out.1 bs.data = @s bs.out.1
+scoreboard players operation #vector.caninical_to_local.backup.out.2 bs.data = @s bs.out.2
 scoreboard players operation #vector.caninical_to_local.backup.oriH bs.data = @s bs.ori.h
 scoreboard players operation #vector.caninical_to_local.backup.oriV bs.data = @s bs.ori.v
 
@@ -67,8 +60,8 @@ scoreboard players operation @s bs.in.1 = #vector.caninical_to_local.backup.var1
 scoreboard players operation @s bs.in.2 = #vector.caninical_to_local.backup.var2 bs.data
 scoreboard players operation @s bs.in.3 = #vector.caninical_to_local.backup.var3 bs.data
 scoreboard players operation @s bs.in.4 = #vector.caninical_to_local.backup.var4 bs.data
-scoreboard players operation @s bs.out.0 = #vector.caninical_to_local.backup.res0 bs.data
-scoreboard players operation @s bs.out.1 = #vector.caninical_to_local.backup.res1 bs.data
-scoreboard players operation @s bs.out.2 = #vector.caninical_to_local.backup.res2 bs.data
+scoreboard players operation @s bs.out.0 = #vector.caninical_to_local.backup.out.0 bs.data
+scoreboard players operation @s bs.out.1 = #vector.caninical_to_local.backup.out.1 bs.data
+scoreboard players operation @s bs.out.2 = #vector.caninical_to_local.backup.out.2 bs.data
 scoreboard players operation @s bs.ori.h = #vector.caninical_to_local.backup.oriH bs.data
 scoreboard players operation @s bs.ori.v = #vector.caninical_to_local.backup.oriV bs.data

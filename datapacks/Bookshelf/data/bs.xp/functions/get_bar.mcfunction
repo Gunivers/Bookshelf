@@ -1,31 +1,25 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# Authors       : Leirof
+# Contributors  : 
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-## Original path: bs.xp:get_bar
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#get_bar
-## Note:
+# Original path : bs.xp:get_bar
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
+# Note          :
 
-#__________________________________________________
-## PARAMETERS
+# INIT ------------------------------------------------------------------------
 
-## Output: bs.out.0 (score): percentage of the bar filled
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-## CONFIG
-
-#__________________________________________________
-## CODE
-
-scoreboard players operation SAVE.VAR0 bs = @s bs.in.0
+scoreboard players operation #xp.backup.in.0 bs.data = @s bs.in.0
 
 execute store result score @s bs.in.0 run xp query @s levels
 xp set @s 130 levels
@@ -37,4 +31,4 @@ scoreboard players operation @s bs.out.0 /= 1012 bs.const
 
 function bs.xp:set_levels
 
-scoreboard players operation @s bs.in.0 = SAVE.VAR0 bs
+scoreboard players operation @s bs.in.0 = #xp.backup.in.0 bs.data

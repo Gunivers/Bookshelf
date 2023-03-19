@@ -1,29 +1,23 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# Authors       : Leirof
+# Contributors  : 
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-## Original path: bs.xp:set_levels
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#set_levels
-## Note:
+# Original path : bs.xp:set_levels
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#set
+# Note          :
 
-#__________________________________________________
-## PARAMETERS
+# INIT ------------------------------------------------------------------------
 
-## Input: bs.in.0 (score): levels to set to the player
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
-
-#__________________________________________________
-## CONFIG
-
-#__________________________________________________
-## CODE
+# CODE ------------------------------------------------------------------------
 
 xp set @s 0 levels
 function bs.xp:add_levels

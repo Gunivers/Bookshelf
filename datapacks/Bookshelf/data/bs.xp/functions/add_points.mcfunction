@@ -1,44 +1,38 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-#__________________________________________________
-## INFO     Copyright © 2021 Altearn.
+# Authors       : Leirof
+# Contributors  : 
 
-## Authors: Leirof
-## Contributors:
-## MC Version: 1.18.2
-## Last check:
+# Version: 1.1
+# Created: ??/??/???? (1.18.2)
+# Last verification: 19/03/2023 (1.19.4)
+# Last modification: 19/03/2023 (1.19.4)
 
-## Original path: bs.xp:add_points
-## Documentation: https://bs-core.readthedocs.io/en/latest/XP.html#add_points
-## Note:
+# Original path : bs.xp:add_points
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#add
+# Note          :
 
-#__________________________________________________
-## PARAMETERS
+# INIT ------------------------------------------------------------------------
 
-## Input: bs.in.0 (score): Points to add to the player
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-## INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-## CONFIG
+scoreboard players operation #xp.points bs.data = @s bs.in.0
 
-#__________________________________________________
-## CODE
+execute if score #xp.points bs.data matches 128.. run function bs.xp:add_points/child/128-
 
-scoreboard players operation POINTS bs = @s bs.in.0
-
-execute if score POINTS bs matches 128.. run function bs.xp:add_points/child/128-
-
-execute if score POINTS bs matches 64.. run xp add @s 64 points
-execute if score POINTS bs matches 64.. run scoreboard players remove POINTS bs 64
-execute if score POINTS bs matches 32.. run xp add @s 32 points
-execute if score POINTS bs matches 32.. run scoreboard players remove POINTS bs 32
-execute if score POINTS bs matches 16.. run xp add @s 16 points
-execute if score POINTS bs matches 16.. run scoreboard players remove POINTS bs 16
-execute if score POINTS bs matches 8.. run xp add @s 8 points
-execute if score POINTS bs matches 8.. run scoreboard players remove POINTS bs 8
-execute if score POINTS bs matches 4.. run xp add @s 4 points
-execute if score POINTS bs matches 4.. run scoreboard players remove POINTS bs 4
-execute if score POINTS bs matches 2.. run xp add @s 2 points
-execute if score POINTS bs matches 2.. run scoreboard players remove POINTS bs 2
-execute if score POINTS bs matches 1.. run xp add @s 1 points
+execute if score #xp.points bs.data matches 64.. run xp add @s 64 points
+execute if score #xp.points bs.data matches 64.. run scoreboard players remove #xp.points bs.data 64
+execute if score #xp.points bs.data matches 32.. run xp add @s 32 points
+execute if score #xp.points bs.data matches 32.. run scoreboard players remove #xp.points bs.data 32
+execute if score #xp.points bs.data matches 16.. run xp add @s 16 points
+execute if score #xp.points bs.data matches 16.. run scoreboard players remove #xp.points bs.data 16
+execute if score #xp.points bs.data matches 8.. run xp add @s 8 points
+execute if score #xp.points bs.data matches 8.. run scoreboard players remove #xp.points bs.data 8
+execute if score #xp.points bs.data matches 4.. run xp add @s 4 points
+execute if score #xp.points bs.data matches 4.. run scoreboard players remove #xp.points bs.data 4
+execute if score #xp.points bs.data matches 2.. run xp add @s 2 points
+execute if score #xp.points bs.data matches 2.. run scoreboard players remove #xp.points bs.data 2
+execute if score #xp.points bs.data matches 1.. run xp add @s 1 points

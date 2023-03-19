@@ -35,7 +35,7 @@ tag @s[tag=bs.config.override] remove bs.config.override
 # Backup
 
 scoreboard players operation #backup.move.vectorZ bs = @s bs.vector.z
-scoreboard players operation #backup.move.res0 bs = @s bs.out.0
+scoreboard players operation #backup.move.out.0 bs = @s bs.out.0
 
 # Absurd values security
 
@@ -75,4 +75,4 @@ tag @s remove bs.move.by_vector.rest
 # Restore
 
 scoreboard players operation @s bs.vector.z = #backup.move.vectorZ bs
-scoreboard players operation @s bs.out.0 = backup.move.res0 bs
+scoreboard players operation @s bs.out.0 = backup.move.out.0 bs

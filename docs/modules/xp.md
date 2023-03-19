@@ -1,243 +1,444 @@
 # 🏅 XP
 
-`bs.xp:` all function concerning the experience points and levels.
+**`bs.xp:_`**
 
-## Add levels
+All functions allowing to manage experience points and levels.
 
-`add_levels`: Add levels from a score
-
-- Take the amount of levels to add on the score `bs.in.0`
-
-*Example:*
-
-Add you 123 levels
-
-```
-# Once
-scoreboard players set @s bs.in.0 123
-bs.xp:add_levels
-
-# See the result
-# look at your XP bar in survival mode
+```{image} img/xp.png
+:class: dark-light p-2
 ```
 
-## Add points
+## Add
 
-`add_points`: Add XP from a score
+::::{tab-set}
+:::{tab-item} Points
 
-- Take the amount of XP to add on the score `bs.in.0`
+**`bs.xp:add_points`**
 
-*Example:*
+Add XP from a score
 
-Add you 1234 XP
+:Inputs:
 
-```
-# Once
-scoreboard players set @s bs.in.0 1234
-bs.xp:add_points
+    (execution) `as <players>`
+    : The players to add XP to
 
-# See the result
-function bs.xp:get_total_points
-scoreboard objectives setdisplay sidebar bs.out.0
-# run the add function here
-function bs.xp:get_total_points
-```
+    (score) `@s bs.in.0`
+    : The amount of XP to add
 
-## Get bar
+:Outputs:
 
-`get_bar`: Get the portion of the bar filled
+    (state) players xp
+    : The players XP is updated
 
-- The percentage of the bar filled is returned on the score `bs.out.0`
-- Due to the division, the result is rounded to the lowest integer. If you want to round to the nearest integer, use the function `get_bar_rounded`
+:Example:
 
-*Example:*
+    Add you 1234 XP
 
-Get the portion filled in your XP bar
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 1234
+    bs.xp:add_points
 
-```
-# Once
-bs.xp:get_bar
+    # See the result
+    function bs.xp:get_total_points
+    scoreboard objectives setdisplay sidebar bs.out.0
+    # run the add function here
+    function bs.xp:get_total_points
+    ```
 
-# See the result
-scoreboard obective setdisplay sidebar bs.out.0
-```
+:::
+:::{tab-item} Levels
 
-## Get bar rounded
+**`bs.xp:add_levels`**
 
-`get_bar_rounded`: Get the portion of the bar filled
+Add levels from a score
 
-- The percentage of the bar filled is returned on the score `bs.out.0`
-- This function require the module `bs.math`
+:Inputs:
 
-*Example:*
+    (execution) `as <players>`
+    : The players to add levels to
 
-Get the portion filled in your XP bar
+    (score) `@s bs.in.0`
+    : The amount of levels to add
 
-```
-# Once
-bs.xp:get_bar_rounded
+:Outputs:
 
-# See the result
-scoreboard obective setdisplay sidebar bs.out.0
-```
+    (state) players xp
+    : The players XP is updated 
 
-## Get Level Points
+:Example:
 
-`get_level_points`: Get the points required to pass to the next level.
+    Add you 123 levels
 
-- Returns the number of points required on `bs.out.0`
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 123
+    bs.xp:add_levels
 
-*Example:*
+    # See the result
+    # look at your XP bar in survival mode
+    ```
 
-Get the number of points required to pass from the level 15 to the level 16
+:::
+::::
 
-```
-# Once
-scoreboard players set @s bs.in.0 15
-bs.xp:get_total_points
+## Get
 
-# See the result
-tellraw @a ["",{"text":"I need "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" to pass this level"}]
-```
+::::::{tab-set}
+:::::{tab-item} Total points
 
-## Get Total Points
+**`bs.xp:get_total_points`**
 
-`get_total_points`: Get the total amount of points of the player.
+Get the total amount of points of the player.
 
--  Returns the amount of XP points on the score `bs.out.0`
+:Input:
 
-*Example:*
+    (execution) `as <players>`
+    : The players from which you want to get the total amount of points
 
-Get your amount of points
+:Output:
 
-```
-# Once (execute on you)
-bs.xp:get_total_points
+    (score) `@s bs.out.0`
+    : The total amount of points
 
-# See the result (execute on you)
-tellraw @a ["",{"text":"I have "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" XP"}]
-```
+:Example:
 
-## Remove levels
+    Get your amount of points
 
-`remove_levels`: Remove levels from a score
+    ```
+    # Once (execute on you)
+    bs.xp:get_total_points
 
--  Take the amount of levels to remove on the score `bs.in.0`
+    # See the result (execute on you)
+    tellraw @a ["",{"text":"I have "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" XP"}]
+    ```
 
-*Example:*
+:::::
+:::::{tab-item} Bar
 
-Remove you 123 levels
+::::{tab-set}
+:::{tab-item} Lowered
 
-```
-# Once
-scoreboard players set @s bs.in.0 123
-bs.xp:add_levels
+**`bs.xp:get_bar`**
 
-# See the result
-# look at your XP bar in survival mode
-```
+Get the portion of the bar filled (in percent)
 
-## Remove points
+:Inputs:
 
-`remove_points`: Remove XP from a score
+    (execution) `as <players>`
+    : The players from which you want to get the fraction of the bar filled
 
--  Take the amount of XP to remove on the score `bs.in.0`
+:Outputs:
+    
+    (score) `@s bs.out.0`
+    : The percentage of the bar filled (rounded to the lowest integer)
 
-*Example:*
+    ```{admonition} Minecraft natural division
+    :class: tip
 
-Remove you 1234 XP
+    Due to the division, the result is rounded to the lowest integer. If you want to round to the nearest integer, use the function `bs.xp:get_bar_rounded`
+    ```
 
-```
-# Once
-scoreboard players set @s bs.in.0 1234
-bs.xp:remove_points
+:Example:
 
-# See the result
-function bs.xp:get_total_points
-scoreboard objectives setdisplay sidebar bs.out.0
-# run the remove function here
-function bs.xp:get_total_points
-```
+    Get the portion filled in your XP bar
 
-## Set bar
+    ```
+    # Once
+    bs.xp:get_bar
 
-`set_bar`: Fill partially the XP bar
+    # See the result
+    scoreboard obective setdisplay sidebar bs.out.0
+    ```
 
--  Take the percentage of the bar filled via the `bs.in.0` score
+:::
+:::{tab-item} Rounded
 
-*Example:*
+**`bs.xp:get_bar_rounded`**
 
-Fill your bar at 50%
+Get the portion of the bar filled (in percent)
 
-```
-# Once
-scoreboard players set @s bs.in.0 50
-bs.xp:set_bar
+:Inputs:
 
-# See the result
-# look at your XP bar in survival mode
-```
+    (execution) `as <players>`
+    : The players from which you want to get the fraction of the bar filled
 
-## Set levels
+:Outputs:
 
-`set_levels`: Set levels from a score
+    (score) `@s bs.out.0`
+    : The percentage of the bar filled (rounded to the nearest integer)
 
-- Take the amount of levels to set on the score `bs.in.0`
+:Example:
 
-*Example:*
+    Get the portion filled in your XP bar
 
-Set your level to 123
+    ```
+    # Once
+    bs.xp:get_bar_rounded
 
-```
-# Once
-scoreboard players set @s bs.in.0 123
-bs.xp:set_levels
+    # See the result
+    scoreboard obective setdisplay sidebar bs.out.0
+    ```
 
-# See the result
-# look at your XP bar in survival mode
-```
+```{admonition} Depnedency
+:class: dropdown
 
-## Set points
-
-`set_points`: Set XP from a score
-
-- Take the amount of XP to set on the score `bs.in.0`
-
-*Example:*
-
-Set your XP to 1234
-
-```
-# Once
-scoreboard players set @s bs.in.0 1234
-bs.xp:set_points
-
-# See the result
-function bs.xp:get_total_points
-scoreboard objectives setdisplay sidebar bs.out.0
-# run the set function here
-function bs.xp:get_total_points
+This function require the [`bs.math`](math) module to work properly
 ```
 
-## Set total points
+:::
+::::
 
-`set_total_points`: Set XP from a score
+:::::
+:::::{tab-item} Level points
 
--  Take the total amount of XP to set on the score `bs.in.0`
+**`bs.xp:get_level_points`**
 
-*Example:*
+Get the points required to pass to the next level.
 
-Set your total XP amount to 1234
+:Input:
 
-```
-# Once
-scoreboard players set @s bs.in.0 1234
-bs.xp:set_total_points
+    (execution) `as <players>`
+    : The players from which you want to get the points required to pass to the indicated level
 
-# See the result
-function bs.xp:get_total_points
-scoreboard objectives setdisplay sidebar bs.out.0
-```
+    (score) `@s bs.in.0`
+    : The level you want to get the points required to pass it
+
+:Output:
+
+    (score) `@s bs.out.0`
+    : The amount of points required to pass to the next level
+
+:Example:
+
+    Get the number of points required to pass from the level 15 to the level 16
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 15
+    bs.xp:get_total_points
+
+    # See the result
+    tellraw @a ["",{"text":"I need "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" to pass this level"}]
+    ```
+
+:::::
+::::::
+
+## Remove
+
+::::{tab-set}
+:::{tab-item} Points
+
+**`bs.xp:remove_points`**
+
+Remove XP from a score
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players to remove XP from
+
+    (score) `@s bs.in.0`
+    : The amount of XP to remove
+
+:Outputs:
+
+    (state) players xp
+    : The players XP is updated
+
+:Example:
+
+    Remove you 1234 XP
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 1234
+    bs.xp:remove_points
+
+    # See the result
+    function bs.xp:get_total_points
+    scoreboard objectives setdisplay sidebar bs.out.0
+    # run the remove function here
+    function bs.xp:get_total_points
+    ```
+
+:::
+:::{tab-item} Levels
+
+**`bs.xp:remove_levels`**
+
+Remove levels from a score
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players to remove levels from
+
+    (score) `@s bs.in.0`
+    : The amount of levels to remove
+
+:Outputs:
+
+    (state) players xp
+    : The players XP is updated
+
+:Example:
+
+    Remove you 123 levels
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 123
+    bs.xp:add_levels
+
+    # See the result
+    # look at your XP bar in survival mode
+    ```
+
+:::
+::::
+
+## Set
+
+::::{tab-set}
+:::{tab-item} Bar
+
+**`bs.xp:set_bar`**
+
+Fill partially the XP bar
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players to fill the XP bar
+
+    (score) `@s bs.in.0`
+    : The percentage of the bar to fill
+
+:Outputs:
+
+    (state) players xp
+    : The players XP is updated
+
+:Example:
+
+    Fill your bar at 50%
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 50
+    bs.xp:set_bar
+
+    # See the result
+    # look at your XP bar in survival mode
+    ```
+
+:::
+:::{tab-item} Levels
+
+**`bs.xp:set_levels`**
+
+Set levels from a score
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players to set levels from
+
+    (score) `@s bs.in.0`
+    : The amount of levels to set
+
+:Outputs:
+
+    (state) players xp
+    : The players XP is updated
+
+:Example:
+
+    Set your level to 123
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 123
+    bs.xp:set_levels
+
+    # See the result
+    # look at your XP bar in survival mode
+    ```
+
+:::
+:::{tab-item} Points
+
+**`bs.xp:set_points`**
+
+Set XP from a score
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players you want to set XP
+
+    (score) `@s bs.in.0`
+    : The amount of XP to set
+
+:Outputs:
+
+    (state) players xp
+    : The players XP is updated
+
+:Example:
+
+    Set your XP to 1234
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 1234
+    bs.xp:set_points
+
+    # See the result
+    function bs.xp:get_total_points
+    scoreboard objectives setdisplay sidebar bs.out.0
+    # run the set function here
+    function bs.xp:get_total_points
+    ```
+
+:::
+:::{tab-item} Total points
+
+**`bs.xp:set_total_points`**
+
+Set XP from a score
+
+:Inputs:
+
+    (execution) `as <players>`
+    : The players you want to set the total XP
+
+    (score) `@s bs.in.0`
+    : The amount of XP to set
+
+:Outputs:
+    
+    (state) players xp
+    : The players XP is updated 
+
+:Example:
+
+    Set your total XP amount to 1234
+
+    ```
+    # Once
+    scoreboard players set @s bs.in.0 1234
+    bs.xp:set_total_points
+
+    # See the result
+    function bs.xp:get_total_points
+    scoreboard objectives setdisplay sidebar bs.out.0
+    ```
+
+:::
+::::
 
 ---
 

@@ -27,7 +27,7 @@ tag @s[tag=bs.config.override] remove bs.config.override
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #vector.backup.res0 bs.data = @s bs.out.0
+scoreboard players operation #vector.backup.out.0 bs.data = @s bs.out.0
 
 function bs.vector:length
 
@@ -39,4 +39,4 @@ scoreboard players operation @s bs.vector.x /= @s bs.out.0
 scoreboard players operation @s bs.vector.y /= @s bs.out.0
 scoreboard players operation @s bs.vector.z /= @s bs.out.0
 
-scoreboard players operation @s bs.out.0 = #vector.backup.res0 bs.data
+scoreboard players operation @s bs.out.0 = #vector.backup.out.0 bs.data
