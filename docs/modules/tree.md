@@ -4,303 +4,797 @@
 
 A bank of trees. As simple as useful.
 
+---
+
 ## 🗿 Structures
+
+You can find below all the structures available in this module.
+
+---
 
 ### Birch
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:birch_1`
-    - ```{image} img/birch_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:birch_2`
-    - ```{image} img/birch_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:birch_3`
-    - ```{image} img/birch_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:birch_4`
-    - ```{image} img/birch_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:birch_5`
-    - ```{image} img/birch_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/birch_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:birch_1`
+
+</div>
+
 :::
+:::{grid-item}
+
+```{image} img/birch_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:birch_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/birch_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:birch_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/birch_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:birch_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/birch_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:birch_5`
+
+</div>
+
+:::
+::::
+
+---
 
 ### Cypress
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:cypress_1`
-    - ```{image} img/cypress_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:cypress_2`
-    - ```{image} img/cypress_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:cypress_3`
-    - ```{image} img/cypress_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:cypress_4`
-    - ```{image} img/cypress_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:cypress_5`
-    - ```{image} img/cypress_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/cypress_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:cypress_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/cypress_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:cypress_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/cypress_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:cypress_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/cypress_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:cypress_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/cypress_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:cypress_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Dark Oak
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:dark_oak_1`
-    - ```{image} img/dark_oak_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dark_oak_2`
-    - ```{image} img/dark_oak_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dark_oak_3`
-    - ```{image} img/dark_oak_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dark_oak_4`
-    - ```{image} img/dark_oak_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dark_oak_5`
-    - ```{image} img/dark_oak_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/dark_oak_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dark_oak_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/dark_oak_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dark_oak_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dark_oak_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dark_oak_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dark_oak_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dark_oak_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dark_oak_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dark_oak_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Dead Spruce
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:dead_spruce_1`
-    - ```{image} img/dead_spruce_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dead_spruce_2`
-    - ```{image} img/dead_spruce_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dead_spruce_3`
-    - ```{image} img/dead_spruce_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dead_spruce_4`
-    - ```{image} img/dead_spruce_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:dead_spruce_5`
-    - ```{image} img/dead_spruce_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/dead_spruce_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dead_spruce_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/dead_spruce_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dead_spruce_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dead_spruce_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dead_spruce_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dead_spruce_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dead_spruce_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/dead_spruce_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:dead_spruce_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Exotic
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:exotic_1`
-    - ```{image} img/exotic_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:exotic_2`
-    - ```{image} img/exotic_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:exotic_3`
-    - ```{image} img/exotic_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:exotic_4`
-    - ```{image} img/exotic_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:exotic_5`
-    - ```{image} img/exotic_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/exotic_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:exotic_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/exotic_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:exotic_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/exotic_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:exotic_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/exotic_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:exotic_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/exotic_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:exotic_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Fir
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:fir_1`
-    - ```{image} img/fir_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:fir_2`
-    - ```{image} img/fir_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:fir_3`
-    - ```{image} img/fir_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:fir_4`
-    - ```{image} img/fir_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:fir_5`
-    - ```{image} img/fir_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/fir_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:fir_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/fir_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:fir_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/fir_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:fir_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/fir_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:fir_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/fir_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:fir_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Jungle
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:jungle_1`
-    - ```{image} img/jungle_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:jungle_2`
-    - ```{image} img/jungle_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:jungle_3`
-    - ```{image} img/jungle_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:jungle_4`
-    - ```{image} img/jungle_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:jungle_5`
-    - ```{image} img/jungle_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/jungle_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:jungle_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/jungle_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:jungle_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/jungle_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:jungle_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/jungle_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:jungle_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/jungle_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:jungle_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Mushroom
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:mushroom_1`
-    - ```{image} img/mushroom_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:mushroom_2`
-    - ```{image} img/mushroom_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:mushroom_3`
-    - ```{image} img/mushroom_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:mushroom_4`
-    - ```{image} img/mushroom_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:mushroom_5`
-    - ```{image} img/mushroom_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/mushroom_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:mushroom_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/mushroom_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:mushroom_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/mushroom_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:mushroom_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/mushroom_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:mushroom_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/mushroom_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:mushroom_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Oak
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:oak_1`
-    - ```{image} img/oak_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:oak_2`
-    - ```{image} img/oak_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:oak_3`
-    - ```{image} img/oak_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:oak_4`
-    - ```{image} img/oak_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:oak_5`
-    - ```{image} img/oak_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/oak_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:oak_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/oak_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:oak_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/oak_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:oak_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/oak_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:oak_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/oak_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:oak_5`
+
+</div>
+
+:::
+
+::::
+
+---
 
 ### Palm
 
-:::{list-table}
-:header-rows: 1
+::::{grid} 3
 
-*   - Name
-    - Preview
-*   - `bs.tree:palm_1`
-    - ```{image} img/palm_1.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:palm_2`
-    - ```{image} img/palm_2.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:palm_3`
-    - ```{image} img/palm_3.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:palm_4`
-    - ```{image} img/palm_4.png
-      :class: dark-light p-2
-      ```
-*   - `bs.tree:palm_5`
-    - ```{image} img/palm_5.png
-      :class: dark-light p-2
-      ```
+:::{grid-item}
+
+```{image} img/palm_1.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:palm_1`
+
+</div>
 
 :::
+:::{grid-item}
+
+```{image} img/palm_2.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:palm_2`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/palm_3.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:palm_3`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/palm_4.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:palm_4`
+
+</div>
+
+:::
+:::{grid-item}
+
+```{image} img/palm_5.png
+:class: dark-light p-2
+:align: center
+```
+
+<div align=center>
+
+`bs.tree:palm_5`
+
+</div>
+
+:::
+
+::::
