@@ -95,7 +95,7 @@ A bank of trees. As simple as useful.
 
 :::
 
-### Dark Spruce
+### Dead Spruce
 
 :::{list-table}
 :header-rows: 1
