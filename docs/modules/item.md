@@ -1,81 +1,133 @@
 # ⛏️ Item
 
-`bs.item:` : Systems allowing to manipulate items
+**`bs.item:_`**
+
+Systems allowing to manipulate items
+
+```{admonition} Heavy module
+:class: warning
+
+This module use search trees, that perform very fast operations that have not been considered in the current Minecraft commands system. The counterpart of such systems is that they use thousands of similar files. Thus, we highly recomended you to keep the datapack compressed when you use this module. A simple zip compression is enough to drastically reduce the size of the datapack and the number of files will no longer be a problem.
+```
 
 ---
 
-## Get item ID
+## 🔧 Functions
 
-`get`: Gives to the item executing the function a score corresponding
+You can find below all the function available in this module.
+
+---
+
+### Get item ID
+
+**`bs.item:get`**
+
+Gives to the item executing the function a score corresponding
 to a unique identifier corresponding to its nature.
 
-- The result is stored on the score `bs.item.id`
-- Must be executed on an item only
+:Inputs:
 
-*Example:* 
+    (execution) `as <items>`
+    : The items on which you want to store the item ID
 
-Make sure that all the items in the world have their identifier
-indicated by their score `bs.item.id`
+:Outputs:
 
-```
-# Once
-execute as @e[type=item] run function bs:item/get
+    (score) `@s bs.item.id`
+    : The unique identifier of the item
 
-# See the result
-scoreboard objectives setdisplay sidebar bs.item.id
-```
+:Example:
+
+    Make sure that all the items in the world have their identifier
+    indicated by their score `bs.item.id`
+
+    ```
+    # Once
+    execute as @e[type=item] run function bs:item/get
+
+    # See the result
+    scoreboard objectives setdisplay sidebar bs.item.id
+    ```
 
 ---
 
-## Set item from ID
+### Set item from ID
 
-`set`: Create an item corresponding to the identifier stored on the
+**`bs.item:set`**
+
+Create an item corresponding to the identifier stored on the
 executing entity.
 
-- The identifier must be given via the score `bs.item.id`.
+:Inputs:
 
-*Example:*
+    (execution) `as <entities>`
+    : The entity on which the item ID is stored
 
-Make the player named Steve create an item in front of him,
-corresponding to the identifier he has given on his score
-`bs.item.id`
+    (score) `@s bs.item.id`
+    : The unique identifier of the item
 
-```
-# Once
-execute as Steve at @s anchored eyes positioned ^ ^ ^1 run function bs:item/set
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position of the item you want to create
 
-# See the result
-# Look in front of Steve
-```
+:Outputs:
+
+    (state) summoned item
+    : An item corresponding to the identifier was summoned
+
+:Example:
+
+    Make the player named Steve create an item in front of him,
+    corresponding to the identifier he has given on his score
+    `bs.item.id`
+
+    ```
+    # Once
+    execute as Steve at @s anchored eyes positioned ^ ^ ^1 run function bs:item/set
+
+    # See the result
+    # Look in front of Steve
+    ```
 
 ---
 
-## Convert item ID to block ID
+### Convert item ID to block ID
 
-`convert_to_block`: Convert an item id stored on the executing entity
+**`bs.item:convert_to_block`**
+
+Convert an item id stored on the executing entity
 to a block id
 
-- The item identifier must be indicated by the ``bs.item.id`` score
-- The block identifier will be stored on the score ``bs.block.id``
+:Inputs:
 
-*Example:*
+    (execution) `as <entities>`
+    : The entity on which the item ID is stored
 
-Make the player named Steve get the block identifier corresponding to
-the item that is indicated by his score ``bs.item.id``
+    (score) `@s bs.item.id`
+    : The unique identifier of the item
 
+:Outputs:
+
+    (score) `@s bs.block.id`
+    : The unique identifier of the block (with the default blockstate)
+
+:Example:
+
+    Make the player named Steve get the block identifier corresponding to
+    the item that is indicated by his score ``bs.item.id``
+
+    ```
+    # Once
+    execute as Steve run function bs:item/convert_to_block
+
+    # See the result
+    scoreboard objectives setdisplay sidebar bs.block.id
+    ```
+```{button-link} https://www.youtube.com/watch?v=c1agAFYpaaE
+:color: primary
+:align: center
+:shadow:
+
+🎬 Watch the video
 ```
-# Once
-execute as Steve run function bs:item/convert_to_block
-
-# See the result
-scoreboard objectives setdisplay sidebar bs.block.id
-```
-
-<div align=center>
-    <a href="https://www.youtube.com/watch?v=c1agAFYpaaE" align=center>
-        <img src="https://gunivers.net/wp-content/uploads/2022/06/watch-on-youtube.png" alt="drawing" width="200"/>
-    </a>
-</div>
 
 ---
 

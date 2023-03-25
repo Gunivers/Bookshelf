@@ -16,4 +16,5 @@ execute as @e[type=minecraft:item,tag=bs.new] run data modify entity @s NoGravit
 scoreboard players set @e[type=minecraft:item,tag=bs.new] bs.lifetime -201
 
 # Remonving there "bs.new" tag
+tag @e[type=minecraft:item,tag=bs.new] add bs.example.WalkTrail
 tag @e[type=minecraft:item,tag=bs.new] remove bs.new

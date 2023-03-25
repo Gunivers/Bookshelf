@@ -1,9 +1,9 @@
-execute as @e[type=item] at @s unless block ~-0.5 ~ ~ air run tag @s add bs.example.drop_to_place
-execute as @e[type=item] at @s unless block ~0.5 ~ ~ air run tag @s add bs.example.drop_to_place
-execute as @e[type=item] at @s unless block ~ ~-0.1 ~ air run tag @s add bs.example.drop_to_place
-execute as @e[type=item] at @s unless block ~ ~0.7 ~ air run tag @s add bs.example.drop_to_place
-execute as @e[type=item] at @s unless block ~ ~ ~-0.5 air run tag @s add bs.example.drop_to_place
-execute as @e[type=item] at @s unless block ~ ~ ~0.5 air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~-0.5 ~ ~ air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~0.5 ~ ~ air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~ ~-0.1 ~ air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~ ~0.7 ~ air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~ ~ ~-0.5 air run tag @s add bs.example.drop_to_place
+execute as @e[type=item,tag=!bs.example.WalkTrail] at @s unless block ~ ~ ~0.5 air run tag @s add bs.example.drop_to_place
 
 
 # Getting item type when the item exist since 1 second
