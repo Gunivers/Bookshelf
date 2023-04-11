@@ -1,41 +1,45 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: theogiraudet
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : theogiraudet
+# Contributors  : leirof
 
-# Original path: bs.view:aimed_entity
-# Documentation: https://bs-core.readthedocs.io//entity#view
-# Parallelizable: <true/false/global>
-# Note:
+# Version: 1.1
+# Created:??/??/???? (1.13)
+# Last verification: 11/04/2023 (1.19.4)
+# Last modification: 11/04/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.view:aimed_entity
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#aimed-entity
+# Note          :
 
-#__________________________________________________
-# INIT
+# CONFIG ----------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
+# bs.in.0 -> Range*10 (10 blocs -> bs.in.0 = 100): Max distance limit for raycast
+scoreboard players set @s[tag=!bs.config.override] bs.in.0 100
 
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
-scoreboard players operation @s bs.id.target = @s bs.id
-tag @s add Executor
-function bs.id:check_parent
-kill @e[tag=bs.aimedEntity,tag=bs.id.parent.match]
-execute at @s run summon armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Marker:1,Tags:["bs","bs.raycastEntity.new"]}
-tp @e[tag=bs.raycastEntity.new] @s
-execute at @s run tp @e[tag=bs.raycastEntity.new] ~ ~1.7 ~
+tag @e remove bs.view.AimedEntity
+
+# Create a new enttiy and assign it to the executing entity
+execute at @s run function bs.core:entity/summon
+scoreboard players operation @e[tag=bs.new] bs.id.parent = @s bs.id
+tp @e[tag=bs.new] @s
+execute at @s run tp @e[tag=bs.new] ~ ~1.7 ~
 
 # CONFIG: bs.in.0 -> Range*10 (10 blocs -> bs.in.0 = 100)
-scoreboard players set @e[tag=bs.raycastEntity.new] bs.in.0 1000
-# END CONFIG
-execute as @e[tag=bs.raycastEntity.new] at @s run function bs.view:aimed_entity/child/aimed_entity_raycast
-execute as @e[tag=bs.raycastEntity.new] at @s run tag @e[tag=!bs.raycastEntity.new,distance=..0.1,sort=nearest,limit=1] add bs.aimedEntity
-execute at @e[tag=bs.raycastEntity.new] run scoreboard players operation @e[tag=bs.aimedEntity] bs.id.parent = @s bs.id
-kill @e[tag=bs.raycastEntity.new]
-tag @s remove Executor
+scoreboard players operation @e[tag=bs.new] bs.in.0 = @s bs.in.0
+
+# Raycast
+tag @s add bs.view.Source
+execute as @e[tag=bs.new] at @s run function bs.view:aimed_entity/child/raycast
+tag @e remove bs.view.Source
+
+execute as @e[tag=bs.new] at @s positioned ~ ~-0.5 ~ run tag @e[tag=!bs.new,distance=..1,sort=nearest,limit=1] add bs.view.AimedEntity
+
+### DEBUG
+execute if entity @a[tag=bs.debug.view.aimed_entity] run function bs.view:aimed_entity/debug/1
+### END DEBUG
+
+execute as @e[tag=bs.new] run function bs.core:entity/safe_kill

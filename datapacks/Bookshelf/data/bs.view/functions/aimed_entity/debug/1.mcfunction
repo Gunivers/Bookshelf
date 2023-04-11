@@ -1,0 +1,3 @@
+tellraw @a[tag=bs.debug.view.aimed_entity] [{"text":"> Bookshelf | ","color":"dark_aqua"},{"text":"Record from bs.view:aimed_entity","color":"green","clickEvent":{"action":"run_command","value":"/tag @s remove bs.debug.view.aimed_entity"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
+tellraw @a[tag=bs.debug.view.aimed_entity] {"text":" Trajectory displayed using particles","color":"gray"}
+tellraw @a[tag=bs.debug.view.aimed_entity] [{"text":"<","color":"dark_aqua"}]
