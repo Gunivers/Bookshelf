@@ -1,6 +1,13 @@
 # 👀 View
 
-`bs.view:`:The view functions allow to get some practical information about what the entity sees or aims.
+**`bs.view:_`**
+
+The view functions allow to get some practical information about what the entity sees or aims.
+
+```{image} img/eye.png
+:class: dark-light p-2
+:align: center
+```
 
 ```{epigraph}
 
@@ -11,63 +18,123 @@
 
 ---
 
-## Get aimed block
+## Aimed block
 
-`aimed_block`: Places an armor_stand having the tag `bs.aimedBlock` and a score `bs.id.parent` corresponding to the Id of the running entity.
+**`bs.view:aimed_block`**
 
-*Example:*
+Places an entity in the block the source is looking at.
 
-Place in entity on the aimed block:
+:Inputs:
 
-```
-# Once
-function bs.view:aimed_block
-```
+    (execution) `as <entities>`
+    : The entities from which you want to get the aimed block.
+
+:Outputs:
+
+    (state) new entity created
+    : The entity is created at the aimed block. It can be identified by the tag `bs.view.AimedBlock` and the score `bs.id.parent` corresponding to the ID of the entity executing the function. If there was already an entity with the tag `bs.view.AimedBlock` and the same `bs.id.parent`, it will be replaced.
+
+    ```{admonition} In case there is no ID system
+    :class: tip
+
+    If you don't have an ID system, this function have to be used on 1 entity at a time. THe score `bs.id.parent` will then not be used. An ID system can be added using the [`bs.id` module](id).
+    ```
+
+:Example:
+
+    Place in entity on the aimed block:
+
+    ```
+    # Once
+    function bs.view:aimed_block
+    ```
 
 ---
 
-## Get aimed entity
+## Aimed entity
 
-`aimed_entity`: Gives the tag `bs.raycastEntity` and a score `bs.id.parent` corresponding to the Id of the entity executing at the targeted entity by the player.
+**`bs.view:aimed_entity`**
 
-*Example:*
+Identify the first entity aimed by the source entity.
 
-Place in entity on the targeted block:
+:Inputs:
 
-```
-# Once
-function bs.view:aimed_entity
-```
+    (execution) `as <entity>`
+    : The entity from which you want to get the aimed entity. Note that you can use this function on one entity at a time.
+
+:Outputs:
+
+    (tag) `<aimed entity> bs.view.AimedEntity`
+    : The tag `bs.view.AimedEntity` is added to the aimed entity. The tag is remove from all other entities.
+
+:Example:
+
+    Place in entity on the targeted block:
+
+    ```
+    # Once
+    function bs.view:aimed_entity
+    ```
 
 ---
 
 ## Can see "as to at"
 
-`can_see_ata`: Allows to know if the entity, from its position, may be able to see the execution position of the command (if no block obstructs its vision). If so, the source entity will get the tag `bs.canSee`.
+**`bs.view:can_see_ata`**
 
-*Example:*
+Allows to know if the entity, from its position, may be able to see the execution position of the command (if no block obstructs its vision).
 
-Knowing whether an entity sees you:
+:Inputs:
 
-```
-# Once
-execute as @e at @s run function bs.view:has_in_front_ata
-```
+    (execution) `as <entities>`
+    : The entities from which you want to know if they can see the execution position of the function.
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position you want to know if the entities can see it.
+
+:Outputs:
+
+    (tag) `@s bs.view.CanSee`
+    : The tag is added to the source entities that can see the execution position of the function.
+
+:Example:
+
+    Knowing whether an entity sees you:
+
+    ```
+    # Once
+    execute as @e at @s run function bs.view:has_in_front_ata
+    ```
 
 ---
 
 ## Has in front "as to at"
 
-`has_in_front_ata`: Allows to know if the execution position of the function is in front of the source entity. If it is, the source entity gets the tag `bs.hasInFront`.
+**`bs.view:has_in_front_ata`**
 
-*Example:*
+Allows to know if the execution position of the function is in front of the source entity.
 
-Know if the position 0 5 0 is in front of you:
+:Inputs:
 
-```
-# Once
-execute as @s positioned 0 5 0 run function bs.view:has_in_front_ata
-```
+    (execution) `as <entities>`
+    : The entities from which you want to know if the execution position of the function is in front of them.
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position you want to know if the entities can see it.
+
+:Outputs:
+
+    (tag) `@s bs.view.HasInFront`
+    : The tag is added to the source entities that have the execution position of the function in front of them.
+
+:Example:
+
+    Know if the position 0 5 0 is in front of you:
+
+    ```
+    # Once
+    execute as @s positioned 0 5 0 run function bs.view:has_in_front_ata
+    ```
 
 ---
 

@@ -24,7 +24,6 @@ tag @e remove bs.view.AimedEntity
 
 # Create a new enttiy and assign it to the executing entity
 execute at @s run function bs.core:entity/summon
-scoreboard players operation @e[tag=bs.new] bs.id.parent = @s bs.id
 tp @e[tag=bs.new] @s
 execute at @s run tp @e[tag=bs.new] ~ ~1.7 ~
 
