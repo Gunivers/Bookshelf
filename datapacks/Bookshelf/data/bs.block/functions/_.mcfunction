@@ -1,2 +1,2 @@
 tellraw @s [{"text": "[bs.block documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://mc-bookshelf.rtfd.io/en/latest/block.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
-scoreboard players set bs.block bs.activeModule 1
+scoreboard players set module.block bs.metadata 1

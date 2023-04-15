@@ -1,5 +1,5 @@
 {
  "values": [
-	"bs.core:tick"
+	"bs.core:__tick__"
  ]
 }

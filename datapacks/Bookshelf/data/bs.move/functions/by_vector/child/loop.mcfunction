@@ -1,56 +1,37 @@
-# Start Debug
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] [{"text":" > ","bold":true,"color":"gold"},{"text":"bs","color":"dark_aqua"},{"text":" | ","color":"gold"},{"text":"Record from bs.move:by_vector/child/loop","color":"green","clickEvent":{"action":"open_url","value":"tag @s remove bs.debug.move.by_vector"},"hoverEvent":{"action":"show_text","contents":"Hide this debug"}}]
-# End Debug
-
-#__________________________________________________
-# Get working vector
-
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorX bs = @s bs.vector.x
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorY bs = @s bs.vector.y
-execute if entity @s[tag=!bs.move.by_vector.rest] run scoreboard players operation move.vectorZ bs = @s bs.vector.z
-
-# Start Debug
-execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] at @s[distance=..30] run summon falling_block ~ ~-0.5 ~-0.45 {BlockState:{Name:"stone_button"},NoGravity:1,Time:50,Tags:["bs","Debug"]}
-execute if entity @a[tag=bs.debug.move.by_vector] at @a[tag=bs.debug] as @s[distance=..30] run tellraw @a ["",{"text":"   | X: "},{"score":{"name":"move.vectorX","objective":"bs"}},{"text":" Y: "},{"score":{"name":"move.vectorY","objective":"bs"}},{"text":" Z: "},{"score":{"name":"move.vectorZ","objective":"bs"}},{"text":" Dec: "},{"score":{"name":"move.decomposition.factor","objective":"bs"}}]
-# End Debug
-
-#__________________________________________________
-# Detect block front
-
-tag @s[tag=bs.collisionFront] remove bs.collisionFront
-tag @s[tag=bs.collisionTest] remove bs.collisionTest
-tag @s[tag=bs.collisionFront,tag=!bs.collision] add bs.collisionTest
-execute as @s[scores={bs.collision=1..}] at @s run function bs.move:by_vector/child/collision_detect_front
-
-#__________________________________________________
-# Detect bloc on the 3 axes
-
-tag @s[tag=bs.collision] remove bs.collision
-tag @s[tag=bs.collisionTest] add bs.collisionFront
-execute as @s[scores={bs.collision=1..},tag=bs.collisionFront] at @s run function bs.move:by_vector/child/collision
-
-# Start Debug
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] ["",{"text":"    Collision detected : Front"}]
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] ["",{"text":"    Collision detected : X"}]
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] ["",{"text":"    Collision detected : Y"}]
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] ["",{"text":"    Collision detected : Z"}]
-# End Debug
-
-#__________________________________________________
-# Apply movement
-
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.x = move.vectorX bs
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.y = move.vectorY bs
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.z = move.vectorZ bs
-execute if entity @s[tag=!bs.collision] run function bs.location:add/accuracy/10-3
-
-#__________________________________________________
-# Loop
-
-scoreboard players remove move.decomposition.factor bs 1
-execute at @s if score move.decomposition.factor bs matches 1.. run function bs.move:by_vector/child/loop
 
 
-# Start Debug
-execute as @e[tag=bs.collision,tag=bs.debug.move.by_vector] run tellraw @a[tag=bs.debug.move.by_vector] ["",{"text":" <","bold":true,"color":"gold"}]
-# End Debug
+# Detect and apply collision --------------------------------------------------
+
+execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/heads/__switch__
+execute if score @s bs.collision matches 1.. run function bs.config:move/by_vector/collision/heads/__switch__
+
+execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/detection/__switch__
+execute if score @s bs.collision matches 1.. run function bs.config:move/by_vector/collision/detection/__switch__
+
+execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/behavior/__switch__
+execute if score @s bs.collision matches 1.. run function bs.config:move/by_vector/collision/behavior/__switch__
+
+# Display trajectory ----------------------------------------------------------
+
+execute if entity @s[tag=bs.move.DisplayTrajectory] at @s run summon block_display ~-0.05 ~-0.05 ~-0.05 {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.1f,0.1f,0.1f]},block_state:{Name:"minecraft:white_concrete"},Tags:["bs.debug","bs.debug.move.by_vector","bs.move.TrajectoryDisplay"]}
+execute if entity @s[tag=bs.move.DisplayTrajectory,tag=bs.collision] at @e[tag=bs.collision.detection.head,tag=front] run summon block_display ~-0.05 ~-0.05 ~-0.05 {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.1f,0.1f,0.1f]},block_state:{Name:"minecraft:black_concrete"},Tags:["bs.debug","bs.debug.move.by_vector","bs.move.TrajectoryDisplay"]}
+execute if entity @s[tag=bs.move.DisplayTrajectory,tag=bs.collision.x] at @e[tag=bs.collision.detection.head,tag=x] run summon block_display ~-0.2 ~-0.025 ~-0.025 {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.4f,0.05f,0.05f]},block_state:{Name:"minecraft:red_concrete"},Tags:["bs.debug","bs.debug.move.by_vector","bs.move.TrajectoryDisplay"]}
+execute if entity @s[tag=bs.move.DisplayTrajectory,tag=bs.collision.y] at @e[tag=bs.collision.detection.head,tag=y] run summon block_display ~-0.025 ~-0.2 ~-0.025 {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.05f,0.4f,0.05f]},block_state:{Name:"minecraft:lime_concrete"},Tags:["bs.debug","bs.debug.move.by_vector","bs.move.TrajectoryDisplay"]}
+execute if entity @s[tag=bs.move.DisplayTrajectory,tag=bs.collision.z] at @e[tag=bs.collision.detection.head,tag=z] run summon block_display ~-0.025 ~-0.025 ~-0.2 {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.05f,0.05f,0.4f]},block_state:{Name:"minecraft:blue_concrete"},Tags:["bs.debug","bs.debug.move.by_vector","bs.move.TrajectoryDisplay"]}
+scoreboard players add @e[tag=bs.move.TrajectoryDisplay] bs.lifetime 0
+scoreboard players set @e[tag=bs.move.TrajectoryDisplay,scores={bs.lifetime=0..}] bs.lifetime -200
+
+# Apply movement --------------------------------------------------------------
+
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.x = #Vt.x bs.data
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.y = #Vt.y bs.data
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.z = #Vt.z bs.data
+execute if entity @s[tag=!bs.collision] run function bs.location:add/scale/3
+
+# Loop ------------------------------------------------------------------------
+
+# Clear collision detection heads
+execute as @e[tag=bs.collision.detection.head] run function bs.core:entity/safe_kill
+
+scoreboard players remove #A bs.data 1
+execute at @s[tag=!bs.collision] if score #A bs.data matches 1.. run function bs.move:by_vector/child/loop
