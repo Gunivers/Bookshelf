@@ -1,0 +1,35 @@
+name: Upload build assets
+
+on:
+  # Triggers the action when a release is published
+  release:
+    types: [ published ]
+
+jobs:
+  publish:
+   # linux best
+    runs-on: ubuntu-latest
+  
+    steps:
+      # Get the source code
+      - uses: actions/checkout@v3
+
+      - name: Run the resource pack packager
+        run: |
+          cd $GITHUB_WORKSPACE
+          tag_name="${GITHUB_REF##*/}"
+          python3 distribute.py --version ${tag_name}
+
+      - name: Upload assets to the release
+        run: |
+          tag_name="${GITHUB_REF##*/}"
+          gh release view --json body -q .body > release-note.md
+          echo -e >> release-note.md && echo "⚠ Most modules rely on \`bs.core\` module. Don't forget to download it!" >> release-note.md
+          gh release edit ${tag_name} --notes-file release-note.md
+          gh release upload ${tag_name} build/*
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: write  # This is required for actions/checkout
