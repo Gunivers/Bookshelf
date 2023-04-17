@@ -2,7 +2,6 @@ import zipfile
 import glob
 import os
 import argparse
-import sys
 
 DATAPACK_PATTERNS = [
     "**/*.mcfunction",
@@ -15,6 +14,10 @@ DATAPACK_PATTERNS = [
 WORLD_PATTERNS = [
     "**/*.mca", # region files
 ]
+
+RENAME_MODULES = {
+    "bs": "controller",
+}
 
 def get_files(
     base_folder: str,
@@ -140,8 +143,9 @@ def create_core_module_archive(filename: str = 'build/Bookshelf-core.zip'):
 def create_modules_archive(filename: str = "build/Bookshelf-{}.zip"):
     for module in list_modules():
         print(f"🧩 Creating archive for module {module}")
+        module_name = RENAME_MODULES[module] if module in RENAME_MODULES else module
         create_archive(
-            filename.format(module[3:] if module.startswith('bs.') else module),
+            filename.format(module_name[3:] if module_name.startswith('bs.') else module_name),
             "datapacks/Bookshelf",
             get_module_datapack_files(module),
         )
