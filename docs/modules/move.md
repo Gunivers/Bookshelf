@@ -66,17 +66,20 @@ axis of the game.
 
         These function will be called in this order when `@s bs.collision` $> 0$. They allow you to call the collision functions according to the corresponding `bs.collision` score. Here is the default switchers:
 
-        ```mcfunction
-        # bs.config:move/by_vector/collision/heads/__switch__
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/heads/__switch__.mcfunction
+
         execute if score @s bs.collision matches -99..-1 run function bs.move:by_vector/child/collision/heads/from_feet
         execute if score @s bs.collision matches -199..-100 run function bs.move:by_vector/child/collision/heads/from_player_head
         ```
-        ```mcfunction
-        # bs.config:move/by_vector/collision/detection/__switch__
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/detection/__switch__.mcfunction
+
         execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/detection/solid_block_on_detection_head
         ```
-        ```mcfunction
-        # bs.config:move/by_vector/collision/behavior/__switch__
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/behavior/__switch__.mcfunction
+
         execute if score @s bs.collision matches -1 run function bs.move:by_vector/child/collision/behavior/1-perfect_bounce
         execute if score @s bs.collision matches -2 run function bs.move:by_vector/child/collision/behavior/2-slide
         execute if score @s bs.collision matches -3 run function bs.move:by_vector/child/collision/behavior/3-stick
@@ -85,7 +88,9 @@ axis of the game.
 
         Here is below an example of what a `heads` function should looks like. Only the `bs.collision.detection.head` on each detection head entity in order to be correctly cleared afterward. This example is made to detect a collision of a point-like object by placing entites on 4 relevant directions : forward to detect a collision, and x, y and z to detect in which direction. As the detection is made before the movement, the detection heads are placed on the next position of the object.
 
-        ```mcfunction
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/heads/from_feet.mcfunction
+
         # Executed on the moving object, at it's feet
         # Create detection heads on the moving object
         summon marker ~ ~ ~ {Tags:["bs.collision.detection.head","front"]}
@@ -115,7 +120,9 @@ axis of the game.
 
         Heres is an example of what a `detection` function should looks like, based on the heads function above. You can change the ignore blocks and potentially try to detect several block in a specific soncifugration to create more complex mecanics.
 
-        ```mcfunction
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/detection/solid_block_on_detection_head.mcfunction
+
         execute at @e[tag=bs.collision.detection.head,tag=front] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision
         execute if entity @s[tag=bs.collision] at @e[tag=bs.collision.detection.head,tag=x] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision.x
         execute if entity @s[tag=bs.collision] at @e[tag=bs.collision.detection.head,tag=y] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision.y
@@ -125,7 +132,9 @@ axis of the game.
         Finally, here is few examples of what a `behavior` function should looks like.
 
         Perfect bounce:
-        ```mcfunction
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/behavior/damped_bounce.mcfunction
+
         # The object will go in the opposite direction with the same speed on the axis it collided with.
         scoreboard players operation @s[tag=bs.collision.x] bs.vector.x *= -1 bs.const
         scoreboard players operation @s[tag=bs.collision.y] bs.vector.y *= -1 bs.const
@@ -133,7 +142,9 @@ axis of the game.
         ```
 
         Stick:
-        ```mcfunction
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/behavior/stick.mcfunction
+
         # The object will stop at the first block it hits
         scoreboard players set @s[tag=bs.collision] bs.vector.x 0
         scoreboard players set @s[tag=bs.collision] bs.vector.y 0
@@ -141,7 +152,9 @@ axis of the game.
         ```
 
         Dumped bounce:
-        ```mcfunction	
+        ```{code-block} mcfunction
+        :caption: bs.config:move/by_vector/collision/behavior/damped_bounce.mcfunction
+
         # The object will bounce but will lose half of it's speed each time it bounces.
         scoreboard players operation @s[tag=bs.collision.x] bs.vector.x *= -1 bs.const
         scoreboard players operation @s[tag=bs.collision.y] bs.vector.y *= -1 bs.const
@@ -195,13 +208,50 @@ axis of the game.
     execute as @e[type=boat] run function bs.move:by_vector
     ```
 
+```{admonition} How does it work?
+:class: dropdown
+
+This function will decompose the input vector in a sum of vectors with max component equal to the desired precision (by default, 1 block).
+The vector is a set of 3 scores : `bs.vector.x`, `bs.vector.y`, `bs.vector.y` that define the displacement of the entity
+ 
+The function then use :
+
+$$ V_i = A * V_n + V_r $$
+
+With
+- $V_i$ : the input vector
+- $V_n$ : The input vector normalize such as it's maximum component is equal to the precision
+- $A$  : The number of times Vn need to be stacked to get near $Vi$ ($A \times V_n \approx V_i$)
+- $V_r$ : the "rest" vector, that allow to perfectly match $V_i$
+
+Once the vector is decomposed, the system loop from $1$ to $A$ to apply the movement corresponding to the $V_n$ vector, and then apply once the $V_r$ movement.
+To apply this vector, the system use a dichotomic function.
+Basically, it consist of teleporting the entity to +0.512 on the X axis if the X component of it's vector is > 512
+If it's the case, then it remove 512 from the X component. Then repeast the operation with 256 (= 512/2) ... then with 128 (256/2)
+At the end, the entity will be moved on the X axis by exactly the same distance indicated by the vector component
+
+At the end of each loop, it call 3 `__switch__` functions that allow to manage collision according to the value of `bs.collision` score.
+If the bs.collision score is negative, it will use the built-in collision systems (demo and general purposes).
+If the score is positive, it will use the user defined collision, calling the 3 following functions (in order) :
+- `bs.config:move/by_vector/collision/heads/__switch__`: Define the detection points
+- `bs.config:move/by_vector/collision/detection/__switch__`: Defin the nature of the detection (blocks adjancement)
+- `bs.config:move/by_vector/collision/behavior/__switch__`: Define the behavior of the entity when a collision is detected
+
+See the "Create your own behaviors!" dropdown above for more details about collisions. 
+```
+
 ```{admonition} Dependencies
 :class: dropdown
 
 This function depends on:
 
 - [**`bs.location`**](location)
+```
 
+```{admonition} Performance tip
+:class: tip
+
+Moving an entity using this system is pretty efficient because it only consist in 50 to 100 commands such as scoreboard operation and teleport, which doesn't cost a lot. However, collision detection is from far the heaviest part due to block detection. A higher precision or a higher speed will increase the number of block detection and then the impact on performances.
 ```
 
 :::
