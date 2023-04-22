@@ -20,7 +20,13 @@ Link positions and orientations between entities and create coherent entity stru
 
 ---
 
-## Create link
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Create link
 
 ::::{tab-set}
 :::{tab-item} As to at
@@ -119,9 +125,11 @@ This function require the following modules to work properly:
 - [`bs.orientation`](orientation)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Imitate location
+### Imitate location
 
 ::::{tab-set}
 :::{tab-item} All directions
@@ -274,10 +282,11 @@ This function require the following modules to work properly:
 - [`bs.location`](location)
 ```
 
+> **Credits**: Leirof
 
 ---
 
-## Imitate orientation
+### Imitate orientation
 
 ::::{tab-set}
 :::{tab-item} Both angles
@@ -386,9 +395,11 @@ This function require the following modules to work properly:
 - [`bs.orientation`](orientation)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Keep local location
+### Keep local location
 
 **`bs.link:keep_local_location`**
 
@@ -447,9 +458,11 @@ This function require the following modules to work properly:
 This reference frame, unlike the relative coordinates, takes into account the orientation of the entity. Thus, when the parent entity turns on itself, the child entity will turn around it keeping its distance and the angle formed between the direction of the parent entity's look and the parent->child vector.
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Reverse location
+### Reverse location
 
 ::::{tab-set}
 :::{tab-item} All directions
@@ -594,9 +607,11 @@ This function require the following modules to work properly:
 - [`bs.location`](location)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Reverse orientation
+### Reverse orientation
 
 ::::{tab-set}
 :::{tab-item} Both angles
@@ -710,9 +725,11 @@ This function require the following modules to work properly:
 - [`bs.orientation`](orientation)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Update link
+### Update link
 
 **`bs.link:update_link`**
 
@@ -766,6 +783,8 @@ This function require the following modules to work properly:
 - [`bs.math`](math)
 - [`bs.orientation`](orientation)
 ```
+
+> **Credits**: Leirof
 
 ---
 

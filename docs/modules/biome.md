@@ -6,7 +6,13 @@ All function concerning biome properties.
 
 ---
 
-## Can it rain?
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Can it rain?
 
 **`bs.biome:can_rain`**
 
@@ -40,9 +46,11 @@ Determine if it can rain or not.
     execute as @a[tag=!bs.biome.CanRain] run say Where I am, it never rain...
     ```
 
+> **Credits**: theogiraudet
+
 ---
 
-## Can it snow?
+### Can it snow?
 
 **`bs.biome:can_snow`**
 
@@ -76,9 +84,11 @@ Determine if it can snow or not.
     execute as @a[tag=!bs.biome.CanSnow] run say Where I am, it never snows...
     ```
 
+> **Credits**: theogiraudet
+
 ---
 
-## Get biome ID
+### Get biome ID
 
 **`bs.biome:get`**
 
@@ -109,9 +119,11 @@ Get the biome ID.
     tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":"> "},{"text":"Mon biome: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.biome"},"color":"gold"}]
     ```
 
+> **Credits**: theogiraudet
+
 ---
 
-## Get temperature
+### Get temperature
 
 ::::{tab-set}
 :::{tab-item} Biome
@@ -182,6 +194,8 @@ biome and its altitude.
 
 :::
 ::::
+
+> **Credits**: theogiraudet
 
 ---
 

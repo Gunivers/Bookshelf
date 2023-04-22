@@ -8,7 +8,15 @@ All functions allowing to manage experience points and levels.
 :class: dark-light p-2
 ```
 
-## Add
+---
+
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Add
 
 ::::{tab-set}
 :::{tab-item} Points
@@ -82,7 +90,11 @@ Add levels from a score
 :::
 ::::
 
-## Get
+> **Credits**: Leirof
+
+---
+
+### Get
 
 ::::::{tab-set}
 :::::{tab-item} Total points
@@ -225,7 +237,11 @@ Get the points required to pass to the next level.
 :::::
 ::::::
 
-## Remove
+> **Credits**: Leirof
+
+---
+
+### Remove
 
 ::::{tab-set}
 :::{tab-item} Points
@@ -299,7 +315,11 @@ Remove levels from a score
 :::
 ::::
 
-## Set
+> **Credits**: Leirof
+
+---
+
+### Set
 
 ::::{tab-set}
 :::{tab-item} Bar
@@ -439,6 +459,8 @@ Set XP from a score
 
 :::
 ::::
+
+> **Credits**: Leirof
 
 ---
 

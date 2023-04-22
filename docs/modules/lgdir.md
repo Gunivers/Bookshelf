@@ -16,6 +16,8 @@ function bs.lgdir:main
 {octicon}`device-camera-video` Watch the video
 ```
 
+> **Credits**: GamerGuppy & Leirof
+
 ---
 
 <div align=center>

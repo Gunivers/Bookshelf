@@ -18,7 +18,13 @@ The view functions allow to get some practical information about what the entity
 
 ---
 
-## Aimed block
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Aimed block
 
 **`bs.view:aimed_block`**
 
@@ -49,9 +55,11 @@ Places an entity in the block the source is looking at.
     function bs.view:aimed_block
     ```
 
+> **Credits**: Leirof
+
 ---
 
-## Aimed entity
+### Aimed entity
 
 **`bs.view:aimed_entity`**
 
@@ -76,9 +84,11 @@ Identify the first entity aimed by the source entity.
     function bs.view:aimed_entity
     ```
 
+> **Credits**: Leirof
+
 ---
 
-## Can see "as to at"
+### Can see "as to at"
 
 **`bs.view:can_see_ata`**
 
@@ -106,9 +116,11 @@ Allows to know if the entity, from its position, may be able to see the executio
     execute as @e at @s run function bs.view:has_in_front_ata
     ```
 
+> **Credits**: Leirof
+
 ---
 
-## Has in front "as to at"
+### Has in front "as to at"
 
 **`bs.view:has_in_front_ata`**
 
@@ -135,6 +147,8 @@ Allows to know if the execution position of the function is in front of the sour
     # Once
     execute as @s positioned 0 5 0 run function bs.view:has_in_front_ata
     ```
+
+> **Credits**: Leirof
 
 ---
 

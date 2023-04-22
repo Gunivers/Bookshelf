@@ -48,6 +48,8 @@ to a unique identifier corresponding to its nature.
     scoreboard objectives setdisplay sidebar bs.item.id
     ```
 
+> **Credits**: theogiraudet & Leirof
+
 ---
 
 ### Set item from ID
@@ -86,6 +88,8 @@ executing entity.
     # See the result
     # Look in front of Steve
     ```
+
+> **Credits**: theogiraudet & Leirof
 
 ---
 
@@ -128,6 +132,8 @@ to a block id
 
 🎬 Watch the video
 ```
+
+> **Credits**: theogiraudet & Leirof
 
 ---
 

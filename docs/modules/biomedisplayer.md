@@ -16,6 +16,8 @@ function bs.biome_displayer:main
 {octicon}`device-camera-video` Watch the video
 ```
 
+> **Credits**: theogiraudet
+
 ---
 
 <div align=center>

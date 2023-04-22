@@ -27,7 +27,13 @@ Make your entity move exactly the way you want them to!
 
 ---
 
-## Move using vector
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Move using vector
 
 ::::{tab-set}
 :::{tab-item} Canonical
@@ -227,10 +233,10 @@ With
 Once the vector is decomposed, the system loop from $1$ to $A$ to apply the movement corresponding to the $V_n$ vector, and then apply once the $V_r$ movement.
 To apply this vector, the system use a dichotomic function.
 Basically, it consist of teleporting the entity to +0.512 on the X axis if the X component of it's vector is > 512
-If it's the case, then it remove 512 from the X component. Then repeast the operation with 256 (= 512/2) ... then with 128 (256/2)
+If it's the case, then it remove 512 from the X component. Then repeast the operation with 256 (= 512/2) ... then with 128 (= 256/2)
 At the end, the entity will be moved on the X axis by exactly the same distance indicated by the vector component
 
-At the end of each loop, it call 3 `__switch__` functions that allow to manage collision according to the value of `bs.collision` score.
+In each loop before applying the movement, the system call 3 `__switch__` functions that allow to manage collision according to the value of `bs.collision` score.
 If the bs.collision score is negative, it will use the built-in collision systems (demo and general purposes).
 If the score is positive, it will use the user defined collision, calling the 3 following functions (in order) :
 - `bs.config:move/by_vector/collision/heads/__switch__`: Define the detection points
@@ -302,9 +308,11 @@ resources consumed by this function are proportional to the number
 of blocks/tick at which the entity moves.
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Move forward
+### Move forward
 
 `forward`: Allows to move the entity according to the direction
 towards which it looks and its vector `bs.vector.z`
@@ -331,9 +339,11 @@ of blocks/tick at which the entity moves.
     execute as @e[type=boat] run function bs.move:forward
     ```
 
+> **Credits**: Leirof
+
 --- 
 
-## Find a path "as to at"
+### Find a path "as to at"
 
 `pathfind_ata`: Allows to determine a path between the position of the
 source entity and the execution position of the function.
@@ -361,9 +371,11 @@ source entity and the execution position of the function.
 {octicon}`device-camera-video` Watch the video
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Convert vector to motion
+### Convert vector to motion
 
 `vector_to_motion`: Allows to move the entity according to its vector
 through a motion (motion system integrated in the game).
@@ -384,6 +396,8 @@ own in the `by_vector/config/collision/` folder. By default, the
 precision of the collisions, stored on the Var5 score, is 500 (= 0,5
 blocks). }}
 :::
+
+> **Credits**: Leirof
 
 ---
 

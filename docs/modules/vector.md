@@ -29,7 +29,13 @@ Vector are fundamental and extremly powerfull tool to manage motions, forces and
 
 ---
 
-## Get vector from orientation
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Get vector from orientation
 
 **`bs.vector:get_from_orientation`**
 
@@ -62,9 +68,11 @@ This function require the following modules to work properly:
 - [`bs.orientation`](orientation)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Get vector "as to at"
+### Get vector "as to at"
 
 **`bs.vector:get_ata`**
 
@@ -99,9 +107,11 @@ This function require the following modules to work properly:
 - [`bs.location`](location)
 ```
 
+> **Credits**: Leirof
+
 ---
 
-## Get length
+### Get length
 
 ::::{tab-set}
 :::{tab-item} Length
@@ -194,9 +204,11 @@ Compute the norm of the squared vector and store it on the score `bs.out.0`.
 :::
 ::::
 
+> **Credits**: Leirof
+
 ---
 
-## Normalize
+### Normalize
 
 ::::{tab-set}
 :::{tab-item} Classic
@@ -266,9 +278,11 @@ Allows to normalize the components of the vector by placing the largest componen
 :::
 ::::
 
+> **Credits**: Leirof
+
 ---
 
-## Convert canonical to local vector
+### Convert canonical to local vector
 
 **`bs.vector:canonical_to_local`**
 
@@ -309,6 +323,8 @@ Allows to convert a "normal" vector (using the relative reference frame) into lo
 This function require the following modules to work properly:
 - [`bs.math`](math)
 ```
+
+> **Credits**: Leirof
 
 ---
 

@@ -26,7 +26,13 @@ The beatifull world of mathematics... **in Minecraft!**
 
 ---
 
-## Arccosine
+## 🔧 Functions
+
+You can find below all the function available in this module.
+
+---
+
+### Arccosine
 
 **`bs.math:trgi/arccos`**
 
@@ -57,9 +63,11 @@ Calculate the arccosinus of a value between -1 and 1
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
 
+> **Credits**: KubbyDev
+
 ---
 
-## Arcsine
+### Arcsine
 
 **`bs.math:trg/arcsin`**
 
@@ -90,9 +98,11 @@ Compute the arcsinus of a value between -1 and 1
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
 
+> **Credits**: KubbyDev
+
 ---
 
-## Arctangent
+### Arctangent
 
 **`bs.math:arctan`**
 
@@ -138,9 +148,11 @@ $$
 
 ![](img/2023-02-28-18-34-44.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Basis rotation 3D
+### Basis rotation 3D
 
 **`bs.math:basis_rotation_3d`**
 
@@ -224,9 +236,11 @@ entity.
    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. out.1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
    ```
 
+> **Credits**: Leirof
+
 ---
 
-## Cosine
+### Cosine
 
 **`bs.math:cos`**
 
@@ -263,9 +277,11 @@ This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Exponential
+### Exponential
 
 **`bs.math:exp`**
 
@@ -306,9 +322,11 @@ the score `bs.in.0` and return the result on the score `bs.out.0`
 We are looking for a better implementation of this function. If you have any ideas, please join our [Discord server](https://discord.gg/E8qq6tN) to discuss with us!
 ```
 
+> **Credits**: KubbyDev
+
 ---
 
-## Factorial
+### Factorial
 
 **`bs.math:factorial`**
 
@@ -345,9 +363,11 @@ Compute the factorial of the number
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/factorial.png)
 
+> **Credits**: KubbyDev
+
 ---
 
-## Greatest common denominator
+### Greatest common denominator
 
 **`bs.math:gcd`**
 
@@ -382,9 +402,11 @@ Compute the greatest common denominator of two numbers
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/gcd.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Logarithm
+### Logarithm
 
 ::::{tab-set}
 
@@ -514,7 +536,9 @@ Computes the logarithm in base a of a number
 :::
 ::::
 
-## Power
+> **Credits**: KubbyDev
+
+### Power
 
 ::::{tab-set}
 :::{tab-item} Normal
@@ -589,9 +613,11 @@ Compute $x^y$
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/power.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Random
+### Random
 
 **`bs.math:random`**
 
@@ -629,9 +655,11 @@ Generates a random number
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/random.png)
 
+> **Credits**: Kikipunk
+
 ---
 
-## Retrieve the next power of 2
+### Retrieve the next power of 2
 
 **`bs.math:get_next_pow2`**
 
@@ -661,9 +689,11 @@ number given in parameter.
    tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
    ```
 
+> **Credits**: Leirof
+
 ---
 
-## Rounded division
+### Rounded division
 
 **`bs.math:divide`**
 
@@ -700,9 +730,11 @@ next whole number).
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Sine
+### Sine
 
 **`bs.math:sin`**
 
@@ -753,9 +785,11 @@ We can compute the sine of any angle.
 
 ![](img/2023-02-07-09-00-23.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Square root
+### Square root
 
 **`bs.math:sqrt`**
 
@@ -804,9 +838,11 @@ For a conveniant reason, instead of taking half of the maximum limite, we take t
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
 
+> **Credits**: Leirof
+
 ---
 
-## Tangent
+### Tangent
 
 **`bs.math:tan`**
 
@@ -836,6 +872,8 @@ Compute the tangeant of an angle between 0 and 360
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)
+
+> **Credits**: Leirof
 
 ---
 

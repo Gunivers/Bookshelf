@@ -46,6 +46,8 @@ If the TTL function is called twice on the same entity, its
 lifetime will decrease twice as fast.
 ```
 
+> **Credits**: Leirof
+
 ---
 
 <div align=center>

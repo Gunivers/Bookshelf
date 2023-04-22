@@ -50,6 +50,8 @@ Gives the executing entity a score corresponding to a unique identifier of the b
     scoreboard objectives setdisplay sidebar bs.block.id
     ```
 
+> **Credits**: theogiraudet & Leirof
+
 ---
 
 ### Set block from ID
@@ -85,6 +87,8 @@ Places a block (and associated blockstates) corresponding to the identifier stor
     # See the result
     # Look above Steve
     ```
+
+> **Credits**: theogiraudet & Leirof
 
 ---
 
@@ -126,6 +130,8 @@ Convert a block id stored on the executing entity to an item id.
 
 🎬 Watch the video
 ```
+
+> **Credits**: theogiraudet & Leirof
 
 ---
 

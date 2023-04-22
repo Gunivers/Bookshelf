@@ -24,6 +24,8 @@ This function allow to create a new default Bookshelf entity (currently markers)
     (state) a new entity was created
     : It can be identified by the tag `bs.new` and that is automatically cleared if it is not used anymore. A new call to the function will clear every entity wearing the tag `bs.new`
 
+> **Credits**: Leirof
+
 ---
 
 ## Safe kill
@@ -56,6 +58,8 @@ Allows to cleanly delete an entity. This function erases the scores of the entit
     # Once
     execute as @e[type=zombie] run function bs.core:entity/safe_kill
     ```
+
+> **Credits**: Leirof
 
 ---
 

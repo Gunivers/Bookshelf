@@ -22,6 +22,10 @@ scoreboard players set Aypierre bs.loc.z 5
 execute as Aypierre at @s run function bs.location:add
 ```
 
+> **Credits**: Leirof
+
+---
+
 ## Get location
 
 `get` : Detect the position of the entity (coordinates)
@@ -37,6 +41,10 @@ Detect and display the position of the nearest spider:
 execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
 ```
+
+> **Credits**: Leirof
+
+---
 
 ## Get distance "as to at"
 
@@ -55,6 +63,10 @@ Calculate the distance between you and the nearest sheep:
 execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata
 tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 ```
+
+> **Credits**: Leirof
+
+---
 
 ## Get distance squared "as to at"
 
@@ -82,6 +94,10 @@ execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:ge
 tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
 ```
 
+> **Credits**: Leirof
+
+---
+
 ## Get relative corrdinates "as to at"
 
 `get_relative_ata` : Allows to obtain the position of the source
@@ -98,6 +114,10 @@ Get your position relative to the nearest Creeper:
 execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata
 tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
 ```
+
+> **Credits**: Leirof
+
+---
 
 ## Is in cave?
 
@@ -117,6 +137,10 @@ execute as @e[type=skeleton] at @s run function bs.location:is_in_cave
 # See the result:
 effect give @e[type=skeleton,scores={bs.out.0=1}] glowing 1 1 true
 ```
+
+> **Credits**: Leirof
+
+---
 
 ## Set location
 
@@ -167,6 +191,10 @@ execute as Boblennon run function bs.location:fast_set
 
 :::
 ::::
+
+> **Credits**: Leirof
+
+---
 
 ## Spread entity
 
@@ -255,6 +283,8 @@ Due to mathematical properties in the computation that are performed, if you put
 
 Who knows, maybe it can be usefull for someone, so we let it as it is ^^
 ```
+
+> **Credits**: A2va
 
 ---
 
