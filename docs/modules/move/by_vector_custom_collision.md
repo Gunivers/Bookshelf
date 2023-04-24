@@ -4,7 +4,7 @@ It is possible to create your own collision behavior. This page is here to guide
 
 ## 1. Create a Bookshelf Config dedicated datapack
 
-You can name this datapack as you want. The idea of createing a new one is that you can keep the main one as a zip file (more optimized) and not edit it, which allow to update it easily. The new datapack will be used to store all the configuration files.
+You can name this datapack as you want. The idea of creating a new one is that you can keep the main one as a zip file (more optimized) and not edit it, which allow to update it easily. The new datapack will be used to store all the configuration files.
 
 ## 2. Create switch functions
 
@@ -33,7 +33,7 @@ You can also associate positive scores to built-in functions. These functions ar
 
 ## 4. Create your custom heads function
 
-Then create the associated file and write the follwing code:
+Then create the associated file and write the following code:
 
 ```{code-block} mcfunction
 :caption: bs.config:move/by_vector/collision/heads/my_custom_heads
@@ -79,7 +79,7 @@ Once again, you can associate positive scores to any function you want, includin
 
 ## 6. Create your custom detection function
 
-You can now create your custom detection function. The main point of this function is to change the tag of bypassed blocks. For instance a laser will pass trhougth glass, but not a ball. The `#bs.move:pass_through` tag used in built-in functions is adapted to bullets. You can create your own tag and add it to the blocks you want to bypass.
+You can now create your custom detection function. The main point of this function is to change the tag of bypassed blocks. For instance a laser will pass through glass, but not a ball. The `#bs.move:pass_through` tag used in built-in functions is adapted to bullets. You can create your own tag and add it to the blocks you want to bypass.
 
 ```{code-block} mcfunction
 :caption: bs.config:move/by_vector/collision/detection/solid_block_on_detection_head
