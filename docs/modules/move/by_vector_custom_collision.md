@@ -1,51 +1,50 @@
----
-html_theme.sidebar_secondary.remove: true
-html_theme.sidebar_primary.remove: true
----
-
 # `by_vector` custom collision
 
-It is possible to create your own collision behavior by creating the 3 following files:
+It is possible to create your own collision behavior. This page is here to guide you through the process.
 
+## 1. Create a Bookshelf Config dedicated datapack
+
+You can name this datapack as you want. The idea of createing a new one is that you can keep the main one as a zip file (more optimized) and not edit it, which allow to update it easily. The new datapack will be used to store all the configuration files.
+
+## 2. Create switch functions
+
+The collision type is indicated by a score, which allow to select which function will be called to manage the collision. This is done using "switchers". There is 3 differents switchers that you need to create:
 - `bs.config:move/by_vector/collision/heads/__switch__`: define the points where the detection will be done
 - `bs.config:move/by_vector/collision/detection/__switch__`: define how the detection will be done (which blocks)
 - `bs.config:move/by_vector/collision/behavior/__switch__`: define the behavior of the entity when a collision is detected
 
-These function will be called in this order when `@s bs.collision` $> 0$. They allow you to call the collision functions according to the corresponding `bs.collision` score. Here is the default switchers:
+These fonction are executed one by one in this order at the begining of each loop of the moving system. For now, let them empty, we will complete them step by step.
+
+## 3. Heads switch function
+
+In the heads switcher, add the folowing line:
 
 ```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/heads/__switch__.mcfunction
+:caption: bs.config:move/by_vector/collision/heads/\_\_switch\_\_
 
-execute if score @s bs.collision matches -99..-1 run function bs.move:by_vector/child/collision/heads/from_feet
-execute if score @s bs.collision matches -199..-100 run function bs.move:by_vector/child/collision/heads/from_player_head
+execute if score @s bs.collision matches 1 run function bs.config:move/by_vector/collision/heads/my_custom_heads
 ```
 
-```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/detection/__switch__.mcfunction
+This line will associate the score `bs.collisions = 1` to the custom heads function. You can only use positive scores. 0 indicate that there is no collision and negative scores are reserved for the built-in collision behaviors. So in both cases, it will never call these switchers.
 
-execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/detection/solid_block_on_detection_head
-```
+You can also associate positive scores to built-in functions. These functions are the following:
+- `bs.move:by_vector/child/collision/heads/from_feet`: one detection (point-like object) head is placed on the moving object's feet
+- `bs.move:by_vector/child/collision/heads/from_human_eyes`: one detection (block-like object) head is placed 1.7 blocs above the moving entity (height of human-like eyes)
 
-```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/behavior/__switch__.mcfunction
+## 4. Create your custom heads function
 
-execute if score @s bs.collision matches -1 run function bs.move:by_vector/child/collision/behavior/1-perfect_bounce
-execute if score @s bs.collision matches -2 run function bs.move:by_vector/child/collision/behavior/2-slide
-execute if score @s bs.collision matches -3 run function bs.move:by_vector/child/collision/behavior/3-stick
-execute if score @s bs.collision matches -4 run function bs.move:by_vector/child/collision/behavior/4-damped_bounce
-```
-
-Here is below an example of what a `heads` function should looks like. Only the `bs.collision.detection.head` on each detection head entity in order to be correctly cleared afterward. This example is made to detect a collision of a point-like object by placing entites on 4 relevant directions : forward to detect a collision, and x, y and z to detect in which direction. As the detection is made before the movement, the detection heads are placed on the next position of the object.
+Then create the associated file and write the follwing code:
 
 ```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/heads/from_feet.mcfunction
+:caption: bs.config:move/by_vector/collision/heads/my_custom_heads
 
-# Executed on the moving object, at it's feet
-# Create detection heads on the moving object
-summon marker ~ ~ ~ {Tags:["bs.collision.detection.head","front"]}
-summon marker ~ ~ ~ {Tags:["bs.collision.detection.head","x"]}
-summon marker ~ ~ ~ {Tags:["bs.collision.detection.head","y"]}
-summon marker ~ ~ ~ {Tags:["bs.collision.detection.head","z"]}
+# This function is executed as and at the moving entity
+
+# Create detection heads 1 block above the mocing entity
+summon marker ~ ~1 ~ {Tags:["bs.collision.detection.head","front"]}
+summon marker ~ ~1 ~ {Tags:["bs.collision.detection.head","x"]}
+summon marker ~ ~1 ~ {Tags:["bs.collision.detection.head","y"]}
+summon marker ~ ~1 ~ {Tags:["bs.collision.detection.head","z"]}
 
 # Initializing the relative location to the object to 0
 execute as @e[tag=bs.collision.detection.head] run scoreboard players set @s bs.loc.x 0
@@ -67,10 +66,23 @@ scoreboard players operation @e[tag=bs.collision.detection.head,tag=front] bs.lo
 execute as @e[tag=bs.collision.detection.head] at @s run function bs.location:add/scale/3
 ```
 
-Heres is an example of what a `detection` function should looks like, based on the heads function above. You can change the ignore blocks and potentially try to detect several block in a specific soncifugration to create more complex mecanics.
+## 5. Detection switch function
 
 ```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/detection/solid_block_on_detection_head.mcfunction
+:caption: bs.config:move/by_vector/collision/detection/_\_switch_\_
+
+execute if score @s bs.collision matches 1 run function bs.config:move/by_vector/collision/detection/my_custom_detection
+```
+
+Once again, you can associate positive scores to any function you want, including built-in ones. The built-in functions are the following:
+- `bs.move:by_vector/child/collision/detection/solid_block_on_detection_head`
+
+## 6. Create your custom detection function
+
+You can now create your custom detection function. The main point of this function is to change the tag of bypassed blocks. For instance a laser will pass trhougth glass, but not a ball. The `#bs.move:pass_through` tag used in built-in functions is adapted to bullets. You can create your own tag and add it to the blocks you want to bypass.
+
+```{code-block} mcfunction
+:caption: bs.config:move/by_vector/collision/detection/solid_block_on_detection_head
 
 execute at @e[tag=bs.collision.detection.head,tag=front] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision
 execute if entity @s[tag=bs.collision] at @e[tag=bs.collision.detection.head,tag=x] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision.x
@@ -78,40 +90,40 @@ execute if entity @s[tag=bs.collision] at @e[tag=bs.collision.detection.head,tag
 execute if entity @s[tag=bs.collision] at @e[tag=bs.collision.detection.head,tag=z] unless block ~ ~ ~ #bs.move:pass_through run tag @s add bs.collision.z
 ```
 
-Finally, here is few examples of what a `behavior` function should looks like.
+## 7. Behavior switch function
 
-Perfect bounce:
 ```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/behavior/damped_bounce.mcfunction
+:caption: bs.config:move/by_vector/collision/behavior/_\_switch_\_
 
-# The object will go in the opposite direction with the same speed on the axis it collided with.
-scoreboard players operation @s[tag=bs.collision.x] bs.vector.x *= -1 bs.const
-scoreboard players operation @s[tag=bs.collision.y] bs.vector.y *= -1 bs.const
-scoreboard players operation @s[tag=bs.collision.z] bs.vector.z *= -1 bs.const
+execute if score @s bs.collision matches 1 run function bs.config:move/by_vector/collision/behavior/my_custom_behavior
 ```
 
-Stick:
+Once again, you can associate positive scores to any function you want, including built-in ones. The built-in functions are the following:
+- `bs.move:by_vector/child/collision/behavior/1-perfect_bounce`
+- `bs.move:by_vector/child/collision/behavior/2-slide`
+- `bs.move:by_vector/child/collision/behavior/3-stick`
+- `bs.move:by_vector/child/collision/behavior/4-damped_bounce`
+
+## 8. Create your custom behavior function
+
+You can now create your custom behavior function. The main point of this function is to change the vector of the moving entity when it collide something. Here is an example of a behavior function:
+
 ```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/behavior/stick.mcfunction
+:caption: bs.config:move/by_vector/collision/behavior/damped_bounce
 
-# The object will stop at the first block it hits
-scoreboard players set @s[tag=bs.collision] bs.vector.x 0
-scoreboard players set @s[tag=bs.collision] bs.vector.y 0
-scoreboard players set @s[tag=bs.collision] bs.vector.z 0
-```
-
-Dumped bounce:
-```{code-block} mcfunction
-:caption: bs.config:move/by_vector/collision/behavior/damped_bounce.mcfunction
-
-# The object will bounce but will lose half of it's speed each time it bounces.
+# Bounce on walls
 scoreboard players operation @s[tag=bs.collision.x] bs.vector.x *= -1 bs.const
-scoreboard players operation @s[tag=bs.collision.y] bs.vector.y *= -1 bs.const
 scoreboard players operation @s[tag=bs.collision.z] bs.vector.z *= -1 bs.const
 
-scoreboard players operation @s[tag=bs.collision] bs.vector.x /= 2 bs.const
-scoreboard players operation @s[tag=bs.collision] bs.vector.y /= 2 bs.const
-scoreboard players operation @s[tag=bs.collision] bs.vector.z /= 2 bs.const
+# Bounce on ceil
+scoreboard players operation @s[tag=bs.collision.y,scores={bs.vector.y=1..}] bs.vector.y *= -1 bs.const
+
+# Stick on ground
+scoreboard players set @s[tag=bs.collision.y,scores={bs.vector.y=..-1}] bs.vector.x 0
+scoreboard players set @s[tag=bs.collision.y,scores={bs.vector.y=..-1}] bs.vector.z 0
+scoreboard players set @s[tag=bs.collision.y,scores={bs.vector.y=..-1}] bs.vector.y 0
 ```
+
+## 9. Enjoy!
 
 If you need help to implement such custom collision system, feel free to ask in the [discord server](https://discord.gg/E8qq6tN)!

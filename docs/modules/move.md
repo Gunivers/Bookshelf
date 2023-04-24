@@ -67,10 +67,11 @@ Inputs
 
         ```{button-link} move/by_vector_custom_collision.html
         :color: primary
+        :ref-type: doc
         :align: center
         :outline:
 
-        ⚙️ Create you own collisions!
+        ⚙️ Create your own collisions!
         ```
 
 Option
