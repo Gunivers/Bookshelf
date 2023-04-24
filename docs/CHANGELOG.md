@@ -14,6 +14,8 @@ This version contain breaking changes. In the following changelog, they are iden
 - Added `bs.vector:get_by_motion` function
 - Added a scale 3 variation to the `bs.math:exp` function
 - (WIP) Added unit tests to ensure that the library is working as expected before each release.
+- It is now possible to control every aspect off the collision process in `bs.move:by_vector`
+- Added fractionned distribution to allow users to download modules as independant datapack - Thanks to ascpial in https://github.com/Gunivers/Bookshelf/pull/55
 
 ### 🔁 Tweaks
 
@@ -35,8 +37,9 @@ This version contain breaking changes. In the following changelog, they are iden
 
 - Orientation and location getters was not clearing the default entity, which sometimes cause bugs in systems that try to get the entity at the same location.
 - 💥 The `bs.math:sin` function was actually cmputing -sin(x) instead of sin(x).
-- Fixed `bs.math::common/log`, `bs.math:log10`, `bs.math:log2` and `bs.math:loga` functions
+- Fixed `bs.math:common/log`, `bs.math:log10`, `bs.math:log2` and `bs.math:loga` functions
 - Fixed `bs.math:arctan` function
 - Fixed `bs.move:by_local_vector` function
 - Fixed `bs.bitwise:two_complement` function
-- Fixed `bs.location:spread` - Thanks to A2va in https://github.com/Gunivers/Bookshelf/pull/41
+- Fixed `bs.location:spread` and `bs.location:spread/scale/3` - Thanks to A2va in https://github.com/Gunivers/Bookshelf/pull/41
+- Fixed `bs.view` modules
