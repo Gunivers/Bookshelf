@@ -23,3 +23,5 @@ level.dat
 /docs/_templates/
 
 /generators/block_converter/Minecraft_generated_data/
+
+build/
