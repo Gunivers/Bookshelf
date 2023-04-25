@@ -206,9 +206,9 @@ execute as Boblennon run function bs.location:fast_set
 
 Allows to randomly teleport an entity in a given area.
 
-:Inputs:
-  
-  (execution) `as <entities>`
+Inputs
+
+: (execution) `as <entities>`
   : The entities you want to spread
 
   (score) `@s bs.in.[0,1]`
@@ -217,14 +217,14 @@ Allows to randomly teleport an entity in a given area.
   (score) `@s bs.in.2`
   : The radius of the area (in blocks)
 
-:Outputs:
+Outputs
 
-  (state) @s location
+: (state) @s location
   : The entity was moved to a random position in the area
 
-:Example:
+Example
 
-  Teleport to an area with a radius of 10 blocks, having as its center the
+: Teleport to an area with a radius of 10 blocks, having as its center the
   coordinate X=15, Z=25
 
   ```
@@ -243,9 +243,9 @@ Allows to randomly teleport an entity in a given area.
 
 Allows to randomly teleport an entity in a given area.
 
-:Inputs:
+Inputs
 
-  (execution) `as <entities>`
+: (execution) `as <entities>`
   : The entities you want to spread
 
   (score) `@s bs.in.[0,1]`
@@ -254,14 +254,14 @@ Allows to randomly teleport an entity in a given area.
   (score) `@s bs.in.2`
   : The radius of the area (in milliblocks)
 
-:Outputs:
+Outputs
 
-  (state) @s location
+: (state) @s location
   : The entity was moved to a random position in the area
 
-:Example:
+Example
 
-  Teleport to an area with a radius of 10.003 blocks, having as its center the coordinate X=15.1, Z=25.502
+: Teleport to an area with a radius of 10.003 blocks, having as its center the coordinate X=15.1, Z=25.502
 
   ```
   # Once

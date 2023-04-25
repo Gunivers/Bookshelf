@@ -25,22 +25,22 @@ You can find below all the function available in this module.
 
 Add XP from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to add XP to
 
     (score) `@s bs.in.0`
     : The amount of XP to add
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Add you 1234 XP
+:   Add you 1234 XP
 
     ```
     # Once
@@ -61,22 +61,22 @@ Add XP from a score
 
 Add levels from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to add levels to
 
     (score) `@s bs.in.0`
     : The amount of levels to add
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated 
 
-:Example:
+Example
 
-    Add you 123 levels
+:   Add you 123 levels
 
     ```
     # Once
@@ -103,19 +103,19 @@ Add levels from a score
 
 Get the total amount of points of the player.
 
-:Input:
+Input
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players from which you want to get the total amount of points
 
-:Output:
+Output
 
-    (score) `@s bs.out.0`
+:   (score) `@s bs.out.0`
     : The total amount of points
 
-:Example:
+Example
 
-    Get your amount of points
+:   Get your amount of points
 
     ```
     # Once (execute on you)
@@ -135,14 +135,14 @@ Get the total amount of points of the player.
 
 Get the portion of the bar filled (in percent)
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players from which you want to get the fraction of the bar filled
 
-:Outputs:
-    
-    (score) `@s bs.out.0`
+Outputs
+
+:   (score) `@s bs.out.0`
     : The percentage of the bar filled (rounded to the lowest integer)
 
     ```{admonition} Minecraft natural division
@@ -151,9 +151,9 @@ Get the portion of the bar filled (in percent)
     Due to the division, the result is rounded to the lowest integer. If you want to round to the nearest integer, use the function `bs.xp:get_bar_rounded`
     ```
 
-:Example:
+Example
 
-    Get the portion filled in your XP bar
+:   Get the portion filled in your XP bar
 
     ```
     # Once
@@ -170,19 +170,19 @@ Get the portion of the bar filled (in percent)
 
 Get the portion of the bar filled (in percent)
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players from which you want to get the fraction of the bar filled
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.out.0`
+:   (score) `@s bs.out.0`
     : The percentage of the bar filled (rounded to the nearest integer)
 
-:Example:
+Example
 
-    Get the portion filled in your XP bar
+:   Get the portion filled in your XP bar
 
     ```
     # Once
@@ -208,22 +208,22 @@ This function require the [`bs.math`](math) module to work properly
 
 Get the points required to pass to the next level.
 
-:Input:
+Input
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players from which you want to get the points required to pass to the indicated level
 
     (score) `@s bs.in.0`
     : The level you want to get the points required to pass it
 
-:Output:
+Output
 
-    (score) `@s bs.out.0`
+:   (score) `@s bs.out.0`
     : The amount of points required to pass to the next level
 
-:Example:
+Example
 
-    Get the number of points required to pass from the level 15 to the level 16
+:   Get the number of points required to pass from the level 15 to the level 16
 
     ```
     # Once
@@ -250,22 +250,22 @@ Get the points required to pass to the next level.
 
 Remove XP from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to remove XP from
 
     (score) `@s bs.in.0`
     : The amount of XP to remove
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Remove you 1234 XP
+:   Remove you 1234 XP
 
     ```
     # Once
@@ -286,22 +286,22 @@ Remove XP from a score
 
 Remove levels from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to remove levels from
 
     (score) `@s bs.in.0`
     : The amount of levels to remove
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Remove you 123 levels
+:   Remove you 123 levels
 
     ```
     # Once
@@ -328,22 +328,22 @@ Remove levels from a score
 
 Fill partially the XP bar
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to fill the XP bar
 
     (score) `@s bs.in.0`
     : The percentage of the bar to fill
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Fill your bar at 50%
+:   Fill your bar at 50%
 
     ```
     # Once
@@ -361,22 +361,22 @@ Fill partially the XP bar
 
 Set levels from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players to set levels from
 
     (score) `@s bs.in.0`
     : The amount of levels to set
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Set your level to 123
+:   Set your level to 123
 
     ```
     # Once
@@ -394,22 +394,22 @@ Set levels from a score
 
 Set XP from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players you want to set XP
 
     (score) `@s bs.in.0`
     : The amount of XP to set
 
-:Outputs:
+Outputs
 
-    (state) players xp
+:   (state) players xp
     : The players XP is updated
 
-:Example:
+Example
 
-    Set your XP to 1234
+:   Set your XP to 1234
 
     ```
     # Once
@@ -430,22 +430,22 @@ Set XP from a score
 
 Set XP from a score
 
-:Inputs:
+Inputs
 
-    (execution) `as <players>`
+:   (execution) `as <players>`
     : The players you want to set the total XP
 
     (score) `@s bs.in.0`
     : The amount of XP to set
 
-:Outputs:
-    
-    (state) players xp
+Outputs
+
+:   (state) players xp
     : The players XP is updated 
 
-:Example:
+Example
 
-    Set your total XP amount to 1234
+:   Set your total XP amount to 1234
 
     ```
     # Once

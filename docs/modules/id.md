@@ -22,17 +22,17 @@ Allows to compare the ``bs.id`` scores of the entities
 with the ``bs.id.target`` score of the entity having executed the
 function.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entity>`
+:   (execution) `as <entity>`
     : The entity that hold the target score (ID check must be performed on one entity at a time)
 
     (score) `@s bs.id.target`
     : The ID to compare with the other entities.
 
-:Outputs:
+Outputs
 
-    (tag) `@s bs.id.checker`
+:   (tag) `@s bs.id.checker`
     : The entity that executed the function.
 
     ```{admonition} Future deprecation warning
@@ -50,9 +50,9 @@ function.
     (tag) `@e bs.id.match`
     : The entities whose `bs.id` score is equal to the `bs.id.target` score.
 
-:Example:
+Example
 
-    Find the entity (or entities) with ID 3:
+:   Find the entity (or entities) with ID 3:
 
     ```
     # Once
@@ -104,14 +104,14 @@ execute as @e[tag=bs.id.parent.match] run tellraw @a ["",{"text":"<"},{"selector
 
 (Simple Unique ID) Allows the entity executing the function to get a `bs.id` score different from all other entities that have already executed the function.
 
-:Input:
+Input
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities you want to assign an ID to.
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.id`
+:   (score) `@s bs.id`
     : The ID of the executing entity.
     
     (tag) `@s bs.id.set`
@@ -126,9 +126,9 @@ execute as @e[tag=bs.id.parent.match] run tellraw @a ["",{"text":"<"},{"selector
     (tag) `@s bs.id.type.suid`
     : The entity that executed the function.
 
-:Example:
+Example
 
-    Give an ID to all players:
+:   Give an ID to all players:
 
     ```
     # In a loop to give an ID to the players who connect

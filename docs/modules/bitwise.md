@@ -39,9 +39,9 @@ _Friendly advice: decrease the volume before clicking_ 😅
 
 Computes the bitwise conjunction of the two input numbers
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
@@ -57,14 +57,14 @@ Computes the bitwise conjunction of the two input numbers
    the first operand and the two's complement of the second
    ```
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation = $a \times b$
 
-:Example:
+Example
 
-   Calculate and display $-9 \times 57$
+:  Calculate and display $-9 \times 57$
    ```
    # Once
    scoreboard players set @s bs.in.0 -9
@@ -72,6 +72,8 @@ Computes the bitwise conjunction of the two input numbers
    function bs.math:bitwise/and
    tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 
@@ -82,17 +84,17 @@ Computes the bitwise conjunction of the two input numbers
 Calculates the number of bits needed to store
 the input
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
    : The number you want to know the number of bits
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The number of bits needed to store the input
 
    ```{admonition} Negative input
@@ -102,15 +104,17 @@ the input
    the absolute value of the number
    ```
 
-:Example:
+Example
 
-   Calculate and display the number of bits of 12
+:  Calculate and display the number of bits of 12
    ```
    # Once
    scoreboard players set @s bs.in.0 12
    function bs.math:bitwise/get_number_of_bits
    tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 
@@ -120,23 +124,25 @@ the input
 
 Computes the bit by bit negation of the input
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
    : The number you want to negate
 
-:Example:
+Example
 
-   Calculate and display $~452$
+:  Calculate and display $~452$
    ```
    # Once
    scoreboard players set @s bs.in.0 452
    function bs.math:bitwise/not
    tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 
@@ -146,9 +152,9 @@ Computes the bit by bit negation of the input
 
 Computes the bit to bit disjunction of the two input numbers
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
@@ -164,14 +170,14 @@ Computes the bit to bit disjunction of the two input numbers
    the first operand and the two's complement of the second
    ```
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation = $a + b$
 
-:Example:
+Example
 
-   Calculate and display $-9 + 57$.
+:  Calculate and display $-9 + 57$.
    ```
    # Once
    scoreboard players set @s bs.in.0 -9
@@ -179,6 +185,8 @@ Computes the bit to bit disjunction of the two input numbers
    function bs.math:bitwise/gold
    tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 
@@ -188,28 +196,30 @@ Computes the bit to bit disjunction of the two input numbers
 
 Computes the two's complement of the input
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
    : The number you want to compute the two's complement
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The two's complement of the input
 
-:Example:
+Example
 
-   Calculate and display the two's complement of 12
+:  Calculate and display the two's complement of 12
    ```
    # Once
    scoreboard players set @s bs.in.0 12
    function bs.math:bitwise/to_complement
    tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 
@@ -220,9 +230,9 @@ Computes the two's complement of the input
 Computes the exclusive bit by bit disjunction of the two input
 numbers
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities to perform the operation on
 
    (score) `@s bs.in.0`
@@ -238,14 +248,14 @@ numbers
    the first operand and the two's complement of the second
    ```
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation = $a \oplus b$
 
-:Example:
+Example
 
-   Calculate and display $-9 \oplus 57$.
+:  Calculate and display $-9 \oplus 57$.
    ```
    # Once
    scoreboard players set @s bs.in.0 -9
@@ -253,6 +263,8 @@ numbers
    function bs.math:bitwise/xor
    tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
+
+> **Credits**: theogiraudet
 
 ---
 

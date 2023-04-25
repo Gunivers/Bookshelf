@@ -38,22 +38,22 @@ You can find below all the function available in this module.
 
 Calculate the arccosinus of a value between -1 and 1
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
-:Example:
+Example
 
-   Calculate and display the arccos of 0,42
+:  Calculate and display the arccos of 0,42
    ```
    # Once
    scoreboard players set @s bs.in.0 420
@@ -73,22 +73,22 @@ Calculate the arccosinus of a value between -1 and 1
 
 Compute the arcsinus of a value between -1 and 1
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
-:Example:
+Example
 
-   Calculate and display the arcsinus of 0.42
+:  Calculate and display the arcsinus of 0.42
    ```
    # Once
    scoreboard players set @s bs.in.0 420
@@ -108,22 +108,22 @@ Compute the arcsinus of a value between -1 and 1
 
 Compute the arctangent of a value between -infinite and +infinite
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation, in degrees (not shifted)
 
-:Example:
+Example
 
-   Calculate and display the arctan of 0.42
+:  Calculate and display the arctan of 0.42
    ```
    # Once
    scoreboard players set @s bs.in.0 420
@@ -161,9 +161,9 @@ passed in parameter in a base with a different orientation. Useful to
 convert an absolute/relative position into a local position for a given
 entity.
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the computation on
 
    (scores) `@s bs.in.[0,1,2]`
@@ -181,14 +181,14 @@ entity.
    - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane. 
    ```
 
-:Outputs:
+Outputs
 
-   (scores) `bs.out.[0,1,2]`
+:  (scores) `bs.out.[0,1,2]`
    : Vector coordinates $(X',Y',Z')$ in the target base
 
-:Examples:
+Examples
 
-   A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?)
+:  A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?)
    
    ```
    # One time
@@ -246,22 +246,22 @@ entity.
 
 Compute the cosine of an angle between 0 and 360
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The angle in degrees
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
-:Example:
+Example
 
-   Calculate and display the cosine of 42
+:  Calculate and display the cosine of 42
    ```
    # Once
    scoreboard players set @s bs.in.0 42
@@ -288,9 +288,9 @@ This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of
 Compute the exponential of the number passed in parameter on
 the score `bs.in.0` and return the result on the score `bs.out.0`
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
@@ -301,14 +301,14 @@ the score `bs.in.0` and return the result on the score `bs.out.0`
    Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
    ```
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Example:
+Example
 
-   Calculate $exp(3)$
+:  Calculate $exp(3)$
    ```
    # Once
    scoreboard players set @s bs.in.0 300
@@ -332,9 +332,9 @@ We are looking for a better implementation of this function. If you have any ide
 
 Compute the factorial of the number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
@@ -346,14 +346,14 @@ Compute the factorial of the number
    Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`
    ```
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation
 
-:Example:
+Example
 
-   Compute $3!$
+:  Compute $3!$
    ```
    # Once
    scoreboard players set @s bs.in.0 3
@@ -373,9 +373,9 @@ Compute the factorial of the number
 
 Compute the greatest common denominator of two numbers
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
@@ -384,14 +384,14 @@ Compute the greatest common denominator of two numbers
    (score) `@s bs.in.1`
    : The second number
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The greatest common denominator
 
-:Example:
+Example
 
-   Calculate the greatest common denominator between 16 and 12
+:  Calculate the greatest common denominator between 16 and 12
    ```
    # Once
    scoreboard players set @s bs.in.0 16
@@ -416,23 +416,23 @@ Compute the greatest common denominator of two numbers
 
 Compute the Neperian logarithm (base e) of a number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    
    (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Example:
+Example
 
-   Calculate $ln(28)$
+:  Calculate $ln(28)$
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
@@ -447,22 +447,22 @@ Compute the Neperian logarithm (base e) of a number
 
 Compute the logarithm in base 2 of a number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Example:
+Example
 
-   Calculate $log_2(28)$:
+:  Calculate $log_2(28)$:
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
@@ -476,22 +476,22 @@ Compute the logarithm in base 2 of a number
 
 Compute the logarithm in base 10 of a number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Example:
+Example
 
-   Calculate $log_{10}(28)$
+:  Calculate $log_{10}(28)$
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
@@ -506,9 +506,9 @@ Compute the logarithm in base 10 of a number
 
 Computes the logarithm in base a of a number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
@@ -517,14 +517,14 @@ Computes the logarithm in base a of a number
    (score) `@s bs.in.1`
    : The base of the logarithm (not shifted)
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
-:Example:
+Example
 
-   Calculate $log_4(28)$
+:  Calculate $log_4(28)$
    ```
    # Once
    scoreboard players set @s bs.in.0 28000
@@ -547,9 +547,9 @@ Computes the logarithm in base a of a number
 
 Compute $x^y$
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
@@ -558,14 +558,14 @@ Compute $x^y$
    (score) `@s bs.in.1`
    : The exponent
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation
 
-:Example:
+Example
 
-   Compute $2^6$
+:  Compute $2^6$
    ```
    # Once
    scoreboard players set @s bs.in.0 2
@@ -581,9 +581,9 @@ Compute $x^y$
 
 Compute $x^y$
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
@@ -592,14 +592,14 @@ Compute $x^y$
    (score) `@s bs.in.1`
    : The exponent, not shifted
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation, a number shifted by 3 digits (1,2345 -> 1234)
 
-:Example:
+Example
 
-   Compute $2.345^6$
+:  Compute $2.345^6$
    ```
    # Once
    scoreboard players set @s bs.in.0 2345
@@ -623,14 +623,14 @@ Compute $x^y$
 
 Generates a random number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : An integer random number between $-2^{31}$ and $2^{31}-1$
 
    ```{tip}
@@ -639,9 +639,9 @@ Generates a random number
    included in the interval [0;9])
    ```
 
-:Example:
+Example
 
-   Get and display a random number between 0 and 100:
+:  Get and display a random number between 0 and 100:
    ```
    # Once
    function bs.math:random
@@ -666,22 +666,22 @@ Generates a random number
 Compute the power of 2 directly superior to the
 number given in parameter.
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The number from which you want to calculate the next power of 2
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation
 
-:Example:
+Example
 
-   Find the power of 2 greater than 43
+:  Find the power of 2 greater than 43
    ```
    # Once
    scoreboard players set @s bs.in.0 43
@@ -701,9 +701,9 @@ Allows you to divide one number by another by rounding the
 result to the nearest whole number (where Minecraft rounds down to the
 next whole number).
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
    (score) `@s bs.in.0`
@@ -712,14 +712,14 @@ next whole number).
    (score) `@s bs.in.1`
    : The denominator
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the division
 
-:Example:
+Example
 
-   Calculate $9/5$
+:  Calculate $9/5$
    ```
    # Once
    scoreboard players set @s bs.in.0 9
@@ -740,22 +740,22 @@ next whole number).
 
 Computes the sine of an angle between 0 and 360
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The angle in degrees
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
-:Example:
+Example
 
-   Calculate and display the sine of 42
+:  Calculate and display the sine of 42
    ```
    # Once
    scoreboard players set @s bs.in.0 42
@@ -795,22 +795,22 @@ We can compute the sine of any angle.
 
 Compute the square root of the number
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The number you want to calculate the square root of
 
-:Output:
+Output
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The result of the calculation
 
-:Example:
+Example
 
-   Calculate and display $\sqrt{42}$
+:  Calculate and display $\sqrt{42}$
    ```
    # Once
    scoreboard players set @s bs.in.0 42
@@ -848,22 +848,22 @@ For a conveniant reason, instead of taking half of the maximum limite, we take t
 
 Compute the tangeant of an angle between 0 and 360
 
-:Inputs:
+Inputs
 
-   (execution) `as <entities>`
+:  (execution) `as <entities>`
    : The entities you want to perform the calculation on
 
    (score) `@s bs.in.0`
    : The angle in degrees (not shifted)
 
-:Outputs:
+Outputs
 
-   (score) `@s bs.out.0`
+:  (score) `@s bs.out.0`
    : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
 
-:Example:
+Example
 
-   Calculate and display the tengeante of 42
+:  Calculate and display the tengeante of 42
    ```
    # Once
    scoreboard players set @s bs.in.0 42

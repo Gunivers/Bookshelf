@@ -35,17 +35,17 @@ You can find below all the function available in this module.
 
 In the same way as `create_link_to_target_id`, this function creates a link between the entity executing the function and the entity closest to the execution position.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The link lead on a parent-child relation. The executing (source) entity must be the child.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The execution position is the position of the parent entity (the function will take the nearest entity).
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
+:   (score) `@s bs.link.r[x,y,z,h,v]`
     : Representing the relative coordinates (position + orientation)
 
     (score) `@s bs.link.l[x,y,z]`
@@ -54,9 +54,9 @@ In the same way as `create_link_to_target_id`, this function creates a link betw
     (score) `@s bs.link.to`
     : Identifies the entity to which it is linked
 
-:Example:
+Example
 
-    Link all armor_stand to the nearest sheep
+:   Link all armor_stand to the nearest sheep
 
     ```
     # Once
@@ -74,17 +74,17 @@ In the same way as `create_link_to_target_id`, this function creates a link betw
 
 Create a link between two entities : compute relative and local position and orientation in order to manipulate them later.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The link lead on a parent-child relation. The executing (source) entity must be the child.
 
     (score) `@s bs.id.target`
     : Score of the executing entity must match the `bs.id` score of the entity to which it will be linked. Multiple entities can be linked to a single entity (generally recommended for armor_stand structures).
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
+:   (score) `@s bs.link.r[x,y,z,h,v]`
     : Representing the relative coordinates (position + orientation)
 
     (score) `@s bs.link.l[x,y,z]`
@@ -93,9 +93,9 @@ Create a link between two entities : compute relative and local position and ori
     (score) `@s bs.link.to`
     : Identifies the entity to which it is linked
 
-:Example:
+Example
 
-    Link all armor_stand to the entity with ID 3 (see the [`bs.id`](id) module to know how to assign an ID to an entity)
+:   Link all armor_stand to the entity with ID 3 (see the [`bs.id`](id) module to know how to assign an ID to an entity)
 
     ```
     # Once
@@ -140,22 +140,22 @@ Allows to replace the entity at its relative position.
 This operation repeated in a loop is to imitate the movements of the
 parent entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[x,y,z]`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved such as it maintain the relative position with the parent entity.
 
-:Example:
+Example
 
-    Make armor_stands mimic your moves
+:   Make armor_stands mimic your moves
 
     ```
     # Once
@@ -174,22 +174,22 @@ Allows to replace the entity at its relative position along the X axis.
 This operation repeated in a loop is to imitate the movements of the
 parent entity on the X ais.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rx`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved such as it maintain the relative position with the parent entity along the X axis.
 
-:Example:
+Example
 
-    Make armor_stands mimic your moves on X axis
+:   Make armor_stands mimic your moves on X axis
 
     ```
     # Once
@@ -206,22 +206,22 @@ parent entity on the X ais.
 
 Allows to replace the entity at its relative position along the Y axis. This operation repeated in a loop is to imitate the movements of the parent entity on the Y axis.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.ry`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved such as it maintain the relative position with the parent entity along the Y axis.
 
-:Example:
+Example
 
-    Make armor_stands mimic your moves on Y axis
+:   Make armor_stands mimic your moves on Y axis
 
     ```
     # Once
@@ -238,22 +238,22 @@ Allows to replace the entity at its relative position along the Y axis. This ope
 
 Allows to replace the entity at its relative position along the Z axis. This operation repeated in a loop is to imitate the movements of the parent entity on the Z axis.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rz`
     : Representing the relative coordinates (position only)
 
-:Outputs:
-    
-    (state) @s position
+Outputs
+
+:   (state) @s position
     : The entity is moved such as it maintain the relative position with the parent entity along the Z axis.
 
-:Example:
+Example
 
-    Make armor_stands mimic your moves on Z axis
+:   Make armor_stands mimic your moves on Z axis
 
     ```
     # Once
@@ -295,22 +295,22 @@ This function require the following modules to work properly:
 
 Allows to replace the entity to its relative orientation. This operation repeated in a loop is to imitate the rotations of the parent entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[h,v]`
     : Representing the horizontal and vertical relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s orientation
+:   (state) @s orientation
     : The entity is rotated such as it maintain the relative orientation with the parent entity.
 
-:Example:
+Example
 
-    Make armor_stands mimic your orientation changes
+:   Make armor_stands mimic your orientation changes
 
     ```
     # Once
@@ -327,22 +327,22 @@ Allows to replace the entity to its relative orientation. This operation repeate
 
 Allows to replace the entity to its relative horizontal orientation. This operation repeated in a loop is to imitate the rotations of the parent entity on the horizontal axis.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rh`
     : Representing the horizontal relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s orientation
+:   (state) @s orientation
     : The entity is rotated such as it maintain the relative orientation with the parent entity on the horizontal axis.
 
-:Example:
+Example
 
-    Make armor_stands mimic your orientation changes on the horizontal axis
+:   Make armor_stands mimic your orientation changes on the horizontal axis
 
     ```
     # Once
@@ -359,22 +359,22 @@ Allows to replace the entity to its relative horizontal orientation. This operat
 
 Allows to replace the entity to its relative vertical orientation. This operation repeated in a loop is to imitate the rotations of the parent entity on the vertical axis.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rv`
     : Representing the vertical relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s orientation
+:   (state) @s orientation
     : The entity is rotated such as it maintain the relative orientation with the parent entity on the vertical axis.
 
-:Example:
+Example
 
-    Make armor_stands mimic your orientation changes on the vertical axis
+:   Make armor_stands mimic your orientation changes on the vertical axis
 
     ```
     # Once
@@ -407,22 +407,22 @@ Allows to keep the local position corresponding
 to the position of the child entity in the repository of the parent
 entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.l[x,y,z]`
     : Representing the local coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved such as it maintain the local position with the parent entity.
 
-:Example:
+Example
 
-    Make the armor_stands lock to your orientation
+:   Make the armor_stands lock to your orientation
 
     ```
     # Once
@@ -472,22 +472,22 @@ This reference frame, unlike the relative coordinates, takes into account the or
 Allows to determine the displacement made by the parent
 entity, and reproduce it in the opposite direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[x,y,z]`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved opposingly to the movements of the parent entity.
 
-:Example:
+Example
 
-    Make the armor_stands do the opposite of your moves
+:   Make the armor_stands do the opposite of your moves
 
     ```
     # Once
@@ -505,22 +505,22 @@ entity, and reproduce it in the opposite direction.
 Allows to determine the displacement made by the parent
 entity along the X axis, and reproduce it in the opposite direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rx`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved opposingly to the movements of the parent entity along the X axis.
 
-:Example:
+Example
 
-    Make the armor_stands do the opposite of your moves along the X axis
+:   Make the armor_stands do the opposite of your moves along the X axis
 
     ```
     # Once
@@ -538,22 +538,22 @@ entity along the X axis, and reproduce it in the opposite direction.
 Allows to determine the displacement made by the parent
 entity along the Y axis, and reproduce it in the opposite direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.ry`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved opposingly to the movements of the parent entity along the Y axis.
 
-:Example:
+Example
 
-    Make the armor_stands do the opposite of your moves along the Y axis
+:   Make the armor_stands do the opposite of your moves along the Y axis
 
     ```
     # Once
@@ -571,22 +571,22 @@ entity along the Y axis, and reproduce it in the opposite direction.
 Allows to determine the displacement made by the parent
 entity along the Z axis, and reproduce it in the opposite direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rz`
     : Representing the relative coordinates (position only)
 
-:Outputs:
+Outputs
 
-    (state) @s position
+:   (state) @s position
     : The entity is moved opposingly to the movements of the parent entity along the Z axis.
 
-:Example:
+Example
 
-    Make the armor_stands do the opposite of your moves along the Z axis
+:   Make the armor_stands do the opposite of your moves along the Z axis
 
     ```
     # Once
@@ -621,22 +621,22 @@ This function require the following modules to work properly:
 Allows you to determine the rotation performed by the
 parent entity, and reproduce it in the opposite direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[h,v]`
     : Representing the relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s rotation
+:   (state) @s rotation
     : The entity is rotated opposingly to the rotations of the parent entity.
 
-:Example:
+Example
 
-    Make the armor_stands invert your rotations
+:   Make the armor_stands invert your rotations
 
     ```
     # Once
@@ -655,22 +655,22 @@ Allows you to determine the rotation performed by the
 parent entity along the horizontal axis, and reproduce it in the opposite
 direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rh`
     : Representing the relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s rotation
+:   (state) @s rotation
     : The entity is rotated opposingly to the rotations of the parent entity along the horizontal axis.
 
-:Example:
+Example
 
-    Make the armor_stands invert your rotations along the horizontal axis
+:   Make the armor_stands invert your rotations along the horizontal axis
 
     ```
     # Once
@@ -689,22 +689,22 @@ Allows you to determine the rotation performed by the
 parent entity along the vertical axis, and reproduce it in the opposite
 direction.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rv`
     : Representing the relative orientation (rotation only)
 
-:Outputs:
+Outputs
 
-    (state) @s rotation
+:   (state) @s rotation
     : The entity is rotated opposingly to the rotations of the parent entity along the vertical axis.
 
-:Example:
+Example
 
-    Make the armor_stands invert your rotations along the vertical axis
+:   Make the armor_stands invert your rotations along the vertical axis
 
     ```
     # Once
@@ -745,14 +745,14 @@ next time you call the link function.
 The link functions of the lib automatically call the update functions if necessary (example: reverse functions). No need to manage this on your side.
 ```
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.link.r[h,v]`
+:   (score) `@s bs.link.r[h,v]`
     : Representing the relative orientation (rotation only)
 
     (score) `@s bs.link.r[x,y,z]`
@@ -761,9 +761,9 @@ The link functions of the lib automatically call the update functions if necessa
     (score) `@s bs.link.l[x,y,z]`
     : Representing the local coordinates (position only)
 
-:Example:
+Example
 
-    Update the armor_stands link
+:   Update the armor_stands link
 
     ```
     # Once

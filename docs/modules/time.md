@@ -20,13 +20,13 @@ function bs.time:set
 
 It will place a command block, a chest and an armor stand at the position of execution. It will then be used to the get the time.
 
-:Inputs:
+Inputs
 
-    None
+:   None
 
-:Outputs:
+Outputs
 
-    (scores) `Heure Systime`
+:   (scores) `Heure Systime`
     : The real hour
 
     (scores) `Minute Systime`
@@ -35,9 +35,9 @@ It will place a command block, a chest and an armor stand at the position of exe
     (scores) `Seconde Systime`
     : The real second
 
-:Example:
+Example
 
-    Get the system time:
+:   Get the system time:
     
     ```mcfunction
     # The first time

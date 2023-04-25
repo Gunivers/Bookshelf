@@ -30,14 +30,14 @@ You can find below all the function available in this module.
 
 Places an entity in the block the source is looking at.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities from which you want to get the aimed block.
 
-:Outputs:
+Outputs
 
-    (state) new entity created
+:   (state) new entity created
     : The entity is created at the aimed block. It can be identified by the tag `bs.view.AimedBlock` and the score `bs.id.parent` corresponding to the ID of the entity executing the function. If there was already an entity with the tag `bs.view.AimedBlock` and the same `bs.id.parent`, it will be replaced.
 
     ```{admonition} In case there is no ID system
@@ -46,9 +46,9 @@ Places an entity in the block the source is looking at.
     If you don't have an ID system, this function have to be used on 1 entity at a time. THe score `bs.id.parent` will then not be used. An ID system can be added using the [`bs.id` module](id).
     ```
 
-:Example:
+Example
 
-    Place in entity on the aimed block:
+:   Place in entity on the aimed block:
 
     ```
     # Once
@@ -65,19 +65,19 @@ Places an entity in the block the source is looking at.
 
 Identify the first entity aimed by the source entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entity>`
+:   (execution) `as <entity>`
     : The entity from which you want to get the aimed entity. Note that you can use this function on one entity at a time.
 
-:Outputs:
+Outputs
 
-    (tag) `<aimed entity> bs.view.AimedEntity`
+:   (tag) `<aimed entity> bs.view.AimedEntity`
     : The tag `bs.view.AimedEntity` is added to the aimed entity. The tag is remove from all other entities.
 
-:Example:
+Example
 
-    Place in entity on the targeted block:
+:   Place in entity on the targeted block:
 
     ```
     # Once
@@ -94,22 +94,22 @@ Identify the first entity aimed by the source entity.
 
 Allows to know if the entity, from its position, may be able to see the execution position of the command (if no block obstructs its vision).
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities from which you want to know if they can see the execution position of the function.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position you want to know if the entities can see it.
 
-:Outputs:
+Outputs
 
-    (tag) `@s bs.view.CanSee`
+:   (tag) `@s bs.view.CanSee`
     : The tag is added to the source entities that can see the execution position of the function.
 
-:Example:
+Example
 
-    Knowing whether an entity sees you:
+:   Knowing whether an entity sees you:
 
     ```
     # Once
@@ -126,22 +126,22 @@ Allows to know if the entity, from its position, may be able to see the executio
 
 Allows to know if the execution position of the function is in front of the source entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities from which you want to know if the execution position of the function is in front of them.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position you want to know if the entities can see it.
 
-:Outputs:
+Outputs
 
-    (tag) `@s bs.view.HasInFront`
+:   (tag) `@s bs.view.HasInFront`
     : The tag is added to the source entities that have the execution position of the function in front of them.
 
-:Example:
+Example
 
-    Know if the position 0 5 0 is in front of you:
+:   Know if the position 0 5 0 is in front of you:
 
     ```
     # Once

@@ -14,14 +14,14 @@ This module is the heart of the lib. It contain functions (detailed below) that 
 
 This function allow to create a new default Bookshelf entity (currently markers).
 
-:Input:
+Input
 
-    (execution) `as <entities>` or `positioned <x> <y> <z>`
+:   (execution) `as <entities>` or `positioned <x> <y> <z>`
     : The position where you want to summon the new entity
 
-:Output:
+Output
 
-    (state) a new entity was created
+:   (state) a new entity was created
     : It can be identified by the tag `bs.new` and that is automatically cleared if it is not used anymore. A new call to the function will clear every entity wearing the tag `bs.new`
 
 > **Credits**: Leirof
@@ -34,25 +34,25 @@ This function allow to create a new default Bookshelf entity (currently markers)
 
 Allows to cleanly delete an entity. This function erases the scores of the entity and teleports it to layer 0 before killing it.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities to kill. Cannot be a player.
 
     (tag) `@s bs.permanent`
     : All the entity that have this tag will never be killed by this function.
 
-:Outputs:
+Outputs
 
-    (state) removed entities
+:   (state) removed entities
     : The entities that are not protected have been killed without any animation (teleported under the map before being killed).
 
     (tag) `@s bs.core.entity.safekill.excluded`
     : The entities that the system didn't killed get this tag. This tag is removed from all entities when the function is called in order to represent only the entities that was spared from the last execution.
 
-:Example:
+Example
 
-    Kill all zombies:
+:   Kill all zombies:
 
     ```
     # Once

@@ -41,19 +41,19 @@ You can find below all the function available in this module.
 
 Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores `bs.vector[X,Y,Z]` (each between -1000 and 1000).
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be computed
 
-:Outputs:
+Outputs
 
-    (scores) `@s bs.vector.[x,y,z]`
+:   (scores) `@s bs.vector.[x,y,z]`
     : The vector components
 
-:Example:
+Example
 
-    Create, for each Creeper, a vector from their respective orientation
+:   Create, for each Creeper, a vector from their respective orientation
 
     ```
     # Once
@@ -78,22 +78,22 @@ This function require the following modules to work properly:
 
 Compute a vector from the source entity to the execution position of the function.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which a vector will be computed, taking there own position as origin
 
     (execution) `at <entities>` or `positioned <x> <y> <z>`
     : The position of the destination (must be unique)
 
-:Outputs:
-    
-    (scores) `@s bs.vector.[x,y,z]`
+Outputs
+
+:   (scores) `@s bs.vector.[x,y,z]`
     : The vector components
 
-:Example:
+Example
 
-    Create a vector that connects you to the nearest skeleton:
+:   Create a vector that connects you to the nearest skeleton:
 
     ```
     # Once
@@ -120,22 +120,22 @@ This function require the following modules to work properly:
 
 Compute the norm of the vector
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be computed
 
     (scores) `@s bs.vector.[x,y,z]`
     : The vector components
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.out.0`
+:   (score) `@s bs.out.0`
     : The vector length
 
-:Example:
+Example
 
-    Compute the length of a vector you defined on yourself
+:   Compute the length of a vector you defined on yourself
 
     ```
     # Once
@@ -172,22 +172,22 @@ This function require the following modules to work properly:
 
 Compute the norm of the squared vector and store it on the score `bs.out.0`.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be computed
 
     (scores) `@s bs.vector.[x,y,z]`
     : The vector components
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.out.0`
+:   (score) `@s bs.out.0`
     : The vector length squared
 
-:Example:
+Example
 
-    Compute the length squared of a vector you defined on yourself
+:   Compute the length squared of a vector you defined on yourself
 
     ```
     # Once
@@ -217,9 +217,9 @@ Compute the norm of the squared vector and store it on the score `bs.out.0`.
 
 Allows to normalize the components of the vector by putting the length at 1000 (=1 but shited by 3 digits) while respecting the proportions linking these components.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be normalized
 
     (scores) `@s bs.vector.[x,y,z]`
@@ -231,9 +231,9 @@ Allows to normalize the components of the vector by putting the length at 1000 (
     You can configure the length of normalization (which is 1000 by default) by setting the score `vector.normalize.length bs.data` score to the desired value and giving the tag `bs.config.override` to the entity executing the function. Be careful, without this tag, the config score will be reseted to the default value.
     ```
 
-:Outputs:
-    
-    (scores) `@s bs.vector.[x,y,z]`
+Outputs
+
+:   (scores) `@s bs.vector.[x,y,z]`
     : The normalized vector components
 
 ```{admonition} Performance tip
@@ -256,9 +256,9 @@ This function require the following modules to work properly:
 
 Allows to normalize the components of the vector by placing the largest component at 1000 (=1 but shited by 3 digits) while respecting the proportions linking these components.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be normalized
 
     (scores) `@s bs.vector.[x,y,z]`
@@ -270,9 +270,9 @@ Allows to normalize the components of the vector by placing the largest componen
     You can configure the length of normalization (which is 1000 by default) by setting the score `vector.fast_normalize.length bs.data` score to the desired value and giving the tag `bs.config.override` to the entity executing the function. Be careful, without this tag, the config score will be reseted to the default value.
     ```
 
-:Outputs:
-    
-    (scores) `@s bs.vector.[x,y,z]`
+Outputs
+
+:   (scores) `@s bs.vector.[x,y,z]`
     : The normalized vector components
 
 :::
@@ -289,22 +289,22 @@ Allows to normalize the components of the vector by placing the largest componen
 Allows to convert a "normal" vector (using the relative reference frame) into local coordinates (using the local reference frame)
 
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities for which the vector will be transformed
 
     (scores) `@s bs.vector.[x,y,z]`
     : The canonical vector components
 
-:Outputs:
+Outputs
 
-    (scores) `@s bs.vector.[x,y,z]`
+:   (scores) `@s bs.vector.[x,y,z]`
     : The local vector components
 
-:Example:
+Example
 
-    Find the local vector corresponding to the vector X=1000, Y=0, Z=0
+:   Find the local vector corresponding to the vector X=1000, Y=0, Z=0
 
     ```
     # Once

@@ -25,22 +25,22 @@ You can find below all the function available in this module.
 
 Gives the executing entity a score corresponding to a unique identifier of the block + blockstate located where the function is executed.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which you want to store the block ID
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position of the block you want to get the ID from
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.block.id`
+:   (score) `@s bs.block.id`
     : The unique identifier of the block + blockstate
 
-:Example:
+Example
 
-    Make the player named Steve retrieve the block id under his feet.
+:   Make the player named Steve retrieve the block id under his feet.
 
     ```
     # Once
@@ -60,9 +60,9 @@ Gives the executing entity a score corresponding to a unique identifier of the b
 
 Places a block (and associated blockstates) corresponding to the identifier stored on the executing entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which the block ID is stored
 
     (score) `@s bs.block.id`
@@ -71,14 +71,14 @@ Places a block (and associated blockstates) corresponding to the identifier stor
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position of the block you want to get the ID from
 
-:Outputs:
+Outputs
 
-    (state) block placed
+:   (state) block placed
     : The block corresponding to the identifier is placed at the position indicated by the function 
 
-:Example:
+Example
 
-    Make the player named Steve put the block on top of him, corresponding to the identifier he has given on his score `bs.block.id`
+:   Make the player named Steve put the block on top of him, corresponding to the identifier he has given on his score `bs.block.id`
 
     ```
     # Once
@@ -98,22 +98,22 @@ Places a block (and associated blockstates) corresponding to the identifier stor
 
 Convert a block id stored on the executing entity to an item id.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which you want to convert the block ID to an item ID
 
     (score) `@s bs.block.id`
     : The unique identifier of the block + blockstate
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.item.id`
+:   (score) `@s bs.item.id`
     : The unique identifier of the item corresponding to the block
 
-:Example:
+Example
 
-    Make the player named Steve get the item identifier corresponding to the block that is indicated by his score `bs.block.id`
+:   Make the player named Steve get the item identifier corresponding to the block that is indicated by his score `bs.block.id`
 
     ```
     # Once

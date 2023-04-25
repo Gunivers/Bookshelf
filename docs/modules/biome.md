@@ -18,22 +18,22 @@ You can find below all the function available in this module.
 
 Determine if it can rain or not.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities that carry the score `bs.biome.temp` you want to check if it can rain.
 
     (score) `bs.biome.temp`
     : The temperature (usualy, the one where the entity is located. You have to get it first)
 
-:Output:
+Output
 
-    (tag) `@s bs.biome.CanRain`
+:   (tag) `@s bs.biome.CanRain`
     : This tag is given if it can rain according to the temperature.
 
-:Example:
-    
-    Knowing if it can rain where the players are
+Example
+
+:   Knowing if it can rain where the players are
     
     ```
     # Once
@@ -56,22 +56,22 @@ Determine if it can rain or not.
 
 Determine if it can snow or not.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entities that carry the score `bs.biome.temp` you want to check if it can snow.
 
     (score) `bs.biome.temp`
     : The temperature (usualy, the one where the entity is located. You have to get it first)
 
-:Output:
+Output
 
-    (tag) `@s bs.biome.CanSnow`
+:   (tag) `@s bs.biome.CanSnow`
     : This tag is given if it can snow according to the temperature.
 
-:Example:
-    
-    Knowing if it can rain where the players are
+Example
+
+:   Knowing if it can rain where the players are
     
     ```
     # Once
@@ -94,22 +94,22 @@ Determine if it can snow or not.
 
 Get the biome ID.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which you want to store the biome ID.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the biome ID.
 
-:Output:
+Output
 
-    (score) `bs.biome`
+:   (score) `bs.biome`
     : The biome ID.
 
-:Example:
+Example
 
-    Get the biome in which each villager is located.
+:   Get the biome in which each villager is located.
 
     ```
     # Once
@@ -133,22 +133,22 @@ Get the biome ID.
 Allows to retrieve the temperature of the
 biome at the execution position of the function.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which you want to store the temperature.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the temperature.
 
-:Output:
+Output
 
-    (score) `bs.biome.temp`
+:   (score) `bs.biome.temp`
     : The temperature of the biome.
 
-:Example:
+Example
 
-    Get the temperature of the biome in which each octopus is located
+:   Get the temperature of the biome in which each octopus is located
 
     ```
     # Once
@@ -167,22 +167,22 @@ Allows to retrieve the temperature at the execution
 position of the function taking into account the temperature of the
 biome and its altitude.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which you want to store the temperature.
 
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position where you want to get the temperature.
 
-:Output:
+Output
 
-    (score) `bs.biome.temp`
+:   (score) `bs.biome.temp`
     : The temperature of the biome.
 
-:Example:
+Example
 
-    Get the temperature at each polar bear
+:   Get the temperature at each polar bear
 
     ```
     # Once

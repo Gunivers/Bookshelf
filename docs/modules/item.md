@@ -25,19 +25,19 @@ You can find below all the function available in this module.
 Gives to the item executing the function a score corresponding
 to a unique identifier corresponding to its nature.
 
-:Inputs:
+Inputs
 
-    (execution) `as <items>`
+:   (execution) `as <items>`
     : The items on which you want to store the item ID
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.item.id`
+:   (score) `@s bs.item.id`
     : The unique identifier of the item
 
-:Example:
+Example
 
-    Make sure that all the items in the world have their identifier
+:   Make sure that all the items in the world have their identifier
     indicated by their score `bs.item.id`
 
     ```
@@ -59,9 +59,9 @@ to a unique identifier corresponding to its nature.
 Create an item corresponding to the identifier stored on the
 executing entity.
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which the item ID is stored
 
     (score) `@s bs.item.id`
@@ -70,14 +70,14 @@ executing entity.
     (execution) `at <entity>` or `positioned <x> <y> <z>`
     : The position of the item you want to create
 
-:Outputs:
+Outputs
 
-    (state) summoned item
+:   (state) summoned item
     : An item corresponding to the identifier was summoned
 
-:Example:
+Example
 
-    Make the player named Steve create an item in front of him,
+:   Make the player named Steve create an item in front of him,
     corresponding to the identifier he has given on his score
     `bs.item.id`
 
@@ -100,22 +100,22 @@ executing entity.
 Convert an item id stored on the executing entity
 to a block id
 
-:Inputs:
+Inputs
 
-    (execution) `as <entities>`
+:   (execution) `as <entities>`
     : The entity on which the item ID is stored
 
     (score) `@s bs.item.id`
     : The unique identifier of the item
 
-:Outputs:
+Outputs
 
-    (score) `@s bs.block.id`
+:   (score) `@s bs.block.id`
     : The unique identifier of the block (with the default blockstate)
 
-:Example:
+Example
 
-    Make the player named Steve get the block identifier corresponding to
+:   Make the player named Steve get the block identifier corresponding to
     the item that is indicated by his score ``bs.item.id``
 
     ```
