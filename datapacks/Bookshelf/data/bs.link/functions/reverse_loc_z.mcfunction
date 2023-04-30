@@ -33,9 +33,9 @@ scoreboard players operation @s bs.id.target = @s bs.link.to
 function bs.id:check
 
 # Relative Position
-execute at @s run function bs.location:get_z/accuracy/10-3
+execute at @s run function bs.location:get/z/scale/3
 scoreboard players operation link.reverseLoc.diff bs = @s bs.loc.z
-execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.location:get_z/accuracy/10-3
+execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.location:get/z/scale/3
 scoreboard players operation link.reverseLoc.diff bs -= @s bs.loc.z
 
 # Calcul difference
@@ -47,7 +47,7 @@ scoreboard players operation @s bs.link.rz += link.reverseLoc.diff bs
 
 # Set new position
 scoreboard players operation @s bs.loc.z += @s bs.link.rz
-function bs.location:set_z/accuracy/10-3
+function bs.location:set/z/scale/3
 
 # Start Restore
 scoreboard players operation @s bs.loc.z = backup.link.reverse.LocZ bs

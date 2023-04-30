@@ -1,48 +1,32 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       :
+# Contributors  : 
 
-# Original path: bs.location:get_relative_ata
-# Parallelizable: true
-# Note: It was excessively more impressive in 1.12...
+# Version: 2.1
+# Created: ??/??/???? (1.13)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: 30/04/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:get_relative_ata
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#get-relative-as-to-at
+# Note          :
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-scoreboard objectives add bs.loc.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
-scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
-scoreboard objectives add bs.loc.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
+execute store result score #X bs.data run data get entity @s Pos[0] 1
+execute store result score #Y bs.data run data get entity @s Pos[1] 1
+execute store result score #Z bs.data run data get entity @s Pos[2] 1
 
-#__________________________________________________
-# CONFIG
+summon marker ~ ~ ~ {Tags:["bs","bs.location.GetDistance"]}
 
-#__________________________________________________
-# CODE
+execute store result score #DX bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[0] 1
+execute store result score #DY bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[1] 1
+execute store result score #DZ bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[2] 1
 
-#tellraw @a ["",{"text":"Debug | bs.location:get_relative_ata","color":"green"}]
+kill @e[type=marker,tag=bs.location.GetDistance]
 
-execute at @s run function bs.location:get
-#tellraw @a [{"text":"\n \u0020 Source - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
-
-scoreboard players operation AT_X bs = @s bs.loc.x
-scoreboard players operation AT_Y bs = @s bs.loc.y
-scoreboard players operation AT_Z bs = @s bs.loc.z
-
-function bs.location:get
-#tellraw @a [{"text":"\n \u0020 Dest - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
-
-scoreboard players operation @s bs.loc.x -= AT_X bs
-scoreboard players operation @s bs.loc.y -= AT_Y bs
-scoreboard players operation @s bs.loc.z -= AT_Z bs
-
-#tellraw @a [{"text":"\n \u0020 Res - LocX: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.x"},"color":"gold"},{"text":" LocY: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.y"},"color":"gold"},{"text":" LocZ: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
-
-
-execute as @e[tag=bs.new] run function bs.core:entity/safe_kill
+scoreboard players operation @s bs.loc.rx -= #X bs.data
+scoreboard players operation @s bs.loc.ry -= #Y bs.data
+scoreboard players operation @s bs.loc.rz -= #Z bs.data

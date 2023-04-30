@@ -58,9 +58,9 @@ scoreboard players operation #collision bs.data = @s bs.collision
 
 # Other edited scores that should be conserved
 scoreboard players operation #move.by_vector.out.0 bs.data = @s bs.out.0
-scoreboard players operation #move.by_vector.loc.x bs.data = @s bs.loc.x
-scoreboard players operation #move.by_vector.loc.y bs.data = @s bs.loc.y
-scoreboard players operation #move.by_vector.loc.z bs.data = @s bs.loc.z
+scoreboard players operation #move.by_vector.loc.rx bs.data = @s bs.loc.rx
+scoreboard players operation #move.by_vector.loc.ry bs.data = @s bs.loc.ry
+scoreboard players operation #move.by_vector.loc.rz bs.data = @s bs.loc.rz
 
 # Remove remaining collision tags
 tag @s remove bs.collision
@@ -116,6 +116,6 @@ execute at @s[tag=!bs.collision] run function bs.move:by_vector/child/loop
 
 # Restore
 scoreboard players operation @s bs.out.0 = #move.by_vector.out.0 bs.data
-scoreboard players operation @s bs.loc.x = #move.by_vector.loc.x bs.data
-scoreboard players operation @s bs.loc.y = #move.by_vector.loc.y bs.data
-scoreboard players operation @s bs.loc.z = #move.by_vector.loc.z bs.data
+scoreboard players operation @s bs.loc.rx = #move.by_vector.loc.rx bs.data
+scoreboard players operation @s bs.loc.ry = #move.by_vector.loc.ry bs.data
+scoreboard players operation @s bs.loc.rz = #move.by_vector.loc.rz bs.data

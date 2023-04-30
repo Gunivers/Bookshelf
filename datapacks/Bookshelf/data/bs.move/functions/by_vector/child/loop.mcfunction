@@ -23,9 +23,10 @@ scoreboard players set @e[tag=bs.move.TrajectoryDisplay,scores={bs.lifetime=0..}
 
 # Apply movement --------------------------------------------------------------
 
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.x = #Vt.x bs.data
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.y = #Vt.y bs.data
-execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.z = #Vt.z bs.data
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.rx = #Vt.x bs.data
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.ry = #Vt.y bs.data
+execute if entity @s[tag=!bs.collision] run scoreboard players operation @s bs.loc.rz = #Vt.z bs.data
+
 execute if entity @s[tag=!bs.collision] run function bs.location:add/scale/3
 
 # Loop ------------------------------------------------------------------------

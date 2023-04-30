@@ -1,43 +1,40 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       :
+# Contributors  : 
 
-# Original path: bs.location:get_distance_squared_ata
-# Parallelizable: true
-# Note: It was excessively more impressive in 1.12...
+# Version: (2.1
+# Created: ??/??/???? (1.13)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: 30/04/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:get_distance_squared_ata/scale/1
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#get-distance-as-to-at
+# Note          :
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
+execute store result score #X bs.data run data get entity @s Pos[0] 1
+execute store result score #Y bs.data run data get entity @s Pos[1] 1
+execute store result score #Z bs.data run data get entity @s Pos[2] 1
 
-#__________________________________________________
-# CODE
+summon marker ~ ~ ~ {Tags:["bs","bs.location.GetDistance"]}
 
-# Backup
-scoreboard players operation location.getDistance.locX bs = @s bs.loc.x
-scoreboard players operation location.getDistance.locY bs = @s bs.loc.y
-scoreboard players operation location.getDistance.locZ bs = @s bs.loc.z
+execute store result score #DX bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[0] 1
+execute store result score #DY bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[1] 1
+execute store result score #DZ bs.data run data get entity @e[type=marker,tag=bs.location.GetDistance,limit=1] Pos[2] 1
 
-function bs.location:get_relative_ata
+kill @e[type=marker,tag=bs.location.GetDistance]
 
-scoreboard players operation @s bs.loc.x *= @s bs.loc.x
-scoreboard players operation @s bs.loc.y *= @s bs.loc.y
-scoreboard players operation @s bs.loc.z *= @s bs.loc.z
+scoreboard players operation #DX bs.data -= #X bs.data
+scoreboard players operation #DY bs.data -= #Y bs.data
+scoreboard players operation #DZ bs.data -= #Z bs.data
 
-scoreboard players operation @s bs.out.0 = @s bs.loc.x
-scoreboard players operation @s bs.out.0 += @s bs.loc.y
-scoreboard players operation @s bs.out.0 += @s bs.loc.z
+scoreboard players operation #DX bs.data *= #DX bs.data
+scoreboard players operation #DY bs.data *= #DY bs.data
+scoreboard players operation #DZ bs.data *= #DZ bs.data
 
-# Restore
-scoreboard players operation @s bs.loc.x = location.getDistance.locX bs
-scoreboard players operation @s bs.loc.y = location.getDistance.locY bs
-scoreboard players operation @s bs.loc.z = location.getDistance.locZ bs
+scoreboard players operation @s bs.out.0 = #DX bs.data
+scoreboard players operation @s bs.out.0 += #DY bs.data
+scoreboard players operation @s bs.out.0 += #DZ bs.data

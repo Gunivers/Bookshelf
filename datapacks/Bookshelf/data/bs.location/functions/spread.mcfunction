@@ -14,10 +14,6 @@
 # Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#spread
 # Note          : Spread an entity based on CenterX, CenterZ and Radius scores
 
-# INIT ------------------------------------------------------------------------
-
-# CONFIG ----------------------------------------------------------------------
-
 # CODE ------------------------------------------------------------------------
 
 scoreboard players operation #location.spread.backup.out.0 bs.data = @s bs.out.0
@@ -48,7 +44,7 @@ scoreboard players operation @s bs.out.0 -= @s bs.in.2
 scoreboard players operation @s bs.loc.z = #location.spread.z bs.data
 scoreboard players operation @s bs.loc.z += @s bs.out.0
 
-execute at @s run function bs.location:get_y
+execute at @s run function bs.location:get/y
 
 # Tp, then tp again over the world surface and block centered
 function bs.location:set

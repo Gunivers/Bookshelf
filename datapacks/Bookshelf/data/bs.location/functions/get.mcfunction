@@ -1,35 +1,24 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check: 1.16.1
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.location:get
-# Parallelizable: true
-# Note: It was excessively more impressive in 1.12...
+# Version: 2.0
+# Created: ??/??/???? (1.12)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: ??/??/???? (1.16.1)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:get
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#get-location
+# Note          : It was excessively more impressive in 1.12...
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-scoreboard objectives add bs.loc.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
-scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
-scoreboard objectives add bs.loc.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
+summon marker ~ ~ ~ {Tags:["bs.location.get"]}
 
-#__________________________________________________
-# CONFIG
+execute store result score @s bs.loc.x run data get entity @e[type=marker,tag=bs.location.get,limit=1,sort=nearest] Pos[0] 1
+execute store result score @s bs.loc.y run data get entity @e[type=marker,tag=bs.location.get,limit=1,sort=nearest] Pos[1] 1
+execute store result score @s bs.loc.z run data get entity @e[type=marker,tag=bs.location.get,limit=1,sort=nearest] Pos[2] 1
 
-#__________________________________________________
-# CODE
-
-function bs.core:entity/summon
-
-execute store result score @s bs.loc.x run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[0] 1
-execute store result score @s bs.loc.y run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[1] 1
-execute store result score @s bs.loc.z run data get entity @e[tag=bs.new,limit=1,sort=nearest] Pos[2] 1
-
-execute as @e[tag=bs.new] run function bs.core:entity/safe_kill
+kill @e[type=marker,tag=bs.location.get]

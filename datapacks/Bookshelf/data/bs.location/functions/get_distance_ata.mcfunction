@@ -1,31 +1,24 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.location:get_distance_ata
-# Parallelizable: true
-# Note: It was excessively more impressive in 1.12...
+# Version: 2.1
+# Created: ??/??/???? (1.13)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: 30/04/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:get_distance_ata
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#get-distance-as-to-at
+# Note          :
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-scoreboard players operation location.getDistance.var0 bs = @s bs.in.0
+scoreboard players operation #location.get_distance_ata.in.0 bs.data = @s bs.in.0
 
 function bs.location:get_distance_squared_ata
 scoreboard players operation @s bs.in.0 = @s bs.out.0
 function bs.math:sqrt
 
-scoreboard players operation @s bs.in.0 = location.getDistance.var0 bs
+scoreboard players operation @s bs.in.0 = #location.get_distance_ata.in.0 bs.data

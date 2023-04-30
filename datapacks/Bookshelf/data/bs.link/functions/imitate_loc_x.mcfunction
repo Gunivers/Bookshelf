@@ -29,7 +29,7 @@ scoreboard players operation @s bs.id.target = @s bs.link.to
 function bs.id:check
 
 #   Relative Position
-execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.location:get_x/accuracy/10-3
+execute at @e[tag=bs.id.match,limit=1,sort=nearest] run function bs.location:get/x/scale/3
 scoreboard players operation @s bs.loc.x += @s bs.link.rx
 
-function bs.location:set_x/accuracy/10-3
+function bs.location:set/x/scale/3

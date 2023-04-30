@@ -1,55 +1,33 @@
 
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.16.1
-# Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.location:add
-# Parallelizable: true
-# Note: It was excessively more impressive in 1.12...
+# Version: 1.1
+# Created: ??/??/?? (1.16.1)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: 30/04/2023 (1.19.4)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:add
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#add-up-coordinates
+# Note          : It was excessively more impressive in 1.12...
 
-# Input: @s bs.loc.x (score)
-# Input: @s bs.loc.y (score)
-# Input: @s bs.loc.z (score)
-
-#__________________________________________________
-# INIT
-
-scoreboard objectives add bs.loc.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location X","color":"aqua"}]
-scoreboard objectives add bs.loc.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Y","color":"aqua"}]
-scoreboard objectives add bs.loc.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Location Z","color":"aqua"}]
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
 # Backup
 scoreboard players operation #backup.location.add.locX bs = @s bs.loc.x
 scoreboard players operation #backup.location.add.locY bs = @s bs.loc.y
 scoreboard players operation #backup.location.add.locZ bs = @s bs.loc.z
 
-execute at @s run function bs.core:entity/summon
-tag @e[tag=bs.new,limit=1] add bs.location.add.tmp
-tag @e[tag=bs.location.add.tmp] remove bs.new
-execute as @e[tag=bs.location.add.tmp] at @s run function bs.location:get
+execute at @s run function bs.location:get
 
-scoreboard players operation @s bs.loc.x += @e[tag=bs.location.add.tmp,limit=1] bs.loc.x
-scoreboard players operation @s bs.loc.y += @e[tag=bs.location.add.tmp,limit=1] bs.loc.y
-scoreboard players operation @s bs.loc.z += @e[tag=bs.location.add.tmp,limit=1] bs.loc.z
-execute as @e[tag=bs.location.add.tmp] at @s run function bs.core:entity/safe_kill
+scoreboard players operation @s bs.loc.x += @s bs.loc.rx
+scoreboard players operation @s bs.loc.y += @s bs.loc.ry
+scoreboard players operation @s bs.loc.z += @s bs.loc.rz
 
-execute if entity @s[type=minecraft:player] run function bs.location:set/child/player
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[0] double 1 run scoreboard players add @s bs.loc.x 0
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[1] double 1 run scoreboard players add @s bs.loc.y 0
-execute if entity @s[type=!minecraft:player] store result entity @s Pos[2] double 1 run scoreboard players add @s bs.loc.z 0
+function bs.location:set
 
 # Restore
 scoreboard players operation @s bs.loc.x = #backup.location.add.locX bs

@@ -1,25 +1,18 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: theogiraudet
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.location:is_in_cave
-# Parallelizable: true
-# Note: Return 1 if the entity is in a cave, 0 else.
+# Version: 2.0
+# Created: ??/??/???? (1.12)
+# Last verification: 30/04/2023 (1.19.4)
+# Last modification: ??/??/???? (1.16.1)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.location:get
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/location.html#is_in_cave
+# Note          : It was excessively more impressive in 1.12...
 
-#__________________________________________________
-# INIT
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
 execute store result score @s bs.out.0 if block ~ ~ ~ cave_air
