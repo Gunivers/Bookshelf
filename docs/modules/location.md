@@ -1,193 +1,88 @@
 # 📍 Location
 
-`bs.location:`: The "Location" functions allow to manage the
-position of entities via scores. It is thus possible to detect the
-position of an entity or to place it at a position defined by a score.
+**`bs.location:_`**
 
-## Add up coordinates
+This module allow to manage the position of entities via scores. It is thus possible to detect the position of an entity or to place it at a position defined by a score.
 
-`add`: Adds the position passed via the scores `bs.loc[X,Y,Z]` to
-the one where the command was executed, then teleports the entity to
-this new position.
+<div align=center>
 
-*Example:*
+![](img/location.jpg)
 
-Move Aypierre by 3 blocks on the X axis, -2 on the Y axis and 5 on the Z
-axis
-
-```
-scoreboard players set Aypierre bs.loc.x 3
-scoreboard players set Aypierre bs.loc.y -2
-scoreboard players set Aypierre bs.loc.z 5
-execute as Aypierre at @s run function bs.location:add
-```
-
-> **Credits**: Leirof
+</div>
 
 ---
 
-## Get location
+## 🔧 Functions
 
-`get` : Detect the position of the entity (coordinates)
-
-* Stores the values on the scores `bs.loc[X,Y,Z]` with a precision of 1:1.
-
-*Example:*
-
-Detect and display the position of the nearest spider:
-
-```
-# Once
-execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get
-tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locX"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs. locY"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
-```
-
-> **Credits**: Leirof
+You can find below all the function available in this module.
 
 ---
 
-## Get distance "as to at"
-
-`get_distance_ata`: Calculates the distance between the source entity
-and the execution position of the function.
-
-* The result is returned on the score `bs.out.0`.
-* * Be careful, this function calls `get_distance_squared_ata`, on which it applies the math/sqrt operation. It is therefore relatively heavy and is subject to the same constraint as `get_distance_squared_as_to_at` on integer size.
-
-*Example:*
-
-Calculate the distance between you and the nearest sheep:
-
-```
-# Once
-execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata
-tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-```
-
-> **Credits**: Leirof
-
----
-
-## Get distance squared "as to at"
-
-`get_distance_squared_ata` : Calculates the squared distance between
-the source entity and the execution position of the function.
-
-* The result is returned on the score `bs.out.0`.
-
-```{warning} 
-
-The scores on Minecraft represent the size of an int variable in java. The latter
-is huge, but not unlimited. However, calculations involving powers give
-results that can quickly rise to more than billions, exceeding the size
-limit of the variable. The game will then have no choice but to "loop"
-the value (if you exceed the limit of 1, the variable will go negative).
-```
-
-*Example:*
-
-Calculate the squared distance between you and the nearest sheep:
-
-```
-# Once
-execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata
-tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-```
-
-> **Credits**: Leirof
-
----
-
-## Get relative corrdinates "as to at"
-
-`get_relative_ata` : Allows to obtain the position of the source
-entity, relative to the execution position of the function.
-
-* The result is then placed on the scores `bs.loc[X,Y,Z]`.
-
-*Example:*
-
-Get your position relative to the nearest Creeper:
-
-```
-# Once
-execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata
-tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. locY"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.z"},"color":"gold"}]
-```
-
-> **Credits**: Leirof
-
----
-
-## Is in cave?
-
-`is_in_cave`: Allows to know if the location indicated by the
-execution mosition of the function is located in a cellar.
-
-* Stores the result on bs.out.0 (1 if in a cellar, 0 otherwise)
-
-*Example:*
-
-To know if the skeletons are in cellars or not:
-
-```
-# Once
-execute as @e[type=skeleton] at @s run function bs.location:is_in_cave
-
-# See the result:
-effect give @e[type=skeleton,scores={bs.out.0=1}] glowing 1 1 true
-```
-
-> **Credits**: Leirof
-
----
-
-## Set location
+### Add up coordinates
 
 ::::{tab-set}
-:::{tab-item} Classic
+:::{tab-item} Block
 
-`set`: Allows to place the entity at a precise coordinate given via
-the scores `bs.loc[X,Y,Z]`.
+**`bs.location:add`**
 
-* This function has variations on x, y and z, useful for players, for whom the position can not be changed directly via the /data command.
+Adds a relative position vector to the position of the executing entity, then teleports the entity to
+this new position.
 
-*Example:*
+Inputs
 
-Teleport in 15 100 25
+:   (execution) `as <entities>`
+    : The entity to teleport
 
-```
-# Once
-scoreboard players set @s bs.loc.x 15
-scoreboard players set @s bs.loc.y 100
-scoreboard players set @s bs.loc.z 25
-function bs.location:set
-```
+    (score) `@s bs.loc.[rx,ry,rz]`
+    : The relative position vector to move the entity
+
+Outputs
+
+:   (state) Entity position changed 
+    : The entity position have been shifted from the relative position vector
+
+Example
+
+:   Move Aypierre by 3 blocks on the X axis, -2 on the Y axis and 5 on the Z axis
+
+    ```
+    scoreboard players set Aypierre bs.loc.x 3
+    scoreboard players set Aypierre bs.loc.y -2
+    scoreboard players set Aypierre bs.loc.z 5
+    execute as Aypierre at @s run function bs.location:add
+    ```
 
 :::
-:::{tab-item} Fast
+:::{tab-item} Milliblock
 
-`fast_set`: Changes the position of the executing entity to the X,Y
-and Z coordinates respectively indicated by the scores ``bs.loc[X,Y,Z]``. To the user, this function is used in the same
-way as the ``set`` function and produces the same results. The
-differences are:
+**`bs.location:add/scale/3`**
 
-* This function goes through a succession of teleports and not via NBT modification, which makes it more cumbersome to execute
-* It avoids the problem of latency in displaying the position of entities after modifications of their NBT (especially when there is a large number of entities).
-* The system is limited to positions between -32000 and +32000 on each axis.
+Adds a relative position vector (expressed in milliblock) to the position of the executing entity, then teleports the entity to
+this new position.
 
-*Example:*
+Inputs
 
-Place Boblennon at coordinate -5 63 26 (absurd case because the position
-is hard-coded, so a simple /tp would suffice, but here the scores can be
-modified unlike the parameters of a /tp command)
+:   (execution) `as <entities>`
+    : The entity to teleport
 
-```
-scoreboard players set Boblennon bs.loc.x -5
-scoreboard players set Boblennon bs.loc.y 63
-scoreboard players set Boblennon bs.loc.z 26
-execute as Boblennon run function bs.location:fast_set
-```
+    (score) `@s bs.loc.[rx,ry,rz]`
+    : The relative position vector to move the entity
+
+Outputs
+
+:   (state) Entity position changed 
+    : The entity position have been shifted from the relative position vector
+
+Example
+
+:   Move Aypierre by 3 blocks on the X axis, -2.345 on the Y axis and 5.1 on the Z axis
+
+    ```
+    scoreboard players set Aypierre bs.loc.x 3000
+    scoreboard players set Aypierre bs.loc.y -2345
+    scoreboard players set Aypierre bs.loc.z 5100
+    execute as Aypierre at @s run function bs.location:add/scale/3
+    ```
 
 :::
 ::::
@@ -196,7 +91,950 @@ execute as Boblennon run function bs.location:fast_set
 
 ---
 
-## Spread entity
+### Get location
+
+::::::{tab-set}
+:::::{tab-item} x,y,z
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get`**
+
+Get the execution position of the function and store the coordinates in 3 scores.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.[x,y,z]`
+    : The coordinates of the position
+
+Example
+
+:   Detect and display the position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get
+
+    # See the resluts
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.y"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get/scale/3`**
+
+Get the execution position of the function, with a milliblock accuracy, and store the coordinates in 3 scores.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.[x,y,z]`
+    : The coordinates of the position expressed in milliblocks
+
+Example
+
+:   Detect and display the position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/scale/3
+
+    # See the resluts
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.y"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+:::::
+:::::{tab-item} x only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get/x`**
+
+Get the execution x position of the function and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.x`
+    : The coordinates of the position
+
+Example
+
+:   Detect and display the x position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/x
+
+    # See the resluts
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.x"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get/x/scale/3`**
+
+Get the execution x position of the function, with a milliblock accuracy, and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.x`
+    : The coordinates of the x position expressed in milliblocks
+
+Example
+
+:   Detect and display the x position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/x/scale/3
+
+    # See the resluts
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.x"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+:::::
+:::::{tab-item} y only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get/y`**
+
+Get the execution y position of the function and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.y`
+    : The coordinates of the position
+
+Example
+
+:   Detect and display the y position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/y
+
+    # See the resluts
+    tellraw @a [{"text": "Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.y"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get/y/scale/3`**
+
+Get the execution y position of the function, with a milliblock accuracy, and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.y`
+    : The coordinates of the y position expressed in milliblocks
+
+Example
+
+:   Detect and display the y position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/y/scale/3
+
+    # See the resluts
+    tellraw @a [{"text": "Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.y"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+:::::
+:::::{tab-item} z only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get/z`**
+
+Get the execution z position of the function and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.z`
+    : The coordinates of the position
+
+Example
+
+:   Detect and display the z position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/z
+
+    # See the resluts
+    tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get/z/scale/3`**
+
+Get the execution z position of the function, with a milliblock accuracy, and store the coordinate in a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to detect
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get
+
+Outputs
+
+:   (score) `@s bs.loc.z`
+    : The coordinates of the z position expressed in milliblocks
+
+Example
+
+:   Detect and display the z position of the nearest spider:
+
+    ```
+    # Once
+    execute as @e[type=spider,limit=1,sort=nearest] run function bs.location:get/z/scale/3
+
+    # See the resluts
+    tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.loc.z"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+:::::
+::::::
+
+> **Credits**: Leirof
+
+---
+
+### Get distance
+
+::::::{tab-set}
+:::::{tab-item} Normal
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get_distance_ata`**
+
+Calculates the distance between the source entity and the execution position of the function.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity positioned at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get the distance from
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : The distance in block between the two positions
+
+Example
+
+:   Calculate the distance between you and the nearest sheep:
+
+    ```
+    # Once
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata
+
+    # See the result
+    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get_distance_ata/scale/3`**
+
+Calculates the distance in milliblock between the source entity and the execution position of the function.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity positioned at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get the distance from
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : The distance in milliblock between the two positions
+
+Example
+
+:   Calculate the distance in melliblock between you and the nearest sheep:
+
+    ```
+    # Once
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_ata/scale/3
+
+    # See the result
+    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+```{admonition} Performance tip
+:class: tip
+
+For several applications such as comparing distances, you can use the squared distance instead of the "normal" distance. It is faster to calculate because it avoid a square root computation, which is a bit heavy for a computer, especially in Minecraft.
+```
+
+```{admonition} Dependencies
+:class: dropdown
+
+The following functions are required to use this one. Be carefull to install the corresponding module before using it.
+
+- [`bs.math:sqrt`](math)
+```
+
+:::::
+:::::{tab-item} Squared
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:get_distance_squared_ata`**
+
+Calculates the squared distance between the source entity and the execution position of the function.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity positioned at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get the distance from
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : The squared distance in block² between the two positions
+
+Example
+
+:   Calculate the squared distance between you and the nearest sheep:
+
+    ```
+    # Once
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata
+
+    # See the result
+    tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+    ```
+:::
+:::{tab-item} Deciblock
+
+**`bs.location:get_distance_squared_ata/scale/1`**
+
+Calculates the squared distance (in deciblock²) between the source entity and the execution position of the function.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity positioned at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get the distance from
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : The squared distance in deciblock² between the two positions
+
+Example
+
+:   Calculate the squared distance in deciblock² between you and the nearest sheep:
+
+    ```
+    # Once
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata/scale/1
+
+    # See the result
+    tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:get_distance_squared_ata/scale/3`**
+
+Calculates the squared distance (in milliblock²) between the source entity and the execution position of the function.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity positioned at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to get the distance from
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : The squared distance in milliblock² between the two positions
+
+Example
+
+:   Calculate the squared distance in milliblock² between you and the nearest sheep:
+
+    ```
+    # Once
+    execute as @s at @e[type=sheep,limit=1,sort=nearest] run function bs.location:get_distance_squared_ata/scale/3
+
+    # See the result
+    tellraw @a [{"text": "Distance^2 : ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+    ```
+
+:::
+::::
+
+```{admonition} Score limitation
+:class: warning
+
+The scores on Minecraft represent the size of an int variable in java. The latter is huge, but not unlimited. However, calculations involving powers give results that can quickly rise to more than billions, exceeding the size limit of the variable. The game will then have no choice but to “loop” the value (if you exceed the limit of 1, the variable will go negative).
+```
+
+:::::
+::::::
+
+> **Credits**: Leirof
+
+---
+
+### Get relative coordinates
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`get_relative_ata`**
+
+Obtain the execution position of the function relatively to the position of the executing entity.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity, considered at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position te get the relative position from
+    
+Outputs
+
+:   (score) `@s bs.loc.[rx,ry,rz]`
+    : The relative coordinates
+
+Example
+
+:   Get your position relative to the nearest Creeper:
+
+    ```
+    # Once
+    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata
+
+    # See the result
+    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.rx"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.ry"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.rz"},"color":"gold"}]
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`get_relative_ata/scale/3`**
+
+Obtain the execution position of the function relatively to the position of the executing entity, in milliblock.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity, considered at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position te get the relative position from
+    
+Outputs
+
+:   (score) `@s bs.loc.[rx,ry,rz]`
+    : The relative coordinates in milliblock
+
+Example
+
+:   Get your position relative in milliblock to the nearest Creeper:
+
+    ```
+    # Once
+    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function bs.location:get_relative_ata/scale/3
+
+    # See the result
+    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.rx"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.loc.ry"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.loc.rz"},"color":"gold"}]
+    ```
+
+:::
+::::
+
+> **Credits**: Leirof
+
+---
+
+### Is in cave?
+
+**`is_in_cave`**
+
+Allows to know if the location indicated by the execution mosition of the function is located in a cellar.
+
+Inputs
+
+:   (execution) `as <entities>`
+
+    : The entity, considered at the reference point
+
+    (execution) `at <entity>` or `positioned <x> <y> <z>`
+    : The position to check
+
+Outputs
+
+:   (score) `@s bs.out.0`
+    : 1 if the position is in a cave, 0 otherwise
+
+Example
+
+:   To know if the skeletons are in cellars or not:
+
+    ```
+    # Once
+    execute as @e[type=skeleton] at @s run function bs.location:is_in_cave
+
+    # See the result:
+    effect give @e[type=skeleton,scores={bs.out.0=1}] glowing 1 1 true
+    ```
+
+> **Credits**: Leirof
+
+---
+
+### Set location
+
+::::::::{tab-set}
+:::::::{tab-item} Normal
+::::::{tab-set}
+:::::{tab-item} x,y,z
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:set`**
+
+Allows to place the entity at a precise coordinate given by scores.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.[x,y,z]`
+    : The coordinates to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the coordinates indicated by the scores
+
+Example
+
+:   Teleport in 15 100 25
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15
+    scoreboard players set @s bs.loc.y 100
+    scoreboard players set @s bs.loc.z 25
+    function bs.location:set
+    ```
+
+:::
+:::{tab-item} Millilock
+
+**`bs.location:set/scale/3`**
+
+Allows to place the entity at a precise coordinate (with a milliblock accuracy) given by scores.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.[x,y,z]`
+    : The coordinates in milliblocks to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the coordinates indicated by the scores
+
+Example
+
+:   Teleport in 15.0 100.123 25.5
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15000
+    scoreboard players set @s bs.loc.y 100123
+    scoreboard players set @s bs.loc.z 25500
+    function bs.location:set/scale/3
+    ```
+
+:::
+::::
+:::::
+:::::{tab-item} x only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:set/x`**
+
+Allows to place the entity at a precise x coordinate given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.x`
+    : The x coordinates to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the x coordinates indicated by the score
+
+Example
+
+:   Teleport in 15 ~ ~
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15
+    function bs.location:set/x
+    ```
+
+:::
+:::{tab-item} Millilock
+
+**`bs.location:set/x/scale/3`**
+
+Allows to place the entity at a precise x coordinate (with a milliblock accuracy) given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.x`
+    : The x coordinates in milliblocks to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the x coordinates indicated by the score
+
+Example
+
+:   Teleport in 15.123 ~ ~
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15123
+    function bs.location:set/x/scale/3
+    ```
+
+:::
+::::
+:::::
+:::::{tab-item} y only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:set/y`**
+
+Allows to place the entity at a precise y coordinate given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.y`
+    : The y coordinates to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the y coordinates indicated by the score
+
+Example
+
+:   Teleport in ~ 15 ~
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.y 15
+    function bs.location:set/y
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:set/y/scale/3`**
+
+Allows to place the entity at a precise y coordinate (with a milliblock accuracy) given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.y`
+    : The y coordinates in milliblocks to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the y coordinates indicated by the score
+
+Example
+
+:   Teleport in ~ 15.123 ~
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.y 15123
+    function bs.location:set/y/scale/3
+    ```
+
+:::
+::::
+:::::
+:::::{tab-item} z only
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:set/z`**
+
+Allows to place the entity at a precise z coordinate given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.z`
+    : The z coordinates to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the z coordinates indicated by the score
+
+Example
+
+:   Teleport in ~ ~ 15
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.z 15
+    function bs.location:set/z
+    ```
+
+:::
+:::{tab-item} Millilock
+
+**`bs.location:set/z/scale/3`**
+
+Allows to place the entity at a precise z coordinate (with a milliblock accuracy) given by a score.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.z`
+    : The z coordinates in milliblocks to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the z coordinates indicated by the score
+
+Example
+
+:   Teleport in ~ ~ 15.123
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.z 15123
+    function bs.location:set/z/scale/3
+    ```
+
+:::
+::::
+:::::
+:::::::
+:::::::{tab-item} Fast
+
+::::{tab-set}
+:::{tab-item} Block
+
+**`bs.location:fast_set`**
+
+Allows to place the entity at a precise coordinate given by scores with a dichotomic teleport method that avoid some graphical lag induced by the /data command.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.[x,y,z]`
+    : The coordinates to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the coordinates indicated by the scores
+
+Example
+
+:   Teleport in 15 100 25
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15
+    scoreboard players set @s bs.loc.y 100
+    scoreboard players set @s bs.loc.z 25
+    function bs.location:fast_set
+    ```
+
+:::
+:::{tab-item} Milliblock
+
+**`bs.location:fast_set/scale/3`**
+
+Allows to place the entity at a precise coordinate (with a milliblock accuracy) given by scores with a dichotomic teleport method that avoid some graphical lag induced by the /data command.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entity to teleport
+
+    (score) `@s bs.loc.[x,y,z]`
+    : The coordinates (in milliblock) to teleport to
+
+Outputs
+
+:   (state) Entity position
+    : The entity has been teleported to the coordinates indicated by the scores
+
+Example
+
+:   Teleport in 15.0 100.123 25.5
+
+    ```
+    # Once
+    scoreboard players set @s bs.loc.x 15000
+    scoreboard players set @s bs.loc.y 100123
+    scoreboard players set @s bs.loc.z 25500
+    function bs.location:fast_set/scale/3
+    ```
+
+:::
+::::
+:::::::
+::::::::
+
+> **Credits**: Leirof
+
+---
+
+### Spread entity
 
 ::::{tab-set}
 
