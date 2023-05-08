@@ -32,6 +32,8 @@ This version contain breaking changes. In the following changelog, they are iden
   - (score) `bs.temperature` $\rightarrow$ `bs.biome.temp`
   - (tag) `bs.canRain` $\rightarrow$ `bs.biome.CanRain`
   - (tag) `bs.canSnow` $\rightarrow$ `bs.biome.CanSnow`
+- 💥 `bs.location:get_relative` and `bs.location:add` now use `bs.loc.[rx,ry,rz]` scores
+- 💥 "accuracy" folders was renamed to "scale" and files inside was renamed "10-X" to "X"
 
 ### 🐛 Bug fixes
 
