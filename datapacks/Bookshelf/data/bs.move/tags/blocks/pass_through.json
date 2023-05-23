@@ -26,6 +26,10 @@
 		"minecraft:air",
 		"minecraft:water",
 		"minecraft:lava",
-		"minecraft:iron_bars"
+		"minecraft:iron_bars",
+		"minecraft:cave_air",
+		"minecraft:void_air",
+		"minecraft:light",
+		"minecraft:moving_piston"
 	]
 }
