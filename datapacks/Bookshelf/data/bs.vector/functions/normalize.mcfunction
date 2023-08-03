@@ -19,8 +19,6 @@
 execute unless score @s bs.opt.0 matches 1.. run scoreboard players set @s bs.opt.0 1000
 ### bs.opt.0 := ||Vn||
 
-scoreboard players operation #vector.backup.out.0 bs.data = @s bs.out.0
-
 # Computing norm of Vi
 function bs.vector:length
 ### bs.out.0 := ||Vi||
@@ -35,7 +33,7 @@ scoreboard players operation @s bs.vector.x /= @s bs.out.0
 scoreboard players operation @s bs.vector.y /= @s bs.out.0
 scoreboard players operation @s bs.vector.z /= @s bs.out.0
 
-# Computing normalization factor A
+# Computing normalization factor A (shifted by 3 decimals)
 scoreboard players operation @s bs.out.0 *= 1000 bs.const
 scoreboard players operation @s bs.out.0 /= @s bs.opt.0
 ### Vi = A * Vn   ==>   A = Vi / Vn
