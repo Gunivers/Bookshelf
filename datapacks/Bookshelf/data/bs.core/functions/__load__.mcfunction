@@ -9,7 +9,7 @@ scoreboard objectives add bs.metadata dummy [{"text":"Bookshelf ","color":"dark_
 scoreboard players reset * bs.metadata
 
 # Module list
-function bs:_
+function bs:menu
 function bs.biome:_
 function bs.block:_
 function bs.cache:_
@@ -25,10 +25,10 @@ function bs.memory:_
 function bs.move:_
 function bs.orientation:_
 function bs.schedule:_
+function bs.smartmove:_
 function bs.time:_
 function bs.tree:_
 function bs.vector:_
 function bs.view:_
 function bs.xp:_
-function gsys.example:_
-function gsys.lgdir:_
+function bs.example:_
