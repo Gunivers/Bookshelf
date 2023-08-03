@@ -127,6 +127,7 @@ execute as @e[tag=bs.unitest] run function bs.vector:fast_normalize
 execute as @e[tag=bs.unitest] unless score @s bs.vector.x matches 333 run tellraw @a [{"text":"[bs.vector:fast_normalize] expected vx' = 333, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.x"}}]
 execute as @e[tag=bs.unitest] unless score @s bs.vector.y matches -667..-666 run tellraw @a [{"text":"[bs.vector:fast_normalize] expected vy' = -666, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.y"}}]
 execute as @e[tag=bs.unitest] unless score @s bs.vector.z matches 1000 run tellraw @a [{"text":"[bs.vector:fast_normalize] expected vz' = 1000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.z"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches 3000 run tellraw @a [{"text":"[bs.vector:fast_normalize] expected A = 3000, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.out.0"}}]
 
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.vector:fast_normalize] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]
@@ -156,6 +157,7 @@ execute as @e[tag=bs.unitest] run function bs.vector:normalize
 execute as @e[tag=bs.unitest] unless score @s bs.vector.x matches 267 run tellraw @a [{"text":"[bs.vector:normalize] expected vx' = 267, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.x"}}]
 execute as @e[tag=bs.unitest] unless score @s bs.vector.y matches -535..-534 run tellraw @a [{"text":"[bs.vector:normalize] expected vy' = -534, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.y"}}]
 execute as @e[tag=bs.unitest] unless score @s bs.vector.z matches 801 run tellraw @a [{"text":"[bs.vector:normalize] expected vz' = 801, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.z"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches 3741 run tellraw @a [{"text":"[bs.vector:normalize] expected A = 3741, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.out.0"}}]
 
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
 execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"text":"[bs.vector:normalize] entity count changed. Diff: ", "color": "red"}, {"score":{"name":"NB_ENTITY_DIFF","objective":"bs.unit_tests"}}]
