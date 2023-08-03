@@ -223,7 +223,7 @@ Inputs
     : The entities for which the vector will be normalized
 
     (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
+    : The initial vector ($V_i$) components
 
     ```{admonition} Config
     :class: dropdown
@@ -231,10 +231,18 @@ Inputs
     You can configure the length of normalization (which is 1000 by default) by setting the score `vector.normalize.length bs.data` score to the desired value and giving the tag `bs.config.override` to the entity executing the function. Be careful, without this tag, the config score will be reseted to the default value.
     ```
 
+Option
+
+:   (score) `@s bs.opt.0` (default: 1000)
+    : The length of the normalized vector shifted by 3 digits
+
 Outputs
 
 :   (scores) `@s bs.vector.[x,y,z]`
-    : The normalized vector components
+    : The normalized vector ($V_n$) components
+
+    (score) `@s bs.out.0`
+    : The normalisation factor $A$ ($V_i = A \times V_n$) shifted by 3 digits
 
 ```{admonition} Performance tip
 :class: tip
@@ -264,16 +272,18 @@ Inputs
     (scores) `@s bs.vector.[x,y,z]`
     : The vector components
 
-    ```{admonition} Config
-    :class: dropdown
+Option
 
-    You can configure the length of normalization (which is 1000 by default) by setting the score `vector.fast_normalize.length bs.data` score to the desired value and giving the tag `bs.config.override` to the entity executing the function. Be careful, without this tag, the config score will be reseted to the default value.
-    ```
+:   (score) `@s bs.opt.0` (default: 1000)
+    : The length of the normalized vector shifted by 3 digits
 
 Outputs
 
 :   (scores) `@s bs.vector.[x,y,z]`
     : The normalized vector components
+
+    (score) `@s bs.out.0`
+    : The normalisation factor $A$ ($V_i = A \times V_n$) shifted by 3 digits
 
 :::
 ::::
