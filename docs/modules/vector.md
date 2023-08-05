@@ -35,11 +35,14 @@ You can find below all the function available in this module.
 
 ---
 
-### Get vector from orientation
+### Get
+
+::::{tab-set}
+:::{tab-item} From orientation
 
 **`bs.vector:get_from_orientation`**
 
-Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores `bs.vector[X,Y,Z]` (each between -1000 and 1000).
+Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores `bs.vector.[x,y,z]` (each between -1000 and 1000).
 
 Inputs
 
@@ -70,9 +73,43 @@ This function require the following modules to work properly:
 
 > **Credits**: Leirof
 
----
+:::
+:::{tab-item} From Motion
 
-### Get vector "as to at"
+**`bs.vector:get_from_motion`**
+
+Compute the displacement vector of the entity according to its motion. This vector is composed of 3 elementary vectors stored on the scores `bs.vector.[x,y,z]`.
+
+Inputs
+
+:   (execution) `as <entities>`
+    : The entities for which the vector will be get
+
+Outputs
+
+:   (scores) `@s bs.vector.[x,y,z]`
+    : The vector components
+
+Example
+
+:   Get the motion vector of every bats
+
+    ```
+    # Once
+    execute as @e[type=bat] run function bs.vector:get_from_motion
+    ```
+
+```{admonition} Dependencies
+:class: warning
+
+Player's motion doesn't take in account movements induced by the user controls. It only take in account movement induced by external forces (like gravity, explosions, etc...).
+
+```
+
+> **Credits**: Leirof
+
+:::
+:::{tab-item} As to at
 
 **`bs.vector:get_ata`**
 
@@ -109,7 +146,7 @@ This function require the following modules to work properly:
 
 > **Credits**: Leirof
 
----
+::::
 
 ### Get length
 
