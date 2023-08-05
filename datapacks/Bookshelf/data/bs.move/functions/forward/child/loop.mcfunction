@@ -12,7 +12,7 @@ execute if score move.vectorZ bs matches ..-1 run function bs.move:by_local_vect
 #__________________________________________________
 # collision
 
-execute at @s[scores={bs.collision=1..}] run function bs.move:forward/child/collision
+execute at @s[scores={bs.move.collision=1..}] run function bs.move:forward/child/collision
 
 #__________________________________________________
 # Loop
