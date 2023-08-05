@@ -39,8 +39,6 @@ conservation_principle
 :caption: Advanced stuff
 
 initialization
-configuration
 comments
-debug
 special_functions
 ````
