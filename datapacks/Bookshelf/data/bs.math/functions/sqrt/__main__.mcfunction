@@ -6,14 +6,12 @@
 # - xiaodou123
 # Contributors:
 
-# Version: 3.0.0
-# Created: 05/08/2023 (1.20.1)
-# Last verification: 05/08/2023 (1.20.1)
+# Version: 3.0
+# Created: ??/??/2018 (1.13)
 # Last modification: 05/08/2023 (1.20.1)
 
-# Original path: bs.math:sqrt
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#square-root
-# Note: Thanks to the Minecraft Commands' discord server for the help provided (https://discord.gg/QAFXFtZ)
+# Note: Thanks to the Minecraft Commands' discord server for the help provided for this version 3.0 (https://discord.gg/QAFXFtZ)
 
 # CODE ------------------------------------------------------------------------
 
