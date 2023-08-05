@@ -17,7 +17,6 @@ for and how to use it. This is what this one looks like:
 
 # Version: (system version)
 # Created: jj/mm/yyyy (minecraft version)
-# Last verification: jj/mm/yyyy (minecraft version)
 # Last modification: jj/mm/yyyy (minecraft version)
 
 # Documentation : https://link.to/documentation/page
