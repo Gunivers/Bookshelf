@@ -69,6 +69,7 @@ scoreboard players set 97 bs.const 97
 scoreboard players set 100 bs.const 100
 scoreboard players set 101 bs.const 101
 scoreboard players set 112 bs.const 112
+scoreboard players set 119 bs.const 119
 scoreboard players set 120 bs.const 120
 scoreboard players set 128 bs.const 128
 scoreboard players set 135 bs.const 135
@@ -110,6 +111,7 @@ scoreboard players set 2303 bs.const 2303
 scoreboard players set 3000 bs.const 3000
 scoreboard players set 4000 bs.const 4000
 scoreboard players set 4096 bs.const 4096
+scoreboard players set 4214 bs.const 4214
 scoreboard players set 5000 bs.const 5000
 scoreboard players set 6000 bs.const 6000
 scoreboard players set 6500 bs.const 6500
@@ -132,6 +134,7 @@ scoreboard players set 32400 bs.const 32400
 scoreboard players set 36000 bs.const 36000
 scoreboard players set 36288 bs.const 36288
 scoreboard players set 40500 bs.const 40500
+scoreboard players set 50436 bs.const 50436
 scoreboard players set 65521 bs.const 65521
 scoreboard players set 65536 bs.const 65536
 scoreboard players set 90000 bs.const 90000
