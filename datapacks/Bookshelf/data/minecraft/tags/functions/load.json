@@ -1,5 +1,7 @@
 {
  "values": [
-    "bs.core:__load__"
+    "bs.core:__load__",
+    "bs.smartmove:__load__",
+    "bs.vector:__load__"
  ]
 }

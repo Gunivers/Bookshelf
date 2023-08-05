@@ -55,7 +55,9 @@ Inputs
     (scores) `@s bs.vector.[x,y,z]`
     : The local vector you want the entity to move on (respectively left, up and forward vectors), shifted by 3 digits (1000 $\rightarrow$ move by 1 block)
 
-    (scores) `@s bs.collision`
+Options
+
+:   (scores) `@s bs.opt.0` (default: 0)
     : The collision behavior. Here is built-in behaviors:
 
         - `0` (default): The entity will cross all the blocks
@@ -63,7 +65,7 @@ Inputs
         - `-2`: The entity will stick and slide on the surface it will encounter
         - `-3`: The entity will stick and stop on all the solid blocks
         - `-4`: The entity will bounce on solid blocks and reduce the total speed by 2
-        - `-101`, `-102`, `-103`, `-104` : same but useing head position instead of feet as the source of detection collision.
+        - `-101`, `-102`, `-103`, `-104` : same but using head position instead of feet as the source of detection collision.
 
         ```{button-link} move/by_vector_custom_collision.html
         :color: primary
@@ -74,15 +76,19 @@ Inputs
         ⚙️ Create your own collisions!
         ```
 
-Option
-
-:   (score) `@s bs.opt.0`
-    : Precision of detection (in miliblock, so 500 -> 0.5 block). Default: 1000 (1 block)
+    (score) `@s bs.opt.1` (default: 1000)
+    : Precision of collision detection (in miliblock, so 500 -> 0.5 block). This precision will not be taken in account if collision option is 0.
 
 Outputs
 
-:   (state) @s position
+:   (state) `@s` position
     : The new position of the entity
+
+    (tag) `@s bs.move.collision`
+    : If the entity has collided with something
+
+    (tag) `@s bs.move.collision_on_[x,y,z]`
+    : If the entity has collided with something on the given axis
 
 Examples
 

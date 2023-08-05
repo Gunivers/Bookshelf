@@ -19,7 +19,7 @@ scoreboard objectives add lgdir.trigger minecraft.used:minecraft.carrot_on_a_sti
 #____________________________________________________________________________________________________
 
 # Summon the projectile when the item is right-clicked
-execute at @a[scores={lgdir.trigger=1}] run summon marker ~ ~ ~ {Tags:["lgdir","lgdir.projectile","Debug","bs.debug.move.by_vector","bs.move.DisplayTrajectory"]}
+execute at @a[scores={lgdir.trigger=1}] run summon marker ~ ~ ~ {Tags:["lgdir","lgdir.projectile","Debug","bs.debug.move.by_vector","bs.move.display_trajectory"]}
 execute at @a[scores={lgdir.trigger=1}] run playsound minecraft:item.trident.throw master @a[distance=..15] ~ ~ ~ 2 2 1
 
 # TP of the projectile on the shooting player to get his orientation (the summon command place the entity in default orientation)
@@ -38,22 +38,25 @@ scoreboard players set @a lgdir.trigger 0
 # Getting projectile vector
 execute as @e[tag=lgdir.projectile,tag=!lgdir.old] at @s run function bs.vector:get_from_orientation 
 
-# Multiplying the speed of the projectile
+# Increasing the speed of the projectile
 scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] bs.vector.x *= 2 bs.const
 scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] bs.vector.y *= 2 bs.const
 scoreboard players operation @e[tag=lgdir.projectile,tag=!lgdir.old] bs.vector.z *= 2 bs.const
 
+# Apply gravity
 scoreboard players remove @e[tag=lgdir.projectile,tag=lgdir.old] bs.vector.y 50
 
 # Setting collision to type "bounce on everything"
-scoreboard players set @e[tag=lgdir.projectile,tag=!lgdir.old] bs.collision -1
+scoreboard players set @e[tag=lgdir.projectile,tag=!lgdir.old] bs.opt.0 -1
 
 # Setting projectile collision precision to 0.1 block
-scoreboard players set @e[tag=lgdir.projectile] bs.opt.0 500
+scoreboard players set @e[tag=lgdir.projectile] bs.opt.1 500
 
+# Apply movement
 execute as @e[tag=lgdir.projectile] run function bs.move:by_vector
-execute at @e[tag=lgdir.projectile] run particle dust 1 0 0 1 ~ ~ ~ 0.01 0.01 0.01 0 5 force
 
+# Displaying trajectory
+execute at @e[tag=lgdir.projectile] run particle dust 1 0 0 1 ~ ~ ~ 0.01 0.01 0.01 0 5 force
 
 # Identity projectiles as old 
 tag @e[tag=lgdir.projectile] add lgdir.old

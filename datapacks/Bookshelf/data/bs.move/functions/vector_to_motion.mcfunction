@@ -27,4 +27,4 @@ execute as @s store result entity @s Motion[0] double 0.001 run scoreboard playe
 execute as @s store result entity @s Motion[1] double 0.001 run scoreboard players get @s bs.vector.y
 execute as @s store result entity @s Motion[2] double 0.001 run scoreboard players get @s bs.vector.z
 
-execute as @s[scores={bs.collision=1..}] run function bs.move:by_motion/child/collision
+execute as @s[scores={bs.move.collision=1..}] run function bs.move:by_motion/child/collision

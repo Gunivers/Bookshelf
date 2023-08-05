@@ -25,10 +25,8 @@ function bs.memory:_
 function bs.move:_
 function bs.orientation:_
 function bs.schedule:_
-function bs.smartmove:_
 function bs.time:_
 function bs.tree:_
-function bs.vector:_
 function bs.view:_
 function bs.xp:_
 function bs.example:_

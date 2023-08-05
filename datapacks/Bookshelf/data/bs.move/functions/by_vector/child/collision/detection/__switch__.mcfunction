@@ -1,4 +1,7 @@
+# Executed as & at the moving entity
 
-# Detection type switch -------------------------------------------------------
+### DEBUG
+tellraw @a [{"text":"> bs.move:by_vector/child/collision/detection/__switch__","color":"aqua"},{"text":" as & at ","color":"gray"},{"selector":"@s"}]
 
-execute if score @s bs.collision matches ..-1 run function bs.move:by_vector/child/collision/detection/solid_block_on_detection_head
+# Detection type switch
+execute if score #move.collision bs.data matches ..-1 run function bs.move:by_vector/child/collision/detection/solid_block
