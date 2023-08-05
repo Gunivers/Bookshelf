@@ -10,12 +10,8 @@
 # Last modification: 02/23/2023 (1.19.2)
 
 # Original path : bs.vector:max_component
-# Documentation : https://bookshelf.docs.gunivers.net/en/latest/vector#max_component
+# Documentation : TODO
 # Note          :
-
-# INIT ------------------------------------------------------------------------
-
-# CONFIG ----------------------------------------------------------------------
 
 # CODE ------------------------------------------------------------------------
 
