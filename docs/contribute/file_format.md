@@ -20,7 +20,6 @@ for and how to use it. This is what this one looks like:
 # Last verification: jj/mm/yyyy (minecraft version)
 # Last modification: jj/mm/yyyy (minecraft version)
 
-# Original path : bs.path:to/function
 # Documentation : https://link.to/documentation/page
 # Note          :
 
