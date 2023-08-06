@@ -6,9 +6,8 @@
 # MC Version: 1.13
 # Last check:
 
-# Original path: bs.vector:classic/get_ata
-# Documentation: https://bs-core.readthedocs.io//entity#vector
-# Parallelizable: <true/false/global>
+# Original path: bs.vector:get_ata
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#get
 # Note:
 
 #__________________________________________________

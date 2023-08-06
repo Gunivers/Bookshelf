@@ -10,12 +10,8 @@
 # Last modification: 28/02/2023 (1.19.2)
 
 # Original path : bs.vector:get_from__motion
-# Documentation : https://bookshelf.docs.gunivers.net/en/latest/vector#get_from_orientation
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#get
 # Note          :
-
-# INIT ------------------------------------------------------------------------
-
-# CONFIG ----------------------------------------------------------------------
 
 # CODE ------------------------------------------------------------------------
 

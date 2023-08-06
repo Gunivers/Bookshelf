@@ -1,37 +1,19 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: KubbyDev
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.vector:classic/length
-# Documentation: https://bs-core.readthedocs.io//entity#vector
-# Parallelizable: <true/false/global>
-# Note:
+# Version: 1.0
+# Created: ??/??/???? (1.13)
+# Last verification: ??/??/???? (1.13)
+# Last modification: ??/??/???? (1.13)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.vector:length
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#get-length
+# Note          :
 
-# Input: bs.vector.x (score dummy)
-# Input: bs.vector.y (score dummy)
-# Input: bs.vector.z (score dummy)
-
-# Output: bs.out.0 (score dummy)
-
-#__________________________________________________
-# INIT
-
-scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
-scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
-scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
 # Backup of bs.in.0
 scoreboard players operation vector.length.var0 bs.data = @s bs.in.0
