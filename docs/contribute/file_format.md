@@ -10,17 +10,17 @@ for and how to use it. This is what this one looks like:
 
 ```
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © <current year> Gunivers Community.
 
-# Authors       :
-# Contributors  : 
+# Authors: <<author 1>, <author 2>, ...>
+# Contributors: <<contributor 1>, <contributor 2>, ...>
 
-# Version: (system version)
-# Created: jj/mm/yyyy (minecraft version)
-# Last modification: jj/mm/yyyy (minecraft version)
+# Version: <system version>
+# Created: <jj>/<mm>/<yyyy> (<minecraft version>)
+# Last modification: <jj>/<mm>/<yyyy> (<minecraft version>)
 
-# Documentation : https://link.to/documentation/page
-# Note          :
+# Documentation: <https://link.to/documentation/page>
+# Note: <some notes>
 
 # CODE ------------------------------------------------------------------------
 ```

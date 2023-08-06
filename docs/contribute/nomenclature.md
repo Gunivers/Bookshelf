@@ -15,4 +15,4 @@ Bookshelf respects a certain tree structure which can be similar to the Java pac
 -  Tags use the snake_case convention with an indication of the path to the module as prefix.
 
    Example: `bs.module.my_tag`
--  A feature is equal to an unique utility, so we should not hesitate to decompose its features in order to make it more readable and to promote the reusability. In addition to these few constraints, the contributor is free to organize his files as he wishes as long as it remains coherent and understandable, and it respect the global structure detailed below.
+-  A feature is equal to an unique utility, so you should not hesitate to decompose its features in order to make it more readable and to promote reusability. In addition to these few constraints, you are free to organize your files as you wish as long as it remains coherent, understandable, and it respects the global structure detailed below.

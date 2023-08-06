@@ -40,5 +40,6 @@ conservation_principle
 
 initialization
 comments
+debug
 special_functions
 ````
