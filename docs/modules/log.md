@@ -2,6 +2,8 @@
 
 **`#bs.log:_`**
 
+## 👶 First steps
+
 Bookshelf proposes facilities to log messages in the chat.
 There are different logs levels to use according to the type of log: 
 1. Debug
@@ -54,7 +56,7 @@ Examples
     The following function called `bs.foo:baz`:
 
     ```
-    function bs.log:info { path: "command-block", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
+    function bs.log:info { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
     ```
 
     Will display the following message if the user has one of these tags `bs.log.foo.baz.info`, `bs.log.foo.baz.debug`, `bs.log._.info`, `bs.log._.debug`, `bs.log.foo.baz._`:
@@ -89,6 +91,18 @@ Inputs
     : The log message.
     Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
 
+Examples
+
+:   Example with a simple raw text:
+    ```
+    function bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
+    ```
+    
+    Example with a complex JSON text components:
+    ```
+    function bs.log:debug { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
+    ```
+
 > **Credits**: theogiraudet
 
 ---
@@ -112,6 +126,18 @@ Inputs
     (macro variable) `message`: string
     : The log message.
     Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
+
+Examples
+
+:   Example with a simple raw text:
+    ```
+    function bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
+    ```
+    
+    Example with a complex JSON text components:
+    ```
+    function bs.log:info { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
+    ```
 
 > **Credits**: theogiraudet
 
@@ -137,6 +163,18 @@ Inputs
     : The log message.
     Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
 
+Examples
+
+:   Example with a simple raw text:
+    ```
+    function bs.log:warn { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
+    ```
+    
+    Example with a complex JSON text components:
+    ```
+    function bs.log:warn { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
+    ```
+
 > **Credits**: theogiraudet
 
 ---
@@ -160,6 +198,18 @@ Inputs
     (macro variable) `message`: string
     : The log message.
     Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
+
+Examples
+
+:   Example with a simple raw text:
+    ```
+    function bs.log:error { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
+    ```
+    
+    Example with a complex JSON text components:
+    ```
+    function bs.log:error { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
+    ```
 
 > **Credits**: theogiraudet
 
