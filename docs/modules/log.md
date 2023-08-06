@@ -87,7 +87,7 @@ Inputs
 
     (macro variable) `message`: string
     : The log message.
-    Format: valid JSON textcomponent as described in [Manage the log granularity](#granularity-log) section.
+    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
 
 > **Credits**: theogiraudet
 
@@ -111,7 +111,7 @@ Inputs
 
     (macro variable) `message`: string
     : The log message.
-    Format: valid JSON textcomponent as described in [Manage the log granularity](#granularity-log) section.
+    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
 
 > **Credits**: theogiraudet
 
@@ -159,7 +159,7 @@ Inputs
 
     (macro variable) `message`: string
     : The log message.
-    Format: valid JSON textcomponent as described in [Manage the log granularity](#granularity-log) section.
+    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
 
 > **Credits**: theogiraudet
 
