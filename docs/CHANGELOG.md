@@ -34,6 +34,7 @@ This version contain breaking changes. In the following changelog, they are iden
   - (tag) `bs.canSnow` $\rightarrow$ `bs.biome.CanSnow`
 - 💥 `bs.location:get_relative` and `bs.location:add` now use `bs.loc.[rx,ry,rz]` scores
 - 💥 "accuracy" folders was renamed to "scale" and files inside was renamed "10-X" to "X"
+- 💥 Constant names were renamed to apply snake case convention
 
 ### 🐛 Bug fixes
 
