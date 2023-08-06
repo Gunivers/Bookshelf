@@ -16,7 +16,7 @@ This version contain breaking changes. In the following changelog, they are iden
 - (WIP) Added unit tests to ensure that the library is working as expected before each release.
 - It is now possible to control every aspect off the collision process in `bs.move:by_vector`
 - Added fractionned distribution to allow users to download modules as independant datapack - Thanks to ascpial in https://github.com/Gunivers/Bookshelf/pull/55
- -Added a new log module as `bs.log:_` (https://github.com/Gunivers/Bookshelf/pull/76)
+- Added a new log module as `bs.log:_` (https://github.com/Gunivers/Bookshelf/pull/76)
 
 ### 🔁 Tweaks
 
