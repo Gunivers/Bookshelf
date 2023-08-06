@@ -12,7 +12,7 @@ scoreboard players operation #math.arctan.denominator bs.data += 1000 bs.const
 scoreboard players operation #math.arctan.numerator bs.data = 4 bs.const
 scoreboard players operation #math.arctan.numerator bs.data *= #math.arctan.x bs.data
 scoreboard players operation #math.arctan.numerator bs.data *= 180000 bs.const
-scoreboard players operation #math.arctan.numerator bs.data /= Pi3 bs.const
+scoreboard players operation #math.arctan.numerator bs.data /= pi3 bs.const
 
 # Offset (pi/2 * sign(x) * 180/pi)
 scoreboard players operation #math.arctan.offset bs.data = 180 bs.const
