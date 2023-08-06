@@ -41,7 +41,7 @@ scoreboard players operation @s[scores={bs.in.2=18000}] bs.in.2 -= 18000 bs.cons
 # Calcul Sin
 
 scoreboard players operation @s bs.out.0 = @s bs.in.2
-scoreboard players operation @s bs.out.0 *= Neg bs.const
+scoreboard players operation @s bs.out.0 *= -1 bs.const
 scoreboard players operation @s bs.out.0 += 18000 bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 scoreboard players operation @s bs.out.0 *= @s bs.in.2
@@ -49,16 +49,16 @@ scoreboard players operation @s bs.out.0 *= 4 bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 
 scoreboard players operation @s bs.in.1 = @s bs.in.2
-scoreboard players operation @s bs.in.1 *= Neg bs.const
+scoreboard players operation @s bs.in.1 *= -1 bs.const
 scoreboard players operation @s bs.in.1 += 18000 bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 scoreboard players operation @s bs.in.1 *= @s bs.in.2
-scoreboard players operation @s bs.in.1 *= Neg bs.const
+scoreboard players operation @s bs.in.1 *= -1 bs.const
 scoreboard players operation @s bs.in.1 += 405000000 bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 scoreboard players operation @s bs.in.1 /= 1000 bs.const
 scoreboard players operation @s bs.out.0 /= @s bs.in.1
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"WIP = ","color":"red"},{"score":{"name":"@s","objective":"bs.in.1"}}]
 
-scoreboard players operation @s[scores={bs.in.0=180000}] bs.out.0 *= Neg bs.const
+scoreboard players operation @s[scores={bs.in.0=180000}] bs.out.0 *= -1 bs.const
 # tellraw @a[tag=Debug] ["",{"text":"CALC -> ","color":"gray"},{"Sin(X) = ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
