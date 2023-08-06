@@ -20,6 +20,7 @@ for and how to use it. This is what this one looks like:
 # Last modification: <jj>/<mm>/<yyyy> (<minecraft version>)
 
 # Documentation: <https://link.to/documentation/page>
+# Dependencies  : <<dependency 1>, <dependency 2>, ...>
 # Note: <some notes>
 
 # CODE ------------------------------------------------------------------------
