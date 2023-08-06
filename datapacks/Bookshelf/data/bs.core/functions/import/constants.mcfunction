@@ -1,14 +1,27 @@
-# Note: This score contains useful constants like:
-# - Values from -2 to 25
-# - Trigonometric values Pi and x*Pi/4 (in degrees)
-# - Trigonometric values 32400, 40500, 18000, 36000, 90000, 180000, 270000, 324000000, 405000000, 28125, 640, 785, 74, 212 (usefull for sinus, cosinus, arctangent et arccosinus approximations)
-# - Powers of 2 (2,4,8,16,32,64,... to 4096)
-# - Powers of 10 (10,100,1000,... to 1000000)
-# - Prime numbers to 100
-# - Others: log(10)*10^6, log(10)*10^4, log(2)*10^4
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Lot of people
+# Contributors:
+
+# Version: 1.0
+# Created: 05/08/2023 (23w31a)
+# Last modification: 07/08/2023 (23w31a)
+
+# Documentation:
+# Dependencies: 
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
+# Particular numbers
+scoreboard players set pi bs.const 3142
+scoreboard players set pi2 bs.const 314
+scoreboard players set pi3 bs.const 3142
+scoreboard players set pi6 bs.const 3141593
+scoreboard players set max_int bs.const 2147483647
 
 # Classic numbers
-scoreboard players set Neg bs.const -1
 scoreboard players set -2 bs.const -2
 scoreboard players set -1 bs.const -1
 scoreboard players set 0 bs.const 0
@@ -145,10 +158,3 @@ scoreboard players set 1000000 bs.const 1000000
 scoreboard players set 2302585 bs.const 2302585
 scoreboard players set 405000000 bs.const 405000000
 scoreboard players set 324000000 bs.const 324000000
-
-# Particular numbers
-scoreboard players set Pi bs.const 3142
-scoreboard players set Pi2 bs.const 314
-scoreboard players set Pi3 bs.const 3142
-scoreboard players set Pi6 bs.const 3141593
-scoreboard players set MaxInt bs.const 2147483647
