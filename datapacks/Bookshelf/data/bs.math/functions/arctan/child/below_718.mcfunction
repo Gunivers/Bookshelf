@@ -29,7 +29,7 @@ scoreboard players operation @s bs.out.0 += #math.arctan.order3 bs.data
 
 # To degree
 scoreboard players operation @s bs.out.0 *= 180 bs.const
-scoreboard players operation @s bs.out.0 /= Pi3 bs.const
+scoreboard players operation @s bs.out.0 /= pi3 bs.const
 
 # Backup restoration
 scoreboard players operation @s bs.in.0 = #math.arctan.backup.var0 bs.data
