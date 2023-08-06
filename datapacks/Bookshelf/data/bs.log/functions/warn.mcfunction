@@ -1,15 +1,16 @@
 # INFO ------------------------------------------------------------------------
 # Copyright © 2023 Gunivers Community.
 
-# Authors       : theogiraudet
-# Contributors  : Aksiome
+# Authors: theogiraudet
+# Contributors: Aksiome
 
 # Version: 1.0
 # Created: 05/08/2023 (23w31a)
 # Last modification: 06/08/2023 (23w31a)
 
-# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#warn
-# Note          :
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#warn
+# Dependencies:
+# Note:
 
 # CODE ------------------------------------------------------------------------
 
