@@ -1,4 +1,4 @@
-tag @e[tag=bs.plot.new] remove bs.new
+tag @e[tag=bs.plot.new] remove bs.plot.new
 
 # Creating new entity
 summon armor_stand ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new"],Marker:1b,NoGravity:1b,Small:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:stone_button",Count:1b}]}

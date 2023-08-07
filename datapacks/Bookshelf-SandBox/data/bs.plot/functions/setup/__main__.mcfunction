@@ -8,7 +8,7 @@
 # Created: ??/??/???? (1.13)
 # Last modification: 06/08/2023 (1.20.1)
 
-# Documentation : None
+# Documentation :
 # Dependencies  : bs.location
 # Note          : 
 
@@ -21,7 +21,7 @@ scoreboard players set @e[tag=bs.plot.new] bs.plot.n 1
 # Positioning first entity on the left of the plot
 scoreboard players operation @e[tag=bs.plot.new] bs.loc.x = $plot.origin_x bs.const
 scoreboard players operation @e[tag=bs.plot.new] bs.loc.y = $plot.origin_y bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.loc.y += $plot.height bs.const
+scoreboard players operation @e[tag=bs.plot.new] bs.loc.y += $plot.half_size_y bs.const
 scoreboard players operation @e[tag=bs.plot.new] bs.loc.z = $plot.origin_z bs.const
 execute as @e[tag=bs.plot.new] run function bs.location:set/scale/3
 
