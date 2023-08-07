@@ -4,12 +4,13 @@
 # CODE ------------------------------------------------------------------------
 
 # Scoreboard declaration
+scoreboard objectives add bs.plot.i dummy
 scoreboard objectives add bs.plot.n dummy
 scoreboard objectives add bs.plot.x dummy
 scoreboard objectives add bs.plot.y dummy
 
 # Special constants
-scoreboard players set $plot.resolution bs.const 1000
+scoreboard players set $plot.resolution bs.const 200
 scoreboard players set $plot.origin_x bs.const 27000
 scoreboard players set $plot.origin_y bs.const 110000
 scoreboard players set $plot.origin_z bs.const 25500

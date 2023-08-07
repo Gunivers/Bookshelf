@@ -16,7 +16,14 @@
 
 # Draw default line (y=0)
 summon armor_stand ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new"],Marker:1b,NoGravity:1b,Small:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:stone_button",Count:1b}]}
+
+# Absolute index
 scoreboard players set @e[tag=bs.plot.new] bs.plot.n 1
+
+# Relative index
+scoreboard players operation @e[tag=bs.plot.new] bs.plot.i = $plot.resolution bs.const
+scoreboard players operation @e[tag=bs.plot.new] bs.plot.i *= -1 bs.const
+scoreboard players operation @e[tag=bs.plot.new] bs.plot.i /= 2 bs.const
 
 # Positioning first entity on the left of the plot
 scoreboard players operation @e[tag=bs.plot.new] bs.loc.x = $plot.origin_x bs.const
@@ -33,6 +40,7 @@ tag @e[tag=bs.plot.new] remove bs.plot.new
 
 # Make points glow
 effect give @e[tag=bs.plot] minecraft:glowing infinite 1 true
+execute as @e[tag=bs.plot] at @s run tp @s ~ ~ ~ ~ -90
 
 # Normalize position
 # execute as @e[tag=bs.sandbox.plot.create] store result score @s bs.in.0 run data get entity @s Pos[0] 1000

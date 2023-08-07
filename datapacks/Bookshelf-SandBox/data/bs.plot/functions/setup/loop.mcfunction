@@ -2,8 +2,12 @@ tag @e[tag=bs.plot.new] remove bs.plot.new
 
 # Creating new entity
 summon armor_stand ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new"],Marker:1b,NoGravity:1b,Small:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:stone_button",Count:1b}]}
+
 scoreboard players operation @e[tag=bs.plot.new] bs.plot.n = @s bs.plot.n
 scoreboard players add @e[tag=bs.plot.new] bs.plot.n 1
+
+scoreboard players operation @e[tag=bs.plot.new] bs.plot.i = @s bs.plot.i
+scoreboard players add @e[tag=bs.plot.new] bs.plot.i 1
 
 # Setting position
 scoreboard players operation @e[tag=bs.plot.new] bs.loc.rx = $plot.step_x bs.const
