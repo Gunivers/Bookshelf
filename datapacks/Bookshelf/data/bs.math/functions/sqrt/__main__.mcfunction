@@ -1,9 +1,7 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers
+# Copyright © 2023 Gunivers Community.
 
-# Authors:
-# - Ethanout
-# - xiaodou123
+# Authors: Ethanout, xiaodou123
 # Contributors:
 
 # Version: 3.0
