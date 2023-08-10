@@ -19,6 +19,6 @@ scoreboard players operation #location.get_distance_ata.in.0 bs.data = @s bs.in.
 
 function bs.location:get_distance_squared_ata
 scoreboard players operation @s bs.in.0 = @s bs.out.0
-function bs.math:sqrt
+function #bs.math:sqrt
 
 scoreboard players operation @s bs.in.0 = #location.get_distance_ata.in.0 bs.data

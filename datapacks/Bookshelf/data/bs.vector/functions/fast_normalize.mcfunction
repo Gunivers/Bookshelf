@@ -10,7 +10,7 @@
 # Last modification: 21/05/2023 (1.19.4)
 
 # Original path : bs.vecotr:fast_normalize
-# Documentation : https://bookshelf.docs.gunivers.net/en/latest/vector#normalize
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
 # Note          :
 
 # CODE ------------------------------------------------------------------------

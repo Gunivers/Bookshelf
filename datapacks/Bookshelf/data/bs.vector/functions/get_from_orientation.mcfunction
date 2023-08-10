@@ -1,34 +1,19 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Authors       : Leirof
+# Contributors  : 
 
-# Original path: bs.vector:classic/get_by_orientation
-# Documentation: https:/mc-bookshelf.rtfd.io/Vector.html#get-vector-by-actual-orientation
-# Note:
+# Version: 1.0
+# Created: ??/??/???? (1.13)
+# Last verification: ??/??/???? (1.13)
+# Last modification: ??/??/???? (1.13)
 
-#__________________________________________________
-# PARAMETERS
+# Original path : bs.vector:get_from_orientation
+# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#get
+# Note          :
 
-# Output: bs.vector.x (score dummy)
-# Output: bs.vector.y (score dummy)
-# Output: bs.vector.z (score dummy)
-
-#__________________________________________________
-# INIT
-
-scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector X","color":"aqua"}]
-scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
-scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
+# CODE ------------------------------------------------------------------------
 
 execute store result score #vector.get_by_orientation.origin.x bs.data run data get entity @s Pos[0] 1000
 execute store result score #vector.get_by_orientation.origin.y bs.data run data get entity @s Pos[1] 1000
