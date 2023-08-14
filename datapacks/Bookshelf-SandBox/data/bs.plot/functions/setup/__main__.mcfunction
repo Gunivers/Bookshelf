@@ -14,42 +14,41 @@
 
 # CODE ------------------------------------------------------------------------
 
+tag @e remove bs.plot.new
+
+# Place entities on the plot --------------------------------------------------
+
 # Draw default line (y=0)
-summon armor_stand ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new"],Marker:1b,NoGravity:1b,Small:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:stone_button",Count:1b}]}
+summon block_display ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new","bs.plot.setup"],teleport_duration:1,Glowing:1b,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.05f,-0.05f,-0.05f],scale:[0.1f,0.1f,0.1f]},block_state:{Name:"minecraft:white_concrete"}}
 
-# Absolute index
-scoreboard players set @e[tag=bs.plot.new] bs.plot.n 1
-
-# Relative index
-scoreboard players operation @e[tag=bs.plot.new] bs.plot.i = $plot.resolution bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.plot.i *= -1 bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.plot.i /= 2 bs.const
+# Index
+scoreboard players set @e[tag=bs.plot.setup] bs.plot.n 1
 
 # Positioning first entity on the left of the plot
-scoreboard players operation @e[tag=bs.plot.new] bs.loc.x = $plot.origin_x bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.loc.y = $plot.origin_y bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.loc.y += $plot.half_size_y bs.const
-scoreboard players operation @e[tag=bs.plot.new] bs.loc.z = $plot.origin_z bs.const
+scoreboard players operation @e[tag=bs.plot.setup] bs.loc.x = #plot.origin_x bs.data
+scoreboard players operation @e[tag=bs.plot.setup] bs.loc.y = #plot.origin_y bs.data
+scoreboard players operation @e[tag=bs.plot.setup] bs.loc.y += #plot.half_size_y bs.data
+scoreboard players operation @e[tag=bs.plot.setup] bs.loc.z = #plot.origin_z bs.data
 execute as @e[tag=bs.plot.new] run function bs.location:set/scale/3
 
 # Create all points
 scoreboard players set #plot.points bs.data 0
-scoreboard players remove #plot.points bs.data 1
-execute as @e[tag=bs.plot.new] at @s run function bs.plot:setup/loop
-tag @e[tag=bs.plot.new] remove bs.plot.new
+scoreboard players add #plot.points bs.data 1
+execute as @e[tag=bs.plot.setup] at @s run function bs.plot:setup/loop
+tag @e[tag=bs.plot.setup] remove bs.plot.setup
 
-# Make points glow
-effect give @e[tag=bs.plot] minecraft:glowing infinite 1 true
-execute as @e[tag=bs.plot] at @s run tp @s ~ ~ ~ ~ -90
+# Interpolate x position of each point ----------------------------------------
+## x = x0 + n * (x1 - x0) / (N - 1)
 
-# Normalize position
-# execute as @e[tag=bs.sandbox.plot.create] store result score @s bs.in.0 run data get entity @s Pos[0] 1000
-# execute as @e[tag=bs.sandbox.plot.create] run function bs.sandbox:math/plot/normalize/x
-# execute as @e[tag=bs.sandbox.plot.create] run scoreboard players operation @s bs.plot.x = @s bs.out.0
-# scoreboard players set @e[tag=bs.sandbox.plot.create] bs.plot.y 0
-# scoreboard players set @e[tag=bs.sandbox.plot.create] bs.plot.z 0
+# Computing (x1 - x0)
+scoreboard players operation #plot.x1-x0 bs.data = #plot.x_max bs.data
+scoreboard players operation #plot.x1-x0 bs.data -= #plot.x_min bs.data
 
-# execute as @e[tag=bs.sandbox.plot.create] at @s run tp @s ~ ~ ~ ~90 ~
+# n * (x1 - x0) / (N - 1)
+execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x = @s bs.plot.n
+execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x *= #plot.x1-x0 bs.data
+execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x /= #plot.N-1 bs.data
 
-# team join bs.plot.new @e[tag=bs.sandbox.plot.create]
-# tag @e[tag=bs.sandbox.plot.create] remove bs.sandbox.plot.create
+# Assing x0
+execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x += #plot.x_min bs.data
+
