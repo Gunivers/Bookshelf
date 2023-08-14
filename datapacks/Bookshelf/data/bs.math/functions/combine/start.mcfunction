@@ -2,4 +2,4 @@
 scoreboard players operation #math.combine.n bs.data -= #math.combine.m bs.data
 scoreboard players set #math.combine.i bs.data 0
 scoreboard players set @s bs.out.0 1
-function bs.math:combine/child/loop
+function bs.math:combine/loop

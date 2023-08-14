@@ -10,10 +10,10 @@ scoreboard players add #math.combine.i bs.data 1
 scoreboard players set #math.combine.max_out_nonoverflow bs.data 2147483647
 scoreboard players operation #math.combine.max_out_nonoverflow bs.data /= #math.combine.n bs.data
 execute store result score #math.combine.flag bs.data if score @s bs.out.0 <= #math.combine.max_out_nonoverflow bs.data
-execute if score #math.combine.flag bs.data matches 1 run function bs.math:combine/child/normal
-execute if score #math.combine.flag bs.data matches 0 run function bs.math:combine/child/anti_overflow
+execute if score #math.combine.flag bs.data matches 1 run function bs.math:combine/normal
+execute if score #math.combine.flag bs.data matches 0 run function bs.math:combine/anti_overflow
 
 #tellraw @a {"score":{"name": "@s","objective": "bs.out.0"}}
 
 
-execute if score #math.combine.i bs.data < #math.combine.m bs.data run function bs.math:combine/child/loop
+execute if score #math.combine.i bs.data < #math.combine.m bs.data run function bs.math:combine/loop
