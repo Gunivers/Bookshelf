@@ -10,7 +10,7 @@ scoreboard players reset * bs.metadata
 
 # Module list
 function bs:menu
-function bs.biome:_
+function bs.biome:__help__
 function bs.block:_
 function bs.cache:_
 function bs.color:_
