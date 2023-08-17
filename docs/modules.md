@@ -69,6 +69,7 @@ modules/item
 modules/lgdir
 modules/link
 modules/location
+modules/log
 modules/mapedit
 modules/math
 modules/memory
