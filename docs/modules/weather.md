@@ -1,22 +1,35 @@
-# 🗺️ Biome Displayer
+# ⛅ Weather
 
-This system allow to display the biome you're in in the action bar.
+`#bs.weather:help`
 
-To enable this system, you just need to execute the following command in a loop:
+Everything concerning the weather.
 
-```
-function bs.biome_displayer:main
-```
+---
 
-```{button-link} https://youtu.be/aUhm9II9_Mw
-:color: primary
-:align: center
-:shadow:
+## 🔍 Predicates
 
-{octicon}`device-camera-video` Watch the video
-```
+You can find below all predicates available in this module.
 
-> **Credits**: theogiraudet
+---
+
+### Is it raining?
+
+**`bs.weather:is_raining`**
+
+Determine if it is raining or not.
+
+---
+
+### Is it thundering?
+
+**`bs.weather:is_thundering`**
+
+Determine if it is thundering or not.
+
+---
+
+
+> **Credits**: theogiraudet, Aksiome
 
 ---
 
