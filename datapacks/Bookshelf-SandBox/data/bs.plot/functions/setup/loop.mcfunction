@@ -14,4 +14,4 @@ execute as @e[tag=bs.plot.setup] run function bs.location:add/scale/3
 
 # Create the new entity
 scoreboard players add #plot.points bs.data 1
-execute if score #plot.points bs.data < #plot.resolution bs.data at @e[tag=bs.plot.setup] run function bs.plot:setup/loop
+execute if score #plot.points bs.data < #plot.resolution bs.data as @e[tag=bs.plot.setup] at @s run function bs.plot:setup/loop

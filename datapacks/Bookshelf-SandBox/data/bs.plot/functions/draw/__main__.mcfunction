@@ -20,12 +20,19 @@ scoreboard players operation #plot.A bs.data /= #plot.o_max-o_min bs.data
 scoreboard players operation #plot.B bs.data = #plot.A bs.data
 scoreboard players operation #plot.B bs.data *= #plot.o_min bs.data
 scoreboard players operation #plot.B bs.data *= -1 bs.const
-scoreboard players operation #plot.B bs.data -= #plot.y_min bs.data
+scoreboard players operation #plot.B bs.data += #plot.y_min bs.data
 
 execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.loc.y = @s bs.plot.y
 execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.loc.y *= #plot.A bs.data
 execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.loc.y += #plot.B bs.data
 
+tellraw @a [{"score":{"name":"#plot.A","objective":"bs.data"}}]
+tellraw @a [{"score":{"name":"#plot.o_min","objective":"bs.data"}}]
+tellraw @a [{"score":{"name":"#plot.y_min","objective":"bs.data"}}]
+tellraw @a [{"score":{"name":"#plot.B","objective":"bs.data"}}]
+
 # Place entity at the right y_ position ----------------------------------------
 
-execute as @e[tag=bs.plot.new] run function bs.location.set/y/scale/3
+execute as @e[tag=bs.plot] run tellraw @a [{"score":{"name":"@s","objective":"bs.plot.n"}},{"text":"   "},{"score":{"name":"@s","objective":"bs.plot.y"}},{"text":"   "},{"score":{"name":"@s","objective":"bs.loc.y"}}]
+
+execute as @e[tag=bs.plot.new] run function bs.location:set/y/scale/3

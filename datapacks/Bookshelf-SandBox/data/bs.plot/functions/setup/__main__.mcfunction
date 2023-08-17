@@ -22,7 +22,7 @@ tag @e remove bs.plot.new
 summon block_display ~ ~ ~ {Tags:["bs","bs.plot","bs.plot.new","bs.plot.setup"],teleport_duration:1,Glowing:1b,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.05f,-0.05f,-0.05f],scale:[0.1f,0.1f,0.1f]},block_state:{Name:"minecraft:white_concrete"}}
 
 # Index
-scoreboard players set @e[tag=bs.plot.setup] bs.plot.n 1
+scoreboard players set @e[tag=bs.plot.setup] bs.plot.n 0
 
 # Positioning first entity on the left of the plot
 scoreboard players operation @e[tag=bs.plot.setup] bs.loc.x = #plot.origin_x bs.data
@@ -51,4 +51,3 @@ execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x /= 
 
 # Assing x0
 execute as @e[tag=bs.plot.new] run scoreboard players operation @s bs.plot.x += #plot.x_min bs.data
-
