@@ -20,6 +20,7 @@ id
 item
 link
 location
+log
 mapedit
 math
 memory

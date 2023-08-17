@@ -10,23 +10,18 @@ for and how to use it. This is what this one looks like:
 
 ```
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © <current year> Gunivers Community.
 
-# Authors       :
-# Contributors  : 
+# Authors: <<author 1>, <author 2>, ...>
+# Contributors: <<contributor 1>, <contributor 2>, ...>
 
-# Version: (system version)
-# Created: jj/mm/yyyy (minecraft version)
-# Last verification: jj/mm/yyyy (minecraft version)
-# Last modification: jj/mm/yyyy (minecraft version)
+# Version: <system version>
+# Created: <jj>/<mm>/<yyyy> (<minecraft version>)
+# Last modification: <jj>/<mm>/<yyyy> (<minecraft version>)
 
-# Original path : bs.path:to/function
-# Documentation : https://link.to/documentation/page
-# Note          :
-
-# INIT ------------------------------------------------------------------------
-
-# CONFIG ----------------------------------------------------------------------
+# Documentation: <https://link.to/documentation/page>
+# Dependencies  : <<dependency 1>, <dependency 2>, ...>
+# Note: <some notes>
 
 # CODE ------------------------------------------------------------------------
 ```

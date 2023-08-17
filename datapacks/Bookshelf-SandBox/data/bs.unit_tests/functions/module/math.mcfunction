@@ -402,7 +402,7 @@ execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches -1000 run tellraw
 # USAGE -----------------------------------------------------------------------
 
 scoreboard players set @e[tag=bs.unitest] bs.in.0 16
-execute as @e[tag=bs.unitest] run function bs.math:sqrt
+execute as @e[tag=bs.unitest] run function #bs.math:sqrt
 
 # RESULTS ----------------------------------------------------------------------
 
@@ -411,7 +411,7 @@ execute as @e[tag=bs.unitest] unless score @s bs.out.0 matches 4 run tellraw @a 
 # USAGE -----------------------------------------------------------------------
 
 scoreboard players set @e[tag=bs.unitest] bs.in.0 955
-execute as @e[tag=bs.unitest] run function bs.math:sqrt
+execute as @e[tag=bs.unitest] run function #bs.math:sqrt
 
 # RESULTS ----------------------------------------------------------------------
 
