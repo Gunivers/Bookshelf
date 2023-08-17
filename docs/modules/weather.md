@@ -6,7 +6,7 @@ Everything concerning the weather.
 
 ---
 
-## 🔍 Predicates
+## 👁️ Predicates
 
 You can find below all predicates available in this module.
 

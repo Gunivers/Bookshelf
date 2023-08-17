@@ -6,7 +6,7 @@ Everything concerning biome properties.
 
 ---
 
-## 🔍 Predicates
+## 👁️ Predicates
 
 You can find below all predicates available in this module.
 
