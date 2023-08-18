@@ -1,6 +1,7 @@
 {
  "values": [
     "bs.core:__load__",
-    "bs.math:__load__"
+    "bs.math:__load__",
+    "bs.sidebar:__load__"
  ]
 }
