@@ -1,10 +1,20 @@
-execute store result score #sidebar.height bs.data if data storage bs:in sidebar.create.contents[]
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-execute unless score #sidebar.height bs.data matches 1..15 run function #bs.log:error { \
-    path: "#bs.sidebar:create", \
-    feature: "sidebar.create", \
-    message: '[{"text":"Contents must have between 1 and 15 lines (found "},{"score":{"name":"#sidebar.height","objective":"bs.data"}},{"text":")"}]' \
-}
-execute unless score #sidebar.height bs.data matches 1..15 run return -1
+# Authors: Aksiome
+# Contributors:
 
-function bs.sidebar:create/do with storage bs:in sidebar.create
+# Version: 1.0
+# Created: 18/08/2023 (23w32a)
+# Last modification: 18/08/2023 (23w32a)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/sidebar.html#create
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
+$data modify storage bs:sidebar do merge value {id:'$(id)',name:'$(name)',contents:$(contents)}
+
+function bs.sidebar:create/do with storage bs:sidebar do
+execute as c9337257-2804-47d4-90bf-3eb772a4c30c run function bs.sidebar:refresh/do with storage bs:sidebar do

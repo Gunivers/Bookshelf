@@ -8,13 +8,13 @@
 # Created: 18/08/2023 (23w32a)
 # Last modification: 18/08/2023 (23w32a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/sidebar.html#refresh
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/sidebar.html#reset
 # Dependencies:
 # Note:
 
 # CODE ------------------------------------------------------------------------
 
-
-$data modify storage bs:sidebar do.id set value $(id)
-
-execute as c9337257-2804-47d4-90bf-3eb772a4c30c run function bs.sidebar:refresh/do with storage bs:sidebar do
+data remove storage bs:sidebar do
+data modify storage bs:sidebar do.score set value "‌"
+execute if data storage bs:sidebar registry[0] run function bs.sidebar:reset/loop
+data remove storage bs:sidebar registry
