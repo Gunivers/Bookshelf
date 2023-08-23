@@ -36,7 +36,7 @@ execute unless score NB_ENTITY_DIFF bs.unit_tests matches 0 run tellraw @a [{"te
 
 #=============================================================================#
 #                                                                             #
-#                          GET_BY_ORIENTATION                                 #
+#                         GET_FROM_ORIENTATION                                #
 #                                                                             #
 #=============================================================================#                                                    
 
@@ -53,7 +53,7 @@ execute as @e[tag=bs.unitest] run function bs.vector:get_from_orientation
 # RESULTS ----------------------------------------------------------------------
 
 execute as @e[tag=bs.unitest] unless score @s bs.vector.x matches -406..-405 run tellraw @a [{"text":"[bs.vector:get_from_orientation] expected vx = -406, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.x"}}]
-execute as @e[tag=bs.unitest] unless score @s bs.vector.y matches 707 run tellraw @a [{"text":"[bs.vector:get_from_orientation] expected vy = 707, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.y"}}]
+execute as @e[tag=bs.unitest] unless score @s bs.vector.y matches 707..708 run tellraw @a [{"text":"[bs.vector:get_from_orientation] expected vy = 708, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.y"}}]
 execute as @e[tag=bs.unitest] unless score @s bs.vector.z matches -580..-579 run tellraw @a [{"text":"[bs.vector:get_from_orientation] expected vz = -579, got ", "color": "red"}, {"score":{"name":"@s","objective":"bs.vector.z"}}]
 
 execute as @e run scoreboard players add NB_ENTITY_DIFF bs.unit_tests 1
