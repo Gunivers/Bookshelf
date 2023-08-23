@@ -3,6 +3,8 @@
 
 # CODE ------------------------------------------------------------------------
 
+scoreboard objectives add bs.data dummy
+
 scoreboard players set module.sidebar bs.metadata 1
 
 forceload add 0 0
