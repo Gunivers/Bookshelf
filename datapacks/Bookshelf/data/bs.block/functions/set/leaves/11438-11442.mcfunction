@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 11438 run setblock ~ ~ ~ red_nether_brick_stairs[facing=north,half=top,shape=outer_right,waterlogged=true]
-execute if score @s bs.block.id matches 11439 run setblock ~ ~ ~ red_nether_brick_stairs[facing=north,half=top,shape=outer_right,waterlogged=false]
-execute if score @s bs.block.id matches 11440 run setblock ~ ~ ~ red_nether_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=true]
-execute if score @s bs.block.id matches 11441 run setblock ~ ~ ~ red_nether_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
-execute if score @s bs.block.id matches 11442 run setblock ~ ~ ~ red_nether_brick_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=true]

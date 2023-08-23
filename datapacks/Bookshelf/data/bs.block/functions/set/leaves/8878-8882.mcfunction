@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 8878 run setblock ~ ~ ~ black_banner[rotation=0]
-execute if score @s bs.block.id matches 8879 run setblock ~ ~ ~ black_banner[rotation=1]
-execute if score @s bs.block.id matches 8880 run setblock ~ ~ ~ black_banner[rotation=2]
-execute if score @s bs.block.id matches 8881 run setblock ~ ~ ~ black_banner[rotation=3]
-execute if score @s bs.block.id matches 8882 run setblock ~ ~ ~ black_banner[rotation=4]

@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 3846 run setblock ~ ~ ~ mangrove_sign[rotation=9,waterlogged=true]
-execute if score @s bs.block.id matches 3847 run setblock ~ ~ ~ mangrove_sign[rotation=9,waterlogged=false]
-execute if score @s bs.block.id matches 3848 run setblock ~ ~ ~ mangrove_sign[rotation=10,waterlogged=true]
-execute if score @s bs.block.id matches 3849 run setblock ~ ~ ~ mangrove_sign[rotation=10,waterlogged=false]
-execute if score @s bs.block.id matches 3850 run setblock ~ ~ ~ mangrove_sign[rotation=11,waterlogged=true]

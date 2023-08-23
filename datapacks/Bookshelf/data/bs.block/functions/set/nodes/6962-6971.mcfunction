@@ -1,3 +1,0 @@
-execute if score @s bs.block.id matches 6962..6964 run function bs.block:set/leaves/6962-6964
-execute if score @s bs.block.id matches 6965..6967 run function bs.block:set/leaves/6965-6967
-execute if score @s bs.block.id matches 6968..6971 run function bs.block:set/leaves/6968-6971

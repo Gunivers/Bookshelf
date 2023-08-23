@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 935 run setblock ~ ~ ~ note_block[instrument=xylophone,note=3,powered=true]
-execute if score @s bs.block.id matches 936 run setblock ~ ~ ~ note_block[instrument=xylophone,note=3,powered=false]
-execute if score @s bs.block.id matches 937 run setblock ~ ~ ~ note_block[instrument=xylophone,note=4,powered=true]
-execute if score @s bs.block.id matches 938 run setblock ~ ~ ~ note_block[instrument=xylophone,note=4,powered=false]
-execute if score @s bs.block.id matches 939 run setblock ~ ~ ~ note_block[instrument=xylophone,note=5,powered=true]

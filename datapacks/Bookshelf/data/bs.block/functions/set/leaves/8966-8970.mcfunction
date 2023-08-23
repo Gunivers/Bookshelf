@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 8966 run setblock ~ ~ ~ red_sandstone_stairs[facing=north,half=top,shape=inner_right,waterlogged=false]
-execute if score @s bs.block.id matches 8967 run setblock ~ ~ ~ red_sandstone_stairs[facing=north,half=top,shape=outer_left,waterlogged=true]
-execute if score @s bs.block.id matches 8968 run setblock ~ ~ ~ red_sandstone_stairs[facing=north,half=top,shape=outer_left,waterlogged=false]
-execute if score @s bs.block.id matches 8969 run setblock ~ ~ ~ red_sandstone_stairs[facing=north,half=top,shape=outer_right,waterlogged=true]
-execute if score @s bs.block.id matches 8970 run setblock ~ ~ ~ red_sandstone_stairs[facing=north,half=top,shape=outer_right,waterlogged=false]

@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 15998 run setblock ~ ~ ~ barrel[facing=east,open=true]
-execute if score @s bs.block.id matches 15999 run setblock ~ ~ ~ barrel[facing=east,open=false]
-execute if score @s bs.block.id matches 16000 run setblock ~ ~ ~ barrel[facing=south,open=true]
-execute if score @s bs.block.id matches 16001 run setblock ~ ~ ~ barrel[facing=south,open=false]
-execute if score @s bs.block.id matches 16002 run setblock ~ ~ ~ barrel[facing=west,open=true]

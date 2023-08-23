@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 9055 run setblock ~ ~ ~ birch_slab[type=bottom,waterlogged=true]
-execute if score @s bs.block.id matches 9056 run setblock ~ ~ ~ birch_slab[type=bottom,waterlogged=false]
-execute if score @s bs.block.id matches 9057 run setblock ~ ~ ~ birch_slab[type=double,waterlogged=true]
-execute if score @s bs.block.id matches 9058 run setblock ~ ~ ~ birch_slab[type=double,waterlogged=false]
-execute if score @s bs.block.id matches 9059 run setblock ~ ~ ~ jungle_slab[type=top,waterlogged=true]

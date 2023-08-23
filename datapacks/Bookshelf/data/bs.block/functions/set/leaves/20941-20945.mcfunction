@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 20941 run setblock ~ ~ ~ deepslate_tile_wall[east=tall,north=none,south=tall,up=false,waterlogged=false,west=tall]
-execute if score @s bs.block.id matches 20942 run setblock ~ ~ ~ deepslate_tile_wall[east=tall,north=low,south=none,up=true,waterlogged=true,west=none]
-execute if score @s bs.block.id matches 20943 run setblock ~ ~ ~ deepslate_tile_wall[east=tall,north=low,south=none,up=true,waterlogged=true,west=low]
-execute if score @s bs.block.id matches 20944 run setblock ~ ~ ~ deepslate_tile_wall[east=tall,north=low,south=none,up=true,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 20945 run setblock ~ ~ ~ deepslate_tile_wall[east=tall,north=low,south=none,up=true,waterlogged=false,west=none]

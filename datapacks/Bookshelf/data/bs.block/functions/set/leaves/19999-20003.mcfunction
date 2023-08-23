@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 19999 run setblock ~ ~ ~ cobbled_deepslate_wall[east=low,north=none,south=low,up=false,waterlogged=false,west=tall]
-execute if score @s bs.block.id matches 20000 run setblock ~ ~ ~ cobbled_deepslate_wall[east=low,north=none,south=tall,up=true,waterlogged=true,west=none]
-execute if score @s bs.block.id matches 20001 run setblock ~ ~ ~ cobbled_deepslate_wall[east=low,north=none,south=tall,up=true,waterlogged=true,west=low]
-execute if score @s bs.block.id matches 20002 run setblock ~ ~ ~ cobbled_deepslate_wall[east=low,north=none,south=tall,up=true,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 20003 run setblock ~ ~ ~ cobbled_deepslate_wall[east=low,north=none,south=tall,up=true,waterlogged=false,west=none]

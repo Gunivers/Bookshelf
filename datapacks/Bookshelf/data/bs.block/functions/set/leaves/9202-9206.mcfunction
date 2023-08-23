@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 9202 run setblock ~ ~ ~ spruce_fence_gate[facing=east,in_wall=false,open=false,powered=false]
-execute if score @s bs.block.id matches 9203 run setblock ~ ~ ~ birch_fence_gate[facing=north,in_wall=true,open=true,powered=true]
-execute if score @s bs.block.id matches 9204 run setblock ~ ~ ~ birch_fence_gate[facing=north,in_wall=true,open=true,powered=false]
-execute if score @s bs.block.id matches 9205 run setblock ~ ~ ~ birch_fence_gate[facing=north,in_wall=true,open=false,powered=true]
-execute if score @s bs.block.id matches 9206 run setblock ~ ~ ~ birch_fence_gate[facing=north,in_wall=true,open=false,powered=false]

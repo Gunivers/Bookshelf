@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 376 run setblock ~ ~ ~ mangrove_leaves[distance=1,persistent=false,waterlogged=true]
-execute if score @s bs.block.id matches 377 run setblock ~ ~ ~ mangrove_leaves[distance=1,persistent=false,waterlogged=false]
-execute if score @s bs.block.id matches 378 run setblock ~ ~ ~ mangrove_leaves[distance=2,persistent=true,waterlogged=true]
-execute if score @s bs.block.id matches 379 run setblock ~ ~ ~ mangrove_leaves[distance=2,persistent=true,waterlogged=false]
-execute if score @s bs.block.id matches 380 run setblock ~ ~ ~ mangrove_leaves[distance=2,persistent=false,waterlogged=true]

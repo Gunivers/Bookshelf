@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 5848 run setblock ~ ~ ~ ender_chest[facing=west,waterlogged=false]
-execute if score @s bs.block.id matches 5849 run setblock ~ ~ ~ ender_chest[facing=east,waterlogged=true]
-execute if score @s bs.block.id matches 5850 run setblock ~ ~ ~ ender_chest[facing=east,waterlogged=false]
-execute if score @s bs.block.id matches 5851 run setblock ~ ~ ~ tripwire_hook[attached=true,facing=north,powered=true]
-execute if score @s bs.block.id matches 5852 run setblock ~ ~ ~ tripwire_hook[attached=true,facing=north,powered=false]

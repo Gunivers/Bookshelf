@@ -1,3 +1,0 @@
-execute if score @s bs.block.id matches 19210..19212 run function bs.block:set/leaves/19210-19212
-execute if score @s bs.block.id matches 19213..19215 run function bs.block:set/leaves/19213-19215
-execute if score @s bs.block.id matches 19216..19219 run function bs.block:set/leaves/19216-19219

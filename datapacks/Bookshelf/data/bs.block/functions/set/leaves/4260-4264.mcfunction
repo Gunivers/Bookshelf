@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 4260 run setblock ~ ~ ~ sugar_cane[age=3]
-execute if score @s bs.block.id matches 4261 run setblock ~ ~ ~ sugar_cane[age=4]
-execute if score @s bs.block.id matches 4262 run setblock ~ ~ ~ sugar_cane[age=5]
-execute if score @s bs.block.id matches 4263 run setblock ~ ~ ~ sugar_cane[age=6]
-execute if score @s bs.block.id matches 4264 run setblock ~ ~ ~ sugar_cane[age=7]
