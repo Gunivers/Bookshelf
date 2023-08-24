@@ -35,10 +35,10 @@ scoreboard players operation VAR0 bs %= 360 bs.const
 # Retranscription of bs.in.0 on interval [0;90[
 
 scoreboard players operation VAR2 bs = VAR0 bs
-execute if score VAR0 bs matches 90..179 run scoreboard players operation VAR2 bs *= Neg bs.const
+execute if score VAR0 bs matches 90..179 run scoreboard players operation VAR2 bs *= -1 bs.const
 execute if score VAR0 bs matches 90..179 run scoreboard players operation VAR2 bs += 180 bs.const
 execute if score VAR0 bs matches 180..269 run scoreboard players operation VAR2 bs -= 180 bs.const
-execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs *= Neg bs.const
+execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs *= -1 bs.const
 execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs += 360 bs.const
 
 
@@ -49,7 +49,7 @@ execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs 
 scoreboard players operation @s bs.out.0 = VAR2 bs
 scoreboard players operation @s bs.out.0 *= @s bs.out.0
 scoreboard players operation @s bs.out.0 *= 4 bs.const
-scoreboard players operation @s bs.out.0 *= Neg bs.const
+scoreboard players operation @s bs.out.0 *= -1 bs.const
 scoreboard players operation @s bs.out.0 += 32400 bs.const
 scoreboard players operation @s bs.out.0 *= 1000 bs.const
 scoreboard players operation VAR1 bs = VAR2 bs
@@ -57,6 +57,6 @@ scoreboard players operation VAR1 bs *= VAR1 bs
 scoreboard players operation VAR1 bs += 32400 bs.const
 scoreboard players operation @s bs.out.0 /= VAR1 bs
 
-execute if score VAR0 bs matches 90..269 run scoreboard players operation @s bs.out.0 *= Neg bs.const
+execute if score VAR0 bs matches 90..269 run scoreboard players operation @s bs.out.0 *= -1 bs.const
 
 # tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]

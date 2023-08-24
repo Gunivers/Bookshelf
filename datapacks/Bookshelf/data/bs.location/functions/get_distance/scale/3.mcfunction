@@ -27,4 +27,4 @@ function bs.location:get_distance_squared_as_to_at/scale/3
 
 scoreboard players operation @s bs.in.0 = @s bs.out.0
 
-function bs.math:sqrt
+function #bs.math:sqrt
