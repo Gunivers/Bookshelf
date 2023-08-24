@@ -6,9 +6,9 @@
 
 # Version: 2.0
 # Created: ??/??/???? (1.14)
-# Last modification: 16/08/2023 (23w32a)
+# Last modification: 24/08/2023 (23w32a)
 
-# Documentation: 
+# Documentation:
 # Dependencies:
 # Note:
 

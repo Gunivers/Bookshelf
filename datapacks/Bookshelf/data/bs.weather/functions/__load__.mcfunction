@@ -1,1 +1,1 @@
-scoreboard players set module.weather bs.metadata 1
+scoreboard players set $module.weather.enabled bs.metadata 1
