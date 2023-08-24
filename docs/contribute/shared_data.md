@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-# 🎖️ Shared data
+# 🌐 Shared data
 
 In order to reduce the footprint of the library here are some shared objectives and storages that a module can use:
 
@@ -26,4 +26,4 @@ In order to reduce the footprint of the library here are some shared objectives 
 | `bs:const` | Contain constant data. Path format: `<module>.<my_key>` |
 | `bs:data` | Global data storage. Path format: `<module>.<feature>.<my_key>` |
 | `bs:in` | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
-| `bs:out` | Default storage for outputs. Path format: `<module>.<feature> or <module>.<feature>.<output_key>` |
+| `bs:out` | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
