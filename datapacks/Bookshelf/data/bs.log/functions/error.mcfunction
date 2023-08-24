@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$execute as @s unless entity @s[ \
+$execute as @a unless entity @s[ \
     tag=!bs.log.$(feature).debug, \
     tag=!bs.log.$(feature).info, \
     tag=!bs.log.$(feature).warn, \
