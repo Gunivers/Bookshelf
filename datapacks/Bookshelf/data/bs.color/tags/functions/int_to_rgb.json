@@ -1,6 +1,6 @@
 {
   "values": [
-    "bs.color:int_to_rgb/__macro__",
-    "bs.color:int_to_rgb/__storage__"
+    "bs.color:int_to_rgb/macro",
+    "bs.color:int_to_rgb/storage"
   ]
 }
