@@ -1,3 +1,8 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# CODE ------------------------------------------------------------------------
+
 scoreboard objectives remove bs.data
 
 scoreboard players reset $module.sidebar.enabled bs.metadata
