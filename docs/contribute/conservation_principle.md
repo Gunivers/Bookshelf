@@ -10,7 +10,7 @@ html_theme.sidebar_secondary.remove: true
 -- Antoine Lavoisier
 ```
 
-The lib must have a minimum impact on the scores and other data in order to avoid some overwritings of data. It means that we should avoid as much as possible to : 
+The lib must have a minimum impact on the scores and other data in order to avoid some overwritings of data. It means that we should avoid as much as possible to :
 
 - Create new scores
 - Delete scores (totally forbidden)
@@ -22,7 +22,7 @@ To do so, each input - as well as other data used by the fonction - must be save
 This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.
 :::
 
-Also for scores, by default, the input and outputs should use respectively the scores `bs.in.[0-9]` and `bs.out.[0-9]`. But they can use others scores when it's is more appropriate, for exemple to allow writing chains of calling functions like :
+Also for scores, by default, inputs and outputs are using `bs.in` and `bs.out`. But they can use others scores when it's more appropriate, especially when you want your data to represent the state of an entity:
 
 ```
 # Multiply the X coordinate of the source entity and place the entity at the new location
