@@ -38,6 +38,7 @@ scoreboard players operation @s bs.out.0 = #vector.scalar.x bs.data
 scoreboard players operation @s bs.out.0 += #vector.scalar.y bs.data
 scoreboard players operation @s bs.out.0 += #vector.scalar.z bs.data
 
+scoreboard players operation @s bs.out.0 /= 1000 bs.const
 
 # RESET PARAMETERS ------------------------------------------------------------
 scoreboard players reset @s bs.opt.0
