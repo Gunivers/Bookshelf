@@ -1,6 +1,7 @@
 {
- "values": [
+  "values": [
+    "bs.bitwise:__load__",
     "bs.core:__load__",
     "bs.math:__load__"
- ]
+  ]
 }
