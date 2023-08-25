@@ -7,7 +7,7 @@ Create beautiful and dynamic sidebar using the scoreboard.
 ```{admonition} Complex module
 :class: warning
 
-This module creates various teams and scoreholders in order to work. Do not try to remove a sidebar by yourself. Always use the provided functions `destroy` and `reset`. 
+This module creates various teams and scoreholders in order to work. Do not try to remove a sidebar by yourself. Always use the provided functions `destroy` and `reset`.
 ```
 
 ---
@@ -27,7 +27,7 @@ Create and register a new sidebar.
 Inputs
 
 :   (macro variable) `id`: string
-    : The unique id. The allowed character set is the same as an objective.
+    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
 
     (macro variable) `name`: string
     : The displayed name. Format: valid JSON text component.
@@ -60,21 +60,6 @@ Example
 
 ---
 
-### Destroy
-
-**`#bs.sidebar:destroy`**
-
-Safely remove a sidebar with all associated scores and teams.
-
-Inputs
-
-:   (macro variable) `id`: string
-    : The unique id. The allowed character set is the same as an objective.
-
-> **Credits**: Aksiome
-
----
-
 ### Refresh
 
 **`#bs.sidebar:refresh`**
@@ -84,7 +69,14 @@ Update dynamic parts of the sidebar.
 Inputs
 
 :   (macro variable) `id`: string
-    : The unique id. The allowed character set is the same as an objective.
+    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
+
+Example
+
+:   Refresh a sidebar.
+    ```mcfunction
+    function #bs.sidebar:refresh {id:"my_guessing_game"}
+    ```
 
 > **Credits**: Aksiome
 
@@ -96,10 +88,35 @@ Inputs
 
 Safely remove all sidebars. When possible prefer this method over `destroy`.
 
+
+Example
+
+:   Delete every sidebar.
+    ```mcfunction
+    function #bs.sidebar:reset
+    ```
+
+> **Credits**: Aksiome
+
+---
+
+### Destroy
+
+**`#bs.sidebar:destroy`**
+
+Safely remove a sidebar with all associated scores and teams.
+
 Inputs
 
 :   (macro variable) `id`: string
-    : The unique id. The allowed character set is the same as an objective.
+    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
+
+Example
+
+:   Delete a single sidebar.
+    ```mcfunction
+    function #bs.sidebar:destroy {id:"my_guessing_game"}
+    ```
 
 > **Credits**: Aksiome
 
