@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$execute at @a unless entity @p[distance=0 \
+$execute at @a unless entity @p[distance=0, \
     tag=!bs.log.$(feature).debug, \
     tag=!bs.log.$(feature).info, \
     tag=!bs.log._.info, \
