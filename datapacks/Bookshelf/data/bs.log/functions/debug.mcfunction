@@ -19,4 +19,8 @@ $execute as @a unless entity @s[ \
     tag=!bs.log._.debug, \
     tag=!bs.log._._, \
     tag=!bs.log.$(feature)._\
-] run tellraw @s ["",{"text":"BS","color":"aqua"},{"text":" [DEBUG]","color":"#CCCCCC"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
+] run tag @s add bs.log.catch_log
+
+$tellraw @a[tag=catch_log] ["",{"text":"BS","color":"aqua"},{"text":" [DEBUG]","color":"#CCCCCC"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
+
+tag @a remove bs.log.catch_log
