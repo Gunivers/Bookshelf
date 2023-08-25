@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$execute as @s unless entity @s[ \
+$execute at @s unless entity @p[distance=0 \
     tag=!bs.log.$(feature).debug, \
     tag=!bs.log.$(feature).info, \
     tag=!bs.log.$(feature).warn, \
@@ -25,8 +25,4 @@ $execute as @s unless entity @s[ \
     tag=!bs.log._.error, \
     tag=!bs.log._._, \
     tag=!bs.log.$(feature)._ \
-] run tag @s add bs.log.catch
-
-$tellraw @a[tag=bs.log.catch] ["",{"text":"BS","color":"aqua"},{"text":" [ERROR]","color":"#DE382B"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
-
-tag @a remove bs.log.catch
+] run tellraw @p ["",{"text":"BS","color":"aqua"},{"text":" [ERROR]","color":"#DE382B"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
