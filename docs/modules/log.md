@@ -37,7 +37,7 @@ Customize the log message
     This variable is used in the tag and follows the following syntax: `<module without 'bs.'>.<feature>`.
     - The log content `message` (type: string).
     This variable is any valid JSON text component usable in a tellraw.
-    Several JSON text components can be specified by join them with a comma `,`.
+    Several JSON text components can be specified by joining them with a comma `,`.
     Note: To specify a plain string text as message, the message needs to have escaped quotes.
     For instance: `"\"message\""` or `'"message"'`.
 
