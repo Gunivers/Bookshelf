@@ -1,4 +1,3 @@
-
 # if E = 87
 execute store result score #in bs.data run data get storage bs.in math.sqrt 0.000000000000000006938893903907228377647697925567626953125
 execute if score #in bs.data matches 1073741824.. run function bs.math:sqrt/calc

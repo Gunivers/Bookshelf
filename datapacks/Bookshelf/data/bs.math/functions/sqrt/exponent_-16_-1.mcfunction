@@ -1,4 +1,3 @@
-
 # is E >= -4
 execute store result score #__check3 bs.data run data get storage bs.in math.sqrt 16
 # is E >= -8

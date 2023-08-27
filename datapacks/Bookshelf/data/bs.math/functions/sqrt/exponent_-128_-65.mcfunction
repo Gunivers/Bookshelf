@@ -1,4 +1,3 @@
-
 # is E >= -80
 execute store result score #_check3 bs.data run data get storage bs.in math.sqrt 1208925819614629174706176
 # is E >= -96

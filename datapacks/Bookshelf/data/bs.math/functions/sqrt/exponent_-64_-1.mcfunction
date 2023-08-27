@@ -1,4 +1,3 @@
-
 # is E >= -16
 execute store result score #_check3 bs.data run data get storage bs.in math.sqrt 65536
 # is E >= -32
