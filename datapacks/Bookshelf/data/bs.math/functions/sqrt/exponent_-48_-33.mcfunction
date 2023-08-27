@@ -1,3 +1,4 @@
+
 # is E >= -36
 execute store result score #__check3 bs.data run data get storage bs.in math.sqrt 68719476736
 # is E >= -40
