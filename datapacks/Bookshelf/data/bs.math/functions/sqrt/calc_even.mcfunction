@@ -39,6 +39,6 @@ scoreboard players operation #temp1 bs.data -= #in bs.data
 scoreboard players operation #temp1 bs.data *= 16384 bs.const
 scoreboard players operation #temp1 bs.data /= #temp2 bs.data
 
-#
+
 scoreboard players operation #out bs.data *= 16384 bs.const
 scoreboard players operation #out bs.data -= #temp1 bs.data
