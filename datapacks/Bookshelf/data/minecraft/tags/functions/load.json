@@ -1,5 +1,6 @@
 {
- "values": [
+  "values": [
+    "bs.bitwise:__load__",
     "bs.core:__load__",
     "bs.color:__load__",
     "bs.biome:__load__",
