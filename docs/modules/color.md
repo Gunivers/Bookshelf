@@ -116,10 +116,11 @@ Example
 ```{admonition} Input / Output flexibility
 :class: tip
 
-All version use the same function tag. It allow you to use any input source and any ouput source you want.
-You can then input the RGB using score and get the output in the storage.
+All version use the same function tag. It allow to use any input and ouput source you want. For example, you can input the RGB using score and get the output in the storage.
 
 Be careful, if serveral inputs are given, lower priority inputs will be overwritten. Macro variable have the highest priority, then storage and finally score.
+
+If you are searching for the best performances, you can use `function bs.color:rgb_to_int/score` to bypass flexibility interfaces (but then you only have score input and output).
 ```
 
 > **Credits**: theogiraudet, Aksiome
