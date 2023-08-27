@@ -14,11 +14,11 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $color.rgb_to_int bs.out = $color.rgb_to_int.color.0 bs.in
+scoreboard players operation $color.rgb_to_int bs.out = $color.rgb_to_int.color.r bs.in
 scoreboard players operation $color.rgb_to_int bs.out *= 65536 bs.const
-scoreboard players operation #color.rgb_to_int bs.data = $color.rgb_to_int.color.1 bs.in
+scoreboard players operation #color.rgb_to_int bs.data = $color.rgb_to_int.color.g bs.in
 scoreboard players operation #color.rgb_to_int bs.data *= 256 bs.const
 scoreboard players operation $color.rgb_to_int bs.out += #color.rgb_to_int bs.data
-scoreboard players operation $color.rgb_to_int bs.out += $color.rgb_to_int.color.2 bs.in
+scoreboard players operation $color.rgb_to_int bs.out += $color.rgb_to_int.color.b bs.in
 
 return run scoreboard players get $color.rgb_to_int bs.out
