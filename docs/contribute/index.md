@@ -26,20 +26,18 @@ Si vous souhaitez contribuer mais que votre anglais n'est pas au point, vous pou
 :caption: Basic stuff
 
 definitions
-nomenclature
 tree_structure
+nomenclature
+shared_data
 file_format
-special_scores
-conservation_principle
 ````
 
 ````{toctree}
 :hidden:
 :maxdepth: 1
 :caption: Advanced stuff
-
-initialization
 comments
 debug
+conservation_principle
 special_functions
 ````

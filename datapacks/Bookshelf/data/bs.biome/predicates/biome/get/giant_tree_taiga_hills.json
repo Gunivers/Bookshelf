@@ -1,6 +1,0 @@
-{
-	"condition": "location_check",
-	"predicate": {
-		"biome": "minecraft:giant_tree_taiga_hills"
-	}
-}

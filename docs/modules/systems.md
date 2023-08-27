@@ -11,5 +11,4 @@ Systems are turnkey solutions that are used directly in-game.
 :maxdepth: 1
 
 lgdir
-biomedisplayer
 ```
