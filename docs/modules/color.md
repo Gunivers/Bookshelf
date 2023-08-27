@@ -24,7 +24,7 @@ Convert a color from rgb to int.
 Inputs
 
 :   (macro variable) `color`: array
-    : A 3D vector representing the rgb color (example: [0,255,128])
+    : A 3D vector representing the rgb color (example: [0,255,128]).
 
 
 Outputs
@@ -52,7 +52,7 @@ Convert a color from rgb to int.
 Inputs
 
 :   (storage) `bs:in color.rgb_to_int.color`: array
-    : A 3D vector representing the rgb color (example: [0,255,128])
+    : A 3D vector representing the rgb color (example: [0,255,128]).
 
 
 Outputs
@@ -69,7 +69,7 @@ Example
     summon minecraft:zombie ~ ~ ~ {ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}]}
 
     # Compute the int representation of a pure red color
-    data modify storage bs:in color.rgb_to_int set value [255,0,0]
+    data modify storage bs:in color.rgb_to_int.color set value [255,0,0]
     function #bs.color:rgb_to_int
 
     # Change the helmet color of all zombie to red
@@ -83,13 +83,13 @@ Convert a color from rgb to int.
 
 Inputs
 
-:   (scores) `#color.rgb_to_int.[r,g,b] bs.in`
-    : The 3 vector elements representing the rgb color
+:   (scores) `$color.rgb_to_int.[r,g,b] bs.in`
+    : The 3 vector elements representing the rgb color.
 
 
 Outputs
 
-:   (score) `#color.rgb_to_int bs.out`
+:   (score) `$color.rgb_to_int bs.out`
     : The color as an integer.
 
 Example
@@ -101,10 +101,10 @@ Example
     summon minecraft:zombie ~ ~ ~ {ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}]}
 
     # Compute the int representation of a pure red color
-    scobreboard players set $color.rgb_to_int.r bs.in 255
-    scobreboard players set $color.rgb_to_int.g bs.in 0
-    scobreboard players set $color.rgb_to_int.b bs.in 0
-    function #bs.color:rgb_to_int/score
+    scoreboard players set $color.rgb_to_int.color.r bs.in 255
+    scoreboard players set $color.rgb_to_int.color.g bs.in 0
+    scoreboard players set $color.rgb_to_int.color.b bs.in 0
+    function #bs.color:rgb_to_int
 
     # Change the helmet color of all zombie to red
     execute as @e[type=minecraft:zombie] store result entity @s ArmorItems[3].tag.display.color int 1 run scoreboard players get $color.rgb_to_int bs.out
@@ -131,17 +131,53 @@ If you are searching for the best performances, you can use `function bs.color:r
 
 **`#bs.color:int_to_rgb`**
 
-Convert a color from int to rgb. The score version of this function is also available inside the lib (bs.color:int_to_rgb/score).
+:::::{tab-set}
+::::{tab-item} Macro variable
+
+Convert a color from int to rgb.
 
 Inputs
 
-:   (storage) `bs:in color.int_to_rgb.color` or (macro variable) `color`: int
+:   (macro variable) `color`: int
     : The color as an integer.
 
 Outputs
 
-:   (storage) `bs:out color.int_to_rgb`
-    : A vec3 representing the rgb color (example: [0,255,128])
+:   (storage) `bs:out color.int_to_rgb`: array
+    : A 3D vector representing the rgb color (example: [0,255,128]).
+
+::::
+::::{tab-item} Storage
+
+Convert a color from int to rgb.
+
+Inputs
+
+:   (storage) `bs:in color.rgb_to_int.color`: int
+    : The color as an integer.
+
+Outputs
+
+:   (storage) `bs:out color.int_to_rgb`: array
+    : A 3D vector representing the rgb color (example: [0,255,128]).
+
+::::
+::::{tab-item} Score
+
+Convert a color from int to rgb.
+
+Inputs
+
+:   (score) `$color.int_to_rgb.color bs.in`
+    : The color as an integer.
+
+Outputs
+
+:   (scores) `$color.int_to_rgb.[r,g,b] bs.out`
+    : The 3 vector elements representing the rgb color.
+
+::::
+:::::
 
 Example
 
@@ -151,6 +187,16 @@ Example
     # Get the rgb representation of a dropped armor piece
     function #bs.color:int_to_rgb with entity @e[type=item,tag=my_armor,limit=1] tag.display
     ```
+
+```{admonition} Input / Output flexibility
+:class: tip
+
+All version use the same function tag. It allow to use any input and ouput source you want. For example, you can input the RGB using score and get the output in the storage.
+
+Be careful, if serveral inputs are given, lower priority inputs will be overwritten. Macro variable have the highest priority, then storage and finally score.
+
+If you are searching for the best performances, you can use `function bs.color:int_to_rgb/score` to bypass flexibility interfaces (but then you only have score input and output).
+```
 
 > **Credits**: theogiraudet, Aksiome
 

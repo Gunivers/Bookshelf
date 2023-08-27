@@ -7,20 +7,20 @@ scoreboard objectives add bs.const dummy [{"text":"Bookshelf ","color":"dark_gra
 scoreboard players set 256 bs.const 256
 scoreboard players set 65536 bs.const 65536
 
-scoreboard players set $module.color.enabled bs.metadata 1
+scoreboard players add $color.int_to_rgb.color bs.in 0
+scoreboard players add $color.rgb_to_int.color.r bs.in 0
+scoreboard players add $color.rgb_to_int.color.g bs.in 0
+scoreboard players add $color.rgb_to_int.color.b bs.in 0
 
-scoreboard players set $color.int_to_rgb.value bs.in 0
-scoreboard players set $color.rgb_to_int.value.0 bs.in 0
-scoreboard players set $color.rgb_to_int.value.1 bs.in 0
-scoreboard players set $color.rgb_to_int.value.2 bs.in 0
+scoreboard players add $color.rgb_to_int bs.out 0
+scoreboard players add $color.int_to_rgb.r bs.out 0
+scoreboard players add $color.int_to_rgb.g bs.out 0
+scoreboard players add $color.int_to_rgb.b bs.out 0
 
-scoreboard players set $color.rgb_to_int bs.out 0
-scoreboard players set $color.int_to_rgb.0 bs.out 0
-scoreboard players set $color.int_to_rgb.1 bs.out 0
-scoreboard players set $color.int_to_rgb.2 bs.out 0
+execute unless data storage bs:in color.int_to_rgb.color run data modify storage bs:in color.int_to_rgb.color set value 0
+execute unless data storage bs:in color.rgb_to_int.color run data modify storage bs:in color.rgb_to_int.color set value [0,0,0]
+execute unless data storage bs:data color.int_to_rgb.color run data modify storage bs:data color.int_to_rgb.color set value 0
+execute unless data storage bs:data color.rgb_to_int.color run data modify storage bs:data color.rgb_to_int.color set value [0,0,0]
 
-data modify storage bs:in color.int_to_rgb.value set value 0
-data modify storage bs:in color.rgb_to_int.value set value [0,0,0]
-
-data modify storage bs:out color.int_to_rgb set value [0,0,0]
-data modify storage bs:out color.rgb_to_int set value 0
+execute unless data storage bs:out color.int_to_rgb run data modify storage bs:out color.int_to_rgb set value [0,0,0]
+execute unless data storage bs:out color.rgb_to_int run data modify storage bs:out color.rgb_to_int set value 0

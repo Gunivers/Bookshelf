@@ -14,13 +14,13 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $color.int_to_rgb.0 bs.out = $color.int_to_rgb.color bs.in
-scoreboard players operation $color.int_to_rgb.0 bs.out /= 65536 bs.const
-scoreboard players operation $color.int_to_rgb.0 bs.out %= 256 bs.const
+scoreboard players operation $color.int_to_rgb.r bs.out = $color.int_to_rgb.color bs.in
+scoreboard players operation $color.int_to_rgb.r bs.out /= 65536 bs.const
+scoreboard players operation $color.int_to_rgb.r bs.out %= 256 bs.const
 
-scoreboard players operation $color.int_to_rgb.1 bs.out = $color.int_to_rgb.color bs.in
-scoreboard players operation $color.int_to_rgb.1 bs.out /= 256 bs.const
-scoreboard players operation $color.int_to_rgb.1 bs.out %= 256 bs.const
+scoreboard players operation $color.int_to_rgb.g bs.out = $color.int_to_rgb.color bs.in
+scoreboard players operation $color.int_to_rgb.g bs.out /= 256 bs.const
+scoreboard players operation $color.int_to_rgb.g bs.out %= 256 bs.const
 
-scoreboard players operation $color.int_to_rgb.2 bs.out = $color.int_to_rgb.color bs.in
-scoreboard players operation $color.int_to_rgb.2 bs.out %= 256 bs.const
+scoreboard players operation $color.int_to_rgb.b bs.out = $color.int_to_rgb.color bs.in
+scoreboard players operation $color.int_to_rgb.b bs.out %= 256 bs.const
