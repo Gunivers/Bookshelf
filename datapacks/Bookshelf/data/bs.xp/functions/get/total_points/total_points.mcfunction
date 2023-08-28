@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Leirof, Aksiome
+# Contributors:
+
+# Version: 2.0
+# Created: ??/??/???? (1.18.2)
+# Last modification: 28/08/2023 (23w33a)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 execute store result score $xp.get_total_points bs.out run xp query @s points
 execute store result score #xp.get_total_points.levels bs.data \
   store result score #xp.get_total_points.x bs.data \
