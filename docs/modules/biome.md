@@ -6,36 +6,6 @@ Everything concerning biome properties.
 
 ---
 
-## 👁️ Predicates
-
-You can find below all predicates available in this module.
-
----
-
-### Can it rain?
-
-**`bs.biome:can_rain`**
-
-Determine if it can rain or not.
-
----
-
-### Can it snow?
-
-**`bs.biome:can_snow`**
-
-Determine if it can snow or not.
-
----
-
-### Can it rain or snow?
-
-**`bs.biome:has_precipitation`**
-
-Determine if the biome has precipitation or not.
-
----
-
 ## 🔧 Functions
 
 You can find below all functions available in this module.
@@ -109,6 +79,36 @@ Example
 ::::
 
 > **Credits**: theogiraudet, Aksiome
+
+---
+
+## 👁️ Predicates
+
+You can find below all predicates available in this module.
+
+---
+
+### Can it rain?
+
+**`bs.biome:can_rain`**
+
+Determine if it can rain or not.
+
+---
+
+### Can it snow?
+
+**`bs.biome:can_snow`**
+
+Determine if it can snow or not.
+
+---
+
+### Can it rain or snow?
+
+**`bs.biome:has_precipitation`**
+
+Determine if the biome has precipitation or not.
 
 ---
 
