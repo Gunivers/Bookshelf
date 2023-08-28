@@ -7,5 +7,5 @@ scoreboard players operation #xp.get_total_points.x2 bs.data *= 5 bs.const
 scoreboard players operation #xp.get_total_points.x2 bs.data -= #xp.get_total_points.x bs.data
 scoreboard players operation #xp.get_total_points.x2 bs.data /= 2 bs.const
 
-scoreboard players operation #xp.get_total_points.result bs.data += #xp.get_total_points.x2 bs.data
-scoreboard players add #xp.get_total_points.result bs.data 360
+scoreboard players operation $xp.get_total_points bs.out += #xp.get_total_points.x2 bs.data
+scoreboard players add $xp.get_total_points bs.out 360
