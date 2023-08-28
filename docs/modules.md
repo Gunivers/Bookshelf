@@ -75,6 +75,7 @@ modules/memory
 modules/move
 modules/orientation
 modules/schedule
+modules/sidebar
 modules/time
 modules/tree
 modules/vector
