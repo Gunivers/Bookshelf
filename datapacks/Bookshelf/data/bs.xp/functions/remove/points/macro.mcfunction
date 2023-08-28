@@ -1,1 +1,1 @@
-$scoreboard players set $xp.remove_points.levels bs.in $(levels)
+$scoreboard players set $xp.remove_points.points bs.in $(points)
