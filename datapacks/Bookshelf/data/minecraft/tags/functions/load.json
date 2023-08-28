@@ -1,9 +1,10 @@
 {
   "values": [
-    "bs.core:__load__",
     "bs.biome:__load__",
+    "bs.color:__load__",
+    "bs.core:__load__",
     "bs.math:__load__",
     "bs.sidebar:__load__",
     "bs.weather:__load__"
-  ]
+ ]
 }

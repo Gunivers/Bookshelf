@@ -57,7 +57,6 @@ And much more!
 :caption: All modules
 
 modules/biome
-modules/biomedisplayer
 modules/bitwise
 modules/block
 modules/cache
@@ -81,6 +80,7 @@ modules/time
 modules/tree
 modules/vector
 modules/view
+modules/weather
 modules/xp
 ```
 

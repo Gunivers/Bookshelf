@@ -1,0 +1,16 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "bs.biome:has_precipitation"
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:reference",
+        "name": "bs.biome:can_snow"
+      }
+    }
+  ]
+}
