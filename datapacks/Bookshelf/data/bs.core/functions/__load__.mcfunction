@@ -13,7 +13,7 @@ function bs:menu
 function #bs.biome:help
 function bs.block:_
 function bs.cache:_
-function bs.color:_
+function #bs.color:help
 function bs.health:_
 function bs.id:_
 function bs.item:_
