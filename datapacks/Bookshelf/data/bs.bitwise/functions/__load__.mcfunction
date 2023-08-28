@@ -3,6 +3,8 @@
 
 # CODE ------------------------------------------------------------------------
 
+scoreboard objectives add bs.in dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Input","color":"aqua"}]
+scoreboard objectives add bs.out dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
 scoreboard objectives add bs.data dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 scoreboard objectives add bs.const dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
 
