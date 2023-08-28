@@ -1,2 +1,1 @@
-scoreboard players set #xp.add_levels.use_macro bs.data 1
-$xp add @s $(levels) levels
+$execute store success score #xp.use_macro bs.data run xp add @s $(levels) levels
