@@ -2940,7 +2940,7 @@
       group_id: 7, \
       group_start_index: 247, \
       default: true, \
-      stringified: "[]", \
+      stringified: "", \
       block_state: { \
          \
       } \
