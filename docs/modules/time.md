@@ -1,57 +1,78 @@
 # ⌚ Time
 
-**`bs.time:_`**
+**`#bs.time:help`**
 
-THis module allow to get information about the system time.
+This module allow to get information about the system time.
 
 ##  🔧 Functions
 
+You can find below all the function available in this module.
+
+---
+
 ###  System time
 
-**`bs.time:get`**
+**`#bs.time:get`**
 
-Get the system time in 3 scores corresponding to the real hour, minute and second.
-
-This function need to run first the following command:
-
-```mcfunction
-function bs.time:set
-```
-
-It will place a command block, a chest and an armor stand at the position of execution. It will then be used to the get the time.
-
-Inputs
-
-:   None
+Get the system time corresponding to the real hours, minutes and seconds.
 
 Outputs
 
-:   (scores) `Heure Systime`
-    : The real hour
+:  (score) `$time.hours bs.out`
+   : The real hours
 
-    (scores) `Minute Systime`
-    : The real minute
+:  (score) `$time.minutes bs.out`
+   : The real minutes
 
-    (scores) `Seconde Systime`
-    : The real second
+:  (score) `$time.seconds bs.out`
+   : The real seconds
+
+:  (storage) `bs:out time.hours`: int
+   : The real hours
+
+:  (storage) `bs:out time.minutes`: int
+   : The real minutes
+
+:  (storage) `bs:out time.seconds`: int
+   : The real seconds
+
+:  (storage) `bs:out time.string`: string
+   : A formatted string using the following format: hh:mm:ss
 
 Example
 
-:   Get the system time:
-    
-    ```mcfunction
-    # The first time
-    function bs.time:set
-    # Then, once every time you want to get the time
-    function bs.time:get
-    # Show the result
-    scoreboard objectives setdisplay sidebar Systime
-    ```
+:  The moment we all dread.
+   ```mcfunction
+   function #bs.time:get
 
-> **Credits**: RedCoal & Awhikax
+   tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h. Time to wake up!"}]
+   ```
 
-```{admonition} Bug reported
-:class: error
+> **Credits**: Aksiome
 
-The function `bs.time:get` is not working properly. You can find the bug report here: https://github.com/Gunivers/Bookshelf/issues/56. If you are able to fix it, feel free to open a pull request!
-```
+---
+
+<div align=center>
+
+**💬 Did it help you?**
+
+Feel free to leave your questions and feedbacks below!
+
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="Gunivers/Glibs"
+        data-repo-id="R_kgDOHQjqYg"
+        data-category="Documentation"
+        data-category-id="DIC_kwDOHQjqYs4CUQpy"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="fr"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
