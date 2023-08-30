@@ -50,10 +50,11 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    execute store result score @s <my_objective> run function #bs.xp:get_max_points
+    scoreboard objectives add my_objective dummy
+    execute store result score @s my_objective run function #bs.xp:get_max_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I need a total of "},{"score":{"name":"@s","objective":"<my_objective>"}},{"text":" points to pass to the next level"}]
+    tellraw @a [{"text":"I need a total of "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" points to pass to the next level"}]
     ```
 
 :::::
@@ -79,10 +80,11 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    execute store result score @s <my_objective> run function #bs.xp:get_remaining_points
+    scoreboard objectives add my_objective dummy
+    execute store result score @s my_objective run function #bs.xp:get_remaining_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I need "},{"score":{"name":"@s","objective":"<my_objective>"}},{"text":" points to pass to the next level"}]
+    tellraw @a [{"text":"I need "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" points to pass to the next level"}]
     ```
 
 :::::
@@ -108,10 +110,11 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    execute store result score @s <my_objective> run function #bs.xp:get_total_points
+    scoreboard objectives add my_objective dummy
+    execute store result score @s my_objective run function #bs.xp:get_total_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I have "},{"score":{"name":"@s","objective":"<my_objective>"}},{"text":" total points"}]
+    tellraw @a [{"text":"I have "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" total points"}]
     ```
 
 :::::
@@ -137,10 +140,11 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    execute store result score @s <my_objective> run function #bs.xp:get_progress
+    scoreboard objectives add my_objective dummy
+    execute store result score @s my_objective run function #bs.xp:get_progress
 
     # See the result
-    scoreboard obective setdisplay sidebar <my_objective>
+    scoreboard obective setdisplay sidebar my_objective
     ```
 
 :::::
@@ -464,7 +468,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (macro variable) `points`: int
+    (macro variable) `progress`: int
     : The per cent mille of the bar to fill.
 
 Outputs
@@ -478,7 +482,7 @@ Example
 
     ```mcfunction
     # Once
-    function #bs.xp:set_progress {points:50000}
+    function #bs.xp:set_progress {progress:50000}
 
     # See the result
     # look at your XP bar in survival mode
@@ -495,7 +499,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (storage) `bs:in xp.set_progress.points`: int
+    (storage) `bs:in xp.set_progress.progress`: int
     : The per cent mille of the bar to fill.
 
 Outputs
@@ -509,7 +513,7 @@ Example
 
     ```mcfunction
     # Once
-    data modify storage bs:in xp.set_progress.points set value 50000
+    data modify storage bs:in xp.set_progress.progress set value 50000
     function #bs.xp:set_progress
 
     # See the result
@@ -527,7 +531,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (score) `$xp.set_progress.points bs.in`: int
+    (score) `$xp.set_progress.progress bs.in`: int
     : The per cent mille of the bar to fill.
 
 Outputs
@@ -541,7 +545,7 @@ Example
 
     ```mcfunction
     # Once
-    scoreboard players set $xp.set_progress.points bs.in 50000
+    scoreboard players set $xp.set_progress.progress bs.in 50000
     function #bs.xp:set_progress
 
     # See the result
@@ -556,7 +560,7 @@ Example
 
 ---
 
-### Add
+### Add / Remove
 
 ::::::{tab-set}
 :::::{tab-item} Levels
@@ -770,7 +774,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (macro variable) `points`: int
+    (macro variable) `progress`: int
     : The per cent mille of the bar to add.
 
 Outputs
@@ -784,7 +788,7 @@ Example
 
     ```mcfunction
     # Once
-    function #bs.xp:add_progress {points:25000}
+    function #bs.xp:add_progress {progress:25000}
 
     # See the result
     # look at your XP bar in survival mode
@@ -801,7 +805,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (storage) `bs:in xp.add_progress.points`: int
+    (storage) `bs:in xp.add_progress.progress`: int
     : The per cent mille of the bar to add.
 
 Outputs
@@ -815,7 +819,7 @@ Example
 
     ```mcfunction
     # Once
-    data modify storage bs:in xp.add_progress.points set value 25000
+    data modify storage bs:in xp.add_progress.progress set value 25000
     function #bs.xp:add_progress
 
     # See the result
@@ -833,7 +837,7 @@ Inputs
 :   (execution) `as <players>`
     : The players to fill the XP bar.
 
-    (score) `$xp.add_progress.points bs.in`: int
+    (score) `$xp.add_progress.progress bs.in`: int
     : The per cent mille of the bar to add.
 
 Outputs
@@ -847,7 +851,7 @@ Example
 
     ```mcfunction
     # Once
-    scoreboard players set $xp.add_progress.points bs.in 25000
+    scoreboard players set $xp.add_progress.progress bs.in 25000
     function #bs.xp:add_progress
 
     # See the result
@@ -858,311 +862,12 @@ Example
 :::::
 ::::::
 
-> **Credits**: Leirof, Aksiome
+```{admonition} How to remove
+:class: tip
 
----
+You can use negative numbers to remove experience from the player.
 
-### Remove
-
-::::::{tab-set}
-:::::{tab-item} Levels
-::::{tab-set}
-:::{tab-item} Macro variable
-
-**`#bs.xp:remove_levels`**
-
-Remove levels from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove levels from.
-
-    (macro variable) `levels`: int
-    : The amount of levels to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 42 levels using a macro.
-
-    ```mcfunction
-    # Once (execute on you)
-    function #bs.xp:remove_levels {levels:42}
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Storage
-
-**`#bs.xp:remove_levels`**
-
-Remove levels from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove levels from.
-
-    (storage) `bs:in xp.remove_levels.levels`: int
-    : The amount of levels to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 61 levels using the storage.
-
-    ```mcfunction
-    # Once (execute on you)
-    data modify storage bs:in xp.remove_levels.levels set value 61
-    function #bs.xp:remove_levels
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Score
-
-**`#bs.xp:remove_levels`**
-
-Remove levels from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove levels from.
-
-    (score) `$xp.remove_levels.levels bs.in`: int
-    : The amount of levels to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 1 level using a score.
-
-    ```mcfunction
-    # Once (execute on you)
-    scoreboard players set $xp.remove_levels.levels bs.in 1
-    function #bs.xp:remove_levels
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-::::
-:::::
-:::::{tab-item} Points
-::::{tab-set}
-:::{tab-item} Macro variable
-
-**`#bs.xp:remove_points`**
-
-Remove points from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove points from.
-
-    (macro variable) `points`: int
-    : The amount of points to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 42 points using a macro.
-
-    ```mcfunction
-    # Once (execute on you)
-    function #bs.xp:remove_points {points:42}
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Storage
-
-**`#bs.xp:remove_points`**
-
-Remove points from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove points from.
-
-    (storage) `bs:in xp.remove_points.points`: int
-    : The amount of points to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 61 points using the storage.
-
-    ```mcfunction
-    # Once (execute on you)
-    data modify storage bs:in xp.remove_points.points set value 61
-    function #bs.xp:remove_points
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Score
-
-**`#bs.xp:remove_points`**
-
-Remove points from the player.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to remove points from.
-
-    (score) `$xp.remove_points.points bs.in`: int
-    : The amount of points to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 1 point using a score.
-
-    ```mcfunction
-    # Once (execute on you)
-    scoreboard players set $xp.remove_points.points bs.in 1
-    function #bs.xp:remove_points
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-::::
-:::::
-:::::{tab-item} Progress bar
-::::{tab-set}
-:::{tab-item} Macro variable
-
-**`#bs.xp:remove_progress`**
-
-Fill partially the XP bar.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to fill the XP bar.
-
-    (macro variable) `points`: int
-    : The per cent mille of the bar to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 25% to the fill level of your bar.
-
-    ```mcfunction
-    # Once
-    function #bs.xp:remove_progress {points:25000}
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Storage
-
-**`#bs.xp:remove_progress`**
-
-Fill partially the XP bar.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to fill the XP bar.
-
-    (storage) `bs:in xp.remove_progress.points`: int
-    : The per cent mille of the bar to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 25% to the fill level of your bar.
-
-    ```mcfunction
-    # Once
-    data modify storage bs:in xp.remove_progress.points set value 25000
-    function #bs.xp:remove_progress
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-:::{tab-item} Score
-
-**`#bs.xp:remove_progress`**
-
-Fill partially the XP bar.
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to fill the XP bar.
-
-    (score) `$xp.remove_progress.points bs.in`: int
-    : The per cent mille of the bar to remove.
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated.
-
-Example
-
-:   Remove 25% to the fill level of your bar.
-
-    ```mcfunction
-    # Once
-    scoreboard players set $xp.remove_progress.points bs.in 25000
-    function #bs.xp:remove_progress
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-:::
-::::
-:::::
-::::::
+```
 
 > **Credits**: Leirof, Aksiome
 
