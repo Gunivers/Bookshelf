@@ -1,1 +1,1 @@
-$setblock ~ ~ ~ $(block_string)
+$setblock ~ ~ ~ $(type)$(state)$(nbt)

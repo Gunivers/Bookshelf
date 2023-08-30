@@ -1,1 +1,1 @@
-$setblock ~ ~ ~ $(block_string) $(mode)
+$setblock ~ ~ ~ $(type)$(state)$(nbt) $(mode)

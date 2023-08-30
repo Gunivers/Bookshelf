@@ -1,1 +1,1 @@
-$return run execute unless block ~ ~ ~ $(block_string)
+$return run execute unless block ~ ~ ~ $(type)$(state)$(nbt)
