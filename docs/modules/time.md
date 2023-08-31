@@ -18,35 +18,45 @@ Get the system time corresponding to the real hours, minutes and seconds.
 
 Outputs
 
-:  (score) `$time.hours bs.out`
-   : The real hours
+: ::::{tab-set}
+  :::{tab-item} Score
 
-:  (score) `$time.minutes bs.out`
-   : The real minutes
+  (score) `$time.hours bs.out`
+  : The real hours
 
-:  (score) `$time.seconds bs.out`
-   : The real seconds
+  (score) `$time.minutes bs.out`
+  : The real minutes
 
-:  (storage) `bs:out time.hours`: int
-   : The real hours
+  (score) `$time.seconds bs.out`
+  : The real seconds
 
-:  (storage) `bs:out time.minutes`: int
-   : The real minutes
+  :::
+  ::: {tab-item} Storage
 
-:  (storage) `bs:out time.seconds`: int
-   : The real seconds
+  (storage) `bs:out time.hours`: int
+  : The real hours
 
-:  (storage) `bs:out time.string`: string
-   : A formatted string using the following format: hh:mm:ss
+  (storage) `bs:out time.minutes`: int
+  : The real minutes
+
+  (storage) `bs:out time.seconds`: int
+  : The real seconds
+
+  (storage) `bs:out time.string`: string
+  : A formatted string using the following format: hh:mm:ss
+
+  :::
+  ::::
+
 
 Example
 
-:  The moment we all dread.
-   ```mcfunction
-   function #bs.time:get
+: The moment we all dread.
+  ```mcfunction
+  function #bs.time:get
 
-   tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h. Time to wake up!"}]
-   ```
+  tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h, "},{"score":{"name":"$time.minutes","objective":"bs.out"}},{"text":"m and "},{"score":{"name":"$time.seconds","objective":"bs.out"}},{"text":"s. Time to wake up!"}]
+  ```
 
 > **Credits**: Aksiome
 
