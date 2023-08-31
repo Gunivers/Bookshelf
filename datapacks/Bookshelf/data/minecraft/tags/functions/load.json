@@ -6,6 +6,7 @@
     "bs.id:__load__",
     "bs.math:__load__",
     "bs.sidebar:__load__",
+    "bs.time:__load__",
     "bs.weather:__load__",
     "bs.xp:__load__"
  ]
