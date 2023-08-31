@@ -15,7 +15,7 @@ Basic mathematical function : sin, cos, exp, log, sqrt and much more!
 :::
 :::{grid-item-card} 🏷️ ID
 :link: modules/id
-:link-type: doc 
+:link-type: doc
 :margin: 0 3 0 0
 
 Identity the entities with a unique ID, and use it to create complexe systems!
@@ -34,7 +34,7 @@ Block {octicon}`arrow-switch` Score {octicon}`arrow-switch` Item conversion syst
 
 Pathfinding, vision and other tools to create NPCs!
 :::
-:::{grid-item-card} 🪃 Vectors 
+:::{grid-item-card} 🪃 Vectors
 :link: modules/vector
 :link-type: doc
 :margin: 0 0 0 0
@@ -59,7 +59,6 @@ And much more!
 modules/biome
 modules/bitwise
 modules/block
-modules/cache
 modules/color
 modules/core
 modules/health
@@ -71,7 +70,6 @@ modules/location
 modules/log
 modules/mapedit
 modules/math
-modules/memory
 modules/move
 modules/orientation
 modules/schedule
