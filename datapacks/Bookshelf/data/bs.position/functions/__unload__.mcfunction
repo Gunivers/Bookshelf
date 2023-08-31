@@ -6,6 +6,7 @@
 kill 72398515-296d-4e77-bd30-412f6f65d642
 forceload remove 0 0
 
+scoreboard objectives remove bs.data
 scoreboard objectives remove bs.const
 scoreboard objectives remove bs.pos.x
 scoreboard objectives remove bs.pos.y
