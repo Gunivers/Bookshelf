@@ -35,7 +35,7 @@
     }, \
     { \
       name: "minecraft:grass_block", \
-      block_states_group: 57 \
+      block_states_group: 59 \
     }, \
     { \
       name: "minecraft:dirt", \
@@ -47,7 +47,7 @@
     }, \
     { \
       name: "minecraft:podzol", \
-      block_states_group: 57 \
+      block_states_group: 59 \
     }, \
     { \
       name: "minecraft:cobblestone", \
@@ -123,7 +123,7 @@
     }, \
     { \
       name: "minecraft:mangrove_propagule", \
-      block_states_group: 70 \
+      block_states_group: 72 \
     }, \
     { \
       name: "minecraft:bedrock", \
@@ -131,11 +131,11 @@
     }, \
     { \
       name: "minecraft:water", \
-      block_states_group: 66 \
+      block_states_group: 68 \
     }, \
     { \
       name: "minecraft:lava", \
-      block_states_group: 66 \
+      block_states_group: 68 \
     }, \
     { \
       name: "minecraft:sand", \
@@ -143,7 +143,7 @@
     }, \
     { \
       name: "minecraft:suspicious_sand", \
-      block_states_group: 94 \
+      block_states_group: 96 \
     }, \
     { \
       name: "minecraft:red_sand", \
@@ -155,7 +155,7 @@
     }, \
     { \
       name: "minecraft:suspicious_gravel", \
-      block_states_group: 94 \
+      block_states_group: 96 \
     }, \
     { \
       name: "minecraft:gold_ore", \
@@ -395,7 +395,7 @@
     }, \
     { \
       name: "minecraft:dispenser", \
-      block_states_group: 52 \
+      block_states_group: 54 \
     }, \
     { \
       name: "minecraft:sandstone", \
@@ -411,7 +411,7 @@
     }, \
     { \
       name: "minecraft:note_block", \
-      block_states_group: 73 \
+      block_states_group: 75 \
     }, \
     { \
       name: "minecraft:white_bed", \
@@ -487,7 +487,7 @@
     }, \
     { \
       name: "minecraft:sticky_piston", \
-      block_states_group: 76 \
+      block_states_group: 78 \
     }, \
     { \
       name: "minecraft:cobweb", \
@@ -511,15 +511,15 @@
     }, \
     { \
       name: "minecraft:tall_seagrass", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:piston", \
-      block_states_group: 76 \
+      block_states_group: 78 \
     }, \
     { \
       name: "minecraft:piston_head", \
-      block_states_group: 77 \
+      block_states_group: 79 \
     }, \
     { \
       name: "minecraft:white_wool", \
@@ -587,7 +587,7 @@
     }, \
     { \
       name: "minecraft:moving_piston", \
-      block_states_group: 71 \
+      block_states_group: 73 \
     }, \
     { \
       name: "minecraft:dandelion", \
@@ -667,7 +667,7 @@
     }, \
     { \
       name: "minecraft:tnt", \
-      block_states_group: 95 \
+      block_states_group: 97 \
     }, \
     { \
       name: "minecraft:bookshelf", \
@@ -695,7 +695,7 @@
     }, \
     { \
       name: "minecraft:fire", \
-      block_states_group: 55 \
+      block_states_group: 57 \
     }, \
     { \
       name: "minecraft:soul_fire", \
@@ -715,7 +715,7 @@
     }, \
     { \
       name: "minecraft:redstone_wire", \
-      block_states_group: 82 \
+      block_states_group: 84 \
     }, \
     { \
       name: "minecraft:diamond_ore", \
@@ -739,7 +739,7 @@
     }, \
     { \
       name: "minecraft:farmland", \
-      block_states_group: 54 \
+      block_states_group: 56 \
     }, \
     { \
       name: "minecraft:furnace", \
@@ -791,7 +791,7 @@
     }, \
     { \
       name: "minecraft:rail", \
-      block_states_group: 81 \
+      block_states_group: 83 \
     }, \
     { \
       name: "minecraft:cobblestone_stairs", \
@@ -991,7 +991,7 @@
     }, \
     { \
       name: "minecraft:snow", \
-      block_states_group: 92 \
+      block_states_group: 94 \
     }, \
     { \
       name: "minecraft:ice", \
@@ -1015,7 +1015,7 @@
     }, \
     { \
       name: "minecraft:jukebox", \
-      block_states_group: 62 \
+      block_states_group: 64 \
     }, \
     { \
       name: "minecraft:oak_fence", \
@@ -1059,7 +1059,7 @@
     }, \
     { \
       name: "minecraft:nether_portal", \
-      block_states_group: 72 \
+      block_states_group: 74 \
     }, \
     { \
       name: "minecraft:carved_pumpkin", \
@@ -1075,7 +1075,7 @@
     }, \
     { \
       name: "minecraft:repeater", \
-      block_states_group: 83 \
+      block_states_group: 85 \
     }, \
     { \
       name: "minecraft:white_stained_glass", \
@@ -1271,11 +1271,11 @@
     }, \
     { \
       name: "minecraft:vine", \
-      block_states_group: 100 \
+      block_states_group: 102 \
     }, \
     { \
       name: "minecraft:glow_lichen", \
-      block_states_group: 56 \
+      block_states_group: 58 \
     }, \
     { \
       name: "minecraft:oak_fence_gate", \
@@ -1295,7 +1295,7 @@
     }, \
     { \
       name: "minecraft:mycelium", \
-      block_states_group: 57 \
+      block_states_group: 59 \
     }, \
     { \
       name: "minecraft:lily_pad", \
@@ -1331,7 +1331,7 @@
     }, \
     { \
       name: "minecraft:water_cauldron", \
-      block_states_group: 80 \
+      block_states_group: 82 \
     }, \
     { \
       name: "minecraft:lava_cauldron", \
@@ -1339,7 +1339,7 @@
     }, \
     { \
       name: "minecraft:powder_snow_cauldron", \
-      block_states_group: 80 \
+      block_states_group: 82 \
     }, \
     { \
       name: "minecraft:end_portal", \
@@ -1347,7 +1347,7 @@
     }, \
     { \
       name: "minecraft:end_portal_frame", \
-      block_states_group: 53 \
+      block_states_group: 55 \
     }, \
     { \
       name: "minecraft:end_stone", \
@@ -1383,11 +1383,11 @@
     }, \
     { \
       name: "minecraft:tripwire_hook", \
-      block_states_group: 98 \
+      block_states_group: 100 \
     }, \
     { \
       name: "minecraft:tripwire", \
-      block_states_group: 97 \
+      block_states_group: 99 \
     }, \
     { \
       name: "minecraft:emerald_block", \
@@ -1579,59 +1579,59 @@
     }, \
     { \
       name: "minecraft:skeleton_skull", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:skeleton_wall_skull", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:wither_skeleton_skull", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:wither_skeleton_wall_skull", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:zombie_head", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:zombie_wall_head", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:player_head", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:player_wall_head", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:creeper_head", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:creeper_wall_head", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:dragon_head", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:dragon_wall_head", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:piglin_head", \
-      block_states_group: 26 \
+      block_states_group: 50 \
     }, \
     { \
       name: "minecraft:piglin_wall_head", \
-      block_states_group: 18 \
+      block_states_group: 51 \
     }, \
     { \
       name: "minecraft:anvil", \
@@ -1651,11 +1651,11 @@
     }, \
     { \
       name: "minecraft:light_weighted_pressure_plate", \
-      block_states_group: 59 \
+      block_states_group: 61 \
     }, \
     { \
       name: "minecraft:heavy_weighted_pressure_plate", \
-      block_states_group: 59 \
+      block_states_group: 61 \
     }, \
     { \
       name: "minecraft:comparator", \
@@ -1663,7 +1663,7 @@
     }, \
     { \
       name: "minecraft:daylight_detector", \
-      block_states_group: 50 \
+      block_states_group: 52 \
     }, \
     { \
       name: "minecraft:redstone_block", \
@@ -1675,7 +1675,7 @@
     }, \
     { \
       name: "minecraft:hopper", \
-      block_states_group: 60 \
+      block_states_group: 62 \
     }, \
     { \
       name: "minecraft:quartz_block", \
@@ -1699,7 +1699,7 @@
     }, \
     { \
       name: "minecraft:dropper", \
-      block_states_group: 52 \
+      block_states_group: 54 \
     }, \
     { \
       name: "minecraft:white_terracotta", \
@@ -1863,7 +1863,7 @@
     }, \
     { \
       name: "minecraft:light", \
-      block_states_group: 68 \
+      block_states_group: 70 \
     }, \
     { \
       name: "minecraft:iron_trapdoor", \
@@ -1991,27 +1991,27 @@
     }, \
     { \
       name: "minecraft:sunflower", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:lilac", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:rose_bush", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:peony", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:tall_grass", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:large_fern", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:white_banner", \
@@ -2395,15 +2395,15 @@
     }, \
     { \
       name: "minecraft:torchflower_crop", \
-      block_states_group: 96 \
+      block_states_group: 98 \
     }, \
     { \
       name: "minecraft:pitcher_crop", \
-      block_states_group: 78 \
+      block_states_group: 80 \
     }, \
     { \
       name: "minecraft:pitcher_plant", \
-      block_states_group: 65 \
+      block_states_group: 67 \
     }, \
     { \
       name: "minecraft:beetroots", \
@@ -2451,7 +2451,7 @@
     }, \
     { \
       name: "minecraft:observer", \
-      block_states_group: 74 \
+      block_states_group: 76 \
     }, \
     { \
       name: "minecraft:shulker_box", \
@@ -2715,7 +2715,7 @@
     }, \
     { \
       name: "minecraft:kelp", \
-      block_states_group: 63 \
+      block_states_group: 65 \
     }, \
     { \
       name: "minecraft:kelp_plant", \
@@ -2727,11 +2727,11 @@
     }, \
     { \
       name: "minecraft:turtle_egg", \
-      block_states_group: 99 \
+      block_states_group: 101 \
     }, \
     { \
       name: "minecraft:sniffer_egg", \
-      block_states_group: 91 \
+      block_states_group: 93 \
     }, \
     { \
       name: "minecraft:dead_tube_coral_block", \
@@ -2895,7 +2895,7 @@
     }, \
     { \
       name: "minecraft:sea_pickle", \
-      block_states_group: 89 \
+      block_states_group: 91 \
     }, \
     { \
       name: "minecraft:blue_ice", \
@@ -3091,7 +3091,7 @@
     }, \
     { \
       name: "minecraft:scaffolding", \
-      block_states_group: 85 \
+      block_states_group: 87 \
     }, \
     { \
       name: "minecraft:loom", \
@@ -3119,11 +3119,11 @@
     }, \
     { \
       name: "minecraft:grindstone", \
-      block_states_group: 58 \
+      block_states_group: 60 \
     }, \
     { \
       name: "minecraft:lectern", \
-      block_states_group: 67 \
+      block_states_group: 69 \
     }, \
     { \
       name: "minecraft:smithing_table", \
@@ -3139,11 +3139,11 @@
     }, \
     { \
       name: "minecraft:lantern", \
-      block_states_group: 64 \
+      block_states_group: 66 \
     }, \
     { \
       name: "minecraft:soul_lantern", \
-      block_states_group: 64 \
+      block_states_group: 66 \
     }, \
     { \
       name: "minecraft:campfire", \
@@ -3223,7 +3223,7 @@
     }, \
     { \
       name: "minecraft:weeping_vines", \
-      block_states_group: 63 \
+      block_states_group: 65 \
     }, \
     { \
       name: "minecraft:weeping_vines_plant", \
@@ -3231,7 +3231,7 @@
     }, \
     { \
       name: "minecraft:twisting_vines", \
-      block_states_group: 63 \
+      block_states_group: 65 \
     }, \
     { \
       name: "minecraft:twisting_vines_plant", \
@@ -3331,11 +3331,11 @@
     }, \
     { \
       name: "minecraft:structure_block", \
-      block_states_group: 93 \
+      block_states_group: 95 \
     }, \
     { \
       name: "minecraft:jigsaw", \
-      block_states_group: 61 \
+      block_states_group: 63 \
     }, \
     { \
       name: "minecraft:composter", \
@@ -3343,7 +3343,7 @@
     }, \
     { \
       name: "minecraft:target", \
-      block_states_group: 59 \
+      block_states_group: 61 \
     }, \
     { \
       name: "minecraft:bee_nest", \
@@ -3375,7 +3375,7 @@
     }, \
     { \
       name: "minecraft:respawn_anchor", \
-      block_states_group: 84 \
+      block_states_group: 86 \
     }, \
     { \
       name: "minecraft:potted_crimson_fungus", \
@@ -3655,7 +3655,7 @@
     }, \
     { \
       name: "minecraft:sculk_sensor", \
-      block_states_group: 87 \
+      block_states_group: 89 \
     }, \
     { \
       name: "minecraft:calibrated_sculk_sensor", \
@@ -3667,15 +3667,15 @@
     }, \
     { \
       name: "minecraft:sculk_vein", \
-      block_states_group: 56 \
+      block_states_group: 58 \
     }, \
     { \
       name: "minecraft:sculk_catalyst", \
-      block_states_group: 86 \
+      block_states_group: 88 \
     }, \
     { \
       name: "minecraft:sculk_shrieker", \
-      block_states_group: 88 \
+      block_states_group: 90 \
     }, \
     { \
       name: "minecraft:oxidized_copper", \
@@ -3815,11 +3815,11 @@
     }, \
     { \
       name: "minecraft:lightning_rod", \
-      block_states_group: 69 \
+      block_states_group: 71 \
     }, \
     { \
       name: "minecraft:pointed_dripstone", \
-      block_states_group: 79 \
+      block_states_group: 81 \
     }, \
     { \
       name: "minecraft:dripstone_block", \
@@ -3851,7 +3851,7 @@
     }, \
     { \
       name: "minecraft:pink_petals", \
-      block_states_group: 75 \
+      block_states_group: 77 \
     }, \
     { \
       name: "minecraft:moss_block", \
@@ -3867,7 +3867,7 @@
     }, \
     { \
       name: "minecraft:small_dripleaf", \
-      block_states_group: 90 \
+      block_states_group: 92 \
     }, \
     { \
       name: "minecraft:hanging_roots", \
@@ -4011,6 +4011,6 @@
     }, \
     { \
       name: "minecraft:decorated_pot", \
-      block_states_group: 51 \
+      block_states_group: 53 \
     } \
   ]
