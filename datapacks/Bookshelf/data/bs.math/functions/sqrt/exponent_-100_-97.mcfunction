@@ -1,19 +1,19 @@
 # if E = -97
-execute store result score #in bs.data run data get storage bs.in math.sqrt 170141183460469231731687303715884105728
-execute if score #in bs.data matches 1073741824.. run function bs.math:sqrt/calc
-execute if score #in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.0000000000000000000000046792401632183050117549258350313003658066855962073926234852386187197670341931 run scoreboard players get #out bs.data
-execute if score #in bs.data matches 1073741824.. run return 0
+execute store result score #math.sqrt.in bs.data run data get storage bs.in math.sqrt 170141183460469231731687303715884105728
+execute if score #math.sqrt.in bs.data matches 1073741824.. run function bs.math:sqrt/calc_odd
+execute if score #math.sqrt.in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.0000000000000000000000093584803264366100235098516700626007316133711924147852469704772374395340683861 run scoreboard players get #math.sqrt.out bs.data
+execute if score #math.sqrt.in bs.data matches 1073741824.. run return 0
 # elif E = -98
-execute store result score #in bs.data run data get storage bs.in math.sqrt 340282366920938463463374607431768211456
-execute if score #in bs.data matches 1073741824.. run function bs.math:sqrt/calc
-execute if score #in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.000000000000000000000003308722450212110699485634768279851414263248443603515625 run scoreboard players get #out bs.data
-execute if score #in bs.data matches 1073741824.. run return 0
+execute store result score #math.sqrt.in bs.data run data get storage bs.in math.sqrt 340282366920938463463374607431768211456
+execute if score #math.sqrt.in bs.data matches 1073741824.. run function bs.math:sqrt/calc_even
+execute if score #math.sqrt.in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.000000000000000000000003308722450212110699485634768279851414263248443603515625 run scoreboard players get #math.sqrt.out bs.data
+execute if score #math.sqrt.in bs.data matches 1073741824.. run return 0
 # elif E = -99
-execute store result score #in bs.data run data get storage bs.in math.sqrt 680564733841876926926749214863536422912
-execute if score #in bs.data matches 1073741824.. run function bs.math:sqrt/calc
-execute if score #in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.0000000000000000000000023396200816091525058774629175156501829033427981036963117426193093598835170965 run scoreboard players get #out bs.data
-execute if score #in bs.data matches 1073741824.. run return 0
+execute store result score #math.sqrt.in bs.data run data get storage bs.in math.sqrt 680564733841876926926749214863536422912
+execute if score #math.sqrt.in bs.data matches 1073741824.. run function bs.math:sqrt/calc_odd
+execute if score #math.sqrt.in bs.data matches 1073741824.. store result storage bs.out math.sqrt float 0.0000000000000000000000046792401632183050117549258350313003658066855962073926234852386187197670341931 run scoreboard players get #math.sqrt.out bs.data
+execute if score #math.sqrt.in bs.data matches 1073741824.. run return 0
 # elif E = -100
-execute store result score #in bs.data run data get storage bs.in math.sqrt 1361129467683753853853498429727072845824
-function bs.math:sqrt/calc
-execute store result storage bs.out math.sqrt float 0.0000000000000000000000016543612251060553497428173841399257071316242218017578125 run scoreboard players get #out bs.data
+execute store result score #math.sqrt.in bs.data run data get storage bs.in math.sqrt 1361129467683753853853498429727072845824
+function bs.math:sqrt/calc_even
+execute store result storage bs.out math.sqrt float 0.0000000000000000000000016543612251060553497428173841399257071316242218017578125 run scoreboard players get #math.sqrt.out bs.data
