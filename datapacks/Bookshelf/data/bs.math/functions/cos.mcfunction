@@ -1,62 +1,30 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
 # Authors: Leirof
-# Contributors:
-# MC Version: 1.13
-# Last check:
+# Contributors: Aksiome
 
-# Original path: bs.math:cos
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: true
-# Note: The input is the angle in degrees. The result is scaled by 1000
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 31/08/2023 (23w33a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#cosine
+# Dependencies:
+# Note:
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
+# Normalize angle
+scoreboard players operation $math.cos bs.out = $math.cos.angle bs.in
+execute store result score #math.cos.angle bs.data run scoreboard players operation $math.cos bs.out %= 36000 bs.const
+execute if score #math.cos.angle bs.data matches 9000..27000 run scoreboard players remove $math.cos bs.out 18000
+execute if score #math.cos.angle bs.data matches 27001.. run scoreboard players remove $math.cos bs.out 36000
 
-#__________________________________________________
-# CODE
-
-
-# Convert to angle [0;360]
-# tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"INPUT: ","color":"red"},{"score":{"name":"@s","objective":"bs.in.0"}}]
-
-scoreboard players operation VAR0 bs = @s bs.in.0
-scoreboard players operation VAR0 bs %= 360 bs.const
-
-# tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"MODULO: ","color":"red"},{"score":{"name":"@s","objective":"bs.in.0"}}]
-
-# Retranscription of bs.in.0 on interval [0;90[
-
-scoreboard players operation VAR2 bs = VAR0 bs
-execute if score VAR0 bs matches 90..179 run scoreboard players operation VAR2 bs *= -1 bs.const
-execute if score VAR0 bs matches 90..179 run scoreboard players operation VAR2 bs += 180 bs.const
-execute if score VAR0 bs matches 180..269 run scoreboard players operation VAR2 bs -= 180 bs.const
-execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs *= -1 bs.const
-execute if score VAR0 bs matches 270.. run scoreboard players operation VAR2 bs += 360 bs.const
-
-
-# tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"0-90: ","color":"red"},{"score":{"name":"@s","objective":"bs.in.0"}}]
-
-# Calcul Cos
-
-scoreboard players operation @s bs.out.0 = VAR2 bs
-scoreboard players operation @s bs.out.0 *= @s bs.out.0
-scoreboard players operation @s bs.out.0 *= 4 bs.const
-scoreboard players operation @s bs.out.0 *= -1 bs.const
-scoreboard players operation @s bs.out.0 += 32400 bs.const
-scoreboard players operation @s bs.out.0 *= 1000 bs.const
-scoreboard players operation VAR1 bs = VAR2 bs
-scoreboard players operation VAR1 bs *= VAR1 bs
-scoreboard players operation VAR1 bs += 32400 bs.const
-scoreboard players operation @s bs.out.0 /= VAR1 bs
-
-execute if score VAR0 bs matches 90..269 run scoreboard players operation @s bs.out.0 *= -1 bs.const
-
-# tellraw @a[tag=Debug] ["",{"text":"DEBUG -> ","color":"gray"},{"text":"Result: ","color":"red"},{"score":{"name":"@s","objective":"Res"}}]
+# Compute Bhāskara cosine approximation
+execute store result score #math.cos.denominator bs.data run scoreboard players operation $math.cos bs.out *= $math.cos bs.out
+scoreboard players operation $math.cos bs.out *= -4 bs.const
+scoreboard players add $math.cos bs.out 324000000
+scoreboard players add #math.cos.denominator bs.data 324000000
+scoreboard players operation #math.cos.denominator bs.data /= 1000 bs.const
+execute if score #math.cos.angle bs.data matches 9000..27000 run scoreboard players operation #math.cos.denominator bs.data *= -1 bs.const
+scoreboard players operation $math.cos bs.out /= #math.cos.denominator bs.data
