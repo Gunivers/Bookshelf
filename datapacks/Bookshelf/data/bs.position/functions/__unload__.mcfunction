@@ -3,7 +3,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-kill 72398515-296d-4e77-bd30-412f6f65d642
+kill B5-0-0-0-1
+kill B5-0-0-0-2
 forceload remove 0 0
 
 scoreboard objectives remove bs.data

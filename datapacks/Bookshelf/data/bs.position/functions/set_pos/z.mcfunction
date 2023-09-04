@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute at @s run tp 72398515-296d-4e77-bd30-412f6f65d642 ~ ~ ~
-$execute store result entity 72398515-296d-4e77-bd30-412f6f65d642 Pos[2] double $(scale) run scoreboard players get @s bs.pos.z
-execute at 72398515-296d-4e77-bd30-412f6f65d642 run tp @s ~ ~ ~
-tp 72398515-296d-4e77-bd30-412f6f65d642 0 0 0 0 0
+execute at @s run tp B5-0-0-0-1 ~ ~ ~
+$execute store result entity B5-0-0-0-1 Pos[2] double $(scale) run scoreboard players get @s bs.pos.z
+execute at B5-0-0-0-1 run tp @s ~ ~ ~
+tp B5-0-0-0-1 0 0 0 0 0

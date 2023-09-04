@@ -4,8 +4,8 @@
 # CODE ------------------------------------------------------------------------
 
 forceload add 0 0
-execute unless entity 72398515-296d-4e77-bd30-412f6f65d642 run summon minecraft:marker 0 0 0 {UUID:[I;1916372245,695029367,-1120911057,1868944962]}
-execute unless entity 3b1d6b85-f396-4483-be95-916c11eb0f07 run summon minecraft:item_display 0 0 0 {UUID:[I;991783813,-208255869,-1097494164,300617479]}
+execute unless entity B5-0-0-0-1 run summon minecraft:marker 0.0 0.0 0.0 {UUID:[I;181,0,0,1]}
+execute unless entity B5-0-0-0-2 run summon minecraft:text_display 0.0 0.0 0.0 {view_range:0f,UUID:[I;181,0,0,2]}
 
 scoreboard objectives add bs.data dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 scoreboard objectives add bs.const dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]

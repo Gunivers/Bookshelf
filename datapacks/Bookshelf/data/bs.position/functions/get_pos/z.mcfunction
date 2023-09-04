@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-tp 72398515-296d-4e77-bd30-412f6f65d642 @s
-$execute store result score @s bs.pos.z run data get entity 72398515-296d-4e77-bd30-412f6f65d642 Pos[2] $(scale)
-tp 72398515-296d-4e77-bd30-412f6f65d642 0 0 0 0 0
+tp B5-0-0-0-1 @s
+$execute store result score @s bs.pos.z run data get entity B5-0-0-0-1 Pos[2] $(scale)
+tp B5-0-0-0-1 0 0 0 0 0
