@@ -1,9 +1,9 @@
 # is E >= -80
-execute store result score #math.sqrt._check_3 bs.data run data get storage bs.in math.sqrt 1208925819614629174706176
+execute store result score #math.sqrt._check_3 bs.data run data get storage bs:in math.sqrt 1208925819614629174706176
 # is E >= -96
-execute store result score #math.sqrt._check_2 bs.data run data get storage bs.in math.sqrt 79228162514264337593543950336
+execute store result score #math.sqrt._check_2 bs.data run data get storage bs:in math.sqrt 79228162514264337593543950336
 # is E >= -112
-execute store result score #math.sqrt._check_1 bs.data run data get storage bs.in math.sqrt 5192296858534827628530496329220096
+execute store result score #math.sqrt._check_1 bs.data run data get storage bs:in math.sqrt 5192296858534827628530496329220096
 
 execute if score #math.sqrt._check_3 bs.data matches 1.. run function bs.math:sqrt/exponent_-80_-65
 execute if score #math.sqrt._check_3 bs.data matches 0 if score #math.sqrt._check_2 bs.data matches 1.. run function bs.math:sqrt/exponent_-96_-81
