@@ -32,4 +32,5 @@ scoreboard players operation #position.get_distance_ata.y1 bs.data *= #position.
 scoreboard players operation #position.get_distance_ata.z1 bs.data *= #position.get_distance_ata.z1 bs.data
 
 scoreboard players operation #position.get_distance_ata.x1 bs.data += #position.get_distance_ata.y1 bs.data
-return run scoreboard players operation #position.get_distance_ata.x1 bs.data += #position.get_distance_ata.z1 bs.data
+scoreboard players operation #position.get_distance_ata.x1 bs.data += #position.get_distance_ata.z1 bs.data
+scoreboard players operation $position.get_distance_squared_ata bs.out = #position.get_distance_ata.x1 bs.data

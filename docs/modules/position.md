@@ -301,7 +301,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$position.get_distance_ata bs.out`
     : The distance between the two positions.
 
 Example
@@ -310,10 +310,10 @@ Example
 
     ```
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] store result score @s bs.out run function #bs.position:get_distance_ata {scale:1}
+    execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_ata {scale:1}
 
     # See the result
-    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out"}, "color": "gold"}]
+    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_ata", "objective": "bs.out"}, "color": "gold"}]
     ```
 
 ```{admonition} Performance tip
@@ -342,7 +342,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$position.get_distance_squared_ata bs.out`
     : The squared distance between the two positions.
 
 Example
@@ -351,10 +351,10 @@ Example
 
     ```
     # Once
-    execute as @s at @e[type=sheep,limit=1,sort=nearest] store result score @s bs.out run function #bs.position:get_distance_squared_ata {scale:1}
+    execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_squared_ata {scale:1}
 
     # See the result
-    tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out"}, "color": "gold"}]
+    tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_squared_ata", "objective": "bs.out"}, "color": "gold"}]
     ```
 
 ```{admonition} Score limitation
