@@ -29,19 +29,19 @@ Inputs
 
 Output
 
-:   (return) value as an int scaled by 10^8
+:   (score) `$biome.get_base_temperature bs.out` as an int scaled by 10^8
     : The base temperature of the biome.
 
 Example
 
-:   Get the base temperature of the biome in which each octopus is located
+:   Get the base temperature of the current biome
 
     ```
     # Once
-    execute as @e[type=squid] store result score @s <objective> run function #bs.biome:get_base_temperature
+    function #bs.biome:get_base_temperature
 
     # See the result
-    tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "The temperature of my biome: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "<objective>"}, "color": "gold"}]
+    tellraw @a [{"text": "The temperature of my biome: ", "color": "dark_gray"},{"score":{"name":"$biome.get_base_temperature", "objective": "bs.out"}, "color": "gold"}]
     ```
 
 :::
@@ -60,19 +60,19 @@ Inputs
 
 Output
 
-:   (return) value as an int scaled by 10^8
+:   (score) `$biome.get_temperature bs.out` as an int scaled by 10^8
     : The temperature at the given location.
 
 Example
 
-:   Get the temperature at each polar bear
+:   Get the temperature at the current altitude
 
     ```
     # Once
-    execute as @e[type=polar_bear] store result score @s <objective> run function #bs.biome:get_temperature
+    function #bs.biome:get_temperature
 
     # See the result
-    tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "The temperature where I am: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "<objective>"}, "color": "gold"}]
+    tellraw @a [{"text": "The temperature: ", "color": "dark_gray"},{"score":{"name":"$biome.get_temperature", "objective": "bs.out"}, "color": "gold"}]
     ```
 
 :::
