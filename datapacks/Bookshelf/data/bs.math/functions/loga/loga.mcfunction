@@ -19,7 +19,6 @@ function #bs.math:log2
 scoreboard players set #math.loga.a bs.data 2000000000
 execute store result score #math.loga.b bs.data run data get storage bs:out math.log2 20000
 execute store result storage bs:data math.loga.a double 1 run scoreboard players operation #math.loga.a bs.data /= #math.loga.b bs.data
-data modify storage bs:data math.loga.a set string storage bs:data math.loga.a 0 -1
 
 data modify storage bs:in math.log2.value set from storage bs:in math.loga.value
 function #bs.math:log2

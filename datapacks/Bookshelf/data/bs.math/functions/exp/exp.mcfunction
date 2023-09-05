@@ -14,15 +14,15 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute store result score #math.exp.index bs.data store result score #math.exp.fract bs.data run data get storage bs:in math.exp.value 10000000
+execute store result score #math.exp.index bs.data store result score #math.exp.x bs.data run data get storage bs:in math.exp.value 10000000
 
 # Seperate integral and fractional parts
 scoreboard players operation #math.exp.index bs.data /= 10000000 bs.const
-execute store result storage bs:data math.exp.fract double 0.0000001 run scoreboard players operation #math.exp.fract bs.data %= 10000000 bs.const
+execute store result storage bs:data math.exp.x double 0.0000001 run scoreboard players operation #math.exp.x bs.data %= 10000000 bs.const
 execute store result storage bs:data math.exp.index int 1 run scoreboard players add #math.exp.index bs.data 6
 
 # Get integral result from lookup table
 function bs.math:exp/table with storage bs:data math.exp
 
 # Adjust result using the fractional part
-execute if score #math.exp.fract bs.data matches 1.. run function bs.math:exp/fract
+execute if score #math.exp.x bs.data matches 1.. run function bs.math:exp/fract
