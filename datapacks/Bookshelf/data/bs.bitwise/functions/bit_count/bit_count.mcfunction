@@ -24,5 +24,3 @@ execute if score #bitwise.bit_count bs.data matches 0..127 run function bs.bitwi
 execute if score #bitwise.bit_count bs.data matches 128..32767 run function bs.bitwise:bit_count/group_2
 execute if score #bitwise.bit_count bs.data matches 32768..8388607 run function bs.bitwise:bit_count/group_3
 execute if score #bitwise.bit_count bs.data matches 8388608.. run function bs.bitwise:bit_count/group_4
-
-return run scoreboard players get $bitwise.bit_count bs.out

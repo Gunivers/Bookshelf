@@ -19,4 +19,4 @@ scoreboard players operation $color.rgb_to_int bs.out *= 65536 bs.const
 scoreboard players operation #color.rgb_to_int bs.data = $color.rgb_to_int.color.g bs.in
 scoreboard players operation #color.rgb_to_int bs.data *= 256 bs.const
 scoreboard players operation $color.rgb_to_int bs.out += #color.rgb_to_int bs.data
-return run scoreboard players operation $color.rgb_to_int bs.out += $color.rgb_to_int.color.b bs.in
+scoreboard players operation $color.rgb_to_int bs.out += $color.rgb_to_int.color.b bs.in

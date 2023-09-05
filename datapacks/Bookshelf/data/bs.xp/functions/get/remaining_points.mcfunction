@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute store result score #xp.get_remaining_points bs.data run function #bs.xp:get_max_points
+function #bs.xp:get_max_points
+scoreboard players operation $xp.get_remaining_points bs.out = $xp.get_max_points bs.out
 execute store result score #xp.get_remaining_points.points bs.data run xp query @s points
-
-return run scoreboard players operation #xp.get_remaining_points bs.data -= #xp.get_remaining_points.points bs.data
+scoreboard players operation $xp.get_remaining_points bs.out -= #xp.get_remaining_points.points bs.data
