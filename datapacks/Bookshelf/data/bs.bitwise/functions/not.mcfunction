@@ -17,4 +17,4 @@
 scoreboard players operation $bitwise.not bs.out = $bitwise.not.value bs.in
 scoreboard players operation $bitwise.not bs.out *= -1 bs.const
 
-return run scoreboard players remove $bitwise.not bs.out 1
+scoreboard players remove $bitwise.not bs.out 1
