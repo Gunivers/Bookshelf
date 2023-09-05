@@ -29,7 +29,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (storage) `bs:out color.rgb_to_int`: int
     : The color as an integer.
 
 Example
@@ -41,7 +41,8 @@ Example
     summon minecraft:zombie ~ ~ ~ {ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}]}
 
     # Change the helmet color of all zombie to red
-    execute as @e[type=minecraft:zombie] store result entity @s ArmorItems[3].tag.display.color int 1 run function #bs.color:rgb_to_int {color:[255,0,0]}
+    function #bs.color:rgb_to_int {color:[255,0,0]}
+    execute as @e[type=minecraft:zombie] store result entity @s ArmorItems[3].tag.display.color int 1 run data get storage bs:out color.rgb_to_int
     ```
 
 ::::
