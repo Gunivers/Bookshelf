@@ -8,7 +8,7 @@
 # Created: ??/??/2018 (1.13)
 # Last modification: 31/08/2023 (23w33a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#sine
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#sin
 # Dependencies:
 # Note:
 

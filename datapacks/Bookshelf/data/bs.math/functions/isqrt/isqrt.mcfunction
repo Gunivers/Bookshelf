@@ -8,7 +8,7 @@
 # Created: ??/??/2018 (1.13)
 # Last modification: 05/09/2023 (23w31a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#square-root
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#isqrt
 # Dependencies:
 # Note:
 

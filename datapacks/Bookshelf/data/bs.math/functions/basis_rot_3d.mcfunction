@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, Leirof
+# Contributors:
+
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 05/09/2023 (23w33a)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#basis_rot_3d
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 # sincos(Theta)
 scoreboard players operation $math.sincos.angle bs.in = $math.basis_rot_3d.h bs.in
 function #bs.math:sincos

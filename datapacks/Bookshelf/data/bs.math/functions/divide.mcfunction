@@ -8,7 +8,7 @@
 # Created: ??/??/2018 (1.13)
 # Last modification: 01/09/2023 (23w33a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#rounded-division
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#divide
 # Dependencies:
 # Note:
 

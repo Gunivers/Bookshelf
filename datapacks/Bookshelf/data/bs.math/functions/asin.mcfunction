@@ -1,4 +1,20 @@
 
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, KubbyDev
+# Contributors:
+
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 05/09/2023 (23w33a)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#asin
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 scoreboard players operation #math.asin.x bs.data = $math.asin.value bs.in
 execute if score $math.asin.value bs.in matches ..-1 run scoreboard players operation #math.asin.x bs.data *= -1 bs.const
 
