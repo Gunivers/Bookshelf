@@ -39,7 +39,7 @@ Inputs
 
 Outputs
 
-:   (score) `@s bs.pos.[x,y,z]`
+:   (scores) `@s bs.pos.[x,y,z]`
     : The coordinates of the position.
 
 Example
@@ -51,7 +51,7 @@ Example
     execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos {scale:1}
 
     # See the resluts
-    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"}{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
+    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"},{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
     ```
 :::
 :::{tab-item} x only
@@ -180,7 +180,7 @@ Inputs
 
 Outputs
 
-:   (score) `@s bs.rot.[h,v]`
+:   (scores) `@s bs.rot.[h,v]`
     : The rotation of the position.
 :::
 :::{tab-item} h only
@@ -260,7 +260,7 @@ Inputs
 
 Outputs
 
-:   (score) `$position.get_relative_ata.[x,y,z] bs.out`
+:   (scores) `$position.get_relative_ata.[x,y,z] bs.out`
     : The relative coordinates.
 
 Example
