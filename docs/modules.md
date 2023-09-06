@@ -66,12 +66,11 @@ modules/id
 modules/item
 modules/lgdir
 modules/link
-modules/location
 modules/log
 modules/mapedit
 modules/math
 modules/move
-modules/orientation
+modules/position
 modules/schedule
 modules/sidebar
 modules/time
