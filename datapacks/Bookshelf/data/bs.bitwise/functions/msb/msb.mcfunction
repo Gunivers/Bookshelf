@@ -26,5 +26,3 @@ execute if score #bitwise.msb bs.data matches 0..127 run function bs.bitwise:msb
 execute if score #bitwise.msb bs.data matches 128..32767 run function bs.bitwise:msb/group_2
 execute if score #bitwise.msb bs.data matches 32768..8388607 run function bs.bitwise:msb/group_3
 execute if score #bitwise.msb bs.data matches 8388608.. run function bs.bitwise:msb/group_4
-
-return run scoreboard players get $bitwise.msb bs.out

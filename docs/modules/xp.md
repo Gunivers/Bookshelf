@@ -41,7 +41,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$xp.get_max_points bs.out`
     : The total amount of points required to pass to the next level.
 
 Example
@@ -50,11 +50,10 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    scoreboard objectives add my_objective dummy
-    execute store result score @s my_objective run function #bs.xp:get_max_points
+    function #bs.xp:get_max_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I need a total of "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" points to pass to the next level"}]
+    tellraw @a [{"text":"I need a total of "},{"score":{"name":"$xp.get_max_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
     ```
 
 :::::
@@ -71,7 +70,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$xp.get_remaining_points bs.out`
     : The amount of points needed to pass to the next level.
 
 Example
@@ -80,11 +79,10 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    scoreboard objectives add my_objective dummy
-    execute store result score @s my_objective run function #bs.xp:get_remaining_points
+    function #bs.xp:get_remaining_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I need "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" points to pass to the next level"}]
+    tellraw @a [{"text":"I need "},{"score":{"name":"$xp.get_remaining_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
     ```
 
 :::::
@@ -101,7 +99,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$xp.get_total_points bs.out`
     : The total amount of points.
 
 Example
@@ -110,11 +108,10 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    scoreboard objectives add my_objective dummy
-    execute store result score @s my_objective run function #bs.xp:get_total_points
+    function #bs.xp:get_total_points
 
     # See the result (execute on you)
-    tellraw @a [{"text":"I have "},{"score":{"name":"@s","objective":"my_objective"}},{"text":" total points"}]
+    tellraw @a [{"text":"I have "},{"score":{"name":"$xp.get_total_points","objective":"bs.out"}},{"text":" total points"}]
     ```
 
 :::::
@@ -131,7 +128,7 @@ Inputs
 
 Outputs
 
-:   (return): int
+:   (score) `$xp.get_progress bs.out`
     : The pcm of the bar filled (rounded to the lowest integer)
 
 Example
@@ -140,11 +137,10 @@ Example
 
     ```mcfunction
     # Once (execute on you)
-    scoreboard objectives add my_objective dummy
-    execute store result score @s my_objective run function #bs.xp:get_progress
+    function #bs.xp:get_progress
 
     # See the result
-    scoreboard obective setdisplay sidebar my_objective
+    tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get_progress","objective":"bs.out"}},{"text":"/100000"}]
     ```
 
 :::::

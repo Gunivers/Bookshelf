@@ -1,2 +1,0 @@
-tellraw @s [{"text": "[bs.orientation documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://mc-bookshelf.rtfd.io/en/latest/orientation.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
-scoreboard players set module.orientation bs.metadata 1

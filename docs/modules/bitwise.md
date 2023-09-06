@@ -62,7 +62,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.and bs.out`
+:  (score) `$bitwise.and bs.out`
    : The result of the operation = $a \times b$
 
 Example
@@ -103,7 +103,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.or bs.out`
+:  (score) `$bitwise.or bs.out`
    : The result of the operation = $a + b$
 
 Example
@@ -145,7 +145,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.xor bs.out`
+:  (score) `$bitwise.xor bs.out`
    : The result of the operation = $a \oplus b$
 
 Example
@@ -176,7 +176,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.not bs.out`
+:  (score) `$bitwise.not bs.out`
    : The result of the not operation
 
 Example
@@ -207,7 +207,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.bit_count bs.out`
+:  (score) `$bitwise.bit_count bs.out`
    : The number of bits needed to store the input
 
    ```{admonition} Negative input
@@ -244,7 +244,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.two_complement bs.out`
+:  (score) `$bitwise.two_complement bs.out`
    : The two's complement of the input
 
 Example
@@ -274,7 +274,7 @@ Inputs
 
 Outputs
 
-:  (return) or (score) `$bitwise.msb bs.out`
+:   (score) `$bitwise.msb bs.out`
    : The value of the msb of the input
 
 Example

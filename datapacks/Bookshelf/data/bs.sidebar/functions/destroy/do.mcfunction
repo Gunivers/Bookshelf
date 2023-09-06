@@ -1,6 +1,6 @@
 $scoreboard players reset * bs.sidebar.$(id)
 $scoreboard objectives remove bs.sidebar.$(id)
-$data remove storage bs:sidebar registry[{id:'$(id)'}]
+$data remove storage bs:data sidebar.registry[{id:'$(id)'}]
 
 $team remove bs.sidebar.$(id).0
 $team remove bs.sidebar.$(id).1
