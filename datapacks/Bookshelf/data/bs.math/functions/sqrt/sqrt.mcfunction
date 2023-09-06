@@ -15,13 +15,13 @@
 # CODE ------------------------------------------------------------------------
 
 # is E >= 64
-execute store result score #math.sqrt.check_3 bs.data run data get storage bs:in math.sqrt 0.0000000000000000000542101086242752217003726400434970855712890625
+execute store result score #math.sqrt.check_3 bs.data run data get storage bs:in math.sqrt.value 0.0000000000000000000542101086242752217003726400434970855712890625
 # break if negative
 execute if score #math.sqrt.check_ bs.data matches ..-1 run return -1
 # is E >= 0
-execute store result score #math.sqrt.check_2 bs.data run data get storage bs:in math.sqrt 1
+execute store result score #math.sqrt.check_2 bs.data run data get storage bs:in math.sqrt.value 1
 # is E >= -64
-execute store result score #math.sqrt.check_1 bs.data run data get storage bs:in math.sqrt 18446744073709551616
+execute store result score #math.sqrt.check_1 bs.data run data get storage bs:in math.sqrt.value 18446744073709551616
 
 execute if score #math.sqrt.check_3 bs.data matches 1.. run function bs.math:sqrt/exponent_64_127
 execute if score #math.sqrt.check_3 bs.data matches 0 if score #math.sqrt.check_2 bs.data matches 1.. run function bs.math:sqrt/exponent_0_63

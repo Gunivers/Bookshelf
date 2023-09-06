@@ -626,7 +626,7 @@ Example
 :  Calculate and display $\sqrt{42}$:
    ```mcfunction
    # Once
-   data modify storage bs:in math.sqrt set value 42
+   data modify storage bs:in math.sqrt.value set value 42
    function #bs.math:sqrt
    tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
    ```
