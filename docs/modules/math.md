@@ -240,6 +240,46 @@ Examples
 
 ---
 
+### Combine
+
+**`bs.math:combine`**
+
+Compute the combine of 2 numbers
+
+Inputs
+
+:  (execution) `as <entities>`
+   : The entities you want to perform the operation on
+
+   (score) `@s bs.in.[0,1]`
+   : The numbers to be combined, the smaller input will be taken from the greater input
+
+   ```{admonition} Technical limitation
+   :class: important
+
+   The value of `bs.out.0` is incorrect if the result is greater than 2147483647 or `bs.in.[0,1]` are not both positive
+   ```
+
+Output
+
+:  (score) `@s bs.out.0`
+   : The result of the operation
+
+Example
+
+:  Calculate $combine(4,2)$
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 4
+   scoreboard players set @s bs.in.1 2
+   function #bs.math:combine
+   tellraw @a [{"text": "combine(4,2) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   ```
+
+> **Credits**: Ethanout
+
+---
+
 ### Cosine
 
 **`bs.math:cos`**
@@ -793,19 +833,16 @@ We can compute the sine of any angle.
 
 **`bs.math:sqrt`**
 
-Compute the square root of the number
+Compute the square root of the floating number
 
-Inputs
+Input
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The number you want to calculate the square root of
+:  (storage) `bs:in math.sqrt`
+   : The floating number you want to calculate the square root of
 
 Output
 
-:  (score) `@s bs.out.0`
+:  (storage) `bs:out math.sqrt`
    : The result of the calculation
 
 Example
@@ -813,14 +850,44 @@ Example
 :  Calculate and display $\sqrt{42}$
    ```
    # Once
-   scoreboard players set @s bs.in.0 42
+   data modify storage bs:in math.sqrt set value 42f
    function #bs.math:sqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:in", "color": "gold"}]
+   ```
+
+> **Credits**: Ethanout
+
+
+**`bs.math:isqrt`**
+
+Compute the square root of the int number
+
+Inputs
+
+:  (execution) `as <entities>`
+   : The entities you want to perform the calculation on
+
+   (score) `@s bs.in.0`
+   : The int number you want to calculate the square root of
+
+Output
+
+:  (score) `@s bs.out.0`
+   : The floor result of the square root
+
+Example
+
+:  Calculate and display $\sqrt{42}$
+   ```
+   # Once
+   scoreboard players set @s bs.in.0 42
+   function #bs.math:isqrt
    tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
    ```
 
 ![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
 
-> **Credits**: Leirof
+> **Credits**: Ethanout
 
 ---
 
