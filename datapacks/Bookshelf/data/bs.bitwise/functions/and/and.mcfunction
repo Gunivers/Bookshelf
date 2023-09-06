@@ -35,7 +35,8 @@ execute if score $bitwise.and.1 bs.in matches ..-1 run scoreboard players add #b
 # Get the greater input most significant bit
 execute if score #bitwise.and.0 bs.data < #bitwise.and.1 bs.data run scoreboard players operation $bitwise.msb.value bs.in = #bitwise.and.1 bs.data
 execute if score #bitwise.and.0 bs.data >= #bitwise.and.1 bs.data run scoreboard players operation $bitwise.msb.value bs.in = #bitwise.and.0 bs.data
-execute store result score #bitwise.and.msb bs.data run function #bs.bitwise:msb
+function #bs.bitwise:msb
+scoreboard players operation #bitwise.and.msb bs.data = $bitwise.msb bs.out
 
 scoreboard players set $bitwise.and bs.out 0
 execute if score #bitwise.and.0 bs.data matches 1.. if score #bitwise.and.1 bs.data matches 1.. run function bs.bitwise:and/loop
@@ -43,5 +44,3 @@ execute if score #bitwise.and.0 bs.data matches 1.. if score #bitwise.and.1 bs.d
 # Two complement if both inputs are negative
 execute if score $bitwise.and.0 bs.in matches ..-1 if score $bitwise.and.1 bs.in matches ..-1 run scoreboard players add $bitwise.and bs.out 2147483647
 execute if score $bitwise.and.0 bs.in matches ..-1 if score $bitwise.and.1 bs.in matches ..-1 run scoreboard players add $bitwise.and bs.out 1
-
-return run scoreboard players get $bitwise.and bs.out

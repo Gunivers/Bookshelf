@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:sidebar do.id set value '$(id)'
+$data modify storage bs:data sidebar.do.id set value '$(id)'
 
-function bs.sidebar:destroy/do with storage bs:sidebar do
+function bs.sidebar:destroy/do with storage bs:data sidebar.do

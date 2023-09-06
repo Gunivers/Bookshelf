@@ -59,7 +59,6 @@ And much more!
 modules/biome
 modules/bitwise
 modules/block
-modules/cache
 modules/color
 modules/core
 modules/health
@@ -70,7 +69,6 @@ modules/link
 modules/log
 modules/mapedit
 modules/math
-modules/memory
 modules/move
 modules/position
 modules/schedule

@@ -24,6 +24,6 @@
 
 scoreboard players operation $bitwise.two_complement bs.out = $bitwise.two_complement.value bs.in
 
-execute if score $bitwise.two_complement bs.out matches 1.. run return run scoreboard players get $bitwise.two_complement bs.out
+execute if score $bitwise.two_complement bs.out matches 1.. run return -1
 scoreboard players add $bitwise.two_complement bs.out 2147483647
-return run scoreboard players add $bitwise.two_complement bs.out 1
+scoreboard players add $bitwise.two_complement bs.out 1
