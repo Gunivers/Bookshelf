@@ -1,5 +1,5 @@
 {
-    "values": [
-       "bs.math:sqrt/__sqrt__"
-    ]
+  "values": [
+    "bs.math:sqrt/sqrt"
+  ]
 }
