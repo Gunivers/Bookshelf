@@ -245,6 +245,121 @@ Examples
 
 ---
 
+### Cosine
+
+**`#bs.math:cos`**
+
+Compute the cosine of an angle between 0 and 360.
+
+Inputs
+
+:  (score) `$math.cos.angle bs.in`
+   : The angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
+
+Outputs
+
+:  (score) `$math.cos bs.out`
+   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+
+Example
+
+:  Calculate and display the cosine of 42:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.cos.angle bs.in 42
+   function #bs.math:cos
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+![](img/cosine.png)
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Sine
+
+**`#bs.math:sin`**
+
+Computes the sine of an angle between 0 and 360.
+
+Inputs
+
+:  (score) `$math.sin.angle bs.in`
+   : The angle in degrees shifted by 2 digits.
+
+Outputs
+
+:  (score) `$math.sin bs.out`
+   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+
+Example
+
+:  Calculate and display the sine of 42
+   ```mcfunction
+   # Once
+   scoreboard players set $math.sin.angle bs.in 4200
+   function #bs.math:sin
+   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sin", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+```{admonition} How does it work?
+:class: dropdown
+
+This function use the Bhaskara approximation which tell us that
+
+$$
+\sin(x) \approx \frac{4x(180-x)}{40500-x(180-x)} \quad \forall x \in [0, 180]
+$$
+
+From this relation, and using the properties
+- $\sin(-x) = -\sin(x)$ (antisymetry)
+- $\sin(x+360) = \sin(x)$ (periodicity)
+
+We can compute the sine of any angle.
+
+![](img/bhaskara.png)
+
+```
+
+![](img/sine.png)
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Tangent
+
+**`#bs.math:tan`**
+
+Compute the tangent of an angle between 0 and 360.
+
+Inputs
+
+:  (score) `$math.tan.value bs.in`
+   : The angle in degrees shifted by 2 digits.
+
+Outputs
+
+:  (score) `$math.tan bs.out`
+   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420).
+
+Example
+
+:  Calculate and display the tengeante of 42:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.tan.value bs.in 4200
+   function #bs.math:tan
+   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+![](img/tan.png)
+
+> **Credits**: Leirof
+
+---
+
 ### Combine
 
 **`#bs.math:combine`**
@@ -279,76 +394,6 @@ Example
    ```
 
 > **Credits**: Ethanout
-
----
-
-### Cosine
-
-**`#bs.math:cos`**
-
-Compute the cosine of an angle between 0 and 360.
-
-Inputs
-
-:  (score) `$math.cos.angle bs.in`
-   : The angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
-
-Outputs
-
-:  (score) `$math.cos bs.out`
-   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the cosine of 42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.cos.angle bs.in 42
-   function #bs.math:cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/cosine.png)
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Exponential
-
-**`#bs.math:exp`**
-
-Compute the exponential function.
-
-Inputs
-
-:  (storage) `bs:in math.exp.value`
-   : The number to be exponentiated.
-
-   ```{admonition} Technical limitation
-   :class: important
-   Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
-   ```
-
-Output
-
-:  (storage) `bs:out math.exp`
-   : The result of the operation.
-
-Example
-
-:  Calculate $exp(3)$
-   ```mcfunction
-   # Once
-
-   data modify storage bs:in math.exp.value set value 3.0
-   function #bs.math:exp
-   data get storage bs:out math.exp
-   ```
-
-![](img/exp.png)
-
-> **Credits**: Aksiome, KubbyDev
 
 ---
 
@@ -390,38 +435,6 @@ Example
 
 ---
 
-### Frexp
-
-**`#bs.math:frexp`**
-
-Decompose a floating point number into a normalized fraction and an integral power of two.
-
-Inputs
-
-:  (storage) `bs:in math.frexp.value`
-   : Floating-point value.
-
-Output
-
-:  (storage) `math.frexp.e bs.out`
-   : The exponent power of 2.
-:  (storage) `math.frexp.x bs.out`
-   : The normalized fraction (mantissa) in range  `]-1,-0.5]` or `[0.5,1[`.
-
-Example
-
-:  Decompose 5.8 into its mantissa and exponent.
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.frexp.value set value 5.8
-   function #bs.math:frexp
-   data get storage bs:out math.frexp
-   ```
-
-> **Credits**: Aksiome
-
----
-
 ### Greatest common denominator
 
 **`#bs.math:gcd`**
@@ -452,6 +465,215 @@ Example
 ![](img/gcd.png)
 
 > **Credits**: Aksiome, Leirof
+
+---
+
+### Rounded division
+
+**`#bs.math:divide`**
+
+Allows you to divide one number by another by rounding the result to the nearest whole number (where Minecraft rounds down to the next whole number).
+
+Inputs
+
+:  (score) `$math.divide.num bs.in`
+   : The numerator.
+
+   (score) `$math.divide.den bs.in`
+   : The denominator.
+
+Output
+
+:  (score) `$math.divide bs.out`
+   : The result of the division.
+
+Example
+
+:  Calculate $9/5$
+   ```
+   # Once
+   scoreboard players set $math.divide.num bs.in 9
+   scoreboard players set $math.divide.den bs.in 5
+   function #bs.math:divide
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"$math.divide", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+![](img/divide.png)
+
+> **Credits**: Aksiome, theogiraudet
+
+---
+
+### Power
+
+::::{tab-set}
+
+:::{tab-item} Power
+
+**`#bs.math:pow {scale:<scaling>}`**
+
+Compute $x^y$.
+
+Inputs
+
+:  (score) `$math.pow.base bs.in`
+   : The base.
+
+   (score) `$math.pow.exp bs.in`
+   : The exponent.
+
+Output
+
+:  (score) `$math.pow bs.out`
+   : The result of the calculation.
+
+Example
+
+:  Compute $2.245^6$:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.pow.base bs.in 2245
+   scoreboard players set $math.pow.exp bs.in 6
+   function #bs.math:pow {scale:1000}
+   tellraw @a [{"text": "(2.245^6)*(1000) = ", "color": "dark_gray"},{"score":{"name":"$math.pow", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+:::
+:::{tab-item} Power of 2
+
+**`#bs.math:pow2`**
+
+Compute $2^n$.
+
+Inputs
+
+:  (score) `$math.pow2.exp bs.in`
+   : The exponent.
+
+Output
+
+:  (score) `$math.pow2 bs.out`
+   : The result of the calculation.
+
+Example
+
+:  Compute $2^6$:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.pow2.exp bs.in 6
+   function #bs.math:pow2
+   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"$math.pow2", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+:::
+::::
+
+![](img/power.png)
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Square root
+
+::::{tab-set}
+
+:::{tab-item} Integer
+
+**`#bs.math:isqrt`**
+
+Compute the square root of an int number.
+
+Inputs
+
+:  (score) `$math.isqrt.value bs.in`
+   : The int number you want to calculate the square root of.
+
+Output
+
+:  (score) `$math.isqrt bs.out`
+   : The floor result of the square root.
+
+Example
+
+:  Calculate and display $\sqrt{42}$:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.isqrt.value bs.in 42
+   function #bs.math:isqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"$math.isqrt", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+:::
+:::{tab-item} Decimal
+
+**`#bs.math:sqrt`**
+
+Compute the square root of a floating number.
+
+Input
+
+:  (storage) `bs:in math.sqrt.value`
+   : The floating number you want to calculate the square root of.
+
+Output
+
+:  (storage) `bs:out math.sqrt`
+   : The result of the calculation.
+
+Example
+
+:  Calculate and display $\sqrt{42}$:
+   ```mcfunction
+   # Once
+   data modify storage bs:in math.sqrt set value 42
+   function #bs.math:sqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
+   ```
+:::
+::::
+
+![](img/sqrt.png)
+
+> **Credits**: Ethanout
+
+---
+
+### Exponential
+
+**`#bs.math:exp`**
+
+Compute the exponential function.
+
+Inputs
+
+:  (storage) `bs:in math.exp.value`
+   : The number to be exponentiated.
+
+   ```{admonition} Technical limitation
+   :class: important
+   Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
+   ```
+
+Output
+
+:  (storage) `bs:out math.exp`
+   : The result of the operation.
+
+Example
+
+:  Calculate $exp(3)$
+   ```mcfunction
+   # Once
+
+   data modify storage bs:in math.exp.value set value 3.0
+   function #bs.math:exp
+   data get storage bs:out math.exp
+   ```
+
+![](img/exp.png)
+
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
@@ -574,257 +796,37 @@ Example
 
 > **Credits**: Aksiome, KubbyDev
 
-### Power
-
-::::{tab-set}
-
-:::{tab-item} Power of base
-
-**`#bs.math:pow {scale:<scaling>}`**
-
-Compute $x^y$.
-
-Inputs
-
-:  (score) `$math.pow.base bs.in`
-   : The base.
-
-   (score) `$math.pow.exp bs.in`
-   : The exponent.
-
-Output
-
-:  (score) `$math.pow bs.out`
-   : The result of the calculation.
-
-Example
-
-:  Compute $2.345^6$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.pow.base bs.in 2245
-   scoreboard players set $math.pow.exp bs.in 6
-   function #bs.math:pow {scale:1000}
-   tellraw @a [{"text": "(2.245^6)*(1000) = ", "color": "dark_gray"},{"score":{"name":"$math.pow", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-:::
-:::{tab-item} Power of 2
-
-**`#bs.math:pow2`**
-
-Compute $2^n$.
-
-Inputs
-
-:  (score) `$math.pow2.exp bs.in`
-   : The exponent.
-
-Output
-
-:  (score) `$math.pow2 bs.out`
-   : The result of the calculation.
-
-Example
-
-:  Compute $2^6$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.pow2.exp bs.in 6
-   function #bs.math:pow2
-   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"$math.pow2", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-:::
-::::
-
-![](img/power.png)
-
-> **Credits**: Aksiome, Leirof
-
 ---
 
-### Rounded division
+### Float radix
 
-**`#bs.math:divide`**
+**`#bs.math:frexp`**
 
-Allows you to divide one number by another by rounding the result to the nearest whole number (where Minecraft rounds down to the next whole number).
+Decompose a floating point number into a normalized fraction and an integral power of two.
 
 Inputs
 
-:  (score) `$math.divide.num bs.in`
-   : The numerator.
-
-   (score) `$math.divide.den bs.in`
-   : The denominator.
+:  (storage) `bs:in math.frexp.value`
+   : Floating-point value.
 
 Output
 
-:  (score) `$math.divide bs.out`
-   : The result of the division.
+:  (storage) `math.frexp.e bs.out`
+   : The exponent power of 2.
+:  (storage) `math.frexp.x bs.out`
+   : The normalized fraction (mantissa) in range  `]-1,-0.5]` or `[0.5,1[`.
 
 Example
 
-:  Calculate $9/5$
-   ```
-   # Once
-   scoreboard players set $math.divide.num bs.in 9
-   scoreboard players set $math.divide.den bs.in 5
-   function #bs.math:divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"$math.divide", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/divide.png)
-
-> **Credits**: Aksiome, theogiraudet
-
----
-
-### Sine
-
-**`#bs.math:sin`**
-
-Computes the sine of an angle between 0 and 360.
-
-Inputs
-
-:  (score) `$math.sin.angle bs.in`
-   : The angle in degrees shifted by 2 digits.
-
-Outputs
-
-:  (score) `$math.sin bs.out`
-   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the sine of 42
+:  Decompose 5.8 into its mantissa and exponent.
    ```mcfunction
    # Once
-   scoreboard players set $math.sin.angle bs.in 4200
-   function #bs.math:sin
-   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sin", "objective": "bs.out"}, "color": "gold"}]
+   data modify storage bs:in math.frexp.value set value 5.8
+   function #bs.math:frexp
+   data get storage bs:out math.frexp
    ```
 
-```{admonition} How does it work?
-:class: dropdown
-
-This function use the Bhaskara approximation which tell us that
-
-$$
-\sin(x) \approx \frac{4x(180-x)}{40500-x(180-x)} \quad \forall x \in [0, 180]
-$$
-
-From this relation, and using the properties
-- $\sin(-x) = -\sin(x)$ (antisymetry)
-- $\sin(x+360) = \sin(x)$ (periodicity)
-
-We can compute the sine of any angle.
-
-![](img/bhaskara.png)
-
-```
-
-![](img/sine.png)
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Square root
-
-::::{tab-set}
-
-:::{tab-item} Integer
-
-**`#bs.math:isqrt`**
-
-Compute the square root of an int number.
-
-Inputs
-
-:  (score) `$math.isqrt.value bs.in`
-   : The int number you want to calculate the square root of.
-
-Output
-
-:  (score) `$math.isqrt bs.out`
-   : The floor result of the square root.
-
-Example
-
-:  Calculate and display $\sqrt{42}$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.isqrt.value bs.in 42
-   function #bs.math:isqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"$math.isqrt", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-:::
-:::{tab-item} Decimal
-
-**`#bs.math:sqrt`**
-
-Compute the square root of a floating number.
-
-Input
-
-:  (storage) `bs:in math.sqrt.value`
-   : The floating number you want to calculate the square root of.
-
-Output
-
-:  (storage) `bs:out math.sqrt`
-   : The result of the calculation.
-
-Example
-
-:  Calculate and display $\sqrt{42}$:
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.sqrt set value 42
-   function #bs.math:sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
-   ```
-:::
-::::
-
-![](img/sqrt.png)
-
-> **Credits**: Ethanout
-
----
-
-### Tangent
-
-**`#bs.math:tan`**
-
-Compute the tangent of an angle between 0 and 360.
-
-Inputs
-
-:  (score) `$math.tan.value bs.in`
-   : The angle in degrees shifted by 2 digits.
-
-Outputs
-
-:  (score) `$math.tan bs.out`
-   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the tengeante of 42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.tan.value bs.in 4200
-   function #bs.math:tan
-   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/tan.png)
-
-> **Credits**: Leirof
+> **Credits**: Aksiome
 
 ---
 

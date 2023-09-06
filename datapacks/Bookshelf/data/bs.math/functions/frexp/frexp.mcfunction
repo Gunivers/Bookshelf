@@ -8,7 +8,7 @@
 # Created: 02/09/2023 (23w33a)
 # Last modification:
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#frexp
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#float-radix
 # Dependencies:
 # Note:
 
