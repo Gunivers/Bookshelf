@@ -266,7 +266,7 @@ Example
 :  Calculate and display the cosine of 42:
    ```mcfunction
    # Once
-   scoreboard players set $math.cos.angle bs.in 42
+   scoreboard players set $math.cos.angle bs.in 4200
    function #bs.math:cos
    tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
    ```
@@ -336,7 +336,7 @@ Compute the tangent of an angle between 0 and 360.
 
 Inputs
 
-:  (score) `$math.tan.value bs.in`
+:  (score) `$math.tan.angle bs.in`
    : The angle in degrees shifted by 2 digits.
 
 Outputs
@@ -490,7 +490,7 @@ Output
 Example
 
 :  Calculate $9/5$
-   ```
+   ```mcfunction
    # Once
    scoreboard players set $math.divide.num bs.in 9
    scoreboard players set $math.divide.den bs.in 5

@@ -29,5 +29,3 @@ execute store result score #math.isqrt.temp_1 bs.data run scoreboard players ope
 # Floor the result
 scoreboard players operation #math.isqrt.temp_1 bs.data *= #math.isqrt.temp_1 bs.data
 execute if score #math.isqrt.temp_1 bs.data > $math.isqrt.value bs.in run scoreboard players remove $math.isqrt bs.out 1
-
-scoreboard players get $math.isqrt bs.out

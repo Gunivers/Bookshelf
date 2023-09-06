@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-data modify storage bs:in math.log2.x set from storage bs:in math.log.x
+data modify storage bs:in math.log2.value set from storage bs:in math.log.value
 function #bs.math:log2
 execute store result storage bs:out math.log double 0.0000001 run data get storage bs:out math.log2 6931471.805599453

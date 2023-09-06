@@ -11,7 +11,7 @@
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#arcsine
 # Dependencies:
-# Note:
+# Note: This algorithm is taken from the Handbook of Mathematical Functions (M. Abramowitz and I.A. Stegun, Ed.)
 
 # CODE ------------------------------------------------------------------------
 
