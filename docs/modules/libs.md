@@ -18,12 +18,11 @@ health
 id
 item
 link
-location
 log
 mapedit
 math
 move
-orientation
+position
 schedule
 time
 vector

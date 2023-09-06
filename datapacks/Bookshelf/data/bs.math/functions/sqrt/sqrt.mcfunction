@@ -8,9 +8,9 @@
 # Created: 28/08/2023 (23w31a)
 # Last modification: 05/09/2023 (23w31a)
 
-# Documentation: 
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#square-root
 # Dependencies:
-# Note: 
+# Note:
 
 # CODE ------------------------------------------------------------------------
 

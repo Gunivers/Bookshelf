@@ -137,10 +137,8 @@ Compute the 2-argument arctangent of y and x.
 
 Inputs
 
-:  (score) `$math.atan2.y bs.in`
-   : The y value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
-   (score) `$math.atan2.x bs.in`
-   : The x value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+:  (scores) `$math.atan2.[y,x] bs.in`
+   : The values you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
 Output
 
@@ -249,38 +247,35 @@ Examples
 
 ### Combine
 
-**`bs.math:combine`**
+**`#bs.math:combine`**
 
-Compute the combine of 2 numbers
+Compute the combine of 2 numbers.
+
+```{admonition} Technical limitation
+:class: important
+
+The value of `bs.out` is incorrect if the result is greater than 2147483647 or `$math.combine.[m,n] bs.in` are not both positive.
+```
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.[0,1]`
-   : The numbers to be combined, the smaller input will be taken from the greater input
-
-   ```{admonition} Technical limitation
-   :class: important
-
-   The value of `bs.out.0` is incorrect if the result is greater than 2147483647 or `bs.in.[0,1]` are not both positive
-   ```
+:  (scores) `$math.combine.[m,n] bs.in`
+   : The numbers to be combined, the smaller input will be taken from the greater input.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation
+:  (score) `$math.combine bs.out`
+   : The result of the operation.
 
 Example
 
-:  Calculate $combine(4,2)$
-   ```
+:  Calculate $combine(4,2)$:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 4
-   scoreboard players set @s bs.in.1 2
+   scoreboard players set $math.combine.m bs.in 4
+   scoreboard players set $math.combine.n bs.in 2
    function #bs.math:combine
-   tellraw @a [{"text": "combine(4,2) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   tellraw @a [{"text": "combine(4,2) = ","color":"dark_gray"},{"score":{"name":"$math.combine","objective":"bs.out"},"color":"gold"}]
    ```
 
 > **Credits**: Ethanout
@@ -289,167 +284,174 @@ Example
 
 ### Cosine
 
-**`bs.math:cos`**
+**`#bs.math:cos`**
 
-Compute the cosine of an angle between 0 and 360
+Compute the cosine of an angle between 0 and 360.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The angle in degrees
+:  (score) `$math.cos.angle bs.in`
+   : The angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
 
 Outputs
 
-:  (score) `@s bs.out.0`
-   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+:  (score) `$math.cos bs.out`
+   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
 
 Example
 
-:  Calculate and display the cosine of 42
-   ```
+:  Calculate and display the cosine of 42:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 42
-   function bs.math:cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.cos.angle bs.in 42
+   function #bs.math:cos
+   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
    ```
 
-```{admonition} How does it work?
-:class: dropdown
+![](img/cosine.png)
 
-This function use the property $\cos(x) = \sin(x + 90)$ to compute the cosine of an angle. It then uses the [sine](#sine) function to compute the result.
-```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/cos.png)
-
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Exponential
 
-**`bs.math:exp`**
+**`#bs.math:exp`**
 
-Compute the exponential of the number passed in parameter on
-the score `bs.in.0` and return the result on the score `bs.out.0`
+Compute the exponential function.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The number to be exponentiated shifted by two digits (1,2345 -> 123) for better precision in integer scores
+:  (storage) `bs:in math.exp.value`
+   : The number to be exponentiated.
 
    ```{admonition} Technical limitation
    :class: important
-   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[-600,1200]` (i.e. `[-6;12]` in real value)
+   Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
    ```
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:out math.exp`
+   : The result of the operation.
 
 Example
 
 :  Calculate $exp(3)$
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 300
-   function bs.math:exp
-   tellraw @a [{"text":"exp(3)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+
+   data modify storage bs:in math.exp.value set value 3.0
+   function #bs.math:exp
+   data get storage bs:out math.exp
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/exp.png)
+![](img/exp.png)
 
-```{note}
-We are looking for a better implementation of this function. If you have any ideas, please join our [Discord server](https://discord.gg/E8qq6tN) to discuss with us!
-```
-
-> **Credits**: KubbyDev
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
 ### Factorial
 
-**`bs.math:factorial`**
+**`#bs.math:factorial`**
 
-Compute the factorial of the number
+Compute the factorial of the number.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The number to be factorialized
+:  (score) `$math.factorial.n bs.in`
+   : The number to be factorialized.
 
    ```{admonition} Technical limitation
    :class: important
 
-   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`
+   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`.
    ```
 
 Output
 
-:  (score) `@s bs.out.0`
+:  (score) `$math.factorial bs.out`
    : The result of the operation
 
 Example
 
 :  Compute $3!$
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 3
-   function bs.math:factorial
-   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set $math.factorial.n bs.in 3
+   function #bs.math:factorial
+   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"$math.factorial","objective":"bs.out"},"color":"gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/factorial.png)
+![](img/factorial.png)
 
 > **Credits**: KubbyDev
 
 ---
 
-### Greatest common denominator
+### Frexp
 
-**`bs.math:gcd`**
+**`#bs.math:frexp`**
 
-Compute the greatest common denominator of two numbers
+Decompose a floating point number into a normalized fraction and an integral power of two.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The first number
-
-   (score) `@s bs.in.1`
-   : The second number
+:  (storage) `bs:in math.frexp.value`
+   : Floating-point value.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The greatest common denominator
+:  (storage) `math.frexp.e bs.out`
+   : The exponent power of 2.
+:  (storage) `math.frexp.x bs.out`
+   : The normalized fraction (mantissa) in range  `]-1,-0.5]` or `[0.5,1[`.
 
 Example
 
-:  Calculate the greatest common denominator between 16 and 12
-   ```
+:  Decompose 5.8 into its mantissa and exponent.
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 16
-   scoreboard players set @s bs.in.1 12
-   function bs.math:gcd
-   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   data modify storage bs:in math.frexp.value set value 5.8
+   function #bs.math:frexp
+   data get storage bs:out math.frexp
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/gcd.png)
+> **Credits**: Aksiome
 
-> **Credits**: Leirof
+---
+
+### Greatest common denominator
+
+**`#bs.math:gcd`**
+
+Compute the greatest common denominator of two numbers.
+
+Inputs
+
+:  (scores) `$math.gcd.[a,b] bs.in`
+   : The two numbers.
+
+Output
+
+:  (score) `$math.gcd bs.out`
+   : The greatest common denominator.
+
+Example
+
+:  Calculate the greatest common denominator between 16 and 12.
+   ```mcfunction
+   # Once
+   scoreboard players set $math.gcd.a bs.in 16
+   scoreboard players set $math.gcd.b bs.in 12
+   function #bs.math:gcd
+   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"$math.gcd", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+![](img/gcd.png)
+
+> **Credits**: Aksiome, Leirof
 
 ---
 
@@ -459,355 +461,249 @@ Example
 
 :::{tab-item} Base e (Neperian)
 
-**`bs.math:log`**
+**`#bs.math:log`**
 
-Compute the Neperian logarithm (base e) of a number
+Compute the Neperian logarithm (base e) of a number.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-
-   (score) `@s bs.in.0`
-   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:in math.log.value`
+   : The number to be logarithmized.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:out math.log`
+   : The result of the operation.
 
 Example
 
 :  Calculate $ln(28)$
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 28000
-   function bs.math:log
-   tellraw @a [{"text":"ln(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   data modify storage bs:in math.log.value set value 28.0
+   function #bs.math:log
+   data get storage bs:out math.log
    ```
 
 :::
 :::{tab-item} Base 2
 
-**`bs.math:log2`**
+**`#bs.math:log2`**
 
-Compute the logarithm in base 2 of a number
+Compute the logarithm in base 2 of a number.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:in math.log2.value`
+   : The number to be logarithmized.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:out math.log2`
+   : The result of the operation.
 
 Example
 
 :  Calculate $log_2(28)$:
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 28000
-   function bs.math:log2
-   tellraw @a [{"text":"log2(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   data modify storage bs:in math.log2.value set value 28.0
+   function #bs.math:log2
+   data get storage bs:out math.log2
    ```
 :::
 :::{tab-item} Base 10
 
-**`bs.math:log10`**
+**`#bs.math:log10`**
 
-Compute the logarithm in base 10 of a number
+Compute the logarithm in base 10 of a number.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:in math.log10.value`
+   : The number to be logarithmized.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:out math.log10`
+   : The result of the operation.
 
 Example
 
 :  Calculate $log_{10}(28)$
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 28000
-   function bs.math:log10
-   tellraw @a [{"text":"log10(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   data modify storage bs:in math.log10.value set value 28.0
+   function #bs.math:log10
+   data get storage bs:out math.log10
    ```
 
 :::
 :::{tab-item} Base a
 
-**`bs.math:loga`**
+**`#bs.math:loga`**
 
-Computes the logarithm in base a of a number
+Computes the logarithm in base a of a number.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
+:  (storage) `bs:in math.loga.value`
+   : The number to be logarithmized.
 
-   (score) `@s bs.in.0`
-   : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
-
-   (score) `@s bs.in.1`
-   : The base of the logarithm (not shifted)
+   (storage) `bs:in math.loga.a`
+   : The base of the logarithm.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the operation, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (storage) `bs:out math.loga`
+   : The result of the operation.
 
 Example
 
 :  Calculate $log_4(28)$
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 28000
-   scoreboard players set @s bs.in.1 4
-   function bs.math:loga
-   tellraw @a [{"text":"log4(28)*10^3 = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   data modify storage bs:in math.loga.a set value 4
+   data modify storage bs:in math.loga.value set value 28.0
+   function #bs.math:loga
+   data get storage bs:out math.loga
    ```
 
 :::
 ::::
 
-> **Credits**: KubbyDev
+> **Credits**: Aksiome, KubbyDev
 
 ### Power
 
 ::::{tab-set}
-:::{tab-item} Normal
 
-**`bs.math:pow`**
+:::{tab-item} Power of base
 
-Compute $x^y$
+**`#bs.math:pow {scale:<scaling>}`**
+
+Compute $x^y$.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
+:  (score) `$math.pow.base bs.in`
+   : The base.
 
-   (score) `@s bs.in.0`
-   : The base
-
-   (score) `@s bs.in.1`
-   : The exponent
+   (score) `$math.pow.exp bs.in`
+   : The exponent.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the calculation
+:  (score) `$math.pow bs.out`
+   : The result of the calculation.
 
 Example
 
-:  Compute $2^6$
-   ```
+:  Compute $2.345^6$:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 2
-   scoreboard players set @s bs.in.1 6
-   function bs.math:pow
-   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.pow.base bs.in 2245
+   scoreboard players set $math.pow.exp bs.in 6
+   function #bs.math:pow {scale:1000}
+   tellraw @a [{"text": "(2.245^6)*(1000) = ", "color": "dark_gray"},{"score":{"name":"$math.pow", "objective": "bs.out"}, "color": "gold"}]
    ```
+
 :::
-:::{tab-item} Scale 3
+:::{tab-item} Power of 2
 
+**`#bs.math:pow2`**
 
-**`bs.math:pow/scale/3`**
-
-Compute $x^y$
+Compute $2^n$.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The base, a number shifted by 3 digits (1,2345 -> 1234)
-
-   (score) `@s bs.in.1`
-   : The exponent, not shifted
+:  (score) `$math.pow2.exp bs.in`
+   : The exponent.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the calculation, a number shifted by 3 digits (1,2345 -> 1234)
+:  (score) `$math.pow2 bs.out`
+   : The result of the calculation.
 
 Example
 
-:  Compute $2.345^6$
-   ```
+:  Compute $2^6$:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 2345
-   scoreboard players set @s bs.in.1 6
-   function bs.math:pow/scale/3
-   tellraw @a [{"text": "2.345^6 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.pow2.exp bs.in 6
+   function #bs.math:pow2
+   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"$math.pow2", "objective": "bs.out"}, "color": "gold"}]
    ```
 
 :::
 ::::
 
-![](https://gunivers.net/wp-content/uploads/2022/06/power.png)
+![](img/power.png)
 
-> **Credits**: Leirof
-
----
-
-### Random
-
-**`bs.math:random`**
-
-Generates a random number
-
-Inputs
-
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-Output
-
-:  (score) `@s bs.out.0`
-   : An integer random number between $-2^{31}$ and $2^{31}-1$
-
-   ```{tip}
-   To reduce this interval, execute the function then do a "modulo"
-   operation on the result (random % 10 -> the random number will be
-   included in the interval [0;9])
-   ```
-
-Example
-
-:  Get and display a random number between 0 and 100:
-   ```
-   # Once
-   function bs.math:random
-   scoreboard players operation @s bs.out.0 %= 101 bs.const
-   tellraw @a [{"text": "random() = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-
-   Beware: the score `bs.const` does not contain all possible
-   values. Make sure the value you want to use exists and initialize it
-   if necessary.
-   ```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/random.png)
-
-> **Credits**: Kikipunk
-
----
-
-### Retrieve the next power of 2
-
-**`bs.math:get_next_pow2`**
-
-Compute the power of 2 directly superior to the
-number given in parameter.
-
-Inputs
-
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The number from which you want to calculate the next power of 2
-
-Output
-
-:  (score) `@s bs.out.0`
-   : The result of the calculation
-
-Example
-
-:  Find the power of 2 greater than 43
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 43
-   function bs.math:get_next_pow2
-   tellraw @a [{"text":"get_next_pow2(43) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
-   ```
-
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Rounded division
 
-**`bs.math:divide`**
+**`#bs.math:divide`**
 
-Allows you to divide one number by another by rounding the
-result to the nearest whole number (where Minecraft rounds down to the
-next whole number).
+Allows you to divide one number by another by rounding the result to the nearest whole number (where Minecraft rounds down to the next whole number).
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the operation on
+:  (score) `$math.divide.num bs.in`
+   : The numerator.
 
-   (score) `@s bs.in.0`
-   : The numerator
-
-   (score) `@s bs.in.1`
-   : The denominator
+   (score) `$math.divide.den bs.in`
+   : The denominator.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the division
+:  (score) `$math.divide bs.out`
+   : The result of the division.
 
 Example
 
 :  Calculate $9/5$
    ```
    # Once
-   scoreboard players set @s bs.in.0 9
-   scoreboard players set @s bs.in.1 5
-   function bs.math:divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.divide.num bs.in 9
+   scoreboard players set $math.divide.den bs.in 5
+   function #bs.math:divide
+   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"$math.divide", "objective": "bs.out"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/divide.png)
+![](img/divide.png)
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
 ### Sine
 
-**`bs.math:sin`**
+**`#bs.math:sin`**
 
-Computes the sine of an angle between 0 and 360
+Computes the sine of an angle between 0 and 360.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The angle in degrees
+:  (score) `$math.sin.angle bs.in`
+   : The angle in degrees shifted by 2 digits.
 
 Outputs
 
-:  (score) `@s bs.out.0`
-   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420)
+:  (score) `$math.sin bs.out`
+   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
 
 Example
 
 :  Calculate and display the sine of 42
-   ```
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 42
-   function bs.math:sin
-   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.sin.angle bs.in 4200
+   function #bs.math:sin
+   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sin", "objective": "bs.out"}, "color": "gold"}]
    ```
 
 ```{admonition} How does it work?
@@ -825,74 +721,76 @@ From this relation, and using the properties
 
 We can compute the sine of any angle.
 
-![](img/2023-02-28-18-34-11.png)
-
+![](img/bhaskara.png)
 
 ```
 
-![](img/2023-02-07-09-00-23.png)
+![](img/sine.png)
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Square root
 
-**`bs.math:sqrt`**
+::::{tab-set}
 
-Compute the square root of the floating number
+:::{tab-item} Integer
+
+**`#bs.math:isqrt`**
+
+Compute the square root of an int number.
+
+Inputs
+
+:  (score) `$math.isqrt.value bs.in`
+   : The int number you want to calculate the square root of.
+
+Output
+
+:  (score) `$math.isqrt bs.out`
+   : The floor result of the square root.
+
+Example
+
+:  Calculate and display $\sqrt{42}$:
+   ```mcfunction
+   # Once
+   scoreboard players set $math.isqrt.value bs.in 42
+   function #bs.math:isqrt
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"$math.isqrt", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+:::
+:::{tab-item} Decimal
+
+**`#bs.math:sqrt`**
+
+Compute the square root of a floating number.
 
 Input
 
-:  (storage) `bs:in math.sqrt`
-   : The floating number you want to calculate the square root of
+:  (storage) `bs:in math.sqrt.value`
+   : The floating number you want to calculate the square root of.
 
 Output
 
 :  (storage) `bs:out math.sqrt`
-   : The result of the calculation
+   : The result of the calculation.
 
 Example
 
-:  Calculate and display $\sqrt{42}$
-   ```
+:  Calculate and display $\sqrt{42}$:
+   ```mcfunction
    # Once
-   data modify storage bs:in math.sqrt set value 42f
+   data modify storage bs:in math.sqrt set value 42
    function #bs.math:sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:in", "color": "gold"}]
+   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
    ```
+:::
+::::
 
-> **Credits**: Ethanout
-
-
-**`bs.math:isqrt`**
-
-Compute the square root of the int number
-
-Inputs
-
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The int number you want to calculate the square root of
-
-Output
-
-:  (score) `@s bs.out.0`
-   : The floor result of the square root
-
-Example
-
-:  Calculate and display $\sqrt{42}$
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 42
-   function #bs.math:isqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-![](https://gunivers.net/wp-content/uploads/2022/06/sqrt.png)
+![](img/sqrt.png)
 
 > **Credits**: Ethanout
 
@@ -900,34 +798,31 @@ Example
 
 ### Tangent
 
-**`bs.math:tan`**
+**`#bs.math:tan`**
 
-Compute the tangeant of an angle between 0 and 360
+Compute the tangent of an angle between 0 and 360.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The angle in degrees (not shifted)
+:  (score) `$math.tan.value bs.in`
+   : The angle in degrees shifted by 2 digits.
 
 Outputs
 
-:  (score) `@s bs.out.0`
-   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420)
+:  (score) `$math.tan bs.out`
+   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420).
 
 Example
 
-:  Calculate and display the tengeante of 42
-   ```
+:  Calculate and display the tengeante of 42:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 42
-   function bs.math:tan
-   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
+   scoreboard players set $math.tan.value bs.in 4200
+   function #bs.math:tan
+   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/tan.png)
+![](img/tan.png)
 
 > **Credits**: Leirof
 
