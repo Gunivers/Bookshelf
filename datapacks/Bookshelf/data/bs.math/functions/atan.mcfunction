@@ -8,7 +8,7 @@
 # Created: 18/01/2023 (1.19.2)
 # Last modification: 05/09/2023 (23w33a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#atan
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#arctangent
 # Dependencies:
 # Note:
 

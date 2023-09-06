@@ -13,7 +13,6 @@ Libraries are set of functions, predicates etc. dedicated to datapackers.
 biome
 bitwise
 block
-cache
 color
 health
 id
@@ -23,7 +22,6 @@ location
 log
 mapedit
 math
-memory
 move
 orientation
 schedule

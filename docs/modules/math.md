@@ -1,12 +1,12 @@
 # 🧮 Math
 
-**`bs.math:_`**
+**`#bs.math:help`**
 
 The beatifull world of mathematics... **in Minecraft!**
 
 <div align=center>
 
-![](img/2023-01-27-22-55-18.png)
+![](img/math.png)
 
 </div>
 
@@ -34,127 +34,137 @@ You can find below all the function available in this module.
 
 ### Arccosine
 
-**`bs.math:trgi/arccos`**
+**`#bs.math:acos`**
 
-Calculate the arccosinus of a value between -1 and 1
+Calculate the arccosinus of a value between -1 and 1.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (score) `$math.acos.value bs.in`
+   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
+:  (score) `$math.acos bs.out`
+   : The result of the calculation, in degrees (shifted by 2 digits).
 
 Example
 
-:  Calculate and display the arccos of 0,42
-   ```
+:  Calculate and display the arccos of 0,42:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:arccos
-   tellraw @a [{"text":"arccos(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set $math.acos.value bs.in 420
+   function #bs.math:acos
+   tellraw @a [{"text":"acos(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.acos","objective":"bs.out"},"color":"gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/arcsin.png)
+![](img/arccos.png)
 
-> **Credits**: KubbyDev
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
 ### Arcsine
 
-**`bs.math:trg/arcsin`**
+**`#bs.math:asin`**
 
-Compute the arcsinus of a value between -1 and 1
+Compute the arcsinus of a value between -1 and 1.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (score) `$math.asin.value bs.in`
+   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
+:  (score) `$math.asin bs.out`
+   : The result of the calculation, in degrees (shifted by 2 digits).
 
 Example
 
-:  Calculate and display the arcsinus of 0.42
-   ```
+:  Calculate and display the arcsinus of 0.42:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:arcsin
-   tellraw @a [{"text":"arcsin(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set $math.asin.value bs.in 420
+   function #bs.math:asin
+   tellraw @a [{"text":"asin(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.asin","objective":"bs.out"},"color":"gold"}]
    ```
 
-![](https://gunivers.net/wp-content/uploads/2022/06/arccos.png)
+![](img/arcsin.png)
 
-> **Credits**: KubbyDev
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
 ### Arctangent
 
-**`bs.math:arctan`**
+**`#bs.math:atan`**
 
-Compute the arctangent of a value between -infinite and +infinite
+Compute the arctangent of a value between -infinite and +infinite.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the calculation on
-
-   (score) `@s bs.in.0`
-   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
+:  (score) `$math.atan.value bs.in`
+   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
 Output
 
-:  (score) `@s bs.out.0`
-   : The result of the calculation, in degrees (not shifted)
+:  (score) `$math.atan bs.out`
+   : The result of the calculation, in degrees (shifted by 2 digits).
 
 Example
 
-:  Calculate and display the arctan of 0.42
-   ```
+:  Calculate and display the arctan of 0.42:
+   ```mcfunction
    # Once
-   scoreboard players set @s bs.in.0 420
-   function bs.math:arctan
-   tellraw @a [{"text":"arctan(0.42) = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"},"color":"gold"}]
+   scoreboard players set $math.atan.value bs.in 420
+   function #bs.math:atan
+   tellraw @a [{"text":"atan(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.atan","objective":"bs.out"},"color":"gold"}]
    ```
 
-```{admonition} How does it work?
-:class: dropdown
 
-This function use two approximations to calculate the arctangent of a value:
+![](img/arctan.png)
 
-$$
-\begin{cases}
-\tan(x) = \left(\frac \pi 2 \frac x {|x|} - 4 \frac x {4x^2 + 1}\right)\frac \pi {180} &\forall |x| \geq 0.72\\
-\tan(x) = \left( x - \frac {x^3} 3 + \frac {x^5} 5 \right)\frac \pi {180} & \forall |x| < 0.72
-\end{cases}
-$$
+> **Credits**: Aksiome, Leirof
 
-![](img/2023-02-28-18-21-51.png)
-```
+---
 
-![](img/2023-02-28-18-34-44.png)
+### Arctangent 2
 
-> **Credits**: Leirof
+**`#bs.math:atan2`**
+
+Compute the 2-argument arctangent of y and x.
+
+Inputs
+
+:  (score) `$math.atan2.y bs.in`
+   : The y value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+   (score) `$math.atan2.x bs.in`
+   : The x value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+
+Output
+
+:  (score) `$math.atan2 bs.out`
+   : The result of the calculation, in degrees (shifted by 2 digits).
+
+Example
+
+:  Calculate and display the atan2 of (0.42, 0.8):
+   ```mcfunction
+   # Once
+   scoreboard players set $math.atan2.y bs.in 420
+   scoreboard players set $math.atan2.x bs.in 800
+   function #bs.math:atan2
+   tellraw @a [{"text":"atan2(0.42, 0.8) = ","color":"dark_gray"},{"score":{"name":"$math.atan2","objective":"bs.out"},"color":"gold"}]
+   ```
+
+> **Credits**: Aksiome
 
 ---
 
 ### Basis rotation 3D
 
-**`bs.math:basis_rotation_3d`**
+**`#bs.math:basis_rot_3d`**
 
 Allows to obtain the equivalent of the vector
 passed in parameter in a base with a different orientation. Useful to
@@ -163,14 +173,11 @@ entity.
 
 Inputs
 
-:  (execution) `as <entities>`
-   : The entities you want to perform the computation on
+:  (scores) `$math.basis_rot_3d.[x,y,z] bs.in`
+   : Vector coordinates $(X,Y,Z)$ in the starting base (shifted by 3 digits).
 
-   (scores) `@s bs.in.[0,1,2]`
-   : Vector coordinates $(X,Y,Z)$ in the starting base
-
-   (scores) `@s bs.in.[3,4]`
-   : Horizontal angle $\phi$ (along $\hat{y}$) and vertical angle $\theta$ (along $\hat{\phi}$) rotation (in degree) from the starting base
+   (scores) `$math.basis_rot_3d.[h,v] bs.in`
+   : Horizontal angle $\phi$ (along $\hat{y}$) and vertical angle $\theta$ (along $\hat{\phi}$) rotation (in degree) from the starting base (shifted by 2 digits).
 
    ```{admonition} Basis system
    :class: info
@@ -178,62 +185,62 @@ Inputs
    This system use the Minecraft coordinate system. Thus:
    - $\hat{y}$ is the vertical axis.
    - $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
-   - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane. 
+   - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane.
    ```
 
 Outputs
 
-:  (scores) `bs.out.[0,1,2]`
-   : Vector coordinates $(X',Y',Z')$ in the target base
+:  (scores) `$math.basis_rot_3d.[x,y,z] bs.out`
+   : Vector coordinates $(X',Y',Z')$ in the target base.
 
 Examples
 
-:  A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?)
-   
-   ```
+:  A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?):
+
+   ```mcfunction
    # One time
 
    # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s bs.in.0 2000
-   scoreboard players set @s bs.in.1 5000
-   scoreboard players set @s bs.in.2 10000
+   scoreboard players set $math.basis_rot_3d.x bs.in 2000
+   scoreboard players set $math.basis_rot_3d.y bs.in 5000
+   scoreboard players set $math.basis_rot_3d.z bs.in 10000
 
-   # Difference between my orientation (= that of the coondata grid ^X ^Y ^Z) and the orientation of the Minecraft blocks grid (~X ~Y ~Z)
-   function bs.orientation:get
-   scoreboard players operation @s bs.in.3 = @s bs.ori.h
-   scoreboard players operation @s bs.in.4 = @s bs.ori.v
+   # Difference between my rotation (= that of the coondata grid ^X ^Y ^Z) and the rotation of the Minecraft blocks grid (~X ~Y ~Z)
+   function #bs.position:get_rot {scale:100}
+   scoreboard players operation $math.basis_rot_3d.h bs.in = @s bs.rot.h
+   scoreboard players operation $math.basis_rot_3d.v bs.in = @s bs.rot.v
 
    # Perform the basic rotation
-   function bs.math:basis_rotation_3d
+   function #bs.math:basis_rot_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. out.1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.x", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.y", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$math.basis_rot_3d.z","objective":"bs.out"},"color":"gold"}]
    ```
 
    I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
-   
-   ```
+
+   ```mcfunction
    # Once
 
    # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set @s bs.in.0 0
-   scoreboard players set @s bs.in.1 0
-   scoreboard players set @s bs.in.2 1000
+   scoreboard players set $math.basis_rot_3d.x bs.in 0
+   scoreboard players set $math.basis_rot_3d.y bs.in 0
+   scoreboard players set $math.basis_rot_3d.z bs.in 1000
 
    # Get the orientation
-   function bs.orientation:get
-   scoreboard players operation @s bs.in.3 = @s bs.ori.h
-   scoreboard players operation @s bs.in.4 = @s bs.ori.v
+   function #bs.position:get_rot {scale:100}
+   scoreboard players operation $math.basis_rot_3d.h bs.in = @s bs.rot.h
+   scoreboard players operation $math.basis_rot_3d.v bs.in = @s bs.rot.v
 
    # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-   scoreboard players operation @s bs.in.3 *= -1 bs.const
-   scoreboard players operation @s bs.in.4 *= -1 bs.const
+   scoreboard players operation $math.basis_rot_3d.h bs.in *= -1 bs.const
+   scoreboard players operation $math.basis_rot_3d.v bs.in *= -1 bs.const
 
    # Perform the basic rotation
-   function bs.math:basis_rotation_3d
+   function #bs.math:basis_rot_3d
 
    # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. out.1"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.2"},"color":"gold"}]
+   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.x", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.y", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$math.basis_rot_3d.z","objective":"bs.out"},"color":"gold"}]
    ```
 
 > **Credits**: Leirof
@@ -421,7 +428,7 @@ Inputs
 :  (execution) `as <entities>`
    : The entities you want to perform the operation on
 
-   
+
    (score) `@s bs.in.0`
    : The number to be logarithmized, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores
 
