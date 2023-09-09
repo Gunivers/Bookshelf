@@ -14,9 +14,9 @@
 
 # CODE ------------------------------------------------------------------------
 
-$execute unless entity @a[ \
+$execute at @a unless entity @p[distance=0, \
     tag=!bs.log.$(feature).debug, \
     tag=!bs.log._.debug, \
     tag=!bs.log._._, \
     tag=!bs.log.$(feature)._\
-] run tellraw @s ["",{"text":"BS","color":"aqua"},{"text":" [DEBUG]","color":"#CCCCCC"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
+] run tellraw @p ["",{"text":"BS","color":"aqua"},{"text":" [DEBUG]","color":"#CCCCCC"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]

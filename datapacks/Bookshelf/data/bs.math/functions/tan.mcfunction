@@ -1,50 +1,21 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: KubbyDev
+# Authors: Aksiome, KubbyDev
 # Contributors:
-# MC Version: 1.13
-# Last check:
 
-# Original path: bs.math:tan
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: <true/false/global>
-# Note: The input is the angle in degrees. The result is scaled by 1000. Angle must be on interval [0;360]
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 05/09/2023 (23w33a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#tan
+# Dependencies:
+# Note:
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-
-
-
-
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-# PARAMETERS
-
-#__________________________________________________
-# INIT:
-
-
-
-# CODE
-
-scoreboard players operation @s bs.in.4 = @s bs.in.0
-
-function bs.math:cos
-
-scoreboard players operation @s bs.in.3 = @s bs.out.0
-scoreboard players operation @s bs.in.0 = @s bs.in.4
-
-function bs.math:sin
-
-scoreboard players operation @s bs.out.0 *= 1000 bs.const
-scoreboard players operation @s bs.out.0 /= @s bs.in.3
+scoreboard players operation $math.sincos.angle bs.in = $math.tan.angle bs.in
+function #bs.math:sincos
+scoreboard players operation $math.tan bs.out = $math.sincos.sin bs.out
+scoreboard players operation $math.tan bs.out *= 1000 bs.const
+scoreboard players operation $math.tan bs.out /= $math.sincos.cos bs.out
