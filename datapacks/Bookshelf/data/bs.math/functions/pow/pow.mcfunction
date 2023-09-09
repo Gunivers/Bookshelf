@@ -18,5 +18,3 @@ $scoreboard players set #math.pow.scale bs.data $(scale)
 
 execute if score #math.pow.scale bs.data matches 1 run function bs.math:pow/simple
 execute if score #math.pow.scale bs.data matches 2.. run function bs.math:pow/scaled
-
-scoreboard players get $math.pow bs.out

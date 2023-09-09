@@ -349,7 +349,7 @@ Example
 :  Calculate and display the tengeante of 42:
    ```mcfunction
    # Once
-   scoreboard players set $math.tan.value bs.in 4200
+   scoreboard players set $math.tan.angle bs.in 4200
    function #bs.math:tan
    tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
    ```
@@ -521,6 +521,9 @@ Inputs
 
    (score) `$math.pow.exp bs.in`
    : The exponent.
+
+   (macro variable) `scale`: double
+      Scalar for the function’s input base and the output.
 
 Output
 
