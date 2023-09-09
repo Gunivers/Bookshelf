@@ -53,7 +53,7 @@ execute unless score #sidebar.lines bs.data matches 1..15 run function #bs.log:e
 execute unless score #sidebar.lines bs.data matches 1..15 run return 0
 
 # Start creating each line
-execute as c9337257-2804-47d4-90bf-3eb772a4c30c run function bs.sidebar:create/do with storage bs:data sidebar.do
+execute as B5-0-0-0-2 run function bs.sidebar:create/do with storage bs:data sidebar.do
 
 # If last line is less than the total line count, an error concerning the format of the line occured
 scoreboard players operation #sidebar.lines bs.data -= #sidebar.line bs.data
