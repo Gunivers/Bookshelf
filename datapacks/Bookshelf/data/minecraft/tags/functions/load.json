@@ -4,11 +4,12 @@
     "bs.color:__load__",
     "bs.core:__load__",
     "bs.id:__load__",
+    "bs.link:__load__",
     "bs.math:__load__",
     "bs.position:__load__",
     "bs.sidebar:__load__",
     "bs.time:__load__",
     "bs.weather:__load__",
     "bs.xp:__load__"
- ]
+  ]
 }

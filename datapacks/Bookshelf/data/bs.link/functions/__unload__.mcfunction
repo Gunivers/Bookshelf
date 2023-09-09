@@ -1,3 +1,8 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# CODE ------------------------------------------------------------------------
+
 scoreboard objectives remove bs.link.rx
 scoreboard objectives remove bs.link.ry
 scoreboard objectives remove bs.link.rz
@@ -10,3 +15,5 @@ scoreboard objectives remove bs.link.rv
 scoreboard objectives remove bs.link.rh
 
 scoreboard objectives remove bs.link.to
+
+scoreboard objectives remove bs.const
