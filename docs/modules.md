@@ -64,7 +64,6 @@ modules/core
 modules/health
 modules/id
 modules/item
-modules/lgdir
 modules/link
 modules/log
 modules/mapedit

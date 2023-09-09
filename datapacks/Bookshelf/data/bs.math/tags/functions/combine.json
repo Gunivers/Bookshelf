@@ -1,5 +1,5 @@
 {
-    "values": [
-       "bs.math:combine/__main__"
-    ]
+  "values": [
+    "bs.math:combine/combine"
+  ]
 }

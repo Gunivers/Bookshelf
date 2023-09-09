@@ -120,9 +120,8 @@ The output scores should generally not be directly modified because they are use
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.location`](location)
 - [`bs.math`](math)
-- [`bs.orientation`](orientation)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
@@ -279,7 +278,7 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.location`](location)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
@@ -392,7 +391,7 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.orientation`](orientation)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
@@ -446,10 +445,9 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.location`](location)
 - [`bs.math`](math)
-- [`bs.orientation`](orientation)
 - [`bs.move`](move)
+- [`bs.position`](position)
 ```
 
 ```{admonition} How does it work?
@@ -604,7 +602,7 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.location`](location)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
@@ -722,7 +720,7 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.orientation`](orientation)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
@@ -779,9 +777,8 @@ Example
 
 This function require the following modules to work properly:
 - [`bs.id`](id)
-- [`bs.location`](location)
 - [`bs.math`](math)
-- [`bs.orientation`](orientation)
+- [`bs.position`](position)
 ```
 
 > **Credits**: Leirof
