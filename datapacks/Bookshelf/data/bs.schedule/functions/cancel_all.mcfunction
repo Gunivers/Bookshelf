@@ -8,7 +8,7 @@
 # Created: 10/09/2023 (1.20.2)
 # Last modification: 10/09/2023 (1.20.2)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#cancel-all
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#cancel
 # Dependencies:
 # Note:
 
