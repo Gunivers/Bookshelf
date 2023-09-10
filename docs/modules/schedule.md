@@ -52,7 +52,7 @@ Examples
 
 ### Clear
 
-**`#bs.schedule:clear_all`**
+**`#bs.schedule:clear`**
 
 Remove all scheduled commands.
 
@@ -60,7 +60,7 @@ Examples
 
 :   To remove all commands:
     ```mcfunction
-    function #bs.schedule:clear_all
+    function #bs.schedule:clear
     ```
 
 > **Credits**: theogiraudet, Aksiome
