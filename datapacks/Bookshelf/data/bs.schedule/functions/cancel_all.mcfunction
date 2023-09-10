@@ -4,7 +4,7 @@
 # Authors: theogiraudet, Aksiome
 # Contributors:
 
-# Version: 2.0
+# Version: 1.0
 # Created: 10/09/2023 (1.20.2)
 # Last modification: 10/09/2023 (1.20.2)
 
