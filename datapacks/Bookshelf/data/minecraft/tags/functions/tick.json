@@ -1,5 +1,6 @@
 {
- "values": [
-	"bs.core:__tick__"
- ]
+  "values": [
+    "bs.core:__tick__",
+    "bs.health:__tick__"
+  ]
 }
