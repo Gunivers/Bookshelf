@@ -1,52 +1,461 @@
 # ❤️ Health
 
-`bs.health:_`: Management by scoreboard of the life of an entity.
+`#bs.health:help`
+
+Management of the life of an entity.
 
 ---
 
-## Time to live
+## 🔧 Functions
 
-`time_to_live`: Allows to define the time of life of the entities.
+You can find below all the function available in this module.
 
-* By default, this time is 10 seconds (= 200 ticks)
-* The entity will live before being applied the end of life action (default: function bs.core:entity/safe_kill).
-* Before being applied the end of life action, the entity will receive the tag ``bs.ttl.timeOut`` during 1 tick
-* You can change each of the default values by opening the file and going to the "CONFIG" section.
+---
 
-*Example:*
+### Add / Remove
 
-Give the Creepers a 10 second life time:
+::::::{tab-set}
+:::::{tab-item} Health
+::::{tab-set}
+:::{tab-item} Macro variable
+
+**`#bs.helth:add_health`**
+
+Add health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (macro variable) `points`: double
+    : The health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Add 5 health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    function #bs.health:add_health {points:5}
+    ```
+
+:::
+:::{tab-item} Storage
+
+**`#bs.helth:add_health`**
+
+Add health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (storage) `bs:in health.add_health.points`: double
+    : The health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Add 5 health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    data modify storage bs:in health.add_health.points set value 5
+    function #bs.health:add_health
+    ```
+
+:::
+:::{tab-item} Score
+
+**`#bs.helth:add_health`**
+
+Add health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (score) `$health.add_health.points bs.in`: int
+    : The health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Add 5 health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    scoreboard players set $health.add_health.points bs.in 5
+    function #bs.health:add_health
+    ```
+
+:::
+::::
+:::::
+:::::{tab-item} Max health
+::::{tab-set}
+:::{tab-item} Macro variable
+
+**`#bs.helth:add_max_health`**
+
+Add max health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose max health will be updated.
+
+    (macro variable) `points`: double
+    : The max health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players max health is updated.
+
+Example
+
+:   Add 5 max health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    function #bs.health:add_max_health {points:5}
+    ```
+
+:::
+:::{tab-item} Storage
+
+**`#bs.helth:add_max_health`**
+
+Add max health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose max health will be updated.
+
+    (storage) `bs:in health.add_max_health.points`: double
+    : The max health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players max health is updated.
+
+Example
+
+:   Add 5 max health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    data modify storage bs:in health.add_max_health.points set value 5
+    function #bs.health:add_max_health
+    ```
+
+:::
+:::{tab-item} Score
+
+**`#bs.helth:add_max_health`**
+
+Add max health points to the player.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose max health will be updated.
+
+    (score) `$health.add_max_health.points bs.in`: int
+    : The max health points to add to the player.
+
+Outputs
+
+:   (state) players health
+    : The players max health is updated.
+
+Example
+
+:   Add 5 max health point to the player:
+
+    ```mcfunction
+    # Once (execute on you)
+    scoreboard players set $health.add_max_health.points bs.in 5
+    function #bs.health:add_max_health
+    ```
+
+:::
+::::
+:::::
+::::::
+
+```{admonition} How to remove
+:class: tip
+
+You can use negative numbers to remove experience from the player.
 
 ```
-# At each tick
-execute as @e[type=creeper] run function bs.health:time_to_live
-```
 
-Give a time to live of 20 seconds to the Cow:
+> **Credits**: Aksiome
 
-```
-# At least once
-scoreboard players set @e[type=cow,tag=bs.ttl.default] bs.ttl 400
-# At each tick
-execute as @e[type=cow] run function bs:time_to_live
-```
+---
 
-Give an explosion effect to Creepers at the end of their life
+### Set
 
-```
-# At each tick
-execute as @e[type=creeper] run function bs.health:time_to_live
-execute as @e[tag=bs.ttl.timeOut] at @s run playsound minecraft:entity.generic.explode master @a
-execute as @e[tag=bs.ttl.timeOut] at @s run article minecraft:explosion_emitter ~ ~ ~
-```
+::::::{tab-set}
+:::::{tab-item} Health
+::::{tab-set}
+:::{tab-item} Macro variable
 
-```{warning}
+**`#bs.helth:set_health`**
 
-If the TTL function is called twice on the same entity, its
-lifetime will decrease twice as fast.
-```
+Set the player health.
 
-> **Credits**: Leirof
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (macro variable) `points`: double
+    : The health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Set the player health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    function #bs.health:set_health {points:10}
+    ```
+
+:::
+:::{tab-item} Storage
+
+**`#bs.helth:set_health`**
+
+Set the player health.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (storage) `bs:in health.set_health.points`: double
+    : The health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Set the player health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    data modify storage bs:in health.set_health.points set value 10
+    function #bs.health:set_health
+    ```
+
+:::
+:::{tab-item} Score
+
+**`#bs.helth:set_health`**
+
+Set the player health.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose health will be updated.
+
+    (score) `$health.set_health.points bs.in`: int
+    : The health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players health is updated.
+
+Example
+
+:   Set the player health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    scoreboard players set $health.set_health.points bs.in 10
+    function #bs.health:set_health
+    ```
+
+:::
+::::
+:::::
+:::::{tab-item} Max health
+::::{tab-set}
+:::{tab-item} Macro variable
+
+**`#bs.helth:set_max_health`**
+
+Set the player maximum health.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose maximum health will be updated.
+
+    (macro variable) `points`: double
+    : The maximum health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players maximum health is updated.
+
+Example
+
+:   Set the player maximum health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    function #bs.health:set_max_health {points:10}
+    ```
+
+:::
+:::{tab-item} Storage
+
+**`#bs.helth:set_max_health`**
+
+Set the player maximum health.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose maximum health will be updated.
+
+    (storage) `bs:in health.set_max_health.points`: double
+    : The maximum health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players maximum health is updated.
+
+Example
+
+:   Set the player maximum health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    data modify storage bs:in health.set_max_health.points set value 10
+    function #bs.health:set_max_health {points:10}
+    ```
+
+:::
+:::{tab-item} Score
+
+**`#bs.helth:set_max_health`**
+
+Set the player maximum health.
+
+Inputs
+
+:   (execution) `as <player>`
+    : The player whose maximum health will be updated.
+
+    (score) `$health.set_max_health.points bs.in`: int
+    : The maximum health of the player.
+
+Outputs
+
+:   (state) players health
+    : The players maximum health is updated.
+
+Example
+
+:   Set the player maximum health to 10 using a macro:
+
+    ```mcfunction
+    # Once (execute on you)
+    scoreboard players set $health.set_max_health.points bs.in 10
+    function #bs.health:set_max_health {points:10}
+    ```
+
+:::
+::::
+:::::
+::::::
+
+> **Credits**: Aksiome
+
+---
+
+### Time to live
+
+**`#bs.helth:time_to_live`**
+
+Allows to define the time of life of the entities.
+
+Inputs
+
+:   (execution) `as <entity>`
+    : The entity to add a life time to.
+
+    (macro variable) `time`: int (optional)
+    : The time to live. In ticks by default if unit is not defined.
+
+    (macro variable) `unit`: string (optional)
+    : The unit of the specified time. Possible values: 'tick', 'second', 'minute', 'hour', 't', 's', 'm', 'h'.
+
+    (macro variable) `on_death`: string (optional)
+    : A command that will be run as the entity on its death.
+
+Example
+
+:   Give the creepers a 10 second life time:
+
+    ```mcfunction
+    # Once
+    execute as @e[type=minecraft:creeper] run function #bs.health:time_to_live {time:10,unit:"s"}
+    ```
+
+:   Give an explosion effect to creepers at the end of their life:
+
+    ```mcfunction
+    # Once
+    execute as @e[type=minecraft:creeper] run function #bs.health:time_to_live {time:10,on_death:"execute at @s run particle minecraft:explosion_emitter ~ ~ ~"}
+    ```
+
+:   Update the on_death callback at any given time:
+
+    ```mcfunction
+    # Once
+    execute as @e[type=minecraft:creeper] run function #bs.health:time_to_live {time:100,on_death:"execute at @s run particle minecraft:explosion_emitter ~ ~ ~"}
+
+    # Update the on_death callback of a single creeper before it dies
+    execute as @e[type=minecraft:creeper,limit=1] run function #bs.health:time_to_live {on_death:"say GOTCHA"}
+    ```
+
+> **Credits**: Aksiome, Leirof
 
 ---
 
