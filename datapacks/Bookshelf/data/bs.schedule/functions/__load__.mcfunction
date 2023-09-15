@@ -3,7 +3,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard objectives add bs.data dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 
 execute unless data storage bs:data schedule.commands run data modify storage bs:data schedule.commands set value []
 data modify storage bs:const schedule.units set value [ \
