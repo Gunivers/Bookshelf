@@ -79,11 +79,14 @@ Inputs
 
 Outputs
 
-:   (score) `@s bs.link.r[x,y,z,h,v]`
-    : Representing the relative coordinates (position + orientation).
+:   (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
 
     (score) `@s bs.link.l[x,y,z]`
-    : Representing local coordinates (position only).
+    : Representing local position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing local rotation.
 
     (score) `@s bs.link.to`
     : Identifies the entity to which it is linked.
@@ -119,8 +122,11 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
@@ -151,7 +157,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative coordinates.
+    : Representing the relative position.
 
 Outputs
 
@@ -174,20 +180,20 @@ Example
 
 **`#bs.link:imitate_rot`**
 
-Allows to replace the entity at its relative rotation. This operation repeated in a loop is to imitate rotations of the parent entity.
+Allows to replace the entity at its local rotation. This operation repeated in a loop is to imitate rotations of the parent entity.
 
 Inputs
 
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
 :   (state) @s rotation
-    : The entity is moved such as it maintain the relative rotation with the parent entity.
+    : The entity is moved such as it maintain the local rotation of the parent entity.
 
 Example
 
@@ -213,7 +219,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rx`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -244,7 +250,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.ry`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -275,7 +281,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rz`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -298,20 +304,20 @@ Example
 
 **`#bs.link:imitate_rot_h`**
 
-Allows to replace the entity to its relative horizontal orientation. This operation repeated in a loop is to imitate the rotations of the parent entity on the horizontal axis.
+Allows to replace the entity to its local horizontal rotation. This operation repeated in a loop is to imitate the rotations of the parent entity on the horizontal axis.
 
 Inputs
 
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.rh`
-    : Representing the horizontal relative rotation (rotation only).
+    (score) `@s bs.link.lh`
+    : Representing the horizontal local rotation.
 
 Outputs
 
 :   (state) @s rotation
-    : The entity is rotated such as it maintain the relative orientation with the parent entity on the horizontal axis.
+    : The entity is rotated such as it maintain the rotation of the parent entity on the horizontal axis.
 
 Example
 
@@ -329,20 +335,20 @@ Example
 
 **`#bs.link:imitate_rot_v`**
 
-Allows to replace the entity to its relative vertical orientation. This operation repeated in a loop is to imitate the rotations of the parent entity on the vertical axis.
+Allows to replace the entity to its local vertical rotation. This operation repeated in a loop is to imitate the rotations of the parent entity on the vertical axis.
 
 Inputs
 
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.rv`
-    : Representing the vertical relative rotation (rotation only).
+    (score) `@s bs.link.lv`
+    : Representing the vertical local rotation.
 
 Outputs
 
 :   (state) @s rotation
-    : The entity is rotated such as it maintain the relative orientation with the parent entity on the vertical axis.
+    : The entity is rotated such as it maintain the rotation of the parent entity on the vertical axis.
 
 Example
 
@@ -434,8 +440,11 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
@@ -465,8 +474,11 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
@@ -540,8 +552,11 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[x,y,z,h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
@@ -572,7 +587,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative coordinates.
+    : Representing the relative position.
 
 Outputs
 
@@ -602,8 +617,8 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.r[h,v]`
-    : Representing the relative coordinates.
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
 
 Outputs
 
@@ -634,7 +649,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rx`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -665,7 +680,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.ry`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -696,7 +711,7 @@ Inputs
     : The executing entity must be linked to another entity.
 
     (score) `@s bs.link.rz`
-    : Representing the relative coordinates (position only).
+    : Representing the relative position.
 
 Outputs
 
@@ -726,8 +741,8 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.rh`
-    : Representing the horizontal relative rotation (rotation only).
+    (score) `@s bs.link.lh`
+    : Representing the horizontal local rotation.
 
 Outputs
 
@@ -758,8 +773,8 @@ Inputs
 :   (execution) `as <entities>`
     : The executing entity must be linked to another entity.
 
-    (score) `@s bs.link.rv`
-    : Representing the vertical relative rotation (rotation only).
+    (score) `@s bs.link.lv`
+    : Representing the vertical local rotation.
 
 Outputs
 
@@ -802,14 +817,15 @@ Inputs
 
 Outputs
 
-:   (score) `@s bs.link.r[h,v]`
-    : Representing the relative orientation (rotation only).
-
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative coordinates (position only).
+:   (score) `@s bs.link.r[x,y,z]`
+    : Representing the relative position.
 
     (score) `@s bs.link.l[x,y,z]`
-    : Representing the local coordinates (position only).
+    : Representing the local position.
+
+    (score) `@s bs.link.l[h,v]`
+    : Representing the local rotation.
+
 
 Example
 

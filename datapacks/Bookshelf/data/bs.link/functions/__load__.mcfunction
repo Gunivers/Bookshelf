@@ -11,8 +11,8 @@ scoreboard objectives add bs.link.lx dummy [{"text":"BS ","color":"dark_gray"},{
 scoreboard objectives add bs.link.ly dummy [{"text":"BS ","color":"dark_gray"},{"text":"Local position Y","color":"aqua"}]
 scoreboard objectives add bs.link.lz dummy [{"text":"BS ","color":"dark_gray"},{"text":"Local position Z","color":"aqua"}]
 
-scoreboard objectives add bs.link.rv dummy [{"text":"BS ","color":"dark_gray"},{"text":"Relative rotation V","color":"aqua"}]
-scoreboard objectives add bs.link.rh dummy [{"text":"BS ","color":"dark_gray"},{"text":"Relative rotation H","color":"aqua"}]
+scoreboard objectives add bs.link.lv dummy [{"text":"BS ","color":"dark_gray"},{"text":"Local rotation V","color":"aqua"}]
+scoreboard objectives add bs.link.lh dummy [{"text":"BS ","color":"dark_gray"},{"text":"Local rotation H","color":"aqua"}]
 
 scoreboard objectives add bs.link.to dummy [{"text":"BS ","color":"dark_gray"},{"text":"Linked to","color":"aqua"}]
 
