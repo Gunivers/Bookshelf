@@ -9,4 +9,4 @@ execute store result score #schedule.game_time bs.data run time query gametime
 # if the execution time is equal or lower than the game time, execute the command.
 execute unless score #schedule.next_time bs.data matches 0 \
   if score #schedule.game_time bs.data >= #schedule.next_time bs.data \
-  run function bs.schedule:execute/run_recursive with storage bs:data schedule.commands[-1]
+  run function bs.schedule:execute/loop
