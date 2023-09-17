@@ -15,6 +15,7 @@
 # CODE ------------------------------------------------------------------------
 
 execute unless data storage bs:data schedule.command run return -1
+execute if score #schedule.selector bs.data matches 0 run return -1
 
 # Compute the game time at which the command must be executed and add a unique id.
 execute store result score #schedule.time bs.data run data get storage bs:data schedule.command.time 1
