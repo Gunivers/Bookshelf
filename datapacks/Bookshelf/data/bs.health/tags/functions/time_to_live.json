@@ -1,0 +1,8 @@
+{
+  "values": [
+    "bs.health:time_to_live/macros/time",
+    "bs.health:time_to_live/macros/unit",
+    "bs.health:time_to_live/macros/on_death",
+    "bs.health:time_to_live/time_to_live"
+  ]
+}

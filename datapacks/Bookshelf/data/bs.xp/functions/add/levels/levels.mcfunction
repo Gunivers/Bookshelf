@@ -14,7 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute unless score #xp.use_macro bs.data matches 1 store success score #xp.score_changed bs.data unless score #xp.add_levels.check bs.data = $xp.add_levels.levels bs.in
-execute unless score #xp.use_macro bs.data matches 1 if score #xp.score_changed bs.data matches 1 store result storage bs:in xp.add_levels.levels int 1 run scoreboard players operation #xp.add_levels.check bs.data = $xp.add_levels.levels bs.in
+execute unless score #xp.use_macro bs.data matches 1 unless score #xp.add_levels.check bs.data = $xp.add_levels.levels bs.in store result storage bs:in xp.add_levels.levels int 1 run scoreboard players operation #xp.add_levels.check bs.data = $xp.add_levels.levels bs.in
 execute unless score #xp.use_macro bs.data matches 1 run function bs.xp:add/levels/macro with storage bs:in xp.add_levels
 scoreboard players reset #xp.use_macro bs.data

@@ -3,7 +3,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard objectives add bs.data dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 
 scoreboard players set $module.sidebar.enabled bs.metadata 1
 

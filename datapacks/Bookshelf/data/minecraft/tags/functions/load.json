@@ -2,7 +2,7 @@
   "values": [
     "bs.biome:__load__",
     "bs.color:__load__",
-    "bs.core:__load__",
+    "bs.health:__load__",
     "bs.id:__load__",
     "bs.math:__load__",
     "bs.position:__load__",
