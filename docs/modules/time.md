@@ -4,6 +4,12 @@
 
 This module allow to get information about the system time.
 
+```{admonition} Enable command blocks
+:class: warning
+
+This module uses a command block to get the system time. Be sure that `enable-command-block` is set to `true` in you `server.properties` file.
+```
+
 ##  🔧 Functions
 
 You can find below all the function available in this module.
