@@ -2,10 +2,12 @@
   "values": [
     "bs.biome:__load__",
     "bs.color:__load__",
+    "bs.health:__load__",
     "bs.id:__load__",
     "bs.link:__load__",
     "bs.math:__load__",
     "bs.position:__load__",
+    "bs.schedule:__load__",
     "bs.sidebar:__load__",
     "bs.time:__load__",
     "bs.weather:__load__",

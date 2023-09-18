@@ -14,7 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute unless score #xp.use_macro bs.data matches 1 store success score #xp.score_changed bs.data unless score #xp.set_progress.check bs.data = $xp.set_progress.progress bs.in
-execute unless score #xp.use_macro bs.data matches 1 if score #xp.score_changed bs.data matches 1 store result storage bs:in xp.set_progress.progress int 1 run scoreboard players operation #xp.set_progress.check bs.data = $xp.set_progress.progress bs.in
+execute unless score #xp.use_macro bs.data matches 1 unless score #xp.set_progress.check bs.data = $xp.set_progress.progress bs.in store result storage bs:in xp.set_progress.progress int 1 run scoreboard players operation #xp.set_progress.check bs.data = $xp.set_progress.progress bs.in
 execute unless score #xp.use_macro bs.data matches 1 run function bs.xp:set/progress/macro with storage bs:in xp.set_progress
 scoreboard players reset #xp.use_macro bs.data

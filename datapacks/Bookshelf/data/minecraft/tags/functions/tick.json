@@ -1,3 +1,7 @@
 {
-  "values": []
+  "values": [
+    "bs.core:__tick__",
+    "bs.schedule:__tick__",
+    "bs.health:__tick__"
+  ]
 }

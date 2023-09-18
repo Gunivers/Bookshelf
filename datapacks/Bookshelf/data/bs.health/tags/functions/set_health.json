@@ -1,0 +1,6 @@
+{
+  "values": [
+    "bs.health:set/health/macro",
+    "bs.health:set/health/health"
+  ]
+}
