@@ -29,10 +29,13 @@ Inputs
     : The command to schedule.
 
     (macro variable) `time`: integer
-    : The time to wait before the execution of the command.
+    : The time to wait before the execution of the command. In ticks by default if unit is not defined.
 
-    (macro variable) `unit`: string
+    (macro variable) `unit`: string (optional)
     : The unit of the specified time. Possible values: 'tick', 'second', 'minute', 'hour', 't', 's', 'm', 'h'.
+
+    (macro variable) `selector`: string (optional)
+    : A selector for the command to be executed as. Only one entity is allowed.
 
 Examples
 
@@ -44,6 +47,11 @@ Examples
     Example to execute `kill @e[type=slime]` in 2 minutes:
     ```mcfunction
     function #bs.schedule:schedule { unit: "minute", id: "foo", time: 2, command: "kill @e[type=slime]" }
+    ```
+
+    Example to execute `say @s` as @s in 2 seconds:
+    ```mcfunction
+    function #bs.schedule:schedule { unit: "s", id: "foo", time: 2, command: "say @s", selector: "@s" }
     ```
 
 > **Credits**: theogiraudet, Aksiome

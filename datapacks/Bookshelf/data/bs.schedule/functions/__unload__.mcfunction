@@ -3,6 +3,9 @@
 
 # CODE ------------------------------------------------------------------------
 
+forceload remove 0 0
+kill B5-0-0-0-3
+
 scoreboard objectives remove bs.data
 
 data remove storage bs:data schedule
