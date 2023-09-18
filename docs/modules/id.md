@@ -177,6 +177,21 @@ Example
     execute as @e[predicate=bs.id:suid_upper] run say I'm an adult
     ```
 :::
+:::{tab-item} Has
+
+**`bs.id:has_suid`**
+
+Check if an entity has a ``bs.id`` score.
+
+Example
+
+:   Give an suid to all entities that aren't identified by a ``bs.id`` score:
+
+    ```mcfunction
+    execute as @e[predicate=!bs.id:has_suid] run function #bs.id:give_suid
+    ```
+
+:::
 ::::
 
 > **Credits**: Aksiome
@@ -250,6 +265,21 @@ Example
 
     execute as @e[predicate=bs.id:cuid_upper] run say I'm an adult
     ```
+:::
+:::{tab-item} Has
+
+**`bs.id:has_cuid`**
+
+Check if an entity has a ``bs.cid`` score.
+
+Example
+
+:   Give a cuid to all entities that aren't identified by a ``bs.cid`` score:
+
+    ```mcfunction
+    execute as @e[predicate=!bs.id:has_cuid] run function #bs.id:give_cuid
+    ```
+
 :::
 ::::
 

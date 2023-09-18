@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-tp B5-0-0-0-1 @s
+tp B5-0-0-0-1 ~ ~ ~
 $execute store result score @s bs.pos.x run data get entity B5-0-0-0-1 Pos[0] $(scale)
 tp B5-0-0-0-1 0 0 0 0 0

@@ -1,2 +1,0 @@
-tellraw @s [{"text": "[bs.link documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://mc-bookshelf.rtfd.io/en/latest/link.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
-scoreboard players set module.link bs.metadata 1
