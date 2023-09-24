@@ -18,11 +18,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #bitwise.msb bs.data = $bitwise.msb.value bs.in
-execute if score $bitwise.msb.value bs.in matches ..-1 run scoreboard players operation #bitwise.msb bs.data *= -1 bs.const
-execute if score $bitwise.msb.value bs.in matches ..-1 run scoreboard players remove #bitwise.msb bs.data 1
-
-execute if score #bitwise.msb bs.data matches 0..127 run function bs.bitwise:msb/group_1
-execute if score #bitwise.msb bs.data matches 128..32767 run function bs.bitwise:msb/group_2
-execute if score #bitwise.msb bs.data matches 32768..8388607 run function bs.bitwise:msb/group_3
-execute if score #bitwise.msb bs.data matches 8388608.. run function bs.bitwise:msb/group_4
+execute if score $bitwise.msb.value bs.in matches 0..127 run function bs.bitwise:msb/group_1
+execute if score $bitwise.msb.value bs.in matches 128..32767 run function bs.bitwise:msb/group_2
+execute if score $bitwise.msb.value bs.in matches 32768..8388607 run function bs.bitwise:msb/group_3
+execute if score $bitwise.msb.value bs.in matches 8388608..2147483647 run function bs.bitwise:msb/group_4
+execute if score $bitwise.msb.value bs.in matches ..-1 run scoreboard players set $bitwise.msb bs.out -2147483648
