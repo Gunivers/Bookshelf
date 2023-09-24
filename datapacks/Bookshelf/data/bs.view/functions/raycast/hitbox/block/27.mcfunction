@@ -1,0 +1,13 @@
+# door group
+execute if block ~ ~ ~ #minecraft:doors[facing=west,open=false] run data modify storage bs:data _ set value [[13, 0, 0, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=east,open=false] run data modify storage bs:data _ set value [[0, 0, 0, 3, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=north,open=false] run data modify storage bs:data _ set value [[0, 0, 13, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=south,open=false] run data modify storage bs:data _ set value [[0, 0, 0, 16, 16, 3]]
+execute if block ~ ~ ~ #minecraft:doors[facing=west,open=true,hinge=left] run data modify storage bs:data _ set value [[0, 0, 13, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=east,open=true,hinge=left] run data modify storage bs:data _ set value [[0, 0, 0, 16, 16, 3]]
+execute if block ~ ~ ~ #minecraft:doors[facing=north,open=true,hinge=left] run data modify storage bs:data _ set value [[0, 0, 0, 3, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=south,open=true,hinge=left] run data modify storage bs:data _ set value [[13, 0, 0, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=west,open=true,hinge=right] run data modify storage bs:data _ set value [[0, 0, 0, 16, 16, 3]]
+execute if block ~ ~ ~ #minecraft:doors[facing=east,open=true,hinge=right] run data modify storage bs:data _ set value [[0, 0, 13, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=north,open=true,hinge=right] run data modify storage bs:data _ set value [[13, 0, 0, 16, 16, 16]]
+execute if block ~ ~ ~ #minecraft:doors[facing=south,open=true,hinge=right] run data modify storage bs:data _ set value [[0, 0, 0, 3, 16, 16]]

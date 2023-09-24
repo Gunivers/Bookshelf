@@ -1,12 +1,7 @@
 {
   "values": [
-    "#minecraft:small_flowers",
     "minecraft:air",
-    "minecraft:bamboo_sapling",
-    "minecraft:bamboo",
     "minecraft:cave_air",
-    "minecraft:mangrove_propagule",
-    "minecraft:pointed_dripstone",
     "minecraft:void_air"
   ]
 }
