@@ -14,4 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.math:atan2/as
+execute store result entity B5-0-0-0-1 Pos[2] double 0.001 run scoreboard players get $math.atan2.x bs.in
+execute store result entity B5-0-0-0-1 Pos[0] double 0.001 run scoreboard players get $math.atan2.y bs.in
+execute positioned 0.0 0.0 0.0 facing entity B5-0-0-0-1 feet rotated ~ 0.0 run tp B5-0-0-0-1 0.0 0.0 0.0 ~ ~
+execute store result score $math.atan2 bs.out run data get entity B5-0-0-0-1 Rotation[0] -100

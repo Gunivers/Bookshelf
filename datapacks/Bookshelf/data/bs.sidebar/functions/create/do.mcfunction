@@ -15,3 +15,4 @@ data modify entity @s text set from storage bs:data sidebar.do.contents[0]
 data modify storage bs:data sidebar.do.text set from entity @s text
 
 function bs.sidebar:create/loop with storage bs:data sidebar.do
+data modify entity @s CustomName set value '[{"text":"BS ","color":"dark_gray"},{"text":"Text Display","color":"aqua"}]'
