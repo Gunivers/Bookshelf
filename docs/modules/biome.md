@@ -19,53 +19,56 @@ You can find below all functions available in this module.
 
 **`#bs.biome:get_base_temperature`**
 
-Allows to retrieve the base temperature of the
-biome at the execution position of the function.
+Get the base temperature of the biome at the execution position of the function.
 
 Inputs
 
 :   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position where you want to get the temperature.
+    : The position from which you want to get the temperature.
 
 Output
 
-:   (score) `$biome.get_base_temperature bs.out` as an int scaled by 10^8
-    : The base temperature of the biome.
+:   (score) `$biome.get_base_temperature bs.out`
+    : The base temperature of the biome (scaled by 10^8).
+
+    (return)
+    : The base temperature of the biome (scaled by 10^8).
 
 Example
 
-:   Get the base temperature of the current biome
+:   Get the base temperature of the current biome:
 
     ```
     # Once
     function #bs.biome:get_base_temperature
 
     # See the result
-    tellraw @a [{"text": "The temperature of my biome: ", "color": "dark_gray"},{"score":{"name":"$biome.get_base_temperature", "objective": "bs.out"}, "color": "gold"}]
+    tellraw @a [{"text": "The base temperature of the biome: ", "color": "dark_gray"},{"score":{"name":"$biome.get_base_temperature", "objective": "bs.out"}, "color": "gold"}]
     ```
 
 :::
-:::{tab-item} At a given location
+:::{tab-item} At a given position
 
 **`#bs.biome:get_temperature`**
 
-Allows to retrieve the temperature at the execution
-position of the function taking into account the temperature of the
-biome and its altitude.
+Get the temperature at the execution position of the function taking the altitude into account.
 
 Inputs
 
 :   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position where you want to get the temperature.
+    : The position from which you want to get the temperature.
 
 Output
 
-:   (score) `$biome.get_temperature bs.out` as an int scaled by 10^8
-    : The temperature at the given location.
+:   (score) `$biome.get_temperature bs.out`
+    : The temperature at the given position (scaled by 10^8).
+
+    (return)
+    : The temperature at the given position (scaled by 10^8).
 
 Example
 
-:   Get the temperature at the current altitude
+:   Get the temperature at the current altitude:
 
     ```
     # Once

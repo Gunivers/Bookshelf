@@ -14,8 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-function #bs.biome:get_base_temperature
-scoreboard players operation $biome.get_temperature bs.out = $biome.get_base_temperature bs.out
+execute store result score $biome.get_temperature bs.out run function #bs.biome:get_base_temperature
 
 execute store result score #biome.variation bs.data run data get entity @s Pos[1]
 scoreboard players remove #biome.variation bs.data 80
