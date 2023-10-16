@@ -41,6 +41,35 @@ You can find below all the function available in this module.
 
 ### logical AND
 
+```{function} #bs.bitwise:and
+
+Computes the bitwise conjunction of the two input numbers.
+
+:Inputs:
+  **(score)** `$bitwise.and.a bs.in`: The first operand $a$.
+
+  **(score)** `$bitwise.and.b bs.in`: The second operand $b$.
+
+:Outputs:
+  **(return) | (score)** `$bitwise.and bs.out`: The result of the operation = $a \times b$.
+```
+
+Example
+
+:  Calculate and display $-9 \times 57$:
+   ```mcfunction
+   # Once
+   scoreboard players set $bitwise.and.a bs.in -9
+   scoreboard players set $bitwise.and.b bs.in 57
+   function #bs.bitwise:and
+   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"$bitwise.and", "objective": "bs.out"}, "color": "gold"}]
+   ```
+
+> **Credits**: theogiraudet, Aksiome
+
+---
+
+
 **`#bs.bitwise:and`**
 
 Computes the bitwise conjunction of the two input numbers

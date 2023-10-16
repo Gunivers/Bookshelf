@@ -1,17 +1,41 @@
 html[data-theme="light"] {
-    --pst-color-primary: #3296fa;
+    --pst-color-primary: #79a3f2;
     --pst-color-secondary: #fa9632;
     --sd-color-card-border-hover: var(--pst-color-primary);
     --pst-color-primary-highlight: var(--pst-color-secondary);
 }
 
 html[data-theme="dark"] {
-    --pst-color-primary: #3296fa;
-    --pst-color-secondary: #fa9632;
-    --sd-color-card-border-hover: var(--pst-color-primary);
+    --pst-color-primary: #79a3f2;
+    --pst-color-secondary: #ec8523;
     --pst-color-primary-highlight: var(--pst-color-secondary);
+    --sd-color-primary: #3b6bc4;
+    --sd-color-primary-text: #eee;
+    --sd-color-card-border-hover: var(--pst-color-primary);
+    --pst-color-info-bg: #1f407e;
+    --pst-color-warning-bg: #803e12;
+    --pst-color-success-bg: #064224;
+    --pst-color-danger-bg: #6d0c0c;
 }
 
 a.headerlink {
     color: var(--pst-color-secondary);
+}
+
+nav a:hover, nav button:hover {
+  text-decoration: none!important;
+}
+
+.bd-content .sd-tab-set>label {
+  border-top: none;
+}
+
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #666b7a;
 }
