@@ -76,10 +76,10 @@ Computes the bitwise conjunction of the two input numbers
 
 Inputs
 
-:  (score) `$bitwise.and.0 bs.in`
+:  (score) `$bitwise.and.a bs.in`
    : The first operand $a$
 
-   (score) `$bitwise.and.1 bs.in`
+   (score) `$bitwise.and.b bs.in`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -99,8 +99,8 @@ Example
 :  Calculate and display $-9 \times 57$
    ```mcfunction
    # Once
-   scoreboard players set $bitwise.and.0 bs.in -9
-   scoreboard players set $bitwise.and.1 bs.in 57
+   scoreboard players set $bitwise.and.a bs.in -9
+   scoreboard players set $bitwise.and.b bs.in 57
    function #bs.bitwise:and
    tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"$bitwise.and", "objective": "bs.out"}, "color": "gold"}]
    ```
@@ -117,10 +117,10 @@ Computes the bit to bit disjunction of the two input numbers
 
 Inputs
 
-:  (score) `$bitwise.or.0 bs.in`
+:  (score) `$bitwise.or.a bs.in`
    : The first operand $a$
 
-   (score) `$bitwise.or.1 bs.in`
+   (score) `$bitwise.or.b bs.in`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -140,8 +140,8 @@ Example
 :  Calculate and display $-9 + 57$.
    ```mcfunction
    # Once
-   scoreboard players set $bitwise.or.0 bs.in -9
-   scoreboard players set $bitwise.or.1 bs.in 57
+   scoreboard players set $bitwise.or.a bs.in -9
+   scoreboard players set $bitwise.or.b bs.in 57
    function #bs.bitwise:or
    tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"$bitwise.or", "objective": "bs.out"}, "color": "gold"}]
    ```
@@ -159,10 +159,10 @@ numbers
 
 Inputs
 
-:  (score) `$bitwise.xor.0 bs.in`
+:  (score) `$bitwise.xor.a bs.in`
    : The first operand $a$
 
-   (score) `$bitwise.xor.1 bs.in`
+   (score) `$bitwise.xor.b bs.in`
    : The second operand $b$
 
    ```{admonition} Negative input
@@ -182,8 +182,8 @@ Example
 :  Calculate and display $-9 \oplus 57$.
    ```mcfunction
    # Once
-   scoreboard players set $bitwise.xor.0 bs.in -9
-   scoreboard players set $bitwise.xor.1 bs.in 57
+   scoreboard players set $bitwise.xor.a bs.in -9
+   scoreboard players set $bitwise.xor.b bs.in 57
    function #bs.bitwise:xor
    tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"$bitwise.xor", "objective": "bs.out"}, "color": "gold"}]
    ```

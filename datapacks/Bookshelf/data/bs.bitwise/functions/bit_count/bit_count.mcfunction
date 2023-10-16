@@ -17,10 +17,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #bitwise.bit_count bs.data = $bitwise.bit_count.value bs.in
-execute if score $bitwise.bit_count.value bs.in matches ..-1 run scoreboard players operation #bitwise.bit_count bs.data *= -1 bs.const
-
-execute if score #bitwise.bit_count bs.data matches 0..127 run function bs.bitwise:bit_count/group_1
-execute if score #bitwise.bit_count bs.data matches 128..32767 run function bs.bitwise:bit_count/group_2
-execute if score #bitwise.bit_count bs.data matches 32768..8388607 run function bs.bitwise:bit_count/group_3
-execute if score #bitwise.bit_count bs.data matches 8388608.. run function bs.bitwise:bit_count/group_4
+execute if score $bitwise.bit_count.value bs.in matches 0..127 run function bs.bitwise:bit_count/group_1
+execute if score $bitwise.bit_count.value bs.in matches 128..32767 run function bs.bitwise:bit_count/group_2
+execute if score $bitwise.bit_count.value bs.in matches 32768..8388607 run function bs.bitwise:bit_count/group_3
+execute if score $bitwise.bit_count.value bs.in matches 8388608..2147483647 run function bs.bitwise:bit_count/group_4
+execute if score $bitwise.bit_count.value bs.in matches ..-1 run scoreboard players set $bitwise.bit_count bs.out 32
