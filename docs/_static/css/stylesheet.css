@@ -30,7 +30,6 @@ nav a:hover, nav button:hover {
   border-top: none;
 }
 
-
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -38,4 +37,12 @@ nav a:hover, nav button:hover {
 
 *::-webkit-scrollbar-thumb {
   background: #666b7a;
+}
+
+.function > dd {
+  margin-left: 0!important;
+}
+
+.function dl.field-list > dd {
+  text-indent: -1rem;
 }

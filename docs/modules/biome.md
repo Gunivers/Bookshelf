@@ -17,28 +17,22 @@ You can find below all functions available in this module.
 ::::{tab-set}
 :::{tab-item} Base temperature
 
-**`#bs.biome:get_base_temperature`**
+```{function} #bs.biome:get_base_temperature
 
 Get the base temperature of the biome at the execution position of the function.
 
-Inputs
+:Inputs:
+  **(execution)** `at <entity>` or `positioned <x> <y> <z>`: The position from which you want to get the temperature.
 
-:   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position from which you want to get the temperature.
-
-Output
-
-:   (score) `$biome.get_base_temperature bs.out`
-    : The base temperature of the biome (scaled by 10^8).
-
-    (return)
-    : The base temperature of the biome (scaled by 10^8).
+:Outputs:
+  **(return) & (score)** `$biome.get_base_temperature bs.out`: The base temperature of the biome (scaled by 10^8).
+```
 
 Example
 
 :   Get the base temperature of the current biome:
 
-    ```
+    ```mcfunction
     # Once
     function #bs.biome:get_base_temperature
 
@@ -49,28 +43,22 @@ Example
 :::
 :::{tab-item} At a given position
 
-**`#bs.biome:get_temperature`**
+```{function} #bs.biome:get_temperature
 
 Get the temperature at the execution position of the function taking the altitude into account.
 
-Inputs
+:Inputs:
+  **(execution)** `at <entity>` or `positioned <x> <y> <z>`: The position from which you want to get the temperature.
 
-:   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position from which you want to get the temperature.
-
-Output
-
-:   (score) `$biome.get_temperature bs.out`
-    : The temperature at the given position (scaled by 10^8).
-
-    (return)
-    : The temperature at the given position (scaled by 10^8).
+:Outputs:
+  **(return) & (score)** `$biome.get_base_temperature bs.out`: The temperature at the given position (scaled by 10^8).
+```
 
 Example
 
 :   Get the temperature at the current altitude:
 
-    ```
+    ```mcfunction
     # Once
     function #bs.biome:get_temperature
 

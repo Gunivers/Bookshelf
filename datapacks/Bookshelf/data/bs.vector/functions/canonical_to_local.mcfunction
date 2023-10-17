@@ -21,6 +21,8 @@ scoreboard objectives add bs.vector.x dummy [{"text":"Bookshelf ","color":"dark_
 scoreboard objectives add bs.vector.y dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Y","color":"aqua"}]
 scoreboard objectives add bs.vector.z dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Vector Z","color":"aqua"}]
 
+scoreboard players operation azdazd bs.in
+
 #__________________________________________________
 # CONFIG
 
