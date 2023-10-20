@@ -1,1 +1,1 @@
-$function bs.view:raycast/hitbox/block/$(_)
+$function bs.view:raycast/hitbox/block/$(id)
