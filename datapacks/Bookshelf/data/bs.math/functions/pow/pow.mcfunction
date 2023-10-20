@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$scoreboard players set #math.pow.scale bs.data $(scale)
+$scoreboard players set #math.pow.scaling bs.data $(scaling)
 
-execute if score #math.pow.scale bs.data matches 1 run function bs.math:pow/simple
-execute if score #math.pow.scale bs.data matches 2.. run function bs.math:pow/scaled
+execute if score #math.pow.scaling bs.data matches 1 run function bs.math:pow/simple
+execute if score #math.pow.scaling bs.data matches 2.. run function bs.math:pow/scaled

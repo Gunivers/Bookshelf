@@ -160,91 +160,6 @@ Example
 
 ---
 
-### Basis rotation 3D
-
-**`#bs.math:basis_rot_3d`**
-
-Allows to obtain the equivalent of the vector
-passed in parameter in a base with a different orientation. Useful to
-convert an absolute/relative position into a local position for a given
-entity.
-
-Inputs
-
-:  (scores) `$math.basis_rot_3d.[x,y,z] bs.in`
-   : Vector coordinates $(X,Y,Z)$ in the starting base (shifted by 3 digits).
-
-   (scores) `$math.basis_rot_3d.[h,v] bs.in`
-   : Horizontal angle $\phi$ (along $\hat{y}$) and vertical angle $\theta$ (along $\hat{\phi}$) rotation (in degree) from the starting base (shifted by 2 digits).
-
-   ```{admonition} Basis system
-   :class: info
-
-   This system use the Minecraft coordinate system. Thus:
-   - $\hat{y}$ is the vertical axis.
-   - $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
-   - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane.
-   ```
-
-Outputs
-
-:  (scores) `$math.basis_rot_3d.[x,y,z] bs.out`
-   : Vector coordinates $(X',Y',Z')$ in the target base.
-
-Examples
-
-:  A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?):
-
-   ```mcfunction
-   # One time
-
-   # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set $math.basis_rot_3d.x bs.in 2000
-   scoreboard players set $math.basis_rot_3d.y bs.in 5000
-   scoreboard players set $math.basis_rot_3d.z bs.in 10000
-
-   # Difference between my rotation (= that of the coondata grid ^X ^Y ^Z) and the rotation of the Minecraft blocks grid (~X ~Y ~Z)
-   function #bs.position:get_rot {scale:100}
-   scoreboard players operation $math.basis_rot_3d.h bs.in = @s bs.rot.h
-   scoreboard players operation $math.basis_rot_3d.v bs.in = @s bs.rot.v
-
-   # Perform the basic rotation
-   function #bs.math:basis_rot_3d
-
-   # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.x", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.y", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$math.basis_rot_3d.z","objective":"bs.out"},"color":"gold"}]
-   ```
-
-   I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
-
-   ```mcfunction
-   # Once
-
-   # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set $math.basis_rot_3d.x bs.in 0
-   scoreboard players set $math.basis_rot_3d.y bs.in 0
-   scoreboard players set $math.basis_rot_3d.z bs.in 1000
-
-   # Get the orientation
-   function #bs.position:get_rot {scale:100}
-   scoreboard players operation $math.basis_rot_3d.h bs.in = @s bs.rot.h
-   scoreboard players operation $math.basis_rot_3d.v bs.in = @s bs.rot.v
-
-   # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-   scoreboard players operation $math.basis_rot_3d.h bs.in *= -1 bs.const
-   scoreboard players operation $math.basis_rot_3d.v bs.in *= -1 bs.const
-
-   # Perform the basic rotation
-   function #bs.math:basis_rot_3d
-
-   # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.x", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$math.basis_rot_3d.y", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$math.basis_rot_3d.z","objective":"bs.out"},"color":"gold"}]
-   ```
-
-> **Credits**: Leirof
-
----
-
 ### Cosine
 
 **`#bs.math:cos`**
@@ -510,7 +425,7 @@ Example
 
 :::{tab-item} Power
 
-**`#bs.math:pow {scale:<scaling>}`**
+**`#bs.math:pow {scaling:<scaling>}`**
 
 Compute $x^y$.
 
@@ -522,7 +437,7 @@ Inputs
    (score) `$math.pow.exp bs.in`
    : The exponent.
 
-   (macro variable) `scale`: double
+   (macro variable) `scaling`: double
       Scalar for the function’s input base and the output.
 
 Output

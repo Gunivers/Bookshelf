@@ -18,3 +18,4 @@ scoreboard objectives add bs.rot.v dummy [{"text":"BS ","color":"dark_gray"},{"t
 
 scoreboard players set 180 bs.const 180
 scoreboard players set 360 bs.const 360
+scoreboard players set 1000 bs.const 1000
