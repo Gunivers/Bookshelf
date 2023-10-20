@@ -21,5 +21,5 @@ scoreboard players operation #view.raycast.max_distance bs.data = $position.get_
 scoreboard players set #view.raycast.target_entities bs.data 0
 scoreboard players set #view.can_see_ata.obstructed bs.data 0
 data modify storage bs:data view.raycast.run set value "scoreboard players set #view.can_see_ata.obstructed bs.data 1"
-function bs.view:raycast/raycast
+execute facing entity @s eyes run function bs.view:raycast/raycast
 execute if score #view.can_see_ata.obstructed bs.data matches 0 run function bs.view:can_see_ata/run with storage bs:in view.can_see_ata
