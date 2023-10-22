@@ -4,20 +4,7 @@
 
 This module contains various bitwise operations.
 
-<div align=center>
-
 ![](img/bitwise.png)
-
-```{button-link} https://youtu.be/itgPhvTMSZQ
-:color: primary
-:align: center
-:shadow:
-
-{octicon}`device-camera-video` Watch a demo
-```
-
-*Friendly advice: decrease the volume before clicking* 😅
-</div>
 
 ```{epigraph}
 "Binary is a very simple numbering system, but it is incredibly powerful when used correctly."
