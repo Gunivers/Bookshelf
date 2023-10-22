@@ -4,7 +4,15 @@
 
 This module contains various bitwise operations.
 
-![](img/bitwise.png)
+```{image} img/bitwise_light.png
+:align: center
+:class: only-light
+```
+
+```{image} img/bitwise_dark.png
+:align: center
+:class: only-dark
+```
 
 ```{epigraph}
 "Binary is a very simple numbering system, but it is incredibly powerful when used correctly."

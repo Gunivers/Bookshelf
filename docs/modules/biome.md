@@ -4,7 +4,15 @@
 
 Everything concerning biome properties.
 
-![](img/biome.jpg)
+```{image} img/biome_light.jpg
+:align: center
+:class: only-light
+```
+
+```{image} img/biome_dark.jpg
+:align: center
+:class: only-dark
+```
 
 ```{epigraph}
 "The most dangerous worldview is the worldview of those have not viewed the world."
