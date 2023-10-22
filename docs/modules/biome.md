@@ -1,8 +1,16 @@
 # ⛰️ Biome
 
-`#bs.biome:help`
+**`#bs.biome:help`**
 
 Everything concerning biome properties.
+
+![](img/biome.jpg)
+
+```{epigraph}
+"The most dangerous worldview is the worldview of those have not viewed the world."
+
+-- Alexander von Humboldt
+```
 
 ---
 
@@ -22,23 +30,18 @@ You can find below all functions available in this module.
 Get the base temperature of the biome at the execution position of the function.
 
 :Inputs:
-  **(execution)** `at <entity>` or `positioned <x> <y> <z>`: The position from which you want to get the temperature.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
 
 :Outputs:
-  **(return) & (score)** `$biome.get_base_temperature bs.out`: The base temperature of the biome (scaled by 10^8).
+  **Return | Score `$biome.get_base_temperature bs.out`**: Base temperature of the biome (scaled by 10^8).
 ```
 
-Example
+*Get the base temperature of the current biome:*
 
-:   Get the base temperature of the current biome:
-
-    ```mcfunction
-    # Once
-    function #bs.biome:get_base_temperature
-
-    # See the result
-    tellraw @a [{"text": "The base temperature of the biome: ", "color": "dark_gray"},{"score":{"name":"$biome.get_base_temperature", "objective": "bs.out"}, "color": "gold"}]
-    ```
+```mcfunction
+# Once
+function #bs.biome:get_base_temperature
+```
 
 :::
 :::{tab-item} At a given position
@@ -48,28 +51,23 @@ Example
 Get the temperature at the execution position of the function taking the altitude into account.
 
 :Inputs:
-  **(execution)** `at <entity>` or `positioned <x> <y> <z>`: The position from which you want to get the temperature.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
 
 :Outputs:
-  **(return) & (score)** `$biome.get_base_temperature bs.out`: The temperature at the given position (scaled by 10^8).
+  **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position (scaled by 10^8).
 ```
 
-Example
+*Get the temperature at the current altitude:*
 
-:   Get the temperature at the current altitude:
-
-    ```mcfunction
-    # Once
-    function #bs.biome:get_temperature
-
-    # See the result
-    tellraw @a [{"text": "The temperature: ", "color": "dark_gray"},{"score":{"name":"$biome.get_temperature", "objective": "bs.out"}, "color": "gold"}]
-    ```
+```mcfunction
+# Once
+function #bs.biome:get_temperature
+```
 
 :::
 ::::
 
-> **Credits**: theogiraudet, Aksiome
+> **Credits**: Aksiome, theogiraudet
 
 ---
 

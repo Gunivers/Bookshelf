@@ -54,19 +54,16 @@ And much more!
 
 ```{toctree}
 :hidden:
-:caption: All modules
+:caption: Base modules
 
 modules/biome
 modules/bitwise
 modules/block
 modules/color
-modules/core
 modules/health
 modules/id
 modules/item
 modules/link
-modules/log
-modules/mapedit
 modules/math
 modules/move
 modules/position
@@ -81,10 +78,10 @@ modules/xp
 ```
 
 ```{toctree}
-:caption: Filter by content
-:maxdepth: 1
+:hidden:
+:caption: Dev modules
 
-modules/libs
-modules/systems
-modules/banks
+modules/core
+modules/log
+modules/mapedit
 ```
