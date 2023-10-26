@@ -1,4 +1,4 @@
-$attribute @s minecraft:generic.max_health base set $(points)
+$attribute @s minecraft:generic.max_health base set $(b)
 
 effect give @s minecraft:instant_health 1 28 true
 

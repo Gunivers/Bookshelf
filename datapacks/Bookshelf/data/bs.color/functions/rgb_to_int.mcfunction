@@ -14,11 +14,11 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:data color set value $(color)
+$data modify storage bs:ctx _ set value $(color)
 
-execute store result score #color.rgb_to_int.r bs.data run data get storage bs:data color[0]
-execute store result score #color.rgb_to_int.g bs.data run data get storage bs:data color[1]
-execute store result score #color.rgb_to_int.b bs.data run data get storage bs:data color[2]
+execute store result score #color.rgb_to_int.r bs.data run data get storage bs:ctx _[0]
+execute store result score #color.rgb_to_int.g bs.data run data get storage bs:ctx _[1]
+execute store result score #color.rgb_to_int.b bs.data run data get storage bs:ctx _[2]
 
 scoreboard players operation $color.rgb_to_int bs.out = #color.rgb_to_int.r bs.data
 scoreboard players operation $color.rgb_to_int bs.out *= 65536 bs.const

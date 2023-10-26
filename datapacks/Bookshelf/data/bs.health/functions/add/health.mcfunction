@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:_ points set value $(points)
-execute store result score #health bs.data run data get storage bs:_ points 100000
+$data modify storage bs:ctx _ set value $(points)
+execute store result score #health bs.data run data get storage bs:ctx _ 100000
 scoreboard players operation @s bs.health.points += #health bs.data
