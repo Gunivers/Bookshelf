@@ -14,9 +14,9 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:_ health set value $(with)
+$data modify storage bs:_ with set value $(with)
 
-execute if data storage bs:_ health.on_death run function bs.health:time_to_live/register_callback with entity @s
-execute if data storage bs:_ health.unit run function bs.health:time_to_live/register_unit with storage bs:_ health
-execute if data storage bs:_ health.time store result score @s bs.ttl run data get storage bs:_ health.time
-data remove storage bs:_ health
+execute if data storage bs:_ with.on_death run function bs.health:time_to_live/register_callback with entity @s
+execute if data storage bs:_ with.unit run function bs.health:time_to_live/register_unit with storage bs:_ with
+execute if data storage bs:_ with.time store result score @s bs.ttl run data get storage bs:_ with.time
+data remove storage bs:_ with
