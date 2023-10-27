@@ -21,7 +21,7 @@ $execute store result score #sidebar.valid bs.data unless data storage bs:data s
 execute unless score #sidebar.valid bs.data matches 1 run function #bs.log:error { \
   path: "#bs.sidebar:create", \
   feature: "sidebar.create", \
-  message: '[{"text":"The id \'","color":"red"},{"storage":"bs:sidebar","nbt":"do.id"},{"text":"\' is already in use."}]', \
+  message: '[{"text":"The id \'","color":"red"},{"storage":"bs:data","nbt":"sidebar.do.id"},{"text":"\' is already in use."}]', \
 }
 execute unless score #sidebar.valid bs.data matches 1 run return 0
 
@@ -30,7 +30,7 @@ execute store result score #sidebar.valid bs.data run function bs.sidebar:create
 execute unless score #sidebar.valid bs.data matches 1 run function #bs.log:error { \
   path: "#bs.sidebar:create", \
   feature: "sidebar.create", \
-  message: '[{"text":"The id \'","color":"red"},{"storage":"bs:sidebar","nbt":"do.id"},{"text":"\' must only contain lowercase letters, numbers, dashes, underscores or dots."}]', \
+  message: '[{"text":"The id \'","color":"red"},{"storage":"bs:data","nbt":"sidebar.do.id"},{"text":"\' must only contain lowercase letters, numbers, dashes, underscores or dots."}]', \
 }
 execute unless score #sidebar.valid bs.data matches 1 run return 0
 
@@ -39,7 +39,7 @@ execute store result score #sidebar.valid bs.data run function bs.sidebar:create
 execute unless score #sidebar.valid bs.data matches 1 run function #bs.log:error { \
   path: "#bs.sidebar:create", \
   feature: "sidebar.create", \
-  message: '[{"text":"The name \'","color":"red"},{"storage":"bs:sidebar","nbt":"do.name"},{"text":"\' must be a valid JSON text component."}]', \
+  message: '[{"text":"The name \'","color":"red"},{"storage":"bs:data","nbt":"sidebar.do.name"},{"text":"\' must be a valid JSON text component."}]', \
 }
 execute unless score #sidebar.valid bs.data matches 1 run return 0
 
@@ -60,7 +60,7 @@ scoreboard players operation #sidebar.lines bs.data -= #sidebar.line bs.data
 execute if score #sidebar.lines bs.data matches 1.. run function #bs.log:error { \
   path: "#bs.sidebar:create", \
   feature: "sidebar.create", \
-  message: '[{"text":"The line at position ","color":"red"},{"score":{"name":"#sidebar.line","objective":"bs.data"}},{"text":" \'"},{"storage":"bs:sidebar","nbt":"do.guard"},{"text":"\' must be a valid JSON text component."}]', \
+  message: '[{"text":"The line at position ","color":"red"},{"score":{"name":"#sidebar.line","objective":"bs.data"}},{"text":" \'"},{"storage":"bs:data","nbt":"sidebar.do.guard"},{"text":"\' must be a valid JSON text component."}]', \
 }
 execute if score #sidebar.lines bs.data matches 1.. run function #bs.sidebar:destroy with storage bs:data sidebar.do
 execute if score #sidebar.lines bs.data matches 1.. run return 0

@@ -18,4 +18,3 @@ data remove storage bs:data sidebar.do
 data modify storage bs:data sidebar.do.score set value "‌"
 
 execute if data storage bs:data sidebar.registry[0] run function bs.sidebar:reset/loop
-data remove storage bs:data sidebar.registry
