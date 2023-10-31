@@ -1,0 +1,10 @@
+# pink_petals group
+data modify storage bs:_ hitbox set value [[0, 0, 0, 16, 3, 16]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=west,flower_amount=1] run data modify storage bs:_ hitbox set value [[0, 0, 8, 8, 3, 16]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=east,flower_amount=1] run data modify storage bs:_ hitbox set value [[8, 0, 0, 16, 3, 8]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=north,flower_amount=1] run data modify storage bs:_ hitbox set value [[0, 0, 0, 8, 3, 8]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=south,flower_amount=1] run data modify storage bs:_ hitbox set value [[8, 0, 8, 16, 3, 16]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=west,flower_amount=2] run data modify storage bs:_ hitbox set value [[0, 0, 8, 16, 3, 16]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=east,flower_amount=2] run data modify storage bs:_ hitbox set value [[0, 0, 0, 16, 3, 8]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=north,flower_amount=2] run data modify storage bs:_ hitbox set value [[0, 0, 0, 8, 3, 16]]
+execute if block ~ ~ ~ minecraft:pink_petals[facing=south,flower_amount=2] run data modify storage bs:_ hitbox set value [[8, 0, 0, 16, 3, 16]]

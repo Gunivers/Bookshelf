@@ -8,4 +8,3 @@ scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"te
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
 
 scoreboard players set 125000 bs.const 125000
-scoreboard players set $module.biome.enabled bs.metadata 1
