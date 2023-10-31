@@ -18,6 +18,29 @@ You can find below all the function available in this module.
 
 ---
 
+### Canonical to local
+
+**`#bs.position:canonical_to_local`**
+
+Convert a position (using the relative reference frame) into a local position (using the local reference frame).
+
+Inputs
+
+:   (execution) `rotated as <entity>` or `rotated <h> <v>`
+    : Rotation to use for the conversion.
+
+    (score) `@s bs.pos.[x,y,z]`
+    : Position to convert.
+
+Outputs
+
+:   (scores) `@s bs.pos.[x,y,z]`
+    : Converted position.
+
+> **Credits**: Aksiome
+
+---
+
 ### Get position
 
 ::::{tab-set}
@@ -243,6 +266,9 @@ Allows to normalize the oriantations (replace the `bs.rot.h` and `bs.rot.v` scor
 
 ### Get relative
 
+::::{tab-set}
+:::{tab-item} As to at
+
 **`#bs.position:get_relative_ata {scale:<scaling>}`**
 
 Obtain the execution position of the function relatively to the position of the executing entity.
@@ -260,7 +286,7 @@ Inputs
 
 Outputs
 
-:   (scores) `$position.get_relative_ata.[x,y,z] bs.out`
+:   (scores) `@s bs.pos.[x,y,z]`
     : The relative coordinates.
 
 Example
@@ -272,8 +298,43 @@ Example
     execute as @s at @e[type=creeper,limit=1,sort=nearest] run function #bs.position:get_relative_ata {scale:1}
 
     # See the result
-    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"$position.get_relative_ata.x", "objective": "bs.out"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"$position.get_relative_ata.y", "objective": "bs.out"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"$position.get_relative_ata.z","objective":"bs.out"},"color":"gold"}]
+    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
     ```
+
+:::
+:::{tab-item} From direction
+
+**`#bs.position:get_relative_from_dir {scale:<scaling>}`**
+
+Obtain a direction vector based on the execution position and rotation. Scale is used as the norm/length.
+
+Inputs
+
+:   (execution) `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`
+    : The position and rotation te get the relative position from.
+
+    (macro variable) `scale`: double
+    : Scalar for the function's outputs.
+
+Outputs
+
+:   (scores) `@s bs.pos.[x,y,z]`
+    : The relative coordinates.
+
+Example
+
+:   Get your position relative to the position that is 2 blocks in front of you (scaled by 1000):
+
+    ```
+    # Once
+    execute at @s run function #bs.position:get_relative_from_dir {scale:2000}
+
+    # See the result
+    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
+    ```
+
+:::
+::::
 
 > **Credits**: Aksiome, Leirof
 
