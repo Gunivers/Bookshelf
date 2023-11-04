@@ -10,6 +10,8 @@
     "bs.schedule:__load__",
     "bs.sidebar:__load__",
     "bs.time:__load__",
+    "bs.vector:__load__",
+    "bs.view:__load__",
     "bs.weather:__load__",
     "bs.xp:__load__"
   ]

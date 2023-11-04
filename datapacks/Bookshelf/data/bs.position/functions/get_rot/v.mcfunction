@@ -14,6 +14,5 @@
 
 # CODE ------------------------------------------------------------------------
 
-tp B5-0-0-0-1 ~ ~ ~ ~ ~
+tp B5-0-0-0-1 0 0 0 ~ ~
 $execute store result score @s bs.rot.v run data get entity B5-0-0-0-1 Rotation[1] $(scale)
-tp B5-0-0-0-1 0 0 0 0 0
