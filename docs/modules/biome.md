@@ -4,14 +4,9 @@
 
 Everything concerning biome properties.
 
-```{image} img/biome_light.jpg
+```{image} /_imgs/modules/biome.png
 :align: center
-:class: only-light
-```
-
-```{image} img/biome_dark.jpg
-:align: center
-:class: only-dark
+:class: dark_light
 ```
 
 ```{epigraph}

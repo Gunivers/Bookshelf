@@ -1,6 +1,6 @@
 # ❤️ Health
 
-`#bs.health:help`
+**`#bs.health:help`**
 
 Management of the life of an entity.
 
@@ -14,7 +14,7 @@ When using the module, you cannot rely on NBTs to get health information. Use th
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 

@@ -4,11 +4,17 @@
 
 Entity ID management help with precise identification of entities, crucial for scenarios like shooting games where you need to track who is targeting whom.
 
+```{epigraph}
+"We know what we are, but know not what we may be."
+
+-- William Shakespeare
+```
+
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 

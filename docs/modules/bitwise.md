@@ -4,12 +4,12 @@
 
 This module contains various bitwise operations.
 
-```{image} img/bitwise_light.png
+```{image} /_imgs/modules/bitwise_light.png
 :align: center
 :class: only-light
 ```
 
-```{image} img/bitwise_dark.png
+```{image} /_imgs/modules/bitwise_dark.png
 :align: center
 :class: only-dark
 ```
@@ -24,7 +24,7 @@ This module contains various bitwise operations.
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 

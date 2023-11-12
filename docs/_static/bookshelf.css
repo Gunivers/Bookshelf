@@ -135,3 +135,7 @@ nav a:hover, nav button:hover {
   margin: 6px 0;
   line-height: 1.4;
 }
+
+.bs-rounded {
+  border-radius: 50%;
+}

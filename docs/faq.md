@@ -1,4 +1,4 @@
-# ❓ FAQ
+# 🗳️ FAQ
 
 ## Can I use the lib in my map/server project?
 

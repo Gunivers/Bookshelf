@@ -1,0 +1,26 @@
+<svg width="256" height="64" xmlns="http://www.w3.org/2000/svg">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>
+        .container{
+          height:64px;
+          box-sizing:border-box;
+          display:flex;
+          gap:1rem;
+          align-items:center;
+          justify-content:center;
+          border-radius:0.5rem;
+          border:2px solid #333;
+          color:#777;
+          font-size:1.7em;
+          font-family:-apple-system,BlinkMacSystemFont,Segoe UI,"Helvetica Neue",Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        }
+        img{width:1em;margin:4px 0 0 -8px}
+			</style>
+			<div class="container">
+        <img src="data:image/png;base64,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"/>
+				Download
+			</div>
+		</div>
+	</foreignObject>
+</svg>

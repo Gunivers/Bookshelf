@@ -8,11 +8,11 @@ sd_hide_title: true
 
 # Bookshelf
 
-```{image} _static/banner_light.png
+```{image} /_imgs/banner-light.png
 :class: only-light
 ```
 
-```{image} _static/banner_dark.png
+```{image} /_imgs/banner-dark.png
 :class: only-dark
 ```
 
@@ -126,9 +126,9 @@ If you want to contribute, please read at least the "Getting started" section in
 :hidden:
 :maxdepth: 1
 
-getting_started
+quickstart
 modules
 contribute/index
-faq
 CHANGELOG
+faq
 special-thanks

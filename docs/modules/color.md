@@ -4,7 +4,7 @@
 
 Convert colors to your preferred format.
 
-```{image} img/color.jpg
+```{image} /_imgs/modules/color.png
 :align: center
 :class: dark_light
 ```
@@ -19,7 +19,7 @@ Convert colors to your preferred format.
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 

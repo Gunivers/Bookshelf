@@ -1,60 +1,58 @@
-![](docs/_static/banner_light.png)
-
-<br>
-<br>
-<div align=center>
-
-<a href="https://glib.gunivers.net"><img src="https://gunivers.net/wp-content/uploads/2022/08/download.png" style="width:64px"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://bookshelf.docs.gunivers.net/"><img src="https://gunivers.net/wp-content/uploads/2022/08/search.png" style="width:64px"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://discord.gg/E8qq6tN"><img src="https://gunivers.net/wp-content/uploads/2022/08/discord.png" style="width:64px"></a>
-
-</div>
-<br>
-
-# 🔎 What is it?
-
-Bookshelf (previously Gunivers Libs) is a highly accessible modular library datapack, designed to help mapmakers to quickly & easily implement complexe systems in their maps.
-
-<div align=center>
-
-<h3>
-
-<a href="https://www.youtube.com/watch?v=E2nKYEvjETk">🎬 Watch presentation video</a>
-
-</h3>
-
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" alt="Bookshelf" srcset="./docs/_imgs/banner-dark.png" width="600px">
+    <img alt="Bookshelf" src="./docs/_imgs/banner-light.png" width="600px">
+  </picture>
 </div>
 
-# ⚙️ Features
+<h2>
+<div align="center">
+    <a href="https://glib.gunivers.net"><img src="./docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
+    &nbsp;&nbsp;
+    <a href="https://bookshelf.docs.gunivers.net/"><img src="./docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
+    &nbsp;&nbsp;
+    <a href="https://discord.gg/E8qq6tN"><img src="./docs/_imgs/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
+  </div>
+</h2>
 
-🧮 **Mathematical functions** (sin, cos, exp, log, sqrt...)<br>
-🏷️ **ID system** for entities<br>
-🔀 **Block ↔ Score ↔ Item** conversion system supporting BlockStates<br>
-🧠 **Pathfinding** and other NPC AI basic tools<br>
-🪃 **Vectors** management to give customized trajectories to your entities, which can be deflected by the wind, bounce on blocks etc.<br>
-📎 **Entity Link** to synchronize the movement of entities, create moving entity cohérent structures or adding mirrors effects
+<br>
 
-And much more!
+# 🕵️‍♂️ What is Bookshelf?
 
-# 🏃 Motivation
+Bookshelf (previously Gunivers Libs) is a highly accessible modular library datapack, designed to help mapmakers quickly & easily implement systems in their maps.
 
-As developers, we know the importance of using libraries to avoid losing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
+[🎬 Watch presentation video](https://www.youtube.com/watch?v=E2nKYEvjETk)
 
-That's why we created this library, to propose a lot of re-usable tools and try to convice mapmakers to become real developers by looking for and using the available tools.
+## 🛠️ Key features
 
-Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
+🧮 **Mathematical functions:** sin, cos, exp, log, sqrt...
 
+🖥️ **Bitwise functions:** and, or, xor, not, msb...
 
-# 👋 Get started
+🏷️ **ID system:** easily identify entities.
 
-<div align=center>
+🔗 **Link entities:** link positions and rotations between entities and create coherent structures!
 
-<h3>
+🏃 **Move and vectors:** give customized trajectories to entities, which can bounce on blocks and more...
 
-<a href="https://glib.gunivers.net">📥 Download</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://bookshelf.docs.gunivers.net">📚 How to use it?</a>
+❤️ **Health management:** easily modify player health!
 
-</h3>
+🧱 **Block management:** get and manipulate blocks (supports BlockStates and NBT)!
 
-</div>
+<br>
+And much more...
+
+# Motivation
+
+As developers, we recognize the importance of using libraries to save time and avoid reinventing the wheel. Unfortunately, we've noticed that mapmakers within the Minecraft community are often unfamiliar with this concept.
+
+That's why we started this project, to introduce a variety of reusable tools and try to convice mapmakers to embrace the use of libraries.
+
+While we strive to keep these modules as much optimized and accurate as possible, our main goal is to offer a wide range of features and provide tools that are both easy to use and install. Therefore, we will always prioritize accessibility above everything else.
+
+# Contribution
+
+[👉 Please refer to the contribution docs for more information](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html)
+
+Anyone can contribute to this repository. Please do so by posting issues when you've found something that is unexpected or sending a pull request for improvements. If you have any doubts related to the project or want to discuss something, then join our Discord server.
+

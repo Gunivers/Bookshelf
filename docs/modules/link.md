@@ -4,32 +4,20 @@
 
 Link positions and rotations between entities and create coherent entity structures!
 
-<div align=center>
-
-![](img/link.png)
-
-</div>
-
-```{button-link} https://www.youtube.com/watch?v=XuhVhfyVGko
-:color: primary
+```{image} /_imgs/modules/link.png
 :align: center
-:shadow:
-
-🎬 Watch a demo
+:class: dark_light
 ```
 
-```{admonition} Dependencies
-:class: dropdown
+```{epigraph}
+"Invisible threads are the strongest ties."
 
-This module require the following modules to work properly:
-- [`bs.id`](id)
-- [`bs.math`](math)
-- [`bs.position`](position)
+-- Friedrich Nietzsche
 ```
 
 ---
 
-## 🎓 Create behaviors
+## 🎓 Custom behaviors
 
 With this module you can combine multiple behaviors to create your very own custom one.
 
@@ -37,467 +25,274 @@ With this module you can combine multiple behaviors to create your very own cust
 
 To create a new behavior, you first need to create a new function tag. The tag must start with `bs.link:behaviors/setup` and end with `bs.link:behaviors/apply`. Between those 2 functions you are free to use any behaviors that are provided inside the `bs.link:behaviors` folder.
 
-Example
 
-:   This is how `#bs.link:mirror_x_plane` is implemented inside bookshelf:
 
-    ```json
-    {
-      "values": [
-        "bs.link:behaviors/setup",
-        "bs.link:behaviors/reverse_pos_x",
-        "bs.link:behaviors/imitate_pos_y",
-        "bs.link:behaviors/imitate_pos_z",
-        "bs.link:behaviors/reverse_rot_h",
-        "bs.link:behaviors/imitate_rot_v",
-        "bs.link:behaviors/apply"
-      ]
-    }
+*This is how `#bs.link:mirror_x_plane` is implemented inside bookshelf:*
 
-    ```
+```json
+{
+  "values": [
+    "bs.link:behaviors/setup",
+    "bs.link:behaviors/reverse_pos_x",
+    "bs.link:behaviors/imitate_pos_y",
+    "bs.link:behaviors/imitate_pos_z",
+    "bs.link:behaviors/reverse_rot_h",
+    "bs.link:behaviors/imitate_rot_v",
+    "bs.link:behaviors/apply"
+  ]
+}
+```
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ### Create link
 
-**`bs.link:create_link_ata`**
+```{function} #bs.link:create_link_ata
 
-This function creates a link between the entity executing the function and the entity closest to the execution position.
+Create a link between the entity executing the function and the entity closest to the execution position.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Child entities that you wish to link to a parent.
 
-:   (execution) `as <entities>`
-    : The link lead on a parent-child relation. The executing (source) entity must be the child.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Use the nearest entity as the parent.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The execution position is the position of the parent entity (the function will take the nearest entity).
+:Outputs:
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-Outputs
+  **Scores `@s bs.link.l[x,y,z,h,v]`**: Local position and rotation relative to the parent entity.
 
-:   (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
-
-    (score) `@s bs.link.l[x,y,z]`
-    : Representing local position.
-
-    (score) `@s bs.link.l[h,v]`
-    : Representing local rotation.
-
-    (score) `@s bs.link.to`
-    : Identifies the entity to which it is linked.
-
-Example
-
-:   Link all armor_stand to the nearest sheep:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function #bs.link:create_link_ata
-    ```
-
-```{note}
-The output scores should generally not be directly modified because they are used as parameters for other link functions. It is then recommanded to only use the bookshelf function to modify these scores.
+  **Scores `@s bs.link.to`**: ID of the parent entity to which it is linked.
 ```
 
-> **Credits**: Leirof, Aksiome
+*Link armor stands to the nearest sheep:*
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function #bs.link:create_link_ata
+```
+
+```{important}
+You should generally avoid changing output scores, as they serve as parameters for other link functions. Therefore, it is recommended to exclusively let bookshelf handle them.
+```
+
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Imitate behaviors
 
 ::::{tab-set}
-:::{tab-item} All
+:::{tab-item} Pos & Rot
 
-**`#bs.link:imitate_pos_and_rot`**
+```{function} #bs.link:imitate_pos_and_rot
 
-Allows to replace the entity at its relative position. This operation repeated in a loop is to imitate movements and rotations of the parent entity.
+Replace the entity at its relative position and local rotation. This operation repeated in a loop simulates the movements and rotations of the parent entity.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+  **Scores `@s bs.link.l[h,v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+:Outputs:
+  **State**: The entity is moved to maintain its relative position and local rotation relative to the parent entity.
+```
 
-Outputs
+*Make armor stands mimic your moves:*
 
-:   (state) @s position and rotation
-    : The entity is moved such as it maintain the relative position and rotation with the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_and_rot
+```
 
-:   Make armor_stands mimic your moves:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_pos_and_rot
-    ```
 :::
 :::{tab-item} Position
 
-**`#bs.link:imitate_pos`**
+```{function} #bs.link:imitate_pos
 
-Allows to replace the entity at its relative position. This operation repeated in a loop is to imitate movements of the parent entity.
+Replace the entity at its relative position. This operation repeated in a loop simulates the movements of the parent entity.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved to maintain its relative position with the parent entity.
+```
 
-Outputs
+*Make armor stands mimic your moves:*
 
-:   (state) @s position
-    : The entity is moved such as it maintain the relative position with the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos
+```
 
-:   Make armor_stands mimic your moves:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_pos
-    ```
 :::
 :::{tab-item} Rotation
 
-**`#bs.link:imitate_rot`**
+```{function} #bs.link:imitate_rot
 
-Allows to replace the entity at its local rotation. This operation repeated in a loop is to imitate rotations of the parent entity.
+Replace the entity at its local rotation. This operation repeated in a loop simulates the rotation of the parent entity.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.l[h,v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+:Outputs:
+  **State**: The entity is moved to maintain its local rotation relative to the parent entity.
+```
 
-Outputs
+*Make armor stands mimic your moves:*
 
-:   (state) @s rotation
-    : The entity is moved such as it maintain the local rotation of the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot
+```
 
-:   Make armor_stands mimic your moves:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_rot
-    ```
 :::
-:::{tab-item} Along X
+:::{tab-item} Single axis
 
-**`#bs.link:imitate_pos_x`**
+```{function} #bs.link:imitate_pos_[x|y|z]
 
-Allows to replace the entity at its relative position along the X axis. This operation repeated in a loop is to imitate the movements of the parent entity on the X ais.
+Replace the entity at its relative position along an axis. This operation repeated in a loop simulates the movements of the parent entity on a single axis.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Score `@s bs.link.r[x|y|z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.rx`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved to maintain its relative position with the parent entity on a single axis.
+```
 
-Outputs
+*Make armor stands mimic your moves:*
 
-:   (state) @s position
-    : The entity is moved such as it maintain the relative position with the parent entity along the X axis.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_x
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_y
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_z
+```
 
-:   Make armor_stands mimic your moves on X axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_pos_x
-    ```
 :::
-:::{tab-item} Along Y
+:::{tab-item} Single angle
 
-**`#bs.link:imitate_pos_y`**
+```{function} #bs.link:imitate_rot_[h|v]
 
-Allows to replace the entity at its relative position along the Y axis. This operation repeated in a loop is to imitate the movements of the parent entity on the Y axis.
+Replace the entity at its horizontal or vertical local rotation. This operation repeated in a loop simulates the rotation of the parent entity on a single rotation axis.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Score `@s bs.link.l[h|v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.ry`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved to maintain its local rotation relative to the parent entity on a single rotation axis.
+```
 
-Outputs
+*Make armor stands mimic your moves:*
 
-:   (state) @s position
-    : The entity is moved such as it maintain the relative position with the parent entity along the Y axis.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot_h
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot_v
+```
 
-:   Make armor_stands mimic your moves on Y axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_pos_y
-    ```
-:::
-:::{tab-item} Along Z
-
-**`#bs.link:imitate_pos_z`**
-
-Allows to replace the entity at its relative position along the Z axis. This operation repeated in a loop is to imitate the movements of the parent entity on the Z axis.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.rz`
-    : Representing the relative position.
-
-Outputs
-
-:   (state) @s position
-    : The entity is moved such as it maintain the relative position with the parent entity along the Z axis.
-
-Example
-
-:   Make armor_stands mimic your moves on Z axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_pos_z
-    ```
-:::
-:::{tab-item} Horizontal angle
-
-**`#bs.link:imitate_rot_h`**
-
-Allows to replace the entity to its local horizontal rotation. This operation repeated in a loop is to imitate the rotations of the parent entity on the horizontal axis.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.lh`
-    : Representing the horizontal local rotation.
-
-Outputs
-
-:   (state) @s rotation
-    : The entity is rotated such as it maintain the rotation of the parent entity on the horizontal axis.
-
-Example
-
-:   Make armor_stands mimic your rotation changes on the horizontal axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_rot_h
-    ```
-:::
-:::{tab-item} Vertical angle
-
-**`#bs.link:imitate_rot_v`**
-
-Allows to replace the entity to its local vertical rotation. This operation repeated in a loop is to imitate the rotations of the parent entity on the vertical axis.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.lv`
-    : Representing the vertical local rotation.
-
-Outputs
-
-:   (state) @s rotation
-    : The entity is rotated such as it maintain the rotation of the parent entity on the vertical axis.
-
-Example
-
-:   Make armor_stands mimic your rotation changes on the vertical axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:imitate_rot_v
-    ```
 :::
 ::::
 
-```{button-link} https://youtu.be/BisY7Y_tLwg
-:color: primary
-:align: center
-:shadow:
-
-🎬 Watch a demo
-```
-
-> **Credits**: Leirof, Aksiome
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Keep local position
 
-**`#bs.link:keep_local_pos`**
+```{function} #bs.link:keep_local_pos
 
-Allows to keep the local position with the parent entity.
+Keep the local position relative to the parent entity.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.l[x,y,z]`**: Local position relative to the parent entity.
 
-    (score) `@s bs.link.l[x,y,z]`
-    : Representing the local coordinates (position only).
-
-Outputs
-
-:   (state) @s position
-    : The entity is moved such as it maintain the local position with the parent entity.
-
-Example
-
-:   Make armor_stands lock to your rotation:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:keep_local_pos
-    ```
-
-
-```{button-link} https://youtu.be/PmeUw8O2ZZU
-:color: primary
-:align: center
-:shadow:
-
-🎬 Watch a demo
+:Outputs:
+  **State**: The entity is moved to maintain its local position relative to the parent entity.
 ```
 
-```{admonition} How does it work?
+*Make armor stands lock to your rotation:*
+
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:keep_local_pos
+```
+
+```{admonition} Local position... 🥶 What's this?
 :class: dropdown
 
-This reference frame, unlike the relative coordinates, takes into account the rotation of the entity. Thus, when the parent entity turns on itself, the child entity will turn around it keeping its distance and the angle formed between the direction of the parent entity's look and the parent->child vector.
+Unlike relative coordinates, this reference frame considers the entity's rotation. Therefore, when the parent entity rotates, the child entity rotates around it. For those familiar with Minecraft commands, local coordinates are available through the `^` symbol.
 ```
 
-> **Credits**: Leirof, Aksiome
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Mirror plane
 
-::::{tab-set}
-:::{tab-item} Along X
+```{function} #bs.link:mirror_[x|z]_plane
 
-**`#bs.link:mirror_x_plane`**
+Mirror the position and rotation of an entity along a plane.
 
-Allows to mirror the position and rotation of an entity along the X plane.
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-Inputs
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.l[h,v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved such as it mirrors the relative position and rotation of the parent entity.
+```
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+*Make armor stands mirror your position and rotation along a plane:*
 
-Outputs
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-:   (state) @s position and rotation
-    : The entity is moved such as it mirrors the relative position and rotation of the the parent entity.
-
-Example
-
-:   Make armor_stands mirror your position and rotation along the X plane:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:mirror_x_plane
-    ```
-:::
-:::{tab-item} Along Z
-
-**`#bs.link:mirror_z_plane`**
-
-Allows to mirror the position and rotation of an entity along the Z plane.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
-
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
-
-Outputs
-
-:   (state) @s position and rotation
-    : The entity is moved such as it mirrors the relative position and rotation of the the parent entity.
-
-Example
-
-:   Make armor_stands mirror your position and rotation along the Z plane:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:mirror_z_plane
-    ```
-:::
-::::
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:mirror_x_plane
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:mirror_z_plane
+```
 
 > **Credits**: Aksiome
 
@@ -505,34 +300,28 @@ Example
 
 ### Mirror point
 
-**`#bs.link:mirror_point_ata`**
+```{function} #bs.link:mirror_point_ata
 
-Allows to mirror the position and rotation of an entity around a given point.
+Mirror the position and rotation of an entity around a given point.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position of the point around which the entity is mirrored.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The execution position is the position of the point around which the entity is mirrored.
+:Outputs:
+  **State**: The entity is moved such as it mirrors the position and rotation of the the parent entity around the given point.
+```
 
-Outputs
+*Make armor stands mirror your position and rotation around 0 0 0:*
 
-:   (state) @s position and rotation
-    : The entity is moved such as it mirrors the position and rotation of the the parent entity around the given point.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
-
-:   Make armor_stands mirror your position and rotation around 0 0 0:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] positioned 0 0 0 run function #bs.link:mirror_point_ata
-    ```
+# In a loop
+execute as @e[predicate=bs.link:has_link] positioned 0 0 0 run function #bs.link:mirror_point_ata
+```
 
 > **Credits**: Aksiome
 
@@ -541,302 +330,193 @@ Example
 ### Reverse behaviors
 
 ::::{tab-set}
-:::{tab-item} All
+:::{tab-item} Pos & Rot
 
-**`#bs.link:reverse_pos_and_rot`**
+```{function} #bs.link:reverse_pos_and_rot
 
-Allows to determine the rotation and displacement made by the parent entity, and reproduce them in the opposite direction.
+Determine the rotation and displacement made by the parent entity, and reproduce them in the opposite direction.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+  **Scores `@s bs.link.l[h,v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+:Outputs:
+  **State**: The entity is moved and rotated opposingly to the movements and rotations of the parent entity.
+```
 
-Outputs
+*Make armor stands invert your moves and rotations:*
 
-:   (state) @s position and rotation
-    : The entity is moved and rotated opposingly to the movements and rotations of the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_and_rot
+```
 
-:   Make armor_stands invert your moves and rotations:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_pos_and_rot
-    ```
 :::
 :::{tab-item} Position
 
-**`#bs.link:reverse_pos`**
+```{function} #bs.link:reverse_pos
 
-Allows to determine the displacement made by the parent entity, and reproduce it in the opposite direction.
+Determine the displacement made by the parent entity, and reproduce it in the opposite direction.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved opposingly to the movements of the parent entity.
+```
 
-Outputs
+*Make armor stands do the opposite of your moves:*
 
-:   (state) @s position
-    : The entity is moved opposingly to the movements of the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos
+```
 
-:   Make armor_stands do the opposite of your moves:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_pos
-    ```
 :::
 :::{tab-item} Rotation
 
-**`#bs.link:reverse_rot`**
+```{function} #bs.link:reverse_rot
 
-Allows you to determine the rotation performed by the parent entity, and reproduce it in the opposite direction.
+Determine the rotation performed by the parent entity, and reproduce it in the opposite direction.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Scores `@s bs.link.l[h,v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+:Outputs:
+  **State**: The entity is rotated opposingly to the rotations of the parent entity.
+```
 
-Outputs
+*Make armor stands invert your rotations:*
 
-:   (state) @s rotation
-    : The entity is rotated opposingly to the rotations of the parent entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot
+```
 
-:   Make armor_stands invert your rotations:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_rot
-    ```
 :::
-:::{tab-item} Along X
+:::{tab-item} Single axis
 
-**`#bs.link:reverse_pos_x`**
+```{function} #bs.link:reverse_pos_[x|y|z]
 
-Allows to determine the displacement made by the parent entity along the X axis, and reproduce it in the opposite direction.
+Determine the displacement made by the parent entity along a single axis, and reproduce it in the opposite direction.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Score `@s bs.link.r[x|y|z]`**: Relative position to the parent entity.
 
-    (score) `@s bs.link.rx`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is moved opposingly to the movements of the parent entity along a single axis.
+```
 
-Outputs
+*Make armor stands do the opposite of your moves along an axis:*
 
-:   (state) @s position
-    : The entity is moved opposingly to the movements of the parent entity along the X axis.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_x
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_y
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_z
+```
 
-:   Make armor_stands do the opposite of your moves along the X axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_pos_x
-    ```
 :::
-:::{tab-item} Along Y
+:::{tab-item} Single angle
 
-**`#bs.link:reverse_pos_y`**
+```{function} #bs.link:reverse_rot_[h|v]
 
-Allows to determine the displacement made by the parent entity along the Y axis, and reproduce it in the opposite direction.
+Determine the rotation performed by the parent entity along a rotation axis, and reproduce it in the opposite direction.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+  **Score `@s bs.link.l[h|v]`**: Local rotation relative to the parent entity.
 
-    (score) `@s bs.link.ry`
-    : Representing the relative position.
+:Outputs:
+  **State**: The entity is rotated opposingly to the rotations of the parent entity.
+```
 
-Outputs
+*Make armor stands invert your rotations along a rotation axis:*
 
-:   (state) @s position
-    : The entity is moved opposingly to the movements of the parent entity along the Y axis.
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
 
-Example
+# In a loop
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot_h
+# Or
+execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot_v
+```
 
-:   Make armor_stands do the opposite of your moves along the Y axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_pos_y
-    ```
-:::
-:::{tab-item} Along Z
-
-**`#bs.link:reverse_pos_z`**
-
-Allows to determine the displacement made by the parent entity along the Z axis, and reproduce it in the opposite direction.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.rz`
-    : Representing the relative position.
-
-Outputs
-
-:   (state) @s position
-    : The entity is moved opposingly to the movements of the parent entity along the Z axis.
-
-Example
-
-:   Make armor_stands do the opposite of your moves along the Z axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_pos_z
-    ```
-:::
-:::{tab-item} Horizontal angle
-
-**`#bs.link:reverse_rot_h`**
-
-Allows you to determine the rotation performed by the parent entity along the horizontal axis, and reproduce it in the opposite direction.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.lh`
-    : Representing the horizontal local rotation.
-
-Outputs
-
-:   (state) @s rotation
-    : The entity is rotated opposingly to the rotations of the parent entity along the horizontal axis.
-
-Example
-
-:   Make armor_stands invert your rotations along the horizontal axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_rot_h
-    ```
-:::
-:::{tab-item} Vertical angle
-
-**`#bs.link:reverse_rot_v`**
-
-Allows you to determine the rotation performed by the parent entity along the vertical axis, and reproduce it in the opposite direction.
-
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
-
-    (score) `@s bs.link.lv`
-    : Representing the vertical local rotation.
-
-Outputs
-
-:   (state) @s rotation
-    : The entity is rotated opposingly to the rotations of the parent entity along the vertical axis.
-
-Example
-
-:   Make armor_stands invert your rotations along the vertical axis:
-
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
-
-    # In a loop
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:reverse_rot_v
-    ```
 :::
 ::::
 
-> **Credits**: Leirof, Aksiome
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Update link
 
-**`#bs.link:update_link`**
+```{function} #bs.link:update_link
 
-This function allows to update the link between entities. If you only use immitation and/or local position keeping functions, this function will not be of any use to you. On the other hand, if you change the position of the child entity automatically, you will have to update the link so that your operation is not cancelled the next time you call the link function.
+Update scores that represent the link between an entity and its parent.
 
-```{admonition} Automatically updated
+:Inputs:
+  **Execution `as <entities>`**: Executing entities that must be linked to another entity.
 
-The link functions of the lib automatically call the update functions if necessary (example: reverse functions). No need to manage this on your side.
+:Outputs:
+  **Scores `@s bs.link.r[x,y,z]`**: Relative position to the parent entity.
+
+  **Scores `@s bs.link.l[x,y,z,h,v]`**: Local position and rotation relative to the parent entity.
 ```
 
-Inputs
+*Update armor stands link:*
 
-:   (execution) `as <entities>`
-    : The executing entity must be linked to another entity.
+```mcfunction
+# Once
+execute as @e[type=armor_stand,predicate=bs.link:has_link] run function #bs.link:update_link
+```
 
-Outputs
+```{important}
+You usually don't need to call this function while using others. However, if you move a child entity and want to maintain the new connection it forms with the parent, updating the link is necessary to prevent changes from being reversed.
+```
 
-:   (score) `@s bs.link.r[x,y,z]`
-    : Representing the relative position.
+> **Credits**: Aksiome, Leirof
 
-    (score) `@s bs.link.l[x,y,z]`
-    : Representing the local position.
+---
 
-    (score) `@s bs.link.l[h,v]`
-    : Representing the local rotation.
+## 👁️ Predicates
 
+You can find below all predicates available in this module.
 
-Example
+---
 
-:   Update armor_stands link:
+### Has link
 
-    ```mcfunction
-    # Once
-    execute as @e[type=armor_stand,scores={bs.link.to=1..}] run function #bs.link:update_link
-    ```
+**`bs.link:has_link`**
 
-> **Credits**: Leirof, Aksiome
+Determine if an entity has a `bs.link.to` score.
+
+> **Credits**: Aksiome
 
 ---
 

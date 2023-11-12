@@ -62,7 +62,6 @@ modules/block
 modules/color
 modules/health
 modules/id
-modules/item
 modules/link
 modules/math
 modules/move
