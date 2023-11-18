@@ -24,8 +24,8 @@ $execute store result score #position.get_distance_ata.x2 bs.data run data get e
 $execute store result score #position.get_distance_ata.y2 bs.data run data get entity @s Pos[1] $(scale)
 $execute store result score #position.get_distance_ata.z2 bs.data run data get entity @s Pos[2] $(scale)
 
-execute store result storage bs:_ x int 1 run scoreboard players operation #position.get_distance_ata.x1 bs.data -= #position.get_distance_ata.x2 bs.data
-execute store result storage bs:_ y int 1 run scoreboard players operation #position.get_distance_ata.y1 bs.data -= #position.get_distance_ata.y2 bs.data
-execute store result storage bs:_ z int 1 run scoreboard players operation #position.get_distance_ata.z1 bs.data -= #position.get_distance_ata.z2 bs.data
+execute store result storage bs:ctx x int 1 run scoreboard players operation #position.get_distance_ata.x1 bs.data -= #position.get_distance_ata.x2 bs.data
+execute store result storage bs:ctx y int 1 run scoreboard players operation #position.get_distance_ata.y1 bs.data -= #position.get_distance_ata.y2 bs.data
+execute store result storage bs:ctx z int 1 run scoreboard players operation #position.get_distance_ata.z1 bs.data -= #position.get_distance_ata.z2 bs.data
 
-execute as B5-0-0-0-2 run function bs.position:get_distance_ata/compute with storage bs:_
+execute as B5-0-0-0-2 run function bs.position:get_distance_ata/compute with storage bs:ctx

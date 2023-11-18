@@ -10,333 +10,35 @@ This module allow to manage the position and rotation of entities via scores. It
 
 </div>
 
+```{image} /_imgs/modules/position.png
+:align: center
+:class: dark_light
+```
+
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ### Canonical to local
 
-**`#bs.position:canonical_to_local`**
+```{function} #bs.position:canonical_to_local
 
 Convert a position (using the relative reference frame) into a local position (using the local reference frame).
 
-Inputs
+:Inputs:
+  **Execution `rotated as <entity>` or `rotated <h> <v>`**: Rotation to use for the conversion.
 
-:   (execution) `rotated as <entity>` or `rotated <h> <v>`
-    : Rotation to use for the conversion.
+  **Scores `@s bs.pos.[x,y,z]`**: Position to convert.
 
-    (score) `@s bs.pos.[x,y,z]`
-    : Position to convert.
-
-Outputs
-
-:   (scores) `@s bs.pos.[x,y,z]`
-    : Converted position.
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Converted position.
+```
 
 > **Credits**: Aksiome
-
----
-
-### Get position
-
-::::{tab-set}
-:::{tab-item} x,y,z
-**`#bs.position:get_pos {scale:<scaling>}`**
-
-Get the execution position of the function and store the coordinates in 3 scores.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (scores) `@s bs.pos.[x,y,z]`
-    : The coordinates of the position.
-
-Example
-
-:   Detect and display the position of the nearest spider (without scaling):
-
-    ```mcfunction
-    # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos {scale:1}
-
-    # See the resluts
-    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"},{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
-    ```
-:::
-:::{tab-item} x only
-**`#bs.position:get_pos_x {scale:<scaling>}`**
-
-Get the execution x position of the function and store the coordinate in a score.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (score) `@s bs.pos.x`
-    : The coordinates of the position.
-
-Example
-
-:   Detect and display the x position of the nearest spider (without scaling):
-
-    ```mcfunction
-    # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_x {scale:1}
-
-    # See the resluts
-    tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"}]
-    ```
-:::
-:::{tab-item} y only
-**`#bs.position:get_pos_y {scale:<scaling>}`**
-
-Get the execution y position of the function and store the coordinate in a score.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (score) `@s bs.pos.y`
-    : The coordinates of the position.
-
-Example
-
-:   Detect and display the y position of the nearest spider (without scaling):
-
-    ```mcfunction
-    # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_y {scale:1}
-
-    # See the resluts
-    tellraw @a [{"text": "Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"}]
-    ```
-:::
-:::{tab-item} z only
-**`#bs.position:get_pos_z {scale:<scaling>}`**
-
-Get the execution z position of the function and store the coordinate in a score.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (score) `@s bs.pos.z`
-    : The coordinates of the position.
-
-Example
-
-:   Detect and display the z position of the nearest spider (without scaling):
-
-    ```mcfunction
-    # Once
-    execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_z {scale:1}
-
-    # See the resluts
-    tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
-    ```
-:::
-::::
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Get rotation
-
-::::{tab-set}
-:::{tab-item} h,v
-**`#bs.position:get_rot {scale:<scaling>}`**
-
-Get the execution rotation of the function and store it in 2 scores.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `rotated as <entity>`
-    : The rotation to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (scores) `@s bs.rot.[h,v]`
-    : The rotation of the position.
-:::
-:::{tab-item} h only
-**`#bs.position:get_rot_h {scale:<scaling>}`**
-
-Get the execution horizontal rotation of the function.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `rotated as <entity>`
-    : The rotation to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (score) `@s bs.rot.h`
-    : The horizontal rotation of the position.
-:::
-:::{tab-item} v only
-**`#bs.position:get_rot_v {scale:<scaling>}`**
-
-Get the execution vertical rotation of the function.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity to store the score to.
-
-    (execution) `at <entity>` or `rotated as <entity>`
-    : The rotation to get.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (score) `@s bs.rot.v`
-    : The vertical rotation of the position.
-:::
-::::
-
-> **Credits**: Aksiome, Leirof, theogiraudet
-
----
-
-### Normalize rotation
-
-**`#bs.position:normalize_rot`**
-
-Allows to normalize the oriantations (replace the `bs.rot.h` and `bs.rot.v` scores respectively in the interval [0;360[ and [0;180[)
-
-> **Credits**: Leirof
-
----
-
-### Get relative
-
-::::{tab-set}
-:::{tab-item} As to at
-
-**`#bs.position:get_relative_ata {scale:<scaling>}`**
-
-Obtain the execution position of the function relatively to the position of the executing entity.
-
-Inputs
-
-:   (execution) `as <entities>`
-    : The entity, considered at the reference point.
-
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position te get the relative position from.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (scores) `@s bs.pos.[x,y,z]`
-    : The relative coordinates.
-
-Example
-
-:   Get your position relative to the nearest Creeper (without scaling):
-
-    ```
-    # Once
-    execute as @s at @e[type=creeper,limit=1,sort=nearest] run function #bs.position:get_relative_ata {scale:1}
-
-    # See the result
-    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
-    ```
-
-:::
-:::{tab-item} From direction
-
-**`#bs.position:get_relative_from_dir {scale:<scaling>}`**
-
-Obtain a direction vector based on the execution position and rotation. Scale is used as the norm/length.
-
-Inputs
-
-:   (execution) `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`
-    : The position and rotation te get the relative position from.
-
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
-
-Outputs
-
-:   (scores) `@s bs.pos.[x,y,z]`
-    : The relative coordinates.
-
-Example
-
-:   Get your position relative to the position that is 2 blocks in front of you (scaled by 1000):
-
-    ```
-    # Once
-    execute at @s run function #bs.position:get_relative_from_dir {scale:2000}
-
-    # See the result
-    tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
-    ```
-
-:::
-::::
-
-> **Credits**: Aksiome, Leirof
 
 ---
 
@@ -345,78 +47,64 @@ Example
 ::::{tab-set}
 :::{tab-item} Normal
 
-**`#bs.position:get_distance_ata {scale:<scaling>}`**
+```{function} #bs.position:get_distance_ata {scale:<scaling>}
 
-Calculates the distance between the source entity and the execution position of the function.
+Compute the distance between the source entity and the execution position of the function.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entity positioned at the reference point.
 
-:   (execution) `as <entities>`
-    : The entity positioned at the reference point.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get the distance from.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get the distance from.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+:Outputs:
+  **Scores `$position.get_distance_ata bs.out`**: Distance between the two positions.
+```
 
-Outputs
+*Calculate the distance between you and the nearest sheep (in blocks, without scaling):*
 
-:   (score) `$position.get_distance_ata bs.out`
-    : The distance between the two positions.
+```mcfunction
+# Once
+execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_ata {scale:1}
 
-Example
-
-:   Calculate the distance between you and the nearest sheep (in blocks, without scaling):
-
-    ```
-    # Once
-    execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_ata {scale:1}
-
-    # See the result
-    tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_ata", "objective": "bs.out"}, "color": "gold"}]
-    ```
+# See the result
+tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_ata", "objective": "bs.out"}, "color": "gold"}]
+```
 
 ```{admonition} Performance tip
 :class: tip
 
-For several applications such as comparing distances, you can use the squared distance instead of the "normal" distance. It is a bit faster to calculate.
+For several applications such as comparing distances, you can use the squared distance instead of the "normal" distance. It is a bit faster to compute.
 ```
 
 :::
 :::{tab-item} Squared
 
-**`#bs.position:get_distance_squared_ata {scale:<scaling>}`**
+```{function} #bs.position:get_distance_squared_ata {scale:<scaling>}
 
-Calculates the squared distance between the source entity and the execution position of the function.
+Compute the squared distance between the source entity and the execution position of the function.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entity positioned at the reference point.
 
-:   (execution) `as <entities>`
-    : The entity positioned at the reference point.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get the distance from.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position to get the distance from.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+:Outputs:
+  **Scores `$position.get_distance_ata bs.out`**: Squared distance between the two positions.
+```
 
-Outputs
+*Calculate the squared distance between you and the nearest sheep (in blocks, without scaling):*
 
-:   (score) `$position.get_distance_squared_ata bs.out`
-    : The squared distance between the two positions.
+```mcfunction
+# Once
+execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_squared_ata {scale:1}
 
-Example
-
-:   Calculate the squared distance between you and the nearest sheep (in blocks, without scaling):
-
-    ```
-    # Once
-    execute at @e[type=sheep,limit=1,sort=nearest] run function #bs.position:get_distance_squared_ata {scale:1}
-
-    # See the result
-    tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_squared_ata", "objective": "bs.out"}, "color": "gold"}]
-    ```
+# See the result
+tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"$position.get_distance_squared_ata", "objective": "bs.out"}, "color": "gold"}]
+```
 
 ```{admonition} Score limitation
 :class: warning
@@ -431,138 +119,372 @@ Scores in Minecraft have a limited size similar to a signed int variable. The la
 
 ---
 
+### Get position
+
+::::{tab-set}
+:::{tab-item} x,y,z
+
+```{function} #bs.position:get_pos {scale:<scaling>}
+
+Get the execution position of the function and store the coordinates in 3 scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Coordinates of the position.
+```
+
+*Detect and display the position of the nearest spider (without scaling):*
+
+```mcfunction
+# Once
+execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos {scale:1}
+
+# See the resluts
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"},{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
+```
+
+:::
+:::{tab-item} x only
+
+```{function} #bs.position:get_pos_x {scale:<scaling>}
+
+Get the execution x position of the function and store the coordinate in a score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Score `@s bs.pos.x`**: Coordinates of the position.
+```
+
+*Detect and display the x position of the nearest spider (without scaling):*
+
+```mcfunction
+# Once
+execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_x {scale:1}
+
+# See the resluts
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"}]
+```
+
+:::
+:::{tab-item} y only
+
+```{function} #bs.position:get_pos_y {scale:<scaling>}
+
+Get the execution y position of the function and store the coordinate in a score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Score `@s bs.pos.y`**: Coordinates of the position.
+```
+
+*Detect and display the y position of the nearest spider (without scaling):*
+
+```mcfunction
+# Once
+execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_y {scale:1}
+
+# See the resluts
+tellraw @a [{"text": "Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"}]
+```
+
+:::
+:::{tab-item} z only
+
+```{function} #bs.position:get_pos_z {scale:<scaling>}
+
+Get the execution z position of the function and store the coordinate in a score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Score `@s bs.pos.z`**: Coordinates of the position.
+```
+
+*Detect and display the z position of the nearest spider (without scaling):*
+
+```mcfunction
+# Once
+execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_pos_z {scale:1}
+
+# See the resluts
+tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
+```
+
+:::
+::::
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Get relative
+
+::::{tab-set}
+:::{tab-item} As to at
+
+```{function} #bs.position:get_relative_ata {scale:<scaling>}
+
+Get the execution position of the function relatively to the position of the executing entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity considered at the reference point.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position te get the relative position from.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Relative coordinates.
+```
+
+*Get your position relative to the nearest Creeper (without scaling):*
+
+```mcfunction
+# Once
+execute as @s at @e[type=creeper,limit=1,sort=nearest] run function #bs.position:get_relative_ata {scale:1}
+
+# See the result
+tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
+```
+
+:::
+:::{tab-item} From direction
+
+```{function} #bs.position:get_relative_from_dir {scale:<scaling>}
+
+Get a direction vector based on the execution position and rotation. Scale is used as the norm/length.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`**: Position and rotation te get the relative position from.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Relative coordinates.
+```
+
+*Get your position relative to the position that is 2 blocks in front of you (scaled by 1000):*
+
+```mcfunction
+# Once
+execute at @s run function #bs.position:get_relative_from_dir {scale:2000}
+
+# See the result
+tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
+```
+
+:::
+::::
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Get rotation
+
+::::{tab-set}
+:::{tab-item} h,v
+
+```{function} #bs.position:get_rot {scale:<scaling>}
+
+Get the execution rotation of the function and store it in 2 scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Scores `@s bs.rot.[h,v]`**: Rotation of the position.
+```
+
+:::
+:::{tab-item} h only
+
+```{function} #bs.position:get_rot_h {scale:<scaling>}
+
+Get the execution horizontal rotation of the function.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Score `@s bs.rot.h`**: Horizontal rotation of the position.
+```
+
+:::
+:::{tab-item} v only
+
+```{function} #bs.position:get_rot_v {scale:<scaling>}
+
+Get the execution vertical rotation of the function.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **Score `@s bs.rot.v`**: Vertical rotation of the position.
+```
+
+:::
+::::
+
+> **Credits**: Aksiome, Leirof, theogiraudet
+
+---
+
+### Normalize rotation
+
+```{function} #bs.position:normalize_rot
+
+Normalize rotations (replace the `bs.rot.h` and `bs.rot.v` scores respectively in the interval [0;360[ and [0;180[)
+```
+
+> **Credits**: Leirof
+
+---
+
 ### Set position
 
 ::::{tab-set}
 :::{tab-item} x,y,z
-**`#bs.position:set_pos {scale:<scaling>}`**
 
-Allows to place the entity at a precise coordinate given by scores.
+```{function} #bs.position:set_pos {scale:<scaling>}
 
-Inputs
+Place an entity at coordinates given by scores.
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (score) `@s bs.pos.[x,y,z]`
-    : The coordinates to teleport to.
+  **Scores `@s bs.pos.[x,y,z]`**: Coordinates to teleport to.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-Outputs
+:Outputs:
+  **State**: Entity is teleported to the coordinates indicated by the scores.
+```
 
-:   (state) Entity position
-    : The entity has been teleported to the coordinates indicated by the scores.
+*Teleport to 48.85 0 2.29:*
 
-Example
-
-:   Teleport to 48.85 0 2.29:
-
-    ```mcfunction
-    # Once
-    scoreboard players set @s bs.pos.x 4885
-    scoreboard players set @s bs.pos.y 0
-    scoreboard players set @s bs.pos.z 229
-    function #bs.position:set_pos {scale:0.001}
-
-    ```
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.x 4885
+scoreboard players set @s bs.pos.y 0
+scoreboard players set @s bs.pos.z 229
+function #bs.position:set_pos {scale:0.001}
+```
 :::
 :::{tab-item} x only
-**`#bs.position:set_pos_x {scale:<scaling>}`**
 
-Allows to place the entity at a precise x coordinate given by a score.
+```{function} #bs.position:set_pos_x {scale:<scaling>}
 
-Inputs
+Place an entity at a precise x coordinate given by scores.
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (score) `@s bs.pos.x`
-    : The x coordinate to teleport to.
+  **Score `@s bs.pos.x`**: Coordinate x to teleport to.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-Outputs
+:Outputs:
+  **State**: Entity is teleported to the x coordinate indicated by the score.
+```
 
-:   (state) Entity position
-    : The entity has been teleported to the x coordinate indicated by the score.
+*Teleport to 70 ~ ~:*
 
-Example
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.x 70
+function #bs.position:set_pos_x {scale:1}
+```
 
-:   Teleport to 70 ~ ~:
-
-    ```mcfunction
-    # Once
-    scoreboard players set @s bs.pos.x 70
-    function #bs.position:set_pos_x {scale:1}
-
-    ```
 :::
 :::{tab-item} y only
-**`#bs.position:set_pos_y {scale:<scaling>}`**
 
-Allows to place the entity at a precise y coordinate given by a score.
+```{function} #bs.position:set_pos_y {scale:<scaling>}
 
-Inputs
+Place an entity at a precise y coordinate given by scores.
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (score) `@s bs.pos.y`
-    : The y coordinate to teleport to.
+  **Score `@s bs.pos.y`**: Coordinate y to teleport to.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-Outputs
+:Outputs:
+  **State**: Entity is teleported to the y coordinate indicated by the score.
+```
 
-:   (state) Entity position
-    : The entity has been teleported to the y coordinate indicated by the score.
+*Teleport to ~ 82 ~:*
 
-Example
-
-:   Teleport to ~ 82 ~:
-
-    ```mcfunction
-    # Once
-    scoreboard players set @s bs.pos.y 82
-    function #bs.position:set_pos_y {scale:1}
-
-    ```
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.y 82
+function #bs.position:set_pos_y {scale:1}
+```
 :::
 :::{tab-item} z only
-**`#bs.position:set_pos_z {scale:<scaling>}`**
 
-Allows to place the entity at a precise z coordinate given by a score.
 
-Inputs
+```{function} #bs.position:set_pos_z {scale:<scaling>}
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+Place an entity at a precise z coordinate given by scores.
 
-    (score) `@s bs.pos.z`
-    : The z coordinate to teleport to.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Score `@s bs.pos.z`**: Coordinate z to teleport to.
 
-Outputs
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-:   (state) Entity position
-    : The entity has been teleported to the z coordinate indicated by the score.
+:Outputs:
+  **State**: Entity is teleported to the z coordinate indicated by the score.
+```
 
-Example
+*Teleport to ~ ~ 65:*
 
-:   Teleport to ~ ~ 65:
-
-    ```mcfunction
-    # Once
-    scoreboard players set @s bs.pos.z 65
-    function #bs.position:set_pos_z {scale:1}
-
-    ```
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.z 65
+function #bs.position:set_pos_z {scale:1}
+```
 :::
 ::::
 
@@ -574,67 +496,59 @@ Example
 
 ::::{tab-set}
 :::{tab-item} h,v
-**`#bs.position:set_rot {scale:<scaling>}`**
 
-Allows to orientate the entity according to its scores.
+```{function} #bs.position:set_rot {scale:<scaling>}
 
-Inputs
+Rotate an entity according to its scores.
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (score) `@s bs.rot.[h,v]`
-    : The rotation to teleport to.
+  **Scores `@s bs.rot.[h,v]`**: Rotation to teleport to.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-Outputs
+:Outputs:
+  **State**: Entity is teleported to the rotation indicated by the scores.
+```
 
-:   (state) Entity rotation
-    : The entity has been teleported to the rotation indicated by the scores.
 :::
 :::{tab-item} h only
-**`#bs.position:set_rot_h {scale:<scaling>}`**
 
-Allows to orientate the entity according to its horizontal rotation score.
 
-Inputs
+```{function} #bs.position:set_rot_h {scale:<scaling>}
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+Rotate an entity according to its horizontal rotation score.
 
-    (score) `@s bs.rot.h`
-    : The rotation to teleport to.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Score `@s bs.rot.h`**: Rotation to teleport to.
 
-Outputs
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-:   (state) Entity rotation
-    : The entity has been teleported to the rotation indicated by the horizontal score.
+:Outputs:
+  **State**: Entity is teleported to the rotation indicated by the horizontal score.
+```
+
 :::
 :::{tab-item} v only
-**`#bs.position:set_rot_v {scale:<scaling>}`**
 
-Allows to orientate the entity according to its vertical rotation score.
+```{function} #bs.position:set_rot_v {scale:<scaling>}
 
-Inputs
+Rotate an entity according to its vertical rotation score.
 
-:   (execution) `as <entities>`
-    : The entity to teleport.
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
 
-    (score) `@s bs.rot.v`
-    : The rotation to teleport to.
+  **Score `@s bs.rot.v`**: Rotation to teleport to.
 
-    (macro variable) `scale`: double
-    : Scalar for the function's outputs.
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
-Outputs
+:Outputs:
+  **State**: Entity is teleported to the rotation indicated by the vertical score.
+```
 
-:   (state) Entity rotation
-    : The entity has been teleported to the rotation indicated by the vertical score.
 :::
 ::::
 
