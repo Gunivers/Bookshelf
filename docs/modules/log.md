@@ -11,15 +11,13 @@ Bookshelf provides functions to log messages in the chat. Different log levels a
 3. **Warning**: Exceptional occurrences that are not errors.
 4. **Error**: Runtime errors that should be monitored and fixed.
 
-
-
 ---
 
 ### Manage log granularity
 
 A significant number of logs can quickly flood the chat. To prevent this, Bookshelf's log module can be configured to display specific logs based on two parameters: the **log level** and the **feature**.
 
-Users need to give themselves tags that follow a strict syntax: `bs.log.<feature>.<level>`, where the level can be `debug`, `info`, `warn`, or `error`.
+Users need to give themselves tags that follow a strict syntax: `bs.log.<feature>.<level>`, where the level can be `debug`, `info`, `warn`, or `error`. To avoid conflict, Bookshelf modules use a strict syntax for the feature: `<module without 'bs.'>.<feature>`.
 
 The `_` symbol acts as a wildcard, logging all features or all levels:
 - `bs.log._.<level>`: show all logs regardless of the feature.
@@ -34,7 +32,7 @@ Each level allows the visualization of subsequent levels. For example, if a user
 
 ### Customize log messages
 
-Log functions take three variables as input. The `path` of the current function that inform users of the log origin, the `feature` used in the tag and the `message`. To avoid conflict, Bookshelf modules use a strict syntax for the feature: `<module without 'bs.'>.<feature>`.
+Log functions take three variables as input. The `path` of the current function that inform users of the log origin, the `feature` used in the tag and the `message`.
 
 ```{warning}
 The `message` string must be a valid JSON text component. Thus, to specify a plain string text as a message, the message needs to be escaped  (`"\"message\""` or `'"message"'`).

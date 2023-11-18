@@ -4,11 +4,23 @@
 
 The beatifull world of mathematics... **in Minecraft!**
 
-<div align=center>
 
-![](img/math.png)
+```{image} /_imgs/modules/math-light.png
+:align: center
+:class: only-light
+```
 
-</div>
+```{image} /_imgs/modules/math-dark.png
+:align: center
+:class: only-dark
+```
+
+```{epigraph}
+"Mathematics has very subtle inventions that can be of great service, both to satisfy the curious and to facilitate all arts and reduce the labor of men."
+
+-- René Descartes
+```
+
 
 ```{button-link} https://youtu.be/Bt0HKaOosqU
 :color: primary
@@ -18,210 +30,192 @@ The beatifull world of mathematics... **in Minecraft!**
 {octicon}`device-camera-video` Watch a demo
 ```
 
-```{epigraph}
-"Mathematics has very subtle inventions that can be of great service, both to satisfy the curious and to facilitate all arts and reduce the labor of men."
-
--- René Descartes
-```
-
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Arccosine
+### Inverse trigonometry
 
-**`#bs.math:acos`**
+::::{tab-set}
+:::{tab-item} Acos
 
-Calculate the arccosinus of a value between -1 and 1.
+```{function} #bs.math:acos
 
-Inputs
+Compute the arc cosine of a value between -1 and 1.
 
-:  (score) `$math.acos.value bs.in`
-   : The value you want to calculate the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+:Inputs:
+  **Score `$math.acos.value bs.in`**: Value you want to compute the arccosine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
-Output
+:Outputs:
+  **Return | Score `$math.acos bs.out`**: Result of the operation in degrees, shifted by 2 digits.
+```
 
-:  (score) `$math.acos bs.out`
-   : The result of the calculation, in degrees (shifted by 2 digits).
+*Compute and display the arccosine of 0.42:*
+```mcfunction
+# Once
+scoreboard players set $math.acos.value bs.in 420
+function #bs.math:acos
+tellraw @a [{"text":"acos(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.acos","objective":"bs.out"},"color":"gold"}]
+```
 
-Example
+![](/_imgs/modules/math/arccos.png)
 
-:  Calculate and display the arccos of 0,42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.acos.value bs.in 420
-   function #bs.math:acos
-   tellraw @a [{"text":"acos(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.acos","objective":"bs.out"},"color":"gold"}]
-   ```
+:::
+:::{tab-item} Asin
 
-![](img/arccos.png)
+```{function} #bs.math:asin
 
-> **Credits**: Aksiome, KubbyDev
+Compute the arc sine of a value between -1 and 1.
 
----
+:Inputs:
+  **Score `$math.asin.value bs.in`**: Value you want to compute the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
-### Arcsine
+:Outputs:
+  **Return | Score `$math.asin bs.out`**: Result of the operation in degrees, shifted by 2 digits.
+```
 
-**`#bs.math:asin`**
+*Compute and display the arcsine of 0.42:*
+```mcfunction
+# Once
+scoreboard players set $math.asin.value bs.in 420
+function #bs.math:asin
+tellraw @a [{"text":"asin(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.asin","objective":"bs.out"},"color":"gold"}]
+```
 
-Compute the arcsinus of a value between -1 and 1.
+![](/_imgs/modules/math/arcsin.png)
 
-Inputs
+:::
+:::{tab-item} Atan
 
-:  (score) `$math.asin.value bs.in`
-   : The value you want to calculate the arcsine of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+```{function} #bs.math:atan
 
-Output
+Compute the arc tangent of a value between -infinite and +infinite.
 
-:  (score) `$math.asin bs.out`
-   : The result of the calculation, in degrees (shifted by 2 digits).
+:Inputs:
+  **Score `$math.atan.value bs.in`**: Value you want to compute the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
-Example
+:Outputs:
+  **Return | Score `$math.atan bs.out`**: Result of the operation in degrees, shifted by 2 digits.
+```
 
-:  Calculate and display the arcsinus of 0.42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.asin.value bs.in 420
-   function #bs.math:asin
-   tellraw @a [{"text":"asin(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.asin","objective":"bs.out"},"color":"gold"}]
-   ```
+*Compute and display the arctan of 0.42:*
+```mcfunction
+# Once
+scoreboard players set $math.atan.value bs.in 420
+function #bs.math:atan
+tellraw @a [{"text":"atan(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.atan","objective":"bs.out"},"color":"gold"}]
+```
 
-![](img/arcsin.png)
+![](/_imgs/modules/math/arctan.png)
 
-> **Credits**: Aksiome, KubbyDev
+:::
+:::{tab-item} Atan2
 
----
-
-### Arctangent
-
-**`#bs.math:atan`**
-
-Compute the arctangent of a value between -infinite and +infinite.
-
-Inputs
-
-:  (score) `$math.atan.value bs.in`
-   : The value you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
-
-Output
-
-:  (score) `$math.atan bs.out`
-   : The result of the calculation, in degrees (shifted by 2 digits).
-
-Example
-
-:  Calculate and display the arctan of 0.42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.atan.value bs.in 420
-   function #bs.math:atan
-   tellraw @a [{"text":"atan(0.42) = ","color":"dark_gray"},{"score":{"name":"$math.atan","objective":"bs.out"},"color":"gold"}]
-   ```
-
-
-![](img/arctan.png)
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Arctangent 2
-
-**`#bs.math:atan2`**
+```{function} #bs.math:atan2
 
 Compute the 2-argument arctangent of y and x.
 
-Inputs
+:Inputs:
+  **Scores `$math.atan2.[y,x] bs.in`**: Values you want to compute the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
 
-:  (scores) `$math.atan2.[y,x] bs.in`
-   : The values you want to calculate the arctangent of, shifted by 3 digits (1,2345 -> 1234) for better precision in integer scores.
+:Outputs:
+  **Return | Score `$math.atan2 bs.out`**: Result of the operation in degrees, shifted by 2 digits.
+```
 
-Output
+*Compute and display the atan2 of (0.42, 0.8):*
+```mcfunction
+# Once
+scoreboard players set $math.atan2.y bs.in 420
+scoreboard players set $math.atan2.x bs.in 800
+function #bs.math:atan2
+tellraw @a [{"text":"atan2(0.42, 0.8) = ","color":"dark_gray"},{"score":{"name":"$math.atan2","objective":"bs.out"},"color":"gold"}]
+```
 
-:  (score) `$math.atan2 bs.out`
-   : The result of the calculation, in degrees (shifted by 2 digits).
+:::
+::::
 
-Example
 
-:  Calculate and display the atan2 of (0.42, 0.8):
-   ```mcfunction
-   # Once
-   scoreboard players set $math.atan2.y bs.in 420
-   scoreboard players set $math.atan2.x bs.in 800
-   function #bs.math:atan2
-   tellraw @a [{"text":"atan2(0.42, 0.8) = ","color":"dark_gray"},{"score":{"name":"$math.atan2","objective":"bs.out"},"color":"gold"}]
-   ```
-
-> **Credits**: Aksiome
+> **Credits**: Aksiome, KubbyDev, Leirof
 
 ---
 
-### Cosine
+### Trigonometry
 
-**`#bs.math:cos`**
+::::{tab-set}
+:::{tab-item} Cos
+
+```{function} #bs.math:cos
 
 Compute the cosine of an angle between 0 and 360.
 
-Inputs
+:Inputs:
+  **Score `$math.cos.angle bs.in`**: Angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
 
-:  (score) `$math.cos.angle bs.in`
-   : The angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
+:Outputs:
+  **Return | Score `$math.cos bs.out`**: Cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+```
 
-Outputs
+*Compute and display the cosine of 42:*
+```mcfunction
+# Once
+scoreboard players set $math.cos.angle bs.in 4200
+function #bs.math:cos
+tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
+```
 
-:  (score) `$math.cos bs.out`
-   : The cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the cosine of 42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.cos.angle bs.in 4200
-   function #bs.math:cos
-   tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.cos", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/cosine.png)
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Sine
-
-**`#bs.math:sin`**
-
-Computes the sine of an angle between 0 and 360.
-
-Inputs
-
-:  (score) `$math.sin.angle bs.in`
-   : The angle in degrees shifted by 2 digits.
-
-Outputs
-
-:  (score) `$math.sin bs.out`
-   : The sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the sine of 42
-   ```mcfunction
-   # Once
-   scoreboard players set $math.sin.angle bs.in 4200
-   function #bs.math:sin
-   tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sin", "objective": "bs.out"}, "color": "gold"}]
-   ```
+![](/_imgs/modules/math/cosine.png)
 
 ```{admonition} How does it work?
 :class: dropdown
 
-This function use the Bhaskara approximation which tell us that
+This functions use the Bhaskara approximation which tell us that
+
+$$
+\sin(x) \approx \frac{4x(180-x)}{40500-x(180-x)} \quad \forall x \in [0, 180]
+$$
+
+From this relation, and using the properties
+- $\sin(-x) = -\sin(x)$ (antisymetry)
+- $\sin(x+360) = \sin(x)$ (periodicity)
+
+We can compute the sine of any angle and thus the cosine.
+
+![](/_imgs/modules/math/bhaskara.png)
+
+```
+
+:::
+:::{tab-item} Sin
+
+```{function} #bs.math:sin
+
+Compute the sine of an angle between 0 and 360.
+
+:Inputs:
+  **Score `$math.sin.angle bs.in`**: Angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
+
+:Outputs:
+  **Return | Score `$math.sin bs.out`**: Sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+```
+
+*Compute and display the sine of 42:*
+```mcfunction
+# Once
+scoreboard players set $math.sin.angle bs.in 4200
+function #bs.math:sin
+tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sin", "objective": "bs.out"}, "color": "gold"}]
+```
+
+![](/_imgs/modules/math/sine.png)
+
+```{admonition} How does it work?
+:class: dropdown
+
+This functions use the Bhaskara approximation which tell us that
 
 $$
 \sin(x) \approx \frac{4x(180-x)}{40500-x(180-x)} \quad \forall x \in [0, 180]
@@ -233,53 +227,78 @@ From this relation, and using the properties
 
 We can compute the sine of any angle.
 
-![](img/bhaskara.png)
+![](/_imgs/modules/math/bhaskara.png)
 
 ```
 
-![](img/sine.png)
+:::
+:::{tab-item} Tan
+
+```{function} #bs.math:tan
+
+Compute the tangent of an angle between 0 and 360.
+
+:Inputs:
+  **Score `$math.tan.angle bs.in`**: Angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
+
+:Outputs:
+  **Return | Score `$math.tan bs.out`**: Tangent of the angle shifted by 3 digits (ex: 0.42 -> 420).
+```
+
+*Compute and display the tangent of 42:*
+```mcfunction
+# Once
+scoreboard players set $math.tan.angle bs.in 4200
+function #bs.math:tan
+tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
+```
+
+![](/_imgs/modules/math/tangent.png)
+
+:::
+:::{tab-item} Sincos
+
+```{function} #bs.math:sincos
+
+Compute both the sine and cosine of an angle between 0 and 360 in a single operation.
+
+:Inputs:
+  **Score `$math.sincos.angle bs.in`**: Angle in degrees shifted by 2 digits (ex: 90.15 -> 9015).
+
+:Outputs:
+  **Score `$math.sincos.cos bs.out`**: Cosine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+
+  **Score `$math.sincos.sin bs.out`**: Sine of the angle shifted by 3 digits (ex: 0.42 -> 420).
+```
+
+*Compute and display the sine and cosine of 42:*
+```mcfunction
+# Once
+scoreboard players set $math.sincos.angle bs.in 4200
+function #bs.math:sincos
+tellraw @a [{"text": "cos(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sincos.cos", "objective": "bs.out"}, "color": "gold"}]
+tellraw @a [{"text": "sin(42) = ", "color": "dark_gray"},{"score":{"name":"$math.sincos.sin", "objective": "bs.out"}, "color": "gold"}]
+```
+
+:::
+::::
 
 > **Credits**: Aksiome, Leirof
 
 ---
 
-### Tangent
-
-**`#bs.math:tan`**
-
-Compute the tangent of an angle between 0 and 360.
-
-Inputs
-
-:  (score) `$math.tan.angle bs.in`
-   : The angle in degrees shifted by 2 digits.
-
-Outputs
-
-:  (score) `$math.tan bs.out`
-   : The tangeant of the angle shifted by 3 digits (ex: 0.42 -> 420).
-
-Example
-
-:  Calculate and display the tengeante of 42:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.tan.angle bs.in 4200
-   function #bs.math:tan
-   tellraw @a [{"text": "tan(42) = ", "color": "dark_gray"},{"score":{"name":"$math.tan", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/tan.png)
-
-> **Credits**: Leirof
-
----
-
 ### Combine
 
-**`#bs.math:combine`**
+```{function} #bs.math:combine
 
 Compute the combine of 2 numbers.
+
+:Inputs:
+  **Scores `$math.combine.[m,n] bs.in`**: Numbers to be combined, the smaller input will be taken from the greater input.
+
+:Outputs:
+  **Score `$math.combine bs.out`**: Result of the operation.
+```
 
 ```{admonition} Technical limitation
 :class: important
@@ -287,26 +306,14 @@ Compute the combine of 2 numbers.
 The value of `bs.out` is incorrect if the result is greater than 2147483647 or `$math.combine.[m,n] bs.in` are not both positive.
 ```
 
-Inputs
-
-:  (scores) `$math.combine.[m,n] bs.in`
-   : The numbers to be combined, the smaller input will be taken from the greater input.
-
-Output
-
-:  (score) `$math.combine bs.out`
-   : The result of the operation.
-
-Example
-
-:  Calculate $combine(4,2)$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.combine.m bs.in 4
-   scoreboard players set $math.combine.n bs.in 2
-   function #bs.math:combine
-   tellraw @a [{"text": "combine(4,2) = ","color":"dark_gray"},{"score":{"name":"$math.combine","objective":"bs.out"},"color":"gold"}]
-   ```
+*Compute $combine(4,2)$:*
+```mcfunction
+# Once
+scoreboard players set $math.combine.m bs.in 4
+scoreboard players set $math.combine.n bs.in 2
+function #bs.math:combine
+tellraw @a [{"text": "combine(4,2) = ","color":"dark_gray"},{"score":{"name":"$math.combine","objective":"bs.out"},"color":"gold"}]
+```
 
 > **Credits**: Ethanout
 
@@ -314,37 +321,32 @@ Example
 
 ### Factorial
 
-**`#bs.math:factorial`**
+```{function} #bs.math:factorial
 
 Compute the factorial of the number.
 
-Inputs
+:Inputs:
+  **Score `$math.factorial.n bs.in`**: Number to be factorialized.
 
-:  (score) `$math.factorial.n bs.in`
-   : The number to be factorialized.
+:Outputs:
+  **Score `$math.factorial bs.out`**: Result of the operation.
+```
 
-   ```{admonition} Technical limitation
-   :class: important
+```{admonition} Technical limitation
+:class: important
 
-   Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`.
-   ```
+Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`.
+```
 
-Output
+*Compute $3!$:*
+```mcfunction
+# Once
+scoreboard players set $math.factorial.n bs.in 3
+function #bs.math:factorial
+tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"$math.factorial","objective":"bs.out"},"color":"gold"}]
+```
 
-:  (score) `$math.factorial bs.out`
-   : The result of the operation
-
-Example
-
-:  Compute $3!$
-   ```mcfunction
-   # Once
-   scoreboard players set $math.factorial.n bs.in 3
-   function #bs.math:factorial
-   tellraw @a [{"text": "3! = ","color":"dark_gray"},{"score":{"name":"$math.factorial","objective":"bs.out"},"color":"gold"}]
-   ```
-
-![](img/factorial.png)
+![](/_imgs/modules/math/factorial.png)
 
 > **Credits**: KubbyDev
 
@@ -352,32 +354,27 @@ Example
 
 ### Greatest common denominator
 
-**`#bs.math:gcd`**
+```{function} #bs.math:gcd
 
 Compute the greatest common denominator of two numbers.
 
-Inputs
+:Inputs:
+  **Scores `$math.gcd.[a,b] bs.in`**: The two numbers.
 
-:  (scores) `$math.gcd.[a,b] bs.in`
-   : The two numbers.
+:Outputs:
+  **Score `$math.gcd bs.out`**: The greatest common denominator.
+```
 
-Output
+*Calculate the greatest common denominator between 16 and 12:*
+```mcfunction
+# Once
+scoreboard players set $math.gcd.a bs.in 16
+scoreboard players set $math.gcd.b bs.in 12
+function #bs.math:gcd
+tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"$math.gcd", "objective": "bs.out"}, "color": "gold"}]
+```
 
-:  (score) `$math.gcd bs.out`
-   : The greatest common denominator.
-
-Example
-
-:  Calculate the greatest common denominator between 16 and 12.
-   ```mcfunction
-   # Once
-   scoreboard players set $math.gcd.a bs.in 16
-   scoreboard players set $math.gcd.b bs.in 12
-   function #bs.math:gcd
-   tellraw @a [{"text": "gcd(16,12) = ", "color": "dark_gray"},{"score":{"name":"$math.gcd", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/gcd.png)
+![](/_imgs/modules/math/gcd.png)
 
 > **Credits**: Aksiome, Leirof
 
@@ -385,35 +382,28 @@ Example
 
 ### Rounded division
 
-**`#bs.math:divide`**
+```{function} #bs.math:divide
 
-Allows you to divide one number by another by rounding the result to the nearest whole number (where Minecraft rounds down to the next whole number).
+Divide a number by another then round the result to the nearest integer (Minecraft rounds down to the next integer).
 
-Inputs
+:Inputs:
+  **Score `$math.divide.num bs.in`**: The numerator.
 
-:  (score) `$math.divide.num bs.in`
-   : The numerator.
+  **Score `$math.divide.den bs.in`**: The denominator.
+:Outputs:
+  **Score `$math.divide bs.out`**: Result of the division.
+```
 
-   (score) `$math.divide.den bs.in`
-   : The denominator.
+*Calculate $9/5$:*
+```mcfunction
+# Once
+scoreboard players set $math.divide.num bs.in 9
+scoreboard players set $math.divide.den bs.in 5
+function #bs.math:divide
+tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"$math.divide", "objective": "bs.out"}, "color": "gold"}]
+```
 
-Output
-
-:  (score) `$math.divide bs.out`
-   : The result of the division.
-
-Example
-
-:  Calculate $9/5$
-   ```mcfunction
-   # Once
-   scoreboard players set $math.divide.num bs.in 9
-   scoreboard players set $math.divide.den bs.in 5
-   function #bs.math:divide
-   tellraw @a [{"text": "9 / 5 = ", "color": "dark_gray"},{"score":{"name":"$math.divide", "objective": "bs.out"}, "color": "gold"}]
-   ```
-
-![](img/divide.png)
+![](/_imgs/modules/math/divide.png)
 
 > **Credits**: Aksiome, theogiraudet
 
@@ -425,68 +415,55 @@ Example
 
 :::{tab-item} Power
 
-**`#bs.math:pow {scaling:<scaling>}`**
+```{function} #bs.math:pow {scaling:<scaling>}
 
 Compute $x^y$.
 
-Inputs
+:Inputs:
+  **Score `$math.pow.base bs.in`**: The base.
 
-:  (score) `$math.pow.base bs.in`
-   : The base.
+  **Score `$math.pow.exp bs.in`**: The exponent.
 
-   (score) `$math.pow.exp bs.in`
-   : The exponent.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input base and the output.
+:Outputs:
+  **Score `$math.pow bs.out`**: Result of the operation.
+```
 
-   (macro variable) `scaling`: double
-      Scalar for the function’s input base and the output.
-
-Output
-
-:  (score) `$math.pow bs.out`
-   : The result of the calculation.
-
-Example
-
-:  Compute $2.245^6$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.pow.base bs.in 2245
-   scoreboard players set $math.pow.exp bs.in 6
-   function #bs.math:pow {scale:1000}
-   tellraw @a [{"text": "(2.245^6)*(1000) = ", "color": "dark_gray"},{"score":{"name":"$math.pow", "objective": "bs.out"}, "color": "gold"}]
-   ```
+*Compute $2.245^6$:*
+```mcfunction
+# Once
+scoreboard players set $math.pow.base bs.in 2245
+scoreboard players set $math.pow.exp bs.in 6
+function #bs.math:pow {scale:1000}
+tellraw @a [{"text": "(2.245^6)*(1000) = ", "color": "dark_gray"},{"score":{"name":"$math.pow", "objective": "bs.out"}, "color": "gold"}]
+```
 
 :::
 :::{tab-item} Power of 2
 
-**`#bs.math:pow2`**
+```{function} #bs.math:pow2
 
 Compute $2^n$.
 
-Inputs
+:Inputs:
+  **Score `$math.pow2.exp bs.in`**: The exponent.
 
-:  (score) `$math.pow2.exp bs.in`
-   : The exponent.
+:Outputs:
+  **Score `$math.pow2 bs.out`**: Result of the operation.
+```
 
-Output
-
-:  (score) `$math.pow2 bs.out`
-   : The result of the calculation.
-
-Example
-
-:  Compute $2^6$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.pow2.exp bs.in 6
-   function #bs.math:pow2
-   tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"$math.pow2", "objective": "bs.out"}, "color": "gold"}]
-   ```
+*Compute $2^6$:*
+```mcfunction
+# Once
+scoreboard players set $math.pow2.exp bs.in 6
+function #bs.math:pow2
+tellraw @a [{"text": "2^6 = ", "color": "dark_gray"},{"score":{"name":"$math.pow2", "objective": "bs.out"}, "color": "gold"}]
+```
 
 :::
 ::::
 
-![](img/power.png)
+![](/_imgs/modules/math/power.png)
 
 > **Credits**: Aksiome, Leirof
 
@@ -498,60 +475,50 @@ Example
 
 :::{tab-item} Integer
 
-**`#bs.math:isqrt`**
+```{function} #bs.math:isqrt
 
 Compute the square root of an int number.
 
-Inputs
+:Inputs:
+  **Score `$math.isqrt.value bs.in`**: Number you want to calculate the square root of.
 
-:  (score) `$math.isqrt.value bs.in`
-   : The int number you want to calculate the square root of.
+:Outputs:
+  **Score `$math.isqrt bs.out`**: Floored result of the square root.
+```
 
-Output
-
-:  (score) `$math.isqrt bs.out`
-   : The floor result of the square root.
-
-Example
-
-:  Calculate and display $\sqrt{42}$:
-   ```mcfunction
-   # Once
-   scoreboard players set $math.isqrt.value bs.in 42
-   function #bs.math:isqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"$math.isqrt", "objective": "bs.out"}, "color": "gold"}]
-   ```
+*Calculate and display $\sqrt{42}$:*
+```mcfunction
+# Once
+scoreboard players set $math.isqrt.value bs.in 42
+function #bs.math:isqrt
+tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"score":{"name":"$math.isqrt", "objective": "bs.out"}, "color": "gold"}]
+```
 
 :::
 :::{tab-item} Decimal
 
-**`#bs.math:sqrt`**
+```{function} #bs.math:sqrt
 
 Compute the square root of a floating number.
 
-Input
+:Inputs:
+  **Storage `bs:in math.sqrt.value` [number]**: Number you want to calculate the square root of.
 
-:  (storage) `bs:in math.sqrt.value`
-   : The floating number you want to calculate the square root of.
+:Outputs:
+  **Storage `bs:out math.sqrt` [float]**: Result of the operation.
+```
 
-Output
-
-:  (storage) `bs:out math.sqrt`
-   : The result of the calculation.
-
-Example
-
-:  Calculate and display $\sqrt{42}$:
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.sqrt.value set value 42
-   function #bs.math:sqrt
-   tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
-   ```
+*Calculate and display $\sqrt{42}$:*
+```mcfunction
+# Once
+data modify storage bs:in math.sqrt.value set value 42
+function #bs.math:sqrt
+tellraw @a [{"text": "sqrt(42) = ", "color": "dark_gray"},{"nbt": "math.sqrt", "storage": "bs:out", "color": "gold"}]
+```
 :::
 ::::
 
-![](img/sqrt.png)
+![](/_imgs/modules/math/sqrt.png)
 
 > **Credits**: Ethanout
 
@@ -559,37 +526,31 @@ Example
 
 ### Exponential
 
-**`#bs.math:exp`**
+```{function} #bs.math:exp
 
 Compute the exponential function.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.exp.value` [number]**: Number to be exponentiated.
 
-:  (storage) `bs:in math.exp.value`
-   : The number to be exponentiated.
+:Outputs:
+  **Storage `bs:out math.exp` [double]**: Result of the operation.
+```
 
-   ```{admonition} Technical limitation
-   :class: important
-   Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
-   ```
+```{admonition} Technical limitation
+:class: important
+Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
+```
 
-Output
+*Compute $exp(3)$:*
+```mcfunction
+# Once
+data modify storage bs:in math.exp.value set value 3.0
+function #bs.math:exp
+data get storage bs:out math.exp
+```
 
-:  (storage) `bs:out math.exp`
-   : The result of the operation.
-
-Example
-
-:  Calculate $exp(3)$
-   ```mcfunction
-   # Once
-
-   data modify storage bs:in math.exp.value set value 3.0
-   function #bs.math:exp
-   data get storage bs:out math.exp
-   ```
-
-![](img/exp.png)
+![](/_imgs/modules/math/exp.png)
 
 > **Credits**: Aksiome, KubbyDev
 
@@ -601,113 +562,92 @@ Example
 
 :::{tab-item} Base e (Neperian)
 
-**`#bs.math:log`**
+```{function} #bs.math:log
 
 Compute the Neperian logarithm (base e) of a number.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.log.value` [number]**: Number to be logarithmized.
 
-:  (storage) `bs:in math.log.value`
-   : The number to be logarithmized.
+:Outputs:
+  **Storage `bs:out math.log` [double]**: Result of the operation.
+```
 
-Output
-
-:  (storage) `bs:out math.log`
-   : The result of the operation.
-
-Example
-
-:  Calculate $ln(28)$
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.log.value set value 28.0
-   function #bs.math:log
-   data get storage bs:out math.log
-   ```
+*Calculate $ln(28)$:*
+```mcfunction
+# Once
+data modify storage bs:in math.log.value set value 28.0
+function #bs.math:log
+data get storage bs:out math.log
+```
 
 :::
 :::{tab-item} Base 2
 
-**`#bs.math:log2`**
+```{function} #bs.math:log2
 
 Compute the logarithm in base 2 of a number.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.log2.value` [number]**: Number to be logarithmized.
 
-:  (storage) `bs:in math.log2.value`
-   : The number to be logarithmized.
+:Outputs:
+  **Storage `bs:out math.log2` [double]**: Result of the operation.
+```
 
-Output
-
-:  (storage) `bs:out math.log2`
-   : The result of the operation.
-
-Example
-
-:  Calculate $log_2(28)$:
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.log2.value set value 28.0
-   function #bs.math:log2
-   data get storage bs:out math.log2
-   ```
+*Calculate $log_2(28)$:*
+```mcfunction
+# Once
+data modify storage bs:in math.log2.value set value 28.0
+function #bs.math:log2
+data get storage bs:out math.log2
+```
 :::
 :::{tab-item} Base 10
 
-**`#bs.math:log10`**
+```{function} #bs.math:log10
 
 Compute the logarithm in base 10 of a number.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.log10.value` [number]**: Number to be logarithmized.
 
-:  (storage) `bs:in math.log10.value`
-   : The number to be logarithmized.
+:Outputs:
+  **Storage `bs:out math.log10` [double]**: Result of the operation.
+```
 
-Output
-
-:  (storage) `bs:out math.log10`
-   : The result of the operation.
-
-Example
-
-:  Calculate $log_{10}(28)$
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.log10.value set value 28.0
-   function #bs.math:log10
-   data get storage bs:out math.log10
-   ```
+*Calculate $log_{10}(28)$:*
+```mcfunction
+# Once
+data modify storage bs:in math.log10.value set value 28.0
+function #bs.math:log10
+data get storage bs:out math.log10
+```
 
 :::
 :::{tab-item} Base a
 
-**`#bs.math:loga`**
+```{function} #bs.math:loga
 
-Computes the logarithm in base a of a number.
+Compute the logarithm in base a of a number.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.loga.value` [number]**: Number to be logarithmized.
 
-:  (storage) `bs:in math.loga.value`
-   : The number to be logarithmized.
+  **Storage `bs:in math.loga.a` [number]**: Base of the logarithm.
 
-   (storage) `bs:in math.loga.a`
-   : The base of the logarithm.
+:Outputs:
+  **Storage `bs:out math.loga` [double]**: Result of the operation.
+```
 
-Output
-
-:  (storage) `bs:out math.loga`
-   : The result of the operation.
-
-Example
-
-:  Calculate $log_4(28)$
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.loga.a set value 4
-   data modify storage bs:in math.loga.value set value 28.0
-   function #bs.math:loga
-   data get storage bs:out math.loga
-   ```
+*Calculate $log_4(28)$:*
+```mcfunction
+# Once
+data modify storage bs:in math.loga.a set value 4
+data modify storage bs:in math.loga.value set value 28.0
+function #bs.math:loga
+data get storage bs:out math.loga
+```
 
 :::
 ::::
@@ -718,31 +658,26 @@ Example
 
 ### Float radix
 
-**`#bs.math:frexp`**
+```{function} #bs.math:frexp
 
 Decompose a floating point number into a normalized fraction and an integral power of two.
 
-Inputs
+:Inputs:
+  **Storage `bs:in math.frexp.value` [number]**: Number to be decomposed.
 
-:  (storage) `bs:in math.frexp.value`
-   : Floating-point value.
+:Outputs:
+  **Storage `bs:out math.frexp.e` [int]**: Exponent for the power of 2.
 
-Output
+  **Storage `bs:out math.frexp.x` [double]**: Normalized fraction in range  `]-1,-0.5]` or `[0.5,1[`.
+```
 
-:  (storage) `math.frexp.e bs.out`
-   : The exponent power of 2.
-:  (storage) `math.frexp.x bs.out`
-   : The normalized fraction (mantissa) in range  `]-1,-0.5]` or `[0.5,1[`.
-
-Example
-
-:  Decompose 5.8 into its mantissa and exponent.
-   ```mcfunction
-   # Once
-   data modify storage bs:in math.frexp.value set value 5.8
-   function #bs.math:frexp
-   data get storage bs:out math.frexp
-   ```
+*Decompose 5.8 into its mantissa and exponent:*
+```mcfunction
+# Once
+data modify storage bs:in math.frexp.value set value 5.8
+function #bs.math:frexp
+data get storage bs:out math.frexp
+```
 
 > **Credits**: Aksiome
 

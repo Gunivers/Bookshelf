@@ -64,7 +64,7 @@ if not version_match or version_match.isdigit():
 
 html_theme_options = {
     "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
-    "navbar_start":  ["navbar-logo", "version-switcher"],
+    "navbar_start": ["navbar-logo", "version-switcher"],
     "navbar_persistent": ["search-button"],
     "use_edit_page_button": True,
     "logo": {
@@ -78,7 +78,7 @@ html_theme_options = {
     "icon_links": [
         {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
         {"name": "GitHub", "url": "https://github.com/Gunivers/Bookshelf", "icon": "fa-brands fa-github"},
-        {"name": "Support us", "url": "https://www.patreon.com/gunivers", "icon": "fa-solid fa-heart"},
+        {"name": "Support us", "url": "https://gunivers.net/soutenir/", "icon": "fa-solid fa-heart"},
         {"name": "Discord server", "url": "https://discord.gg/E8qq6tN", "icon": "fa-brands fa-discord"},
         {"name": "Gunivers", "url": "https://gunivers.net", "icon": "_static/logo-gunivers.png", "type": "local"},
     ],

@@ -10,31 +10,31 @@ sd_hide_title: true
 
 ```{image} /_imgs/banner-light.png
 :class: only-light
+:width: 600px
 ```
 
 ```{image} /_imgs/banner-dark.png
 :class: only-dark
+:width: 600px
 ```
 
 </div>
 
+## 🕵️‍♂️ What is Bookshelf?
 
-
-## 🔎 What is it?
-
-Bookshelf (previously Gunivers Libs) is a highly accessible modular library datapack, designed to help mapmakers to quickly & easily implement complexe systems in their maps.
+Bookshelf (previously Gunivers Libs) is a highly accessible modular library datapack, designed to help mapmakers quickly & easily implement systems in their maps.
 
 
 ::::{grid} 2
 
 :::{grid-item}
 
-```{button-link} getting_started.html
+```{button-link} quickstart.html
 :color: primary
 :align: right
 :shadow:
 
-👋 Get started!
+🚀 Quickstart!
 ```
 
 :::
@@ -51,76 +51,34 @@ Bookshelf (previously Gunivers Libs) is a highly accessible modular library data
 :::
 ::::
 
-## ⚙️ Features
+---
 
-::::{grid} 2
+### 🌟 Featured modules
 
-:::{grid-item-card} 🧮 Math
-:link: modules/math
-:link-type: doc
-:margin: 0 3 0 0
+```{include} _templates/featured-modules.md
+```
 
-Basic mathematical function : sin, cos, exp, log, sqrt and much more!
-:::
-:::{grid-item-card} 🏷️ ID
-:link: modules/id
-:link-type: doc
-:margin: 0 3 0 0
+---
 
-Identity the entities with a unique ID, and use it to create complexe systems!
-:::
-:::{grid-item-card} 🔀 Block conversion
-:link: modules/block
-:link-type: doc
-:margin: 0 3 0 0
+## 🔥 Motivation
 
-Block {octicon}`arrow-switch` Score {octicon}`arrow-switch` Item conversion systems!
-:::
-:::{grid-item-card} 🧠 AI tools
-:link: modules/move
-:link-type: doc
-:margin: 0 3 0 0
+As developers, we recognize the importance of using libraries to save time and avoid reinventing the wheel. Unfortunately, we've noticed that mapmakers within the Minecraft community are often unfamiliar with this concept.
 
-Pathfinding, vision and other tools to create NPCs!
-:::
-:::{grid-item-card} 🪃 Vectors
-:link: modules/vector
-:link-type: doc
-:margin: 0 0 0 0
+That's why we started this project, to introduce a variety of reusable tools and try to convice mapmakers to embrace the use of libraries.
 
-Give customized trajectories to your entities, which can be deflected by the wind, bounce on blocks etc.
-:::
-:::{grid-item-card} 📎 Entity Link
-:link: modules/link
-:link-type: doc
-:margin: 0 0 0 0
-
-Synchronize the movement of your entities, move consistent entity structures or add mirrors effects
-:::
-::::
-
-And much more!
-
-## 🏃 Motivation
-
-As developers, we know the importance of using libraries to avoid losing time by re-inventing the wheel in each project. But in Minecraft, we often see that mapmakers are not familiar with this concept.
-
-That's why we created this library, to propose a lot of re-usable tools and try to convice mapmakers to become real developers by looking for and using the available tools.
-
-Thus, this lib is not made to propose the best optimized functions or the more accurate ones. Instead, it is designed to be easy to install and use, and propose various features. We give a huge importance to the accessibility and we recommend talented creators to fork this project in order to make their own optimized versions of the lib.
+While we strive to keep these modules as much optimized and accurate as possible, our main goal is to offer a wide range of features and provide tools that are both easy to use and install. Therefore, we will always prioritize accessibility above everything else.
 
 ```{epigraph}
-
 "I have seen further than others because I have stood on the shoulders of giants."
 
 -- Isaac Newton
 ```
 
-## 🤝 Follow and/or contribute
+## 🤝 Contribution
 
-You can come on [our Discord](https://discord.gg/E8qq6tN) server to talk with us and/or take part of the project!
+If you have any doubts related to the project or want to discuss something, then join [our Discord](https://discord.gg/E8qq6tN) server.
 
-If you want to contribute, please read at least the "Getting started" section in the ["Contributing" page](https://bookshelf.docs.gunivers.net/en/latest/contributing.html) that contain all the development convention used in this project.
+If you want to contribute, please refer to the [contribution docs](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html) for more information.
 
 ````{toctree}
 :hidden:

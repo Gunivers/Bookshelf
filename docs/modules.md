@@ -4,53 +4,14 @@ html_theme.sidebar_secondary.remove: true
 
 # 🧩 Modules
 
-::::{grid} 2
+Bookshelf is designed with modularity in mind. Features that serve a common purpose are organized into distinct, standalone, namespaced modules.
 
-:::{grid-item-card} 🧮 Math
-:link: modules/math
-:link-type: doc
-:margin: 0 3 0 0
+---
 
-Basic mathematical function : sin, cos, exp, log, sqrt and much more!
-:::
-:::{grid-item-card} 🏷️ ID
-:link: modules/id
-:link-type: doc
-:margin: 0 3 0 0
+## 🌟 Featured modules
 
-Identity the entities with a unique ID, and use it to create complexe systems!
-:::
-:::{grid-item-card} 🔀 Block conversion
-:link: modules/block
-:link-type: doc
-:margin: 0 3 0 0
-
-Block {octicon}`arrow-switch` Score {octicon}`arrow-switch` Item conversion systems!
-:::
-:::{grid-item-card} 🧠 AI tools
-:link: modules/move
-:link-type: doc
-:margin: 0 3 0 0
-
-Pathfinding, vision and other tools to create NPCs!
-:::
-:::{grid-item-card} 🪃 Vectors
-:link: modules/vector
-:link-type: doc
-:margin: 0 0 0 0
-
-Give customized trajectories to your entities, which can be deflected by the wind, bounce on blocks etc.
-:::
-:::{grid-item-card} 📎 Entity Link
-:link: modules/link
-:link-type: doc
-:margin: 0 0 0 0
-
-Synchronize the movement of your entities, move consistent entity structures or add mirrors effects
-:::
-::::
-
-And much more!
+```{include} _templates/featured-modules.md
+```
 
 ```{toctree}
 :hidden:
@@ -80,7 +41,6 @@ modules/xp
 :hidden:
 :caption: Dev modules
 
-modules/core
 modules/log
 modules/mapedit
 ```
