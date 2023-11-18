@@ -34,3 +34,5 @@ scoreboard players operation #math.combine.m bs.data < #math.combine.temp bs.dat
 execute if score #math.combine.m bs.data matches 0 run scoreboard players set $math.combine bs.out 1
 execute if score #math.combine.m bs.data matches 1 run scoreboard players operation $math.combine bs.out = #math.combine.n bs.data
 execute if score #math.combine.m bs.data matches 2.. run function bs.math:combine/start
+
+return run scoreboard players get $math.combine bs.out

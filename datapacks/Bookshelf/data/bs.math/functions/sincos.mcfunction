@@ -8,7 +8,7 @@
 # Created: 05/09/2023 (23w33a)
 # Last modification:
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#sincos
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#trigonometry
 # Dependencies:
 # Note:
 

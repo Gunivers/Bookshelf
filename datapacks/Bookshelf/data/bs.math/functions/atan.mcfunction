@@ -8,13 +8,13 @@
 # Created: 18/01/2023 (1.19.2)
 # Last modification: 05/09/2023 (23w33a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#arctangent
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#inverse-trigonometry
 # Dependencies:
 # Note:
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $math.atan2.y bs.in = $math.atan.value bs.in
-scoreboard players set $math.atan2.x bs.in 1000
-function #bs.math:atan2
-scoreboard players operation $math.atan bs.out = $math.atan2 bs.out
+execute store result entity B5-0-0-0-1 Pos[0] double 0.001 run scoreboard players get $math.atan.value bs.in
+data modify entity B5-0-0-0-1 Pos[2] set value 1
+execute positioned 0.0 0.0 0.0 facing entity B5-0-0-0-1 feet rotated ~ 0.0 run tp B5-0-0-0-1 0.0 0.0 0.0 ~ ~
+return run execute store result score $math.atan bs.out run data get entity B5-0-0-0-1 Rotation[0] -100

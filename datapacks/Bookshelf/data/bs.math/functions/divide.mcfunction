@@ -20,3 +20,4 @@ execute store result score #math.divide.nmod bs.data run scoreboard players oper
 scoreboard players operation #math.divide.nmod bs.data -= $math.divide.den bs.in
 scoreboard players operation #math.divide.nmod bs.data *= -1 bs.const
 execute if score #math.divide.nmod bs.data < #math.divide.mod bs.data run scoreboard players add $math.divide bs.out 1
+return run scoreboard players get $math.divide bs.out

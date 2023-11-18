@@ -18,12 +18,12 @@ execute store result score #math.exp.index bs.data store result score #math.exp.
 
 # Seperate integral and fractional parts
 scoreboard players operation #math.exp.index bs.data /= 10000000 bs.const
-execute store result storage bs:_ x double 0.0000001 run scoreboard players operation #math.exp.x bs.data %= 10000000 bs.const
-execute store result storage bs:_ index int 1 run scoreboard players add #math.exp.index bs.data 7
+execute store result storage bs:ctx x double 0.0000001 run scoreboard players operation #math.exp.x bs.data %= 10000000 bs.const
+execute store result storage bs:ctx y int 1 run scoreboard players add #math.exp.index bs.data 7
 
 # Get integral result from lookup table
 execute if score #math.exp.index bs.data matches ..-1 run data modify storage bs:out math.exp set value 0.0
-execute if score #math.exp.index bs.data matches 0.. run function bs.math:exp/table with storage bs:_
+execute if score #math.exp.index bs.data matches 0.. run function bs.math:exp/table with storage bs:ctx
 
 # Adjust result using the fractional part
 execute if score #math.exp.x bs.data matches 1.. run function bs.math:exp/fract
