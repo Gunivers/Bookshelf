@@ -297,7 +297,7 @@ Compute the combine of 2 numbers.
   **Scores `$math.combine.[m,n] bs.in`**: Numbers to be combined, the smaller input will be taken from the greater input.
 
 :Outputs:
-  **Score `$math.combine bs.out`**: Result of the operation.
+  **Return | Score `$math.combine bs.out`**: Result of the operation.
 ```
 
 ```{admonition} Technical limitation
@@ -329,7 +329,7 @@ Compute the factorial of the number.
   **Score `$math.factorial.n bs.in`**: Number to be factorialized.
 
 :Outputs:
-  **Score `$math.factorial bs.out`**: Result of the operation.
+  **Return | Score `$math.factorial bs.out`**: Result of the operation.
 ```
 
 ```{admonition} Technical limitation
@@ -362,7 +362,7 @@ Compute the greatest common denominator of two numbers.
   **Scores `$math.gcd.[a,b] bs.in`**: The two numbers.
 
 :Outputs:
-  **Score `$math.gcd bs.out`**: The greatest common denominator.
+  **Return | Score `$math.gcd bs.out`**: The greatest common denominator.
 ```
 
 *Calculate the greatest common denominator between 16 and 12:*
@@ -391,7 +391,7 @@ Divide a number by another then round the result to the nearest integer (Minecra
 
   **Score `$math.divide.den bs.in`**: The denominator.
 :Outputs:
-  **Score `$math.divide bs.out`**: Result of the division.
+  **Return | Score `$math.divide bs.out`**: Result of the division.
 ```
 
 *Calculate $9/5$:*
@@ -426,7 +426,7 @@ Compute $x^y$.
 
   **Macro Var `scaling` [number]**: Scalar for the function’s input base and the output.
 :Outputs:
-  **Score `$math.pow bs.out`**: Result of the operation.
+  **Return | Score `$math.pow bs.out`**: Result of the operation.
 ```
 
 *Compute $2.245^6$:*
@@ -449,7 +449,7 @@ Compute $2^n$.
   **Score `$math.pow2.exp bs.in`**: The exponent.
 
 :Outputs:
-  **Score `$math.pow2 bs.out`**: Result of the operation.
+  **Return | Score `$math.pow2 bs.out`**: Result of the operation.
 ```
 
 *Compute $2^6$:*
@@ -483,7 +483,7 @@ Compute the square root of an int number.
   **Score `$math.isqrt.value bs.in`**: Number you want to calculate the square root of.
 
 :Outputs:
-  **Score `$math.isqrt bs.out`**: Floored result of the square root.
+  **Return | Score `$math.isqrt bs.out`**: Floored result of the square root.
 ```
 
 *Calculate and display $\sqrt{42}$:*
