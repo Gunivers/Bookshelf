@@ -1,3 +1,3 @@
 # spider group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 700000
-scoreboard players set #view.raycast.hitbox.height bs.data 900000
+scoreboard players set $hitbox.width bs.out 1400000
+scoreboard players set $hitbox.height bs.out 900000

@@ -6,10 +6,10 @@ html_theme.sidebar_secondary.remove: true
 
 Bookshelf respects certain naming conventions in order to reduce the effort needed to read and understand code.
 
-- Storage use the snake_case with an indication of the path to the module as prefix.
+- Storage use the snake_case and is limited to the one defined in the shared data section.
 
-  Example: `bs:<module> my_data`
-- Objectives use the snake_case with an indication of the path to the module as prefix.
+  Example: `bs:data <module>.<feature>`
+- Objectives use the snake_case with a `bs.` prefix.
 
   Example: `bs.<module>.my_objective`
 - Tags use the snake_case convention with an indication of the path to the module as prefix.

@@ -1,7 +1,8 @@
 # armor_stand group
-data modify storage bs:_ nbt set from entity @s
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 250000
-scoreboard players set #view.raycast.hitbox.height bs.data 1975000
-execute if data storage bs:_ nbt{Small:1b} run scoreboard players set #view.raycast.hitbox.hwidth bs.data 125000
-execute if data storage bs:_ nbt{Small:1b} run scoreboard players set #view.raycast.hitbox.height bs.data 987500
-execute if data storage bs:_ nbt{Marker:1b} run scoreboard players reset #view.raycast.entity.id bs.data
+data modify storage bs:ctx _ set from entity @s
+scoreboard players set $hitbox.width bs.out 500000
+scoreboard players set $hitbox.height bs.out 1975000
+execute if data storage bs:ctx _{Small:1b} run scoreboard players set $hitbox.width bs.out 250000
+execute if data storage bs:ctx _{Small:1b} run scoreboard players set $hitbox.height bs.out 987500
+execute if data storage bs:ctx _{Marker:1b} run scoreboard players set $hitbox.width bs.out 0
+execute if data storage bs:ctx _{Marker:1b} run scoreboard players set $hitbox.height bs.out 0

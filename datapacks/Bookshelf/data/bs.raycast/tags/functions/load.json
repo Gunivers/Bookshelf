@@ -1,0 +1,6 @@
+{
+  "values": [
+    "#bs.hitbox:load",
+    "bs.raycast:__load__"
+  ]
+}

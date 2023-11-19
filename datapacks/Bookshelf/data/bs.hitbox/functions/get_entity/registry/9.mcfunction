@@ -1,3 +1,3 @@
 # boat group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 687500
-scoreboard players set #view.raycast.hitbox.height bs.data 562500
+scoreboard players set $hitbox.width bs.out 1375000
+scoreboard players set $hitbox.height bs.out 562500

@@ -1,3 +1,3 @@
 # giant group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 1800000
-scoreboard players set #view.raycast.hitbox.height bs.data 12000000
+scoreboard players set $hitbox.width bs.out 3600000
+scoreboard players set $hitbox.height bs.out 12000000

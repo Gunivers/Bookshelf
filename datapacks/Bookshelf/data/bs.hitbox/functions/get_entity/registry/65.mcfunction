@@ -1,3 +1,3 @@
 # wither_skull group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 156250
-scoreboard players set #view.raycast.hitbox.height bs.data 312500
+scoreboard players set $hitbox.width bs.out 312500
+scoreboard players set $hitbox.height bs.out 312500

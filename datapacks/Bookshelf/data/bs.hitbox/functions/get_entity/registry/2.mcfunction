@@ -1,3 +1,3 @@
 # area_effect_cloud group
-execute store result score #view.raycast.hitbox.hwidth bs.data run data get entity @s Radius 1000000
-scoreboard players set #view.raycast.hitbox.height bs.data 500000
+execute store result score $hitbox.width bs.out run data get entity @s Radius 2000000
+scoreboard players set $hitbox.height bs.out 500000

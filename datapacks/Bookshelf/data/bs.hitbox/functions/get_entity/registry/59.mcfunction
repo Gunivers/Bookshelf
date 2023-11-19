@@ -1,3 +1,3 @@
 # tropical_fish group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 250000
-scoreboard players set #view.raycast.hitbox.height bs.data 400000
+scoreboard players set $hitbox.width bs.out 500000
+scoreboard players set $hitbox.height bs.out 400000

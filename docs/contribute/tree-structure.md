@@ -8,9 +8,7 @@ Bookshelf respects a certain tree structure which can be similar to the Java pac
 
 - Each module should be responsible for loading and unloading itself. This means that each module must redefine objectives, constants, and everything else that is needed.
 
-- Each module should also registered itself to the core module using the metadata objective.
-
-- Each feature function should have its own function tag.
+- Each feature function should have its own function tag.s
 
 - A feature is equal to a unique utility, so we should not hesitate to decompose its features in order to make it more readable and to promote reusability.
 

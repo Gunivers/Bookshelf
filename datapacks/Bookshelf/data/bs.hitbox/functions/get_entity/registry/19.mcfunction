@@ -1,3 +1,3 @@
 # elder_guardian group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 998750
-scoreboard players set #view.raycast.hitbox.height bs.data 1997500
+scoreboard players set $hitbox.width bs.out 1997500
+scoreboard players set $hitbox.height bs.out 1997500

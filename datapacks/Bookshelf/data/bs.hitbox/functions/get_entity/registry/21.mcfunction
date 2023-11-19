@@ -1,3 +1,3 @@
 # ender_dragon group
-scoreboard players set #view.raycast.hitbox.hwidth bs.data 8000000
-scoreboard players set #view.raycast.hitbox.height bs.data 8000000
+scoreboard players set $hitbox.width bs.out 16000000
+scoreboard players set $hitbox.height bs.out 8000000
