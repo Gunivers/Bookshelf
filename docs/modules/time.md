@@ -12,57 +12,30 @@ This module uses a command block to get the system time. Be sure that `enable-co
 
 ##  🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ###  System time
 
-**`#bs.time:get`**
+```{function} #bs.time:get
 
 Get the system time corresponding to the real hours, minutes and seconds.
 
-Outputs
+:Outputs:
+  **Score `$time.hours bs.out`**: System time hours.
 
-: ::::{tab-set}
-  :::{tab-item} Score
+  **Score `$time.minutes bs.out`**: System time minutes.
 
-  (score) `$time.hours bs.out`
-  : The real hours
+  **Score `$time.seconds bs.out`**: System time seconds.
+```
 
-  (score) `$time.minutes bs.out`
-  : The real minutes
+*The moment we all dread:*
+```mcfunction
+function #bs.time:get
 
-  (score) `$time.seconds bs.out`
-  : The real seconds
-
-  :::
-  ::: {tab-item} Storage
-
-  (storage) `bs:out time.hours`: int
-  : The real hours
-
-  (storage) `bs:out time.minutes`: int
-  : The real minutes
-
-  (storage) `bs:out time.seconds`: int
-  : The real seconds
-
-  (storage) `bs:out time.string`: string
-  : A formatted string using the following format: hh:mm:ss
-
-  :::
-  ::::
-
-
-Example
-
-: The moment we all dread.
-  ```mcfunction
-  function #bs.time:get
-
-  tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h, "},{"score":{"name":"$time.minutes","objective":"bs.out"}},{"text":"m and "},{"score":{"name":"$time.seconds","objective":"bs.out"}},{"text":"s. Time to wake up!"}]
-  ```
+tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h, "},{"score":{"name":"$time.minutes","objective":"bs.out"}},{"text":"m and "},{"score":{"name":"$time.seconds","objective":"bs.out"}},{"text":"s. Time to wake up!"}]
+```
 
 > **Credits**: Aksiome
 
