@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:wither_skeleton",
+    "minecraft:wither_skull",
+    "minecraft:wolf",
+    "#bs.hitbox:zombie_like",
+    "minecraft:player",
+    "minecraft:goat",
+    "minecraft:villager"
+  ]
+}
