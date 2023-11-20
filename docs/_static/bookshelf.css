@@ -1,6 +1,6 @@
 html[data-theme="light"] {
   --pst-color-primary: #538fef;
-  --pst-color-secondary: #ff4d05;
+  --pst-color-secondary: rgb(247, 110, 19);
   --sd-color-card-border-hover: var(--pst-color-primary);
   --pst-color-primary-highlight: var(--pst-color-secondary);
   --scrollbar-thumb-bg: #00000019;
