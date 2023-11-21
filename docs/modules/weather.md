@@ -18,6 +18,8 @@ You can find below all predicates available in this module.
 
 Determine if it is raining or not.
 
+> **Credits**: Aksiome, theogiraudet
+
 ---
 
 ### Is it thundering?
@@ -26,10 +28,7 @@ Determine if it is raining or not.
 
 Determine if it is thundering or not.
 
----
-
-
-> **Credits**: theogiraudet, Aksiome
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
