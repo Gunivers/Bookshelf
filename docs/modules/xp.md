@@ -4,7 +4,7 @@
 
 All functions allowing to manage experience points and levels.
 
-```{image} img/xp.png
+```{image} /_imgs/modules/xp.png
 :class: dark-light p-2
 ```
 
