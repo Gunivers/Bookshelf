@@ -4,6 +4,7 @@
 # CODE ------------------------------------------------------------------------
 
 kill B5-0-0-0-1
+kill B5-0-0-0-2
 forceload remove -1 -1 1 1
 
 scoreboard objectives remove bs.in

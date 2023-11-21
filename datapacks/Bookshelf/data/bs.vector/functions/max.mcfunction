@@ -17,3 +17,4 @@
 scoreboard players operation $vector.max bs.out = $vector.max.0 bs.in
 execute if predicate bs.vector:max/check1 run scoreboard players operation $vector.max bs.out = $vector.max.1 bs.in
 execute if predicate bs.vector:max/check2 run scoreboard players operation $vector.max bs.out = $vector.max.2 bs.in
+return run scoreboard players get $vector.max bs.out
