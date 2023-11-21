@@ -86,6 +86,8 @@ You can find below all predicates available in this module.
 
 Determine if it can rain or not.
 
+> **Credits**: Aksiome
+
 ---
 
 ### Can it snow?
@@ -94,6 +96,8 @@ Determine if it can rain or not.
 
 Determine if it can snow or not.
 
+> **Credits**: Aksiome
+
 ---
 
 ### Can it rain or snow?
@@ -101,6 +105,8 @@ Determine if it can snow or not.
 **`bs.biome:has_precipitation`**
 
 Determine if the biome has precipitation or not.
+
+> **Credits**: Aksiome
 
 ---
 
