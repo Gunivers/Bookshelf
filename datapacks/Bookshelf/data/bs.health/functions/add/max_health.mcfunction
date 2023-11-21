@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.0
+# Version: 1.1
 # Created: 15/09/2023 (1.20.2)
-# Last modification: 23/10/2023 (1.20.2)
+# Last modification: 21/11/2023 (1.20.3)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/health.html##add-remove
 # Dependencies:
@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value $(points)
-execute store result score #health bs.data run data get storage bs:ctx _ 100000
-scoreboard players operation @s bs.health.max += #health bs.data
+$execute store result score #health bs.data run data get storage bs:const health.point $(points)
+scoreboard players operation @s bs.health.y += #health bs.data
+execute if score @s bs.health.y matches 0 run scoreboard players reset @s bs.health.y

@@ -5,9 +5,10 @@
 
 scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 scoreboard objectives add bs.ttl dummy [{"text":"BS ","color":"dark_gray"},{"text":"Time to Live","color":"aqua"}]
-scoreboard objectives add bs.health.max dummy [{"text":"BS ","color":"dark_gray"},{"text":"Health [internal]","color":"aqua"}]
-scoreboard objectives add bs.health.points dummy [{"text":"BS ","color":"dark_gray"},{"text":"Health [internal]","color":"aqua"}]
+scoreboard objectives add bs.health.x dummy [{"text":"BS ","color":"dark_gray"},{"text":"Health [internal]","color":"aqua"}]
+scoreboard objectives add bs.health.y dummy [{"text":"BS ","color":"dark_gray"},{"text":"Health [internal]","color":"aqua"}]
 
+data modify storage bs:const health.point set value 100000
 data modify storage bs:const health.ttl.units set value [ \
   {name:"t",scale:1}, \
   {name:"tick",scale:1}, \

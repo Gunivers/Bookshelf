@@ -5,36 +5,14 @@
       "condition": "minecraft:entity_scores",
       "entity": "this",
       "scores": {
-        "bs.health.points": {
-          "min": 1
-        }
+        "bs.health.x": {}
       }
     },
     {
       "condition": "minecraft:entity_scores",
       "entity": "this",
       "scores": {
-        "bs.health.points": {
-          "max": -1
-        }
-      }
-    },
-    {
-      "condition": "minecraft:entity_scores",
-      "entity": "this",
-      "scores": {
-        "bs.health.max": {
-          "min": 1
-        }
-      }
-    },
-    {
-      "condition": "minecraft:entity_scores",
-      "entity": "this",
-      "scores": {
-        "bs.health.max": {
-          "max": -1
-        }
+        "bs.health.y": {}
       }
     }
   ]

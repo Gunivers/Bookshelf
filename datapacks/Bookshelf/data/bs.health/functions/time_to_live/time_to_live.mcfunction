@@ -6,7 +6,7 @@
 
 # Version: 2.0
 # Created: ??/??/???? (1.13)
-# Last modification: 15/09/2023 (1.20.2)
+# Last modification: 19/11/2023 (1.20.3)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#time-to-live
 # Dependencies:
