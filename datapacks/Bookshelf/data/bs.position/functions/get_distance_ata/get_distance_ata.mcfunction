@@ -28,4 +28,4 @@ execute store result storage bs:ctx x int 1 run scoreboard players operation #po
 execute store result storage bs:ctx y int 1 run scoreboard players operation #position.get_distance_ata.y1 bs.data -= #position.get_distance_ata.y2 bs.data
 execute store result storage bs:ctx z int 1 run scoreboard players operation #position.get_distance_ata.z1 bs.data -= #position.get_distance_ata.z2 bs.data
 
-execute as B5-0-0-0-2 run function bs.position:get_distance_ata/compute with storage bs:ctx
+execute store result score $position.get_distance_ata bs.out as B5-0-0-0-2 run return run function bs.position:get_distance_ata/compute with storage bs:ctx

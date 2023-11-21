@@ -53,7 +53,7 @@ Compute the distance between the source entity and the execution position of the
   **Macro Var `scale`**: Scalar for the function's outputs.
 
 :Outputs:
-  **Scores `$position.get_distance_ata bs.out`**: Distance between the two positions.
+  **Return | Score `$position.get_distance_ata bs.out`**: Distance between the two positions.
 ```
 
 *Calculate the distance between you and the nearest sheep (in blocks, without scaling):*
@@ -87,7 +87,7 @@ Compute the squared distance between the source entity and the execution positio
   **Macro Var `scale`**: Scalar for the function's outputs.
 
 :Outputs:
-  **Scores `$position.get_distance_ata bs.out`**: Squared distance between the two positions.
+  **Return | Score `$position.get_distance_ata bs.out`**: Squared distance between the two positions.
 ```
 
 *Calculate the squared distance between you and the nearest sheep (in blocks, without scaling):*
