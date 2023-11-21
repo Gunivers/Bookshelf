@@ -1,6 +1,5 @@
 {
   "values": [
-    "bs.xp:set/levels/macro",
-    "bs.xp:set/levels/levels"
+    "bs.xp:set/levels"
   ]
 }

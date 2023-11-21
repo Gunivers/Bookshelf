@@ -14,9 +14,4 @@
 
 # CODE ------------------------------------------------------------------------
 
-# level 1111129 => max_points = 10000002
-$execute store result storage bs:ctx x int 1 run data get storage bs:const xp.progress $(progress)
-execute store result storage bs:ctx y int 1 run xp query @s levels
-xp set @s 1111129 levels
-function bs.xp:set/progress/apply with storage bs:ctx
-function bs.xp:utils/restore_levels with storage bs:ctx
+$xp set @s $(points) points
