@@ -4,11 +4,15 @@
 
 Vector are fundamental and extremly powerfull tool to manage motions, forces and.. well... do physics!
 
-<div align=center>
+```{image} /_imgs/modules/vector-light.png
+:align: center
+:class: only-light
+```
 
-![](img/2023-01-27-23-43-58.png)
-
-</div>
+```{image} /_imgs/modules/vector-dark.png
+:align: center
+:class: only-dark
+```
 
 
 ```{button-link} https://www.youtube.com/watch?v=IzASD7R80vQ
@@ -30,90 +34,83 @@ Vector are fundamental and extremly powerfull tool to manage motions, forces and
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ### Basis rotation 3D
 
-**`#bs.vector:basis_rot_3d`**
+```{function} #bs.vector:basis_rot_3d
 
-Allows to obtain the equivalent of the vector passed in parameter in a base with a different orientation. Useful to convert an absolute/relative position into a local position for a given entity.
+Get the equivalent of the vector passed in parameter in a base with a different rotation. Useful to convert absolute/relative positions into local positions.
 
-Inputs
+:Inputs:
+  **Scores `$vector.basis_rot_3d.pos.[0,1,2] bs.in`**: Vector coordinates $=(X,Y,Z)$ in the starting base.
 
-:  (scores) `$vector.basis_rot_3d.pos.[0,1,2] bs.in`
-   : Vector coordinates $(X,Y,Z)$ in the starting base.
+  **Scores `$vector.basis_rot_3d.rot.[0,1] bs.in`**: Horizontal angle $=\phi$ (along $=\hat{y}$) and vertical angle $=\theta$ (along $=\hat{\phi}$) rotation (in degree) from the starting base.
 
-   (scores) `$vector.basis_rot_3d.rot.[0,1] bs.in`
-   : Horizontal angle $\phi$ (along $\hat{y}$) and vertical angle $\theta$ (along $\hat{\phi}$) rotation (in degree) from the starting base.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-   (macro) `scaling`: int
-   : Scalar for the function’s input and output.
+:Outputs:
+  **Scores `$vector.basis_rot_3d.[0,1,2] bs.out`**: Vector coordinates $=(X',Y',Z')$ in the target base.
+```
 
-   ```{admonition} Basis system
-   :class: info
+```{admonition} Basis system
+:class: info
 
-   This system uses the Minecraft coordinate system. Thus:
-   - $\hat{y}$ is the vertical axis.
-   - $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
-   - $\theta=0$ (starting point of the vertical angle) is on the horizontal plane.
-   ```
+This system uses the Minecraft coordinate system. Thus:
+- $\hat{y}$ is the vertical axis.
+- $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
+- $\theta=0$ (starting point of the vertical angle) is on the horizontal plane.
+```
 
-Outputs
+*A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?):*
 
-:  (scores) `$vector.basis_rot_3d.[0,1,2] bs.out`
-   : Vector coordinates $(X',Y',Z')$ in the target base.
+```mcfunction
+# One time
 
-Examples
+# Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 2000
+scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 5000
+scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 10000
 
-:  A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?):
+# Difference between my rotation (= that of the coondata grid ^X ^Y ^Z) and the rotation of the Minecraft blocks grid (~X ~Y ~Z)
+function #bs.position:get_rot {scale:1000}
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
 
-   ```mcfunction
-   # One time
+# Perform the basic rotation
+function #bs.vector:basis_rot_3d {scaling:1000}
 
-   # Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 2000
-   scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 5000
-   scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 10000
+# See the result
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
+```
 
-   # Difference between my rotation (= that of the coondata grid ^X ^Y ^Z) and the rotation of the Minecraft blocks grid (~X ~Y ~Z)
-   function #bs.position:get_rot {scale:1000}
-   scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
-   scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
+*I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library):*
 
-   # Perform the basic rotation
-   function #bs.vector:basis_rot_3d {scaling:1000}
+```mcfunction
+# Once
 
-   # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
-   ```
+# Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 0
+scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 0
+scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 1000
 
-   I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library)
+# Get the orientation
+function #bs.position:get_rot {scale:1000}
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
 
-   ```mcfunction
-   # Once
+# Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in *= -1 bs.const
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in *= -1 bs.const
 
-   # Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
-   scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 0
-   scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 0
-   scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 1000
+# Perform the basic rotation
+function #bs.vector:basis_rot_3d {scaling:1000}
 
-   # Get the orientation
-   function #bs.position:get_rot {scale:1000}
-   scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
-   scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
-
-   # Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
-   scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in *= -1 bs.const
-   scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in *= -1 bs.const
-
-   # Perform the basic rotation
-   function #bs.vector:basis_rot_3d {scaling:1000}
-
-   # See the result
-   tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
-   ```
+# See the result
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
+```
 
 > **Credits**: Aksiome, Leirof
 
@@ -121,31 +118,27 @@ Examples
 
 ### Cartesian to spherical
 
-**`#bs.vector:cartesian_to_spherical`**
+```{function} #bs.vector:cartesian_to_spherical
 
 Convert cartesian coordinates to spherical coordinates.
 
-Inputs
+:Inputs:
+  **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.in`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
 
-:  (scores) `$vector.cartesian_to_spherical.[0,1,2] bs.in`
-   : Vector representing the cartesian coordinates $(X,Y,Z)$.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-   (macro) `scaling`: int
-   : Scalar for the function’s input and output.
+:Outputs:
+  **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.out`**: Vector representing the spherical coordinates $=(H,V,R)$.
+```
 
-Outputs
+```{admonition} Spherical coordinates
+:class: warning
 
-:  (scores) `$vector.cartesian_to_spherical.[0,1,2] bs.out`
-   : Vector representing the spherical coordinates $(H,V,R)$.
-
-   ```{admonition} Spherical coordinates
-   :class: warning
-
-   This system returns non conventional shperical coordinates for more convenience.
-   - $H$ (horizontal angle) is along the $\hat{z}$ axis.
-   - $V$ (vertical angle) is on the horizontal plane.
-   - $R$ is the radial distance.
-   ```
+This system returns non conventional shperical coordinates.
+- $H$ (horizontal angle) is along the $\hat{z}$ axis.
+- $V$ (vertical angle) is on the horizontal plane.
+- $R$ is the radial distance.
+```
 
 > **Credits**: Aksiome
 
@@ -153,25 +146,20 @@ Outputs
 
 ### Cross product
 
-**`#bs.vector:cross_product`**
+```{function} #bs.vector:cross_product
 
 Compute the vector product between $u$ and $v$.
 
-Inputs
+:Inputs:
+  **Scores `$vector.cross_product.u.[0,1,2] bs.in`**: First vector components.
 
-:  (scores) `$vector.cross_product.u.[0,1,2] bs.in`
-   : First vector components.
+  **Scores `$vector.cross_product.v.[0,1,2] bs.in`**: Second vector components.
 
-   (scores) `$vector.cross_product.v.[0,1,2] bs.in`
-   : Second vector components.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-   (macro) `scaling`: int
-   : Scalar for the function’s input and output.
-
-Outputs
-
-:  (scores) `$vector.cross_product.[0,1,2] bs.out`
-   : The result of the operation $u \times v$.
+:Outputs:
+  **Scores `$vector.cross_product.[0,1,2] bs.out`**: Result of the operation $=u \times v$.
+```
 
 > **Credits**: Aksiome, Majoras16
 
@@ -179,25 +167,20 @@ Outputs
 
 ### Dot product
 
-**`#bs.vector:dot_product`**
+```{function} #bs.vector:dot_product
 
 Compute the scalar product between $u$ and $v$.
 
-Inputs
+:Inputs:
+  **Scores `$vector.dot_product.u.[0,1,2] bs.in`**: First vector components.
 
-:  (scores) `$vector.dot_product.u.[0,1,2] bs.in`
-   : First vector components.
+  **Scores `$vector.dot_product.v.[0,1,2] bs.in`**: Second vector components.
 
-   (scores) `$vector.dot_product.v.[0,1,2] bs.in`
-   : Second vector components.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-   (macro) `scaling`: int
-   : Scalar for the function’s input and output.
-
-Outputs
-
-:  (scores) `$vector.dot_product.[0,1,2] bs.out`
-   : The result of the operation $u · v$.
+:Outputs:
+  **Scores `$vector.dot_product.[0,1,2] bs.out`**: Result of the operation $=u · v$.
+```
 
 > **Credits**: Aksiome, Majoras16
 
@@ -208,34 +191,29 @@ Outputs
 ::::{tab-set}
 :::{tab-item} Length
 
-**`#bs.vector:length`**
+```{function} #bs.vector:length
 
 Compute the norm of the vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.length.[0,1,2] bs.in`**: Vector components.
 
-:   (scores) `$vector.length.[0,1,2] bs.in`
-    : Vector components.
+:Outputs:
+  **Return | Score `$vector.length bs.out`**: Vector length.
+```
 
-Outputs
+*Compute the length of a vector:*
 
-:   (score) `$vector.length bs.out`
-    : Vector length.
+```mcfunction
+scoreboard players set $vector.length.0 bs.in 1000
+scoreboard players set $vector.length.1 bs.in 2000
+scoreboard players set $vector.length.2 bs.in 3000
 
-Example
+function #bs.vector:length
 
-:   Compute the length of a vector:
-
-    ```mcfunction
-    scoreboard players set $vector.length.0 bs.in 1000
-    scoreboard players set $vector.length.1 bs.in 2000
-    scoreboard players set $vector.length.2 bs.in 3000
-
-    function #bs.vector:length
-
-    # Display the result
-    tellraw @a [{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"$vector.length","objective":"bs.out"}}]
-    ```
+# Display the result
+tellraw @a [{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"$vector.length","objective":"bs.out"}}]
+```
 
 ```{admonition} Performance tip
 :class: tip
@@ -246,37 +224,33 @@ If you want to minimize the performance impact, we recomande you to use the `len
 - You want to compare the length with a given one, then compute manually the square of the given value and compare it with the result of `length_squared`, which is faster than computing the real length.
 - You want to compare a vector length with another one, then you can compare the result of `length_squared` instead of computing the real length of both vectors.
 ```
+
 :::
 :::{tab-item} Length squared
 
-**`#bs.vector:length_squared`**
+```{function} #bs.vector:length_squared
 
 Compute the squared norm of the vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.length_squared.[0,1,2] bs.in`**: Vector components.
 
-:   (scores) `$vector.length_squared.[0,1,2] bs.in`
-    : Vector components.
+:Outputs:
+  **Return | Score `$vector.length_squared bs.out`**: Vector length squared.
+```
 
-Outputs
+*Compute the squared length of a vector:*
 
-:   (score) `$vector.length_squared bs.out`
-    : Vector length squared.
+```mcfunction
+scoreboard players set $vector.length_squared.0 bs.in 1000
+scoreboard players set $vector.length_squared.1 bs.in 2000
+scoreboard players set $vector.length_squared.2 bs.in 3000
 
-Example
+function #bs.vector:length_squared
 
-:   Compute the squared length of a vector:
-
-    ```mcfunction
-    scoreboard players set $vector.length_squared.0 bs.in 1000
-    scoreboard players set $vector.length_squared.1 bs.in 2000
-    scoreboard players set $vector.length_squared.2 bs.in 3000
-
-    function #bs.vector:length_squared
-
-    # Display the result
-    tellraw @a [{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"$vector.length_squared","objective":"bs.out"}}]
-    ```
+# Display the result
+tellraw @a [{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"$vector.length_squared","objective":"bs.out"}}]
+```
 
 :::
 ::::
@@ -287,19 +261,16 @@ Example
 
 ### Max
 
-**`#bs.vector:max`**
+```{function} #bs.vector:max
 
 Get the max component of a vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.max.[0,1,2] bs.in`**: Vector components.
 
-:  (scores) `$vector.max.[0,1,2] bs.in`
-   : Vector components.
-
-Outputs
-
-:  (scores) `$vector.max bs.out`
-   : Component with the value furthest from 0.
+:Outputs:
+  **Return | Score `$vector.max bs.out`**: Component with the value furthest from 0.
+```
 
 > **Credits**: Aksiome, Leirof
 
@@ -307,19 +278,16 @@ Outputs
 
 ### Min
 
-**`#bs.vector:min`**
+```{function} #bs.vector:min
 
 Get the min component of a vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.min.[0,1,2] bs.in`**: Vector components.
 
-:  (scores) `$vector.min.[0,1,2] bs.in`
-   : Vector components.
-
-Outputs
-
-:  (scores) `$vector.min bs.out`
-   : CComponent with the value closest to 0.
+:Outputs:
+  **Return | Score `$vector.min bs.out`**: Component with the value closest to 0.
+```
 
 > **Credits**: Aksiome
 
@@ -330,22 +298,18 @@ Outputs
 ::::{tab-set}
 :::{tab-item} Classic
 
-**`#bs.vector:normalize`**
+```{function} #bs.vector:normalize
 
 Normalize the vector by putting the length at the given scale while keeping proportions.
 
-Inputs
+:Inputs:
+  **Scores `$vector.normalize.[0,1,2] bs.in`**: Vector components.
 
-:   (scores) `$vector.normalize.[0,1,2] bs.in`
-    : Vector components.
+  **Macro Var `scale` [number]**: Scalar for the function’s output.
 
-    (macro) `scale`: int
-    : Scalar for the function’s output.
-
-Outputs
-
-:   (scores) `$vector.normalize.[0,1,2] bs.out`
-    : Normalized vector components.
+:Outputs:
+  **Scores `$vector.normalize.[0,1,2] bs.out`**: Normalized vector components.
+```
 
 ```{admonition} Performance tip
 :class: tip
@@ -356,25 +320,20 @@ Normalization of vector doesn't often need to be accurate, so you can try first 
 :::
 :::{tab-item} Fast
 
-**`#bs.vector:fast_normalize`**
+```{function} #bs.vector:fast_normalize
 
 Normalize the vector by placing the largest component at the given scale while keeping proportions.
 
-Inputs
+:Inputs:
+  **Scores `$vector.fast_normalize.[0,1,2] bs.in`**: Vector components.
 
-:   (scores) `$vector.fast_normalize.[0,1,2] bs.in`
-    : Vector components.
+  **Macro Var `scale` [number]**: Scalar for the function’s output.
 
-    (macro) `scale`: int
-    : Scalar for the function’s output.
+:Outputs:
+  **Scores `$vector.fast_normalize.[0,1,2] bs.out`**: Normalized vector components.
 
-Outputs
-
-:   (scores) `$vector.fast_normalize.[0,1,2] bs.out`
-    : Normalized vector components.
-
-    (score) `$vector.fast_normalize.factor bs.out`
-    : Normalisation factor $A$ ($V_i = A \times V_n$).
+  **Score `$vector.fast_normalize.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
+```
 
 :::
 ::::
@@ -385,63 +344,29 @@ Outputs
 
 ### Spherical to cartesian
 
-**`#bs.vector:spherical_to_cartesian`**
+```{function} #bs.vector:spherical_to_cartesian
 
 Convert spherical coordinates to cartesian coordinates.
 
-Inputs
+:Inputs:
+  **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.in`**: Vector representing the spherical coordinates $=(H,V,R)$.
 
-:  (scores) `$vector.spherical_to_cartesian.[0,1,2] bs.in`
-   : Vector representing the spherical coordinates $(H,V,R)$.
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-   (macro) `scaling`: int
-   : Scalar for the function’s input and output.
+:Outputs:
+  **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.out`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
+```
 
-   ```{admonition} Spherical coordinates
-   :class: warning
+```{admonition} Spherical coordinates
+:class: warning
 
-   This system returns non conventional shperical coordinates for more convenience.
-   - $H$ (horizontal angle) is along the $\hat{z}$ axis.
-   - $V$ (vertical angle) is on the horizontal plane.
-   - $R$ is the radial distance.
-   ```
-
-Outputs
-
-:  (scores) `$vector.spherical_to_cartesian.[0,1,2] bs.out`
-   : Vector representing the cartesian coordinates $(X,Y,Z)$.
+This system uses non conventional shperical coordinates.
+- $H$ (horizontal angle) is along the $\hat{z}$ axis.
+- $V$ (vertical angle) is on the horizontal plane.
+- $R$ is the radial distance.
+```
 
 > **Credits**: Aksiome
-
----
-
-### Helpers
-
-Convert specialized scores (pos, rot and vel) to vectors and vice versa.
-
-- **`#bs.vector:pos_from_vec`**
-- **`#bs.vector:rot_from_vec`**
-- **`#bs.vector:vec_from_pos`**
-- **`#bs.vector:vec_from_rot`**
-- **`#bs.vector:vec_from_vel`**
-- **`#bs.vector:vel_from_vec`**
-
-Inputs
-
-:  (macro) `name`: string
-   : Name for the score holder.
-
-   (macro) `objective`: string
-   : Objective used to store the score (should usually be `bs.in`).
-
-Example
-
-:   Convert `@s bs.pos.[x,y,z]` to `$vector.dot_product.u.[0,1,2] bs.in`:
-
-    ```mcfunction
-    function #bs.vector:vec_from_pos {name:'$vector.dot_product.u', objective:'bs.in'}
-    ```
-
 
 ---
 
