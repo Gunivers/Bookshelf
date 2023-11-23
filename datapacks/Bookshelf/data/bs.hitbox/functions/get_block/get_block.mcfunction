@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome
+# Contributors:
+
+# Version: 1.0
+# Created: 21/11/2023 (1.20.3)
+# Last modification: 21/11/2023 (1.20.3)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 scoreboard players set #hitbox.get_block.offset_x bs.data 0
 scoreboard players set #hitbox.get_block.offset_z bs.data 0
 execute if block ~ ~ ~ #bs.hitbox:has_offset run function bs.hitbox:get_block/offset/get

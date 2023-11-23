@@ -22,6 +22,7 @@ modules/bitwise
 modules/block
 modules/color
 modules/health
+modules/hitbox
 modules/id
 modules/link
 modules/math

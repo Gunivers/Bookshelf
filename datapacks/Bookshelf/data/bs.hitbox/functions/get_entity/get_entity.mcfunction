@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome
+# Contributors:
+
+# Version: 1.0
+# Created: 21/11/2023 (1.20.3)
+# Last modification: 21/11/2023 (1.20.3)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 scoreboard players set #hitbox.get_entity.id bs.data 0
 execute if entity @s[type=#bs.hitbox:group_1] run scoreboard players add #hitbox.get_entity.id bs.data 1
 execute if entity @s[type=#bs.hitbox:group_2] run scoreboard players add #hitbox.get_entity.id bs.data 2
