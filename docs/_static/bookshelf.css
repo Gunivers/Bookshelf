@@ -7,6 +7,7 @@ html[data-theme="light"] {
   --scrollbar-thumb-bg-hover: #00000026;
   --scrollbar-thumb-bg-active: #0000002b;
   --pst-color-on-background: #f9f9f9;
+  --bs-border-color: #dee2e699;
 }
 
 html[data-theme="light"] .highlight .c1 {
@@ -28,6 +29,7 @@ html[data-theme="dark"] {
   --scrollbar-thumb-bg: #ffffff19;
   --scrollbar-thumb-bg-hover: #ffffff26;
   --scrollbar-thumb-bg-active: #ffffff2b;
+  --bs-border-color: #dee2e611;
 }
 
 html[data-theme="dark"] .highlight .c1 {
@@ -138,4 +140,8 @@ nav a:hover, nav button:hover {
 
 .bs-rounded {
   border-radius: 50%;
+}
+
+tr.row-odd {
+  background: #6b7d9909;
 }

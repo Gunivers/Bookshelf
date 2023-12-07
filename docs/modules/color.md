@@ -2,7 +2,7 @@
 
 **`#bs.color:help`**
 
-Convert colors to your preferred format.
+Facilitate color conversion between various formats.
 
 ```{image} /_imgs/modules/color.png
 :align: center

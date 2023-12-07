@@ -2,8 +2,7 @@
 
 **`#bs.schedule:help`**
 
-Module to schedule the execution of commands.
-Unlike the vanilla schedule command, this system allows the user to schedule commands (and not only functions) and it is possible to schedule several times the same command.
+Schedule commands, not just functions. This module allows flexibility beyond the vanilla schedule command with cancellation options and a selector to keep the context when needed.
 
 ---
 

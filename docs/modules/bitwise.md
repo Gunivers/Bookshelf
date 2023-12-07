@@ -2,7 +2,7 @@
 
 **`#bs.bitwise:help`**
 
-This module contains various bitwise operations.
+A collection of various bitwise operations, providing versatile tools for manipulating binary data.
 
 ```{image} /_imgs/modules/bitwise-light.png
 :align: center

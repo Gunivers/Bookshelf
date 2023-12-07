@@ -1,4 +1,4 @@
-# ↗️ Vector
+# ➡️ Vector
 
 **`#bs.vector:help`**
 

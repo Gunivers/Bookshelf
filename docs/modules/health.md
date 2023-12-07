@@ -2,12 +2,18 @@
 
 **`#bs.health:help`**
 
-Management of the life of an entity.
+Efficiently manage the lifecycle and vital aspects of an entity.
 
 ```{admonition} About NBTs
 :class: warning
 
 When using the module, you cannot rely on NBTs to get health information. Use the `get_health` and `get_max_health` functions instead. This is because NBTs may not consistently reflect actual values. This choice was made to enhance performance, reliability, and to work around some limitations.
+```
+
+```{epigraph}
+"He who has a why to live can bear almost any how."
+
+-- Friedrich Nietzsche
 ```
 
 ---
@@ -101,10 +107,10 @@ Get a player's health points.
   **Return | Storage `bs:out health.get_health` [double]**: Player's health points.
 ```
 
-*Store your HP value in a score (scaled by 1000):*
+*Get your current HP (scaled by 1000):*
 ```mcfunction
-# Once (execute on you)
-execute store result score @s <objective> run function #bs.health:get_health {scale:1000}
+# See the returned value (execute on you)
+function #bs.health:get_health {scale:1000}
 ```
 
 :::
@@ -123,10 +129,10 @@ Get a player's maximum health points.
   **Return | Storage `bs:out health.get_max_health` [double]**: Player's max health points.
 ```
 
-*Store your maximum HP value in a score (scaled by 1000):*
+*Get your maximum HP (scaled by 1000):*
 ```mcfunction
-# Once (execute on you)
-execute store result score @s <objective> run function #bs.health:get_max_health {scale:1000}
+# See the returned value (execute on you)
+function #bs.health:get_max_health {scale:1000}
 ```
 
 :::

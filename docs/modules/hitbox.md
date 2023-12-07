@@ -2,7 +2,13 @@
 
 **`#bs.hitbox:help`**
 
-Get and check hitboxes of blocks or entities.
+Get and check the hitboxes of blocks or entities.
+
+```{epigraph}
+"Talent hits a target no one else can hit; Genius hits a target no one else can see."
+
+-- Arthur Schopenhauer
+```
 
 ---
 
@@ -19,12 +25,14 @@ You can find below all functions available in this module.
 
 ```{function} #bs.hitbox:get_block
 
-Get the hitbox of a block as an array of array of coordinates.
+Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions range from 0 to 16 as for models. This means that a full block will return the following: `[[0, 0, 0, 16, 16, 16]]`.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
+  **Scores `$hitbox.offset_[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
+
   **Storage `bs:out hitbox` [array]**: An array of cube coordinates.
 ```
 
@@ -41,7 +49,7 @@ data get storage bs:out hitbox
 
 ```{function} #bs.hitbox:get_entity
 
-Get the `width` and `height` of an entity.
+Get the width and height of an entity. For simplicity and optimization purposes this value is returned scaled by 1 000 000.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to get the hitbox from.
@@ -62,7 +70,7 @@ tellraw @a [{"text":"Height: ","color":"dark_gray"},{"score":{"name":"$hitbox.he
 ```
 
 ```{important}
-Static entities, such as paintings and item frames, do not provide height and width information. Instead, they return an array of coordinates, similar to blocks.
+Static entities, such as paintings and item frames, do not provide height and width information. Instead, they return a shape similar to blocks in `bs:out hitbox`.
 ```
 
 :::

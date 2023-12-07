@@ -2,7 +2,7 @@
 
 **`#bs.link:help`**
 
-Link positions and rotations between entities and create coherent entity structures!
+Construct coherent entity structures by linking entities' positions and rotations.
 
 ```{image} /_imgs/modules/link.png
 :align: center
@@ -15,33 +15,6 @@ Link positions and rotations between entities and create coherent entity structu
 -- Friedrich Nietzsche
 ```
 
----
-
-## 🎓 Custom behaviors
-
-With this module you can combine multiple behaviors to create your very own custom one.
-
----
-
-To create a new behavior, you first need to create a new function tag. The tag must start with `bs.link:behaviors/setup` and end with `bs.link:behaviors/apply`. Between those 2 functions you are free to use any behaviors that are provided inside the `bs.link:behaviors` folder.
-
-
-
-*This is how `#bs.link:mirror_x_plane` is implemented inside bookshelf:*
-
-```json
-{
-  "values": [
-    "bs.link:behaviors/setup",
-    "bs.link:behaviors/reverse_pos_x",
-    "bs.link:behaviors/imitate_pos_y",
-    "bs.link:behaviors/imitate_pos_z",
-    "bs.link:behaviors/reverse_rot_h",
-    "bs.link:behaviors/imitate_rot_v",
-    "bs.link:behaviors/apply"
-  ]
-}
-```
 ---
 
 ## 🔧 Functions
@@ -518,6 +491,33 @@ Determine if an entity has a `bs.link.to` score.
 
 > **Credits**: Aksiome
 
+---
+
+## 🎓 Custom behaviors
+
+With this module you can combine multiple behaviors to create your very own custom one.
+
+---
+
+To create a new behavior, you first need to create a new function tag. The tag must start with `bs.link:behaviors/setup` and end with `bs.link:behaviors/apply`. Between those 2 functions you are free to use any behaviors that are provided inside the `bs.link:behaviors` folder.
+
+
+
+*This is how `#bs.link:mirror_x_plane` is implemented inside bookshelf:*
+
+```json
+{
+  "values": [
+    "bs.link:behaviors/setup",
+    "bs.link:behaviors/reverse_pos_x",
+    "bs.link:behaviors/imitate_pos_y",
+    "bs.link:behaviors/imitate_pos_z",
+    "bs.link:behaviors/reverse_rot_h",
+    "bs.link:behaviors/imitate_rot_v",
+    "bs.link:behaviors/apply"
+  ]
+}
+```
 ---
 
 <div align=center>

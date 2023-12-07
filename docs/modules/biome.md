@@ -2,7 +2,7 @@
 
 **`#bs.biome:help`**
 
-Everything concerning biome properties.
+Comprehensive information and tools related to biome properties.
 
 ```{image} /_imgs/modules/biome.png
 :align: center
