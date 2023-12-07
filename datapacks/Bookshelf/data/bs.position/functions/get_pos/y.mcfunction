@@ -16,4 +16,4 @@
 
 tp B5-0-0-0-1 ~ ~ ~
 $execute store result score @s bs.pos.y run data get entity B5-0-0-0-1 Pos[1] $(scale)
-tp B5-0-0-0-1 0 0 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0

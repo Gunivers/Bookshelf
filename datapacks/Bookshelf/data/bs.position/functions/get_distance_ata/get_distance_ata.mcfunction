@@ -18,7 +18,7 @@ tp B5-0-0-0-1 ~ ~ ~
 $execute store result score #position.get_distance_ata.x1 bs.data run data get entity B5-0-0-0-1 Pos[0] $(scale)
 $execute store result score #position.get_distance_ata.y1 bs.data run data get entity B5-0-0-0-1 Pos[1] $(scale)
 $execute store result score #position.get_distance_ata.z1 bs.data run data get entity B5-0-0-0-1 Pos[2] $(scale)
-tp B5-0-0-0-1 0 0 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
 
 $execute store result score #position.get_distance_ata.x2 bs.data run data get entity @s Pos[0] $(scale)
 $execute store result score #position.get_distance_ata.y2 bs.data run data get entity @s Pos[1] $(scale)
