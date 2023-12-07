@@ -14,10 +14,10 @@ scoreboard players operation #hitbox.min_z bs.data -= $hitbox.width bs.out
 scoreboard players operation #hitbox.max_y bs.data += $hitbox.height bs.out
 
 execute \
-  if score #hitbox.x bs.data > #hitbox.min_x bs.data \
+  if score #hitbox.x bs.data >= #hitbox.min_x bs.data \
   if score #hitbox.x bs.data < #hitbox.max_x bs.data \
   if score #hitbox.y bs.data >= #hitbox.min_y bs.data \
   if score #hitbox.y bs.data < #hitbox.max_y bs.data \
-  if score #hitbox.z bs.data > #hitbox.min_z bs.data \
+  if score #hitbox.z bs.data >= #hitbox.min_z bs.data \
   if score #hitbox.z bs.data < #hitbox.max_z bs.data \
 run return 1
