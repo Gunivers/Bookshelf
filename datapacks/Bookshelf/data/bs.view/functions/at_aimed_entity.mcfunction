@@ -16,7 +16,7 @@
 
 data modify storage bs:data view.raycast set from storage bs:in raycast
 data modify storage bs:in raycast.target_entities set value true
-execute anchored eyes positioned ^ ^ ^ run function bs.raycast:run
+execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
 data modify storage bs:in raycast set from storage bs:data view.raycast
 execute unless data storage bs:out raycast.targeted_entity run return 0
 summon minecraft:area_effect_cloud 0.0 0.0 0.0 {UUID:[I;181,0,0,0]}
