@@ -48,6 +48,7 @@ html_favicon = "_static/logo-bookshelf.png"
 
 html_static_path = ['_static']
 html_css_files = ['bookshelf.css']
+html_js_files = ['bookshelf.js']
 
 html_context = {
     "github_user": "Gunivers",

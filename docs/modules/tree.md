@@ -796,5 +796,14 @@ You can find below all structures available in this module.
 </div>
 
 :::
-
 ::::
+
+---
+
+<div id="gs-comments" align=center>
+
+**💬 Did it help you?**
+
+Feel free to leave your questions and feedbacks below!
+
+</div>
