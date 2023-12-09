@@ -6,12 +6,12 @@ A collection of various bitwise operations, providing versatile tools for manipu
 
 ```{image} /_imgs/modules/bitwise-light.png
 :align: center
-:class: only-light
+:class: only-light p-2
 ```
 
 ```{image} /_imgs/modules/bitwise-dark.png
 :align: center
-:class: only-dark
+:class: only-dark p-2
 ```
 
 ```{epigraph}

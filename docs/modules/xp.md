@@ -2,7 +2,7 @@
 
 **`#bs.xp:help`**
 
-All functions allowing to manage experience points and levels.
+Efficiently manage the experience points and levels of players.
 
 ```{image} /_imgs/modules/xp.png
 :class: dark-light p-2

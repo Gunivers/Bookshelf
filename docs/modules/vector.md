@@ -2,7 +2,7 @@
 
 **`#bs.vector:help`**
 
-Vector are fundamental and extremly powerfull tool to manage motions, forces and.. well... do physics!
+Vectors are fundamental and incredibly powerful tools to manage motions, forces and.. well... do physics!
 
 ```{image} /_imgs/modules/vector-light.png
 :align: center

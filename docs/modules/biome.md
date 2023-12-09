@@ -6,7 +6,7 @@ Comprehensive information and tools related to biome properties.
 
 ```{image} /_imgs/modules/biome.png
 :align: center
-:class: dark_light
+:class: dark_light p-2
 ```
 
 ```{epigraph}

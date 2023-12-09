@@ -2,7 +2,7 @@
 
 **`#bs.time:help`**
 
-This module allow to get information about the system time.
+Get information about the system time effortlessly.
 
 ```{admonition} Enable command blocks
 :class: warning

@@ -6,7 +6,7 @@ Manage entity positions and rotations using scores.
 
 ```{image} /_imgs/modules/position.png
 :align: center
-:class: dark_light
+:class: dark_light p-2
 ```
 
 ```{epigraph}
