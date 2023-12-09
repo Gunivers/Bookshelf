@@ -80,7 +80,7 @@ If you have any doubts related to the project or want to discuss something, then
 
 If you want to contribute, please refer to the [contribution docs](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html) for more information.
 
-````{toctree}
+```{toctree}
 :hidden:
 :maxdepth: 1
 
@@ -90,3 +90,4 @@ contribute/index
 CHANGELOG
 faq
 special-thanks
+```
