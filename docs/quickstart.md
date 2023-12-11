@@ -6,52 +6,31 @@ html_theme.sidebar_secondary.remove: true
 
 ## 🔌Installation
 
-::::{tab-set}
-:::{tab-item} 📁 Install the datapack only
+Bookshelf is still in a development phase. There is no trivial install process yet (we are actively searching for web devs that could help us!)
 
-You can download the datapack on the Bookshelf Manager website:
+If you are not familliar with datapacks, feel free to come on our Discord, we will be pleased to help you installing and use the lib!
 
-```{button-link} https://bookshelf.gunivers.net
+:::{button-link} https://discord.gg/AJwDCx5U8t
 :align: center
 :color: primary
 :shadow:
 
-🔖 Bookshelf Manager
-```
+💬 Come talk with us on Discord!
+:::
 
-Once you have the datapack, simply drop it in the "datapacks" folder in your world's files. Then, in game, use `/reload` to load the datapack.
+If you think you can handle that alone 💪😎, you can download the Github repository. Then, you can exctract what you want and put it in your project!
+
+The repo contain the entire demo map (still work in progress) and 4 datapacks :
+- **Bookshelf Dev**: contain utilities for developpers (such as the core, logs, unit tests etc.). It should be installed during the development phase of your project.
+- **Bookshelf Examples**: contain easily-readable examples of systems that can be made with Bookshelf. It is mainly made to explore the files, not to be implemented in a project. Install it only if you want to see what they do to get familiar with the lib.
+- **Bookshelf World**: contain the code used by the world itself. It is not made to be used directly.
+- **Bookshelf**: contain all the usefull tools that you will use in your project. It is the only one that you should install keep in your final product. Bookshelf is also devided in modules, so you can only take the one you are planning to use. The modules are basically namespaces inside this datapack. Be carefull, some modules can partially depend on others. These dependencies are indicated in the doc.
 
 ```{admonition} You can take only what you need!
 :class: note
 
 As it is a big project with a lot of things included, you probably don't need everything. That's why we propose you to download it from the [Bookshelf Manager](https://bookshelf.gunivers.net). Moreover, some modules can be heavy, such as the `bs.block` or `bs.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files (minecraft limitations oblige).
 ```
-
-:::
-:::{tab-item} 🌍 Install the Minecraft world
-
-```{admonition} Coming soon!
-:class: note
-
-A clean installation process is coming soon.
-
-For now, you have to download the content of the Github repository and put it in the "map" folder.<br>This repo contain all the modules of the lib so it's heavy.<br>For this reason, we recommand you to go on `play.gunivers.net`, where the map is already hosted.
-```
-
-:::
-:::{tab-item} 🖇️ Related library
-
-Bookshelf is a general library focus on accessibility, but there is other libraries that can be useful for you. Here is a list of forks of Bookshelf that have a different purpose and other libraries that might interest you:
-
-```{admonition} This section is empty :/
-:class: important
-
-You know a cool minecraft library? Share it with us on our [Discord server](https://discord.gg/E8qq6tN) to let us add it here!
-
-```
-
-:::
-::::
 
 ```{admonition} Allow cheats / Enable command-blocks
 :class: important
@@ -61,9 +40,9 @@ Be sure that "cheats" are enabled if you play in local. Or, if you are on a serv
 
 ## 👶 First steps
 
-Now the Gunivers-Lib is installed on your map (or once you are on the sandbox map), let's start to make some basic stuff to understand how the Gunivers-Lib work!
+Now that Bookshelf is installed on your map (or once you are on the sandbox map), let's start to make some basic stuff to understand how it work!
 
-First, let's test if the Gunivers-Lib is correctly installed. To do so, enter the following command in your chat:
+First, let's test if Bookshelf is correctly installed. To do so, enter the following command in your chat:
 
 ```
 /function bs:hello

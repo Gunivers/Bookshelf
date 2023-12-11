@@ -7,7 +7,7 @@
 
 <h2>
 <div align="center">
-    <a href="https://glib.gunivers.net"><img src="./docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
+    <a href="https://bookshelf.docs.gunivers.net/en/latest/quickstart.html"><img src="./docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
     &nbsp;&nbsp;
     <a href="https://bookshelf.docs.gunivers.net/"><img src="./docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
     &nbsp;&nbsp;
