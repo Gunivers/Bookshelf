@@ -26,10 +26,10 @@ Si vous souhaitez contribuer mais que votre anglais n'est pas au point, vous pou
 :caption: Basic stuff
 
 definitions
-tree_structure
+tree-structure
 nomenclature
-shared_data
-file_format
+shared-data
+file-format
 ````
 
 ````{toctree}
@@ -38,6 +38,6 @@ file_format
 :caption: Advanced stuff
 comments
 debug
-conservation_principle
-special_functions
+conservation-principle
+special-functions
 ````

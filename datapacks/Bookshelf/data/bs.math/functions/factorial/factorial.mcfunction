@@ -14,6 +14,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute if score $math.factorial.n bs.in matches 0 run scoreboard players set $math.factorial bs.out 1
+execute if score $math.factorial.n bs.in matches 0 run return run scoreboard players set $math.factorial bs.out 1
 execute if score $math.factorial.n bs.in matches 1.. store result score #math.factorial.i bs.data run scoreboard players operation $math.factorial bs.out = $math.factorial.n bs.in
 execute if score $math.factorial.n bs.in matches 3.. run function bs.math:factorial/loop
+
+return run scoreboard players get $math.factorial bs.out

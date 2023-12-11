@@ -24,4 +24,4 @@ scoreboard players operation $vector.dot_product bs.out += #vector.dot_product b
 scoreboard players operation #vector.dot_product bs.data = $vector.dot_product.u.2 bs.in
 scoreboard players operation #vector.dot_product bs.data *= $vector.dot_product.v.2 bs.in
 scoreboard players operation $vector.dot_product bs.out += #vector.dot_product bs.data
-scoreboard players operation $vector.dot_product bs.out /= #vector.dot_product.scaling bs.data
+return run scoreboard players operation $vector.dot_product bs.out /= #vector.dot_product.scaling bs.data

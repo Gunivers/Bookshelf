@@ -8,7 +8,7 @@
 # Created: ??/??/2018 (1.13)
 # Last modification: 31/08/2023 (23w33a)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#cosine
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#trigonometry
 # Dependencies:
 # Note:
 
@@ -27,4 +27,4 @@ scoreboard players add $math.cos bs.out 324000000
 scoreboard players add #math.cos.denominator bs.data 324000000
 scoreboard players operation #math.cos.denominator bs.data /= 1000 bs.const
 execute if score #math.cos.angle bs.data matches 9000..27000 run scoreboard players operation #math.cos.denominator bs.data *= -1 bs.const
-scoreboard players operation $math.cos bs.out /= #math.cos.denominator bs.data
+return run scoreboard players operation $math.cos bs.out /= #math.cos.denominator bs.data

@@ -1,6 +1,5 @@
 {
   "values": [
-    "bs.health:add/max_health/macro",
-    "bs.health:add/max_health/max_health"
+    "bs.health:add/max_health"
   ]
 }

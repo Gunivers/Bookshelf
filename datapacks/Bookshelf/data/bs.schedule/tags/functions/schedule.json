@@ -1,8 +1,5 @@
 {
   "values": [
-    "bs.schedule:schedule/macros/required",
-    "bs.schedule:schedule/macros/selector",
-    "bs.schedule:schedule/macros/unit",
     "bs.schedule:schedule/schedule"
   ]
 }

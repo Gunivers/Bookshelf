@@ -1,6 +1,12 @@
 {
   "values": [
-    "bs.health:__tick__",
-    "bs.schedule:__tick__"
+    {
+      "id": "bs.health:__tick__",
+      "required": false
+    },
+    {
+      "id": "bs.schedule:__tick__",
+      "required": false
+    }
   ]
 }

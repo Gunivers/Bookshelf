@@ -17,3 +17,4 @@
 scoreboard players operation $vector.min bs.out = $vector.min.0 bs.in
 execute if predicate bs.vector:min/check1 run scoreboard players operation $vector.min bs.out = $vector.min.1 bs.in
 execute if predicate bs.vector:min/check2 run scoreboard players operation $vector.min bs.out = $vector.min.2 bs.in
+return run scoreboard players get $vector.min bs.out

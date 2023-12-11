@@ -2,76 +2,13 @@
 
 **`#bs.schedule:help`**
 
-Module to schedule the execution of commands.
-Unlike the vanilla schedule command, this system allows the user to schedule commands (and not only functions) and it is possible to schedule several times the same command.
+Schedule commands, not just functions. This module allows flexibility beyond the vanilla schedule command with cancellation options and a selector to keep the context when needed.
 
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
-
----
-
-### Schedule
-
-**`#bs.schedule:schedule`**
-
-Allows to schedule a command.
-If a command is registered in a tick where commands are already registered, adds the command after those already registered.
-
-Inputs
-
-:   (macro variable) `id`: string
-    : An ID to identify the command (not necessarily unique).
-
-    (macro variable) `command`: string
-    : The command to schedule.
-
-    (macro variable) `time`: integer
-    : The time to wait before the execution of the command. In ticks by default if unit is not defined.
-
-    (macro variable) `unit`: string (optional)
-    : The unit of the specified time. Possible values: 'tick', 'second', 'minute', 'hour', 't', 's', 'm', 'h'.
-
-    (macro variable) `selector`: string (optional)
-    : A selector for the command to be executed as. Only one entity is allowed.
-
-Examples
-
-:   Example to execute `say foo` in 5 ticks:
-    ```mcfunction
-    function #bs.schedule:schedule { unit: "tick", id: "foo", time: 5, command: "say foo" }
-    ```
-
-    Example to execute `kill @e[type=slime]` in 2 minutes:
-    ```mcfunction
-    function #bs.schedule:schedule { unit: "minute", id: "foo", time: 2, command: "kill @e[type=slime]" }
-    ```
-
-    Example to execute `say @s` as @s in 2 seconds:
-    ```mcfunction
-    function #bs.schedule:schedule { unit: "s", id: "foo", time: 2, command: "say @s", selector: "@s" }
-    ```
-
-> **Credits**: theogiraudet, Aksiome
-
----
-
-### Clear
-
-**`#bs.schedule:clear`**
-
-Remove all scheduled commands.
-
-Examples
-
-:   To remove all commands:
-    ```mcfunction
-    function #bs.schedule:clear
-    ```
-
-> **Credits**: theogiraudet, Aksiome
+You can find below all functions available in this module.
 
 ---
 
@@ -80,70 +17,108 @@ Examples
 ::::{tab-set}
 :::{tab-item} All
 
-**`#bs.schedule:cancel_all`**
+```{function} #bs.schedule:cancel
 
-Allows to cancel a scheduled command.
-If several commands have the same ID, cancels all of them.
+Cancel all scheduled commands that match the given id.
 
-Inputs
+:Inputs:
+  **Macro Var `with.id` [any]**: Scheduled command parameter to match against.
+```
 
-:   (macro variable) `id`: string
-    : The ID of the command the cancel.
-
-Examples
-
-:   Example to cancel all commands with the ID "foo":
-    ```mcfunction
-    function #bs.schedule:cancel_all { id: "foo" }
-    ```
+*Cancel all commands that have an `id` parameter set to "foo":*
+```mcfunction
+function #bs.schedule:cancel {with:{id:"foo"}}
+```
 
 :::
 :::{tab-item} Single one
 
-**`#bs.schedule:cancel`**
+```{function} #bs.schedule:cancel_one
 
-Allows to cancel a scheduled command.
-If several commands have the same ID, cancels only the command to be executed earliest.
+Cancel the scheduled command to be executed earliest that match the given id.
 
-Inputs
+:Inputs:
+  **Macro Var `with.id` [any]**: Scheduled command parameter to match against.
+```
 
-:   (macro variable) `id`: string
-    : The ID of the command the cancel.
-
-Examples
-
-:   Example to cancel next command with the ID "foo":
-    ```mcfunction
-    function #bs.schedule:cancel { id: "foo" }
-    ```
+*Cancel the next command that have an `id` parameter set to "foo":*
+```mcfunction
+function #bs.schedule:cancel_one {with:{id:"foo"}}
+```
 :::
 ::::
 
-> **Credits**: theogiraudet, Aksiome
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
-<div align=center>
+### Clear
+
+```{function} #bs.schedule:clear
+
+Clear all scheduled commands.
+```
+
+*Remove all scheduled commands:*
+
+```mcfunction
+function #bs.schedule:clear
+```
+
+> **Credits**: Aksiome, theogiraudet
+
+---
+
+### Schedule
+
+```{function} #bs.schedule:schedule
+
+Schedule a command for execution.
+If a command is registered in a tick where commands are already registered, adds the command after those already registered.
+
+:Inputs:
+  **Macro Var `with.command` [string]**: Command to schedule.
+
+  **Macro Var `with.selector` [string]**: Single entity selector for the command to be executed as.
+
+  **Macro Var `with.time` [int]**: Time to wait. In ticks by default if unit is not defined.
+
+  **Macro Var `with.unit` [string]**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
+
+  **Macro Var `with.id` [any]**: Parameter used to identify the scheduled command.
+
+:Outputs:
+  **Return**: The `suid` identifier of the scheduled command.
+```
+
+*Execute `say foo` in 2 seconds:*
+
+```mcfunction
+function #bs.schedule:schedule {with:{command:"say foo",time:2,unit:"s"}}
+```
+
+*Execute `say @s` as @s in 5 ticks:*
+
+```mcfunction
+function #bs.schedule:schedule {with:{command:"say @s",selector:"@s",time:5}}
+```
+
+*Schedule then cancel commands that match a complex id:*
+
+```mcfunction
+function #bs.schedule:schedule {with:{id:{foo:"bar",fails:true},command:"say failure",time:10,unit:"s"}}
+function #bs.schedule:schedule {with:{id:{foo:"bar"},command:"say success",time:10,unit:"s"}}
+function #bs.schedule:cancel {with:{id:{fails:true}}}
+```
+
+> **Credits**: Aksiome, theogiraudet
+
+---
+
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

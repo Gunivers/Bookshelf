@@ -18,4 +18,4 @@ $execute store result entity B5-0-0-0-1 Pos[0] double $(scale) run scoreboard pl
 $execute store result entity B5-0-0-0-1 Pos[1] double $(scale) run scoreboard players get @s bs.pos.y
 $execute store result entity B5-0-0-0-1 Pos[2] double $(scale) run scoreboard players get @s bs.pos.z
 execute at B5-0-0-0-1 run tp @s ~ ~ ~
-tp B5-0-0-0-1 0 0 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0

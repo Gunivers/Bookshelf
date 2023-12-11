@@ -18,9 +18,12 @@ Make your entity move exactly the way you want them to!
 🎬 Watch a demo
 ```
 
-> In the universe, everything is mouvement.
->
-> -- Heraclite d'Ephès
+
+```{epigraph}
+"There is nothing permanent except change."
+
+-- Heraclitus
+```
 
 ```{toctree}
 :hidden:
@@ -118,7 +121,7 @@ Examples
 
 This function will decompose the input vector in a sum of vectors with max component equal to the desired precision (by default, 1 block).
 The vector is a set of 3 scores : `bs.vector.x`, `bs.vector.y`, `bs.vector.y` that define the displacement of the entity
- 
+
 The function then use :
 
 $$ V_i = A * V_n + V_r $$
@@ -142,7 +145,7 @@ If the score is positive, it will use the user defined collision, calling the 3 
 - `bs.config:move/by_vector/collision/detection/__switch__`: Defin the nature of the detection (blocks adjancement)
 - `bs.config:move/by_vector/collision/behavior/__switch__`: Define the behavior of the entity when a collision is detected
 
-See the "Create your own behaviors!" dropdown above for more details about collisions. 
+See the "Create your own behaviors!" dropdown above for more details about collisions.
 ```
 
 ```{admonition} Dependencies
@@ -240,7 +243,7 @@ of blocks/tick at which the entity moves.
 
 > **Credits**: Leirof
 
---- 
+---
 
 ### Find a path "as to at"
 
@@ -300,27 +303,10 @@ blocks).
 
 ---
 
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

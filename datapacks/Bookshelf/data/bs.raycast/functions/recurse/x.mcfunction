@@ -1,0 +1,3 @@
+scoreboard players operation #raycast.lx bs.data += #raycast.dx bs.data
+execute if score #raycast.ux bs.data matches 1.. positioned ~1 ~ ~ run return run function bs.raycast:recurse/next with storage bs:in raycast
+execute if score #raycast.ux bs.data matches ..-1 positioned ~-1 ~ ~ run return run function bs.raycast:recurse/next with storage bs:in raycast

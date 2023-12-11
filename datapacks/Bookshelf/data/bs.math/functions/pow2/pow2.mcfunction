@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute if score $math.pow2.exp bs.in matches 0..7 run function bs.math:pow2/group_1
-execute if score $math.pow2.exp bs.in matches 8..15 run function bs.math:pow2/group_2
-execute if score $math.pow2.exp bs.in matches 16..23 run function bs.math:pow2/group_3
-execute if score $math.pow2.exp bs.in matches 24.. run function bs.math:pow2/group_4
+execute if score $math.pow2.exp bs.in matches 0..7 run return run function bs.math:pow2/range_1
+execute if score $math.pow2.exp bs.in matches 8..15 run return run function bs.math:pow2/range_2
+execute if score $math.pow2.exp bs.in matches 16..23 run return run function bs.math:pow2/range_3
+execute if score $math.pow2.exp bs.in matches 24.. run return run function bs.math:pow2/range_4

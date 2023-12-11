@@ -1,10 +1,10 @@
-$team modify bs.sidebar.$(id).$(line) prefix $(text)
+$$(cmd) $(text)
 
-data remove storage bs:data sidebar.do.refresh[0]
-execute unless data storage bs:data sidebar.do.refresh[0] run return 1
+data remove storage bs:ctx _.dyn[0]
+execute unless data storage bs:ctx _.dyn[0] run return 1
 
-data modify storage bs:data sidebar.do.line set from storage bs:data sidebar.do.refresh[0].line
-data modify entity @s text set from storage bs:data sidebar.do.refresh[0].text
-data modify storage bs:data sidebar.do.text set from entity @s text
+data modify storage bs:ctx _.cmd set from storage bs:ctx _.dyn[0].cmd
+data modify entity B5-0-0-0-2 text set from storage bs:ctx _.dyn[0].text
+data modify storage bs:ctx _.text set from entity B5-0-0-0-2 text
 
-function bs.sidebar:refresh/loop with storage bs:data sidebar.do
+return run function bs.sidebar:refresh/loop with storage bs:ctx _
