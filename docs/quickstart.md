@@ -6,9 +6,7 @@ html_theme.sidebar_secondary.remove: true
 
 ## 🔌Installation
 
-Bookshelf is still in a development phase. There is no trivial install process yet (we are actively searching for web devs that could help us!)
-
-If you are not familliar with datapacks, feel free to come on our Discord, we will be pleased to help you installing and use the lib!
+Bookshelf is still in a development phase. There is no trivial install process yet. If you are not familliar with datapacks, feel free to come on our Discord, we will be pleased to help you installing and use the lib!
 
 :::{button-link} https://discord.gg/AJwDCx5U8t
 :align: center
@@ -18,7 +16,13 @@ If you are not familliar with datapacks, feel free to come on our Discord, we wi
 💬 Come talk with us on Discord!
 :::
 
-If you think you can handle that alone 💪😎, you can download the Github repository. Then, you can exctract what you want and put it in your project!
+```{admonition} 🤝 Help us improving the install process
+:class: info
+
+We are actively searching for web developers to make the new version of the Bookshelf Manager, which allow to easily download modules and there respective dependencies. For now, we already specified what the website should look like, you can [check this here](https://www.figma.com/file/kVAmQnmP5pWWzun0Iq2kBa/Bookshelf-Manager-V2.0-prod?type=design&node-id=0-1). If you are interested, please contact us on Discord!
+```
+
+If you think you can handle the installation process alone 💪😎, rendez-vous on the Github repository. Download it and then exctract what you want to put it in your project!
 
 The repo contain the entire demo map (still work in progress) and 4 datapacks :
 - **Bookshelf Dev**: contain utilities for developpers (such as the core, logs, unit tests etc.). It should be installed during the development phase of your project.
