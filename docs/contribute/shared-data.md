@@ -11,7 +11,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 ## Shared objectives
 
 | Objectives | Description |
-|:------:|:-----------:|
+|------------|-------------|
 | `bs.const` | Contain constant values. Scoreholder format: `<value>` |
 | `bs.data` | Global score storage. Scoreholder format: `#<module>.<feature>.<my_key>` |
 | `bs.in` | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
@@ -22,7 +22,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 ## Shared storages
 
 | Storages | Description |
-|:------:|:-----------:|
+|----------|-------------|
 | `bs:const` | Contain constant data. Path format: `<module>.<my_key>` |
 | `bs:data` | Global data storage. Path format: `<module>.<feature>.<my_key>` |
 | `bs:in` | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |

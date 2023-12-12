@@ -78,7 +78,7 @@ html_theme_options = {
         "version_match": version_match,
     },
     "icon_links": [
-        {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
+        # {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
         {"name": "GitHub", "url": "https://github.com/Gunivers/Bookshelf", "icon": "fa-brands fa-github"},
         {"name": "Support us", "url": "https://gunivers.net/soutenir/", "icon": "fa-solid fa-heart"},
         {"name": "Discord server", "url": "https://discord.gg/E8qq6tN", "icon": "fa-brands fa-discord"},
