@@ -18,7 +18,6 @@ scoreboard players set 15 bs.const 15
 scoreboard players set 255 bs.const 255
 scoreboard players set 500 bs.const 500
 scoreboard players set 1000 bs.const 1000
-scoreboard players set 2000 bs.const 2000
 scoreboard players set 65536 bs.const 65536
 scoreboard players set 3129871 bs.const 3129871
 scoreboard players set 16777216 bs.const 16777216

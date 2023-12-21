@@ -5,13 +5,16 @@ execute store result score #hitbox.max_x bs.data run data get entity @s Pos[0] 1
 execute store result score #hitbox.max_y bs.data run data get entity @s Pos[1] 1000
 execute store result score #hitbox.max_z bs.data run data get entity @s Pos[2] 1000
 
-scoreboard players operation $hitbox.width bs.out /= 2000 bs.const
-scoreboard players operation $hitbox.height bs.out /= 1000 bs.const
-scoreboard players operation #hitbox.max_x bs.data += $hitbox.width bs.out
-scoreboard players operation #hitbox.max_z bs.data += $hitbox.width bs.out
-scoreboard players operation #hitbox.min_x bs.data -= $hitbox.width bs.out
-scoreboard players operation #hitbox.min_z bs.data -= $hitbox.width bs.out
-scoreboard players operation #hitbox.max_y bs.data += $hitbox.height bs.out
+scoreboard players operation #hitbox.hw bs.data = @s bs.width
+scoreboard players operation #hitbox.hw bs.data /= 2 bs.const
+scoreboard players operation #hitbox.max_x bs.data += #hitbox.hw bs.data
+scoreboard players operation #hitbox.max_z bs.data += #hitbox.hw bs.data
+scoreboard players operation #hitbox.min_x bs.data -= #hitbox.hw bs.data
+scoreboard players operation #hitbox.min_z bs.data -= #hitbox.hw bs.data
+scoreboard players operation #hitbox.max_y bs.data += @s bs.height
+
+execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.height
+execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.width
 
 execute \
   if score #hitbox.x bs.data >= #hitbox.min_x bs.data \
