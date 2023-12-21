@@ -1,6 +1,6 @@
 # panda group
-execute at @s positioned ~ ~1 ~ store result score #hitbox.get_entity.is_baby bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.width bs.out 1300000
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.height bs.out 1250000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.width bs.out 650000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.height bs.out 625000
+execute store success score #success bs.data if predicate bs.hitbox:is_baby
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.width 1300
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.height 1250
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.width 650
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.height 625

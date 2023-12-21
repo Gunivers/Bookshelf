@@ -1,3 +1,3 @@
 # enderman group
-scoreboard players set $hitbox.width bs.out 600000
-scoreboard players set $hitbox.height bs.out 2900000
+scoreboard players set @s bs.width 600
+scoreboard players set @s bs.height 2900

@@ -1,6 +1,6 @@
 # polar_bear group
-execute at @s positioned ~ ~1 ~ store result score #hitbox.get_entity.is_baby bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.width bs.out 1400000
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.height bs.out 1400000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.width bs.out 700000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.height bs.out 700000
+execute store success score #success bs.data if predicate bs.hitbox:is_baby
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.width 1400
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.height 1400
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.width 700
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.height 700

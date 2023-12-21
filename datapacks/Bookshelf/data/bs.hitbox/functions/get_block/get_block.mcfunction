@@ -16,6 +16,7 @@
 
 scoreboard players set $hitbox.offset_x bs.out 0
 scoreboard players set $hitbox.offset_z bs.out 0
+
 scoreboard players set #hitbox.id bs.data 0
 execute if block ~ ~ ~ #bs.hitbox:group_1 run scoreboard players add #hitbox.id bs.data 1
 execute if block ~ ~ ~ #bs.hitbox:group_2 run scoreboard players add #hitbox.id bs.data 2
