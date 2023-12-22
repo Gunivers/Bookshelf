@@ -14,6 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
+execute if entity @s[scores={bs.vel.x=0,bs.vel.y=0,bs.vel.z=0}] run return 0
 $execute store result storage bs:ctx x double $(scale) run scoreboard players get @s bs.vel.x
 $execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.vel.y
 $execute store result storage bs:ctx z double $(scale) run scoreboard players get @s bs.vel.z
