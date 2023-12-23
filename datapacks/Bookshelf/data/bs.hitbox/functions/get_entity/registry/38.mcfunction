@@ -4,3 +4,5 @@ execute if score #result bs.data matches 0 run data modify storage bs:out hitbox
 execute if score #result bs.data matches 1 run data modify storage bs:out hitbox set value [[15, 0, 0, 16, 16, 16]]
 execute if score #result bs.data matches 2 run data modify storage bs:out hitbox set value [[0, 0, 15, 16, 16, 16]]
 execute if score #result bs.data matches 3 run data modify storage bs:out hitbox set value [[0, 0, 0, 1, 16, 16]]
+scoreboard players set $hitbox.offset.x bs.out 0
+scoreboard players set $hitbox.offset.z bs.out 0

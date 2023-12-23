@@ -23,7 +23,4 @@ execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
 execute store success score #hitbox.is_custom bs.data if predicate bs.hitbox:has_hitbox
 execute if score #hitbox.is_custom bs.data matches 0 run function #bs.hitbox:get_entity
 execute if predicate bs.hitbox:has_hitbox run return run function bs.hitbox:is_in_entity/check
-
-scoreboard players set $hitbox.offset.x bs.out 0
-scoreboard players set $hitbox.offset.z bs.out 0
 return run function bs.hitbox:is_in_block/check
