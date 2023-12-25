@@ -1,4 +1,3 @@
-execute if score #move.ct bs.data matches ..-1 run scoreboard players set #move.ct bs.data 0
 scoreboard players operation #move.rx bs.data = #move.vx bs.data
 scoreboard players operation #move.ry bs.data = #move.vy bs.data
 scoreboard players operation #move.rz bs.data = #move.vz bs.data
@@ -18,3 +17,4 @@ execute if score #move.cf bs.data matches 2 as B5-0-0-0-1 at @s run tp @s ~ ~ ~-
 execute if score #move.cf bs.data matches 1 as B5-0-0-0-1 at @s run tp @s ~ ~.0011 ~
 execute if score #move.cf bs.data matches 0 as B5-0-0-0-1 at @s run tp @s ~ ~-.0011 ~
 execute positioned as B5-0-0-0-1 run tp @s ~ ~ ~
+$function $(on_collision)

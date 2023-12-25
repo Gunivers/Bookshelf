@@ -1,5 +1,3 @@
-function bs.move:collision/resolution/resolve
-
 execute store result storage bs:ctx x double .001 run scoreboard players operation #move.vx bs.data -= #move.rx bs.data
 execute store result storage bs:ctx z double .001 run scoreboard players operation #move.vz bs.data -= #move.rz bs.data
 execute store result storage bs:ctx y double .001 run scoreboard players operation #move.vy bs.data -= #move.ry bs.data

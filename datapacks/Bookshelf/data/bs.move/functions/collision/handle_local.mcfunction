@@ -26,6 +26,8 @@ execute if score #move.dr bs.data matches 4 run function bs.move:collision/recur
 execute if score #move.dr bs.data matches 5 run function bs.move:collision/recurse/init/pnp
 execute if score #move.dr bs.data matches 6 run function bs.move:collision/recurse/init/ppn
 execute if score #move.dr bs.data matches 7 run function bs.move:collision/recurse/init/ppp
-$execute unless score #move.ct bs.data matches 2147483647 run function $(on_collision)
+execute if score #move.ct bs.data matches 0..2147483646 rotated as @s run function #bs.move:local_to_canonical
+execute if score #move.ct bs.data matches 0..2147483646 run function bs.move:collision/resolve with storage bs:in move
+execute if score #move.ct bs.data matches 0..2147483646 rotated as @s run function #bs.move:canonical_to_local
 execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
 tag @e[tag=bs.move.omit] remove bs.move.omit

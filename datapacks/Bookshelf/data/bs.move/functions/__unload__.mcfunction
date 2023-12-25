@@ -6,6 +6,7 @@
 kill B5-0-0-0-1
 forceload remove 0 0
 
+scoreboard objectives remove bs.in
 scoreboard objectives remove bs.data
 scoreboard objectives remove bs.const
 scoreboard objectives remove bs.height
