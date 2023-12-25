@@ -27,7 +27,7 @@ You can find below all functions available in this module.
 
 ```{function} #bs.position:canonical_to_local
 
-Convert a position (using the relative reference frame) into a local position (using the local reference frame).
+Convert a canonical position (using the relative reference frame) into a local position (using the local reference frame).
 
 :Inputs:
   **Execution `rotated as <entity>` or `rotated <h> <v>`**: Rotation to use for the conversion.
@@ -365,6 +365,25 @@ Get the execution vertical rotation of the function.
 ::::
 
 > **Credits**: Aksiome, Leirof, theogiraudet
+
+---
+
+### Local to canonical
+
+```{function} #bs.position:local_to_canonical
+
+Convert a local position (using the local reference frame) into a canonical position (using the relative reference frame).
+
+:Inputs:
+  **Execution `rotated as <entity>` or `rotated <h> <v>`**: Rotation to use for the conversion.
+
+  **Scores `@s bs.pos.[x,y,z]`**: Position to convert.
+
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Converted position.
+```
+
+> **Credits**: Aksiome
 
 ---
 
