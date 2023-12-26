@@ -14,11 +14,13 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $raycast.block_collision bs.in >< #view.as_aimed_entity.block_collision bs.data
-scoreboard players operation $raycast.entity_collision bs.in >< #view.as_aimed_entity.entity_collision bs.data
+# run the raycast
+data modify storage bs:data view.raycast set from storage bs:in raycast
+data modify storage bs:in raycast merge value {block_collision:true,entity_collision:true}
 execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
-scoreboard players operation $raycast.block_collision bs.in >< #view.as_aimed_entity.block_collision bs.data
-scoreboard players operation $raycast.entity_collision bs.in >< #view.as_aimed_entity.entity_collision bs.data
+data modify storage bs:in raycast set from storage bs:data view.raycast
+
+# run the command as the entity that was found or return early
 execute unless data storage bs:out raycast.targeted_entity run return 0
 summon minecraft:area_effect_cloud 0.0 0.0 0.0 {UUID:[I;181,0,0,0]}
 data modify entity B5-0-0-0-0 Owner set from storage bs:out raycast.targeted_entity

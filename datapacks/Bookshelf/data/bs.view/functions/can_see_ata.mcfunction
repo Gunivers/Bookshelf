@@ -15,12 +15,9 @@
 # CODE ------------------------------------------------------------------------
 
 data modify storage bs:data view.raycast set from storage bs:in raycast
+data modify storage bs:in raycast merge value {block_collision:true,entity_collision:false}
 data modify storage bs:in raycast.ignored_blocks set from storage bs:in view.can_see_ata.ignored_blocks
 execute store result storage bs:in raycast.max_distance double 0.001 run function #bs.position:get_distance_ata {scale:1000}
-scoreboard players operation $raycast.block_collision bs.in >< #view.can_see_ata.block_collision bs.data
-scoreboard players operation $raycast.entity_collision bs.in >< #view.can_see_ata.entity_collision bs.data
-execute facing entity @s eyes run function #bs.raycast:run
-scoreboard players operation $raycast.block_collision bs.in >< #view.can_see_ata.block_collision bs.data
-scoreboard players operation $raycast.entity_collision bs.in >< #view.can_see_ata.entity_collision bs.data
+execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
 data modify storage bs:in raycast set from storage bs:data view.raycast
 execute if score #raycast.distance bs.data matches 2147483647 run return 1

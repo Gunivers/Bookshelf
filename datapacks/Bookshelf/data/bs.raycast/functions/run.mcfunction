@@ -50,6 +50,8 @@ execute if score #raycast.lz bs.data matches ..0 run scoreboard players operatio
 # run the recursion loop
 tag @s add bs.raycast.omit
 scoreboard players set #raycast.distance bs.data 2147483647
+execute store result score #raycast.bc bs.data run data get storage bs:in raycast.block_collision
+execute store result score #raycast.ec bs.data run data get storage bs:in raycast.entity_collision
 execute store result score #raycast.max_distance bs.data run data get storage bs:in raycast.max_distance 1000
 data modify storage bs:out raycast set value {distance:0d,hit_point:[0d,0d,0d]}
 execute align xyz run function bs.raycast:recurse/next with storage bs:in raycast

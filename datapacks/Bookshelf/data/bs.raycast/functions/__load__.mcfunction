@@ -15,11 +15,10 @@ scoreboard players set 2 bs.const 2
 scoreboard players set 500 bs.const 500
 scoreboard players set 1000 bs.const 1000
 
-scoreboard players set $raycast.block_collision bs.in 1
-scoreboard players set $raycast.entity_collision bs.in 1
-
 execute unless data storage bs:in raycast run data modify storage bs:in raycast set value { \
   max_distance: 16.0, \
+  block_collision: true, \
+  entity_collision: false, \
   ignored_blocks: "#bs.hitbox:intangible", \
   solid_entities: "bs.raycast.is_solid", \
 }
