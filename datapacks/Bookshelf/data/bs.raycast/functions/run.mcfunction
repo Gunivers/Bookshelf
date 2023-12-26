@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.1
+# Version: 1.2
 # Created: 09/10/2023 (1.20.2)
-# Last modification: 30/11/2023 (1.20.3)
+# Last modification: 26/12/2023 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/raycast.html
 # Dependencies:
@@ -48,14 +48,13 @@ execute if score #raycast.ly bs.data matches ..0 run scoreboard players operatio
 execute if score #raycast.lz bs.data matches ..0 run scoreboard players operation #raycast.lz bs.data += #raycast.dz bs.data
 
 # run the recursion loop
-tag @s add bs.raycast.origin
+tag @s add bs.raycast.omit
 scoreboard players set #raycast.distance bs.data 2147483647
-execute store result score #raycast.entities bs.data run data get storage bs:in raycast.target_entities
 execute store result score #raycast.max_distance bs.data run data get storage bs:in raycast.max_distance 1000
 data modify storage bs:out raycast set value {distance:0d,hit_point:[0d,0d,0d]}
 execute align xyz run function bs.raycast:recurse/next with storage bs:in raycast
 execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
-tag @s remove bs.raycast.origin
+tag @e[tag=bs.raycast.omit] remove bs.raycast.omit
 
 # return 0 early if no collision occured or compute output data then return 1
 execute if score #raycast.distance bs.data matches 2147483647 run return 0
