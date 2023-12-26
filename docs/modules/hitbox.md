@@ -31,7 +31,7 @@ Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
-  **Scores `$hitbox.offset_[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
+  **Scores `$hitbox.offset.[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
 
   **Storage `bs:out hitbox` [array]**: An array of cube coordinates.
 ```
