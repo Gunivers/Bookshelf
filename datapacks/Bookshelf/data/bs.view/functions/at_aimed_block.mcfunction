@@ -14,10 +14,11 @@
 
 # CODE ------------------------------------------------------------------------
 
-data modify storage bs:data view.raycast set from storage bs:in raycast
-data modify storage bs:in raycast.target_entities set value false
+scoreboard players operation $raycast.block_collision bs.in >< #view.at_aimed_block.block_collision bs.data
+scoreboard players operation $raycast.entity_collision bs.in >< #view.at_aimed_block.entity_collision bs.data
 execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
-data modify storage bs:in raycast set from storage bs:data view.raycast
+scoreboard players operation $raycast.block_collision bs.in >< #view.at_aimed_block.block_collision bs.data
+scoreboard players operation $raycast.entity_collision bs.in >< #view.at_aimed_block.entity_collision bs.data
 execute if score #raycast.distance bs.data matches 2147483647 run return 0
 data modify entity B5-0-0-0-1 Pos set from storage bs:out raycast.targeted_block
 $execute at B5-0-0-0-1 run $(run)
