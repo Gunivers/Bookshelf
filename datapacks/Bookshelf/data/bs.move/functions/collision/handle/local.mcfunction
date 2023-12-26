@@ -17,6 +17,8 @@ scoreboard players operation #move.w bs.data /= 2 bs.const
 tag @s add bs.move.omit
 scoreboard players set #move.dr bs.data 0
 scoreboard players set #move.ct bs.data 2147483647
+execute store result score #move.bc bs.data run data get storage bs:in move.block_collision
+execute store result score #move.ec bs.data run data get storage bs:in move.entity_collision
 execute if score #move.vx bs.data matches 0.. run scoreboard players add #move.dr bs.data 4
 execute if score #move.vy bs.data matches 0.. run scoreboard players add #move.dr bs.data 2
 execute if score #move.vz bs.data matches 0.. run scoreboard players add #move.dr bs.data 1

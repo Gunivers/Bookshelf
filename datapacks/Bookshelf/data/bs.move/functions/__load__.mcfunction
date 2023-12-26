@@ -21,11 +21,10 @@ scoreboard players set 2 bs.const 2
 scoreboard players set 500 bs.const 500
 scoreboard players set 1000 bs.const 1000
 
-scoreboard players set $move.block_collision bs.in 1
-scoreboard players set $move.entity_collision bs.in 1
-
 execute unless data storage bs:in move run data modify storage bs:in move set value { \
+  block_collision: true, \
+  entity_collision: false, \
+  on_collision: "#bs.move:on_collision/slide", \
   ignored_blocks: "#bs.move:can_pass_through", \
   solid_entities: "bs.move.is_solid", \
-  on_collision: "#bs.move:on_collision/slide", \
 }
