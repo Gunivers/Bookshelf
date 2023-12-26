@@ -35,12 +35,14 @@ Cast a ray from the execution position and check if it hits something.
   :::{list-table}
   *   - **`max_distance`**&nbsp;[number]
       - Maximum ray travel distance (default: 16.0).
+  *   - **`block_collision`**&nbsp;[bool]
+      - Whether the ray should collide with blocks (default: true).
+  *   - **`entity_collision`**&nbsp;[bool]
+      - Whether the ray should collide with entities (default: false).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`ignored_entities`**&nbsp;[string]
-      - Entities to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`target_entities`**&nbsp;[bool]
-      - Whether the ray should stop on entities or not (default: false).
+  *   - **`solid_entities`**&nbsp;[string]
+      - Tag for entities to include (default: `bs.raycast.is_solid`).
   :::
 
 :Outputs:
