@@ -8,7 +8,7 @@
 # Created: 25/12/2023 (1.20.4)
 # Last modification: 25/12/2023 (1.20.4)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#local_to_canonical
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#local-to-canonical
 # Dependencies:
 # Note:
 
