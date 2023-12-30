@@ -31,7 +31,7 @@ Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
-  **Scores `$hitbox.offset_[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
+  **Scores `$hitbox.offset.[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
 
   **Storage `bs:out hitbox` [array]**: An array of cube coordinates.
 ```
@@ -49,7 +49,7 @@ data get storage bs:out hitbox
 
 ```{function} #bs.hitbox:get_entity
 
-Get the width and height of an entity. For simplicity and optimization purposes this value is returned scaled by 1 000 000.
+Get the width and height of an entity. For simplicity and optimization purposes this value is returned scaled by 1000.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to get the hitbox from.
@@ -57,16 +57,16 @@ Get the width and height of an entity. For simplicity and optimization purposes 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the entity hitbox.
 
 :Outputs:
-  **Score `$hitbox.height bs.out`**: Height of the entity.
+  **Score `@s bs.width`**: Height of the entity.
 
-  **Score `$hitbox.width bs.out`**: Width of the entity.
+  **Score `@s bs.height`**: Width of the entity.
 ```
 
 *Get the hitbox of an armor_stand:*
 
 ```mcfunction
 execute summon minecraft:armor_stand run function #bs.hitbox:get_entity
-tellraw @a [{"text":"Height: ","color":"dark_gray"},{"score":{"name":"$hitbox.height","objective":"bs.out"},"color":"gold"},{"text":", Width: ","color":"dark_gray"},{"score":{"name":"$hitbox.width","objective":"bs.out"},"color":"gold"}]
+execute as @e[type=armor_stand,sort=nearest,limit=1] run tellraw @a [{"text":"Height: ","color":"gray"},{"score":{"name":"@s","objective":"bs.height"},"color":"gold"},{"text":", Width: "},{"score":{"name":"@s","objective":"bs.width"},"color":"gold"}]
 ```
 
 ```{important}

@@ -1,3 +1,3 @@
 # tropical_fish group
-scoreboard players set $hitbox.width bs.out 500000
-scoreboard players set $hitbox.height bs.out 400000
+scoreboard players set @s bs.width 500
+scoreboard players set @s bs.height 400

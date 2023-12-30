@@ -1,6 +1,6 @@
 # pig group
-execute at @s positioned ~ ~.5 ~ store result score #hitbox.get_entity.is_baby bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.width bs.out 900000
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.height bs.out 900000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.width bs.out 450000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.height bs.out 450000
+execute store success score #success bs.data if predicate bs.hitbox:is_baby
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.width 900
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.height 900
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.width 450
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.height 450

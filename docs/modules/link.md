@@ -495,7 +495,7 @@ Determine if an entity has a `bs.link.to` score.
 
 ## 🎓 Custom behaviors
 
-With this module you can combine multiple behaviors to create your very own custom one.
+This module allows you to combine multiple behaviors to create your very own custom one.
 
 ---
 

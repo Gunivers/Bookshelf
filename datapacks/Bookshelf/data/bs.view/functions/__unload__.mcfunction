@@ -9,3 +9,4 @@ forceload remove 0 0
 scoreboard objectives remove bs.data
 
 data remove storage bs:in view
+data remove storage bs:data view

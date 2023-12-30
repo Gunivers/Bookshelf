@@ -6,10 +6,10 @@ execute store result score #hitbox.max_y bs.data run data get storage bs:out hit
 execute store result score #hitbox.max_z bs.data run data get storage bs:out hitbox[-1][5] 62.5
 
 # offset coordinates if needed
-scoreboard players operation #hitbox.min_x bs.data += $hitbox.offset_x bs.out
-scoreboard players operation #hitbox.max_x bs.data += $hitbox.offset_x bs.out
-scoreboard players operation #hitbox.min_z bs.data += $hitbox.offset_z bs.out
-scoreboard players operation #hitbox.max_z bs.data += $hitbox.offset_z bs.out
+scoreboard players operation #hitbox.min_x bs.data += $hitbox.offset.x bs.out
+scoreboard players operation #hitbox.max_x bs.data += $hitbox.offset.x bs.out
+scoreboard players operation #hitbox.min_z bs.data += $hitbox.offset.z bs.out
+scoreboard players operation #hitbox.max_z bs.data += $hitbox.offset.z bs.out
 
 execute \
   if score #hitbox.x bs.data >= #hitbox.min_x bs.data \

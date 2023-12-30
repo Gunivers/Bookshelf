@@ -1,3 +1,3 @@
 # guardian group
-scoreboard players set $hitbox.width bs.out 850000
-scoreboard players set $hitbox.height bs.out 850000
+scoreboard players set @s bs.width 850
+scoreboard players set @s bs.height 850

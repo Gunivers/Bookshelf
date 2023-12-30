@@ -1,10 +1,9 @@
 # camel group
-execute at @s positioned ~ ~1 ~ store result score #hitbox.get_entity.is_sitting bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_sitting bs.data matches 0 at @s positioned ~ ~2 ~ store result score #hitbox.get_entity.is_baby bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_sitting bs.data matches 1 at @s positioned ~ ~.5 ~ store result score #hitbox.get_entity.is_baby bs.data unless entity @s[dx=0]
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.width bs.out 1700000
-execute if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players set $hitbox.height bs.out 2375000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.width bs.out 765000
-execute if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players set $hitbox.height bs.out 1068750
-execute if score #hitbox.get_entity.is_sitting bs.data matches 1 if score #hitbox.get_entity.is_baby bs.data matches 0 run scoreboard players remove $hitbox.height bs.out 1430000
-execute if score #hitbox.get_entity.is_sitting bs.data matches 1 if score #hitbox.get_entity.is_baby bs.data matches 1 run scoreboard players remove $hitbox.height bs.out 643500
+execute store success score #success bs.data if predicate bs.hitbox:is_baby
+execute at @s positioned ~ ~1 ~ store result score #hitbox.is_sitting bs.data unless entity @s[dx=0]
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.width 1700
+execute if score #success bs.data matches 0 run scoreboard players set @s bs.height 2375
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.width 765
+execute if score #success bs.data matches 1 run scoreboard players set @s bs.height 1069
+execute if score #hitbox.is_sitting bs.data matches 1 if score #success bs.data matches 0 run scoreboard players remove @s bs.height 1430
+execute if score #hitbox.is_sitting bs.data matches 1 if score #success bs.data matches 1 run scoreboard players remove @s bs.height 643

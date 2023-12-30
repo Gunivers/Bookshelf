@@ -1,3 +1,3 @@
 # iron_golem group
-scoreboard players set $hitbox.width bs.out 1400000
-scoreboard players set $hitbox.height bs.out 2700000
+scoreboard players set @s bs.width 1400
+scoreboard players set @s bs.height 2700
