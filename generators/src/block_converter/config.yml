@@ -1,6 +1,0 @@
-# Use https://github.com/PixiGeko/Minecraft-generated-data
-# These parameters correspond to the folder the program will search in
-# Minecraft-generated-data/<parent>/<version_type>/<version>/
-parent: 1.19
-version_type: releases
-version: 1.19
