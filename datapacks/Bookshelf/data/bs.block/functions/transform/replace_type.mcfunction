@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, theogiraudet
+# Contributors:
+
+# Version: 1.0
+# Created: 15/01/2024 (1.20.4)
+# Last modification: 15/01/2024 (1.20.4)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#replace-type
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 $execute unless data storage bs:const block[{type:"$(type)"}] run return 0
 $data modify storage bs:ctx _ set from storage bs:const block[{type:"$(type)"}]
 

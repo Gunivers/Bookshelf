@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, theogiraudet
+# Contributors:
+
+# Version: 1.0
+# Created: 15/01/2024 (1.20.4)
+# Last modification: 15/01/2024 (1.20.4)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#keep-properties
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 $data modify storage bs:ctx _ set value $(properties)
 
 # use _ to prevent populating options with dummy data when searching for selected values

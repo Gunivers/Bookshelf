@@ -1,7 +1,7 @@
 # INFO ------------------------------------------------------------------------
 # Copyright © 2023 Gunivers Community.
 
-# Authors: Aksiome
+# Authors: Aksiome, theogiraudet
 # Contributors:
 
 # Version: 1.0

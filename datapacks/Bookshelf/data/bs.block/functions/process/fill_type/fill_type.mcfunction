@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, theogiraudet
+# Contributors:
+
+# Version: 1.0
+# Created: 15/01/2024 (1.20.4)
+# Last modification: 15/01/2024 (1.20.4)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 execute unless data storage bs:in block.fill_type.mode run data modify storage bs:in block.fill_type.mode set value "replace"
 execute unless data storage bs:in block.fill_type.limit run data modify storage bs:in block.fill_type.limit set value 4096
 execute unless data storage bs:in block.fill_type.masks run data modify storage bs:in block.fill_type.masks set value []

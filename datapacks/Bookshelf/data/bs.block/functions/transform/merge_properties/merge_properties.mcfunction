@@ -1,3 +1,19 @@
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
+
+# Authors: Aksiome, theogiraudet
+# Contributors:
+
+# Version: 1.0
+# Created: 15/01/2024 (1.20.4)
+# Last modification: 15/01/2024 (1.20.4)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#merge-properties
+# Dependencies:
+# Note:
+
+# CODE ------------------------------------------------------------------------
+
 $data modify storage bs:ctx _ set value {in:$(properties)}
 data modify storage bs:ctx _.out set from storage bs:out block.iterable_properties
 
