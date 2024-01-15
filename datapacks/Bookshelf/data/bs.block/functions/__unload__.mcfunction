@@ -3,8 +3,12 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard objectives remove bs.block.type.id
-scoreboard objectives remove bs.block.state.id
+kill B5-0-0-0-1
+forceload remove 0 0
+
+scoreboard objectives remove bs.data
+
 data remove storage bs:in block
 data remove storage bs:out block
 data remove storage bs:const block
+data remove storage bs:data block

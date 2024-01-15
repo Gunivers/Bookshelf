@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.block:get/type/from/block"
+    "bs.block:get/get_type",
+    "bs.block:get/compile/block"
   ]
 }

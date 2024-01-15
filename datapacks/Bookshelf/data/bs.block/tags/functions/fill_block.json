@@ -1,8 +1,5 @@
 {
   "values": [
-    "bs.block:fill_block/macros/block",
-    "bs.block:fill_block/macros/filter",
-    "bs.block:fill_block/macros/mode",
-    "bs.block:fill_block/fill_block"
+    "bs.block:process/fill_block/fill_block"
   ]
 }

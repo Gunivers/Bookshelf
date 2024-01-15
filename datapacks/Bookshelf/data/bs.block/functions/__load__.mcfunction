@@ -3,7 +3,9 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard objectives add bs.block.type.id dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Block Type ID","color":"aqua"}]
-scoreboard objectives add bs.block.state.id dummy [{"text":"Bookshelf ","color":"dark_gray"},{"text":"Block State ID","color":"aqua"}]
-function bs.block:import/state_list
-function bs.block:import/type_list
+forceload add 0 0
+execute unless entity B5-0-0-0-1 run summon minecraft:marker 0.0 0.0 0.0 {UUID:[I;181,0,0,1],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Marker","color":"aqua"}]'}
+
+scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+
+function bs.block:load/lookup_table

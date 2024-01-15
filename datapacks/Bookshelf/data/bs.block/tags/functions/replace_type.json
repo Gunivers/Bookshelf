@@ -1,6 +1,6 @@
 {
   "values": [
-    "bs.block:get/get_block",
+    "bs.block:transform/replace_type",
     "bs.block:get/compile/block"
   ]
 }
