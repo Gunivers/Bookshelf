@@ -1,52 +1,34 @@
 # INFO ------------------------------------------------------------------------
 # Copyright © 2023 Gunivers Community.
 
-# Authors       : Leirof
-# Contributors  : 
+# Authors: Aksiome, Leirof
+# Contributors:
 
-# Version: 1.0
+# Version: 2.0
 # Created: 19/02/2023 (1.19.2)
-# Last verification: 21/05/2023 (1.19.4)
-# Last modification: 21/05/2023 (1.19.4)
+# Last modification: 17/10/2023 (1.20.2)
 
-# Original path : bs.vecotr:fast_normalize
-# Documentation : https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
-# Note          :
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
+# Dependencies:
+# Note:
 
 # CODE ------------------------------------------------------------------------
 
-# Lenght after normalization
-execute unless score @s bs.opt.0 matches 1.. run scoreboard players set @s bs.opt.0 1000
+$scoreboard players set #vector.fast_normalize.scale bs.data $(scale)
 
-# Getting absolute value of each component
-scoreboard players operation #vector.fast_normalize.x bs.data = @s bs.vector.x
-scoreboard players operation #vector.fast_normalize.y bs.data = @s bs.vector.y
-scoreboard players operation #vector.fast_normalize.z bs.data = @s bs.vector.z
+scoreboard players operation $vector.fast_normalize.factor bs.out = $vector.fast_normalize.0 bs.in
+execute if predicate bs.vector:fast_normalize/check1 run scoreboard players operation $vector.fast_normalize.factor bs.out = $vector.fast_normalize.1 bs.in
+execute if predicate bs.vector:fast_normalize/check2 run scoreboard players operation $vector.fast_normalize.factor bs.out = $vector.fast_normalize.2 bs.in
+execute if score $vector.fast_normalize.factor bs.out matches ..-1 run scoreboard players operation $vector.fast_normalize.factor bs.out *= -1 bs.const
 
-execute if score #vector.fast_normalize.x bs.data matches ..-1 run scoreboard players operation #vector.fast_normalize.x bs.data *= -1 bs.const
-execute if score #vector.fast_normalize.y bs.data matches ..-1 run scoreboard players operation #vector.fast_normalize.y bs.data *= -1 bs.const
-execute if score #vector.fast_normalize.z bs.data matches ..-1 run scoreboard players operation #vector.fast_normalize.z bs.data *= -1 bs.const
+scoreboard players operation $vector.fast_normalize.0 bs.out = $vector.fast_normalize.0 bs.in
+scoreboard players operation $vector.fast_normalize.1 bs.out = $vector.fast_normalize.1 bs.in
+scoreboard players operation $vector.fast_normalize.2 bs.out = $vector.fast_normalize.2 bs.in
 
-# Getting the maximum component of the vector
-scoreboard players operation #vector.fast_normalize.max bs.data = #vector.fast_normalize.x bs.data
-execute if score #vector.fast_normalize.y bs.data > #vector.fast_normalize.max bs.data run scoreboard players operation #vector.fast_normalize.max bs.data = #vector.fast_normalize.y bs.data
-execute if score #vector.fast_normalize.z bs.data > #vector.fast_normalize.max bs.data run scoreboard players operation #vector.fast_normalize.max bs.data = #vector.fast_normalize.z bs.data
+scoreboard players operation $vector.fast_normalize.0 bs.out *= #vector.fast_normalize.scale bs.data
+scoreboard players operation $vector.fast_normalize.1 bs.out *= #vector.fast_normalize.scale bs.data
+scoreboard players operation $vector.fast_normalize.2 bs.out *= #vector.fast_normalize.scale bs.data
 
-# Multiplying the vector by the final length
-scoreboard players operation @s bs.vector.x *= @s bs.opt.0
-scoreboard players operation @s bs.vector.y *= @s bs.opt.0
-scoreboard players operation @s bs.vector.z *= @s bs.opt.0
-
-# Dividing the vector by the maximum component
-scoreboard players operation @s bs.vector.x /= #vector.fast_normalize.max bs.data
-scoreboard players operation @s bs.vector.y /= #vector.fast_normalize.max bs.data
-scoreboard players operation @s bs.vector.z /= #vector.fast_normalize.max bs.data
-
-# Computing normalization factor (with 3 decimals)
-# Vi = A * Vn  ==> A = Vi / Vn
-scoreboard players operation @s bs.out.0 = #vector.fast_normalize.max bs.data
-scoreboard players operation @s bs.out.0 *= 1000 bs.const
-scoreboard players operation @s bs.out.0 /= @s bs.opt.0
-
-# Reset option score
-scoreboard players reset @s bs.opt.0
+scoreboard players operation $vector.fast_normalize.0 bs.out /= $vector.fast_normalize.factor bs.out
+scoreboard players operation $vector.fast_normalize.1 bs.out /= $vector.fast_normalize.factor bs.out
+scoreboard players operation $vector.fast_normalize.2 bs.out /= $vector.fast_normalize.factor bs.out

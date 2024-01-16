@@ -1,31 +1,21 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: KubbyDev
+# Authors: Aksiome, KubbyDev
 # Contributors:
-# MC Version: 1.13
-# Last check:
 
-# Original path: bs.math:log10
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: <true/false/global>
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 02/09/2023 (23w33a)
+
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#logarithm
+# Dependencies:
 # Note:
-# - This function takes inputs in [1; 1 000 000 000] (corresponds to [0.001; 1 000 000]). If you want log10(0.5), input 500
-# - The output values are scaled by 10 000. They are the exact result +- 0.001 (The maximum error is 0.0008)
-# - If you input 0 the function returns log10(0.001), if you input a negative value it returns log10(-x)
 
-#__________________________________________________
-# PARAMETERS
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-function bs.math:log
-scoreboard players operation @s bs.out.0 *= 1000 bs.const
-scoreboard players operation @s bs.out.0 /= 2303 bs.const
+data modify storage bs:data math.log10.log2 set from storage bs:in math.log2.value
+data modify storage bs:in math.log2.value set from storage bs:in math.log10.value
+function #bs.math:log2
+data modify storage bs:in math.log2.value set from storage bs:data math.log10.log2
+execute store result storage bs:out math.log10 double 0.0000001 run data get storage bs:out math.log2 3010299.9566

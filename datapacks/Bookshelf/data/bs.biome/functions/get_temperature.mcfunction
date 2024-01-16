@@ -1,36 +1,23 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
 # Authors: theogiraudet
-# Contributors:
-# MC Version: 1.14
-# Last check:
+# Contributors: Aksiome
 
-# Original path: bs.biome:get_temperature_at_player
-# Parallelizable: true
-# Note: Allow to get the temperature at the altitude of the player.
-#		The format of the result is :
-#		temperature = biome_temperature * 10^8 - altitude_factor
-#		altitude_factor = 0 if(Y - 62 < 0) else (Y - 62) * 166667
-# 	Based on the wiki values.
+# Version: 2.0
+# Created: ??/??/???? (1.14)
+# Last modification: 24/08/2023 (23w32a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html#get-temperature
+# Dependencies:
+# Note:
 
-# Output: Temperature (score dummy)
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+execute store result score $biome.get_temperature bs.out run function #bs.biome:get_base_temperature
 
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-scoreboard players set @s bs.in.0 0
-function bs.biome:get_biome_temperature
-execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 = @s bs.loc.y
-execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 -= 62 bs.const
-execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.in.0 *= 166667 bs.const
-execute if score @s bs.loc.y matches 63.. run scoreboard players operation @s bs.biome.temp -= @s bs.in.0
+execute store result score #biome.variation bs.data run data get entity @s Pos[1]
+scoreboard players remove #biome.variation bs.data 80
+execute if score #biome.variation bs.data matches 1.. run scoreboard players operation #biome.variation bs.data *= 125000 bs.const
+execute if score #biome.variation bs.data matches 1.. run scoreboard players operation $biome.get_temperature bs.out -= #biome.variation bs.data
+return run scoreboard players get $biome.get_temperature bs.out

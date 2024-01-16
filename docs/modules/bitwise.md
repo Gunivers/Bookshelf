@@ -1,29 +1,18 @@
 # 🖥️ Bitwise
 
-**`bs.math:bitwise`**
+**`#bs.bitwise:help`**
 
-This folder contains various bitwise operators to
-*apply to scores.
+A collection of various bitwise operations, providing versatile tools for manipulating binary data.
 
-<div align=center>
-
-![](img/bitwise.png)
-
-</div>
-
-```{button-link} https://youtu.be/itgPhvTMSZQ
-:color: primary
+```{image} /_imgs/modules/bitwise-light.png
 :align: center
-:shadow:
-
-{octicon}`device-camera-video` Watch a demo
+:class: only-light p-2
 ```
 
-<div align=center>
-
-_Friendly advice: decrease the volume before clicking_ 😅
-
-</div>
+```{image} /_imgs/modules/bitwise-dark.png
+:align: center
+:class: only-dark p-2
+```
 
 ```{epigraph}
 "Binary is a very simple numbering system, but it is incredibly powerful when used correctly."
@@ -33,262 +22,211 @@ _Friendly advice: decrease the volume before clicking_ 😅
 
 ---
 
-## logical AND
+## 🔧 Functions
 
-**`bs.bitwise:and`**
-
-Computes the bitwise conjunction of the two input numbers
-
-Inputs
-
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The first operand $a$
-
-   (score) `@s bs.in.1`
-   : The second operand $b$
-
-   ```{admonition} Negative input
-   :class: hint
-      
-   If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-   ```
-
-Outputs
-
-:  (score) `@s bs.out.0`
-   : The result of the operation = $a \times b$
-
-Example
-
-:  Calculate and display $-9 \times 57$
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 -9
-   scoreboard players set @s bs.in.1 57
-   function bs.math:bitwise/and
-   tellraw @a [{"text":"-9 & 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-> **Credits**: theogiraudet
+You can find below all functions available in this module.
 
 ---
 
-## Get number of bits
+### Complement to 2
 
-**`get_number_of_bits`**
+```{function} #bs.bitwise:two_complement
 
-Calculates the number of bits needed to store
-the input
+Compute the two's complement of a number.
 
-Inputs
+:Inputs:
+  **Score `$bitwise.two_complement.value bs.in`**: Number to compute the two's complement of.
 
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
+:Outputs:
+  **Return | Score `$bitwise.two_complement bs.out`**: The two's complement of the number.
+```
 
-   (score) `@s bs.in.0`
-   : The number you want to know the number of bits
+*Compute and display the two's complement of -12:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.two_complement.value bs.in -12
+function #bs.bitwise:two_complement
 
-Outputs
+# See the result
+tellraw @a [{"text":"Two's complement of -12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.two_complement","objective":"bs.out"}}]
+```
 
-:  (score) `@s bs.out.0`
-   : The number of bits needed to store the input
-
-   ```{admonition} Negative input
-   :class: hint
-      
-   If the input is negative, returns the number of bits needed to store
-   the absolute value of the number
-   ```
-
-Example
-
-:  Calculate and display the number of bits of 12
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 12
-   function bs.math:bitwise/get_number_of_bits
-   tellraw @a [{"text": "Number of bits of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-> **Credits**: theogiraudet
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
-## logical NOT
+### Logical operators
 
-**`bs.bitwise:not`**
+::::{tab-set}
+:::{tab-item} And
 
-Computes the bit by bit negation of the input
+```{function} #bs.bitwise:and
 
-Inputs
+Compute the bitwise conjunction of two numbers.
 
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
+:Inputs:
+  **Score `$bitwise.and.a bs.in`**: First operand $=a$.
 
-   (score) `@s bs.in.0`
-   : The number you want to negate
+  **Score `$bitwise.and.b bs.in`**: Second operand $=b$.
 
-Example
+:Outputs:
+  **Return | Score `$bitwise.and bs.out`**: Result of the operation $=a \land b$.
+```
 
-:  Calculate and display $~452$
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 452
-   function bs.math:bitwise/not
-   tellraw @a [{"text":"~452 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
+*Compute and display $-9 \land 57$:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.and.a bs.in -9
+scoreboard players set $bitwise.and.b bs.in 57
+function #bs.bitwise:and
 
-> **Credits**: theogiraudet
+# See the result
+tellraw @a [{"text":"-9 & 57 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.and","objective":"bs.out"}}]
+```
 
----
+:::
+:::{tab-item} Or
 
-## OR logic
+```{function} #bs.bitwise:or
 
-**`bs.bitwise:or`**
+Compute the bitwise disjunction of two numbers.
 
-Computes the bit to bit disjunction of the two input numbers
+:Inputs:
+  **Score `$bitwise.or.a bs.in`**: First operand $=a$.
 
-Inputs
+  **Score `$bitwise.or.b bs.in`**: Second operand $=b$.
 
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
+:Outputs:
+  **Return | Score `$bitwise.or bs.out`**: Result of the operation $=a \lor b$.
+```
 
-   (score) `@s bs.in.0`
-   : The first operand $a$
+*Compute and display $-9 \lor 57$:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.or.a bs.in -9
+scoreboard players set $bitwise.or.b bs.in 57
+function #bs.bitwise:or
 
-   (score) `@s bs.in.1`
-   : The second operand $b$
+# See the result
+tellraw @a [{"text":"-9 | 57 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.or","objective":"bs.out"}}]
+```
 
-   ```{admonition} Negative input
-   :class: hint
-      
-   If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-   ```
+:::
+:::{tab-item} Xor
 
-Outputs
+```{function} #bs.bitwise:xor
 
-:  (score) `@s bs.out.0`
-   : The result of the operation = $a + b$
+Compute the exclusive bitwise disjunction of two numbers.
 
-Example
+:Inputs:
+  **Score `$bitwise.xor.a bs.in`**: First operand $=a$.
 
-:  Calculate and display $-9 + 57$.
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 -9
-   scoreboard players set @s bs.in.1 57
-   function bs.math:bitwise/gold
-   tellraw @a [{"text":"-9 | 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
+  **Score `$bitwise.xor.b bs.in`**: Second operand $=b$.
 
-> **Credits**: theogiraudet
+:Outputs:
+  **Return | Score `$bitwise.xor bs.out`**: Result of the operation $=a \oplus b$.
+```
 
----
+*Compute and display $-9 \oplus 57$:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.xor.a bs.in -9
+scoreboard players set $bitwise.xor.b bs.in 57
+function #bs.bitwise:xor
 
-## Complement to 2
+# See the result
+tellraw @a [{"text":"-9 ^ 57 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.xor","objective":"bs.out"}}]
+```
 
-**`bs.bitwise:two_complement`**
+:::
+:::{tab-item} Not
 
-Computes the two's complement of the input
+```{function} #bs.bitwise:not
 
-Inputs
+Compute the bitwise negation of a number.
 
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
+:Inputs:
+  **Score `$bitwise.not.value bs.in`**: Number to negate.
 
-   (score) `@s bs.in.0`
-   : The number you want to compute the two's complement
+:Outputs:
+  **Return | Score `$bitwise.not bs.out`**: Result of the not operation.
+```
 
-Outputs
+*Compute and display $\lnot 452$:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.not.value bs.in 452
+function #bs.bitwise:not
 
-:  (score) `@s bs.out.0`
-   : The two's complement of the input
+# See the result
+tellraw @a [{"text":"~452 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.not","objective":"bs.out"}}]
+```
 
-Example
+:::
+::::
 
-:  Calculate and display the two's complement of 12
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 12
-   function bs.math:bitwise/to_complement
-   tellraw @a [{"text": "Two's complement of 12 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-> **Credits**: theogiraudet
-
----
-
-## OR exclusive
-
-**`bs.bitwise:xor`**
-
-Computes the exclusive bit by bit disjunction of the two input
-numbers
-
-Inputs
-
-:  (execution) `as <entities>`
-   : The entities to perform the operation on
-
-   (score) `@s bs.in.0`
-   : The first operand $a$
-
-   (score) `@s bs.in.1`
-   : The second operand $b$
-
-   ```{admonition} Negative input
-   :class: hint
-      
-   If one of the inputs is negative, the operation will be done between
-   the first operand and the two's complement of the second
-   ```
-
-Outputs
-
-:  (score) `@s bs.out.0`
-   : The result of the operation = $a \oplus b$
-
-Example
-
-:  Calculate and display $-9 \oplus 57$.
-   ```
-   # Once
-   scoreboard players set @s bs.in.0 -9
-   scoreboard players set @s bs.in.1 57
-   function bs.math:bitwise/xor
-   tellraw @a [{"text":"-9 ^ 57 = ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.out.0"}, "color": "gold"}]
-   ```
-
-> **Credits**: theogiraudet
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
-<div align=center>
+### Most significant bit
+
+```{function} #bs.bitwise:msb
+
+Get the value of the most significant bit of a number.
+
+:Inputs:
+  **Score `$bitwise.msb.value bs.in`**: Number to get the msb of.
+
+:Outputs:
+  **Return | Score `$bitwise.msb bs.out`**: Value of the msb of the number.
+```
+
+*Compute and display the value of the most significant bit of 12:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.msb.value bs.in 12
+function #bs.bitwise:msb
+
+# See the result
+tellraw @a [{"text":"MSB of 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.msb","objective":"bs.out"}}]
+```
+
+> **Credits**: Aksiome
+
+---
+
+### Size
+
+```{function} #bs.bitwise:size
+
+Get the number of bits needed to store a number.
+
+:Inputs:
+  **Score `$bitwise.size.value bs.in`**: Number to get the size of.
+
+:Outputs:
+  **Return | Score `$bitwise.size bs.out`**: Number of bits needed to represent the number.
+```
+
+*Compute and display how much bits 12 has:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.size.value bs.in 12
+function #bs.bitwise:size
+
+# See the result
+tellraw @a [{"text":"Number of bits for 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.size","objective":"bs.out"}}]
+```
+
+> **Credits**: Aksiome, theogiraudet
+
+---
+
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

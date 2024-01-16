@@ -1,40 +1,23 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: theogiraudet
+# Authors: Aksiome, theogiraudet
 # Contributors:
-# MC Version: 1.13
-# Last check:
 
-# Original path: bs.math:divide
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: <true/false/global>
-# Note: Allows to retrieve the value rounded to the integer near of a normal division.
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 01/09/2023 (23w33a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#rounded-division
+# Dependencies:
+# Note:
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-scoreboard players operation #math.divide.rest bs.data = @s bs.in.0
-scoreboard players operation #math.divide.rest bs.data %= @s bs.in.1
-execute if score #math.divide.rest bs.data matches 0 run tag @s add bs.math.divide.CantApply
-
-execute if entity @s[tag=!bs.math.divide.CantApply] run scoreboard players operation #math.divide.rest bs.data = @s bs.in.0
-execute if entity @s[tag=!bs.math.divide.CantApply] run scoreboard players operation #math.divide.rest bs.data *= 10 bs.const
-execute if entity @s[tag=!bs.math.divide.CantApply] run scoreboard players operation #math.divide.rest bs.data /= @s bs.in.1
-execute if entity @s[tag=!bs.math.divide.CantApply] run scoreboard players operation #math.divide.rest bs.data %= 10 bs.const
-
-scoreboard players operation @s bs.out.0 = @s bs.in.0
-scoreboard players operation @s bs.out.0 /= @s bs.in.1
-execute if score #math.divide.rest bs.data matches 5.. run scoreboard players add @s[tag=!bs.math.divide.CantApply] bs.out.0 1
-execute if score #math.divide.rest bs.data matches ..-5 run scoreboard players remove @s[tag=!bs.math.divide.CantApply] bs.out.0 1
-
-tag @s remove bs.math.divide.CantApply
+execute store result score #math.divide.mod bs.data run scoreboard players operation $math.divide bs.out = $math.divide.num bs.in
+scoreboard players operation $math.divide bs.out /= $math.divide.den bs.in
+execute store result score #math.divide.nmod bs.data run scoreboard players operation #math.divide.mod bs.data %= $math.divide.den bs.in
+scoreboard players operation #math.divide.nmod bs.data -= $math.divide.den bs.in
+scoreboard players operation #math.divide.nmod bs.data *= -1 bs.const
+execute if score #math.divide.nmod bs.data < #math.divide.mod bs.data run scoreboard players add $math.divide bs.out 1
+return run scoreboard players get $math.divide bs.out

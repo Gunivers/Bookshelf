@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-# ❤️ Special thanks
+# ❤️ Special&nbsp;thanks
 
 Bookshelf is a collaborative project, and it is thanks to the work of many people that it exists today. Here is a list of special thanks, people who have made a great contribution to this project and without who it would not be what it is today.
 
@@ -23,28 +23,14 @@ See all contributors
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/leirof.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/leirof.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Creator of the original Gunivers Libs, and the current maintainer of Bookshelf
-
-:::
-
-:::{grid-item-card} KubbyDev
-:link: https://github.com/KubbyDev
-:link-type: url
-:margin: 0 3 0 0
-
-<div align=center>
-<img src="_static/credits/kubbydev.jpg" style="max-width:150px; border-radius:75px">
-</div>
-
----
-
-Huge contributor on the original Gunivers Libs
+Creator of the original Gunivers Libs, and the current maintainer of Bookshelf.
 
 :::
 
@@ -53,13 +39,46 @@ Huge contributor on the original Gunivers Libs
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/theogiraudet.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/theogiraudet.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Huge contributor on the original Gunivers Libs
+Huge contributor of the original Gunivers Libs and Bookshelf.
+
+:::
+
+:::{grid-item-card} KubbyDev
+:link: https://github.com/KubbyDev
+:link-type: url
+:margin: 0 3 0 0
+
+```{image} /_imgs/credits/kubbydev.png
+:align: center
+:class: dark_light, bs-rounded
+```
+
+---
+
+Huge contributor of the original Gunivers Libs.
+
+:::
+
+:::{grid-item-card} Aksiome
+:link: https://github.com/aksiome
+:link-type: url
+:margin: 0 3 0 0
+
+```{image} /_imgs/credits/aksiome.png
+:align: center
+:class: dark_light, bs-rounded
+```
+
+---
+
+Huge contributor of the latest version of Bookshelf.
 
 :::
 
@@ -68,13 +87,14 @@ Huge contributor on the original Gunivers Libs
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/theaustudio.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/theaustudio.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Main developer of Bookshelf Manager website
+Main developer of the Bookshelf Manager website.
 
 :::
 

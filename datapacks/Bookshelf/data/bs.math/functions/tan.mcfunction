@@ -1,50 +1,22 @@
-#__________________________________________________
-# INFO     Copyright © 2021 Altearn.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
-# Authors: KubbyDev
+# Authors: Aksiome, KubbyDev
 # Contributors:
-# MC Version: 1.13
-# Last check:
 
-# Original path: bs.math:tan
-# Documentation: https://bs-core.readthedocs.io//math
-# Parallelizable: <true/false/global>
-# Note: The input is the angle in degrees. The result is scaled by 1000. Angle must be on interval [0;360]
+# Version: 2.0
+# Created: ??/??/2018 (1.13)
+# Last modification: 05/09/2023 (23w33a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#trigonometry
+# Dependencies:
+# Note:
 
-#__________________________________________________
-# INIT
+# CODE ------------------------------------------------------------------------
 
-
-
-
-
-
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-# PARAMETERS
-
-#__________________________________________________
-# INIT:
-
-
-
-# CODE
-
-scoreboard players operation @s bs.in.4 = @s bs.in.0
-
-function bs.math:cos
-
-scoreboard players operation @s bs.in.3 = @s bs.out.0
-scoreboard players operation @s bs.in.0 = @s bs.in.4
-
-function bs.math:sin
-
-scoreboard players operation @s bs.out.0 *= 1000 bs.const
-scoreboard players operation @s bs.out.0 /= @s bs.in.3
+execute store result entity B5-0-0-0-1 Rotation[0] float -0.01 run scoreboard players get $math.tan.angle bs.in
+execute at B5-0-0-0-1 positioned 0.0 0.0 0.0 rotated ~ 0.0 run tp B5-0-0-0-1 ^ ^ ^10.0
+execute store result score $math.tan bs.out run data get entity B5-0-0-0-1 Pos[0] 100
+execute store result score #math.tan bs.data run data get entity B5-0-0-0-1 Pos[2] 100
+scoreboard players operation $math.tan bs.out *= 1000 bs.const
+return run scoreboard players operation $math.tan bs.out /= #math.tan bs.data

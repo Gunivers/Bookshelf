@@ -1,6 +1,84 @@
 {
- "values": [
-    "bs.core:__load__",
-    "bs.math:__load__"
- ]
+  "values": [
+    {
+      "id": "bs.biome:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.bitwise:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.block:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.color:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.health:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.hitbox:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.id:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.link:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.math:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.move:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.position:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.raycast:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.schedule:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.sidebar:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.time:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.tree:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.vector:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.view:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.weather:__load__",
+      "required": false
+    },
+    {
+      "id": "bs.xp:__load__",
+      "required": false
+    }
+  ]
 }

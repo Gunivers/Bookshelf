@@ -1,0 +1,16 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "bs.id": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$id.suid.check"
+        },
+        "score": "bs.in"
+      }
+    }
+  }
+}

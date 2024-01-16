@@ -1,217 +1,265 @@
 # 🏷️ ID
 
-**`bs.id:_`**
+**`#bs.id:help`**
 
-The management of entity IDs allows to identify precisely
-an entity. Useful for example in the case of a shooting game to know who
-is shooting at whom.
+Manage entity IDs, essential in scenarios like shooting games where you need to track who is targeting whom.
+
+```{epigraph}
+"We know what we are, but know not what we may be."
+
+-- William Shakespeare
+```
 
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Check ID
+### Give simple unique ID
 
-**`bs.id:check`**
+```{function} #bs.id:give_suid
 
-Allows to compare the ``bs.id`` scores of the entities
-with the ``bs.id.target`` score of the entity having executed the
-function.
+Give a unique `bs.id` score to each entity.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entities to assign an ID to.
 
-:   (execution) `as <entity>`
-    : The entity that hold the target score (ID check must be performed on one entity at a time)
-
-    (score) `@s bs.id.target`
-    : The ID to compare with the other entities.
-
-Outputs
-
-:   (tag) `@s bs.id.checker`
-    : The entity that executed the function.
-
-    ```{admonition} Future deprecation warning
-    :class: important
-
-    The `bs.id.checker` tag will no longer be given in the future. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
-    ```
-    
-    (tag) `@e bs.id.upper`
-    : The entities whose `bs.id` score is higher than the `bs.id.target` score.
-    
-    (tag) `@e bs.id.lower`
-    : The entities whose `bs.id` score is lower than the `bs.id.target` score.
-    
-    (tag) `@e bs.id.match`
-    : The entities whose `bs.id` score is equal to the `bs.id.target` score.
-
-Example
-
-:   Find the entity (or entities) with ID 3:
-
-    ```
-    # Once
-    scoreboard players set @s bs.id.target 3
-    function bs.id:check
-
-    # See the result
-    execute unless entity @e[tag=bs.id.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
-    execute as @e[tag=bs.id.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
-    ```
-
-> **Credits**: Leirof
-
----
-
-### Check parent ID
-
-`check_parent` : Compares the `bs.id.parent` scores of the entities
-with the `bs.id.target` score of the entity that executed the
-function.
-
-* The latter receives the tag `bs.id.parent.checker`.
-* The other entities receive the tag
-   * `bs.id.parent.upper` if their score `bs.id.parent` is higher than the `id.targetId`
-   * `bs.id.parent.lower` if their score `bs.id.parent` is lower than the `id.targetId`
-   * `bs.id.parent.match` if their score `bs.id.parent` is equal to the `id.targetId`
-
-**Example:**
-
-Find all child entities of Bob:
-
-```
-# Once
-execute as @e[name=Bob,limit=1] run scoreboard players operation @s bs.id.target = @s bs.id
-function bs.id:check_parent
-
-# See the result
-execute unless entity @e[tag=bs.id.parent.match] run tellraw @a [{"text": "No entity found :'(", "color": "dark_gray"}]
-execute as @e[tag=bs.id.parent.match] run tellraw @a ["",{"text":"<"},{"selector":"@s"},{"text":">"},{"text": "Hey! Are you looking for me?", "color": "dark_gray"}]
+:Outputs:
+  **Score `@s bs.id`**: Generated simple unique id.
 ```
 
-> **Credits**: Leirof
-
----
-
-### Get simple unique ID
-
-**`bs.id:get_suid`**
-
-(Simple Unique ID) Allows the entity executing the function to get a `bs.id` score different from all other entities that have already executed the function.
-
-Input
-
-:   (execution) `as <entities>`
-    : The entities you want to assign an ID to.
-
-Outputs
-
-:   (score) `@s bs.id`
-    : The ID of the executing entity.
-    
-    (tag) `@s bs.id.set`
-    : A tag to confirm the entity got a unique ID.
-
-    ```{admonition} Future deprecation warning
-    :class: important
-
-    The `bs.id.set` tag will no longer be given in the future. Instead, you can check if the entity have an ID using `@e[scores={bs.id=1..}]`. This change is motivated by the feedbacks we recieved, asking the lib to minimize the number of scores, tags and entities created.
-    ```
-    
-    (tag) `@s bs.id.type.suid`
-    : The entity that executed the function.
-
-Example
-
-:   Give an ID to all players:
-
-    ```
-    # In a loop to give an ID to the players who connect
-    execute as @a[tag=!bs.id.set] run function bs.id:get_suid
-
-    # See the result
-    scoreboard objective setdisplay sidebar bs.id
-    ```
-    
-> **Credits**: Leirof
-
----
-
-### Get chain unique ID
-
-`get_cuid` : (Chain Unique ID) Allows the entity running the function
-to get a score `bs.id` different from all other entities that have
-already run the function. The difference with `get_suid` is in the way
-the scores are assigned.
-
-* ID scores are assigned dynamically based on the available scores, so that they form a string. So, if there are 5 entities, they will be numbered from 1 to 5, without any "hole". In order not to break this string, you must also execute the `update_cuid` function in a loop.
-* Returns the ID on the `bs.id` score of the executing entity.
-* Give the tag `bs.id.set` and `bs.id.type.cuid` to the entities that have already executed the function
-
-**Example:**
-
-Give an ID to all players:
-
-```
-# In a loop to give an ID to the players who connect
-execute as @a[tag=!bs.id.set] run function bs.id:get_cuid
+*Give an ID to all players:*
+```mcfunction
+# Give an id to all players who don’t already have one
+execute as @a[predicate=!bs.id:has_suid] run function #bs.id:give_suid
 
 # See the result
 scoreboard objective setdisplay sidebar bs.id
 ```
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, KubbyDev
+
+---
+
+### Give chain unique ID
+
+```{function} #bs.id:give_cuid
+
+Give a unique `bs.cid` score to each entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Entities to assign an ID to.
+
+:Outputs:
+  **Score `@s bs.cid`**: Generated chain unique id.
+```
+
+```{admonition} How it works
+:class: info
+
+The chain ID is similar to the simple ID. However with chain IDs, you can use the function `#bs.id:update_cuids` to make sure there are no gaps in the ID sequence, thus creating a continuous chain.
+```
+
+*Give an ID to all players:*
+```mcfunction
+# Give an id to all players who don’t have one
+execute as @a[predicate=!bs.id:has_cuid] run  run function #bs.id:give_cuid
+
+# See the result
+scoreboard objective setdisplay sidebar bs.cid
+```
+
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
 ### Update chain unique ID
 
-`update_cuid` : Allows to update all the CUID of the entities.
-Executes globally (the source entity does not matter, executing it
-multiple times per tick will have no effect)
+```{function} #bs.id:update_cuids
 
-**Example:**
-
-Keep the ID string free of holes and duplicates:
-
+Update all entities CUIDs to ensure the chain is continuous.
 ```
-# To be executed once at the beginning of each tick
-function bs.id:update_cuid
+
+*Ensure the chain is free of gaps and duplicates:*
+
+```mcfunction
+function #bs.id:update_cuids
 
 # See the result
-scoreboard objective setdisplay sidebar bs.id
+scoreboard objective setdisplay sidebar bs.cid
 ```
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, KubbyDev
 
 ---
 
-<div align=center>
+## 👁️ Predicates
+
+You can find below all predicates available in this module.
+
+---
+
+### Check simple unique ID
+
+::::{tab-set}
+:::{tab-item} Match
+
+```{function} bs.id:suid_match
+
+Find an entity that has the same `bs.id` as the input value.
+
+:Inputs:
+  **Score `$id.suid.check bs.in`**: Value to check against.
+```
+
+*Find the entity that has a `bs.id` equal to 1:*
+
+```mcfunction
+scoreboard players set $id.suid.check bs.in 1
+execute as @e[predicate=bs.id:suid_match,limit=1] run say I'm the one
+```
+
+:::
+:::{tab-item} Lower
+
+```{function} bs.id:suid_lower
+
+Filter entities that have a `bs.id` less than or equal to the input value.
+
+:Inputs:
+  **Score `$id.suid.check bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.id` less than or equal to 17:*
+
+```mcfunction
+scoreboard players set $id.suid.check bs.in 17
+execute as @e[predicate=bs.id:suid_lower] run say I'm a minor
+```
+
+:::
+:::{tab-item} Upper
+
+```{function} bs.id:suid_upper
+
+Filter entities that have a `bs.id` greater than or equal to the input value.
+
+:Inputs:
+  **Score `$id.suid.check bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.id` greater than or equal to 18:*
+
+```mcfunction
+scoreboard players set $id.suid.check bs.in 18
+execute as @e[predicate=bs.id:suid_upper] run say I'm an adult
+```
+
+:::
+:::{tab-item} Has
+
+```{function} bs.id:has_suid
+
+Determine if an entity has a `bs.id` score.
+```
+
+*Give an suid to all entities that aren't identified by a `bs.id` score:*
+
+```mcfunction
+execute as @e[predicate=!bs.id:has_suid] run function #bs.id:give_suid
+```
+
+:::
+::::
+
+> **Credits**: Aksiome
+
+---
+
+### Check chain unique ID
+
+::::{tab-set}
+:::{tab-item} Match
+
+```{function} bs.id:cuid_match
+
+Find an entity that has the same `bs.cid` as the input value.
+
+:Inputs:
+  **Score `$id.cuid.check bs.in`**: Value to check against.
+```
+
+*Find the entity that has a `bs.cid` equal to 1:*
+
+```mcfunction
+scoreboard players set $id.cuid.check bs.in 1
+execute as @e[predicate=bs.id:cuid_match,limit=1] run say I'm the one
+```
+
+:::
+:::{tab-item} Lower
+
+```{function} bs.id:cuid_lower
+
+Filter entities that have a `bs.cid` less than or equal to the input value.
+
+:Inputs:
+  **Score `$id.cuid.check bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.cid` less than or equal to 17:*
+
+```mcfunction
+scoreboard players set $id.cuid.check bs.in 17
+execute as @e[predicate=bs.id:cuid_lower] run say I'm a minor
+```
+
+:::
+:::{tab-item} Upper
+
+```{function} bs.id:cuid_upper
+
+Filter entities that have a `bs.cid` greater than or equal to the input value.
+
+:Inputs:
+  **Score `$id.cuid.check bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.cid` greater than or equal to 18:*
+
+```mcfunction
+scoreboard players set $id.cuid.check bs.in 18
+execute as @e[predicate=bs.id:cuid_upper] run say I'm an adult
+```
+
+:::
+:::{tab-item} Has
+
+```{function} bs.id:has_cuid
+
+Determine if an entity has a `bs.cid` score.
+```
+
+*Give an cuid to all entities that aren't identified by a `bs.cid` score:*
+
+```mcfunction
+execute as @e[predicate=!bs.id:has_cuid] run function #bs.id:give_cuid
+```
+
+:::
+::::
+
+> **Credits**: Aksiome
+
+---
+
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

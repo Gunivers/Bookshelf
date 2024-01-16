@@ -1,10 +1,10 @@
 # 🏅 XP
 
-**`bs.xp:_`**
+**`#bs.xp:help`**
 
-All functions allowing to manage experience points and levels.
+Efficiently manage the experience points and levels of players.
 
-```{image} img/xp.png
+```{image} /_imgs/modules/xp.png
 :class: dark-light p-2
 ```
 
@@ -12,479 +12,328 @@ All functions allowing to manage experience points and levels.
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Add
+### Add / Remove
 
 ::::{tab-set}
-:::{tab-item} Points
-
-**`bs.xp:add_points`**
-
-Add XP from a score
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to add XP to
-
-    (score) `@s bs.in.0`
-    : The amount of XP to add
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated
-
-Example
-
-:   Add you 1234 XP
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 1234
-    bs.xp:add_points
-
-    # See the result
-    function bs.xp:get_total_points
-    scoreboard objectives setdisplay sidebar bs.out.0
-    # run the add function here
-    function bs.xp:get_total_points
-    ```
-
-:::
 :::{tab-item} Levels
 
-**`bs.xp:add_levels`**
+```{function} #bs.xp:add_levels
 
-Add levels from a score
+Add levels to the player.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players to add levels to.
 
-:   (execution) `as <players>`
-    : The players to add levels to
+  **Macro Var `levels` [int]**: Amount of levels to add.
 
-    (score) `@s bs.in.0`
-    : The amount of levels to add
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-Outputs
+*Add 42 levels:*
 
-:   (state) players xp
-    : The players XP is updated 
+```mcfunction
+# Once (execute on you)
+function #bs.xp:add_levels {levels:42}
 
-Example
-
-:   Add you 123 levels
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 123
-    bs.xp:add_levels
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
+# See the result
+# look at your XP bar in survival mode
+```
 
 :::
-::::
+:::{tab-item} Points
 
-> **Credits**: Leirof
+```{function} #bs.xp:add_points
 
----
+Add experience points to the player.
 
-### Get
+:Inputs:
+  **Execution `as <players>`**: Players to add points to.
 
-::::::{tab-set}
-:::::{tab-item} Total points
+  **Macro Var `points` [int]**: Amount of points to add.
 
-**`bs.xp:get_total_points`**
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-Get the total amount of points of the player.
+*Add 42 experience points:*
 
-Input
+```mcfunction
+# Once (execute on you)
+function #bs.xp:add_points {points:42}
 
-:   (execution) `as <players>`
-    : The players from which you want to get the total amount of points
-
-Output
-
-:   (score) `@s bs.out.0`
-    : The total amount of points
-
-Example
-
-:   Get your amount of points
-
-    ```
-    # Once (execute on you)
-    bs.xp:get_total_points
-
-    # See the result (execute on you)
-    tellraw @a ["",{"text":"I have "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" XP"}]
-    ```
-
-:::::
-:::::{tab-item} Bar
-
-::::{tab-set}
-:::{tab-item} Lowered
-
-**`bs.xp:get_bar`**
-
-Get the portion of the bar filled (in percent)
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players from which you want to get the fraction of the bar filled
-
-Outputs
-
-:   (score) `@s bs.out.0`
-    : The percentage of the bar filled (rounded to the lowest integer)
-
-    ```{admonition} Minecraft natural division
-    :class: tip
-
-    Due to the division, the result is rounded to the lowest integer. If you want to round to the nearest integer, use the function `bs.xp:get_bar_rounded`
-    ```
-
-Example
-
-:   Get the portion filled in your XP bar
-
-    ```
-    # Once
-    bs.xp:get_bar
-
-    # See the result
-    scoreboard obective setdisplay sidebar bs.out.0
-    ```
+# See the result
+# look at your XP bar in survival mode
+```
 
 :::
-:::{tab-item} Rounded
+:::{tab-item} Progress bar
 
-**`bs.xp:get_bar_rounded`**
+```{function} #bs.xp:add_progress
 
-Get the portion of the bar filled (in percent)
+Fill the XP bar partially.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players to fill the XP bar.
 
-:   (execution) `as <players>`
-    : The players from which you want to get the fraction of the bar filled
+  **Macro Var `progress` [number]**: Percentage of the bar to add.
 
-Outputs
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-:   (score) `@s bs.out.0`
-    : The percentage of the bar filled (rounded to the nearest integer)
+*Add 25.5% to the fill level of your bar:*
 
-Example
+```mcfunction
+# Once (execute on you)
+function #bs.xp:add_progress {progress:25.5}
 
-:   Get the portion filled in your XP bar
-
-    ```
-    # Once
-    bs.xp:get_bar_rounded
-
-    # See the result
-    scoreboard obective setdisplay sidebar bs.out.0
-    ```
-
-```{admonition} Depnedency
-:class: dropdown
-
-This function require the [`bs.math`](math) module to work properly
+# See the result
+# look at your XP bar in survival mode
 ```
 
 :::
 ::::
 
-:::::
-:::::{tab-item} Level points
+```{admonition} How to remove
+:class: tip
 
-**`bs.xp:get_level_points`**
+You can use negative numbers to remove experience from the player.
 
-Get the points required to pass to the next level.
+```
 
-Input
-
-:   (execution) `as <players>`
-    : The players from which you want to get the points required to pass to the indicated level
-
-    (score) `@s bs.in.0`
-    : The level you want to get the points required to pass it
-
-Output
-
-:   (score) `@s bs.out.0`
-    : The amount of points required to pass to the next level
-
-Example
-
-:   Get the number of points required to pass from the level 15 to the level 16
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 15
-    bs.xp:get_total_points
-
-    # See the result
-    tellraw @a ["",{"text":"I need "},{"score":{"name":"@s","objective":"bs.out.0"}},{"text":" to pass this level"}]
-    ```
-
-:::::
-::::::
-
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
-### Remove
+### Get
 
 ::::{tab-set}
-:::{tab-item} Points
+:::{tab-item} Max points
 
-**`bs.xp:remove_points`**
+```{function} #bs.xp:get_max_points
 
-Remove XP from a score
+Get the total amount of points required to pass to the next level.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players from whom you want to get the max amount of points.
 
-:   (execution) `as <players>`
-    : The players to remove XP from
+:Outputs:
+  **Return | Score `$xp.get_max_points bs.out`**: Total amount of points required for the next level.
+```
 
-    (score) `@s bs.in.0`
-    : The amount of XP to remove
+*Get the total amount of points required to pass to the next level:*
 
-Outputs
+```mcfunction
+# Once (execute on you)
+function #bs.xp:get_max_points
 
-:   (state) players xp
-    : The players XP is updated
-
-Example
-
-:   Remove you 1234 XP
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 1234
-    bs.xp:remove_points
-
-    # See the result
-    function bs.xp:get_total_points
-    scoreboard objectives setdisplay sidebar bs.out.0
-    # run the remove function here
-    function bs.xp:get_total_points
-    ```
+# See the result (execute on you)
+tellraw @a [{"text":"I need a total of "},{"score":{"name":"$xp.get_max_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
+```
 
 :::
-:::{tab-item} Levels
+:::{tab-item} Remaining points
 
-**`bs.xp:remove_levels`**
+```{function} #bs.xp:get_remaining_points
 
-Remove levels from a score
+Get the remaining amount of points needed to pass to the next level.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players from whom you want to get the remaining points.
 
-:   (execution) `as <players>`
-    : The players to remove levels from
+:Outputs:
+  **Return | Score `$xp.get_remaining_points bs.out`**: Points needed for the next level.
+```
 
-    (score) `@s bs.in.0`
-    : The amount of levels to remove
+*Get the amount of points needed to pass to the next level:*
 
-Outputs
+```mcfunction
+# Once (execute on you)
+function #bs.xp:get_remaining_points
 
-:   (state) players xp
-    : The players XP is updated
+# See the result (execute on you)
+tellraw @a [{"text":"I need "},{"score":{"name":"$xp.get_remaining_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
+```
 
-Example
+:::
+:::{tab-item} Total points
 
-:   Remove you 123 levels
+```{function} #bs.xp:get_total_points
 
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 123
-    bs.xp:add_levels
+Get the total amount of points of a player.
 
-    # See the result
-    # look at your XP bar in survival mode
-    ```
+:Inputs:
+  **Execution `as <players>`**: Players from whom you want to get the total amount of points.
+
+:Outputs:
+  **Return | Score `$xp.get_total_points bs.out`**: Total amount of points.
+```
+
+*Get your total amount of points:*
+
+```mcfunction
+# Once (execute on you)
+function #bs.xp:get_total_points
+
+# See the result (execute on you)
+tellraw @a [{"text":"I have "},{"score":{"name":"$xp.get_total_points","objective":"bs.out"}},{"text":" total points"}]
+```
+
+:::
+:::{tab-item} Progress bar
+
+```{function} #bs.xp:get_progress {scale:<scaling>}
+
+Get the fill progress percentage of the XP bar.
+
+:Inputs:
+  **Execution `as <players>`**: Players from whom you want to get the bar progress.
+
+  **Macro Var `scale` [number]**: Scalar for the function's outputs.
+
+:Outputs:
+  **Return | Score `$xp.get_progress bs.out`**: Fill percentage of the xp bar after scaling.
+```
+
+*Get the fill per cent mille of the xp bar:*
+
+```mcfunction
+# Once (execute on you)
+function #bs.xp:get_progresss {scale:1000}
+
+# See the result
+tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get_progress","objective":"bs.out"}},{"text":"/100000"}]
+```
 
 :::
 ::::
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
 ### Set
 
 ::::{tab-set}
-:::{tab-item} Bar
-
-**`bs.xp:set_bar`**
-
-Fill partially the XP bar
-
-Inputs
-
-:   (execution) `as <players>`
-    : The players to fill the XP bar
-
-    (score) `@s bs.in.0`
-    : The percentage of the bar to fill
-
-Outputs
-
-:   (state) players xp
-    : The players XP is updated
-
-Example
-
-:   Fill your bar at 50%
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 50
-    bs.xp:set_bar
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
-
-:::
 :::{tab-item} Levels
 
-**`bs.xp:set_levels`**
+```{function} #bs.xp:set_levels
 
-Set levels from a score
+Set players levels.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players to set levels to.
 
-:   (execution) `as <players>`
-    : The players to set levels from
+  **Macro Var `levels` [int]**: Amount of levels to set.
 
-    (score) `@s bs.in.0`
-    : The amount of levels to set
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-Outputs
+*Set your level to 42 using a macro:*
 
-:   (state) players xp
-    : The players XP is updated
+```mcfunction
+# Once (execute on you)
+function #bs.xp:set_levels {levels:42}
 
-Example
-
-:   Set your level to 123
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 123
-    bs.xp:set_levels
-
-    # See the result
-    # look at your XP bar in survival mode
-    ```
+# See the result
+# look at your XP bar in survival mode
+```
 
 :::
 :::{tab-item} Points
 
-**`bs.xp:set_points`**
+```{function} #bs.xp:set_points
 
-Set XP from a score
+Set players experience points.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players to set points to.
 
-:   (execution) `as <players>`
-    : The players you want to set XP
+  **Macro Var `points` [int]**: Amount of experience points to set.
 
-    (score) `@s bs.in.0`
-    : The amount of XP to set
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-Outputs
+*Set your points to 42 using a macro:*
 
-:   (state) players xp
-    : The players XP is updated
+```mcfunction
+# Once (execute on you)
+function #bs.xp:set_points {points:42}
 
-Example
-
-:   Set your XP to 1234
-
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 1234
-    bs.xp:set_points
-
-    # See the result
-    function bs.xp:get_total_points
-    scoreboard objectives setdisplay sidebar bs.out.0
-    # run the set function here
-    function bs.xp:get_total_points
-    ```
+# See the result
+# look at your XP bar in survival mode
+```
 
 :::
 :::{tab-item} Total points
 
-**`bs.xp:set_total_points`**
+```{function} #bs.xp:set_total_points
 
-Set XP from a score
+Set players total experience points.
 
-Inputs
+:Inputs:
+  **Execution `as <players>`**: Players you want to set the total XP.
 
-:   (execution) `as <players>`
-    : The players you want to set the total XP
+  **Macro Var `points` [int]**: Amount of total experience points to set.
 
-    (score) `@s bs.in.0`
-    : The amount of XP to set
+:Outputs:
+  **State**: Players XP is updated.
+```
 
-Outputs
+*Set your total XP amount to 42:*
 
-:   (state) players xp
-    : The players XP is updated 
+```mcfunction
+# Once (execute on you)
+function #bs.xp:set_total_points {points:42}
 
-Example
+# See the result
+# look at your XP bar in survival mode
+```
 
-:   Set your total XP amount to 1234
+:::
+:::{tab-item} Progress bar
 
-    ```
-    # Once
-    scoreboard players set @s bs.in.0 1234
-    bs.xp:set_total_points
+```{function} #bs.xp:set_progress
 
-    # See the result
-    function bs.xp:get_total_points
-    scoreboard objectives setdisplay sidebar bs.out.0
-    ```
+Fill the XP bar partially.
+
+:Inputs:
+  **Execution `as <players>`**: Players to fill the XP bar.
+
+  **Macro Var `progress` [number]**: Percentage of the bar to fill.
+
+:Outputs:
+  **State**: Players XP is updated.
+```
+
+*Fill your bar at 50%:*
+
+```mcfunction
+# Once
+function #bs.xp:set_progress {progress:50.0}
+
+# See the result
+# look at your XP bar in survival mode
+```
 
 :::
 ::::
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

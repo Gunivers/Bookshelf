@@ -1,57 +1,50 @@
 # ⌚ Time
 
-**`bs.time:_`**
+**`#bs.time:help`**
 
-THis module allow to get information about the system time.
+Get information about the system time effortlessly.
+
+```{admonition} Enable command blocks
+:class: warning
+
+This module uses a command block to get the system time. Be sure that `enable-command-block` is set to `true` in you `server.properties` file.
+```
 
 ##  🔧 Functions
 
+You can find below all functions available in this module.
+
+---
+
 ###  System time
 
-**`bs.time:get`**
+```{function} #bs.time:get
 
-Get the system time in 3 scores corresponding to the real hour, minute and second.
+Get the system time corresponding to the real hours, minutes and seconds.
 
-This function need to run first the following command:
+:Outputs:
+  **Score `$time.hours bs.out`**: System time hours.
 
+  **Score `$time.minutes bs.out`**: System time minutes.
+
+  **Score `$time.seconds bs.out`**: System time seconds.
+```
+
+*The moment we all dread:*
 ```mcfunction
-function bs.time:set
+function #bs.time:get
+
+tellraw @a [{"text":"It is "},{"score":{"name":"$time.hours","objective":"bs.out"}},{"text":"h, "},{"score":{"name":"$time.minutes","objective":"bs.out"}},{"text":"m and "},{"score":{"name":"$time.seconds","objective":"bs.out"}},{"text":"s. Time to wake up!"}]
 ```
 
-It will place a command block, a chest and an armor stand at the position of execution. It will then be used to the get the time.
+> **Credits**: Aksiome
 
-Inputs
+---
 
-:   None
+<div id="gs-comments" align=center>
 
-Outputs
+**💬 Did it help you?**
 
-:   (scores) `Heure Systime`
-    : The real hour
+Feel free to leave your questions and feedbacks below!
 
-    (scores) `Minute Systime`
-    : The real minute
-
-    (scores) `Seconde Systime`
-    : The real second
-
-Example
-
-:   Get the system time:
-    
-    ```mcfunction
-    # The first time
-    function bs.time:set
-    # Then, once every time you want to get the time
-    function bs.time:get
-    # Show the result
-    scoreboard objectives setdisplay sidebar Systime
-    ```
-
-> **Credits**: RedCoal & Awhikax
-
-```{admonition} Bug reported
-:class: error
-
-The function `bs.time:get` is not working properly. You can find the bug report here: https://github.com/Gunivers/Bookshelf/issues/56. If you are able to fix it, feel free to open a pull request!
-```
+</div>

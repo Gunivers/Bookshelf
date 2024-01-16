@@ -1,4 +1,4 @@
-# 🔧 Changelog
+# 🛠️ Changelog
 
 ## (WIP) 1.19 - 2.0 - Bookshelf
 

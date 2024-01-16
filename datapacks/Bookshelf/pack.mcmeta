@@ -1,6 +1,6 @@
-  {
-       "pack": {
-           "pack_format": 16,
-           "description": "Library for Map Making"
-       }
-   }
+{
+  "pack": {
+    "pack_format": 26,
+    "description": "Bookshelf - Library designed for mapmakers"
+  }
+}

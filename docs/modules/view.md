@@ -1,12 +1,12 @@
 # 👀 View
 
-**`bs.view:_`**
+**`#bs.view:help`**
 
-The view functions allow to get some practical information about what the entity sees or aims.
+Execute commands based on what an entity sees.
 
-```{image} img/eye.png
-:class: dark-light p-2
+```{image} /_imgs/modules/view.png
 :align: center
+:class: dark_light p-2
 ```
 
 ```{epigraph}
@@ -20,159 +20,219 @@ The view functions allow to get some practical information about what the entity
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ### Aimed block
 
-**`bs.view:aimed_block`**
+```{function} #bs.view:at_aimed_block
 
-Places an entity in the block the source is looking at.
+Run a command at the aligned coordinates of the block an entity is aiming at.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
-:   (execution) `as <entities>`
-    : The entities from which you want to get the aimed block.
+  **Macro Var `run` [string]**: Command to run at the targeted block position.
+```
 
-Outputs
+*Change the block you are looking at:*
 
-:   (state) new entity created
-    : The entity is created at the aimed block. It can be identified by the tag `bs.view.AimedBlock` and the score `bs.id.parent` corresponding to the ID of the entity executing the function. If there was already an entity with the tag `bs.view.AimedBlock` and the same `bs.id.parent`, it will be replaced.
+```mcfunction
+# Once (will run if you are targeting a block)
+function #bs.view:at_aimed_block {run:"setblock ~ ~ ~ minecraft:sponge"}
+```
 
-    ```{admonition} In case there is no ID system
-    :class: tip
+```{admonition} Advanced usage
+:class: dropdown
 
-    If you don't have an ID system, this function have to be used on 1 entity at a time. THe score `bs.id.parent` will then not be used. An ID system can be added using the [`bs.id` module](id).
-    ```
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
 
-Example
-
-:   Place in entity on the aimed block:
-
-    ```
-    # Once
-    function bs.view:aimed_block
-    ```
-
-> **Credits**: Leirof
+> **Credits**: Aksiome
 
 ---
 
 ### Aimed entity
 
-**`bs.view:aimed_entity`**
+::::{tab-set}
+:::{tab-item} As
 
-Identify the first entity aimed by the source entity.
+```{function} #bs.view:as_aimed_entity
 
-Inputs
+Run a command as the entity that is aimed by the current entity.
 
-:   (execution) `as <entity>`
-    : The entity from which you want to get the aimed entity. Note that you can use this function on one entity at a time.
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
-Outputs
+  **Macro Var `run` [string]**: Command to run as the targeted entity.
+```
 
-:   (tag) `<aimed entity> bs.view.AimedEntity`
-    : The tag `bs.view.AimedEntity` is added to the aimed entity. The tag is remove from all other entities.
+*Run a command as the entity that you are looking at:*
 
-Example
+```mcfunction
+# Once (will run if you are targeting an entity)
+function #bs.view:as_aimed_entity {run:"say I'm sorry, are you hitting on me?"}
+```
 
-:   Place in entity on the targeted block:
+:::
+:::{tab-item} At
 
-    ```
-    # Once
-    function bs.view:aimed_entity
-    ```
+```{function} #bs.view:at_aimed_entity
 
-> **Credits**: Leirof
+Run a command at the entity that is aimed by the current entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run at the targeted entity.
+```
+
+*Run a command at the entity that you are looking at:*
+
+```mcfunction
+# Once (will run if you are targeting an entity)
+function #bs.view:at_aimed_entity {run:"particle minecraft:heart ~ ~2 ~ 0 0 0 0 1"}
+```
+
+:::
+::::
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
+
+```{admonition} Performance tip
+:class: tip
+
+In Minecraft, predicates can check if a player is looking at an entity. If you only need a simple player specific check without the additional functionalities of the raycast, you should consider using the [Looked entity](#looked-entity) functions.
+```
+
+> **Credits**: Aksiome
 
 ---
 
 ### Can see "as to at"
 
-**`bs.view:can_see_ata`**
+```{function} #bs.view:can_see_ata
 
-Allows to know if the entity, from its position, may be able to see the execution position of the command (if no block obstructs its vision).
+Determine if an entity, from its current position, can have an unobstructed view to the execution position.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entities that are being checked.
 
-:   (execution) `as <entities>`
-    : The entities from which you want to know if they can see the execution position of the function.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check for visibility.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position you want to know if the entities can see it.
+  **Storage `bs:in view.can_see_ata.ignored_blocks` [string]**: Blocks to ignore (default: `#bs.view:can_see_through`).
 
-Outputs
+:Outputs:
+  **Return**: Whether the check is a success or a failure (1 or 0).
+```
 
-:   (tag) `@s bs.view.CanSee`
-    : The tag is added to the source entities that can see the execution position of the function.
+*Run a command on entities that may be able to see you:*
 
-Example
+```mcfunction
+# Once
+execute at @s as @e[distance=0.1..] if function #bs.view:can_see_ata run say You're not hiding very well...
+```
 
-:   Knowing whether an entity sees you:
-
-    ```
-    # Once
-    execute as @e at @s run function bs.view:has_in_front_ata
-    ```
-
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
-### Has in front "as to at"
+### In view "as to at"
 
-**`bs.view:has_in_front_ata`**
+```{function} #bs.view:in_view_ata
 
-Allows to know if the execution position of the function is in front of the source entity.
+Determine if an entity has the execution position in its view angle.
 
-Inputs
+:Inputs:
+  **Execution `as <entities>`**: Entities that are being checked.
 
-:   (execution) `as <entities>`
-    : The entities from which you want to know if the execution position of the function is in front of them.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check if it's within the field of view.
 
-    (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position you want to know if the entities can see it.
+  **Storage `bs:in view.in_view_ata.angle` [number]**: Angle that represents the field of view (based on the world and not the fov option).
+```
 
-Outputs
+*Check whether the position 0 5 0 is in your field of view::*
 
-:   (tag) `@s bs.view.HasInFront`
-    : The tag is added to the source entities that have the execution position of the function in front of them.
+```mcfunction
+# Once
+execute as @s positioned 0 5 0 run function #bs.view:in_view_ata
+```
 
-Example
-
-:   Know if the position 0 5 0 is in front of you:
-
-    ```
-    # Once
-    execute as @s positioned 0 5 0 run function bs.view:has_in_front_ata
-    ```
-
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
-<div align=center>
+### Looked entity
+
+::::{tab-set}
+:::{tab-item} As
+
+```{function} #bs.view:as_looked_entity
+
+Run a command as the entity a player is looking at.
+
+:Inputs:
+  **Execution `as <players>`**: Player whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run as the looked at entity.
+
+  **Tag `bs.view.is_lookable`**: Tag that must be added to entities that can be looked at.
+
+```
+
+*Make the armor_stand the player is looking at glow:*
+
+```mcfunction
+# Once
+tag @e[type=minecraft:armor_stand] add bs.view.is_lookable
+function #bs.view:as_looked_entity {run:"effect give @s minecraft:glowing 1 0 true"}
+```
+
+:::
+:::{tab-item} At
+
+```{function} #bs.view:at_looked_entity
+
+Run a command at the entity a player is looking at.
+
+:Inputs:
+  **Execution `as <players>`**: Player whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run at the looked at entity.
+
+  **Tag `bs.view.is_lookable`**: Tag that must be added to entities that can be looked at.
+```
+
+*Summon particles at the armor_stand the player is looking at:*
+
+```mcfunction
+# Once
+tag @e[type=minecraft:armor_stand] add bs.view.is_lookable
+function #bs.view:at_looked_entity {run:"particle minecraft:crit ~ ~2 ~ 0 0 0 0 1"}
+```
+
+:::
+::::
+
+```{admonition} Technical limitations
+:class: important
+
+As this function relies on a player specific predicate, it is exclusively designed for players. Additionally, to optimize performance, only a maximum of 255 entities are allowed to have the `bs.view.is_lookable` tag simultaneously.
+```
+
+> **Credits**: Aksiome
+
+---
+
+<div id="comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

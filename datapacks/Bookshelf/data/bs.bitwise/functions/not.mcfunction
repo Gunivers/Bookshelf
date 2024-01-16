@@ -1,34 +1,20 @@
-#__________________________________________________
-# INFO     Copyright � 2020 Gunivers.
+# INFO ------------------------------------------------------------------------
+# Copyright © 2023 Gunivers Community.
 
 # Authors: theogiraudet
-# Contributors:
-# MC Version: 1.16.X
-# Last check: 1.16.2
+# Contributors: Aksiome
 
-# Original path: bs.math:bitwise/not
-# Documentation: https://bookshelf.docs.gunivers.net//Functions#Bitwise
-# Parallelizable: true
-# Note:
-# - This function returns the bit negation of the number
+# Version: 1.0
+# Created: ??/??/???? (1.16)
+# Last modification: 25/08/2023 (23w33a)
 
-#__________________________________________________
-# PARAMETERS
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#logical-operators
+# Dependencies:
+# Note: This function returns the bit negation of a number
 
-# Input: @s bs.in.0 (score): number to negate
-# Output: @s bs.out.0 (score): the negation of the number (~var0)
+# CODE ------------------------------------------------------------------------
 
-#__________________________________________________
-# INIT
+scoreboard players operation $bitwise.not bs.out = $bitwise.not.value bs.in
+scoreboard players operation $bitwise.not bs.out *= -1 bs.const
 
-#__________________________________________________
-# CONFIG
-
-#__________________________________________________
-# CODE
-
-scoreboard players operation #bs.bitwise.x bs.data = @s bs.in.0
-
-scoreboard players operation #bs.bitwise.x bs.data *= -1 bs.const
-scoreboard players remove #bs.bitwise.x bs.data 1
-scoreboard players operation @s bs.out.0 = #bs.bitwise.x bs.data
+return run scoreboard players remove $bitwise.not bs.out 1
