@@ -4,6 +4,12 @@
 
 Manage blocks, including states and NBTs, while offering advanced tools for seamless transformations.
 
+```{epigraph}
+"Architecture is the thoughtful making of space."
+
+-- Louis Kahn
+```
+
 ---
 
 ## 🔧 Functions
@@ -221,6 +227,12 @@ data get storage bs:out block
 
 ::::
 :::::
+
+```{admonition} Read-only output
+:class: warning
+
+The `bs:out block` output is intended to be read-only. Modifying parts manually could lead to potential bugs. That's why the module provides numerous functions capable of making modifications to the output while preserving its integrity.
+```
 
 > **Credits**: Aksiome, theogiraudet
 
