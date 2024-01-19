@@ -44,5 +44,4 @@ modules/xp
 :caption: Dev modules
 
 modules/log
-modules/mapedit
 ```
