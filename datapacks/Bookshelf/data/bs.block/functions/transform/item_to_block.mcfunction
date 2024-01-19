@@ -8,7 +8,7 @@
 # Created: 15/01/2024 (1.20.4)
 # Last modification: 15/01/2024 (1.20.4)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#item-to-block
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type
 # Dependencies:
 # Note:
 
