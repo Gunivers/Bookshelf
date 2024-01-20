@@ -8,7 +8,7 @@
 # Created: ??/??/???? (1.14)
 # Last modification: 22/10/2023 (1.20.2)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#int-to-rgb
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-rgb
 # Dependencies:
 # Note:
 
