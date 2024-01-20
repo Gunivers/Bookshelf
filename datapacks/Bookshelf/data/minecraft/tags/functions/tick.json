@@ -3,10 +3,6 @@
     {
       "id": "bs.health:__tick__",
       "required": false
-    },
-    {
-      "id": "bs.schedule:__tick__",
-      "required": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.schedule:__load__"
+    "bs.schedule:__load__",
+    "#bs.selector:load"
   ]
 }
