@@ -30,6 +30,7 @@ modules/move
 modules/position
 modules/raycast
 modules/schedule
+modules/selector
 modules/sidebar
 modules/time
 modules/tree
