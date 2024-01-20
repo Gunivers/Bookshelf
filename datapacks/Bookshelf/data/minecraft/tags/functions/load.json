@@ -53,10 +53,6 @@
       "required": false
     },
     {
-      "id": "bs.selector:__load__",
-      "required": false
-    },
-    {
       "id": "bs.sidebar:__load__",
       "required": false
     },
