@@ -114,6 +114,33 @@ In Minecraft, predicates can check if a player is looking at an entity. If you o
 
 ---
 
+### Aimed point
+
+```{function} #bs.view:at_aimed_point
+
+Run a command at the point that was hit by the raycast.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run at the hit point.
+```
+
+*Run a command at the point you are looking at:*
+
+```mcfunction
+# Once (will run if you are aiming at a solid block or entity)
+function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force"}
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
+
+---
+
 ### Can see "as to at"
 
 ```{function} #bs.view:can_see_ata
