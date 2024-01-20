@@ -24,11 +24,10 @@ function bs.schedule:schedule/callback with storage bs:ctx _
 
 # Get the current context (entity location and selector)
 tp B5-0-0-0-1 ~ ~ ~ ~ ~
-function #bs.selector:to_string
 data modify storage bs:ctx _.Pos set from entity B5-0-0-0-1 Pos
 data modify storage bs:ctx _.Rotation set from entity B5-0-0-0-1 Rotation
-data modify storage bs:ctx _.selector set from storage bs:out selector
-execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
+data modify storage bs:ctx _.Owner set from entity @s UUID
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1605
 
 # Compute the game time at which the command must be executed and add a unique id.
 execute store result score #schedule.time bs.data run data get storage bs:ctx _.time 1
