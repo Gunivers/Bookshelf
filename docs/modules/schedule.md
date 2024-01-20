@@ -2,7 +2,7 @@
 
 **`#bs.schedule:help`**
 
-Schedule commands, not just functions. This module allows flexibility beyond the vanilla schedule command with cancellation options and a selector to keep the context when needed.
+Enhance command scheduling with this module, providing flexibility beyond vanilla capabilities. Cancel commands and maintain execution context (entity & location).
 
 ---
 
@@ -35,7 +35,7 @@ function #bs.schedule:cancel {with:{id:"foo"}}
 
 ```{function} #bs.schedule:cancel_one
 
-Cancel the scheduled command to be executed earliest that match the given id.
+Cancel the first scheduled command that match the given id.
 
 :Inputs:
   **Macro Var `with.id` [any]**: Scheduled command parameter to match against.
@@ -79,13 +79,11 @@ If a command is registered in a tick where commands are already registered, adds
 :Inputs:
   **Macro Var `with.command` [string]**: Command to schedule.
 
-  **Macro Var `with.selector` [string]**: Single entity selector for the command to be executed as.
-
   **Macro Var `with.time` [int]**: Time to wait. In ticks by default if unit is not defined.
 
   **Macro Var `with.unit` [string]**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
 
-  **Macro Var `with.id` [any]**: Parameter used to identify the scheduled command.
+  **Macro Var `with.id` [any]**: Optional parameter used to identify the scheduled command.
 
 :Outputs:
   **Return**: The `suid` identifier of the scheduled command.
@@ -95,12 +93,6 @@ If a command is registered in a tick where commands are already registered, adds
 
 ```mcfunction
 function #bs.schedule:schedule {with:{command:"say foo",time:2,unit:"s"}}
-```
-
-*Execute `say @s` as @s in 5 ticks:*
-
-```mcfunction
-function #bs.schedule:schedule {with:{command:"say @s",selector:"@s",time:5}}
 ```
 
 *Schedule then cancel commands that match a complex id:*
