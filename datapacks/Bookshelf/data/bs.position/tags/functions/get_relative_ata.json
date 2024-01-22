@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.position:get_relative_ata"
+    "bs.position:get/relative_ata"
   ]
 }
