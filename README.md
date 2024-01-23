@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" alt="Bookshelf" srcset="./docs/_imgs/banner-dark.png" width="600px">
     <img alt="Bookshelf" src="./docs/_imgs/banner-light.png" width="600px">
