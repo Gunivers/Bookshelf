@@ -256,6 +256,41 @@ As this function relies on a player specific predicate, it is exclusively design
 
 ---
 
+### Placed block
+
+```{function} #bs.view:at_placed_block
+
+Run a command at the aligned coordinates of the block to be placed.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run before the targeted block position.
+```
+
+*Set a block as if the player was placing it:*
+
+```mcfunction
+# Once (will run if you are targeting a block)
+function #bs.view:at_placed_block {run:"setblock ~ ~ ~ minecraft:sponge"}
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
+
+```{admonition} Avoid the advancement
+:class: important
+
+This function simulates block placement but is discouraged for use with the `placed_block` advancement due to potential differences in precision compared to Minecraft. Rapid mouse movements during the same tick may also result in the wrong block being targeted.
+```
+
+> **Credits**: Aksiome
+
+---
+
 <div id="comments" align=center>
 
 **💬 Did it help you?**
