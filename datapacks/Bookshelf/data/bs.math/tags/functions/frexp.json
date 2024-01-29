@@ -1,5 +1,6 @@
 {
   "values": [
+    "bs.math:frexp/in",
     "bs.math:frexp/frexp"
   ]
 }

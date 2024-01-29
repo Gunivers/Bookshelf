@@ -16,5 +16,5 @@
 
 execute store result entity B5-0-0-0-1 Pos[0] double 0.001 run scoreboard players get $math.atan.value bs.in
 data modify entity B5-0-0-0-1 Pos[2] set value 1
-execute positioned 0.0 0.0 0.0 facing entity B5-0-0-0-1 feet rotated ~ 0.0 run tp B5-0-0-0-1 0.0 0.0 0.0 ~ ~
+execute positioned 0.0 0.0 0.0 facing entity B5-0-0-0-1 feet rotated ~ 0.0 run tp B5-0-0-0-1 -30000000 0 1600 ~ ~
 return run execute store result score $math.atan bs.out run data get entity B5-0-0-0-1 Rotation[0] -100

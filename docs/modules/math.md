@@ -83,11 +83,6 @@ Compute the exponential function.
   **Storage `bs:out math.exp` [double]**: Result of the operation.
 ```
 
-```{admonition} Technical limitation
-:class: important
-Due to the limit of integers that can be stored in a score, the interval of `bs:in` is limited to `[-6,15[`.
-```
-
 *Compute $exp(3)$:*
 ```mcfunction
 # Once

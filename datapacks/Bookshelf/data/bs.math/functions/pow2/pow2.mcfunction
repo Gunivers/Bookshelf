@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.0
+# Version: 1.1
 # Created: 05/09/2023 (23w33a)
-# Last modification:
+# Last modification: 29/01/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#pow2
 # Dependencies:
@@ -14,7 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute if score $math.pow2.exp bs.in matches 0..7 run return run function bs.math:pow2/range_1
-execute if score $math.pow2.exp bs.in matches 8..15 run return run function bs.math:pow2/range_2
-execute if score $math.pow2.exp bs.in matches 16..23 run return run function bs.math:pow2/range_3
-execute if score $math.pow2.exp bs.in matches 24.. run return run function bs.math:pow2/range_4
+
+execute store result storage bs:ctx y int 1 run scoreboard players get $math.pow2.exp bs.in
+return run function bs.math:pow2/table
