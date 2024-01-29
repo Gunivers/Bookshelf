@@ -1,5 +1,6 @@
 {
   "values": [
+    "bs.math:log2/in",
     "bs.math:log2/log2"
   ]
 }
