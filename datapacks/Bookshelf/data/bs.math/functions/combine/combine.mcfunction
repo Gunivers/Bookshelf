@@ -14,25 +14,25 @@
 
 # CODE ------------------------------------------------------------------------
 
-# C(m,n)
+# C(n,k)
 
-# keep m, n > 0
-scoreboard players operation #math.combine.m bs.data = $math.combine.m bs.in
-scoreboard players operation #math.combine.m bs.data > 0 bs.const
+# keep n, k > 0
 scoreboard players operation #math.combine.n bs.data = $math.combine.n bs.in
 scoreboard players operation #math.combine.n bs.data > 0 bs.const
+scoreboard players operation #math.combine.k bs.data = $math.combine.k bs.in
+scoreboard players operation #math.combine.k bs.data > 0 bs.const
 
-# keep m <= n
-execute if score #math.combine.m bs.data > #math.combine.n bs.data run scoreboard players operation #math.combine.m bs.data >< #math.combine.n bs.data
+# keep n <= k
+execute if score #math.combine.n bs.data > #math.combine.k bs.data run scoreboard players operation #math.combine.n bs.data >< #math.combine.k bs.data
 
-# get smaller m
-scoreboard players operation #math.combine.temp bs.data = #math.combine.n bs.data
-scoreboard players operation #math.combine.temp bs.data -= #math.combine.m bs.data
-scoreboard players operation #math.combine.m bs.data < #math.combine.temp bs.data
+# get smaller n
+scoreboard players operation #math.combine.temp bs.data = #math.combine.k bs.data
+scoreboard players operation #math.combine.temp bs.data -= #math.combine.n bs.data
+scoreboard players operation #math.combine.n bs.data < #math.combine.temp bs.data
 
-# break if m is special
-execute if score #math.combine.m bs.data matches 0 run scoreboard players set $math.combine bs.out 1
-execute if score #math.combine.m bs.data matches 1 run scoreboard players operation $math.combine bs.out = #math.combine.n bs.data
-execute if score #math.combine.m bs.data matches 2.. run function bs.math:combine/start
+# break if n is special
+execute if score #math.combine.n bs.data matches 0 run scoreboard players set $math.combine bs.out 1
+execute if score #math.combine.n bs.data matches 1 run scoreboard players operation $math.combine bs.out = #math.combine.k bs.data
+execute if score #math.combine.n bs.data matches 2.. run function bs.math:combine/recurse/init
 
 return run scoreboard players get $math.combine bs.out

@@ -14,8 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-# decompose x into a normalized fraction and an integral power of two [log2(x) = log2(frexp.x) + frexp.e]
-function bs.math:frexp/frexp
-function bs.math:log2/fract with storage bs:out math.frexp
-execute store result score #result bs.data run data get storage bs:out math.frexp.e 10000000
-execute store result storage bs:out math.log2 float 0.0000001 run scoreboard players operation #math.log2 bs.data += #result bs.data
+data modify storage bs:ctx x set from storage bs:in math.log2.x
+function bs.math:log2/run
+data modify storage bs:out math.log2 set from storage bs:ctx x

@@ -15,10 +15,12 @@
 # CODE ------------------------------------------------------------------------
 
 data modify storage bs:ctx x set from storage bs:in math.loga.a
-function bs.math:log2/log2
+function bs.math:log2/run
+
 scoreboard players set #math.loga.a bs.data 2000000000
-execute store result score #math.loga.b bs.data run data get storage bs:out math.log2 20000
-data modify storage bs:ctx x set from storage bs:in math.loga.value
-function bs.math:log2/log2
-execute store result storage bs:ctx x double 1 run scoreboard players operation #math.loga.a bs.data /= #math.loga.b bs.data
-function bs.math:loga/rescale with storage bs:ctx
+execute store result score #math.loga.b bs.data run data get storage bs:ctx x 20000
+execute store result storage bs:ctx y double 1 run scoreboard players operation #math.loga.a bs.data /= #math.loga.b bs.data
+
+data modify storage bs:ctx x set from storage bs:in math.loga.x
+function bs.math:log2/run
+function bs.math:loga/mul with storage bs:ctx
