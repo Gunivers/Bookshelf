@@ -14,8 +14,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #math.asin.x bs.data = $math.asin.value bs.in
-execute if score $math.asin.value bs.in matches ..-1 run scoreboard players operation #math.asin.x bs.data *= -1 bs.const
+scoreboard players operation #math.asin.x bs.data = $math.asin.x bs.in
+execute if score $math.asin.x bs.in matches ..-1 run scoreboard players operation #math.asin.x bs.data *= -1 bs.const
 
 scoreboard players set $math.asin bs.out 107311
 scoreboard players operation $math.asin bs.out *= #math.asin.x bs.data
@@ -29,15 +29,15 @@ scoreboard players operation $math.asin bs.out /= 1000 bs.const
 scoreboard players remove $math.asin bs.out 9000000
 scoreboard players operation $math.asin bs.out /= 100 bs.const
 
-scoreboard players operation $math.isqrt.value bs.in >< #math.asin.x bs.data
-scoreboard players operation $math.isqrt.value bs.in *= -100000 bs.const
-scoreboard players add $math.isqrt.value bs.in 100000000
+scoreboard players operation $math.isqrt.x bs.in >< #math.asin.x bs.data
+scoreboard players operation $math.isqrt.x bs.in *= -100000 bs.const
+scoreboard players add $math.isqrt.x bs.in 100000000
 function #bs.math:isqrt
-scoreboard players operation $math.isqrt.value bs.in >< #math.asin.x bs.data
+scoreboard players operation $math.isqrt.x bs.in >< #math.asin.x bs.data
 scoreboard players operation $math.asin bs.out *= $math.isqrt bs.out
 scoreboard players operation $math.asin bs.out /= 100000 bs.const
 
 scoreboard players add $math.asin bs.out 9000
-execute if score $math.asin.value bs.in matches ..-1 run scoreboard players operation $math.asin bs.out *= -1 bs.const
+execute if score $math.asin.x bs.in matches ..-1 run scoreboard players operation $math.asin bs.out *= -1 bs.const
 
 return run scoreboard players get $math.asin bs.out

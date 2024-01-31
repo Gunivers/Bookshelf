@@ -1,6 +1,5 @@
 {
   "values": [
-    "bs.math:ldexp/in",
     "bs.math:ldexp/ldexp"
   ]
 }

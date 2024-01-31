@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute store result entity B5-0-0-0-1 Rotation[0] float -0.01 run scoreboard players get $math.tan.angle bs.in
+execute store result entity B5-0-0-0-1 Rotation[0] float -0.01 run scoreboard players get $math.tan.x bs.in
 execute at B5-0-0-0-1 positioned 0.0 0.0 0.0 rotated ~ 0.0 run tp B5-0-0-0-1 ^ ^ ^10.0
 execute store result score $math.tan bs.out run data get entity B5-0-0-0-1 Pos[0] 100
 execute store result score #math.tan bs.data run data get entity B5-0-0-0-1 Pos[2] 100

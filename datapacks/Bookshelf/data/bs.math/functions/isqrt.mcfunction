@@ -14,12 +14,12 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute store result score #math.isqrt.t1 bs.data store result score #math.isqrt.t2 bs.data store result score #math.isqrt.t3 bs.data store result score #math.isqrt.t4 bs.data run scoreboard players operation $math.isqrt bs.out = $math.isqrt.value bs.in
+execute store result score #math.isqrt.t1 bs.data store result score #math.isqrt.t2 bs.data store result score #math.isqrt.t3 bs.data store result score #math.isqrt.t4 bs.data run scoreboard players operation $math.isqrt bs.out = $math.isqrt.x bs.in
 
-execute if score $math.isqrt.value bs.in matches 0..1515359 run scoreboard players operation $math.isqrt bs.out /= 559 bs.const
-execute if score $math.isqrt.value bs.in matches 0..1515359 run scoreboard players add $math.isqrt bs.out 15
-execute if score $math.isqrt.value bs.in matches 1515360.. run scoreboard players operation $math.isqrt bs.out /= 32768 bs.const
-execute if score $math.isqrt.value bs.in matches 1515360.. run scoreboard players add $math.isqrt bs.out 2456
+execute if score $math.isqrt.x bs.in matches 0..1515359 run scoreboard players operation $math.isqrt bs.out /= 559 bs.const
+execute if score $math.isqrt.x bs.in matches 0..1515359 run scoreboard players add $math.isqrt bs.out 15
+execute if score $math.isqrt.x bs.in matches 1515360.. run scoreboard players operation $math.isqrt bs.out /= 32768 bs.const
+execute if score $math.isqrt.x bs.in matches 1515360.. run scoreboard players add $math.isqrt bs.out 2456
 
 scoreboard players operation #math.isqrt.t1 bs.data /= $math.isqrt bs.out
 scoreboard players operation $math.isqrt bs.out += #math.isqrt.t1 bs.data

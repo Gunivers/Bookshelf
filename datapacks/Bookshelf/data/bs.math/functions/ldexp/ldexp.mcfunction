@@ -8,13 +8,13 @@
 # Created: 28/01/2024 (1.20.4)
 # Last modification: 28/01/2024 (1.20.4)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#float-manipulation
 # Dependencies:
 # Note:
 
 # CODE ------------------------------------------------------------------------
 
-execute store result storage bs:ctx y int 1 run scoreboard players add #math.ldexp.e bs.data 127
-
-function bs.math:ldexp/table with storage bs:ctx
-function bs.math:ldexp/compute with storage bs:ctx
+data modify storage bs:ctx x set from storage bs:in math.ldexp.x
+execute store result score #math.ldexp.e bs.data run data get storage bs:in math.ldexp.e
+function bs.math:ldexp/run
+data modify storage bs:out math.ldexp set from storage bs:ctx x
