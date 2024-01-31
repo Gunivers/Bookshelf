@@ -1,83 +1,83 @@
 {
   "values": [
     {
-      "id": "bs.biome:__load__",
+      "id": "#bs.biome:load",
       "required": false
     },
     {
-      "id": "bs.bitwise:__load__",
+      "id": "#bs.bitwise:load",
       "required": false
     },
     {
-      "id": "bs.block:__load__",
+      "id": "#bs.block:load",
       "required": false
     },
     {
-      "id": "bs.color:__load__",
+      "id": "#bs.color:load",
       "required": false
     },
     {
-      "id": "bs.health:__load__",
+      "id": "#bs.health:load",
       "required": false
     },
     {
-      "id": "bs.hitbox:__load__",
+      "id": "#bs.hitbox:load",
       "required": false
     },
     {
-      "id": "bs.id:__load__",
+      "id": "#bs.id:load",
       "required": false
     },
     {
-      "id": "bs.link:__load__",
+      "id": "#bs.link:load",
       "required": false
     },
     {
-      "id": "bs.math:__load__",
+      "id": "#bs.math:load",
       "required": false
     },
     {
-      "id": "bs.move:__load__",
+      "id": "#bs.move:load",
       "required": false
     },
     {
-      "id": "bs.position:__load__",
+      "id": "#bs.position:load",
       "required": false
     },
     {
-      "id": "bs.raycast:__load__",
+      "id": "#bs.raycast:load",
       "required": false
     },
     {
-      "id": "bs.schedule:__load__",
+      "id": "#bs.schedule:load",
       "required": false
     },
     {
-      "id": "bs.sidebar:__load__",
+      "id": "#bs.sidebar:load",
       "required": false
     },
     {
-      "id": "bs.time:__load__",
+      "id": "#bs.time:load",
       "required": false
     },
     {
-      "id": "bs.tree:__load__",
+      "id": "#bs.tree:load",
       "required": false
     },
     {
-      "id": "bs.vector:__load__",
+      "id": "#bs.vector:load",
       "required": false
     },
     {
-      "id": "bs.view:__load__",
+      "id": "#bs.view:load",
       "required": false
     },
     {
-      "id": "bs.weather:__load__",
+      "id": "#bs.weather:load",
       "required": false
     },
     {
-      "id": "bs.xp:__load__",
+      "id": "#bs.xp:load",
       "required": false
     }
   ]
