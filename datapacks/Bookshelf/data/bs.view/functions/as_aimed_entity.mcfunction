@@ -22,7 +22,5 @@ data modify storage bs:in raycast set from storage bs:data view.raycast
 
 # run the command as the entity that was found or return early
 execute unless data storage bs:out raycast.targeted_entity run return 0
-summon minecraft:area_effect_cloud 0.0 0.0 0.0 {UUID:[I;181,0,0,0]}
-data modify entity B5-0-0-0-0 Owner set from storage bs:out raycast.targeted_entity
-$execute as B5-0-0-0-0 on origin run $(run)
-kill B5-0-0-0-0
+data modify entity B5-0-0-0-4 Owner set from storage bs:out raycast.targeted_entity
+$execute as B5-0-0-0-4 on origin run $(run)
