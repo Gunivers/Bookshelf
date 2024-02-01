@@ -32,4 +32,4 @@ execute store result entity B5-0-0-0-1 Pos[0] double 1 run scoreboard players op
 execute store result entity B5-0-0-0-1 Pos[1] double 1 run scoreboard players operation #view.y1 bs.data += #view.y2 bs.data
 execute store result entity B5-0-0-0-1 Pos[2] double 1 run scoreboard players operation #view.z1 bs.data += #view.z2 bs.data
 $execute at B5-0-0-0-1 run $(run)
-execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

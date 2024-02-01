@@ -24,4 +24,4 @@ data modify storage bs:in raycast set from storage bs:data view.raycast
 execute if score #raycast.distance bs.data matches 2147483647 run return 0
 data modify entity B5-0-0-0-1 Pos set from storage bs:out raycast.hit_point
 $execute at B5-0-0-0-1 run $(run)
-execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600
