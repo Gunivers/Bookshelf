@@ -34,4 +34,4 @@ tag @e[tag=bs.move.omit] remove bs.move.omit
 
 # resolve the collision only if the object was not colliding with something else at its starting point
 execute if score #move.ct bs.data matches 0..2147483646 run function bs.move:collision/resolution/canonical with storage bs:in move
-execute in minecraft:overworld run tp B5-0-0-0-1 0 0 0
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

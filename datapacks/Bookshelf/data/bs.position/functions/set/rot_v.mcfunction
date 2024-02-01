@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute rotated as @s run tp B5-0-0-0-1 0 0 0 ~ ~
+execute rotated as @s run tp B5-0-0-0-1 -30000000 0 1600 ~ ~
 $execute store result entity B5-0-0-0-1 Rotation[1] float $(scale) run scoreboard players get @s bs.rot.v
 execute rotated as B5-0-0-0-1 positioned as @s run tp @s ~ ~ ~ ~ ~
