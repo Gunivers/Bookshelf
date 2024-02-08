@@ -1,7 +1,7 @@
 # get cube hitbox coordinates
-execute store result score #move.max_x bs.data run scoreboard players operation #move.min_x bs.data = #move.x1 bs.data
-execute store result score #move.max_y bs.data run scoreboard players operation #move.min_y bs.data = #move.y1 bs.data
-execute store result score #move.max_z bs.data run scoreboard players operation #move.min_z bs.data = #move.z1 bs.data
+execute store result score #move.max_x bs.data run scoreboard players operation #move.min_x bs.data = #move.rx bs.data
+execute store result score #move.max_y bs.data run scoreboard players operation #move.min_y bs.data = #move.ry bs.data
+execute store result score #move.max_z bs.data run scoreboard players operation #move.min_z bs.data = #move.rz bs.data
 scoreboard players add #move.max_x bs.data 1000000
 scoreboard players add #move.max_y bs.data 1000000
 scoreboard players add #move.max_z bs.data 1000000

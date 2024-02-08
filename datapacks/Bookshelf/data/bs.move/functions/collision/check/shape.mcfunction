@@ -8,12 +8,12 @@ execute store result score #move.max_z bs.data run data get storage bs:out hitbo
 data remove storage bs:out hitbox[-1]
 
 # add the relative coordinates to the hitbox
-scoreboard players operation #move.min_x bs.data += #move.x1 bs.data
-scoreboard players operation #move.min_y bs.data += #move.y1 bs.data
-scoreboard players operation #move.min_z bs.data += #move.z1 bs.data
-scoreboard players operation #move.max_x bs.data += #move.x1 bs.data
-scoreboard players operation #move.max_y bs.data += #move.y1 bs.data
-scoreboard players operation #move.max_z bs.data += #move.z1 bs.data
+scoreboard players operation #move.min_x bs.data += #move.rx bs.data
+scoreboard players operation #move.min_y bs.data += #move.ry bs.data
+scoreboard players operation #move.min_z bs.data += #move.rz bs.data
+scoreboard players operation #move.max_x bs.data += #move.rx bs.data
+scoreboard players operation #move.max_y bs.data += #move.ry bs.data
+scoreboard players operation #move.max_z bs.data += #move.rz bs.data
 
 # add the moving entity size to the hitbox
 scoreboard players operation #move.min_x bs.data -= #move.w bs.data
