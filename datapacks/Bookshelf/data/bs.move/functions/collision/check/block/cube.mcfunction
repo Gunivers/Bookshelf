@@ -34,7 +34,6 @@ scoreboard players operation #move.max_x bs.data < #move.max_z bs.data
 
 # if min_x <= max_x, ray is intersecting with AABB, if max_x < 0, ray is intersecting AABB, but the whole AABB is behind
 execute if score #move.max_x bs.data matches 0.. \
-  if score #move.min_x bs.data matches ..1000 \
   if score #move.min_x bs.data <= #move.max_x bs.data \
-  if score #move.ct bs.data > #move.min_x bs.data \
+  if score #move.ctime bs.data > #move.min_x bs.data \
   run function bs.move:collision/collide

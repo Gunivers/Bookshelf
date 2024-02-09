@@ -12,7 +12,7 @@ scoreboard players operation #move.rx bs.data *= 1000 bs.const
 scoreboard players operation #move.ry bs.data *= 1000 bs.const
 scoreboard players operation #move.rz bs.data *= 1000 bs.const
 
-execute if score #hitbox.is_shaped bs.data matches 0 run function bs.move:collision/check/size
+execute if score #hitbox.is_shaped bs.data matches 0 run function bs.move:collision/check/entity/size
 execute if score #hitbox.is_shaped bs.data matches 1 run function bs.move:collision/check/shape
 execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.height
 execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.width
