@@ -3,8 +3,9 @@
 
 # CODE ------------------------------------------------------------------------
 
+kill B5-0-0-0-2
+forceload remove -30000000 1600
+
 scoreboard objectives remove bs.data
 
-forceload remove 0 0
-kill B5-0-0-0-2
 data remove storage bs:data sidebar

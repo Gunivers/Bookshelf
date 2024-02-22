@@ -19,7 +19,7 @@ execute store result entity B5-0-0-0-1 Pos[1] double 0.00000001 run scoreboard p
 execute store result entity B5-0-0-0-1 Pos[2] double 0.00000001 run scoreboard players get $vector.normalize.2 bs.in
 
 execute as B5-0-0-0-1 positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ^ ^ ^1
-
 $execute store result score $vector.normalize.0 bs.out run data get entity B5-0-0-0-1 Pos[0] $(scale)
 $execute store result score $vector.normalize.1 bs.out run data get entity B5-0-0-0-1 Pos[1] $(scale)
 $execute store result score $vector.normalize.2 bs.out run data get entity B5-0-0-0-1 Pos[2] $(scale)
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600
