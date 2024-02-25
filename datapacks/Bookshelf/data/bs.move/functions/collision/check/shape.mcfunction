@@ -8,12 +8,12 @@ execute store result score #move.max_z bs.data run data get storage bs:out hitbo
 data remove storage bs:out hitbox[-1]
 
 # add the relative coordinates to the hitbox
-scoreboard players operation #move.min_x bs.data += #move.x1 bs.data
-scoreboard players operation #move.min_y bs.data += #move.y1 bs.data
-scoreboard players operation #move.min_z bs.data += #move.z1 bs.data
-scoreboard players operation #move.max_x bs.data += #move.x1 bs.data
-scoreboard players operation #move.max_y bs.data += #move.y1 bs.data
-scoreboard players operation #move.max_z bs.data += #move.z1 bs.data
+scoreboard players operation #move.min_x bs.data += #move.rx bs.data
+scoreboard players operation #move.min_y bs.data += #move.ry bs.data
+scoreboard players operation #move.min_z bs.data += #move.rz bs.data
+scoreboard players operation #move.max_x bs.data += #move.rx bs.data
+scoreboard players operation #move.max_y bs.data += #move.ry bs.data
+scoreboard players operation #move.max_z bs.data += #move.rz bs.data
 
 # add the moving entity size to the hitbox
 scoreboard players operation #move.min_x bs.data -= #move.w bs.data
@@ -43,9 +43,8 @@ scoreboard players operation #move.max_x bs.data < #move.max_z bs.data
 
 # if min_x <= max_x, ray is intersecting with AABB, if max_x < 0, ray is intersecting AABB, but the whole AABB is behind
 execute if score #move.max_x bs.data matches 0.. \
-  if score #move.min_x bs.data matches ..1000 \
   if score #move.min_x bs.data <= #move.max_x bs.data \
-  if score #move.ct bs.data > #move.min_x bs.data \
+  if score #move.ctime bs.data > #move.min_x bs.data \
   run function bs.move:collision/collide
 
 execute if data storage bs:out hitbox[0] run function bs.move:collision/check/shape

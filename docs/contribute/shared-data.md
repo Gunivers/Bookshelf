@@ -33,7 +33,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 
 ## Shared entities
 
-These 3 commands can be used at load time to create global entities that can be used anywhere. These entities must be kept in loaded chunks at the end of each tick. They are summoned with specific UUIDs in order to avoid having to rely on the `@e` selector. The UUID `B5-0-0-0-0` is reserved for contextual temporary entities that should not exist at the end of a tick.
+These commands can be used at load time to create global entities that can be used anywhere. These entities must be kept in loaded chunks (at -30000000 1600) at the end of each tick. They are summoned with specific UUIDs in order to avoid having to rely on the `@e` selector. The UUID `B5-0-0-0-0` is reserved for contextual temporary entities that should not exist at the end of a tick.
 
 ```mcfunction
 # The most useful entity, used for position, arithmetic, and much more...
@@ -44,6 +44,9 @@ execute unless entity B5-0-0-0-2 run summon minecraft:text_display 0.0 0.0 0.0 {
 
 # An entity that can be used to manipulate loots or compute transformations
 execute unless entity B5-0-0-0-3 run summon minecraft:item_display 0.0 0.0 0.0 {view_range:0f,UUID:[181,0,0,3],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Item Display","color":"aqua"}]'}
+
+# An entity used as an UUID pointer (modify Owner then execute on origin)
+execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Entity Pointer","color":"aqua"}]',NoGravity:1b,Invulnerable:1b}
 
 ```
 

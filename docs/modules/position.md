@@ -23,6 +23,183 @@ You can find below all functions available in this module.
 
 ---
 
+### Add position
+
+::::{tab-set}
+:::{tab-item} x,y,z
+
+```{function} #bs.position:add_pos {scale:<scaling>}
+
+Add position scores to the entity's coordinates.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Scores `@s bs.pos.[x,y,z]`**: Coordinates to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported based on position scores.
+```
+
+*Teleport to ~48.85 ~ ~2.29:*
+
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.x 4885
+scoreboard players set @s bs.pos.y 0
+scoreboard players set @s bs.pos.z 229
+function #bs.position:add_pos {scale:0.001}
+```
+:::
+:::{tab-item} x only
+
+```{function} #bs.position:add_pos_x {scale:<scaling>}
+
+Add the x axis position score to the entity's coordinates.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Score `@s bs.pos.x`**: Coordinate x to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported based on the x axis position score.
+```
+
+*Teleport to ~70 ~ ~:*
+
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.x 70
+function #bs.position:add_pos_x {scale:1}
+```
+
+:::
+:::{tab-item} y only
+
+```{function} #bs.position:add_pos_y {scale:<scaling>}
+
+Add the y axis position score to the entity's coordinates.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Score `@s bs.pos.y`**: Coordinate y to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported based on the y axis position score.
+```
+
+*Teleport to ~ ~82 ~:*
+
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.y 82
+function #bs.position:add_pos_y {scale:1}
+```
+:::
+:::{tab-item} z only
+
+
+```{function} #bs.position:add_pos_z {scale:<scaling>}
+
+Add the z axis position score to the entity's coordinates.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Score `@s bs.pos.z`**: Coordinate z to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported based on the z axis position score.
+```
+
+*Teleport to ~ ~ ~65:*
+
+```mcfunction
+# Once
+scoreboard players set @s bs.pos.z 65
+function #bs.position:add_pos_z {scale:1}
+```
+:::
+::::
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Add rotation
+
+::::{tab-set}
+:::{tab-item} h,v
+
+```{function} #bs.position:add_rot {scale:<scaling>}
+
+Rotate an entity according to its scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Scores `@s bs.rot.[h,v]`**: Rotation to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported by the rotation indicated by the scores.
+```
+
+:::
+:::{tab-item} h only
+
+
+```{function} #bs.position:add_rot_h {scale:<scaling>}
+
+Rotate an entity according to its horizontal rotation score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Score `@s bs.rot.h`**: Rotation to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported by the rotation indicated by the horizontal score.
+```
+
+:::
+:::{tab-item} v only
+
+```{function} #bs.position:add_rot_v {scale:<scaling>}
+
+Rotate an entity according to its vertical rotation score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Score `@s bs.rot.v`**: Rotation to add.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
+
+:Outputs:
+  **State**: Entity is teleported by the rotation indicated by the vertical score.
+```
+
+:::
+::::
+
+> **Credits**: Aksiome, Leirof
+
+---
+
 ### Canonical to local
 
 ```{function} #bs.position:canonical_to_local

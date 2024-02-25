@@ -27,6 +27,7 @@ execute as B5-0-0-0-1 rotated as @s positioned 0.0 0.0 0.0 positioned ^ ^ ^1 run
 $execute store result score $vector.spherical_to_cartesian.0 bs.out run data get entity B5-0-0-0-1 Pos[0] $(scaling)
 $execute store result score $vector.spherical_to_cartesian.1 bs.out run data get entity B5-0-0-0-1 Pos[1] $(scaling)
 $execute store result score $vector.spherical_to_cartesian.2 bs.out run data get entity B5-0-0-0-1 Pos[2] $(scaling)
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600
 
 scoreboard players operation $vector.spherical_to_cartesian.0 bs.out *= $vector.spherical_to_cartesian.2 bs.in
 scoreboard players operation $vector.spherical_to_cartesian.1 bs.out *= $vector.spherical_to_cartesian.2 bs.in

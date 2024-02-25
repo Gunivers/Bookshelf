@@ -22,3 +22,4 @@ execute as B5-0-0-0-1 positioned 0.0 0.0 0.0 facing entity @s feet run tp @s ~ ~
 $execute store result score $vector.cartesian_to_spherical.0 bs.out run data get entity B5-0-0-0-1 Rotation[0] $(scaling)
 $execute store result score $vector.cartesian_to_spherical.1 bs.out run data get entity B5-0-0-0-1 Rotation[1] $(scaling)
 execute store result score $vector.cartesian_to_spherical.2 bs.out as B5-0-0-0-2 run function bs.vector:length/compute with storage bs:ctx
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

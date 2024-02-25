@@ -1,0 +1,10 @@
+execute unless block ~ ~ ~ #bs.hitbox:is_shaped run return run function bs.move:collision/check/block/cube
+
+function #bs.hitbox:get_block
+scoreboard players operation $hitbox.offset.x bs.out *= 1000 bs.const
+scoreboard players operation $hitbox.offset.z bs.out *= 1000 bs.const
+scoreboard players operation #move.rx bs.data += $hitbox.offset.x bs.out
+scoreboard players operation #move.rz bs.data += $hitbox.offset.z bs.out
+function bs.move:collision/check/shape
+scoreboard players operation #move.rx bs.data -= $hitbox.offset.x bs.out
+scoreboard players operation #move.rz bs.data -= $hitbox.offset.z bs.out
