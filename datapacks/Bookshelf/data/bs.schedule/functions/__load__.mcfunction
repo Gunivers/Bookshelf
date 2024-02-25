@@ -3,12 +3,12 @@
 
 # CODE ------------------------------------------------------------------------
 
-forceload add 0 0
-execute unless entity B5-0-0-0-3 run summon minecraft:item_display 0.0 0.0 0.0 {view_range:0f,UUID:[I;181,0,0,3],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Item Display","color":"aqua"}]'}
+forceload add -30000000 1600
+execute unless entity B5-0-0-0-1 run summon minecraft:marker -30000000 0 1600 {UUID:[I;181,0,0,1],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Marker","color":"aqua"}]'}
+execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Entity Pointer","color":"aqua"}]',NoGravity:1b,Invulnerable:1b}
 
 scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 
-execute unless data storage bs:data schedule.commands run data modify storage bs:data schedule.commands set value []
 data modify storage bs:const schedule.units set value [ \
   {name:"t",scale:1}, \
   {name:"tick",scale:1}, \

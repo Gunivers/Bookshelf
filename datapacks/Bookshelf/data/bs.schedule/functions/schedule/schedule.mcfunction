@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
 # Copyright © 2023 Gunivers Community.
 
-# Authors: theogiraudet, Aksiome
+# Authors: Aksiome, theogiraudet
 # Contributors:
 
-# Version: 2.1
+# Version: 2.2
 # Created: ??/??/2019 (1.14)
-# Last modification: 19/11/2023 (23w46a)
+# Last modification: 20/01/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#schedule
 # Dependencies:
@@ -14,26 +14,25 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value [$(with)]
+$data modify storage bs:ctx _ set value $(with)
 
-# Handle the unit and selector then return early if there is nothing to schedule.
-scoreboard players set #schedule.success bs.data 1
-execute if data storage bs:ctx _[0].unit run function bs.schedule:schedule/unit/handle with storage bs:ctx _[0]
-execute if score #schedule.success bs.data matches 0 run return fail
-execute if data storage bs:ctx _[0].selector run function bs.schedule:schedule/selector/handle
-execute if score #schedule.success bs.data matches 0 run return fail
+# Handle the unit, return early on failure
+scoreboard players set #success bs.data 1
+execute if data storage bs:ctx _.unit run function bs.schedule:schedule/unit/handle with storage bs:ctx _
+execute if score #success bs.data matches 0 run return fail
 
-# Compute the game time at which the command must be executed and add a unique id.
-execute store result score #schedule.time bs.data run data get storage bs:ctx _[0].time 1
-execute store result score #schedule.gametime bs.data run time query gametime
-execute store result storage bs:ctx _[0].time int 1 run scoreboard players operation #schedule.time bs.data += #schedule.gametime bs.data
-execute store result storage bs:ctx _[0].suid int 1 run scoreboard players add #schedule.suid bs.data 1
+# Schedule the callback, update the gametime and add a unique id
+execute store result storage bs:ctx _.time int 1 run function bs.schedule:schedule/callback with storage bs:ctx _
+execute store result storage bs:ctx _.suid int 1 run scoreboard players add #schedule.suid bs.data 1
 
-# Add the command to the schedule stack, ordered by the execution time
-execute store result score #schedule.time2 bs.data run data get storage bs:data schedule.commands[-1].time
-execute unless score #schedule.time2 bs.data matches 0 if score #schedule.time bs.data >= #schedule.time2 bs.data run function bs.schedule:schedule/pop_recursive
-data modify storage bs:data schedule.commands append from storage bs:ctx _[]
+# Get the current context (entity location and selector)
+tp B5-0-0-0-1 ~ ~ ~ ~ ~
+data modify storage bs:ctx _.Owner set from entity @s UUID
+data modify storage bs:ctx _.Pos set from entity B5-0-0-0-1 Pos
+data modify storage bs:ctx _.Rotation set from entity B5-0-0-0-1 Rotation
+execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1605
 
+# Add the command to the schedule queue
+data modify storage bs:data schedule prepend from storage bs:ctx _
 function #bs.log:info {feature:"schedule.schedule", path:"#bs.schedule:schedule", message:'"Command scheduled."'}
-execute store result score #schedule.next_time bs.data run data get storage bs:data schedule.commands[-1].time
-return run data get storage bs:ctx _[0].suid 1
+return run data get storage bs:ctx _.suid 1

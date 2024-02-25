@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.schedule:cancel"
+    "bs.schedule:cancel/cancel_all"
   ]
 }
