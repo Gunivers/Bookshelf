@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-# 🏷️Nomenclature
+# 🏷️ Nomenclature
 
 Bookshelf respects certain naming conventions in order to reduce the effort needed to read and understand code.
 

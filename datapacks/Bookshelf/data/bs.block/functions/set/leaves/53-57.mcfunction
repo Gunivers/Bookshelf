@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 53 run setblock ~ ~ ~ mangrove_propagule[age=2,hanging=true,stage=1,waterlogged=false]
-execute if score @s bs.block.id matches 54 run setblock ~ ~ ~ mangrove_propagule[age=2,hanging=false,stage=0,waterlogged=true]
-execute if score @s bs.block.id matches 55 run setblock ~ ~ ~ mangrove_propagule[age=2,hanging=false,stage=0,waterlogged=false]
-execute if score @s bs.block.id matches 56 run setblock ~ ~ ~ mangrove_propagule[age=2,hanging=false,stage=1,waterlogged=true]
-execute if score @s bs.block.id matches 57 run setblock ~ ~ ~ mangrove_propagule[age=2,hanging=false,stage=1,waterlogged=false]

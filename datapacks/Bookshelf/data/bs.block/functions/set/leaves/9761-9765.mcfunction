@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 9761 run setblock ~ ~ ~ acacia_door[facing=north,half=lower,hinge=right,open=false,powered=true]
-execute if score @s bs.block.id matches 9762 run setblock ~ ~ ~ acacia_door[facing=north,half=lower,hinge=right,open=false,powered=false]
-execute if score @s bs.block.id matches 9763 run setblock ~ ~ ~ acacia_door[facing=south,half=upper,hinge=left,open=true,powered=true]
-execute if score @s bs.block.id matches 9764 run setblock ~ ~ ~ acacia_door[facing=south,half=upper,hinge=left,open=true,powered=false]
-execute if score @s bs.block.id matches 9765 run setblock ~ ~ ~ acacia_door[facing=south,half=upper,hinge=left,open=false,powered=true]

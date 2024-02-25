@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 11910 run setblock ~ ~ ~ brick_wall[east=low,north=low,south=low,up=false,waterlogged=true,west=none]
-execute if score @s bs.block.id matches 11911 run setblock ~ ~ ~ brick_wall[east=low,north=low,south=low,up=false,waterlogged=true,west=low]
-execute if score @s bs.block.id matches 11912 run setblock ~ ~ ~ brick_wall[east=low,north=low,south=low,up=false,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 11913 run setblock ~ ~ ~ brick_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=none]
-execute if score @s bs.block.id matches 11914 run setblock ~ ~ ~ brick_wall[east=low,north=low,south=low,up=false,waterlogged=false,west=low]

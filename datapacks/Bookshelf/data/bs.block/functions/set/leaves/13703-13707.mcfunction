@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 13703 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=none,up=false,waterlogged=false,west=tall]
-execute if score @s bs.block.id matches 13704 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=low,up=true,waterlogged=true,west=none]
-execute if score @s bs.block.id matches 13705 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=low,up=true,waterlogged=true,west=low]
-execute if score @s bs.block.id matches 13706 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=low,up=true,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 13707 run setblock ~ ~ ~ mud_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=none]

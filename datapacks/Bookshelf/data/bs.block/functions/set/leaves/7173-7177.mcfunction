@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 7173 run setblock ~ ~ ~ player_head[rotation=6]
-execute if score @s bs.block.id matches 7174 run setblock ~ ~ ~ player_head[rotation=7]
-execute if score @s bs.block.id matches 7175 run setblock ~ ~ ~ player_head[rotation=8]
-execute if score @s bs.block.id matches 7176 run setblock ~ ~ ~ player_head[rotation=9]
-execute if score @s bs.block.id matches 7177 run setblock ~ ~ ~ player_head[rotation=10]

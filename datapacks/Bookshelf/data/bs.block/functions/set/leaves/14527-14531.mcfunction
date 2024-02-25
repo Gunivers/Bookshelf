@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 14527 run setblock ~ ~ ~ andesite_wall[east=low,north=tall,south=none,up=false,waterlogged=true,west=low]
-execute if score @s bs.block.id matches 14528 run setblock ~ ~ ~ andesite_wall[east=low,north=tall,south=none,up=false,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 14529 run setblock ~ ~ ~ andesite_wall[east=low,north=tall,south=none,up=false,waterlogged=false,west=none]
-execute if score @s bs.block.id matches 14530 run setblock ~ ~ ~ andesite_wall[east=low,north=tall,south=none,up=false,waterlogged=false,west=low]
-execute if score @s bs.block.id matches 14531 run setblock ~ ~ ~ andesite_wall[east=low,north=tall,south=none,up=false,waterlogged=false,west=tall]

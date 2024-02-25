@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 464 run setblock ~ ~ ~ dispenser[facing=north,triggered=true]
-execute if score @s bs.block.id matches 465 run setblock ~ ~ ~ dispenser[facing=north,triggered=false]
-execute if score @s bs.block.id matches 466 run setblock ~ ~ ~ dispenser[facing=east,triggered=true]
-execute if score @s bs.block.id matches 467 run setblock ~ ~ ~ dispenser[facing=east,triggered=false]
-execute if score @s bs.block.id matches 468 run setblock ~ ~ ~ dispenser[facing=south,triggered=true]

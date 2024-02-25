@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 317 run setblock ~ ~ ~ jungle_leaves[distance=7,persistent=false,waterlogged=false]
-execute if score @s bs.block.id matches 318 run setblock ~ ~ ~ acacia_leaves[distance=1,persistent=true,waterlogged=true]
-execute if score @s bs.block.id matches 319 run setblock ~ ~ ~ acacia_leaves[distance=1,persistent=true,waterlogged=false]
-execute if score @s bs.block.id matches 320 run setblock ~ ~ ~ acacia_leaves[distance=1,persistent=false,waterlogged=true]
-execute if score @s bs.block.id matches 321 run setblock ~ ~ ~ acacia_leaves[distance=1,persistent=false,waterlogged=false]

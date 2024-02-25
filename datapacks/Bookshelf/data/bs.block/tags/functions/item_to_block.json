@@ -1,0 +1,6 @@
+{
+  "values": [
+    "bs.block:transform/item_to_block",
+    "bs.block:get/compile/block"
+  ]
+}
