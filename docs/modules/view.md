@@ -114,6 +114,33 @@ In Minecraft, predicates can check if a player is looking at an entity. If you o
 
 ---
 
+### Aimed point
+
+```{function} #bs.view:at_aimed_point
+
+Run a command at the point that was hit by the raycast.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run at the hit point.
+```
+
+*Run a command at the point you are looking at:*
+
+```mcfunction
+# Once (will run if you are aiming at a solid block or entity)
+function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force"}
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
+
+---
+
 ### Can see "as to at"
 
 ```{function} #bs.view:can_see_ata
@@ -223,6 +250,41 @@ function #bs.view:at_looked_entity {run:"particle minecraft:crit ~ ~2 ~ 0 0 0 0 
 :class: important
 
 As this function relies on a player specific predicate, it is exclusively designed for players. Additionally, to optimize performance, only a maximum of 255 entities are allowed to have the `bs.view.is_lookable` tag simultaneously.
+```
+
+> **Credits**: Aksiome
+
+---
+
+### Placed block
+
+```{function} #bs.view:at_placed_block
+
+Run a command at the aligned coordinates of the block to be placed.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
+
+  **Macro Var `run` [string]**: Command to run before the targeted block position.
+```
+
+*Set a block as if the player was placing it:*
+
+```mcfunction
+# Once (will run if you are targeting a block)
+function #bs.view:at_placed_block {run:"setblock ~ ~ ~ minecraft:sponge"}
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
+```
+
+```{admonition} Avoid the advancement
+:class: important
+
+This function simulates block placement but is discouraged for use with the `placed_block` advancement due to potential differences in precision compared to Minecraft. Rapid mouse movements during the same tick may also result in the wrong block being targeted.
 ```
 
 > **Credits**: Aksiome
