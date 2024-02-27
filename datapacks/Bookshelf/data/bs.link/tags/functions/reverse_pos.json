@@ -1,9 +1,9 @@
 {
   "values": [
-    "bs.link:behaviors/setup",
-    "bs.link:behaviors/reverse_pos_x",
-    "bs.link:behaviors/reverse_pos_y",
-    "bs.link:behaviors/reverse_pos_z",
-    "bs.link:behaviors/apply"
+    "#bs.link:behaviors/setup",
+    "#bs.link:behaviors/reverse_pos_x",
+    "#bs.link:behaviors/reverse_pos_y",
+    "#bs.link:behaviors/reverse_pos_z",
+    "#bs.link:behaviors/apply"
   ]
 }
