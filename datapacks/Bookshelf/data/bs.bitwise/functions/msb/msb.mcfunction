@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.0
+# Version: 1.1
 # Created: 25/08/2023 (23w33a)
-# Last modification: 22/10/2023 (1.20.2)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#most-significant-bit
 # Dependencies:
@@ -17,9 +17,9 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation #bitwise.msb bs.data = $bitwise.msb.value bs.in
-execute if score $bitwise.msb.value bs.in matches ..-1 run scoreboard players add #bitwise.msb bs.data 2147483647
-execute if score $bitwise.msb.value bs.in matches ..-1 run scoreboard players add #bitwise.msb bs.data 1
+scoreboard players operation #bitwise.msb bs.data = $bitwise.msb.n bs.in
+execute if score $bitwise.msb.n bs.in matches ..-1 run scoreboard players add #bitwise.msb bs.data 2147483647
+execute if score $bitwise.msb.n bs.in matches ..-1 run scoreboard players add #bitwise.msb bs.data 1
 
 execute if score #bitwise.msb bs.data matches 0..127 run return run function bs.bitwise:msb/group_1
 execute if score #bitwise.msb bs.data matches 128..32767 run return run function bs.bitwise:msb/group_2

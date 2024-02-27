@@ -28,6 +28,60 @@ You can find below all functions available in this module.
 
 ---
 
+### Bit count
+
+```{function} #bs.bitwise:bit_count
+
+Get the number of ones in the binary representation of a number.
+
+:Inputs:
+  **Score `$bitwise.bit_count.n bs.in`**: Number to get the bit_count of.
+
+:Outputs:
+  **Return | Score `$bitwise.bit_count bs.out`**: Number of positive bits needed to represent the number.
+```
+
+*Compute and display how much positive bits 12 has:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.bit_count.n bs.in 12
+function #bs.bitwise:bit_count
+
+# See the result
+tellraw @a [{"text":"Number of bits for 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.bit_count","objective":"bs.out"}}]
+```
+
+> **Credits**: Aksiome
+
+---
+
+### Bit length
+
+```{function} #bs.bitwise:bit_length
+
+Get the number of bits necessary to represent a number.
+
+:Inputs:
+  **Score `$bitwise.bit_length.n bs.in`**: Number to get the bit_length of.
+
+:Outputs:
+  **Return | Score `$bitwise.bit_length bs.out`**: Number of bits needed to represent the number.
+```
+
+*Compute and display how much bits 12 has:*
+```mcfunction
+# Once
+scoreboard players set $bitwise.bit_length.n bs.in 12
+function #bs.bitwise:bit_length
+
+# See the result
+tellraw @a [{"text":"Number of bits for 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.bit_length","objective":"bs.out"}}]
+```
+
+> **Credits**: Aksiome, theogiraudet
+
+---
+
 ### Complement to 2
 
 ```{function} #bs.bitwise:two_complement
@@ -35,7 +89,7 @@ You can find below all functions available in this module.
 Compute the two's complement of a number.
 
 :Inputs:
-  **Score `$bitwise.two_complement.value bs.in`**: Number to compute the two's complement of.
+  **Score `$bitwise.two_complement.n bs.in`**: Number to compute the two's complement of.
 
 :Outputs:
   **Return | Score `$bitwise.two_complement bs.out`**: The two's complement of the number.
@@ -44,7 +98,7 @@ Compute the two's complement of a number.
 *Compute and display the two's complement of -12:*
 ```mcfunction
 # Once
-scoreboard players set $bitwise.two_complement.value bs.in -12
+scoreboard players set $bitwise.two_complement.n bs.in -12
 function #bs.bitwise:two_complement
 
 # See the result
@@ -176,7 +230,7 @@ tellraw @a [{"text":"~452 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.not"
 Get the value of the most significant bit of a number.
 
 :Inputs:
-  **Score `$bitwise.msb.value bs.in`**: Number to get the msb of.
+  **Score `$bitwise.msb.n bs.in`**: Number to get the msb of.
 
 :Outputs:
   **Return | Score `$bitwise.msb bs.out`**: Value of the msb of the number.
@@ -185,7 +239,7 @@ Get the value of the most significant bit of a number.
 *Compute and display the value of the most significant bit of 12:*
 ```mcfunction
 # Once
-scoreboard players set $bitwise.msb.value bs.in 12
+scoreboard players set $bitwise.msb.n bs.in 12
 function #bs.bitwise:msb
 
 # See the result
@@ -193,33 +247,6 @@ tellraw @a [{"text":"MSB of 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise
 ```
 
 > **Credits**: Aksiome
-
----
-
-### Size
-
-```{function} #bs.bitwise:size
-
-Get the number of bits needed to store a number.
-
-:Inputs:
-  **Score `$bitwise.size.value bs.in`**: Number to get the size of.
-
-:Outputs:
-  **Return | Score `$bitwise.size bs.out`**: Number of bits needed to represent the number.
-```
-
-*Compute and display how much bits 12 has:*
-```mcfunction
-# Once
-scoreboard players set $bitwise.size.value bs.in 12
-function #bs.bitwise:size
-
-# See the result
-tellraw @a [{"text":"Number of bits for 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.size","objective":"bs.out"}}]
-```
-
-> **Credits**: Aksiome, theogiraudet
 
 ---
 
