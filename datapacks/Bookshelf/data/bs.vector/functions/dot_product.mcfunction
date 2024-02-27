@@ -1,5 +1,5 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: Aksiome, Majoras16
 # Contributors:
