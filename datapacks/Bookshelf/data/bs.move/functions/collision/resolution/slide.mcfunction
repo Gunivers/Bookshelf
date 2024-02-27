@@ -9,4 +9,4 @@ execute if score $move.hit_face bs.out matches 0..1 store result storage bs:ctx 
 execute if score $move.hit_face bs.out matches 2..3 store result storage bs:ctx z double .001 run scoreboard players set @s bs.vel.z 0
 
 # travel the remaining distance
-execute at @s run function bs.move:tp_by_vel/apply with storage bs:ctx
+execute at @s run function #bs.move:on_collision/continue with storage bs:ctx

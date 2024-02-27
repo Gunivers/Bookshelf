@@ -17,7 +17,7 @@
 # run the raycast
 data modify storage bs:data view.raycast set from storage bs:in raycast
 data modify storage bs:in raycast merge value {block_collision:true,entity_collision:true}
-execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
+execute at @s anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
 data modify storage bs:in raycast set from storage bs:data view.raycast
 
 # run the command at the block before the block that was found or return early

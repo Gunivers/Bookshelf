@@ -3,9 +3,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-kill B5-0-0-0-1
-forceload remove 0 0
-
 scoreboard objectives remove bs.data
 
 data remove storage bs:in block

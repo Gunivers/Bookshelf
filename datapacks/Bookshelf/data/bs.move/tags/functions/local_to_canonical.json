@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.move:local_to_canonical"
+    "bs.move:convert/local_to_canonical/local_to_canonical"
   ]
 }
