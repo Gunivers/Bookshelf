@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: Aksiome
 # Contributors:
 
 # Version: 1.0
 # Created: 21/11/2023 (1.20.3)
-# Last modification: 21/11/2023 (1.20.3)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get
 # Dependencies:

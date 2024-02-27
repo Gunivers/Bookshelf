@@ -499,7 +499,7 @@ This module allows you to combine multiple behaviors to create your very own cus
 
 ---
 
-To create a new behavior, you first need to create a new function tag. The tag must start with `bs.link:behaviors/setup` and end with `bs.link:behaviors/apply`. Between those 2 functions you are free to use any behaviors that are provided inside the `bs.link:behaviors` folder.
+To create a new behavior, you first need to create a new function tag. The tag must start with `#bs.link:behaviors/setup` and end with `#bs.link:behaviors/apply`. Between those 2 functions you are free to use any behaviors that are provided inside the `#bs.link:behaviors` folder.
 
 
 
@@ -508,13 +508,13 @@ To create a new behavior, you first need to create a new function tag. The tag m
 ```json
 {
   "values": [
-    "bs.link:behaviors/setup",
-    "bs.link:behaviors/reverse_pos_x",
-    "bs.link:behaviors/imitate_pos_y",
-    "bs.link:behaviors/imitate_pos_z",
-    "bs.link:behaviors/reverse_rot_h",
-    "bs.link:behaviors/imitate_rot_v",
-    "bs.link:behaviors/apply"
+    "#bs.link:behaviors/setup",
+    "#bs.link:behaviors/reverse_pos_x",
+    "#bs.link:behaviors/imitate_pos_y",
+    "#bs.link:behaviors/imitate_pos_z",
+    "#bs.link:behaviors/reverse_rot_h",
+    "#bs.link:behaviors/imitate_rot_v",
+    "#bs.link:behaviors/apply"
   ]
 }
 ```

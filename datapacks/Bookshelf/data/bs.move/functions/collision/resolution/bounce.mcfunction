@@ -12,4 +12,4 @@ execute store result storage bs:ctx y double .001 run scoreboard players get $mo
 execute store result storage bs:ctx z double .001 run scoreboard players get $move.vel_remaining.z bs.out
 
 # travel the remaining distance
-execute at @s run function bs.move:tp_by_vel/apply with storage bs:ctx
+execute at @s run function #bs.move:on_collision/continue with storage bs:ctx

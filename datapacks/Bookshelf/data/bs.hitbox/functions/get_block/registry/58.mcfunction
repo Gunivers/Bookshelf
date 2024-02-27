@@ -1,5 +1,5 @@
 # pointed_dripstone group
-function bs.hitbox:get_block/offset/get
+execute as B5-0-0-0-1 run function bs.hitbox:get_block/offset/get
 execute if score $hitbox.offset.x bs.out matches 125.. run scoreboard players set $hitbox.offset.x bs.out 125
 execute if score $hitbox.offset.x bs.out matches ..-125 run scoreboard players set $hitbox.offset.x bs.out -125
 execute if score $hitbox.offset.z bs.out matches 125.. run scoreboard players set $hitbox.offset.z bs.out 125

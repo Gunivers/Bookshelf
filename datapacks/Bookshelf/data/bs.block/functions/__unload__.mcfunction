@@ -1,10 +1,7 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # CODE ------------------------------------------------------------------------
-
-kill B5-0-0-0-1
-forceload remove 0 0
 
 scoreboard objectives remove bs.data
 

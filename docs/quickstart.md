@@ -57,6 +57,10 @@ This datapack contains code utilized by the world itself. It is not intended for
 
 ## 👶 First steps
 
+:::{important}
+
+Bookshelf relies on persistent entities to enhance performances. Therefore, it's important not to kill all entities. Instead, you can use the command `kill @e[tag=!bs.persistent]`. [Learn more here](contribute/shared-data.md#shared-entities)
+:::
 
 
 :::{note}

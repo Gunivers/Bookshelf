@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.position:add/pos_and_rot/pos_and_rot"
+    "#bs.position:add_pos",
+    "#bs.position:add_rot"
   ]
 }

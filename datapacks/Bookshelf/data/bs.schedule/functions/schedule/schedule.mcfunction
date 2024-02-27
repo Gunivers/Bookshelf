@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: Aksiome, theogiraudet
 # Contributors:
 
 # Version: 2.2
 # Created: ??/??/2019 (1.14)
-# Last modification: 20/01/2024 (1.20.4)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#schedule
 # Dependencies:
@@ -26,11 +26,8 @@ execute store result storage bs:ctx _.time int 1 run function bs.schedule:schedu
 execute store result storage bs:ctx _.suid int 1 run scoreboard players add #schedule.suid bs.data 1
 
 # Get the current context (entity location and selector)
-tp B5-0-0-0-1 ~ ~ ~ ~ ~
 data modify storage bs:ctx _.Owner set from entity @s UUID
-data modify storage bs:ctx _.Pos set from entity B5-0-0-0-1 Pos
-data modify storage bs:ctx _.Rotation set from entity B5-0-0-0-1 Rotation
-execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1605
+execute as B5-0-0-0-1 run function bs.schedule:schedule/context
 
 # Add the command to the schedule queue
 data modify storage bs:data schedule prepend from storage bs:ctx _

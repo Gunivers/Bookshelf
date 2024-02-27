@@ -1,5 +1,5 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: KubbyDev
 # Contributors: Aksiome

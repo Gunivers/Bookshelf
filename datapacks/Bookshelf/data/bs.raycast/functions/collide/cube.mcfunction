@@ -15,5 +15,5 @@ execute if score #raycast.distance bs.data = #raycast.ly bs.data if score #rayca
 execute if score #raycast.distance bs.data = #raycast.lz bs.data if score #raycast.uz bs.data matches ..-1 run data modify storage bs:out raycast.hit_normal set value [0,0,1]
 
 # store the targeted block position
-tp B5-0-0-0-1 ~ ~ ~
-data modify storage bs:out raycast.targeted_block set from entity B5-0-0-0-1 Pos
+tp @s ~ ~ ~
+data modify storage bs:out raycast.targeted_block set from entity @s Pos

@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.vector:spherical_to_cartesian"
+    "bs.vector:convert/spherical_to_cartesian/spherical_to_cartesian"
   ]
 }

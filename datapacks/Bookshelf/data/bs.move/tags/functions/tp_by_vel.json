@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.move:tp_by_vel/tp_by_vel"
+    "bs.move:teleport/by_vel/by_vel"
   ]
 }

@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.vector:basis_rot_3d"
+    "bs.vector:convert/basis_rot_3d/basis_rot_3d"
   ]
 }

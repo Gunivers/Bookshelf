@@ -222,7 +222,7 @@ By modifying the `bs:in move.on_collision` storage, you have the freedom to spec
 
 The simplest collision resolution is to stop the movement.
 
-*`bs.move:collision/resolution/stick`*
+*`#bs.move:on_collision/stick`*
 ```mcfunction
 # set all components to 0 to cancel the movement
 scoreboard players set @s bs.vel.x 0
@@ -232,7 +232,7 @@ scoreboard players set @s bs.vel.z 0
 
 For sliding, we need to cancel the velocity on the axis that was hit and continue traveling the remaining distance.
 
-*`bs.move:collision/resolution/slide`*
+*`#bs.move:on_collision/slide`*
 ```mcfunction
 # get a vector that represent the remaining distance to travel
 execute store result storage bs:ctx x double .001 run scoreboard players get $move.vel_remaining.x bs.out
@@ -245,7 +245,7 @@ execute if score $move.hit_face bs.out matches 0..1 store result storage bs:ctx 
 execute if score $move.hit_face bs.out matches 2..3 store result storage bs:ctx z double .001 run scoreboard players set @s bs.vel.z 0
 
 # travel the remaining distance
-execute at @s run function bs.move:tp_by_vel/apply with storage bs:ctx
+execute at @s run function #bs.move:on_collision/continue with storage bs:ctx
 ```
 
 To simplify the creation of these behaviors, there's no need to handle a local velocity directly. The vector is automatically converted before and after the collision resolution. If you need help with custom collisions, you can ask us on our [discord server](https://discord.gg/E8qq6tN)!

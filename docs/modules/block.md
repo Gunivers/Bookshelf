@@ -387,30 +387,6 @@ data get storage bs:out block.block
 ### Manage type
 
 ::::{tab-set}
-:::{tab-item} Item to block
-
-```{function} #bs.block:item_to_block
-
-Get the block type from the given item string id.
-
-:Inputs:
-  **Macro var `item` [string]**: Item string id associated to a block type.
-
-:Outputs:
-  **Storage `bs:out block` [compound]**: Equivalent to the [`#bs.block:get_type`](#get) function.
-```
-
-*Get block type data for the stone item:*
-
-```mcfunction
-# Get block type data
-function #bs.block:item_to_block {item:"minecraft:stone"}
-
-# See the result
-data get storage bs:out block.block
-```
-
-:::
 :::{tab-item} Replace
 
 ```{function} #bs.block:replace_type
@@ -432,6 +408,54 @@ execute positioned ~ ~ ~ run function #bs.block:get_block
 
 # Get block type data
 function #bs.block:replace_type {type:"minecraft:spruce_stairs"}
+
+# See the result
+data get storage bs:out block.block
+```
+
+:::
+:::{tab-item} Lookup item
+
+```{function} #bs.block:lookup_item
+
+Get block data from the given item string id.
+
+:Inputs:
+  **Macro var `item` [string]**: Item string id associated to a block.
+
+:Outputs:
+  **Storage `bs:out block` [compound]**: Equivalent to the [`#bs.block:get_type`](#get) function.
+```
+
+*Get block data for the stone item:*
+
+```mcfunction
+# Get block type data
+function #bs.block:lookup_item {item:"minecraft:stone"}
+
+# See the result
+data get storage bs:out block.block
+```
+
+:::
+:::{tab-item} Lookup type
+
+```{function} #bs.block:lookup_type
+
+Get block data from the given type string id.
+
+:Inputs:
+  **Macro var `type` [string]**: Type string id associated to a block.
+
+:Outputs:
+  **Storage `bs:out block` [compound]**: Equivalent to the [`#bs.block:get_type`](#get) function.
+```
+
+*Get block data for the stone type:*
+
+```mcfunction
+# Get block type data
+function #bs.block:lookup_type {type:"minecraft:stone"}
 
 # See the result
 data get storage bs:out block.block
