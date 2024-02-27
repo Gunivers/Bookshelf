@@ -1,6 +1,6 @@
 {
   "values": [
-    "bs.block:transform/item_to_block",
+    "bs.block:lookup/lookup_type",
     "bs.block:get/compile/block"
   ]
 }
