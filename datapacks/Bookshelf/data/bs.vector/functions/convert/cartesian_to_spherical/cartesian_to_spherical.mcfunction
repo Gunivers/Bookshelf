@@ -6,7 +6,7 @@
 
 # Version: 1.1
 # Created: 20/10/2023 (1.20.2)
-# Last modification: 20/11/2023 (23w46a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#cartesian-to-spherical
 # Dependencies:

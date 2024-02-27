@@ -6,7 +6,7 @@
 
 # Version: 2.0
 # Created: ??/??/???? (1.13)
-# Last modification: 31/08/2023 (23w33a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-rotation
 # Dependencies:
@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute rotated as @s in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600 ~ ~
-$execute store result entity B5-0-0-0-1 Rotation[1] float $(scale) run scoreboard players get @s bs.rot.v
-execute rotated as B5-0-0-0-1 positioned as @s run tp @s ~ ~ ~ ~ ~
+$execute store result storage bs:ctx x double $(scale) run scoreboard players get @s bs.rot.h
+$execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.rot.v
+execute at @s run function bs.position:set/rotation/all/run with storage bs:ctx

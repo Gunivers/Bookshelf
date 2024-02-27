@@ -6,7 +6,7 @@
 
 # Version: 1.0
 # Created: 25/12/2023 (1.20.4)
-# Last modification: 25/12/2023 (1.20.4)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/move.html#local-to-canonical
 # Dependencies:

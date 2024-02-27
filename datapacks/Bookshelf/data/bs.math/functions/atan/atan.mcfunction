@@ -6,7 +6,7 @@
 
 # Version: 3.0
 # Created: 18/01/2023 (1.19.2)
-# Last modification: 05/09/2023 (23w33a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#inverse-trigonometry
 # Dependencies:

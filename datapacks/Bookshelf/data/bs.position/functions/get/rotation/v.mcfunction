@@ -6,7 +6,7 @@
 
 # Version: 2.0
 # Created: ??/??/???? (1.13)
-# Last modification: 31/08/2023 (23w33a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-rotation
 # Dependencies:

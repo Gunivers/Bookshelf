@@ -6,7 +6,7 @@
 
 # Version: 2.0
 # Created: ??/??/2018 (1.13)
-# Last modification: 05/09/2023 (23w33a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#trigonometry
 # Dependencies:

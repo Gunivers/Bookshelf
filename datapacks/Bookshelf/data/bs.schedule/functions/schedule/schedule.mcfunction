@@ -6,7 +6,7 @@
 
 # Version: 2.2
 # Created: ??/??/2019 (1.14)
-# Last modification: 20/01/2024 (1.20.4)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#schedule
 # Dependencies:

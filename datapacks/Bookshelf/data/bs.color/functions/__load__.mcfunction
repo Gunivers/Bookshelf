@@ -28,5 +28,3 @@ execute unless data storage bs:out color.rgb_to_int run data modify storage bs:o
 execute unless data storage bs:out color.hex_to_int run data modify storage bs:out color.hex_to_int set value 0
 execute unless data storage bs:out color.rgb_to_hex run data modify storage bs:out color.rgb_to_hex set value ""
 execute unless data storage bs:out color.int_to_hex run data modify storage bs:out color.int_to_hex set value ""
-
-

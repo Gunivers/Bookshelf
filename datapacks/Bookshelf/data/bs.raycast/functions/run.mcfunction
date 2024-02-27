@@ -6,7 +6,7 @@
 
 # Version: 1.3
 # Created: 09/10/2023 (1.20.2)
-# Last modification: 09/02/2024 (1.20.4)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/raycast.html
 # Dependencies:

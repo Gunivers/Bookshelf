@@ -6,7 +6,7 @@
 
 # Version: 2.0
 # Created: 19/02/2023 (1.19.2)
-# Last modification: 17/10/2023 (1.20.2)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
 # Dependencies:
