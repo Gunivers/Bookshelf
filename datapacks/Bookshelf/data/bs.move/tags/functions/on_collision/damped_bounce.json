@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.move:collision/resolution/damped_bounce"
+    "bs.move:collision/resolution/behaviors/damped_bounce"
   ]
 }

@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.move:collision/resolution/slide"
+    "bs.move:collision/resolution/behaviors/slide"
   ]
 }
