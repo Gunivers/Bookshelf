@@ -10,7 +10,7 @@
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/dump.html
 # Dependencies:
-# Note:
+# Note: Thanks to tryashtar and PiggyPig for inspiring the idea behind this module.
 
 # CODE ------------------------------------------------------------------------
 
