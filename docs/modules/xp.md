@@ -80,17 +80,17 @@ Fill the XP bar partially.
 :Inputs:
   **Execution `as <players>`**: Players to fill the XP bar.
 
-  **Macro Var `progress` [number]**: Percentage of the bar to add.
+  **Macro Var `progress` [number]**: Progress to add to the bar.
 
 :Outputs:
   **State**: Players XP is updated.
 ```
 
-*Add 25.5% to the fill level of your bar:*
+*Add 25% to the fill level of your bar:*
 
 ```mcfunction
 # Once (execute on you)
-function #bs.xp:add_progress {progress:25.5}
+function #bs.xp:add_progress {progress:0.25}
 
 # See the result
 # look at your XP bar in survival mode
@@ -189,7 +189,7 @@ tellraw @a [{"text":"I have "},{"score":{"name":"$xp.get_total_points","objectiv
 
 ```{function} #bs.xp:get_progress {scale:<scaling>}
 
-Get the fill progress percentage of the XP bar.
+Get the fill progress of the XP bar.
 
 :Inputs:
   **Execution `as <players>`**: Players from whom you want to get the bar progress.
@@ -197,17 +197,17 @@ Get the fill progress percentage of the XP bar.
   **Macro Var `scale` [number]**: Scalar for the function's outputs.
 
 :Outputs:
-  **Return | Score `$xp.get_progress bs.out`**: Fill percentage of the xp bar after scaling.
+  **Return | Score `$xp.get_progress bs.out`**: Fill level of the xp bar after scaling.
 ```
 
-*Get the fill per cent mille of the xp bar:*
+*Get the fill percentage of the xp bar:*
 
 ```mcfunction
 # Once (execute on you)
-function #bs.xp:get_progresss {scale:1000}
+function #bs.xp:get_progress {scale:100}
 
 # See the result
-tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get_progress","objective":"bs.out"}},{"text":"/100000"}]
+tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get_progress","objective":"bs.out"}},{"text":"/100"}]
 ```
 
 :::
@@ -307,7 +307,7 @@ Fill the XP bar partially.
 :Inputs:
   **Execution `as <players>`**: Players to fill the XP bar.
 
-  **Macro Var `progress` [number]**: Percentage of the bar to fill.
+  **Macro Var `progress` [number]**: Progress to set on the bar.
 
 :Outputs:
   **State**: Players XP is updated.
@@ -317,7 +317,7 @@ Fill the XP bar partially.
 
 ```mcfunction
 # Once
-function #bs.xp:set_progress {progress:50.0}
+function #bs.xp:set_progress {progress:0.5}
 
 # See the result
 # look at your XP bar in survival mode

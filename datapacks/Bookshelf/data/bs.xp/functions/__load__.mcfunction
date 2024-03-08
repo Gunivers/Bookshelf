@@ -15,5 +15,5 @@ scoreboard players set 81 bs.const 81
 scoreboard players set 100 bs.const 100
 scoreboard players set 325 bs.const 325
 
-# level 1111129 => max_points = 10000002
-data modify storage bs:const xp.progress set value 100000.02
+# level 111111129 => max_points = 1000000002
+data modify storage bs:const xp.progress set value 1000000000
