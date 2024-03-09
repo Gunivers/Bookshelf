@@ -30,7 +30,6 @@ modules/move
 modules/position
 modules/raycast
 modules/schedule
-modules/selector
 modules/sidebar
 modules/time
 modules/tree
@@ -44,5 +43,6 @@ modules/xp
 :hidden:
 :caption: Dev modules
 
+modules/dump
 modules/log
 ```
