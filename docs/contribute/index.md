@@ -4,7 +4,7 @@ html_theme.sidebar_secondary.remove: true
 
 # 🤝 Contribute
 
-Bookshelf is a community project and can therefore be developed by several people at the same time. To keep the project clean and consistent, it is necessary for the different developers to respect some conventions when developing functions. In the following page, you can find all the Bookshelf standards. This standard is signed by the prefix "**`bs.`**" in the namespaces so you can identify all the datapacks that use it.
+Bookshelf is a community project and can therefore be developed by several people at the same time. To keep the project clean and consistent, it is necessary for the different developers to respect some conventions when developing functions. In the following page, you can find all the Bookshelf standards. This standard is signed by the prefix `bs.` in the namespaces so you can identify all the datapacks that use it.
 
 To contribute on this project, you must
 

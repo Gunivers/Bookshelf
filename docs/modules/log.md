@@ -2,10 +2,99 @@
 
 **`#bs.log:help`**
 
-(first-steps)=
-## 👶 First steps
+Log messages in the chat with varying levels of severity.
 
-Bookshelf provides functions to log messages in the chat. Different log levels are available for various types of logs:
+---
+
+## 🔧 Functions
+
+You can find below all functions available in this module.
+
+---
+
+::::{tab-set}
+:::{tab-item} Error
+```{function} #bs.log:error
+
+Log a message as an error. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log an error message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Error"' }
+```
+:::
+:::{tab-item} Warning
+```{function} #bs.log:warn
+
+Log a message as a warning. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log a warn message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Warning"' }
+```
+:::
+:::{tab-item} Information
+```{function} #bs.log:info
+
+Log a message as an information. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log an info message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Info"' }
+```
+:::
+:::{tab-item} Debug
+```{function} #bs.log:debug
+
+Log a message as a debug. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log a debug message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"Debug"' }
+```
+:::
+::::
+
+> **Credits**: theogiraudet
+
+---
+
+(usage)=
+## 🎓 How to use?
+
+Different log levels are available for various types of logs:
 1. **Debug**: Detailed debug information.
 2. **Information**: Interesting / significant events.
 3. **Warning**: Exceptional occurrences that are not errors.
@@ -13,7 +102,7 @@ Bookshelf provides functions to log messages in the chat. Different log levels a
 
 ---
 
-### Manage log granularity
+### Manage granularity
 
 A significant number of logs can quickly flood the chat. To prevent this, Bookshelf's log module can be configured to display specific logs based on two parameters: the **log level** and the **feature**.
 
@@ -30,7 +119,7 @@ Each level allows the visualization of subsequent levels. For example, if a user
 
 ---
 
-### Customize log messages
+### Customize messages
 
 Log functions take three variables as input. The `path` of the current function that inform users of the log origin, the `feature` used in the tag and the `message`.
 
@@ -67,93 +156,6 @@ Will display the following message if the user has one of these tags:
 - `bs.log.foo.baz._`
 
 ![](/_imgs/modules/log/example-2.png)
-
----
-
-## 🔧 Functions
-
-You can find below all functions available in this module.
-
----
-
-### Log messages
-
-::::{tab-set}
-:::{tab-item} Error
-```{function} #bs.log:error
-
-Log a message as an error. For more information on how it works see the [first steps](#first-steps) section.
-
-:Inputs:
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
-```
-
-*Log an error message that originates from the `bs.foo:bar` function:*
-```mcfunction
-function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Error"' }
-```
-:::
-:::{tab-item} Warning
-```{function} #bs.log:warn
-
-Log a message as a warning. For more information on how it works see the [first steps](#first-steps) section.
-
-:Inputs:
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
-```
-
-*Log a warn message that originates from the `bs.foo:bar` function:*
-```mcfunction
-function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Warning"' }
-```
-:::
-:::{tab-item} Information
-```{function} #bs.log:info
-
-Log a message as an information. For more information on how it works see the [first steps](#first-steps) section.
-
-:Inputs:
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
-```
-
-*Log an info message that originates from the `bs.foo:bar` function:*
-```mcfunction
-function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Info"' }
-```
-:::
-:::{tab-item} Debug
-```{function} #bs.log:debug
-
-Log a message as a debug. For more information on how it works see the [first steps](#first-steps) section.
-
-:Inputs:
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
-```
-
-*Log a debug message that originates from the `bs.foo:bar` function:*
-```mcfunction
-function #bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"Debug"' }
-```
-:::
-::::
-
-> **Credits**: theogiraudet
 
 ---
 

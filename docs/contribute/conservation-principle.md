@@ -24,10 +24,15 @@ This is a new directive, so most of the functions doesn't respect it for now. Pl
 
 Also for scores, by default, inputs and outputs are using `bs.in` and `bs.out`. But they can use others scores when it's more appropriate, especially when you want your data to represent the state of an entity:
 
+```mcfunction
+# Get the position of the source entity
+function bs.position:get_pos {scale:1000}
+
+# Multiply the X coordinate by 2
+scoreboard players operation @s bs.pos.x *= 2 bs.const
+
+# Place the entity at the new position
+function bs.position:set_pos {scale:.001}
 ```
-# Multiply the X coordinate of the source entity and place the entity at the new location
-function bs.location:get
-scoreboard players operation @s bs.loc.x *= 2 bs.const
-function bs.location:set
-```
-In this exemple, the `get` function will return `bs.loc.[x,y,z]` scores, that are also used as input for the `set` function.
+
+In this exemple, the `get` function will return `bs.pos.[x,y,z]` scores, that are also used as input for the `set` function.

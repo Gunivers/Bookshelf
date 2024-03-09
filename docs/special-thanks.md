@@ -1,10 +1,11 @@
 ---
+html_theme.sidebar_primary.remove: true
 html_theme.sidebar_secondary.remove: true
 ---
 
 # ❤️ Special&nbsp;thanks
 
-Bookshelf is a collaborative project, and it is thanks to the work of many people that it exists today. Here is a list of special thanks, people who have made a great contribution to this project and without who it would not be what it is today.
+Bookshelf is a collaborative project, made possible by the dedication and contributions of numerous individuals. We extend special thanks to those who have made significant contributions to this project, without whom it would not be what it is today.
 
 ```{button-link} https://github.com/Gunivers/Bookshelf/graphs/contributors
 :color: primary
@@ -30,39 +31,7 @@ See all contributors
 
 ---
 
-Creator of the original Gunivers Libs, and the current maintainer of Bookshelf.
-
-:::
-
-:::{grid-item-card} Théo Giraudet (aka Oromis)
-:link: https://github.com/theogiraudet
-:link-type: url
-:margin: 0 3 0 0
-
-```{image} /_imgs/credits/theogiraudet.png
-:align: center
-:class: dark_light, bs-rounded
-```
-
----
-
-Huge contributor of the original Gunivers Libs and Bookshelf.
-
-:::
-
-:::{grid-item-card} KubbyDev
-:link: https://github.com/KubbyDev
-:link-type: url
-:margin: 0 3 0 0
-
-```{image} /_imgs/credits/kubbydev.png
-:align: center
-:class: dark_light, bs-rounded
-```
-
----
-
-Huge contributor of the original Gunivers Libs.
+Creator of the original Gunivers Libs, and contributor of Bookshelf.
 
 :::
 
@@ -78,24 +47,38 @@ Huge contributor of the original Gunivers Libs.
 
 ---
 
-Huge contributor of the latest version of Bookshelf.
+Contributor of the last version of Bookshelf, and current maintainer.
 
 :::
 
-:::{grid-item-card} Theaustudio
-:link: https://github.com/Theaustudio
+:::{grid-item-card} Théo Giraudet (aka Oromis)
+:link: https://github.com/theogiraudet
 :link-type: url
 :margin: 0 3 0 0
 
-```{image} /_imgs/credits/theaustudio.png
+```{image} /_imgs/credits/theogiraudet.png
 :align: center
 :class: dark_light, bs-rounded
 ```
 
 ---
 
-Main developer of the Bookshelf Manager website.
+Contributor of the original Gunivers Libs and Bookshelf.
 
 :::
+
+:::{grid-item-card} KubbyDev
+:link: https://github.com/KubbyDev
+:link-type: url
+:margin: 0 3 0 0
+
+```{image} /_imgs/credits/kubbydev.png
+:align: center
+:class: dark_light, bs-rounded
+```
+
+---
+
+Contributor of the original Gunivers Libs.
 
 ::::
