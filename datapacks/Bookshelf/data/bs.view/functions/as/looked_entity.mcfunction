@@ -14,6 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
+execute unless predicate bs.view:is_looking_at_entity run return 0
 execute if entity @e[tag=bs.view.is_lookable,tag=!bs.view.bi,sort=arbitrary,limit=1] run function bs.view:looked_entity/setup
 execute if score #view.looked_entity bs.data matches 1.. if predicate bs.view:looked_entity/b0 run tag @e[tag=bs.view.bi,tag=!bs.view.b0] remove bs.view.bi
 execute if score #view.looked_entity bs.data matches 2.. if predicate bs.view:looked_entity/b1 run tag @e[tag=bs.view.bi,tag=!bs.view.b1] remove bs.view.bi
@@ -23,5 +24,5 @@ execute if score #view.looked_entity bs.data matches 16.. if predicate bs.view:l
 execute if score #view.looked_entity bs.data matches 32.. if predicate bs.view:looked_entity/b5 run tag @e[tag=bs.view.bi,tag=!bs.view.b5] remove bs.view.bi
 execute if score #view.looked_entity bs.data matches 64.. if predicate bs.view:looked_entity/b6 run tag @e[tag=bs.view.bi,tag=!bs.view.b6] remove bs.view.bi
 execute if score #view.looked_entity bs.data matches 128.. if predicate bs.view:looked_entity/b7 run tag @e[tag=bs.view.bi,tag=!bs.view.b7] remove bs.view.bi
-$execute at @e[tag=bs.view.is_lookable,tag=bs.view.bi,sort=arbitrary,limit=1] run $(run)
+$execute as @e[tag=bs.view.is_lookable,tag=bs.view.bi,sort=arbitrary,limit=1] run $(run)
 tag @e[tag=bs.view.is_lookable,sort=arbitrary] add bs.view.bi
