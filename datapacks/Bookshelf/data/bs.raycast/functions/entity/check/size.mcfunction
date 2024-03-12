@@ -34,4 +34,4 @@ scoreboard players operation #raycast.tmax bs.data < #raycast.max_z bs.data
 execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
-  run function bs.raycast:collide/entity
+  run function bs.raycast:entity/collide

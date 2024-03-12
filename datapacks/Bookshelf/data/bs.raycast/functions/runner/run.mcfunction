@@ -15,7 +15,7 @@
 # CODE ------------------------------------------------------------------------
 
 tag @s add bs.raycast.origin
-execute as B5-0-0-0-1 run function bs.raycast:cast
+execute as B5-0-0-0-1 run function bs.raycast:runner/as
 tag @s remove bs.raycast.origin
 
 # return 0 early if no collision occured or compute output data then return 1

@@ -16,7 +16,7 @@ execute store result score #raycast.max_z bs.data run scoreboard players operati
 execute if score #hitbox.is_shaped bs.data matches 1 run scoreboard players operation $hitbox.offset.x bs.out *= 1000 bs.const
 execute if score #hitbox.is_shaped bs.data matches 1 run scoreboard players operation $hitbox.offset.z bs.out *= 1000 bs.const
 
-execute if score #hitbox.is_shaped bs.data matches 0 run function bs.raycast:check/entity/size
-execute if score #hitbox.is_shaped bs.data matches 1 run function bs.raycast:check/entity/shape
+execute if score #hitbox.is_shaped bs.data matches 0 run function bs.raycast:entity/check/size
+execute if score #hitbox.is_shaped bs.data matches 1 run function bs.raycast:entity/check/shape
 execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.height
 execute if score #hitbox.is_custom bs.data matches 0 run scoreboard players reset @s bs.width
