@@ -2,8 +2,7 @@ import requests
 import sys
 import os
 
-from . import generators
-
+from . import consumers
 
 def run(mc_version, world_path):
 
@@ -22,10 +21,10 @@ def run(mc_version, world_path):
 
     module_path = os.path.join(world_path, "datapacks/Bookshelf/data/bs.block/")
 
-    generators.gen_tags_files(blocks, module_path)
-    generators.gen_types_file(blocks, module_path)
-    generators.gen_states_file(groups, module_path)
-    generators.gen_registry_files(groups, module_path)
+    consumers.gen_tags_files(blocks, module_path)
+    consumers.gen_types_file(blocks, module_path)
+    consumers.gen_states_file(groups, module_path)
+    consumers.gen_registry_files(groups, module_path)
 
 
 if __name__ == "__main__":
