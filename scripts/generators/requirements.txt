@@ -1,1 +1,2 @@
 requests
+nbtlib==1.12.1
