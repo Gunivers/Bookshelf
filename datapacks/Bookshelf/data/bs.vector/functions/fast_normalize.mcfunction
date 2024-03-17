@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$scoreboard players set #vector.fast_normalize.scale bs.data $(scale)
+$scoreboard players set #vector.scale bs.data $(scale)
 
 scoreboard players operation $vector.fast_normalize.factor bs.out = $vector.fast_normalize.0 bs.in
 execute if predicate bs.vector:fast_normalize/check1 run scoreboard players operation $vector.fast_normalize.factor bs.out = $vector.fast_normalize.1 bs.in
@@ -25,9 +25,9 @@ scoreboard players operation $vector.fast_normalize.0 bs.out = $vector.fast_norm
 scoreboard players operation $vector.fast_normalize.1 bs.out = $vector.fast_normalize.1 bs.in
 scoreboard players operation $vector.fast_normalize.2 bs.out = $vector.fast_normalize.2 bs.in
 
-scoreboard players operation $vector.fast_normalize.0 bs.out *= #vector.fast_normalize.scale bs.data
-scoreboard players operation $vector.fast_normalize.1 bs.out *= #vector.fast_normalize.scale bs.data
-scoreboard players operation $vector.fast_normalize.2 bs.out *= #vector.fast_normalize.scale bs.data
+scoreboard players operation $vector.fast_normalize.0 bs.out *= #vector.scale bs.data
+scoreboard players operation $vector.fast_normalize.1 bs.out *= #vector.scale bs.data
+scoreboard players operation $vector.fast_normalize.2 bs.out *= #vector.scale bs.data
 
 scoreboard players operation $vector.fast_normalize.0 bs.out /= $vector.fast_normalize.factor bs.out
 scoreboard players operation $vector.fast_normalize.1 bs.out /= $vector.fast_normalize.factor bs.out
