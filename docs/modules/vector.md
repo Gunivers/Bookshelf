@@ -40,7 +40,7 @@ You can find below all functions available in this module.
 
 ### Basis rotation 3D
 
-```{function} #bs.vector:basis_rot_3d
+```{function} #bs.vector:basis_rot_3d {scaling:<value>}
 
 Get the equivalent of the vector passed in parameter in a base with a different rotation. Useful to convert absolute/relative positions into local positions.
 
@@ -118,7 +118,7 @@ tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.bas
 
 ### Cartesian to spherical
 
-```{function} #bs.vector:cartesian_to_spherical
+```{function} #bs.vector:cartesian_to_spherical {scaling:<value>}
 
 Convert cartesian coordinates to spherical coordinates.
 
@@ -146,7 +146,7 @@ This system returns non conventional shperical coordinates.
 
 ### Cross product
 
-```{function} #bs.vector:cross_product
+```{function} #bs.vector:cross_product {scaling:<value>}
 
 Compute the vector product between $u$ and $v$.
 
@@ -167,7 +167,7 @@ Compute the vector product between $u$ and $v$.
 
 ### Dot product
 
-```{function} #bs.vector:dot_product
+```{function} #bs.vector:dot_product {scaling:<value>}
 
 Compute the scalar product between $u$ and $v$.
 
@@ -179,7 +179,7 @@ Compute the scalar product between $u$ and $v$.
   **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
 :Outputs:
-  **Scores `$vector.dot_product.[0,1,2] bs.out`**: Result of the operation $=u · v$.
+  **Scores `$vector.dot_product bs.out`**: Result of the operation $=u · v$.
 ```
 
 > **Credits**: Aksiome, Majoras16
@@ -228,12 +228,14 @@ If you want to minimize the performance impact, we recomande you to use the `len
 :::
 :::{tab-item} Length squared
 
-```{function} #bs.vector:length_squared
+```{function} #bs.vector:length_squared {scaling:<value>}
 
 Compute the squared norm of the vector.
 
 :Inputs:
   **Scores `$vector.length_squared.[0,1,2] bs.in`**: Vector components.
+
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
 :Outputs:
   **Return | Score `$vector.length_squared bs.out`**: Vector length squared.
@@ -298,7 +300,7 @@ Get the min component of a vector.
 ::::{tab-set}
 :::{tab-item} Classic
 
-```{function} #bs.vector:normalize
+```{function} #bs.vector:normalize {scale:<scaling>}
 
 Normalize the vector by putting the length at the given scale while keeping proportions.
 
@@ -320,7 +322,7 @@ Normalization of vector doesn't often need to be accurate, so you can try first 
 :::
 :::{tab-item} Fast
 
-```{function} #bs.vector:fast_normalize
+```{function} #bs.vector:fast_normalize {scale:<scaling>}
 
 Normalize the vector by placing the largest component at the given scale while keeping proportions.
 
@@ -344,7 +346,7 @@ Normalize the vector by placing the largest component at the given scale while k
 
 ### Spherical to cartesian
 
-```{function} #bs.vector:spherical_to_cartesian
+```{function} #bs.vector:spherical_to_cartesian {scaling:<value>}
 
 Convert spherical coordinates to cartesian coordinates.
 
