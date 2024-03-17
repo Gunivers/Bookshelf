@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$scoreboard players set #vector.cross_product.scaling bs.data $(scaling)
+$scoreboard players set #vector.scaling bs.data $(scaling)
 
 # out.0 = u.1 * v.2 - u.2 * v.1
 scoreboard players operation $vector.cross_product.0 bs.out = $vector.cross_product.u.1 bs.in
@@ -22,7 +22,7 @@ scoreboard players operation $vector.cross_product.0 bs.out *= $vector.cross_pro
 scoreboard players operation #vector.cross_product bs.data = $vector.cross_product.u.2 bs.in
 scoreboard players operation #vector.cross_product bs.data *= $vector.cross_product.v.1 bs.in
 scoreboard players operation $vector.cross_product.0 bs.out -= #vector.cross_product bs.data
-scoreboard players operation $vector.cross_product.0 bs.out /= #vector.cross_product.scaling bs.data
+scoreboard players operation $vector.cross_product.0 bs.out /= #vector.scaling bs.data
 
 # out.1 = u.2 * v.0 - u.0 * v.2
 scoreboard players operation $vector.cross_product.1 bs.out = $vector.cross_product.u.2 bs.in
@@ -30,7 +30,7 @@ scoreboard players operation $vector.cross_product.1 bs.out *= $vector.cross_pro
 scoreboard players operation #vector.cross_product bs.data = $vector.cross_product.u.0 bs.in
 scoreboard players operation #vector.cross_product bs.data *= $vector.cross_product.v.2 bs.in
 scoreboard players operation $vector.cross_product.1 bs.out -= #vector.cross_product bs.data
-scoreboard players operation $vector.cross_product.1 bs.out /= #vector.cross_product.scaling bs.data
+scoreboard players operation $vector.cross_product.1 bs.out /= #vector.scaling bs.data
 
 # out.2 = u.0 * v.1 - u.1 * v.0
 scoreboard players operation $vector.cross_product.2 bs.out = $vector.cross_product.u.0 bs.in
@@ -38,4 +38,4 @@ scoreboard players operation $vector.cross_product.2 bs.out *= $vector.cross_pro
 scoreboard players operation #vector.cross_product bs.data = $vector.cross_product.u.1 bs.in
 scoreboard players operation #vector.cross_product bs.data *= $vector.cross_product.v.0 bs.in
 scoreboard players operation $vector.cross_product.2 bs.out -= #vector.cross_product bs.data
-scoreboard players operation $vector.cross_product.2 bs.out /= #vector.cross_product.scaling bs.data
+scoreboard players operation $vector.cross_product.2 bs.out /= #vector.scaling bs.data

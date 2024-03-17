@@ -8,6 +8,10 @@ Cast rays and see if they collide with blocks or entities.
 Unlike traditional raycasts, this module uses a voxel traversal algorithm which is a lot more precise. Also, thanks to the `bs.hitbox` module, it supports all of the different hitboxes, including both blocks & entities.
 ```
 
+```{important}
+This module limits the world size to 2,147,483 to prevent scoreboard overflow.
+```
+
 ```{epigraph}
 "Reality only reveals itself when it is illuminated by a ray of poetry."
 

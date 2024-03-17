@@ -9,6 +9,11 @@ Execute commands based on what an entity sees.
 :class: dark_light p-2
 ```
 
+```{important}
+This module limits the world size to 2,147,483 to prevent scoreboard overflow.
+```
+
+
 ```{epigraph}
 
 "Vision is the act of seeing things as they could be, not as they are."
@@ -66,6 +71,8 @@ Run a command as the entity that is aimed by the current entity.
   **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
   **Macro Var `run` [string]**: Command to run as the targeted entity.
+
+  **Tag**: Tag for entities that can be aimed (default: `bs.raycast.is_solid`).
 ```
 
 *Run a command as the entity that you are looking at:*
@@ -86,6 +93,8 @@ Run a command at the entity that is aimed by the current entity.
   **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
   **Macro Var `run` [string]**: Command to run at the targeted entity.
+
+  **Tag**: Tag for entities that can be aimed (default: `bs.raycast.is_solid`).
 ```
 
 *Run a command at the entity that you are looking at:*

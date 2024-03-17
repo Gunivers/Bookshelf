@@ -27,7 +27,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 | `bs:data` | Global data storage. Path format: `<module>.<feature>.<my_key>` |
 | `bs:in` | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
 | `bs:out` | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
-| `bs:ctx` | Fast contextual storage. Only path accepted are `x`, `y`, `z` for values (store) and `_` for set data (macro). |
+| `bs:ctx` | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |
 
 ---
 
@@ -37,16 +37,16 @@ These commands can be used at load time to create global entities that can be us
 
 ```mcfunction
 # The most useful entity, used for position, arithmetic, and much more...
-execute unless entity B5-0-0-0-1 run summon minecraft:marker 0.0 0.0 0.0 {UUID:[181,0,0,1],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Marker","color":"aqua"}]'}
+execute unless entity B5-0-0-0-1 run summon minecraft:marker 0.0 0.0 0.0 {UUID:[181,0,0,1],Tags:["bs.entity","bs.persistent"]}
 
 # An entity that can be used to interpret text or compute transformations
-execute unless entity B5-0-0-0-2 run summon minecraft:text_display 0.0 0.0 0.0 {view_range:0f,UUID:[181,0,0,2],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Text Display","color":"aqua"}]'}
+execute unless entity B5-0-0-0-2 run summon minecraft:text_display 0.0 0.0 0.0 {UUID:[181,0,0,2],Tags:["bs.entity","bs.persistent"],view_range:0f}
 
 # An entity that can be used to manipulate loots or compute transformations
-execute unless entity B5-0-0-0-3 run summon minecraft:item_display 0.0 0.0 0.0 {view_range:0f,UUID:[181,0,0,3],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Item Display","color":"aqua"}]'}
+execute unless entity B5-0-0-0-3 run summon minecraft:item_display 0.0 0.0 0.0 {UUID:[181,0,0,3],Tags:["bs.entity","bs.persistent"],view_range:0f}
 
 # An entity used as an UUID pointer (modify Owner then execute on origin)
-execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent"],CustomName:'[{"text":"BS ","color":"dark_gray"},{"text":"Entity Pointer","color":"aqua"}]',NoGravity:1b,Invulnerable:1b}
+execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent"],NoGravity:1b,Invulnerable:1b}
 
 ```
 

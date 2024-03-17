@@ -22,6 +22,7 @@ data modify storage bs:in raycast set from storage bs:data view.raycast
 
 # run the command at the block that was found or return early
 execute if score #raycast.distance bs.data matches 2147483647 run return 0
+tp B5-0-0-0-1 @s
 data modify entity B5-0-0-0-1 Pos set from storage bs:out raycast.targeted_block
 $execute at B5-0-0-0-1 run $(run)
 execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

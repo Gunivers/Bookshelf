@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$scoreboard players set #vector.dot_product.scaling bs.data $(scaling)
+$scoreboard players set #vector.scaling bs.data $(scaling)
 
 scoreboard players operation $vector.dot_product bs.out = $vector.dot_product.u.0 bs.in
 scoreboard players operation $vector.dot_product bs.out *= $vector.dot_product.v.0 bs.in
@@ -24,4 +24,4 @@ scoreboard players operation $vector.dot_product bs.out += #vector.dot_product b
 scoreboard players operation #vector.dot_product bs.data = $vector.dot_product.u.2 bs.in
 scoreboard players operation #vector.dot_product bs.data *= $vector.dot_product.v.2 bs.in
 scoreboard players operation $vector.dot_product bs.out += #vector.dot_product bs.data
-return run scoreboard players operation $vector.dot_product bs.out /= #vector.dot_product.scaling bs.data
+return run scoreboard players operation $vector.dot_product bs.out /= #vector.scaling bs.data

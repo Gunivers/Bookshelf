@@ -1,3 +1,7 @@
+---
+html_theme.sidebar_primary.remove: true
+---
+
 # 🚀 Quickstart
 
 This page gives a quick overview of how to get started with the Bookshelf library, and how to use it.
@@ -40,7 +44,7 @@ The Github repository includes a demo map (still a work in progress) and four da
 
 This is the main datapack of the library, containing all the useful tools for your project. It's the only one to keep in the end. The datapack is divided into modules, so install only the ones you need.
 
-**📁 datapacks / Bookshelf Dev (WIP)**
+**📁 datapacks / Bookshelf Dev**
 
 This datapack includes utilities for developers, such as logs, unit tests, and more. Its purpose is to provide essential tools to assist you during the development phase of your project.
 

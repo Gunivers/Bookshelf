@@ -1,7 +1,0 @@
-{
-	"replace": false,
-	"values": [
-        "#bs.core:glass/glass_blocks",
-        "#bs.core:glass/glass_panes"
-	]
-}

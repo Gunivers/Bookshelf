@@ -1,1 +1,0 @@
-tellraw @a[tag=bs.debug] [{"text":"   Entity: ","color":"dark_gray"},{"selector":"@s","color":"gold"},{"text":" Debug ID: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.debug"},"color":"gold"}]

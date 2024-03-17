@@ -80,7 +80,7 @@ Replace the entity at its relative position and local rotation. This operation r
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_and_rot
@@ -106,7 +106,7 @@ Replace the entity at its relative position. This operation repeated in a loop s
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos
@@ -132,7 +132,7 @@ Replace the entity at its local rotation. This operation repeated in a loop simu
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot
@@ -158,7 +158,7 @@ Replace the entity at its relative position along an axis. This operation repeat
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_pos_x
@@ -188,7 +188,7 @@ Replace the entity at its horizontal or vertical local rotation. This operation 
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot_h
@@ -222,7 +222,7 @@ Keep the local position relative to the parent entity.
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:keep_local_pos
@@ -259,7 +259,7 @@ Mirror the position and rotation of an entity along a plane.
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:mirror_x_plane
@@ -290,7 +290,7 @@ Mirror the position and rotation of an entity around a given point.
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] positioned 0 0 0 run function #bs.link:mirror_point_ata
@@ -324,7 +324,7 @@ Determine the rotation and displacement made by the parent entity, and reproduce
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_and_rot
@@ -350,7 +350,7 @@ Determine the displacement made by the parent entity, and reproduce it in the op
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos
@@ -376,7 +376,7 @@ Determine the rotation performed by the parent entity, and reproduce it in the o
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot
@@ -402,7 +402,7 @@ Determine the displacement made by the parent entity along a single axis, and re
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_x
@@ -432,7 +432,7 @@ Determine the rotation performed by the parent entity along a rotation axis, and
 
 ```mcfunction
 # Once
-execute as @e[type=armor_stand] at @s run function #bs.link:create_link_ata
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
 
 # In a loop
 execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot_h

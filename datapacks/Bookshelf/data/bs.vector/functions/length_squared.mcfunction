@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$scoreboard players set #vector.length_squared.scaling bs.data $(scaling)
+$scoreboard players set #vector.scaling bs.data $(scaling)
 
 scoreboard players operation $vector.length_squared bs.out = $vector.length_squared.0 bs.in
 scoreboard players operation $vector.length_squared bs.out *= $vector.length_squared.0 bs.in
@@ -24,4 +24,4 @@ scoreboard players operation $vector.length_squared bs.out += #vector.length_squ
 scoreboard players operation #vector.length_squared bs.data = $vector.length_squared.2 bs.in
 scoreboard players operation #vector.length_squared bs.data *= $vector.length_squared.2 bs.in
 scoreboard players operation $vector.length_squared bs.out += #vector.length_squared bs.data
-return run scoreboard players operation $vector.length_squared bs.out /= #vector.length_squared.scaling bs.data
+return run scoreboard players operation $vector.length_squared bs.out /= #vector.scaling bs.data

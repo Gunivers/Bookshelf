@@ -42,6 +42,6 @@ execute unless score #sidebar.lines bs.data matches 1..15 run return run functio
 
 # start the recursion to create each line abort if a line failed
 execute as B5-0-0-0-2 run function bs.sidebar:create/recurse/start with storage bs:ctx _
-data modify entity @s CustomName set value '[{"text":"BS ","color":"dark_gray"},{"text":"Text Display","color":"aqua"}]'
+data remove entity @s CustomName
 execute if score #sidebar.lines bs.data = #sidebar.line bs.data run return 1
 return run function bs.sidebar:create/recurse/abort with storage bs:ctx _
