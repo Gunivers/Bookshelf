@@ -1,8 +1,4 @@
-$attribute @s minecraft:generic.max_health base set $(x)
+attribute @s minecraft:generic.max_health modifier remove 68f0b501-5dca-4abb-8b69-057945a9583d
+$attribute @s minecraft:generic.max_health modifier add 68f0b501-5dca-4abb-8b69-057945a9583d "bs.health" $(x) add
 effect give @s minecraft:instant_health 1 28 true
-
-tag @s add bs.health.break
-scoreboard players operation @s bs.health.y = #health.max bs.data
-scoreboard players operation @s bs.health.y -= #health.points bs.data
-execute if score @s bs.health.y matches 0 run scoreboard players reset @s bs.health.y
-scoreboard players reset @s bs.health.x
+advancement revoke @s only bs.health:restore_health
