@@ -22,5 +22,6 @@ scoreboard players operation #health.max bs.data -= #health.mod bs.data
 
 execute store result score #health.points bs.data run data get entity @s Health 100000
 execute store result storage bs:ctx x double -0.00001 run scoreboard players operation #health.max bs.data -= #health bs.data
-execute if score #health.points bs.data > #health bs.data if score #health.max bs.data matches 0.. run return run function bs.health:apply/decrease_health with storage bs:ctx
-execute if score #health.points bs.data < #health bs.data if score #health.max bs.data matches 0.. run return run function bs.health:apply/increase_health with storage bs:ctx
+execute if score #health.max bs.data matches ..-1 run data modify storage bs:ctx x set value 0
+execute if score #health.points bs.data > #health bs.data run return run function bs.health:apply/decrease_health with storage bs:ctx
+execute if score #health.points bs.data < #health bs.data run return run function bs.health:apply/increase_health with storage bs:ctx

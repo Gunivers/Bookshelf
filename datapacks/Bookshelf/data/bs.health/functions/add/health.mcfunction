@@ -25,5 +25,6 @@ execute store result score #health.max bs.data run attribute @s minecraft:generi
 execute store result score #health.mod bs.data run attribute @s minecraft:generic.max_health modifier value get 68f0b501-5dca-4abb-8b69-057945a9583d 100000
 scoreboard players operation #health.mod bs.data -= #health.max bs.data
 execute store result storage bs:ctx x double 0.00001 run scoreboard players operation #health.mod bs.data += #health bs.data
-execute if score #health.points bs.data > #health bs.data if score #health.mod bs.data matches ..0 run return run function bs.health:apply/decrease_health with storage bs:ctx
-execute if score #health.points bs.data < #health bs.data if score #health.mod bs.data matches ..0 run return run function bs.health:apply/increase_health with storage bs:ctx
+execute if score #health.mod bs.data matches 1.. run data modify storage bs:ctx x set value 0
+execute if score #health.points bs.data > #health bs.data run return run function bs.health:apply/decrease_health with storage bs:ctx
+execute if score #health.points bs.data < #health bs.data run return run function bs.health:apply/increase_health with storage bs:ctx
