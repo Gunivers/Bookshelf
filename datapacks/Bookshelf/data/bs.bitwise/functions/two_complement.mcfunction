@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: theogiraudet
 # Contributors: Aksiome
 
-# Version: 1.0
+# Version: 1.1
 # Created: ??/??/???? (1.16)
-# Last modification: 25/08/2023 (23w33a)
+# Last modification: 27/02/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#complement-to-2
 # Dependencies:
@@ -22,8 +22,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $bitwise.two_complement bs.out = $bitwise.two_complement.value bs.in
-
-execute if score $bitwise.two_complement bs.out matches 1.. run return -1
+scoreboard players operation $bitwise.two_complement bs.out = $bitwise.two_complement.n bs.in
+execute if score $bitwise.two_complement bs.out matches 1.. run return run scoreboard players get $bitwise.two_complement bs.out
 scoreboard players add $bitwise.two_complement bs.out 2147483647
-scoreboard players add $bitwise.two_complement bs.out 1
+return run scoreboard players add $bitwise.two_complement bs.out 1

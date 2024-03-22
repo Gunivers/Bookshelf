@@ -1,1 +1,0 @@
-execute at @s run function bs.block:convert/id_to_block

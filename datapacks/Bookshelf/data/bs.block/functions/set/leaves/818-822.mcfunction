@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 818 run setblock ~ ~ ~ note_block[instrument=bell,note=19,powered=false]
-execute if score @s bs.block.id matches 819 run setblock ~ ~ ~ note_block[instrument=bell,note=20,powered=true]
-execute if score @s bs.block.id matches 820 run setblock ~ ~ ~ note_block[instrument=bell,note=20,powered=false]
-execute if score @s bs.block.id matches 821 run setblock ~ ~ ~ note_block[instrument=bell,note=21,powered=true]
-execute if score @s bs.block.id matches 822 run setblock ~ ~ ~ note_block[instrument=bell,note=21,powered=false]

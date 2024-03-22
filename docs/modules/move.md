@@ -1,326 +1,261 @@
 # 🏃 Move
 
-**`bs.move:_`**
+**`#bs.move:help`**
 
 Make your entity move exactly the way you want them to!
 
-<div align=center>
-
-![](img/2023-01-27-23-29-41.png)
-
-</div>
-
-```{button-link} https://youtu.be/KH3Q9F5j04I
-:color: primary
+```{image} /_imgs/modules/move.png
 :align: center
-:shadow:
-
-🎬 Watch a demo
+:class: dark_light
 ```
 
-> In the universe, everything is mouvement.
->
-> -- Heraclite d'Ephès
+```{epigraph}
+"There is nothing permanent except change."
 
-```{toctree}
-:hidden:
-:caption: Function configuration
-
-move/by_vector_custom_collision
+-- Heraclitus
 ```
 
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Move using vector
+### Canonical to local
 
-::::{tab-set}
-:::{tab-item} Canonical
+```{function} #bs.move:canonical_to_local
 
-**`bs.move:by_vector`**
+Convert a canonical velocity (using the relative reference frame) into a local velocity (using the local reference frame).
 
-Allows to move the entity according to its vector on each
-axis of the game.
+:Inputs:
+  **Execution `rotated as <entity>` or `rotated <h> <v>`**: Rotation used for the conversion.
 
-Inputs
+  **Scores `@s bs.vel.[x,y,z]`**: Velocity to convert.
 
-:   (execution) `as <entity>`
-    : The entity to move
-
-    (scores) `@s bs.vector.[x,y,z]`
-    : The local vector you want the entity to move on (respectively left, up and forward vectors), shifted by 3 digits (1000 $\rightarrow$ move by 1 block)
-
-    (scores) `@s bs.collision`
-    : The collision behavior. Here is built-in behaviors:
-
-        - `0` (default): The entity will cross all the blocks
-        - `-1`: The entity will bounce on all the solid blocks
-        - `-2`: The entity will stick and slide on the surface it will encounter
-        - `-3`: The entity will stick and stop on all the solid blocks
-        - `-4`: The entity will bounce on solid blocks and reduce the total speed by 2
-        - `-101`, `-102`, `-103`, `-104` : same but useing head position instead of feet as the source of detection collision.
-
-        ```{button-link} move/by_vector_custom_collision.html
-        :color: primary
-        :ref-type: doc
-        :align: center
-        :outline:
-
-        ⚙️ Create your own collisions!
-        ```
-
-Option
-
-:   (score) `@s bs.opt.0`
-    : Precision of detection (in miliblock, so 500 -> 0.5 block). Default: 1000 (1 block)
-
-Outputs
-
-:   (state) @s position
-    : The new position of the entity
-
-Examples
-
-:   Apply a movement of 0.3 blocks per tick in the X direction to all boats (simulating a sea current):
-
-    ```
-    # Once
-    scoreboard players set @e[type=boat] bs.vector.x 300
-    scoreboard players set @e[type=boat] bs.vector.y 0
-    scoreboard players set @e[type=boat] bs.vector.z 0
-
-    # In loop
-    execute as @e[type=boat] run function bs.move:by_vector
-    ```
-
-    Take into account collisions and make the boat stop, with a precision of 0.1 block:
-
-    ```
-    # Once
-    scoreboard players set @e[type=boat] bs.vector.x 300
-    scoreboard players set @e[type=boat] bs.vector.y 0
-    scoreboard players set @e[type=boat] bs.vector.z 0
-    scoreboard players set @e[type=boat] bs.collision 2
-    tag @e[type=boat] add bs.config.override
-    scoreboard players set @e[type=boat] bs.precision 100
-
-    # In loop
-    execute as @e[type=boat] run function bs.move:by_vector
-    ```
-
-```{admonition} How does it work?
-:class: dropdown
-
-This function will decompose the input vector in a sum of vectors with max component equal to the desired precision (by default, 1 block).
-The vector is a set of 3 scores : `bs.vector.x`, `bs.vector.y`, `bs.vector.y` that define the displacement of the entity
- 
-The function then use :
-
-$$ V_i = A * V_n + V_r $$
-
-With
-- $V_i$ : the input vector
-- $V_n$ : The input vector normalize such as it's maximum component is equal to the precision
-- $A$  : The number of times Vn need to be stacked to get near $Vi$ ($A \times V_n \approx V_i$)
-- $V_r$ : the "rest" vector, that allow to perfectly match $V_i$
-
-Once the vector is decomposed, the system loop from $1$ to $A$ to apply the movement corresponding to the $V_n$ vector, and then apply once the $V_r$ movement.
-To apply this vector, the system use a dichotomic function.
-Basically, it consist of teleporting the entity to +0.512 on the X axis if the X component of it's vector is > 512
-If it's the case, then it remove 512 from the X component. Then repeast the operation with 256 (= 512/2) ... then with 128 (= 256/2)
-At the end, the entity will be moved on the X axis by exactly the same distance indicated by the vector component
-
-In each loop before applying the movement, the system call 3 `__switch__` functions that allow to manage collision according to the value of `bs.collision` score.
-If the bs.collision score is negative, it will use the built-in collision systems (demo and general purposes).
-If the score is positive, it will use the user defined collision, calling the 3 following functions (in order) :
-- `bs.config:move/by_vector/collision/heads/__switch__`: Define the detection points
-- `bs.config:move/by_vector/collision/detection/__switch__`: Defin the nature of the detection (blocks adjancement)
-- `bs.config:move/by_vector/collision/behavior/__switch__`: Define the behavior of the entity when a collision is detected
-
-See the "Create your own behaviors!" dropdown above for more details about collisions. 
+:Outputs:
+  **Scores `@s bs.vel.[x,y,z]`**: Converted velocity.
 ```
 
-```{admonition} Dependencies
-:class: dropdown
+> **Credits**: Aksiome
 
-This function depends on:
+---
 
-- [**`bs.location`**](location)
+### Local to canonical
+
+```{function} #bs.move:local_to_canonical
+
+Convert a local velocity (using the local reference frame) into a canonical velocity (using the relative reference frame).
+
+:Inputs:
+  **Execution `rotated as <entity>` or `rotated <h> <v>`**: Rotation used for the conversion.
+
+  **Scores `@s bs.vel.[x,y,z]`**: Velocity to convert.
+
+:Outputs:
+  **Scores `@s bs.vel.[x,y,z]`**: Converted velocity.
 ```
 
-```{admonition} Performance tip
-:class: tip
+> **Credits**: Aksiome
 
-Moving an entity using this system is pretty efficient because it only consist in 50 to 100 commands such as scoreboard operation and teleport, which doesn't cost a lot. However, collision detection is from far the heaviest part due to block detection. A higher precision or a higher speed will increase the number of block detection and then the impact on performances.
+---
+
+### Set motion
+
+```{function} #bs.move:set_motion_by_vel {scale:<scaling>}
+
+Set the motion of an entity using velocity scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to move.
+
+  **Scores `@s bs.vel.[x,y,z]`**: Velocity vector.
+
+  **Macro Var `scale`**: Scalar for the function’s outputs.
+
+:Outputs:
+  **State**: Motion is applied to the given entity.
 ```
 
-:::
-:::{tab-item} Local
+*Move a pig by its velocity scores:*
 
-**`bs.move:by_local_vector`**
+```mcfunction
+# Once
+summon minecraft:pig ~ ~ ~
+scoreboard players set @e[type=minecraft:pig] bs.vel.x 50
+scoreboard players set @e[type=minecraft:pig] bs.vel.y 25
+scoreboard players set @e[type=minecraft:pig] bs.vel.z 0
 
-Allows to move the entity according to its vector
-on each axis of the local reference frame.
+# In a loop
+execute as @e[type=minecraft:pig] run function #bs.move:set_motion_by_vel {scale:0.001}
+```
 
-Inputs
+> **Credits**: Aksiome
 
-:   (execution) `as <entity>`
-    : The entity to move
+---
 
-    (scores) `bs.vector.[x,y,z]`
-    : The local vector you want the entity to move on (respectively left, up and forward vectors), shifted by 3 digits (1000 $\rightarrow$ move by 1 block)
+### Teleport
 
-Outputs
+:::::{tab-set}
+::::{tab-item} Canonical
 
-:   (state) @s position
-    : The new position of the entity
+```{function} #bs.move:tp_by_vel {scale:<scaling>}
 
+Teleport an entity by its velocity scores while handling collisions.
 
+:Inputs:
+  **Execution `as <entities>`**: Entity to move.
 
-Example
+  **Scores `@s bs.vel.[x,y,z]`**: Canonical velocity vector.
 
-:   Apply a movement of 0.3 blocks per tick to the left to all boats:
+  **Scores `@s bs.[height,width]`**: Entity size (in miliblocks). Default to Minecraft size if not defined.
 
-    ```
-    # Once
-    scoreboard players set @e[type=boat] bs.vector.x 300
-    scoreboard players set @e[type=boat] bs.vector.y 0
-    scoreboard players set @e[type=boat] bs.vector.z 0
+  **Storage `bs:in move`**:
+  :::{list-table}
+  *   - **`on_collision`**&nbsp;[string]
+      - Function run on collision (default: `#bs.move:on_collision/slide`).
+  *   - **`block_collision`**&nbsp;[bool]
+      - Whether the entity should collide with blocks (default: true).
+  *   - **`entity_collision`**&nbsp;[bool]
+      - Whether the entity should collide with entities (default: false).
+  *   - **`ignored_blocks`**&nbsp;[string]
+      - Blocks to ignore (default: `#bs.hitbox:intangible`).
+  *   - **`solid_entities`**&nbsp;[string]
+      - Tag for entities that will be checked (default: `bs.move.is_solid`).
+  :::
 
-    # In loop
-    execute as @e[type=boat] run function bs.move:by_local_vector
-    ```
+  **Macro Var `scale`**: Scalar for the function’s outputs.
 
-:::
+:Outputs:
+  **State**: Entity is teleported according to its velocity scores.
+```
+
 ::::
+::::{tab-item} Local
+
+```{function} #bs.move:tp_by_local_vel {scale:<scaling>}
+
+Teleport an entity by its velocity scores, using the local reference frame, while handling collisions.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to move.
+
+  **Scores `@s bs.vel.[x,y,z]`**: Local velocity vector.
+
+  **Scores `@s bs.[height,width]`**: Entity size (in miliblocks). Default to Minecraft size if not defined.
+
+  **Storage `bs:in move`**:
+  :::{list-table}
+  *   - **`on_collision`**&nbsp;[string]
+      - Function run on collision (default: `#bs.move:on_collision/slide`).
+  *   - **`block_collision`**&nbsp;[bool]
+      - Whether the entity should collide with blocks (default: true).
+  *   - **`entity_collision`**&nbsp;[bool]
+      - Whether the entity should collide with entities (default: false).
+  *   - **`ignored_blocks`**&nbsp;[string]
+      - Blocks to ignore (default: `#bs.hitbox:intangible`).
+  *   - **`solid_entities`**&nbsp;[string]
+      - Tag for entities that will be checked (default: `bs.move.is_solid`).
+  :::
+
+  **Macro Var `scale`**: Scalar for the function’s outputs.
+
+:Outputs:
+  **State**: Entity is teleported according to its local velocity scores.
+```
+
+::::
+:::::
+
+*Move a cube (block_display) by its velocity scores:*
+
+```mcfunction
+# Once
+summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f]}
+scoreboard players set @e[type=minecraft:block_display] bs.vel.x 100
+scoreboard players set @e[type=minecraft:block_display] bs.vel.y 20
+scoreboard players set @e[type=minecraft:block_display] bs.vel.z 50
+scoreboard players set @e[type=minecraft:block_display] bs.width 1000
+scoreboard players set @e[type=minecraft:block_display] bs.height 1000
+
+# In a loop
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001}
+
+# Choose between multiple collision behaviors
+data modify storage bs:in move.on_collision set value "#bs.move:on_collision/bounce"
+data modify storage bs:in move.on_collision set value "#bs.move:on_collision/damped_bounce"
+data modify storage bs:in move.on_collision set value "#bs.move:on_collision/slide"
+data modify storage bs:in move.on_collision set value "#bs.move:on_collision/stick"
+```
 
 ```{admonition} Performance tip
 :class: tip
 
-The system does not include any speed limit. However, the
-resources consumed by this function are proportional to the number
-of blocks/tick at which the entity moves.
+Although this system doesn't set specific limits, it's important to note that performance is influenced by both the speed and size of the entity.
 ```
 
-> **Credits**: Leirof
+> **Credits**: Aksiome
 
 ---
 
-### Move forward
+## 🎓 Custom collisions
 
-`forward`: Allows to move the entity according to the direction
-towards which it looks and its vector `bs.vector.z`
+This module allows you to customize collision behaviors according to your specific needs.
 
-* A vector of 1000 on an axis will cause a movement of one block at each execution of the function.
-* The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-* * The system takes as input the 3 scores `bs.vector[Left,Up,Front]` (1000 <=> 1 block).
+---
 
-:::{warning}
-The system does not include any speed limit. However, the
-resources consumed by this function are proportional to the number
-of blocks/tick at which the entity moves.
+By modifying the `bs:in move.on_collision` storage, you have the freedom to specify the function that triggers upon collision. However, managing the resolution yourself can be quite challenging. This is why Bookshelf provides several predefined functions:
+
+:::{list-table}
+  *   - `#bs.move:on_collision/bounce`
+      - The entity will bounce on the collision surface.
+  *   - `#bs.move:on_collision/damped_bounce`
+      - The entity speed is reduced by 2 on each bounce.
+  *   - `#bs.move:on_collision/slide`
+      - The entity will stick and slide along the collision surface.
+  *   - `#bs.move:on_collision/stick`
+      - The entity will stop and stick to the collision surface.
 :::
 
-*Example:*
+### How it works?
 
--   Apply a movement of 0.3 blocks per tick forward to all boats:
+The simplest collision resolution is to stop the movement.
 
-    ```
-    # Once
-    scoreboard players set @e[type=boat] bs.vector.z 300
-
-    # In a loop
-    execute as @e[type=boat] run function bs.move:forward
-    ```
-
-> **Credits**: Leirof
-
---- 
-
-### Find a path "as to at"
-
-`pathfind_ata`: Allows to determine a path between the position of the
-source entity and the execution position of the function.
-
-* By default, the function will make 500 tests (defined via the `bs.in.1` score). This limit allow to avoid the function taking too many ressources if the path is too complexe or impossible to find.
-* The behavior is defined by the variable `bs.in.3` which, by default is 0, corresponding to a behavior of a zombie, creeper, skeleton or a player (terrestrial entity of size 1*2*1).
-   * When it is set to 1, the behavior will be similar to a bat.
-   * You can create your own behaviors at any time in the `pathfind/config/` folder and link them in the `main.mcfunction` file in the same folder.
-* The path is then defined by a succession of armor_stand with the tag "Glib_Pathfind_Rewind" and "Glib_Pathfind".
-
-*Example:*
-
--   Find the path to the nearest armor_stand:
-
-    ```
-    # Once
-    execute at @e[type=minecraft:armor_stand,limit=1,sort=nearest] run function bs.move:pathfind_ata
-    ```
-
-```{button-link} https://youtu.be/xeLjHIQ0s1Q
-:color: primary
-:align: center
-:shadow:
-
-{octicon}`device-camera-video` Watch the video
+*`#bs.move:on_collision/stick`*
+```mcfunction
+# set all components to 0 to cancel the movement
+scoreboard players set @s bs.vel.x 0
+scoreboard players set @s bs.vel.y 0
+scoreboard players set @s bs.vel.z 0
 ```
 
-> **Credits**: Leirof
+For sliding, we need to cancel the velocity on the axis that was hit and continue traveling the remaining distance.
+
+*`#bs.move:on_collision/slide`*
+```mcfunction
+# get a vector that represent the remaining distance to travel
+execute store result storage bs:ctx x double .001 run scoreboard players get $move.vel_remaining.x bs.out
+execute store result storage bs:ctx y double .001 run scoreboard players get $move.vel_remaining.y bs.out
+execute store result storage bs:ctx z double .001 run scoreboard players get $move.vel_remaining.z bs.out
+
+# set a component to 0 depending on the surface that was hit
+execute if score $move.hit_face bs.out matches 4..5 store result storage bs:ctx x double .001 run scoreboard players set @s bs.vel.x 0
+execute if score $move.hit_face bs.out matches 0..1 store result storage bs:ctx y double .001 run scoreboard players set @s bs.vel.y 0
+execute if score $move.hit_face bs.out matches 2..3 store result storage bs:ctx z double .001 run scoreboard players set @s bs.vel.z 0
+
+# travel the remaining distance
+execute at @s run function #bs.move:on_collision/continue with storage bs:ctx
+```
+
+To simplify the creation of these behaviors, there's no need to handle a local velocity directly. The vector is automatically converted before and after the collision resolution. If you need help with custom collisions, you can ask us on our [discord server](https://discord.gg/E8qq6tN)!
 
 ---
 
-### Convert vector to motion
-
-`vector_to_motion`: Allows to move the entity according to its vector
-through a motion (motion system integrated in the game).
-
-* A vector of 1000 on an axis will move a block at each tick of the game.
-* The sum of the movements on each axis will give a movement in space (thus in 3 dimensions), corresponding to the global vector of the entity.
-
-:::{note}
-This system admits a speed limit corresponding to that of the
-Motions. Moreover, the entity will have by default a collision
-system preventing it from crossing blocks. Moreover, adding Marker,
-NoAI, NoGravity tags can block this system. Collisions are
-integrated in this system but are not very reliable and therefore
-not recommended. Only activated when the entity has a Collision
-score greater than 1 (each value corresponds to a type of
-collision). You can modify the collision reactions or create your
-own in the `by_vector/config/collision/` folder. By default, the
-precision of the collisions, stored on the Var5 score, is 500 (= 0,5
-blocks).
-:::
-
-> **Credits**: Leirof
-
----
-
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

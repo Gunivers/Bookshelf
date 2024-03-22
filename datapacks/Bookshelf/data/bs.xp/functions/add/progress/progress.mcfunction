@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
-# Authors: Leirof, Aksiome
+# Authors: Aksiome, Leirof
 # Contributors:
 
-# Version: 2.0
+# Version: 2.1
 # Created: ??/??/???? (1.18.2)
-# Last modification: 28/08/2023 (23w33a)
+# Last modification: 08/03/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#add-remove
 # Dependencies:
@@ -14,7 +14,13 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute unless score #xp.use_macro bs.data matches 1 store success score #xp.score_changed bs.data unless score #xp.add_progress.check bs.data = $xp.add_progress.progress bs.in
-execute unless score #xp.use_macro bs.data matches 1 if score #xp.score_changed bs.data matches 1 store result storage bs:in xp.add_progress.progress int 1 run scoreboard players operation #xp.add_progress.check bs.data = $xp.add_progress.progress bs.in
-execute unless score #xp.use_macro bs.data matches 1 run function bs.xp:add/progress/macro with storage bs:in xp.add_progress
-scoreboard players reset #xp.use_macro bs.data
+# level 111111129 => max_points = 1000000002
+$execute store result storage bs:ctx x int 1 store result score #xp.add_progress bs.data run data get storage bs:const xp.progress $(progress)
+execute store result storage bs:ctx y int 1 run xp query @s levels
+xp set @s 111111129 levels
+execute store result score #xp.add_progress.points bs.data run xp query @s points
+scoreboard players operation #xp.add_progress bs.data += #xp.add_progress.points bs.data
+execute if score #xp.add_progress bs.data matches ..0 run xp set @s 0 points
+execute if score #xp.add_progress bs.data matches 1000000000.. run xp set @s 1000000000 points
+execute if score #xp.add_progress bs.data matches 1..999999999 run function bs.xp:add/progress/apply with storage bs:ctx
+function bs.xp:utils/restore_levels with storage bs:ctx

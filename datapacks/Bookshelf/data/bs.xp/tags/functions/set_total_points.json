@@ -1,6 +1,5 @@
 {
   "values": [
-    "bs.xp:set/total_points/macro",
-    "bs.xp:set/total_points/total_points"
+    "bs.xp:set/total_points"
   ]
 }

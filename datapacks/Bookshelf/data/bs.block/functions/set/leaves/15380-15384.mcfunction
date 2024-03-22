@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 15380 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=true,west=tall]
-execute if score @s bs.block.id matches 15381 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=false,west=none]
-execute if score @s bs.block.id matches 15382 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=false,west=low]
-execute if score @s bs.block.id matches 15383 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=low,south=tall,up=false,waterlogged=false,west=tall]
-execute if score @s bs.block.id matches 15384 run setblock ~ ~ ~ end_stone_brick_wall[east=none,north=tall,south=none,up=true,waterlogged=true,west=none]

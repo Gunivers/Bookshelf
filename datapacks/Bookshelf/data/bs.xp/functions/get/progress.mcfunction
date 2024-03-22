@@ -1,12 +1,12 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
-# Authors: Leirof, Aksiome
+# Authors: Aksiome, Leirof
 # Contributors:
 
-# Version: 2.0
+# Version: 2.1
 # Created: ??/??/???? (1.18.2)
-# Last modification: 28/08/2023 (23w33a)
+# Last modification: 08/03/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#get
 # Dependencies:
@@ -14,10 +14,4 @@
 
 # CODE ------------------------------------------------------------------------
 
-# level 1111129 => max_points = 10000003
-execute store result storage bs:data xp.get_progress.levels int 1 run xp query @s levels
-xp set @s 1111129 levels
-execute store result score $xp.get_progress bs.out run xp query @s points
-function bs.xp:set/levels/macro with storage bs:data xp.get_progress
-scoreboard players reset #xp.use_macro bs.data
-scoreboard players operation $xp.get_progress bs.out /= 100 bs.const
+$execute store result score $xp.get_progress bs.out run return run data get entity @s XpP $(scale)

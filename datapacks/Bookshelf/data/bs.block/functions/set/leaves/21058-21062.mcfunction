@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 21058 run setblock ~ ~ ~ deepslate_brick_stairs[facing=west,half=top,shape=inner_left,waterlogged=false]
-execute if score @s bs.block.id matches 21059 run setblock ~ ~ ~ deepslate_brick_stairs[facing=west,half=top,shape=inner_right,waterlogged=true]
-execute if score @s bs.block.id matches 21060 run setblock ~ ~ ~ deepslate_brick_stairs[facing=west,half=top,shape=inner_right,waterlogged=false]
-execute if score @s bs.block.id matches 21061 run setblock ~ ~ ~ deepslate_brick_stairs[facing=west,half=top,shape=outer_left,waterlogged=true]
-execute if score @s bs.block.id matches 21062 run setblock ~ ~ ~ deepslate_brick_stairs[facing=west,half=top,shape=outer_left,waterlogged=false]

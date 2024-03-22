@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 7466 run setblock ~ ~ ~ dropper[facing=east,triggered=true]
-execute if score @s bs.block.id matches 7467 run setblock ~ ~ ~ dropper[facing=east,triggered=false]
-execute if score @s bs.block.id matches 7468 run setblock ~ ~ ~ dropper[facing=south,triggered=true]
-execute if score @s bs.block.id matches 7469 run setblock ~ ~ ~ dropper[facing=south,triggered=false]
-execute if score @s bs.block.id matches 7470 run setblock ~ ~ ~ dropper[facing=west,triggered=true]

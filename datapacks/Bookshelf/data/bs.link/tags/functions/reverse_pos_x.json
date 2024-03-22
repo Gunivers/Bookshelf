@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#bs.link:behaviors/setup",
+    "#bs.link:behaviors/reverse_pos_x",
+    "#bs.link:behaviors/apply"
+  ]
+}

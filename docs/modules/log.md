@@ -1,241 +1,168 @@
 # 📄 Log
 
-**`#bs.log:_`**
+**`#bs.log:help`**
 
-## 👶 First steps
-
-Bookshelf proposes facilities to log messages in the chat.
-There are different logs levels to use according to the type of log:
-1. Debug
-2. Information
-3. Warning
-4. Error
-
-(granularity-log)=
-Manage the log granularity
-
-:   A lot of logs in their code can flood the chat.
-    To avoid that, the log module of Bookshelf can be configure to display only specific logs according to two parameters: the log level and the feature.
-    To do that, the user wishing to display these specific logs need to give themselves tags with the following syntax: `bs.log.<module>.<feature>.<level>` where level is among `debug`, `info`, `warn` and `error`.
-
-    Each log level enables the visualisation of the next levels.
-    For instance, if a user give themselves a tag finishing by `warn`, they can visualize logs of `warn` and `error` levels.
-
-    The tags `bs.log._.<level>` enables the display of all logs regardless of the feature.
-    The tags `bs.log.<module>.<feature>._` enables the display of all logs regardless of the level (equivalent to `bs.log.<module>.<feature>.debug`).
-    The tag `bs.log._._` enables the display of all logs.
-
-    By default, the logs are not displayed to any user.
-
-(customize-log)=
-Customize the log message
-
-:   The log functions take three variables as input:
-    - The `path` (type: string) of the current function.
-    This variable follows the minecraft path format.
-    - The logged `feature` (type: string).
-    This variable is used in the tag and follows the following syntax: `<module without 'bs.'>.<feature>`.
-    - The log content `message` (type: string).
-    This variable is any valid JSON text component usable in a tellraw.
-    Several JSON text components can be specified by joining them with a comma `,`.
-    Note: To specify a plain string text as message, the message needs to have escaped quotes.
-    For instance: `"\"message\""` or `'"message"'`.
-
-Examples
-
-:   The following function called `bs.foo:bar`:
-
-    ```
-    function #bs.log:warn { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
-    ```
-
-    Will display the following message if the user has one of these tags `bs.log.foo.bar.warn`, `bs.log.foo.bar.info`, `bs.log.foo.bar.debug`, `bs.log._.warn`, `bs.log._.info`, `bs.log._.debug`, `bs.log._._`, `bs.log.foo.bar._`:
-
-    ![](img/log_example_1.png)
-
-    The following function called `bs.foo:baz`:
-
-    ```
-    function #bs.log:info { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
-    ```
-
-    Will display the following message if the user has one of these tags `bs.log.foo.baz.info`, `bs.log.foo.baz.debug`, `bs.log._.info`, `bs.log._.debug`, `bs.log.foo.baz._`:
-
-    ![](img/log_example_2.png)
+Log messages in the chat with varying levels of severity.
 
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Debug
+::::{tab-set}
+:::{tab-item} Error
+```{function} #bs.log:error
 
-**`#bs.log:debug`**
+Log a message as an error. For more information on how it works see the [usage](#usage) section.
 
-Allows to log a message as a debug message.
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
 
-Inputs
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
 
-:   (macro variable) `path`: string
-    : The Minecraft path of the current function.
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
 
-    (macro variable) `feature`: string
-    : The logged feature.
-    Format: `<module>:<feature name>`.
-    Used in the tag as described in the [Customize log message](#customize-log) section.
+*Log an error message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Error"' }
+```
+:::
+:::{tab-item} Warning
+```{function} #bs.log:warn
 
-    (macro variable) `message`: string
-    : The log message.
-    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
+Log a message as a warning. For more information on how it works see the [usage](#usage) section.
 
-Examples
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
 
-:   Example with a simple raw text:
-    ```
-    function #bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
-    ```
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
 
-    Example with a complex JSON text components:
-    ```
-    function #bs.log:debug { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
-    ```
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log a warn message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Warning"' }
+```
+:::
+:::{tab-item} Information
+```{function} #bs.log:info
+
+Log a message as an information. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log an info message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"Info"' }
+```
+:::
+:::{tab-item} Debug
+```{function} #bs.log:debug
+
+Log a message as a debug. For more information on how it works see the [usage](#usage) section.
+
+:Inputs:
+  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
+
+  **Macro Var `feature` [string]**: Logged feature. Bookshelf format: `<module>.<feature name>`.
+
+  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+```
+
+*Log a debug message that originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"Debug"' }
+```
+:::
+::::
 
 > **Credits**: theogiraudet
 
 ---
 
-### Information
+(usage)=
+## 🎓 How to use?
 
-**`#bs.log:info`**
-
-Allows to log a message as an information message.
-
-Inputs
-
-:   (macro variable) `path`: string
-    : The Minecraft path of the current function.
-
-    (macro variable) `feature`: string
-    : The logged feature.
-    Format: `<module>:<feature name>`.
-    Used in the tag as described in the [Customize log message](#customize-log) section.
-
-    (macro variable) `message`: string
-    : The log message.
-    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
-
-Examples
-
-:   Example with a simple raw text:
-    ```
-    function #bs.log:info { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
-    ```
-
-    Example with a complex JSON text components:
-    ```
-    function #bs.log:info { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
-    ```
-
-> **Credits**: theogiraudet
+Different log levels are available for various types of logs:
+1. **Debug**: Detailed debug information.
+2. **Information**: Interesting / significant events.
+3. **Warning**: Exceptional occurrences that are not errors.
+4. **Error**: Runtime errors that should be monitored and fixed.
 
 ---
 
-### Warning
+### Manage granularity
 
-**`#bs.log:warn`**
+A significant number of logs can quickly flood the chat. To prevent this, Bookshelf's log module can be configured to display specific logs based on two parameters: the **log level** and the **feature**.
 
-Allows to log a message as a warning message.
+Users need to give themselves tags that follow a strict syntax: `bs.log.<feature>.<level>`, where the level can be `debug`, `info`, `warn`, or `error`. To avoid conflict, Bookshelf modules use a strict syntax for the feature: `<module without 'bs.'>.<feature>`.
 
-Inputs
+The `_` symbol acts as a wildcard, logging all features or all levels:
+- `bs.log._.<level>`: show all logs regardless of the feature.
+- `bs.log.<feature>._`: show all logs regardless of the level.
+- `bs.log._._`: show all logs.
 
-:   (macro variable) `path`: string
-    : The Minecraft path of the current function.
-
-    (macro variable) `feature`: string
-    : The logged feature.
-    Format: `<module>:<feature name>`.
-    Used in the tag as described in the [Customize log message](#customize-log) section.
-
-    (macro variable) `message`: string
-    : The log message.
-    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
-
-Examples
-
-:   Example with a simple raw text:
-    ```
-    function #bs.log:warn { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
-    ```
-
-    Example with a complex JSON text components:
-    ```
-    function #bs.log:warn { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
-    ```
-
-> **Credits**: theogiraudet
+```{note}
+Each level allows the visualization of subsequent levels. For example, if a user give themselves a tag ending with warn, they can visualize logs of warn and error levels. By default, logs are not displayed to any user.
+```
 
 ---
 
-### Error
+### Customize messages
 
-**`#bs.log:error`**
+Log functions take three variables as input. The `path` of the current function that inform users of the log origin, the `feature` used in the tag and the `message`.
 
-Allows to log a message as an error message.
+```{warning}
+The `message` string must be a valid JSON text component. Thus, to specify a plain string text as a message, the message needs to be escaped  (`"\"message\""` or `'"message"'`).
+```
 
-Inputs
+*Log a simple warning message. We assume the log originates from the `bs.foo:bar` function:*
+```mcfunction
+function #bs.log:warn { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
+```
+Will display the following message if the user has one of these tags:
+- `bs.log.foo.bar.warn`
+- `bs.log.foo.bar.info`
+- `bs.log.foo.bar.debug`
+- `bs.log._.warn`
+- `bs.log._.info`
+- `bs.log._.debug`
+- `bs.log._._`
+- `bs.log.foo.bar._`
 
-:   (macro variable) `path`: string
-    : The Minecraft path of the current function.
+![](/_imgs/modules/log/example-1.png)
 
-    (macro variable) `feature`: string
-    : The logged feature.
-    Format: `<module>:<feature name>`.
-    Used in the tag as described in the [Customize log message](#customize-log) section.
+*Log a complex info message. We assume the log originates from the `bs.foo:baz` function:*
+```mcfunction
+function #bs.log:info { path: "bs.foo:baz", feature: "foo.baz", message: '{"text":"Score: ","color":"light_purple"},{"score":{"name":"-1","objective":"bs.const"}},{"text":", "},{"text":"@p: ","color":"light_purple"},{"selector":"@p"},{"text":", "},{"text":"[hover me]","color":"light_purple","hoverEvent":{"action":"show_text","contents":"That tickles!"}}' }
+```
 
-    (macro variable) `message`: string
-    : The log message.
-    Format: valid JSON text component as described in [Manage the log granularity](#granularity-log) section.
+Will display the following message if the user has one of these tags:
+- `bs.log.foo.baz.info`
+- `bs.log.foo.baz.debug`
+- `bs.log._.info`
+- `bs.log._.debug`
+- `bs.log.foo.baz._`
 
-Examples
-
-:   Example with a simple raw text:
-    ```
-    function #bs.log:error { path: "bs.foo:bar", feature: "foo.bar", message: '"A warning message"' }
-    ```
-
-    Example with a complex JSON text components:
-    ```
-    function #bs.log:error { path: "bs.foo:baz", feature: "foo.baz", message: '{"text": "Score: ","color": "light_purple"}, {"score": {"name": "@p", "objective": "bs.in.0"}}, {"text": ", "},{"text": "@p: ", "color": "light_purple"}, {"selector": "@p"}, {"text": ", hoverevent", "hoverEvent": {"action": "show_text", "contents": "Hi!"}}' }
-    ```
-
-> **Credits**: theogiraudet
+![](/_imgs/modules/log/example-2.png)
 
 ---
 
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

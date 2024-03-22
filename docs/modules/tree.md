@@ -1,14 +1,14 @@
 # 🌳 Tree
 
-`bs.tree:_`
+**`#bs.tree:help`**
 
-A bank of trees. As simple as useful.
+Simplicity meets utility in this bank of trees.
 
 ---
 
 ## 🗿 Structures
 
-You can find below all the structures available in this module.
+You can find below all structures available in this module.
 
 ---
 
@@ -18,7 +18,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/birch_1.png
+```{image} /_imgs/modules/tree/birch_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -32,7 +32,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/birch_2.png
+```{image} /_imgs/modules/tree/birch_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -46,7 +46,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/birch_3.png
+```{image} /_imgs/modules/tree/birch_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -60,7 +60,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/birch_4.png
+```{image} /_imgs/modules/tree/birch_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -74,7 +74,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/birch_5.png
+```{image} /_imgs/modules/tree/birch_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -96,7 +96,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/cypress_1.png
+```{image} /_imgs/modules/tree/cypress_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -110,7 +110,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/cypress_2.png
+```{image} /_imgs/modules/tree/cypress_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -124,7 +124,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/cypress_3.png
+```{image} /_imgs/modules/tree/cypress_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -138,7 +138,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/cypress_4.png
+```{image} /_imgs/modules/tree/cypress_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -152,7 +152,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/cypress_5.png
+```{image} /_imgs/modules/tree/cypress_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -175,7 +175,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/dark_oak_1.png
+```{image} /_imgs/modules/tree/dark_oak_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -189,7 +189,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dark_oak_2.png
+```{image} /_imgs/modules/tree/dark_oak_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -203,7 +203,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dark_oak_3.png
+```{image} /_imgs/modules/tree/dark_oak_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -217,7 +217,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dark_oak_4.png
+```{image} /_imgs/modules/tree/dark_oak_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -231,7 +231,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dark_oak_5.png
+```{image} /_imgs/modules/tree/dark_oak_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -254,7 +254,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/dead_spruce_1.png
+```{image} /_imgs/modules/tree/dead_spruce_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -268,7 +268,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dead_spruce_2.png
+```{image} /_imgs/modules/tree/dead_spruce_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -282,7 +282,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dead_spruce_3.png
+```{image} /_imgs/modules/tree/dead_spruce_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -296,7 +296,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dead_spruce_4.png
+```{image} /_imgs/modules/tree/dead_spruce_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -310,7 +310,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/dead_spruce_5.png
+```{image} /_imgs/modules/tree/dead_spruce_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -333,7 +333,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/exotic_1.png
+```{image} /_imgs/modules/tree/exotic_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -347,7 +347,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/exotic_2.png
+```{image} /_imgs/modules/tree/exotic_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -361,7 +361,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/exotic_3.png
+```{image} /_imgs/modules/tree/exotic_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -375,7 +375,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/exotic_4.png
+```{image} /_imgs/modules/tree/exotic_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -389,7 +389,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/exotic_5.png
+```{image} /_imgs/modules/tree/exotic_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -412,7 +412,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/fir_1.png
+```{image} /_imgs/modules/tree/fir_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -426,7 +426,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/fir_2.png
+```{image} /_imgs/modules/tree/fir_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -440,7 +440,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/fir_3.png
+```{image} /_imgs/modules/tree/fir_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -454,7 +454,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/fir_4.png
+```{image} /_imgs/modules/tree/fir_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -468,7 +468,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/fir_5.png
+```{image} /_imgs/modules/tree/fir_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -491,7 +491,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/jungle_1.png
+```{image} /_imgs/modules/tree/jungle_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -505,7 +505,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/jungle_2.png
+```{image} /_imgs/modules/tree/jungle_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -519,7 +519,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/jungle_3.png
+```{image} /_imgs/modules/tree/jungle_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -533,7 +533,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/jungle_4.png
+```{image} /_imgs/modules/tree/jungle_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -547,7 +547,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/jungle_5.png
+```{image} /_imgs/modules/tree/jungle_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -570,7 +570,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/mushroom_1.png
+```{image} /_imgs/modules/tree/mushroom_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -584,7 +584,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/mushroom_2.png
+```{image} /_imgs/modules/tree/mushroom_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -598,7 +598,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/mushroom_3.png
+```{image} /_imgs/modules/tree/mushroom_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -612,7 +612,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/mushroom_4.png
+```{image} /_imgs/modules/tree/mushroom_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -626,7 +626,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/mushroom_5.png
+```{image} /_imgs/modules/tree/mushroom_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -649,7 +649,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/oak_1.png
+```{image} /_imgs/modules/tree/oak_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -663,7 +663,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/oak_2.png
+```{image} /_imgs/modules/tree/oak_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -677,7 +677,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/oak_3.png
+```{image} /_imgs/modules/tree/oak_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -691,7 +691,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/oak_4.png
+```{image} /_imgs/modules/tree/oak_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -705,7 +705,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/oak_5.png
+```{image} /_imgs/modules/tree/oak_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -728,7 +728,7 @@ You can find below all the structures available in this module.
 
 :::{grid-item}
 
-```{image} img/palm_1.png
+```{image} /_imgs/modules/tree/palm_1.png
 :class: dark-light p-2
 :align: center
 ```
@@ -742,7 +742,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/palm_2.png
+```{image} /_imgs/modules/tree/palm_2.png
 :class: dark-light p-2
 :align: center
 ```
@@ -756,7 +756,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/palm_3.png
+```{image} /_imgs/modules/tree/palm_3.png
 :class: dark-light p-2
 :align: center
 ```
@@ -770,7 +770,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/palm_4.png
+```{image} /_imgs/modules/tree/palm_4.png
 :class: dark-light p-2
 :align: center
 ```
@@ -784,7 +784,7 @@ You can find below all the structures available in this module.
 :::
 :::{grid-item}
 
-```{image} img/palm_5.png
+```{image} /_imgs/modules/tree/palm_5.png
 :class: dark-light p-2
 :align: center
 ```
@@ -796,5 +796,14 @@ You can find below all the structures available in this module.
 </div>
 
 :::
-
 ::::
+
+---
+
+<div id="gs-comments" align=center>
+
+**💬 Did it help you?**
+
+Feel free to leave your questions and feedbacks below!
+
+</div>

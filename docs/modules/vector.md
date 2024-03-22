@@ -1,15 +1,18 @@
-# ↗️ Vector
+# ➡️ Vector
 
-**`bs.vector:_`**
+**`#bs.vector:help`**
 
-Vector are fundamental and extremly powerfull tool to manage motions, forces and.. well... do physics!
+Vectors are fundamental and incredibly powerful tools to manage motions, forces and.. well... do physics!
 
-<div align=center>
+```{image} /_imgs/modules/vector-light.png
+:align: center
+:class: only-light
+```
 
-![](img/2023-01-27-23-43-58.png)
-
-</div>
-
+```{image} /_imgs/modules/vector-dark.png
+:align: center
+:class: only-dark
+```
 
 
 ```{button-link} https://www.youtube.com/watch?v=IzASD7R80vQ
@@ -31,217 +34,264 @@ Vector are fundamental and extremly powerfull tool to manage motions, forces and
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
-### Get
+### Basis rotation 3D
 
-::::{tab-set}
-:::{tab-item} From orientation
+```{function} #bs.vector:basis_rot_3d {scaling:<value>}
 
-**`bs.vector:get_from_orientation`**
+Get the equivalent of the vector passed in parameter in a base with a different rotation. Useful to convert absolute/relative positions into local positions.
 
-Compute the displacement vector of the entity according to its orientation. This vector is composed of 3 elementary vectors stored on the scores `bs.vector.[x,y,z]` (each between -1000 and 1000).
+:Inputs:
+  **Scores `$vector.basis_rot_3d.pos.[0,1,2] bs.in`**: Vector coordinates $=(X,Y,Z)$ in the starting base.
 
-Inputs
+  **Scores `$vector.basis_rot_3d.rot.[0,1] bs.in`**: Horizontal angle $=\phi$ (along $=\hat{y}$) and vertical angle $=\theta$ (along $=\hat{\phi}$) rotation (in degree) from the starting base.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be computed
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-Outputs
-
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
-
-Example
-
-:   Create, for each Creeper, a vector from their respective orientation
-
-    ```
-    # Once
-    execute as @e[type=creeper] run function bs.vector:get_from_orientation
-    ```
-
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.location`](location)
-- [`bs.orientation`](orientation)
+:Outputs:
+  **Scores `$vector.basis_rot_3d.[0,1,2] bs.out`**: Vector coordinates $=(X',Y',Z')$ in the target base.
 ```
 
-> **Credits**: Leirof
+```{admonition} Basis system
+:class: info
 
-:::
-:::{tab-item} From Motion
+This system uses the Minecraft coordinate system. Thus:
+- $\hat{y}$ is the vertical axis.
+- $\phi=0$ (starting point of the horizontal angle) is along the $\hat{z}$ axis.
+- $\theta=0$ (starting point of the vertical angle) is on the horizontal plane.
+```
 
-**`bs.vector:get_from_motion`**
+*A block is in ~2 ~5 ~10 from me, I want to have this position in local coordinate (^? ^? ^?):*
 
-Compute the displacement vector of the entity according to its motion. This vector is composed of 3 elementary vectors stored on the scores `bs.vector.[x,y,z]`.
+```mcfunction
+# One time
 
-Inputs
+# Relative coordinates (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 2000
+scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 5000
+scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 10000
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be get
+# Difference between my rotation (= that of the coondata grid ^X ^Y ^Z) and the rotation of the Minecraft blocks grid (~X ~Y ~Z)
+function #bs.position:get_rot {scale:1000}
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
 
-Outputs
+# Perform the basic rotation
+function #bs.vector:basis_rot_3d {scaling:1000}
 
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
+# See the result
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
+```
 
-Example
+*I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library):*
 
-:   Get the motion vector of every bats
+```mcfunction
+# Once
 
-    ```
-    # Once
-    execute as @e[type=bat] run function bs.vector:get_from_motion
-    ```
+# Retrieve a vector ^ ^ ^1 corresponding to a vector directed according to the orientation of the entity (we multiply by 1000 to have more precision on the result, which will also be multiplied by 1000)
+scoreboard players set $vector.basis_rot_3d.pos.0 bs.in 0
+scoreboard players set $vector.basis_rot_3d.pos.1 bs.in 0
+scoreboard players set $vector.basis_rot_3d.pos.2 bs.in 1000
 
-```{admonition} Dependencies
+# Get the orientation
+function #bs.position:get_rot {scale:1000}
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in = @s bs.rot.h
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in = @s bs.rot.v
+
+# Reversal of the orientation since we want to have the relative orientation of the game grid compared to the orientation of the player (unlike the previous example)
+scoreboard players operation $vector.basis_rot_3d.rot.0 bs.in *= -1 bs.const
+scoreboard players operation $vector.basis_rot_3d.rot.1 bs.in *= -1 bs.const
+
+# Perform the basic rotation
+function #bs.vector:basis_rot_3d {scaling:1000}
+
+# See the result
+tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
+```
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Cartesian to spherical
+
+```{function} #bs.vector:cartesian_to_spherical {scaling:<value>}
+
+Convert cartesian coordinates to spherical coordinates.
+
+:Inputs:
+  **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.in`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
+
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+
+:Outputs:
+  **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.out`**: Vector representing the spherical coordinates $=(H,V,R)$.
+```
+
+```{admonition} Spherical coordinates
 :class: warning
 
-Player's motion doesn't take in account movements induced by the user controls. It only take in account movement induced by external forces (like gravity, explosions, etc...).
-
+This system returns non conventional shperical coordinates.
+- $H$ (horizontal angle) is along the $\hat{z}$ axis.
+- $V$ (vertical angle) is on the horizontal plane.
+- $R$ is the radial distance.
 ```
 
-> **Credits**: Leirof
+> **Credits**: Aksiome
 
-:::
-:::{tab-item} As to at
+---
 
-**`bs.vector:get_ata`**
+### Cross product
 
-Compute a vector from the source entity to the execution position of the function.
+```{function} #bs.vector:cross_product {scaling:<value>}
 
-Inputs
+Compute the vector product between $u$ and $v$.
 
-:   (execution) `as <entities>`
-    : The entities for which a vector will be computed, taking there own position as origin
+:Inputs:
+  **Scores `$vector.cross_product.u.[0,1,2] bs.in`**: First vector components.
 
-    (execution) `at <entities>` or `positioned <x> <y> <z>`
-    : The position of the destination (must be unique)
+  **Scores `$vector.cross_product.v.[0,1,2] bs.in`**: Second vector components.
 
-Outputs
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
-
-Example
-
-:   Create a vector that connects you to the nearest skeleton:
-
-    ```
-    # Once
-    execute as @s at @e[type=skeleton] run function bs.vector:get_ata
-    ```
-
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.location`](location)
+:Outputs:
+  **Scores `$vector.cross_product.[0,1,2] bs.out`**: Result of the operation $=u \times v$.
 ```
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Majoras16
 
-::::
+---
 
-### Get length
+### Dot product
+
+```{function} #bs.vector:dot_product {scaling:<value>}
+
+Compute the scalar product between $u$ and $v$.
+
+:Inputs:
+  **Scores `$vector.dot_product.u.[0,1,2] bs.in`**: First vector components.
+
+  **Scores `$vector.dot_product.v.[0,1,2] bs.in`**: Second vector components.
+
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+
+:Outputs:
+  **Scores `$vector.dot_product bs.out`**: Result of the operation $=u · v$.
+```
+
+> **Credits**: Aksiome, Majoras16
+
+---
+
+### Length
 
 ::::{tab-set}
 :::{tab-item} Length
 
-**`bs.vector:length`**
+```{function} #bs.vector:length
 
-Compute the norm of the vector
+Compute the norm of the vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.length.[0,1,2] bs.in`**: Vector components.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be computed
+:Outputs:
+  **Return | Score `$vector.length bs.out`**: Vector length.
+```
 
-    (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
+*Compute the length of a vector:*
 
-Outputs
+```mcfunction
+scoreboard players set $vector.length.0 bs.in 1000
+scoreboard players set $vector.length.1 bs.in 2000
+scoreboard players set $vector.length.2 bs.in 3000
 
-:   (score) `@s bs.out.0`
-    : The vector length
+function #bs.vector:length
 
-Example
-
-:   Compute the length of a vector you defined on yourself
-
-    ```
-    # Once
-    scoreboard players set @s bs.vector.x 1000
-    scoreboard players set @s bs.vector.y 2000
-    scoreboard players set @s bs.vector.z 3000
-
-    execute as @s run function bs.vector:lenght
-
-    # Display the result
-    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"}}]
-    ```
+# Display the result
+tellraw @a [{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"$vector.length","objective":"bs.out"}}]
+```
 
 ```{admonition} Performance tip
 :class: tip
 
-If you want to minimize the performance impact, we recomande you to use the `lenght_squared` function instead of this one when it's possible. In fact, computing the lenght of a vector require to perform square root operation which is not a simple task for a computer, especially in Minecraft.
+If you want to minimize the performance impact, we recomande you to use the `length_squared` function instead of this one when it's possible. In fact, computing the length of a vector require to perform square root operation which is not a simple task for a computer, especially in Minecraft.
 
-`lenght_squared` can often be used in the following cases:
-- You want to compare the length with a given one, then compute manually the square of the given value and compare it with the result of `lenght_squared`, which is faster than computing the real length.
-- You want to compare a vector length with another one, then you can compare the result of `lenght_squared` instead of computing the real length of both vectors.
+`length_squared` can often be used in the following cases:
+- You want to compare the length with a given one, then compute manually the square of the given value and compare it with the result of `length_squared`, which is faster than computing the real length.
+- You want to compare a vector length with another one, then you can compare the result of `length_squared` instead of computing the real length of both vectors.
 ```
 
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.math`](math)
-```
 :::
 :::{tab-item} Length squared
 
-**`bs.vector:lenght_squared`**
+```{function} #bs.vector:length_squared {scaling:<value>}
 
-Compute the norm of the squared vector and store it on the score `bs.out.0`.
+Compute the squared norm of the vector.
 
-Inputs
+:Inputs:
+  **Scores `$vector.length_squared.[0,1,2] bs.in`**: Vector components.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be computed
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-    (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
+:Outputs:
+  **Return | Score `$vector.length_squared bs.out`**: Vector length squared.
+```
 
-Outputs
+*Compute the squared length of a vector:*
 
-:   (score) `@s bs.out.0`
-    : The vector length squared
+```mcfunction
+scoreboard players set $vector.length_squared.0 bs.in 1000
+scoreboard players set $vector.length_squared.1 bs.in 2000
+scoreboard players set $vector.length_squared.2 bs.in 3000
 
-Example
+function #bs.vector:length_squared
 
-:   Compute the length squared of a vector you defined on yourself
-
-    ```
-    # Once
-    scoreboard players set @s bs.vector.x 1000
-    scoreboard players set @s bs.vector.y 2000
-    scoreboard players set @s bs.vector.z 3000
-
-    execute as @s run function bs.vector:lenght_squared
-
-    # Display the result
-    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.out.0"}}]
-    ```
+# Display the result
+tellraw @a [{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"$vector.length_squared","objective":"bs.out"}}]
+```
 
 :::
 ::::
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Max
+
+```{function} #bs.vector:max
+
+Get the max component of a vector.
+
+:Inputs:
+  **Scores `$vector.max.[0,1,2] bs.in`**: Vector components.
+
+:Outputs:
+  **Return | Score `$vector.max bs.out`**: Component with the value furthest from 0.
+```
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Min
+
+```{function} #bs.vector:min
+
+Get the min component of a vector.
+
+:Inputs:
+  **Scores `$vector.min.[0,1,2] bs.in`**: Vector components.
+
+:Outputs:
+  **Return | Score `$vector.min bs.out`**: Component with the value closest to 0.
+```
+
+> **Credits**: Aksiome
 
 ---
 
@@ -250,152 +300,82 @@ Example
 ::::{tab-set}
 :::{tab-item} Classic
 
-**`bs.vector:normalize`**
+```{function} #bs.vector:normalize {scale:<scaling>}
 
-Allows to normalize the components of the vector by putting the length at 1000 (=1 but shited by 3 digits) while respecting the proportions linking these components.
+Normalize the vector by putting the length at the given scale while keeping proportions.
 
-Inputs
+:Inputs:
+  **Scores `$vector.normalize.[0,1,2] bs.in`**: Vector components.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be normalized
+  **Macro Var `scale` [number]**: Scalar for the function’s output.
 
-    (scores) `@s bs.vector.[x,y,z]`
-    : The initial vector ($V_i$) components
-
-    ```{admonition} Config
-    :class: dropdown
-
-    You can configure the length of normalization (which is 1000 by default) by setting the score `vector.normalize.length bs.data` score to the desired value and giving the tag `bs.config.override` to the entity executing the function. Be careful, without this tag, the config score will be reseted to the default value.
-    ```
-
-Option
-
-:   (score) `@s bs.opt.0` (default: 1000)
-    : The length of the normalized vector shifted by 3 digits
-
-Outputs
-
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The normalized vector ($V_n$) components
-
-    (score) `@s bs.out.0`
-    : The normalisation factor $A$ ($V_i = A \times V_n$) shifted by 3 digits
+:Outputs:
+  **Scores `$vector.normalize.[0,1,2] bs.out`**: Normalized vector components.
+```
 
 ```{admonition} Performance tip
 :class: tip
 
-Normalization of vector doesn't often need to be accurate, so you can try first to use the `fast_normalize` function instead of this one. It is less accurate, but it avoid the square root computation so it is faster.
-```
-
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.math`](math)
+Normalization of vector doesn't often need to be accurate, so you can try first to use the `fast_normalize` function instead of this one. It is less accurate, but it avoid some operations and is faster.
 ```
 
 :::
 :::{tab-item} Fast
 
-**`bs.vector:fast_normalize`**
+```{function} #bs.vector:fast_normalize {scale:<scaling>}
 
-Allows to normalize the components of the vector by placing the largest component at 1000 (=1 but shited by 3 digits) while respecting the proportions linking these components.
+Normalize the vector by placing the largest component at the given scale while keeping proportions.
 
-Inputs
+:Inputs:
+  **Scores `$vector.fast_normalize.[0,1,2] bs.in`**: Vector components.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be normalized
+  **Macro Var `scale` [number]**: Scalar for the function’s output.
 
-    (scores) `@s bs.vector.[x,y,z]`
-    : The vector components
+:Outputs:
+  **Scores `$vector.fast_normalize.[0,1,2] bs.out`**: Normalized vector components.
 
-Option
-
-:   (score) `@s bs.opt.0` (default: 1000)
-    : The length of the normalized vector shifted by 3 digits
-
-Outputs
-
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The normalized vector components
-
-    (score) `@s bs.out.0`
-    : The normalisation factor $A$ ($V_i = A \times V_n$) shifted by 3 digits
+  **Score `$vector.fast_normalize.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
+```
 
 :::
 ::::
 
-> **Credits**: Leirof
+> **Credits**: Aksiome, Leirof
 
 ---
 
-### Convert canonical to local vector
+### Spherical to cartesian
 
-**`bs.vector:canonical_to_local`**
+```{function} #bs.vector:spherical_to_cartesian {scaling:<value>}
 
-Allows to convert a "normal" vector (using the relative reference frame) into local coordinates (using the local reference frame)
+Convert spherical coordinates to cartesian coordinates.
 
+:Inputs:
+  **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.in`**: Vector representing the spherical coordinates $=(H,V,R)$.
 
-Inputs
+  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
 
-:   (execution) `as <entities>`
-    : The entities for which the vector will be transformed
-
-    (scores) `@s bs.vector.[x,y,z]`
-    : The canonical vector components
-
-Outputs
-
-:   (scores) `@s bs.vector.[x,y,z]`
-    : The local vector components
-
-Example
-
-:   Find the local vector corresponding to the vector X=1000, Y=0, Z=0
-
-    ```
-    # Once
-    scoreboard players set @s bs.vector.x 1000
-    scoreboard players set @s bs.vector.y 0
-    scoreboard players set @s bs.vector.z 0
-    function bs.vector:get_from_classic_vector
-
-    # Display the result
-    tellraw @a [{"text":"<"},{"selector":"@s"},{"text":">"},{"text":" VectorLeft: ","color":"dark_gray"},{"score":{"name":"@s","objective":"bs. vectorLeft"}, "color": "gold"},{"text": "VectorUp: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs. vectorUp"}, "color": "gold"},{"text":" VectorFront: ", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.vector.z"}, "color": "gold"}]
-    ```
-
-```{admonition} Dependencies
-:class: dropdown
-
-This function require the following modules to work properly:
-- [`bs.math`](math)
+:Outputs:
+  **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.out`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
 ```
 
-> **Credits**: Leirof
+```{admonition} Spherical coordinates
+:class: warning
+
+This system uses non conventional shperical coordinates.
+- $H$ (horizontal angle) is along the $\hat{z}$ axis.
+- $V$ (vertical angle) is on the horizontal plane.
+- $R$ is the radial distance.
+```
+
+> **Credits**: Aksiome
 
 ---
 
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-    data-repo="Gunivers/Glibs"
-    data-repo-id="R_kgDOHQjqYg"
-    data-category="Documentation"
-    data-category-id="DIC_kwDOHQjqYs4CUQpy"
-    data-mapping="title"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="light"
-    data-lang="fr"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-</script>

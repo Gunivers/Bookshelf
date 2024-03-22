@@ -1,5 +1,8 @@
 {
- "values": [
-	"bs.core:__tick__"
- ]
+  "values": [
+    {
+      "id": "bs.health:__tick__",
+      "required": false
+    }
+  ]
 }

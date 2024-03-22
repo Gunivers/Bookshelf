@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 4200 run setblock ~ ~ ~ redstone_wall_torch[facing=south,lit=true]
-execute if score @s bs.block.id matches 4201 run setblock ~ ~ ~ redstone_wall_torch[facing=south,lit=false]
-execute if score @s bs.block.id matches 4202 run setblock ~ ~ ~ redstone_wall_torch[facing=west,lit=true]
-execute if score @s bs.block.id matches 4203 run setblock ~ ~ ~ redstone_wall_torch[facing=west,lit=false]
-execute if score @s bs.block.id matches 4204 run setblock ~ ~ ~ redstone_wall_torch[facing=east,lit=true]

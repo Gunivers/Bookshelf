@@ -1,8 +1,19 @@
 # ⛰️ Biome
 
-`#bs.biome:help`
+**`#bs.biome:help`**
 
-Everything concerning biome properties.
+Comprehensive information and tools related to biome properties.
+
+```{image} /_imgs/modules/biome.png
+:align: center
+:class: dark_light p-2
+```
+
+```{epigraph}
+"The most dangerous worldview is the worldview of those have not viewed the world."
+
+-- Alexander von Humboldt
+```
 
 ---
 
@@ -17,68 +28,49 @@ You can find below all functions available in this module.
 ::::{tab-set}
 :::{tab-item} Base temperature
 
-**`#bs.biome:get_base_temperature`**
+```{function} #bs.biome:get_base_temperature
 
-Allows to retrieve the base temperature of the
-biome at the execution position of the function.
+Get the base temperature of the biome at the execution position of the function.
 
-Inputs
+:Inputs:
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
 
-:   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position where you want to get the temperature.
+:Outputs:
+  **Return | Score `$biome.get_base_temperature bs.out`**: Base temperature of the biome (scaled by 10^8).
+```
 
-Output
+*Get the base temperature of the current biome:*
 
-:   (score) `$biome.get_base_temperature bs.out` as an int scaled by 10^8
-    : The base temperature of the biome.
-
-Example
-
-:   Get the base temperature of the current biome
-
-    ```
-    # Once
-    function #bs.biome:get_base_temperature
-
-    # See the result
-    tellraw @a [{"text": "The temperature of my biome: ", "color": "dark_gray"},{"score":{"name":"$biome.get_base_temperature", "objective": "bs.out"}, "color": "gold"}]
-    ```
+```mcfunction
+# Once
+function #bs.biome:get_base_temperature
+```
 
 :::
-:::{tab-item} At a given location
+:::{tab-item} At a given position
 
-**`#bs.biome:get_temperature`**
+```{function} #bs.biome:get_temperature
 
-Allows to retrieve the temperature at the execution
-position of the function taking into account the temperature of the
-biome and its altitude.
+Get the temperature at the execution position of the function taking the altitude into account.
 
-Inputs
+:Inputs:
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
 
-:   (execution) `at <entity>` or `positioned <x> <y> <z>`
-    : The position where you want to get the temperature.
+:Outputs:
+  **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position (scaled by 10^8).
+```
 
-Output
+*Get the temperature at the current altitude:*
 
-:   (score) `$biome.get_temperature bs.out` as an int scaled by 10^8
-    : The temperature at the given location.
-
-Example
-
-:   Get the temperature at the current altitude
-
-    ```
-    # Once
-    function #bs.biome:get_temperature
-
-    # See the result
-    tellraw @a [{"text": "The temperature: ", "color": "dark_gray"},{"score":{"name":"$biome.get_temperature", "objective": "bs.out"}, "color": "gold"}]
-    ```
+```mcfunction
+# Once
+function #bs.biome:get_temperature
+```
 
 :::
 ::::
 
-> **Credits**: theogiraudet, Aksiome
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
@@ -94,6 +86,8 @@ You can find below all predicates available in this module.
 
 Determine if it can rain or not.
 
+> **Credits**: Aksiome
+
 ---
 
 ### Can it snow?
@@ -101,6 +95,8 @@ Determine if it can rain or not.
 **`bs.biome:can_snow`**
 
 Determine if it can snow or not.
+
+> **Credits**: Aksiome
 
 ---
 
@@ -110,29 +106,14 @@ Determine if it can snow or not.
 
 Determine if the biome has precipitation or not.
 
+> **Credits**: Aksiome
+
 ---
 
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

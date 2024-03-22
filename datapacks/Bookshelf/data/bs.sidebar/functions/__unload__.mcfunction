@@ -1,12 +1,11 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # CODE ------------------------------------------------------------------------
 
+kill B5-0-0-0-2
+forceload remove -30000000 1600
+
 scoreboard objectives remove bs.data
 
-scoreboard players reset $module.sidebar.enabled bs.metadata
-
-forceload remove 0 0
-kill B5-0-0-0-2
 data remove storage bs:data sidebar

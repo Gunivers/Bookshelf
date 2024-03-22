@@ -1,3 +1,3 @@
-$data modify storage bs:out time.hours set value $(hours)
-$data modify storage bs:out time.minutes set value $(minutes)
-$data modify storage bs:out time.seconds set value $(seconds)
+$scoreboard players set $time.hours bs.out $(hours)
+$scoreboard players set $time.minutes bs.out $(minutes)
+$scoreboard players set $time.seconds bs.out $(seconds)

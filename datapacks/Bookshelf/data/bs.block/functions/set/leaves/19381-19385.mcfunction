@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 19381 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
-execute if score @s bs.block.id matches 19382 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=true]
-execute if score @s bs.block.id matches 19383 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=south,half=bottom,shape=inner_left,waterlogged=false]
-execute if score @s bs.block.id matches 19384 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=true]
-execute if score @s bs.block.id matches 19385 run setblock ~ ~ ~ waxed_weathered_cut_copper_stairs[facing=south,half=bottom,shape=inner_right,waterlogged=false]

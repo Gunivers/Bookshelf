@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#bs.position:load",
+    "#bs.raycast:load",
+    "bs.view:__load__"
+  ]
+}

@@ -2,59 +2,65 @@
 
 **`#bs.sidebar:help`**
 
-Create beautiful and dynamic sidebar using the scoreboard.
-
-```{admonition} Complex module
-:class: warning
-
-This module creates various teams and scoreholders in order to work. Do not try to remove a sidebar by yourself. Always use the provided functions `destroy` and `reset`.
-```
+Create a visually appealing and dynamic sidebar using the scoreboard
 
 ---
 
 ## 🔧 Functions
 
-You can find below all the function available in this module.
+You can find below all functions available in this module.
 
 ---
 
 ### Create
 
-**`#bs.sidebar:create`**
+```{function} #bs.sidebar:create
 
 Create and register a new sidebar.
 
-Inputs
+:Inputs:
+  **Macro Var `objective` [string]**: A custom objective used for the sidebar.
 
-:   (macro variable) `id`: string
-    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
+  **Macro Var `name` [string]**: Displayed objective name. Must be a valid JSON text component.
 
-    (macro variable) `name`: string
-    : The displayed name. Format: valid JSON text component.
+  **Macro Var `contents` [array]**: Displayed lines. Each entry must either be a valid JSON text component or an array with two JSON text components for the left and right sides.
+```
 
-    (macro variable) `contents`: array
-    : The displayed lines. Each entry must be a valid JSON text component.
+*Create and display a new sidebar with left-aligned text:*
+```mcfunction
+# Create a new sidebar
+function #bs.sidebar:create { \
+    objective:"my_guessing_game", \
+    name:'{"text":"Guess my name"}', \
+    contents: [ \
+        '{"text":" Clues:","color":"gold","bold":true}', \
+        '{"text":"  • I gave my name to a famous test"}', \
+        '{"text":"  • I am a pioneer of computer science and AI"}', \
+        '[{"text":" My name is: "},{"score":{"objective":"enigma","name":"VHVyaW5n"}}]', \
+    ], \
+}
 
+# Display the sidebar
+scoreboard objectives setdisplay sidebar my_guessing_game
+```
 
-Example
+*Create and display a new sidebar with right-aligned text:*
+```mcfunction
+# Create a new sidebar
+function #bs.sidebar:create { \
+    objective:"my_guessing_game_2", \
+    name:'{"text":"Guess my name V2"}', \
+    contents: [ \
+        ['""','{"text":" Clues:","color":"gold","bold":true}'], \
+        ['""','{"text":"  • I gave my name to a famous test"}'], \
+        ['""','{"text":"  • I am a pioneer of computer science and AI"}'], \
+        ['""','[{"text":" My name is: "},{"score":{"objective":"enigma","name":"VHVyaW5n"}}]'], \
+    ], \
+}
 
-:   Create then display a new sidebar.
-    ```
-    # Register a new sidebar
-    function #bs.sidebar:create { \
-        id:"my_guessing_game", \
-        name:'{"text":"Guess my name"}', \
-        contents: [ \
-            '{"text":" Clues:","color":"gold","bold":true}', \
-            '{"text":"  • I gave my name to a famous test"}', \
-            '{"text":"  • I am a pioneer of computer science and AI"}', \
-            '[{"text":" My name is: "},{"score":{"objective":"enigma","name":"VHVyaW5n"}}]', \
-        ], \
-    }
-
-    # Display the sidebar (objective: bs.sidebar.<id>)
-    scoreboard objectives setdisplay sidebar bs.sidebar.my_guessing_game
-    ```
+# Display the sidebar
+scoreboard objectives setdisplay sidebar my_guessing_game_2
+```
 
 > **Credits**: Aksiome
 
@@ -62,87 +68,27 @@ Example
 
 ### Refresh
 
-**`#bs.sidebar:refresh`**
+```{function} #bs.sidebar:refresh
 
 Update dynamic parts of the sidebar.
 
-Inputs
+:Inputs:
+  **Macro Var `objective` [string]**: The objective used for the sidebar.
+```
 
-:   (macro variable) `id`: string
-    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
-
-Example
-
-:   Refresh a sidebar.
-    ```mcfunction
-    function #bs.sidebar:refresh {id:"my_guessing_game"}
-    ```
+*Refresh a sidebar:*
+```mcfunction
+function #bs.sidebar:refresh {objective:"my_guessing_game"}
+```
 
 > **Credits**: Aksiome
 
 ---
 
-### Reset
-
-**`#bs.sidebar:reset`**
-
-Safely remove all sidebars. When possible prefer this method over `destroy`.
-
-
-Example
-
-:   Delete every sidebar.
-    ```mcfunction
-    function #bs.sidebar:reset
-    ```
-
-> **Credits**: Aksiome
-
----
-
-### Destroy
-
-**`#bs.sidebar:destroy`**
-
-Safely remove a sidebar with all associated scores and teams.
-
-Inputs
-
-:   (macro variable) `id`: string
-    : The unique id (must only contain lowercase letters, numbers, dashes, underscores or dots).
-
-Example
-
-:   Delete a single sidebar.
-    ```mcfunction
-    function #bs.sidebar:destroy {id:"my_guessing_game"}
-    ```
-
-> **Credits**: Aksiome
-
----
-
-<div align=center>
+<div id="gs-comments" align=center>
 
 **💬 Did it help you?**
 
 Feel free to leave your questions and feedbacks below!
 
 </div>
-
-<script src="https://giscus.app/client.js"
-        data-repo="Gunivers/Glibs"
-        data-repo-id="R_kgDOHQjqYg"
-        data-category="Documentation"
-        data-category-id="DIC_kwDOHQjqYs4CUQpy"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="fr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

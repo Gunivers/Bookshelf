@@ -8,20 +8,10 @@
 /poi/
 /region/
 /stats/
-level.dat
+/level.dat
 /level.dat_old
 /session.lock
 /uid.dat
 /venv/
 
-.vscode/
-
-/datapacks/Glib/data/glib.wip/
-
-/docs/_build/
-/docs/build/
-/docs/_templates/
-
-/generators/block_converter/Minecraft_generated_data/
-
-build/
+/.vscode/

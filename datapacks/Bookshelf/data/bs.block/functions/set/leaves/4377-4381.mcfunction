@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 4377 run setblock ~ ~ ~ repeater[delay=3,facing=south,locked=true,powered=false]
-execute if score @s bs.block.id matches 4378 run setblock ~ ~ ~ repeater[delay=3,facing=south,locked=false,powered=true]
-execute if score @s bs.block.id matches 4379 run setblock ~ ~ ~ repeater[delay=3,facing=south,locked=false,powered=false]
-execute if score @s bs.block.id matches 4380 run setblock ~ ~ ~ repeater[delay=3,facing=west,locked=true,powered=true]
-execute if score @s bs.block.id matches 4381 run setblock ~ ~ ~ repeater[delay=3,facing=west,locked=true,powered=false]

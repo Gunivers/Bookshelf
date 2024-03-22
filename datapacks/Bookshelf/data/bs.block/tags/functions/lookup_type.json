@@ -1,0 +1,6 @@
+{
+  "values": [
+    "bs.block:lookup/lookup_type",
+    "bs.block:get/compile/block"
+  ]
+}

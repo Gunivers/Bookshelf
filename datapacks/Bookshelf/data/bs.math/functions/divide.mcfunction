@@ -1,5 +1,5 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # Authors: Aksiome, theogiraudet
 # Contributors:
@@ -14,9 +14,10 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute store result score #math.divide.mod bs.data run scoreboard players operation $math.divide bs.out = $math.divide.num bs.in
-scoreboard players operation $math.divide bs.out /= $math.divide.den bs.in
-execute store result score #math.divide.nmod bs.data run scoreboard players operation #math.divide.mod bs.data %= $math.divide.den bs.in
-scoreboard players operation #math.divide.nmod bs.data -= $math.divide.den bs.in
-scoreboard players operation #math.divide.nmod bs.data *= -1 bs.const
-execute if score #math.divide.nmod bs.data < #math.divide.mod bs.data run scoreboard players add $math.divide bs.out 1
+execute store result score #math.divide.x bs.data run scoreboard players operation $math.divide bs.out = $math.divide.x bs.in
+scoreboard players operation $math.divide bs.out /= $math.divide.y bs.in
+execute store result score #math.divide.y bs.data run scoreboard players operation #math.divide.x bs.data %= $math.divide.y bs.in
+scoreboard players operation #math.divide.y bs.data -= $math.divide.y bs.in
+scoreboard players operation #math.divide.y bs.data *= -1 bs.const
+execute if score #math.divide.y bs.data < #math.divide.x bs.data run scoreboard players add $math.divide bs.out 1
+return run scoreboard players get $math.divide bs.out

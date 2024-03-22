@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.position:get_distance_squared_ata"
+    "bs.position:get/distance/distance_squared_ata"
   ]
 }

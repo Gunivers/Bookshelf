@@ -1,10 +1,11 @@
 ---
+html_theme.sidebar_primary.remove: true
 html_theme.sidebar_secondary.remove: true
 ---
 
-# ❤️ Special thanks
+# ❤️ Special&nbsp;thanks
 
-Bookshelf is a collaborative project, and it is thanks to the work of many people that it exists today. Here is a list of special thanks, people who have made a great contribution to this project and without who it would not be what it is today.
+Bookshelf is a collaborative project, made possible by the dedication and contributions of numerous individuals. We extend special thanks to those who have made significant contributions to this project, without whom it would not be what it is today.
 
 ```{button-link} https://github.com/Gunivers/Bookshelf/graphs/contributors
 :color: primary
@@ -23,28 +24,30 @@ See all contributors
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/leirof.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/leirof.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Creator of the original Gunivers Libs, and the current maintainer of Bookshelf
+Creator of the original Gunivers Libs, and contributor of Bookshelf.
 
 :::
 
-:::{grid-item-card} KubbyDev
-:link: https://github.com/KubbyDev
+:::{grid-item-card} Aksiome
+:link: https://github.com/aksiome
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/kubbydev.jpg" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/aksiome.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Huge contributor on the original Gunivers Libs
+Contributor of the last version of Bookshelf, and current maintainer.
 
 :::
 
@@ -53,29 +56,29 @@ Huge contributor on the original Gunivers Libs
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/theogiraudet.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/theogiraudet.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Huge contributor on the original Gunivers Libs
+Contributor of the original Gunivers Libs and Bookshelf.
 
 :::
 
-:::{grid-item-card} Theaustudio
-:link: https://github.com/Theaustudio
+:::{grid-item-card} KubbyDev
+:link: https://github.com/KubbyDev
 :link-type: url
 :margin: 0 3 0 0
 
-<div align=center>
-<img src="_static/credits/theaustudio.png" style="max-width:150px; border-radius:75px">
-</div>
+```{image} /_imgs/credits/kubbydev.png
+:align: center
+:class: dark_light, bs-rounded
+```
 
 ---
 
-Main developer of Bookshelf Manager website
-
-:::
+Contributor of the original Gunivers Libs.
 
 ::::

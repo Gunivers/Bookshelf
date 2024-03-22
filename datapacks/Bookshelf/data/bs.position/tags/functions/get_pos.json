@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.position:get_pos/all"
+    "bs.position:get/position/all"
   ]
 }

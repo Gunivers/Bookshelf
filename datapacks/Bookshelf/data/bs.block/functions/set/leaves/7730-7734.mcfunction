@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 7730 run setblock ~ ~ ~ gray_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]
-execute if score @s bs.block.id matches 7731 run setblock ~ ~ ~ gray_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=false]
-execute if score @s bs.block.id matches 7732 run setblock ~ ~ ~ gray_stained_glass_pane[east=false,north=true,south=true,waterlogged=true,west=true]
-execute if score @s bs.block.id matches 7733 run setblock ~ ~ ~ gray_stained_glass_pane[east=false,north=true,south=true,waterlogged=true,west=false]
-execute if score @s bs.block.id matches 7734 run setblock ~ ~ ~ gray_stained_glass_pane[east=false,north=true,south=true,waterlogged=false,west=true]

@@ -1,0 +1,6 @@
+{
+  "values": [
+    "#bs.bitwise:load",
+    "bs.hitbox:__load__"
+  ]
+}

@@ -1,5 +1,0 @@
-execute if score @s bs.block.id matches 16027 run setblock ~ ~ ~ grindstone[face=floor,facing=south]
-execute if score @s bs.block.id matches 16028 run setblock ~ ~ ~ grindstone[face=floor,facing=west]
-execute if score @s bs.block.id matches 16029 run setblock ~ ~ ~ grindstone[face=floor,facing=east]
-execute if score @s bs.block.id matches 16030 run setblock ~ ~ ~ grindstone[face=wall,facing=north]
-execute if score @s bs.block.id matches 16031 run setblock ~ ~ ~ grindstone[face=wall,facing=south]

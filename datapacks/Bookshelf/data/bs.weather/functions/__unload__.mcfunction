@@ -1,6 +1,4 @@
 # INFO ------------------------------------------------------------------------
-# Copyright © 2023 Gunivers Community.
+# Copyright © 2024 Gunivers Community.
 
 # CODE ------------------------------------------------------------------------
-
-scoreboard players reset $module.weather.enabled bs.metadata
