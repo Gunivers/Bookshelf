@@ -7,7 +7,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$id.cuid.check"
+          "name": "$id.cuid"
         },
         "score": "bs.in"
       }

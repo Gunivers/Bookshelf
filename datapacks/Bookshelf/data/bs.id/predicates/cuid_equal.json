@@ -3,6 +3,14 @@
   "entity": "this",
   "scores": {
     "bs.cid": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$id.cuid"
+        },
+        "score": "bs.in"
+      },
       "max": {
         "type": "minecraft:score",
         "target": {
