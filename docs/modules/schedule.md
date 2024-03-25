@@ -17,7 +17,7 @@ You can find below all functions available in this module.
 ::::{tab-set}
 :::{tab-item} All
 
-```{function} #bs.schedule:cancel
+```{function} #bs.schedule:cancel_all
 
 Cancel all scheduled commands that match the given id.
 
@@ -27,7 +27,7 @@ Cancel all scheduled commands that match the given id.
 
 *Cancel all commands that have an `id` parameter set to "foo":*
 ```mcfunction
-function #bs.schedule:cancel {with:{id:"foo"}}
+function #bs.schedule:cancel_all {with:{id:"foo"}}
 ```
 
 :::
