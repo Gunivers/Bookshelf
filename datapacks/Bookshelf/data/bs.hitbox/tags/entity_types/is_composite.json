@@ -1,6 +1,6 @@
 {
   "values": [
-    "#bs.hitbox:item_frame",
+    "#bs.hitbox:shape/item_frame",
     "minecraft:painting"
   ]
 }

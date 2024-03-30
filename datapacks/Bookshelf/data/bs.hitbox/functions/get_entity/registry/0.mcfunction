@@ -1,3 +1,3 @@
 # fallback group
-scoreboard players set @s bs.width 0
-scoreboard players set @s bs.height 0
+scoreboard players set $hitbox.width bs.out 0
+scoreboard players set $hitbox.height bs.out 0

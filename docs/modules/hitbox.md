@@ -49,17 +49,15 @@ data get storage bs:out hitbox
 
 ```{function} #bs.hitbox:get_entity
 
-Get the width and height of an entity. For simplicity and optimization purposes this value is returned scaled by 1000.
+Get the width and height of an entity. For simplicity and optimization purposes these values are returned on scores scaled by 1000.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to get the hitbox from.
 
-  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the entity hitbox.
-
 :Outputs:
-  **Score `@s bs.width`**: Height of the entity.
+  **Score `$hitbox.width bs.out`**: Height of the entity.
 
-  **Score `@s bs.height`**: Width of the entity.
+  **Score `$hitbox.height bs.out`**: Width of the entity.
 ```
 
 *Get the hitbox of an armor_stand:*
@@ -121,7 +119,7 @@ Check if the execution position is inside the entity executing the command.
 *Check if you are inside an entity:*
 
 ```mcfunction
-execute summon minecraft:cow if function #bs.hitbox:is_in_entity run say Oh no step bro
+execute summon minecraft:cow if function #bs.hitbox:is_in_entity run say Oh no...
 ```
 
 :::

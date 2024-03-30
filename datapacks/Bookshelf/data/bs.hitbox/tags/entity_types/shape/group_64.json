@@ -3,7 +3,7 @@
     "minecraft:wither_skeleton",
     "minecraft:wither_skull",
     "minecraft:wolf",
-    "#bs.hitbox:zombie_like",
+    "#bs.hitbox:shape/zombie_like",
     "minecraft:player",
     "minecraft:goat",
     "minecraft:villager"

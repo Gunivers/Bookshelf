@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.0
+# Version: 1.1
 # Created: 21/11/2023 (1.20.3)
-# Last modification: 27/02/2024 (1.20.4)
+# Last modification: 30/03/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside
 # Dependencies:
@@ -14,9 +14,9 @@
 
 # CODE ------------------------------------------------------------------------
 
+execute if entity @s[type=#bs.hitbox:intangible] run return 0
 execute as B5-0-0-0-1 run function bs.hitbox:is_in_entity/get_pos
+function #bs.hitbox:get_entity
 
-execute store success score #hitbox.is_custom bs.data if predicate bs.hitbox:has_hitbox
-execute if score #hitbox.is_custom bs.data matches 0 run function #bs.hitbox:get_entity
-execute if predicate bs.hitbox:has_hitbox run return run function bs.hitbox:is_in_entity/check
-return run function bs.hitbox:is_in_block/check
+execute if entity @s[type=#bs.hitbox:is_composite] run return run function bs.hitbox:is_in_block/check
+return run function bs.hitbox:is_in_entity/check

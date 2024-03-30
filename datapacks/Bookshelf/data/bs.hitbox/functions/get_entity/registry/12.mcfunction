@@ -1,3 +1,3 @@
 # cave_spider group
-scoreboard players set @s bs.width 700
-scoreboard players set @s bs.height 500
+scoreboard players set $hitbox.width bs.out 700
+scoreboard players set $hitbox.height bs.out 500

@@ -1,3 +1,3 @@
 # minecart group
-scoreboard players set @s bs.width 980
-scoreboard players set @s bs.height 700
+scoreboard players set $hitbox.width bs.out 980
+scoreboard players set $hitbox.height bs.out 700

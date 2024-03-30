@@ -1,3 +1,3 @@
 # ender_dragon group
-scoreboard players set @s bs.width 16000
-scoreboard players set @s bs.height 8000
+scoreboard players set $hitbox.width bs.out 16000
+scoreboard players set $hitbox.height bs.out 8000

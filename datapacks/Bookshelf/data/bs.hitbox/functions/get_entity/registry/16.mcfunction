@@ -1,3 +1,3 @@
 # creeper group
-scoreboard players set @s bs.width 600
-scoreboard players set @s bs.height 1700
+scoreboard players set $hitbox.width bs.out 600
+scoreboard players set $hitbox.height bs.out 1700

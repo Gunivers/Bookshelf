@@ -1,3 +1,3 @@
 # snow_golem group
-scoreboard players set @s bs.width 700
-scoreboard players set @s bs.height 1900
+scoreboard players set $hitbox.width bs.out 700
+scoreboard players set $hitbox.height bs.out 1900

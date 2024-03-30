@@ -1,3 +1,3 @@
 # silverfish_like group
-scoreboard players set @s bs.width 400
-scoreboard players set @s bs.height 300
+scoreboard players set $hitbox.width bs.out 400
+scoreboard players set $hitbox.height bs.out 300

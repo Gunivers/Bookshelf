@@ -9,8 +9,6 @@ execute unless entity B5-0-0-0-1 run summon minecraft:marker -30000000 0 1600 {U
 scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
 scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
-scoreboard objectives add bs.height dummy [{"text":"BS ","color":"dark_gray"},{"text":"Height","color":"aqua"}]
-scoreboard objectives add bs.width dummy [{"text":"BS ","color":"dark_gray"},{"text":"Width","color":"aqua"}]
 
 scoreboard players set 2 bs.const 2
 scoreboard players set 11 bs.const 11
