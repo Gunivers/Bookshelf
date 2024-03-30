@@ -1,5 +1,6 @@
 {
   "values": [
+    "bs.raycast:runner/with",
     "bs.raycast:runner/run"
   ]
 }

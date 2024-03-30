@@ -22,4 +22,4 @@ execute if score #raycast.ly bs.data matches ..0 run scoreboard players operatio
 execute if score #raycast.lz bs.data matches ..0 run scoreboard players operation #raycast.lz bs.data += #raycast.dz bs.data
 
 # run the recursion loop
-execute align xyz run function bs.raycast:block/recurse/next with storage bs:in raycast
+execute align xyz run function bs.raycast:block/recurse/next with storage bs:data raycast

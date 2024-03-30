@@ -1,4 +1,4 @@
-execute unless block ~ ~ ~ #bs.hitbox:is_shaped run return run function bs.raycast:block/collide/cube
+execute unless block ~ ~ ~ #bs.hitbox:is_composite run return run function bs.raycast:block/collide/cube
 
 function #bs.hitbox:get_block
 execute if score #raycast.ux bs.data matches 0.. run scoreboard players operation #raycast.lx bs.data -= #raycast.dx bs.data

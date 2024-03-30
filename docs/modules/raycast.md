@@ -9,7 +9,7 @@ Unlike traditional raycasts, this module uses a voxel traversal algorithm which 
 ```
 
 ```{important}
-This module limits the world size to 2,147,483 to prevent scoreboard overflow.
+This module limits the world size to 2,147,480 to prevent scoreboard overflow.
 ```
 
 ```{epigraph}
@@ -35,18 +35,18 @@ Cast a ray from the execution position and check if it hits something.
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z> rotated <rot>`**: Origin of the ray.
 
-  **Storage `bs:in raycast`**:
+  **Macro Var `with` [compound]**:
   :::{list-table}
+  *   - **`blocks`**&nbsp;[bool]
+      - Whether the ray should stop on blocks (default: true).
+  *   - **`entities`**&nbsp;[bool|string]</span>
+      - Whether the ray should stop on entities (default: false). Can also be a tag that entities must have.
   *   - **`max_distance`**&nbsp;[number]
       - Maximum ray travel distance (default: 16.0).
-  *   - **`block_collision`**&nbsp;[bool]
-      - Whether the ray should collide with blocks (default: true).
-  *   - **`entity_collision`**&nbsp;[bool]
-      - Whether the ray should collide with entities (default: false).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`solid_entities`**&nbsp;[string]
-      - Tag for entities to include (default: `bs.raycast.is_solid`).
+  *   - **`ignored_entities`**&nbsp;[string]
+      - Entities to ignore (default: `#bs.hitbox:intangible`).
   :::
 
 :Outputs:
@@ -71,7 +71,7 @@ Cast a ray from the execution position and check if it hits something.
 
 ```mcfunction
 # Once (return 0 if no collision occured)
-execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run
+execute anchored eyes positioned ^ ^ ^ run function #bs.raycast:run {with:{}}
 
 # If a collision occured, see the collision point
 data get storage bs:out raycast.hit_point

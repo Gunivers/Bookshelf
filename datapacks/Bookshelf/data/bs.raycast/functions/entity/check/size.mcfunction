@@ -1,6 +1,6 @@
-# compute hitbox coordinates (using bs.width and bs.height)
-scoreboard players operation #raycast.w bs.data = @s bs.width
-scoreboard players operation #raycast.h bs.data = @s bs.height
+# compute hitbox coordinates (using width and height)
+scoreboard players operation #raycast.w bs.data = $hitbox.width bs.out
+scoreboard players operation #raycast.h bs.data = $hitbox.height bs.out
 scoreboard players operation #raycast.w bs.data *= 500 bs.const
 scoreboard players operation #raycast.h bs.data *= 1000 bs.const
 scoreboard players operation #raycast.min_x bs.data -= #raycast.w bs.data
