@@ -7,16 +7,10 @@ execute store result score #raycast.max_y2 bs.data run data get storage bs:out h
 execute store result score #raycast.max_z2 bs.data run data get storage bs:out hitbox[-1][5] 62500
 data remove storage bs:out hitbox[-1]
 
-# offset coordinates if needed
-scoreboard players operation #raycast.min_x bs.data += $hitbox.offset.x bs.out
-scoreboard players operation #raycast.max_x bs.data += $hitbox.offset.x bs.out
-scoreboard players operation #raycast.min_z bs.data += $hitbox.offset.z bs.out
-scoreboard players operation #raycast.max_z bs.data += $hitbox.offset.z bs.out
-
 # compute hitbox coordinates (using the shape)
-scoreboard players operation #raycast.min_x bs.data -= #raycast.min_x2 bs.data
-scoreboard players operation #raycast.min_y bs.data -= #raycast.min_y2 bs.data
-scoreboard players operation #raycast.min_z bs.data -= #raycast.min_z2 bs.data
+scoreboard players operation #raycast.min_x bs.data += #raycast.min_x2 bs.data
+scoreboard players operation #raycast.min_y bs.data += #raycast.min_y2 bs.data
+scoreboard players operation #raycast.min_z bs.data += #raycast.min_z2 bs.data
 scoreboard players operation #raycast.max_x bs.data += #raycast.max_x2 bs.data
 scoreboard players operation #raycast.max_y bs.data += #raycast.max_y2 bs.data
 scoreboard players operation #raycast.max_z bs.data += #raycast.max_z2 bs.data
@@ -46,6 +40,7 @@ scoreboard players operation #raycast.tmax bs.data < #raycast.max_z bs.data
 execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
+  if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
   run function bs.raycast:entity/collide
 
 execute if data storage bs:out hitbox[0] run function bs.raycast:entity/check/shape

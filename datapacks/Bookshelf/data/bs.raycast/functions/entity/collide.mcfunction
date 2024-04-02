@@ -1,5 +1,5 @@
 # stop the recursion then get the travelled distance
-scoreboard players set #raycast.max_distance bs.data -2147483648
+scoreboard players set #raycast.limit bs.data -2147483648
 scoreboard players operation #raycast.distance bs.data = #raycast.tmin bs.data
 
 # get the normal of the surface that was hit

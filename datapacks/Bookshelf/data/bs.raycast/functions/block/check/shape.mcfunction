@@ -42,6 +42,7 @@ scoreboard players operation #raycast.tmax bs.data < #raycast.max_z bs.data
 execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
+  if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
   run function bs.raycast:block/collide/shape
 
 execute if data storage bs:out hitbox[0] run function bs.raycast:block/check/shape

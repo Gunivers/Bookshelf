@@ -1,5 +1,5 @@
 # stop the recursion then compute the travelled distance
-scoreboard players set #raycast.max_distance bs.data -2147483648
+scoreboard players set #raycast.limit bs.data -2147483648
 scoreboard players operation #raycast.lx bs.data -= #raycast.dx bs.data
 scoreboard players operation #raycast.ly bs.data -= #raycast.dy bs.data
 execute store result score #raycast.distance bs.data run scoreboard players operation #raycast.lz bs.data -= #raycast.dz bs.data
