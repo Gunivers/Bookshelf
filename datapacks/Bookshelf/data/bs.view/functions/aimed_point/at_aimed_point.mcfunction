@@ -15,7 +15,7 @@
 # CODE ------------------------------------------------------------------------
 
 # run the raycast at the entity eyes
-execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:runner/run
+execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:run
 
 # run the command at the hit point that was found or return early
 execute if score #raycast.distance bs.data matches 2147483647 run return fail

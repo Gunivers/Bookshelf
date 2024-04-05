@@ -30,5 +30,5 @@ execute store result storage bs:ctx y int 1 run scoreboard players operation #vi
 execute store result storage bs:ctx z int 1 run scoreboard players operation #view.can_see_ata.z1 bs.data -= #view.can_see_ata.z2 bs.data
 function bs.view:can_see_ata/max_distance/compute with storage bs:ctx
 
-execute facing entity @s eyes run function bs.raycast:runner/run
+execute facing entity @s eyes run function bs.raycast:run
 execute if score #raycast.distance bs.data matches 2147483647 run return 1

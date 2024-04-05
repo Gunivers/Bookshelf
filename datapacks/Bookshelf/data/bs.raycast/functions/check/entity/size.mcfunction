@@ -1,8 +1,18 @@
+# get the entity relative coordinates
+execute at @s as B5-0-0-0-1 run function bs.raycast:compute/relative_pos with storage bs:data raycast
+execute store result score #raycast.min_x bs.data run data get storage bs:ctx _[0] 10000000
+execute store result score #raycast.min_y bs.data run data get storage bs:ctx _[1] 10000000
+execute store result score #raycast.min_z bs.data run data get storage bs:ctx _[2] 10000000
+execute store result score #raycast.max_x bs.data run scoreboard players operation #raycast.min_x bs.data += #raycast.x bs.data
+execute store result score #raycast.max_y bs.data run scoreboard players operation #raycast.min_y bs.data += #raycast.y bs.data
+execute store result score #raycast.max_z bs.data run scoreboard players operation #raycast.min_z bs.data += #raycast.z bs.data
+
 # compute hitbox coordinates (using width and height)
-scoreboard players operation #raycast.w bs.data = $hitbox.width bs.out
-scoreboard players operation #raycast.h bs.data = $hitbox.height bs.out
-scoreboard players operation #raycast.w bs.data *= 500 bs.const
-scoreboard players operation #raycast.h bs.data *= 1000 bs.const
+execute store result score #raycast.h bs.data run data get storage bs:out hitbox.height 10000
+execute store result score #raycast.w bs.data run data get storage bs:out hitbox.width 5000
+execute store result score #raycast.s bs.data run data get storage bs:out hitbox.scale 1000
+scoreboard players operation #raycast.h bs.data *= #raycast.s bs.data
+scoreboard players operation #raycast.w bs.data *= #raycast.s bs.data
 scoreboard players operation #raycast.min_x bs.data -= #raycast.w bs.data
 scoreboard players operation #raycast.min_z bs.data -= #raycast.w bs.data
 scoreboard players operation #raycast.max_x bs.data += #raycast.w bs.data
@@ -35,4 +45,4 @@ execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
   if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
-  run function bs.raycast:entity/collide
+  run function bs.raycast:collide/entity

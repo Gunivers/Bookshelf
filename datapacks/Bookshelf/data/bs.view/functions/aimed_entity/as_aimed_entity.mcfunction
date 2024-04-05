@@ -15,7 +15,7 @@
 # CODE ------------------------------------------------------------------------
 
 # run the raycast at the entity eyes
-execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:runner/run
+execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:run
 
 # run the command as the entity that was found or return early
 execute unless data storage bs:out raycast.targeted_entity run return fail

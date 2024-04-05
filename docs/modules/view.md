@@ -9,11 +9,6 @@ Execute commands based on what an entity sees.
 :class: dark_light p-2
 ```
 
-```{important}
-This module limits the world size to 2,147,480 to prevent scoreboard overflow.
-```
-
-
 ```{epigraph}
 
 "Vision is the act of seeing things as they could be, not as they are."
