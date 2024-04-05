@@ -31,9 +31,9 @@ Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
-  **Scores `$hitbox.offset.[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
+  **Storage `bs:out hitbox.shape` [array]**: An array of cube coordinates.
 
-  **Storage `bs:out hitbox` [array]**: An array of cube coordinates.
+  **Storage `bs:out hitbox.offset.[x,z]`**: Hitbox offset (used for exemple by flowers).
 ```
 
 *Get the hitbox of a stair:*
@@ -49,15 +49,17 @@ data get storage bs:out hitbox
 
 ```{function} #bs.hitbox:get_entity
 
-Get the width and height of an entity. For simplicity and optimization purposes these values are returned on scores scaled by 1000.
+Get the width and height of an entity.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to get the hitbox from.
 
 :Outputs:
-  **Score `$hitbox.width bs.out`**: Height of the entity.
+  **Storage `bs:out hitbox.height`**: Height of the entity.
 
-  **Score `$hitbox.height bs.out`**: Width of the entity.
+  **Storage `bs:out hitbox.width`**: Width of the entity.
+
+  **Storage `bs:out hitbox.scale`**: Scaling of the hitbox.
 ```
 
 *Get the hitbox of an armor_stand:*

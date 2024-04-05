@@ -1,3 +1,2 @@
 # wither_skull group
-scoreboard players set $hitbox.width bs.out 312
-scoreboard players set $hitbox.height bs.out 312
+data modify storage bs:out hitbox set value {width:0.3125,height:0.3125}

@@ -1,3 +1,2 @@
 # snow_golem group
-scoreboard players set $hitbox.width bs.out 700
-scoreboard players set $hitbox.height bs.out 1900
+data modify storage bs:out hitbox set value {width:0.7,height:1.9}

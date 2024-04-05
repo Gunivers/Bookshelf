@@ -47,6 +47,7 @@
     "minecraft:twisting_vines",
     "#bs.hitbox:shape/wall_banner",
     "#bs.hitbox:shape/wall_head",
-    "#bs.hitbox:shape/wall_torch"
+    "#bs.hitbox:shape/wall_torch",
+    "minecraft:redstone_wire"
   ]
 }

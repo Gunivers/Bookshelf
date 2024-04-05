@@ -1,11 +1,11 @@
 # compute the offset since we only care about bits 16 to 24, overflow of the scoreboard is not an issue
 data modify storage bs:data hitbox.offsets append value {x:0,z:0,k:[0,0]}
-execute store result storage bs:data hitbox.offsets[-1].k[0] int 1 run scoreboard players get $hitbox.offset.x bs.out
-execute store result storage bs:data hitbox.offsets[-1].k[1] int 1 run scoreboard players get $hitbox.offset.z bs.out
+execute store result storage bs:data hitbox.offsets[-1].k[0] int 1 run scoreboard players get #hitbox.offset.x bs.data
+execute store result storage bs:data hitbox.offsets[-1].k[1] int 1 run scoreboard players get #hitbox.offset.z bs.data
 
 # compute i = (x * 3129871) ^ (z * 116129781) - [Triton365 fast bitwise xor (using floating-point errors)]
-execute store result entity @s Pos[1] double .000000007450580596923828125 run scoreboard players operation $hitbox.offset.x bs.out *= 3129871 bs.const
-execute store result entity @s Pos[2] double .000000007450580596923828125 run scoreboard players operation $hitbox.offset.z bs.out *= 116129781 bs.const
+execute store result entity @s Pos[1] double .000000007450580596923828125 run scoreboard players operation #hitbox.offset.x bs.data *= 3129871 bs.const
+execute store result entity @s Pos[2] double .000000007450580596923828125 run scoreboard players operation #hitbox.offset.z bs.data *= 116129781 bs.const
 execute at @s \
   positioned -.00000000186264514923095703125 ~33554496 ~33554496 facing ~ ~-.0000000037252902984619140625 ~-.0000000037252902984619140625 positioned ^ ^ ^-.00000000186264514923095703125 \
   positioned ~ ~33554431.9999999962747097015380859375 ~33554431.9999999962747097015380859375 facing ~ ~-.000000007450580596923828125 ~-.000000007450580596923828125 positioned ^ ^ ^-.0000000037252902984619140625 \
@@ -40,35 +40,36 @@ execute at @s \
   positioned ~ ~18014398509481982 ~18014398509481982 facing ~ ~-4 ~-4 positioned ^ ^ ^2 \
   run tp @s ~ 0 0.
 execute store result score #hitbox.offset.i bs.data run data get entity @s Pos[0] 1073741824
-scoreboard players operation #hitbox.offset.i bs.data -= $hitbox.offset.x bs.out
-execute store result score #hitbox.offset.i2 bs.data run scoreboard players operation #hitbox.offset.i bs.data -= $hitbox.offset.z bs.out
+scoreboard players operation #hitbox.offset.i bs.data -= #hitbox.offset.x bs.data
+execute store result score #hitbox.offset.i2 bs.data run scoreboard players operation #hitbox.offset.i bs.data -= #hitbox.offset.z bs.data
 
 # compute i = (i * i * 42317861) + (i * 11)
 scoreboard players operation #hitbox.offset.i2 bs.data *= #hitbox.offset.i2 bs.data
 scoreboard players operation #hitbox.offset.i2 bs.data *= 42317861 bs.const
 scoreboard players operation #hitbox.offset.i bs.data *= 11 bs.const
-execute store result score $hitbox.offset.x bs.out store result score $hitbox.offset.z bs.out run scoreboard players operation #hitbox.offset.i bs.data += #hitbox.offset.i2 bs.data
+execute store result score #hitbox.offset.x bs.data store result score #hitbox.offset.z bs.data run scoreboard players operation #hitbox.offset.i bs.data += #hitbox.offset.i2 bs.data
 
 # compute offset x = (((i >> 16 & 15) / 15.0) - 0.5) * 0.5
-scoreboard players operation $hitbox.offset.x bs.out /= 65536 bs.const
-scoreboard players operation $hitbox.offset.x bs.out *= 268435456 bs.const
-scoreboard players operation $hitbox.offset.x bs.out /= 268435456 bs.const
-execute if score $hitbox.offset.x bs.out matches ..-1 run scoreboard players add $hitbox.offset.x bs.out 16
-scoreboard players operation $hitbox.offset.x bs.out *= 1000 bs.const
-scoreboard players operation $hitbox.offset.x bs.out /= 15 bs.const
-scoreboard players remove $hitbox.offset.x bs.out 500
-scoreboard players operation $hitbox.offset.x bs.out /= 2 bs.const
+scoreboard players operation #hitbox.offset.x bs.data /= 65536 bs.const
+scoreboard players operation #hitbox.offset.x bs.data *= 268435456 bs.const
+scoreboard players operation #hitbox.offset.x bs.data /= 268435456 bs.const
+execute if score #hitbox.offset.x bs.data matches ..-1 run scoreboard players add #hitbox.offset.x bs.data 16
+scoreboard players operation #hitbox.offset.x bs.data *= 10000000 bs.const
+scoreboard players operation #hitbox.offset.x bs.data /= 15 bs.const
+scoreboard players remove #hitbox.offset.x bs.data 5000000
+scoreboard players operation #hitbox.offset.x bs.data /= 2 bs.const
 
 # compute offset z = (((i >> 24 & 15) / 15.0) - 0.5) * 0.5
-scoreboard players operation $hitbox.offset.z bs.out /= 16777216 bs.const
-scoreboard players operation $hitbox.offset.z bs.out *= 268435456 bs.const
-scoreboard players operation $hitbox.offset.z bs.out /= 268435456 bs.const
-execute if score $hitbox.offset.z bs.out matches ..-1 run scoreboard players add $hitbox.offset.z bs.out 16
-scoreboard players operation $hitbox.offset.z bs.out *= 1000 bs.const
-scoreboard players operation $hitbox.offset.z bs.out /= 15 bs.const
-scoreboard players remove $hitbox.offset.z bs.out 500
-scoreboard players operation $hitbox.offset.z bs.out /= 2 bs.const
+scoreboard players operation #hitbox.offset.z bs.data /= 16777216 bs.const
+scoreboard players operation #hitbox.offset.z bs.data *= 268435456 bs.const
+scoreboard players operation #hitbox.offset.z bs.data /= 268435456 bs.const
+execute if score #hitbox.offset.z bs.data matches ..-1 run scoreboard players add #hitbox.offset.z bs.data 16
+scoreboard players operation #hitbox.offset.z bs.data *= 10000000 bs.const
+scoreboard players operation #hitbox.offset.z bs.data /= 15 bs.const
+scoreboard players remove #hitbox.offset.z bs.data 5000000
+scoreboard players operation #hitbox.offset.z bs.data /= 2 bs.const
 
 # cache the result for better performance in future calls
-execute store result storage bs:data hitbox.offsets[-1].x int 1 run scoreboard players get $hitbox.offset.x bs.out
-execute store result storage bs:data hitbox.offsets[-1].z int 1 run scoreboard players get $hitbox.offset.z bs.out
+execute store result storage bs:out hitbox.offset.x double .0000001 run scoreboard players get #hitbox.offset.x bs.data
+execute store result storage bs:out hitbox.offset.z double .0000001 run scoreboard players get #hitbox.offset.z bs.data
+data modify storage bs:data hitbox.offsets[-1] merge from storage bs:out hitbox.offset

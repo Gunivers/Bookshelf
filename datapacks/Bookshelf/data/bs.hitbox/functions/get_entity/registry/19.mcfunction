@@ -1,3 +1,2 @@
 # elder_guardian group
-scoreboard players set $hitbox.width bs.out 1997
-scoreboard players set $hitbox.height bs.out 1997
+data modify storage bs:out hitbox set value {width:1.9975,height:1.9975}

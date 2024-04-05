@@ -1,3 +1,2 @@
 # leash_knot group
-scoreboard players set $hitbox.width bs.out 375
-scoreboard players set $hitbox.height bs.out 500
+data modify storage bs:out hitbox set value {width:0.375,height:0.5}

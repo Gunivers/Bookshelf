@@ -32,6 +32,7 @@
     "#bs.hitbox:shape/repeater_shaped",
     "#bs.hitbox:shape/rod",
     "#bs.hitbox:shape/sapling",
-    "#minecraft:walls"
+    "#minecraft:walls",
+    "minecraft:redstone_wire"
   ]
 }

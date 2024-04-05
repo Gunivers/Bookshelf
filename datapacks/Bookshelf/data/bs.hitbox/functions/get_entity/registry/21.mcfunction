@@ -1,3 +1,2 @@
 # ender_dragon group
-scoreboard players set $hitbox.width bs.out 16000
-scoreboard players set $hitbox.height bs.out 8000
+data modify storage bs:out hitbox set value {width:16.0,height:8.0}

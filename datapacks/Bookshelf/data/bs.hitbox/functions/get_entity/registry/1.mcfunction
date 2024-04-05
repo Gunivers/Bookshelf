@@ -1,3 +1,2 @@
 # allay group
-scoreboard players set $hitbox.width bs.out 350
-scoreboard players set $hitbox.height bs.out 600
+data modify storage bs:out hitbox set value {width:0.35,height:0.6}

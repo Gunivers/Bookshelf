@@ -1,3 +1,2 @@
 # wither group
-scoreboard players set $hitbox.width bs.out 900
-scoreboard players set $hitbox.height bs.out 3500
+data modify storage bs:out hitbox set value {width:0.9,height:3.5}

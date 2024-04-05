@@ -1,3 +1,4 @@
 # area_effect_cloud group
-execute store result score $hitbox.width bs.out run data get entity @s Radius 2000
-scoreboard players set $hitbox.height bs.out 500
+data modify storage bs:out hitbox set value {width:0,height:0.5}
+execute store result score #hitbox.width bs.data run data get entity @s Radius 20000000
+execute store result storage bs:out hitbox.width double .0000001 run scoreboard players operation #hitbox.width bs.data *= #hitbox.scale bs.data

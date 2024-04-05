@@ -32,6 +32,7 @@
     "#minecraft:wall_signs",
     "#bs.hitbox:shape/wall_torch",
     "#minecraft:walls",
-    "minecraft:weeping_vines"
+    "minecraft:weeping_vines",
+    "minecraft:redstone_wire"
   ]
 }

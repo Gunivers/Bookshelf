@@ -1,3 +1,2 @@
 # spider group
-scoreboard players set $hitbox.width bs.out 1400
-scoreboard players set $hitbox.height bs.out 900
+data modify storage bs:out hitbox set value {width:1.4,height:0.9}

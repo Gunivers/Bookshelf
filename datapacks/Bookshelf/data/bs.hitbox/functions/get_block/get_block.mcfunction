@@ -14,9 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players set $hitbox.offset.x bs.out 0
-scoreboard players set $hitbox.offset.z bs.out 0
-
 scoreboard players set #hitbox.id bs.data 0
 execute if block ~ ~ ~ #bs.hitbox:shape/group_1 run scoreboard players add #hitbox.id bs.data 1
 execute if block ~ ~ ~ #bs.hitbox:shape/group_2 run scoreboard players add #hitbox.id bs.data 2
@@ -26,5 +23,6 @@ execute if block ~ ~ ~ #bs.hitbox:shape/group_16 run scoreboard players add #hit
 execute if block ~ ~ ~ #bs.hitbox:shape/group_32 run scoreboard players add #hitbox.id bs.data 32
 execute if block ~ ~ ~ #bs.hitbox:shape/group_64 run scoreboard players add #hitbox.id bs.data 64
 
+data modify storage bs:out hitbox set value {shape:[],offset:{x:0d,z:0d}}
 execute store result storage bs:ctx y short 1 run scoreboard players get #hitbox.id bs.data
 function bs.hitbox:get_block/dispatch with storage bs:ctx

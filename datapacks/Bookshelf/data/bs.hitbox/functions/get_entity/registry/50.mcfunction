@@ -1,3 +1,2 @@
 # skeleton group
-scoreboard players set $hitbox.width bs.out 600
-scoreboard players set $hitbox.height bs.out 1990
+data modify storage bs:out hitbox set value {width:0.6,height:1.99}

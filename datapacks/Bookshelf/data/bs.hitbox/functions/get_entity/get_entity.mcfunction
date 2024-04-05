@@ -25,3 +25,5 @@ execute if entity @s[type=#bs.hitbox:shape/group_64] run scoreboard players add 
 
 execute store result storage bs:ctx y short 1 run scoreboard players get #hitbox.id bs.data
 function bs.hitbox:get_entity/dispatch with storage bs:ctx
+data modify storage bs:out hitbox.scale set value 1.0
+#execute store result storage bs:out hitbox.scale double .000001 run attribute @s minecraft:generic.scale get 1000000
