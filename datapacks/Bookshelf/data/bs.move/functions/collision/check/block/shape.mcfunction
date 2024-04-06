@@ -1,19 +1,19 @@
 # get hitbox coordinates
-execute store result score #move.min_x bs.data run data get storage bs:out hitbox[-1][0] 62500
-execute store result score #move.min_y bs.data run data get storage bs:out hitbox[-1][1] 62500
-execute store result score #move.min_z bs.data run data get storage bs:out hitbox[-1][2] 62500
-execute store result score #move.max_x bs.data run data get storage bs:out hitbox[-1][3] 62500
-execute store result score #move.max_y bs.data run data get storage bs:out hitbox[-1][4] 62500
-execute store result score #move.max_z bs.data run data get storage bs:out hitbox[-1][5] 62500
-data remove storage bs:out hitbox[-1]
+execute store result score #move.min_x bs.data run data get storage bs:out hitbox.shape[-1][0] 62500
+execute store result score #move.min_y bs.data run data get storage bs:out hitbox.shape[-1][1] 62500
+execute store result score #move.min_z bs.data run data get storage bs:out hitbox.shape[-1][2] 62500
+execute store result score #move.max_x bs.data run data get storage bs:out hitbox.shape[-1][3] 62500
+execute store result score #move.max_y bs.data run data get storage bs:out hitbox.shape[-1][4] 62500
+execute store result score #move.max_z bs.data run data get storage bs:out hitbox.shape[-1][5] 62500
+data remove storage bs:out hitbox.shape[-1]
 
 # add the relative coordinates to the hitbox
-scoreboard players operation #move.min_x bs.data += #move.rx bs.data
+scoreboard players operation #move.min_x bs.data += #move.ox bs.data
 scoreboard players operation #move.min_y bs.data += #move.ry bs.data
-scoreboard players operation #move.min_z bs.data += #move.rz bs.data
-scoreboard players operation #move.max_x bs.data += #move.rx bs.data
+scoreboard players operation #move.min_z bs.data += #move.oz bs.data
+scoreboard players operation #move.max_x bs.data += #move.ox bs.data
 scoreboard players operation #move.max_y bs.data += #move.ry bs.data
-scoreboard players operation #move.max_z bs.data += #move.rz bs.data
+scoreboard players operation #move.max_z bs.data += #move.oz bs.data
 
 # add the moving entity size to the hitbox
 scoreboard players operation #move.min_x bs.data -= #move.w bs.data
@@ -47,4 +47,4 @@ execute if score #move.max_x bs.data matches 0.. \
   if score #move.ctime bs.data > #move.min_x bs.data \
   run function bs.move:collision/collide
 
-execute if data storage bs:out hitbox[0] run function bs.move:collision/check/shape
+execute if data storage bs:out hitbox.shape[0] run function bs.move:collision/check/block/shape
