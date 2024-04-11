@@ -1,4 +1,4 @@
-# 🧪 PackTest
+# 🧪 MCUnit
 
 This script is designed to facilitate running an automated test server using **[PackTest](https://github.com/misode/packtest)**.
 
@@ -12,5 +12,5 @@ To use the script, follow these steps:
 
 ```shell
 pip install -r requirements.txt
-python packtest.py <minecraft_version> <world_path>
+python mcunit.py --source <world_path> --version <minecraft_version>
 ```
