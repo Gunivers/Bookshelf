@@ -104,7 +104,7 @@ execute as @e[type=minecraft:pig] run function #bs.move:set_motion_by_vel {scale
 :::::{tab-set}
 ::::{tab-item} Canonical
 
-```{function} #bs.move:tp_by_vel {scale:<scaling>}
+```{function} #bs.move:tp_by_vel {scale:<scaling>,with:{}}
 
 Teleport an entity by its velocity scores while handling collisions.
 
@@ -137,7 +137,7 @@ Teleport an entity by its velocity scores while handling collisions.
 ::::
 ::::{tab-item} Local
 
-```{function} #bs.move:tp_by_local_vel {scale:<scaling>}
+```{function} #bs.move:tp_by_local_vel {scale:<scaling>,with:{}}
 
 Teleport an entity by its velocity scores, using the local reference frame, while handling collisions.
 
@@ -179,13 +179,13 @@ scoreboard players set @e[type=minecraft:block_display] bs.vel.y 20
 scoreboard players set @e[type=minecraft:block_display] bs.vel.z 50
 
 # In a loop
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{}}
 
 # Choose between multiple collision behaviors
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/bounce"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/damped_bounce"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/slide"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/stick"
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/damped_bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/slide"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/stick"}}
 ```
 
 ```{admonition} Performance tip
