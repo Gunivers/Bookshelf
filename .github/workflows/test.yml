@@ -1,11 +1,6 @@
 name: 🧪 Test datapacks
 on: [push, pull_request, workflow_dispatch]
 
-env:
-  FABRIC_SERVER: https://meta.fabricmc.net/v2/versions/loader/1.20.4/0.15.7/1.0.0/server/jar
-  FABRIC_API: https://cdn.modrinth.com/data/P7dR8mSH/versions/9p2sguD7/fabric-api-0.96.4%2B1.20.4.jar
-  PACKTEST: https://cdn.modrinth.com/data/XsKUhp45/versions/18smpIeE/packtest-1.6-mc1.20.4.jar
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,14 +10,18 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Setup environement variables
+        run: |
+          pip install -r scripts/requirements.txt
+          python3 scripts/definitions.py
       - name: Download and prepare files
         run: |
-          curl -o server.jar $FABRIC_SERVER
+          curl -o server.jar ${{ env.TEST_FABRIC_SERVER }}
           mkdir mods
-          curl -o mods/fabric-api.jar $FABRIC_API
-          curl -o mods/packtest.jar $PACKTEST
+          curl -o mods/fabric-api.jar ${{ env.TEST_FABRIC_API }}
+          curl -o mods/packtest.jar ${{ env.TEST_PACKTEST }}
           mkdir -p world
-          cp -r datapacks world/datapacks
+          cp -r ${{ env.DATAPACKS_PATH }} world/datapacks
       - name: Run tests
         run: |
           java -Xmx2G -Dpacktest.auto -Dpacktest.auto.annotations -jar server.jar nogui

@@ -1,35 +1,31 @@
-name: Upload build assets
+name: 🔖 Upload build assets
 
 on:
-  # Triggers the action when a release is published
-  release:
-    types: [ published ]
+  push:
+    tags: [ 'v*.*.*' ]
 
 jobs:
-  publish:
-   # linux best
+  build:
     runs-on: ubuntu-latest
-  
     steps:
-      # Get the source code
       - uses: actions/checkout@v3
-
-      - name: Run the resource pack packager
+      - name: Setup environement variables
         run: |
-          cd $GITHUB_WORKSPACE
-          tag_name="${GITHUB_REF##*/}"
-          python3 distribute.py --version ${tag_name}
-
-      - name: Upload assets to the release
-        run: |
-          tag_name="${GITHUB_REF##*/}"
-          gh release view --json body -q .body > release-note.md
-          echo -e >> release-note.md && echo "⚠ Most modules rely on \`bs.core\` module. Don't forget to download it!" >> release-note.md
-          gh release edit ${tag_name} --notes-file release-note.md
-          gh release upload ${tag_name} build/*
-        env:
-          GH_TOKEN: ${{ github.token }}
+          pip install -r scripts/requirements.txt
+          python3 scripts/definitions.py
+      - name: Package datapacks
+        run: python3 scripts/distribute.py -v ${{ github.ref_name }} -w 0
+      - name: Package world
+        uses: aksiome/minecraft-package@master
+        with:
+          config: .mcwpack.yml
+          source: ${{ env.WORLD_PATH }}
+          target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ github.ref_name }}.zip
+      - name: Upload artifacts
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.BUILD_PATH }}/*
 
     permissions:
-      id-token: write # This is required for requesting the JWT
-      contents: write  # This is required for actions/checkout
+      id-token: write
+      contents: write
