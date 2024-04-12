@@ -58,11 +58,12 @@ class CreateStatesFile(DataProcessor):
 
         self.write_lines(to, [
             "# This file was automatically generated, do not edit it",
-        ] + [
-            (f"data modify storage bs:const "
-             f"block[{{group:{str(group + 1)}}}].iterable_properties set value "
-             f"{self.render(self.format(states))}")
-            for group, states in enumerate(self.data.groups[1:])
+            *[
+                (f"data modify storage bs:const "
+                 f"block[{{group:{str(group + 1)}}}].iterable_properties set value "
+                 f"{self.render(self.format(states))}")
+                for group, states in enumerate(self.data.groups[1:])
+            ]
         ])
 
         print("✅ Done!")
@@ -86,11 +87,12 @@ class CreateRegistryFiles(DataProcessor):
         for group, states in enumerate(self.data.groups[1:]):
             self.write_lines(to / f"{group + 1}.mcfunction", [
                 "# This file was automatically generated, do not edit it",
-            ] + [
-                (f'execute if block ~ ~ ~ #bs.block:has_state[{name}={value}] run '
-                 f'data modify storage bs:out block.iterable_properties'
-                 f'[{{name:"{name}"}}].options[{{value:"{value}"}}].selected set value 1b')
-                for name, options in states.items() for value in options
+                *[
+                    (f'execute if block ~ ~ ~ #bs.block:has_state[{name}={value}] run '
+                     f'data modify storage bs:out block.iterable_properties'
+                     f'[{{name:"{name}"}}].options[{{value:"{value}"}}].selected set value 1b')
+                    for name, options in states.items() for value in options
+                ]
             ])
 
         print("✅ Done!")
