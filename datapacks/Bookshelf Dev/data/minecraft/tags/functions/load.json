@@ -7,10 +7,6 @@
     {
       "id": "#bs.log:load",
       "required": false
-    },
-    {
-      "id": "#bs.test:load",
-      "required": false
     }
   ]
 }
