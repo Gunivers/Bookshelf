@@ -48,6 +48,21 @@ def list_modules(datapack: str) -> list[str]:
 
     return modules
 
+def list_dependencies(datapack: str, module: str) -> list[str]:
+    dependencies = [module]
+    file_path = definitions.DATAPACKS_PATH / datapack / f"data/{module}/tags/functions/load.json"
+    with open(file_path) as file:
+        contents = json.load(file)
+        for value in contents["values"]:
+            if isinstance(value, dict):
+                value = value.get("id")
+            if not value.startswith("#"):
+                continue
+            module = value.split(":")[0].lstrip("#")
+            dependencies.extend(list_dependencies(datapack, module))
+
+    return dependencies
+
 def get_world_files() -> list[str]:
     path_list = [
         "datapacks",
@@ -66,14 +81,13 @@ def get_datapack_files(datapack: str) -> list[str]:
     return get_files(definitions.DATAPACKS_PATH / datapack, path_list, DATAPACK_PATTERNS)
 
 def get_module_files(datapack: str, module: str) -> list[str]:
-    path_list = [f"data/{module}", "data/minecraft", "icon.png", "pack.mcmeta"]
-    file_path = definitions.DATAPACKS_PATH / datapack / f"data/{module}/tags/functions/load.json"
-    with open(file_path) as file:
-        contents = json.load(file)
-        path_list.extend([
-            f'data/{value.split(":")[0].lstrip("#")}'
-            for value in contents["values"]
-        ])
+    dependencies = list_dependencies(datapack, module)
+    path_list = [
+        "data/minecraft",
+        "icon.png",
+        "pack.mcmeta",
+        *[f'data/{value}' for value in dependencies]
+    ]
 
     return get_files(definitions.DATAPACKS_PATH / datapack, path_list, DATAPACK_PATTERNS)
 
