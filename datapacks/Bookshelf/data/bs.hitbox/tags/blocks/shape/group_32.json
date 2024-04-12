@@ -1,11 +1,11 @@
 {
   "values": [
-    "#minecraft:fence_gates",
-    "#minecraft:fences",
+    "#bs.hitbox:shape/fence_gate",
+    "#bs.hitbox:shape/fence",
     "#bs.hitbox:shape/grass_shaped",
     "minecraft:grindstone",
     "minecraft:hanging_roots",
-    "#minecraft:ceiling_hanging_signs",
+    "#bs.hitbox:shape/ceiling_hanging_sign",
     "#bs.hitbox:shape/head",
     "minecraft:hopper",
     "minecraft:ladder",
@@ -27,12 +27,12 @@
     "minecraft:piston_head",
     "minecraft:pitcher_crop",
     "minecraft:pointed_dripstone",
-    "#minecraft:pressure_plates",
+    "#bs.hitbox:shape/pressure_plate",
     "#bs.hitbox:shape/rail",
     "#bs.hitbox:shape/repeater_shaped",
     "#bs.hitbox:shape/rod",
     "#bs.hitbox:shape/sapling",
-    "#minecraft:walls",
+    "#bs.hitbox:shape/wall",
     "minecraft:redstone_wire"
   ]
 }

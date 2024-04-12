@@ -1,8 +1,8 @@
 {
   "values": [
-    "#minecraft:candles",
+    "#bs.hitbox:shape/candle",
     "#bs.hitbox:shape/carpet_shaped",
-    "#minecraft:cauldrons",
+    "#bs.hitbox:shape/cauldron",
     "minecraft:chain",
     "#bs.hitbox:shape/chest",
     "minecraft:composter",
@@ -11,7 +11,7 @@
     "#bs.hitbox:shape/coral_plant",
     "#bs.hitbox:shape/coral_wall_fan",
     "minecraft:daylight_detector",
-    "#minecraft:doors",
+    "#bs.hitbox:shape/door",
     "minecraft:end_portal_frame",
     "minecraft:end_portal",
     "#bs.hitbox:shape/extended_piston",
@@ -27,7 +27,7 @@
     "minecraft:piston_head",
     "minecraft:pitcher_crop",
     "minecraft:pointed_dripstone",
-    "#minecraft:pressure_plates",
+    "#bs.hitbox:shape/pressure_plate",
     "#bs.hitbox:shape/rail",
     "#bs.hitbox:shape/repeater_shaped",
     "#bs.hitbox:shape/rod",
@@ -37,16 +37,16 @@
     "#bs.hitbox:shape/tall_crop",
     "#bs.hitbox:shape/torch",
     "minecraft:torchflower_crop",
-    "#minecraft:trapdoors",
+    "#bs.hitbox:shape/trapdoor",
     "minecraft:tripwire_hook",
     "minecraft:tripwire",
     "minecraft:turtle_egg",
     "minecraft:twisting_vines",
     "#bs.hitbox:shape/vine_shaped",
     "#bs.hitbox:shape/wall_banner",
-    "#minecraft:wall_hanging_signs",
+    "#bs.hitbox:shape/wall_hanging_sign",
     "#bs.hitbox:shape/wall_head",
-    "#minecraft:wall_signs",
+    "#bs.hitbox:shape/wall_sign",
     "#bs.hitbox:shape/wall_torch"
   ]
 }

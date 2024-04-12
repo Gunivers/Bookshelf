@@ -1,6 +1,6 @@
 {
   "values": [
     "minecraft:cake",
-    "#minecraft:candle_cakes"
+    "#bs.hitbox:shape/candle_cake"
   ]
 }
