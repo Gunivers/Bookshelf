@@ -9,20 +9,15 @@ import zipfile
 from pathlib import Path
 
 DATAPACK_PATTERNS = [
-    "**/*.mcfunction",
+    "**/functions/*.mcfunction",
     "**/*.mcmeta",
     "**/*.png",
     "**/*.json",
-    "**/*.txt", # comments
     "**/*.nbt", # structure files
 ]
 WORLD_PATTERNS = [
     "**/*.mca", # region files
 ]
-
-RENAME_MODULES = {
-    "bs": "controller",
-}
 
 def get_files(
     base_dir: Path,
