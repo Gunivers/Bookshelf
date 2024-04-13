@@ -1,0 +1,3 @@
+nbtlib==1.12.1
+pyyaml
+requests

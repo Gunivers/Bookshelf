@@ -1,3 +1,2 @@
 # fallback group
-scoreboard players set @s bs.width 0
-scoreboard players set @s bs.height 0
+data modify storage bs:out hitbox set value {width:0.0,height:0.0}

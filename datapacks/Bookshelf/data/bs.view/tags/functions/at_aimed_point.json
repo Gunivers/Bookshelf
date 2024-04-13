@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.view:at_aimed_point"
+    "bs.view:aimed_point/with",
+    "bs.view:aimed_point/at_aimed_point"
   ]
 }

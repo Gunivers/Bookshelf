@@ -1,3 +1,2 @@
 # shulker_like group
-scoreboard players set @s bs.width 1000
-scoreboard players set @s bs.height 1000
+data modify storage bs:out hitbox set value {width:1.0,height:1.0}

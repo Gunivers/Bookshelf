@@ -1,13 +1,20 @@
-# add the relative coordinates to the hitbox
-execute store result score #move.max_x bs.data run scoreboard players operation #move.min_x bs.data = #move.rx bs.data
-execute store result score #move.max_y bs.data run scoreboard players operation #move.min_y bs.data = #move.ry bs.data
-execute store result score #move.max_z bs.data run scoreboard players operation #move.min_z bs.data = #move.rz bs.data
+# get the entity relative coordinates
+execute store result score #move.min_x bs.data run data get entity @s Pos[0] 1000
+execute store result score #move.min_y bs.data run data get entity @s Pos[1] 1000
+execute store result score #move.min_z bs.data run data get entity @s Pos[2] 1000
+scoreboard players operation #move.min_x bs.data -= #move.x bs.data
+scoreboard players operation #move.min_y bs.data -= #move.y bs.data
+scoreboard players operation #move.min_z bs.data -= #move.z bs.data
+execute store result score #move.max_x bs.data run scoreboard players operation #move.min_x bs.data *= 1000 bs.const
+execute store result score #move.max_y bs.data run scoreboard players operation #move.min_y bs.data *= 1000 bs.const
+execute store result score #move.max_z bs.data run scoreboard players operation #move.min_z bs.data *= 1000 bs.const
 
 # compute the hitbox using the sizes of the collided entity and the moving entity
-scoreboard players operation #move.ew bs.data = @s bs.width
-scoreboard players operation #move.eh bs.data = @s bs.height
-scoreboard players operation #move.ew bs.data *= 500 bs.const
-scoreboard players operation #move.eh bs.data *= 1000 bs.const
+execute store result score #move.eh bs.data run data get storage bs:out hitbox.height 1000
+execute store result score #move.ew bs.data run data get storage bs:out hitbox.width 500
+execute store result score #move.es bs.data run data get storage bs:out hitbox.scale 1000
+scoreboard players operation #move.eh bs.data *= #move.es bs.data
+scoreboard players operation #move.ew bs.data *= #move.es bs.data
 scoreboard players operation #move.ew bs.data += #move.w bs.data
 scoreboard players operation #move.min_x bs.data -= #move.ew bs.data
 scoreboard players operation #move.min_y bs.data -= #move.h bs.data

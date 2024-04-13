@@ -1,3 +1,2 @@
 # ravager group
-scoreboard players set @s bs.width 1950
-scoreboard players set @s bs.height 2200
+data modify storage bs:out hitbox set value {width:1.95,height:2.2}

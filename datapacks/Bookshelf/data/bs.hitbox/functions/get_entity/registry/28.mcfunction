@@ -1,3 +1,2 @@
 # guardian group
-scoreboard players set @s bs.width 850
-scoreboard players set @s bs.height 850
+data modify storage bs:out hitbox set value {width:0.85,height:0.85}

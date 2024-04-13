@@ -1,4 +1,5 @@
 # interaction group
 data modify storage bs:ctx _ set from entity @s
-execute store result score @s bs.width run data get storage bs:ctx _.width 1000
-execute store result score @s bs.height run data get storage bs:ctx _.height 1000
+data modify storage bs:out hitbox set value {}
+data modify storage bs:out hitbox.width set from storage bs:ctx _.width
+data modify storage bs:out hitbox.height set from storage bs:ctx _.height

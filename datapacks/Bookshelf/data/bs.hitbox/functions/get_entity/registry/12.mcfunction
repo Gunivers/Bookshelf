@@ -1,3 +1,2 @@
 # cave_spider group
-scoreboard players set @s bs.width 700
-scoreboard players set @s bs.height 500
+data modify storage bs:out hitbox set value {width:0.7,height:0.5}

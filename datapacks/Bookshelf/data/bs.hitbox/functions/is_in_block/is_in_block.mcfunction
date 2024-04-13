@@ -4,9 +4,9 @@
 # Authors: Aksiome
 # Contributors:
 
-# Version: 1.0
+# Version: 1.1
 # Created: 21/11/2023 (1.20.3)
-# Last modification: 27/02/2024 (1.20.4)
+# Last modification: 30/03/2024 (1.20.4)
 
 # Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside
 # Dependencies:
@@ -15,7 +15,7 @@
 # CODE ------------------------------------------------------------------------
 
 execute if block ~ ~ ~ #bs.hitbox:intangible run return 0
-execute unless block ~ ~ ~ #bs.hitbox:is_shaped run return 1
+execute unless block ~ ~ ~ #bs.hitbox:is_composite run return 1
 function #bs.hitbox:get_block
 
 execute as B5-0-0-0-1 run function bs.hitbox:is_in_block/get_pos

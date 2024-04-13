@@ -1,0 +1,33 @@
+name: 🚀 Deploy on server
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy files
+        uses:  swznd/sftp-deploy@master
+        with:
+          host: ${{ secrets.SFTP_IP }}
+          port: ${{ secrets.SFTP_PORT }}
+          user: ${{ secrets.SFTP_SANDBOX_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          remote_path: /Glib-Sandbox/
+          ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, /advancements/, /data/, /DIM-1/, /DIM1/, /entities/, /generated/, /playerdata/, /poi/, /region/ /stats/, /level.dat, /level.dat_old, /session.lock, /uid.dat, /docs/, /generators/
+      - name: Restart server
+        env:
+          SERVER_RESTART_ENDPOINT: ${{ secrets.SERVER_RESTART_ENDPOINT }}
+          SERVER_RESTART_BEARER: ${{ secrets.SERVER_RESTART_BEARER }}
+        run: |
+          server_full_status=$(curl "$SERVER_RESTART_ENDPOINT/resources" -H 'Accept: application/json'  -H 'Content-Type: application/json' -H "Authorization: Bearer $SERVER_RESTART_BEARER" -X GET)
+          server_power_status=$(jq -r '.attributes.current_state' <<<"$server_full_status")
+          if [ $server_power_status = 'running' ]; then
+            echo "Bookshelf's test server is online, restarting it to apply updates"
+            curl "$SERVER_RESTART_ENDPOINT/power" -H 'Accept: application/json' -H 'Content-Type: application/json' -H "Authorization: Bearer $SERVER_RESTART_BEARER" -X POST -d '{"signal": "restart"}'
+          else
+            echo "Bookshelf's test server is offline, it will not be started"
+          fi

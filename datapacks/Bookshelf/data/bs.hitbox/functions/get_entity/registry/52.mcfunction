@@ -1,3 +1,2 @@
 # small_fireball_like group
-scoreboard players set @s bs.width 312
-scoreboard players set @s bs.height 312
+data modify storage bs:out hitbox set value {width:0.3125,height:0.3125}

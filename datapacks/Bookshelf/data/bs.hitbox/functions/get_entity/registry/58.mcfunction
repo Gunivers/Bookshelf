@@ -1,3 +1,2 @@
 # tadpole group
-scoreboard players set @s bs.width 400
-scoreboard players set @s bs.height 300
+data modify storage bs:out hitbox set value {width:0.4,height:0.3}

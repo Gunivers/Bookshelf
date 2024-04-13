@@ -1,6 +1,4 @@
 # zombie_like group
 execute store success score #success bs.data if predicate bs.hitbox:is_baby
-execute if score #success bs.data matches 0 run scoreboard players set @s bs.width 600
-execute if score #success bs.data matches 0 run scoreboard players set @s bs.height 1950
-execute if score #success bs.data matches 1 run scoreboard players set @s bs.width 300
-execute if score #success bs.data matches 1 run scoreboard players set @s bs.height 975
+execute if score #success bs.data matches 0 run data modify storage bs:out hitbox set value {width:0.6,height:1.95}
+execute if score #success bs.data matches 1 run data modify storage bs:out hitbox set value {width:0.3,height:0.975}

@@ -1,3 +1,2 @@
 # end_crystal group
-scoreboard players set @s bs.width 2000
-scoreboard players set @s bs.height 2000
+data modify storage bs:out hitbox set value {width:2.0,height:2.0}

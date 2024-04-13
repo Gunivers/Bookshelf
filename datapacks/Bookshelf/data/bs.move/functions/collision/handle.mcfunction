@@ -10,15 +10,34 @@ execute store result score #move.vx bs.data run scoreboard players operation #mo
 execute store result score #move.vy bs.data run scoreboard players operation #move.y2 bs.data -= #move.y bs.data
 execute store result score #move.vz bs.data run scoreboard players operation #move.z2 bs.data -= #move.z bs.data
 
-# rescale width and height
-scoreboard players operation #move.w bs.data = @s bs.width
-scoreboard players operation #move.h bs.data = @s bs.height
-scoreboard players operation #move.w bs.data *= 500 bs.const
-scoreboard players operation #move.h bs.data *= 1000 bs.const
+# get width and height
+scoreboard players set #move.h bs.data 0
+scoreboard players set #move.w bs.data 0
+function bs.move:collision/hitbox
+scoreboard players operation #move.sh bs.data /= 1000 bs.const
+scoreboard players operation #move.sw bs.data /= 1000 bs.const
 
-# check for collisions for blocks and/or entities
+# check for collisions and resolve them
+tag @s add bs.move.omit
+execute on passengers run tag @s add bs.move.omit
 scoreboard players set #move.ctime bs.data 1000
-execute if data storage bs:in move{block_collision:1b} run function bs.move:collision/check/blocks
-execute if data storage bs:in move{entity_collision:1b} run function bs.move:collision/check/entities with storage bs:in move
-$execute if score #move.ctime bs.data matches 0..999 run function bs.move:collision/resolution/$(space) with storage bs:in move
+execute if score #move.vx bs.data matches 0.. run function bs.move:collision/recurse/init/x_pos
+execute if score #move.vy bs.data matches 0.. run function bs.move:collision/recurse/init/y_pos
+execute if score #move.vz bs.data matches 0.. run function bs.move:collision/recurse/init/z_pos
+execute if score #move.vx bs.data matches ..-1 run function bs.move:collision/recurse/init/x_neg
+execute if score #move.vy bs.data matches ..-1 run function bs.move:collision/recurse/init/y_neg
+execute if score #move.vz bs.data matches ..-1 run function bs.move:collision/recurse/init/z_neg
+scoreboard players operation #move.x2 bs.data *= 1000 bs.const
+scoreboard players operation #move.y2 bs.data *= 1000 bs.const
+scoreboard players operation #move.z2 bs.data *= 1000 bs.const
+execute store result score #move.rx bs.data run scoreboard players operation #move.x1 bs.data *= 1000 bs.const
+execute store result score #move.ry bs.data run scoreboard players operation #move.y1 bs.data *= 1000 bs.const
+execute store result score #move.rz bs.data run scoreboard players operation #move.z1 bs.data *= 1000 bs.const
+execute store result score #move.b bs.data unless data storage bs:data move{blocks:0b}
+execute store result score #move.e bs.data unless data storage bs:data move{entities:0b}
+execute if score #move.e bs.data matches 1 if data storage bs:data move{entities:1b} run data modify storage bs:data move.entities set value "!bs.move.omit"
+execute if score #move.vx bs.data matches 0.. at B5-0-0-0-1 align xyz run function bs.move:collision/recurse/x_pos
+execute if score #move.vx bs.data matches ..-1 at B5-0-0-0-1 align xyz run function bs.move:collision/recurse/x_neg
+tag @e[tag=bs.move.omit] remove bs.move.omit
+execute if score #move.ctime bs.data matches 0..999 run function bs.move:collision/resolution/resolve with storage bs:data move
 execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

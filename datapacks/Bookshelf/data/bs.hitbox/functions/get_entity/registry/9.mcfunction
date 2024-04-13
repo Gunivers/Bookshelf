@@ -1,3 +1,2 @@
 # boat group
-scoreboard players set @s bs.width 1375
-scoreboard players set @s bs.height 562
+data modify storage bs:out hitbox set value {width:1.375,height:0.5625}

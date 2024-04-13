@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.view:at_aimed_entity"
+    "bs.view:aimed_entity/with",
+    "bs.view:aimed_entity/at_aimed_entity"
   ]
 }

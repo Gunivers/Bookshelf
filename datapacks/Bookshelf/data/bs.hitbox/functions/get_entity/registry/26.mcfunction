@@ -1,3 +1,2 @@
 # giant group
-scoreboard players set @s bs.width 3600
-scoreboard players set @s bs.height 12000
+data modify storage bs:out hitbox set value {width:3.6,height:12.0}
