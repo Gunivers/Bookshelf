@@ -147,6 +147,8 @@ function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 
 This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
 ```
 
+> **Credits**: Aksiome
+
 ---
 
 ### Can see "as to at"
@@ -160,17 +162,25 @@ Determine if an entity, from its current position, can have an unobstructed view
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check for visibility.
 
-  **Storage `bs:in view.can_see_ata.ignored_blocks` [string]**: Blocks to ignore (default: `#bs.view:can_see_through`).
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 
 :Outputs:
   **Return**: Whether the check is a success or a failure (1 or 0).
 ```
 
-*Run a command on entities that may be able to see you:*
+*See if the nearest entity is able to see you:*
 
 ```mcfunction
 # Once
-execute at @s as @e[distance=0.1..] if function #bs.view:can_see_ata run say You're not hiding very well...
+
+execute at @s as @e[distance=0.1..,sort=nearest,limit=1] store success score #success bs.data run function #bs.view:can_see_ata {with:{}}
+execute if score #success bs.data matches 1 run say You're not hiding very well...
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
 ```
 
 > **Credits**: Aksiome, Leirof
@@ -188,14 +198,14 @@ Determine if an entity has the execution position in its view angle.
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check if it's within the field of view.
 
-  **Storage `bs:in view.in_view_ata.angle` [number]**: Angle that represents the field of view (based on the world and not the fov option).
+  **Macro Var `angle` [number]**: Angle that represents the field of view (based on the world and not the fov option).
 ```
 
 *Check whether the position 0 5 0 is in your field of view::*
 
 ```mcfunction
 # Once
-execute as @s positioned 0 5 0 run function #bs.view:in_view_ata
+execute as @s positioned 0 5 0 run function #bs.view:in_view_ata {angle:90}
 ```
 
 > **Credits**: Aksiome, Leirof

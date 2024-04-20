@@ -3,21 +3,29 @@ name: 🚀 Deploy on server
 on:
   push:
     branches: [master]
-
+  workflow_dispatch:
+    inputs:
+      sync:
+        description: "File synchronization"
+        required: true
+        default: "delta"
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy files
-        uses:  swznd/sftp-deploy@master
+      - uses: actions/checkout@v4
         with:
-          host: ${{ secrets.SFTP_IP }}
-          port: ${{ secrets.SFTP_PORT }}
-          user: ${{ secrets.SFTP_SANDBOX_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          remote_path: /Glib-Sandbox/
-          ignore: .github/**,.gitignore,**/.gitignore,**/.git/**, /advancements/, /data/, /DIM-1/, /DIM1/, /entities/, /generated/, /playerdata/, /poi/, /region/ /stats/, /level.dat, /level.dat_old, /session.lock, /uid.dat, /docs/, /generators/
+          fetch-depth: 0
+      - name: Deploy files
+        uses:  milanmk/actions-file-deployer@master
+        with:
+          remote-protocol: "sftp"
+          remote-host: ${{ secrets.SFTP_IP }}
+          remote-port: ${{ secrets.SFTP_PORT }}
+          remote-user: ${{ secrets.SFTP_SANDBOX_USER }}
+          remote-password: ${{ secrets.SFTP_PASSWORD }}
+          remote-path: /bookshelf-world/
+          ftp-mirror-options: "--include-glob=**/*.mca --include-glob=datapacks/** --include-glob=level.dat --include-glob=icon.png"
       - name: Restart server
         env:
           SERVER_RESTART_ENDPOINT: ${{ secrets.SERVER_RESTART_ENDPOINT }}

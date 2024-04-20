@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-data modify storage bs:ctx x set from storage bs:in math.log.x
-function bs.math:log2/log2
-execute store result storage bs:out math.log float .000000059604644775390625 run data get storage bs:out math.log2 5050445.259733675979077816009521484375
+data modify storage bs:ctx x set from storage bs:in math.log10.x
+function bs.math:log2/run
+execute store result storage bs:out math.log10 float .000000059604644775390625 run data get storage bs:ctx x 5050445.259733675979077816009521484375

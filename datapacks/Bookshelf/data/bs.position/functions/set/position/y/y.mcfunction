@@ -15,4 +15,4 @@
 # CODE ------------------------------------------------------------------------
 
 $execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.pos.y
-function bs.position:set/position/y/run with storage bs:ctx
+execute at @s positioned ~ 0.0 ~ run function bs.position:set/position/y/run with storage bs:ctx

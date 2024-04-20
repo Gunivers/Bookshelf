@@ -14,8 +14,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $id.suid.check bs.in = @s bs.link.to
-execute at @e[predicate=bs.id:suid_match,sort=arbitrary,limit=1] run function #bs.position:get_pos_and_rot {scale:1000}
+scoreboard players operation $id.suid bs.in = @s bs.link.to
+execute at @e[predicate=bs.id:suid_equal,sort=arbitrary,limit=1] run function #bs.position:get_pos_and_rot {scale:1000}
 
 scoreboard players operation #link.origin.x bs.data = @s bs.pos.x
 scoreboard players operation #link.origin.y bs.data = @s bs.pos.y

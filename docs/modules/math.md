@@ -140,7 +140,7 @@ Compute the factorial of the number.
 ```{admonition} Technical limitation
 :class: important
 
-Due to the limit of integers that can be stored in a score, the interval of `bs.in.0` is limited to `[0,12]`.
+Due to the limit of integers that can be stored in a score, the interval of `$math.factorial.n bs.in` is limited to `[0,12]`.
 ```
 
 *Compute $3!$:*
@@ -196,7 +196,7 @@ Build a floating point number from a normalized fraction and an integral power o
   **Storage `bs:in math.ldexp.e` [int]**: Exponent for the power of 2.
 
 :Outputs:
-  **Storage `bs:out math.ldexp.x` [float]**: Resulting floating-point number.
+  **Storage `bs:out math.ldexp` [float]**: Resulting floating-point number.
 ```
 
 *Compose a floating-point number:*
@@ -205,7 +205,7 @@ Build a floating point number from a normalized fraction and an integral power o
 data modify storage bs:in math.ldexp.e set value 3
 data modify storage bs:in math.ldexp.x set value 0.75
 function #bs.math:ldexp
-data get storage bs:out math.ldexp.x
+data get storage bs:out math.ldexp
 ```
 
 :::
