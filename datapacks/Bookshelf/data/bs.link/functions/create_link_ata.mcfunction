@@ -14,6 +14,8 @@
 
 # CODE ------------------------------------------------------------------------
 
-execute as @e[limit=1,sort=nearest] unless predicate bs.id:has_suid run function #bs.id:give_suid
-scoreboard players operation @s bs.link.to = @e[limit=1,sort=nearest] bs.id
+tag @s add bs.link.this
+execute as @e[tag=!bs.link.this,sort=nearest,limit=1] unless predicate bs.id:has_suid run function #bs.id:give_suid
+scoreboard players operation @s bs.link.to = @e[tag=!bs.link.this,sort=nearest,limit=1] bs.id
+tag @s remove bs.link.this
 function #bs.link:update_link
