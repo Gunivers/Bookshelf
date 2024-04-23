@@ -22,6 +22,19 @@ Bookshelf is still in its development phase, and there is no straightforward ins
 We are actively searching for web developers to create the new version of the Bookshelf Manager, a website that helps users download modules and their respective dependencies. We've already finalized the mockup for the website, you can [check it here](https://www.figma.com/file/kVAmQnmP5pWWzun0Iq2kBa/Bookshelf-Manager-V2.0-prod?type=design&node-id=0-1). If you are interested in helping us, please contact us on Discord!
 ```
 
+## 🏷️ Install from release
+
+If you prefer to install from a GitHub release, you can do so by visiting the [github](https://github.com/Gunivers/Bookshelf/releases) repository. In each release, you will find zipped datapacks.
+
+You have two options for installation:
+
+1. **Whole Datapacks:** You can download entire datapacks which includes all modules and dependencies. This is a good option if you want to explore everything Bookshelf has to offer.
+2. **Module by Module:** If you prefer, you can also download individual modules as datapacks. Each module zip file contains all the dependencies needed for that module to work. This is a great option if you only need specific functionalities and want to keep your installation lightweight.
+
+After downloading, move the zip file to the datapacks directory of your Minecraft world.
+
+Please note that while the datapacks from GitHub releases are stable, they might not include the very latest features or fixes that are available in the source code. If you want the most up-to-date version of Bookshelf, consider installing from source.
+
 
 ## 🗃️ Install from source
 
@@ -42,7 +55,7 @@ This is the main datapack of the library, containing all the useful tools for yo
 
 **📁 datapacks / Bookshelf Dev**
 
-This datapack includes utilities for developers, such as logs, unit tests, and more. Its purpose is to provide essential tools to assist you during the development phase of your project.
+This datapack includes utilities for developers, such as logs and more. Its purpose is to provide essential tools to assist you during the development phase of your project.
 
 **📁 datapacks / Bookshelf Examples (WIP)**
 
@@ -62,6 +75,9 @@ This datapack contains code utilized by the world itself. It is not intended for
 Bookshelf relies on persistent entities to enhance performances. Therefore, it's important not to kill all entities. Instead, you can use the command `kill @e[tag=!bs.persistent]`. [Learn more here](contribute/shared-data.md#shared-entities)
 :::
 
+### 📖 Good practices
+
+Bookshelf is designed to minimize unintended side effects. However, complications can arise when multiple datapacks utilize the same one. To prevent potential issues, it’s always recommended to set inputs prior to executing a function. This holds true even though Bookshelf adheres to a strict policy of preserving inputs. By following this practice, you can ensure smoother operation and prevent unexpected behaviors.
 
 :::{note}
 This section is in progress. If you have some ideas about how to improve the first steps with Bookshelf, please share it on our [Discord server](https://discord.gg/E8qq6tN).
@@ -71,15 +87,6 @@ This section is in progress. If you have some ideas about how to improve the fir
 
 
 <!--
-
-
-```{admonition} You can take only what you need!
-:class: note
-
-As it is a big project with a lot of things included, you probably don't need everything. That's why we propose you to download it from the [Bookshelf Manager](https://bookshelf.gunivers.net). Moreover, some modules can be heavy, such as the `bs.block` or `bs.item` that contain search trees. If you download them, the reload can take some time. If you edit the datapack, be sure to compress it in a zip file before uploading it somewhere. In the other cases, the search trees will slow down the upload due to thousands of little files (minecraft limitations oblige).
-```
-
-## 👶 First steps
 
 Now that Bookshelf is installed on your map (or once you are on the sandbox map), let's start to make some basic stuff to understand how it work!
 
