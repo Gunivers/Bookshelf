@@ -1,7 +1,3 @@
----
-html_theme.sidebar_primary.remove: true
----
-
 # 🛠️ Changelog
 
 ## Bookshelf - 2.0.0
