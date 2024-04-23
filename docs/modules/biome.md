@@ -23,38 +23,51 @@ You can find below all functions available in this module.
 
 ---
 
-### Get temperature
+### Get biome
 
-::::{tab-set}
-:::{tab-item} Base temperature
+```{function} #bs.biome:get_biome
 
-```{function} #bs.biome:get_base_temperature
-
-Get the base temperature of the biome at the execution position of the function.
+Get biome data at the execution position of the function.
 
 :Inputs:
-  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get biome data.
 
 :Outputs:
-  **Return | Score `$biome.get_base_temperature bs.out`**: Base temperature of the biome (scaled by 10^8).
+  **Storage `bs:out biome` [compound]**:
+  :::{list-table}
+  *   - **`id`**&nbsp;[int]
+      - A numeric id that represents the biome type.
+  *   - **`type`**&nbsp;[string]
+      - String representation of the id (e.g., `minecraft:plains`).
+  *   - **`temperature`**&nbsp;[double]
+      - The base temperature of the biome.
+  *   - **`has_precipitation`**&nbsp;[bool]
+      - Whether the biome has precipitation or not.
+  :::
 ```
 
-*Get the base temperature of the current biome:*
+*Get biome data at the current location:*
 
 ```mcfunction
 # Once
-function #bs.biome:get_base_temperature
+function #bs.biome:get_biome
+data get storage bs:out biome
 ```
 
-:::
-:::{tab-item} At a given position
+> **Credits**: Aksiome
 
-```{function} #bs.biome:get_temperature
+---
+
+### Get temperature
+
+```{function} #bs.biome:get_temperature {scale:<scaling>}
 
 Get the temperature at the execution position of the function taking the altitude into account.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
+
+  **Macro Var `scale`**: Scalar for the function's outputs.
 
 :Outputs:
   **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position (scaled by 10^8).
@@ -64,11 +77,8 @@ Get the temperature at the execution position of the function taking the altitud
 
 ```mcfunction
 # Once
-function #bs.biome:get_temperature
+function #bs.biome:get_temperature {scale:1000}
 ```
-
-:::
-::::
 
 > **Credits**: Aksiome, theogiraudet
 
