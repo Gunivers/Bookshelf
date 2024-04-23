@@ -22,6 +22,7 @@ if __name__ == "__main__":
             file.write(f"MC_VERSION={MC_VERSION}\n")
             file.write(f"WORLD_PATH={WORLD_PATH}\n")
             file.write(f"ASSETS_PATH={ASSETS_PATH}\n")
+            file.write(f"BUILD_PATH={BUILD_PATH}\n")
             file.write(f"DATAPACKS_PATH={DATAPACKS_PATH}\n")
             file.write(f"TEST_PACKTEST={mcunit.packtest_url}\n")
             file.write(f"TEST_FABRIC_API={mcunit.fabric_api_url}\n")
