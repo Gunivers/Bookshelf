@@ -2,6 +2,7 @@
 # @batch bs.view
 # @dummy
 
+fill ~-1 ~ ~-1 ~1 ~1 ~1 minecraft:air
 setblock ~ ~1 ~1 minecraft:bookshelf
 
 execute at @s positioned ~ ~1 ~.5 store result score #success bs.data run function #bs.view:can_see_ata {with:{}}
