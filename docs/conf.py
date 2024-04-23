@@ -63,6 +63,14 @@ version_match = os.environ.get("READTHEDOCS_VERSION")
 if not version_match or version_match.isdigit():
     version_match = "latest"
 
+html_sidebars = {
+    'CHANGELOG': [],
+    'faq': [],
+    'index': [],
+    'quickstart': [],
+    'special-thanks': [],
+}
+
 html_theme_options = {
     "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
     "navbar_start": ["navbar-logo", "version-switcher"],

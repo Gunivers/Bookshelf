@@ -1,7 +1,3 @@
----
-html_theme.sidebar_primary.remove: true
----
-
 # 🚀 Quickstart
 
 This page gives a quick overview of how to get started with the Bookshelf library, and how to use it.

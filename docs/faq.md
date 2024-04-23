@@ -1,7 +1,3 @@
----
-html_theme.sidebar_primary.remove: true
----
-
 # 📋 FAQ
 
 ## Can I use Bookshelf in my project?
