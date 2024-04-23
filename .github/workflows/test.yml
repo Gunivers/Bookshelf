@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
       - name: Setup environement variables
         run: |
           pip install -r scripts/requirements.txt
