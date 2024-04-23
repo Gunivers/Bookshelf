@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.biome:get_temperature"
+    "bs.biome:get/temperature/get_temperature"
   ]
 }

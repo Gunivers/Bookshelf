@@ -2,8 +2,10 @@
   "condition": "minecraft:all_of",
   "terms": [
     {
-      "condition": "minecraft:reference",
-      "name": "bs.biome:has_precipitation"
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "biomes": "#bs.biome:has_precipitation"
+      }
     },
     {
       "condition": "minecraft:inverted",
