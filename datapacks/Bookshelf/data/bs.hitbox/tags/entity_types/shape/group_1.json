@@ -34,6 +34,7 @@
     "minecraft:wither",
     "minecraft:wither_skull",
     "#bs.hitbox:shape/zombie_like",
-    "minecraft:villager"
+    "minecraft:villager",
+    "minecraft:armadillo"
   ]
 }
