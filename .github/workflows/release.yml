@@ -13,18 +13,20 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
           python3 scripts/definitions.py
+          TAG=${{ github.ref_name }}
+          echo "VERSION=${TAG#v}" >> $GITHUB_ENV
       - name: Package datapacks
-        run: python3 scripts/distribute.py -v ${{ github.ref_name }} -w 0
+        run: python3 scripts/distribute.py -v ${{ env.VERSION }} -w 0
       - name: Package world
         uses: aksiome/minecraft-package@master
         with:
           config: .mcwpack.yml
           source: ${{ env.WORLD_PATH }}
-          target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ github.ref_name }}.zip
+          target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ env.VERSION }}.zip
       - name: Upload artifacts
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.BUILD_PATH }}/*
+          files: ${{ env.BUILD_PATH }}/*.zip
 
     permissions:
       id-token: write
