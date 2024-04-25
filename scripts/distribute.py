@@ -109,7 +109,7 @@ def create_datapacks_archive(target: Path, filename: str):
     for datapack in ["Bookshelf", "Bookshelf Dev"]:
         print(f"📦 Creating archive for datapack {datapack}")
         create_archive(
-            target / filename.format(datapack),
+            target / filename.format(datapack.lower().replace(" ", "-")),
             definitions.DATAPACKS_PATH / datapack,
             get_datapack_files(datapack),
         )
@@ -136,13 +136,13 @@ if __name__ == "__main__":
 
     target = Path(args.target).absolute() if args.target else definitions.BUILD_PATH
     target.mkdir(parents=True, exist_ok=True)
-    version = f" {args.version}" if args.version else ""
+    version = f"-{args.version}" if args.version else ""
 
     if args.datapacks:
         create_datapacks_archive(target, f"{{}}{version}.zip")
     if args.modules:
         (target / "modules").mkdir(parents=True, exist_ok=True)
-        create_modules_archive(target, f"modules/bs-{{}}-{version}.zip")
-        shutil.make_archive(target / f"Bookshelf Modules {version}", "zip", target / "modules")
+        create_modules_archive(target, f"modules/bs-{{}}{version}.zip")
+        shutil.make_archive(target / f"bookshelf-modules{version}", "zip", target / "modules")
     if args.world:
-        create_world_archive(target, f"Bookshelf World {version}.zip")
+        create_world_archive(target, f"bookshelf-world{version}.zip")
