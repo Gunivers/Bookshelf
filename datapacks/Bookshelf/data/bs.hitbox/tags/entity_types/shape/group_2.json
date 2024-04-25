@@ -34,6 +34,7 @@
     "minecraft:wither",
     "minecraft:wolf",
     "#bs.hitbox:shape/zombie_like",
-    "minecraft:goat"
+    "minecraft:goat",
+    "minecraft:armadillo"
   ]
 }

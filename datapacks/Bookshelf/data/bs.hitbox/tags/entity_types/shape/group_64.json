@@ -6,6 +6,7 @@
     "#bs.hitbox:shape/zombie_like",
     "minecraft:player",
     "minecraft:goat",
-    "minecraft:villager"
+    "minecraft:villager",
+    "minecraft:armadillo"
   ]
 }
