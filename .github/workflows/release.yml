@@ -16,13 +16,13 @@ jobs:
           TAG=${{ github.ref_name }}
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
       - name: Package datapacks
-        run: python3 scripts/distribute.py -v ${{ env.VERSION }} -w 0
+        run: python3 scripts/distribute.py -v ${{ env.MC_VERSION }}-${{ env.VERSION }} -w 0
       - name: Package world
         uses: aksiome/minecraft-package@master
         with:
           config: .mcwpack.yml
           source: ${{ env.WORLD_PATH }}
-          target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ env.VERSION }}.zip
+          target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ env.MC_VERSION }}-${{ env.VERSION }}.zip
       - name: Upload artifacts
         uses: softprops/action-gh-release@v1
         with:
