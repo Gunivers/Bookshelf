@@ -4,16 +4,16 @@
 
 Efficiently manage the lifecycle and vital aspects of an entity.
 
-```{admonition} About NBTs
-:class: warning
-
-When using the module, you cannot rely on NBTs to get health information. Use the `get_health` and `get_max_health` functions instead. This is because NBTs may not consistently reflect actual values. This choice was made to enhance performance, reliability, and to work around some limitations.
-```
-
 ```{epigraph}
 "He who has a why to live can bear almost any how."
 
 -- Friedrich Nietzsche
+```
+
+```{admonition} About NBTs
+:class: warning
+
+When using the module, you cannot rely on NBTs to get health information. Use the `get_health` and `get_max_health` functions instead. This is because NBTs may not consistently reflect actual values. This choice was made to enhance performance, reliability, and to work around some limitations.
 ```
 
 ---
@@ -29,14 +29,14 @@ You can find below all functions available in this module.
 ::::{tab-set}
 :::{tab-item} Health
 
-```{function} #bs.helth:add_health
+```{function} #bs.health:add_health
 
 Add or remove health points from players.
 
 :Inputs:
   **Execution `as <players>`**: Players whose health will be updated.
 
-  **Macro var `points` [number]**: Health points to add to players.
+  **Macro var `points`**: {nbt}`number` Health points to add to players.
 
 :Outputs:
   **State**: Health is scheduled for update.
@@ -57,14 +57,14 @@ You can use negative numbers to remove health points from the player.
 :::
 :::{tab-item} Max Health
 
-```{function} #bs.helth:add_max_health
+```{function} #bs.health:add_max_health
 
 Add or remove maximum health points from players.
 
 :Inputs:
   **Execution `as <players>`**: Players whose max health will be updated.
 
-  **Macro var `points` [number]**: Max health points to add to players.
+  **Macro var `points`**: {nbt}`number` Max health points to add to players.
 
 :Outputs:
   **State**: Max health is scheduled for update.
@@ -94,17 +94,17 @@ You can use negative numbers to remove max health from the player.
 ::::{tab-set}
 :::{tab-item} Health
 
-```{function} #bs.helth:get_health
+```{function} #bs.health:get_health
 
 Get a player's health points.
 
 :Inputs:
   **Execution `as <players>`**: Players from which you want to get health points.
 
-  **Macro var `scale` [number]**: Scalar for the function’s returned value.
+  **Macro var `scale`**: {nbt}`number` Scalar for the function’s returned value.
 
 :Outputs:
-  **Return | Storage `bs:out health.get_health` [double]**: Player's health points.
+  **Return | Storage `bs:out health.get_health`**: {nbt}`double` Player's health points.
 ```
 
 *Get your current HP (scaled by 1000):*
@@ -116,17 +116,17 @@ function #bs.health:get_health {scale:1000}
 :::
 :::{tab-item} Max Health
 
-```{function} #bs.helth:get_max_health
+```{function} #bs.health:get_max_health
 
 Get a player's maximum health points.
 
 :Inputs:
   **Execution `as <players>`**: Players from which you want to get max health points.
 
-  **Macro var `scale` [number]**: Scalar for the function’s returned value.
+  **Macro var `scale`**: {nbt}`number` Scalar for the function’s returned value.
 
 :Outputs:
-  **Return | Storage `bs:out health.get_max_health` [double]**: Player's max health points.
+  **Return | Storage `bs:out health.get_max_health`**: {nbt}`double` Player's max health points.
 ```
 
 *Get your maximum HP (scaled by 1000):*
@@ -147,14 +147,14 @@ function #bs.health:get_max_health {scale:1000}
 ::::{tab-set}
 :::{tab-item} Health
 
-```{function} #bs.helth:set_health
+```{function} #bs.health:set_health
 
 Set players health points.
 
 :Inputs:
   **Execution `as <players>`**: Players whose health will be updated.
 
-  **Macro var `points` [number]**: Health points.
+  **Macro var `points`**: {nbt}`number` Health points.
 
 :Outputs:
   **State**: Health is scheduled for update.
@@ -169,14 +169,14 @@ function #bs.health:set_health {points:5.0}
 :::
 :::{tab-item} Max Health
 
-```{function} #bs.helth:set_max_health
+```{function} #bs.health:set_max_health
 
 Set players maximum health points.
 
 :Inputs:
   **Execution `as <players>`**: Players whose max health will be updated.
 
-  **Macro var `points` [number]**: Max health points.
+  **Macro var `points`**: {nbt}`number` Max health points.
 
 :Outputs:
   **State**: Max health is scheduled for update.
@@ -197,18 +197,20 @@ function #bs.health:set_max_health {points:5.0}
 
 ### Time to live
 
-```{function} #bs.helth:time_to_live
+```{function} #bs.health:time_to_live
 
 Set the life time of entities.
 
 :Inputs:
   **Execution `as <entities>`**: Entities to add a life time to.
 
-  **Macro var `with.time` [int]**: Time to live. In ticks by default if unit is not defined.
-
-  **Macro var `with.unit` [string]**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
-
-  **Macro var `with.on_death` [string]**: Command that will be run as the entity on its death.
+  **Macro var `with`**:
+  :::{treeview}
+  - {nbt}`compound` Life time data
+    - {nbt}`int` **time**: Time to live. In ticks by default if unit is not defined.
+    - {nbt}`string` **unit**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
+    - {nbt}`string` **on_death**: Command that will be run as the entity on its death.
+  :::
 
 :Outputs:
   **State**: The entity has now a finite life time.

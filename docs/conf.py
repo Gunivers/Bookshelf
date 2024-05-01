@@ -1,23 +1,28 @@
 import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "_exts/"))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Bookshelf'
-copyright = '2023, Gunivers'
-author = 'Gunivers'
+project = "Bookshelf"
+copyright = "2023, Gunivers"
+author = "Gunivers"
 
 
 # -- General configuration ---------------------------------------------------
 
 extensions = [
-  'myst_parser',
-  'sphinx_design',
-  'sphinx_togglebutton',
-  'sphinx_copybutton',
+  "myst_parser",
+  "sphinx_design",
+  "sphinx_togglebutton",
+  "sphinx_copybutton",
+  "bs_treeview",
+  "bs_nbt",
 ]
 
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-templates_path = ['_templates']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+templates_path = ["_templates"]
 
 
 # -- MyST options ------------------------------------------------------------
@@ -42,13 +47,13 @@ myst_enable_extensions = [
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = 'pydata_sphinx_theme'
+html_theme = "pydata_sphinx_theme"
 html_logo = "_static/logo-bookshelf.png"
 html_favicon = "_static/logo-bookshelf.png"
 
-html_static_path = ['_static']
-html_css_files = ['bookshelf.css']
-html_js_files = ['bookshelf.js']
+html_static_path = ["_static"]
+html_css_files = ["bookshelf.css", "treeview.css"]
+html_js_files = ["bookshelf.js"]
 
 html_context = {
     "github_user": "Gunivers",
@@ -64,17 +69,18 @@ if not version_match or version_match.isdigit():
     version_match = "latest"
 
 html_sidebars = {
-    'CHANGELOG': [],
-    'faq': [],
-    'index': [],
-    'quickstart': [],
-    'special-thanks': [],
+    "CHANGELOG": [],
+    "faq": [],
+    "index": [],
+    "quickstart": [],
+    "special-thanks": [],
 }
 
 html_theme_options = {
     "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
     "navbar_start": ["navbar-logo", "version-switcher"],
     "navbar_persistent": ["search-button"],
+    "navigation_with_keys": True,
     "use_edit_page_button": True,
     "header_links_before_dropdown": 6,
     "logo": {

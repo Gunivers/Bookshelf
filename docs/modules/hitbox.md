@@ -20,23 +20,28 @@ You can find below all functions available in this module.
 
 ### Get
 
-::::{tab-set}
-:::{tab-item} Block
+:::::{tab-set}
+::::{tab-item} Block
 
 ```{function} #bs.hitbox:get_block
 
-Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions range from 0 to 16 as for models. This means that a full block will return the following: `[[0, 0, 0, 16, 16, 16]]`.
+Get the hitbox of a block as a shape, represented by a list of boxes coordinates. Dimensions range from 0 to 16 as for models.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
-  **Storage `bs:out hitbox.shape` [array]**: An array of cube coordinates.
-
-  **Storage `bs:out hitbox.offset.[x,z]`**: Hitbox offset (used for exemple by flowers).
+  **Storage `bs:out hitbox`**:
+  :::{treeview}
+  - {nbt}`compound` Block collision box
+    - {nbt}`list` **shape**: A list of cube coordinates (format: `[[xmin, ymin, zmin, xmax, ymax, zmax]]`).
+    - {nbt}`compound` **offset**: Hitbox offset (used for exemple by flowers).
+      - {nbt}`double` **x**: Number describing the X coordinate offset.
+      - {nbt}`double` **z**: Number describing the Z coordinate offset.
+  :::
 ```
 
-*Get the hitbox of a stair:*
+*Get the hitbox of stairs:*
 
 ```mcfunction
 setblock 0 0 0 minecraft:oak_stairs
@@ -44,8 +49,8 @@ execute positioned 0 0 0 run function #bs.hitbox:get_block
 data get storage bs:out hitbox
 ```
 
-:::
-:::{tab-item} Entity
+::::
+::::{tab-item} Entity
 
 ```{function} #bs.hitbox:get_entity
 
@@ -55,26 +60,28 @@ Get the width and height of an entity.
   **Execution `as <entities>`**: Entity to get the hitbox from.
 
 :Outputs:
-  **Storage `bs:out hitbox.height`**: Height of the entity.
-
-  **Storage `bs:out hitbox.width`**: Width of the entity.
-
-  **Storage `bs:out hitbox.scale`**: Scaling of the hitbox.
+  **Storage `bs:out hitbox`**:
+  :::{treeview}
+  - {nbt}`compound` Block collision box
+    - {nbt}`double` **height**: Height of the entity.
+    - {nbt}`double` **width**: Width of the entity.
+    - {nbt}`double` **scale**: Scaling of the hitbox.
+  :::
 ```
 
 *Get the hitbox of an armor_stand:*
 
 ```mcfunction
 execute summon minecraft:armor_stand run function #bs.hitbox:get_entity
-execute as @e[type=armor_stand,sort=nearest,limit=1] run tellraw @a [{"text":"Height: ","color":"gray"},{"score":{"name":"@s","objective":"bs.height"},"color":"gold"},{"text":", Width: "},{"score":{"name":"@s","objective":"bs.width"},"color":"gold"}]
+data get storage bs:out hitbox
 ```
 
 ```{important}
 Static entities, such as paintings and item frames, do not provide height and width information. Instead, they return a shape similar to blocks in `bs:out hitbox`.
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome
 
@@ -96,7 +103,7 @@ Check if the execution position is inside the hitbox of a block.
   **Return**: Success or failure.
 ```
 
-*Say My name is Pavel if you are inside a block:*
+*Say "My name is Pavel" if you are inside a block:*
 
 ```mcfunction
 execute if function #bs.hitbox:is_in_block run say My name is Pavel

@@ -4,7 +4,10 @@ This page gives a quick overview of how to get started with the Bookshelf librar
 
 ---
 
-## 🔌 Quick installation
+## 📥 Installation
+
+:::::{tab-set}
+::::{tab-item} 🔌 from manager
 
 Bookshelf is still in its development phase, and there is no straightforward installation process at the moment. If you're not familiar with datapacks, feel free to join our Discord, we'll be delighted to assist you with the installation and usage of the library!
 
@@ -22,21 +25,21 @@ Bookshelf is still in its development phase, and there is no straightforward ins
 We are actively searching for web developers to create the new version of the Bookshelf Manager, a website that helps users download modules and their respective dependencies. We've already finalized the mockup for the website, you can [check it here](https://www.figma.com/file/kVAmQnmP5pWWzun0Iq2kBa/Bookshelf-Manager-V2.0-prod?type=design&node-id=0-1). If you are interested in helping us, please contact us on Discord!
 ```
 
-## 🏷️ Install from release
+::::
+::::{tab-item} 🏷️ from release
 
-If you prefer to install from a GitHub release, you can do so by visiting the [github](https://github.com/Gunivers/Bookshelf/releases) repository. In each release, you will find zipped datapacks.
+If you prefer to install from a GitHub release, you can do so by visiting the [github](https://github.com/Gunivers/Bookshelf/releases) repository. In each release, you will find zipped datapacks. You have two options for installation:
 
-You have two options for installation:
+📚 **Whole Datapacks:** You can download entire datapacks which includes all modules and dependencies. This is a good option if you want to explore everything Bookshelf has to offer.
 
-1. **Whole Datapacks:** You can download entire datapacks which includes all modules and dependencies. This is a good option if you want to explore everything Bookshelf has to offer.
-2. **Module by Module:** If you prefer, you can also download individual modules as datapacks. Each module zip file contains all the dependencies needed for that module to work. This is a great option if you only need specific functionalities and want to keep your installation lightweight.
+🧩 **Module by Module:** If you prefer, you can also download individual modules as datapacks. Each module zip file contains all the dependencies needed for that module to work. This is a great option if you only need specific functionalities and want to keep your installation lightweight.
 
 After downloading, move the zip file to the datapacks directory of your Minecraft world.
 
 Please note that while the datapacks from GitHub releases are stable, they might not include the very latest features or fixes that are available in the source code. If you want the most up-to-date version of Bookshelf, consider installing from source.
 
-
-## 🗃️ Install from source
+::::
+::::{tab-item} 🗃️ from source
 
 If you know how datapacks work, and want to handle the installation process on your own 💪😎, first familiarize yourself with the structure of the project below. Then rendez-vous on [github](https://github.com/Gunivers/Bookshelf) to download the repository, and extract only what you need!
 
@@ -65,6 +68,8 @@ This datapack contains easily-readable examples showcasing systems that can be c
 
 This datapack contains code utilized by the world itself. It is not intended for direct use.
 
+::::
+:::::
 
 ---
 

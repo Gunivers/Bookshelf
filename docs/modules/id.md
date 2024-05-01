@@ -66,7 +66,7 @@ The chain ID is similar to the simple ID. However with chain IDs, you can use th
 *Give an ID to all players:*
 ```mcfunction
 # Give an id to all players who don’t have one
-execute as @a[predicate=!bs.id:has_cuid] run  run function #bs.id:give_cuid
+execute as @a[predicate=!bs.id:has_cuid] run function #bs.id:give_cuid
 
 # See the result
 scoreboard objective setdisplay sidebar bs.cid
@@ -182,7 +182,7 @@ Filter entities that have a `bs.id` between the given values.
 :Inputs:
   **Score `$id.suid.min bs.in`**: Min value to check against.
 
-  **Score `$id.suid.max bs.in`**: Min value to check against.
+  **Score `$id.suid.max bs.in`**: Max value to check against.
 ```
 
 *Filter entities that have a `bs.id` between 2 and 4:*
@@ -280,7 +280,7 @@ Filter entities that have a `bs.cid` between the given values.
 :Inputs:
   **Score `$id.cuid.min bs.in`**: Min value to check against.
 
-  **Score `$id.cuid.max bs.in`**: Min value to check against.
+  **Score `$id.cuid.max bs.in`**: Max value to check against.
 ```
 
 *Filter entities that have a `bs.cid` between 2 and 4:*

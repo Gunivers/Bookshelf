@@ -298,7 +298,7 @@ Get the min component of a vector.
 ### Normalize
 
 ::::{tab-set}
-:::{tab-item} Classic
+:::{tab-item} Norm
 
 ```{function} #bs.vector:normalize {scale:<scaling>}
 
@@ -316,25 +316,25 @@ Normalize the vector by putting the length at the given scale while keeping prop
 ```{admonition} Performance tip
 :class: tip
 
-Normalization of vector doesn't often need to be accurate, so you can try first to use the `fast_normalize` function instead of this one. It is less accurate, but it avoid some operations and is faster.
+A vector doesn’t always need to be normalized by its length. Often, the `normalize_max_component` function can be used instead. While this method doesn’t normalize the length, it simplifies some operations and enhances performance.
 ```
 
 :::
-:::{tab-item} Fast
+:::{tab-item} Max component
 
-```{function} #bs.vector:fast_normalize {scale:<scaling>}
+```{function} #bs.vector:normalize_max_component {scale:<scaling>}
 
 Normalize the vector by placing the largest component at the given scale while keeping proportions.
 
 :Inputs:
-  **Scores `$vector.fast_normalize.[0,1,2] bs.in`**: Vector components.
+  **Scores `$vector.normalize_max_component.[0,1,2] bs.in`**: Vector components.
 
   **Macro Var `scale` [number]**: Scalar for the function’s output.
 
 :Outputs:
-  **Scores `$vector.fast_normalize.[0,1,2] bs.out`**: Normalized vector components.
+  **Scores `$vector.normalize_max_component.[0,1,2] bs.out`**: Normalized vector components.
 
-  **Score `$vector.fast_normalize.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
+  **Score `$vector.normalize_max_component.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
 ```
 
 :::

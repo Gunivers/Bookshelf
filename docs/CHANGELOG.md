@@ -1,6 +1,6 @@
 # 🛠️ Changelog
 
-## Bookshelf - 2.0.0
+## 📦 Bookshelf - 2.0.0
 
 ```{admonition} Breaking changes
 :class: warning
@@ -31,3 +31,10 @@ This new version is filled with breaking changes. Since maintaining a list of th
 
 ### 🐛 Bug fixes
 - Who knows at this point 🤷‍♂️, almost no legacy code remains...
+
+
+## 📦 Gunivers Lib - 1.0.0
+
+Data load error: TooLazyException
+
+Our devs are too busy coding the future to dig up the past...

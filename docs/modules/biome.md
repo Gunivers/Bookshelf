@@ -23,6 +23,7 @@ You can find below all functions available in this module.
 
 ---
 
+
 ### Get biome
 
 ```{function} #bs.biome:get_biome
@@ -33,16 +34,13 @@ Get biome data at the execution position of the function.
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get biome data.
 
 :Outputs:
-  **Storage `bs:out biome` [compound]**:
-  :::{list-table}
-  *   - **`id`**&nbsp;[int]
-      - A numeric id that represents the biome type.
-  *   - **`type`**&nbsp;[string]
-      - String representation of the id (e.g., `minecraft:plains`).
-  *   - **`temperature`**&nbsp;[double]
-      - The base temperature of the biome.
-  *   - **`has_precipitation`**&nbsp;[bool]
-      - Whether the biome has precipitation or not.
+  **Storage `bs:out biome`**:
+  :::{treeview}
+  - {nbt}`compound` Biome data
+    - {nbt}`int` **id**: A numeric id that represents the biome type.
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:plains`).
+    - {nbt}`double` **temperature**: The base temperature of the biome.
+    - {nbt}`bool` **has_precipitation**: Whether the biome has precipitation or not.
   :::
 ```
 
@@ -70,7 +68,7 @@ Get the temperature at the execution position of the function taking the altitud
   **Macro Var `scale`**: Scalar for the function's outputs.
 
 :Outputs:
-  **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position (scaled by 10^8).
+  **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position.
 ```
 
 *Get the temperature at the current altitude:*

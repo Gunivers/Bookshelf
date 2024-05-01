@@ -14,11 +14,13 @@ from processors.block import (
 )
 
 BLOCKS_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-summary/blocks/data.min.json"
+ITEMS_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-registries/item/data.min.json"
 
 @dataclass
 class Blocks:
     types: list[dict]
     groups: list[dict]
+    items: list[str]
 
 
 def get_blocks(mc_version: str) -> Blocks:
@@ -46,7 +48,15 @@ def get_blocks(mc_version: str) -> Blocks:
             "type": block if block.startswith("minecraft:") else f"minecraft:{block}"
         })
 
-    return Blocks(types, groups)
+    response = requests.get(ITEMS_URL.format(mc_version))
+    response.raise_for_status()
+
+    items = [
+        item if item.startswith("minecraft:") else f"minecraft:{item}"
+        for item in response.json()
+    ]
+
+    return Blocks(types, groups, items)
 
 
 def get_processors(datapacks: Path, assets: Path = None) -> list[DataProcessor]:

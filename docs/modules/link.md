@@ -9,14 +9,14 @@ Construct coherent entity structures by linking entities' positions and rotation
 :class: dark_light
 ```
 
-```{important}
-This module limits the world size to 2,147,480 to prevent scoreboard overflow.
-```
-
 ```{epigraph}
 "Invisible threads are the strongest ties."
 
 -- Friedrich Nietzsche
+```
+
+```{important}
+This module limits the world size to 2,147,480 to prevent scoreboard overflow.
 ```
 
 ---
@@ -53,7 +53,7 @@ execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run funct
 ```
 
 ```{important}
-You should generally avoid changing output scores, as they serve as parameters for other link functions. Therefore, it is recommended to exclusively let bookshelf handle them.
+You should generally avoid changing output scores, as they serve as parameters for other link functions. Therefore, it is recommended to exclusively let Bookshelf handle them.
 ```
 
 > **Credits**: Aksiome, Leirof
@@ -203,6 +203,10 @@ execute as @e[predicate=bs.link:has_link] run function #bs.link:imitate_rot_v
 :::
 ::::
 
+```{important}
+While chaining behavior functions is possible, it's not advisable because it involves repeatedly fetching coordinates, performing computations, and applying them. Instead, consider creating [custom behaviors](#custom-behaviors).
+```
+
 > **Credits**: Aksiome, Leirof
 
 ---
@@ -311,7 +315,7 @@ execute as @e[predicate=bs.link:has_link] positioned 0 0 0 run function #bs.link
 
 ```{function} #bs.link:reverse_pos_and_rot
 
-Determine the rotation and displacement made by the parent entity, and reproduce them in the opposite direction.
+Determine the rotation and movement made by the parent entity, and reproduce them in the opposite direction.
 
 :Inputs:
   **Execution `as <entities>`**: Executing entities that must be linked to another entity.
@@ -339,7 +343,7 @@ execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_pos_and_
 
 ```{function} #bs.link:reverse_pos
 
-Determine the displacement made by the parent entity, and reproduce it in the opposite direction.
+Determine the movement made by the parent entity, and reproduce it in the opposite direction.
 
 :Inputs:
   **Execution `as <entities>`**: Executing entities that must be linked to another entity.
@@ -391,7 +395,7 @@ execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot
 
 ```{function} #bs.link:reverse_pos_[x|y|z]
 
-Determine the displacement made by the parent entity along a single axis, and reproduce it in the opposite direction.
+Determine the movement made by the parent entity along a single axis, and reproduce it in the opposite direction.
 
 :Inputs:
   **Execution `as <entities>`**: Executing entities that must be linked to another entity.
@@ -447,6 +451,10 @@ execute as @e[predicate=bs.link:has_link] run function #bs.link:reverse_rot_v
 :::
 ::::
 
+```{important}
+While chaining behavior functions is possible, it's not advisable because it involves repeatedly fetching coordinates, performing computations, and applying them. Instead, consider creating [custom behaviors](#custom-behaviors).
+```
+
 > **Credits**: Aksiome, Leirof
 
 ---
@@ -497,9 +505,10 @@ Determine if an entity has a `bs.link.to` score.
 
 ---
 
+(custom-behaviors)=
 ## 🎓 Custom behaviors
 
-This module allows you to combine multiple behaviors to create your very own custom one.
+This module allows you to combine multiple behaviors to create your very own optimized custom one.
 
 ---
 

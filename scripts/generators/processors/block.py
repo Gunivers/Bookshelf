@@ -85,6 +85,10 @@ ITEMS_DICT = {
     "minecraft:cave_vines_plant": "minecraft:glow_berries",
 }
 
+def get_item(type: str, data) -> dict:
+    value = ITEMS_DICT.get(type, type)
+    return {"item":value} if value in data.items else {}
+
 
 class CreateTagsFiles(DataProcessor):
     def process(self, data):
@@ -107,16 +111,16 @@ class CreateTypesFile(DataProcessor):
         self.write_text(self.target, [
             "# This file was automatically generated, do not edit it",
             (f"data modify storage bs:const block set value "
-             f"{self.render(self.format(data.types))}")
+             f"{self.render(self.format(data))}")
         ])
 
-    def format(self, blocks: list) -> list:
+    def format(self, data) -> list:
         return [{
             "id": block["id"],
             "group": block["group"],
             "type": block["type"],
-            "item": ITEMS_DICT.get(block["type"], block["type"]),
-        } for block in blocks]
+            **get_item(block["type"], data),
+        } for block in data.types]
 
 
 class CreateStatesFile(DataProcessor):
@@ -127,7 +131,7 @@ class CreateStatesFile(DataProcessor):
             "# This file was automatically generated, do not edit it",
             *[
                 (f"data modify storage bs:const "
-                 f"block[{{group:{str(group + 1)}}}].iterable_properties set value "
+                 f"block[{{group:{str(group + 1)}}}]._ set value "
                  f"{self.render(self.format(states))}")
                 for group, states in enumerate(data.groups[1:])
             ]
@@ -154,7 +158,7 @@ class CreateRegistryFiles(DataProcessor):
                 "# This file was automatically generated, do not edit it",
                 *[
                     (f'execute if block ~ ~ ~ #bs.block:has_state[{name}={value}] run '
-                     f'data modify storage bs:out block.iterable_properties'
+                     f'data modify storage bs:out block._'
                      f'[{{name:"{name}"}}].options[{{value:"{value}"}}].selected set value 1b')
                     for name, options in states.items() for value in options
                 ]
@@ -176,8 +180,8 @@ class UpdateStorageFile(DataProcessor):
             "id": block["id"],
             "group": block["group"],
             "type": block["type"],
-            "item": ITEMS_DICT.get(block["type"], block["type"]),
-            "iterable_properties": self.format_states(data.groups[block["group"]])
+            **get_item(block["type"], data),
+            "_": self.format_states(data.groups[block["group"]])
         } for block in data.types]
 
     def format_states(self, states: dict) -> list:

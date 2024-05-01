@@ -286,7 +286,7 @@ tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"$po
 ```{admonition} Score limitation
 :class: warning
 
-Scores in Minecraft have a limited size similar to a signed int variable. The latter is huge, but not unlimited and can overflow. Since this function uses powers of 2 to calculate the result, you should prefer the "normal" version (which does not rely on powers) when working over big distances.
+Scores in Minecraft have a limited size similar to a signed integer variable. The latter is huge, but not unlimited and can overflow. Since this function uses powers of 2 to calculate the result, you should prefer the "normal" version (which does not rely on powers) when working over big distances.
 ```
 
 :::
