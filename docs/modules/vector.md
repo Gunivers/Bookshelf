@@ -140,6 +140,21 @@ This system returns non conventional shperical coordinates.
 - $R$ is the radial distance.
 ```
 
+I want to convert the vector (1000, 2000, 3000) to spherical coordinates:
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.cartesian_to_spherical.0 bs.in 1000
+scoreboard players set $vector.cartesian_to_spherical.1 bs.in 2000
+scoreboard players set $vector.cartesian_to_spherical.2 bs.in 3000
+
+# Perform the conversion
+function #bs.vector:cartesian_to_spherical {scaling:1000}
+
+# Display the result
+tellraw @a [{"text":"Spherical coordinates: ","color":"dark_gray"},{"score":{"name":"$vector.cartesian_to_spherical.0","objective":"bs.out"},"color":"gold"},{"text":"°, ","color":"gold"},{"score":{"name":"$vector.cartesian_to_spherical.1","objective":"bs.out"},"color":"gold"},{"text":"°, ","color":"gold"},{"score":{"name":"$vector.cartesian_to_spherical.2","objective":"bs.out"},"color":"gold"}]
+```
+
 > **Credits**: Aksiome
 
 ---
@@ -161,6 +176,25 @@ Compute the vector product between $u$ and $v$.
   **Scores `$vector.cross_product.[0,1,2] bs.out`**: Result of the operation $=u \times v$.
 ```
 
+I want to perform $u \times v$ with $u=(1,2,3)$ and $v=(4,5,6)$:
+
+```mcfunction
+# Define the vectors
+scoreboard players set $vector.cross_product.u.0 bs.in 100
+scoreboard players set $vector.cross_product.u.1 bs.in 200
+scoreboard players set $vector.cross_product.u.2 bs.in 300
+
+scoreboard players set $vector.cross_product.v.0 bs.in 400
+scoreboard players set $vector.cross_product.v.1 bs.in 500
+scoreboard players set $vector.cross_product.v.2 bs.in 600
+
+# Perform the operation
+function #bs.vector:cross_product {scaling:100}
+
+# Display the result
+tellraw @a [{"text":"Cross product: ","color":"dark_gray"},{"score":{"name":"$vector.cross_product.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.cross_product.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.cross_product.2","objective":"bs.out"},"color":"gold"}]
+```
+
 > **Credits**: Aksiome, Majoras16
 
 ---
@@ -180,6 +214,25 @@ Compute the scalar product between $u$ and $v$.
 
 :Outputs:
   **Scores `$vector.dot_product bs.out`**: Result of the operation $=u · v$.
+```
+
+I want to perform $u \cdot v$ with $u=(1,2,3)$ and $v=(4,5,6)$:
+
+```mcfunction
+# Define the vectors
+scoreboard players set $vector.dot_product.u.0 bs.in 100
+scoreboard players set $vector.dot_product.u.1 bs.in 200
+scoreboard players set $vector.dot_product.u.2 bs.in 300
+
+scoreboard players set $vector.dot_product.v.0 bs.in 400
+scoreboard players set $vector.dot_product.v.1 bs.in 500
+scoreboard players set $vector.dot_product.v.2 bs.in 600
+
+# Perform the operation
+function #bs.vector:dot_product {scaling:100}
+
+# Display the result
+tellraw @a [{"text":"Dot product: ","color":"dark_gray"},{"score":{"name":"$vector.dot_product","objective":"bs.out"},"color":"gold"}]
 ```
 
 > **Credits**: Aksiome, Majoras16
@@ -274,6 +327,21 @@ Get the max component of a vector.
   **Return | Score `$vector.max bs.out`**: Component with the value furthest from 0.
 ```
 
+I want to get the max component of the vector (1000, 2000, 3000):
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.max.0 bs.in 1000
+scoreboard players set $vector.max.1 bs.in 2000
+scoreboard players set $vector.max.2 bs.in 3000
+
+# Get the max component
+function #bs.vector:max
+
+# Display the result
+tellraw @a [{"text":" Max component: ","color":"dark_gray"},{"score":{"name":"$vector.max","objective":"bs.out"},"color":"gold"}]
+```
+
 > **Credits**: Aksiome, Leirof
 
 ---
@@ -289,6 +357,21 @@ Get the min component of a vector.
 
 :Outputs:
   **Return | Score `$vector.min bs.out`**: Component with the value closest to 0.
+```
+
+I want to get the min component of the vector (1000, 2000, 3000):
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.min.0 bs.in 1000
+scoreboard players set $vector.min.1 bs.in 2000
+scoreboard players set $vector.min.2 bs.in 3000
+
+# Get the min component
+function #bs.vector:min
+
+# Display the result
+tellraw @a [{"text":" Min component: ","color":"dark_gray"},{"score":{"name":"$vector.min","objective":"bs.out"},"color":"gold"}]
 ```
 
 > **Credits**: Aksiome
@@ -319,6 +402,21 @@ Normalize the vector by putting the length at the given scale while keeping prop
 Normalization of vector doesn't often need to be accurate, so you can try first to use the `fast_normalize` function instead of this one. It is less accurate, but it avoid some operations and is faster.
 ```
 
+*Normalize the vector (1000, 2000, 3000) with a scale of 1000:*
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.normalize.0 bs.in 1000
+scoreboard players set $vector.normalize.1 bs.in 2000
+scoreboard players set $vector.normalize.2 bs.in 3000
+
+# Perform the normalization
+function #bs.vector:normalize {scale:1000}
+
+# Display the result
+tellraw @a [{"text":"Normalized vector: ","color":"dark_gray"},{"score":{"name":"$vector.normalize.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.normalize.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.normalize.2","objective":"bs.out"},"color":"gold"}]
+```
+
 :::
 :::{tab-item} Fast
 
@@ -335,6 +433,21 @@ Normalize the vector by placing the largest component at the given scale while k
   **Scores `$vector.fast_normalize.[0,1,2] bs.out`**: Normalized vector components.
 
   **Score `$vector.fast_normalize.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
+```
+
+*Fast normalize the vector (1000, 2000, 3000) with a scale of 1000:*
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.fast_normalize.0 bs.in 1000
+scoreboard players set $vector.fast_normalize.1 bs.in 2000
+scoreboard players set $vector.fast_normalize.2 bs.in 3000
+
+# Perform the fast normalization
+function #bs.vector:fast_normalize {scale:1000}
+
+# Display the result
+tellraw @a [{"text":"Normalized vector: ","color":"dark_gray"},{"score":{"name":"$vector.fast_normalize.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.fast_normalize.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.fast_normalize.2","objective":"bs.out"},"color":"gold"}]
 ```
 
 :::
@@ -366,6 +479,21 @@ This system uses non conventional shperical coordinates.
 - $H$ (horizontal angle) is along the $\hat{z}$ axis.
 - $V$ (vertical angle) is on the horizontal plane.
 - $R$ is the radial distance.
+```
+
+I want to convert the spherical coordinates $(45°, 30°, 1)$ to cartesian coordinates:
+
+```mcfunction
+# Define the spherical coordinates
+scoreboard players set $vector.spherical_to_cartesian.0 bs.in 45000
+scoreboard players set $vector.spherical_to_cartesian.1 bs.in 30000
+scoreboard players set $vector.spherical_to_cartesian.2 bs.in 1000
+
+# Perform the conversion
+function #bs.vector:spherical_to_cartesian {scaling:1000}
+
+# Display the result
+tellraw @a [{"text":"Cartesian coordinates: ","color":"dark_gray"},{"score":{"name":"$vector.spherical_to_cartesian.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.spherical_to_cartesian.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.spherical_to_cartesian.2","objective":"bs.out"},"color":"gold"}]
 ```
 
 > **Credits**: Aksiome
