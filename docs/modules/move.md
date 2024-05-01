@@ -9,14 +9,14 @@ Make your entity move exactly the way you want them to!
 :class: dark_light
 ```
 
-```{important}
-This module limits the world size to 2,147,480 to prevent scoreboard overflow.
-```
-
 ```{epigraph}
 "There is nothing permanent except change."
 
 -- Heraclitus
+```
+
+```{important}
+This module limits the world size to 2,147,480 to prevent scoreboard overflow.
 ```
 
 ---
@@ -42,6 +42,12 @@ Convert a canonical velocity (using the relative reference frame) into a local v
   **Scores `@s bs.vel.[x,y,z]`**: Converted velocity.
 ```
 
+```{admonition} Local velocity... 🥶 What's this?
+:class: dropdown
+
+Unlike relative velocity (canonical), this reference frame considers the entity's rotation. Therefore, when the parent entity rotates, the child entity rotates around it. For those familiar with Minecraft commands, local coordinates are available through the `^` symbol.
+```
+
 > **Credits**: Aksiome
 
 ---
@@ -59,6 +65,12 @@ Convert a local velocity (using the local reference frame) into a canonical velo
 
 :Outputs:
   **Scores `@s bs.vel.[x,y,z]`**: Converted velocity.
+```
+
+```{admonition} Local velocity... 🥶 What's this?
+:class: dropdown
+
+Unlike relative velocity (canonical), this reference frame considers the entity's rotation. Therefore, when the parent entity rotates, the child entity rotates around it. For those familiar with Minecraft commands, local coordinates are available through the `^` symbol.
 ```
 
 > **Credits**: Aksiome
@@ -122,7 +134,7 @@ Teleport an entity by its velocity scores while handling collisions.
   *   - **`entities`**&nbsp;[bool|string]</span>
       - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
   *   - **`on_collision`**&nbsp;[string]
-      - Function run on collision (default: `#bs.move:on_collision/bounce`).
+      - Function to run on collision (default: `#bs.move:on_collision/bounce`).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
   *   - **`ignored_entities`**&nbsp;[string]
@@ -155,7 +167,7 @@ Teleport an entity by its velocity scores, using the local reference frame, whil
   *   - **`entities`**&nbsp;[bool|string]</span>
       - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
   *   - **`on_collision`**&nbsp;[string]
-      - Function run on collision (default: `#bs.move:on_collision/bounce`).
+      - Function to run on collision (default: `#bs.move:on_collision/bounce`).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
   *   - **`ignored_entities`**&nbsp;[string]
@@ -218,6 +230,8 @@ By modifying the `on_collision` input key, you have the freedom to specify the f
 :::
 
 ### How it works?
+
+Upon collision, you have the freedom to update both the velocity score that will be used in the next tick `@s bs.vel.[x,y,z]` and the remaining velocity `$move.vel_remaining.[x,y,z] bs.data`, which is always scaled by 1000. Since the module will attempt to continue moving based on the remaining velocity, it's crucial to avoid introducing a race condition.
 
 The simplest collision resolution is to stop the movement.
 
