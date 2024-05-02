@@ -1,3 +1,2 @@
 # minecart group
-scoreboard players set @s bs.width 980
-scoreboard players set @s bs.height 700
+data modify storage bs:out hitbox set value {width:0.98,height:0.7}

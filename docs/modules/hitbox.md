@@ -31,9 +31,9 @@ Get the hitbox of a block as a shape, represented by a list of boxes. Dimensions
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the block hitbox.
 
 :Outputs:
-  **Scores `$hitbox.offset.[x,z] bs.out`**: Hitbox offset in miliblocks (used for exemple by flowers).
+  **Storage `bs:out hitbox.shape` [array]**: An array of cube coordinates.
 
-  **Storage `bs:out hitbox` [array]**: An array of cube coordinates.
+  **Storage `bs:out hitbox.offset.[x,z]`**: Hitbox offset (used for exemple by flowers).
 ```
 
 *Get the hitbox of a stair:*
@@ -49,17 +49,17 @@ data get storage bs:out hitbox
 
 ```{function} #bs.hitbox:get_entity
 
-Get the width and height of an entity. For simplicity and optimization purposes this value is returned scaled by 1000.
+Get the width and height of an entity.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to get the hitbox from.
 
-  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which to get the entity hitbox.
-
 :Outputs:
-  **Score `@s bs.width`**: Height of the entity.
+  **Storage `bs:out hitbox.height`**: Height of the entity.
 
-  **Score `@s bs.height`**: Width of the entity.
+  **Storage `bs:out hitbox.width`**: Width of the entity.
+
+  **Storage `bs:out hitbox.scale`**: Scaling of the hitbox.
 ```
 
 *Get the hitbox of an armor_stand:*
@@ -121,7 +121,7 @@ Check if the execution position is inside the entity executing the command.
 *Check if you are inside an entity:*
 
 ```mcfunction
-execute summon minecraft:cow if function #bs.hitbox:is_in_entity run say Oh no step bro
+execute summon minecraft:cow if function #bs.hitbox:is_in_entity run say Oh no...
 ```
 
 :::

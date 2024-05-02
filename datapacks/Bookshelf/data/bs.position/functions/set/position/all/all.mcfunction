@@ -17,4 +17,4 @@
 $execute store result storage bs:ctx x double $(scale) run scoreboard players get @s bs.pos.x
 $execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.pos.y
 $execute store result storage bs:ctx z double $(scale) run scoreboard players get @s bs.pos.z
-function bs.position:set/position/all/run with storage bs:ctx
+execute positioned 0.0 0.0 0.0 run function bs.position:set/position/all/run with storage bs:ctx

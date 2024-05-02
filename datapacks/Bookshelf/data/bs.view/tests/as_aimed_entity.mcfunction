@@ -3,5 +3,5 @@
 # @dummy
 
 summon minecraft:armor_stand ~.5 ~ ~1.5 {Tags:["bs.raycast.is_solid"],NoGravity:1b}
-function #bs.view:as_aimed_entity {run:"tag @s add found"}
+function #bs.view:as_aimed_entity {run:"tag @s add found",with:{}}
 assert entity @e[type=minecraft:armor_stand,tag=found] inside

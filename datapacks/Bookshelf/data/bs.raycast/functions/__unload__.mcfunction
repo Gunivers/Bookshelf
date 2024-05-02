@@ -8,7 +8,6 @@ forceload remove -30000000 1600
 
 scoreboard objectives remove bs.in
 scoreboard objectives remove bs.data
-scoreboard objectives remove bs.const
 
-data remove storage bs:in raycast
+data remove storage bs:data raycast
 data remove storage bs:out raycast

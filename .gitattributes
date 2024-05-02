@@ -1,3 +1,8 @@
 * text=auto
 
 /.github export-ignore
+.editorconfig export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.mcwpack.yml export-ignore
+.readthedocs.yml export-ignore

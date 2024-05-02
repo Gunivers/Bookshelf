@@ -7,7 +7,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$id.suid.check"
+          "name": "$id.suid.min"
         },
         "score": "bs.in"
       },
@@ -15,7 +15,7 @@
         "type": "minecraft:score",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$id.suid.check"
+          "name": "$id.suid.max"
         },
         "score": "bs.in"
       }

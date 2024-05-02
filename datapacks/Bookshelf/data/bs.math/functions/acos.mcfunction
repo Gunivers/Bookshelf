@@ -38,6 +38,6 @@ scoreboard players operation $math.acos bs.out *= $math.isqrt bs.out
 scoreboard players operation $math.acos bs.out /= 100000 bs.const
 
 execute if score $math.acos.x bs.in matches 0.. run scoreboard players operation $math.acos bs.out *= -1 bs.const
-execute if score $math.asin.x bs.in matches ..-1 run scoreboard players add $math.acos bs.out 18000
+execute if score $math.acos.x bs.in matches ..-1 run scoreboard players add $math.acos bs.out 18000
 
-return run scoreboard players get $math.asin bs.out
+return run scoreboard players get $math.acos bs.out

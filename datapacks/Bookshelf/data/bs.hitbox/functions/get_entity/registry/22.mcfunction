@@ -1,3 +1,2 @@
 # enderman group
-scoreboard players set @s bs.width 600
-scoreboard players set @s bs.height 2900
+data modify storage bs:out hitbox set value {width:0.6,height:2.9}

@@ -14,5 +14,5 @@
 
 # CODE ------------------------------------------------------------------------
 
-scoreboard players operation $id.suid.check bs.in = @s bs.link.to
-execute at @e[predicate=bs.id:suid_match,sort=arbitrary,limit=1] run function bs.link:update_link/at_parent
+scoreboard players operation $id.suid bs.in = @s bs.link.to
+execute at @e[predicate=bs.id:suid_equal,sort=arbitrary,limit=1] run function bs.link:update_link/at_parent

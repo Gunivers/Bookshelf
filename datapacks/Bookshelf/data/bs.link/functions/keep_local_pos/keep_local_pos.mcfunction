@@ -18,5 +18,5 @@ execute store result storage bs:ctx x double 0.001 run scoreboard players get @s
 execute store result storage bs:ctx y double 0.001 run scoreboard players get @s bs.link.ly
 execute store result storage bs:ctx z double 0.001 run scoreboard players get @s bs.link.lz
 
-scoreboard players operation $id.suid.check bs.in = @s bs.link.to
-execute at @e[predicate=bs.id:suid_match,sort=arbitrary,limit=1] run function bs.link:keep_local_pos/apply with storage bs:ctx
+scoreboard players operation $id.suid bs.in = @s bs.link.to
+execute at @e[predicate=bs.id:suid_equal,sort=arbitrary,limit=1] run function bs.link:keep_local_pos/apply with storage bs:ctx

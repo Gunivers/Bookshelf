@@ -564,17 +564,6 @@ Convert a local position (using the local reference frame) into a canonical posi
 
 ---
 
-### Normalize rotation
-
-```{function} #bs.position:normalize_rot
-
-Normalize rotations (replace the `bs.rot.h` and `bs.rot.v` scores respectively in the interval [0;360[ and [0;180[)
-```
-
-> **Credits**: Leirof
-
----
-
 ### Set position
 
 ::::{tab-set}

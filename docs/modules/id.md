@@ -105,60 +105,6 @@ You can find below all predicates available in this module.
 ### Check simple unique ID
 
 ::::{tab-set}
-:::{tab-item} Match
-
-```{function} bs.id:suid_match
-
-Find an entity that has the same `bs.id` as the input value.
-
-:Inputs:
-  **Score `$id.suid.check bs.in`**: Value to check against.
-```
-
-*Find the entity that has a `bs.id` equal to 1:*
-
-```mcfunction
-scoreboard players set $id.suid.check bs.in 1
-execute as @e[predicate=bs.id:suid_match,limit=1] run say I'm the one
-```
-
-:::
-:::{tab-item} Lower
-
-```{function} bs.id:suid_lower
-
-Filter entities that have a `bs.id` less than or equal to the input value.
-
-:Inputs:
-  **Score `$id.suid.check bs.in`**: Value to check against.
-```
-
-*Filter entities that have a `bs.id` less than or equal to 17:*
-
-```mcfunction
-scoreboard players set $id.suid.check bs.in 17
-execute as @e[predicate=bs.id:suid_lower] run say I'm a minor
-```
-
-:::
-:::{tab-item} Upper
-
-```{function} bs.id:suid_upper
-
-Filter entities that have a `bs.id` greater than or equal to the input value.
-
-:Inputs:
-  **Score `$id.suid.check bs.in`**: Value to check against.
-```
-
-*Filter entities that have a `bs.id` greater than or equal to 18:*
-
-```mcfunction
-scoreboard players set $id.suid.check bs.in 18
-execute as @e[predicate=bs.id:suid_upper] run say I'm an adult
-```
-
-:::
 :::{tab-item} Has
 
 ```{function} bs.id:has_suid
@@ -173,6 +119,81 @@ execute as @e[predicate=!bs.id:has_suid] run function #bs.id:give_suid
 ```
 
 :::
+:::{tab-item} Equal
+
+```{function} bs.id:suid_equal
+
+Find an entity that has the same `bs.id` as the input value.
+
+:Inputs:
+  **Score `$id.suid bs.in`**: Value to check against.
+```
+
+*Find the entity that has a `bs.id` equal to 1:*
+
+```mcfunction
+scoreboard players set $id.suid bs.in 1
+execute as @e[predicate=bs.id:suid_equal,limit=1] run say I'm the one
+```
+
+:::
+:::{tab-item} Lower
+
+```{function} bs.id:suid_lower
+
+Filter entities that have a `bs.id` less than or equal to the input value.
+
+:Inputs:
+  **Score `$id.suid bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.id` less than or equal to 17:*
+
+```mcfunction
+scoreboard players set $id.suid bs.in 17
+execute as @e[predicate=bs.id:suid_lower] run say I'm a minor
+```
+
+:::
+:::{tab-item} Upper
+
+```{function} bs.id:suid_upper
+
+Filter entities that have a `bs.id` greater than or equal to the input value.
+
+:Inputs:
+  **Score `$id.suid bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.id` greater than or equal to 18:*
+
+```mcfunction
+scoreboard players set $id.suid bs.in 18
+execute as @e[predicate=bs.id:suid_upper] run say I'm an adult
+```
+
+:::
+:::{tab-item} Match
+
+```{function} bs.id:suid_match
+
+Filter entities that have a `bs.id` between the given values.
+
+:Inputs:
+  **Score `$id.suid.min bs.in`**: Min value to check against.
+
+  **Score `$id.suid.max bs.in`**: Min value to check against.
+```
+
+*Filter entities that have a `bs.id` between 2 and 4:*
+
+```mcfunction
+scoreboard players set $id.suid.min bs.in 2
+scoreboard players set $id.suid.max bs.in 4
+execute as @e[predicate=bs.id:suid_match,limit=1] run say In range
+```
+
+:::
 ::::
 
 > **Credits**: Aksiome
@@ -182,60 +203,6 @@ execute as @e[predicate=!bs.id:has_suid] run function #bs.id:give_suid
 ### Check chain unique ID
 
 ::::{tab-set}
-:::{tab-item} Match
-
-```{function} bs.id:cuid_match
-
-Find an entity that has the same `bs.cid` as the input value.
-
-:Inputs:
-  **Score `$id.cuid.check bs.in`**: Value to check against.
-```
-
-*Find the entity that has a `bs.cid` equal to 1:*
-
-```mcfunction
-scoreboard players set $id.cuid.check bs.in 1
-execute as @e[predicate=bs.id:cuid_match,limit=1] run say I'm the one
-```
-
-:::
-:::{tab-item} Lower
-
-```{function} bs.id:cuid_lower
-
-Filter entities that have a `bs.cid` less than or equal to the input value.
-
-:Inputs:
-  **Score `$id.cuid.check bs.in`**: Value to check against.
-```
-
-*Filter entities that have a `bs.cid` less than or equal to 17:*
-
-```mcfunction
-scoreboard players set $id.cuid.check bs.in 17
-execute as @e[predicate=bs.id:cuid_lower] run say I'm a minor
-```
-
-:::
-:::{tab-item} Upper
-
-```{function} bs.id:cuid_upper
-
-Filter entities that have a `bs.cid` greater than or equal to the input value.
-
-:Inputs:
-  **Score `$id.cuid.check bs.in`**: Value to check against.
-```
-
-*Filter entities that have a `bs.cid` greater than or equal to 18:*
-
-```mcfunction
-scoreboard players set $id.cuid.check bs.in 18
-execute as @e[predicate=bs.id:cuid_upper] run say I'm an adult
-```
-
-:::
 :::{tab-item} Has
 
 ```{function} bs.id:has_cuid
@@ -247,6 +214,81 @@ Determine if an entity has a `bs.cid` score.
 
 ```mcfunction
 execute as @e[predicate=!bs.id:has_cuid] run function #bs.id:give_cuid
+```
+
+:::
+:::{tab-item} Equal
+
+```{function} bs.id:cuid_equal
+
+Find an entity that has the same `bs.cid` as the input value.
+
+:Inputs:
+  **Score `$id.cuid bs.in`**: Value to check against.
+```
+
+*Find the entity that has a `bs.cid` equal to 1:*
+
+```mcfunction
+scoreboard players set $id.cuid bs.in 1
+execute as @e[predicate=bs.id:cuid_equal,limit=1] run say I'm the one
+```
+
+:::
+:::{tab-item} Lower
+
+```{function} bs.id:cuid_lower
+
+Filter entities that have a `bs.cid` less than or equal to the input value.
+
+:Inputs:
+  **Score `$id.cuid bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.cid` less than or equal to 17:*
+
+```mcfunction
+scoreboard players set $id.cuid bs.in 17
+execute as @e[predicate=bs.id:cuid_lower] run say I'm a minor
+```
+
+:::
+:::{tab-item} Upper
+
+```{function} bs.id:cuid_upper
+
+Filter entities that have a `bs.cid` greater than or equal to the input value.
+
+:Inputs:
+  **Score `$id.cuid bs.in`**: Value to check against.
+```
+
+*Filter entities that have a `bs.cid` greater than or equal to 18:*
+
+```mcfunction
+scoreboard players set $id.cuid bs.in 18
+execute as @e[predicate=bs.id:cuid_upper] run say I'm an adult
+```
+
+:::
+:::{tab-item} Match
+
+```{function} bs.id:cuid_match
+
+Filter entities that have a `bs.cid` between the given values.
+
+:Inputs:
+  **Score `$id.cuid.min bs.in`**: Min value to check against.
+
+  **Score `$id.cuid.max bs.in`**: Min value to check against.
+```
+
+*Filter entities that have a `bs.cid` between 2 and 4:*
+
+```mcfunction
+scoreboard players set $id.cuid.min bs.in 2
+scoreboard players set $id.cuid.max bs.in 4
+execute as @e[predicate=bs.id:cuid_match,limit=1] run say In range
 ```
 
 :::

@@ -200,7 +200,7 @@ tellraw @a [{"text":"-9 ^ 57 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.x
 Compute the bitwise negation of a number.
 
 :Inputs:
-  **Score `$bitwise.not.value bs.in`**: Number to negate.
+  **Score `$bitwise.not.n bs.in`**: Number to negate.
 
 :Outputs:
   **Return | Score `$bitwise.not bs.out`**: Result of the not operation.
@@ -209,7 +209,7 @@ Compute the bitwise negation of a number.
 *Compute and display $\lnot 452$:*
 ```mcfunction
 # Once
-scoreboard players set $bitwise.not.value bs.in 452
+scoreboard players set $bitwise.not.n bs.in 452
 function #bs.bitwise:not
 
 # See the result
@@ -220,33 +220,6 @@ tellraw @a [{"text":"~452 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.not"
 ::::
 
 > **Credits**: Aksiome, theogiraudet
-
----
-
-### Most significant bit
-
-```{function} #bs.bitwise:msb
-
-Get the value of the most significant bit of a number.
-
-:Inputs:
-  **Score `$bitwise.msb.n bs.in`**: Number to get the msb of.
-
-:Outputs:
-  **Return | Score `$bitwise.msb bs.out`**: Value of the msb of the number.
-```
-
-*Compute and display the value of the most significant bit of 12:*
-```mcfunction
-# Once
-scoreboard players set $bitwise.msb.n bs.in 12
-function #bs.bitwise:msb
-
-# See the result
-tellraw @a [{"text":"MSB of 12 = ","color":"#e0c7ff"},{"score":{"name":"$bitwise.msb","objective":"bs.out"}}]
-```
-
-> **Credits**: Aksiome
 
 ---
 

@@ -9,6 +9,10 @@ Construct coherent entity structures by linking entities' positions and rotation
 :class: dark_light
 ```
 
+```{important}
+This module limits the world size to 2,147,480 to prevent scoreboard overflow.
+```
+
 ```{epigraph}
 "Invisible threads are the strongest ties."
 

@@ -1,5 +1,6 @@
 {
   "values": [
-    "bs.move:teleport/by_local_vel/by_local_vel"
+    "bs.move:teleport/with",
+    "bs.move:teleport/local/tp_by_local_vel"
   ]
 }

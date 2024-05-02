@@ -1,3 +1,2 @@
 # item_like group
-scoreboard players set @s bs.width 250
-scoreboard players set @s bs.height 250
+data modify storage bs:out hitbox set value {width:0.25,height:0.25}

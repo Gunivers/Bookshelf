@@ -1,3 +1,2 @@
 # ghast group
-scoreboard players set @s bs.width 4000
-scoreboard players set @s bs.height 4000
+data modify storage bs:out hitbox set value {width:4.0,height:4.0}

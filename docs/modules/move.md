@@ -9,6 +9,10 @@ Make your entity move exactly the way you want them to!
 :class: dark_light
 ```
 
+```{important}
+This module limits the world size to 2,147,480 to prevent scoreboard overflow.
+```
+
 ```{epigraph}
 "There is nothing permanent except change."
 
@@ -100,7 +104,7 @@ execute as @e[type=minecraft:pig] run function #bs.move:set_motion_by_vel {scale
 :::::{tab-set}
 ::::{tab-item} Canonical
 
-```{function} #bs.move:tp_by_vel {scale:<scaling>}
+```{function} #bs.move:tp_by_vel {scale:<scaling>,with:{}}
 
 Teleport an entity by its velocity scores while handling collisions.
 
@@ -109,23 +113,22 @@ Teleport an entity by its velocity scores while handling collisions.
 
   **Scores `@s bs.vel.[x,y,z]`**: Canonical velocity vector.
 
-  **Scores `@s bs.[height,width]`**: Entity size (in miliblocks). Default to Minecraft size if not defined.
+  **Macro Var `scale`**: Scalar for the function’s outputs.
 
-  **Storage `bs:in move`**:
+  **Macro Var `with` [compound]**:
   :::{list-table}
-  *   - **`on_collision`**&nbsp;[string]
-      - Function run on collision (default: `#bs.move:on_collision/slide`).
-  *   - **`block_collision`**&nbsp;[bool]
+  *   - **`blocks`**&nbsp;[bool]
       - Whether the entity should collide with blocks (default: true).
-  *   - **`entity_collision`**&nbsp;[bool]
-      - Whether the entity should collide with entities (default: false).
+  *   - **`entities`**&nbsp;[bool|string]</span>
+      - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
+  *   - **`on_collision`**&nbsp;[string]
+      - Function run on collision (default: `#bs.move:on_collision/bounce`).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`solid_entities`**&nbsp;[string]
-      - Tag for entities that will be checked (default: `bs.move.is_solid`).
+  *   - **`ignored_entities`**&nbsp;[string]
+      - Entities to ignore (default: `#bs.hitbox:intangible`).
   :::
 
-  **Macro Var `scale`**: Scalar for the function’s outputs.
 
 :Outputs:
   **State**: Entity is teleported according to its velocity scores.
@@ -134,7 +137,7 @@ Teleport an entity by its velocity scores while handling collisions.
 ::::
 ::::{tab-item} Local
 
-```{function} #bs.move:tp_by_local_vel {scale:<scaling>}
+```{function} #bs.move:tp_by_local_vel {scale:<scaling>,with:{}}
 
 Teleport an entity by its velocity scores, using the local reference frame, while handling collisions.
 
@@ -143,23 +146,21 @@ Teleport an entity by its velocity scores, using the local reference frame, whil
 
   **Scores `@s bs.vel.[x,y,z]`**: Local velocity vector.
 
-  **Scores `@s bs.[height,width]`**: Entity size (in miliblocks). Default to Minecraft size if not defined.
+  **Macro Var `scale`**: Scalar for the function’s outputs.
 
-  **Storage `bs:in move`**:
+  **Macro Var `with` [compound]**:
   :::{list-table}
-  *   - **`on_collision`**&nbsp;[string]
-      - Function run on collision (default: `#bs.move:on_collision/slide`).
-  *   - **`block_collision`**&nbsp;[bool]
+  *   - **`blocks`**&nbsp;[bool]
       - Whether the entity should collide with blocks (default: true).
-  *   - **`entity_collision`**&nbsp;[bool]
-      - Whether the entity should collide with entities (default: false).
+  *   - **`entities`**&nbsp;[bool|string]</span>
+      - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
+  *   - **`on_collision`**&nbsp;[string]
+      - Function run on collision (default: `#bs.move:on_collision/bounce`).
   *   - **`ignored_blocks`**&nbsp;[string]
       - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`solid_entities`**&nbsp;[string]
-      - Tag for entities that will be checked (default: `bs.move.is_solid`).
+  *   - **`ignored_entities`**&nbsp;[string]
+      - Entities to ignore (default: `#bs.hitbox:intangible`).
   :::
-
-  **Macro Var `scale`**: Scalar for the function’s outputs.
 
 :Outputs:
   **State**: Entity is teleported according to its local velocity scores.
@@ -168,25 +169,23 @@ Teleport an entity by its velocity scores, using the local reference frame, whil
 ::::
 :::::
 
-*Move a cube (block_display) by its velocity scores:*
+*Move a cube (block_display) by its velocity scores (uses an interaction as the hitbox):*
 
 ```mcfunction
 # Once
-summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f]}
+summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f],Passengers:[{id:"minecraft:interaction",width:1f,height:1f}]}
 scoreboard players set @e[type=minecraft:block_display] bs.vel.x 100
 scoreboard players set @e[type=minecraft:block_display] bs.vel.y 20
 scoreboard players set @e[type=minecraft:block_display] bs.vel.z 50
-scoreboard players set @e[type=minecraft:block_display] bs.width 1000
-scoreboard players set @e[type=minecraft:block_display] bs.height 1000
 
 # In a loop
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{}}
 
 # Choose between multiple collision behaviors
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/bounce"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/damped_bounce"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/slide"
-data modify storage bs:in move.on_collision set value "#bs.move:on_collision/stick"
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/damped_bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/slide"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/stick"}}
 ```
 
 ```{admonition} Performance tip
@@ -205,7 +204,7 @@ This module allows you to customize collision behaviors according to your specif
 
 ---
 
-By modifying the `bs:in move.on_collision` storage, you have the freedom to specify the function that triggers upon collision. However, managing the resolution yourself can be quite challenging. This is why Bookshelf provides several predefined functions:
+By modifying the `on_collision` input key, you have the freedom to specify the function that triggers upon collision. However, managing the resolution yourself can be quite challenging. This is why Bookshelf provides several predefined functions:
 
 :::{list-table}
   *   - `#bs.move:on_collision/bounce`
@@ -225,27 +224,19 @@ The simplest collision resolution is to stop the movement.
 *`#bs.move:on_collision/stick`*
 ```mcfunction
 # set all components to 0 to cancel the movement
-scoreboard players set @s bs.vel.x 0
-scoreboard players set @s bs.vel.y 0
-scoreboard players set @s bs.vel.z 0
+execute store result score $move.vel_remaining.x bs.data run scoreboard players set @s bs.vel.x 0
+execute store result score $move.vel_remaining.y bs.data run scoreboard players set @s bs.vel.y 0
+execute store result score $move.vel_remaining.z bs.data run scoreboard players set @s bs.vel.z 0
 ```
 
 For sliding, we need to cancel the velocity on the axis that was hit and continue traveling the remaining distance.
 
 *`#bs.move:on_collision/slide`*
 ```mcfunction
-# get a vector that represent the remaining distance to travel
-execute store result storage bs:ctx x double .001 run scoreboard players get $move.vel_remaining.x bs.out
-execute store result storage bs:ctx y double .001 run scoreboard players get $move.vel_remaining.y bs.out
-execute store result storage bs:ctx z double .001 run scoreboard players get $move.vel_remaining.z bs.out
-
 # set a component to 0 depending on the surface that was hit
-execute if score $move.hit_face bs.out matches 4..5 store result storage bs:ctx x double .001 run scoreboard players set @s bs.vel.x 0
-execute if score $move.hit_face bs.out matches 0..1 store result storage bs:ctx y double .001 run scoreboard players set @s bs.vel.y 0
-execute if score $move.hit_face bs.out matches 2..3 store result storage bs:ctx z double .001 run scoreboard players set @s bs.vel.z 0
-
-# travel the remaining distance
-execute at @s run function #bs.move:on_collision/continue with storage bs:ctx
+execute if score $move.hit_face bs.data matches 4..5 store result score $move.vel_remaining.x bs.data run scoreboard players set @s bs.vel.x 0
+execute if score $move.hit_face bs.data matches 0..1 store result score $move.vel_remaining.y bs.data run scoreboard players set @s bs.vel.y 0
+execute if score $move.hit_face bs.data matches 2..3 store result score $move.vel_remaining.z bs.data run scoreboard players set @s bs.vel.z 0
 ```
 
 To simplify the creation of these behaviors, there's no need to handle a local velocity directly. The vector is automatically converted before and after the collision resolution. If you need help with custom collisions, you can ask us on our [discord server](https://discord.gg/E8qq6tN)!

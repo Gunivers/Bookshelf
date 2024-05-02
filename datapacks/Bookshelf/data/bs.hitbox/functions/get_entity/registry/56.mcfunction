@@ -1,3 +1,2 @@
 # squid group
-scoreboard players set @s bs.width 800
-scoreboard players set @s bs.height 800
+data modify storage bs:out hitbox set value {width:0.8,height:0.8}

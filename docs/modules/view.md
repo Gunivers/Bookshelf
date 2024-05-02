@@ -9,11 +9,6 @@ Execute commands based on what an entity sees.
 :class: dark_light p-2
 ```
 
-```{important}
-This module limits the world size to 2,147,483 to prevent scoreboard overflow.
-```
-
-
 ```{epigraph}
 
 "Vision is the act of seeing things as they could be, not as they are."
@@ -39,13 +34,15 @@ Run a command at the aligned coordinates of the block an entity is aiming at.
   **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
   **Macro Var `run` [string]**: Command to run at the targeted block position.
+
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 ```
 
 *Change the block you are looking at:*
 
 ```mcfunction
 # Once (will run if you are targeting a block)
-function #bs.view:at_aimed_block {run:"setblock ~ ~ ~ minecraft:sponge"}
+function #bs.view:at_aimed_block {run:"setblock ~ ~ ~ minecraft:sponge",with:{}}
 ```
 
 ```{admonition} Advanced usage
@@ -72,14 +69,14 @@ Run a command as the entity that is aimed by the current entity.
 
   **Macro Var `run` [string]**: Command to run as the targeted entity.
 
-  **Tag**: Tag for entities that can be aimed (default: `bs.raycast.is_solid`).
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 ```
 
 *Run a command as the entity that you are looking at:*
 
 ```mcfunction
 # Once (will run if you are targeting an entity)
-function #bs.view:as_aimed_entity {run:"say I'm sorry, are you hitting on me?"}
+function #bs.view:as_aimed_entity {run:"say I'm sorry, are you hitting on me?",with:{}}
 ```
 
 :::
@@ -94,14 +91,14 @@ Run a command at the entity that is aimed by the current entity.
 
   **Macro Var `run` [string]**: Command to run at the targeted entity.
 
-  **Tag**: Tag for entities that can be aimed (default: `bs.raycast.is_solid`).
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 ```
 
 *Run a command at the entity that you are looking at:*
 
 ```mcfunction
 # Once (will run if you are targeting an entity)
-function #bs.view:at_aimed_entity {run:"particle minecraft:heart ~ ~2 ~ 0 0 0 0 1"}
+function #bs.view:at_aimed_entity {run:"particle minecraft:heart ~ ~2 ~ 0 0 0 0 1",with:{}}
 ```
 
 :::
@@ -133,13 +130,15 @@ Run a command at the point that was hit by the raycast.
   **Execution `as <entities>`**: Entity whose eyes determine the vision origin.
 
   **Macro Var `run` [string]**: Command to run at the hit point.
+
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 ```
 
 *Run a command at the point you are looking at:*
 
 ```mcfunction
 # Once (will run if you are aiming at a solid block or entity)
-function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force"}
+function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 force",with:{}}
 ```
 
 ```{admonition} Advanced usage
@@ -147,6 +146,8 @@ function #bs.view:at_aimed_point {run:"particle minecraft:flame ~ ~ ~ 0 0 0 0 1 
 
 This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
 ```
+
+> **Credits**: Aksiome
 
 ---
 
@@ -161,17 +162,25 @@ Determine if an entity, from its current position, can have an unobstructed view
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check for visibility.
 
-  **Storage `bs:in view.can_see_ata.ignored_blocks` [string]**: Blocks to ignore (default: `#bs.view:can_see_through`).
+  **Macro Var `with` [compound]**: Optional settings (see advanced usage below).
 
 :Outputs:
   **Return**: Whether the check is a success or a failure (1 or 0).
 ```
 
-*Run a command on entities that may be able to see you:*
+*See if the nearest entity is able to see you:*
 
 ```mcfunction
 # Once
-execute at @s as @e[distance=0.1..] if function #bs.view:can_see_ata run say You're not hiding very well...
+
+execute at @s as @e[distance=0.1..,sort=nearest,limit=1] store success score #success bs.data run function #bs.view:can_see_ata {with:{}}
+execute if score #success bs.data matches 1 run say You're not hiding very well...
+```
+
+```{admonition} Advanced usage
+:class: dropdown
+
+This system is a simplified, specific use case of the `#bs.raycast:run` function. It internally relies on it, allowing you to read its output and providing the flexibility to alter its behavior by modifying its input. [Learn more here](raycast.md)
 ```
 
 > **Credits**: Aksiome, Leirof
@@ -189,14 +198,14 @@ Determine if an entity has the execution position in its view angle.
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position you want to check if it's within the field of view.
 
-  **Storage `bs:in view.in_view_ata.angle` [number]**: Angle that represents the field of view (based on the world and not the fov option).
+  **Macro Var `angle` [number]**: Angle that represents the field of view (based on the world and not the fov option).
 ```
 
 *Check whether the position 0 5 0 is in your field of view::*
 
 ```mcfunction
 # Once
-execute as @s positioned 0 5 0 run function #bs.view:in_view_ata
+execute as @s positioned 0 5 0 run function #bs.view:in_view_ata {angle:90}
 ```
 
 > **Credits**: Aksiome, Leirof

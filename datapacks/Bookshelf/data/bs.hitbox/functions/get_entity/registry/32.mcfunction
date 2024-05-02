@@ -1,3 +1,2 @@
 # iron_golem group
-scoreboard players set @s bs.width 1400
-scoreboard players set @s bs.height 2700
+data modify storage bs:out hitbox set value {width:1.4,height:2.7}

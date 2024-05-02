@@ -1,3 +1,4 @@
+$scoreboard players set $$(line) $(id) -$(line)
 $scoreboard players display name $$(line) $(id) $(left)
 $scoreboard players display numberformat $$(line) $(id) fixed $(right)
 
