@@ -19,24 +19,27 @@ $data modify storage bs:ctx _ set value {id:'$(objective)',name:'$(name)',conten
 # check that the objective format is valid
 execute store success score #success bs.data run function bs.sidebar:create/check/objective with storage bs:ctx _
 execute unless score #success bs.data matches 1 run return run function #bs.log:error { \
+  namespace: "bs.sidebar", \
   path: "#bs.sidebar:create", \
-  feature: "sidebar.create", \
+  tag: "create", \
   message: '[{"text":"The objective \'","color":"red"},{"storage":"bs:ctx","nbt":"_.id"},{"text":"\' contain invalid characters"}]', \
 }
 
 # check that the name format is valid
 execute store success score #success bs.data run function bs.sidebar:create/check/name with storage bs:ctx _
 execute unless score #success bs.data matches 1 run return run function #bs.log:error { \
+  namespace: "bs.sidebar", \
   path: "#bs.sidebar:create", \
-  feature: "sidebar.create", \
+  tag: "create", \
   message: '[{"text":"The name \'","color":"red"},{"storage":"bs:ctx","nbt":"_.name"},{"text":"\' must be a valid JSON text component."}]', \
 }
 
 # check that the contents have between 1 and 15 entries
 execute store result score #sidebar.lines bs.data if data storage bs:ctx _.contents[]
 execute unless score #sidebar.lines bs.data matches 1..15 run return run function #bs.log:error { \
+  namespace: "bs.sidebar", \
   path: "#bs.sidebar:create", \
-  feature: "sidebar.create", \
+  tag: "create", \
   message: '[{"text":"The contents must have between 1 and 15 lines (","color":"red"},{"score":{"name":"#sidebar.lines","objective":"bs.data"}},{"text":" given)."}]', \
 }
 
