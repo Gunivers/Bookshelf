@@ -14,9 +14,20 @@
 
 # CODE ------------------------------------------------------------------------
 
+$data modify storage bs:in log set value {path: $(path), message: $(message), namespace: $(namespace), tag: $(tag)}
+# Output on bs:in log
+function bs.log:time/get
+
+data modify storage bs:ctx _ set from storage bs:const log.messages.default.debug
+$data modify storage bs:ctx _ set from storage bs:const log.messages."$(namespace)".debug
+
 $execute at @a unless entity @p[distance=0, \
-    tag=!bs.log.$(feature).debug, \
-    tag=!bs.log._.debug, \
-    tag=!bs.log._._, \
-    tag=!bs.log.$(feature)._\
-] run tellraw @p ["",{"text":"BS","color":"aqua"},{"text":" [DEBUG]","color":"#CCCCCC"},{"text":" $(path)","color":"dark_aqua"},{"text":" > ","color":"gray"}, $(message)]
+    tag=!$(namespace).log.$(tag).debug, \
+    tag=!$(namespace).log._.debug, \
+    tag=!$(namespace).log._._, \
+    tag=!$(namespace).log.$(tag)._, \
+    tag=!_.log.$(tag).debug, \
+    tag=!_.log._.debug, \
+    tag=!_.log.$(tag)._, \
+    tag=!_.log._._ \
+] run tellraw @p {"nbt": "_", "storage": "bs:ctx", "interpret": true}

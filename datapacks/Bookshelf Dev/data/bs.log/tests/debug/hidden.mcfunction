@@ -2,5 +2,5 @@
 # @batch bs.log
 # @dummy
 
-function #bs.log:debug { path: "bs.foo:bar", feature: "foo.bar", message: '"Hidden debug log message"' }
+function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", feature: "bar", message: '"Hidden debug log message"' }
 assert not chat "Hidden debug log message"
