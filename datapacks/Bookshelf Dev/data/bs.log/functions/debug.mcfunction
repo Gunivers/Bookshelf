@@ -18,8 +18,8 @@ $data modify storage bs:in log set value {path: "$(path)", message: '$(message)'
 # Output on bs:in log
 function bs.log:time/get
 
-data modify storage bs:ctx _ set from storage bs:const log.messages.default.debug
-$data modify storage bs:ctx _ set from storage bs:const log.messages."$(namespace)".debug
+data modify storage bs:data log.ctx set from storage bs:const log.messages.default.debug
+$data modify storage bs:data log.ctx set from storage bs:const log.messages."$(namespace)".debug
 
 $execute at @a unless entity @p[distance=0, \
     tag=!$(namespace).log.$(tag).debug, \
@@ -30,4 +30,4 @@ $execute at @a unless entity @p[distance=0, \
     tag=!_.log._.debug, \
     tag=!_.log.$(tag)._, \
     tag=!_.log._._ \
-] run tellraw @p {"nbt": "_", "storage": "bs:ctx", "interpret": true}
+] run tellraw @p {"nbt": "log.ctx", "storage": "bs:data", "interpret": true}

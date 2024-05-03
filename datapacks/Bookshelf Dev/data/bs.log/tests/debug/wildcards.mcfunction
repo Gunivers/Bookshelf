@@ -13,7 +13,7 @@ assert chat "Tag wildcard debug log message"
 tag @s remove bs.foo.log._.debug
 
 tag @s add bs.foo.log._._
-function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"All wildcards debug log message"' }
+function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Tag and level wildcards debug log message"' }
 assert chat "Tag and level wildcards debug log message"
 tag @s remove bs.foo.log._._
 

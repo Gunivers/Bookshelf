@@ -12,7 +12,7 @@ function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", me
 assert chat "Info tag error log message"
 tag @s remove bs.foo.log.bar.info
 
-tag @s add bs.log.bar.warn
+tag @s add bs.foo.log.bar.warn
 function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Warn tag error log message"' }
 assert chat "Warn tag error log message"
 tag @s remove bs.foo.log.bar.warn
