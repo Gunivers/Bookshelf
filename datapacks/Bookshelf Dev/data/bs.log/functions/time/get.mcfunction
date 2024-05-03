@@ -1,4 +1,3 @@
-# data modify storage bs:in log.full_time set string block -30000000 0 1605 LastOutput 10 18
 data modify storage bs:in log.full_real_time set from storage bs:data log.time.full_time
 data modify storage bs:in log.hours set string storage bs:data log.time.full_time 0 2
 data modify storage bs:in log.minutes set string storage bs:data log.time.full_time 3 5

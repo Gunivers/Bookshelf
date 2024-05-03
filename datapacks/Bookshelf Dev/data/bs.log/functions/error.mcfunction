@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:in log set value {path: $(path), message: $(message), namespace: $(namespace), tag: $(tag)}
+$data modify storage bs:in log set value {path: "$(path)", message: '$(message)', namespace: "$(namespace)", tag: "$(tag)"}
 # Output on bs:in log
 function bs.log:time/get
 
