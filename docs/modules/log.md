@@ -197,19 +197,19 @@ The value of each key must be full JSON text component.
 
 Bookshelf exposes several values that can be used directly in the log messages format:
 
-| storage  |      path      |      type      |                                  description                                  |
-|----------|----------------|----------------|-------------------------------------------------------------------------------|
-| bs:in    | namespace      | string         | The namespace of the current log message                                      |
-| bs:in    | path           | string         | The path of the function that logs the current message                        |
-| bs:in    | tag            | string         | The tag of the log message                                                    |
-| bs:in    | message        | JSON compounds | The message of the log                                                        |
-| bs:in    | hours          | string         | The hours of the log message timestamp                                        |
-| bs:in    | minutes        | string         | The minutes of the log message timestamp                                      |
-| bs:in    | seconds        | string         | The seconds of the log message timestamp                                      |
-| bs:in    | full_real_time | string         | The timestamp in the following format: hh:mm:ss                               |
-| bs:in    | ticks          | integer        | The ticks of the log message timestamp                                        |
-| bs:const | log.full_time  | JSON array     | A "sugar" JSON array to simplify the display of the time in hh:mm:ss:t format |
-| bs:in    | gametime       | integer        | The gametime where the message was logged                                     |
+| storage  |        path        |      type      |                                  description                                  |
+|----------|--------------------|----------------|-------------------------------------------------------------------------------|
+| bs:in    | log.namespace      | string         | The namespace of the current log message                                      |
+| bs:in    | log.path           | string         | The path of the function that logs the current message                        |
+| bs:in    | log.tag            | string         | The tag of the log message                                                    |
+| bs:in    | log.message        | JSON compounds | The message of the log                                                        |
+| bs:in    | log.hours          | string         | The hours of the log message timestamp                                        |
+| bs:in    | log.minutes        | string         | The minutes of the log message timestamp                                      |
+| bs:in    | log.seconds        | string         | The seconds of the log message timestamp                                      |
+| bs:in    | log.full_real_time | string         | The timestamp in the following format: hh:mm:ss                               |
+| bs:in    | log.ticks          | integer        | The ticks of the log message timestamp                                        |
+| bs:const | log.full_time      | JSON array     | A "sugar" JSON array to simplify the display of the time in hh:mm:ss:t format |
+| bs:in    | log.gametime       | integer        | The gametime where the message was logged                                     |
 
 A simple example to define custom log message formats for the namespace `bs.foo`:
 ```mcfunction
