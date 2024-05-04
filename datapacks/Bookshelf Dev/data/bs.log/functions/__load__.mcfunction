@@ -5,11 +5,11 @@
 
 forceload add -30000000 1600
 setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,Command:"help me",TrackOutput:1}
-scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+
 scoreboard objectives add bs.in dummy [{"text":"BS ","color":"dark_gray"},{"text":"Input","color":"aqua"}]
-scoreboard players add #bs.log.tick bs.data 0
-function bs.log:get_seconds
-data modify storage bs:data log.time.previous_second set from storage bs:data log.time.current_second
+scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+
+execute unless score #log.gametime bs.data matches -2147483648..2147483647 store result score #log.gametime bs.data run time query gametime
 
 data modify storage bs:const log.full_time set value '[{"nbt": "log.full_real_time", "storage": "bs:in"}, {"text": ":"}, {"nbt": "log.ticks", "storage": "bs:in"}]'
 
