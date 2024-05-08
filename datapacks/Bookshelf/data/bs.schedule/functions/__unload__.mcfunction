@@ -11,4 +11,3 @@ scoreboard objectives remove bs.data
 
 data remove storage bs:data schedule
 data remove storage bs:const schedule
-data remove storage bs:const log.messages."bs.schedule"

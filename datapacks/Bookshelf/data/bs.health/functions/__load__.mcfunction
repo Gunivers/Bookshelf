@@ -18,9 +18,4 @@ data modify storage bs:const health.units set value [ \
   {name:"h",scale:72000}, \
 ]
 
-data modify storage bs:const log.messages."bs.health" set value { \
-  debug: '{"nbt": "log.messages.bs.debug", "storage": "bs:const", "interpret": true}', \
-  info: '{"nbt": "log.messages.bs.info", "storage": "bs:const", "interpret": true}', \
-  warn: '{"nbt": "log.messages.bs.warn", "storage": "bs:const", "interpret": true}', \
-  error: '{"nbt": "log.messages.bs.error", "storage": "bs:const", "interpret": true}' \
-}
+execute unless data storage bs:const log.messages[{namespaces: ["bs.health"]}] run data modify storage bs:const log.messages[{namespaces: ["bs"]}].namespaces append value "bs.health"

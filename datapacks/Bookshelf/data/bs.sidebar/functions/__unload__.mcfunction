@@ -9,4 +9,3 @@ forceload remove -30000000 1600
 scoreboard objectives remove bs.data
 
 data remove storage bs:data sidebar
-data remove storage bs:const log.messages."bs.sidebar"
