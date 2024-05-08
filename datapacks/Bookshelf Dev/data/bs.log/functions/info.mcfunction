@@ -18,7 +18,7 @@ $data modify storage bs:in log set value {path: "$(path)", message: '$(message)'
 # Output on bs:in log
 function bs.log:time/get
 
-data modify storage bs:data log.ctx set from storage bs:const log.messages[0].format.info
+data modify storage bs:data log.ctx set from storage bs:const log.messages[{default: true}].format.info
 $data modify storage bs:data log.ctx set from storage bs:const log.messages[{namespaces: ["$(namespace)"]}].format.info
 
 $execute at @a unless entity @p[distance=0, \
