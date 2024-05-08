@@ -2,17 +2,23 @@
 # @batch bs.log
 # @dummy
 
-tag @s add bs.log.foo.bar._
-function #bs.log:error { path: "bs.foo:bar", feature: "foo.bar", message: '"Level wildcard error log message"' }
+tag @s add bs.foo.log.bar._
+function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Level wildcard error log message"' }
 assert chat "Level wildcard error log message"
-tag @s remove bs.log.foo.bar._
+tag @s remove bs.foo.log.bar._
 
-tag @s add bs.log._.error
-function #bs.log:error { path: "bs.foo:bar", feature: "foo.bar", message: '"Feature wildcard error log message"' }
-assert chat "Feature wildcard error log message"
-tag @s remove bs.log._.error
+tag @s add bs.foo.log._.error
+function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Tag wildcard error log message"' }
+assert chat "Tag wildcard error log message"
+tag @s remove bs.foo.log._.error
 
-tag @s add bs.log._._
-function #bs.log:error { path: "bs.foo:bar", feature: "foo.bar", message: '"All wildcards error log message"' }
+tag @s add bs.foo.log._._
+function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Tag and level wildcards error log message"' }
+assert chat "Tag and level wildcards error log message"
+tag @s remove bs.foo.log._._
+
+tag @s add _.log._._
+function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"All wildcards error log message"' }
 assert chat "All wildcards error log message"
-tag @s remove bs.log._._
+tag @s remove _.log._._
+

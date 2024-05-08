@@ -19,3 +19,5 @@ data modify storage bs:const schedule.units set value [ \
   {name:"hour",scale:72000}, \
   {name:"h",scale:72000}, \
 ]
+
+execute unless data storage bs:const log.messages[{namespaces: ["bs.schedule"]}] run data modify storage bs:const log.messages[{namespaces: ["bs"]}].namespaces append value "bs.schedule"
