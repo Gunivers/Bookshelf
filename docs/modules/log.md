@@ -191,33 +191,49 @@ Will display the following message if the user has one of these tags:
 ### Customize the log message format
 
 Bookshelf proposes to define different log message format according to the namespace.
-To add new log message formats, you have to write directly inside the storage `bs:in log.messages.<namespace>`.
-The `<namespace>` NBT tag is a compound, with four possibles keys: `error`, `warn`, `info` and `debug`, each describing the log format for the respecting severity level.
-The value of each key must be full JSON text component.
+To add new log message formats, you have to write directly inside the storage array `bs:in log.messages`.
+`messages` is an array of objects, with the following format:
+```nbt
+{
+  namespaces: ["<namespace>"],
+  format: {
+    debug: "<JSON compound>",
+    info: "<JSON compound>",
+    warn: "<JSON compound>",
+    error: "<JSON compound>",
+  }
+}
+```
+The `namespaces` array stores all the namespaces sharing the same log message formats.
+The four formats (`error`, `warn`, `info` and `debug`) describe the log format for the respecting severity level.
+The value of each must be a full JSON text component.
 
 Bookshelf exposes several values that can be used directly in the log messages format:
 
-| storage  |        path        |      type      |                                  description                                  |
-|----------|--------------------|----------------|-------------------------------------------------------------------------------|
-| bs:in    | log.namespace      | string         | The namespace of the current log message                                      |
-| bs:in    | log.path           | string         | The path of the function that logs the current message                        |
-| bs:in    | log.tag            | string         | The tag of the log message                                                    |
-| bs:in    | log.message        | JSON compounds | The message of the log                                                        |
-| bs:in    | log.hours          | string         | The hours of the log message timestamp                                        |
-| bs:in    | log.minutes        | string         | The minutes of the log message timestamp                                      |
-| bs:in    | log.seconds        | string         | The seconds of the log message timestamp                                      |
-| bs:in    | log.full_real_time | string         | The timestamp in the following format: hh:mm:ss                               |
-| bs:in    | log.ticks          | integer        | The ticks of the log message timestamp                                        |
-| bs:const | log.full_time      | JSON array     | A "sugar" JSON array to simplify the display of the time in hh:mm:ss:t format |
-| bs:in    | log.gametime       | integer        | The gametime where the message was logged                                     |
+| storage  |        path        |      type     |                                  description                                  |
+|----------|--------------------|---------------|-------------------------------------------------------------------------------|
+| bs:in    | log.namespace      | string        | The namespace of the current log message                                      |
+| bs:in    | log.path           | string        | The path of the function that logs the current message                        |
+| bs:in    | log.tag            | string        | The tag of the log message                                                    |
+| bs:in    | log.message        | JSON compound | The message of the log                                                        |
+| bs:in    | log.hours          | string        | The hours of the log message timestamp                                        |
+| bs:in    | log.minutes        | string        | The minutes of the log message timestamp                                      |
+| bs:in    | log.seconds        | string        | The seconds of the log message timestamp                                      |
+| bs:in    | log.full_real_time | string        | The timestamp in the following format: hh:mm:ss                               |
+| bs:in    | log.ticks          | integer       | The ticks of the log message timestamp                                        |
+| bs:const | log.full_time      | JSON array    | A "sugar" JSON array to simplify the display of the time in hh:mm:ss:t format |
+| bs:in    | log.gametime       | integer       | The gametime where the message was logged                                     |
 
 A simple example to define custom log message formats for the namespace `bs.foo`:
 ```mcfunction
-data modify storage bs:const log.messages."bs.foo" set value { \
-    debug: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [DEBUG] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
-    info: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [INFO] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
-    warn: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [WARN] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
-    error: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [ERROR] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
+data modify storage bs:const log.messages append value { \
+    namespaces: ["bs.foo"], \
+    format: { \
+      debug: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [DEBUG] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
+      info: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [INFO] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
+      warn: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [WARN] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]', \
+      error: '["", {"nbt": "log.full_time", "storage": "bs:const", "interpret": true, "color": "red"}, " [ERROR] - ", {"nbt": "log.message", "storage": "bs:in", "interpret": true}]' \
+    } \
 }
 ```
 And to try the new format:
