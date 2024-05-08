@@ -15,4 +15,4 @@
 # CODE ------------------------------------------------------------------------
 
 $execute store result score #result bs.data run data remove storage bs:data schedule[$(with)]
-function #bs.log:info {feature:"schedule.cancel", path:"#bs.schedule:cancel", message:'["Canceled ",{"score":{"name":"#result","objective":"bs.data"}}," command(s)."]'}
+function #bs.log:info {namespace:"bs.schedule", tag:"cancel", path:"#bs.schedule:cancel", message:'["Canceled ",{"score":{"name":"#result","objective":"bs.data"}}," command(s)."]'}
