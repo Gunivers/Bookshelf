@@ -31,15 +31,19 @@ You can find below all functions available in this module.
 
 ### Convert to hexadecimal
 
-::::{tab-set}
-:::{tab-item} RGB to hexadecimal
+:::::{tab-set}
+::::{tab-item} RGB to hexadecimal
 
-```{function} #bs.color:rgb_to_hex
+```{function} #bs.color:rgb_to_hex {color:[]}
 
 Convert a color from RGB to hexadecimal.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`list` Vector representing the RGB color (example: [0,255,128]).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **color**: Vector representing the RGB color (example: [0,255,128]).
+  :::
 
 :Outputs:
   **Storage `bs:out color.rgb_to_hex`**: {nbt}`string` Color as an hexadecimal string.
@@ -55,15 +59,19 @@ function #bs.color:rgb_to_hex {color:[0,255,128]}
 data get storage bs:out color.rgb_to_hex
 ```
 
-:::
-:::{tab-item} Integer to hexadecimal
+::::
+::::{tab-item} Integer to hexadecimal
 
-```{function} #bs.color:int_to_hex
+```{function} #bs.color:int_to_hex {color:<value>}
 
 Convert a color from integer to hexadecimal.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`int` Color as an integer.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **color**: Color as an integer.
+  :::
 
 :Outputs:
   **Storage `bs:out color.int_to_hex`**: {nbt}`string` Color as an hexadecimal string.
@@ -79,8 +87,8 @@ function #bs.color:int_to_hex with entity @e[type=minecraft:zombie,sort=nearest,
 data get storage bs:out color.int_to_hex
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, theogiraudet
 
@@ -88,15 +96,19 @@ data get storage bs:out color.int_to_hex
 
 ### Convert to integer
 
-::::{tab-set}
-:::{tab-item} Hexadecimal to integer
+:::::{tab-set}
+::::{tab-item} Hexadecimal to integer
 
-```{function} #bs.color:hex_to_int
+```{function} #bs.color:hex_to_int {color:<value>}
 
 Convert a color from hexadecimal to integer.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`string` Color as an hexadecimal string (example: #ffffff).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **color**: Color as an hexadecimal string (example: #ffffff).
+  :::
 
 :Outputs:
   **Return | Score `$color.hex_to_int bs.out`**: Color as an integer.
@@ -114,15 +126,19 @@ summon minecraft:zombie ~ ~ ~ {ArmorItems:[{},{},{},{id:"minecraft:leather_helme
 execute as @e[type=minecraft:zombie,sort=nearest,limit=1] store result entity @s ArmorItems[3].tag.display.color int 1 run function #bs.color:hex_to_int {color:"#ffffff"}
 ```
 
-:::
-:::{tab-item} RGB to integer
+::::
+::::{tab-item} RGB to integer
 
-```{function} #bs.color:rgb_to_int
+```{function} #bs.color:rgb_to_int {color:[]}
 
 Convert a color from RGB to integer.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`list` Vector representing the RGB color (example: [0,255,128]).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **color**: Vector representing the RGB color (example: [0,255,128]).
+  :::
 
 :Outputs:
   **Return | Score `$color.rgb_to_int bs.out`**: Color as an integer.
@@ -140,8 +156,8 @@ summon minecraft:zombie ~ ~ ~ {ArmorItems:[{},{},{},{id:"minecraft:leather_helme
 execute as @e[type=minecraft:zombie,sort=nearest,limit=1] store result entity @s ArmorItems[3].tag.display.color int 1 run function #bs.color:rgb_to_int {color:[255,0,0]}
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, theogiraudet
 
@@ -149,15 +165,19 @@ execute as @e[type=minecraft:zombie,sort=nearest,limit=1] store result entity @s
 
 ### Convert to RGB
 
-::::{tab-set}
-:::{tab-item} Hexadecimal to RGB
+:::::{tab-set}
+::::{tab-item} Hexadecimal to RGB
 
-```{function} #bs.color:hex_to_rgb
+```{function} #bs.color:hex_to_rgb {color:<value>}
 
 Convert a color from hexadecimal to RGB.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`string` Color as an hexadecimal string (example: #ffffff).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **color**: Color as an hexadecimal string (example: #ffffff).
+  :::
 
 :Outputs:
   **Storage `bs:out color.hex_to_rgb`**: {nbt}`list` Vector representing the RGB color.
@@ -175,15 +195,19 @@ function #bs.color:hex_to_rgb {color:"#ffffff"}
 data get storage bs:out color.hex_to_rgb
 ```
 
-:::
-:::{tab-item} Integer to RGB
+::::
+::::{tab-item} Integer to RGB
 
-```{function} #bs.color:int_to_rgb
+```{function} #bs.color:int_to_rgb {color:<value>}
 
 Convert a color from integer to RGB.
 
 :Inputs:
-  **Macro Var `color`**: {nbt}`int` Color as an integer.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **color**: Color as an integer.
+  :::
 
 :Outputs:
   **Storage `bs:out color.int_to_rgb`**: {nbt}`list` Vector representing the RGB color.
@@ -201,8 +225,8 @@ function #bs.color:int_to_rgb with entity @e[type=minecraft:zombie,sort=nearest,
 data get storage bs:out color.int_to_rgb
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, theogiraudet
 

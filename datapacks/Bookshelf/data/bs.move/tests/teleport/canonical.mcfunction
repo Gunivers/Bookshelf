@@ -8,7 +8,7 @@ execute store result score #packtest.x_min bs.data store result score #packtest.
 execute store result score #packtest.y_min bs.data store result score #packtest.y_max bs.data store result score @s bs.vel.y run random value -1000..1000
 execute store result score #packtest.z_min bs.data store result score #packtest.z_max bs.data store result score @s bs.vel.z run random value -1000..1000
 
-function #bs.move:tp_by_vel {scale:0.001,with:{blocks:0b,entities:0b}}
+function #bs.move:apply_vel {scale:0.001,with:{blocks:0b,entities:0b}}
 
 execute store result score #packtest.x bs.data run data get entity @s Pos[0] 1000
 execute store result score #packtest.y bs.data run data get entity @s Pos[1] 1000

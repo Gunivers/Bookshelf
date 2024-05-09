@@ -1,6 +1,6 @@
 {
   "values": [
     "bs.move:teleport/with",
-    "bs.move:teleport/canonical/tp_by_vel"
+    "bs.move:teleport/canonical/apply_vel"
   ]
 }

@@ -9,7 +9,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$vector.max.2"
+            "name": "$vector.abs_max.2"
           },
           "score": "bs.in"
         },
@@ -18,7 +18,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$vector.max"
+              "name": "$vector.abs_max"
             },
             "score": "bs.out",
             "scale": -1
@@ -27,7 +27,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$vector.max"
+              "name": "$vector.abs_max"
             },
             "score": "bs.out"
           }
@@ -39,7 +39,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$vector.max.2"
+            "name": "$vector.abs_max.2"
           },
           "score": "bs.in"
         },
@@ -48,7 +48,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$vector.max"
+              "name": "$vector.abs_max"
             },
             "score": "bs.out"
           },
@@ -56,7 +56,7 @@
             "type": "minecraft:score",
             "target": {
               "type": "minecraft:fixed",
-              "name": "$vector.max"
+              "name": "$vector.abs_max"
             },
             "score": "bs.out",
             "scale": -1

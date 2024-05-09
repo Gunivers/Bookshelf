@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "bs.log:__tick__",
+      "id": "#bs.log:tick",
       "required": false
     }
   ]

@@ -18,17 +18,21 @@ You can find below all functions available in this module.
 
 ### Add / Remove
 
-::::{tab-set}
-:::{tab-item} Levels
+:::::{tab-set}
+::::{tab-item} Levels
 
-```{function} #bs.xp:add_levels
+```{function} #bs.xp:add_levels {levels:<value>}
 
 Add levels to the player.
 
 :Inputs:
   **Execution `as <players>`**: Players to add levels to.
 
-  **Macro Var `levels` [int]**: Amount of levels to add.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **levels**: Amount of levels to add.
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
@@ -44,17 +48,21 @@ function #bs.xp:add_levels {levels:42}
 # look at your XP bar in survival mode
 ```
 
-:::
-:::{tab-item} Points
+::::
+::::{tab-item} Points
 
-```{function} #bs.xp:add_points
+```{function} #bs.xp:add_points {points:<value>}
 
 Add experience points to the player.
 
 :Inputs:
   **Execution `as <players>`**: Players to add points to.
 
-  **Macro Var `points` [int]**: Amount of points to add.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **points**: Amount of points to add.
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
@@ -70,17 +78,21 @@ function #bs.xp:add_points {points:42}
 # look at your XP bar in survival mode
 ```
 
-:::
-:::{tab-item} Progress bar
+::::
+::::{tab-item} Progress bar
 
-```{function} #bs.xp:add_progress
+```{function} #bs.xp:add_progress {progress:<value>}
 
 Fill the XP bar partially.
 
 :Inputs:
   **Execution `as <players>`**: Players to fill the XP bar.
 
-  **Macro Var `progress` [number]**: Progress to add to the bar.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`double` **progress**: Progress to add to the bar (in range [-1,1]).
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
@@ -96,8 +108,8 @@ function #bs.xp:add_progress {progress:0.25}
 # look at your XP bar in survival mode
 ```
 
-:::
 ::::
+:::::
 
 ```{admonition} How to remove
 :class: tip
@@ -112,8 +124,8 @@ You can use negative numbers to remove experience from the player.
 
 ### Get
 
-::::{tab-set}
-:::{tab-item} Max points
+:::::{tab-set}
+::::{tab-item} Max points
 
 ```{function} #bs.xp:get_max_points
 
@@ -136,8 +148,8 @@ function #bs.xp:get_max_points
 tellraw @a [{"text":"I need a total of "},{"score":{"name":"$xp.get_max_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
 ```
 
-:::
-:::{tab-item} Remaining points
+::::
+::::{tab-item} Remaining points
 
 ```{function} #bs.xp:get_remaining_points
 
@@ -160,12 +172,12 @@ function #bs.xp:get_remaining_points
 tellraw @a [{"text":"I need "},{"score":{"name":"$xp.get_remaining_points","objective":"bs.out"}},{"text":" points to pass to the next level"}]
 ```
 
-:::
-:::{tab-item} Total points
+::::
+::::{tab-item} Total points
 
 ```{function} #bs.xp:get_total_points
 
-Get the total amount of points of a player.
+Get the sum of all points a player has gathered.
 
 :Inputs:
   **Execution `as <players>`**: Players from whom you want to get the total amount of points.
@@ -184,8 +196,8 @@ function #bs.xp:get_total_points
 tellraw @a [{"text":"I have "},{"score":{"name":"$xp.get_total_points","objective":"bs.out"}},{"text":" total points"}]
 ```
 
-:::
-:::{tab-item} Progress bar
+::::
+::::{tab-item} Progress bar
 
 ```{function} #bs.xp:get_progress {scale:<scaling>}
 
@@ -194,7 +206,11 @@ Get the fill progress of the XP bar.
 :Inputs:
   **Execution `as <players>`**: Players from whom you want to get the bar progress.
 
-  **Macro Var `scale` [number]**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Return | Score `$xp.get_progress bs.out`**: Fill level of the xp bar after scaling.
@@ -210,8 +226,8 @@ function #bs.xp:get_progress {scale:100}
 tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get_progress","objective":"bs.out"}},{"text":"/100"}]
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -219,23 +235,27 @@ tellraw @a [{"text":"My experience bar is filled at "},{"score":{"name":"$xp.get
 
 ### Set
 
-::::{tab-set}
-:::{tab-item} Levels
+:::::{tab-set}
+::::{tab-item} Levels
 
-```{function} #bs.xp:set_levels
+```{function} #bs.xp:set_levels {levels:<value>}
 
 Set players levels.
 
 :Inputs:
   **Execution `as <players>`**: Players to set levels to.
 
-  **Macro Var `levels` [int]**: Amount of levels to set.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **levels**: Amount of levels to set.
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
 ```
 
-*Set your level to 42 using a macro:*
+*Set your level to 42:*
 
 ```mcfunction
 # Once (execute on you)
@@ -245,23 +265,27 @@ function #bs.xp:set_levels {levels:42}
 # look at your XP bar in survival mode
 ```
 
-:::
-:::{tab-item} Points
+::::
+::::{tab-item} Points
 
-```{function} #bs.xp:set_points
+```{function} #bs.xp:set_points {points:<value>}
 
 Set players experience points.
 
 :Inputs:
   **Execution `as <players>`**: Players to set points to.
 
-  **Macro Var `points` [int]**: Amount of experience points to set.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **points**: Amount of experience points to set.
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
 ```
 
-*Set your points to 42 using a macro:*
+*Set your points to 42:*
 
 ```mcfunction
 # Once (execute on you)
@@ -271,17 +295,21 @@ function #bs.xp:set_points {points:42}
 # look at your XP bar in survival mode
 ```
 
-:::
-:::{tab-item} Total points
+::::
+::::{tab-item} Total points
 
-```{function} #bs.xp:set_total_points
+```{function} #bs.xp:set_total_points {points:<value>}
 
 Set players total experience points.
 
 :Inputs:
   **Execution `as <players>`**: Players you want to set the total XP.
 
-  **Macro Var `points` [int]**: Amount of total experience points to set.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **points**: Amount of total experience points to set.
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
@@ -297,17 +325,21 @@ function #bs.xp:set_total_points {points:42}
 # look at your XP bar in survival mode
 ```
 
-:::
-:::{tab-item} Progress bar
+::::
+::::{tab-item} Progress bar
 
-```{function} #bs.xp:set_progress
+```{function} #bs.xp:set_progress {progress:<value>}
 
 Fill the XP bar partially.
 
 :Inputs:
   **Execution `as <players>`**: Players to fill the XP bar.
 
-  **Macro Var `progress` [number]**: Progress to set on the bar.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`double` **progress**: Progress to set on the bar (in range [-1,1]).
+  :::
 
 :Outputs:
   **State**: Players XP is updated.
@@ -323,8 +355,8 @@ function #bs.xp:set_progress {progress:0.5}
 # look at your XP bar in survival mode
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 

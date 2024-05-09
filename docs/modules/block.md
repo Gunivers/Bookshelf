@@ -209,16 +209,17 @@ The `bs:out block` output is intended to be read-only. Modifying parts manually 
 :::::{tab-set}
 ::::{tab-item} Keep
 
-```{function} #bs.block:keep_properties
+```{function} #bs.block:keep_properties {properties:[]}
 
 Filter properties to keep only the desired ones.
 
 :Inputs:
-  **Macro var `properties`**:
+  **Function macro**:
   :::{treeview}
-  - {nbt}`list` List of properties to keep
-    - {nbt}`compound` Property data
-      - {nbt}`string` **name**: Name of the property (e.g., `shape`).
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **properties**: List of properties to keep.
+      - {nbt}`compound` Property data
+        - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
 
 :Outputs:
@@ -241,18 +242,19 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Merge
 
-```{function} #bs.block:merge_properties
+```{function} #bs.block:merge_properties {properties:[]}
 
 Merge state properties from the current location into the output. The merge occurs if the syntax is correct, regardless of logical coherence (e.g., using 'age' for different plants).
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Location of the block that act as input.
 
-  **Macro var `properties`**:
+  **Function macro**:
   :::{treeview}
-  - {nbt}`list` List of properties to merge
-    - {nbt}`compound` Property data
-      - {nbt}`string` **name**: Name of the property (e.g., `shape`).
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **properties**: List of properties to merge.
+      - {nbt}`compound` Property data
+        - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
 
 :Outputs:
@@ -275,16 +277,17 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Remove
 
-```{function} #bs.block:remove_properties
+```{function} #bs.block:remove_properties {properties:[]}
 
 Filter properties by removing the undesired ones.
 
 :Inputs:
-  **Macro var `properties`**:
+  **Function macro**:
   :::{treeview}
-  - {nbt}`list` List of properties to remove
-    - {nbt}`compound` Property data
-      - {nbt}`string` **name**: Name of the property (e.g., `shape`).
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **properties**: List of properties to remove.
+      - {nbt}`compound` Property data
+        - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
 
 :Outputs:
@@ -307,17 +310,18 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Replace
 
-```{function} #bs.block:replace_properties
+```{function} #bs.block:replace_properties {properties:[]}
 
 Replace property values. Invalid values will not be replaced.
 
 :Inputs:
-  **Macro var `properties`**:
+  **Function macro**:
   :::{treeview}
-  - {nbt}`list` List of properties to replace
-    - {nbt}`compound` Property data
-      - {nbt}`string` **name**: Name of the property (e.g., `facing`).
-      - {nbt}`string` **value**: Value of the property (e.g., `east`).
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **properties**: List of properties to replace.
+      - {nbt}`compound` Property data
+        - {nbt}`string` **name**: Name of the property (e.g., `facing`).
+        - {nbt}`string` **value**: Value of the property (e.g., `east`).
   :::
 
 :Outputs:
@@ -340,17 +344,18 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Shift
 
-```{function} #bs.block:shift_properties
+```{function} #bs.block:shift_properties {properties:[]}
 
 Shift properties by any amount, allowing cycling through their values.
 
 :Inputs:
-  **Macro var `properties`**:
+  **Function macro**:
   :::{treeview}
-  - {nbt}`list` List of properties to shift
-    - {nbt}`compound` Property data
-      - {nbt}`string` **name**: Name of the property (e.g., `shape`).
-      - {nbt}`string` **by**: Shift amount (defaults to 1).
+  - {nbt}`compound` Arguments
+    - {nbt}`list` **properties**: List of properties to shift.
+      - {nbt}`compound` Property data
+        - {nbt}`string` **name**: Name of the property (e.g., `shape`).
+        - {nbt}`string` **by**: Shift amount (defaults to 1).
   :::
 
 :Outputs:
@@ -379,15 +384,19 @@ data get storage bs:out block.block
 
 ### Manage type
 
-::::{tab-set}
-:::{tab-item} Replace
+:::::{tab-set}
+::::{tab-item} Replace
 
-```{function} #bs.block:replace_type
+```{function} #bs.block:replace_type {type:<value>}
 
 Replace the block type while trying to conserve the state. State is preserved only if the group of the output matches the input.
 
 :Inputs:
-  **Macro var `type`**: {nbt}`string` String representation of the id (e.g., `minecraft:stone`).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+  :::
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -406,15 +415,19 @@ function #bs.block:replace_type {type:"minecraft:spruce_stairs"}
 data get storage bs:out block.block
 ```
 
-:::
-:::{tab-item} Lookup item
+::::
+::::{tab-item} Lookup item
 
-```{function} #bs.block:lookup_item
+```{function} #bs.block:lookup_item {item:<value>}
 
 Get block data from the given item string id.
 
 :Inputs:
-  **Macro var `item`**: {nbt}`string` Item string id associated to a block.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **item**: Item string id associated to a block.
+  :::
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` Equivalent to the [`#bs.block:get_type`](#get) function.
@@ -434,15 +447,19 @@ data get storage bs:out block.block
 Minecraft does not perfectly map between blocks and items. Some items may correspond to multiple blocks, and this function will only return one of them.
 ```
 
-:::
-:::{tab-item} Lookup type
+::::
+::::{tab-item} Lookup type
 
-```{function} #bs.block:lookup_type
+```{function} #bs.block:lookup_type {type:<value>}
 
 Get block data from the given type string id.
 
 :Inputs:
-  **Macro var `type`**: {nbt}`string` Type string id associated to a block.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: Type string id associated to a block.
+  :::
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` Equivalent to the [`#bs.block:get_type`](#get) function.
@@ -458,8 +475,8 @@ function #bs.block:lookup_type {type:"minecraft:stone"}
 data get storage bs:out block.block
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome
 

@@ -38,6 +38,70 @@ You can find below all functions available in this module.
 
 ---
 
+### Absolute max
+
+```{function} #bs.vector:abs_max
+
+Get the number furthest to zero, regardless of sign.
+
+:Inputs:
+  **Scores `$vector.abs_max.[0,1,2] bs.in`**: Vector components.
+
+:Outputs:
+  **Return | Score `$vector.abs_max bs.out`**: Component with the value furthest from 0.
+```
+
+I want to get the max component of the vector (1000, 2000, 3000):
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.abs_max.0 bs.in 1000
+scoreboard players set $vector.abs_max.1 bs.in 2000
+scoreboard players set $vector.abs_max.2 bs.in 3000
+
+# Get the max component
+function #bs.vector:abs_max
+
+# Display the result
+tellraw @a [{"text":" Max component: ","color":"dark_gray"},{"score":{"name":"$vector.abs_max","objective":"bs.out"},"color":"gold"}]
+```
+
+> **Credits**: Aksiome, Leirof
+
+---
+
+### Absolute min
+
+```{function} #bs.vector:abs_min
+
+Get the number closest to zero, regardless of sign.
+
+:Inputs:
+  **Scores `$vector.abs_min.[0,1,2] bs.in`**: Vector components.
+
+:Outputs:
+  **Return | Score `$vector.abs_min bs.out`**: Component with the value closest to 0.
+```
+
+I want to get the min component of the vector (1000, 2000, 3000):
+
+```mcfunction
+# Define the vector
+scoreboard players set $vector.abs_min.0 bs.in 1000
+scoreboard players set $vector.abs_min.1 bs.in 2000
+scoreboard players set $vector.abs_min.2 bs.in 3000
+
+# Get the min component
+function #bs.vector:abs_min
+
+# Display the result
+tellraw @a [{"text":" Min component: ","color":"dark_gray"},{"score":{"name":"$vector.abs_min","objective":"bs.out"},"color":"gold"}]
+```
+
+> **Credits**: Aksiome
+
+---
+
 ### Basis rotation 3D
 
 ```{function} #bs.vector:basis_rot_3d {scaling:<value>}
@@ -49,7 +113,11 @@ Get the equivalent of the vector passed in parameter in a base with a different 
 
   **Scores `$vector.basis_rot_3d.rot.[0,1] bs.in`**: Horizontal angle $=\phi$ (along $=\hat{y}$) and vertical angle $=\theta$ (along $=\hat{\phi}$) rotation (in degree) from the starting base.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Scores `$vector.basis_rot_3d.[0,1,2] bs.out`**: Vector coordinates $=(X',Y',Z')$ in the target base.
@@ -86,7 +154,7 @@ function #bs.vector:basis_rot_3d {scaling:1000}
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.0", "objective": "bs.out"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"$vector.basis_rot_3d.1", "objective": "bs.out"},"color":"gold"},{"text":", Z = ","color":"dark_gray"},{"score":{"name":"$vector.basis_rot_3d.2","objective":"bs.out"},"color":"gold"}]
 ```
 
-*I want to have a vector pointing to where I'm looking, but in relative coordinates ~X ~Y ~Z (also called "classical" vector in this library):*
+*I want to have a vector pointing to where I'm looking at, but in relative coordinates ~X ~Y ~Z:*
 
 ```mcfunction
 # Once
@@ -125,7 +193,11 @@ Convert cartesian coordinates to spherical coordinates.
 :Inputs:
   **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.in`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Scores `$vector.cartesian_to_spherical.[0,1,2] bs.out`**: Vector representing the spherical coordinates $=(H,V,R)$.
@@ -134,7 +206,7 @@ Convert cartesian coordinates to spherical coordinates.
 ```{admonition} Spherical coordinates
 :class: warning
 
-This system returns non conventional shperical coordinates.
+This system returns non conventional [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 - $H$ (horizontal angle) is along the $\hat{z}$ axis.
 - $V$ (vertical angle) is on the horizontal plane.
 - $R$ is the radial distance.
@@ -170,7 +242,11 @@ Compute the vector product between $u$ and $v$.
 
   **Scores `$vector.cross_product.v.[0,1,2] bs.in`**: Second vector components.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Scores `$vector.cross_product.[0,1,2] bs.out`**: Result of the operation $=u \times v$.
@@ -210,7 +286,11 @@ Compute the scalar product between $u$ and $v$.
 
   **Scores `$vector.dot_product.v.[0,1,2] bs.in`**: Second vector components.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Scores `$vector.dot_product bs.out`**: Result of the operation $=u · v$.
@@ -241,8 +321,8 @@ tellraw @a [{"text":"Dot product: ","color":"dark_gray"},{"score":{"name":"$vect
 
 ### Length
 
-::::{tab-set}
-:::{tab-item} Length
+:::::{tab-set}
+::::{tab-item} Length
 
 ```{function} #bs.vector:length
 
@@ -271,15 +351,15 @@ tellraw @a [{"text":" Vector length: ","color":"dark_gray"},{"score":{"name":"$v
 ```{admonition} Performance tip
 :class: tip
 
-If you want to minimize the performance impact, we recomande you to use the `length_squared` function instead of this one when it's possible. In fact, computing the length of a vector require to perform square root operation which is not a simple task for a computer, especially in Minecraft.
+If you want to minimize the performance impact, we recomande you to use the `length_squared` function instead of this one when it's possible. In fact, computing the length of a vector requires to perform square root operation which is not a simple task for a computer, especially in Minecraft.
 
 `length_squared` can often be used in the following cases:
 - You want to compare the length with a given one, then compute manually the square of the given value and compare it with the result of `length_squared`, which is faster than computing the real length.
 - You want to compare a vector length with another one, then you can compare the result of `length_squared` instead of computing the real length of both vectors.
 ```
 
-:::
-:::{tab-item} Length squared
+::::
+::::{tab-item} Length squared
 
 ```{function} #bs.vector:length_squared {scaling:<value>}
 
@@ -288,7 +368,11 @@ Compute the squared norm of the vector.
 :Inputs:
   **Scores `$vector.length_squared.[0,1,2] bs.in`**: Vector components.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Return | Score `$vector.length_squared bs.out`**: Vector length squared.
@@ -307,81 +391,17 @@ function #bs.vector:length_squared
 tellraw @a [{"text":" Vector length squared: ","color":"dark_gray"},{"score":{"name":"$vector.length_squared","objective":"bs.out"}}]
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
-
----
-
-### Max
-
-```{function} #bs.vector:max
-
-Get the max component of a vector.
-
-:Inputs:
-  **Scores `$vector.max.[0,1,2] bs.in`**: Vector components.
-
-:Outputs:
-  **Return | Score `$vector.max bs.out`**: Component with the value furthest from 0.
-```
-
-I want to get the max component of the vector (1000, 2000, 3000):
-
-```mcfunction
-# Define the vector
-scoreboard players set $vector.max.0 bs.in 1000
-scoreboard players set $vector.max.1 bs.in 2000
-scoreboard players set $vector.max.2 bs.in 3000
-
-# Get the max component
-function #bs.vector:max
-
-# Display the result
-tellraw @a [{"text":" Max component: ","color":"dark_gray"},{"score":{"name":"$vector.max","objective":"bs.out"},"color":"gold"}]
-```
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Min
-
-```{function} #bs.vector:min
-
-Get the min component of a vector.
-
-:Inputs:
-  **Scores `$vector.min.[0,1,2] bs.in`**: Vector components.
-
-:Outputs:
-  **Return | Score `$vector.min bs.out`**: Component with the value closest to 0.
-```
-
-I want to get the min component of the vector (1000, 2000, 3000):
-
-```mcfunction
-# Define the vector
-scoreboard players set $vector.min.0 bs.in 1000
-scoreboard players set $vector.min.1 bs.in 2000
-scoreboard players set $vector.min.2 bs.in 3000
-
-# Get the min component
-function #bs.vector:min
-
-# Display the result
-tellraw @a [{"text":" Min component: ","color":"dark_gray"},{"score":{"name":"$vector.min","objective":"bs.out"},"color":"gold"}]
-```
-
-> **Credits**: Aksiome
 
 ---
 
 ### Normalize
 
-::::{tab-set}
-:::{tab-item} Norm
+:::::{tab-set}
+::::{tab-item} Norm
 
 ```{function} #bs.vector:normalize {scale:<scaling>}
 
@@ -390,7 +410,11 @@ Normalize the vector by putting the length at the given scale while keeping prop
 :Inputs:
   **Scores `$vector.normalize.[0,1,2] bs.in`**: Vector components.
 
-  **Macro Var `scale` [number]**: Scalar for the function’s output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Scores `$vector.normalize.[0,1,2] bs.out`**: Normalized vector components.
@@ -417,8 +441,8 @@ function #bs.vector:normalize {scale:1000}
 tellraw @a [{"text":"Normalized vector: ","color":"dark_gray"},{"score":{"name":"$vector.normalize.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.normalize.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.normalize.2","objective":"bs.out"},"color":"gold"}]
 ```
 
-:::
-:::{tab-item} Max component
+::::
+::::{tab-item} Max component
 
 ```{function} #bs.vector:normalize_max_component {scale:<scaling>}
 
@@ -427,12 +451,16 @@ Normalize the vector by placing the largest component at the given scale while k
 :Inputs:
   **Scores `$vector.normalize_max_component.[0,1,2] bs.in`**: Vector components.
 
-  **Macro Var `scale` [number]**: Scalar for the function’s output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Scores `$vector.normalize_max_component.[0,1,2] bs.out`**: Normalized vector components.
 
-  **Score `$vector.normalize_max_component.factor bs.out`**: Normalization factor $=A$ ($=V_i = A \times V_n$).
+  **Score `$vector.normalize_max_component.factor bs.out`**: Normalization factor.
 ```
 
 *Fast normalize the vector (1000, 2000, 3000) with a scale of 1000:*
@@ -450,8 +478,8 @@ function #bs.vector:fast_normalize {scale:1000}
 tellraw @a [{"text":"Normalized vector: ","color":"dark_gray"},{"score":{"name":"$vector.fast_normalize.0","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.fast_normalize.1","objective":"bs.out"},"color":"gold"},{"text":", ","color":"gold"},{"score":{"name":"$vector.fast_normalize.2","objective":"bs.out"},"color":"gold"}]
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -466,7 +494,11 @@ Convert spherical coordinates to cartesian coordinates.
 :Inputs:
   **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.in`**: Vector representing the spherical coordinates $=(H,V,R)$.
 
-  **Macro Var `scaling` [number]**: Scalar for the function’s input and output.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scaling**: Scalar for the function’s input and output.
+  :::
 
 :Outputs:
   **Scores `$vector.spherical_to_cartesian.[0,1,2] bs.out`**: Vector representing the cartesian coordinates $=(X,Y,Z)$.
@@ -475,7 +507,7 @@ Convert spherical coordinates to cartesian coordinates.
 ```{admonition} Spherical coordinates
 :class: warning
 
-This system uses non conventional shperical coordinates.
+This system uses non conventional [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 - $H$ (horizontal angle) is along the $\hat{z}$ axis.
 - $V$ (vertical angle) is on the horizontal plane.
 - $R$ is the radial distance.

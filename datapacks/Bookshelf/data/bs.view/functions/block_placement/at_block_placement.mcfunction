@@ -6,9 +6,9 @@
 
 # Version: 1.1
 # Created: 24/01/2024 (1.20.4)
-# Last modification: 30/03/2024 (1.20.4)
+# Last modification: 09/05/2024 (1.20.6)
 
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#placed-block
+# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#block-placement
 # Dependencies:
 # Note:
 

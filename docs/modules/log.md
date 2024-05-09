@@ -4,6 +4,12 @@
 
 Log messages in the chat with varying levels of severity.
 
+```{admonition} Enable command blocks
+:class: warning
+
+This module uses a command block to get the system time. For the time to be displayed as intended, be sure that `enable-command-block` is set to `true` in you `server.properties` file and that the `sendCommandFeedback` gamerule is enabled.
+```
+
 ---
 
 ## 🔧 Functions
@@ -12,96 +18,104 @@ You can find below all functions available in this module.
 
 ---
 
-::::{tab-set}
-:::{tab-item} Error
+:::::{tab-set}
+::::{tab-item} Error
+
 ```{function} #bs.log:error
 
-Log a message as an error. For more information on how it works see the [usage](#usage) section.
-By default, print the log message in the following format: `[ERROR] <tag> > <message>`.
-The timestamp and the log function path are visible when hovering the part of the log message at the left of the `>` character.
+Log an error message. For more information on how it works see the [usage](#usage) section. By default, it’s printed as: [ERROR] <tag> > <message> and hovering over the left part of the log reveals the timestamp and log function path.
 
 :Inputs:
-  **Macro Var `namespace` [string]**: Namespace of the function.
-
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `tag` [string]**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **message**: Logged message. Must be a valid JSON text component.
+    - {nbt}`string` **namespace**: Namespace of the function.
+    - {nbt}`string` **path**: Origin path for the log (current Minecraft function).
+    - {nbt}`string` **tag**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
+  :::
 ```
 
 *Log an error message that originates from the `bs.foo:bar` function:*
+
 ```mcfunction
-function #bs.log:info { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Error"' }
+function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Error"' }
 ```
-:::
-:::{tab-item} Warning
+
+::::
+::::{tab-item} Warning
+
 ```{function} #bs.log:warn
 
-Log a message as a warning. For more information on how it works see the [usage](#usage) section.
-By default, print the log message in the following format: `[WARN] <tag> > <message>`.
-The timestamp and the log function path are visible when hovering the part of the log message at the left of the `>` character.
+Log a warning message. For more information on how it works see the [usage](#usage) section. By default, it’s printed as: [WARN] <tag> > <message> and hovering over the left part of the log reveals the timestamp and log function path.
 
 :Inputs:
-  **Macro Var `namespace` [string]**: Namespace of the function.
-
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `tag` [string]**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **message**: Logged message. Must be a valid JSON text component.
+    - {nbt}`string` **namespace**: Namespace of the function.
+    - {nbt}`string` **path**: Origin path for the log (current Minecraft function).
+    - {nbt}`string` **tag**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
+  :::
 ```
 
 *Log a warn message that originates from the `bs.foo:bar` function:*
+
 ```mcfunction
-function #bs.log:info { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Warning"' }
+function #bs.log:warn { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Warning"' }
 ```
-:::
-:::{tab-item} Information
+
+::::
+::::{tab-item} Information
+
 ```{function} #bs.log:info
 
-Log a message as an information. For more information on how it works see the [usage](#usage) section.
-By default, print the log message in the following format: `[INFO] <tag> > <message>`.
-The timestamp and the log function path are visible when hovering the part of the log message at the left of the `>` character.
+Log an information message. For more information on how it works see the [usage](#usage) section. By default, it’s printed as: [INFO] <tag> > <message> and hovering over the left part of the log reveals the timestamp and log function path.
 
 :Inputs:
-  **Macro Var `namespace` [string]**: Namespace of the function.
-
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `tag` [string]**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **message**: Logged message. Must be a valid JSON text component.
+    - {nbt}`string` **namespace**: Namespace of the function.
+    - {nbt}`string` **path**: Origin path for the log (current Minecraft function).
+    - {nbt}`string` **tag**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
+  :::
 ```
 
 *Log an info message that originates from the `bs.foo:bar` function:*
+
 ```mcfunction
 function #bs.log:info { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Info"' }
 ```
-:::
-:::{tab-item} Debug
+
+::::
+::::{tab-item} Debug
+
 ```{function} #bs.log:debug
 
-Log a message as a debug. For more information on how it works see the [usage](#usage) section.
-By default, print the log message in the following format: `[DEBUG] <tag> > <message>`.
-The timestamp and the log function path are visible when hovering the part of the log message at the left of the `>` character.
+Log a debug message. For more information on how it works see the [usage](#usage) section. By default, it’s printed as: [DEBUG] <tag> > <message> and hovering over the left part of the log reveals the timestamp and log function path.
 
 :Inputs:
-  **Macro Var `namespace` [string]**: Namespace of the function.
-
-  **Macro Var `path` [string]**: Origin path for the log (current Minecraft function).
-
-  **Macro Var `tag` [string]**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
-
-  **Macro Var `message` [string]**: Logged message. Must be a valid JSON text component.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **message**: Logged message. Must be a valid JSON text component.
+    - {nbt}`string` **namespace**: Namespace of the function.
+    - {nbt}`string` **path**: Origin path for the log (current Minecraft function).
+    - {nbt}`string` **tag**: A tag to identify the function. This tag is displayed in the log message and is used as group to manage the granularity.
+  :::
 ```
 
 *Log a debug message that originates from the `bs.foo:bar` function:*
+
 ```mcfunction
 function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Debug"' }
 ```
-:::
+
 ::::
+:::::
 
 > **Credits**: theogiraudet
 
@@ -124,9 +138,9 @@ A significant number of logs can quickly flood the chat. To prevent this, Booksh
 
 Users need to give themselves tags that follow a strict syntax: `<namespace>.log.<tag>.<level>`, where the level can be `debug`, `info`, `warn`, or `error`.
 
-The `_` symbol acts as a wildcard, logging all features or all levels:
-- `bs.foo.log._.<level>`: show all logs of `bs.foo` regardless of the feature.
-- `bs.foo.log.<feature>._`: show all logs of `bs.foo` regardless of the level.
+The `_` symbol acts as a wildcard, logging all tags or all levels:
+- `bs.foo.log._.<level>`: show all logs of `bs.foo` regardless of the tag.
+- `bs.foo.log.<tag>._`: show all logs of `bs.foo` regardless of the level.
 - `bs.foo.log._._`: show all logs of `bs.foo`.
 - `_.log._._`: show all logs.
 
@@ -148,23 +162,7 @@ The `message` string must be a valid JSON text component. Thus, to specify a pla
 ```mcfunction
 function #bs.log:warn { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"A warning message"' }
 ```
-Will display the following message if the user has one of these tags:
-- `bs.foo.log.bar.warn`
-- `bs.foo.log.bar.info`
-- `bs.foo.log.bar.debug`
-- `bs.foo.log._.warn`
-- `bs.foo.log._.info`
-- `bs.foo.log._.debug`
-- `bs.foo.log._._`
-- `bs.foo.log.bar._`
-- `_.log.bar.warn`
-- `_.log.bar.info`
-- `_.log.bar.debug`
-- `_.log._.warn`
-- `_.log._.info`
-- `_.log._.debug`
-- `_.log._._`
-- `_.log.bar._`
+Will display the following message if the user has one of these tags: `bs.foo.log.bar.warn`, `bs.foo.log.bar.info`, `bs.foo.log.bar.debug`, `bs.foo.log._.warn`, `bs.foo.log._.info`, `bs.foo.log._.debug`, `bs.foo.log._._`, `bs.foo.log.bar._`, `_.log.bar.warn`, `_.log.bar.info`, `_.log.bar.debug`, `_.log._.warn`, `_.log._.info`, `_.log._.debug`, `_.log._._`, `_.log.bar._`.
 
 
 ![](/_imgs/modules/log/example-1.png)
@@ -174,26 +172,16 @@ Will display the following message if the user has one of these tags:
 function #bs.log:info { namespace: "bs.foo", path: "bs.foo:baz", tag: "baz", message: '[{"text":"Score: ","color":"light_purple"},{"score":{"name":"-1","objective":"bs.const"}},{"text":", "},{"text":"@p: ","color":"light_purple"},{"selector":"@p"},{"text":", "},{"text":"[hover me]","color":"light_purple","hoverEvent":{"action":"show_text","contents":"That tickles!"}}]' }
 ```
 
-Will display the following message if the user has one of these tags:
-- `bs.foo.log.baz.info`
-- `bs.foo.log.baz.debug`
-- `bs.foo.log._.info`
-- `bs.foo.log._.debug`
-- `bs.foo.log.baz._`
-- `_.log.baz.info`
-- `_.log.baz.debug`
-- `_.log._.info`
-- `_.log._.debug`
-- `_.log.baz._`
+Will display the following message if the user has one of these tags: `bs.foo.log.baz.info`, `bs.foo.log.baz.debug`, `bs.foo.log._.info`, `bs.foo.log._.debug`, `bs.foo.log.baz._`, `_.log.baz.info`, `_.log.baz.debug`, `_.log._.info`, `_.log._.debug`, `_.log.baz._`.
 
 ![](/_imgs/modules/log/example-2.png)
 
-### Customize the log message format
+### Customize the format
 
 Bookshelf proposes to define different log message format according to the namespace.
-To add new log message formats, you have to write directly inside the storage array `bs:in log.messages`.
-`messages` is an array of objects, with the following format:
-```nbt
+To add new log message formats, you have to write directly inside the storage array `bs:const log.messages`:
+
+```mcfunction
 {
   namespaces: ["<namespace>"],
   format: {
@@ -204,27 +192,29 @@ To add new log message formats, you have to write directly inside the storage ar
   }
 }
 ```
+
 The `namespaces` array stores all the namespaces sharing the same log message formats.
 The four formats (`error`, `warn`, `info` and `debug`) describe the log format for the respecting severity level.
 The value of each must be a full JSON text component.
 
 Bookshelf exposes several values that can be used directly in the log messages format:
 
-| storage  |        path        |      type     |                                  description                                  |
-|----------|--------------------|---------------|-------------------------------------------------------------------------------|
-| bs:in    | log.namespace      | string        | The namespace of the current log message                                      |
-| bs:in    | log.path           | string        | The path of the function that logs the current message                        |
-| bs:in    | log.tag            | string        | The tag of the log message                                                    |
-| bs:in    | log.message        | JSON compound | The message of the log                                                        |
-| bs:in    | log.hours          | string        | The hours of the log message timestamp                                        |
-| bs:in    | log.minutes        | string        | The minutes of the log message timestamp                                      |
-| bs:in    | log.seconds        | string        | The seconds of the log message timestamp                                      |
-| bs:in    | log.full_real_time | string        | The timestamp in the following format: hh:mm:ss                               |
-| bs:in    | log.ticks          | integer       | The ticks of the log message timestamp                                        |
-| bs:const | log.full_time      | JSON array    | A "sugar" JSON array to simplify the display of the time in hh:mm:ss:t format |
-| bs:in    | log.gametime       | integer       | The gametime where the message was logged                                     |
+|             | storage  |        path        |                                      description                                        |
+|-------------|----------|--------------------|-----------------------------------------------------------------------------------------|
+{nbt}`string` | bs:in    | log.message        | The message of the log (must be a valid JSON text component)                            |
+{nbt}`string` | bs:in    | log.namespace      | The namespace of the current log message                                                |
+{nbt}`string` | bs:in    | log.path           | The path of the function that logs the current message                                  |
+{nbt}`string` | bs:in    | log.tag            | The tag of the log message                                                              |
+{nbt}`string` | bs:in    | log.hours          | The hours of the log message timestamp                                                  |
+{nbt}`string` | bs:in    | log.minutes        | The minutes of the log message timestamp                                                |
+{nbt}`string` | bs:in    | log.seconds        | The seconds of the log message timestamp                                                |
+{nbt}`string` | bs:in    | log.ticks          | The ticks of the log message timestamp                                                  |
+{nbt}`int`    | bs:in    | log.gametime       | The gametime where the message was logged                                               |
+{nbt}`string` | bs:const | log.time_hms       | A JSON text component to display time in the in hh:mm:ss format                         |
+{nbt}`string` | bs:const | log.time_hmst      | A JSON text component to display time in the in hh:mm:ss:tt format                      |
 
 A simple example to define custom log message formats for the namespace `bs.foo`:
+
 ```mcfunction
 data modify storage bs:const log.messages append value { \
     namespaces: ["bs.foo"], \
@@ -236,13 +226,11 @@ data modify storage bs:const log.messages append value { \
     } \
 }
 ```
+
 And to try the new format:
 ```mcfunction
-tag @s add bs.test.log.bar.warn
-function #bs.log:warn { namespace: "test", path: "bs.foo:bar", tag: "bar", message: '"A warning message"' }
-```
-```{warning}
-To get the time, Bookshelf uses the output of a command block. If you have disabled the `sendCommandFeedback` gamerule, the time display will not work as intended.
+tag @s add bs.foo.log.bar.warn
+function #bs.log:warn { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"A warning message"' }
 ```
 
 ---

@@ -14,7 +14,7 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value {id:'$(objective)',name:'$(name)',contents:$(contents)}
+$data modify storage bs:ctx _ set value {id:'$(objective)',name:'$(display_name)',contents:$(contents)}
 
 # check that the objective format is valid
 execute store success score #success bs.data run function bs.sidebar:create/check/objective with storage bs:ctx _

@@ -27,6 +27,96 @@ You can find below all functions available in this module.
 
 ---
 
+### Apply velocity
+
+:::::{tab-set}
+::::{tab-item} Canonical
+
+```{function} #bs.move:apply_vel {scale:<scaling>,with:{}}
+
+Teleport an entity by its velocity scores while handling collisions.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to move.
+
+  **Scores `@s bs.vel.[x,y,z]`**: Canonical velocity vector.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+    - {nbt}`compound` **with**: Collision settings.
+      - {nbt}`bool` **blocks**: Whether the entity should collide with blocks (default: true).
+      - {nbt}`bool` {nbt}`string` **entities**: Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
+      - {nbt}`string` **on_collision**: Function to run on collision (default: `#bs.move:on_collision/bounce`).
+      - {nbt}`string` **ignored_blocks**: Blocks to ignore (default: `#bs.hitbox:intangible`).
+      - {nbt}`string` **ignored_entities**: Entities to ignore (default: `#bs.hitbox:intangible`).
+  :::
+
+:Outputs:
+  **State**: Entity is teleported according to its velocity scores.
+```
+
+::::
+::::{tab-item} Local
+
+```{function} #bs.move:apply_local_vel {scale:<scaling>,with:{}}
+
+Teleport an entity by its velocity scores, using the local reference frame, while handling collisions.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to move.
+
+  **Scores `@s bs.vel.[x,y,z]`**: Local velocity vector.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+    - {nbt}`compound` **with**: Collision settings.
+      - {nbt}`bool` **blocks**: Whether the entity should collide with blocks (default: true).
+      - {nbt}`bool` {nbt}`string` **entities**: Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
+      - {nbt}`string` **on_collision**: Function to run on collision (default: `#bs.move:on_collision/bounce`).
+      - {nbt}`string` **ignored_blocks**: Blocks to ignore (default: `#bs.hitbox:intangible`).
+      - {nbt}`string` **ignored_entities**: Entities to ignore (default: `#bs.hitbox:intangible`).
+  :::
+
+:Outputs:
+  **State**: Entity is teleported according to its local velocity scores.
+```
+
+::::
+:::::
+
+*Move a cube (block_display) by its velocity scores (uses an interaction as the hitbox):*
+
+```mcfunction
+# Once
+summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f],Passengers:[{id:"minecraft:interaction",width:1f,height:1f}]}
+scoreboard players set @e[type=minecraft:block_display] bs.vel.x 100
+scoreboard players set @e[type=minecraft:block_display] bs.vel.y 20
+scoreboard players set @e[type=minecraft:block_display] bs.vel.z 50
+
+# In a loop
+execute as @e[type=minecraft:block_display] run function #bs.move:apply_vel {scale:0.001,with:{}}
+
+# Choose between multiple collision behaviors
+execute as @e[type=minecraft:block_display] run function #bs.move:apply_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:apply_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/damped_bounce"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:apply_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/slide"}}
+execute as @e[type=minecraft:block_display] run function #bs.move:apply_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/stick"}}
+```
+
+```{admonition} Performance tip
+:class: tip
+
+Although this system doesn't set specific limits, it's important to note that performance is influenced by both the speed and size of the entity.
+```
+
+> **Credits**: Aksiome
+
+---
+
 ### Canonical to local
 
 ```{function} #bs.move:canonical_to_local
@@ -79,16 +169,20 @@ Unlike relative velocity (canonical), this reference frame considers the entity'
 
 ### Set motion
 
-```{function} #bs.move:set_motion_by_vel {scale:<scaling>}
+```{function} #bs.move:set_motion {scale:<scaling>}
 
-Set the motion of an entity using velocity scores.
+Set the motion nbt of an entity using velocity scores.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to move.
 
   **Scores `@s bs.vel.[x,y,z]`**: Velocity vector.
 
-  **Macro Var `scale`**: Scalar for the function’s outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Motion is applied to the given entity.
@@ -104,106 +198,7 @@ scoreboard players set @e[type=minecraft:pig] bs.vel.y 25
 scoreboard players set @e[type=minecraft:pig] bs.vel.z 0
 
 # In a loop
-execute as @e[type=minecraft:pig] run function #bs.move:set_motion_by_vel {scale:0.001}
-```
-
-> **Credits**: Aksiome
-
----
-
-### Teleport
-
-:::::{tab-set}
-::::{tab-item} Canonical
-
-```{function} #bs.move:tp_by_vel {scale:<scaling>,with:{}}
-
-Teleport an entity by its velocity scores while handling collisions.
-
-:Inputs:
-  **Execution `as <entities>`**: Entity to move.
-
-  **Scores `@s bs.vel.[x,y,z]`**: Canonical velocity vector.
-
-  **Macro Var `scale`**: Scalar for the function’s outputs.
-
-  **Macro Var `with` [compound]**:
-  :::{list-table}
-  *   - **`blocks`**&nbsp;[bool]
-      - Whether the entity should collide with blocks (default: true).
-  *   - **`entities`**&nbsp;[bool|string]</span>
-      - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
-  *   - **`on_collision`**&nbsp;[string]
-      - Function to run on collision (default: `#bs.move:on_collision/bounce`).
-  *   - **`ignored_blocks`**&nbsp;[string]
-      - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`ignored_entities`**&nbsp;[string]
-      - Entities to ignore (default: `#bs.hitbox:intangible`).
-  :::
-
-
-:Outputs:
-  **State**: Entity is teleported according to its velocity scores.
-```
-
-::::
-::::{tab-item} Local
-
-```{function} #bs.move:tp_by_local_vel {scale:<scaling>,with:{}}
-
-Teleport an entity by its velocity scores, using the local reference frame, while handling collisions.
-
-:Inputs:
-  **Execution `as <entities>`**: Entity to move.
-
-  **Scores `@s bs.vel.[x,y,z]`**: Local velocity vector.
-
-  **Macro Var `scale`**: Scalar for the function’s outputs.
-
-  **Macro Var `with` [compound]**:
-  :::{list-table}
-  *   - **`blocks`**&nbsp;[bool]
-      - Whether the entity should collide with blocks (default: true).
-  *   - **`entities`**&nbsp;[bool|string]</span>
-      - Whether the entity should collide with entities (default: false). Can also be a tag that entities must have.
-  *   - **`on_collision`**&nbsp;[string]
-      - Function to run on collision (default: `#bs.move:on_collision/bounce`).
-  *   - **`ignored_blocks`**&nbsp;[string]
-      - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`ignored_entities`**&nbsp;[string]
-      - Entities to ignore (default: `#bs.hitbox:intangible`).
-  :::
-
-:Outputs:
-  **State**: Entity is teleported according to its local velocity scores.
-```
-
-::::
-:::::
-
-*Move a cube (block_display) by its velocity scores (uses an interaction as the hitbox):*
-
-```mcfunction
-# Once
-summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f],Passengers:[{id:"minecraft:interaction",width:1f,height:1f}]}
-scoreboard players set @e[type=minecraft:block_display] bs.vel.x 100
-scoreboard players set @e[type=minecraft:block_display] bs.vel.y 20
-scoreboard players set @e[type=minecraft:block_display] bs.vel.z 50
-
-# In a loop
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{}}
-
-# Choose between multiple collision behaviors
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/bounce"}}
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/damped_bounce"}}
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/slide"}}
-execute as @e[type=minecraft:block_display] run function #bs.move:tp_by_vel {scale:0.001,with:{on_collision:"#bs.move:on_collision/stick"}}
-```
-
-```{admonition} Performance tip
-:class: tip
-
-Although this system doesn't set specific limits, it's important to note that performance is influenced by both the speed and size of the entity.
+execute as @e[type=minecraft:pig] run function #bs.move:set_motion {scale:0.001}
 ```
 
 > **Credits**: Aksiome
