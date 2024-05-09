@@ -25,8 +25,8 @@ You can find below all functions available in this module.
 
 ### Add position
 
-::::{tab-set}
-:::{tab-item} x,y,z
+:::::{tab-set}
+::::{tab-item} x,y,z
 
 ```{function} #bs.position:add_pos {scale:<scaling>}
 
@@ -37,7 +37,11 @@ Add position scores to the entity's coordinates.
 
   **Scores `@s bs.pos.[x,y,z]`**: Coordinates to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported based on position scores.
@@ -52,8 +56,8 @@ scoreboard players set @s bs.pos.y 0
 scoreboard players set @s bs.pos.z 229
 function #bs.position:add_pos {scale:0.001}
 ```
-:::
-:::{tab-item} x only
+::::
+::::{tab-item} x only
 
 ```{function} #bs.position:add_pos_x {scale:<scaling>}
 
@@ -64,7 +68,11 @@ Add the x axis position score to the entity's coordinates.
 
   **Score `@s bs.pos.x`**: Coordinate x to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported based on the x axis position score.
@@ -78,8 +86,8 @@ scoreboard players set @s bs.pos.x 70
 function #bs.position:add_pos_x {scale:1}
 ```
 
-:::
-:::{tab-item} y only
+::::
+::::{tab-item} y only
 
 ```{function} #bs.position:add_pos_y {scale:<scaling>}
 
@@ -90,7 +98,11 @@ Add the y axis position score to the entity's coordinates.
 
   **Score `@s bs.pos.y`**: Coordinate y to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported based on the y axis position score.
@@ -103,8 +115,8 @@ Add the y axis position score to the entity's coordinates.
 scoreboard players set @s bs.pos.y 82
 function #bs.position:add_pos_y {scale:1}
 ```
-:::
-:::{tab-item} z only
+::::
+::::{tab-item} z only
 
 
 ```{function} #bs.position:add_pos_z {scale:<scaling>}
@@ -116,7 +128,11 @@ Add the z axis position score to the entity's coordinates.
 
   **Score `@s bs.pos.z`**: Coordinate z to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported based on the z axis position score.
@@ -129,8 +145,8 @@ Add the z axis position score to the entity's coordinates.
 scoreboard players set @s bs.pos.z 65
 function #bs.position:add_pos_z {scale:1}
 ```
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -138,8 +154,8 @@ function #bs.position:add_pos_z {scale:1}
 
 ### Add rotation
 
-::::{tab-set}
-:::{tab-item} h,v
+:::::{tab-set}
+::::{tab-item} h,v
 
 ```{function} #bs.position:add_rot {scale:<scaling>}
 
@@ -150,14 +166,18 @@ Rotate an entity according to its scores.
 
   **Scores `@s bs.rot.[h,v]`**: Rotation to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported by the rotation indicated by the scores.
 ```
 
-:::
-:::{tab-item} h only
+::::
+::::{tab-item} h only
 
 
 ```{function} #bs.position:add_rot_h {scale:<scaling>}
@@ -169,14 +189,18 @@ Rotate an entity according to its horizontal rotation score.
 
   **Score `@s bs.rot.h`**: Rotation to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported by the rotation indicated by the horizontal score.
 ```
 
-:::
-:::{tab-item} v only
+::::
+::::{tab-item} v only
 
 ```{function} #bs.position:add_rot_v {scale:<scaling>}
 
@@ -187,14 +211,18 @@ Rotate an entity according to its vertical rotation score.
 
   **Score `@s bs.rot.v`**: Rotation to add.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported by the rotation indicated by the vertical score.
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -215,14 +243,20 @@ Convert a canonical position (using the relative reference frame) into a local p
   **Scores `@s bs.pos.[x,y,z]`**: Converted position.
 ```
 
+```{admonition} Local position... 🥶 What's this?
+:class: dropdown
+
+Unlike relative position (canonical), this reference frame considers the entity's rotation. Therefore, when the parent entity rotates, the child entity rotates around it. For those familiar with Minecraft commands, local coordinates are available through the `^` symbol.
+```
+
 > **Credits**: Aksiome
 
 ---
 
 ### Get distance
 
-::::{tab-set}
-:::{tab-item} Normal
+:::::{tab-set}
+::::{tab-item} Normal
 
 ```{function} #bs.position:get_distance_ata {scale:<scaling>}
 
@@ -233,7 +267,11 @@ Compute the distance between the source entity and the execution position of the
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get the distance from.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Return | Score `$position.get_distance_ata bs.out`**: Distance between the two positions.
@@ -255,8 +293,8 @@ tellraw @a [{"text": "Distance: ", "color": "dark_gray"},{"score":{"name":"$posi
 For several applications such as comparing distances, you can use the squared distance instead of the "normal" distance. It is a bit faster to compute.
 ```
 
-:::
-:::{tab-item} Squared
+::::
+::::{tab-item} Squared
 
 ```{function} #bs.position:get_distance_squared_ata {scale:<scaling>}
 
@@ -267,10 +305,14 @@ Compute the squared distance between the source entity and the execution positio
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get the distance from.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
-  **Return | Score `$position.get_distance_ata bs.out`**: Squared distance between the two positions.
+  **Return | Score `$position.get_distance_squared_ata bs.out`**: Squared distance between the two positions.
 ```
 
 *Calculate the squared distance between you and the nearest sheep (in blocks, without scaling):*
@@ -289,8 +331,8 @@ tellraw @a [{"text": "Distance^2: ", "color": "dark_gray"},{"score":{"name":"$po
 Scores in Minecraft have a limited size similar to a signed integer variable. The latter is huge, but not unlimited and can overflow. Since this function uses powers of 2 to calculate the result, you should prefer the "normal" version (which does not rely on powers) when working over big distances.
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -298,8 +340,8 @@ Scores in Minecraft have a limited size similar to a signed integer variable. Th
 
 ### Get position
 
-::::{tab-set}
-:::{tab-item} x,y,z
+:::::{tab-set}
+::::{tab-item} x,y,z
 
 ```{function} #bs.position:get_pos {scale:<scaling>}
 
@@ -310,7 +352,11 @@ Get the execution position of the function and store the coordinates in 3 scores
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's outputs.
+  :::
 
 :Outputs:
   **Scores `@s bs.pos.[x,y,z]`**: Coordinates of the position.
@@ -326,8 +372,8 @@ execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_po
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"},{"text":", Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
 ```
 
-:::
-:::{tab-item} x only
+::::
+::::{tab-item} x only
 
 ```{function} #bs.position:get_pos_x {scale:<scaling>}
 
@@ -338,10 +384,14 @@ Get the execution x position of the function and store the coordinate in a score
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
-  **Score `@s bs.pos.x`**: Coordinates of the position.
+  **Score `@s bs.pos.x`**: Coordinate of the position.
 ```
 
 *Detect and display the x position of the nearest spider (without scaling):*
@@ -354,8 +404,8 @@ execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_po
 tellraw @a [{"text": "X = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.x"}, "color": "gold"}]
 ```
 
-:::
-:::{tab-item} y only
+::::
+::::{tab-item} y only
 
 ```{function} #bs.position:get_pos_y {scale:<scaling>}
 
@@ -366,10 +416,14 @@ Get the execution y position of the function and store the coordinate in a score
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
-  **Score `@s bs.pos.y`**: Coordinates of the position.
+  **Score `@s bs.pos.y`**: Coordinate of the position.
 ```
 
 *Detect and display the y position of the nearest spider (without scaling):*
@@ -382,8 +436,8 @@ execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_po
 tellraw @a [{"text": "Y = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.y"}, "color": "gold"}]
 ```
 
-:::
-:::{tab-item} z only
+::::
+::::{tab-item} z only
 
 ```{function} #bs.position:get_pos_z {scale:<scaling>}
 
@@ -394,10 +448,14 @@ Get the execution z position of the function and store the coordinate in a score
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
-  **Score `@s bs.pos.z`**: Coordinates of the position.
+  **Score `@s bs.pos.z`**: Coordinate of the position.
 ```
 
 *Detect and display the z position of the nearest spider (without scaling):*
@@ -410,8 +468,8 @@ execute as @e[type=spider,limit=1,sort=nearest] run function #bs.position:get_po
 tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spider,limit=1,sort=nearest]", "objective": "bs.pos.z"}, "color": "gold"}]
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -419,8 +477,8 @@ tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spi
 
 ### Get relative
 
-::::{tab-set}
-:::{tab-item} As to at
+:::::{tab-set}
+::::{tab-item} As to at
 
 ```{function} #bs.position:get_relative_ata {scale:<scaling>}
 
@@ -431,7 +489,11 @@ Get the execution position of the function relatively to the position of the exe
 
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position te get the relative position from.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's outputs.
+  :::
 
 :Outputs:
   **Scores `@s bs.pos.[x,y,z]`**: Relative coordinates.
@@ -447,8 +509,8 @@ execute as @s at @e[type=creeper,limit=1,sort=nearest] run function #bs.position
 tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
 ```
 
-:::
-:::{tab-item} From direction
+::::
+::::{tab-item} From direction
 
 ```{function} #bs.position:get_relative_from_dir {scale:<scaling>}
 
@@ -457,9 +519,13 @@ Get a direction vector based on the execution position and rotation. Scale is us
 :Inputs:
   **Execution `as <entities>`**: Entity to store the score to.
 
-  **Execution `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`**: Position and rotation te get the relative position from.
+  **Execution `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`**: Position and rotation to get the relative position from.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's outputs.
+  :::
 
 :Outputs:
   **Scores `@s bs.pos.[x,y,z]`**: Relative coordinates.
@@ -475,8 +541,8 @@ execute at @s run function #bs.position:get_relative_from_dir {scale:2000}
 tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.x"}, "color": "gold"},{"text":", Y=", "color": "dark_gray"},{"score":{"name":"@s", "objective": "bs.pos.y"},"color":"gold"},{"text":", Z=","color":"dark_gray"},{"score":{"name":"@s","objective":"bs.pos.z"},"color":"gold"}]
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -484,8 +550,8 @@ tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"
 
 ### Get rotation
 
-::::{tab-set}
-:::{tab-item} h,v
+:::::{tab-set}
+::::{tab-item} h,v
 
 ```{function} #bs.position:get_rot {scale:<scaling>}
 
@@ -496,14 +562,18 @@ Get the execution rotation of the function and store it in 2 scores.
 
   **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's outputs.
+  :::
 
 :Outputs:
   **Scores `@s bs.rot.[h,v]`**: Rotation of the position.
 ```
 
-:::
-:::{tab-item} h only
+::::
+::::{tab-item} h only
 
 ```{function} #bs.position:get_rot_h {scale:<scaling>}
 
@@ -514,14 +584,18 @@ Get the execution horizontal rotation of the function.
 
   **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Score `@s bs.rot.h`**: Horizontal rotation of the position.
 ```
 
-:::
-:::{tab-item} v only
+::::
+::::{tab-item} v only
 
 ```{function} #bs.position:get_rot_v {scale:<scaling>}
 
@@ -532,14 +606,18 @@ Get the execution vertical rotation of the function.
 
   **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Score `@s bs.rot.v`**: Vertical rotation of the position.
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof, theogiraudet
 
@@ -560,14 +638,20 @@ Convert a local position (using the local reference frame) into a canonical posi
   **Scores `@s bs.pos.[x,y,z]`**: Converted position.
 ```
 
+```{admonition} Local position... 🥶 What's this?
+:class: dropdown
+
+Unlike relative position (canonical), this reference frame considers the entity's rotation. Therefore, when the parent entity rotates, the child entity rotates around it. For those familiar with Minecraft commands, local coordinates are available through the `^` symbol.
+```
+
 > **Credits**: Aksiome
 
 ---
 
 ### Set position
 
-::::{tab-set}
-:::{tab-item} x,y,z
+:::::{tab-set}
+::::{tab-item} x,y,z
 
 ```{function} #bs.position:set_pos {scale:<scaling>}
 
@@ -578,7 +662,11 @@ Place an entity at coordinates given by scores.
 
   **Scores `@s bs.pos.[x,y,z]`**: Coordinates to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the coordinates indicated by the scores.
@@ -593,8 +681,8 @@ scoreboard players set @s bs.pos.y 0
 scoreboard players set @s bs.pos.z 229
 function #bs.position:set_pos {scale:0.001}
 ```
-:::
-:::{tab-item} x only
+::::
+::::{tab-item} x only
 
 ```{function} #bs.position:set_pos_x {scale:<scaling>}
 
@@ -605,7 +693,11 @@ Place an entity at a precise x coordinate given by scores.
 
   **Score `@s bs.pos.x`**: Coordinate x to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the x coordinate indicated by the score.
@@ -619,8 +711,8 @@ scoreboard players set @s bs.pos.x 70
 function #bs.position:set_pos_x {scale:1}
 ```
 
-:::
-:::{tab-item} y only
+::::
+::::{tab-item} y only
 
 ```{function} #bs.position:set_pos_y {scale:<scaling>}
 
@@ -631,7 +723,11 @@ Place an entity at a precise y coordinate given by scores.
 
   **Score `@s bs.pos.y`**: Coordinate y to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the y coordinate indicated by the score.
@@ -644,8 +740,8 @@ Place an entity at a precise y coordinate given by scores.
 scoreboard players set @s bs.pos.y 82
 function #bs.position:set_pos_y {scale:1}
 ```
-:::
-:::{tab-item} z only
+::::
+::::{tab-item} z only
 
 
 ```{function} #bs.position:set_pos_z {scale:<scaling>}
@@ -657,7 +753,11 @@ Place an entity at a precise z coordinate given by scores.
 
   **Score `@s bs.pos.z`**: Coordinate z to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the z coordinate indicated by the score.
@@ -670,8 +770,8 @@ Place an entity at a precise z coordinate given by scores.
 scoreboard players set @s bs.pos.z 65
 function #bs.position:set_pos_z {scale:1}
 ```
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof
 
@@ -679,8 +779,8 @@ function #bs.position:set_pos_z {scale:1}
 
 ### Set rotation
 
-::::{tab-set}
-:::{tab-item} h,v
+:::::{tab-set}
+::::{tab-item} h,v
 
 ```{function} #bs.position:set_rot {scale:<scaling>}
 
@@ -691,14 +791,18 @@ Rotate an entity according to its scores.
 
   **Scores `@s bs.rot.[h,v]`**: Rotation to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the rotation indicated by the scores.
 ```
 
-:::
-:::{tab-item} h only
+::::
+::::{tab-item} h only
 
 
 ```{function} #bs.position:set_rot_h {scale:<scaling>}
@@ -710,14 +814,18 @@ Rotate an entity according to its horizontal rotation score.
 
   **Score `@s bs.rot.h`**: Rotation to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the rotation indicated by the horizontal score.
 ```
 
-:::
-:::{tab-item} v only
+::::
+::::{tab-item} v only
 
 ```{function} #bs.position:set_rot_v {scale:<scaling>}
 
@@ -728,14 +836,18 @@ Rotate an entity according to its vertical rotation score.
 
   **Score `@s bs.rot.v`**: Rotation to teleport to.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
 
 :Outputs:
   **State**: Entity is teleported to the rotation indicated by the vertical score.
 ```
 
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, Leirof, theogiraudet
 

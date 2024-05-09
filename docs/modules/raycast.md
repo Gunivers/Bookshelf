@@ -5,7 +5,7 @@
 Cast rays and see if they collide with blocks or entities.
 
 ```{note}
-Unlike traditional raycasts, this module uses a voxel traversal algorithm which is a lot more precise. Also, thanks to the `bs.hitbox` module, it supports all of the different hitboxes, including both blocks & entities.
+Unlike traditional raycasts, this module uses a [voxel traversal algorithm](http://www.cse.yorku.ca/~amana/research/grid.pdf) which is a lot more precise. Also, thanks to the `bs.hitbox` module, it supports all different hitboxes, including both blocks & entities.
 ```
 
 ```{epigraph}
@@ -24,42 +24,35 @@ You can find below all functions available in this module.
 
 ### Run the raycast
 
-```{function} #bs.raycast:run
+```{function} #bs.raycast:run {with:{}}
 
 Cast a ray from the execution position and check if it hits something.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z> rotated <rot>`**: Origin of the ray.
 
-  **Macro Var `with` [compound]**:
-  :::{list-table}
-  *   - **`blocks`**&nbsp;[bool]
-      - Whether the ray should stop on blocks (default: true).
-  *   - **`entities`**&nbsp;[bool|string]</span>
-      - Whether the ray should stop on entities (default: false). Can also be a tag that entities must have.
-  *   - **`max_distance`**&nbsp;[number]
-      - Maximum ray travel distance (default: 16.0).
-  *   - **`ignored_blocks`**&nbsp;[string]
-      - Blocks to ignore (default: `#bs.hitbox:intangible`).
-  *   - **`ignored_entities`**&nbsp;[string]
-      - Entities to ignore (default: `#bs.hitbox:intangible`).
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Ray input data.
+      - {nbt}`bool` **blocks**: Whether the ray should stop on blocks (default: true).
+      - {nbt}`bool` {nbt}`string` **entities**: Whether the ray should stop on entities (default: false). Can also be a tag that entities must have.
+      - {nbt}`number` **max_distance**: Maximum ray travel distance (default: 16.0).
+      - {nbt}`string` **ignored_blocks**: Blocks to ignore (default: `#bs.hitbox:intangible`).
+      - {nbt}`string` **ignored_entities**: Entities to ignore (default: `#bs.hitbox:intangible`).
   :::
 
 :Outputs:
   **Return**: Whether the ray collides with a hitbox or not (1 or 0).
 
   **Storage `bs:out raycast`**:
-  :::{list-table}
-  *   - **`distance`**&nbsp;[double]
-      - The distance from the ray's origin to the impact point.
-  *   - **`hit_point`**&nbsp;[array]
-      - The coordintates of the impact point.
-  *   - **`hit_normal`**&nbsp;[array]
-      - The normal of the surface the ray hit.
-  *   - **`targeted_block`**&nbsp;[array]
-      - The coordinates of the block that was hit.
-  *   - **`targeted_entity`**&nbsp;[array]
-      - The UUID array of the entity that was hit.
+  :::{treeview}
+  - {nbt}`compound` Ray output data
+    - {nbt}`double` **distance**: The distance from the ray's origin to the impact point.
+    - {nbt}`array` **hit_point**: The coordintates of the impact point.
+    - {nbt}`array` **hit_normal**: The normal of the surface the ray hit.
+    - {nbt}`array` **targeted_block**: The coordinates of the block that was hit.
+    - {nbt}`array` **targeted_entity**: The UUID array of the entity that was hit.
   :::
 ```
 

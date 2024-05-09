@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "_exts/"))
 # -- Project information -----------------------------------------------------
 
 project = "Bookshelf"
-copyright = "2023, Gunivers"
+copyright = "2024, Gunivers"
 author = "Gunivers"
 
 

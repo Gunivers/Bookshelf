@@ -65,7 +65,11 @@ Get the temperature at the execution position of the function taking the altitud
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position from which you want to get the temperature.
 
-  **Macro Var `scale`**: Scalar for the function's outputs.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
 
 :Outputs:
   **Return | Score `$biome.get_base_temperature bs.out`**: Temperature at a given position.

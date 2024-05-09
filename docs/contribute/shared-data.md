@@ -31,6 +31,15 @@ In order to reduce the footprint of the library here are some shared objectives 
 
 ---
 
+## Shared blocks
+
+These commands can be used at load time to create blocks that can be used anywhere. These blocks must be kept in loaded chunks (at -30000000 1600).
+
+```mcfunction
+# Used to get the system time (command block output)
+setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,Command:"help me",TrackOutput:1}
+```
+
 ## Shared entities
 
 These commands can be used at load time to create global entities that can be used anywhere. These entities must be kept in loaded chunks (at -30000000 1600) at the end of each tick. They are summoned with specific UUIDs in order to avoid having to rely on the `@e` selector. The UUID `B5-0-0-0-0` is reserved for contextual temporary entities that should not exist at the end of a tick.
@@ -49,5 +58,3 @@ execute unless entity B5-0-0-0-3 run summon minecraft:item_display -30000000 0 1
 execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent"],NoGravity:1b,Invulnerable:1b}
 
 ```
-
-

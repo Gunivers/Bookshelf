@@ -10,19 +10,11 @@ html_theme.sidebar_secondary.remove: true
 -- Antoine Lavoisier
 ```
 
-The lib must have a minimum impact on the scores and other data in order to avoid some overwritings of data. It means that we should avoid as much as possible to :
+To minimize interference with scores and other data, Bookshelf aims to prevent accidental overwrites. This involves minimizing the creation of new scores, strictly forbidding score deletion, and avoiding unnecessary score rewrites whenever possible.
 
-- Create new scores
-- Delete scores (totally forbidden)
-- Avoid unnecessary scores rewriting
+To achieve this, each function begins by saving its inputs and restores them at the end. This ensures that only the function outputs are altered, leaving other data intact.
 
-To do so, each input - as well as other data used by the fonction - must be saved in the begining of the function (in a fake player for example) and restored at the end. Only the outputs of the functions should change.
-
-:::{note}
-This is a new directive, so most of the functions doesn't respect it for now. Please do not hesistate to update the existing functions in order to apply this directive.
-:::
-
-Also for scores, by default, inputs and outputs are using `bs.in` and `bs.out`. But they can use others scores when it's more appropriate, especially when you want your data to represent the state of an entity:
+Additionally, while default objectives for inputs and outputs are `bs.in` and `bs.out`, alternative ones can be used, particularly when representing entity states.
 
 ```mcfunction
 # Get the position of the source entity

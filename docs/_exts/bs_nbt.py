@@ -5,7 +5,7 @@ from sphinx.util.docutils import SphinxRole
 class NbtRole(SphinxRole):
 
     def run(self):
-        svg = f'<span class="bs-nbt-{self.text}"></span>'
+        svg = f'<span class="bs-nbt-{self.text}" title="{self.text}"></span>'
         node = nodes.raw("", nodes.Text(svg), format="html")
         self.set_source_info(node)
         return [node], []

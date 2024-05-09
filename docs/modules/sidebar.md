@@ -2,7 +2,7 @@
 
 **`#bs.sidebar:help`**
 
-Create a visually appealing and dynamic sidebar using the scoreboard
+Create a visually appealing and dynamic sidebar using the scoreboard.
 
 ---
 
@@ -19,19 +19,22 @@ You can find below all functions available in this module.
 Create and register a new sidebar.
 
 :Inputs:
-  **Macro Var `objective` [string]**: A custom objective used for the sidebar.
-
-  **Macro Var `name` [string]**: Displayed objective name. Must be a valid JSON text component.
-
-  **Macro Var `contents` [array]**: Displayed lines. Each entry must either be a valid JSON text component or an array with two JSON text components for the left and right sides.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **objective**: An objective used for the sidebar.
+    - {nbt}`string` **display_name**: Displayed objective name. Must be a valid JSON text component.
+    - {nbt}`list` **contents**: Lines displayed on the sidebar.
+      - {nbt}`list` {nbt}`string`: Must either be a valid JSON text component or an array with two JSON text components for the left and right sides.
+  :::
 ```
 
 *Create and display a new sidebar with left-aligned text:*
 ```mcfunction
 # Create a new sidebar
 function #bs.sidebar:create { \
-    objective:"my_guessing_game", \
-    name:'{"text":"Guess my name"}', \
+    objective: "my_guessing_game", \
+    display_name: '{"text":"Guess my name"}', \
     contents: [ \
         '{"text":" Clues:","color":"gold","bold":true}', \
         '{"text":"  • I gave my name to a famous test"}', \
@@ -48,8 +51,8 @@ scoreboard objectives setdisplay sidebar my_guessing_game
 ```mcfunction
 # Create a new sidebar
 function #bs.sidebar:create { \
-    objective:"my_guessing_game_2", \
-    name:'{"text":"Guess my name V2"}', \
+    objective: "my_guessing_game_2", \
+    display_name: '{"text":"Guess my name V2"}', \
     contents: [ \
         ['""','{"text":" Clues:","color":"gold","bold":true}'], \
         ['""','{"text":"  • I gave my name to a famous test"}'], \
@@ -73,7 +76,11 @@ scoreboard objectives setdisplay sidebar my_guessing_game_2
 Update dynamic parts of the sidebar.
 
 :Inputs:
-  **Macro Var `objective` [string]**: The objective used for the sidebar.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **objective**: The objective for the sidebar to refresh.
+  :::
 ```
 
 *Refresh a sidebar:*

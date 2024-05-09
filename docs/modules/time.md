@@ -7,7 +7,7 @@ Get information about the system time effortlessly.
 ```{admonition} Enable command blocks
 :class: warning
 
-This module uses a command block to get the system time. Be sure that `enable-command-block` is set to `true` in you `server.properties` file.
+This module uses a command block to get the system time. For the time to be displayed as intended, be sure that `enable-command-block` is set to `true` in you `server.properties` file and that the `sendCommandFeedback` gamerule is enabled.
 ```
 
 ##  🔧 Functions

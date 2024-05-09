@@ -14,15 +14,20 @@ You can find below all functions available in this module.
 
 ### Cancel
 
-::::{tab-set}
-:::{tab-item} All
+:::::{tab-set}
+::::{tab-item} All
 
-```{function} #bs.schedule:cancel_all
+```{function} #bs.schedule:cancel_all {with:{}}
 
-Cancel all scheduled commands that match the given id.
+Cancel all scheduled commands that match the given ID.
 
 :Inputs:
-  **Macro Var `with.id` [any]**: Scheduled command parameter to match against.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Cancel filters.
+      - {nbt}`any` **id**: Scheduled command parameter to match against.
+  :::
 ```
 
 *Cancel all commands that have an `id` parameter set to "foo":*
@@ -30,23 +35,28 @@ Cancel all scheduled commands that match the given id.
 function #bs.schedule:cancel_all {with:{id:"foo"}}
 ```
 
-:::
-:::{tab-item} Single one
+::::
+::::{tab-item} Single one
 
-```{function} #bs.schedule:cancel_one
+```{function} #bs.schedule:cancel_one {with:{}}
 
-Cancel the first scheduled command that match the given id.
+Cancel the first scheduled command that match the given ID.
 
 :Inputs:
-  **Macro Var `with.id` [any]**: Scheduled command parameter to match against.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Cancel filters.
+      - {nbt}`any` **id**: Scheduled command parameter to match against.
+  :::
 ```
 
 *Cancel the next command that have an `id` parameter set to "foo":*
 ```mcfunction
 function #bs.schedule:cancel_one {with:{id:"foo"}}
 ```
-:::
 ::::
+:::::
 
 > **Credits**: Aksiome, theogiraudet
 
@@ -71,22 +81,24 @@ function #bs.schedule:clear
 
 ### Schedule
 
-```{function} #bs.schedule:schedule
+```{function} #bs.schedule:schedule {with:{}}
 
 Schedule a command for execution.
 If a command is registered in a tick where commands are already registered, adds the command after those already registered.
 
 :Inputs:
-  **Macro Var `with.command` [string]**: Command to schedule.
-
-  **Macro Var `with.time` [int]**: Time to wait. In ticks by default if unit is not defined.
-
-  **Macro Var `with.unit` [string]**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
-
-  **Macro Var `with.id` [any]**: Optional parameter used to identify the scheduled command.
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Schedule data.
+      - {nbt}`string` **command**: Command to schedule.
+      - {nbt}`int` **time**: Time to wait. In ticks by default if unit is not defined.
+      - {nbt}`string` **unit**: Unit of the specified time (tick, second, minute, hour, t, s, m, h).
+      - {nbt}`any` **id**: Optional parameter used to identify the scheduled command.
+  :::
 
 :Outputs:
-  **Return**: The `suid` identifier of the scheduled command.
+  **Return**: A unique identifier for the scheduled command.
 ```
 
 *Execute `say foo` in 2 seconds:*
@@ -95,7 +107,7 @@ If a command is registered in a tick where commands are already registered, adds
 function #bs.schedule:schedule {with:{command:"say foo",time:2,unit:"s"}}
 ```
 
-*Schedule then cancel commands that match a complex id:*
+*Schedule then cancel commands that match a complex ID:*
 
 ```mcfunction
 function #bs.schedule:schedule {with:{id:{foo:"bar",fails:true},command:"say failure",time:10,unit:"s"}}

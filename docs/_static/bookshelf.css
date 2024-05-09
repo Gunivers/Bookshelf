@@ -248,6 +248,10 @@ button.btn.version-switcher__button {
   background-position: 0px -48px;
 }
 
+.bs-nbt-any {
+  background-position: -16px -48px;
+}
+
 .bs-nbt-number {
   background-position: -32px -48px;
 }
