@@ -135,7 +135,6 @@ Get all data related to the block at the current location, including its state a
   **Storage `bs:out block`**:
   :::{treeview}
   - {nbt}`compound` **[readonly]** Block data
-    - {nbt}`int` **id**: A numeric id that represents the block type.
     - {nbt}`int` **group**: Blocks within the same group share the same possible state (e.g., stairs).
     - {nbt}`string` **block**: Full string representation of the block `type[state]{nbt}`.
     - {nbt}`string` **item**: Item string id associated with the block, if it exists.
@@ -170,7 +169,6 @@ Get the block type at the current location. Although states, NBTs, and propertie
   **Storage `bs:out block`**:
   :::{treeview}
   - {nbt}`compound` **[readonly]** Block data
-    - {nbt}`int` **id**: A numeric id that represents the block type.
     - {nbt}`int` **group**: Blocks within the same group share the same possible state (e.g., stairs).
     - {nbt}`string` **block**: Full string representation of the block (only the type).
     - {nbt}`string` **item**: Item string id associated with the block, if it exists.

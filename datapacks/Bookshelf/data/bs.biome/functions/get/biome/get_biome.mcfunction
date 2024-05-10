@@ -23,5 +23,5 @@ execute if biome ~ ~ ~ #bs.biome:type/group_16 run scoreboard players add #biome
 execute if biome ~ ~ ~ #bs.biome:type/group_32 run scoreboard players add #biome.id bs.data 32
 execute if biome ~ ~ ~ #bs.biome:type/group_64 run scoreboard players add #biome.id bs.data 64
 
-execute store result storage bs:ctx y short 1 run scoreboard players get #biome.id bs.data
-execute unless data storage bs:ctx {y:0} run function bs.biome:get/biome/lookup with storage bs:ctx
+execute store result storage bs:ctx y short 1 run scoreboard players remove #biome.id bs.data 1
+execute unless score #biome.id bs.data matches -1 run function bs.biome:get/biome/lookup with storage bs:ctx

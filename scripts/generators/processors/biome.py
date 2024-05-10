@@ -47,8 +47,16 @@ class CreateTypesFile(DataProcessor):
 
         self.write_text(self.target, [
             "# This file was automatically generated, do not edit it",
-            f"data modify storage bs:const biome set value {self.render(data)}"
+            (f"data modify storage bs:const biome set value "
+             f"{self.render(self.format(data))}")
         ])
+
+    def format(self, data) -> list:
+        return [{
+            key: value
+            for key, value in biome.items()
+            if key != 'id'
+        } for biome in data]
 
 
 class UpdateStorageFile(DataProcessor):
@@ -57,6 +65,13 @@ class UpdateStorageFile(DataProcessor):
 
         self.write_nbt(
             self.target,
-            self.render(data),
+            self.render(self.format(data)),
             ".data.contents.const.biome",
         )
+
+    def format(self, data) -> list:
+        return [{
+            key: value
+            for key, value in biome.items()
+            if key != 'id'
+        } for biome in data]

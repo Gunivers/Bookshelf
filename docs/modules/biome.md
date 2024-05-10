@@ -37,7 +37,6 @@ Get biome data at the execution position of the function.
   **Storage `bs:out biome`**:
   :::{treeview}
   - {nbt}`compound` Biome data
-    - {nbt}`int` **id**: A numeric id that represents the biome type.
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:plains`).
     - {nbt}`double` **temperature**: The base temperature of the biome.
     - {nbt}`bool` **has_precipitation**: Whether the biome has precipitation or not.
