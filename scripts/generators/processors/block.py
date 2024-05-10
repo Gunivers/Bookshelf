@@ -138,12 +138,12 @@ class CreateStatesFile(DataProcessor):
 
     def format(self, states: dict) -> list:
         return [{
-            "name": name,
-            "options": [{
-                "index": index,
-                "value": value,
-                "state": f"{name}={value},",
-                "property": {name: value},
+            "n": name,
+            "o": [{
+                "i": index,
+                "v": value,
+                "s": f"{name}={value},",
+                "p": {name: value},
             } for index, value in enumerate(options)],
         } for name, options in states.items()]
 
@@ -158,7 +158,7 @@ class CreateRegistryFiles(DataProcessor):
                 *[
                     (f'execute if block ~ ~ ~ #bs.block:has_state[{name}={value}] run '
                      f'data modify storage bs:out block._'
-                     f'[{{name:"{name}"}}].options[{{value:"{value}"}}].selected set value 1b')
+                     f'[{{n:"{name}"}}].o[{{v:"{value}"}}].c set value 1b')
                     for name, options in states.items() for value in options
                 ]
             ])
@@ -184,11 +184,11 @@ class UpdateStorageFile(DataProcessor):
 
     def format_states(self, states: dict) -> list:
         return [{
-            "name": name,
-            "options": [{
-                "index": index,
-                "value": value,
-                "state": f"{name}={value},",
-                "property": {name: value},
+            "n": name,
+            "o": [{
+                "i": index,
+                "v": value,
+                "s": f"{name}={value},",
+                "p": {name: value},
             } for index, value in enumerate(options)],
         } for name, options in states.items()]
