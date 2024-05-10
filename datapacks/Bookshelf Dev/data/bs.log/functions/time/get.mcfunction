@@ -4,4 +4,5 @@ data modify storage bs:in log.seconds set string storage bs:data log.time.full_t
 
 execute store result storage bs:in log.gametime int 1 store result score #log.ticks bs.data run time query gametime
 execute store result storage bs:in log.ticks int .99999999999 run scoreboard players operation #log.ticks bs.data -= #log.gametime bs.data
-function bs.log:time/format with storage bs:in log
+execute if score #log.ticks bs.data matches ..10 run function bs.log:time/ticks/format with storage bs:in log
+execute if score #log.ticks bs.data matches 11.. run function bs.log:time/ticks/stringify with storage bs:in log
