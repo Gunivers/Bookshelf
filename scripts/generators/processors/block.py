@@ -116,7 +116,6 @@ class CreateTypesFile(DataProcessor):
 
     def format(self, data) -> list:
         return [{
-            "id": block["id"],
             "group": block["group"],
             "type": block["type"],
             **get_item(block["type"], data),
@@ -177,7 +176,6 @@ class UpdateStorageFile(DataProcessor):
 
     def format(self, data) -> list:
         return [{
-            "id": block["id"],
             "group": block["group"],
             "type": block["type"],
             **get_item(block["type"], data),
