@@ -1,6 +1,6 @@
 {
   "values": [
     "bs.block:get/get_type",
-    "bs.block:get/compile/block"
+    "bs.block:get/compile/type"
   ]
 }

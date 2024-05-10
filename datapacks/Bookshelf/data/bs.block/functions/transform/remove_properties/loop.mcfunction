@@ -1,3 +1,3 @@
-$data remove storage bs:out block._[{name:$(name)}].options[{selected:1b}].selected
+$data remove storage bs:out block._[{n:$(name)}].o[{c:1b}].c
 data remove storage bs:ctx _[-1]
 function bs.block:transform/remove_properties/loop with storage bs:ctx _[-1]
