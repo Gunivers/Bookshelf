@@ -29,6 +29,6 @@ execute if block ~ ~ ~ #bs.block:type/group_1024 run scoreboard players add #blo
 
 execute store result storage bs:ctx y short 1 run scoreboard players remove #block.id bs.data 1
 execute unless score #block.id bs.data matches -1 run function bs.block:get/lookup with storage bs:ctx
-execute store result storage bs:ctx y int 1 run data get storage bs:out block.group
-execute unless data storage bs:ctx {y:0} run function bs.block:get/dispatch with storage bs:ctx
+execute store result storage bs:ctx y int 1 store result score #block.group bs.data run data get storage bs:out block.group
+execute unless score #block.group bs.data matches 0 run function bs.block:get/dispatch with storage bs:ctx
 data modify storage bs:out block.nbt set from block ~ ~ ~ {}

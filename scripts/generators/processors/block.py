@@ -98,9 +98,9 @@ class CreateTagsFiles(DataProcessor):
         values = [block["type"] for block in data.types if block["group"] > 0]
         self.write_json(self.target / "has_state.json", { "values": values })
 
-        for i in range(math.floor(math.log2(len(data.types))) + 1):
-            file = self.target / f"type/group_{2**i}.json"
-            values = [block["type"] for block in data.types if (block["id"] >> i) & 1]
+        for bit in range(math.floor(math.log2(len(data.types))) + 1):
+            file = self.target / f"type/group_{2**bit}.json"
+            values = [block["type"] for i, block in enumerate(data.types, 1) if (i >> bit) & 1]
             self.write_json(file, { "values": values })
 
 
@@ -142,10 +142,10 @@ class CreateStatesFile(DataProcessor):
             "o": [{
                 "i": index,
                 "v": value,
-                "s": f"{name}={value},",
+                "s": {state_idx: f"{name}={value},"},
                 "p": {name: value},
             } for index, value in enumerate(options)],
-        } for name, options in states.items()]
+        } for state_idx, (name, options) in enumerate(states.items())]
 
 
 class CreateRegistryFiles(DataProcessor):
