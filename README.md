@@ -20,14 +20,11 @@
 # 🕵️‍♂️ What is Bookshelf?
 
 Bookshelf (formerly known as Gunivers Libs) is a user-friendly modular library datapack, crafted to assist mapmakers in effortlessly implementing intricate systems within their maps.
-
-<div align="center">
-
-[🎬 Watch presentation video](https://www.youtube.com/watch?v=E2nKYEvjETk)
-
-</div>
+Bookshelf is split into several modules. You can download a zip from the Github packages page with each module zipped with its dependencies to pick the module(s) you need.
 
 ## 🛠️ Key features
+
+📄 **Bookshelf Dev:** an optional datapack for development time that includes utilities such as logs and variable dump.
 
 🧮 **Mathematical functions:** sin, cos, exp, log, sqrt...
 
@@ -46,15 +43,15 @@ Bookshelf (formerly known as Gunivers Libs) is a user-friendly modular library d
 <br>
 And much more...
 
-# Motivation
+# 🔥 Motivation
 
 As developers, we recognize the importance of using libraries to save time and avoid reinventing the wheel. Unfortunately, we've noticed that mapmakers within the Minecraft community are often unfamiliar with this concept.
 
-That's why we started this project, to introduce a variety of reusable tools and try to convice mapmakers to embrace the use of libraries.
+That's why we started this project, to introduce a variety of reusable tools and try to convince mapmakers to embrace the use of libraries.
 
 While we strive to keep these modules as much optimized and accurate as possible, our main goal is to offer a wide range of features and provide tools that are both easy to use and install. Therefore, we will always prioritize accessibility above everything else.
 
-# Contribution
+# 🤝 Contribution
 
 [👉 Please refer to the contribution docs for more information](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html)
 

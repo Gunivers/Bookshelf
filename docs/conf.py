@@ -62,7 +62,7 @@ html_context = {
     "doc_path": "docs",
 }
 
-json_url = "https://bookshelf.docs.gunivers.net/en/latest/_static/switcher.json"
+json_url = "https://bookshelf.docs.gunivers.net/en/dev/_static/switcher.json"
 version_match = os.environ.get("READTHEDOCS_VERSION")
 
 if not version_match or version_match.isdigit():
@@ -82,7 +82,7 @@ html_theme_options = {
     "navbar_persistent": ["search-button"],
     "navigation_with_keys": True,
     "use_edit_page_button": True,
-    "header_links_before_dropdown": 6,
+    "header_links_before_dropdown": 4,
     "logo": {
         "text": "Bookshelf",
         "image_dark": "_static/logo-bookshelf.png",
