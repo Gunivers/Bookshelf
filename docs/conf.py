@@ -77,7 +77,6 @@ html_sidebars = {
 }
 
 html_theme_options = {
-    "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
     "navbar_start": ["navbar-logo", "version-switcher"],
     "navbar_persistent": ["search-button"],
     "navigation_with_keys": True,
@@ -99,3 +98,6 @@ html_theme_options = {
         {"name": "Gunivers", "url": "https://gunivers.net", "icon": "_static/logo-gunivers.png", "type": "local"},
     ],
 }
+
+if version_match == "master":
+    html_theme_options["announcement"] = "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️"

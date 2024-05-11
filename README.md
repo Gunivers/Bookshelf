@@ -20,6 +20,7 @@
 # 🕵️‍♂️ What is Bookshelf?
 
 Bookshelf (formerly known as Gunivers Libs) is a user-friendly modular library datapack, crafted to assist mapmakers in effortlessly implementing intricate systems within their maps.
+
 Bookshelf is split into several modules. You can download a zip from the Github packages page with each module zipped with its dependencies to pick the module(s) you need.
 
 ## 🛠️ Key features
