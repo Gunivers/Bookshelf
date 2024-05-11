@@ -1,16 +1,27 @@
 [
   {
     "name": "dev",
-    "version": "latest",
-    "url": "https://bookshelf.docs.gunivers.net/en/latest/"
+    "version": "master",
+    "url": "https://bookshelf.docs.gunivers.net/en/master/"
   },
   {
-    "name": "1.19-1.0 Wild",
+    "name": "latest",
+    "version": "latest",
+    "url": "https://bookshelf.docs.gunivers.net/en/latest/",
+    "preferred": true
+  },
+  {
+    "name": "2.0.0",
+    "version": "v2.0.0",
+    "url": "https://bookshelf.docs.gunivers.net/en/v2.0.0/"
+  },
+  {
+    "name": "1.5",
     "version": "1.19",
     "url": "https://bookshelf.docs.gunivers.net/en/1.19-1.0_wild/"
   },
   {
-    "name": "1.18-1.1 Spaghetti",
+    "name": "1.4",
     "version": "1.18",
     "url": "https://bookshelf.docs.gunivers.net/en/1.18-1.1_spaghetti/"
   }

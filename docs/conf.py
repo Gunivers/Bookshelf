@@ -62,7 +62,7 @@ html_context = {
     "doc_path": "docs",
 }
 
-json_url = "https://bookshelf.docs.gunivers.net/en/latest/_static/switcher.json"
+json_url = "https://bookshelf.docs.gunivers.net/en/master/_static/switcher.json"
 version_match = os.environ.get("READTHEDOCS_VERSION")
 
 if not version_match or version_match.isdigit():
@@ -77,12 +77,11 @@ html_sidebars = {
 }
 
 html_theme_options = {
-    "announcement": "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️",
     "navbar_start": ["navbar-logo", "version-switcher"],
     "navbar_persistent": ["search-button"],
     "navigation_with_keys": True,
     "use_edit_page_button": True,
-    "header_links_before_dropdown": 6,
+    "header_links_before_dropdown": 4,
     "logo": {
         "text": "Bookshelf",
         "image_dark": "_static/logo-bookshelf.png",
@@ -94,8 +93,11 @@ html_theme_options = {
     "icon_links": [
         # {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
         {"name": "GitHub", "url": "https://github.com/Gunivers/Bookshelf", "icon": "fa-brands fa-github"},
-        {"name": "Support us", "url": "https://gunivers.net/soutenir/", "icon": "fa-solid fa-heart"},
+        {"name": "Support us", "url": "https://www.helloasso.com/associations/altearn/formulaires/3/en", "icon": "fa-solid fa-heart"},
         {"name": "Discord server", "url": "https://discord.gg/E8qq6tN", "icon": "fa-brands fa-discord"},
         {"name": "Gunivers", "url": "https://gunivers.net", "icon": "_static/logo-gunivers.png", "type": "local"},
     ],
 }
+
+if version_match == "master":
+    html_theme_options["announcement"] = "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️"
