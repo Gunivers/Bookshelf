@@ -62,7 +62,7 @@ html_context = {
     "doc_path": "docs",
 }
 
-json_url = "https://bookshelf.docs.gunivers.net/en/dev/_static/switcher.json"
+json_url = "https://bookshelf.docs.gunivers.net/en/master/_static/switcher.json"
 version_match = os.environ.get("READTHEDOCS_VERSION")
 
 if not version_match or version_match.isdigit():
