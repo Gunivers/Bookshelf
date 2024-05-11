@@ -5,29 +5,36 @@ on:
     tags: [ 'v*.*.*' ]
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup environement variables
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment variables
         run: |
           pip install -r scripts/requirements.txt
           python3 scripts/definitions.py
           TAG=${{ github.ref_name }}
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+
       - name: Package datapacks
         run: python3 scripts/distribute.py -v ${{ env.MC_VERSION }}-${{ env.VERSION }} -w 0
+
       - name: Package world
         uses: aksiome/minecraft-package@master
         with:
           config: .mcwpack.yml
           source: ${{ env.WORLD_PATH }}
           target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ env.MC_VERSION }}-${{ env.VERSION }}.zip
+
       - name: Upload artifacts
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.BUILD_PATH }}/*.zip
 
-    permissions:
-      id-token: write
-      contents: write
+      - name: Update latest tag
+        uses: EndBug/latest-tag@latest
