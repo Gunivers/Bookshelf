@@ -33,7 +33,7 @@ def get_blocks(mc_version: str) -> Blocks:
     types = []
     groups = [{}]
 
-    for index, (block, data) in enumerate(response.json().items()):
+    for block, data in response.json().items():
         states = {}
         for name, options in data[0].items():
             idx = options.index(data[1][name])
@@ -43,7 +43,6 @@ def get_blocks(mc_version: str) -> Blocks:
             groups.append(states)
 
         types.append({
-            "id": index + 1,
             "group": groups.index(states),
             "type": block if block.startswith("minecraft:") else f"minecraft:{block}"
         })
