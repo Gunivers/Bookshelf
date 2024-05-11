@@ -1,13 +1,14 @@
 [
   {
-    "name": "latest",
-    "version": "latest",
-    "url": "https://bookshelf.docs.gunivers.net/en/latest/"
-  },
-  {
-    "name": "Development",
+    "name": "dev",
     "version": "master",
     "url": "https://bookshelf.docs.gunivers.net/en/master/"
+  },
+  {
+    "name": "latest",
+    "version": "latest",
+    "url": "https://bookshelf.docs.gunivers.net/en/latest/",
+    "preferred": true
   },
   {
     "name": "2.0.0",
