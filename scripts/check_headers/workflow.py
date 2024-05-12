@@ -14,4 +14,7 @@ gitLogCommand = f"git diff --name-only {baseSHA}...{headSHA}"
 result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
 filePaths = result.splitlines()
 
-process(workspace, filePaths)
+errors = process(workspace, filePaths)
+
+if(errors):
+    exit(1)
