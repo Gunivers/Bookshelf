@@ -2,8 +2,8 @@ import subprocess
 import os
 import json
 import sys
-from process import process
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from process import process
 
 workspace = os.getenv('GITHUB_WORKSPACE')
 event = os.getenv('GITHUB_EVENT')
