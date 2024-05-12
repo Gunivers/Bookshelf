@@ -1,6 +1,5 @@
 import os
 import json
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import definitions
 import re
 from _types import *
