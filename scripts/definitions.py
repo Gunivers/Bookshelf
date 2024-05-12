@@ -13,6 +13,9 @@ with open(ROOT_DIR / ".env.yml", 'r') as file:
     BUILD_PATH: Path = ROOT_DIR / config['build_path']
     DATAPACKS_PATH: Path = ROOT_DIR / config['datapacks_path']
     WORLD_PATH: Path = ROOT_DIR / config['world_path']
+    BOOKSHELF_LIBS: list[str] = config['bookshelf_libs']
+    METADATA_FOLDER: str = config['metadata_folder']
+    DOC_URL: str = config['doc_url']
 
 
 if __name__ == "__main__":

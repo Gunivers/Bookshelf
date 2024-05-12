@@ -1,0 +1,36 @@
+name: 🔍 Pull Request Checks
+
+on:
+  pull_request:
+    paths:
+      - "datapacks/**"
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        labeled,
+        unlabeled,
+        milestoned,
+        demilestoned,
+      ]
+
+jobs:
+  build:
+    name: 🔍 Metadata Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup environement variables
+        run: |
+          pip install -r scripts/requirements.txt
+          python3 scripts/definitions.py
+
+      - name:
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: python scripts/check-dependencies.py

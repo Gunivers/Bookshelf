@@ -106,16 +106,16 @@ def create_world_archive(target: Path, filename: str):
     )
 
 def create_datapacks_archive(target: Path, filename: str):
-    for datapack in ["Bookshelf", "Bookshelf Dev"]:
+    for datapack in definitions.BOOKSHELF_LIBS:
         print(f"📦 Creating archive for datapack {datapack}")
         create_archive(
-            target / filename.format(datapack.lower().replace(" ", "-")),
+            target / filename.format(str(datapack).lower().replace(" ", "-")),
             definitions.DATAPACKS_PATH / datapack,
             get_datapack_files(datapack),
         )
 
 def create_modules_archive(target: Path, filename: str):
-    for datapack in ["Bookshelf", "Bookshelf Dev"]:
+    for datapack in definitions.BOOKSHELF_LIBS:
         for module in list_modules(datapack):
             print(f"🧩 Creating archive for module {module}")
             create_archive(
