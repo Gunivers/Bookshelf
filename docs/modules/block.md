@@ -406,8 +406,54 @@ Replace the block type while trying to conserve the state. State is preserved on
 # Once (on oak_stairs)
 execute positioned ~ ~ ~ run function #bs.block:get_block
 
-# Get block type data
+# Replace type data
 function #bs.block:replace_type {type:"minecraft:spruce_stairs"}
+
+# See the result
+data get storage bs:out block.block
+```
+
+::::
+::::{tab-item} Replace set
+
+```{function} #bs.block:replace_mapped_type {type:<value>,type_set:[]}
+
+This function replaces a block type based on a type set. It matches the input type's category and index to the type set, allowing for group-based block replacement. Useful for swapping related blocks.
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+    - {nbt}`list` **type_set**: A list of mappings from one block type to another. Each mapping includes a category, an index, and a block type.
+      - {nbt}`compound` Type data
+        - {nbt}`int` **category**: Category of the block type.
+        - {nbt}`int` **index**: Index of the block type within its category.
+        - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+  :::
+
+:Outputs:
+  **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
+```
+
+*Replace all oak related blocks to spruce ones (the function replaces the oak stairs block with a spruce stairs block, as they both have the same category and index):*
+
+```mcfunction
+# Once (on oak_stairs)
+execute positioned ~ ~ ~ run function #bs.block:get_block
+
+# Replace type data
+function #bs.block:replace_mapped_type { \
+  type: "minecraft:spruce_planks",
+  type_set: [ \
+    {category:0,index:0,type:"minecraft:oak_planks"}, \
+    {category:0,index:1,type:"minecraft:oak_stairs"}, \
+    {category:0,index:2,type:"minecraft:oak_slab"}, \
+    {category:1,index:0,type:"minecraft:spruce_planks"}, \
+    {category:1,index:1,type:"minecraft:spruce_stairs"}, \
+    {category:1,index:2,type:"minecraft:spruce_slab"}, \
+  ] \
+}
 
 # See the result
 data get storage bs:out block.block
