@@ -1,9 +1,9 @@
 import os
 import json
-import definitions
 import re
-from _types import *
-from utils import *
+from function_call_getter._types import *
+from function_call_getter.utils import *
+from files_provider.files_provider import DataCategory, DataPackArtifactPath
 
 regex = r"^(?!#)(?:\s|\S)*?function(?:\s|\\)*(#?[a-z0-9-\/:_\.$\(\)]+)"
 
@@ -12,7 +12,7 @@ class FunctionCallGetter:
     error = False
     __cache__: FeatureSet = None
 
-    def build_function_call_tree(self, workspace: str, filepaths: list[str]) -> FeatureSet:
+    def build_function_call_tree(self, artifact_paths: list[DataPackArtifactPath]) -> FeatureSet:
         self.error = False
 
         if not self.__cache__:
@@ -20,14 +20,13 @@ class FunctionCallGetter:
 
             features: list[Feature] = []
 
-            for filePath in filepaths:
-                if self.is_valid_tag(filePath):
-                    real_path = os.path.join(workspace, filePath)
-                    with open(real_path, 'r', encoding='utf-8') as f:
+            for artifact_path in artifact_paths:
+                if artifact_path.category == DataCategory.FUN_TAG:
+                    with open(artifact_path.real_path, mode='r', encoding='utf-8') as f:
                         contents = json.load(f)
                         if contents.get('feature', False):
-                            mc_path = resolve_real_path(filePath)
-                            feature = Feature(path=mc_path, namespace=mc_path.split(":")[0], __browsed_functions__=[], called_functions=[], __unread_functions__=contents.get('values', False))
+                            mc_path = resolve_real_path(artifact_path.real_path)
+                            feature = Feature(path=mc_path, namespace=artifact_path.namespace, __browsed_functions__=[], called_functions=[], __unread_functions__=contents.get('values', False))
                             features.append(feature)
 
             for feature in features:
@@ -76,7 +75,3 @@ class FunctionCallGetter:
 
         for fun in result:
             self.browse_function_locator(fun)
-
-    def is_valid_tag(self, filepath: str) -> bool:
-        libs = "|".join([re.escape(lib) for lib in definitions.BOOKSHELF_LIBS])
-        return re.match(f"datapacks/(?:{libs})/data/.*?/tags/functions/.*\\.json", filepath)

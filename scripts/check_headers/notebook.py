@@ -1,11 +1,6 @@
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import subprocess
 import definitions
 import process
-
-
 
 def check_unmerged_features():
     headSHA = subprocess.check_output("git rev-parse HEAD", encoding='utf-8', shell=True)

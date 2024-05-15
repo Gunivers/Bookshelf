@@ -1,13 +1,10 @@
-from dataclasses import dataclass
 from datetime import datetime
 from functools import partial
-import os
 import re
-import sys
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), "function_call_getter"))
-from function_call_getter import FunctionCallGetter
-from _types import (FeatureSet, Function, Visitor)
+from function_call_getter .function_call_getter import FunctionCallGetter
+from function_call_getter._types import (FeatureSet, Function, Visitor)
 import definitions
+from files_provider.files_provider import DataPackArtifactPath
 
 header_header = "# INFO"
 header_footer = "# CODE"
@@ -24,24 +21,22 @@ lines = {
          },
      }
 
-def process(workspace: str, filepaths: list[str]) -> bool:
+def process(artifact_paths: list[DataPackArtifactPath]) -> bool:
     """
     return True if errors were found
     """
 
     print('📄 The following files will be reviewed:')
-    print("\n".join([ "  " + filepath for filepath in filepaths]))
+    print("\n".join([ "  " + str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths]))
 
     getter = FunctionCallGetter()
 
-    feature_set: FeatureSet = getter.build_function_call_tree(workspace, filepaths)
+    feature_set: FeatureSet = getter.build_function_call_tree(artifact_paths)
     print(f"📦 Found {len(feature_set.features)} features:")
     for feature in feature_set.features:
         print(f"  {feature.path}")
 
     print("⏳ Checking their header…")
-
-
 
     # Store feature_name → dependency modules
     errors: list[str] = []

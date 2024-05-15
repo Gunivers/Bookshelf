@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from utils import resolve_function_path
-from typing import Callable, Tuple, Type
+from function_call_getter.utils import resolve_function_path
+from typing import Callable, Type
 
 @dataclass
 class ResourceLocator:
