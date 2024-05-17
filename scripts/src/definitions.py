@@ -4,7 +4,7 @@ from mcunit import MCUnit
 from pathlib import Path
 
 
-ROOT_DIR: Path = Path(__file__).parent.parent.resolve()
+ROOT_DIR: Path = Path(__file__).parent.parent.parent.resolve()
 
 with open(ROOT_DIR / ".env.yml", 'r') as file:
     config = yaml.safe_load(file)

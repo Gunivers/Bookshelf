@@ -1,30 +1,13 @@
 from dataclasses import dataclass
-from enum import Enum
 import os
 from pathlib import Path
 from typing import Callable
 import subprocess
 import definitions
+import glob
+from typing import cast
+from files_provider._types import *
 
-
-class DataCategory(Enum):
-    FUNCTION = "functions"
-    FUN_TAG = os.path.join("tags", "functions")
-
-@dataclass
-class DataPackArtifactPath:
-    namespace: str
-    name: str
-    category: DataCategory
-    real_path: Path
-
-@dataclass
-class Module:
-    namespace: str
-    path: Path
-
-    def __hash__(self):
-        return hash(self.path)
 
 
 class Manager[T]:
@@ -41,9 +24,26 @@ class Manager[T]:
         return self._content
 
 
-class DataPackArtifactManager(Manager[DataPackArtifactPath]):
+@dataclass
+class ModuleManager(Manager[Module]):
 
-    def __init__(self, artifacts: list[DataPackArtifactPath]):
+    def __init__(self, modules: list[Module]):
+        self._content = modules
+
+    def get_all_features(self) -> list[Feature]:
+        features: list[Feature] = []
+        for module in self._content:
+            for file in glob.glob("/tags/function/**/*.json", module.path):
+                artifact = build_artifact(Path(file))
+                artifact.get_content()
+                if isinstance(Tag, artifact) and cast(Tag, artifact)._content.get('values', False):
+                    features.append(Feature(artifact.real_path, artifact.mc_path, artifact._content))
+
+
+
+class ArtifactManager(Manager[Artifact]):
+
+    def __init__(self, artifacts: list[Artifact]):
         self._content = artifacts
 
     def get_modules(self) -> list[Module]:
@@ -52,24 +52,24 @@ class DataPackArtifactManager(Manager[DataPackArtifactPath]):
             modules.add(Module(artifact.namespace, Path(artifact.real_path.parents[2])))
         return modules
 
+    def get_features(self) -> list[Feature]:
+        features: list[Feature] = []
+        for artifact in self._content:
+            if isinstance(artifact, Tag) and cast(Tag, artifact).get_content().get('values', False):
+                features.append(artifact)
+        return features
 
 class FilePathsManager(Manager[Path]):
 
     def __init__(self, files: list[Path]):
         self._content = files
 
-    def only_dp_artifacts(self) -> DataPackArtifactManager:
-        from function_call_getter.utils import to_relative_path
+    def only_dp_artifacts(self) -> ArtifactManager:
         file_paths: list[Path] = list(filter(lambda file_path: file_path.relative_to(definitions.ROOT_DIR).parts[0] == 'datapacks', self._content))
-        result: list[DataPackArtifactPath] = []
+        result: list[Artifact] = []
         for file_path in file_paths:
-            relative_path: Path = to_relative_path(file_path)
-            cat = None
-            for category in DataCategory:
-                if category.value in str(relative_path):
-                    cat = category
-            result.append(DataPackArtifactPath(Path(relative_path.parts[3]), file_path.name, cat, file_path))
-        return DataPackArtifactManager(result)
+            result.append(build_artifact(file_path))
+        return ArtifactManager(result)
 
 
 

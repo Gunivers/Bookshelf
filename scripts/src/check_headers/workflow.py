@@ -1,7 +1,9 @@
+from pathlib import Path
 import subprocess
 import os
 import json
 from check_headers.process import process
+from files_provider.files_provider import FilePathsManager
 
 workspace = os.getenv('GITHUB_WORKSPACE')
 event = os.getenv('GITHUB_EVENT')
@@ -14,7 +16,13 @@ gitLogCommand = f"git diff --name-only {baseSHA}...{headSHA}"
 result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
 filePaths = result.splitlines()
 
-errors = process(workspace, filePaths)
+paths: list[Path] = list(map(lambda path: Path(os.path.join(workspace, path)), filePaths))
+
+files = FilePathsManager(paths) \
+        .only_dp_artifacts() \
+        .get()
+
+errors = process(files)
 
 if(errors):
     exit(1)
