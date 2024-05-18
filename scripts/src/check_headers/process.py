@@ -3,7 +3,7 @@ from functools import partial
 import re
 from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
-from function_call_getter._types import (FeatureSet, VisitableFunction, Visitor)
+from function_call_getter._types import (VisitableFeatureSet, VisitableFunction, Visitor)
 import definitions
 
 header_header = "# INFO"
@@ -31,7 +31,7 @@ def process(artifact_paths: list[Artifact]) -> bool:
 
     getter = FunctionCallGetter()
 
-    feature_set: FeatureSet = getter.build_function_call_tree(artifact_paths)
+    feature_set: VisitableFeatureSet = getter.build_function_call_tree(artifact_paths)
     print(f"📦 Found {len(feature_set.features)} features:")
     for feature in feature_set.features:
         print(f"  {feature.mc_path}")
@@ -48,6 +48,8 @@ def process(artifact_paths: list[Artifact]) -> bool:
         print(error)
 
     return len(errors) > 0
+
+
 
 def callback(errors: list[str], function: VisitableFunction) -> bool:
     content: list[str] = function.content

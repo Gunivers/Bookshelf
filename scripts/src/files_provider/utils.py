@@ -19,7 +19,7 @@ def parse_real_path(path: Path) -> tuple[str, 'DataCategory']:
     relative_path = splitted_path[4]
     for category in DataCategory:
         if relative_path.startswith(category.value.path_fragment):
-            fragment_path = relative_path.removeprefix(category.value.path_fragment + os.path.sep)
+            fragment_path = relative_path.removeprefix(category.value.path_fragment + os.path.sep).removesuffix(category.value.extension)
             return namespace.removeprefix(category.value.mc_path_prefix) + ':' + fragment_path, category
 
 

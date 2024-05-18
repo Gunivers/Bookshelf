@@ -33,12 +33,12 @@ class ModuleManager(Manager[Module]):
     def get_all_features(self) -> list[Feature]:
         features: list[Feature] = []
         for module in self._content:
-            for file in glob.glob("/tags/function/**/*.json", module.path):
-                artifact = build_artifact(Path(file))
+            for file in glob.glob(pathname="tags/functions/**/*.json", root_dir=module.path, recursive=True):
+                artifact = build_artifact(Path(os.path.join(module.path, file)))
                 artifact.get_content()
-                if isinstance(Tag, artifact) and cast(Tag, artifact)._content.get('values', False):
+                if isinstance(artifact, Tag) and cast(Tag, artifact)._content.get('feature', False):
                     features.append(Feature(artifact.real_path, artifact.mc_path, artifact._content))
-
+        return features
 
 
 class ArtifactManager(Manager[Artifact]):
@@ -46,11 +46,11 @@ class ArtifactManager(Manager[Artifact]):
     def __init__(self, artifacts: list[Artifact]):
         self._content = artifacts
 
-    def get_modules(self) -> list[Module]:
+    def get_modules(self) -> ModuleManager:
         modules: set[Module] = set()
         for artifact in self._content:
             modules.add(Module(artifact.namespace, Path(artifact.real_path.parents[2])))
-        return modules
+        return ModuleManager(modules)
 
     def get_features(self) -> list[Feature]:
         features: list[Feature] = []

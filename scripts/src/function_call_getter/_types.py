@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable, Type
 from files_provider._types import Function, Artifact, Tag, Feature, build_artifact
 from files_provider.utils import resolve_function_path
@@ -9,7 +10,7 @@ class Visitable:
         pass
 
 @dataclass
-class FeatureSet(Visitable):
+class VisitableFeatureSet(Visitable):
     features: list['VisitableFeature']
 
     def __accept__(self, visitor: 'Visitor') -> None:
@@ -18,15 +19,19 @@ class FeatureSet(Visitable):
 
 @dataclass
 class VisitableFeature(Visitable):
+    name: str
     namespace: str
     mc_path: str
     called_functions: list['VisitableAbstractFunction']
+    real_path: Path
     __browsed_functions__: list[Function]
     __unread_functions__: list[Function]
 
     def __init__(self, feature: Feature):
+        self.name = feature.name
         self.namespace = feature.namespace
         self.mc_path = feature.mc_path
+        self.real_path = feature.real_path
         self.called_functions = []
         self.__browsed_functions__ = []
         self.__unread_functions__ = [build_artifact(resolve_function_path(fun)) for fun in feature._content.get('values', False)]
@@ -34,6 +39,14 @@ class VisitableFeature(Visitable):
     def __accept__(self, visitor: 'Visitor') -> None:
         for called_function in self.called_functions:
             visitor.visit(called_function)
+
+    def __hash__(self):
+        return hash(self.mc_path)
+
+    def __eq__(self, other: object):
+        if not isinstance(other, VisitableFeature):
+            return False
+        return self.mc_path == other.mc_path
 
 @dataclass
 class VisitableAbstractFunction(Visitable):
@@ -54,6 +67,7 @@ class VisitableAbstractFunction(Visitable):
         for called_function in self.called_functions:
             visitor.visit(called_function)
 
+
 @dataclass
 class VisitableFunction(VisitableAbstractFunction):
 
@@ -63,6 +77,14 @@ class VisitableFunction(VisitableAbstractFunction):
         super().__init__(function, feature)
         self.content = function.get_content()
 
+    def __hash__(self):
+        return hash(self.real_path)
+
+    def __eq__(self, other: object):
+        if not isinstance(other, VisitableAbstractFunction):
+            return False
+        return self.real_path == other.real_path
+
 @dataclass
 class VisitableFunctionTag(VisitableAbstractFunction):
 
@@ -71,6 +93,14 @@ class VisitableFunctionTag(VisitableAbstractFunction):
     def __init__(self, tag: Tag, feature: VisitableFeature):
         super().__init__(tag, feature)
         self.content = tag.get_content()
+
+    def __hash__(self):
+        return hash(self.real_path)
+
+    def __eq__(self, other: object):
+        if not isinstance(other, VisitableAbstractFunction):
+            return False
+        return self.real_path == other.real_path
 
 def build_abstract_function(artifact: Artifact, feature: VisitableFeature) -> VisitableAbstractFunction:
     if isinstance(artifact, Tag):

@@ -13,7 +13,8 @@ license = {file = "LICENSE" }
 dependencies = [
   "nbtlib==1.12.1",
   "pyyaml",
-  "requests"
+  "requests",
+  "Jinja2"
 ]
 
 [tool.setuptools.packages.find]

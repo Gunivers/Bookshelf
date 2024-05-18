@@ -9,9 +9,9 @@ regex = r"^(?!#)(?:\s|\S)*?function(?:\s|\\)*(#?[a-z0-9-\/:_\.$\(\)]+)"
 class FunctionCallGetter:
 
     error = False
-    __cache__: FeatureSet = None
+    __cache__: VisitableFeatureSet = None
 
-    def build_function_call_tree(self, features: list[Feature]) -> FeatureSet:
+    def build_function_call_tree(self, features: list[Feature]) -> VisitableFeatureSet:
         self.error = False
 
         if not self.__cache__:
@@ -27,7 +27,7 @@ class FunctionCallGetter:
                     self.browse_function(function)
                 visitableFeatures.append(feature)
 
-            self.__cache__ = FeatureSet(visitableFeatures)
+            self.__cache__ = VisitableFeatureSet(visitableFeatures)
 
         return self.__cache__
 
@@ -42,7 +42,6 @@ class FunctionCallGetter:
     def browse_function_tag(self, function: VisitableFunctionTag):
         with open(os.path.join(function.real_path), encoding="utf-8") as file:
             content = json.load(file).get('values', False)
-            function.content = content
             for fun in content:
                 artifact: Artifact = build_artifact(resolve_function_path(fun))
                 artifact.get_content()
