@@ -24,6 +24,7 @@ class VisitableFeature(Visitable):
     mc_path: str
     called_functions: list['VisitableAbstractFunction']
     real_path: Path
+    content: dict
     __browsed_functions__: list[Function]
     __unread_functions__: list[Function]
 
@@ -34,6 +35,7 @@ class VisitableFeature(Visitable):
         self.real_path = feature.real_path
         self.called_functions = []
         self.__browsed_functions__ = []
+        self.content = feature._content
         self.__unread_functions__ = [build_artifact(resolve_function_path(fun)) for fun in feature._content.get('values', False)]
 
     def __accept__(self, visitor: 'Visitor') -> None:

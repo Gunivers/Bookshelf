@@ -51,7 +51,7 @@ class Tag(Artifact[dict]):
             return json.load(f)
 
 
-class Feature(Artifact):
+class Feature(Artifact[dict]):
 
     def __init__(self, real_path: Path, mc_path: str, content: list[str]):
         super().__init__(real_path, mc_path)

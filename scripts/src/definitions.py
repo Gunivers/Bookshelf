@@ -16,6 +16,7 @@ with open(ROOT_DIR / ".env.yml", 'r') as file:
     BOOKSHELF_LIBS: list[str] = config['bookshelf_libs']
     METADATA_FOLDER: str = config['metadata_folder']
     DOC_URL: str = config['doc_url']
+    FEATURE_TAG_NAMESPACE: str = config['feature_tag_namespace']
 
 
 if __name__ == "__main__":
