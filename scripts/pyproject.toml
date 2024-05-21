@@ -14,7 +14,8 @@ dependencies = [
   "nbtlib==1.12.1",
   "pyyaml",
   "requests",
-  "Jinja2"
+  "Jinja2",
+  "colored"
 ]
 
 [tool.setuptools.packages.find]

@@ -15,5 +15,6 @@
 /session.lock
 /uid.dat
 /venv/
+/scripts/src/bookshelf_scripts.egg-info/
 
 /.vscode/

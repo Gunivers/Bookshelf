@@ -8,3 +8,7 @@ To be able to execute the scripts:
 pip install --upgrade build
 python -m build
 ```
+OR
+```
+pip install -e .
+```
