@@ -14,10 +14,10 @@
 
 # CODE ------------------------------------------------------------------------
 
-data remove storage bs:ctx _
-$execute store success score #success bs.data run data modify storage bs:ctx _ set from storage bs:const block[{type:"$(type)"}]
-execute if score #success bs.data matches 0 run return 0
+data modify storage bs:ctx _ set from storage bs:out block
 
-execute store success score #success bs.data run data modify storage bs:out block.group set from storage bs:ctx _.group
-execute if score #success bs.data matches 0 run data modify storage bs:out block.type set from storage bs:ctx _.type
-execute if score #success bs.data matches 1 run data modify storage bs:out block set from storage bs:ctx _
+$execute store success score #success bs.data store result storage bs:ctx y int 1 run data get storage bs:const block.types."$(type)"
+execute if score #success bs.data matches 1 run function bs.block:get/lookup with storage bs:ctx
+execute store success score #success bs.data run data modify storage bs:ctx _.group set from storage bs:out block.group
+execute if score #success bs.data matches 0 run data modify storage bs:out block.nbt set from storage bs:ctx _.nbt
+execute if score #success bs.data matches 0 run data modify storage bs:out block._ set from storage bs:ctx _._

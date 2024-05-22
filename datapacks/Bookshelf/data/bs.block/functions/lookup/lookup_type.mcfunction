@@ -14,5 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-$execute store success score #success bs.data run data modify storage bs:out block set from storage bs:const block[{type:"$(type)"}]
-execute if score #success bs.data matches 0 run return 0
+$execute store success score #success bs.data store result storage bs:ctx y int 1 run data get storage bs:const block.types."$(type)"
+execute if score #success bs.data matches 1 run function bs.block:get/lookup with storage bs:ctx
+return run scoreboard players get #success bs.data

@@ -1,3 +1,4 @@
+import bisect
 import requests
 import sys
 
@@ -7,7 +8,9 @@ from contracts import DataProcessor
 
 from processors.block import (
     CreateTagsFiles,
-    CreateTypesFile,
+    CreateBlockTableFile,
+    CreateBlockTypesFile,
+    CreateBlockItemsFile,
     CreateStatesFile,
     CreateRegistryFiles,
     UpdateStorageFile,
@@ -42,10 +45,10 @@ def get_blocks(mc_version: str) -> Blocks:
         if states not in groups:
             groups.append(states)
 
-        types.append({
+        bisect.insort(types, {
             "group": groups.index(states),
             "type": block if block.startswith("minecraft:") else f"minecraft:{block}"
-        })
+        }, key=lambda x: x["group"])
 
     response = requests.get(ITEMS_URL.format(mc_version))
     response.raise_for_status()
@@ -66,7 +69,9 @@ def get_processors(datapacks: Path, assets: Path = None) -> list[DataProcessor]:
 
     return filter(None, [
         CreateTagsFiles(module / "tags/blocks"),
-        CreateTypesFile(module / "functions/load/types_table.mcfunction"),
+        CreateBlockTableFile(module / "functions/load/blocks_table.mcfunction"),
+        CreateBlockTypesFile(module / "functions/load/types_table.mcfunction"),
+        CreateBlockItemsFile(module / "functions/load/items_table.mcfunction"),
         CreateStatesFile(module / "functions/load/states_table.mcfunction"),
         CreateRegistryFiles(module / "functions/get/registry/"),
         UpdateStorageFile(assets / "command_storage_bs.dat") if assets else None,
