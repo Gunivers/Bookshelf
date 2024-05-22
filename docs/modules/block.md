@@ -416,44 +416,31 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Replace set
 
-```{function} #bs.block:replace_mapped_type {type:<value>,type_set:[]}
+```{function} #bs.block:replace_mapped_type {type:<value>,mapping_set:<value>}
 
-This function replaces a block type based on a type set. It matches the input type's category and index to the type set, allowing for group-based block replacement. Useful for swapping related blocks.
+This function replaces a block type based on a defined mapping set. It locates the ID of the specified type, identifies the corresponding set, and replaces the output with the type that has the same set but matches the input ID. This is particularly useful for group-based block swapping, allowing for coherent block replacements within defined sets.
+
+Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If these are not sufficient, you can [create your own](#custom-mapping-sets).
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
-    - {nbt}`list` **type_set**: A list of mappings from one block type to another. Each mapping includes a category, an index, and a block type.
-      - {nbt}`compound` Type data
-        - {nbt}`int` **category**: Category of the block type.
-        - {nbt}`int` **index**: Index of the block type within its category.
-        - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+    - {nbt}`string` **mapping_set**: A path to the mapping set used for the replacement (e.g., `bs.shapes`).
   :::
-
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
 ```
 
-*Replace all oak related blocks to spruce ones (the function replaces the oak stairs block with a spruce stairs block, as they both have the same category and index):*
+*Replace all oak related blocks to spruce ones (the function replaces the oak stairs block with a spruce stairs block):*
 
 ```mcfunction
 # Once (on oak_stairs)
 execute positioned ~ ~ ~ run function #bs.block:get_block
 
 # Replace type data
-function #bs.block:replace_mapped_type { \
-  type: "minecraft:spruce_planks",
-  type_set: [ \
-    {category:0,index:0,type:"minecraft:oak_planks"}, \
-    {category:0,index:1,type:"minecraft:oak_stairs"}, \
-    {category:0,index:2,type:"minecraft:oak_slab"}, \
-    {category:1,index:0,type:"minecraft:spruce_planks"}, \
-    {category:1,index:1,type:"minecraft:spruce_stairs"}, \
-    {category:1,index:2,type:"minecraft:spruce_slab"}, \
-  ] \
-}
+function #bs.block:replace_mapped_type { type: "minecraft:spruce_planks", mapping_set: "bs.shapes" }
 
 # See the result
 data get storage bs:out block.block
@@ -740,6 +727,29 @@ function #bs.block:spawn_solid_block_display
 :::::
 
 > **Credits**: Aksiome, theogiraudet
+
+---
+
+## 🎓 Custom mapping sets
+
+This module allows you to create personalized mapping sets tailored to your specific needs.
+
+---
+
+To create a new mapping set, you need to define a new array within the `bs:const block.mapping_sets` storage. Each new mapping set should be namespaced and each element must include an `id`, `set`, and `type`. Here's how you can define a new mapping set:
+
+```mcfunction
+data modify storage bs:const block.mapping_sets.<namespace>.<name> [
+  {id:0,set:0,type:"minecraft:oak_planks"}, \
+  {id:1,set:0,type:"minecraft:spruce_planks"}, \
+  \
+  {id:0,set:1,type:"minecraft:oak_stairs"}, \
+  {id:1,set:1,type:"minecraft:spruce_stairs"}, \
+  \
+  {id:0,set:2,type:"minecraft:oak_slab"}, \
+  {id:1,set:2,type:"minecraft:spruce_slab"}, \
+]
+```
 
 ---
 

@@ -14,7 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value $(type_set)
-$execute store result storage bs:ctx x int 1 run data get storage bs:ctx _[{type:"$(type)"}].category
-execute store result storage bs:ctx y int 1 run function bs.block:transform/replace_mapped_type/get_index with storage bs:out block
-function bs.block:transform/replace_mapped_type/replace_type with storage bs:ctx
+$execute store result storage bs:ctx x int 1 run data get storage bs:ctx _[{type:"$(type)"}].id
+execute store result storage bs:ctx y int 1 run function bs.block:transform/replace_mapped_type/find_set with storage bs:out block
+function bs.block:transform/replace_mapped_type/replace_intersect with storage bs:ctx
