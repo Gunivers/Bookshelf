@@ -14,6 +14,6 @@
 
 # CODE ------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set value []
-$data modify storage bs:ctx _ append from storage bs:const block[{item:"$(item)"}]
-return run data modify storage bs:out block set from storage bs:ctx _[0]
+$execute store success score #success bs.data store result storage bs:ctx y int 1 run data get storage bs:const block.items."$(item)"
+execute if score #success bs.data matches 1 run function bs.block:get/lookup with storage bs:ctx
+return run scoreboard players get #success bs.data

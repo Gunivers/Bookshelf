@@ -104,14 +104,14 @@ class CreateTagsFiles(DataProcessor):
             self.write_json(file, { "values": values })
 
 
-class CreateTypesFile(DataProcessor):
+class CreateBlockTableFile(DataProcessor):
     def process(self, data):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
         self.write_text(self.target, [
             "# This file was automatically generated, do not edit it",
-            (f"data modify storage bs:const block set value "
-             f"{self.render(self.format(data))}")
+            (f"data modify storage bs:const block.table set value "
+             f"{self.render(self.format(data))}"),
         ])
 
     def format(self, data) -> list:
@@ -122,6 +122,47 @@ class CreateTypesFile(DataProcessor):
         } for block in data.types]
 
 
+class CreateBlockTypesFile(DataProcessor):
+    def process(self, data):
+        print("\033[90m⚙️ Generating types table function\033[0m")
+
+        self.write_text(self.target, [
+            "# This file was automatically generated, do not edit it",
+            (f"data modify storage bs:const block.types set value "
+             f"{self.render(self.format(data))}"),
+        ])
+
+    def format(self, data):
+        return {
+            f'"{block["type"]}"': idx
+            for idx, block in enumerate(data.types)
+        } | {
+            f'"{block["type"][10:]}"': idx
+            for idx, block in enumerate(data.types)
+        }
+
+
+class CreateBlockItemsFile(DataProcessor):
+    def process(self, data):
+        print("\033[90m⚙️ Generating types table function\033[0m")
+
+        self.write_text(self.target, [
+            "# This file was automatically generated, do not edit it",
+            (f"data modify storage bs:const block.items set value "
+             f"{self.render(self.format(data))}"),
+        ])
+
+    def format(self, data):
+        ret = {}
+        for idx, block in enumerate(data.types):
+            item = ITEMS_DICT.get(block["type"], block["type"])
+            key = f'"{item}"'
+            if item in data.items and key not in ret:
+                ret[key] = idx
+                ret[f'"{item[10:]}"'] = idx
+        return ret
+
+
 class CreateStatesFile(DataProcessor):
     def process(self, data):
         print("\033[90m⚙️ Generating states table function\033[0m")
@@ -130,7 +171,7 @@ class CreateStatesFile(DataProcessor):
             "# This file was automatically generated, do not edit it",
             *[
                 (f"data modify storage bs:const "
-                 f"block[{{group:{str(group + 1)}}}]._ set value "
+                 f"block.table[{{group:{str(group + 1)}}}]._ set value "
                  f"{self.render(self.format(states))}")
                 for group, states in enumerate(data.groups[1:])
             ]
