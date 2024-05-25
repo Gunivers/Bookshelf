@@ -209,7 +209,7 @@ The `bs:out block` output is intended to be read-only. Modifying parts manually 
 
 ```{function} #bs.block:keep_properties {properties:[]}
 
-Filter properties to keep only the desired ones.
+Filter properties to keep only the desired ones. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -219,6 +219,8 @@ Filter properties to keep only the desired ones.
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -242,7 +244,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:merge_properties {properties:[]}
 
-Merge state properties from the current location into the output. The merge occurs if the syntax is correct, regardless of logical coherence (e.g., using 'age' for different plants).
+Merge state properties from the current location into the output. The merge occurs if the syntax is correct, regardless of logical coherence (e.g., using 'age' for different plants). This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Location of the block that act as input.
@@ -254,6 +256,8 @@ Merge state properties from the current location into the output. The merge occu
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -277,7 +281,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:remove_properties {properties:[]}
 
-Filter properties by removing the undesired ones.
+Filter properties by removing the undesired ones. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -287,6 +291,8 @@ Filter properties by removing the undesired ones.
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -310,7 +316,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:replace_properties {properties:[]}
 
-Replace property values. Invalid values will not be replaced.
+Replace property values. Invalid values will not be replaced. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -321,6 +327,8 @@ Replace property values. Invalid values will not be replaced.
         - {nbt}`string` **name**: Name of the property (e.g., `facing`).
         - {nbt}`string` **value**: Value of the property (e.g., `east`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -344,7 +352,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:shift_properties {properties:[]}
 
-Shift properties by any amount, allowing cycling through their values.
+Shift properties by any amount, allowing cycling through their values. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -355,6 +363,8 @@ Shift properties by any amount, allowing cycling through their values.
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
         - {nbt}`string` **by**: Shift amount (defaults to 1).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -387,7 +397,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:replace_type {type:<value>}
 
-Replace the block type while trying to conserve the state. State is preserved only if the group of the output matches the input.
+Replace the block type while trying to conserve the state. State is preserved only if the group of the output matches the input. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -395,6 +405,8 @@ Replace the block type while trying to conserve the state. State is preserved on
   - {nbt}`compound` Arguments
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -416,11 +428,23 @@ data get storage bs:out block.block
 ::::
 ::::{tab-item} Replace set
 
-```{function} #bs.block:replace_mapped_type {type:<value>,mapping_set:<value>}
+`````{function} #bs.block:replace_mapped_type {type:<value>,mapping_set:<value>}
 
-This function replaces a block type based on a defined mapping set. It locates the ID of the specified type, identifies the corresponding set, and replaces the output with the type that has the same set but matches the input ID. This is particularly useful for group-based block swapping, allowing for coherent block replacements within defined sets.
+Replace a block type based on a defined mapping set. A mapping set example:
 
-Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If these are not sufficient, you can [create your own](#custom-mapping-sets).
+```mcfunction
+data modify storage bs:const block.mapping_sets.bs.colors set value [ \
+  {id:0,set:0,type:"minecraft:red_wool"}, \
+  {id:1,set:0,type:"minecraft:green_wool"}, \
+  {id:0,set:1,type:"minecraft:red_carpet"}, \
+  {id:1,set:1,type:"minecraft:green_carpet"}, \
+]
+```
+This function retrieves the ID of the specified type, finds the corresponding set, and replaces the output with the type that matches the input ID within the same set. It is useful for group-based block swapping, ensuring coherent replacements within defined sets. The function operates on the [virtual block format](#get) stored in the block output.
+
+For example, with the above mapping set: if the input is "red_wool" (id: 0), and the virtual block type is "green_carpet" (set: 1), the resulting block will be "red_carpet" (id: 0, set: 1).
+
+Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-sets).
 
 :Inputs:
   **Function macro**:
@@ -429,9 +453,14 @@ Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
     - {nbt}`string` **mapping_set**: A path to the mapping set used for the replacement (e.g., `bs.shapes`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
+
 :Outputs:
+  **Return**: Whether a type was found and the replacement occurred.
+
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
-```
+`````
 
 *Replace all oak related blocks to spruce ones (the function replaces the oak stairs block with a spruce stairs block):*
 

@@ -1,7 +1,6 @@
 {
   "values": [
     "bs.block:transform/replace_mapped_type/with_mapping_set",
-    "bs.block:transform/replace_mapped_type/replace_mapped_type",
-    "bs.block:get/compile/block"
+    "bs.block:transform/replace_mapped_type/replace_mapped_type"
   ]
 }
