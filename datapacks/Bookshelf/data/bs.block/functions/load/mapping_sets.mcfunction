@@ -527,5 +527,3 @@ data modify storage bs:const block.mapping_sets.bs.colors set value [ \
   {id:14,set:11,type:"minecraft:magenta_banner"}, \
   {id:15,set:11,type:"minecraft:pink_banner"}, \
 ]
-
-
