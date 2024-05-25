@@ -19,3 +19,4 @@ execute if score #success bs.data matches 0 run return fail
 execute store result storage bs:ctx y int 1 store success score #success bs.data run function bs.block:transform/replace_mapped_type/find_set with storage bs:out block
 execute if score #success bs.data matches 0 run return fail
 function bs.block:transform/replace_mapped_type/replace_intersect with storage bs:ctx
+return run function bs.block:get/compile/block
