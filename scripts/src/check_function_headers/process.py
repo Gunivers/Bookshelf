@@ -1,6 +1,5 @@
 from datetime import datetime
 from functools import partial
-import json
 import os
 from pathlib import Path
 import re
@@ -14,18 +13,6 @@ from jinja2 import Environment, FileSystemLoader
 
 header_header = "# INFO"
 header_footer = "# CODE"
-
-lines = {
-     "copyright": {
-          "syntax": r"^Copyright © " + re.escape(str(datetime.now().year)) + r" Gunivers Community\.$"
-        },
-     "authors": {
-            "syntax": r"^Authors:.*$"
-     },
-     "documentation": {
-            "syntax": r"^Documentation:\s*" + re.escape(definitions.DOC_URL) + r".*$"
-         },
-     }
 
 def process(artifact_paths: list[Artifact]) -> bool:
     """
@@ -41,7 +28,7 @@ def process(artifact_paths: list[Artifact]) -> bool:
     print(f"📦 Found {len(feature_set.features)} features:{Fore.dark_gray}")
     print("\n".join([ "    " + feature.mc_path for feature in feature_set.features]) + Style.reset)
 
-    print("⏳ Checking their header…")
+    print("⏳ Checking the header of all the called function…")
 
     errors: list[str] = []
 
@@ -50,6 +37,11 @@ def process(artifact_paths: list[Artifact]) -> bool:
 
     for error in errors:
         print(error)
+
+    if len(errors) == 0:
+        print(f"✅ Done!")
+    else:
+        print(f"❌ Done with errors.")
 
     return len(errors) > 0
 
@@ -63,9 +55,9 @@ def callback(errors: list[str], function: VisitableFunction | VisitableFeature) 
     if isinstance(function, VisitableFeature):
         content = cast(VisitableFeature, function).content
         if not definitions.FEATURE_TAG_NAMESPACE in content:
-            errors.append(f"{Fore.red}❌ No metadata in feature tag '{function.mc_path}'. End points analyze will be ignored.{Style.reset}")
+            errors.append(f"   {Fore.red} No metadata in feature tag '{function.mc_path}'. End points analyze will be ignored.{Style.reset}")
         elif not "documentation" in content[definitions.FEATURE_TAG_NAMESPACE]:
-            errors.append(f"{Fore.red}❌ No 'documentation' key in feature tag '{function.mc_path}' metadata. End points analyze will be ignored.{Style.reset}")
+            errors.append(f"   {Fore.red} No 'documentation' key in feature tag '{function.mc_path}' metadata. End points analyze will be ignored.{Style.reset}")
         else:
             documentation = content[definitions.FEATURE_TAG_NAMESPACE].get("documentation", None)
         is_feature = True
@@ -82,6 +74,6 @@ def callback(errors: list[str], function: VisitableFunction | VisitableFeature) 
             current_header = "\n".join(content[0:len(splitted_header)]).strip()
 
             if current_header != header:
-                errors.append(f"{Fore.red}❌ Invalid header in function '{function.mc_path}' (feature {function.feature.mc_path}).{Style.reset}")
+                errors.append(f"   {Fore.red} Invalid header in function '{function.mc_path}' (feature {function.feature.mc_path}).{Style.reset}")
 
             is_feature = False

@@ -8,6 +8,10 @@ import definitions
 from files_provider.files_provider import DataCategory
 
 
+def get_module_path(namespace: str, path: Path) -> Path:
+    """return the path of the module containing the file"""
+    return Path(path.as_posix().split(namespace)[0] + namespace)
+
 
 def parse_real_path(path: Path) -> tuple[str, 'DataCategory']:
     """return Minecraft path and the data category (function, function tag, …)"""

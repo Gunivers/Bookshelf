@@ -1,0 +1,34 @@
+---
+{% for feature in features|sort(attribute='name') -%}
+name: {{ feature.name }}
+documentation: {{ feature.documentation }}
+authors:
+{%- for author in feature.authors|sort() %}
+  - {{ author }}
+{%- endfor %}
+{%- if feature.contributors %}
+contributors:
+{%- for contributor in feature.contributors|sort() %}
+  - {{ contributor }}
+{%- endfor %}
+{%- endif %}
+created:
+  date: {{ feature.created.date }}
+  version: {{ feature.created.version }}
+updated:
+  date: {{ feature.updated.date }}
+  version: {{ feature.updated.version }}
+{%- if feature.dependencies %}
+dependencies:
+{%- for dep in feature.dependencies|sort() %}
+  - {{ dep }}
+{%- endfor %}
+{%- endif %}
+{%- if feature.week_dependencies %}
+week_dependencies:
+{%- for dep in feature.week_dependencies|sort() %}
+  - {{ dep }}
+{%- endfor %}
+{%- endif %}
+---
+{% endfor %}

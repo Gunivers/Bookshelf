@@ -1,12 +1,13 @@
 from dataclasses import dataclass
 import os
 from pathlib import Path
-from typing import Callable
 import subprocess
+from typing import Callable
 import definitions
 import glob
 from typing import cast
 from files_provider._types import *
+from files_provider.utils import get_module_path
 
 
 
@@ -36,7 +37,8 @@ class ModuleManager(Manager[Module]):
             for file in glob.glob(pathname="tags/functions/**/*.json", root_dir=module.path, recursive=True):
                 artifact = build_artifact(Path(os.path.join(module.path, file)))
                 artifact.get_content()
-                if isinstance(artifact, Tag) and cast(Tag, artifact)._content.get('feature', False):
+                bookshelf_tag = cast(Tag, artifact)._content.get(definitions.FEATURE_TAG_NAMESPACE, None)
+                if isinstance(artifact, Tag) and bookshelf_tag != None and bookshelf_tag.get('feature', False):
                     features.append(Feature(artifact.real_path, artifact.mc_path, artifact._content))
         return features
 
@@ -49,7 +51,7 @@ class ArtifactManager(Manager[Artifact]):
     def get_modules(self) -> ModuleManager:
         modules: set[Module] = set()
         for artifact in self._content:
-            modules.add(Module(artifact.namespace, Path(artifact.real_path.parents[2])))
+            modules.add(Module(artifact.namespace, get_module_path(artifact.namespace, artifact.real_path)))
         return ModuleManager(modules)
 
     def get_features(self) -> list[Feature]:
