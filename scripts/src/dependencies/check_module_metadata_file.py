@@ -1,9 +1,8 @@
+import json
 import re
 from logger.logger import Logger
-import yaml
 from files_provider.files_provider import Module
 import definitions
-from colored import Fore, Style
 
 lines = {
      "name": {
@@ -30,7 +29,7 @@ lines = {
     }
 }
 
-def check_metadata_yaml(yaml: dict, path, logger: Logger):
+def check_metadata_json(yaml: dict, path, logger: Logger):
     for key, value in lines.items():
         key_value = yaml.get(key, None)
         if not key_value and not value["optional"]:
@@ -49,14 +48,14 @@ def __check_metadata_value(key: str, value: str, syntax: str, path: str, logger:
 
 
 def check_module(module: Module, logger: Logger) -> dict:
-    metadata_path = module.path / ".metadata" / "metadata.yml"
+    metadata_path = module.path / ".metadata" / "metadata.json"
     path = module.path.relative_to(definitions.ROOT_DIR)
     if not metadata_path.exists():
         logger.print_err(f"Metadata file not found for module '{path}'.")
     else:
         with open(metadata_path, "r") as f:
-            content = yaml.safe_load(f)
-            check_metadata_yaml(content, path, logger)
+            content = json.load(f)
+            check_metadata_json(content, path, logger)
             if not logger.has_level_errors():
                 return content
 

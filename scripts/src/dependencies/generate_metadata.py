@@ -45,7 +45,7 @@ def generate(module_manager: ModuleManager):
 def compute(feature_set: VisitableFeatureSet, result_callback: Callable[[Path, str], bool], logger: Logger):
     """
         Compute the metadata files for the modules and features of the given module manager and feature set.
-        Each time a module/feature is computed, the result_callback is called with the location to store the file and the metadata in a YAML format.
+        Each time a module/feature is computed, the result_callback is called with the location to store the file and the metadata in a JSON format.
     """
     module_dependencies: dict[str, ModuleMetadata] = {}
     feature_dependencies: dict[str, FeatureMetadata] = {}
@@ -65,7 +65,7 @@ def compute(feature_set: VisitableFeatureSet, result_callback: Callable[[Path, s
                 if result:
                     feature_params.append(result)
             if not logger.reduce_error_context():
-                result_callback(compute_path(module.path, "features"), generate_yaml({"features": feature_params}, env, "features.jinja"), logger)
+                result_callback(compute_path(module.path, "features"), generate_json({"features": feature_params}, env, "features.jinja"), logger)
             else:
                 logger.print_err(f"Errors when computing metadata for the features of the module '{module.namespace}'. The features metadata for this module has not been processed.", count=False)
         else:
@@ -94,7 +94,7 @@ def compute_module_metadata(module: ModuleMetadata, env: Environment, result_cal
             "weak_dependencies":weak_dependencies,
             "features": features
         }
-        result = result_callback(compute_path(module.path, "module"), generate_yaml(params, env, "module.jinja"), logger)
+        result = result_callback(compute_path(module.path, "module"), generate_json(params, env, "module.jinja"), logger)
         return params
 
 
@@ -144,12 +144,12 @@ def compute_dependencies(dependencies: set[VisitableFunctionTag], weak_dependenc
     return dependencies or None, weak_dependencies or None
 
 
-def generate_yaml(params: any, env: Environment, template: str) -> str:
+def generate_json(params: any, env: Environment, template: str) -> str:
     template = env.get_template(template)
     return template.render(params)
 
 def compute_path(path: Path, filename: str) -> Path:
-    return Path(os.path.join(path, ".metadata", "generated", filename + '.yml'))
+    return Path(os.path.join(path, ".metadata", "generated", filename + '.json'))
 
 
 def generate_file(path: Path, content: str, logger: Logger):
@@ -159,5 +159,5 @@ def generate_file(path: Path, content: str, logger: Logger):
     content: The content of the file.
     """
     os.makedirs(path.parent, exist_ok=True)
-    with open(os.path.join(path), "w") as f:
+    with open(path, "w") as f:
         f.write(content)

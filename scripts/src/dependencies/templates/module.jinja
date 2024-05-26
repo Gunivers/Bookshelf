@@ -1,20 +1,25 @@
-name: {{ name }}
-display_name: {{ display_name }}
-description: {{ description }}
-documentation: {{ documentation }}
-{%- if dependencies %}
-dependencies:
-{%- for dep in dependencies|sort() %}
-  - {{ dep }}
-{%- endfor %}
-{%- endif %}
-{%- if weak_dependencies %}
-weak_dependencies:
-{%- for dep in weak_dependencies|sort() %}
-  - {{ dep }}
-{%- endfor %}
-features:
-{%- for feature in features|sort() %}
-  - {{ feature}}
-{%- endfor %}
-{%- endif %}
+{
+  "name": "{{ name }}",
+  "display_name": "{{ display_name }}",
+  "description": "{{ description }}",
+  "documentation": "{{ documentation }}",
+  {%- if dependencies %}
+  "dependencies": [
+  {%- for dep in dependencies|sort() %}
+    "{{ dep }}"{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ],
+  {%- endif %}
+  {%- if weak_dependencies %}
+  "weak_dependencies": [
+  {%- for dep in weak_dependencies|sort() %}
+    "{{ dep }}"{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ],
+  {%- endif %}
+  "features": [
+  {%- for feature in features|sort() %}
+    "{{ feature }}"{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ]
+}
