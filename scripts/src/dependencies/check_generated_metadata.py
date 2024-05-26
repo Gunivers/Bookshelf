@@ -1,5 +1,4 @@
 from pathlib import Path
-from colored import Fore, Style
 import definitions
 from dependencies.generate_metadata import compute
 from files_provider.files_provider import Feature, ModuleManager

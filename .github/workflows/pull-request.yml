@@ -10,9 +10,7 @@ on:
         synchronize,
         reopened,
         labeled,
-        unlabeled,
-        milestoned,
-        demilestoned,
+        unlabeled
       ]
 
 jobs:
@@ -30,7 +28,22 @@ jobs:
           pip install -r scripts/requirements.txt
           python3 scripts/definitions.py
 
-      - name: 📑 Check headers
+      - name: 📑 Check function headers
         env:
           GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: python scripts/check_headers/workflow.py
+        run: python scripts/ci/check_function_headers.py
+
+      - name: 📑 Check feature tag metadata
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: python scripts/ci/check_feature_tag_metadata.py
+
+      - name: 📑 Check generated metadata
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: python scripts/ci/check_generated_metadata.py
+
+      - name: 📑 Check module metadata files
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: python scripts/ci/check_metadata_files.py

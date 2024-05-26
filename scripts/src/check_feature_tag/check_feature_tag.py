@@ -1,6 +1,5 @@
 from functools import partial
 import re
-from colored import Fore, Style
 from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, Visitor)

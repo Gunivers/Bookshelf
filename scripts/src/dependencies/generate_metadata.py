@@ -3,13 +3,12 @@ from functools import partial
 import os
 from pathlib import Path
 from typing import Callable, Tuple
-from check_feature_tag.process import check_feature
-from colored import Fore, Style
+from check_feature_tag.check_feature_tag import check_feature
 from files_provider.files_provider import Feature, ModuleManager, Module
 from function_call_getter._types import VisitableFeatureSet, VisitableFunctionTag, Visitor, VisitableFeature
 import definitions
 from function_call_getter.function_call_getter import FunctionCallGetter
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment, FileSystemLoader
 
 from dependencies.metadata_helper import compute_metadata, FeatureMetadata, ModuleMetadata
 from dependencies.check_module_metadata_file import check_module

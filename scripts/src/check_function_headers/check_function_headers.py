@@ -2,9 +2,7 @@ from datetime import datetime
 from functools import partial
 import os
 from pathlib import Path
-import re
 from typing import cast
-from colored import Fore, Style
 from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, VisitableFunction, Visitor)
@@ -15,7 +13,7 @@ from logger.logger import Logger
 header_header = "# INFO"
 header_footer = "# CODE"
 
-def process(artifact_paths: list[Artifact]) -> bool:
+def check(artifact_paths: list[Artifact]) -> bool:
     """
     return True if errors were found
     """
