@@ -25,7 +25,7 @@ jobs:
 
       - name: Setup environement variables
         run: |
-          pip install -r scripts/requirements.txt
+          pip install -e scripts
           python3 scripts/src/definitions.py
 
       - name: 📑 Check function headers
