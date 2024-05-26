@@ -70,7 +70,9 @@ class FilePathsManager(Manager[Path]):
         file_paths: list[Path] = list(filter(lambda file_path: file_path.relative_to(definitions.ROOT_DIR).parts[0] == 'datapacks', self._content))
         result: list[Artifact] = []
         for file_path in file_paths:
-            result.append(build_artifact(file_path))
+            artifact = build_artifact(file_path)
+            if artifact:
+                result.append(artifact)
         return ArtifactManager(result)
 
 

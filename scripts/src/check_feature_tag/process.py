@@ -5,6 +5,7 @@ from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, Visitor)
 import definitions
+from logger.logger import Logger
 
 date = {
             "date": {
@@ -57,80 +58,74 @@ def check(artifact_paths: list[Artifact]) -> bool:
     return True if errors were found
     """
 
-    print(f'📄 The following files will be reviewed:{Fore.dark_gray}')
-    print("\n".join([ "    " + str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths]) + Style.reset)
+    logger = Logger()
+    logger.print_step("The following files will be reviewed:", "📄")
+    logger.print_log(*[str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths])
 
     getter = FunctionCallGetter()
 
     feature_set: VisitableFeatureSet = getter.build_function_call_tree(artifact_paths)
-    print(f"📦 Found {len(feature_set.features)} features:{Fore.dark_gray}")
-    print("\n".join([ "    " + feature.mc_path for feature in feature_set.features]) + Style.reset)
+    logger.print_step(f"Found {len(feature_set.features)} features:", "📦")
+    logger.print_log(*[feature.mc_path for feature in feature_set.features])
 
-    print("⏳ Checking their specified metadata…")
+    logger.print_step("Checking their specified metadata…", "⏳")
 
-    errors: list[str] = []
-
-    visitor = Visitor([VisitableFeature], partial(callback, errors))
+    visitor = Visitor([VisitableFeature], partial(callback, logger))
     visitor.visit(feature_set)
 
-    for error in errors:
-        print(error)
+    return logger.print_done()
 
-    if len(errors) == 0:
-        print(f"✅ Done!")
-    else:
-        print(f"❌ Done with errors.")
-
-    return len(errors) > 0
-
-def callback(errors: list[str], feature: VisitableFeature) -> bool:
-    result = check_feature(feature)
-    if isinstance(result, list):
-        errors.extend(result)
+def callback(logger: Logger, feature: VisitableFeature) -> bool:
+    check_feature(feature, logger)
     return True
 
-def check_feature(feature: VisitableFeature) -> list[str] | dict:
-    errors: list[str] = []
+def check_feature(feature: VisitableFeature, logger: Logger) -> dict:
     metadata = feature.content.get(definitions.FEATURE_TAG_NAMESPACE, None)
     if metadata == None:
-        errors.append(f"   {Fore.red} No metadata in feature tag '{feature.mc_path}'.{Style.reset}")
+        logger.print_err(f"No metadata in feature tag '{feature.mc_path}'.")
     else:
         for key, value in bookshelf_key.items():
-            errors.extend(check_key(feature.mc_path, [definitions.FEATURE_TAG_NAMESPACE, key], value, metadata))
-    return errors or feature.content.get(definitions.FEATURE_TAG_NAMESPACE)
+            check_key(feature.mc_path, [definitions.FEATURE_TAG_NAMESPACE, key], value, metadata, logger)
+    return feature.content.get(definitions.FEATURE_TAG_NAMESPACE)
 
 
-def check_key(tag_path: str, path: list[str], pattern: dict, obj: dict) -> list[str]:
-    errors: list[str] = []
+def check_string(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+    syntax = pattern.get("syntax", None)
+    if syntax != None and not re.match(syntax, value):
+        logger.print_err(f"Invalid syntax for key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
+
+def check_list(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+    if not isinstance(value, list):
+        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a list.")
+    elif "not_empty" in pattern.get("tags", []):
+        if len(value) == 0:
+            logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should not be empty.")
+
+def check_object(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+    if not isinstance(value, dict):
+        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be an object.")
+    else:
+        for key, element in pattern.get("elements", {}).items():
+            check_key(tag_path, path + [key], element, value, logger)
+
+def check_bool(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+    if not isinstance(value, bool):
+        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a boolean.")
+    elif value != pattern.get("value", False):
+        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be {pattern.get('value', False)}.")
+
+def check_key(tag_path: str, path: list[str], pattern: dict, obj: dict, logger: Logger):
     type = pattern.get("type", None)
     value = obj.get(path[-1], None)
     if value == None and pattern.get("optional", True) == False:
-        errors.append(f"   {Fore.red} Missing key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.{Style.reset}")
+        logger.print_err(f"Missing key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
     elif pattern.get("optional", True) == False:
         if type == "string":
-            syntax = pattern.get("syntax", None)
-            if syntax != None and not re.match(syntax, value):
-                errors.append(f"   {Fore.red} Invalid syntax for key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.{Style.reset}")
-
+            check_string(value, path, pattern, tag_path, logger)
         elif type == "list":
-            if not isinstance(value, list):
-                errors.append(f"   {Fore.red} Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a list.{Style.reset}")
-            elif "not_empty" in pattern.get("tags", []):
-                if len(value) == 0:
-                    errors.append(f"   {Fore.red} Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should not be empty.{Style.reset}")
-
-        if type == "object":
-            if not isinstance(value, dict):
-                errors.append(f"   {Fore.red} Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be an object.{Style.reset}")
-            else:
-                for key, element in pattern.get("elements", {}).items():
-                    errors.extend(check_key(tag_path, path + [key], element, value))
-
-        if type == "bool":
-            if not isinstance(value, bool):
-                errors.append(f"   {Fore.red} Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a boolean.{Style.reset}")
-            elif value != pattern.get("value", False):
-                errors.append(f"   {Fore.red} Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be {pattern.get('value', False)}.{Style.reset}")
-
-    return errors
+            check_list(value, path, pattern, tag_path, logger)
+        elif type == "object":
+            check_object(value, path, pattern, tag_path, logger)
+        elif type == "bool":
+            check_bool(value, path, pattern, tag_path, logger)
 

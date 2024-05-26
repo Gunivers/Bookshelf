@@ -13,6 +13,7 @@ from jinja2 import Environment, FileSystemLoader, Template
 
 from dependencies.metadata_helper import compute_metadata, FeatureMetadata, ModuleMetadata
 from dependencies.check_module_metadata_file import check_module
+from logger.logger import Logger
 
 
 @dataclass
@@ -22,28 +23,26 @@ class UpdateDTO:
 
 
 def generate(module_manager: ModuleManager):
-    print(f'🧩 The following modules will be analyzed:{Fore.dark_gray}')
-    print("\n".join(["    " + str(module.path.relative_to(definitions.ROOT_DIR)) for module in module_manager.get()]) + Style.reset)
+    logger = Logger()
+    logger.print_step(f'The following modules will be analyzed:', '🧩')
+    logger.print_log(*[str(module.path.relative_to(definitions.ROOT_DIR)) for module in module_manager.get()])
 
 
     features: list[Feature] = module_manager.get_all_features()
     getter = FunctionCallGetter()
 
     feature_set: VisitableFeatureSet = getter.build_function_call_tree(features)
-    print(f"📦 Found {len(feature_set.features)} features:{Fore.dark_gray}")
-    print("\n".join(["    " + tag.mc_path for tag in feature_set.features]) + Style.reset)
+    logger.print_step(f"Found {len(feature_set.features)} features:", "📦")
+    logger.print_log(*[tag.mc_path for tag in feature_set.features])
 
-    print("⏳ Generating their metadata file…")
+    logger.print_step("Generating their metadata file…", '⏳')
 
-    errors = compute(feature_set, generate_file)
+    compute(feature_set, generate_file, logger)
 
-    if errors:
-        print(f"❌ Done with errors.")
-    else:
-        print(f"✅ Done!")
+    return logger.print_done()
 
 
-def compute(feature_set: VisitableFeatureSet, result_callback: Callable[[Path, str], bool]) -> bool:
+def compute(feature_set: VisitableFeatureSet, result_callback: Callable[[Path, str], bool], logger: Logger):
     """
         Compute the metadata files for the modules and features of the given module manager and feature set.
         Each time a module/feature is computed, the result_callback is called with the location to store the file and the metadata in a YAML format.
@@ -55,40 +54,36 @@ def compute(feature_set: VisitableFeatureSet, result_callback: Callable[[Path, s
 
     env = Environment(loader=FileSystemLoader(os.path.join(definitions.ROOT_DIR, "scripts", "src", "dependencies", "templates")))
 
-    errors = False
     for module in module_dependencies.values():
-        params, err = compute_module_metadata(module, env, result_callback)
-        errors = errors or err
-        if not err and params:
+        logger.new_error_context()
+        params = compute_module_metadata(module, env, result_callback, logger)
+        if not logger.reduce_error_context() and params:
             feature_params: list[dict] = []
-            in_module_errors = False
+            logger.new_error_context()
             for feature in module.features:
-                result = compute_feature_metadata(feature, params["weak_dependencies"], env)
+                result = compute_feature_metadata(feature, params["weak_dependencies"], logger)
                 if result:
                     feature_params.append(result)
-                else:
-                    in_module_errors = True
-            if not in_module_errors:
-                errors | result_callback(compute_path(module.path, "features"), generate_yaml({"features": feature_params}, env, "features.jinja"))
+            if not logger.reduce_error_context():
+                result_callback(compute_path(module.path, "features"), generate_yaml({"features": feature_params}, env, "features.jinja"), logger)
             else:
-                print(f"    {Fore.red}Errors when computing metadata for the features of the module '{module.namespace}'. The features metadata for this module has not been processed.{Style.reset}")
+                logger.print_err(f"Errors when computing metadata for the features of the module '{module.namespace}'. The features metadata for this module has not been processed.", count=False)
         else:
-            errors = True
-            print(f"    {Fore.red}Errors when computing metadata for the module '{module.namespace}'. The module metadata and its features metadata have not been processed.{Style.reset}")
-
-    return errors
+            logger.print_err(f"Errors when computing metadata for the module '{module.namespace}'. The module metadata and its features metadata have not been processed.", count=False)
 
 
-def compute_module_metadata(module: ModuleMetadata, env: Environment, result_callback: Callable[[Path, str], bool]) -> Tuple[dict, bool]:
-    print(f"    {Fore.dark_gray}Computing metadata for module " + module.namespace + f".{Style.reset}")
-    result = check_module(Module(path=module.path, namespace=module.namespace))
-    if not isinstance(result, list):
+
+def compute_module_metadata(module: ModuleMetadata, env: Environment, result_callback: Callable[[Path, str], bool], logger: Logger) -> dict:
+    logger.print_log(f"Computing metadata for module {module.namespace}.")
+    logger.new_error_context()
+    result = check_module(Module(path=module.path, namespace=module.namespace), logger)
+    if not logger.reduce_error_context():
         documentation = result.get("documentation", None)
         description = result.get("description", None)
         display_name = result.get("display_name", None)
         name = module.namespace
         dependencies = [tag.mc_path for tag in module.dependencies]
-        dependencies, weak_dependencies = compute_dependencies(module.dependencies, result.get("weak_dependencies", []), module.name, "module", True)
+        dependencies, weak_dependencies = compute_dependencies(module.dependencies, result.get("weak_dependencies", []), module.name, "module", True, logger)
         features = [feature.name for feature in module.features]
         params = {
             "documentation": documentation,
@@ -99,31 +94,25 @@ def compute_module_metadata(module: ModuleMetadata, env: Environment, result_cal
             "weak_dependencies":weak_dependencies,
             "features": features
         }
-        result = result_callback(compute_path(module.path, "module"), generate_yaml(params, env, "module.jinja"))
-        return params, result
-    else:
-        print("\n".join(["    " + error for error in result]))
-        return None, True
+        result = result_callback(compute_path(module.path, "module"), generate_yaml(params, env, "module.jinja"), logger)
+        return params
 
 
-def compute_feature_metadata(feature: FeatureMetadata, weak_dependencies: list[str], env: Environment) -> dict | bool:
-    print(f"    {Fore.dark_gray}Computing feature for module " + feature.mc_path + f".{Style.reset}")
-    result = check_feature(feature.this)
-    if not isinstance(result, list):
+def compute_feature_metadata(feature: FeatureMetadata, weak_dependencies: list[str], logger: Logger) -> dict:
+    logger.print_log(f"Computing feature for module " + feature.mc_path + f".")
+    logger.new_error_context()
+    result = check_feature(feature.this, logger)
+    if not logger.reduce_error_context():
         documentation = result.get("documentation", None)
-        # description = result.get("description", None)
-        # display_name = result.get("display_name", None)
         name = feature.name
         dependencies = [tag.mc_path for tag in feature.dependencies]
-        dependencies, weak_dependencies = compute_dependencies(feature.dependencies, weak_dependencies, feature.name, "module", False)
+        dependencies, weak_dependencies = compute_dependencies(feature.dependencies, weak_dependencies, feature.name, "module", False, logger)
         authors = result.get("authors", None)
         contributors = result.get("contributors", None)
         created: UpdateDTO = UpdateDTO(date=result.get("created").get("date"), version=result.get("created").get("minecraft_version"))
         updated: UpdateDTO = UpdateDTO(date=result.get("updated").get("date"), version=result.get("updated").get("minecraft_version"))
         params = {
             "documentation": documentation,
-            # "description": description,
-            # "display_name": display_name,
             "name": name,
             "dependencies": dependencies,
             "weak_dependencies": weak_dependencies,
@@ -133,12 +122,9 @@ def compute_feature_metadata(feature: FeatureMetadata, weak_dependencies: list[s
             "updated": updated
         }
         return params
-    else:
-        print("\n".join(["    " + error for error in result]))
-        return False
 
 
-def compute_dependencies(dependencies: set[VisitableFunctionTag], weak_dependencies: set[str], name: str, type: str, check_non_use: bool) -> Tuple[set[str], set[str]]:
+def compute_dependencies(dependencies: set[VisitableFunctionTag], weak_dependencies: set[str], name: str, type: str, check_non_use: bool, logger: Logger) -> Tuple[set[str], set[str]]:
     if not dependencies:
         return None, weak_dependencies
     if not weak_dependencies:
@@ -152,7 +138,7 @@ def compute_dependencies(dependencies: set[VisitableFunctionTag], weak_dependenc
             dependencies.remove(tag)
     diff = weak_dependencies - used_weak_dependencies
     if check_non_use and len(diff) > 0:
-            print(f"    {Fore.yellow}{type.capitalize()} {name} has weak dependencies that are not used: {",".join(diff)}.{Style.reset}")
+            logger.print_warn(f"{type.capitalize()} {name} has weak dependencies that are not used: {",".join(diff)}.")
     dependencies = [dependency.mc_path for dependency in dependencies]
     weak_dependencies = weak_dependencies
     return dependencies or None, weak_dependencies or None
@@ -166,7 +152,7 @@ def compute_path(path: Path, filename: str) -> Path:
     return Path(os.path.join(path, ".metadata", "generated", filename + '.yml'))
 
 
-def generate_file(path: Path, content: str):
+def generate_file(path: Path, content: str, logger: Logger):
     """
     Generate a file at the given path with the given content.
     path: The path of the file to generate.
@@ -175,4 +161,3 @@ def generate_file(path: Path, content: str):
     os.makedirs(path.parent, exist_ok=True)
     with open(os.path.join(path), "w") as f:
         f.write(content)
-    return False

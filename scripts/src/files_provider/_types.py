@@ -75,9 +75,9 @@ class DataCategory(Enum):
 
 def build_artifact(real_path: Path) -> Optional[Artifact]:
     from files_provider.utils import parse_real_path
-    mc_path, category = parse_real_path(real_path)
-    if category:
-        return category.value.clazz(real_path, mc_path)
+    result = parse_real_path(real_path)
+    if result:
+        return result[1].value.clazz(real_path, result[0])
     return None
 
 

@@ -1,4 +1,5 @@
 import re
+from logger.logger import Logger
 import yaml
 from files_provider.files_provider import Module
 import definitions
@@ -29,54 +30,45 @@ lines = {
     }
 }
 
-def check_metadata_yaml(yaml: dict, path) -> list[str]:
-    errors = []
+def check_metadata_yaml(yaml: dict, path, logger: Logger):
     for key, value in lines.items():
         key_value = yaml.get(key, None)
         if not key_value and not value["optional"]:
-            errors.append(f"{Fore.red} Metadata file for module '{path}' is missing required key '{key}'.{Style.reset}")
+            logger.print_err(f"Metadata file for module '{path}' is missing required key '{key}'.")
         elif key_value:
             if value.get("elements", None):
                 for element in key_value:
-                    __check_metadata_value(key, element, value["elements"]["syntax"], path, errors)
+                    __check_metadata_value(key, element, value["elements"]["syntax"], path, logger)
             else:
-                __check_metadata_value(key, key_value, value["syntax"], path, errors)
-    return errors
+                __check_metadata_value(key, key_value, value["syntax"], path, logger)
 
-def __check_metadata_value(key: str, value: str, syntax: str, path: str, errors: list[str]):
+
+def __check_metadata_value(key: str, value: str, syntax: str, path: str, logger: Logger):
     if not re.match(syntax, value):
-        errors.append(f"{Fore.red} Metadata file for module '{path}' has an invalid value for '{key}'. Found '{value}', should match regex '{syntax}'.{Style.reset}")
+        logger.print_err(f"Metadata file for module '{path}' has an invalid value for '{key}'. Found '{value}', should match regex '{syntax}'.")
 
-def check_module(module: Module) -> list[str] | dict:
-    errors = []
+
+def check_module(module: Module, logger: Logger) -> dict:
     metadata_path = module.path / ".metadata" / "metadata.yml"
     path = module.path.relative_to(definitions.ROOT_DIR)
     if not metadata_path.exists():
-        errors.append(f"{Fore.red}Metadata file not found for module '{path}'.{Style.reset}")
+        logger.print_err(f"Metadata file not found for module '{path}'.")
     else:
         with open(metadata_path, "r") as f:
             content = yaml.safe_load(f)
-            errors.extend(check_metadata_yaml(content, path))
-            if len(errors) == 0:
+            check_metadata_yaml(content, path, logger)
+            if not logger.has_level_errors():
                 return content
-    return errors
 
 
 def check(modules: list[Module]) -> bool:
-    print(f'🧩 The following modules will be analyzed: {Fore.dark_gray}')
-    print("\n".join([ "    " + str(module.path.relative_to(definitions.ROOT_DIR)) for module in modules]) + Style.reset)
+    logger = Logger()
+    logger.print_step('The following modules will be analyzed:', '🧩')
+    logger.print_log(*[str(module.path.relative_to(definitions.ROOT_DIR)) for module in modules])
 
-    errors: list[str] = []
-
+    logger.print_step("Checking their metadata file…", "⏳")
     for module in modules:
-        result = check_module(module)
-        if isinstance(result, list):
-            errors.extend(result)
+        logger.print_log(f"Checking module '{module.path.relative_to(definitions.ROOT_DIR)}'.")
+        check_module(module, logger)
 
-    if len(errors) > 0:
-        print("\n".join(errors))
-        print (f"❌ Done with errors.")
-        return True
-    else:
-        print(f"✅ Done!")
-        return False
+    return logger.print_done()
