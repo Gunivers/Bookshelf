@@ -132,15 +132,18 @@ class Logger:
         message = "Done"
         if self.__errors > 0:
             prefix = "❌ "
-            message += f" with {self.__errors} errors."
+            message += f" with {self.__errors} errors"
             if self.__warnings > 0:
-                message += f" and {self.__warnings} warnings."
+                message += f" and {self.__warnings} warnings"
         elif self.__warnings > 0:
             prefix = "⚠️ "
-            message += f" with {self.__warnings} warnings."
+            message += f" with {self.__warnings} warnings"
         else:
             prefix = "✅ "
+        if self.__errors == 0 and self.__warnings == 0:
             message += "!"
+        else:
+            message += "."
         self.__level = 0
         self.__print(prefix + message)
         return self.__errors > 0

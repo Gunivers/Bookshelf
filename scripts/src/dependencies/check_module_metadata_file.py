@@ -1,25 +1,42 @@
 import json
+from pathlib import Path
 import re
+from typing import Callable
 from logger.logger import Logger
 from files_provider.files_provider import Module
 import definitions
 
+
+def check_icon(name: str, path: str, logger: Logger) -> bool:
+    icon_path = path / ".metadata" / name
+    if not icon_path.exists():
+        logger.print_err(f"Icon '{name}' is missing at path '{path.relative_to(definitions.ROOT_DIR)}'.")
+        return False
+    return True
+
+
 lines = {
      "name": {
-          "syntax": r"^bs\.[a-z0-1-_]+$",
-          "optional": False
+        "syntax": r"^bs\.[a-z0-1-_]+$",
+        "optional": False
     },
      "display_name": {
         "syntax": r"^.*$",
-          "optional": False
+        "optional": False
      },
      "description": {
         "syntax": r"^.*$",
-          "optional": False
+        "optional": False
+     },
+     "icon": {
+         "syntax": r"^.*$",
+         "validator": check_icon,
+         "optional": True,
+         "warning_if_missing": True
      },
      "documentation": {
         "syntax": re.escape(definitions.DOC_URL) + r".*$",
-          "optional": False
+        "optional": False
      },
      "weak_dependencies": {
          "elements": {
@@ -29,22 +46,30 @@ lines = {
     }
 }
 
-def check_metadata_json(yaml: dict, path, logger: Logger):
+def check_metadata_json(yaml: dict, path: Path, logger: Logger):
+    relative_path = path.relative_to(definitions.ROOT_DIR)
     for key, value in lines.items():
         key_value = yaml.get(key, None)
         if not key_value and not value["optional"]:
-            logger.print_err(f"Metadata file for module '{path}' is missing required key '{key}'.")
+            logger.print_err(f"Metadata file for module '{relative_path}' is missing required key '{key}'.")
         elif key_value:
             if value.get("elements", None):
                 for element in key_value:
-                    __check_metadata_value(key, element, value["elements"]["syntax"], path, logger)
+                    __check_metadata_value(key, element, value["elements"]["syntax"], path, value.get("validator", None), logger)
             else:
-                __check_metadata_value(key, key_value, value["syntax"], path, logger)
+                __check_metadata_value(key, key_value, value["syntax"], path, value.get("validator", None), logger)
+        else:
+            if value.get("warning_if_missing", False):
+                logger.print_warn(f"Metadata file for module '{relative_path}' is missing optional key '{key}'. You should consider adding it.")
 
 
-def __check_metadata_value(key: str, value: str, syntax: str, path: str, logger: Logger):
+def __check_metadata_value(key: str, value: str, syntax: str, path: str, validator: Callable[[str, str, Logger], bool] | None, logger: Logger):
     if not re.match(syntax, value):
-        logger.print_err(f"Metadata file for module '{path}' has an invalid value for '{key}'. Found '{value}', should match regex '{syntax}'.")
+        relative_path = path.relative_to(definitions.ROOT_DIR)
+        logger.print_err(f"Metadata file for module '{relative_path}' has an invalid value for '{key}'. Found '{value}', should match regex '{syntax}'.")
+    if validator:
+        validator(value, path, logger)
+
 
 
 def check_module(module: Module, logger: Logger) -> dict:
@@ -55,7 +80,7 @@ def check_module(module: Module, logger: Logger) -> dict:
     else:
         with open(metadata_path, "r") as f:
             content = json.load(f)
-            check_metadata_json(content, path, logger)
+            check_metadata_json(content, module.path, logger)
             if not logger.has_level_errors():
                 return content
 

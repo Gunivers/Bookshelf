@@ -3,6 +3,9 @@
   "display_name": "{{ display_name }}",
   "description": "{{ description }}",
   "documentation": "{{ documentation }}",
+  {%- if icon %}
+  "icon": "{{ icon }}",
+  {%- endif %}
   {%- if dependencies %}
   "dependencies": [
   {%- for dep in dependencies|sort() %}

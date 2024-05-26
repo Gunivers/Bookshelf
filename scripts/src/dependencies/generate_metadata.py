@@ -80,6 +80,9 @@ def compute_module_metadata(module: ModuleMetadata, env: Environment, result_cal
         documentation = result.get("documentation", None)
         description = result.get("description", None)
         display_name = result.get("display_name", None)
+        icon = result.get("icon", None)
+        if icon:
+            icon = "../" + icon
         name = module.namespace
         dependencies = [tag.mc_path for tag in module.dependencies]
         dependencies, weak_dependencies = compute_dependencies(module.dependencies, result.get("weak_dependencies", []), module.name, "module", True, logger)
@@ -89,6 +92,7 @@ def compute_module_metadata(module: ModuleMetadata, env: Environment, result_cal
             "description": description,
             "display_name": display_name,
             "name": name,
+            "icon": icon,
             "dependencies": dependencies,
             "weak_dependencies":weak_dependencies,
             "features": features
