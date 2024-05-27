@@ -4,36 +4,48 @@ html_theme.sidebar_secondary.remove: true
 
 # 📄 File format
 
-Each feature of Bookshelf implements documentation to
-provide additional information to developers and users. It must respect the following format:
+Each function of Bookshelf should have a header to indicate the license.
+If the function is the first function called in the feature (functions directly called by the function tag), the header should also specified the link to the feature documentation.
 
+Header to put at the beggining of each function:
 ```
-# INFO ------------------------------------------------------------------------
-# Copyright © <current year> Gunivers Community.
-
-# Authors: <<author 1>, <author 2>, ...>
-# Contributors: <<contributor 1>, <contributor 2>, ...>
-
-# Version: <system version>
-# Created: <jj>/<mm>/<yyyy> (<minecraft version>)
-# Last modification: <jj>/<mm>/<yyyy> (<minecraft version>)
-
-# Documentation: <https://link.to/documentation/page>
-# Dependencies  : <<dependency 1>, <dependency 2>, ...>
-# Note: <some notes>
-
-# CODE ------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) <YEAR> Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: <DOCUMENTATION>
+# ------------------------------------------------------------------------------------------------------------
 ```
 
-We can find various information about the function itself (the example is not exhaustive), of which the following is a complete list:
+The `<YEAR>` placeholder must be fill by the current year and the `<DOCUMENTATION>` placeholder by the link to the documentation of this specific feature.
 
-| Field | Description |
-|-------|-------------|
-| Authors | The list of authors of the function. |
-| Contributors | The list of contributors to the function. A contributor is someone who helps to create the function without developing it (the one who gives a track to realize the function or the one who fixes a bug for example). |
-| Version | Version version of the system, composed by 2 numbers: major version and minor version (`major.minor`). Minor is a change in a part of the code while major is a function overhaul.` |
-| Created | Date and minecraft version in which the system was originally created (for history purpose) |
-| Last modification | Date and minecraft version in which the system was modified for the last time |
-| Documentation | Link to the documentation of the function |
-| Dependencies | List of the dependencies |
-| Note | Allows you to provide additional information about the function such as a description of what the function does, how to use it if the use is particular, the behaviors of the function or the side effects of its use. |
+If the function is not a feature, the header looks like this:
+```
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+```
+
+If a Bookshelf contributor forgot to put a header at the beggining of a function, the CI/CD pipeline will reject the merge of the contribution in Bookshelf.
+To be sure the code meets the minimal requirements, see the [contribution validation page](project:contribution-validation.md).
