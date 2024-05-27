@@ -2,9 +2,9 @@ import requests
 import sys
 
 from pathlib import Path
-from contracts import DataProcessor
+from generators.contracts import DataProcessor
 
-from processors.biome import (
+from generators.processors.biome import (
     CreateTagsFiles,
     CreatePredicatesFiles,
     CreateTypesFile,

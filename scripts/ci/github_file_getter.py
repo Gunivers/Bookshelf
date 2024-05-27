@@ -1,7 +1,8 @@
 import json
 import os
-from pathlib import Path
 import subprocess
+
+from pathlib import Path
 
 
 def get_not_merged_files() -> list[Path]:
@@ -16,4 +17,4 @@ def get_not_merged_files() -> list[Path]:
     result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
     filePaths = result.splitlines()
 
-    return list(map(lambda path: Path(os.path.join(workspace, path)), filePaths))
+    return [ Path(workspace) / path for path in filePaths ]

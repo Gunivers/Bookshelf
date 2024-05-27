@@ -13,8 +13,11 @@ on:
         unlabeled
       ]
 
+env:
+  GITHUB_EVENT: ${{ toJSON(github.event) }}
+
 jobs:
-  build:
+  review-metadata:
     name: 🔍 Metadata Review
     runs-on: ubuntu-latest
     steps:
@@ -23,28 +26,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup environement variables
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -e scripts
-          python3 scripts/src/definitions.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      - name: 📑 Check function headers
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: python scripts/ci/check_function_headers.py
+      - name: Install dependencies
+        run: pip install -e ./scripts
 
-      - name: 📑 Check feature tag metadata
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: python scripts/ci/check_feature_tag_metadata.py
+      - name: Check installation
+        run: python -m pip list
 
-      - name: 📑 Check generated metadata
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: python scripts/ci/check_generated_metadata.py
+      - name: Check function headers
+        run: python scripts/ci/check_function_headers_wf.py
 
-      - name: 📑 Check module metadata files
-        env:
-          GITHUB_EVENT: ${{ toJSON(github.event) }}
-        run: python scripts/ci/check_metadata_files.py
+      - name: Check feature tag metadata
+        run: python scripts/ci/check_feature_tag_metadata_wf.py
+
+      - name: Check generated metadata
+        run: python scripts/ci/check_generated_metadata_wf.py
+
+      - name: Check module metadata files
+        run: python scripts/ci/check_metadata_files_wf.py

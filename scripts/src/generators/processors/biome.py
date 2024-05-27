@@ -1,6 +1,6 @@
 import math
 from collections import defaultdict
-from contracts import DataProcessor
+from generators.contracts import DataProcessor
 
 
 class CreateTagsFiles(DataProcessor):

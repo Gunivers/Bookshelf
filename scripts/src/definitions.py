@@ -1,6 +1,4 @@
-import os
 import yaml
-from mcunit import MCUnit
 from pathlib import Path
 
 
@@ -17,17 +15,3 @@ with open(ROOT_DIR / ".env.yml", 'r') as file:
     METADATA_FOLDER: str = config['metadata_folder']
     DOC_URL: str = config['doc_url']
     FEATURE_TAG_NAMESPACE: str = config['feature_tag_namespace']
-
-
-if __name__ == "__main__":
-    mcunit = MCUnit(MC_VERSION)
-    if env_file := os.getenv('GITHUB_ENV'):
-        with open(env_file, "a") as file:
-            file.write(f"MC_VERSION={MC_VERSION}\n")
-            file.write(f"WORLD_PATH={WORLD_PATH}\n")
-            file.write(f"ASSETS_PATH={ASSETS_PATH}\n")
-            file.write(f"BUILD_PATH={BUILD_PATH}\n")
-            file.write(f"DATAPACKS_PATH={DATAPACKS_PATH}\n")
-            file.write(f"TEST_PACKTEST={mcunit.packtest_url}\n")
-            file.write(f"TEST_FABRIC_API={mcunit.fabric_api_url}\n")
-            file.write(f"TEST_FABRIC_SERVER={mcunit.fabric_server_url}\n")

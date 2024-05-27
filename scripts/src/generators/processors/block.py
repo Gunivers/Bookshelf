@@ -1,5 +1,5 @@
 import math
-from contracts import DataProcessor
+from generators.contracts import DataProcessor
 
 ITEMS_DICT = {
     "minecraft:wall_torch": "minecraft:torch",

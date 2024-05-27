@@ -4,9 +4,9 @@ import sys
 
 from pathlib import Path
 from dataclasses import dataclass
-from contracts import DataProcessor
+from generators.contracts import DataProcessor
 
-from processors.block import (
+from generators.processors.block import (
     CreateTagsFiles,
     CreateBlockTableFile,
     CreateBlockTypesFile,
