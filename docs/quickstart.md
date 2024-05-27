@@ -28,7 +28,7 @@ We are actively searching for web developers to create the new version of the Bo
 ::::
 ::::{tab-item} 🔧 from Modrinth
 
-Bookshelf is available on [Modrinth](https://modrinth.com/datapack/bookshelf-library)! From Modrinth, you can only the whole datapacks (Bookshelf and/or Bookshelf Dev), that is a good option if you want to explore what Bookshelf can propose.
+Bookshelf is available on [Modrinth](https://modrinth.com/datapack/bookshelf-library)! From Modrinth, you can only download the whole datapacks (Bookshelf and/or Bookshelf Dev). This is a good option if you want to explore what Bookshelf can propose.
 
 You can also follow the project if you like it 😉.
 
