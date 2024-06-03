@@ -1,6 +1,6 @@
 from pathlib import Path
 import definitions
-from dependencies.generate_metadata import compute
+from metadata.generate_metadata import compute
 from files_provider.files_provider import Feature, ModuleManager
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import VisitableFeatureSet

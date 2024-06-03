@@ -26,6 +26,26 @@ class Manager[T]:
 
 
 @dataclass
+class DatapackManager(Manager[Datapack]):
+
+    def __init__(self, datapacks: list[Datapack]):
+        self._content = datapacks
+
+    def get_modules(self) -> 'ModuleManager':
+        modules: list[Module] = list()
+        for datapack in self._content:
+            modules.extend([ Module(module.name, Path(module.path)) for module in os.scandir(datapack.path / 'data') if module.is_dir() and module.name != 'minecraft'])
+        return ModuleManager(modules)
+
+    def get_separated_modules(self) -> list['ModuleManager']:
+        modules = self.get_modules().get()
+        result: list[ModuleManager] = []
+        for module in modules:
+            result.append(ModuleManager([module]))
+        return result
+
+
+@dataclass
 class ModuleManager(Manager[Module]):
 
     def __init__(self, modules: list[Module]):
@@ -76,6 +96,7 @@ class FilePathsManager(Manager[Path]):
         return ArtifactManager(result)
 
 
+ignore_datapacks = ["Bookshelf Examples", "Bookshelf World"]
 
 class FilesProvider:
 
@@ -86,3 +107,13 @@ class FilesProvider:
         gitLogCommand = f"git diff --name-only {baseSHA}...{headSHA}"
         result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
         return FilePathsManager(list(map(lambda path: Path(os.path.join(definitions.ROOT_DIR, path)), result.splitlines())))
+
+    def datapacks(self) -> DatapackManager:
+        return DatapackManager([ Datapack(datapack.name, Path(datapack.path)) for datapack in os.scandir(definitions.DATAPACKS_PATH) if datapack.is_dir() and datapack.name not in ignore_datapacks])
+
+    def separated_datapacks(self) -> list[DatapackManager]:
+        datapacks = self.datapacks().get()
+        result: list[DatapackManager] = []
+        for datapack in datapacks:
+            result.append(DatapackManager([datapack]))
+        return result

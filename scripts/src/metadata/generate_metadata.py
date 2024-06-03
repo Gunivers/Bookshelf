@@ -3,15 +3,15 @@ from functools import partial
 import os
 from pathlib import Path
 from typing import Callable, Tuple
-from check_feature_tag.check_feature_tag import check_feature
+from check_feature_tag.check_feature_tag import __check_feature
 from files_provider.files_provider import Feature, ModuleManager, Module
 from function_call_getter._types import VisitableFeatureSet, VisitableFunctionTag, Visitor, VisitableFeature
 import definitions
 from function_call_getter.function_call_getter import FunctionCallGetter
 from jinja2 import Environment, FileSystemLoader
 
-from dependencies.metadata_helper import compute_metadata, FeatureMetadata, ModuleMetadata
-from dependencies.check_module_metadata_file import check_module
+from metadata.metadata_helper import compute_metadata, FeatureMetadata, ModuleMetadata
+from metadata.check_module_metadata_file import check_module
 from logger.logger import Logger
 
 
@@ -104,7 +104,7 @@ def compute_module_metadata(module: ModuleMetadata, env: Environment, result_cal
 def compute_feature_metadata(feature: FeatureMetadata, weak_dependencies: list[str], logger: Logger) -> dict:
     logger.print_log(f"Computing feature for module " + feature.mc_path + f".")
     logger.new_error_context()
-    result = check_feature(feature.this, logger)
+    result = __check_feature(feature.this, logger)
     if not logger.reduce_error_context():
         documentation = result.get("documentation", None)
         name = feature.name

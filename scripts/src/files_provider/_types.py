@@ -53,7 +53,7 @@ class Tag(Artifact[dict]):
 
 class Feature(Artifact[dict]):
 
-    def __init__(self, real_path: Path, mc_path: str, content: list[str]):
+    def __init__(self, real_path: Path, mc_path: str, content: dict):
         super().__init__(real_path, mc_path)
         self._content = content
 
@@ -84,6 +84,14 @@ def build_artifact(real_path: Path) -> Optional[Artifact]:
 @dataclass
 class Module:
     namespace: str
+    path: Path
+
+    def __hash__(self):
+        return hash(self.path)
+
+@dataclass
+class Datapack:
+    name: str
     path: Path
 
     def __hash__(self):

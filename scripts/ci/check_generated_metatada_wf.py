@@ -1,5 +1,5 @@
 from pathlib import Path
-from dependencies.check_generated_metadata import check
+from metadata.check_generated_metadata import check
 from files_provider.files_provider import FilesProvider
 
 from github_file_getter import get_not_merged_files
