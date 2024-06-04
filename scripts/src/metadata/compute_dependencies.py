@@ -12,8 +12,8 @@ from logger.logger import Logger
 
 @dataclass
 class Dependencies:
-    dependencies: set[str]
-    weak_dependencies: set[str]
+    dependencies: list[str]
+    weak_dependencies: list[str]
 
 @dataclass
 class ModuleDependencies:
@@ -40,11 +40,11 @@ def compute_dependencies(module_manager: ModuleManager, weak_dependencies: set[s
         features_dependencies: dict[str, Dependencies] = {}
         for feature, feature_references in feature_dependencies.items():
             dependencies, weak_dep = __compute_dependencies([dep.namespace for dep in feature_references.dependencies], weak_dependencies, feature, "feature", True, logger)
-            features_dependencies[feature] = Dependencies(dependencies, weak_dep)
+            features_dependencies[feature] = Dependencies(list(dependencies) if dependencies else None, list(weak_dep) if weak_dependencies else None)
 
         # Structure module dependencies
         dependencies, weak_dependencies = __compute_dependencies(module_dependencies, weak_dependencies, module_manager.get()[0].namespace, "module", False, logger)
-        return ModuleDependencies(Dependencies(dependencies, weak_dependencies), features_dependencies)
+        return ModuleDependencies(Dependencies(list(dependencies) if dependencies else None, list(weak_dependencies) if weak_dependencies else None), features_dependencies)
 
 @dataclass
 class FeatureReferences:
@@ -81,7 +81,6 @@ def __compute_dependencies(dependencies: set[str], weak_dependencies: set[str], 
     diff = weak_dependencies - used_weak_dependencies
     if check_non_use and len(diff) > 0:
             logger.print_warn(f"{type.capitalize()} {name} has weak dependencies that are not used: {",".join(diff)}.")
-    # dependencies = [dependency.mc_path for dependency in dependencies]
     weak_dependencies = weak_dependencies
     return deps or None, weak_dependencies or None
 

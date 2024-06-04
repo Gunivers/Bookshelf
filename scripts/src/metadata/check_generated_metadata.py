@@ -1,6 +1,8 @@
+from functools import partial
 from pathlib import Path
 import definitions
-from metadata.generate_metadata import compute
+from metadata.build_metadata import DatapackMetadata, build
+from metadata.generate_metadata import adapt_for_manifest, generate_feature_metadata, generate_manifest, generate_module_metadata, sort_metadata
 from files_provider.files_provider import Feature, ModuleManager
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import VisitableFeatureSet
@@ -22,13 +24,19 @@ def check(module_manager: ModuleManager) -> bool:
 
     logger.print_step("Computing their metadata file…", "⏳")
 
-    compute(feature_set, comparing, logger)
+    metadata: list[DatapackMetadata] = build(logger)
+    sort_metadata(metadata)
+    generate_manifest(adapt_for_manifest(metadata), partial(__comparing, logger))
+    for datapack in metadata:
+        for module in datapack.modules:
+            generate_module_metadata(module, partial(__comparing, logger))
+            generate_feature_metadata(module.features, module.module_path, partial(__comparing, logger))
 
     return logger.print_done()
 
 
 
-def comparing(path: Path, content: str, logger: Logger):
+def __comparing(logger: Logger, content: str, path: Path):
     if not path.exists():
         logger.print_err(f"Metadata file '{path.relative_to(definitions.ROOT_DIR)}' was not generated. Please run the generator and retry after.")
     else:

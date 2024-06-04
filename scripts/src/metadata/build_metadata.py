@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import json
+from pathlib import Path
 from typing import Tuple
 from check_feature_tag.check_feature_tag import check, check_feature
 from files_provider._types import Datapack
@@ -24,6 +25,8 @@ class FeatureMetadata:
     updated: Updated
     dependencies: list[str] | None
     weak_dependencies: list[str] | None
+    feature_path: Path
+    mc_path: str
 
 @dataclass
 class ModuleMetadata:
@@ -35,6 +38,7 @@ class ModuleMetadata:
     dependencies: list[str] | None
     weak_dependencies: list[str] | None
     features: list[FeatureMetadata]
+    module_path: Path
 
 @dataclass
 class DatapackMetadata:
@@ -44,9 +48,8 @@ class DatapackMetadata:
     modules: list[ModuleMetadata]
 
 
-def build() -> list[DatapackMetadata]:
+def build(logger: Logger = Logger()) -> list[DatapackMetadata]:
     managers = FilesProvider().separated_datapacks()
-    logger = Logger()
     datapack_metadata = []
 
     for manager in managers:
@@ -85,9 +88,6 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
     logger.new_error_context()
     result = check_module(module, logger)
 
-    # if logger.reduce_error_context():
-    #     logger.print_err(f"Errors when computing metadata for the module '{module.namespace}'. The module metadata and its features metadata have not been processed.", count=False)
-    #     return
     if not logger.reduce_error_context():
         documentation = result.get("documentation", None)
         description = result.get("description", None)
@@ -104,7 +104,7 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
             if met:
                 feature_metadata.append(met)
 
-        return ModuleMetadata(module.namespace, display_name, description, documentation, icon, module_dep.dependencies.dependencies, module_dep.dependencies.weak_dependencies, feature_metadata)
+        return ModuleMetadata(module.namespace, display_name, description, documentation, icon, module_dep.dependencies.dependencies, module_dep.dependencies.weak_dependencies, feature_metadata, module.path)
 
 
 def build_features_metadata(feature: Feature, dependencies: Dependencies, logger: Logger) -> FeatureMetadata:
@@ -116,4 +116,4 @@ def build_features_metadata(feature: Feature, dependencies: Dependencies, logger
         contributors = result.get("contributors", None)
         created = Updated(result.get("created", {}).get("date", None), result.get("created", {}).get("minecraft_version", None))
         updated = Updated(result.get("updated", {}).get("date", None), result.get("updated", {}).get("minecraft_version", None))
-        return FeatureMetadata(feature.name, documentation, authors, contributors, created, updated, dependencies.dependencies, dependencies.weak_dependencies)
+        return FeatureMetadata(feature.name, documentation, authors, contributors, created, updated, dependencies.dependencies, dependencies.weak_dependencies, feature.real_path, feature.mc_path)
