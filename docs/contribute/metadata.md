@@ -4,11 +4,11 @@ html_theme.sidebar_secondary.remove: true
 
 # 🔖 Metadata
 
-To facilitate the work of bots such as the incoming Bookshelf Manager, each feature, module and data pack should declare some metadata.
+To facilitate the work of bots such as the incoming Bookshelf Manager, each feature, module, and data pack should declare some metadata.
 The Bookshelf contributor should specify some of them manually.
-These metadata are then used to produce more complete metadata files a bot can consume.
-To generate the full metadata, the Bookshelf contributor must execute the metadata generators in `scripts/all.ipynb` notebook (requires Python, see `scripts/pyproject.toml` file).
-All metadata are verified by the CI/CD pipeline (see [contribution validation page](project:../contribute/contribution-validation.md)).
+These metadata are then used to produce more complete metadata files that a bot can consume.
+To generate the full metadata, the Bookshelf contributor must execute the metadata generators in the `scripts/all.ipynb` notebook (requires Python, see the `scripts/pyproject.toml` file).
+All metadata are verified by the CI/CD pipeline (see the [contribution validation page](project:../contribute/contribution-validation.md)).
 
 ## ⭐ Feature metadata
 
@@ -44,7 +44,7 @@ The feature metadata are directly placed on the function tag of the feature:
 |-------|-------------|---------- |
 | feature | Indicate if the current function tag is the end point of a feature or not. | yes |
 | documentation | The link to the documentation of the feature. | yes |
-| authors | The list of authors of the featyre. Cannot be empty. | yes |
+| authors | The list of authors of the feature. Cannot be empty. | yes |
 | contributors | The list of contributors to the feature. A contributor is someone who helps to create the function without developing it (the one who gives a track to realize the function or the one who fixes a bug for example). Cannot be empty. | no |
 | created | Date and minecraft version in which the system was originally created (for history purpose) | yes |
 | updated | Date and minecraft version in which the system was modified for the last time | yes |
@@ -82,13 +82,10 @@ The generated metadata are placed in `<module>/data/.metadata/generated/module.j
 
 # 📦 Datapack metadata
 
-The datapack metadata are directly placed in the `pack.mcmeta` file:
+The datapack metadata are the `pack.mcmeta` file:
 
 ```json
 {
-  "__bookshelf__": {
-    "display_name": "<DISPLAY NAME>"
-  },
   "pack": {
     "pack_format": 41,
     "description": "Bookshelf - Library designed for mapmakers"
@@ -96,7 +93,14 @@ The datapack metadata are directly placed in the `pack.mcmeta` file:
 }
 
 ```
+
 | Field | Description | Mandatory |
 |-------|-------------|---------- |
-| display_name | The display name of the module. For instance: `Bookshelf`. | yes |
-```
+| pack_format | See the [Minecraft wiki](https://minecraft.wiki/w/Pack_format). | yes |
+| description | A description for the datapack. | yes |
+
+
+# 📜 Manifest
+
+The manifest is the file containing the metadata of all datapacks, modules, and features of Bookshelf.
+This manifest is automatically generated and it is located at `generated/manifest.json`.
