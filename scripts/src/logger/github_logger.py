@@ -26,7 +26,7 @@ class GithubLogger:
             self.__context_error[-1] += len(messages)
         caller, line = get_caller()
         for m in messages:
-            self.__print(f"::error file={caller},line={line}::{m}")
+            self.__print(f"::notice file={caller},line={line}::{m}")
 
     def print_success(self, *messages: list[str]):
         """
@@ -155,6 +155,7 @@ class GithubLogger:
         else:
             message += "."
         self.__level = 0
+        print("::endgroup::")
         self.__print(prefix + message)
         return self.__errors > 0
 
