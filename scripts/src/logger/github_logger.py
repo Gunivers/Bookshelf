@@ -42,14 +42,16 @@ class GithubLogger:
         """
         if count:
             self.__warnings += len(messages)
-        self.print_custom(*messages, color=Fore.yellow)
+        caller, line = get_caller()
+        for m in messages:
+            self.__print(f"::warning file={caller},line={line}::{m}")
 
     def print_log(self, *messages: list[str]):
         """
         Print a log message, in dark gray.
         :param messages: the messages to print
         """
-        self.print_custom(*messages, color=Fore.dark_gray)
+        self.print_custom(*messages)
 
 
     def print_step(self, message: str, emoji: str, manage_indent: bool = True):
@@ -61,8 +63,10 @@ class GithubLogger:
         :param manage_indent: if False, do not update the indentation.
         """
         if manage_indent:
+            if self.__level > 0:
+                print("::endgroup::")
             self.unindent()
-            self.print_custom(message, emoji=emoji)
+            print(f"::group::{emoji} {message}")
             self.indent()
         else:
             self.print_custom(message, emoji=emoji)
