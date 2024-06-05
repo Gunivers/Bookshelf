@@ -1,4 +1,22 @@
 {
+  "__bookshelf__": {
+    "feature": true,
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html#get-temperature",
+    "authors": [
+      "theogiraudet"
+    ],
+    "contributors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "????/??/??",
+      "minecraft_version": "1.14"
+    },
+    "updated": {
+      "date": "2024/04/22",
+      "minecraft_version": "1.20.5"
+    }
+  },
   "values": [
     "bs.biome:get/temperature/get_temperature"
   ]
