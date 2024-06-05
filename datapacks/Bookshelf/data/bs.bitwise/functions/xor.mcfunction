@@ -1,22 +1,25 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#logical-operators
+# ------------------------------------------------------------------------------------------------------------
 
-# Authors: theogiraudet, Aksiome
-# Contributors:
-
-# Version: 1.0
-# Created: ??/??/???? (1.16)
-# Last modification: 25/08/2023 (23w33a)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#logical-operators
-# Dependencies:
 # Note:
 # - This function returns the exclusive or bitwise between two numbers.
 # - Example: -178 ^ 32165 = -32021
 # - Formula: a ^ b = (a + b) - 2*(a & b)
 # The result is the number composed by putting one at all bits where the value in the two binary representations of these numbers is different.
-
-# CODE ------------------------------------------------------------------------
 
 scoreboard players operation #bitwise.and.a bs.data = $bitwise.xor.a bs.in
 execute store result score $bitwise.xor bs.out run scoreboard players operation #bitwise.and.b bs.data = $bitwise.xor.b bs.in

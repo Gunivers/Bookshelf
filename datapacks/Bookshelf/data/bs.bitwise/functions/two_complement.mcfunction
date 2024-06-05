@@ -1,15 +1,20 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#complement-to-2
+# ------------------------------------------------------------------------------------------------------------
 
-# Authors: theogiraudet
-# Contributors: Aksiome
-
-# Version: 1.1
-# Created: ??/??/???? (1.16)
-# Last modification: 27/02/2024 (1.20.4)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#complement-to-2
-# Dependencies:
 # Note:
 # - This function returns the two's complement of a number
 # - Example: -1 -> 2147483647
@@ -19,8 +24,6 @@
 # An other way to compute this: 2^n - abs(x) where n is the number of bit wanted to represent the binary number of the complement.
 # In Minecraft, numbers are stored in a integer type (4 bytes), i.e. a 2^n of 2^31 - 1. In this case, we need to take 2^32 to include
 # all numbers but 2^32 can't be store in an integer, so we modify a bit the operation for: (2^n - 1) - abs(x) + 1.
-
-# CODE ------------------------------------------------------------------------
 
 scoreboard players operation $bitwise.two_complement bs.out = $bitwise.two_complement.n bs.in
 execute if score $bitwise.two_complement bs.out matches 1.. run return run scoreboard players get $bitwise.two_complement bs.out
