@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import re
 from typing import Callable
+from logger import newLogger
 from logger.logger import Logger
 from files_provider.files_provider import Module
 import definitions
@@ -86,7 +87,7 @@ def check_module(module: Module, logger: Logger) -> dict:
 
 
 def check(modules: list[Module]) -> bool:
-    logger = Logger()
+    logger = newLogger()
     logger.print_step('The following modules will be analyzed:', '🧩')
     logger.print_log(*[str(module.path.relative_to(definitions.ROOT_DIR)) for module in modules])
 

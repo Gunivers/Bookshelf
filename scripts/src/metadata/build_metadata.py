@@ -5,6 +5,7 @@ from typing import Tuple
 from check_feature_tag.check_feature_tag import check, check_feature
 from files_provider._types import Datapack
 from files_provider.files_provider import DatapackManager, FilesProvider, ModuleManager
+from logger import newLogger
 from logger.logger import Logger
 from metadata.check_module_metadata_file import check_module
 from metadata.compute_dependencies import Dependencies, ModuleDependencies, compute_dependencies
@@ -48,7 +49,7 @@ class DatapackMetadata:
     modules: list[ModuleMetadata]
 
 
-def build(logger: Logger = Logger()) -> list[DatapackMetadata]:
+def build(logger: Logger = newLogger()) -> list[DatapackMetadata]:
     managers = FilesProvider().separated_datapacks()
     datapack_metadata = []
 

@@ -4,6 +4,7 @@ from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, Visitor)
 import definitions
+from logger import newLogger
 from logger.logger import Logger
 from files_provider._types import Feature
 
@@ -58,7 +59,7 @@ def check(artifact_paths: list[Artifact]) -> bool:
     return True if errors were found
     """
 
-    logger = Logger()
+    logger = newLogger()
     logger.print_step("The following files will be reviewed:", "📄")
     logger.print_log(*[str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths])
 

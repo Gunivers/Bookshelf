@@ -1,6 +1,7 @@
 from functools import partial
 from pathlib import Path
 import definitions
+from logger import newLogger
 from metadata.build_metadata import DatapackMetadata, build
 from metadata.generate_metadata import adapt_for_manifest, generate_feature_metadata, generate_manifest, generate_module_metadata, sort_metadata
 from files_provider.files_provider import Feature, ModuleManager
@@ -10,7 +11,7 @@ from logger.logger import Logger
 
 
 def check(module_manager: ModuleManager) -> bool:
-    logger = Logger()
+    logger = newLogger()
     logger.print_step(f'The following modules will be analyzed:', '🧩')
     logger.print_log(*[str(module.path.relative_to(definitions.ROOT_DIR)) for module in module_manager.get()])
 
