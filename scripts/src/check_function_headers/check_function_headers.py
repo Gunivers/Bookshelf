@@ -8,6 +8,7 @@ import definitions
 from logger import newLogger
 from logger.logger import Logger
 import utils.function_header as function_header
+import utils.function_header as function_header
 
 header_header = "# INFO"
 header_footer = "# CODE"
