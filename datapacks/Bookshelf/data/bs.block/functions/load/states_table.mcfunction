@@ -1,3 +1,18 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+
 # This file was automatically generated, do not edit it
 data modify storage bs:const block.table[{group:1}]._ set value [{n:"face",o:[{i:0,v:"wall",s:{0:"face=wall,"},p:{face:"wall"}},{i:1,v:"ceiling",s:{0:"face=ceiling,"},p:{face:"ceiling"}},{i:2,v:"floor",s:{0:"face=floor,"},p:{face:"floor"}}]},{n:"facing",o:[{i:0,v:"north",s:{1:"facing=north,"},p:{facing:"north"}},{i:1,v:"south",s:{1:"facing=south,"},p:{facing:"south"}},{i:2,v:"west",s:{1:"facing=west,"},p:{facing:"west"}},{i:3,v:"east",s:{1:"facing=east,"},p:{facing:"east"}}]},{n:"powered",o:[{i:0,v:"false",s:{2:"powered=false,"},p:{powered:"false"}},{i:1,v:"true",s:{2:"powered=true,"},p:{powered:"true"}}]}]
 data modify storage bs:const block.table[{group:2}]._ set value [{n:"facing",o:[{i:0,v:"north",s:{0:"facing=north,"},p:{facing:"north"}},{i:1,v:"south",s:{0:"facing=south,"},p:{facing:"south"}},{i:2,v:"west",s:{0:"facing=west,"},p:{facing:"west"}},{i:3,v:"east",s:{0:"facing=east,"},p:{facing:"east"}}]},{n:"half",o:[{i:0,v:"lower",s:{1:"half=lower,"},p:{half:"lower"}},{i:1,v:"upper",s:{1:"half=upper,"},p:{half:"upper"}}]},{n:"hinge",o:[{i:0,v:"left",s:{2:"hinge=left,"},p:{hinge:"left"}},{i:1,v:"right",s:{2:"hinge=right,"},p:{hinge:"right"}}]},{n:"open",o:[{i:0,v:"false",s:{3:"open=false,"},p:{open:"false"}},{i:1,v:"true",s:{3:"open=true,"},p:{open:"true"}}]},{n:"powered",o:[{i:0,v:"false",s:{4:"powered=false,"},p:{powered:"false"}},{i:1,v:"true",s:{4:"powered=true,"},p:{powered:"true"}}]}]

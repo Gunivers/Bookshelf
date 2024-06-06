@@ -10,6 +10,7 @@ import definitions
 from jinja2 import Environment, FileSystemLoader
 from logger import newLogger
 from logger.logger import Logger
+import utils.function_header as function_header
 
 header_header = "# INFO"
 header_footer = "# CODE"
@@ -55,9 +56,7 @@ def callback(logger: Logger, function: VisitableFunction | VisitableFeature) -> 
 
     else:
         if not is_feature or documentation:
-            env = Environment(loader=FileSystemLoader(os.path.join(Path(__file__).parent / "templates")))
-            template = env.get_template("header.jinja")
-            header = template.render(year=datetime.now().year, doc=documentation, is_feature=is_feature).replace("\r\n", "\n").strip()
+            header = function_header.get(documentation, is_feature)
 
             content: list[str] = [line for line in function.content if line != ""]
 

@@ -1,11 +1,7 @@
-from datetime import datetime
 import math
 from collections import defaultdict
-import os
-from pathlib import Path
 from generators.contracts import DataProcessor
-from jinja2 import Environment, FileSystemLoader
-import definitions
+import utils.function_header as function_header
 
 
 class CreateTagsFiles(DataProcessor):
@@ -50,9 +46,7 @@ class CreateTypesFile(DataProcessor):
     def process(self, data):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
-        env = Environment(loader=FileSystemLoader(os.path.join(Path(definitions.ROOT_DIR) / "scripts" / "src" / "check_function_headers" / "templates")))
-        template = env.get_template("header.jinja")
-        header = template.render(year=datetime.now().year, doc=None, is_feature=False).replace("\r\n", "\n").strip()
+        header = function_header.get()
 
         self.write_text(self.target, [
             header,
