@@ -1,5 +1,6 @@
 import math
 from generators.contracts import DataProcessor
+import utils.function_header as function_header
 
 ITEMS_DICT = {
     "minecraft:wall_torch": "minecraft:torch",
@@ -85,6 +86,8 @@ ITEMS_DICT = {
     "minecraft:cave_vines_plant": "minecraft:glow_berries",
 }
 
+header = function_header.get()
+
 def get_item(type: str, data) -> dict:
     value = ITEMS_DICT.get(type, type)
     return {"item":value} if value in data.items else {}
@@ -109,6 +112,8 @@ class CreateBlockTableFile(DataProcessor):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
         self.write_text(self.target, [
+            header,
+            ""
             "# This file was automatically generated, do not edit it",
             (f"data modify storage bs:const block.table set value "
              f"{self.render(self.format(data))}"),
@@ -127,6 +132,8 @@ class CreateBlockTypesFile(DataProcessor):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
         self.write_text(self.target, [
+            header,
+            ""
             "# This file was automatically generated, do not edit it",
             (f"data modify storage bs:const block.types set value "
              f"{self.render(self.format(data))}"),
@@ -147,6 +154,8 @@ class CreateBlockItemsFile(DataProcessor):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
         self.write_text(self.target, [
+            header,
+            ""
             "# This file was automatically generated, do not edit it",
             (f"data modify storage bs:const block.items set value "
              f"{self.render(self.format(data))}"),
@@ -168,6 +177,8 @@ class CreateStatesFile(DataProcessor):
         print("\033[90m⚙️ Generating states table function\033[0m")
 
         self.write_text(self.target, [
+            header,
+            "",
             "# This file was automatically generated, do not edit it",
             *[
                 (f"data modify storage bs:const "
@@ -195,6 +206,8 @@ class CreateRegistryFiles(DataProcessor):
 
         for group, states in enumerate(data.groups[1:]):
             self.write_text(self.target / f"{group + 1}.mcfunction", [
+                header,
+                "",
                 "# This file was automatically generated, do not edit it",
                 *[
                     (f'execute if block ~ ~ ~ #bs.block:has_state[{name}={value}] run '
