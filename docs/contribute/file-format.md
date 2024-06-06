@@ -5,7 +5,7 @@ html_theme.sidebar_secondary.remove: true
 # 📄 File format
 
 Each function of Bookshelf should have a header to indicate the license.
-If the function is the first function called in the feature (functions directly called by the function tag), the header should also specified the link to the feature documentation.
+The header may also specified the link to the feature documentation (not mandatory).
 
 Header to put at the beggining of each function:
 ```
@@ -29,10 +29,10 @@ Header to put at the beggining of each function:
 
 The `<YEAR>` placeholder must be fill by the current year and the `<DOCUMENTATION>` placeholder by the link to the documentation of this specific feature.
 
-If the function is not a feature, the header looks like this:
+If the documentation is not specified, the header looks like:
 ```
 # ------------------------------------------------------------------------------------------------------------
-# Copyright (c) 2024 Gunivers
+# Copyright (c) <YEAR> Gunivers
 #
 # This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
 #

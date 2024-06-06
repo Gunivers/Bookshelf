@@ -1,15 +1,13 @@
-from datetime import datetime
 from functools import partial
-import os
-from pathlib import Path
+import re
 from typing import cast
 from files_provider.files_provider import Artifact
 from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, VisitableFunction, Visitor)
 import definitions
-from jinja2 import Environment, FileSystemLoader
 from logger import newLogger
 from logger.logger import Logger
+import utils.function_header as function_header
 
 header_header = "# INFO"
 header_footer = "# CODE"
@@ -36,34 +34,24 @@ def check(artifact_paths: list[Artifact]) -> bool:
 
     return logger.print_done()
 
-documentation = None
-is_feature = False
 
 def callback(logger: Logger, function: VisitableFunction | VisitableFeature) -> bool:
-    global documentation
-    global is_feature
 
     if isinstance(function, VisitableFeature):
         content = cast(VisitableFeature, function).content
         if not definitions.FEATURE_TAG_NAMESPACE in content:
             logger.print_err(f"No metadata in feature tag '{function.mc_path}'. End points analyze will be ignored.")
-        elif not "documentation" in content[definitions.FEATURE_TAG_NAMESPACE]:
-            logger.print_err(f"No 'documentation' key in feature tag '{function.mc_path}' metadata. End points analyze will be ignored.")
-        else:
-            documentation = content[definitions.FEATURE_TAG_NAMESPACE].get("documentation", None)
-        is_feature = True
 
     else:
-        if not is_feature or documentation:
-            env = Environment(loader=FileSystemLoader(os.path.join(Path(__file__).parent / "templates")))
-            template = env.get_template("header.jinja")
-            header = template.render(year=datetime.now().year, doc=documentation, is_feature=is_feature).replace("\r\n", "\n").strip()
+        header_with_doc = re.escape(function_header.get("%REGEX%", True)).replace("\\\n", "\n").replace("%REGEX%", re.escape(definitions.DOC_URL) + r"([-a-zA-Z0-9@:%_\+.~#?&//=]*)")
+        header_without_doc = function_header.get()
 
-            content: list[str] = [line for line in function.content if line != ""]
+        content: list[str] = [line for line in function.content if line != ""]
 
-            splitted_header = header.splitlines()
-            current_header = "\n".join(content[0:len(splitted_header)]).strip()
+        splitted_header_without_doc = header_without_doc.splitlines()
+        splitted_header_with_doc = header_with_doc.splitlines()
+        current_header_if_doc = "\n".join([line.strip() for line in content[0:len(splitted_header_with_doc)]])
+        current_header_if_no_doc = "\n".join([line.strip() for line in content[0:len(splitted_header_without_doc)]])
 
-            if current_header != header:
-                logger.print_err(f"Invalid header in function '{function.mc_path}' (feature {function.feature.mc_path}).")
-            is_feature = False
+        if current_header_if_no_doc != header_without_doc and not re.match(header_with_doc, current_header_if_doc):
+            logger.print_err(f"Invalid header in function '{function.mc_path}' (feature {function.feature.mc_path}).")
