@@ -1,3 +1,18 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+
 # compute the offset since we only care about bits 16 to 24, overflow of the scoreboard is not an issue
 data modify storage bs:data hitbox.offsets append value {x:0,z:0,k:[0,0]}
 execute store result storage bs:data hitbox.offsets[-1].k[0] int 1 run scoreboard players get #hitbox.offset.x bs.data
