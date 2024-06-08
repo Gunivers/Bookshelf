@@ -11,7 +11,10 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/id.html
 # ------------------------------------------------------------------------------------------------------------
+
 
 scoreboard objectives remove bs.in
 scoreboard objectives remove bs.id

@@ -11,6 +11,8 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html
 # ------------------------------------------------------------------------------------------------------------
 
 tellraw @s [{"text": "[bs.color documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]
