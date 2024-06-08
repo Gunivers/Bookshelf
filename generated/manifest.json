@@ -258,6 +258,1294 @@
                     }
                 ],
                 "module_path": "datapacks/Bookshelf/data/bs.bitwise"
+            },
+            {
+                "name": "bs.block",
+                "display_name": "Block",
+                "description": "Manage blocks, including states and NBTs, while offering advanced tools for seamless transformations.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
+                "features": [
+                    {
+                        "name": "fill_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "fill_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "get_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#get",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "get_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#get",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "keep_properties",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "lookup_item",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "lookup_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "match",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#match",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "merge_properties",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "remove_properties",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "replace_mapped_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "contributors": [
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/05/25",
+                            "version": "1.20.6"
+                        },
+                        "updated": {
+                            "date": "2024/05/25",
+                            "version": "1.20.6"
+                        }
+                    },
+                    {
+                        "name": "replace_properties",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "replace_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "set_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#set",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "set_type",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#set",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "shift_properties",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "spawn_block_display",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "spawn_falling_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "spawn_solid_block_display",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/15",
+                            "version": "1.20.4"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.block"
+            },
+            {
+                "name": "bs.color",
+                "display_name": "Color",
+                "description": "Facilitate color conversion between various formats.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
+                "features": [
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/27",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "hex_to_int",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html#get-biome",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/04/22",
+                            "version": "1.20.5"
+                        },
+                        "updated": {
+                            "date": "2024/04/22",
+                            "version": "1.20.5"
+                        }
+                    },
+                    {
+                        "name": "hex_to_rgb",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-rgb",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "int_to_hex",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-hex",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "int_to_rgb",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-rgb",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "contributors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2019/08/12",
+                            "version": "1.14"
+                        },
+                        "updated": {
+                            "date": "2023/10/22",
+                            "version": "1.20.2"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/27",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "rgb_to_hex",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-hex",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2024/01/20",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "rgb_to_int",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-int",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "contributors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2019/08/12",
+                            "version": "1.14"
+                        },
+                        "updated": {
+                            "date": "2023/10/22",
+                            "version": "1.20.2"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
+                        "authors": [
+                            "Aksiome",
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/27",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.color"
+            },
+            {
+                "name": "bs.health",
+                "display_name": "Health",
+                "description": "Efficiently manage the lifecycle and vital aspects of an entity.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+                "features": [
+                    {
+                        "name": "add_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#add-remove",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "add_max_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#add-remove",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "get_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#get",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/10/23",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "get_max_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#get",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/10/23",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "set_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#set",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "set_max_health",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#set",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/03/19",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "time_to_live",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#time-to-live",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/07/08",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/11/19",
+                            "version": "1.20.3"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/15",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.health"
+            },
+            {
+                "name": "bs.hitbox",
+                "display_name": "Hitbox",
+                "description": "Get and check the hitboxes of blocks or entities.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html",
+                "features": [
+                    {
+                        "name": "get_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/21",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/03/30",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "get_entity",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/21",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/03/30",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/23",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "is_in_block",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/21",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/03/30",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "is_in_entity",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/21",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/03/30",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/23",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/23",
+                            "version": "1.20.3"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.hitbox"
+            },
+            {
+                "name": "bs.id",
+                "display_name": "ID",
+                "description": "Manage entity IDs, essential in scenarios like shooting games where you need to track who is targeting whom.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html",
+                "features": [
+                    {
+                        "name": "give_cuid",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html#give-chain-unique-id",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2017/10/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/08/28",
+                            "version": "23w33a"
+                        }
+                    },
+                    {
+                        "name": "give_suid",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html#give-simple-unique-id",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2017/10/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/08/28",
+                            "version": "23w33a"
+                        }
+                    },
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2023/18/29",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2023/18/29",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2023/18/29",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "update_cuids",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/id.html#update-chain-unique-id",
+                        "authors": [
+                            "Aksiome",
+                            "KubbyDev"
+                        ],
+                        "created": {
+                            "date": "2017/10/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/08/28",
+                            "version": "23w33a"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.id"
+            },
+            {
+                "name": "bs.link",
+                "display_name": "Link",
+                "description": "Construct coherent entity structures by linking entities\u00e2\u20ac\u2122 positions and rotations.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
+                "dependencies": [
+                    "bs.id"
+                ],
+                "features": [
+                    {
+                        "name": "create_link_ata",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#create-link",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2020/05/16",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.15"
+                        },
+                        "dependencies": [
+                            "bs.id"
+                        ]
+                    },
+                    {
+                        "name": "imitate_pos",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_pos_and_rot",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/09",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_pos_x",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_pos_y",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_pos_z",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_rot",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_rot_h",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "imitate_rot_v",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "keep_local_pos",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#keep-local-position",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2019/07/13",
+                            "version": "1.14"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.1"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/09",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        },
+                        "dependencies": [
+                            "bs.id"
+                        ]
+                    },
+                    {
+                        "name": "mirror_point_ata",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#mirror-point",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/10",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.1"
+                        }
+                    },
+                    {
+                        "name": "mirror_x_plane",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#mirror-plane",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/10",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.1"
+                        }
+                    },
+                    {
+                        "name": "mirror_z_plane",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#mirror-plane",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/09/10",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.1"
+                        }
+                    },
+                    {
+                        "name": "reverse_pos",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_pos_and_rot",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_pos_x",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_pos_y",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_pos_z",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_rot",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_rot_h",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "reverse_rot_v",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/09/11",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2023/09/12",
+                            "version": "1.20.1"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "update_link",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#update-link",
+                        "authors": [
+                            "Aksiome",
+                            "Leirof"
+                        ],
+                        "created": {
+                            "date": "2018/06/29",
+                            "version": "1.13"
+                        },
+                        "updated": {
+                            "date": "2023/10/20",
+                            "version": "1.20.2"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.link"
             }
         ]
     },
