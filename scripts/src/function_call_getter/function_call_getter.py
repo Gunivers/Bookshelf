@@ -22,9 +22,8 @@ class FunctionCallGetter:
                 feature = VisitableFeature(feature)
                 for fun in feature.__unread_functions__:
                     function = build_abstract_function(fun, feature)
-                    # TODO Currently doesn't support if the features references function tags
                     feature.called_functions.append(function)
-                    self.browse_function(function)
+                    self.browse_function_locator(function)
                 visitableFeatures.append(feature)
 
             self.__cache__ = VisitableFeatureSet(visitableFeatures)
