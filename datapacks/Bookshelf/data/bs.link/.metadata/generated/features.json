@@ -166,8 +166,7 @@
         "name": "load",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
         "authors": [
-            "Aksiome",
-            "Leirof"
+            "Aksiome"
         ],
         "created": {
             "date": "2023/09/09",
@@ -358,8 +357,7 @@
         "name": "unload",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
         "authors": [
-            "Aksiome",
-            "Leirof"
+            "Aksiome"
         ],
         "created": {
             "date": "2023/09/12",

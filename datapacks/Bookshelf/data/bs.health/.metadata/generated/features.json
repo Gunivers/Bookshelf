@@ -63,8 +63,7 @@
         "name": "help",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
         "authors": [
-            "Aksiome",
-            "Leirof"
+            "Aksiome"
         ],
         "created": {
             "date": "2023/09/15",
@@ -79,8 +78,7 @@
         "name": "load",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
         "authors": [
-            "Aksiome",
-            "Leirof"
+            "Aksiome"
         ],
         "created": {
             "date": "2023/09/15",
@@ -141,8 +139,7 @@
         "name": "unload",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
         "authors": [
-            "Aksiome",
-            "Leirof"
+            "Aksiome"
         ],
         "created": {
             "date": "2023/09/15",

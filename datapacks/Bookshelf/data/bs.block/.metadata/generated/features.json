@@ -65,8 +65,7 @@
         "name": "help",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
         "authors": [
-            "Aksiome",
-            "theogiraudet"
+            "Aksiome"
         ],
         "created": {
             "date": "2024/01/15",
@@ -96,8 +95,7 @@
         "name": "load",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
         "authors": [
-            "Aksiome",
-            "theogiraudet"
+            "Aksiome"
         ],
         "created": {
             "date": "2024/01/15",
@@ -332,8 +330,7 @@
         "name": "unload",
         "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html",
         "authors": [
-            "Aksiome",
-            "theogiraudet"
+            "Aksiome"
         ],
         "created": {
             "date": "2024/01/15",
