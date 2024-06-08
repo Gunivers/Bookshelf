@@ -2464,6 +2464,60 @@
                     }
                 ],
                 "module_path": "datapacks/Bookshelf/data/bs.time"
+            },
+            {
+                "name": "bs.tree",
+                "display_name": "Tree",
+                "description": "Simplicity meets utility in this bank of trees.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/tree.html",
+                "features": [
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/tree.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2023/10/19",
+                            "version": "1.20.2"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/tree.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2023/10/19",
+                            "version": "1.20.2"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/tree.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        },
+                        "updated": {
+                            "date": "2023/10/19",
+                            "version": "1.20.2"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf/data/bs.tree"
             }
         ]
     },
