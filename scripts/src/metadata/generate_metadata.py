@@ -4,7 +4,6 @@ import json
 import os
 from pathlib import Path
 from typing import Callable
-from logger.logger import Logger
 from metadata.JSONEncoder import DCJSONEncoder, ManifestJSONEncoder, ModuleJSONEncoder
 from metadata.build_metadata import DatapackMetadata, FeatureMetadata, ModuleMetadata, build
 import definitions
