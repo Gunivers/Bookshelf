@@ -3,6 +3,9 @@
     "display_name": "Health",
     "description": "Efficiently manage the lifecycle and vital aspects of an entity.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+    "dependencies": [
+        "bs.log"
+    ],
     "features": [
         "bs.health:add_health",
         "bs.health:add_max_health",

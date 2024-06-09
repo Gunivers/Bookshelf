@@ -12,7 +12,10 @@
         "updated": {
             "date": "2023/12/07",
             "version": "1.20.3"
-        }
+        },
+        "dependencies": [
+            "bs.log"
+        ]
     },
     {
         "name": "help",

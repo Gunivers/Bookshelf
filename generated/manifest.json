@@ -762,6 +762,9 @@
                 "display_name": "Health",
                 "description": "Efficiently manage the lifecycle and vital aspects of an entity.",
                 "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/health.html",
+                "dependencies": [
+                    "bs.log"
+                ],
                 "features": [
                     {
                         "name": "add_health",
@@ -897,7 +900,10 @@
                         "updated": {
                             "date": "2023/11/19",
                             "version": "1.20.3"
-                        }
+                        },
+                        "dependencies": [
+                            "bs.log"
+                        ]
                     },
                     {
                         "name": "unload",
@@ -2742,6 +2748,9 @@
                 "display_name": "Schedule",
                 "description": "Enhance command scheduling with this module, providing flexibility beyond vanilla capabilities. Cancel commands and maintain execution context (entity & location).",
                 "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html",
+                "dependencies": [
+                    "bs.log"
+                ],
                 "features": [
                     {
                         "name": "cancel_all",
@@ -2757,7 +2766,10 @@
                         "updated": {
                             "date": "2024/01/20",
                             "version": "1.20.4"
-                        }
+                        },
+                        "dependencies": [
+                            "bs.log"
+                        ]
                     },
                     {
                         "name": "cancel_one",
@@ -2773,7 +2785,10 @@
                         "updated": {
                             "date": "2024/01/20",
                             "version": "1.20.4"
-                        }
+                        },
+                        "dependencies": [
+                            "bs.log"
+                        ]
                     },
                     {
                         "name": "clear",
@@ -2835,7 +2850,10 @@
                         "updated": {
                             "date": "2024/02/27",
                             "version": "1.20.4"
-                        }
+                        },
+                        "dependencies": [
+                            "bs.log"
+                        ]
                     },
                     {
                         "name": "unload",
@@ -2860,6 +2878,9 @@
                 "display_name": "Sidebar",
                 "description": "Create a visually appealing and dynamic sidebar using the scoreboard.",
                 "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/sidebar.html",
+                "dependencies": [
+                    "bs.log"
+                ],
                 "features": [
                     {
                         "name": "create",
@@ -2874,7 +2895,10 @@
                         "updated": {
                             "date": "2023/12/07",
                             "version": "1.20.3"
-                        }
+                        },
+                        "dependencies": [
+                            "bs.log"
+                        ]
                     },
                     {
                         "name": "help",
@@ -3932,6 +3956,135 @@
                     }
                 ],
                 "module_path": "datapacks/Bookshelf Dev/data/bs.dump"
+            },
+            {
+                "name": "bs.log",
+                "display_name": "Log",
+                "description": "Log messages in the chat with varying levels of severity.",
+                "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
+                "features": [
+                    {
+                        "name": "debug",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#debug",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/05",
+                            "version": "23w31a"
+                        },
+                        "updated": {
+                            "date": "2024/05/08",
+                            "version": "1.20.6"
+                        }
+                    },
+                    {
+                        "name": "error",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#error",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/05",
+                            "version": "23w31a"
+                        },
+                        "updated": {
+                            "date": "2024/05/08",
+                            "version": "1.20.6"
+                        }
+                    },
+                    {
+                        "name": "help",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/13",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "info",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#info",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/05",
+                            "version": "23w31a"
+                        },
+                        "updated": {
+                            "date": "2024/05/08",
+                            "version": "1.20.6"
+                        }
+                    },
+                    {
+                        "name": "load",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/13",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "tick",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/13",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "unload",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
+                        "authors": [
+                            "Aksiome"
+                        ],
+                        "created": {
+                            "date": "2023/11/13",
+                            "version": "1.20.2"
+                        },
+                        "updated": {
+                            "date": "2024/02/27",
+                            "version": "1.20.4"
+                        }
+                    },
+                    {
+                        "name": "warn",
+                        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#warn",
+                        "authors": [
+                            "theogiraudet"
+                        ],
+                        "created": {
+                            "date": "2023/08/05",
+                            "version": "23w31a"
+                        },
+                        "updated": {
+                            "date": "2024/05/08",
+                            "version": "1.20.6"
+                        }
+                    }
+                ],
+                "module_path": "datapacks/Bookshelf Dev/data/bs.log"
             }
         ]
     }
