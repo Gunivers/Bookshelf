@@ -1,5 +1,10 @@
 # 🛠️ Changelog
 
+## 📦 Bookshelf - 2.1.0
+
+### 📄 Documentation
+- ([206](https://github.com/Gunivers/Bookshelf/issues/206)) Add new related datapacks and mods.
+
 ## 📦 Bookshelf - 2.0.0
 
 ```{admonition} Breaking changes
