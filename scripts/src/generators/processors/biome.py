@@ -1,6 +1,7 @@
 import math
 from collections import defaultdict
 from generators.contracts import DataProcessor
+import utils.function_header as function_header
 
 
 class CreateTagsFiles(DataProcessor):
@@ -45,7 +46,11 @@ class CreateTypesFile(DataProcessor):
     def process(self, data):
         print("\033[90m⚙️ Generating types table function\033[0m")
 
+        header = function_header.get()
+
         self.write_text(self.target, [
+            header,
+            "",
             "# This file was automatically generated, do not edit it",
             (f"data modify storage bs:const biome set value "
              f"{self.render(self.format(data))}")

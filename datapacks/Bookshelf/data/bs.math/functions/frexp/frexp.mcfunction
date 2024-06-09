@@ -1,18 +1,19 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
-
-# Authors: Aksiome
-# Contributors:
-
-# Version: 1.3
-# Created: 02/09/2023 (23w33a)
-# Last modification: 30/01/2024 (1.20.4)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#float-manipulation
-# Dependencies:
-# Note:
-
-# CODE ------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#float-manipulation
+# ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:ctx x set from storage bs:in math.frexp.x
 function bs.math:frexp/run
