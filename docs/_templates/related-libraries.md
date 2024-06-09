@@ -70,6 +70,13 @@ Detect when a player opens (almost) any GUI!
 Iris is a utility datapack designed to determine what block or entity a player is looking at, with micrometric precision and taking into account individual block geometries.
 :::
 
+:::{grid-item-card} 🔢 Large Number
+:link: https://github.com/kaer-3058/large_number
+:margin: 0 3 0 0
+
+Datapack providing functionalities for handling large numbers, trigonometric functions, and various mathematical operations.
+:::
+
 :::{grid-item-card} ➡️ MCF Raycast Raymarch
 :link: https://github.com/Neylz/MCF_Raycast-Raymarch
 :margin: 0 3 0 0
@@ -82,6 +89,13 @@ Usage of raymarching to optimize mcfunction raycasts.
 :margin: 0 3 0 0
 
 Moxlib aims to make Datapack creation fun and enjoyable. This is a multi-purpose datapack.
+:::
+
+:::{grid-item-card} 🔢 Minecraft Floating Point Arithmetic
+:link: https://github.com/gibbsly/gm
+:margin: 0 3 0 0
+
+A basic utility pack to do math with floats and/or doubles.
 :::
 
 :::{grid-item-card} 💥 Minecraft Ray Collision Detector
