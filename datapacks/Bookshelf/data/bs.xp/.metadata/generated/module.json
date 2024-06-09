@@ -3,6 +3,10 @@
     "display_name": "XP",
     "description": "Efficiently manage the experience points and levels of players.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html",
+    "authors": [
+        "Aksiome",
+        "Leirof"
+    ],
     "features": [
         "bs.xp:add_levels",
         "bs.xp:add_points",

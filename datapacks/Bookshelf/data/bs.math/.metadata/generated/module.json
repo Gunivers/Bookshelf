@@ -3,6 +3,18 @@
     "display_name": "Math",
     "description": "The beatifull world of mathematics\u00e2\u20ac\u00a6 in Minecraft!",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html",
+    "authors": [
+        "Aksiome",
+        "Ethanout",
+        "KubbyDev",
+        "Leirof",
+        "Triton365",
+        "theogiraudet",
+        "xiaodou123"
+    ],
+    "contributors": [
+        "Aksiome"
+    ],
     "features": [
         "bs.math:acos",
         "bs.math:asin",

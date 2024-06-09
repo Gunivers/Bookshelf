@@ -3,6 +3,13 @@
     "display_name": "Biome",
     "description": "Comprehensive information and tools related to biome properties.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html",
+    "authors": [
+        "Aksiome",
+        "theogiraudet"
+    ],
+    "contributors": [
+        "Aksiome"
+    ],
     "features": [
         "bs.biome:get_biome",
         "bs.biome:get_temperature",

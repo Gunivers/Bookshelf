@@ -3,6 +3,10 @@
     "display_name": "Bitwise",
     "description": "A collection of various bitwise operations, providing versatile tools for manipulating binary data.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html",
+    "authors": [
+        "Aksiome",
+        "theogiraudet"
+    ],
     "features": [
         "bs.bitwise:and",
         "bs.bitwise:bit_count",

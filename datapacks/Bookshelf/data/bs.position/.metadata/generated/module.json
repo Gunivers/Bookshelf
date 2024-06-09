@@ -3,6 +3,14 @@
     "display_name": "Position",
     "description": "Manage entity positions and rotations using scores.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html",
+    "authors": [
+        "Aksiome",
+        "Leirof",
+        "theogiraudet"
+    ],
+    "contributors": [
+        "Triton365"
+    ],
     "features": [
         "bs.position:add_pos",
         "bs.position:add_pos_and_rot",

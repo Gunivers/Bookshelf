@@ -3,6 +3,9 @@
     "display_name": "Dump",
     "description": "Dump the content of given variables to the chat.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/dump.html",
+    "authors": [
+        "Aksiome"
+    ],
     "features": [
         "bs.dump:help",
         "bs.dump:load",

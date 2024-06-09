@@ -3,6 +3,10 @@
     "display_name": "View",
     "description": "Execute commands based on what an entity sees.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html",
+    "authors": [
+        "Aksiome",
+        "Leirof"
+    ],
     "dependencies": [
         "bs.hitbox",
         "bs.raycast"
