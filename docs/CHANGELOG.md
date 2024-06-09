@@ -1,5 +1,12 @@
 # 🛠️ Changelog
 
+## 📦 Bookshelf - 2.1.0
+
+## 🐛 Fixes
+- Add missing help function tag in `bs.link`.
+- Add missing help function tag in `bs.vector`.
+- Add missing help function tag in `bs.xp`.
+
 ## 📦 Bookshelf - 2.0.0
 
 ```{admonition} Breaking changes
