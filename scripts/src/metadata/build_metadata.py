@@ -35,11 +35,13 @@ class ModuleMetadata:
     display_name: str
     description: str
     documentation: str
+    authors: list[str]
+    contributors: list[str] | None
     icon: str | None
+    module_path: Path
     dependencies: list[str] | None
     weak_dependencies: list[str] | None
     features: list[FeatureMetadata]
-    module_path: Path
 
 @dataclass
 class DatapackMetadata:
@@ -98,14 +100,25 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
             icon = module.path / '.metadata' / icon
 
         module_dep: ModuleDependencies = compute_dependencies(manager, result.get("weak_dependencies", []), logger)
+        authors = set()
+        contributors = set()
 
         feature_metadata: list[FeatureMetadata] = []
         for feature in manager.get_all_features():
             met = build_features_metadata(feature, module_dep.features_dependencies.get(feature.mc_path, Dependencies(None, None)), logger)
             if met:
                 feature_metadata.append(met)
+                authors.extend(met.authors)
+                if met.contributors:
+                    contributors.extend(met.contributors)
 
-        return ModuleMetadata(module.namespace, display_name, description, documentation, icon, module_dep.dependencies.dependencies, module_dep.dependencies.weak_dependencies, feature_metadata, module.path)
+        if len(contributors) == 0:
+            contributors = None
+        else:
+            contributors = list(contributors)
+
+        authors = list(authors)
+        return ModuleMetadata(name=module.namespace, display_name=display_name, description=description, documentation=documentation, icon=icon, contributors=contributors, authors=authors, dependencies=module_dep.dependencies.dependencies, weak_dependencies=module_dep.dependencies.weak_dependencies, features=feature_metadata, module_path=module.path)
 
 
 def build_features_metadata(feature: Feature, dependencies: Dependencies, logger: Logger) -> FeatureMetadata:
@@ -117,4 +130,4 @@ def build_features_metadata(feature: Feature, dependencies: Dependencies, logger
         contributors = result.get("contributors", None)
         created = Updated(result.get("created", {}).get("date", None), result.get("created", {}).get("minecraft_version", None))
         updated = Updated(result.get("updated", {}).get("date", None), result.get("updated", {}).get("minecraft_version", None))
-        return FeatureMetadata(feature.name, documentation, authors, contributors, created, updated, dependencies.dependencies, dependencies.weak_dependencies, feature.real_path, feature.mc_path)
+        return FeatureMetadata(name=feature.name, documentation=documentation, authors=authors, contributors=contributors, created=created, updated=updated, dependencies=dependencies.dependencies, weak_dependencies=dependencies.weak_dependencies, feature_path=feature.real_path, mc_path=feature.mc_path)
