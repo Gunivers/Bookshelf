@@ -34,7 +34,7 @@ def generate_feature_metadata(metadata: list[FeatureMetadata], module_path: Path
 
 
 def __generate(obj, encoder: type[json.JSONEncoder] = DCJSONEncoder):
-    return json.dumps(obj, indent=4, cls=encoder)
+    return json.dumps(obj, indent=4, cls=encoder, ensure_ascii=False)
 
 def __write_json(json: str, path: Path):
     os.makedirs(path.parent, exist_ok=True)
