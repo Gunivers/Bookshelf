@@ -177,7 +177,7 @@
             "version": "1.20.4"
         },
         "dependencies": [
-            "bs.id"
+            "bs.position"
         ]
     },
     {
@@ -193,7 +193,10 @@
         "updated": {
             "date": "2023/09/11",
             "version": "1.20.1"
-        }
+        },
+        "dependencies": [
+            "bs.position"
+        ]
     },
     {
         "name": "mirror_x_plane",
@@ -382,6 +385,9 @@
         "updated": {
             "date": "2023/10/20",
             "version": "1.20.2"
-        }
+        },
+        "dependencies": [
+            "bs.position"
+        ]
     }
 ]

@@ -4,7 +4,8 @@
     "description": "Construct coherent entity structures by linking entities\u00e2\u20ac\u2122 positions and rotations.",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
     "dependencies": [
-        "bs.id"
+        "bs.id",
+        "bs.position"
     ],
     "features": [
         "bs.link:create_link_ata",

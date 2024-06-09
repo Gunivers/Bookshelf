@@ -1,18 +1,19 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
-
-# Authors: Aksiome, Leirof
-# Contributors:
-
-# Version: 2.0
-# Created: ??/??/???? (1.16.1)
-# Last modification: 27/02/2024 (1.20.4)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-rotation
-# Dependencies:
-# Note:
-
-# CODE ------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-rotation
+# ------------------------------------------------------------------------------------------------------------
 
 $execute store result storage bs:ctx x double $(scale) run scoreboard players get @s bs.rot.h
 execute at @s run function bs.position:add/rotation/h/run with storage bs:ctx
