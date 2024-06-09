@@ -4,6 +4,10 @@
 
 ### 📄 Documentation
 - ([206](https://github.com/Gunivers/Bookshelf/issues/206)) Add new related datapacks and mods.
+## 🐛 Fixes
+- Add missing help function tag in `bs.link`.
+- Add missing help function tag in `bs.vector`.
+- Add missing help function tag in `bs.xp`.
 
 ## 📦 Bookshelf - 2.0.0
 
