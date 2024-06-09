@@ -1,7 +1,7 @@
 {
     "name": "bs.vector",
     "display_name": "Vector",
-    "description": "Vectors are fundamental and incredibly powerful tools to manage motions, forces and\u00e2\u20ac\u00a6 well\u00e2\u20ac\u00a6 do physics!",
+    "description": "Vectors are fundamental and incredibly powerful tools to manage motions, forces and… well… do physics!",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html",
     "authors": [
         "Aksiome",
