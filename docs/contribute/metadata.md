@@ -63,6 +63,12 @@ Here is the format:
   "description": "<DESCRIPTION>",
   "documentation": "<DOCUMENTATION>",
   "icon": "<ICON NAME>",
+  "authors": [
+    "<AUTHOR1>"
+  ],
+  "contributors": [
+    "<CONTRIBUTOR1>"
+  ],
   "weak_dependencies": [
     "<MODULE1>"
   ]
@@ -76,6 +82,8 @@ Here is the format:
 | description | A description for the module. | yes |
 | documentation | The link to the documentation of the module. | yes |
 | icon | The name of the module icon image. Should be placed on the same folder than the `metadata` file. | no (but trigger warnings) |
+| authors | The list of authors of the module. Cannot be empty. The authors are automatically computed from the features, this field allows defining authors that are not indicated inside the features. | no |
+| contributors | The list of contributors to the feature. A contributor is someone who helps to create the function without developing it (the one who gives a track to realize the function or the one who fixes a bug for example). The contributors are automatically computed from the features, this field allows defining contributors that are not indicated inside the features. | no |
 | weak dependencies | List of the feature weak dependencies. A weak dependency is a dependency module that is not essential to the functioning of the feature. For instance, `bs.log`. | no |
 
 The generated metadata are placed in `<module>/data/.metadata/generated/module.json`.
