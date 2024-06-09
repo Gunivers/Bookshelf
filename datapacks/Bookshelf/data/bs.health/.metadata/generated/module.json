@@ -7,7 +7,7 @@
         "Aksiome",
         "Leirof"
     ],
-    "dependencies": [
+    "weak_dependencies": [
         "bs.log"
     ],
     "features": [

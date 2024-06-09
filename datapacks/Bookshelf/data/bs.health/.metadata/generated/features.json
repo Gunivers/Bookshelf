@@ -134,7 +134,7 @@
             "date": "2023/11/19",
             "version": "1.20.3"
         },
-        "dependencies": [
+        "weak_dependencies": [
             "bs.log"
         ]
     },

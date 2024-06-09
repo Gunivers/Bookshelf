@@ -14,7 +14,7 @@
             "date": "2024/01/20",
             "version": "1.20.4"
         },
-        "dependencies": [
+        "weak_dependencies": [
             "bs.log"
         ]
     },
@@ -33,7 +33,7 @@
             "date": "2024/01/20",
             "version": "1.20.4"
         },
-        "dependencies": [
+        "weak_dependencies": [
             "bs.log"
         ]
     },
@@ -98,7 +98,7 @@
             "date": "2024/02/27",
             "version": "1.20.4"
         },
-        "dependencies": [
+        "weak_dependencies": [
             "bs.log"
         ]
     },

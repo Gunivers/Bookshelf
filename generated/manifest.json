@@ -792,7 +792,7 @@
                     "Leirof"
                 ],
                 "module_path": "datapacks/Bookshelf/data/bs.health",
-                "dependencies": [
+                "weak_dependencies": [
                     "bs.log"
                 ],
                 "features": [
@@ -931,7 +931,7 @@
                             "date": "2023/11/19",
                             "version": "1.20.3"
                         },
-                        "dependencies": [
+                        "weak_dependencies": [
                             "bs.log"
                         ]
                     },
@@ -2820,7 +2820,7 @@
                     "theogiraudet"
                 ],
                 "module_path": "datapacks/Bookshelf/data/bs.schedule",
-                "dependencies": [
+                "weak_dependencies": [
                     "bs.log"
                 ],
                 "features": [
@@ -2839,7 +2839,7 @@
                             "date": "2024/01/20",
                             "version": "1.20.4"
                         },
-                        "dependencies": [
+                        "weak_dependencies": [
                             "bs.log"
                         ]
                     },
@@ -2858,7 +2858,7 @@
                             "date": "2024/01/20",
                             "version": "1.20.4"
                         },
-                        "dependencies": [
+                        "weak_dependencies": [
                             "bs.log"
                         ]
                     },
@@ -2923,7 +2923,7 @@
                             "date": "2024/02/27",
                             "version": "1.20.4"
                         },
-                        "dependencies": [
+                        "weak_dependencies": [
                             "bs.log"
                         ]
                     },
@@ -2953,7 +2953,7 @@
                     "Aksiome"
                 ],
                 "module_path": "datapacks/Bookshelf/data/bs.sidebar",
-                "dependencies": [
+                "weak_dependencies": [
                     "bs.log"
                 ],
                 "features": [
@@ -2971,7 +2971,7 @@
                             "date": "2023/12/07",
                             "version": "1.20.3"
                         },
-                        "dependencies": [
+                        "weak_dependencies": [
                             "bs.log"
                         ]
                     },

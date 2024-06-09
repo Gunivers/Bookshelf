@@ -6,7 +6,7 @@
     "authors": [
         "Aksiome"
     ],
-    "dependencies": [
+    "weak_dependencies": [
         "bs.log"
     ],
     "features": [

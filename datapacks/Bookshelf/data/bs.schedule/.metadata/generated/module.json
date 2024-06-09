@@ -7,7 +7,7 @@
         "Aksiome",
         "theogiraudet"
     ],
-    "dependencies": [
+    "weak_dependencies": [
         "bs.log"
     ],
     "features": [
