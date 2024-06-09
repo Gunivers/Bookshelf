@@ -108,9 +108,9 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
             met = build_features_metadata(feature, module_dep.features_dependencies.get(feature.mc_path, Dependencies(None, None)), logger)
             if met:
                 feature_metadata.append(met)
-                authors.extend(met.authors)
+                authors.update(met.authors)
                 if met.contributors:
-                    contributors.extend(met.contributors)
+                    contributors.update(met.contributors)
 
         if len(contributors) == 0:
             contributors = None

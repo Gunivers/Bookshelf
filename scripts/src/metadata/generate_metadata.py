@@ -52,6 +52,9 @@ def sort_metadata(metadata: list[DatapackMetadata]):
                     module.dependencies.sort()
                 if module.weak_dependencies:
                     module.weak_dependencies.sort()
+                module.authors.sort()
+                if module.contributors:
+                    module.contributors.sort()
                 if module.features:
                     for feature in module.features:
                         if feature.dependencies:
