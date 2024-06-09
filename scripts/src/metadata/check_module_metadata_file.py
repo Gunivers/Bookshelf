@@ -36,7 +36,12 @@ lines = {
          "warning_if_missing": True
      },
      "authors": {
-         "optional": True
+         "optional": True,
+         "can_be_empty": False
+     },
+     "contributors": {
+         "optional": True,
+         "can_be_empty": False
      },
      "documentation": {
         "syntax": re.escape(definitions.DOC_URL) + r".*$",
@@ -57,6 +62,8 @@ def check_metadata_json(yaml: dict, path: Path, logger: Logger):
         if not key_value and not value["optional"]:
             logger.print_err(f"Metadata file for module '{relative_path}' is missing required key '{key}'.")
         elif key_value:
+            if value.get("can_be_empty", False) and len(key_value) == 0:
+                logger.print_err(f"Metadata file for module '{relative_path}' has an empty value for key '{key}'.")
             if value.get("elements", None):
                 for element in key_value:
                     __check_metadata_value(key, element, value["elements"]["syntax"], path, value.get("validator", None), logger)

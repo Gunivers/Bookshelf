@@ -95,13 +95,15 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
         documentation = result.get("documentation", None)
         description = result.get("description", None)
         display_name = result.get("display_name", None)
+        authors = result.get("authors", None)
+        contributors = result.get("contributors", None)
         icon = result.get("icon", None)
         if icon:
             icon = module.path / '.metadata' / icon
 
         module_dep: ModuleDependencies = compute_dependencies(manager, result.get("weak_dependencies", []), logger)
-        authors = set()
-        contributors = set()
+        authors = set(authors) if authors else set()
+        contributors = set(contributors) if contributors else set()
 
         feature_metadata: list[FeatureMetadata] = []
         for feature in manager.get_all_features():
