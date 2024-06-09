@@ -35,6 +35,9 @@ lines = {
          "optional": True,
          "warning_if_missing": True
      },
+     "authors": {
+         "optional": True
+     },
      "documentation": {
         "syntax": re.escape(definitions.DOC_URL) + r".*$",
         "optional": False
