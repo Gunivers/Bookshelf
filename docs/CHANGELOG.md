@@ -9,10 +9,9 @@
 
 ### 📄 Documentation
 - ([206](https://github.com/Gunivers/Bookshelf/issues/206)) Add new related datapacks and mods.
-## 🐛 Fixes
-- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
-- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.vector`.
-- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.xp`.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:get_pos_and_rot`.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:set_pos_and_rot`.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:add_pos_and_rot`.
 
 ## 📦 Bookshelf - 2.0.0
 
