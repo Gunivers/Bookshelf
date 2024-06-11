@@ -223,6 +223,7 @@ Add position scores to the entity's coordinates and rotate it according to its r
   **Execution `as <entities>`**: Entity to teleport and rotate.
 
   **Scores `@s bs.pos.[x,y,z]`**: Coordinates to add.
+
   **Scores `@s bs.rot.[h,v]`**: Rotation to add.
 
   **Function macro**:
@@ -556,7 +557,7 @@ Get the execution vertical rotation of the function.
 
 ```{function} #bs.position:get_pos_and_rot {scale:<scaling>}
 
-Get the execution position and rotation of the function and store the coordinates in 5 scores.
+Get the execution position and rotation of the function and store the coordinates and rotation in 5 scores.
 
 :Inputs:
   **Execution `as <entities>`**: Entity to store the score to.
