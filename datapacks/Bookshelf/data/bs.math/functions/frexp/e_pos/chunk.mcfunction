@@ -1,3 +1,18 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+
 execute unless score #math.frexp.x bs.data matches -1073741823..1073741823 store result storage bs:ctx x float .0000000004656612873077392578125 run scoreboard players get #math.frexp.x bs.data
 execute unless score #math.frexp.x bs.data matches -1073741823..1073741823 run return run scoreboard players add #math.frexp.e bs.data 7
 execute unless score #math.frexp.x bs.data matches -536870911..536870911 store result storage bs:ctx x float .000000000931322574615478515625 run scoreboard players get #math.frexp.x bs.data

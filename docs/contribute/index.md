@@ -30,6 +30,8 @@ tree-structure
 nomenclature
 shared-data
 file-format
+metadata
+contribution-validation
 ````
 
 ````{toctree}

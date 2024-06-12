@@ -1,18 +1,19 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
-
-# Authors: Aksiome, theogiraudet
-# Contributors:
-
-# Version: 2.0
-# Created: ??/??/2018 (1.13)
-# Last modification: 01/09/2023 (23w33a)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#rounded-division
-# Dependencies:
-# Note:
-
-# CODE ------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#rounded-division
+# ------------------------------------------------------------------------------------------------------------
 
 execute store result score #math.divide.x bs.data run scoreboard players operation $math.divide bs.out = $math.divide.x bs.in
 scoreboard players operation $math.divide bs.out /= $math.divide.y bs.in

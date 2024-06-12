@@ -1,18 +1,17 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
-
-# Authors: Aksiome, Leirof
-# Contributors:
-
-# Version: 2.0
-# Created: ??/??/???? (1.13)
-# Last modification: 13/12/2023 (1.20.4)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/move.html#set-motion
-# Dependencies:
-# Note:
-
-# CODE ------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
 
 $execute store result entity @s Motion[0] double $(scale) run scoreboard players get @s bs.vel.x
 $execute store result entity @s Motion[1] double $(scale) run scoreboard players get @s bs.vel.y
