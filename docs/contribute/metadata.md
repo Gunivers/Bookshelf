@@ -53,7 +53,7 @@ The generated metadata are placed in `<module>/data/.metadata/generated/features
 
 ## 🧩 Module metadata
 
-The module metadata are specified in `<module>/data/.metadata/metadata.json` (see [tree structure page](project:../contribute/tree-structure.md)).
+The module metadata are specified in `<module>/data/.metadata/module.json` (see [tree structure page](project:../contribute/tree-structure.md)).
 Here is the format:
 
 ```json

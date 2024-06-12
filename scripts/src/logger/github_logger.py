@@ -5,8 +5,6 @@ from colored import Style, Fore
 from logger.utils import get_caller
 
 
-multiplier = 3
-
 class GithubLogger:
 
     __level = 0
@@ -160,4 +158,4 @@ class GithubLogger:
         return self.__errors > 0
 
     def __print(self, message: str):
-        print(" " * self.__level * multiplier + message)
+        print(message)

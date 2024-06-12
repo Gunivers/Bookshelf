@@ -90,7 +90,7 @@ def __check_metadata_value(key: str, value: str, syntax: str, path: str, validat
 
 
 def check_module(module: Module, logger: Logger) -> dict:
-    metadata_path = module.path / ".metadata" / "metadata.json"
+    metadata_path = module.path / ".metadata" / "module.json"
     path = module.path.relative_to(definitions.ROOT_DIR)
     if not metadata_path.exists():
         logger.print_err(f"Metadata file not found for module '{path}'.")
