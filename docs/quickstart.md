@@ -26,7 +26,14 @@ We are actively searching for web developers to create the new version of the Bo
 ```
 
 ::::
-::::{tab-item} 🏷️ from release
+::::{tab-item} 🔧 from Modrinth
+
+Bookshelf is available on [Modrinth](https://modrinth.com/datapack/bookshelf-library)! From Modrinth, you can only download the whole datapacks (Bookshelf and/or Bookshelf Dev). This is a good option if you want to explore what Bookshelf can propose.
+
+You can also follow the project if you like it 😉.
+
+::::
+::::{tab-item} 🏷️ from Github release
 
 If you prefer to install from a GitHub release, you can do so by visiting the [github](https://github.com/Gunivers/Bookshelf/releases) repository. In each release, you will find zipped datapacks. You have two options for installation:
 
@@ -85,7 +92,7 @@ Bookshelf relies on persistent entities to enhance performances. Therefore, it's
 Bookshelf is designed to minimize unintended side effects. However, complications can arise when multiple datapacks utilize the same one. To prevent potential issues, it’s always recommended to set inputs prior to executing a function. This holds true even though Bookshelf adheres to a strict policy of preserving inputs. By following this practice, you can ensure smoother operation and prevent unexpected behaviors.
 
 :::{note}
-This section is in progress. If you have some ideas about how to improve the first steps with Bookshelf, please share it on our [Discord server](https://discord.gg/E8qq6tN).
+This section is in progress. If you have some ideas about how to improve the first steps with Bookshelf, please share it on our [Discord server](https://discord.gg/MkXytNjmBt).
 :::
 
 ---
@@ -128,7 +135,7 @@ In this command block, you can enter the command of one of the following example
 
 
 :::{note}
-This section is in progress. If you have some ideas about how to improves the first steps with the Glibs, please share it on our [Discord server](https://discord.gg/E8qq6tN).
+This section is in progress. If you have some ideas about how to improves the first steps with the Glibs, please share it on our [Discord server](https://discord.gg/MkXytNjmBt).
 :::
 
 ---

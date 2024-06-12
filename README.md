@@ -11,7 +11,7 @@
     &nbsp;&nbsp;
     <a href="https://bookshelf.docs.gunivers.net/"><img src="./docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
     &nbsp;&nbsp;
-    <a href="https://discord.gg/E8qq6tN"><img src="./docs/_imgs/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
+    <a href="https://discord.gg/MkXytNjmBt"><img src="./docs/_imgs/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
   </div>
 </h2>
 
