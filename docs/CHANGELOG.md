@@ -1,5 +1,27 @@
 # 🛠️ Changelog
 
+## 📦 Bookshelf - 2.1.0
+
+## 🐛 Fixes
+- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
+- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.vector`.
+- ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.xp`.
+
+### 📄 Documentation
+- ([206](https://github.com/Gunivers/Bookshelf/issues/206)) Add new related datapacks and mods.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:get_pos_and_rot`.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:set_pos_and_rot`.
+- ([208](https://github.com/Gunivers/Bookshelf/issues/208)) Add missing documentation for documentation for feature `bs.position:add_pos_and_rot`.
+
+### 📋 Conventions
+- ([#200](https://github.com/Gunivers/Bookshelf/issues/200)) We throw away the old feature function header to a new one with only the licence. This header is now mandatory for all functions. All the metadata that was present inside the old one have been moved to the feature function tag.
+- ([#52](https://github.com/Gunivers/Bookshelf/issues/52), [#175](https://github.com/Gunivers/Bookshelf/issues/175)) Each module has now its own metadata that should be specified manually. The metadata of the features and modules are used to generate more metadata, including the dependencies. These metadata can be used by bots like the incomming Bookshelf Manager. More information [here](project:contribute/metadata.md).
+
+### ⚙️ Github and CI
+- Added a template for pull requests.
+- Added templates for issues.
+- ([#199](https://github.com/Gunivers/Bookshelf/pull/199)) The different metadata (the manually specified one and the generated one) are now automatically verified at each commit inside a pull request. This prevents them from being forgotten. More information [here](project:contribute/contribution-validation.md).
+
 ## 📦 Bookshelf - 2.0.0
 
 ```{admonition} Breaking changes

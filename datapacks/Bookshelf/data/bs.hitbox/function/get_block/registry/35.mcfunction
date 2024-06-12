@@ -1,3 +1,18 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+
 # grindstone group
 execute if block ~ ~ ~ minecraft:grindstone[facing=west,face=floor] run data modify storage bs:out hitbox.shape set value [[6, 0, 2, 10, 7, 4],[6, 0, 12, 10, 7, 14],[5, 7, 2, 11, 13, 4],[5, 7, 12, 11, 13, 14],[2, 4, 4, 14, 16, 12]]
 execute if block ~ ~ ~ minecraft:grindstone[facing=east,face=floor] run data modify storage bs:out hitbox.shape set value [[6, 0, 2, 10, 7, 4],[6, 0, 12, 10, 7, 14],[5, 7, 2, 11, 13, 4],[5, 7, 12, 11, 13, 14],[2, 4, 4, 14, 16, 12]]

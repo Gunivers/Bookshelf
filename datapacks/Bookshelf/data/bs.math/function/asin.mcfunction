@@ -1,18 +1,21 @@
-# INFO ------------------------------------------------------------------------
-# Copyright © 2024 Gunivers Community.
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#inverse-trigonometry
+# ------------------------------------------------------------------------------------------------------------
 
-# Authors: Aksiome, KubbyDev
-# Contributors:
-
-# Version: 2.0
-# Created: ??/??/2018 (1.13)
-# Last modification: 05/09/2023 (23w33a)
-
-# Documentation: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#inverse-trigonometry
-# Dependencies:
 # Note: This algorithm is taken from the Handbook of Mathematical Functions (M. Abramowitz and I.A. Stegun, Ed.)
-
-# CODE ------------------------------------------------------------------------
 
 scoreboard players operation #math.asin.x bs.data = $math.asin.x bs.in
 execute if score $math.asin.x bs.in matches ..-1 run scoreboard players operation #math.asin.x bs.data *= -1 bs.const

@@ -35,11 +35,4 @@ The Misode's website proposes many tools to generate aspects of the map making s
 VSCode extension to view Minecraft NBT files. For structure files, this shows a 3D block view.
 :::
 
-:::{grid-item-card} 📈 Performance Tool
-:link: https://github.com/SnaveSutit/mcworld-performance-dp
-:margin: 0 3 0 0
-
-This is a datapack to mesure performance of other datapacks or commands directly in game.
-:::
-
 ::::
