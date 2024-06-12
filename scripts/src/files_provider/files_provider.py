@@ -88,6 +88,10 @@ class ArtifactManager(Manager[Artifact]):
         self.filter(lambda artifact: artifact.namespace != 'minecraft')
         return self
 
+    def only_from_main_datapacks(self) -> 'ArtifactManager':
+        self.filter(lambda artifact: artifact.real_path.relative_to(definitions.ROOT_DIR).parts[1] in definitions.BOOKSHELF_LIBS)
+        return self
+
 
 class FilePathsManager(Manager[Path]):
 
