@@ -9,6 +9,7 @@ paths: list[Path] = get_not_merged_files()
 
 files = FilePathsManager(paths) \
         .only_dp_artifacts() \
+        .remove_minecraft_namespaces() \
         .get_modules() \
         .get()
 

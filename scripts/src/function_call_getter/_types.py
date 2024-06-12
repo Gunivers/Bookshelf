@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Type
 from files_provider._types import Function, Artifact, Tag, Feature, build_artifact
-from files_provider.utils import resolve_function_path
+from files_provider.utils import extract_tag_values, resolve_function_path
 
 @dataclass
 class Visitable:
@@ -36,7 +36,7 @@ class VisitableFeature(Visitable):
         self.called_functions = []
         self.__browsed_functions__ = []
         self.content = feature._content
-        self.__unread_functions__ = [build_artifact(resolve_function_path(fun)) for fun in feature._content.get('values', False)]
+        self.__unread_functions__ = [build_artifact(resolve_function_path(fun)) for fun in extract_tag_values(feature._content.get('values', False))]
 
     def __accept__(self, visitor: 'Visitor') -> None:
         for called_function in self.called_functions:
