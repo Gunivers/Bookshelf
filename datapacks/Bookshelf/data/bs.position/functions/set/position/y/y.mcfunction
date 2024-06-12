@@ -12,7 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation
 # ------------------------------------------------------------------------------------------------------------
 
 $execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.pos.y

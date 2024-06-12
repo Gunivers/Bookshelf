@@ -13,6 +13,7 @@
     ],
     "features": [
         "bs.link:create_link_ata",
+        "bs.link:help",
         "bs.link:imitate_pos",
         "bs.link:imitate_pos_and_rot",
         "bs.link:imitate_pos_x",

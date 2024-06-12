@@ -12,7 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-position
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation
 # ------------------------------------------------------------------------------------------------------------
 
 execute as B5-0-0-0-1 run function bs.position:get/position/ctx

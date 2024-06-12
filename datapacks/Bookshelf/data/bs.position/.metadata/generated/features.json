@@ -1,7 +1,7 @@
 [
     {
         "name": "add_pos",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -17,7 +17,7 @@
     },
     {
         "name": "add_pos_and_rot",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -33,7 +33,7 @@
     },
     {
         "name": "add_pos_x",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -49,7 +49,7 @@
     },
     {
         "name": "add_pos_y",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -65,7 +65,7 @@
     },
     {
         "name": "add_pos_z",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -81,7 +81,7 @@
     },
     {
         "name": "add_rot",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-rotation",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -97,7 +97,7 @@
     },
     {
         "name": "add_rot_h",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-rotation",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -113,7 +113,7 @@
     },
     {
         "name": "add_rot_v",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#add-rotation",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#add-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -179,7 +179,7 @@
     },
     {
         "name": "get_pos",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -195,7 +195,7 @@
     },
     {
         "name": "get_pos_and_rot",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -211,7 +211,7 @@
     },
     {
         "name": "get_pos_x",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -227,7 +227,7 @@
     },
     {
         "name": "get_pos_y",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -243,7 +243,7 @@
     },
     {
         "name": "get_pos_z",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -386,7 +386,7 @@
     },
     {
         "name": "set_pos",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -418,7 +418,7 @@
     },
     {
         "name": "set_pos_x",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -434,7 +434,7 @@
     },
     {
         "name": "set_pos_y",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"
@@ -450,7 +450,7 @@
     },
     {
         "name": "set_pos_z",
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation",
         "authors": [
             "Aksiome",
             "Leirof"

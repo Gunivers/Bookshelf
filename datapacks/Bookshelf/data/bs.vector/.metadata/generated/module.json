@@ -16,6 +16,7 @@
         "bs.vector:cartesian_to_spherical",
         "bs.vector:cross_product",
         "bs.vector:dot_product",
+        "bs.vector:help",
         "bs.vector:length",
         "bs.vector:length_squared",
         "bs.vector:load",

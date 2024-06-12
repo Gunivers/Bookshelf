@@ -15,6 +15,7 @@
         "bs.xp:get_progress",
         "bs.xp:get_remaining_points",
         "bs.xp:get_total_points",
+        "bs.xp:help",
         "bs.xp:load",
         "bs.xp:set_levels",
         "bs.xp:set_points",

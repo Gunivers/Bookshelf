@@ -1,7 +1,7 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-position",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/master/modules/position.html#set-position-and-rotation",
     "authors": [
       "Aksiome",
       "Leirof"
