@@ -2,7 +2,7 @@
 
 ## 📦 Bookshelf - 2.1.0
 
-## 🐛 Fixes
+### 🐛 Fixes
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.vector`.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.xp`.
