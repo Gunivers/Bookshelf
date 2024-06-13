@@ -36,7 +36,7 @@ jobs:
         uses: aksiome/minecraft-package@master
         with:
           config: .mcwpack.yml
-          source: ${{ env.WORLD_PATH }}
+          source: .
           target: ${{ env.BUILD_PATH }}/bookshelf-world-${{ env.MC_VERSION }}-${{ env.VERSION }}.zip
 
       - name: Upload artifacts
