@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set from storage bs:const block.mapping_sets.$(mapping_set)
+$data remove storage bs:ctx _.found[{type:"$(type)"}]

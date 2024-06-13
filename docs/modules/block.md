@@ -426,32 +426,33 @@ data get storage bs:out block.block
 ```
 
 ::::
-::::{tab-item} Replace set
+::::{tab-item} Map
 
-`````{function} #bs.block:replace_mapped_type {type:<value>,mapping_set:<value>}
+`````{function} #bs.block:map_type {type:<value>,mapping_registry:<value>}
 
-Replace a block type based on a defined mapping set. A mapping set example:
+Swap related block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
 
 ```mcfunction
-data modify storage bs:const block.mapping_sets.bs.colors set value [ \
-  {id:0,set:0,type:"minecraft:red_wool"}, \
-  {id:1,set:0,type:"minecraft:green_wool"}, \
-  {id:0,set:1,type:"minecraft:red_carpet"}, \
-  {id:1,set:1,type:"minecraft:green_carpet"}, \
+data modify storage bs:const block.mapping_registry.bs.colors set value [ \
+  { set: "wool", attrs: ["red"], type: "minecraft:red_wool" }, \
+  { set: "wool", attrs: ["green"], type: "minecraft:green_wool" }, \
+  { set: "carpet", attrs: ["red"], type: "minecraft:red_carpet" }, \
+  { set: "carpet", attrs: ["green"], type: "minecraft:green_carpet" }, \
 ]
 ```
-This function retrieves the ID of the specified type, finds the corresponding set, and replaces the output with the type that matches the input ID within the same set. It is useful for group-based block swapping, ensuring coherent replacements within defined sets. The function operates on the [virtual block format](#get) stored in the block output.
 
-For example, with the above mapping set: if the input is "red_wool" (id: 0), and the virtual block type is "green_carpet" (set: 1), the resulting block will be "red_carpet" (id: 0, set: 1).
+This function operates on the [virtual block format](#get) stored in the block output. It replaces the type in the output with one that belongs to the same set and better matches the attributes of the inputted type.
 
-Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-sets).
+For example, with the above mapping registry: if the input is `minecraft:red_wool` (attrs:["red"]), and the virtual block type is `minecraft:green_carpet` (set:"carpet"), the resulting block will be `minecraft:red_carpet` (set:"carpet",attrs:["red"]).
+
+Bookshelf includes two predefined mapping registries (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-registry).
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
-    - {nbt}`string` **mapping_set**: A path to the mapping set used for the replacement (e.g., `bs.shapes`).
+    - {nbt}`string` **mapping_registry**: A path to the mapping registry used for the replacement (e.g., `bs.shapes`).
   :::
 
   **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
@@ -462,14 +463,73 @@ Bookshelf includes two predefined mapping sets (`bs.shapes` and `bs.colors`). If
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
 `````
 
-*Replace all oak related blocks to spruce ones (the function replaces the oak stairs block with a spruce stairs block):*
+*Replace all oak-related blocks with spruce ones (the function replaces the oak stairs block with a spruce stairs block):*
 
 ```mcfunction
 # Once (on oak_stairs)
 execute positioned ~ ~ ~ run function #bs.block:get_block
 
 # Replace type data
-function #bs.block:replace_mapped_type { type: "minecraft:spruce_planks", mapping_set: "bs.shapes" }
+function #bs.block:map_type { type: "minecraft:spruce_planks", mapping_registry: "bs.shapes" }
+
+# See the result
+data get storage bs:out block.block
+```
+
+::::
+::::{tab-item} Mix
+
+`````{function} #bs.block:mix_type {type:<value>,mapping_registry:<value>}
+
+```{admonition} Experimental
+:class: warning
+
+This function may sometimes behave unpredictably due to the arbitrary nature of block relationship definitions. Additionally, while the provided registries aim to cover a wide range of blocks, they are handcrafted and therefore not exhaustive.
+```
+
+Mix block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
+
+```mcfunction
+data modify storage bs:const block.mapping_registry.bs.colors set value [ \
+  { set: "cube", attrs: ["stone"], type: "minecraft:stone" }, \
+  { set: "cube", attrs: ["brick"], type: "minecraft:bricks" }, \
+  { set: "cube", attrs: ["stone", "brick"], type: "minecraft:stone_bricks" }, \
+  { set: "stairs", attrs: ["stone"], type: "minecraft:stone_stairs" }, \
+  { set: "stairs", attrs: ["brick"], type: "minecraft:brick_stairs" }, \
+  { set: "stairs", attrs: ["stone","brick"], type: "minecraft:stone_brick_stairs" }, \
+]
+```
+
+This function operates on the [virtual block format](#get) stored in the block output. It replaces the type in the output with one that belongs to the same set and better matches the attributes of both the output and input types while prioritizing the input type.
+
+For example, with the above mapping registry: if the input is `minecraft:bricks` (attrs:["brick"]), and the virtual block type is `minecraft:stone_stairs` (set:"stairs",attrs:["stone"]), the resulting block will be `minecraft:stone_brick_stairs` (set:"stairs",attrs:["stone","brick"]).
+
+Bookshelf includes two predefined mapping registries (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-registry).
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+    - {nbt}`string` **mapping_registry**: A path to the mapping registry used for the replacement (e.g., `bs.shapes`).
+  :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
+
+:Outputs:
+  **Return**: Whether a type was found and the replacement occurred.
+
+  **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
+`````
+
+*Mix a mossy cobblestone block with bricks resulting in a mossy stone bricks block:*
+
+```mcfunction
+# Once (on mossy_cobblestone)
+execute positioned ~ ~ ~ run function #bs.block:get_block
+
+# Replace type data
+function #bs.block:mix_type { type: "minecraft:bricks", mapping_registry: "bs.shapes" }
 
 # See the result
 data get storage bs:out block.block
@@ -759,24 +819,24 @@ function #bs.block:spawn_solid_block_display
 
 ---
 
-## 🎓 Custom mapping sets
+## 🎓 Custom mapping registry
 
-This module allows you to create personalized mapping sets tailored to your specific needs.
+This module allows you to create a personalized mapping registry tailored to your specific needs.
 
 ---
 
-To create a new mapping set, you need to define a new array within the `bs:const block.mapping_sets` storage. Each new mapping set should be namespaced and each element must include an `id`, `set`, and `type`. Here's how you can define a new mapping set:
+To create a new registry, you need to define an array within the `bs:const block.mapping_registry` storage. Each new registry should be namespaced, and each element must include `set`, `attrs`, and `type`. Here’s how you can define a new mapping registry:
 
 ```mcfunction
-data modify storage bs:const block.mapping_sets.<namespace>.<name> [
-  {id:0,set:0,type:"minecraft:oak_planks"}, \
-  {id:1,set:0,type:"minecraft:spruce_planks"}, \
+data modify storage bs:const block.mapping_registry.<namespace>.<name> [
+  { set: "cube", attrs: ["oak"], type: "minecraft:oak_planks" }, \
+  { set: "cube", attrs: ["spruce"], type: "minecraft:spruce_planks" }, \
   \
-  {id:0,set:1,type:"minecraft:oak_stairs"}, \
-  {id:1,set:1,type:"minecraft:spruce_stairs"}, \
+  { set: "stairs", attrs: ["oak"], type: "minecraft:oak_stairs" }, \
+  { set: "stairs", attrs: ["spruce"], type: "minecraft:spruce_stairs" }, \
   \
-  {id:0,set:2,type:"minecraft:oak_slab"}, \
-  {id:1,set:2,type:"minecraft:spruce_slab"}, \
+  { set: "slab", attrs: ["oak"], type: "minecraft:oak_slab" }, \
+  { set: "slab", attrs: ["spruce"], type: "minecraft:spruce_slab" }, \
 ]
 ```
 

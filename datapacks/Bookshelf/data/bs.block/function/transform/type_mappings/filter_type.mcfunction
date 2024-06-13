@@ -11,16 +11,8 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
-
-function bs.block:load/blocks_table
-function bs.block:load/items_table
-function bs.block:load/types_table
-function bs.block:load/states_table
-function bs.block:load/mapping_registry
-
-data modify storage bs:out block set value {}
+$data modify storage bs:ctx _.filter set from storage bs:ctx _.sets[{type:"$(type)"}]
+execute if data storage bs:ctx _.filter run data modify storage bs:ctx _.filter.attr set from storage bs:ctx _.attrs[0]
+execute if data storage bs:ctx _.filter run function bs.block:transform/type_mappings/filter_set with storage bs:ctx _.filter

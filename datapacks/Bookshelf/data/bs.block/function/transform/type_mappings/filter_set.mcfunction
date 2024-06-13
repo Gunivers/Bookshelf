@@ -13,4 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$function bs.block:transform/replace_type with storage bs:ctx _[{id:$(x),set:$(y)}]
+data modify storage bs:ctx _.sets[]._ set value 1b
+$data remove storage bs:ctx _.sets[{set:"$(set)",attrs:["$(attr)"]}]._
+data remove storage bs:ctx _.sets[{_:1b}]

@@ -13,4 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$return run data get storage bs:ctx _[{type:"$(type)"}].set
+data modify storage bs:ctx _ set value {sets:[]}
+$data modify storage bs:ctx _.sets set from storage bs:const block.mapping_registry.$(mapping_registry)

@@ -11,13 +11,13 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store result storage bs:ctx x int 1 store success score #success bs.data run data get storage bs:ctx _[{type:"$(type)"}].id
-execute if score #success bs.data matches 0 run return fail
-execute store result storage bs:ctx y int 1 store success score #success bs.data run function bs.block:transform/replace_mapped_type/find_set with storage bs:out block
-execute if score #success bs.data matches 0 run return fail
-function bs.block:transform/replace_mapped_type/replace_intersect with storage bs:ctx
-return run function bs.block:get/compile/block
+$execute store success score #success bs.data if data storage bs:ctx _{attrs:$(attrs)}
+execute if score #success bs.data matches 1 store result score #result bs.data if data storage bs:ctx _.entry.attrs[]
+execute if score #success bs.data matches 1 run scoreboard players operation #block.attrs bs.data > #result bs.data
+execute if score #success bs.data matches 1 run data modify storage bs:ctx _.found append from storage bs:ctx _.entry
+
+data remove storage bs:ctx _.sets[-1]
+execute store success score #success bs.data run data modify storage bs:ctx _.entry set from storage bs:ctx _.sets[-1]
+execute if score #success bs.data matches 1 run function bs.block:transform/type_mappings/find_match with storage bs:ctx _.entry
