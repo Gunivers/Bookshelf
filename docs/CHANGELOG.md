@@ -2,6 +2,8 @@
 
 ## 📦 Bookshelf - 2.1.0
 
+Bookshelf is now based on **Minecraft 1.21**.
+
 ### 🎉 Addition
 - ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
 
