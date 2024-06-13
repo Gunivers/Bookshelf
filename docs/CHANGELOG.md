@@ -2,6 +2,9 @@
 
 ## 📦 Bookshelf - 2.1.0
 
+### 🎉 Addition
+- ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
+
 ### 🐛 Fixes
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.vector`.
