@@ -10,7 +10,7 @@ import zipfile
 from pathlib import Path
 
 DATAPACK_PATTERNS = [
-    "**/functions/**/*.mcfunction",
+    "**/function/**/*.mcfunction",
     "**/*.mcmeta",
     "**/*.png",
     "**/*.json",
@@ -46,7 +46,7 @@ def list_modules(datapack: str) -> list[str]:
 
 def list_dependencies(datapack: str, module: str) -> list[str]:
     dependencies = [module]
-    file_path = definitions.DATAPACKS_PATH / datapack / f"data/{module}/tags/functions/load.json"
+    file_path = definitions.DATAPACKS_PATH / datapack / f"data/{module}/tags/function/load.json"
     with open(file_path) as file:
         contents = json.load(file)
         for value in contents["values"]:

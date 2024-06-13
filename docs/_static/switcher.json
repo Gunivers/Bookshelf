@@ -11,6 +11,11 @@
     "preferred": true
   },
   {
+    "name": "2.1.0",
+    "version": "v2.1.0",
+    "url": "https://bookshelf.docs.gunivers.net/en/v2.1.0/"
+  },
+  {
     "name": "2.0.0",
     "version": "v2.0.0",
     "url": "https://bookshelf.docs.gunivers.net/en/v2.0.0/"
