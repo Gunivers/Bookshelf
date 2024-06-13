@@ -138,6 +138,24 @@
     }
   },
   {
+    "name": "map_type",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+    "authors": [
+      "Aksiome"
+    ],
+    "contributors": [
+      "theogiraudet"
+    ],
+    "created": {
+      "date": "2024/05/25",
+      "version": "1.20.6"
+    },
+    "updated": {
+      "date": "2024/06/11",
+      "version": "1.20.6"
+    }
+  },
+  {
     "name": "match",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#match",
     "authors": [
@@ -169,6 +187,24 @@
     }
   },
   {
+    "name": "mix_type",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
+    "authors": [
+      "Aksiome"
+    ],
+    "contributors": [
+      "theogiraudet"
+    ],
+    "created": {
+      "date": "2024/06/08",
+      "version": "1.20.6"
+    },
+    "updated": {
+      "date": "2024/06/11",
+      "version": "1.20.6"
+    }
+  },
+  {
     "name": "remove_properties",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state",
     "authors": [
@@ -181,24 +217,6 @@
     "updated": {
       "date": "2024/01/15",
       "version": "1.20.4"
-    }
-  },
-  {
-    "name": "replace_mapped_type",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type",
-    "authors": [
-      "Aksiome"
-    ],
-    "contributors": [
-      "theogiraudet"
-    ],
-    "created": {
-      "date": "2024/05/25",
-      "version": "1.20.6"
-    },
-    "updated": {
-      "date": "2024/05/25",
-      "version": "1.20.6"
     }
   },
   {

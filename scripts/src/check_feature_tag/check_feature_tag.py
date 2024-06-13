@@ -82,9 +82,7 @@ def __callback(logger: Logger, feature: VisitableFeature) -> bool:
 
 def check_feature(feature: Feature, logger: Logger) -> dict:
     metadata = feature._content.get(definitions.FEATURE_TAG_NAMESPACE, None)
-    if metadata == None:
-        logger.print_err(f"No metadata in feature tag '{feature.mc_path}'.")
-    else:
+    if metadata != None and metadata.get("feature", False):
         for key, value in bookshelf_key.items():
             __check_key(feature.mc_path, [definitions.FEATURE_TAG_NAMESPACE, key], value, metadata, logger)
     return feature._content.get(definitions.FEATURE_TAG_NAMESPACE)

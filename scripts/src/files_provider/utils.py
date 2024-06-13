@@ -40,3 +40,13 @@ def resolve_function_path(path: str) -> Optional[Path]:
             return Path(path)
     print(f"❌ function '{os.path.abspath(path)}' cannot be resolved", file=sys.stderr)
     raise
+
+
+def extract_tag_values(values: dict) -> list[str]:
+    result = []
+    for value in values:
+        if isinstance(value, dict):
+            result.append(value.get('id'))
+        else:
+            result.append(value)
+    return result

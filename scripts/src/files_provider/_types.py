@@ -69,8 +69,8 @@ class DataCategoryValue:
     mc_path_prefix: str
 
 class DataCategory(Enum):
-    FUNCTION = DataCategoryValue("functions", Function, ".mcfunction", "#")
-    FUN_TAG = DataCategoryValue(os.path.join("tags", "functions"), Tag, ".json", "")
+    FUNCTION = DataCategoryValue("function", Function, ".mcfunction", "#")
+    FUN_TAG = DataCategoryValue(os.path.join("tags", "function"), Tag, ".json", "")
 
 
 def build_artifact(real_path: Path) -> Optional[Artifact]:
