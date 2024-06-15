@@ -11,7 +11,7 @@ Bookshelf is now based on **Minecraft 1.21**.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.vector`.
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.xp`.
-- Enhanced speed of factorial function by doing static multiplication in `bs.math`
+- ([218(https://github.com/Gunivers/Bookshelf/pull/218)]) Enhanced speed of factorial function in `bs.math`
 
 ### 📄 Documentation
 - ([206](https://github.com/Gunivers/Bookshelf/issues/206)) Add new related datapacks and mods.
