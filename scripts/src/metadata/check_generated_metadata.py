@@ -12,7 +12,7 @@ from logger.logger import Logger
 
 def check(module_manager: ModuleManager) -> bool:
     logger = newLogger()
-    logger.print_step(f'The following modules will be analyzed:', '🧩')
+    logger.print_step('The following modules will be analyzed:', '🧩')
     logger.print_log(*[str(module.path.relative_to(definitions.ROOT_DIR)) for module in module_manager.get()])
 
 

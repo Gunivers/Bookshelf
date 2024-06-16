@@ -1,10 +1,20 @@
 import os
 import json
 import re
-from function_call_getter._types import *
+from function_call_getter._types import (
+    Artifact,
+    Feature,
+    VisitableAbstractFunction,
+    VisitableFeature,
+    VisitableFeatureSet,
+    VisitableFunction,
+    VisitableFunctionTag,
+    build_abstract_function,
+    build_artifact,
+)
 from files_provider.utils import resolve_function_path
 
-regex = r"^(?!#)(?:\s|\S)*?function(?:\s|\\)*(#?[a-z0-9-\/:_\.$\(\)]+)"
+regex = r"(?:^|\brun(?:\s|\\)+\b|\$)function(?:\s|\\)+(#?[a-z0-9-\/:_\.]+)(?:\s|$)"
 
 class FunctionCallGetter:
 
