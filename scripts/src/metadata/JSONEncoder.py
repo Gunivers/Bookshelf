@@ -1,10 +1,7 @@
 from dataclasses import asdict, is_dataclass
 import json
-from pathlib import Path
-from typing import cast
-import definitions
 
-from metadata.build_metadata import DatapackMetadata, FeatureMetadata, ModuleMetadata
+from metadata.build_metadata import DatapackMetadata, ModuleMetadata
 
 
 def _cleandict(d, keep_path=False):
@@ -20,7 +17,7 @@ class DCJSONEncoder(json.JSONEncoder):
     def default(self, o):
         if is_dataclass(o):
             return _cleandict(asdict(o))
-        if type(o) is set:
+        if isinstance(o, set):
             return list(o)
         return super().default(o)
 

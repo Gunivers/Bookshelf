@@ -97,7 +97,7 @@ def __compute_references(feature_dependencies: dict[str, FeatureReferences], mod
     module_path = Path(str(tag.real_path).split(DataCategory.FUN_TAG.value.path_fragment)[0])
 
     bookshelf_tag = tag.content.get(definitions.FEATURE_TAG_NAMESPACE, None)
-    if bookshelf_tag != None and bookshelf_tag.get('feature', False) and tag.feature.namespace != tag.namespace.split(":")[0]:
+    if bookshelf_tag is not None and bookshelf_tag.get('feature', False) and tag.feature.namespace != tag.namespace.split(":")[0]:
         # Add to feature dependencies
         feature_references = __get_feature_references(feature_dependencies, tag.feature, module_path)
         feature_references.dependencies.add(tag)

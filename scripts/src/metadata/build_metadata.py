@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import json
 from pathlib import Path
 from typing import Tuple
-from check_feature_tag.check_feature_tag import check, check_feature
+from check_feature_tag.check_feature_tag import check_feature
 from files_provider._types import Datapack
 from files_provider.files_provider import DatapackManager, FilesProvider, ModuleManager
 from logger import newLogger
@@ -77,10 +77,10 @@ def build_datapack_metadata(manager: DatapackManager, logger: Logger) -> Datapac
 def get_mcmeta_infos(datapack: Datapack, logger: Logger) -> Tuple[int, str]:
     with open(datapack.path / "pack.mcmeta") as file:
         content: dict = json.load(file)
-        if content.get("pack", None) != None:
-            if content["pack"].get("pack_format", None) == None:
+        if content.get("pack", None) is not None:
+            if content["pack"].get("pack_format", None) is None:
                 logger.print_err(f"'pack_format' is missing in the pack.mcmeta of '{datapack.name}'")
-            elif content["pack"].get("description", None) == None:
+            elif content["pack"].get("description", None) is None:
                 logger.print_err(f"'description' is missing in the pack.mcmeta of '{datapack.name}'")
             return content["pack"]["pack_format"], content["pack"]["description"]
         logger.print_err(f"'pack' is missing in the pack.mcmeta of '{datapack.name}'")

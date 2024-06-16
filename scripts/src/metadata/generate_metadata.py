@@ -38,7 +38,7 @@ def __generate(obj, encoder: type[json.JSONEncoder] = DCJSONEncoder):
 
 def __write_json(json: str, path: Path):
     os.makedirs(path.parent, exist_ok=True)
-    with open(path, 'w') as file:
+    with open(path, 'w', newline='\n') as file:
         file.write(json)
 
 def sort_metadata(metadata: list[DatapackMetadata]):

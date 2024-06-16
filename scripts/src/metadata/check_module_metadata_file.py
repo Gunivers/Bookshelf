@@ -17,48 +17,48 @@ def check_icon(name: str, path: str, logger: Logger) -> bool:
 
 
 lines = {
-     "name": {
+    "name": {
         "syntax": r"^bs\.[a-z0-1-_]+$",
-        "optional": False
+        "optional": False,
     },
-     "display_name": {
+    "display_name": {
         "syntax": r"^.*$",
-        "optional": False
-     },
-     "description": {
+        "optional": False,
+    },
+    "description": {
         "syntax": r"^.*$",
-        "optional": False
-     },
-     "icon": {
-         "syntax": r"^.*$",
-         "validator": check_icon,
-         "optional": True,
-         "warning_if_missing": True
-     },
-     "authors": {
-         "optional": True,
-         "can_be_empty": False,
-         "elements": {
-                "syntax": r"^.+$"
-         }
-     },
-     "contributors": {
-         "optional": True,
-         "can_be_empty": False,
-          "elements": {
-                "syntax": r"^.+$"
-         }
-     },
-     "documentation": {
-        "syntax": re.escape(definitions.DOC_URL) + r".*$",
-        "optional": False
-     },
-     "weak_dependencies": {
-         "elements": {
-                "syntax": r"^bs\.[a-z0-1-_]+$"
-         },
-         "optional": True
-    }
+        "optional": False,
+    },
+    "icon": {
+        "syntax": r"^.*$",
+        "validator": check_icon,
+        "optional": True,
+        "warning_if_missing": True,
+    },
+    "authors": {
+        "optional": True,
+        "can_be_empty": False,
+        "elements": {
+            "syntax": r"^.+$",
+        },
+    },
+    "contributors": {
+        "optional": True,
+        "can_be_empty": False,
+        "elements": {
+            "syntax": r"^.+$",
+        },
+    },
+    "documentation": {
+        "syntax": fr"{re.escape(definitions.DOC_URL)}.*$",
+        "optional": False,
+    },
+    "weak_dependencies": {
+        "elements": {
+            "syntax": r"^bs\.[a-z0-1-_]+$",
+        },
+        "optional": True,
+    },
 }
 
 def check_metadata_json(yaml: dict, path: Path, logger: Logger):
