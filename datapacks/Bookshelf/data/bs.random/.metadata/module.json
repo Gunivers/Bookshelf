@@ -1,0 +1,9 @@
+{
+    "name": "bs.random",
+    "display_name": "Random",
+    "description": "Contains many random functions for different distributions",
+    "documentation": "",
+    "authors": [
+        "SBtree"
+    ]
+}
