@@ -1626,12 +1626,14 @@
           "Ethanout",
           "KubbyDev",
           "Leirof",
+          "SBtree-bit",
           "Triton365",
           "theogiraudet",
           "xiaodou123"
         ],
         "contributors": [
-          "Aksiome"
+          "Aksiome",
+          "tryashtar"
         ],
         "module_path": "datapacks/Bookshelf/data/bs.math",
         "features": [
@@ -1781,10 +1783,12 @@
             "name": "factorial",
             "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#factorial",
             "authors": [
-              "KubbyDev"
+              "Aksiome",
+              "KubbyDev",
+              "SBtree-bit"
             ],
             "contributors": [
-              "Aksiome"
+              "tryashtar"
             ],
             "created": {
               "date": "2017/09/08",

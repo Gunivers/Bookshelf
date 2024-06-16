@@ -145,10 +145,12 @@
     "name": "factorial",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#factorial",
     "authors": [
-      "KubbyDev"
+      "Aksiome",
+      "KubbyDev",
+      "SBtree-bit"
     ],
     "contributors": [
-      "Aksiome"
+      "tryashtar"
     ],
     "created": {
       "date": "2017/09/08",
