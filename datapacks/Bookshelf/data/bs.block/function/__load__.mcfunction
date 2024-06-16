@@ -15,6 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
+forceload add -30000000 1600
+setblock -30000000 0 1606 minecraft:decorated_pot
+
 scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 
 function bs.block:load/blocks_table

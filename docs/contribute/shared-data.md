@@ -38,6 +38,9 @@ These commands can be used at load time to create blocks that can be used anywhe
 ```mcfunction
 # Used to get the system time (command block output)
 setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,Command:"help me",TrackOutput:1}
+
+# Used to manipulate loots
+setblock -30000000 0 1606 minecraft:decorated_pot
 ```
 
 ## Shared entities

@@ -10,8 +10,26 @@
       "version": "1.20.4"
     },
     "updated": {
-      "date": "2024/01/15",
-      "version": "1.20.4"
+      "date": "2024/06/16",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "fill_random",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill",
+    "authors": [
+      "Aksiome"
+    ],
+    "contributors": [
+      "SBtree-bit"
+    ],
+    "created": {
+      "date": "2024/06/16",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/16",
+      "version": "1.21"
     }
   },
   {
@@ -25,8 +43,8 @@
       "version": "1.20.4"
     },
     "updated": {
-      "date": "2024/01/15",
-      "version": "1.20.4"
+      "date": "2024/06/16",
+      "version": "1.21"
     }
   },
   {

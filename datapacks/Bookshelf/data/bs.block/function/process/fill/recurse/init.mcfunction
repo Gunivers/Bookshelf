@@ -11,16 +11,6 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
-setblock -30000000 0 1606 minecraft:air
-forceload remove -30000000 1600
-
-scoreboard objectives remove bs.data
-
-data remove storage bs:in block
-data remove storage bs:out block
-data remove storage bs:const block
-data remove storage bs:data block
+$execute positioned $(x) $(y) $(z) run function bs.block:process/fill/recurse/next with storage bs:data block.process

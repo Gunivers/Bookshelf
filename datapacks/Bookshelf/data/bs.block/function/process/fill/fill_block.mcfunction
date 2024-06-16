@@ -11,7 +11,19 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:data block.fill_type[].unqueue set value 1b
-function bs.block:process/fill_type/recurse/unqueue
+data modify storage bs:data block.process set value { \
+  mode: "replace", \
+  limit: 4096, \
+  masks: [], \
+  mask: "", \
+  run: "bs.block:process/run/set_block", \
+  resume: "bs.block:process/fill/recurse/resume", \
+}
+data modify storage bs:data block.process merge from storage bs:in block.fill_block
+
+execute if data storage bs:data block.process.masks[0] run function bs.block:process/masks/compile
+function bs.block:process/fill/recurse/setup
