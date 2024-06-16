@@ -2,8 +2,11 @@
     "name": "bs.random",
     "display_name": "Random",
     "description": "Contains many random functions for different distributions",
-    "documentation": "",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html",
     "authors": [
         "SBtree"
+    ],
+    "contributors": [
+        "Aeldrion"
     ]
 }
