@@ -115,3 +115,32 @@ function #bs.random:poisson {lambda:50}
 # See the result
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.poisson", "objective": "bs.out"}, "color": "gold"}]
 ```
+
+::::
+:::::
+
+### Random Choice
+
+```{function} #bs.random:choose
+
+Picks a random value from an array
+
+:Inputs:
+  **Storage `bs:in random.choose.list`**: {nbt}`array` Array of values to choose from
+
+:Outputs:
+  **Storage `bs:out random.choose.selection`**: {nbt}`any` Value that is randomly selected
+```
+
+*Generate a random number between 1 and 10, with a 20% chance*
+
+```mcfunction
+# Populate list with test values
+data modify storage bs:in random.choose.list set value ["Apples", "Bananas", "Strawberries", "Blueberries", "Mango", "Watermelon", "Honeydew Melon"]
+
+# Randomly select one
+function #bs.random:choose
+
+# See the result
+tellraw @a [{"text": "Value: ", "color": "dark_gray"},{"nbt":"random.choose.selection","storage":"bs:out", "color": "gold"}]
+```

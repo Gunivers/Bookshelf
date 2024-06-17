@@ -12,6 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
-scoreboard objectives remove bs.random
+
+$data modify storage bs:out random.choose.selection set from storage bs:in random.choose.list[$(idx)]

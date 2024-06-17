@@ -1,5 +1,25 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
+# ------------------------------------------------------------------------------------------------------------
+# Modified from https://github.com/Aeldrion/Minecraft-Random
 scoreboard objectives add bs.random dummy [{"text":"BS ","color":"dark_gray"},{"text":"Random","color":"aqua"}]
 execute unless score #lcg bs.random = #lcg bs.random store result score #lcg bs.random run seed
+data merge storage bs:random {tmp:{}}
+execute unless data storage bs:in random run data merge storage bs:in {random:{choose:{list:[]}}}
+execute unless data storage bs:out random run data merge storage bs:out {random:{choose:{selection:""}}}
 
 scoreboard players set #3 bs.const 3
 scoreboard players set #5 bs.const 5

@@ -12,6 +12,13 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
-scoreboard objectives remove bs.random
+
+execute store result score #len bs.random run data get storage bs:in random.choose.list
+scoreboard players remove #len bs.random 1
+execute store result score #idx bs.random run random value 0..1000
+scoreboard players operation #idx bs.random *= #len bs.random
+data merge storage bs:random {tmp:{idx:0}}
+execute store result storage bs:random tmp.idx int 0.001 run scoreboard players get #idx bs.random
+function bs.random:choose/get with storage bs:random tmp
