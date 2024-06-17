@@ -1,7 +1,7 @@
 {
     "__bookshelf__": {
         "feature": true,
-        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#uniform-random-distribution",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
         "authors": [
             "SBtree"
         ],
@@ -9,15 +9,15 @@
             "Aeldrion"
         ],
         "created": {
-            "date": "2024/6/15",
+            "date": "2024/6/16",
             "minecraft_version": "1.21"
         },
         "updated": {
-            "date": "2024/6/15",
+            "date": "2024/6/16",
             "minecraft_version": "1.21"
         }
     },
     "values": [
-        "bs.random:uniform/uniform"
+        "bs.random:geometric/geometric"
     ]
 }

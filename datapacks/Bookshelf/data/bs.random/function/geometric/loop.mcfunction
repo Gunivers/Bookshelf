@@ -11,13 +11,10 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 
-# Xn+1 = (aXn + c) mod m
-scoreboard players operation #lcg bs.random *= #lcg_a bs.random
-scoreboard players operation #lcg bs.random += #lcg_c bs.random
-scoreboard players operation #lcg bs.random %= #lcg_m bs.random
-
-# Loop if necessary
-execute if score #lcg bs.random >= #max bs.random run function bs.random:uniform/loop
+scoreboard players add $random.geometric bs.out 1
+execute unless predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.random","target":{"type":"minecraft:fixed","name":"#chance"}}}} unless score $random.geometric bs.out matches 1000 run function bs.random:geometric/loop
