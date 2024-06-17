@@ -901,6 +901,22 @@ Place and rotate an entity according to its position and rotation scores.
 
 ---
 
+## 👁️ Predicates
+
+You can find below all predicates available in this module.
+
+---
+
+### Is outside?
+
+**`bs.biome:is_outside`**
+
+Determine if the current position is outside, i.e. if there is no block between the position and the sky.
+
+> **Credits**: theogiraudet
+
+---
+
 <div id="gs-comments" align=center>
 
 **💬 Did it help you?**
