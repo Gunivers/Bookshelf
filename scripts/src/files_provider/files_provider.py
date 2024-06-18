@@ -1,13 +1,22 @@
 from dataclasses import dataclass
-import os
+from files_provider._types import (
+    Artifact,
+    DataCategory,
+    Datapack,
+    Feature,
+    Function,
+    Module,
+    Tag,
+    build_artifact,
+)
+from files_provider.utils import get_module_path
 from pathlib import Path
-import subprocess
 from typing import Callable
+from typing import cast
 import definitions
 import glob
-from typing import cast
-from files_provider._types import *
-from files_provider.utils import get_module_path
+import os
+import subprocess
 
 
 
@@ -34,7 +43,11 @@ class DatapackManager(Manager[Datapack]):
     def get_modules(self) -> 'ModuleManager':
         modules: list[Module] = list()
         for datapack in self._content:
-            modules.extend([ Module(module.name, Path(module.path)) for module in os.scandir(datapack.path / 'data') if module.is_dir() and module.name != 'minecraft'])
+            modules.extend([
+                Module(module.name, Path(module.path))
+                for module in os.scandir(datapack.path / 'data')
+                if module.is_dir() and module.name != 'minecraft'
+            ])
         return ModuleManager(modules)
 
     def get_separated_modules(self) -> list['ModuleManager']:
@@ -58,7 +71,7 @@ class ModuleManager(Manager[Module]):
                 artifact = build_artifact(Path(os.path.join(module.path, file)))
                 artifact.get_content()
                 bookshelf_tag = cast(Tag, artifact)._content.get(definitions.FEATURE_TAG_NAMESPACE, None)
-                if isinstance(artifact, Tag) and bookshelf_tag != None and bookshelf_tag.get('feature', False):
+                if isinstance(artifact, Tag) and bookshelf_tag is not None and bookshelf_tag.get('feature', False):
                     features.append(Feature(artifact.real_path, artifact.mc_path, artifact._content))
         return features
 
@@ -122,7 +135,11 @@ class FilesProvider:
         return FilePathsManager(list(map(lambda path: Path(os.path.join(definitions.ROOT_DIR, path)), result.splitlines())))
 
     def datapacks(self) -> DatapackManager:
-        return DatapackManager([ Datapack(datapack.name, Path(datapack.path)) for datapack in os.scandir(definitions.DATAPACKS_PATH) if datapack.is_dir() and datapack.name not in ignore_datapacks])
+        return DatapackManager([
+            Datapack(datapack.name, Path(datapack.path))
+            for datapack in os.scandir(definitions.DATAPACKS_PATH)
+            if datapack.is_dir() and datapack.name not in ignore_datapacks
+        ])
 
     def separated_datapacks(self) -> list[DatapackManager]:
         datapacks = self.datapacks().get()

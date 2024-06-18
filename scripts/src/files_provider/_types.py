@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
-import json
-import os
 from pathlib import Path
 from typing import Optional
+import json
+import os
 
 
 class Artifact[T](ABC):

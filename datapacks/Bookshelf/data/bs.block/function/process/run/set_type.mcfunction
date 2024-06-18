@@ -13,4 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute positioned $(x) $(y) $(z) run function bs.block:process/fill_block/recurse/next with storage bs:data block.process
+function bs.block:get/get_block
+function #bs.block:replace_type with storage bs:data block.process
+data modify storage bs:data block.process.block set from storage bs:out block.block
+function bs.block:process/run/set_block with storage bs:data block.process

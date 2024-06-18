@@ -11,16 +11,13 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
-setblock -30000000 0 1606 minecraft:air
-forceload remove -30000000 1600
+data modify storage bs:ctx _.pools[0].entries append value {type:"minecraft:item",name:"minecraft:cod",weight:1,functions:[{function:"minecraft:set_custom_data",tag:{}}]}
 
-scoreboard objectives remove bs.data
+data modify storage bs:ctx _.pools[0].entries[-1].weight set from storage bs:data block.process.entries[-1].weight
+data modify storage bs:ctx _.pools[0].entries[-1].functions[0].tag.block set from storage bs:data block.process.entries[-1].block
+data modify storage bs:ctx _.pools[0].entries[-1].functions[0].tag.type set from storage bs:data block.process.entries[-1].type
 
-data remove storage bs:in block
-data remove storage bs:out block
-data remove storage bs:const block
-data remove storage bs:data block
+data remove storage bs:data block.process.entries[-1]
+execute if data storage bs:data block.process.entries[-1] run function bs.block:process/random/loop

@@ -1,16 +1,12 @@
-from files_provider._types import *
-import re
-from typing import cast
+from files_provider._types import Function
 from files_provider.files_provider import Artifact
 from function_call_getter._types import (VisitableFeature, VisitableFunction)
-import definitions
 from logger import newLogger
 from logger.logger import Logger
+from typing import cast
+import definitions
+import re
 import utils.function_header as function_header
-import utils.function_header as function_header
-
-header_header = "# INFO"
-header_footer = "# CODE"
 
 def check(artifact_paths: list[Artifact]) -> bool:
     """
@@ -45,7 +41,7 @@ def callback(logger: Logger, function: VisitableFunction | VisitableFeature) -> 
 
     if isinstance(function, VisitableFeature):
         content = cast(VisitableFeature, function).content
-        if not definitions.FEATURE_TAG_NAMESPACE in content:
+        if definitions.FEATURE_TAG_NAMESPACE not in content:
             logger.print_err(f"No metadata in feature tag '{function.mc_path}'. End points analyze will be ignored.")
 
     else:

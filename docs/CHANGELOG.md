@@ -5,10 +5,11 @@
 ## 📦 Bookshelf - 2.2.0
 
 ### 🎉 Addition
-- ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
-- ([190](https://github.com/Gunivers/Bookshelf/issues/190)) Add `bs.position:is_outside` predicate.
+
+- ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
 
 ### ⚡️ Improvements
+
 - ([218](https://github.com/Gunivers/Bookshelf/pull/218)) Enhanced speed of factorial function in `bs.math`.
 
 ---

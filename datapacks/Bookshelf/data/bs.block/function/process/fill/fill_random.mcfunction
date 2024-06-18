@@ -12,15 +12,19 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill
 # ------------------------------------------------------------------------------------------------------------
 
-setblock -30000000 0 1606 minecraft:air
-forceload remove -30000000 1600
+data modify storage bs:data block.process set value { \
+  mode: "replace", \
+  limit: 4096, \
+  masks: [], \
+  mask: "", \
+  run: "bs.block:process/run/set_random", \
+  resume: "bs.block:process/fill/recurse/resume", \
+}
+data modify storage bs:data block.process merge from storage bs:in block.fill_random
 
-scoreboard objectives remove bs.data
-
-data remove storage bs:in block
-data remove storage bs:out block
-data remove storage bs:const block
-data remove storage bs:data block
+execute if data storage bs:data block.process.masks[0] run function bs.block:process/masks/compile
+function bs.block:process/random/compile
+function bs.block:process/fill/recurse/setup
