@@ -19,12 +19,10 @@ data modify storage bs:out random.noise[-1] append value 0.0f
 # Calculate UVs
 scoreboard players operation #U bs.random = #x bs.random
 scoreboard players operation #V bs.random = #y bs.random
-scoreboard players operation #U bs.random *= #100 bs.const
-scoreboard players operation #V bs.random *= #100 bs.const
+scoreboard players operation #U bs.random *= #400 bs.const
+scoreboard players operation #V bs.random *= #400 bs.const
 scoreboard players operation #U bs.random /= #width bs.random
 scoreboard players operation #V bs.random /= #height bs.random
-scoreboard players operation #U bs.random *= #4 bs.const
-scoreboard players operation #V bs.random *= #4 bs.const
 
 # Calculate Grid UVs
 scoreboard players operation #u bs.random = #U bs.random
@@ -43,10 +41,8 @@ scoreboard players operation #v_presmooth bs.random = #v bs.random
 # Smooth Grid UVs
 scoreboard players operation #u1 bs.random = #u bs.random
 scoreboard players operation #v1 bs.random = #v bs.random
-scoreboard players operation #u1 bs.random *= #200 bs.const
-scoreboard players operation #v1 bs.random *= #200 bs.const
-scoreboard players operation #u1 bs.random /= #100 bs.const
-scoreboard players operation #v1 bs.random /= #100 bs.const
+scoreboard players operation #u1 bs.random *= #2 bs.const
+scoreboard players operation #v1 bs.random *= #2 bs.const
 scoreboard players set #u2 bs.random 300
 scoreboard players set #v2 bs.random 300
 scoreboard players operation #u2 bs.random -= #u1 bs.random

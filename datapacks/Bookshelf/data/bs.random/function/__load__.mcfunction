@@ -41,7 +41,9 @@ scoreboard players set #7 bs.const 7
 scoreboard players set #8 bs.const 8
 scoreboard players set #9 bs.const 9
 scoreboard players set #10 bs.const 10
+scoreboard players set #12 bs.const 12
 scoreboard players set #33 bs.const 33
+scoreboard players set #78 bs.const 78
 scoreboard players set #100 bs.const 100
 scoreboard players set #200 bs.const 200
 scoreboard players set #400 bs.const 400
