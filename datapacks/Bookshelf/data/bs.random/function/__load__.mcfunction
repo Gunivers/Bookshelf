@@ -17,17 +17,34 @@
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 scoreboard objectives add bs.random dummy [{"text":"BS ","color":"dark_gray"},{"text":"Random","color":"aqua"}]
 execute unless score #lcg bs.random = #lcg bs.random store result score #lcg bs.random run seed
-data merge storage bs:random {tmp:{}}
+data merge storage bs:random {tmp:{},const:{\
+    constant: "constant",\
+    "minecraft:constant": "minecraft:constant",\
+    uniform: "uniform",\
+    "minecraft:uniform": "minecraft:uniform",\
+    binomial: "binomial",\
+    "minecraft:binomial": "minecraft:binomial",\
+    geometric: "geometric",\
+    "minecraft:geometric": "minecraft:geometric",\
+    poisson: "poisson",\
+    "minecraft:poisson": "minecraft:poisson"\
+}}
 execute unless data storage bs:in random run data merge storage bs:in {random:{choose:{list:[]}}}
 execute unless data storage bs:out random run data merge storage bs:out {random:{choose:{selection:""}}}
 
+execute store result score #seed bs.random run seed
+scoreboard players set #2 bs.const 2
 scoreboard players set #3 bs.const 3
+scoreboard players set #4 bs.const 4
 scoreboard players set #5 bs.const 5
 scoreboard players set #7 bs.const 7
 scoreboard players set #8 bs.const 8
 scoreboard players set #9 bs.const 9
 scoreboard players set #10 bs.const 10
+scoreboard players set #33 bs.const 33
 scoreboard players set #100 bs.const 100
+scoreboard players set #200 bs.const 200
+scoreboard players set #400 bs.const 400
 scoreboard players set #1000 bs.const 1000
 scoreboard players set #10000 bs.const 10000
 scoreboard players set #log(10) bs.const 23026
