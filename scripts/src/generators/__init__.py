@@ -1,2 +1,3 @@
-import generators.biome
-import generators.block
+from . import block
+from . import biome
+from . import metadata

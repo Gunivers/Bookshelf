@@ -1,45 +1,47 @@
-
-import copy
-import json
-import os
+from generators.json_encoders import DCJSONEncoder, ManifestJSONEncoder, ModuleJSONEncoder
+from generators.utils import render_json, write_file
+from logger import BaseLogger, new_logger
+from metadata.build_metadata import DatapackMetadata, FeatureMetadata, ModuleMetadata, build
 from pathlib import Path
 from typing import Callable
-from metadata.JSONEncoder import DCJSONEncoder, ManifestJSONEncoder, ModuleJSONEncoder
-from metadata.build_metadata import DatapackMetadata, FeatureMetadata, ModuleMetadata, build
+import copy
 import definitions
 
-def generate():
-    metadata: list[DatapackMetadata] = build()
+def generate(logger: BaseLogger = new_logger()):
+    logger.step("⏳ Checking metadata files…")
+    metadata: list[DatapackMetadata] = build(logger)
     sort_metadata(metadata)
-    generate_manifest(adapt_for_manifest(metadata), __write_json)
+
+    if logger.has_level_errors():
+        raise RuntimeError("Malformed metadata file detected. Generation interrupted!")
+
+    logger.step("⚙️ Generating metadata files…")
+    generate_manifest(adapt_for_manifest(metadata), write_file)
+    logger.success("Manifest file generated!")
+
     for datapack in metadata:
         for module in datapack.modules:
-            generate_module_metadata(module, __write_json)
-            generate_feature_metadata(module.features, module.module_path, __write_json)
+            generate_module_metadata(module, write_file)
+            generate_feature_metadata(module.features, module.module_path, write_file)
+    logger.success("Metadata files generated!")
+
+    logger.done()
 
 
 def generate_manifest(metadata: list[DatapackMetadata], consumer: Callable[[str, Path], None]):
     path = definitions.GENERATED_PATH / "manifest.json"
-    consumer(__generate(metadata, ManifestJSONEncoder), path)
+    consumer(render_json(metadata, ManifestJSONEncoder), path)
 
 
 def generate_module_metadata(metadata: ModuleMetadata, consumer: Callable[[str, Path], None]):
     path = metadata.module_path / ".metadata" / "generated" / "module.json"
-    consumer(__generate(metadata, ModuleJSONEncoder), path)
+    consumer(render_json(metadata, ModuleJSONEncoder), path)
 
 
 def generate_feature_metadata(metadata: list[FeatureMetadata], module_path: Path, consumer: Callable[[str, Path], None]):
     path = module_path / ".metadata" / "generated" / "features.json"
-    consumer(__generate(metadata, DCJSONEncoder), path)
+    consumer(render_json(metadata, DCJSONEncoder), path)
 
-
-def __generate(obj, encoder: type[json.JSONEncoder] = DCJSONEncoder):
-    return json.dumps(obj, indent=2, cls=encoder, ensure_ascii=False)
-
-def __write_json(json: str, path: Path):
-    os.makedirs(path.parent, exist_ok=True)
-    with open(path, 'w', newline='\n') as file:
-        file.write(json)
 
 def sort_metadata(metadata: list[DatapackMetadata]):
     metadata.sort(key=lambda x: x.name)

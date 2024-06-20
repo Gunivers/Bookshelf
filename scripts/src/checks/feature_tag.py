@@ -3,10 +3,10 @@ from files_provider.files_provider import Artifact
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, Visitor)
 from function_call_getter.function_call_getter import FunctionCallGetter
 from functools import partial
-from logger import newLogger
-from logger.logger import Logger
+from logger import BaseLogger, new_logger
 import definitions
 import re
+
 
 date = {
     "date": {
@@ -30,7 +30,7 @@ bookshelf_key = {
     "documentation": {
         "optional": False,
         "type": "string",
-        "syntax": fr"^{re.escape(definitions.DOC_URL)}.*$",
+        "syntax": fr"^{re.escape(definitions.DOCUMENTATION_URL)}.*$",
     },
     "authors": {
         "optional": False,
@@ -54,33 +54,35 @@ bookshelf_key = {
     }
 }
 
+
 def check(artifact_paths: list[Artifact]) -> bool:
     """
     return True if errors were found
     """
-
-    logger = newLogger()
-    logger.print_step("The following files will be reviewed:", "📄")
-    logger.print_log(*[str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths])
+    logger = new_logger()
+    logger.step("📄 The following files will be reviewed:")
+    logger.print(*[str(path.real_path.relative_to(definitions.ROOT_DIR)) for path in artifact_paths])
 
     getter = FunctionCallGetter()
 
     feature_set: VisitableFeatureSet = getter.build_function_call_tree(artifact_paths)
-    logger.print_step(f"Found {len(feature_set.features)} features:", "📦")
-    logger.print_log(*[feature.mc_path for feature in feature_set.features])
+    logger.step(f"📦 Found {len(feature_set.features)} features:")
+    logger.print(*[feature.mc_path for feature in feature_set.features])
 
-    logger.print_step("Checking their specified metadata…", "⏳")
+    logger.step("⏳ Checking their specified metadata…")
 
     visitor = Visitor([VisitableFeature], partial(__callback, logger))
     visitor.visit(feature_set)
 
-    return logger.print_done()
+    return logger.done()
 
-def __callback(logger: Logger, feature: VisitableFeature) -> bool:
+
+def __callback(logger: BaseLogger, feature: VisitableFeature) -> bool:
     check_feature(Feature(feature.real_path, feature.mc_path, feature.content), logger)
     return True
 
-def check_feature(feature: Feature, logger: Logger) -> dict:
+
+def check_feature(feature: Feature, logger: BaseLogger) -> dict:
     metadata = feature._content.get(definitions.FEATURE_TAG_NAMESPACE, None)
     if metadata is not None and metadata.get("feature", False):
         for key, value in bookshelf_key.items():
@@ -88,36 +90,40 @@ def check_feature(feature: Feature, logger: Logger) -> dict:
     return feature._content.get(definitions.FEATURE_TAG_NAMESPACE)
 
 
-def __check_string(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+def __check_string(value, path: list[str], pattern: dict, tag_path: str, logger: BaseLogger):
     syntax = pattern.get("syntax", None)
     if syntax is not None and not re.match(syntax, value):
-        logger.print_err(f"Invalid syntax for key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
+        logger.error(f"Invalid syntax for key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
 
-def __check_list(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+
+def __check_list(value, path: list[str], pattern: dict, tag_path: str, logger: BaseLogger):
     if not isinstance(value, list):
-        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a list.")
+        logger.error(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a list.")
     elif "not_empty" in pattern.get("tags", []):
         if len(value) == 0:
-            logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should not be empty.")
+            logger.error(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should not be empty.")
 
-def __check_object(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
+
+def __check_object(value, path: list[str], pattern: dict, tag_path: str, logger: BaseLogger):
     if not isinstance(value, dict):
-        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be an object.")
+        logger.error(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be an object.")
     else:
         for key, element in pattern.get("elements", {}).items():
             __check_key(tag_path, path + [key], element, value, logger)
 
-def __check_bool(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
-    if not isinstance(value, bool):
-        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a boolean.")
-    elif value != pattern.get("value", False):
-        logger.print_err(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be {pattern.get('value', False)}.")
 
-def __check_key(tag_path: str, path: list[str], pattern: dict, obj: dict, logger: Logger):
+def __check_bool(value, path: list[str], pattern: dict, tag_path: str, logger: BaseLogger):
+    if not isinstance(value, bool):
+        logger.error(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be a boolean.")
+    elif value != pattern.get("value", False):
+        logger.error(f"Key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}' should be {pattern.get('value', False)}.")
+
+
+def __check_key(tag_path: str, path: list[str], pattern: dict, obj: dict, logger: BaseLogger):
     type = pattern.get("type", None)
     value = obj.get(path[-1], None)
     if value is None and not pattern.get("optional", True):
-        logger.print_err(f"Missing key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
+        logger.error(f"Missing key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
     elif not pattern.get("optional", True):
         if type == "string":
             __check_string(value, path, pattern, tag_path, logger)
@@ -127,4 +133,3 @@ def __check_key(tag_path: str, path: list[str], pattern: dict, obj: dict, logger
             __check_object(value, path, pattern, tag_path, logger)
         elif type == "bool":
             __check_bool(value, path, pattern, tag_path, logger)
-

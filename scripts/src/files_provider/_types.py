@@ -38,7 +38,7 @@ class Function(Artifact[list[str]]):
 
     def __load__(self) -> list[str]:
         with open(self.real_path, mode='r', encoding='utf-8') as f:
-            return f.readlines()
+            return f.read().splitlines()
 
 
 class Tag(Artifact[dict]):

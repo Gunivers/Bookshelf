@@ -69,7 +69,7 @@ def get_world_files() -> list[str]:
         "README.md",
     ]
 
-    return get_files(definitions.WORLD_PATH, path_list, DATAPACK_PATTERNS + WORLD_PATTERNS)
+    return get_files(definitions.ROOT_DIR, path_list, DATAPACK_PATTERNS + WORLD_PATTERNS)
 
 def get_datapack_files(datapack: str) -> list[str]:
     path_list = ["data", "icon.png", "pack.mcmeta"]
@@ -101,7 +101,7 @@ def create_world_archive(target: Path, filename: str):
     print("🗺️ Creating world archive")
     create_archive(
         target / filename,
-        definitions.WORLD_PATH,
+        definitions.ROOT_DIR,
         get_world_files(),
     )
 

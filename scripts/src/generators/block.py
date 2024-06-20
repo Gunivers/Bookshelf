@@ -1,101 +1,83 @@
-import bisect
-import requests
-import sys
-
+from functools import partial
+from generators.utils import render_json, render_snbt, render_template, write_file, write_nbt
+from logger import BaseLogger, new_logger
+from mcdata.block import get_blocks
 from pathlib import Path
-from dataclasses import dataclass
-from generators.contracts import DataProcessor
-
-from generators.processors.block import (
-    CreateTagsFiles,
-    CreateBlockTableFile,
-    CreateBlockTypesFile,
-    CreateBlockItemsFile,
-    CreateStatesFile,
-    CreateRegistryFiles,
-    UpdateStorageFile,
-)
-
-BLOCKS_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-summary/blocks/data.min.json"
-ITEMS_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-registries/item/data.min.json"
-
-@dataclass
-class Blocks:
-    types: list[dict]
-    groups: list[dict]
-    items: list[str]
+from typing import Callable
+import definitions
+import math
 
 
-def get_blocks(mc_version: str) -> Blocks:
-    """
-    Fetches blocks data for the given version of minecraft.
-    """
-    response = requests.get(BLOCKS_URL.format(mc_version))
-    response.raise_for_status()
-
-    types = []
-    groups = [{}]
-
-    for block, data in response.json().items():
-        states = {}
-        for name, options in data[0].items():
-            idx = options.index(data[1][name])
-            states[name] = options[idx:] + options[:idx]
-
-        if states not in groups:
-            groups.append(states)
-
-        bisect.insort(types, {
-            "group": groups.index(states),
-            "type": block if block.startswith("minecraft:") else f"minecraft:{block}"
-        }, key=lambda x: x["group"])
-
-    response = requests.get(ITEMS_URL.format(mc_version))
-    response.raise_for_status()
-
-    items = [
-        item if item.startswith("minecraft:") else f"minecraft:{item}"
-        for item in response.json()
-    ]
-
-    return Blocks(types, groups, items)
-
-
-def get_processors(datapacks: Path, assets: Path = None) -> list[DataProcessor]:
-    """
-    Gets a list of objects used to process blocks data.
-    """
-    module = datapacks / "Bookshelf/data/bs.block/"
-
-    return filter(None, [
-        CreateTagsFiles(module / "tags/blocks"),
-        CreateBlockTableFile(module / "functions/load/blocks_table.mcfunction"),
-        CreateBlockTypesFile(module / "functions/load/types_table.mcfunction"),
-        CreateBlockItemsFile(module / "functions/load/items_table.mcfunction"),
-        CreateStatesFile(module / "functions/load/states_table.mcfunction"),
-        CreateRegistryFiles(module / "functions/get/registry/"),
-        UpdateStorageFile(assets / "command_storage_bs.dat") if assets else None,
-    ])
-
-
-def run(mc_version: str, datapacks_path: str, assets_path: str = None):
-    """
-    Generates files for the block module.
-    """
-    print("🧱 Running the block generator")
-
+def generate(mc_version: str, logger: BaseLogger = new_logger()):
+    logger.step("🚀 Fetching 'bs.block' data…")
     blocks = get_blocks(mc_version)
-    for processor in get_processors(
-        Path(datapacks_path),
-        Path(assets_path) if assets_path else None
-    ):
-        processor.process(blocks)
 
-    print("✅ Done!")
+    logger.step("⚙️ Generating 'bs.block' files…")
+    generate_blocks_storage(blocks, partial(write_nbt, ".data.contents.const.block"))
+    logger.success("Storage 'command_storage_bs.dat' updated!")
+    generate_blocks_table_function(blocks, write_file)
+    logger.success("Function 'blocks_table.mcfunction' generated!")
+    generate_types_hashmap_function(blocks, write_file)
+    logger.success("Function 'types_hashmap.mcfunction' generated!")
+    generate_items_hashmap_function(blocks, write_file)
+    logger.success("Function 'items_hashmap.mcfunction' generated!")
+    generate_block_states_function(blocks, write_file)
+    logger.success("Function 'block_states.mcfunction' generated!")
+    generate_registry_functions(blocks, write_file)
+    logger.success("Registry functions generated!")
+    generate_block_tags(blocks , write_file)
+    logger.success("Block tags generated!")
+
+    logger.done()
 
 
-if __name__ == "__main__":
-    try:
-        run(*sys.argv[1:])
-    except TypeError as e:
-        raise TypeError("Usage: python block.py <minecraft_version> <datapacks_path> [assets_path]") from e
+def generate_blocks_storage(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.GENERATED_PATH / "command_storage_bs.dat"
+    consumer(render_snbt({
+        "table": blocks,
+        "types": {block["type"]: idx for idx, block in enumerate(blocks)},
+        "items": {block["item"]: idx for idx, block in enumerate(blocks) if block["item"] is not None},
+    }), file_path)
+
+
+def generate_blocks_table_function(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/function/load/blocks_table.mcfunction"
+    blocks = [{k: v for k, v in block.items() if k != "_"} for block in blocks]
+    consumer(render_template("block/blocks_table.jinja", blocks=blocks), file_path)
+
+
+def generate_types_hashmap_function(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/function/load/types_hashmap.mcfunction"
+    types = {block["type"]: idx for idx, block in enumerate(blocks)}
+    consumer(render_template("block/types_hashmap.jinja", types=types), file_path)
+
+
+def generate_items_hashmap_function(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/function/load/items_hashmap.mcfunction"
+    items = {block["item"]: idx for idx, block in enumerate(blocks) if block["item"] is not None}
+    consumer(render_template("block/items_hashmap.jinja", items=items), file_path)
+
+
+def generate_block_states_function(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/function/load/block_states.mcfunction"
+    groups = {block["group"]: block["_"] for block in blocks if block["group"] > 0}
+    consumer(render_template("block/block_states.jinja", groups=groups), file_path)
+
+
+def generate_registry_functions(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    dir_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/function/get/registry"
+    groups = {block["group"]: block["_"] for block in blocks if block["group"] > 0}
+
+    for group, states in groups.items():
+        file_path = dir_path / f"{group}.mcfunction"
+        consumer(render_template("block/states_registry.jinja", states=states), file_path)
+
+
+def generate_block_tags(blocks: list[dict], consumer: Callable[[str, Path], None]):
+    dir_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.block/tags/block"
+    file_path = dir_path / "has_state.json"
+    consumer(render_json({ "values": [block["type"] for block in blocks if block["group"] > 0] }), file_path)
+
+    for b in range(math.floor(math.log2(len(blocks))) + 1):
+        file_path = dir_path / f"type/group_{2**b}.json"
+        consumer(render_json({ "values": [biome["type"] for i, biome in enumerate(blocks, 1) if (i >> b) & 1] }), file_path)
