@@ -18,5 +18,5 @@
 
 $scoreboard players set #chance bs.random $(chance)
 scoreboard players set $random.geometric bs.out 0
-function bs.random:geometric/loop
+function bs.random:distributions/geometric/loop
 return run scoreboard players get $random.geometric bs.out

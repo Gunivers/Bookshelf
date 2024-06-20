@@ -57,7 +57,7 @@ scoreboard players set #p bs.random 2147483647
 scoreboard players set #k bs.random -1
 execute if score $min bs.random matches -2147483648..2147483647 run scoreboard players operation #user_min_input bs.random = $min bs.random
 execute if score $max bs.random matches -2147483648..2147483647 run scoreboard players operation #user_max_input bs.random = $max bs.random
-function bs.random:poisson/loop
+function bs.random:distributions/poisson/loop
 scoreboard players operation $random.poisson bs.out = #k bs.random
 
 # Clean up

@@ -18,4 +18,4 @@
 
 execute if predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.random","target":{"type":"minecraft:fixed","name":"#chance"}}}} run scoreboard players add $random.binomial bs.out 1
 scoreboard players remove #trials bs.random 1
-execute if score #trials bs.random matches 1.. run function bs.random:binomial/loop
+execute if score #trials bs.random matches 1.. run function bs.random:distributions/binomial/loop

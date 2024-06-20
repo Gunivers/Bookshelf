@@ -19,5 +19,5 @@
 $scoreboard players set #trials bs.random $(trials)
 $scoreboard players set #chance bs.random $(chance)
 scoreboard players set $random.binomial bs.out 0
-execute if score #trials bs.random matches 1..1000 if score #chance bs.random matches 1..1000000000 run function bs.random:binomial/loop
+execute if score #trials bs.random matches 1..1000 if score #chance bs.random matches 1..1000000000 run function bs.random:distributions/binomial/loop
 return run scoreboard players get $random.binomial bs.out
