@@ -2,7 +2,7 @@
 
 **`#bs.random:help`**
 
-Contains many random functions for different distributions.
+Contains many random functions for different distributions and noise patterns.
 
 ```{image} /_imgs/modules/random.png
 :align: center
@@ -119,6 +119,8 @@ tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random
 ::::
 :::::
 
+> **Credits**: SBtree
+
 ### Random Choice
 
 ```{function} #bs.random:choose
@@ -144,6 +146,8 @@ function #bs.random:choose
 # See the result
 tellraw @a [{"text": "Value: ", "color": "dark_gray"},{"nbt":"random.choose.selection","storage":"bs:out", "color": "gold"}]
 ```
+
+> **Credits**: SBtree
 
 ### Noise
 
@@ -180,6 +184,8 @@ function #bs.random:noise/white_noise {width:4, height:4, range:3}
 # See the result
 tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"noise","storage":"bs:out", "color": "gold"}]
 ```
+
+![](/_imgs/modules/random/white_noise.jpeg)
 
 ::::
 ::::{tab-item} Value Noise
@@ -223,3 +229,10 @@ data remove storage bs:out random.noise[0][0]
 execute as @e[tag=test] at @s unless data storage bs:out random.noise[0][0] run tp ~-16 ~ ~1
 execute if data storage bs:out random.noise[0][0] run function demo:noise_loop
 ```
+
+![](/_imgs/modules/random/value_noise.jpeg)
+
+::::
+:::::
+
+> **Credits**: SBtree

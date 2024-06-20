@@ -17,3 +17,4 @@
 /scripts/src/bookshelf_scripts.egg-info/
 
 /.vscode/
+**/.DS_Store
