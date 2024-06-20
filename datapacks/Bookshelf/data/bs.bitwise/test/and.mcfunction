@@ -9,4 +9,4 @@ assert score $bitwise.and bs.out matches 49
 scoreboard players set $bitwise.and.a bs.in 1234567890
 scoreboard players set $bitwise.and.b bs.in 123456
 function #bs.bitwise:and
-assert score $bitwise.and bs.out matches 5
+assert score $bitwise.and bs.out matches 576
