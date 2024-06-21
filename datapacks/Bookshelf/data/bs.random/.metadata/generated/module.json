@@ -1,0 +1,20 @@
+{
+  "name": "bs.random",
+  "display_name": "Random",
+  "description": "Contains many random functions for different distributions",
+  "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html",
+  "authors": [
+    "SBtree"
+  ],
+  "contributors": [
+    "Aeldrion"
+  ],
+  "features": [
+    "bs.random:choose",
+    "bs.random:distributions/binomial",
+    "bs.random:distributions/geometric",
+    "bs.random:distributions/poisson",
+    "bs.random:noise/value_noise",
+    "bs.random:noise/white_noise"
+  ]
+}

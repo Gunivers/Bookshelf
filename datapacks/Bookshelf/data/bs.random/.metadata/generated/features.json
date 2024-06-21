@@ -1,0 +1,104 @@
+[
+  {
+    "name": "choose",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [],
+    "created": {
+      "date": "2024/06/17",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/17",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "distributions/binomial",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [
+      "Aeldrion"
+    ],
+    "created": {
+      "date": "2024/06/15",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/15",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "distributions/geometric",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [
+      "Aeldrion"
+    ],
+    "created": {
+      "date": "2024/06/16",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/16",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "distributions/poisson",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [
+      "Aeldrion"
+    ],
+    "created": {
+      "date": "2024/06/16",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/16",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "noise/value_noise",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [],
+    "created": {
+      "date": "2024/06/20",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/20",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "noise/white_noise",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [],
+    "created": {
+      "date": "2024/06/17",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/17",
+      "version": "1.21"
+    }
+  }
+]

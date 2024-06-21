@@ -2763,6 +2763,123 @@
         ]
       },
       {
+        "name": "bs.random",
+        "display_name": "Random",
+        "description": "Contains many random functions for different distributions",
+        "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html",
+        "authors": [
+          "SBtree"
+        ],
+        "contributors": [
+          "Aeldrion"
+        ],
+        "module_path": "datapacks/Bookshelf/data/bs.random",
+        "features": [
+          {
+            "name": "choose",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [],
+            "created": {
+              "date": "2024/06/17",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/17",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "distributions/binomial",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [
+              "Aeldrion"
+            ],
+            "created": {
+              "date": "2024/06/15",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/15",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "distributions/geometric",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [
+              "Aeldrion"
+            ],
+            "created": {
+              "date": "2024/06/16",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/16",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "distributions/poisson",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [
+              "Aeldrion"
+            ],
+            "created": {
+              "date": "2024/06/16",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/16",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "noise/value_noise",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [],
+            "created": {
+              "date": "2024/06/20",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/20",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "noise/white_noise",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+            "authors": [
+              "SBtree"
+            ],
+            "contributors": [],
+            "created": {
+              "date": "2024/06/17",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/17",
+              "version": "1.21"
+            }
+          }
+        ]
+      },
+      {
         "name": "bs.raycast",
         "display_name": "Raycast",
         "description": "Cast rays and see if they collide with blocks or entities.",
