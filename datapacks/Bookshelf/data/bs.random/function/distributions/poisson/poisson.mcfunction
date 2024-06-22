@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
+
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 
 # Save expected value as two scores

@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
+
 $scoreboard players set #height bs.random $(height)
 $scoreboard players set #width bs.random $(width)
 $data merge storage bs:random {tmp:{fn:""},with:{spacing:$(height),postpone:0}}

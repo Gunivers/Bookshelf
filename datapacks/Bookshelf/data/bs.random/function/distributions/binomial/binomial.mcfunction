@@ -14,8 +14,8 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
-# Modified from https://github.com/Aeldrion/Minecraft-Random
 
+# Modified from https://github.com/Aeldrion/Minecraft-Random
 $scoreboard players set #trials bs.random $(trials)
 $scoreboard players set #chance bs.random $(chance)
 scoreboard players set $random.binomial bs.out 0

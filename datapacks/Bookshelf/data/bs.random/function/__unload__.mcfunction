@@ -14,4 +14,5 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
+
 scoreboard objectives remove bs.random

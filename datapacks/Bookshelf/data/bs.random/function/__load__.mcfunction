@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
+
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 scoreboard objectives add bs.random dummy [{"text":"BS ","color":"dark_gray"},{"text":"Random","color":"aqua"}]
 execute unless score #lcg bs.random = #lcg bs.random store result score #lcg bs.random run seed

@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
+
 $function $(fn)
 data remove storage bs:out random.noise
 data merge storage bs:out {random:{noise:[]}}

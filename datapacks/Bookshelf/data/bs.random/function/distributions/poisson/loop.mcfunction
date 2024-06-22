@@ -14,6 +14,8 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
+
+# Modified from https://github.com/Aeldrion/Minecraft-Random
 scoreboard players add #k bs.random 1
 
 execute store result score #tmp bs.random run random value 0..65536

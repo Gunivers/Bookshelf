@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
+
 data modify storage bs:out random.noise[-1] append value 0.0f
 
 # Calculate UVs

@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
+
 scoreboard players set #y bs.random 0
 data modify storage bs:out random.noise append value []
 function bs.random:noise/white_noise/yloop

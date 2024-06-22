@@ -14,6 +14,7 @@
 #
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
+
 scoreboard players operation $math.sin.x bs.in = #idU bs.random
 scoreboard players operation $math.sin.x bs.in *= #12 bs.const
 scoreboard players operation #vector.dot_product bs.data = #idV bs.random
