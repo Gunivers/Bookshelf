@@ -1,1 +1,0 @@
-function #bs.random:noise/value_noise {tile_size:4,width:8,height:8,with:{spacing:1,postpone:1,function:"bs.random:test/test_noise_loop"}}
