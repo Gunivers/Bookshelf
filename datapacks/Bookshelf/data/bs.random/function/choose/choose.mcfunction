@@ -15,6 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
 
+$execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {list:$(list)}
 execute store result score #len bs.random run data get storage bs:in random.choose.list
 scoreboard players remove #len bs.random 1
 execute store result score #idx bs.random run random value 0..1000

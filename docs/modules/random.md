@@ -128,7 +128,11 @@ tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random
 Picks a random value from an array
 
 :Inputs:
-  **Storage `bs:in random.choose.list`**: {nbt}`array` Array of values to choose from
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`array` **lise**: The list of values to choose from
+  :::
 
 :Outputs:
   **Storage `bs:out random.choose.selection`**: {nbt}`any` Value that is randomly selected
