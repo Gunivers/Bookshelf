@@ -198,7 +198,7 @@ Generates a value noise texture with the size `width` by `height`
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`number` **tile_size**: The size of the "tiles" of noise - higher tile size means higher detail for mountains, lower tile size for little details like tiny terrain models
+    - {nbt}`number` **tile_size**: The size of the "tiles" of noise - lower tile size means more detail and unpredictability, higher tile size means less detail but more predictable.
     - {nbt}`number` **width**: The width of the noise
     - {nbt}`number` **height**: The height of the noise
     - {nbt}`number` **range**: The range of values
