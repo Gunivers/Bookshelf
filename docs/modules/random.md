@@ -198,6 +198,7 @@ Generates a value noise texture with the size `width` by `height`
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
+    - {nbt}`number` **tile_size**: The size of the "tiles" of noise - higher tile size means higher detail for mountains, lower tile size for little details like tiny terrain models
     - {nbt}`number` **width**: The width of the noise
     - {nbt}`number` **height**: The height of the noise
     - {nbt}`number` **range**: The range of values
@@ -215,7 +216,7 @@ Generates a value noise texture with the size `width` by `height`
 
 ```mcfunction
 # Generate random noise
-function #bs.random:noise/value_noise/ {width:16, height:16, with:{spacing:1, postpone:1, function:"demo:noise_loop"}}
+function #bs.random:noise/value_noise/ {tile_size:4, width:16, height:16, with:{spacing:1, postpone:1, function:"demo:noise_loop"}}
 
 # /function demo:noise_loop
 execute store result score #tmp demo run data get storage bs:out random.noise[0][0] 100
