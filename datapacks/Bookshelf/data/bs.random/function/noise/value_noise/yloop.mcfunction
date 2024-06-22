@@ -19,8 +19,10 @@ data modify storage bs:out random.noise[-1] append value 0.0f
 # Calculate UVs
 scoreboard players operation #U bs.random = #x bs.random
 scoreboard players operation #V bs.random = #y bs.random
-scoreboard players operation #U bs.random *= #400 bs.const
-scoreboard players operation #V bs.random *= #400 bs.const
+scoreboard players operation #U bs.random *= #100 bs.const
+scoreboard players operation #V bs.random *= #100 bs.const
+scoreboard players operation #U bs.random *= #tile_size bs.random
+scoreboard players operation #V bs.random *= #tile_size bs.random
 scoreboard players operation #U bs.random /= #width bs.random
 scoreboard players operation #V bs.random /= #height bs.random
 
