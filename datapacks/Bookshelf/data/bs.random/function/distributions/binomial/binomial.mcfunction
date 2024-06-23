@@ -16,8 +16,10 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # Modified from https://github.com/Aeldrion/Minecraft-Random
-$scoreboard players set #trials bs.random $(trials)
-$scoreboard players set #chance bs.random $(chance)
+$data modify storage bs:ctx _ set value {n:$(trials),p:$(probability)}
+execute store result score #random.n bs.data run data get storage bs:ctx _.n
+execute store result score #random.p bs.data run data get storage bs:ctx _.p 1000000000
+
 scoreboard players set $random.binomial bs.out 0
-execute if score #trials bs.random matches 1..1000 if score #chance bs.random matches 1..1000000000 run function bs.random:distributions/binomial/loop
+execute if score #random.n bs.data matches 1..1000 if score #random.p bs.data matches 1..1000000000 run function bs.random:distributions/binomial/loop
 return run scoreboard players get $random.binomial bs.out

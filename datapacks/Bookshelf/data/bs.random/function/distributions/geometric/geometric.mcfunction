@@ -16,7 +16,9 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # Modified from https://github.com/Aeldrion/Minecraft-Random
-$scoreboard players set #chance bs.random $(chance)
+$data modify storage bs:ctx _ set value $(probability)
+execute store result score #random.p bs.data run data get storage bs:ctx _ 1000000000
+
 scoreboard players set $random.geometric bs.out 0
 function bs.random:distributions/geometric/loop
 return run scoreboard players get $random.geometric bs.out

@@ -1,12 +1,15 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
     "authors": [
       "SBtree"
     ],
+    "contributors": [
+      "Aeldrion"
+    ],
     "created": {
-      "date": "2024/06/17",
+      "date": "2024/06/16",
       "minecraft_version": "1.21"
     },
     "updated": {
@@ -15,6 +18,6 @@
     }
   },
   "values": [
-    "bs.random:choose/choose"
+    "bs.random:distributions/geometric/geometric"
   ]
 }

@@ -17,4 +17,4 @@
 
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 scoreboard players add $random.geometric bs.out 1
-execute unless predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.random","target":{"type":"minecraft:fixed","name":"#chance"}}}} unless score $random.geometric bs.out matches 1000 run function bs.random:distributions/geometric/loop
+execute unless predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.data","target":{"type":"minecraft:fixed","name":"#random.p"}}}} unless score $random.geometric bs.out matches 1000 run function bs.random:distributions/geometric/loop

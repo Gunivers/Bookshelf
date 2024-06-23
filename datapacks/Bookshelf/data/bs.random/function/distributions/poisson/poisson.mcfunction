@@ -18,54 +18,42 @@
 # Modified from https://github.com/Aeldrion/Minecraft-Random
 
 # Save expected value as two scores
-$scoreboard players set #lambda_int bs.random $(lambda)
-scoreboard players operation #lambda_int bs.random /= #10 bs.const
-$scoreboard players set #lambda_dec bs.random $(lambda)
-scoreboard players operation #lambda_dec bs.random %= #10 bs.const
+$data modify storage bs:ctx _ set value $(lambda)
+execute store result score #random.int bs.data run data get storage bs:ctx _
+execute store result score #random.dec bs.data run data get storage bs:ctx _ 10
+scoreboard players operation #random.dec bs.data %= 10 bs.const
 
 # Make sure expected value is valid
-execute if score #lambda_int bs.random matches ..-1 run scoreboard players set #lambda_int bs.random 0
-execute if score #lambda_int bs.random matches 11.. run scoreboard players set #lambda_int bs.random 10
-execute if score #lambda_int bs.random matches 0 if score #lambda_dec bs.random matches 0 run scoreboard players set #lambda_dec bs.random 1
+execute if score #random.int bs.data matches ..-1 run scoreboard players set #random.int bs.data 0
+execute if score #random.int bs.data matches 11.. run scoreboard players set #random.int bs.data 10
+execute if score #random.int bs.data matches 0 if score #random.dec bs.data matches 0 run scoreboard players set #random.dec bs.data 1
 
 # Evaluate exp(-l). The result is a number between 0 and 1 (but not 0), we save it with a scale of 2147483648
-execute if score #lambda_int bs.random matches 0 run scoreboard players set #exp(-l) bs.const 32768
-execute if score #lambda_int bs.random matches 1 run scoreboard players set #exp(-l) bs.const 12054
-execute if score #lambda_int bs.random matches 2 run scoreboard players set #exp(-l) bs.const 4434
-execute if score #lambda_int bs.random matches 3 run scoreboard players set #exp(-l) bs.const 1631
-execute if score #lambda_int bs.random matches 4 run scoreboard players set #exp(-l) bs.const 600
-execute if score #lambda_int bs.random matches 5 run scoreboard players set #exp(-l) bs.const 221
-execute if score #lambda_int bs.random matches 6 run scoreboard players set #exp(-l) bs.const 81
-execute if score #lambda_int bs.random matches 7 run scoreboard players set #exp(-l) bs.const 30
-execute if score #lambda_int bs.random matches 8 run scoreboard players set #exp(-l) bs.const 11
-execute if score #lambda_int bs.random matches 9 run scoreboard players set #exp(-l) bs.const 4
-execute if score #lambda_int bs.random matches 10 run scoreboard players set #exp(-l) bs.const 2
+execute if score #random.int bs.data matches 0 run scoreboard players set #random.exp(-l) bs.data 32768
+execute if score #random.int bs.data matches 1 run scoreboard players set #random.exp(-l) bs.data 12054
+execute if score #random.int bs.data matches 2 run scoreboard players set #random.exp(-l) bs.data 4434
+execute if score #random.int bs.data matches 3 run scoreboard players set #random.exp(-l) bs.data 1631
+execute if score #random.int bs.data matches 4 run scoreboard players set #random.exp(-l) bs.data 600
+execute if score #random.int bs.data matches 5 run scoreboard players set #random.exp(-l) bs.data 221
+execute if score #random.int bs.data matches 6 run scoreboard players set #random.exp(-l) bs.data 81
+execute if score #random.int bs.data matches 7 run scoreboard players set #random.exp(-l) bs.data 30
+execute if score #random.int bs.data matches 8 run scoreboard players set #random.exp(-l) bs.data 11
+execute if score #random.int bs.data matches 9 run scoreboard players set #random.exp(-l) bs.data 4
+execute if score #random.int bs.data matches 10 run scoreboard players set #random.exp(-l) bs.data 2
 
-execute if score #lambda_dec bs.random matches 0 run scoreboard players operation #exp(-l) bs.const *= #65536 bs.const
-execute if score #lambda_dec bs.random matches 1 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.1)*65536 bs.const
-execute if score #lambda_dec bs.random matches 2 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.2)*65536 bs.const
-execute if score #lambda_dec bs.random matches 3 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.3)*65536 bs.const
-execute if score #lambda_dec bs.random matches 4 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.4)*65536 bs.const
-execute if score #lambda_dec bs.random matches 5 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.5)*65536 bs.const
-execute if score #lambda_dec bs.random matches 6 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.6)*65536 bs.const
-execute if score #lambda_dec bs.random matches 7 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.7)*65536 bs.const
-execute if score #lambda_dec bs.random matches 8 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.8)*65536 bs.const
-execute if score #lambda_dec bs.random matches 9 run scoreboard players operation #exp(-l) bs.const *= #exp(-0.9)*65536 bs.const
+execute if score #random.dec bs.data matches 0 run scoreboard players operation #random.exp(-l) bs.data *= #65536 bs.const
+execute if score #random.dec bs.data matches 1 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.1)*65536 bs.const
+execute if score #random.dec bs.data matches 2 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.2)*65536 bs.const
+execute if score #random.dec bs.data matches 3 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.3)*65536 bs.const
+execute if score #random.dec bs.data matches 4 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.4)*65536 bs.const
+execute if score #random.dec bs.data matches 5 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.5)*65536 bs.const
+execute if score #random.dec bs.data matches 6 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.6)*65536 bs.const
+execute if score #random.dec bs.data matches 7 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.7)*65536 bs.const
+execute if score #random.dec bs.data matches 8 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.8)*65536 bs.const
+execute if score #random.dec bs.data matches 9 run scoreboard players operation #random.exp(-l) bs.data *= #exp(-0.9)*65536 bs.const
 
-# Draw bs.const number using Knuth's method
-scoreboard players operation #L bs.random = #exp(-l) bs.const
-scoreboard players set #p bs.random 2147483647
-scoreboard players set #k bs.random -1
-execute if score $min bs.random matches -2147483648..2147483647 run scoreboard players operation #user_min_input bs.random = $min bs.random
-execute if score $max bs.random matches -2147483648..2147483647 run scoreboard players operation #user_max_input bs.random = $max bs.random
+# Draw random number using Knuth's method
+scoreboard players set #random.p bs.data 2147483647
+scoreboard players set #random.k bs.data -1
 function bs.random:distributions/poisson/loop
-scoreboard players operation $random.poisson bs.out = #k bs.random
-
-# Clean up
-execute unless score #user_min_input bs.random matches -2147483648..2147483647 run scoreboard players reset $min bs.random
-execute unless score #user_max_input bs.random matches -2147483648..2147483647 run scoreboard players reset $max bs.random
-execute if score #user_min_input bs.random matches -2147483648..2147483647 run scoreboard players operation $min bs.random = #user_min_input bs.random
-execute if score #user_max_input bs.random matches -2147483648..2147483647 run scoreboard players operation $max bs.random = #user_max_input bs.random
-scoreboard players reset #user_min_input bs.random
-scoreboard players reset #user_max_input bs.random
-return run scoreboard players get $random.poisson bs.out
+return run scoreboard players operation $random.poisson bs.out = #random.k bs.data

@@ -15,4 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives remove bs.random
+scoreboard objectives remove bs.out
+scoreboard objectives remove bs.data
+scoreboard objectives remove bs.const
+
+data remove storage bs:in random
+data remove storage bs:out random

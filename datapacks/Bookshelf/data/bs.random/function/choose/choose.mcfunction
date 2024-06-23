@@ -15,11 +15,10 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
 
-$execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {list:$(list)}
-execute store result score #len bs.random run data get storage bs:in random.choose.list
-scoreboard players remove #len bs.random 1
-execute store result score #idx bs.random run random value 0..1000
-scoreboard players operation #idx bs.random *= #len bs.random
-data merge storage bs:random {tmp:{idx:0}}
-execute store result storage bs:random tmp.idx int 0.001 run scoreboard players get #idx bs.random
-function bs.random:choose/get with storage bs:random tmp
+$data modify storage bs:ctx _ set value $(options)
+execute store result score #count bs.data if data storage bs:ctx _[]
+execute store result score #result bs.data run random value 0..1000
+scoreboard players remove #count bs.data 1
+execute store result storage bs:ctx y int .001 run scoreboard players operation #result bs.data *= #count bs.data
+function bs.random:choose/get with storage bs:ctx
+return run data get storage bs:ctx y
