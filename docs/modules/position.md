@@ -23,7 +23,7 @@ You can find below all functions available in this module.
 
 ---
 
-### Add position
+### Add position and rotation
 
 :::::{tab-set}
 ::::{tab-item} x,y,z
@@ -146,15 +146,6 @@ scoreboard players set @s bs.pos.z 65
 function #bs.position:add_pos_z {scale:1}
 ```
 ::::
-:::::
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Add rotation
-
-:::::{tab-set}
 ::::{tab-item} h,v
 
 ```{function} #bs.position:add_rot {scale:<scaling>}
@@ -222,9 +213,36 @@ Rotate an entity according to its vertical rotation score.
 ```
 
 ::::
+::::{tab-item} x,y,z,h,v
+
+```{function} #bs.position:add_pos_and_rot {scale:<scaling>}
+
+Add position scores to the entity's coordinates and rotate it according to its rotation score.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport and rotate.
+
+  **Scores `@s bs.pos.[x,y,z]`**: Coordinates to add.
+
+  **Scores `@s bs.rot.[h,v]`**: Rotation to add.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
+
+:Outputs:
+  **State**: Entity is teleported at the position indicated by the position scores, and rotated according to the rotation scores.
+```
+
+::::
+
 :::::
 
+
 > **Credits**: Aksiome, Leirof
+
 
 ---
 
@@ -338,7 +356,7 @@ Scores in Minecraft have a limited size similar to a signed integer variable. Th
 
 ---
 
-### Get position
+### Get position and rotation
 
 :::::{tab-set}
 ::::{tab-item} x,y,z
@@ -469,9 +487,99 @@ tellraw @a [{"text": "Z = ", "color": "dark_gray"},{"score":{"name":"@e[type=spi
 ```
 
 ::::
+::::{tab-item} h,v
+
+```{function} #bs.position:get_rot {scale:<scaling>}
+
+Get the execution rotation of the function and store it in 2 scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's outputs.
+  :::
+
+:Outputs:
+  **Scores `@s bs.rot.[h,v]`**: Rotation of the position.
+```
+
+::::
+::::{tab-item} h only
+
+```{function} #bs.position:get_rot_h {scale:<scaling>}
+
+Get the execution horizontal rotation of the function.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
+
+:Outputs:
+  **Score `@s bs.rot.h`**: Horizontal rotation of the position.
+```
+
+::::
+::::{tab-item} v only
+
+```{function} #bs.position:get_rot_v {scale:<scaling>}
+
+Get the execution vertical rotation of the function.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
+
+:Outputs:
+  **Score `@s bs.rot.v`**: Vertical rotation of the position.
+```
+
+::::
+::::{tab-item} x,y,z,h,v
+
+```{function} #bs.position:get_pos_and_rot {scale:<scaling>}
+
+Get the execution position and rotation of the function and store the coordinates and rotation in 5 scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to store the score to.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z> rotated <h> <v>`**: Position and rotation to get.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar for the function's output.
+  :::
+
+:Outputs:
+  **Scores `@s bs.pos.[x,y,z]`**: Coordinates of the position.
+
+  **Scores `@s bs.rot.[h,v]`**: Rotation of the position.
+```
+
+::::
 :::::
 
-> **Credits**: Aksiome, Leirof
+> **Credits**: Aksiome, Leirof, theogiraudet
 
 ---
 
@@ -548,81 +656,6 @@ tellraw @a [{"text": "Relative position : X=", "color": "dark_gray"},{"score":{"
 
 ---
 
-### Get rotation
-
-:::::{tab-set}
-::::{tab-item} h,v
-
-```{function} #bs.position:get_rot {scale:<scaling>}
-
-Get the execution rotation of the function and store it in 2 scores.
-
-:Inputs:
-  **Execution `as <entities>`**: Entity to store the score to.
-
-  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
-
-  **Function macro**:
-  :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`number` **scale**: Scalar for the function's outputs.
-  :::
-
-:Outputs:
-  **Scores `@s bs.rot.[h,v]`**: Rotation of the position.
-```
-
-::::
-::::{tab-item} h only
-
-```{function} #bs.position:get_rot_h {scale:<scaling>}
-
-Get the execution horizontal rotation of the function.
-
-:Inputs:
-  **Execution `as <entities>`**: Entity to store the score to.
-
-  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
-
-  **Function macro**:
-  :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`number` **scale**: Scalar for the function's output.
-  :::
-
-:Outputs:
-  **Score `@s bs.rot.h`**: Horizontal rotation of the position.
-```
-
-::::
-::::{tab-item} v only
-
-```{function} #bs.position:get_rot_v {scale:<scaling>}
-
-Get the execution vertical rotation of the function.
-
-:Inputs:
-  **Execution `as <entities>`**: Entity to store the score to.
-
-  **Execution `at <entity>` or `rotated <h> <v>`**: Rotation to get.
-
-  **Function macro**:
-  :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`number` **scale**: Scalar for the function's output.
-  :::
-
-:Outputs:
-  **Score `@s bs.rot.v`**: Vertical rotation of the position.
-```
-
-::::
-:::::
-
-> **Credits**: Aksiome, Leirof, theogiraudet
-
----
-
 ### Local to canonical
 
 ```{function} #bs.position:local_to_canonical
@@ -648,7 +681,7 @@ Unlike relative position (canonical), this reference frame considers the entity'
 
 ---
 
-### Set position
+### Set position and rotation
 
 :::::{tab-set}
 ::::{tab-item} x,y,z
@@ -771,15 +804,6 @@ scoreboard players set @s bs.pos.z 65
 function #bs.position:set_pos_z {scale:1}
 ```
 ::::
-:::::
-
-> **Credits**: Aksiome, Leirof
-
----
-
-### Set rotation
-
-:::::{tab-set}
 ::::{tab-item} h,v
 
 ```{function} #bs.position:set_rot {scale:<scaling>}
@@ -844,6 +868,30 @@ Rotate an entity according to its vertical rotation score.
 
 :Outputs:
   **State**: Entity is teleported to the rotation indicated by the vertical score.
+```
+
+::::
+::::{tab-item} x,y,z,h,v
+
+```{function} #bs.position:set_pos_and_rot {scale:<scaling>}
+
+Place and rotate an entity according to its position and rotation scores.
+
+:Inputs:
+  **Execution `as <entities>`**: Entity to teleport.
+
+  **Scores `@s bs.rot.[x,y,z]`**: Coordinates to teleport to.
+
+  **Scores `@s bs.rot.[h,v]`**: Rotation to teleport to.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`number` **scale**: Scalar applied to the output.
+  :::
+
+:Outputs:
+  **State**: Entity is teleported to the position indicated by the position scores and rotated according to the rotation scores.
 ```
 
 ::::

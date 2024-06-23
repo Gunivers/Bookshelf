@@ -31,20 +31,20 @@ You can find below all functions available in this module.
 
 ```{function} #bs.block:fill_block
 
-Fill all or parts of a region with a specific block.
+Fill all or part of a region with a specific block.
 
 :Inputs:
   **Storage `bs:in block.fill_block`**:
   :::{treeview}
   - {nbt}`compound` Fill block data
     - {nbt}`string` **block**: Block to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers describing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers describing the X, Y, and Z ending position.
+    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
+    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
       - {nbt}`compound` Block mask
-        - {nbt}`string` **block**: Block that act as a filter.
+        - {nbt}`string` **block**: Block acting as a filter.
         - {nbt}`bool` **negate**: Reverse the mask (default: false).
         - {nbt}`int` **x**: Mask filter x offset (default: 0).
         - {nbt}`int` **y**: Mask filter y offset (default: 0).
@@ -65,7 +65,7 @@ data modify storage bs:in block.fill_block set value {block:"minecraft:grass_blo
 function #bs.block:fill_block
 ```
 
-*Fill an area with stone but only by a few blocks each tick:*
+*Fill an area with stone a few blocks at a time:*
 
 ```mcfunction
 # Setup the input
@@ -79,20 +79,20 @@ function #bs.block:fill_block
 
 ```{function} #bs.block:fill_type
 
-Fill all or parts of a region with a specific block type while trying to conserve states and NBTs.
+Fill all or part of a region with a specific block type, preserving states and NBTs.
 
 :Inputs:
   **Storage `bs:in block.fill_type`**:
   :::{treeview}
   - {nbt}`compound` Fill type data
     - {nbt}`string` **type**: Block id to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers describing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers describing the X, Y, and Z ending position.
+    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
+    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
       - {nbt}`compound` Block mask
-        - {nbt}`string` **block**: Block that act as a filter.
+        - {nbt}`string` **block**: Block acting as a filter.
         - {nbt}`bool` **negate**: Reverse the mask (default: false).
         - {nbt}`int` **x**: Mask filter x offset (default: 0).
         - {nbt}`int` **y**: Mask filter y offset (default: 0).
@@ -103,7 +103,7 @@ Fill all or parts of a region with a specific block type while trying to conserv
   **State**: Blocks are placed in the world.
 ```
 
-*Replace oak_stairs by spruce_stairs while conserving states:*
+*Replace oak stairs with spruce stairs while preserving states:*
 
 ```mcfunction
 # Setup the input
@@ -111,6 +111,47 @@ data modify storage bs:in block.fill_type set value {type:"minecraft:spruce_stai
 
 # Run the process
 function #bs.block:fill_type
+```
+::::
+::::{tab-item} Random
+
+```{function} #bs.block:fill_random
+
+Fill all or part of a region with random blocks or types.
+
+:Inputs:
+  **Storage `bs:in block.fill_random`**:
+  :::{treeview}
+  - {nbt}`compound` Fill random data
+    - {nbt}`list` **entries**: List of entries to pick from randomly.
+      - {nbt}`compound` Block or type entry
+        - {nbt}`string` **block | type**: Block or type to fill the region with.
+        - {nbt}`int` **weight**: Determine the likelihood of selecting the entry (default: 1).
+    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
+    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
+    - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
+    - {nbt}`list` **masks**: Determine which blocks will be replaced.
+      - {nbt}`compound` Block mask
+        - {nbt}`string` **block**: Block acting as a filter.
+        - {nbt}`bool` **negate**: Reverse the mask (default: false).
+        - {nbt}`int` **x**: Mask filter x offset (default: 0).
+        - {nbt}`int` **y**: Mask filter y offset (default: 0).
+        - {nbt}`int` **z**: Mask filter z offset (default: 0).
+  :::
+
+:Outputs:
+  **State**: Blocks are placed in the world.
+```
+
+*Randomly fill an area with stone or air:*
+
+```mcfunction
+# Setup the input
+data modify storage bs:in block.fill_random set value {entries:[{block:"minecraft:stone"},{block:"minecraft:air"}],from:[-16,100,0],to:[-1,103,15]}
+
+# Run the process
+function #bs.block:fill_random
 ```
 ::::
 :::::
@@ -209,7 +250,7 @@ The `bs:out block` output is intended to be read-only. Modifying parts manually 
 
 ```{function} #bs.block:keep_properties {properties:[]}
 
-Filter properties to keep only the desired ones.
+Filter properties to keep only the desired ones. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -219,6 +260,8 @@ Filter properties to keep only the desired ones.
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -242,7 +285,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:merge_properties {properties:[]}
 
-Merge state properties from the current location into the output. The merge occurs if the syntax is correct, regardless of logical coherence (e.g., using 'age' for different plants).
+Merge state properties from the current location into the output. The merge occurs if the syntax is correct, regardless of logical coherence (e.g., using 'age' for different plants). This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Execution `at <entity>` or `positioned <x> <y> <z>`**: Location of the block that act as input.
@@ -254,6 +297,8 @@ Merge state properties from the current location into the output. The merge occu
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -277,7 +322,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:remove_properties {properties:[]}
 
-Filter properties by removing the undesired ones.
+Filter properties by removing the undesired ones. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -287,6 +332,8 @@ Filter properties by removing the undesired ones.
       - {nbt}`compound` Property data
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -310,7 +357,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:replace_properties {properties:[]}
 
-Replace property values. Invalid values will not be replaced.
+Replace property values. Invalid values will not be replaced. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -321,6 +368,8 @@ Replace property values. Invalid values will not be replaced.
         - {nbt}`string` **name**: Name of the property (e.g., `facing`).
         - {nbt}`string` **value**: Value of the property (e.g., `east`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -344,7 +393,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:shift_properties {properties:[]}
 
-Shift properties by any amount, allowing cycling through their values.
+Shift properties by any amount, allowing cycling through their values. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -355,6 +404,8 @@ Shift properties by any amount, allowing cycling through their values.
         - {nbt}`string` **name**: Name of the property (e.g., `shape`).
         - {nbt}`string` **by**: Shift amount (defaults to 1).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -387,7 +438,7 @@ data get storage bs:out block.block
 
 ```{function} #bs.block:replace_type {type:<value>}
 
-Replace the block type while trying to conserve the state. State is preserved only if the group of the output matches the input.
+Replace the block type while trying to conserve the state. State is preserved only if the group of the output matches the input. This function acts on the [virtual block format](#get) stored in the block output.
 
 :Inputs:
   **Function macro**:
@@ -395,6 +446,8 @@ Replace the block type while trying to conserve the state. State is preserved on
   - {nbt}`compound` Arguments
     - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
   :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
 
 :Outputs:
   **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
@@ -406,8 +459,118 @@ Replace the block type while trying to conserve the state. State is preserved on
 # Once (on oak_stairs)
 execute positioned ~ ~ ~ run function #bs.block:get_block
 
-# Get block type data
+# Replace type data
 function #bs.block:replace_type {type:"minecraft:spruce_stairs"}
+
+# See the result
+data get storage bs:out block.block
+```
+
+::::
+::::{tab-item} Map
+
+`````{function} #bs.block:map_type {type:<value>,mapping_registry:<value>}
+
+Swap related block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
+
+```mcfunction
+data modify storage bs:const block.mapping_registry.bs.colors set value [ \
+  { set: "wool", attrs: ["red"], type: "minecraft:red_wool" }, \
+  { set: "wool", attrs: ["green"], type: "minecraft:green_wool" }, \
+  { set: "carpet", attrs: ["red"], type: "minecraft:red_carpet" }, \
+  { set: "carpet", attrs: ["green"], type: "minecraft:green_carpet" }, \
+]
+```
+
+This function operates on the [virtual block format](#get) stored in the block output. It replaces the type in the output with one that belongs to the same set and better matches the attributes of the inputted type.
+
+For example, with the above mapping registry: if the input is `minecraft:red_wool` (attrs:["red"]), and the virtual block type is `minecraft:green_carpet` (set:"carpet"), the resulting block will be `minecraft:red_carpet` (set:"carpet",attrs:["red"]).
+
+Bookshelf includes two predefined mapping registries (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-registry).
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+    - {nbt}`string` **mapping_registry**: A path to the mapping registry used for the replacement (e.g., `bs.shapes`).
+  :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
+
+:Outputs:
+  **Return**: Whether a type was found and the replacement occurred.
+
+  **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
+`````
+
+*Replace all oak-related blocks with spruce ones (the function replaces the oak stairs block with a spruce stairs block):*
+
+```mcfunction
+# Once (on oak_stairs)
+execute positioned ~ ~ ~ run function #bs.block:get_block
+
+# Replace type data
+function #bs.block:map_type { type: "minecraft:spruce_planks", mapping_registry: "bs.shapes" }
+
+# See the result
+data get storage bs:out block.block
+```
+
+::::
+::::{tab-item} Mix
+
+`````{function} #bs.block:mix_type {type:<value>,mapping_registry:<value>}
+
+```{admonition} Experimental
+:class: warning
+
+This function may sometimes behave unpredictably due to the arbitrary nature of block relationship definitions. Additionally, while the provided registries aim to cover a wide range of blocks, they are handcrafted and therefore not exhaustive.
+```
+
+Mix block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
+
+```mcfunction
+data modify storage bs:const block.mapping_registry.bs.colors set value [ \
+  { set: "cube", attrs: ["stone"], type: "minecraft:stone" }, \
+  { set: "cube", attrs: ["brick"], type: "minecraft:bricks" }, \
+  { set: "cube", attrs: ["stone", "brick"], type: "minecraft:stone_bricks" }, \
+  { set: "stairs", attrs: ["stone"], type: "minecraft:stone_stairs" }, \
+  { set: "stairs", attrs: ["brick"], type: "minecraft:brick_stairs" }, \
+  { set: "stairs", attrs: ["stone","brick"], type: "minecraft:stone_brick_stairs" }, \
+]
+```
+
+This function operates on the [virtual block format](#get) stored in the block output. It replaces the type in the output with one that belongs to the same set and better matches the attributes of both the output and input types while prioritizing the input type.
+
+For example, with the above mapping registry: if the input is `minecraft:bricks` (attrs:["brick"]), and the virtual block type is `minecraft:stone_stairs` (set:"stairs",attrs:["stone"]), the resulting block will be `minecraft:stone_brick_stairs` (set:"stairs",attrs:["stone","brick"]).
+
+Bookshelf includes two predefined mapping registries (`bs.shapes` and `bs.colors`). If these are insufficient, you can [create your own](#custom-mapping-registry).
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`string` **type**: String representation of the id (e.g., `minecraft:stone`).
+    - {nbt}`string` **mapping_registry**: A path to the mapping registry used for the replacement (e.g., `bs.shapes`).
+  :::
+
+  **Storage `bs:out block`**: {nbt}`compound` There’s no need for manual specification; rather, employ the relevant functions, such as [`get_block`](#get).
+
+:Outputs:
+  **Return**: Whether a type was found and the replacement occurred.
+
+  **Storage `bs:out block`**: {nbt}`compound` The `block`, `state` and `properties` are updated to reflect this change.
+`````
+
+*Mix a mossy cobblestone block with bricks resulting in a mossy stone bricks block:*
+
+```mcfunction
+# Once (on mossy_cobblestone)
+execute positioned ~ ~ ~ run function #bs.block:get_block
+
+# Replace type data
+function #bs.block:mix_type { type: "minecraft:bricks", mapping_registry: "bs.shapes" }
 
 # See the result
 data get storage bs:out block.block
@@ -694,6 +857,29 @@ function #bs.block:spawn_solid_block_display
 :::::
 
 > **Credits**: Aksiome, theogiraudet
+
+---
+
+## 🎓 Custom mapping registry
+
+This module allows you to create a personalized mapping registry tailored to your specific needs.
+
+---
+
+To create a new registry, you need to define an array within the `bs:const block.mapping_registry` storage. Each new registry should be namespaced, and each element must include `set`, `attrs`, and `type`. Here’s how you can define a new mapping registry:
+
+```mcfunction
+data modify storage bs:const block.mapping_registry.<namespace>.<name> [
+  { set: "cube", attrs: ["oak"], type: "minecraft:oak_planks" }, \
+  { set: "cube", attrs: ["spruce"], type: "minecraft:spruce_planks" }, \
+  \
+  { set: "stairs", attrs: ["oak"], type: "minecraft:oak_stairs" }, \
+  { set: "stairs", attrs: ["spruce"], type: "minecraft:spruce_stairs" }, \
+  \
+  { set: "slab", attrs: ["oak"], type: "minecraft:oak_slab" }, \
+  { set: "slab", attrs: ["spruce"], type: "minecraft:spruce_slab" }, \
+]
+```
 
 ---
 

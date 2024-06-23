@@ -1,6 +1,0 @@
-{
-  "values": [
-    "bs.block:transform/replace_properties/replace_properties",
-    "bs.block:get/compile/block"
-  ]
-}

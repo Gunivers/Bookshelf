@@ -1,6 +1,0 @@
-{
-  "values": [
-    "bs.block:transform/merge_properties/merge_properties",
-    "bs.block:get/compile/block"
-  ]
-}

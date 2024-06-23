@@ -1,6 +1,0 @@
-{
-  "values": [
-    "bs.block:transform/remove_properties/remove_properties",
-    "bs.block:get/compile/block"
-  ]
-}

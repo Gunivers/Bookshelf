@@ -1,7 +1,0 @@
-{
-  "values": [
-    "#bs.link:behaviors/setup",
-    "#bs.link:behaviors/imitate_pos_y",
-    "#bs.link:behaviors/apply"
-  ]
-}

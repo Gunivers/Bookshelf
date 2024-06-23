@@ -94,7 +94,7 @@ html_theme_options = {
         # {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
         {"name": "GitHub", "url": "https://github.com/Gunivers/Bookshelf", "icon": "fa-brands fa-github"},
         {"name": "Support us", "url": "https://www.helloasso.com/associations/altearn/formulaires/3/en", "icon": "fa-solid fa-heart"},
-        {"name": "Discord server", "url": "https://discord.gg/E8qq6tN", "icon": "fa-brands fa-discord"},
+        {"name": "Discord server", "url": "https://discord.gg/MkXytNjmBt", "icon": "fa-brands fa-discord"},
         {"name": "Gunivers", "url": "https://gunivers.net", "icon": "_static/logo-gunivers.png", "type": "local"},
     ],
 }

@@ -1,6 +1,0 @@
-{
-  "values": [
-    "bs.block:transform/keep_properties/keep_properties",
-    "bs.block:get/compile/block"
-  ]
-}
