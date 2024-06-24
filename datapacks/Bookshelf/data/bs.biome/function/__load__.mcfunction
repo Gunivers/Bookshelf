@@ -21,4 +21,4 @@ scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"t
 
 scoreboard players set 125000 bs.const 125000
 
-function bs.biome:load/types_table
+function bs.biome:load/biomes_table

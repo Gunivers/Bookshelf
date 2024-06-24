@@ -1,13 +1,13 @@
 from dataclasses import dataclass
-from functools import partial
-from pathlib import Path
-from typing import Tuple
+from files_provider._types import DataCategory
 from files_provider.files_provider import Feature, ModuleManager
 from function_call_getter._types import VisitableFeatureSet, VisitableFunctionTag, Visitor, VisitableFeature
 from function_call_getter.function_call_getter import FunctionCallGetter
-from files_provider._types import DataCategory
+from functools import partial
+from logger import BaseLogger
+from pathlib import Path
+from typing import Tuple
 import definitions
-from logger.logger import Logger
 
 
 @dataclass
@@ -21,7 +21,7 @@ class ModuleDependencies:
     features_dependencies: dict[str, Dependencies]
 
 
-def compute_dependencies(module_manager: ModuleManager, weak_dependencies: set[str], logger: Logger) -> ModuleDependencies:
+def compute_dependencies(module_manager: ModuleManager, weak_dependencies: set[str], logger: BaseLogger) -> ModuleDependencies:
     """
     :param module_manager: The module manager to compute the dependencies from. The module manager should contains only one module.
     :return: A tuple containing the module dependencies and the weak dependencies.
@@ -65,7 +65,7 @@ class ModuleReferences:
     dependencies: set[VisitableFunctionTag]
     features: set[FeatureReferences]
 
-def __compute_dependencies(dependencies: set[str], weak_dependencies: set[str], name: str, type: str, check_non_use: bool, logger: Logger) -> Tuple[set[str], set[str]]:
+def __compute_dependencies(dependencies: set[str], weak_dependencies: set[str], name: str, type: str, check_non_use: bool, logger: BaseLogger) -> Tuple[set[str], set[str]]:
     if not dependencies:
         return None, None
     if not weak_dependencies:
@@ -80,10 +80,9 @@ def __compute_dependencies(dependencies: set[str], weak_dependencies: set[str], 
             deps.remove(tag)
     diff = weak_dependencies - used_weak_dependencies
     if check_non_use and len(diff) > 0:
-            logger.print_warn(f"{type.capitalize()} {name} has weak dependencies that are not used: {",".join(diff)}.")
+            logger.warning(f"{type.capitalize()} {name} has weak dependencies that are not used: {",".join(diff)}.")
     weak_dependencies = weak_dependencies
     return deps or None, weak_dependencies or None
-
 
 
 def __get_feature_references(feature_dependencies: dict[str, ModuleReferences], feature: VisitableFeature, module_path: Path) -> FeatureReferences:

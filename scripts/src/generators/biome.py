@@ -1,66 +1,65 @@
-import requests
-import sys
-
+from collections import defaultdict
+from functools import partial
+from generators.utils import render_json, render_snbt, render_template, write_file, write_nbt
+from logger import BaseLogger, new_logger
+from mcdata.biome import get_biomes
 from pathlib import Path
-from generators.contracts import DataProcessor
-
-from generators.processors.biome import (
-    CreateTagsFiles,
-    CreatePredicatesFiles,
-    CreateTypesFile,
-    UpdateStorageFile,
-)
-
-BIOMES_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-summary/data/worldgen/biome/data.min.json"
+from typing import Callable
+import definitions
+import math
 
 
-def get_biomes(mc_version: str) -> list[dict]:
-    """
-    Fetches biomes data for the given version of minecraft.
-    """
-    response = requests.get(BIOMES_URL.format(mc_version))
-    response.raise_for_status()
-
-    return [{
-        "id": idx + 1,
-        "type": biome if biome.startswith("minecraft:") else f"minecraft:{biome}",
-        "temperature": float(data["temperature"]),
-        "has_precipitation": bool(data["has_precipitation"]),
-    } for idx, (biome, data) in enumerate(response.json().items())]
-
-
-def get_processors(datapacks: Path, assets: Path = None) -> list[DataProcessor]:
-    """
-    Gets a list of objects used to process biomes data.
-    """
-    module = datapacks / "Bookshelf/data/bs.biome/"
-
-    return filter(None, [
-        CreateTagsFiles(module / "tags/worldgen/biome"),
-        CreatePredicatesFiles(module / "predicates"),
-        CreateTypesFile(module / "functions/load/types_table.mcfunction"),
-        UpdateStorageFile(assets / "command_storage_bs.dat") if assets else None,
-    ])
-
-
-def run(mc_version: str, datapacks_path: str, assets_path: str = None):
-    """
-    Generates files for the biome module.
-    """
-    print("⛰️ Running the biome generator")
-
+def generate(mc_version: str, logger: BaseLogger = new_logger()):
+    logger.step("🚀 Fetching 'bs.biome' data…")
     biomes = get_biomes(mc_version)
-    for processor in get_processors(
-        Path(datapacks_path),
-        Path(assets_path) if assets_path else None
-    ):
-        processor.process(biomes)
 
-    print("✅ Done!")
+    logger.step("⚙️ Generating 'bs.biome' files…")
+    generate_biomes_storage(biomes, partial(write_nbt, ".data.contents.const.biome"))
+    logger.success("Storage 'command_storage_bs.dat' updated!")
+    generate_biomes_table_function(biomes, write_file)
+    logger.success("Function 'biomes_table.mcfunction' generated!")
+    generate_can_snow_predicate(biomes, write_file)
+    logger.success("Predicate 'can_snow.json' generated!")
+    generate_biome_tags(biomes, write_file)
+    logger.success("Biome tags generated!")
+
+    logger.done()
 
 
-if __name__ == "__main__":
-    try:
-        run(*sys.argv[1:])
-    except TypeError as e:
-        raise TypeError("Usage: python biome.py <minecraft_version> <datapacks_path> [assets_path]") from e
+def generate_biomes_storage(biomes: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.GENERATED_PATH / "command_storage_bs.dat"
+    consumer(render_snbt(biomes), file_path)
+
+
+def generate_biomes_table_function(biomes: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.biome/function/load/biomes_table.mcfunction"
+    consumer(render_template("biome/biomes_table.jinja", biomes=biomes), file_path)
+
+
+def generate_biome_tags(biomes: list[dict], consumer: Callable[[str, Path], None]):
+    dir_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.biome/tags/worldgen/biome"
+    file_path = dir_path / "has_precipitation.json"
+    consumer(render_json({ "values": [biome["type"] for biome in biomes if biome["has_precipitation"]] }), file_path)
+
+    for b in range(math.floor(math.log2(len(biomes))) + 1):
+        file_path = dir_path / f"type/group_{2**b}.json"
+        consumer(render_json({ "values": [biome["type"] for i, biome in enumerate(biomes, 1) if (i >> b) & 1] }), file_path)
+
+
+def generate_can_snow_predicate(biomes: list[dict], consumer: Callable[[str, Path], None]):
+    file_path = definitions.DATAPACKS_PATH / "Bookshelf/data/bs.biome/predicate/can_snow.json"
+    groups = defaultdict(list)
+    for biome in [biome for biome in biomes if biome["temperature"] < 0.4]:
+        y = int((biome["temperature"] - 0.15) / 0.00125 + 80)
+        groups[y if y > 0 else -2147483648].append(biome['type'])
+
+    consumer(render_json({
+        "condition":"minecraft:any_of",
+        "terms": [{
+            "condition": "minecraft:location_check",
+            "predicate": {
+                "position": { "y": { "min": y } },
+                "biomes": biomes
+            }
+        } for y, biomes in dict(sorted(groups.items())).items()]
+    }), file_path)

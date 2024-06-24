@@ -5,7 +5,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -21,8 +22,5 @@ jobs:
       - name: Install dependencies
         run: pip install -e ./scripts
 
-      - name: Check installation
-        run: python -m pip list
-
-      - name: Run tests
-        run: python scripts/ci/run_packtest_wf.py
+      - name: Test datapacks
+        run: python scripts/workflows/test_datapacks.py
