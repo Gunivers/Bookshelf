@@ -179,37 +179,62 @@ tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random
 ### Noise
 
 :::::{tab-set}
-::::{tab-item} White Noise
+::::{tab-item} White noise 1D
 
-```{function} #bs.random:noise/white_noise {width:<width>,height:<height>,with:{}}
+```{function} #bs.random:white_noise_1d {length:<length>}
 
-Generates a white noise texture with the size `width` by `height`
+Generates a 1-dimensional array of white noise values.
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`number` **width**: The width of the noise
-    - {nbt}`number` **height**: The height of the noise
-    - {nbt}`number` **range**: The range of values
-    - {nbt}`compound` **with**: Callback settings
-      - {nbt}`string` **function**: The callback function to run when a tile is generated
-      - {nbt}`number` **spacing**: The amount of rows to generate before calling the callback
-      - {nbt}`number` **postpone**: Whether to postpone to the next tick after calling the callback, values higher than 0 mean postpone.
+    - {nbt}`int` **length**: The length of the array to generate.
   :::
 
 :Outputs:
-  **Storage `bs:out random.noise`**: A two-dimensional array of 0s and 1s, with the size of `width` by `height`.
+  **Storage `bs:out random.white_noise_1d`**: {nbt}`list` The generated array of values between 0 and 1.
 ```
 
-*Generate a 4x4 random noise pattern*
+*Generate 4 random values:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:noise/white_noise {width:4, height:4, range:3}
+function #bs.random:white_noise_1d {length:4}
 
 # See the result
-tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"noise","storage":"bs:out", "color": "gold"}]
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_1d","storage":"bs:out", "color": "gold"}]
+```
+
+![](/_imgs/modules/random/white_noise.jpeg)
+
+::::
+::::{tab-item} White noise 2D
+
+```{function} #bs.random:white_noise_2d {width:<width>,height:<height>}
+
+Generates a 2-dimensional array of white noise values.
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **width**: The width of the array to generate.
+    - {nbt}`int` **height**: The height of the array to generate.
+  :::
+
+:Outputs:
+  **Storage `bs:out random.white_noise_2d`**: {nbt}`list` The generated 2-dimensional array of values between 0 and 1.
+```
+
+*Generate a 4x4 random noise pattern:*
+
+```mcfunction
+# Generate random noise
+function #bs.random:white_noise_2d {width:4,height:4}
+
+# See the result
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_2d","storage":"bs:out", "color": "gold"}]
 ```
 
 ![](/_imgs/modules/random/white_noise.jpeg)
