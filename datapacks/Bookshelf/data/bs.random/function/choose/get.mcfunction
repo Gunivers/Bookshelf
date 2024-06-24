@@ -15,4 +15,4 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:out random.choose set from storage bs:ctx _[$(y)]
+$data modify storage bs:out random.choose set from storage bs:in random.choose.options[$(y)]

@@ -23,66 +23,120 @@ You can find below all functions available in this module.
 
 ---
 
-### Random Distributions
+### Random choice
+
+```{function} #bs.random:choose
+
+Selects a random value from a list.
+
+:Inputs:
+  **Storage `bs:in random.choose.options`**: {nbt}`list` The list of values to choose from.
+
+:Outputs:
+  **Storage `bs:out random.choose`**: {nbt}`any` Value that is randomly selected.
+
+  **Return**: The chosen index.
+```
+
+*Pick a random fruit from the list:*
+
+```mcfunction
+# Populate list with values
+data modify storage bs:in random.choose.options set value ["Apples", "Bananas", "Strawberries", "Blueberries", "Mango", "Watermelon", "Honeydew Melon"]
+
+# Randomly select one
+function #bs.random:choose
+
+# See the result
+tellraw @a [{"text":"Value: ","color":"dark_gray"},{"nbt":"random.choose","storage":"bs:out","color":"gold"}]
+```
+
+> **Credits**: SBtree
+
+
+### Random distributions
 
 :::::{tab-set}
-::::{tab-item} Binomial
+::::{tab-item} Uniform
 
-```{function} #bs.random:distributions/binomial {chance:<chance>,trials:<trials>}
+```{function} #bs.random:uniform {min:<min>,max:<max>}
 
-Generates a random number with binomial distribution of parameters `trials`, `chance`
+Generates a random number uniformly distributed between `min` and `max`.
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`number` **chance**: The probability of success of each Bernoulli trial, with a scale of 1,000,000,000.
-    - {nbt}`number` **trials**: The number of Bernoulli trials. Maximum accepted value is 1000. Otherwise, output is 0.
+    - {nbt}`int` **min**: The lower bound.
+    - {nbt}`int` **max**: The upper bound.
   :::
 
 :Outputs:
-  **Return | Score `$random.binomial bs.out`**: An random integer in [0, `trials`]
+  **Return | Score `$random.uniform bs.out`**: A random integer in range [`min`, `max`].
 ```
 
-*Generate a random number between 1 and 10, with a 20% chance*
+*Generate a random number between 1 and 100:*
 
 ```mcfunction
 # Generate random number
-function #bs.random:distributions/binomial {chance:200000000,trials:10}
+function #bs.random:uniform {min:1,max:100}
+
+# See the result
+tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.uniform", "objective": "bs.out"}, "color": "gold"}]
+```
+
+::::
+::::{tab-item} Binomial
+
+```{function} #bs.random:binomial {trials:<trials>,probability:<probability>}
+
+Generates a random number with a binomial distribution using the parameters `trials` and `probability`.
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`int` **trials**: The number of Bernoulli trials. Maximum accepted value is 1000.
+    - {nbt}`double` **probability**: The probability of success of each Bernoulli trial, in range [0,1].
+  :::
+
+:Outputs:
+  **Return | Score `$random.binomial bs.out`**: A random integer in range [0, `trials`].
+```
+
+*Generate a random number between 1 and 10, with a 20% chance:*
+
+```mcfunction
+# Generate random number
+function #bs.random:binomial {trials:10,probability:0.2}
 
 # See the result
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.binomial", "objective": "bs.out"}, "color": "gold"}]
 ```
 
-```{admonition} Low chance values appear to fail
-:class: warning
-
-If you input a low `chance` value (in the 10s or 1000s) *and* a low `trial` value (in the 10s) then it will appear to fail. This is due to the fact that the `chance`s are scaled down by 1 billion, or 1000000000. This means that if you have a `chance` value of 1000 and a `trial` amount of 10, then it will have 0.0001% of a chance of returning a value. Be sure that if you use low `trial` values, use higher `chance` values. **Always test to make sure the function gives you the distribution you want.**
-```
-
 ::::
 ::::{tab-item} Geometric
 
-```{function} #bs.random:distributions/geometric {chance:<chance>}
+```{function} #bs.random:geometric {probability:<probability>}
 
-Generates a random number following a geometric distribution given parameter `chance`.
+Generates a random number following a geometric distribution with the parameter `probability`.
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`number` **chance**: The probability of stopping at each trial.
+    - {nbt}`double` **probability**: The probability of stopping at each trial, in range [0,1].
   :::
 
 :Outputs:
-  **Return | Score `$random.geometric bs.out`**: A random integer in [0, 1000]
+  **Return | Score `$random.geometric bs.out`**: A random integer in range [0, 1000].
 ```
 
-*Generate a random number with a 2% chance of stopping*
+*Generate a random number with a 2% chance of stopping:*
 
 ```mcfunction
 # Generate random number
-function #bs.random:distributions/geometric {chance:20000000}
+function #bs.random:geometric {probability:0.02}
 
 # See the result
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.geometric", "objective": "bs.out"}, "color": "gold"}]
@@ -91,26 +145,26 @@ tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random
 ::::
 ::::{tab-item} Poisson
 
-```{function} #bs.random:distributions/poisson {lambda:<lambda>}
+```{function} #bs.random:poisson {lambda:<lambda>}
 
-Generates a random number following a poisson distribution, given the expected value `lambda`.
+Generates a random number following a Poisson distribution with the expected value `lambda`.
 
 :Inputs:
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`number` **lambda**: The expected value with a scale of 10, a number between 1 and 100
+    - {nbt}`double` **lambda**: The expected value in range [0,10].
   :::
 
 :Outputs:
-  **Return | Score `$random.poisson bs.out`**: A random integer, biased towards the `lambda` variable
+  **Return | Score `$random.poisson bs.out`**: A random integer, biased towards the `lambda` variable.
 ```
 
-*Generate a random number biased towards 5*
+*Generate a random number biased towards 5:*
 
 ```mcfunction
 # Generate random number
-function #bs.random:distributions/poisson {lambda:50}
+function #bs.random:poisson {lambda:5}
 
 # See the result
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.poisson", "objective": "bs.out"}, "color": "gold"}]
@@ -121,37 +175,6 @@ tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random
 
 > **Credits**: SBtree
 
-### Random Choice
-
-```{function} #bs.random:choose
-
-Picks a random value from an array
-
-:Inputs:
-  **Function macro**:
-  :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`array` **lise**: The list of values to choose from
-  :::
-
-:Outputs:
-  **Storage `bs:out random.choose.selection`**: {nbt}`any` Value that is randomly selected
-```
-
-*Generate a random number between 1 and 10, with a 20% chance*
-
-```mcfunction
-# Populate list with test values
-data modify storage bs:in random.choose.list set value ["Apples", "Bananas", "Strawberries", "Blueberries", "Mango", "Watermelon", "Honeydew Melon"]
-
-# Randomly select one
-function #bs.random:choose
-
-# See the result
-tellraw @a [{"text": "Value: ", "color": "dark_gray"},{"nbt":"random.choose.selection","storage":"bs:out", "color": "gold"}]
-```
-
-> **Credits**: SBtree
 
 ### Noise
 
