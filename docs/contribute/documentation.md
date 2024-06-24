@@ -16,7 +16,7 @@ Bookshelf documentation requires Python.
 If you are not familiar with this programming language, don't worry, you don't have to use it.
 But to be able to build the documentation locally, you still need to install it.
 For that, you can download version 3.12 or higher on the [Python website](https://www.python.org/downloads/).
-After having installed Python and cloned the Bookshelf repository, go on the `/docs` folder and open a terminal (or Powershell if you are on Windows).
+After having installed Python and cloned the Bookshelf repository, navigate to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
 Then, execute this command:
 
 ```shell
