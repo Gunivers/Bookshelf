@@ -15,6 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
 
-$function $(fn)
-data remove storage bs:out random.noise
-data merge storage bs:out {random:{noise:[]}}
+scoreboard players remove #random.i bs.data 1
+data modify storage bs:out random.white_noise_1d append value 0f
+execute store result storage bs:out random.white_noise_1d[-1] float .001 run random value 1..1000
+execute if score #random.i bs.data matches 1.. run function bs.random:noise/white_noise_1d/loop

@@ -15,14 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #height bs.random $(height)
-$scoreboard players set #width bs.random $(width)
-$data merge storage bs:random {tmp:{fn:""},with:{spacing:$(height),postpone:0}}
-$data merge storage bs:random {with:$(with)}
-execute store result score #spacing bs.random run data get storage bs:random with.spacing
-execute store result score #postpone bs.random run data get storage bs:random with.postpone
-data modify storage bs:random tmp.fn set from storage bs:random with.function
-scoreboard players set #x bs.random 0
-scoreboard players set #y bs.random 1
-data merge storage bs:out {random:{noise:[]}}
-function bs.random:noise/white_noise/xloop
+$scoreboard players set #random.i bs.data $(length)
+
+data modify storage bs:out random.white_noise_1d set value []
+execute if score #random.i bs.data matches 1.. run function bs.random:noise/white_noise_1d/loop
