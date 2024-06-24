@@ -21,9 +21,9 @@ setblock -30000000 0 1606 minecraft:decorated_pot
 scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 
 function bs.block:load/blocks_table
-function bs.block:load/items_table
-function bs.block:load/types_table
-function bs.block:load/states_table
+function bs.block:load/block_states
+function bs.block:load/items_hashmap
+function bs.block:load/types_hashmap
 function bs.block:load/mapping_registry
 
 data modify storage bs:out block set value {}

@@ -15,6 +15,7 @@ from typing import Callable
 from typing import cast
 import definitions
 import glob
+import json
 import os
 import subprocess
 
@@ -126,13 +127,26 @@ ignore_datapacks = ["Bookshelf Examples", "Bookshelf World"]
 
 class FilesProvider:
 
-    def get_all_files_not_upstreamed(self) -> FilePathsManager:
+    def get_not_merged_pr_files(self) -> FilePathsManager:
+        workspace = os.getenv('GITHUB_WORKSPACE')
+        event = os.getenv('GITHUB_EVENT')
+
+        body = json.loads(event)
+        baseSHA = body['pull_request']['base']['sha']
+        headSHA = body['pull_request']['head']['sha']
+
+        gitLogCommand = f"git diff --name-only --diff-filter=d {baseSHA}...{headSHA}"
+        result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
+
+        return FilePathsManager([ Path(workspace) / path for path in result.splitlines() ])
+
+    def get_not_upstreamed_files(self) -> FilePathsManager:
         headSHA = subprocess.check_output("git rev-parse HEAD", encoding='utf-8', shell=True)
         baseSHA = subprocess.check_output("git rev-parse origin/master", encoding='utf-8', shell=True)
 
         gitLogCommand = f"git diff --name-only --diff-filter=d {baseSHA}...{headSHA}"
         result = subprocess.check_output(gitLogCommand, encoding='utf-8', shell=True)
-        return FilePathsManager(list(map(lambda path: Path(os.path.join(definitions.ROOT_DIR, path)), result.splitlines())))
+        return FilePathsManager([ definitions.ROOT_DIR / path for path in result.splitlines() ])
 
     def datapacks(self) -> DatapackManager:
         return DatapackManager([

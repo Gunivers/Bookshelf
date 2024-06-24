@@ -1,5 +1,7 @@
-import requests
+from logger import BaseLogger
 from pathlib import Path
+import requests
+
 
 class Assets:
     """
@@ -12,14 +14,15 @@ class Assets:
         self.fabric_api_url = get_modrinth_url("fabric-api", mc_version)
         self.packtest_url = get_modrinth_url("packtest", mc_version)
 
-    def download(self, target: Path):
+    def download(self, target: Path, logger: BaseLogger):
+        logger.step("🚀 Downloading assets…")
         for url, filepath in [
             (self.fabric_server_url, target / "server.jar"),
             (self.fabric_api_url, target / "mods/fabric-api.jar"),
             (self.packtest_url, target / "mods/packtest.jar"),
         ]:
             if not filepath.exists():
-                print(f"\033[93m🚀 Downloading\033[0m [{url}]")
+                logger.print(f"Fetch {url}")
                 response = requests.get(url)
                 response.raise_for_status()
                 filepath.parent.mkdir(parents=True, exist_ok=True)
