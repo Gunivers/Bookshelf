@@ -7,6 +7,7 @@
 ### 🎉 Addition
 
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+- ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation.
 
 ### ⚡️ Improvements
 
@@ -20,7 +21,6 @@ Bookshelf is now based on **Minecraft 1.21**.
 
 ### 🎉 Addition
 - ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
-- ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation
 
 ### 🐛 Fixes
 - ([211](https://github.com/Gunivers/Bookshelf/pull/211)) Add missing help function tag in `bs.link`.
