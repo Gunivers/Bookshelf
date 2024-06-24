@@ -12,16 +12,15 @@ This page aims to give some information on how to contribute to the documentatio
 
 ## ⚙️ Install the required tools
 
-Bookshelf documentation requires Python to be built.
+Bookshelf documentation requires Python.
 If you are not familiar with this programming language, don't worry, you don't have to use it.
-But to be able to build locally the documentation locally, you will still need to install it.
-For that, you can download it on the [Python website](https://www.python.org/downloads/).
-We recommend the Python version 3.12.
+But to be able to build the documentation locally, you still need to install it.
+For that, you can download version 3.12 or higher on the [Python website](https://www.python.org/downloads/).
 After having installed Python and cloned the Bookshelf repository, go on the `/docs` folder and open a terminal (or Powershell if you are on Windows).
 Then, execute this command:
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirements.txt -U
 ```
 
 This command will install all the required dependencies, especially [Sphinx](https://www.sphinx-doc.org/en/master/) and [Myst Parser](https://myst-parser.readthedocs.io/en/latest/intro.html) that enable the generation of the documentation website from the different Markdown files.
@@ -36,8 +35,8 @@ All the images are stored into the `/docs/_imgs` folder.
 
 ## 🔨 Build the documentation locally
 
-To verify on your computer if your contribution to the documentation works correctly, you can build the documentation locally.
-To do this, go to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
+To ensure your documentation contribution works correctly, you can build and verify it locally on your computer.
+To do this, navigate to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
 Then, execute this command:
 
 ```shell

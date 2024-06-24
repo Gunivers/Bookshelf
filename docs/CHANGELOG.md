@@ -13,7 +13,7 @@
 - ([218](https://github.com/Gunivers/Bookshelf/pull/218)) Enhanced speed of factorial function in `bs.math`.
 
 ### 📄 Documentation
-([215](https://github.com/Gunivers/Bookshelf/issues/215)) The is now documentation about the documentation (kind of metadocumentation?).
+- ([215](https://github.com/Gunivers/Bookshelf/issues/215)) There is now documentation about the documentation (kind of metadocumentation?).
 
 ---
 
@@ -22,7 +22,6 @@
 Bookshelf is now based on **Minecraft 1.21**.
 
 ### 🎉 Addition
-- ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
 - ([187](https://github.com/Gunivers/Bookshelf/issues/187)) Add `#bs.block:map_type` and `#bs.block:mix_type` functions.
 
 ### 🐛 Fixes
@@ -44,6 +43,8 @@ Bookshelf is now based on **Minecraft 1.21**.
 - Added a template for pull requests.
 - Added templates for issues.
 - ([#199](https://github.com/Gunivers/Bookshelf/pull/199)) The different metadata (the manually specified one and the generated one) are now automatically verified at each commit inside a pull request. This prevents them from being forgotten. More information [here](project:contribute/contribution-validation.md).
+
+---
 
 ## 📦 Bookshelf - 2.0.0
 
