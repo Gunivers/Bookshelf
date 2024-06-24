@@ -78,6 +78,7 @@ This new version is filled with breaking changes. Since maintaining a list of th
 ### 🐛 Bug fixes
 - Who knows at this point 🤷‍♂️, almost no legacy code remains...
 
+---
 
 ## 📦 Gunivers Lib - 1.0.0
 
