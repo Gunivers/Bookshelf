@@ -12,6 +12,9 @@
 
 - ([218](https://github.com/Gunivers/Bookshelf/pull/218)) Enhanced speed of factorial function in `bs.math`.
 
+### 📄 Documentation
+([215](https://github.com/Gunivers/Bookshelf/issues/215)) The is now documentation about the documentation (kind of metadocumentation?).
+
 ---
 
 ## 📦 Bookshelf - 2.1.0
