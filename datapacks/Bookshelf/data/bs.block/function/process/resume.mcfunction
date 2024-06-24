@@ -13,4 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute positioned $(x) $(y) $(z) run function bs.block:process/fill_type/recurse/next with storage bs:data block.process
+data modify storage bs:data block.processes[]._ set value 1b
+function bs.block:process/unqueue with storage bs:data block.processes[-1]

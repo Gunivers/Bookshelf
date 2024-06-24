@@ -1,5 +1,19 @@
 # 🛠️ Changelog
 
+---
+
+## 📦 Bookshelf - 2.2.0
+
+### 🎉 Addition
+
+- ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+
+### ⚡️ Improvements
+
+- ([218](https://github.com/Gunivers/Bookshelf/pull/218)) Enhanced speed of factorial function in `bs.math`.
+
+---
+
 ## 📦 Bookshelf - 2.1.0
 
 Bookshelf is now based on **Minecraft 1.21**.
@@ -27,6 +41,8 @@ Bookshelf is now based on **Minecraft 1.21**.
 - Added a template for pull requests.
 - Added templates for issues.
 - ([#199](https://github.com/Gunivers/Bookshelf/pull/199)) The different metadata (the manually specified one and the generated one) are now automatically verified at each commit inside a pull request. This prevents them from being forgotten. More information [here](project:contribute/contribution-validation.md).
+
+---
 
 ## 📦 Bookshelf - 2.0.0
 
@@ -60,6 +76,7 @@ This new version is filled with breaking changes. Since maintaining a list of th
 ### 🐛 Bug fixes
 - Who knows at this point 🤷‍♂️, almost no legacy code remains...
 
+---
 
 ## 📦 Gunivers Lib - 1.0.0
 

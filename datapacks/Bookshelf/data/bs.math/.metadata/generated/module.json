@@ -8,12 +8,14 @@
     "Ethanout",
     "KubbyDev",
     "Leirof",
+    "SBtree-bit",
     "Triton365",
     "theogiraudet",
     "xiaodou123"
   ],
   "contributors": [
-    "Aksiome"
+    "Aksiome",
+    "tryashtar"
   ],
   "features": [
     "bs.math:acos",

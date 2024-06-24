@@ -11,16 +11,8 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:data block.process set from storage bs:in block.fill_block
-execute unless data storage bs:data block.process.mode run data modify storage bs:data block.process.mode set value "replace"
-execute unless data storage bs:data block.process.limit run data modify storage bs:data block.process.limit set value 4096
-execute unless data storage bs:data block.process.masks run data modify storage bs:data block.process.masks set value []
-
-function bs.block:process/masks/compile
 execute store result score #block.i bs.data run data get storage bs:data block.process.limit
 execute store result score #block.min_x bs.data run data get storage bs:data block.process.from[0]
 execute store result score #block.min_y bs.data run data get storage bs:data block.process.from[1]
@@ -38,4 +30,4 @@ execute store result storage bs:data block.process.max_x int 1 run scoreboard pl
 execute store result storage bs:data block.process.max_y int 1 run scoreboard players get #block.max_y bs.data
 execute store result storage bs:data block.process.max_z int 1 run scoreboard players get #block.max_z bs.data
 
-function bs.block:process/fill_block/recurse/init with storage bs:data block.process
+function bs.block:process/fill/recurse/init with storage bs:data block.process

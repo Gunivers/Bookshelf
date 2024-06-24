@@ -277,6 +277,7 @@
           "theogiraudet"
         ],
         "contributors": [
+          "SBtree-bit",
           "theogiraudet"
         ],
         "module_path": "datapacks/Bookshelf/data/bs.block",
@@ -292,8 +293,26 @@
               "version": "1.20.4"
             },
             "updated": {
-              "date": "2024/01/15",
-              "version": "1.20.4"
+              "date": "2024/06/16",
+              "version": "1.21"
+            }
+          },
+          {
+            "name": "fill_random",
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill",
+            "authors": [
+              "Aksiome"
+            ],
+            "contributors": [
+              "SBtree-bit"
+            ],
+            "created": {
+              "date": "2024/06/16",
+              "version": "1.21"
+            },
+            "updated": {
+              "date": "2024/06/16",
+              "version": "1.21"
             }
           },
           {
@@ -307,8 +326,8 @@
               "version": "1.20.4"
             },
             "updated": {
-              "date": "2024/01/15",
-              "version": "1.20.4"
+              "date": "2024/06/16",
+              "version": "1.21"
             }
           },
           {
@@ -1626,12 +1645,14 @@
           "Ethanout",
           "KubbyDev",
           "Leirof",
+          "SBtree-bit",
           "Triton365",
           "theogiraudet",
           "xiaodou123"
         ],
         "contributors": [
-          "Aksiome"
+          "Aksiome",
+          "tryashtar"
         ],
         "module_path": "datapacks/Bookshelf/data/bs.math",
         "features": [
@@ -1781,10 +1802,12 @@
             "name": "factorial",
             "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#factorial",
             "authors": [
-              "KubbyDev"
+              "Aksiome",
+              "KubbyDev",
+              "SBtree-bit"
             ],
             "contributors": [
-              "Aksiome"
+              "tryashtar"
             ],
             "created": {
               "date": "2017/09/08",

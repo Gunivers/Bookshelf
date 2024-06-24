@@ -1,56 +1,56 @@
-from functools import partial
-import re
+from files_provider._types import Feature
 from files_provider.files_provider import Artifact
-from function_call_getter.function_call_getter import FunctionCallGetter
 from function_call_getter._types import (VisitableFeatureSet, VisitableFeature, Visitor)
-import definitions
+from function_call_getter.function_call_getter import FunctionCallGetter
+from functools import partial
 from logger import newLogger
 from logger.logger import Logger
-from files_provider._types import Feature
+import definitions
+import re
 
 date = {
-            "date": {
-                "optional": False,
-                "type": "string",
-                "syntax": r"^\d{4}/\d{2}/\d{2}$"
-            },
-            "minecraft_version": {
-                "optional": False,
-                "type": "string",
-                "syntax": "^.*$"
-            }
-        }
+    "date": {
+        "optional": False,
+        "type": "string",
+        "syntax": r"^\d{4}/\d{2}/\d{2}$",
+    },
+    "minecraft_version": {
+        "optional": False,
+        "type": "string",
+        "syntax": "^.*$",
+    }
+}
 
 bookshelf_key = {
     "feature": {
         "optional": False,
         "type": "bool",
-        "value": True
+        "value": True,
     },
     "documentation": {
         "optional": False,
         "type": "string",
-        "syntax": r"^" + re.escape(definitions.DOC_URL) + r".*$"
+        "syntax": fr"^{re.escape(definitions.DOC_URL)}.*$",
     },
     "authors": {
         "optional": False,
         "type": "list",
-        "tags": [ "not_empty" ]
+        "tags": [ "not_empty" ],
     },
     "contributors": {
         "optional": True,
         "type": "list",
-        "tags": [ "not_empty" ]
+        "tags": [ "not_empty" ],
     },
     "created": {
         "optional": False,
         "type": "object",
-        "elements": date
+        "elements": date,
     },
     "updated": {
         "optional": False,
         "type": "object",
-        "elements": date
+        "elements": date,
     }
 }
 
@@ -82,7 +82,7 @@ def __callback(logger: Logger, feature: VisitableFeature) -> bool:
 
 def check_feature(feature: Feature, logger: Logger) -> dict:
     metadata = feature._content.get(definitions.FEATURE_TAG_NAMESPACE, None)
-    if metadata != None and metadata.get("feature", False):
+    if metadata is not None and metadata.get("feature", False):
         for key, value in bookshelf_key.items():
             __check_key(feature.mc_path, [definitions.FEATURE_TAG_NAMESPACE, key], value, metadata, logger)
     return feature._content.get(definitions.FEATURE_TAG_NAMESPACE)
@@ -90,7 +90,7 @@ def check_feature(feature: Feature, logger: Logger) -> dict:
 
 def __check_string(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
     syntax = pattern.get("syntax", None)
-    if syntax != None and not re.match(syntax, value):
+    if syntax is not None and not re.match(syntax, value):
         logger.print_err(f"Invalid syntax for key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
 
 def __check_list(value, path: list[str], pattern: dict, tag_path: str, logger: Logger):
@@ -116,9 +116,9 @@ def __check_bool(value, path: list[str], pattern: dict, tag_path: str, logger: L
 def __check_key(tag_path: str, path: list[str], pattern: dict, obj: dict, logger: Logger):
     type = pattern.get("type", None)
     value = obj.get(path[-1], None)
-    if value == None and pattern.get("optional", True) == False:
+    if value is None and not pattern.get("optional", True):
         logger.print_err(f"Missing key '{".".join(path)}' in Bookshelf metadata of feature tag '{tag_path}'.")
-    elif pattern.get("optional", True) == False:
+    elif not pattern.get("optional", True):
         if type == "string":
             __check_string(value, path, pattern, tag_path, logger)
         elif type == "list":

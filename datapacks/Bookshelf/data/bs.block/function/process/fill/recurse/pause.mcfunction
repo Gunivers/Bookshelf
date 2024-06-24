@@ -11,16 +11,10 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
-setblock -30000000 0 1606 minecraft:air
-forceload remove -30000000 1600
+execute store result storage bs:data block.process.x int 1 run scoreboard players get #block.x bs.data
+execute store result storage bs:data block.process.y int 1 run scoreboard players get #block.y bs.data
+execute store result storage bs:data block.process.z int 1 run scoreboard players get #block.z bs.data
 
-scoreboard objectives remove bs.data
-
-data remove storage bs:in block
-data remove storage bs:out block
-data remove storage bs:const block
-data remove storage bs:data block
+function bs.block:process/queue
