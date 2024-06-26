@@ -31,6 +31,7 @@ nomenclature
 shared-data
 file-format
 metadata
+documentation
 contribution-validation
 ````
 
