@@ -13,21 +13,21 @@ In order to reduce the footprint of the library here are some shared objectives 
 | Objectives | Description |
 |------------|-------------|
 | `bs.const` | Contain constant values. Scoreholder format: `<value>` |
-| `bs.data` | Global score storage. Scoreholder format: `#<module>.<feature>.<my_key>` |
-| `bs.in` | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
-| `bs.out` | Default score for outputs. Scoreholder format: `$<module>.<feature>` or `$<module>.<feature>.<output_key>` |
+| `bs.data`  | Global score storage. Scoreholder format: `#<module>.<feature>.<my_key>` |
+| `bs.in`    | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
+| `bs.out`   | Default score for outputs. Scoreholder format: `$<module>.<feature>` or `$<module>.<feature>.<output_key>` |
 
 ---
 
 ## Shared storages
 
-| Storages | Description |
-|----------|-------------|
+| Namespaces | Description |
+|------------|-------------|
 | `bs:const` | Contain constant data. Path format: `<module>.<my_key>` |
-| `bs:data` | Global data storage. Path format: `<module>.<feature>.<my_key>` |
-| `bs:in` | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
-| `bs:out` | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
-| `bs:ctx` | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |
+| `bs:data`  | Global data storage. Path format: `<module>.<feature>.<my_key>` |
+| `bs:in`    | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
+| `bs:out`   | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
+| `bs:ctx`   | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |
 
 ---
 
@@ -36,11 +36,11 @@ In order to reduce the footprint of the library here are some shared objectives 
 These commands can be used at load time to create blocks that can be used anywhere. These blocks must be kept in loaded chunks (at -30000000 1600).
 
 ```mcfunction
-# Used to get the system time (command block output)
-setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,Command:"help me",TrackOutput:1}
-
-# Used to manipulate loots
+# A block that can be used to manipulate loots
 setblock -30000000 0 1606 minecraft:decorated_pot
+
+# Command block used to get the system time (command block output)
+setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,Command:"help me",TrackOutput:1}
 ```
 
 ## Shared entities

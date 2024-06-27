@@ -1,3 +1,7 @@
+---
+html_theme.sidebar_secondary.remove: true
+---
+
 # 🔗 Related
 
 Map making in Minecraft is a community work.
