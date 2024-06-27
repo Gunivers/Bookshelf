@@ -4,9 +4,15 @@ html_theme.sidebar_secondary.remove: true
 
 # 🌟 Special functions
 
+Some functions follow specific conventions to streamline functionality and ensure consistency across modules.
+
+---
+
 ##  👉 The "ata" functions
 
-This is a reduction of "as to at". Several functions require 2 positions to work (example: retrieve the distance between 2 points) or an entity and a position. To simplify the use, no need to pass 3 scores for each position. You will be able to place an entity on point 1 (if it is useful), then execute the function on point 2 by executing it on the entity on point 1.
+This is a reduction of "as to at". Several functions require 2 positions to work (example: retrieve the distance between 2 points) or an entity and a position. To simplify the use, no need to pass 3 scores for each position. You will be able to place an entity on point 1 (if it is useful), then execute the function at point 2 while executing it as the entity on point 1.
+
+---
 
 ## 🔒 The "reserved" functions
 

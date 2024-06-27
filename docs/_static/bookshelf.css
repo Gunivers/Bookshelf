@@ -1,6 +1,7 @@
 html[data-theme="light"] {
   --pst-color-primary: #538fef;
   --pst-color-secondary: #f76e13;
+  --pst-color-accent: #ff8000;
   --sd-color-card-border-hover: var(--pst-color-primary);
   --pst-color-primary-highlight: var(--pst-color-secondary);
   --scrollbar-thumb-bg: #00000019;
@@ -18,6 +19,7 @@ html[data-theme="light"] .highlight .c1 {
 html[data-theme="dark"] {
   --pst-color-primary: #79a3f2;
   --pst-color-secondary: #ec8423;
+  --pst-color-accent: #ff8000;
   --pst-color-primary-highlight: var(--pst-color-secondary);
   --sd-color-primary: #3b6bc4;
   --pst-color-secondary-text: #fff;

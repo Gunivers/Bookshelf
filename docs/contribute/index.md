@@ -23,24 +23,24 @@ Si vous souhaitez contribuer mais que votre anglais n'est pas au point, vous pou
 ````{toctree}
 :hidden:
 :maxdepth: 1
-:caption: Basic stuff
+:caption: Fundamentals
 
 definitions
-tree-structure
 nomenclature
+tree-structure
 shared-data
 file-format
-metadata
-documentation
-contribution-validation
 ````
 
 ````{toctree}
 :hidden:
 :maxdepth: 1
-:caption: Advanced stuff
-comments
+:caption: Key Concepts
 debug
+metadata
+documentation
+contribution-validation
 conservation-principle
 special-functions
+comments
 ````

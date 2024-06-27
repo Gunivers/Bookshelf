@@ -7,6 +7,8 @@ html_theme.sidebar_secondary.remove: true
 Each function of Bookshelf should have a header to indicate the license.
 The header may also specified the link to the feature documentation (not mandatory).
 
+---
+
 Header to put at the beggining of each function:
 ```
 # ------------------------------------------------------------------------------------------------------------

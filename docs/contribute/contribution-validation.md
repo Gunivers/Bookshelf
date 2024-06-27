@@ -3,6 +3,8 @@
 A Bookshelf contribution often requires some additional modifications other than the code itself.
 To ensure the different modifications are correctly contributed, we have set up different validation steps.
 
+---
+
 ## ⚙️ Automatic validation
 
 First, we have defined some scripts that are automatically executed when proposing a pull request (and after each commit inside the pull request).
@@ -16,6 +18,8 @@ Some checks about the metadata can fail because the specified metadata are not u
 Indeed, some module/feature metadata such as the dependencies are computed, and the Bookshelf contributor needs to manually run the generators to enable their computation.
 These generators are available in the `scripts/all.ipynb` notebook and are not executed by the CI/CD.
 
+---
+
 ## 📄 Pull request template
 
 When a Bookshelf contributor opens a pull request on the Bookshelf repository, the message of the pull request is filled with a checklist.
@@ -25,6 +29,8 @@ Here is a non-exhaustive list of what a feature contribution requires:
 - Document the new features in the documentation and update the documentation for existing features (if needed).
 - Provide some unit tests if possible.
 - Link the pull request to an existing issue.
+
+---
 
 ## 🔎 Manual review
 

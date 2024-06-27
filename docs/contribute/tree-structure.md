@@ -4,15 +4,22 @@ html_theme.sidebar_secondary.remove: true
 
 # 🌳 Tree structure
 
-Bookshelf respects a certain tree structure which can be similar to the Java packages, called "modules" in this project. The added features must therefore be positioned in these various modules according to their usefulness.
+Bookshelf respects a certain tree structure which can be similar to Java packages, called "modules" in this project. The added features must therefore be positioned in these various modules according to their usefulness.
 
-- Each module should be responsible for loading and unloading itself. This means that each module must redefine objectives, constants, and everything else that is needed.
+---
+
+**Module requirements:**
 
 - Each module should declare a metadata file, as detailled in the [metadata page](project:metadata.md).
 
-- Each feature function should have its own function tag.
+- Each module should be responsible for loading and unloading itself. This means that each module must redefine objectives, constants, and everything else that is needed.
 
 - Each module should have a help function tag, a load function tag (responsible for loading the module and its dependencies) and an unload function tag.
+
+
+**Feature requirements:**
+
+- Each feature function should have its own function tag.
 
 - A feature is equal to a unique utility, so we should not hesitate to decompose its features in order to make it more readable and to promote reusability.
 
@@ -22,21 +29,21 @@ In addition to these few constraints, the Bookshelf contributor is free to organ
 📁data
  ├─ 📁 <module>
  |   ├─ 📁 .metadata
- |   |   └─ 📄 metadata.json
- │   ├─ 📁 functions
+ |   |   └─ 📄 module.json
+ │   ├─ 📁 function
  │   │   ├─ 📁 <feature1>
  │   │   │   ├─ 📄 <feature1>.mcfunction
  │   │   │   └─ 📄 ...
  │   │   ├─ 📄 <feature2>.mcfunction
  │   │   ├─ 📄 __load__.mcfunction
  │   │   ├─ 📄 __unload__.mcfunction
- │   ├─ 📁 <predicates|loot_tables|...>
+ │   ├─ 📁 <predicate|loot_table|...>
  │   │   ├─ 📁 <feature1>
  │   │   │   ├─ 📄 <feature1>.json
  │   │   │   └─ 📄 ...
  │   │   ├─ 📄 <feature2>.json
  │   └─ 📁 tags
- │       └─ 📁 functions
+ │       └─ 📁 function
  │           ├─ 📄 <feature1>.json
  │           └─ 📄 ...
  └─ 📁 ...
