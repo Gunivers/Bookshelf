@@ -1,0 +1,18 @@
+{
+    "condition": "minecraft:all_of",
+    "terms": [
+      {
+        "condition": "minecraft:reference",
+        "name": "bs.gui:interaction/is_listener"
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "type": "minecraft:interaction",
+          "nbt": "{Tags: [\"bs.gui.listen_left_click\"]}"
+        }
+      }
+    ]
+  }
+  
