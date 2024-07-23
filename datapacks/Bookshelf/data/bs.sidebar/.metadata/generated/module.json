@@ -11,9 +11,6 @@
   ],
   "features": [
     "bs.sidebar:create",
-    "bs.sidebar:help",
-    "bs.sidebar:load",
-    "bs.sidebar:refresh",
-    "bs.sidebar:unload"
+    "bs.sidebar:refresh"
   ]
 }

@@ -9,10 +9,7 @@
   "features": [
     "bs.hitbox:get_block",
     "bs.hitbox:get_entity",
-    "bs.hitbox:help",
     "bs.hitbox:is_in_block",
-    "bs.hitbox:is_in_entity",
-    "bs.hitbox:load",
-    "bs.hitbox:unload"
+    "bs.hitbox:is_in_entity"
   ]
 }

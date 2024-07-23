@@ -19,21 +19,6 @@
     ]
   },
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/09",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "imitate_pos",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors",
     "authors": [
@@ -176,24 +161,6 @@
       "date": "2023/09/11",
       "version": "1.20.1"
     }
-  },
-  {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/09",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    },
-    "dependencies": [
-      "bs.position"
-    ]
   },
   {
     "name": "mirror_point_ata",
@@ -368,21 +335,6 @@
     },
     "updated": {
       "date": "2023/09/11",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/12",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
       "version": "1.20.4"
     }
   },

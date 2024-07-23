@@ -13,7 +13,6 @@
   ],
   "features": [
     "bs.link:create_link_ata",
-    "bs.link:help",
     "bs.link:imitate_pos",
     "bs.link:imitate_pos_and_rot",
     "bs.link:imitate_pos_x",
@@ -23,7 +22,6 @@
     "bs.link:imitate_rot_h",
     "bs.link:imitate_rot_v",
     "bs.link:keep_local_pos",
-    "bs.link:load",
     "bs.link:mirror_point_ata",
     "bs.link:mirror_x_plane",
     "bs.link:mirror_z_plane",
@@ -35,7 +33,6 @@
     "bs.link:reverse_rot",
     "bs.link:reverse_rot_h",
     "bs.link:reverse_rot_v",
-    "bs.link:unload",
     "bs.link:update_link"
   ]
 }

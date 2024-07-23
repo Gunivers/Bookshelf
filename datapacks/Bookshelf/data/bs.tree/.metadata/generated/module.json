@@ -3,12 +3,6 @@
   "display_name": "Tree",
   "description": "Simplicity meets utility in this bank of trees.",
   "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/tree.html",
-  "authors": [
-    "Aksiome"
-  ],
-  "features": [
-    "bs.tree:help",
-    "bs.tree:load",
-    "bs.tree:unload"
-  ]
+  "authors": [],
+  "features": []
 }

@@ -14,10 +14,7 @@
     "bs.move:apply_local_vel",
     "bs.move:apply_vel",
     "bs.move:canonical_to_local",
-    "bs.move:help",
-    "bs.move:load",
     "bs.move:local_to_canonical",
-    "bs.move:set_motion",
-    "bs.move:unload"
+    "bs.move:set_motion"
   ]
 }
