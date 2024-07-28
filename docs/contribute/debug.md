@@ -18,12 +18,31 @@ Bookshelf offers a var dumper module designed to easily display a score or stora
 
 ## 🧪 Unit tests
 
-Tests are an integral part of any software development process. They help ensure the correctness of your code and can save you from potential bugs in the future. In this project, we use a Minecraft fabric mod made by Misode called PackTest.
+Tests are an integral part of any software development process. They help ensure the correctness of your code and can save you from potential bugs in the future. In this project, we use a Minecraft fabric mod made by Misode called [PackTest](https://github.com/misode/packtest).
 
 ### ✍️ Writing tests
 
 Each test is a `.mcfunction` file inside the `test` folder, at the root of each module.
 When writing tests, make sure to clearly define what you are testing and what the expected outcome is. It's also a good idea to include edge cases to ensure your code can handle all possible inputs.
+
+Each test must set the `@batch` directive to the name of the module. For example:
+
+```mcfunction
+# This is a test
+# @batch <bs.my_module>
+```
+
+This setup ensures that tests are correctly scoped to their respective modules, providing a structured and isolated testing environment.
+
+Additionally, each test folder should contain a `__boot__.mcfunction` file that initializes the testing environment. This file should set the `@beforebatch` directive, as shown below:
+
+```mcfunction
+# @batch <bs.my_module>
+# @beforebatch function #<bs.my_module:load>
+```
+
+The purpose of these directives is to load only the relevant module, helping to identify any missing load instructions.
+
 
 ### ⚙️ Running tests
 

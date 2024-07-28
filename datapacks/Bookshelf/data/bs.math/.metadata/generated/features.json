@@ -193,21 +193,6 @@
     }
   },
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/05",
-      "version": "1.13.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "ipow",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#power",
     "authors": [
@@ -252,21 +237,6 @@
     },
     "updated": {
       "date": "2024/01/28",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/05",
-      "version": "1.13.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
       "version": "1.20.4"
     }
   },
@@ -408,21 +378,6 @@
     ],
     "created": {
       "date": "2018/10/01",
-      "version": "1.13.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/math.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/05",
       "version": "1.13.2"
     },
     "updated": {

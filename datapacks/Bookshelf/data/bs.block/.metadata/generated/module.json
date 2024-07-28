@@ -17,9 +17,7 @@
     "bs.block:fill_type",
     "bs.block:get_block",
     "bs.block:get_type",
-    "bs.block:help",
     "bs.block:keep_properties",
-    "bs.block:load",
     "bs.block:lookup_item",
     "bs.block:lookup_type",
     "bs.block:map_type",
@@ -34,7 +32,6 @@
     "bs.block:shift_properties",
     "bs.block:spawn_block_display",
     "bs.block:spawn_falling_block",
-    "bs.block:spawn_solid_block_display",
-    "bs.block:unload"
+    "bs.block:spawn_solid_block_display"
   ]
 }

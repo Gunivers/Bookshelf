@@ -11,9 +11,6 @@
     "RedCoal"
   ],
   "features": [
-    "bs.time:get",
-    "bs.time:help",
-    "bs.time:load",
-    "bs.time:unload"
+    "bs.time:get"
   ]
 }

@@ -30,7 +30,7 @@ def generate(logger: BaseLogger = new_logger()):
 
 def generate_manifest(metadata: list[DatapackMetadata], consumer: Callable[[str, Path], None]):
     path = definitions.GENERATED_PATH / "manifest.json"
-    consumer(render_json(metadata, ManifestJSONEncoder), path)
+    consumer(render_json({ "datapacks": metadata }, ManifestJSONEncoder), path)
 
 
 def generate_module_metadata(metadata: ModuleMetadata, consumer: Callable[[str, Path], None]):

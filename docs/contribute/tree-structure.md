@@ -10,12 +10,27 @@ Bookshelf respects a certain tree structure which can be similar to Java package
 
 **Module requirements:**
 
-- Each module should declare a metadata file, as detailled in the [metadata page](project:metadata.md).
+- Each module must declare a metadata file as detailed in the [metadata page](project:metadata.md).
 
-- Each module should be responsible for loading and unloading itself. This means that each module must redefine objectives, constants, and everything else that is needed.
+- Each module should be responsible for loading and unloading itself. This includes redefining objectives, constants, and any other necessary elements.
 
 - Each module should have a help function tag, a load function tag (responsible for loading the module and its dependencies) and an unload function tag.
 
+- Each module's load and unload function tags should be referenced as optional in `#minecraft:load` and `#minecraft:unload` respectively.
+
+- The load function tag for each module must start by unloading all other modules using `#minecraft:unload`. After that, it should load the module and its dependencies. Weak dependencies can be specified with `"required"`: false. For example, in the health module:
+  ```json
+  {
+    "values": [
+      "#minecraft:unload",
+      "bs.health:__load__",
+      {
+        "id": "#bs.log:load",
+        "required": false
+      }
+    ]
+  }
+  ```
 
 **Feature requirements:**
 
@@ -52,4 +67,3 @@ In addition to these few constraints, the Bookshelf contributor is free to organ
 :::{note}
    Functions, predicates, structures, loot tables etc. must respect the same structure.
 :::
-

@@ -12,9 +12,6 @@
   ],
   "features": [
     "bs.biome:get_biome",
-    "bs.biome:get_temperature",
-    "bs.biome:help",
-    "bs.biome:load",
-    "bs.biome:unload"
+    "bs.biome:get_temperature"
   ]
 }

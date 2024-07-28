@@ -112,36 +112,6 @@
     }
   },
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/31",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/31",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "set_levels",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html#set",
     "authors": [
@@ -203,21 +173,6 @@
     "updated": {
       "date": "2023/11/20",
       "version": "23w46a"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/xp.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/31",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
     }
   }
 ]
