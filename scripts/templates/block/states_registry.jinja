@@ -1,8 +1,0 @@
-{% include 'header.jinja' %}
-
-# This file was automatically generated, do not edit it
-{%- for state in states %}
-{%- for option in state.o %}
-execute if block ~ ~ ~ #bs.block:has_state[{{ state.n }}={{ option.v }}] run data modify storage bs:out block._[{n:"{{ state.n }}"}].o[{v:"{{ option.v }}"}].c set value 1b
-{%- endfor %}
-{%- endfor %}

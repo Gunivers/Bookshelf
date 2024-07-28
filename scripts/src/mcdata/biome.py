@@ -9,6 +9,7 @@ def get_biomes(mc_version: str) -> list[dict]:
     """
     Fetches biomes data for the given version of minecraft.
     """
+    requests.packages.urllib3.util.connection.HAS_IPV6 = False
     response = requests.get(BIOMES_URL.format(mc_version))
     response.raise_for_status()
     biomes = response.json()

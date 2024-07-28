@@ -6,6 +6,7 @@ import definitions
 import os
 import platform
 import re
+import shutil
 import subprocess
 
 
@@ -18,8 +19,9 @@ class Runner:
 
     def run(self, datapacks: Path, target: Path, logger: BaseLogger = new_logger()) -> int:
         self.assets.download(target, logger)
-        (target / "world/data/command_storage_bs.dat").unlink(True)
-        (target / "world/data/scoreboard.dat").unlink(True)
+        shutil.rmtree(target / "world/data", ignore_errors=True)
+        shutil.rmtree(target / "world/entities", ignore_errors=True)
+        shutil.rmtree(target / "world/region", ignore_errors=True)
         create_universal_symlink(datapacks, target / "world/datapacks")
         (target / "allowed_symlinks.txt").write_text(str(datapacks))
 

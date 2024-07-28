@@ -1,3 +1,5 @@
+from collections import Counter
+from itertools import permutations
 import bisect
 import requests
 
@@ -94,6 +96,7 @@ def get_blocks(mc_version: str) -> list[dict]:
     """
     Fetches blocks data for the given version of minecraft.
     """
+    requests.packages.urllib3.util.connection.HAS_IPV6 = False
     response = requests.get(BLOCKS_URL.format(mc_version))
     response.raise_for_status()
     blocks = response.json()
@@ -102,33 +105,98 @@ def get_blocks(mc_version: str) -> list[dict]:
     response.raise_for_status()
     items = [item if item.startswith("minecraft:") else f"minecraft:{item}" for item in response.json()]
 
-    ret = []
     groups = [{}]
+    formatted_blocks = []
+
     for block, data in blocks.items():
-        states = {}
+        props = {}
         for name, options in data[0].items():
             idx = options.index(data[1][name])
-            states[name] = options[idx:] + options[:idx]
+            props[name] = options[idx:] + options[:idx]
 
-        if states not in groups:
-            groups.append(states)
+        if props not in groups:
+            groups.append(props)
 
-        block = block if block.startswith("minecraft:") else f"minecraft:{block}"
-
-        bisect.insort(ret, {
-            "group": groups.index(states),
-            "type": block,
+        bisect.insort(formatted_blocks, {
+            "type": (block := block if block.startswith("minecraft:") else f"minecraft:{block}"),
             "item": BLOCK_TO_ITEM.get(block, block if block in items else None),
-            "_": [{
-                "n": name,
-                "o": [{
-                    "i": option_idx,
-                    "v": value,
-                    "s": {state_idx: f"{name}={value},"},
-                    "p": {name: value},
-                } for option_idx, value in enumerate(options)],
-            } for state_idx, (name, options) in enumerate(states.items())]
+            "group": groups.index(props),
         }, key=lambda x: x["group"])
 
-    return ret
+    formatted_groups = format_groups(groups, find_best_permutations(groups))
+    return [{**block, "states": formatted_groups[block["group"]] } for block in formatted_blocks]
 
+
+def format_groups(groups, best_permutations):
+    next_id = 1
+    sequences = {}
+    formatted_groups = []
+
+    for group, perm in zip(groups, best_permutations):
+        ref = None
+        sequence = ()
+        formatted_group = []
+
+        for state in perm:
+            sequence += (state,)
+            if sequence not in sequences:
+                sequences[sequence] = next_id
+                next_id += 1
+
+            formatted_group.append({
+                "id": sequences[sequence],
+                "idx": len(sequence) - 1,
+                "ref": ref,
+                "name": state[0],
+                "options": group[state[0]],
+            })
+            ref = sequences[sequence]
+        formatted_groups.append(formatted_group)
+
+    return formatted_groups
+
+
+def find_best_permutations(groups: list[dict]):
+    counter = Counter()
+    hashable_groups = []
+    for group in groups:
+        states = [(name, tuple(sorted(options))) for name, options in group.items()]
+        counter.update(states)
+        hashable_groups.append(states)
+
+    all_permutations = []
+    for states in hashable_groups:
+        shared_states = []
+        unique_states = []
+        for state in states:
+            if counter[state] > 1:
+                shared_states.append(state)
+            else:
+                unique_states.append(state)
+        all_permutations.append([list(perm) + unique_states for perm in permutations(shared_states)])
+
+    best_permutations = []
+    while all_permutations:
+        best_score = -1
+        best_permutation = None
+        group_permutations = all_permutations.pop(0)
+
+        for perm in group_permutations:
+            score = sum(count_common_prefix(perm, best_perm) for best_perm in best_permutations)
+            for other_group_permutations in all_permutations:
+                score += max(count_common_prefix(perm, other_perm) for other_perm in other_group_permutations)
+
+            if score > best_score:
+                best_score = score
+                best_permutation = perm
+
+        best_permutations.append(best_permutation)
+
+    return best_permutations
+
+
+def count_common_prefix(a: list, b: list):
+    i = 0
+    while i < len(a) and i < len(b) and a[i] == b[i]:
+        i += 1
+    return i
