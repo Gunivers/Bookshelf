@@ -15,14 +15,10 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value {in:$(properties)}
-data modify storage bs:ctx _.out set from storage bs:out block._
+execute if data storage bs:out block{group:0} run return 0
 
-# reset selected property values and attempt to reselect them based on the current location
-data remove storage bs:out block._[].o[].c
-execute store result storage bs:ctx y int 1 store result score #block.group bs.data run data get storage bs:out block.group
-execute unless score #block.group bs.data matches 0 run function bs.block:get/dispatch with storage bs:ctx
-
-# update old properties with new ones if listed for merging
-function bs.block:transform/merge_properties/loop with storage bs:ctx _.in[-1]
-data modify storage bs:out block._ set from storage bs:ctx _.out
+$data modify storage bs:ctx _ set value {i:$(properties)}
+function bs.block:transform/lookup_group with storage bs:out block
+loot replace block -30000000 0 1606 container.0 loot bs.block:get/get
+data modify storage bs:ctx _.p set from block -30000000 0 1606 item.components."minecraft:custom_data".properties
+function bs.block:transform/merge_properties/recurse/next with storage bs:ctx _.i[-1]

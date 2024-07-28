@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:out block.state set value "[$(0)$(1)$(2)$(3)$(4)$(5)$(6)$(7)]"
+$data modify storage bs:out block.state set value "[$(6)$(5)$(4)$(3)$(2)$(1)$(0)]"
