@@ -33,8 +33,6 @@
     "bs.position:get_rot",
     "bs.position:get_rot_h",
     "bs.position:get_rot_v",
-    "bs.position:help",
-    "bs.position:load",
     "bs.position:local_to_canonical",
     "bs.position:set_pos",
     "bs.position:set_pos_and_rot",
@@ -43,7 +41,6 @@
     "bs.position:set_pos_z",
     "bs.position:set_rot",
     "bs.position:set_rot_h",
-    "bs.position:set_rot_v",
-    "bs.position:unload"
+    "bs.position:set_rot_v"
   ]
 }

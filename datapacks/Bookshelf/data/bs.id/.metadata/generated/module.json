@@ -10,9 +10,6 @@
   "features": [
     "bs.id:give_cuid",
     "bs.id:give_suid",
-    "bs.id:help",
-    "bs.id:load",
-    "bs.id:unload",
     "bs.id:update_cuids"
   ]
 }

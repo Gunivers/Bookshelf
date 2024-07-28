@@ -47,36 +47,6 @@
     }
   },
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.19"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.19"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "not",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html#logical-operators",
     "authors": [
@@ -118,21 +88,6 @@
     "created": {
       "date": "2020/09/06",
       "version": "1.16"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/bitwise.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.19"
     },
     "updated": {
       "date": "2024/02/27",

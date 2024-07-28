@@ -7,9 +7,6 @@
     "Aksiome"
   ],
   "features": [
-    "bs.dump:help",
-    "bs.dump:load",
-    "bs.dump:unload",
     "bs.dump:var"
   ]
 }
