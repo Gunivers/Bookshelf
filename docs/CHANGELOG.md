@@ -2,13 +2,6 @@
 
 ---
 
-## 📦 Bookshelf - 2.2.0
-
-### 🎉 Addition
-- ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
-
----
-
 ## 📦 Bookshelf - 2.1.1
 
 ### 🔁 Tweaks

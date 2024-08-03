@@ -113,47 +113,6 @@ data modify storage bs:in block.fill_type set value {type:"minecraft:spruce_stai
 function #bs.block:fill_type
 ```
 ::::
-::::{tab-item} Random
-
-```{function} #bs.block:fill_random
-
-Fill all or part of a region with random blocks or types.
-
-:Inputs:
-  **Storage `bs:in block.fill_random`**:
-  :::{treeview}
-  - {nbt}`compound` Fill random data
-    - {nbt}`list` **entries**: List of entries to pick from randomly.
-      - {nbt}`compound` Block or type entry
-        - {nbt}`string` **block | type**: Block or type to fill the region with.
-        - {nbt}`int` **weight**: Determine the likelihood of selecting the entry (default: 1).
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
-    - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
-    - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
-    - {nbt}`list` **masks**: Determine which blocks will be replaced.
-      - {nbt}`compound` Block mask
-        - {nbt}`string` **block**: Block acting as a filter.
-        - {nbt}`bool` **negate**: Reverse the mask (default: false).
-        - {nbt}`int` **x**: Mask filter x offset (default: 0).
-        - {nbt}`int` **y**: Mask filter y offset (default: 0).
-        - {nbt}`int` **z**: Mask filter z offset (default: 0).
-  :::
-
-:Outputs:
-  **State**: Blocks are placed in the world.
-```
-
-*Randomly fill an area with stone or air:*
-
-```mcfunction
-# Setup the input
-data modify storage bs:in block.fill_random set value {entries:[{block:"minecraft:stone"},{block:"minecraft:air"}],from:[-16,100,0],to:[-1,103,15]}
-
-# Run the process
-function #bs.block:fill_random
-```
-::::
 :::::
 
 > **Credits**: Aksiome
