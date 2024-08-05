@@ -15,18 +15,21 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set value {size:16}
+data modify storage bs:ctx _ set value {octaves:4,persistence:.5,lacunarity:2.0,size:16}
 $scoreboard players set #w bs.ctx $(width)
 $scoreboard players set #h bs.ctx $(height)
 $data modify storage bs:ctx _ merge value $(with)
 
-execute if data storage bs:ctx _.seed store result score $random.simplex_noise.seed bs.in run data get storage bs:ctx _.seed
-execute unless data storage bs:ctx _.seed store result score $random.simplex_noise.seed bs.in run random value -1000000000..1000000000 bs.random:simplex_noise_2d
+execute store result score $random.fractal_noise.octaves bs.in run data get storage bs:ctx _.octaves
+execute store result score $random.fractal_noise.persistence bs.in run data get storage bs:ctx _.persistence 1000
+execute store result score $random.fractal_noise.lacunarity bs.in run data get storage bs:ctx _.lacunarity 1000
+execute if data storage bs:ctx _.seed store result score $random.fractal_noise.seed bs.in run data get storage bs:ctx _.seed
+execute unless data storage bs:ctx _.seed store result score $random.fractal_noise.seed bs.in run random value -1000000000..1000000000 bs.random:fractal_noise_2d
 
 scoreboard players set #k bs.ctx 1000
 execute store result score #c bs.ctx run data get storage bs:ctx _.size
 scoreboard players operation #k bs.ctx /= #c bs.ctx
 
-execute store result score $random.simplex_noise.y bs.in run scoreboard players set #y bs.ctx 0
-data modify storage bs:out random.simplex_noise_2d set value []
-execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/simplex_noise_2d/yloop
+execute store result score $random.fractal_noise.y bs.in run scoreboard players set #y bs.ctx 0
+data modify storage bs:out random.fractal_noise_2d set value []
+execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/fractal_noise_2d/yloop

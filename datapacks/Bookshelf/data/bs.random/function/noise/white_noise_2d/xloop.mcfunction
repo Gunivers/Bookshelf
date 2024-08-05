@@ -12,7 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:out random.white_noise_2d[-1] append value 0f

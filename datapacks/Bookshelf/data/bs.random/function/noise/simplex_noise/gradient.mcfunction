@@ -12,34 +12,34 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-algorithms
 # ------------------------------------------------------------------------------------------------------------
 
 execute if score #t bs.ctx matches ..0 run return run scoreboard players set #n bs.ctx 0
 
-scoreboard players operation #m bs.ctx = #i bs.ctx
-scoreboard players operation #m bs.ctx *= 13 bs.const
-scoreboard players operation #m bs.ctx += #j bs.ctx
-scoreboard players operation #m bs.ctx += $random.simplex_noise.seed bs.in
+scoreboard players operation #g bs.ctx = #i bs.ctx
+scoreboard players operation #g bs.ctx *= 13 bs.const
+scoreboard players operation #g bs.ctx += #j bs.ctx
+scoreboard players operation #g bs.ctx += $random.simplex_noise.seed bs.in
 
-execute store result score #n bs.ctx run scoreboard players operation #m bs.ctx *= #m bs.ctx
+execute store result score #n bs.ctx run scoreboard players operation #g bs.ctx *= #g bs.ctx
 scoreboard players operation #n bs.ctx /= 2 bs.const
-scoreboard players operation #m bs.ctx *= #m bs.ctx
-scoreboard players operation #m bs.ctx /= 24 bs.const
-scoreboard players operation #n bs.ctx += #m bs.ctx
+scoreboard players operation #g bs.ctx *= #g bs.ctx
+scoreboard players operation #g bs.ctx /= 24 bs.const
+scoreboard players operation #n bs.ctx += #g bs.ctx
 scoreboard players operation #n bs.ctx %= 8 bs.const
 
-scoreboard players set #m bs.ctx 0
-execute if score #n bs.ctx matches 0..2 run scoreboard players operation #m bs.ctx += #u bs.ctx
-execute if score #n bs.ctx matches 1 run scoreboard players operation #m bs.ctx -= #v bs.ctx
-execute if score #n bs.ctx matches 2..3 run scoreboard players operation #m bs.ctx += #v bs.ctx
-execute if score #n bs.ctx matches 4..5 run scoreboard players operation #m bs.ctx -= #v bs.ctx
-execute if score #n bs.ctx matches 5..7 run scoreboard players operation #m bs.ctx -= #u bs.ctx
-execute if score #n bs.ctx matches 6 run scoreboard players operation #m bs.ctx += #v bs.ctx
+scoreboard players set #g bs.ctx 0
+execute if score #n bs.ctx matches 0..2 run scoreboard players operation #g bs.ctx += #u bs.ctx
+execute if score #n bs.ctx matches 1 run scoreboard players operation #g bs.ctx -= #v bs.ctx
+execute if score #n bs.ctx matches 2..3 run scoreboard players operation #g bs.ctx += #v bs.ctx
+execute if score #n bs.ctx matches 4..5 run scoreboard players operation #g bs.ctx -= #v bs.ctx
+execute if score #n bs.ctx matches 5..7 run scoreboard players operation #g bs.ctx -= #u bs.ctx
+execute if score #n bs.ctx matches 6 run scoreboard players operation #g bs.ctx += #v bs.ctx
 
 execute store result score #n bs.ctx run scoreboard players operation #t bs.ctx *= #t bs.ctx
 scoreboard players operation #t bs.ctx /= 1000 bs.const
 scoreboard players operation #n bs.ctx *= #t bs.ctx
 scoreboard players operation #n bs.ctx /= 1000 bs.const
-scoreboard players operation #n bs.ctx *= #m bs.ctx
+scoreboard players operation #n bs.ctx *= #g bs.ctx
 scoreboard players operation #n bs.ctx /= 1000 bs.const

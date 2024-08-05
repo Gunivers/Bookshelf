@@ -12,7 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-algorithms
 # ------------------------------------------------------------------------------------------------------------
 
 # Skew the input space to determine which simplex cell we're in
@@ -36,7 +36,7 @@ execute store result score #t bs.ctx run scoreboard players operation #u bs.ctx 
 execute store result score #d bs.ctx run scoreboard players operation #v bs.ctx += $random.simplex_noise.y bs.in
 
 # Determine which simplex cell we are in
-execute store success score #f bs.ctx if score #u bs.ctx > #v bs.ctx
+execute store success score #c bs.ctx if score #u bs.ctx > #v bs.ctx
 
 # Calculate the contribution from the first corner
 scoreboard players operation #t bs.ctx *= #t bs.ctx
@@ -63,8 +63,8 @@ execute if score #t bs.ctx matches 1.. run function bs.random:noise/simplex_nois
 scoreboard players operation $random.simplex_noise bs.out += #n bs.ctx
 
 # Calculate the contribution from the third corner
-execute if score #f bs.ctx matches 1 run scoreboard players remove #u bs.ctx 1000
-execute if score #f bs.ctx matches 0 run scoreboard players remove #v bs.ctx 1000
+execute if score #c bs.ctx matches 1 run scoreboard players remove #u bs.ctx 1000
+execute if score #c bs.ctx matches 0 run scoreboard players remove #v bs.ctx 1000
 execute store result score #t bs.ctx run scoreboard players add #u bs.ctx 789
 execute store result score #d bs.ctx run scoreboard players add #v bs.ctx 789
 scoreboard players operation #t bs.ctx *= #t bs.ctx
@@ -72,8 +72,8 @@ scoreboard players operation #d bs.ctx *= #d bs.ctx
 scoreboard players operation #t bs.ctx += #d bs.ctx
 scoreboard players remove #t bs.ctx 500000
 scoreboard players operation #t bs.ctx /= -1000 bs.const
-execute if score #f bs.ctx matches 0 run scoreboard players remove #i bs.ctx 1
-execute if score #f bs.ctx matches 1 run scoreboard players remove #j bs.ctx 1
+execute if score #c bs.ctx matches 0 run scoreboard players remove #i bs.ctx 1
+execute if score #c bs.ctx matches 1 run scoreboard players remove #j bs.ctx 1
 scoreboard players set #n bs.ctx 0
 execute if score #t bs.ctx matches 1.. run function bs.random:noise/simplex_noise/gradient
 scoreboard players operation $random.simplex_noise bs.out += #n bs.ctx
