@@ -1,40 +1,39 @@
 [
   {
+    "name": "binomial",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+    "authors": [
+      "SBtree"
+    ],
+    "contributors": [
+      "Aeldrion"
+    ],
+    "created": {
+      "date": "2024/06/15",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    }
+  },
+  {
     "name": "choose",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
     "authors": [
       "SBtree"
     ],
-    "contributors": [],
     "created": {
       "date": "2024/06/17",
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/17",
+      "date": "2024/08/05",
       "version": "1.21"
     }
   },
   {
-    "name": "distributions/binomial",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
-    "authors": [
-      "SBtree"
-    ],
-    "contributors": [
-      "Aeldrion"
-    ],
-    "created": {
-      "date": "2024/06/15",
-      "version": "1.21"
-    },
-    "updated": {
-      "date": "2024/06/15",
-      "version": "1.21"
-    }
-  },
-  {
-    "name": "distributions/geometric",
+    "name": "geometric",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
     "authors": [
       "SBtree"
@@ -47,12 +46,12 @@
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/08/05",
       "version": "1.21"
     }
   },
   {
-    "name": "distributions/poisson",
+    "name": "poisson",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
     "authors": [
       "SBtree"
@@ -65,39 +64,90 @@
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/08/05",
       "version": "1.21"
     }
   },
   {
-    "name": "noise/value_noise",
+    "name": "simplex_noise",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
+      "Aksiome"
+    ],
+    "contributors": [
       "SBtree"
     ],
-    "contributors": [],
+    "created": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "simplex_noise_2d",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "Aksiome"
+    ],
+    "contributors": [
+      "SBtree"
+    ],
+    "created": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "uniform",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/06/24",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/06/24",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "white_noise_1d",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "Aksiome",
+      "SBtree"
+    ],
     "created": {
       "date": "2024/06/20",
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/20",
+      "date": "2024/08/05",
       "version": "1.21"
     }
   },
   {
-    "name": "noise/white_noise",
+    "name": "white_noise_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
+      "Aksiome",
       "SBtree"
     ],
-    "contributors": [],
     "created": {
-      "date": "2024/06/17",
+      "date": "2024/06/20",
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/17",
+      "date": "2024/08/05",
       "version": "1.21"
     }
   }
