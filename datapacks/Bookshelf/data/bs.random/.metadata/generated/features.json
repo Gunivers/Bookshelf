@@ -33,6 +33,36 @@
     }
   },
   {
+    "name": "fractal_noise",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "fractal_noise_2d",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/08/05",
+      "version": "1.21"
+    }
+  },
+  {
     "name": "geometric",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions",
     "authors": [
