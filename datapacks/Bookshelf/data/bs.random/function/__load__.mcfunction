@@ -18,6 +18,7 @@
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
 scoreboard objectives add bs.ctx dummy [{"text":"BS ","color":"dark_gray"},{"text":"Context","color":"aqua"}]
 scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
+scoreboard objectives add bs.in dummy [{"text":"BS ","color":"dark_gray"},{"text":"Input","color":"aqua"}]
 
 execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {options:[]}
 execute unless data storage bs:out random.choose run data modify storage bs:out random.choose set value []

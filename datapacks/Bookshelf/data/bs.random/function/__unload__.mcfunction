@@ -18,6 +18,7 @@
 scoreboard objectives remove bs.const
 scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.out
+scoreboard objectives remove bs.in
 
 data remove storage bs:in random
 data remove storage bs:out random
