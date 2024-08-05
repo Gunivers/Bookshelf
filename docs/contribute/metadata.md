@@ -1,14 +1,12 @@
----
-html_theme.sidebar_secondary.remove: true
----
-
 # 🔖 Metadata
 
-To facilitate the work of bots such as the incoming Bookshelf Manager, each feature, module, and data pack should declare some metadata.
-The Bookshelf contributor should specify some of them manually.
-These metadata are then used to produce more complete metadata files that a bot can consume.
-To generate the full metadata, the Bookshelf contributor must execute the metadata generators in the `scripts/all.ipynb` notebook (requires Python, see the `scripts/pyproject.toml` file).
+To facilitate the work of bots such as the Bookshelf Manager, each feature, module, and data pack should include some metadata.
+Contributors need to manually specify some of these, which are then used to produce more complete metadata files that bots can consume.
+
+To generate the full metadata, contributors need to execute the metadata generators in the  `scripts/all.ipynb` notebook (requires Python, see the `scripts/pyproject.toml` file).
 All metadata are verified by the CI/CD pipeline (see the [contribution validation page](project:../contribute/contribution-validation.md)).
+
+---
 
 ## ⭐ Feature metadata
 
@@ -51,6 +49,8 @@ The feature metadata are directly placed on the function tag of the feature:
 
 The generated metadata are placed in `<module>/data/.metadata/generated/features.json`.
 
+---
+
 ## 🧩 Module metadata
 
 The module metadata are specified in `<module>/data/.metadata/module.json` (see [tree structure page](project:../contribute/tree-structure.md)).
@@ -88,7 +88,9 @@ Here is the format:
 
 The generated metadata are placed in `<module>/data/.metadata/generated/module.json`.
 
-# 📦 Datapack metadata
+---
+
+## 📦 Datapack metadata
 
 The datapack metadata are the `pack.mcmeta` file:
 
@@ -107,8 +109,9 @@ The datapack metadata are the `pack.mcmeta` file:
 | pack_format | See the [Minecraft wiki](https://minecraft.wiki/w/Pack_format). | yes |
 | description | A description for the datapack. | yes |
 
+---
 
-# 📜 Manifest
+## 📜 Manifest
 
 The manifest is the file containing the metadata of all datapacks, modules, and features of Bookshelf.
 This manifest is automatically generated and it is located at `generated/manifest.json`.

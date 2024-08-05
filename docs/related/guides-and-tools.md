@@ -1,3 +1,7 @@
+---
+html_theme.sidebar_secondary.remove: true
+---
+
 # 🔧 Guides & tools
 
 Map making is an aspect of Minecraft that becomes increasingly difficult with each new version of the game.

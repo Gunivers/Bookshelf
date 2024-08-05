@@ -10,9 +10,6 @@
     "bs.hitbox"
   ],
   "features": [
-    "bs.raycast:help",
-    "bs.raycast:load",
-    "bs.raycast:run",
-    "bs.raycast:unload"
+    "bs.raycast:run"
   ]
 }

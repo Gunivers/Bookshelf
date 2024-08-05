@@ -1,6 +1,7 @@
 html[data-theme="light"] {
   --pst-color-primary: #538fef;
-  --pst-color-secondary: rgb(247, 110, 19);
+  --pst-color-secondary: #f76e13;
+  --pst-color-accent: #ff8000;
   --sd-color-card-border-hover: var(--pst-color-primary);
   --pst-color-primary-highlight: var(--pst-color-secondary);
   --scrollbar-thumb-bg: #00000019;
@@ -8,6 +9,7 @@ html[data-theme="light"] {
   --scrollbar-thumb-bg-active: #0000002b;
   --pst-color-on-background: #f9f9f9;
   --bs-border-color: #dee2e699;
+  --pst-color-table-row-hover-bg: #79a3f244;
 }
 
 html[data-theme="light"] .highlight .c1 {
@@ -17,19 +19,34 @@ html[data-theme="light"] .highlight .c1 {
 html[data-theme="dark"] {
   --pst-color-primary: #79a3f2;
   --pst-color-secondary: #ec8423;
+  --pst-color-accent: #ff8000;
   --pst-color-primary-highlight: var(--pst-color-secondary);
   --sd-color-primary: #3b6bc4;
   --pst-color-secondary-text: #fff;
   --sd-color-primary-text: #fff;
   --sd-color-card-border-hover: var(--pst-color-primary);
-  --pst-color-info-bg: #1f407e;
-  --pst-color-warning-bg: #803e12;
+  --pst-color-info-bg: #324f84;
+  --pst-color-warning-bg: #894c21;
   --pst-color-success-bg: #064224;
   --pst-color-danger-bg: #6d0c0c;
   --scrollbar-thumb-bg: #ffffff19;
   --scrollbar-thumb-bg-hover: #ffffff26;
   --scrollbar-thumb-bg-active: #ffffff2b;
   --bs-border-color: #dee2e611;
+  --pst-color-table-row-hover-bg: #538fef44;
+}
+
+
+html[data-theme=dark] .bd-content .sd-tab-set .sd-tab-content, html[data-theme=dark] .bd-content .sd-tab-set>label {
+  background-color: #191d25;
+}
+
+.bd-content .sd-tab-set>input:checked+label {
+  border-color: var(--pst-color-table-row-hover-bg);
+}
+
+.bd-content .sd-tab-set .sd-tab-content {
+  border: .125rem solid var(--pst-color-table-row-hover-bg);
 }
 
 html[data-theme="dark"] .highlight .c1 {
@@ -107,18 +124,6 @@ html[data-theme="dark"] .highlight .l {
 
 hr {
   border-top: 1px solid #888;
-}
-
-a.headerlink {
-    color: var(--pst-color-secondary);
-}
-
-nav a:hover, nav button:hover {
-  text-decoration: none!important;
-}
-
-.bd-header .navbar-nav>.current>.nav-link {
-  border-bottom: none;
 }
 
 .bd-content .sd-tab-set>label {

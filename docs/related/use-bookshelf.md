@@ -1,3 +1,7 @@
+---
+html_theme.sidebar_secondary.remove: true
+---
+
 # 📁 Projects that use Bookshelf
 
 Bookshelf is a project with a long history.

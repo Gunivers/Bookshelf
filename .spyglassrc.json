@@ -1,0 +1,20 @@
+{
+  "env": {
+    "exclude": [
+      ".github/",
+      ".vscode/",
+      "@gitignore",
+      "test/"
+    ]
+  },
+  "lint": {
+    "nameOfNbtKey": "^[a-z0-9_]+$",
+    "nameOfObjective": "^bs\\.[a-z0-9_.]+$",
+    "nameOfScoreHolder": "^[#$\\-]?[a-z0-9_.]+$",
+    "nameOfTag": "^bs\\.[a-z0-9_.]+$",
+    "nameOfTeam": "^bs\\.[a-z0-9_.]+$",
+    "nbtArrayLengthCheck": true,
+    "nbtListLengthCheck": true,
+    "nbtTypeCheck": "loosely"
+  }
+}

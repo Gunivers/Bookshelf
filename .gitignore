@@ -1,3 +1,4 @@
+**/.DS_Store
 **/__pycache__/
 /advancements/
 /build/
@@ -15,6 +16,3 @@
 /uid.dat
 /venv/
 /scripts/src/bookshelf_scripts.egg-info/
-
-/.vscode/
-**/.DS_Store

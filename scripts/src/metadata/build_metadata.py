@@ -1,15 +1,14 @@
+from checks.feature_tag import check_feature
+from checks.module_metadata_file import check_module
 from dataclasses import dataclass
-import json
+from files_provider._types import Datapack
+from files_provider._types import Feature
+from files_provider.files_provider import DatapackManager, FilesProvider, ModuleManager
+from logger import BaseLogger, new_logger
+from metadata.compute_dependencies import Dependencies, ModuleDependencies, compute_dependencies
 from pathlib import Path
 from typing import Tuple
-from check_feature_tag.check_feature_tag import check_feature
-from files_provider._types import Datapack
-from files_provider.files_provider import DatapackManager, FilesProvider, ModuleManager
-from logger import newLogger
-from logger.logger import Logger
-from metadata.check_module_metadata_file import check_module
-from metadata.compute_dependencies import Dependencies, ModuleDependencies, compute_dependencies
-from files_provider._types import Feature
+import json
 
 @dataclass
 class Updated:
@@ -51,7 +50,7 @@ class DatapackMetadata:
     modules: list[ModuleMetadata]
 
 
-def build(logger: Logger = newLogger()) -> list[DatapackMetadata]:
+def build(logger: BaseLogger = new_logger()) -> list[DatapackMetadata]:
     managers = FilesProvider().separated_datapacks()
     datapack_metadata = []
 
@@ -63,7 +62,7 @@ def build(logger: Logger = newLogger()) -> list[DatapackMetadata]:
     return datapack_metadata
 
 
-def build_datapack_metadata(manager: DatapackManager, logger: Logger) -> DatapackMetadata:
+def build_datapack_metadata(manager: DatapackManager, logger: BaseLogger) -> DatapackMetadata:
     datapack = manager.get()[0]
     logger.new_error_context()
     result = get_mcmeta_infos(datapack, logger)
@@ -74,19 +73,19 @@ def build_datapack_metadata(manager: DatapackManager, logger: Logger) -> Datapac
         return DatapackMetadata(datapack.name, description, format, modules)
 
 
-def get_mcmeta_infos(datapack: Datapack, logger: Logger) -> Tuple[int, str]:
+def get_mcmeta_infos(datapack: Datapack, logger: BaseLogger) -> Tuple[int, str]:
     with open(datapack.path / "pack.mcmeta") as file:
         content: dict = json.load(file)
         if content.get("pack", None) is not None:
             if content["pack"].get("pack_format", None) is None:
-                logger.print_err(f"'pack_format' is missing in the pack.mcmeta of '{datapack.name}'")
+                logger.error(f"'pack_format' is missing in the pack.mcmeta of '{datapack.name}'")
             elif content["pack"].get("description", None) is None:
-                logger.print_err(f"'description' is missing in the pack.mcmeta of '{datapack.name}'")
+                logger.error(f"'description' is missing in the pack.mcmeta of '{datapack.name}'")
             return content["pack"]["pack_format"], content["pack"]["description"]
-        logger.print_err(f"'pack' is missing in the pack.mcmeta of '{datapack.name}'")
+        logger.error(f"'pack' is missing in the pack.mcmeta of '{datapack.name}'")
 
 
-def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetadata:
+def build_module_metadata(manager: ModuleManager, logger: BaseLogger) -> ModuleMetadata:
     module = manager.get()[0]
     logger.new_error_context()
     result = check_module(module, logger)
@@ -123,7 +122,7 @@ def build_module_metadata(manager: ModuleManager, logger: Logger) -> ModuleMetad
         return ModuleMetadata(name=module.namespace, display_name=display_name, description=description, documentation=documentation, icon=icon, contributors=contributors, authors=authors, dependencies=module_dep.dependencies.dependencies, weak_dependencies=module_dep.dependencies.weak_dependencies, features=feature_metadata, module_path=module.path)
 
 
-def build_features_metadata(feature: Feature, dependencies: Dependencies, logger: Logger) -> FeatureMetadata:
+def build_features_metadata(feature: Feature, dependencies: Dependencies, logger: BaseLogger) -> FeatureMetadata:
     logger.new_error_context()
     result = check_feature(feature, logger)
     if not logger.reduce_error_context():

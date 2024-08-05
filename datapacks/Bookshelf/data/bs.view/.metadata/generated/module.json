@@ -8,8 +8,7 @@
     "Leirof"
   ],
   "dependencies": [
-    "bs.hitbox",
-    "bs.raycast"
+    "bs.hitbox"
   ],
   "features": [
     "bs.view:as_aimed_entity",
@@ -20,9 +19,6 @@
     "bs.view:at_block_placement",
     "bs.view:at_looked_entity",
     "bs.view:can_see_ata",
-    "bs.view:help",
-    "bs.view:in_view_ata",
-    "bs.view:load",
-    "bs.view:unload"
+    "bs.view:in_view_ata"
   ]
 }

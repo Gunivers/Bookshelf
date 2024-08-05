@@ -1,10 +1,8 @@
-import os
+from logger.base_logger import BaseLogger
+from logger.console_logger import ConsoleLogger
 from logger.github_logger import GithubLogger
-from logger.logger import Logger
+import os
 
 
-def newLogger():
-    if os.getenv('GITHUB_WORKSPACE'):
-        return GithubLogger()
-    else:
-        return Logger()
+def new_logger() -> BaseLogger:
+    return GithubLogger() if os.getenv('GITHUB_WORKSPACE') else ConsoleLogger()
