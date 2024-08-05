@@ -16,10 +16,10 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # Modified from https://github.com/Aeldrion/Minecraft-Random
-scoreboard players add #random.k bs.data 1
+scoreboard players add #k bs.ctx 1
 
-execute store result score #result bs.data run random value 0..65536
-scoreboard players operation #random.p bs.data /= 65536 bs.const
-scoreboard players operation #random.p bs.data *= #result bs.data
+execute store result score #m bs.ctx run random value 0..65536
+scoreboard players operation #p bs.ctx /= 65536 bs.const
+scoreboard players operation #p bs.ctx *= #m bs.ctx
 
-execute if score #random.p bs.data > #random.exp(-l) bs.data run function bs.random:distributions/poisson/loop
+execute if score #p bs.ctx > #e bs.ctx run function bs.random:distributions/poisson/loop

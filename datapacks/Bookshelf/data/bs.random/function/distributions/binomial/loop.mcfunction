@@ -16,6 +16,6 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # Modified from https://github.com/Aeldrion/Minecraft-Random
-execute if predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.data","target":{"type":"minecraft:fixed","name":"#random.p"}}}} run scoreboard players add $random.binomial bs.out 1
-scoreboard players remove #random.n bs.data 1
-execute if score #random.n bs.data matches 1.. run function bs.random:distributions/binomial/loop
+execute if predicate {"condition":"minecraft:value_check","value":{"min":1,"max":1000000000},"range":{"min":1,"max":{"type":"minecraft:score","score":"bs.ctx","target":{"type":"minecraft:fixed","name":"#p"}}}} run scoreboard players add $random.binomial bs.out 1
+scoreboard players remove #n bs.ctx 1
+execute if score #n bs.ctx matches 1.. run function bs.random:distributions/binomial/loop

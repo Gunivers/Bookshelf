@@ -15,6 +15,10 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
 
-$function $(fn)
-data remove storage bs:out random.noise
-data merge storage bs:out {random:{noise:[]}}
+execute store result score $random.simplex_noise.x bs.in run scoreboard players set #x bs.ctx 0
+data modify storage bs:out random.simplex_noise_2d append value []
+function bs.random:noise/simplex_noise_2d/xloop
+
+execute store result score $random.simplex_noise.y bs.in run scoreboard players add #y bs.ctx 1
+scoreboard players operation $random.simplex_noise.y bs.in *= #k bs.ctx
+execute if score #y bs.ctx < #h bs.ctx run function bs.random:noise/simplex_noise_2d/yloop

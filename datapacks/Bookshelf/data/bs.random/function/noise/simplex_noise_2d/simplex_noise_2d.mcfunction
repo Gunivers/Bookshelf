@@ -17,7 +17,15 @@
 
 $scoreboard players set #w bs.ctx $(width)
 $scoreboard players set #h bs.ctx $(height)
+$data modify storage bs:ctx _ set value $(with)
 
-scoreboard players set #y bs.ctx 0
-data modify storage bs:out random.white_noise_2d set value []
-execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/white_noise_2d/yloop
+scoreboard players set #k bs.ctx 1000
+execute store result score #c bs.ctx run data get storage bs:ctx _.size
+execute store result score $random.simplex_noise.seed bs.in run data get storage bs:ctx _.seed
+execute unless data storage bs:ctx _.size run scoreboard players set #c bs.ctx 16
+execute unless data storage bs:ctx _.seed store result score $random.simplex_noise.seed bs.in run random value -2147483648..2147483647 bs.random:simplex_noise_2d
+scoreboard players operation #k bs.ctx /= #c bs.ctx
+
+execute store result score $random.simplex_noise.y bs.in run scoreboard players set #y bs.ctx 0
+data modify storage bs:out random.simplex_noise_2d set value []
+execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/simplex_noise_2d/yloop

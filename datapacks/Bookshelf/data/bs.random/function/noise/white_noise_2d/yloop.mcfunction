@@ -15,9 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #random.x bs.data 0
+scoreboard players set #x bs.ctx 0
 data modify storage bs:out random.white_noise_2d append value []
 function bs.random:noise/white_noise_2d/xloop
 
-scoreboard players add #random.y bs.data 1
-execute if score #random.y bs.data < #random.h bs.data run function bs.random:noise/white_noise_2d/yloop
+scoreboard players add #y bs.ctx 1
+execute if score #y bs.ctx < #h bs.ctx run function bs.random:noise/white_noise_2d/yloop

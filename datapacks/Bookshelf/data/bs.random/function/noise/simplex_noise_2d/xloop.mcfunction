@@ -12,14 +12,12 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise
 # ------------------------------------------------------------------------------------------------------------
 
-# Modified from https://github.com/Aeldrion/Minecraft-Random
-$data modify storage bs:ctx _ set value {n:$(trials),p:$(probability)}
-execute store result score #n bs.ctx run data get storage bs:ctx _.n
-execute store result score #p bs.ctx run data get storage bs:ctx _.p 1000000000
+data modify storage bs:out random.simplex_noise_2d[-1] append value 0f
+execute store result storage bs:out random.simplex_noise_2d[-1][-1] float .001 run function bs.random:noise/simplex_noise/simplex_noise
 
-scoreboard players set $random.binomial bs.out 0
-execute if score #n bs.ctx matches 1..1000 if score #p bs.ctx matches 1..1000000000 run function bs.random:distributions/binomial/loop
-return run scoreboard players get $random.binomial bs.out
+execute store result score $random.simplex_noise.x bs.in run scoreboard players add #x bs.ctx 1
+scoreboard players operation $random.simplex_noise.x bs.in *= #k bs.ctx
+execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/simplex_noise_2d/xloop

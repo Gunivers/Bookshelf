@@ -15,18 +15,23 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
-scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
+scoreboard objectives add bs.ctx dummy [{"text":"BS ","color":"dark_gray"},{"text":"Context","color":"aqua"}]
+scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
 
 execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {options:[]}
 execute unless data storage bs:out random.choose run data modify storage bs:out random.choose set value []
 
 execute store result score #random.seed bs.data run seed
 
+scoreboard players set -1000 bs.const -1000
 scoreboard players set 2 bs.const 2
+scoreboard players set 8 bs.const 8
 scoreboard players set 10 bs.const 10
 scoreboard players set 12 bs.const 12
+scoreboard players set 13 bs.const 13
+scoreboard players set 14 bs.const 14
+scoreboard players set 24 bs.const 24
 scoreboard players set 78 bs.const 78
 scoreboard players set 100 bs.const 100
 scoreboard players set 1000 bs.const 1000
