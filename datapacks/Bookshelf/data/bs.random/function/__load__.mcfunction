@@ -22,8 +22,6 @@ scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"tex
 execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {options:[]}
 execute unless data storage bs:out random.choose run data modify storage bs:out random.choose set value []
 
-execute store result score #random.seed bs.data run seed
-
 scoreboard players set -1000 bs.const -1000
 scoreboard players set 2 bs.const 2
 scoreboard players set 8 bs.const 8
