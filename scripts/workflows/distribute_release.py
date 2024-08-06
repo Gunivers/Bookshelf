@@ -51,8 +51,10 @@ def list_dependencies(datapack: str, module: str) -> list[str]:
         contents = json.load(file)
         for value in contents["values"]:
             if isinstance(value, dict):
+                if not value.get("required", True):
+                    continue
                 value = value.get("id")
-            if not value.startswith("#"):
+            if not value.startswith("#") or value == "#minecraft:unload":
                 continue
             module = value.split(":")[0].lstrip("#")
             dependencies.extend(list_dependencies(datapack, module))
