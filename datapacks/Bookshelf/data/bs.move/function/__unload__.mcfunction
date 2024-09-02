@@ -24,3 +24,5 @@ scoreboard objectives remove bs.const
 scoreboard objectives remove bs.vel.x
 scoreboard objectives remove bs.vel.y
 scoreboard objectives remove bs.vel.z
+
+data remove storage bs:data move
