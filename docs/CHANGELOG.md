@@ -7,6 +7,12 @@
 ### 🎉 Addition
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
 
+### 🐛 Fixes
+- ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
+
+### 📄 Documentation
+- ([244](https://github.com/Gunivers/Bookshelf/issues/244)) Merge the Inverse trigonometry section in `bs.math` with the Trigonometry one for better clarity.
+
 ---
 
 ## 📦 Bookshelf - 2.1.1
