@@ -40,7 +40,7 @@ You can find below all functions available in this API.
 Set an interaction a listener.
 
 :Inputs:
-  **Execution `as <interactions>`**: The interaction to set as listener.
+  **Execution `as <entities>`**: The interaction to set as listener.
 
 :Outputs:
   **State**: The interaction is now a listener and events can be bind to it.
@@ -54,7 +54,7 @@ Set an interaction a listener.
 Unset an interaction to its listener role.
 
 :Inputs:
-  **Execution `as <listeners>`**: The interactions to unset the listener role.
+  **Execution `as <entities>`**: The interactions to unset the listener role.
 
 :Outputs:
   **State**: The interaction is not an listener anymore.
@@ -89,7 +89,7 @@ An icon must be linked to at most one listener.
 A listener must be linked at most one icon.
 
 :Inputs:
-  **Execution `as <listener>`**: The interaction to set as listener.
+  **Execution `as <entity>`**: The listener to link to the icon.
   **Execution `at <entity>`**: The entity to use as icon.
 
 :Outputs:
@@ -104,7 +104,7 @@ A listener must be linked at most one icon.
 Unlink a listener and its icon.
 
 :Inputs:
-  **Execution `as <listener>`**: The interaction to unlink to its icon.
+  **Execution `as <entity>`**: The interaction to unlink to its icon.
 
 :Outputs:
   **State**: The listener and the icon are note linked together anymore.
@@ -141,7 +141,7 @@ Add a new callback function to execute when the right click is pressed on the cu
 A listener can listen to several events.
 
 :Inputs:
-  **Execution `as <listener>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: The listener on which add the new callback.
 
   **Function macro**:
   :::{treeview}
@@ -164,7 +164,7 @@ Add a new callback function to execute when the left click is pressed on the cur
 A listener can listen to several events.
 
 :Inputs:
-  **Execution `as <listener>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: The listener on which add the new callback.
 
   **Function macro**:
   :::{treeview}
@@ -187,7 +187,7 @@ Add a new callback function to execute when the player starts hovering the liste
 A listener can listen to several events.
 
 :Inputs:
-  **Execution `as <listener>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: The listener on which add the new callback.
 
   **Function macro**:
   :::{treeview}
@@ -210,7 +210,7 @@ Add a new callback function to execute while the player hovers the listener.
 A listener can listen to several events.
 
 :Inputs:
-  **Execution `as <listener>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: The listener on which add the new callback.
 
   **Function macro**:
   :::{treeview}
@@ -233,7 +233,7 @@ Add a new callback function to execute when the player stops hovering the listen
 A listener can listen to several events.
 
 :Inputs:
-  **Execution `as <listener>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: The listener on which add the new callback.
 
   **Function macro**:
   :::{treeview}
@@ -273,7 +273,7 @@ You can find below all predicates available in this API.
 
 ---
 
-### Is listener?
+#### Is listener?
 
 **`bs.gui:interaction.is_listener`**
 
@@ -283,7 +283,7 @@ Determine if the current entity is a listener or not.
 
 ---
 
-### Listen a specific event?
+#### Listen a specific event?
 
 :::::{tab-set}
 ::::{tab-item} Right click
