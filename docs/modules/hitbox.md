@@ -35,7 +35,7 @@ Get the hitbox of a block as a shape, represented by a list of boxes coordinates
   :::{treeview}
   - {nbt}`compound` Block collision box
     - {nbt}`list` **shape**: A list of cube coordinates (format: `[[xmin, ymin, zmin, xmax, ymax, zmax]]`).
-    - {nbt}`compound` **offset**: Hitbox offset (used for exemple by flowers).
+    - {nbt}`compound` **offset**: Hitbox offset (used for example by flowers).
       - {nbt}`double` **x**: Number describing the X coordinate offset.
       - {nbt}`double` **z**: Number describing the Z coordinate offset.
   :::
