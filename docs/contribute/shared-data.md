@@ -16,6 +16,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 | `bs.data`  | Global score storage. Scoreholder format: `#<module>.<feature>.<my_key>` |
 | `bs.in`    | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
 | `bs.out`   | Default score for outputs. Scoreholder format: `$<module>.<feature>` or `$<module>.<feature>.<output_key>` |
+| `bs.ctx`   | Fast contextual scoreboard. Scoreholder format: `#<single_letter>` |
 
 ---
 

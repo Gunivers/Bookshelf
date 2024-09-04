@@ -15,4 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:out random.choose set from storage bs:in random.choose.options[$(y)]
+execute store result score #l bs.ctx if data storage bs:in random.choice.options[]
+execute store result score #i bs.ctx run random value 0..1000
+scoreboard players remove #l bs.ctx 1
+execute store result storage bs:ctx y int .001 run scoreboard players operation #i bs.ctx *= #l bs.ctx
+function bs.random:choice/get with storage bs:ctx
+return run data get storage bs:ctx y

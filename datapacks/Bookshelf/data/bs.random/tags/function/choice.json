@@ -15,6 +15,6 @@
     }
   },
   "values": [
-    "bs.random:choose/choose"
+    "bs.random:choice/choice"
   ]
 }

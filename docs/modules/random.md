@@ -25,15 +25,18 @@ You can find below all functions available in this module.
 
 ### Random choice
 
-```{function} #bs.random:choose
+:::::{tab-set}
+::::{tab-item} Choice
+
+```{function} #bs.random:choice
 
 Selects a random value from a list.
 
 :Inputs:
-  **Storage `bs:in random.choose.options`**: {nbt}`list` The list of values to choose from.
+  **Storage `bs:in random.choice.options`**: {nbt}`list` The list of values to choose from.
 
 :Outputs:
-  **Storage `bs:out random.choose`**: {nbt}`any` The randomly selected value.
+  **Storage `bs:out random.choice`**: {nbt}`any` The randomly selected value.
 
   **Return**: The index of the chosen value.
 ```
@@ -42,17 +45,52 @@ Selects a random value from a list.
 
 ```mcfunction
 # Populate list with values
-data modify storage bs:in random.choose.options set value ["Apple", "Banana", "Strawberry", "Blueberry", "Mango", "Watermelon"]
+data modify storage bs:in random.choice.options set value ["Apple", "Banana", "Strawberry", "Blueberry", "Mango", "Watermelon"]
 
 # Randomly select one
-function #bs.random:choose
+function #bs.random:choice
 
 # Display the result
-tellraw @a [{"text":"Value: ","color":"dark_gray"},{"nbt":"random.choose","storage":"bs:out","color":"gold"}]
+tellraw @a [{"text":"Value: ","color":"dark_gray"},{"nbt":"random.choice","storage":"bs:out","color":"gold"}]
 ```
 
-> **Credits**: SBtree
+::::
+::::{tab-item} Weighted Choice
 
+```{function} #bs.random:weighted_choice
+
+Selects a random value from a list based on specified weights.
+
+:Inputs:
+  **Storage `bs:in random.weighted_choice.options`**: {nbt}`list` The list of values to choose from.
+
+  **Storage `bs:in random.weighted_choice.weights`**: {nbt}`list` The corresponding weights for each value.
+
+:Outputs:
+  **Storage `bs:out random.weighted_choice`**: {nbt}`any` The randomly selected value based on the weights.
+
+  **Return**: The index of the chosen value.
+```
+
+*Pick a random fruit from the list based on weights:*
+
+```mcfunction
+# Populate list with values
+data modify storage bs:in random.weighted_choice.options set value ["Apple", "Banana", "Strawberry"]
+
+# Populate list with weights
+data modify storage bs:in random.weighted_choice.weights set value [5, 3, 2]
+
+# Randomly select one based on weights
+function #bs.random:weighted_choice
+
+# Display the result
+tellraw @a [{"text":"Value: ","color":"dark_gray"},{"nbt":"random.weighted_choice","storage":"bs:out","color":"gold"}]
+```
+
+:::::
+
+> **Credits**: Aksiome, SBtree
 
 ### Random distributions
 

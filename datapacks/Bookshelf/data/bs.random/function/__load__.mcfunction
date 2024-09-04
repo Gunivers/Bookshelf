@@ -15,13 +15,13 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
 # ------------------------------------------------------------------------------------------------------------
 
+forceload add -30000000 1600
+setblock -30000000 0 1606 minecraft:decorated_pot
+
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
 scoreboard objectives add bs.ctx dummy [{"text":"BS ","color":"dark_gray"},{"text":"Context","color":"aqua"}]
 scoreboard objectives add bs.out dummy [{"text":"BS ","color":"dark_gray"},{"text":"Output","color":"aqua"}]
 scoreboard objectives add bs.in dummy [{"text":"BS ","color":"dark_gray"},{"text":"Input","color":"aqua"}]
-
-execute unless data storage bs:in random.choose run data modify storage bs:in random.choose set value {options:[]}
-execute unless data storage bs:out random.choose run data modify storage bs:out random.choose set value []
 
 scoreboard players set -1000 bs.const -1000
 scoreboard players set 2 bs.const 2
@@ -36,12 +36,12 @@ scoreboard players set 100 bs.const 100
 scoreboard players set 1000 bs.const 1000
 scoreboard players set 10000 bs.const 10000
 scoreboard players set 65536 bs.const 65536
-scoreboard players set exp(-0.9)*65536 bs.const 26645
-scoreboard players set exp(-0.8)*65536 bs.const 29447
-scoreboard players set exp(-0.7)*65536 bs.const 32544
-scoreboard players set exp(-0.6)*65536 bs.const 35967
-scoreboard players set exp(-0.5)*65536 bs.const 39750
-scoreboard players set exp(-0.4)*65536 bs.const 43930
-scoreboard players set exp(-0.3)*65536 bs.const 48550
-scoreboard players set exp(-0.2)*65536 bs.const 53656
-scoreboard players set exp(-0.1)*65536 bs.const 59299
+scoreboard players set 26645 bs.const 26645
+scoreboard players set 29447 bs.const 29447
+scoreboard players set 32544 bs.const 32544
+scoreboard players set 35967 bs.const 35967
+scoreboard players set 39750 bs.const 39750
+scoreboard players set 43930 bs.const 43930
+scoreboard players set 48550 bs.const 48550
+scoreboard players set 53656 bs.const 53656
+scoreboard players set 59299 bs.const 59299

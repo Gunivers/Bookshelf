@@ -12,16 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-distributions
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice
 # ------------------------------------------------------------------------------------------------------------
 
-setblock -30000000 0 1606 minecraft:air
-forceload remove -30000000 1600
-
-scoreboard objectives remove bs.const
-scoreboard objectives remove bs.ctx
-scoreboard objectives remove bs.out
-scoreboard objectives remove bs.in
-
-data remove storage bs:in random
-data remove storage bs:out random
+$data modify storage bs:out random.choice set from storage bs:in random.choice.options[$(y)]

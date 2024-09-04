@@ -41,16 +41,17 @@ execute if score #i bs.ctx matches 8 run scoreboard players set #e bs.ctx 11
 execute if score #i bs.ctx matches 9 run scoreboard players set #e bs.ctx 4
 execute if score #i bs.ctx matches 10 run scoreboard players set #e bs.ctx 2
 
+# e * exp(0)*65536, e * exp(-0.1)*65536, e * exp(-0.2)*65536, ..., e * exp(-0.9)*65536,
 execute if score #d bs.ctx matches 0 run scoreboard players operation #e bs.ctx *= 65536 bs.const
-execute if score #d bs.ctx matches 1 run scoreboard players operation #e bs.ctx *= exp(-0.1)*65536 bs.const
-execute if score #d bs.ctx matches 2 run scoreboard players operation #e bs.ctx *= exp(-0.2)*65536 bs.const
-execute if score #d bs.ctx matches 3 run scoreboard players operation #e bs.ctx *= exp(-0.3)*65536 bs.const
-execute if score #d bs.ctx matches 4 run scoreboard players operation #e bs.ctx *= exp(-0.4)*65536 bs.const
-execute if score #d bs.ctx matches 5 run scoreboard players operation #e bs.ctx *= exp(-0.5)*65536 bs.const
-execute if score #d bs.ctx matches 6 run scoreboard players operation #e bs.ctx *= exp(-0.6)*65536 bs.const
-execute if score #d bs.ctx matches 7 run scoreboard players operation #e bs.ctx *= exp(-0.7)*65536 bs.const
-execute if score #d bs.ctx matches 8 run scoreboard players operation #e bs.ctx *= exp(-0.8)*65536 bs.const
-execute if score #d bs.ctx matches 9 run scoreboard players operation #e bs.ctx *= exp(-0.9)*65536 bs.const
+execute if score #d bs.ctx matches 1 run scoreboard players operation #e bs.ctx *= 59299 bs.const
+execute if score #d bs.ctx matches 2 run scoreboard players operation #e bs.ctx *= 53656 bs.const
+execute if score #d bs.ctx matches 3 run scoreboard players operation #e bs.ctx *= 48550 bs.const
+execute if score #d bs.ctx matches 4 run scoreboard players operation #e bs.ctx *= 43930 bs.const
+execute if score #d bs.ctx matches 5 run scoreboard players operation #e bs.ctx *= 39750 bs.const
+execute if score #d bs.ctx matches 6 run scoreboard players operation #e bs.ctx *= 35967 bs.const
+execute if score #d bs.ctx matches 7 run scoreboard players operation #e bs.ctx *= 32544 bs.const
+execute if score #d bs.ctx matches 8 run scoreboard players operation #e bs.ctx *= 29447 bs.const
+execute if score #d bs.ctx matches 9 run scoreboard players operation #e bs.ctx *= 26645 bs.const
 
 # Draw random number using Knuth's method
 scoreboard players set #p bs.ctx 2147483647
