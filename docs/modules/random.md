@@ -42,7 +42,7 @@ Selects a random value from a list.
 
 ```mcfunction
 # Populate list with values
-data modify storage bs:in random.choose.options set value ["Apples", "Bananas", "Strawberries", "Blueberries", "Mango", "Watermelon", "Honeydew Melon"]
+data modify storage bs:in random.choose.options set value ["Apple", "Banana", "Strawberry", "Blueberry", "Mango", "Watermelon"]
 
 # Randomly select one
 function #bs.random:choose
@@ -85,6 +85,12 @@ function #bs.random:uniform {min:1,max:100}
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.uniform", "objective": "bs.out"}, "color": "gold"}]
 ```
 
+```{admonition} Uniform Distribution... 🥶 What’s this?
+:class: dropdown
+
+Every outcome has an equal chance of happening. It's like rolling a fair die. Each number (1 through 6) is equally likely.
+```
+
 ::::
 ::::{tab-item} Binomial
 
@@ -112,6 +118,12 @@ function #bs.random:binomial {trials:10,probability:0.2}
 
 # Display the result
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.binomial", "objective": "bs.out"}, "color": "gold"}]
+```
+
+```{admonition} Binomial Distribution... 🥶 What’s this?
+:class: dropdown
+
+Used when you have a fixed number of trials, each with two possible outcomes (like success or failure). It tells you the probability of getting a certain number of successes. For example, flipping a coin 10 times and counting how many heads you get.
 ```
 
 ::::
@@ -142,6 +154,12 @@ function #bs.random:geometric {probability:0.02}
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.geometric", "objective": "bs.out"}, "color": "gold"}]
 ```
 
+```{admonition} Geometric Distribution... 🥶 What’s this?
+:class: dropdown
+
+Measures the number of trials needed to get the first success in a series of independent and identical trials. For instance, how many times you need to roll a die before getting a six.
+```
+
 ::::
 ::::{tab-item} Poisson
 
@@ -170,10 +188,26 @@ function #bs.random:poisson {lambda:5}
 tellraw @a [{"text": "Number: ", "color": "dark_gray"},{"score":{"name":"$random.poisson", "objective": "bs.out"}, "color": "gold"}]
 ```
 
+```{admonition} Poisson Distribution... 🥶 What’s this?
+:class: dropdown
+
+A Poisson distribution produces values that tend to cluster around an average value, **λ (lambda)**. Most results will be close to this average, which makes it useful for modeling random events happening at a consistent rate.
+```
+
 ::::
 :::::
 
-> **Credits**: SBtree
+```{image} /_imgs/modules/random/distributions_dark.png
+:align: center
+:class: only-dark
+```
+
+```{image} /_imgs/modules/random/distributions_light.png
+:align: center
+:class: only-light
+```
+
+> **Credits**: Aksiome, SBtree
 
 ### Noise algorithms
 
@@ -324,7 +358,7 @@ Generates a 2D simplex noise texture of size `width` by `height`. Simplex noise 
   **Storage `bs:out random.simplex_noise_2d`**: 2D array of values between -1 and 1.
 ```
 
-*Generate a 16x16 simplex noise pattern:*
+*Generate a 16×16 simplex noise pattern:*
 
 ```mcfunction
 # Generate random noise
@@ -360,7 +394,7 @@ Generates a 2D fractal noise texture of size `width` by `height`. Fractal noise 
   **Storage `bs:out random.fractal_noise_2d`**: 2D array of values between -1 and 1.
 ```
 
-*Generate a 16x16 fractal noise pattern:*
+*Generate a 16×16 fractal noise pattern:*
 
 ```mcfunction
 # Generate random noise
