@@ -21,6 +21,12 @@
 $data modify storage bs:ctx _ set value $(lambda)
 execute store result score #i bs.ctx run data get storage bs:ctx _
 execute store result score #d bs.ctx run data get storage bs:ctx _ 10
+execute unless score #d bs.ctx matches 0..100 run function #bs.log:error { \
+  namespace:"bs.random", \
+  tag:"poisson", \
+  message:'"Lambda must be between 0 and 10."', \
+  path:"bs.random:distributions/poisson/poisson", \
+}
 scoreboard players operation #d bs.ctx %= 10 bs.const
 
 # Make sure expected value is valid

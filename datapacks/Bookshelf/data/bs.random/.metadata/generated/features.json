@@ -15,10 +15,13 @@
     "updated": {
       "date": "2024/08/05",
       "version": "1.21"
-    }
+    },
+    "weak_dependencies": [
+      "bs.log"
+    ]
   },
   {
-    "name": "choose",
+    "name": "choice",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
     "authors": [
       "SBtree"
@@ -78,7 +81,10 @@
     "updated": {
       "date": "2024/08/05",
       "version": "1.21"
-    }
+    },
+    "weak_dependencies": [
+      "bs.log"
+    ]
   },
   {
     "name": "poisson",
@@ -96,7 +102,10 @@
     "updated": {
       "date": "2024/08/05",
       "version": "1.21"
-    }
+    },
+    "weak_dependencies": [
+      "bs.log"
+    ]
   },
   {
     "name": "simplex_noise",
@@ -146,6 +155,21 @@
     },
     "updated": {
       "date": "2024/06/24",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "weighted_choice",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#random-choice",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/04",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/04",
       "version": "1.21"
     }
   },

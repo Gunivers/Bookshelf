@@ -19,6 +19,13 @@
 $data modify storage bs:ctx _ set value $(probability)
 execute store result score #p bs.ctx run data get storage bs:ctx _ 1000000000
 
+execute unless score #p bs.ctx matches 0..1000000000 run function #bs.log:error { \
+  namespace:"bs.random", \
+  tag:"geometric", \
+  message:'"Probability must be between 0 and 1."', \
+  path:"bs.random:distributions/geometric/geometric", \
+}
+
 scoreboard players set $random.geometric bs.out 0
 function bs.random:distributions/geometric/loop
 return run scoreboard players get $random.geometric bs.out

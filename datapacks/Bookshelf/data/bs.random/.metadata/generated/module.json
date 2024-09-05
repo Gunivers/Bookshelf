@@ -1,7 +1,7 @@
 {
   "name": "bs.random",
   "display_name": "Random",
-  "description": "Contains many random functions for different distributions",
+  "description": "Contains many random functions for different distributions.",
   "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html",
   "authors": [
     "Aksiome",
@@ -11,9 +11,12 @@
     "Aeldrion",
     "SBtree"
   ],
+  "weak_dependencies": [
+    "bs.log"
+  ],
   "features": [
     "bs.random:binomial",
-    "bs.random:choose",
+    "bs.random:choice",
     "bs.random:fractal_noise",
     "bs.random:fractal_noise_2d",
     "bs.random:geometric",
@@ -21,6 +24,7 @@
     "bs.random:simplex_noise",
     "bs.random:simplex_noise_2d",
     "bs.random:uniform",
+    "bs.random:weighted_choice",
     "bs.random:white_noise_1d",
     "bs.random:white_noise_2d"
   ]
