@@ -6,6 +6,10 @@
 
 ### 🎉 Addition
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+- ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation:
+  - Noise functions: white, simplex, and fractal
+  - Random distributions: uniform, binomial, geometric, and Poisson
+  - Random choice of an element from a list
 
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.

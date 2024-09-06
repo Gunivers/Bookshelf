@@ -45,6 +45,10 @@
       "required": false
     },
     {
+      "id": "#bs.random:unload",
+      "required": false
+    },
+    {
       "id": "#bs.raycast:unload",
       "required": false
     },
