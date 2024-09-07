@@ -92,6 +92,8 @@ tellraw @a [{"text":"Value: ","color":"dark_gray"},{"nbt":"random.weighted_choic
 
 > **Credits**: Aksiome, SBtree
 
+---
+
 ### Random distributions
 
 :::::{tab-set}
@@ -247,6 +249,8 @@ A Poisson distribution produces values that tend to cluster around an average va
 
 > **Credits**: Aksiome, SBtree
 
+---
+
 ### Noise algorithms
 
 :::::{tab-set}
@@ -315,6 +319,7 @@ function #bs.random:fractal_noise_2d
 
 > **Credits**: Aksiome, SBtree
 
+---
 
 ### Noise matrices
 
@@ -470,3 +475,13 @@ tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"fractal_noise_mat_
 ::::
 
 > **Credits**: Aksiome, SBtree
+
+---
+
+<div id="gs-comments" align=center>
+
+**💬 Did it help you?**
+
+Feel free to leave your questions and feedbacks below!
+
+</div>
