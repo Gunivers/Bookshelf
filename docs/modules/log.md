@@ -121,6 +121,8 @@ function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", me
 
 > **Credits**: theogiraudet
 
+---
+
 ### Log history
 
 :::::{tab-set}
