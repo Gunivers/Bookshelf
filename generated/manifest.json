@@ -3196,6 +3196,21 @@
           "module_path": "datapacks/Bookshelf Dev/data/bs.log",
           "features": [
             {
+              "name": "clear_history",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#history",
+              "authors": [
+                "Aksiome"
+              ],
+              "created": {
+                "date": "2024/09/06",
+                "version": "1.21"
+              },
+              "updated": {
+                "date": "2024/09/06",
+                "version": "1.21"
+              }
+            },
+            {
               "name": "debug",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#debug",
               "authors": [
@@ -3206,8 +3221,8 @@
                 "version": "23w31a"
               },
               "updated": {
-                "date": "2024/05/08",
-                "version": "1.20.6"
+                "date": "2024/09/06",
+                "version": "1.21"
               }
             },
             {
@@ -3221,8 +3236,23 @@
                 "version": "23w31a"
               },
               "updated": {
-                "date": "2024/05/08",
-                "version": "1.20.6"
+                "date": "2024/09/06",
+                "version": "1.21"
+              }
+            },
+            {
+              "name": "history",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#history",
+              "authors": [
+                "Aksiome"
+              ],
+              "created": {
+                "date": "2024/09/06",
+                "version": "1.21"
+              },
+              "updated": {
+                "date": "2024/09/06",
+                "version": "1.21"
               }
             },
             {
@@ -3236,23 +3266,8 @@
                 "version": "23w31a"
               },
               "updated": {
-                "date": "2024/05/08",
-                "version": "1.20.6"
-              }
-            },
-            {
-              "name": "tick",
-              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/log.html",
-              "authors": [
-                "Aksiome"
-              ],
-              "created": {
-                "date": "2023/11/13",
-                "version": "1.20.2"
-              },
-              "updated": {
-                "date": "2024/02/27",
-                "version": "1.20.4"
+                "date": "2024/09/06",
+                "version": "1.21"
               }
             },
             {
@@ -3266,8 +3281,8 @@
                 "version": "23w31a"
               },
               "updated": {
-                "date": "2024/05/08",
-                "version": "1.20.6"
+                "date": "2024/09/06",
+                "version": "1.21"
               }
             }
           ]

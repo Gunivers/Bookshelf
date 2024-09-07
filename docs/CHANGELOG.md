@@ -5,7 +5,11 @@
 ## 📦 Bookshelf - 2.2.0
 
 ### 🎉 Addition
+- ([171](https://github.com/Gunivers/Bookshelf/issues/171)) Add history for log messages.
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+
+### 🔁 Tweaks
+- ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.
 
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
