@@ -18,6 +18,8 @@ You can find below all functions available in this module.
 
 ---
 
+### Log messages
+
 :::::{tab-set}
 ::::{tab-item} Error
 
@@ -118,6 +120,63 @@ function #bs.log:debug { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", me
 :::::
 
 > **Credits**: theogiraudet
+
+### Log history
+
+:::::{tab-set}
+::::{tab-item} View history
+
+```{function} #bs.log:history {with:{}}
+
+Retrieve the log history. It shows all the previously logged messages.
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Optional filters.
+      - {nbt}`string` **severity**: Severity level to filter logs (`error`, `warn`, `info`, or `debug`).
+      - {nbt}`string` **namespace**: Namespace to filter the logs.
+      - {nbt}`string` **tag**: Tag to filter logs.
+  :::
+```
+
+*View the log history for a specific namespace, tag, and severity level:*
+
+```mcfunction
+# Once
+function #bs.log:history {with: {severity: "warn", namespace: "bs.foo", tag: "bar"}}
+```
+
+::::
+::::{tab-item} Clear history
+
+```{function} #bs.log:clear_history {with:{}}
+
+Clear the log history.
+
+:Inputs:
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Optional filters.
+      - {nbt}`string` **severity**: Severity level to filter logs (`error`, `warn`, `info`, or `debug`).
+      - {nbt}`string` **namespace**: Namespace to filter the logs.
+      - {nbt}`string` **tag**: Tag to filter logs.
+  :::
+```
+
+*Clear the log history for a specific namespace, tag, and severity level:*
+
+```mcfunction
+# Once
+function #bs.log:clear_history {with: {severity: "warn", namespace: "bs.foo", tag: "bar"}}
+```
+
+::::
+:::::
+
+> **Credits**: Aksiome
 
 ---
 

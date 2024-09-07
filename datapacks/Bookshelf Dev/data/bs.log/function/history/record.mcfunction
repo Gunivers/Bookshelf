@@ -15,13 +15,10 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/log.html
 # ------------------------------------------------------------------------------------------------------------
 
-kill B5-0-0-0-2
-setblock -30000000 0 1605 minecraft:air
-forceload remove -30000000 1600
-
-scoreboard objectives remove bs.in
-scoreboard objectives remove bs.data
-
-data remove storage bs:in log
-data remove storage bs:data log
-data remove storage bs:const log
+data modify storage bs:data log.history append value {}
+data modify entity B5-0-0-0-2 text set from storage bs:data log.message
+data modify storage bs:data log.history[-1].severity set from storage bs:in log.severity
+data modify storage bs:data log.history[-1].namespace set from storage bs:in log.namespace
+data modify storage bs:data log.history[-1].tag set from storage bs:in log.tag
+data modify storage bs:data log.history[-1].message set from entity B5-0-0-0-2 text
+execute if data storage bs:data log.history[4096] run data remove storage bs:data log.history[0]
