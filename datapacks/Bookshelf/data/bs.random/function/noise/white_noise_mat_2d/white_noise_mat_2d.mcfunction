@@ -15,9 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #x bs.ctx 0
-data modify storage bs:out random.white_noise_2d append value []
-function bs.random:noise/white_noise_2d/xloop
+$scoreboard players set #w bs.ctx $(width)
+$scoreboard players set #h bs.ctx $(height)
 
-scoreboard players add #y bs.ctx 1
-execute if score #y bs.ctx < #h bs.ctx run function bs.random:noise/white_noise_2d/yloop
+scoreboard players set #y bs.ctx 0
+data modify storage bs:out random.white_noise_mat_2d set value []
+execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/white_noise_mat_2d/yloop

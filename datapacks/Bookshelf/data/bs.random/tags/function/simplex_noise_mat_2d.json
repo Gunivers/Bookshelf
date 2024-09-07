@@ -3,11 +3,13 @@
     "feature": true,
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
-      "Aksiome",
+      "Aksiome"
+    ],
+    "contributors": [
       "SBtree"
     ],
     "created": {
-      "date": "2024/06/20",
+      "date": "2024/08/05",
       "minecraft_version": "1.21"
     },
     "updated": {
@@ -16,6 +18,6 @@
     }
   },
   "values": [
-    "bs.random:noise/white_noise_2d/white_noise_2d"
+    "bs.random:noise/simplex_noise_mat_2d/simplex_noise_mat_2d"
   ]
 }

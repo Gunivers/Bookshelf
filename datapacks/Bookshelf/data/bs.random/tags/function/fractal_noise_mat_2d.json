@@ -15,6 +15,6 @@
     }
   },
   "values": [
-    "bs.random:noise/fractal_noise/fractal_noise"
+    "bs.random:noise/fractal_noise_mat_2d/fractal_noise_mat_2d"
   ]
 }

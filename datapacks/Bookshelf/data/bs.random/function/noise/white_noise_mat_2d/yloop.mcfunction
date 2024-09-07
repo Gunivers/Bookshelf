@@ -12,16 +12,12 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-algorithms
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #m bs.ctx 0
-scoreboard players set #a bs.ctx 1000
-scoreboard players set #f bs.ctx 1000
-scoreboard players set $random.fractal_noise bs.out 0
+scoreboard players set #x bs.ctx 0
+data modify storage bs:out random.white_noise_mat_2d append value []
+function bs.random:noise/white_noise_mat_2d/xloop
 
-scoreboard players operation #o bs.ctx = $random.fractal_noise.octaves bs.in
-scoreboard players operation $random.simplex_noise.seed bs.in = $random.fractal_noise.seed bs.in
-
-execute if score #o bs.ctx matches 1.. run function bs.random:noise/fractal_noise/loop
-return run scoreboard players operation $random.fractal_noise bs.out /= #m bs.ctx
+scoreboard players add #y bs.ctx 1
+execute if score #y bs.ctx < #h bs.ctx run function bs.random:noise/white_noise_mat_2d/yloop

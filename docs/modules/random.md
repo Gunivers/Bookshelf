@@ -252,62 +252,62 @@ A Poisson distribution produces values that tend to cluster around an average va
 :::::{tab-set}
 ::::{tab-item} Simplex Noise
 
-```{function} #bs.random:simplex_noise
+```{function} #bs.random:simplex_noise_2d
 
 Computes the simplex noise value at given coordinates. Simplex noise is a type of gradient noise, similar to Perlin noise, used for textures or procedural generation.
 
 :Inputs:
-  **Score `$random.simplex_noise.seed bs.in`**: The seed used for generation.
+  **Score `$random.simplex_noise_2d.seed bs.in`**: The seed used for generation.
 
-  **Scores `$random.simplex_noise.[x,y] bs.in`**: Coordinates, scaled by 1000 (e.g., for a cell size of 16, multiply by 1000/16).
+  **Scores `$random.simplex_noise_2d.[x,y] bs.in`**: Coordinates, scaled by 1000 (e.g., for a cell size of 16, multiply by 1000/16).
 
 :Outputs:
-  **Return | Score `$random.simplex_noise bs.out`**: The noise value in range [-1000,1000]
+  **Return | Score `$random.simplex_noise_2d bs.out`**: The noise value in range [-1000,1000]
 ```
 
 *Generate a random noise value:*
 
 ```mcfunction
 # Generate random noise value
-scoreboard players set $random.simplex_noise.x bs.in 15589
-scoreboard players set $random.simplex_noise.y bs.in 812
-execute store result score $random.simplex_noise.seed bs.in run random value -1000000000..1000000000
-function #bs.random:simplex_noise
+scoreboard players set $random.simplex_noise_2d.x bs.in 15589
+scoreboard players set $random.simplex_noise_2d.y bs.in 812
+execute store result score $random.simplex_noise_2d.seed bs.in run random value -1000000000..1000000000
+function #bs.random:simplex_noise_2d
 ```
 
 ::::
 ::::{tab-item} Fractal Noise
 
-```{function} #bs.random:fractal_noise
+```{function} #bs.random:fractal_noise_2d
 
 Generates fractal noise by combining multiple noise layers at different scales, often used for terrain generation.
 
 :Inputs:
-  **Score `$random.fractal_noise.seed bs.in`**: The seed used for generation.
+  **Score `$random.fractal_noise_2d.seed bs.in`**: The seed used for generation.
 
-  **Scores `$random.fractal_noise.[x,y] bs.in`**: Coordinates, scaled by 1000 (e.g., for a cell size of 16, multiply by 1000/16).
+  **Scores `$random.fractal_noise_2d.[x,y] bs.in`**: Coordinates, scaled by 1000 (e.g., for a cell size of 16, multiply by 1000/16).
 
-  **Score `$random.fractal_noise.octaves bs.in`**: Number of noise layers to combine (more octaves = more detail).
+  **Score `$random.fractal_noise_2d.octaves bs.in`**: Number of noise layers to combine (more octaves = more detail).
 
-  **Score `$random.fractal_noise.persistence bs.in`**: Contribution of each octave to the total noise, scaled by 1000.
+  **Score `$random.fractal_noise_2d.persistence bs.in`**: Contribution of each octave to the total noise, scaled by 1000.
 
-  **Score `$random.fractal_noise.lacunarity bs.in`**: Increase in frequency for each octave, scaled by 1000.
+  **Score `$random.fractal_noise_2d.lacunarity bs.in`**: Increase in frequency for each octave, scaled by 1000.
 
 :Outputs:
-  **Return | Score `$random.fractal_noise bs.out`**: The noise value in range [-1000,1000]
+  **Return | Score `$random.fractal_noise_2d bs.out`**: The noise value in range [-1000,1000]
 ```
 
 *Generate a random noise value:*
 
 ```mcfunction
 # Generate random noise value
-scoreboard players set $random.fractal_noise.x bs.in 15589
-scoreboard players set $random.fractal_noise.y bs.in 812
-scoreboard players set $random.fractal_noise.octaves bs.in 4
-scoreboard players set $random.fractal_noise.persistence bs.in 500
-scoreboard players set $random.fractal_noise.lacunarity bs.in 2000
-execute store result score $random.fractal_noise.seed bs.in run random value -1000000000..1000000000
-function #bs.random:fractal_noise
+scoreboard players set $random.fractal_noise_2d.x bs.in 15589
+scoreboard players set $random.fractal_noise_2d.y bs.in 812
+scoreboard players set $random.fractal_noise_2d.octaves bs.in 4
+scoreboard players set $random.fractal_noise_2d.persistence bs.in 500
+scoreboard players set $random.fractal_noise_2d.lacunarity bs.in 2000
+execute store result score $random.fractal_noise_2d.seed bs.in run random value -1000000000..1000000000
+function #bs.random:fractal_noise_2d
 ```
 
 ::::
@@ -316,12 +316,12 @@ function #bs.random:fractal_noise
 > **Credits**: Aksiome, SBtree
 
 
-### Noise generators
+### Noise matrices
 
 :::::{tab-set}
 ::::{tab-item} White noise 1D
 
-```{function} #bs.random:white_noise_1d {length:<length>}
+```{function} #bs.random:white_noise_mat_1d {length:<length>}
 
 Generates a 1-dimensional array of white noise values.
 
@@ -333,23 +333,23 @@ Generates a 1-dimensional array of white noise values.
   :::
 
 :Outputs:
-  **Storage `bs:out random.white_noise_1d`**: {nbt}`list` Array of values between 0 and 1.
+  **Storage `bs:out random.white_noise_mat_1d`**: {nbt}`list` Array of values between 0 and 1.
 ```
 
 *Generate 4 random values:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:white_noise_1d {length:4}
+function #bs.random:white_noise_mat_1d {length:4}
 
 # Display the result
-tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_1d","storage":"bs:out", "color": "gold"}]
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_mat_1d","storage":"bs:out", "color": "gold"}]
 ```
 
 ::::
 ::::{tab-item} White noise 2D
 
-```{function} #bs.random:white_noise_2d {width:<width>,height:<height>}
+```{function} #bs.random:white_noise_mat_2d {width:<width>,height:<height>}
 
 Generates a 2-dimensional array of white noise values.
 
@@ -362,22 +362,22 @@ Generates a 2-dimensional array of white noise values.
   :::
 
 :Outputs:
-  **Storage `bs:out random.white_noise_2d`**: {nbt}`list` 2D array of values between 0 and 1.
+  **Storage `bs:out random.white_noise_mat_2d`**: {nbt}`list` 2D array of values between 0 and 1.
 ```
 
 *Generate a 4x4 random noise pattern:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:white_noise_2d {width:4,height:4}
+function #bs.random:white_noise_mat_2d {width:4,height:4}
 
 # Display the result
-tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_2d","storage":"bs:out", "color": "gold"}]
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_mat_2d","storage":"bs:out", "color": "gold"}]
 ```
 ::::
 ::::{tab-item} Simplex Noise 2D
 
-```{function} #bs.random:simplex_noise_2d {width:<width>,height:<height>,with:{}}
+```{function} #bs.random:simplex_noise_mat_2d {width:<width>,height:<height>,with:{}}
 
 Generates a 2D simplex noise texture of size `width` by `height`. Simplex noise is a gradient noise often used for textures.
 
@@ -393,23 +393,23 @@ Generates a 2D simplex noise texture of size `width` by `height`. Simplex noise 
   :::
 
 :Outputs:
-  **Storage `bs:out random.simplex_noise_2d`**: 2D array of values between -1 and 1.
+  **Storage `bs:out random.simplex_noise_mat_2d`**: 2D array of values between -1 and 1.
 ```
 
 *Generate a 16×16 simplex noise pattern:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:simplex_noise_2d {width:16,height:16,with:{size:8}}
+function #bs.random:simplex_noise_mat_2d {width:16,height:16,with:{size:8}}
 
 # Display the result
-tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"simplex_noise_2d","storage":"bs:out", "color": "gold"}]
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"simplex_noise_mat_2d","storage":"bs:out", "color": "gold"}]
 ```
 
 ::::
 ::::{tab-item} Fractal Noise 2D
 
-```{function} #bs.random:fractal_noise_2d {width:<width>,height:<height>,with:{}}
+```{function} #bs.random:fractal_noise_mat_2d {width:<width>,height:<height>,with:{}}
 
 Generates a 2D fractal noise texture of size `width` by `height`. Fractal noise combines multiple layers of noise for detailed textures.
 
@@ -429,17 +429,17 @@ Generates a 2D fractal noise texture of size `width` by `height`. Fractal noise 
   :::
 
 :Outputs:
-  **Storage `bs:out random.fractal_noise_2d`**: 2D array of values between -1 and 1.
+  **Storage `bs:out random.fractal_noise_mat_2d`**: 2D array of values between -1 and 1.
 ```
 
 *Generate a 16×16 fractal noise pattern:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:fractal_noise_2d {width:16,height:16,with:{size:8}}
+function #bs.random:fractal_noise_mat_2d {width:16,height:16,with:{size:8}}
 
 # Display the result
-tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"fractal_noise_2d","storage":"bs:out", "color": "gold"}]
+tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"fractal_noise_mat_2d","storage":"bs:out", "color": "gold"}]
 ```
 
 ::::

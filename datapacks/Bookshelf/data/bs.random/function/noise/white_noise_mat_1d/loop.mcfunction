@@ -15,9 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:out random.fractal_noise_2d[-1] append value 0f
-execute store result storage bs:out random.fractal_noise_2d[-1][-1] float .001 run function #bs.random:fractal_noise
-
-execute store result score $random.fractal_noise.x bs.in run scoreboard players add #x bs.ctx 1
-scoreboard players operation $random.fractal_noise.x bs.in *= #k bs.ctx
-execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/fractal_noise_2d/xloop
+scoreboard players remove #i bs.ctx 1
+data modify storage bs:out random.white_noise_mat_1d append value 0f
+execute store result storage bs:out random.white_noise_mat_1d[-1] float .001 run random value 1..1000
+execute if score #i bs.ctx matches 1.. run function bs.random:noise/white_noise_mat_1d/loop

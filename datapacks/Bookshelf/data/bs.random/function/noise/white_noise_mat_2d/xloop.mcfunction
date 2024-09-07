@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:out random.white_noise_2d[-1] append value 0f
-execute store result storage bs:out random.white_noise_2d[-1][-1] float .001 run random value 1..1000
+data modify storage bs:out random.white_noise_mat_2d[-1] append value 0f
+execute store result storage bs:out random.white_noise_mat_2d[-1][-1] float .001 run random value 1..1000
 scoreboard players add #x bs.ctx 1
-execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/white_noise_2d/xloop
+execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/white_noise_mat_2d/xloop

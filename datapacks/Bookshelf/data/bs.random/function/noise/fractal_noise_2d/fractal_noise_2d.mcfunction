@@ -12,24 +12,16 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-algorithms
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set value {octaves:4,persistence:.5,lacunarity:2.0,size:16}
-$scoreboard players set #w bs.ctx $(width)
-$scoreboard players set #h bs.ctx $(height)
-$data modify storage bs:ctx _ merge value $(with)
+scoreboard players set #m bs.ctx 0
+scoreboard players set #a bs.ctx 1000
+scoreboard players set #f bs.ctx 1000
+scoreboard players set $random.fractal_noise_2d bs.out 0
 
-execute store result score $random.fractal_noise.octaves bs.in run data get storage bs:ctx _.octaves
-execute store result score $random.fractal_noise.persistence bs.in run data get storage bs:ctx _.persistence 1000
-execute store result score $random.fractal_noise.lacunarity bs.in run data get storage bs:ctx _.lacunarity 1000
-execute if data storage bs:ctx _.seed store result score $random.fractal_noise.seed bs.in run data get storage bs:ctx _.seed
-execute unless data storage bs:ctx _.seed store result score $random.fractal_noise.seed bs.in run random value -1000000000..1000000000 bs.random:fractal_noise_2d
+scoreboard players operation #o bs.ctx = $random.fractal_noise_2d.octaves bs.in
+scoreboard players operation $random.simplex_noise_2d.seed bs.in = $random.fractal_noise_2d.seed bs.in
 
-scoreboard players set #k bs.ctx 1000
-execute store result score #c bs.ctx run data get storage bs:ctx _.size
-scoreboard players operation #k bs.ctx /= #c bs.ctx
-
-execute store result score $random.fractal_noise.y bs.in run scoreboard players set #y bs.ctx 0
-data modify storage bs:out random.fractal_noise_2d set value []
-execute if score #h bs.ctx matches 1.. if score #w bs.ctx matches 1.. run function bs.random:noise/fractal_noise_2d/yloop
+execute if score #o bs.ctx matches 1.. run function bs.random:noise/fractal_noise_2d/loop
+return run scoreboard players operation $random.fractal_noise_2d bs.out /= #m bs.ctx

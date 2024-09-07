@@ -16,6 +16,6 @@
     }
   },
   "values": [
-    "bs.random:noise/white_noise_1d/white_noise_1d"
+    "bs.random:noise/white_noise_mat_2d/white_noise_mat_2d"
   ]
 }

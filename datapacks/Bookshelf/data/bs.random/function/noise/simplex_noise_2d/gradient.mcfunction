@@ -20,7 +20,7 @@ execute if score #t bs.ctx matches ..0 run return run scoreboard players set #n 
 scoreboard players operation #g bs.ctx = #i bs.ctx
 scoreboard players operation #g bs.ctx *= 13 bs.const
 scoreboard players operation #g bs.ctx += #j bs.ctx
-scoreboard players operation #g bs.ctx += $random.simplex_noise.seed bs.in
+scoreboard players operation #g bs.ctx += $random.simplex_noise_2d.seed bs.in
 
 execute store result score #n bs.ctx run scoreboard players operation #g bs.ctx *= #g bs.ctx
 scoreboard players operation #n bs.ctx /= 2 bs.const

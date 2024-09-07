@@ -17,5 +17,5 @@
 
 $scoreboard players set #i bs.ctx $(length)
 
-data modify storage bs:out random.white_noise_1d set value []
-execute if score #i bs.ctx matches 1.. run function bs.random:noise/white_noise_1d/loop
+data modify storage bs:out random.white_noise_mat_1d set value []
+execute if score #i bs.ctx matches 1.. run function bs.random:noise/white_noise_mat_1d/loop
