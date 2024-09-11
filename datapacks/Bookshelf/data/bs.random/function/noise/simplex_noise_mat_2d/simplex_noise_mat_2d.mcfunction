@@ -21,7 +21,7 @@ $scoreboard players set #h bs.ctx $(height)
 $data modify storage bs:ctx _ merge value $(with)
 
 execute if data storage bs:ctx _.seed store result score $random.simplex_noise_2d.seed bs.in run data get storage bs:ctx _.seed
-execute unless data storage bs:ctx _.seed store result score $random.simplex_noise_2d.seed bs.in run random value -1000000000..1000000000 bs.random:simplex_noise_mat_2d
+execute unless data storage bs:ctx _.seed store result score $random.simplex_noise_2d.seed bs.in run random value 1.. bs.random:simplex_noise_mat_2d
 
 scoreboard players set #k bs.ctx 1000
 execute store result score #c bs.ctx run data get storage bs:ctx _.size

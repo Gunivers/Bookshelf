@@ -394,7 +394,7 @@ Generates a 2D simplex noise texture of size `width` by `height`. Simplex noise 
     - {nbt}`int` **height**: Height of the array to generate.
     - {nbt}`compound` **with**:
       - {nbt}`int` **size**: Size of the noise "cell" (default: 16). Lower size means more detail.
-      - {nbt}`int` **seed**: Seed for generating noise (default: random int).
+      - {nbt}`int` **seed**: Seed for the noise generation, allowing for reproducibility (default: random).
   :::
 
 :Outputs:
@@ -427,7 +427,7 @@ Generates a 2D fractal noise texture of size `width` by `height`. Fractal noise 
     - {nbt}`int` **height**: Height of the array to generate.
     - {nbt}`compound` **with**:
       - {nbt}`int` **size**: Size of the noise "cell" (default: 16). Lower size means more detail.
-      - {nbt}`int` **seed**: Seed for generating noise (default: random int).
+      - {nbt}`int` **seed**: Seed for the noise generation, allowing for reproducibility (default: random).
       - {nbt}`int` **octaves**: Number of noise layers (default: 4). More octaves = more detail.
       - {nbt}`double` **persistence**: Contribution of each octave (default: 0.5). Higher means more detail.
       - {nbt}`double` **lacunarity**: Increase in frequency for each octave (default: 2.0). Higher means more rapid frequency increase.

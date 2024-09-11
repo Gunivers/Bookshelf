@@ -15,10 +15,14 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-algorithms
 # ------------------------------------------------------------------------------------------------------------
 
+scoreboard players operation #c bs.ctx = $random.simplex_noise_2d.x bs.in
+scoreboard players operation #d bs.ctx = $random.simplex_noise_2d.y bs.in
+scoreboard players operation #c bs.ctx %= 1000000000 bs.const
+
 # Skew the input space to determine which simplex cell we're in
-execute store result score #i bs.ctx run scoreboard players operation #s bs.ctx = $random.simplex_noise_2d.x bs.in
-scoreboard players operation #j bs.ctx = $random.simplex_noise_2d.y bs.in
-execute store result storage bs:ctx y int 1 run scoreboard players operation #s bs.ctx += $random.simplex_noise_2d.y bs.in
+execute store result score #i bs.ctx store result score #s bs.ctx run scoreboard players add #c bs.ctx 1000
+execute store result score #j bs.ctx run scoreboard players operation #d bs.ctx %= 1000000000 bs.const
+execute store result storage bs:ctx y int 1 run scoreboard players operation #s bs.ctx += #d bs.ctx
 execute store result score #s bs.ctx run data get storage bs:ctx y .36602540378
 
 scoreboard players operation #i bs.ctx += #s bs.ctx
@@ -32,8 +36,8 @@ scoreboard players operation #u bs.ctx *= -1000 bs.const
 scoreboard players operation #v bs.ctx *= -1000 bs.const
 scoreboard players operation #u bs.ctx += #t bs.ctx
 scoreboard players operation #v bs.ctx += #t bs.ctx
-execute store result score #t bs.ctx run scoreboard players operation #u bs.ctx += $random.simplex_noise_2d.x bs.in
-execute store result score #d bs.ctx run scoreboard players operation #v bs.ctx += $random.simplex_noise_2d.y bs.in
+execute store result score #t bs.ctx run scoreboard players operation #u bs.ctx += #c bs.ctx
+execute store result score #d bs.ctx run scoreboard players operation #v bs.ctx += #d bs.ctx
 
 # Determine which simplex cell we are in
 execute store success score #c bs.ctx if score #u bs.ctx > #v bs.ctx

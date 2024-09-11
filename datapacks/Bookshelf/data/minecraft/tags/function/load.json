@@ -17,6 +17,10 @@
       "required": false
     },
     {
+      "id": "#bs.generate:load",
+      "required": false
+    },
+    {
       "id": "#bs.health:load",
       "required": false
     },

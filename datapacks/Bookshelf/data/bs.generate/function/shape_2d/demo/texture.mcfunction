@@ -1,0 +1,9 @@
+execute if score $random.fractal_noise_2d bs.out matches -1000..-778 run setblock ~ ~ ~ cherry_planks
+execute if score $random.fractal_noise_2d bs.out matches -777..-556 run setblock ~ ~ ~ bamboo_planks
+execute if score $random.fractal_noise_2d bs.out matches -555..-334 run setblock ~ ~ ~ birch_planks
+execute if score $random.fractal_noise_2d bs.out matches -333..-112 run setblock ~ ~ ~ oak_planks
+execute if score $random.fractal_noise_2d bs.out matches -111..110 run setblock ~ ~ ~ jungle_planks
+execute if score $random.fractal_noise_2d bs.out matches 111..332 run setblock ~ ~ ~ acacia_planks
+execute if score $random.fractal_noise_2d bs.out matches 333..554 run setblock ~ ~ ~ mangrove_planks
+execute if score $random.fractal_noise_2d bs.out matches 555..776 run setblock ~ ~ ~ spruce_planks
+execute if score $random.fractal_noise_2d bs.out matches 777..1000 run setblock ~ ~ ~ dark_oak_planks

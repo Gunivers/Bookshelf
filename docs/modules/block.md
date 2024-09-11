@@ -38,8 +38,8 @@ Fill all or part of a region with a specific block.
   :::{treeview}
   - {nbt}`compound` Fill block data
     - {nbt}`string` **block**: Block to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
@@ -86,8 +86,8 @@ Fill all or part of a region with a specific block type, preserving states and N
   :::{treeview}
   - {nbt}`compound` Fill type data
     - {nbt}`string` **type**: Block id to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
@@ -127,8 +127,8 @@ Fill all or part of a region with random blocks or types.
       - {nbt}`compound` Block or type entry
         - {nbt}`string` **block | type**: Block or type to fill the region with.
         - {nbt}`int` **weight**: Determine the likelihood of selecting the entry (default: 1).
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
