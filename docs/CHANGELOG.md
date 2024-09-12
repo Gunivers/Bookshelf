@@ -6,8 +6,14 @@
 
 ### 🎉 Addition
 
+- ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a function to remove a link `#bs.link:remove_link`.
+- ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a `bs.link:link_equal` predicate and new relationships functions:
+  - `#bs.link:as_children`
+  - `#bs.link:as_parent`
+  - `#bs.link:at_children`
+  - `#bs.link:at_parent`
+- ([171](https://github.com/Gunivers/Bookshelf/issues/171)) Add history for log messages.
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
-
 - ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation:
   - Noise functions: white, simplex, and fractal
   - Random distributions: uniform, binomial, geometric, and Poisson
@@ -16,6 +22,9 @@
   - Includes only 2D shape algorithms for now, enabling texture and heightmap terrain generation.
 - ([251](https://github.com/Gunivers/Bookshelf/pull/251)) Enhanced `bs.block` fill functions: the `from` and `to` inputs now support both a list of 3 elements `[x, y, z]`, and a stringified version of coordinates (e.g., `~ ~5 25`)
 
+
+### 🔁 Tweaks
+- ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.
 
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.

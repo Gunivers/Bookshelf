@@ -4,4 +4,4 @@
 
 tag @s add bs.schedule.log.schedule._
 function #bs.schedule:schedule {with:{command:"",time:1,unit:"¯|_(ツ)_|¯"}}
-assert chat "(?i).*error.*¯\\|_\\(ツ\\)_\\|¯"
+assert chat "(?i).*unit.*¯\\|_\\(ツ\\)_\\|¯"

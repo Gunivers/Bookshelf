@@ -12,16 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/log.html
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/log.html#history
 # ------------------------------------------------------------------------------------------------------------
 
-kill B5-0-0-0-2
-setblock -30000000 0 1605 minecraft:air
-forceload remove -30000000 1600
-
-scoreboard objectives remove bs.in
-scoreboard objectives remove bs.data
-
-data remove storage bs:in log
-data remove storage bs:data log
-data remove storage bs:const log
+$data remove storage bs:data log.history[$(with)]

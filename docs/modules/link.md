@@ -308,6 +308,127 @@ execute as @e[predicate=bs.link:has_link] positioned 0 0 0 run function #bs.link
 
 ---
 
+### Relationships
+
+::::{tab-set}
+:::{tab-item} As children
+
+```{function} #bs.link:as_children {run:<command>}
+
+Execute a command as child entities linked to the executing parent entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Execute as parent entities that must have valid child entities.
+
+:Outputs:
+  **Return**: Fails if the execution entity has no linked child entities.
+```
+
+*Execute a command as all armor stand children:*
+
+```mcfunction
+# Once
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
+function #bs.link:as_children {run:"say Hello World"}
+```
+
+:::
+:::{tab-item} As parent
+
+```{function} #bs.link:as_children {run:<command>}
+
+Execute a command as the parent entity linked to the executing child entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Execute as child entities that must have a valid parent entity.
+
+:Outputs:
+  **Return**: Fails if the execution entity has no linked parent entity.
+```
+
+*Execute a command as the parent of an armor stand:*
+
+```mcfunction
+# Once
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
+execute as @n[type=armor_stand] run function #bs.link:as_parent {run:"say Hello World"}
+```
+
+:::
+:::{tab-item} At children
+
+```{function} #bs.link:as_children {run:<command>}
+
+Execute a command at the location of child entities linked to the executing parent entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Execute as parent entities that must have valid child entities.
+
+:Outputs:
+  **Return**: Fails if the execution entity has no linked child entities.
+```
+
+*Execute a command at the location of all armor stand children:*
+
+```mcfunction
+# Once
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
+function #bs.link:at_children {run:"summon lightning_bolt"}
+```
+
+:::
+:::{tab-item} At parent
+
+```{function} #bs.link:as_children {run:<command>}
+
+Execute a command at the location of the parent entity linked to the executing child entity.
+
+:Inputs:
+  **Execution `as <entities>`**: Execute as child entities that must have a valid parent entity.
+
+:Outputs:
+  **Return**: Fails if the execution entity has no linked parent entity.
+```
+
+*Execute a command at the location of the parent of an armor stand:*
+
+```mcfunction
+# Once
+execute as @e[type=armor_stand] run function #bs.link:create_link_ata
+execute as @n[type=armor_stand] run function #bs.link:at_parent {run:"summon lightning_bolt"}
+```
+
+:::
+::::
+
+> **Credits**: Aksiome
+
+---
+
+### Remove link
+
+```{function} #bs.link:remove_link
+
+Removes an existing link between entities. When executed on a parent entity, it removes all child entities from the link. It does not reset the `bs.id` of entities.
+
+:Inputs:
+  **Execution `as <entities>`**: Child or parent entities that you want to unlink.
+
+:Outputs:
+  **Scores `<children> bs.link.[...]`**: Resets all link-related scores.
+```
+
+*Unlink the nearest armor stand from a sheep:*
+```mcfunction
+# Once
+execute as @e[type=armor_stand] at @e[type=sheep,limit=1,sort=nearest] run function #bs.link:create_link_ata
+execute as @n[type=armor_stand] run function #bs.link:remove_link
+```
+
+> **Credits**: Aksiome
+
+---
+
 ### Reverse behaviors
 
 ::::{tab-set}
@@ -501,6 +622,26 @@ You can find below all predicates available in this module.
 
 Determine if an entity has a `bs.link.to` score.
 
+> **Credits**: Aksiome
+
+---
+
+### Link equal
+
+```{function} bs.link:link_equal
+
+Find an entity that has the same `bs.link.to` as the input value.
+
+:Inputs:
+  **Score `$link.to bs.in`**: Value to check against.
+```
+
+*Find the entity that has a `bs.link.to` equal to 1:*
+
+```mcfunction
+scoreboard players set $link.to bs.in 1
+execute as @n[predicate=bs.link:link_equal] run say I'm the one
+```
 > **Credits**: Aksiome
 
 ---
