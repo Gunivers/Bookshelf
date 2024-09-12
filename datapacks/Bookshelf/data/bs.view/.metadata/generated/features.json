@@ -139,21 +139,6 @@
     ]
   },
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/22",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "in_view_ata",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#in-view-as-to-at",
     "authors": [
@@ -166,39 +151,6 @@
     },
     "updated": {
       "date": "2024/04/20",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/22",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    },
-    "dependencies": [
-      "bs.raycast"
-    ]
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/22",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
       "version": "1.20.4"
     }
   }

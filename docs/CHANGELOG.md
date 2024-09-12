@@ -5,12 +5,40 @@
 ## 📦 Bookshelf - 2.2.0
 
 ### 🎉 Addition
-
+- ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a function to remove a link `#bs.link:remove_link`.
+- ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a `bs.link:link_equal` predicate and new relationships functions:
+  - `#bs.link:as_children`
+  - `#bs.link:as_parent`
+  - `#bs.link:at_children`
+  - `#bs.link:at_parent`
+- ([171](https://github.com/Gunivers/Bookshelf/issues/171)) Add history for log messages.
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+- ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation:
+  - Noise functions: white, simplex, and fractal
+  - Random distributions: uniform, binomial, geometric, and Poisson
+  - Random choice of an element from a list
 
-### ⚡️ Improvements
+### 🔁 Tweaks
+- ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.
 
+### 🐛 Fixes
+- ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
+
+### 📄 Documentation
+- ([244](https://github.com/Gunivers/Bookshelf/issues/244)) Merge the Inverse trigonometry section in `bs.math` with the Trigonometry one for better clarity.
+
+---
+
+## 📦 Bookshelf - 2.1.1
+
+### 🔁 Tweaks
+- ([238](https://github.com/Gunivers/Bookshelf/pull/238)) Load tags now load modules in isolation.
+- ([237](https://github.com/Gunivers/Bookshelf/pull/237)) Enhanced speed of `bs.block` module.
 - ([218](https://github.com/Gunivers/Bookshelf/pull/218)) Enhanced speed of factorial function in `bs.math`.
+
+### 🐛 Fixes
+- ([236](https://github.com/Gunivers/Bookshelf/issues/236)) Fix `bs.block`, `bs.id` and `bs.math` load functions.
+- ([235](https://github.com/Gunivers/Bookshelf/issues/235)) Fix `bs.block` inputs that required extra escaping.
 
 ### 📄 Documentation
 - ([215](https://github.com/Gunivers/Bookshelf/issues/215)) There is now documentation about the documentation (kind of metadocumentation?).

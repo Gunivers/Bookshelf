@@ -1,5 +1,65 @@
 [
   {
+    "name": "as_children",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#relationships",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "as_parent",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#relationships",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "at_children",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#relationships",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    }
+  },
+  {
+    "name": "at_parent",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#relationships",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    }
+  },
+  {
     "name": "create_link_ata",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#create-link",
     "authors": [
@@ -17,21 +77,6 @@
     "dependencies": [
       "bs.id"
     ]
-  },
-  {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/09",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
   },
   {
     "name": "imitate_pos",
@@ -178,24 +223,6 @@
     }
   },
   {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/09",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    },
-    "dependencies": [
-      "bs.position"
-    ]
-  },
-  {
     "name": "mirror_point_ata",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#mirror-point",
     "authors": [
@@ -241,6 +268,21 @@
     "updated": {
       "date": "2023/09/11",
       "version": "1.20.1"
+    }
+  },
+  {
+    "name": "remove_link",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#remove-link",
+    "authors": [
+      "Aksiome"
+    ],
+    "created": {
+      "date": "2024/09/07",
+      "version": "1.21"
+    },
+    "updated": {
+      "date": "2024/09/07",
+      "version": "1.21"
     }
   },
   {
@@ -368,21 +410,6 @@
     },
     "updated": {
       "date": "2023/09/11",
-      "version": "1.20.4"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/link.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/09/12",
-      "version": "1.20.1"
-    },
-    "updated": {
-      "date": "2024/02/27",
       "version": "1.20.4"
     }
   },

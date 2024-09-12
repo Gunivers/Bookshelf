@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _.pools[0].entries append value {type:"minecraft:item",name:"minecraft:cod",weight:1,functions:[{function:"minecraft:set_custom_data",tag:{}}]}
+data modify storage bs:ctx _.pools[0].entries append value {type:"item",name:"cod",weight:1,functions:[{function:"set_custom_data",tag:{}}]}
 
 data modify storage bs:ctx _.pools[0].entries[-1].weight set from storage bs:data block.process.entries[-1].weight
 data modify storage bs:ctx _.pools[0].entries[-1].functions[0].tag.block set from storage bs:data block.process.entries[-1].block

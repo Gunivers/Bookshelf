@@ -8,8 +8,14 @@ import os
 import typing
 
 
-def render_json(obj: typing.Any, encoder: type[json.JSONEncoder] = None) -> str:
-    return json.dumps(obj, indent=2, cls=encoder, ensure_ascii=False)
+def render_json(obj: typing.Any, encoder: type[json.JSONEncoder] = None, indent = 2) -> str:
+    return json.dumps(
+        obj,
+        indent=indent,
+        separators=(',', ':') if not indent else None,
+        cls=encoder,
+        ensure_ascii=False
+    )
 
 
 def render_snbt(obj: typing.Any) -> str:

@@ -30,7 +30,7 @@ jobs:
           echo "BUILD_PATH=$(python -c 'import definitions; print(definitions.BUILD_PATH)')" >> $GITHUB_ENV
 
       - name: Package datapacks
-        run: python scripts/workflows/distribute_release_wf.py -v ${{ env.MC_VERSION }}-${{ env.VERSION }} -w 0
+        run: python scripts/workflows/distribute_release.py -v ${{ env.MC_VERSION }}-${{ env.VERSION }} -w 0
 
       - name: Package world
         uses: aksiome/minecraft-package@master

@@ -1,20 +1,5 @@
 [
   {
-    "name": "help",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "hex_to_int",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html#get-biome",
     "authors": [
@@ -78,21 +63,6 @@
     }
   },
   {
-    "name": "load",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
-    }
-  },
-  {
     "name": "rgb_to_hex",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-hex",
     "authors": [
@@ -123,21 +93,6 @@
     "updated": {
       "date": "2023/10/22",
       "version": "1.20.2"
-    }
-  },
-  {
-    "name": "unload",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/color.html",
-    "authors": [
-      "Aksiome"
-    ],
-    "created": {
-      "date": "2023/08/27",
-      "version": "1.20.2"
-    },
-    "updated": {
-      "date": "2024/02/27",
-      "version": "1.20.4"
     }
   }
 ]

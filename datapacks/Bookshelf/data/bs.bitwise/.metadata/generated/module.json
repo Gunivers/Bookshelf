@@ -11,12 +11,9 @@
     "bs.bitwise:and",
     "bs.bitwise:bit_count",
     "bs.bitwise:bit_length",
-    "bs.bitwise:help",
-    "bs.bitwise:load",
     "bs.bitwise:not",
     "bs.bitwise:or",
     "bs.bitwise:two_complement",
-    "bs.bitwise:unload",
     "bs.bitwise:xor"
   ]
 }

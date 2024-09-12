@@ -15,6 +15,4 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data store result storage bs:ctx y int 1 run data get storage bs:const block.items."$(item)"
-execute if score #success bs.data matches 1 run function bs.block:get/lookup with storage bs:ctx
-return run scoreboard players get #success bs.data
+$return run data modify storage bs:out block set from storage bs:const block.items."$(item)"

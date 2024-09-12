@@ -30,11 +30,9 @@
     "bs.math:factorial",
     "bs.math:frexp",
     "bs.math:gcd",
-    "bs.math:help",
     "bs.math:ipow",
     "bs.math:isqrt",
     "bs.math:ldexp",
-    "bs.math:load",
     "bs.math:log",
     "bs.math:log10",
     "bs.math:log2",
@@ -43,7 +41,6 @@
     "bs.math:sin",
     "bs.math:sincos",
     "bs.math:sqrt",
-    "bs.math:tan",
-    "bs.math:unload"
+    "bs.math:tan"
   ]
 }

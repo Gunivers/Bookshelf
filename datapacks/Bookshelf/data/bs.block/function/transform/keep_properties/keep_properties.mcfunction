@@ -15,11 +15,11 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value $(properties)
+execute if data storage bs:out block{group:0} run return 0
 
-# use _ to prevent populating options with dummy data when searching for selected values
-data modify storage bs:out block._[].o[]._ set value 0b
-function bs.block:transform/keep_properties/loop with storage bs:ctx _[-1]
-# we only need to remove, not set, which mitigates the above issue
-data remove storage bs:out block._[].o[{_:0b}].c
-data remove storage bs:out block._[].o[]._
+$data modify storage bs:ctx _ set value {i:$(properties)}
+function bs.block:transform/lookup_group with storage bs:out block
+function bs.block:transform/keep_properties/recurse/next with storage bs:ctx _.i[-1]
+
+data modify storage bs:out block.properties set from storage bs:ctx _.p
+data modify storage bs:out block._ set from storage bs:ctx _.s

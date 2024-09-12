@@ -29,6 +29,7 @@ modules/link
 modules/math
 modules/move
 modules/position
+modules/random
 modules/raycast
 modules/schedule
 modules/sidebar

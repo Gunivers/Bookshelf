@@ -47,6 +47,7 @@ myst_enable_extensions = [
 
 # -- Options for HTML output -------------------------------------------------
 
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
 html_theme = "pydata_sphinx_theme"
 html_logo = "_static/logo-bookshelf.png"
 html_favicon = "_static/logo-bookshelf.png"
@@ -60,6 +61,7 @@ html_context = {
     "github_repo": "Bookshelf",
     "github_version": "master",
     "doc_path": "docs",
+    "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True"
 }
 
 json_url = "https://bookshelf.docs.gunivers.net/en/master/_static/switcher.json"

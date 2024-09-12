@@ -15,5 +15,8 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-state
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value $(properties)
-function bs.block:transform/replace_properties/loop with storage bs:ctx _[-1]
+execute if data storage bs:out block{group:0} run return 0
+
+$data modify storage bs:ctx _ set value {i:$(properties)}
+function bs.block:transform/lookup_group with storage bs:out block
+function bs.block:transform/replace_properties/recurse/next with storage bs:ctx _.i[-1]

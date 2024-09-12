@@ -8,13 +8,11 @@
     "theogiraudet"
   ],
   "features": [
+    "bs.log:clear_history",
     "bs.log:debug",
     "bs.log:error",
-    "bs.log:help",
+    "bs.log:history",
     "bs.log:info",
-    "bs.log:load",
-    "bs.log:tick",
-    "bs.log:unload",
     "bs.log:warn"
   ]
 }

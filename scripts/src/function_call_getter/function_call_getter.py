@@ -52,7 +52,7 @@ class FunctionCallGetter:
         with open(os.path.join(function.real_path), encoding="utf-8") as file:
             content = json.load(file).get('values', False)
             for fun in content:
-                artifact: Artifact = build_artifact(resolve_function_path(fun))
+                artifact: Artifact = build_artifact(resolve_function_path(fun['id'] if isinstance(fun, dict) else fun))
                 artifact.get_content()
                 self.browse_function_locator(build_abstract_function(artifact, function.feature))
 

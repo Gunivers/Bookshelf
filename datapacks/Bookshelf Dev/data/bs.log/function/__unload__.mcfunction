@@ -15,6 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/log.html
 # ------------------------------------------------------------------------------------------------------------
 
+kill B5-0-0-0-2
 setblock -30000000 0 1605 minecraft:air
 forceload remove -30000000 1600
 

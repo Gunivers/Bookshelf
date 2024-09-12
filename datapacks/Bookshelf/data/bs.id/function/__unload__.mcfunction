@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/id.html
 # ------------------------------------------------------------------------------------------------------------
 
-
 scoreboard objectives remove bs.in
 scoreboard objectives remove bs.id
 scoreboard objectives remove bs.cid
+scoreboard objectives remove bs.data

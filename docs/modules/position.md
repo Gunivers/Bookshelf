@@ -56,6 +56,7 @@ scoreboard players set @s bs.pos.y 0
 scoreboard players set @s bs.pos.z 229
 function #bs.position:add_pos {scale:0.001}
 ```
+
 ::::
 ::::{tab-item} x only
 
