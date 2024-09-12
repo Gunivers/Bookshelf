@@ -1,3 +1,18 @@
+# ------------------------------------------------------------------------------------------------------------
+# Copyright (c) 2024 Gunivers
+#
+# This file is part of the Bookshelf project (https://github.com/Gunivers/Bookshelf).
+#
+# This source code is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# Conditions:
+# - You may use this file in compliance with the MPL v2.0
+# - Any modifications must be documented and disclosed under the same license
+#
+# For more details, refer to the MPL v2.0.
+# ------------------------------------------------------------------------------------------------------------
+
 execute if score $random.fractal_noise_2d bs.out matches -1000..-778 run setblock ~ ~ ~ cherry_planks
 execute if score $random.fractal_noise_2d bs.out matches -777..-556 run setblock ~ ~ ~ bamboo_planks
 execute if score $random.fractal_noise_2d bs.out matches -555..-334 run setblock ~ ~ ~ birch_planks

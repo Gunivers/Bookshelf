@@ -204,7 +204,7 @@
                 "version": "1.20.4"
               },
               "updated": {
-                "date": "2024/06/16",
+                "date": "2024/09/11",
                 "version": "1.21"
               }
             },
@@ -222,7 +222,7 @@
                 "version": "1.21"
               },
               "updated": {
-                "date": "2024/06/16",
+                "date": "2024/09/11",
                 "version": "1.21"
               }
             },
@@ -237,7 +237,7 @@
                 "version": "1.20.4"
               },
               "updated": {
-                "date": "2024/06/16",
+                "date": "2024/09/11",
                 "version": "1.21"
               }
             },
@@ -636,6 +636,63 @@
               "updated": {
                 "date": "2023/10/22",
                 "version": "1.20.2"
+              }
+            }
+          ]
+        },
+        {
+          "name": "bs.generate",
+          "display_name": "Generate",
+          "description": "Generate diverse terrains and landscapes, incorporating natural features.",
+          "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html",
+          "authors": [
+            "Aksiome"
+          ],
+          "module_path": "datapacks/Bookshelf/data/bs.generate",
+          "features": [
+            {
+              "name": "fractal_shape_2d",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html#shape-2d",
+              "authors": [
+                "Aksiome"
+              ],
+              "created": {
+                "date": "2024/09/09",
+                "version": "1.21"
+              },
+              "updated": {
+                "date": "2024/09/09",
+                "version": "1.21"
+              }
+            },
+            {
+              "name": "shape_2d",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html#shape-2d",
+              "authors": [
+                "Aksiome"
+              ],
+              "created": {
+                "date": "2024/09/09",
+                "version": "1.21"
+              },
+              "updated": {
+                "date": "2024/09/09",
+                "version": "1.21"
+              }
+            },
+            {
+              "name": "simplex_shape_2d",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html#shape-2d",
+              "authors": [
+                "Aksiome"
+              ],
+              "created": {
+                "date": "2024/09/09",
+                "version": "1.21"
+              },
+              "updated": {
+                "date": "2024/09/09",
+                "version": "1.21"
               }
             }
           ]
@@ -2340,7 +2397,7 @@
               }
             },
             {
-              "name": "fractal_noise",
+              "name": "fractal_noise_2d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome"
@@ -2355,7 +2412,7 @@
               }
             },
             {
-              "name": "fractal_noise_2d",
+              "name": "fractal_noise_mat_2d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome"
@@ -2412,7 +2469,7 @@
               ]
             },
             {
-              "name": "simplex_noise",
+              "name": "simplex_noise_2d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome"
@@ -2430,7 +2487,7 @@
               }
             },
             {
-              "name": "simplex_noise_2d",
+              "name": "simplex_noise_mat_2d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome"
@@ -2478,7 +2535,7 @@
               }
             },
             {
-              "name": "white_noise_1d",
+              "name": "white_noise_mat_1d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome",
@@ -2494,7 +2551,7 @@
               }
             },
             {
-              "name": "white_noise_2d",
+              "name": "white_noise_mat_2d",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
               "authors": [
                 "Aksiome",

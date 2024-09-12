@@ -5,11 +5,17 @@
 ## 📦 Bookshelf - 2.2.0
 
 ### 🎉 Addition
+
 - ([187](https://github.com/Gunivers/Bookshelf/pull/222)) Add randomized fill function `#bs.block:fill_random`.
+
 - ([1](https://github.com/Gunivers/Bookshelf/issues/1)) ([220](https://github.com/Gunivers/Bookshelf/issues/220)) Add `bs.random` module for random distributions and noise generation:
   - Noise functions: white, simplex, and fractal
   - Random distributions: uniform, binomial, geometric, and Poisson
   - Random choice of an element from a list
+- ([6](https://github.com/Gunivers/Bookshelf/issues/6)) Add `bs.generate` module for terrain generation:
+  - Includes only 2D shape algorithms for now, enabling texture and heightmap terrain generation.
+- ([251](https://github.com/Gunivers/Bookshelf/pull/251)) Enhanced `bs.block` fill functions: the `from` and `to` inputs now support both a list of 3 elements `[x, y, z]`, and a stringified version of coordinates (e.g., `~ ~5 25`)
+
 
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.

@@ -17,15 +17,15 @@
   "features": [
     "bs.random:binomial",
     "bs.random:choice",
-    "bs.random:fractal_noise",
     "bs.random:fractal_noise_2d",
+    "bs.random:fractal_noise_mat_2d",
     "bs.random:geometric",
     "bs.random:poisson",
-    "bs.random:simplex_noise",
     "bs.random:simplex_noise_2d",
+    "bs.random:simplex_noise_mat_2d",
     "bs.random:uniform",
     "bs.random:weighted_choice",
-    "bs.random:white_noise_1d",
-    "bs.random:white_noise_2d"
+    "bs.random:white_noise_mat_1d",
+    "bs.random:white_noise_mat_2d"
   ]
 }
