@@ -1,0 +1,20 @@
+{
+    "condition": "minecraft:all_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+                "bs.id": {}
+            }
+        },
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "type": "minecraft:interaction",
+                "nbt": "{Tags: [\"bs.gui.listener\"]}"
+            }
+        }
+    ]
+}
