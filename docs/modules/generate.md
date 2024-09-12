@@ -43,9 +43,11 @@ Generates a shape in 2D space at the specified origin, with the callback execute
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`compound` **run**: Callback to run at each step, responsible for handling the coordinates.
-    - {nbt}`compound` **width**: Width of the shape to generate.
-    - {nbt}`compound` **height**: Height of the shape to generate.
+    - {nbt}`string` **run**: Callback to run at each step. For each step, the following scores can be used:
+      - **`$generate.x bs.data`**: The X coordinate of the current step.
+      - **`$generate.y bs.data`**: The Y coordinate of the current step.
+    - {nbt}`int` **width**: Width of the shape to generate.
+    - {nbt}`int` **height**: Height of the shape to generate.
     - {nbt}`compound` **with**: Shape settings.
       - {nbt}`string` **direction**: Plane used to generate the shape (`xz`, `xy`, or `zy`, default: `xz`).
       - {nbt}`int` **spacing**: Distance between blocks in the generated shape (default: 1).
@@ -54,11 +56,6 @@ Generates a shape in 2D space at the specified origin, with the callback execute
 
 :Outputs:
   **State**: The callback gets executed at the appropriate coordinates in the world.
-  :::{treeview}
-  - For each step, the following scores can be used:
-    - **`$generate.x bs.data`**: The X coordinate of the current step.
-    - **`$generate.y bs.data`**: The Y coordinate of the current step.
-  :::
 ```
 
 ::::
@@ -74,9 +71,12 @@ Generates a shape in 2D space using a Simplex noise algorithm. The shape is gene
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`compound` **run**: Callback to run at each step.
-    - {nbt}`compound` **width**: Width of the shape to generate.
-    - {nbt}`compound` **height**: Height of the shape to generate.
+    - {nbt}`string` **run**: Callback to run at each step. For each step, the following scores can be used:
+      - **`$random.simplex_noise_2d bs.out`**: The noise value in the range [-1000, 1000].
+      - **`$generate.x bs.data`**: The X coordinate of the current step.
+      - **`$generate.y bs.data`**: The Y coordinate of the current step.
+    - {nbt}`int` **width**: Width of the shape to generate.
+    - {nbt}`int` **height**: Height of the shape to generate.
     - {nbt}`compound` **with**: Shape settings.
       - {nbt}`string` **direction**: Plane used to generate the shape (`xz`, `xy` or `zy`, default: `xz`).
       - {nbt}`int` **spacing**: Distance between blocks in the generated shape (default: 1).
@@ -87,12 +87,6 @@ Generates a shape in 2D space using a Simplex noise algorithm. The shape is gene
 
 :Outputs:
   **State**: The callback gets executed at the appropriate coordinates in the world.
-  :::{treeview}
-  - For each step, the following scores are set:
-    - **`$random.simplex_noise_2d bs.out`**: The noise value in the range [-1000, 1000].
-    - **`$generate.x bs.data`**: The X coordinate of the current step.
-    - **`$generate.y bs.data`**: The Y coordinate of the current step.
-  :::
 ```
 
 ::::
@@ -108,9 +102,12 @@ Generates a shape in 2D space using a Fractal noise algorithm. The shape is gene
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`compound` **run**: Callback to run at each step.
-    - {nbt}`compound` **width**: Width of the shape to generate.
-    - {nbt}`compound` **height**: Height of the shape to generate.
+    - {nbt}`string` **run**: Callback to run at each step. For each step, the following scores can be used:
+      - **`$random.fractal_noise_2d bs.out`**: The noise value in the range [-1000, 1000].
+      - **`$generate.x bs.data`**: The X coordinate of the current step.
+      - **`$generate.y bs.data`**: The Y coordinate of the current step.
+    - {nbt}`int` **width**: Width of the shape to generate.
+    - {nbt}`int` **height**: Height of the shape to generate.
     - {nbt}`compound` **with**: Shape settings.
       - {nbt}`string` **direction**: Plane used to generate the shape (`xz`, `xy` or `zy`, default: `xz`).
       - {nbt}`int` **spacing**: Distance between blocks in the generated shape (default: 1).
@@ -118,18 +115,12 @@ Generates a shape in 2D space using a Fractal noise algorithm. The shape is gene
       - {nbt}`int` **size**: Granularity of the noise. Lower values increase detail (default: 32).
       - {nbt}`int` **seed**:  Seed for the noise generation, allowing for reproducibility (default: random).
       - {nbt}`int` **octaves**: Number of noise layers; more octaves enhance detail (default: 2).
-      - {nbt}`number` **persistence**: Contribution of each octave. Higher means more detail (default: 0.5).
-      - {nbt}`number` **lacunarity**: Frequency increase for each octave. Higher means more rapid frequency increase (default: 2.0).
+      - {nbt}`double` **persistence**: Contribution of each octave. Higher means more detail (default: 0.5).
+      - {nbt}`double` **lacunarity**: Frequency increase for each octave. Higher means more rapid frequency increase (default: 2.0).
   :::
 
 :Outputs:
   **State**: The callback gets executed at the appropriate coordinates in the world.
-  :::{treeview}
-  - For each step, the following scores are set:
-    - **`$random.fractal_noise_2d bs.out`**: The noise value in the range [-1000, 1000].
-    - **`$generate.x bs.data`**: The X coordinate of the current step.
-    - **`$generate.y bs.data`**: The Y coordinate of the current step.
-  :::
 ```
 
 ::::
