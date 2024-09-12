@@ -28,10 +28,12 @@ class Runner:
         logger.step("🧪 Running test server…")
         process = subprocess.Popen(
             "java -Xmx2G -Dpacktest.auto -Dpacktest.auto.annotations -jar server.jar nogui",
+            encoding='utf-8',
             stdout=subprocess.PIPE,
             universal_newlines=True,
             shell=True,
             cwd=target,
+            text=True,
         )
 
         log_parsed_stdout(process, logger)
