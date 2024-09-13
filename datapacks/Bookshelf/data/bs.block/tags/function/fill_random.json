@@ -13,11 +13,11 @@
       "minecraft_version": "1.21"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/09/11",
       "minecraft_version": "1.21"
     }
   },
   "values": [
-    "bs.block:process/fill/fill_random"
+    "bs.block:fill/fill_random"
   ]
 }

@@ -36,7 +36,7 @@
     }
   },
   {
-    "name": "fractal_noise",
+    "name": "fractal_noise_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome"
@@ -51,7 +51,7 @@
     }
   },
   {
-    "name": "fractal_noise_2d",
+    "name": "fractal_noise_mat_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome"
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "name": "simplex_noise",
+    "name": "simplex_noise_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome"
@@ -126,7 +126,7 @@
     }
   },
   {
-    "name": "simplex_noise_2d",
+    "name": "simplex_noise_mat_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome"
@@ -174,7 +174,7 @@
     }
   },
   {
-    "name": "white_noise_1d",
+    "name": "white_noise_mat_1d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome",
@@ -190,7 +190,7 @@
     }
   },
   {
-    "name": "white_noise_2d",
+    "name": "white_noise_mat_2d",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise",
     "authors": [
       "Aksiome",

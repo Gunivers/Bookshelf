@@ -5,6 +5,7 @@
 ## 📦 Bookshelf - 2.2.0
 
 ### 🎉 Addition
+
 - ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a function to remove a link `#bs.link:remove_link`.
 - ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a `bs.link:link_equal` predicate and new relationships functions:
   - `#bs.link:as_children`
@@ -17,6 +18,10 @@
   - Noise functions: white, simplex, and fractal
   - Random distributions: uniform, binomial, geometric, and Poisson
   - Random choice of an element from a list
+- ([6](https://github.com/Gunivers/Bookshelf/issues/6)) Add `bs.generate` module for terrain generation:
+  - Includes only 2D shape algorithms for now, enabling texture and heightmap terrain generation.
+- ([251](https://github.com/Gunivers/Bookshelf/pull/251)) Enhanced `bs.block` fill functions: the `from` and `to` inputs now support both a list of 3 elements `[x, y, z]`, and a stringified version of coordinates (e.g., `~ ~5 25`)
+
 
 ### 🔁 Tweaks
 - ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.

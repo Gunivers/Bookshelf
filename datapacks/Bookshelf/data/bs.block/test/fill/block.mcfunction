@@ -1,4 +1,4 @@
-# Fill a region with a specific block
+# Fill a region with a specific block (using absolute coordinates)
 # @batch bs.block
 
 data modify storage bs:in block.fill_block set value {block:"minecraft:stone"}

@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#minecraft:unload",
+    "#bs.random:load",
+    "bs.generate:__load__"
+  ]
+}
