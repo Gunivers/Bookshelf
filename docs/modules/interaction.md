@@ -25,6 +25,25 @@ You can find below all functions available in this API.
 ### Listener
 
 :::::{tab-set}
+::::{tab-item} Create
+
+```{function} #bs.interaction:create_listener
+
+Create a new existing interaction and set it as listener.
+
+:Inputs:
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: The position where summon the listener.
+  **Function macro**:
+    :::{treeview}
+    - {nbt}`compound` Arguments
+      - {nbt}`compound` **with**: the NBT of the interaction entity. See [Interaction](https://minecraft.wiki/w/Interaction) to have the exhaustive list of supported NBT tags.
+    :::
+
+:Outputs:
+  **State**: A new interaction with the listener role.
+```
+
+::::
 ::::{tab-item} Set
 
 ```{function} #bs.interaction:set_as_listener
@@ -43,7 +62,7 @@ Set an interaction as listener.
 
 ```{function} #bs.interaction:unset_as_listener
 
-Unset an interaction to its listener role.
+Unset an existing interaction to its listener role.
 
 :Inputs:
   **Execution `as <entities>`**: The interactions to unset the listener role.
