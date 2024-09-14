@@ -36,7 +36,7 @@ Create a new existing interaction and set it as listener.
   **Function macro**:
     :::{treeview}
     - {nbt}`compound` Arguments
-      - {nbt}`compound` **with**: the NBT of the interaction entity. See [Interaction](https://minecraft.wiki/w/Interaction) to have the exhaustive list of supported NBT tags.
+      - {nbt}`compound` **with**: the NBT of the interaction entity. See Minecraft Wiki to have the exhaustive list of supported NBT tags.
     :::
 
 :Outputs:
