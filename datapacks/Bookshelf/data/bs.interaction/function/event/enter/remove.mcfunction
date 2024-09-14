@@ -11,21 +11,13 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#remove-on-event
 # ------------------------------------------------------------------------------------------------------------
 
-# Created: 30/03/2024 (24w13a)
-# Last modification: 30/03/2024 (24w13a)
-
-# Documentation:
-# Dependencies:
 # Note:
 #  Remove a callback for the enter event on the current listener.
 # Input:
 #   - Macro { callback_id: integer }
 #   - @s - the current listener
-
-# CODE ------------------------------------------------------------------------
 
 execute unless predicate bs.interaction:is_listener run function #bs.log:error { namespace: bs.interaction, path: "bs.interaction:event/enter/remove", tag: "interaction.event.enter.remove", message: '"The current entity is not a listener."' }
 execute unless predicate bs.interaction:is_listener run return fail

@@ -1,0 +1,25 @@
+{
+  "name": "bs.interaction",
+  "display_name": "Interaction",
+  "description": "A low-level API to create GUI based on Interaction entity by binding events to it.",
+  "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html",
+  "authors": [
+    "theogiraudet"
+  ],
+  "dependencies": [
+    "bs.log"
+  ],
+  "features": [
+    "bs.interaction:callback\\glow",
+    "bs.interaction:callback\\none",
+    "bs.interaction:callback\\unglow",
+    "bs.interaction:create_listener",
+    "bs.interaction:on_hover",
+    "bs.interaction:on_hover_enter",
+    "bs.interaction:on_hover_leave",
+    "bs.interaction:on_left_click",
+    "bs.interaction:on_right_click",
+    "bs.interaction:set_as_listener",
+    "bs.interaction:unset_as_listener"
+  ]
+}

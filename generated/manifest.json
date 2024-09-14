@@ -899,6 +899,204 @@
           ]
         },
         {
+          "name": "bs.interaction",
+          "display_name": "Interaction",
+          "description": "A low-level API to create GUI based on Interaction entity by binding events to it.",
+          "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html",
+          "authors": [
+            "theogiraudet"
+          ],
+          "module_path": "datapacks/Bookshelf/data/bs.interaction",
+          "dependencies": [
+            "bs.log"
+          ],
+          "features": [
+            {
+              "name": "callback\\glow",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              }
+            },
+            {
+              "name": "callback\\none",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              }
+            },
+            {
+              "name": "callback\\unglow",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              }
+            },
+            {
+              "name": "create_listener",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#listener",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              }
+            },
+            {
+              "name": "on_hover",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "on_hover_enter",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "on_hover_leave",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "on_left_click",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "on_right_click",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "set_as_listener",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#listener",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              },
+              "dependencies": [
+                "bs.log"
+              ]
+            },
+            {
+              "name": "unset_as_listener",
+              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
+              "authors": [
+                "theogiraudet"
+              ],
+              "created": {
+                "date": "2024/03/30",
+                "version": "24w13a"
+              },
+              "updated": {
+                "date": "2024/09/14",
+                "version": "23w37a"
+              }
+            }
+          ]
+        },
+        {
           "name": "bs.link",
           "display_name": "Link",
           "description": "Construct coherent entity structures by linking entities’ positions and rotations.",
