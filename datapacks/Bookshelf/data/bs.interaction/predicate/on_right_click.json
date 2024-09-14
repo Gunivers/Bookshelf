@@ -1,0 +1,32 @@
+{
+  "__bookshelf__": {
+    "feature": true,
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-right-click",
+    "authors": [
+      "theogiraudet"
+    ],
+    "created": {
+      "date": "2024/03/30",
+      "minecraft_version": "24w13a"
+    },
+    "updated": {
+      "date": "2024/03/30",
+      "minecraft_version": "24w13a"
+    }
+  },
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "bs.interaction:is_listener"
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:interaction",
+        "nbt": "{Tags: [\"bs.interaction.listen_right_click\"]}"
+      }
+    }
+  ]
+}

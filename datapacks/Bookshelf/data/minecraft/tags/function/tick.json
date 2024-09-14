@@ -1,3 +1,8 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "#bs.interaction:tick",
+      "required": false
+    }
+  ]
 }
