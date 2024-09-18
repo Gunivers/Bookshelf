@@ -19,4 +19,6 @@ execute store result score #hitbox.offset.z bs.data store result storage bs:ctx 
 
 execute store success score #success bs.data run function bs.hitbox:get_block/offset/fetch with storage bs:ctx
 execute if score #success bs.data matches 0 run function bs.hitbox:get_block/offset/compute
+
+execute if block ~ ~ ~ minecraft:pointed_dripstone run function bs.hitbox:get_block/offset/clamp {min:-1250000,max:1250000}
 execute in minecraft:overworld run tp @s -30000000 0 1600
