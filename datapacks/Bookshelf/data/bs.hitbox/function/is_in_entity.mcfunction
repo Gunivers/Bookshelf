@@ -11,10 +11,8 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
+#
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~
-execute store result score #hitbox.x bs.data run data get entity @s Pos[0] 1000
-execute store result score #hitbox.y bs.data run data get entity @s Pos[1] 1000
-execute store result score #hitbox.z bs.data run data get entity @s Pos[2] 1000
-execute in minecraft:overworld run tp @s -30000000 0 1600
+return run execute if entity @s[dy=0] positioned ~-.99999999999999 ~-.99999999999999 ~-.99999999999999 if entity @s[dy=0]

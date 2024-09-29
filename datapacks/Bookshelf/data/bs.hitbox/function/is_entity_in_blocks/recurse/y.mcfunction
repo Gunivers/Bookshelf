@@ -13,8 +13,10 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# pufferfish group
-execute store result score #s bs.ctx run data get entity @s PuffState
-execute if score #s bs.ctx matches 0 run data modify storage bs:out hitbox set value {width:0.35,height:0.35}
-execute if score #s bs.ctx matches 1 run data modify storage bs:out hitbox set value {width:0.48999998,height:0.48999998}
-execute if score #s bs.ctx matches 2 run data modify storage bs:out hitbox set value {width:0.7,height:0.7}
+execute if function bs.hitbox:is_entity_in_blocks/recurse/z run return 1
+
+scoreboard players remove #y bs.ctx 1000000
+scoreboard players remove #m bs.ctx 1000000
+execute if score #m bs.ctx matches 1.. positioned ~ ~1 ~ if function bs.hitbox:is_entity_in_blocks/recurse/y run return 1
+scoreboard players add #y bs.ctx 1000000
+scoreboard players add #m bs.ctx 1000000

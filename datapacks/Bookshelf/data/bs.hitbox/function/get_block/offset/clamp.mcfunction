@@ -13,13 +13,13 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result score #hitbox.offset.x bs.data run data get storage bs:out hitbox.offset.x 10000000
-execute store result score #hitbox.offset.z bs.data run data get storage bs:out hitbox.offset.z 10000000
+execute store result score #u bs.ctx run data get storage bs:out hitbox.offset.x 10000000
+execute store result score #v bs.const run data get storage bs:out hitbox.offset.z 10000000
 
-$execute if score #hitbox.offset.x bs.data matches ..$(min) run scoreboard players set #hitbox.offset.x bs.data $(min)
-$execute if score #hitbox.offset.z bs.data matches ..$(min) run scoreboard players set #hitbox.offset.z bs.data $(min)
-$execute if score #hitbox.offset.x bs.data matches $(max).. run scoreboard players set #hitbox.offset.x bs.data $(max)
-$execute if score #hitbox.offset.z bs.data matches $(max).. run scoreboard players set #hitbox.offset.z bs.data $(max)
+$execute if score #u bs.ctx matches ..$(min) run scoreboard players set #u bs.ctx $(min)
+$execute if score #v bs.ctx matches ..$(min) run scoreboard players set #v bs.ctx $(min)
+$execute if score #u bs.ctx matches $(max).. run scoreboard players set #u bs.ctx $(max)
+$execute if score #v bs.ctx matches $(max).. run scoreboard players set #v bs.ctx $(max)
 
-execute store result storage bs:out hitbox.offset.x double .0000001 run scoreboard players get #hitbox.offset.x bs.data
-execute store result storage bs:out hitbox.offset.z double .0000001 run scoreboard players get #hitbox.offset.z bs.data
+execute store result storage bs:out hitbox.offset.x double .0000001 run scoreboard players get #u bs.ctx
+execute store result storage bs:out hitbox.offset.z double .0000001 run scoreboard players get #v bs.ctx

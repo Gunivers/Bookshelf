@@ -13,8 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~
-execute store result score #hitbox.x bs.data run data get entity @s Pos[0] 1000
-execute store result score #hitbox.y bs.data run data get entity @s Pos[1] 1000
-execute store result score #hitbox.z bs.data run data get entity @s Pos[2] 1000
-execute in minecraft:overworld run tp @s -30000000 0 1600
+execute if function bs.hitbox:is_entity_in_blocks/recurse/y run return 1
+
+scoreboard players remove #x bs.ctx 1000000
+scoreboard players remove #l bs.ctx 1000000
+execute if score #l bs.ctx matches 1.. positioned ~1 ~ ~ run return run function bs.hitbox:is_entity_in_blocks/recurse/x

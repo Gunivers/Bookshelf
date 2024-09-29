@@ -1,7 +1,7 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#intangible",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-inside",
     "authors": [
       "Aksiome"
     ],
@@ -15,12 +15,6 @@
     }
   },
   "values": [
-    "minecraft:air",
-    "minecraft:cave_air",
-    "minecraft:lava",
-    "minecraft:light",
-    "minecraft:structure_void",
-    "minecraft:void_air",
-    "minecraft:water"
+    "bs.hitbox:is_entity_in_blocks/is_entity_in_blocks"
   ]
 }

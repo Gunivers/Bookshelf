@@ -1,4 +1,5 @@
 from collections import defaultdict
+from datetime import datetime
 from generators.utils import render_json, render_snbt, write_file
 from logger import BaseLogger, new_logger
 from mcdata.hitbox import get_shapes
@@ -24,12 +25,42 @@ def generate(mc_version: str, logger: BaseLogger = new_logger()):
 
 def generate_is_composite_block_tag(shapes: list[dict], consumer: Callable[[str, Path], None]):
     consumer(render_json({
+        "__bookshelf__": {
+            "feature": True,
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#is-composite",
+            "authors": [
+                "Aksiome"
+            ],
+            "created": {
+                "date": "2024/09/28",
+                "minecraft_version": "1.21"
+            },
+            "updated": {
+                "date": datetime.now().strftime("%Y/%m/%d"),
+                "minecraft_version": definitions.MC_VERSION
+            }
+        },
         "values": list(sorted([block for shape in shapes for block in shape["blocks"]]))
     }), definitions.DATAPACKS_PATH / "Bookshelf/data/bs.hitbox/tags/block/is_composite.json")
 
 
 def generate_has_offset_block_tag(shapes: list[dict], consumer: Callable[[str, Path], None]):
     consumer(render_json({
+        "__bookshelf__": {
+            "feature": True,
+            "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#has-offset",
+            "authors": [
+                "Aksiome"
+            ],
+            "created": {
+                "date": "2024/09/28",
+                "minecraft_version": "1.21"
+            },
+            "updated": {
+                "date": datetime.now().strftime("%Y/%m/%d"),
+                "minecraft_version": definitions.MC_VERSION
+            }
+        },
         "values": list(sorted([
             block for shape in shapes for block in shape["blocks"]
             if all(entry["has_offset"] for entry in shape["shapes"])

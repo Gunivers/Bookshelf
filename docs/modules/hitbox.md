@@ -34,7 +34,7 @@ Get the hitbox of a block as a shape, represented by a list of boxes coordinates
   **Storage `bs:out hitbox`**:
   :::{treeview}
   - {nbt}`compound` Block collision box
-    - {nbt}`list` **shape**: A list of cube coordinates (format: `[[xmin, ymin, zmin, xmax, ymax, zmax]]`).
+    - {nbt}`list` **shape**: A list of cube coordinates (`[[min_x, min_y, min_z, max_x, max_y, max_z]]`).
     - {nbt}`compound` **offset**: Hitbox offset (used for example by flowers).
       - {nbt}`double` **x**: Number describing the X coordinate offset.
       - {nbt}`double` **z**: Number describing the Z coordinate offset.
@@ -87,6 +87,77 @@ Static entities, such as paintings and item frames, do not provide height and wi
 
 ---
 
+### Is entity inside
+
+:::::{tab-set}
+::::{tab-item} Entity in block
+
+```{function} #bs.hitbox:is_entity_in_block
+
+Check if the specified entity is within the block at the execution position.
+
+:Inputs:
+  **Execution `as <entity>`**: Entity to check.
+
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position to check.
+
+:Outputs:
+  **Return**: Success or failure.
+```
+
+```{note}
+This function checks if the entity's bounding box is inside the block at the current position, not any other blocks the entity might touch.
+```
+
+*Check if a summoned cow is inside the fence at your position:*
+
+```mcfunction
+setblock ~ ~ ~ minecraft:oak_fence
+# move to the edge of the fence, then run
+execute summon minecraft:cow if function #bs.hitbox:is_entity_in_block run say I'm in the fence
+# since the cow is bigger than the player, you should see the message
+```
+
+::::
+::::{tab-item} Entity in blocks
+
+```{function} #bs.hitbox:is_entity_in_blocks
+
+Check if the specified entity is within a block.
+
+:Inputs:
+  **Execution `as <entity>`**: Entity to check.
+
+  **Function macro**:
+  :::{treeview}
+  - {nbt}`compound` Arguments
+    - {nbt}`compound` **with**: Optional settings.
+      - {nbt}`string` **ignored_blocks**: Blocks to ignore (default: `#bs.hitbox:intangible`).
+  :::
+
+:Outputs:
+  **Return**: Success or failure.
+```
+
+```{note}
+Since an entity's bounding box can extend across multiple blocks, this function checks all blocks the entity might be in contact with.
+```
+
+*Check if a summoned cow is inside a block:*
+
+```mcfunction
+# move to the edge of a block, then run
+execute summon minecraft:cow run function #bs.hitbox:is_entity_in_blocks {with:{}}
+# since the cow is bigger than the player, you should get a success
+```
+
+::::
+:::::
+
+> **Credits**: Aksiome
+
+---
+
 ### Is inside
 
 ::::{tab-set}
@@ -130,6 +201,65 @@ Check if the execution position is inside the entity executing the command.
 ```mcfunction
 execute summon minecraft:cow if function #bs.hitbox:is_in_entity run say Oh no...
 ```
+
+:::
+::::
+
+> **Credits**: Aksiome
+
+---
+
+## 🏷️ Tags
+
+You can find below all tags available in this module.
+
+---
+
+### Blocks
+
+::::{tab-set}
+:::{tab-item} Has offset
+
+**`#bs.hitbox:has_offset`**
+
+Determines if the block's hitbox has an intentional random offset. This is commonly used in blocks that have slightly shifted hitboxes to give a more dynamic visual effect.
+
+:::
+:::{tab-item} Intangible
+
+**`#bs.hitbox:intangible`**
+
+Indicates whether the block is intangible, meaning it is typically invisible and lacks interaction collision.
+
+:::
+:::{tab-item} Is composite
+
+**`#bs.hitbox:is_composite`**
+
+Checks if the block is made up of multiple smaller hitboxes or shapes, rather than a single unified block.
+
+:::
+::::
+
+> **Credits**: Aksiome
+
+---
+
+### Entities
+
+::::{tab-set}
+:::{tab-item} Intangible
+
+**`#bs.hitbox:intangible`**
+
+Determines if the entity's hitbox is intangible, meaning it won't interact physically with other blocks or entities.
+
+:::
+:::{tab-item} Is shaped
+
+**`#bs.hitbox:is_shaped`**
+
+Identifies if the entity has a non-standard hitbox shape, differing from the typical cubic or rectangular hitbox.
 
 :::
 ::::

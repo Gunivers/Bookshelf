@@ -13,8 +13,9 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# pufferfish group
-execute store result score #s bs.ctx run data get entity @s PuffState
-execute if score #s bs.ctx matches 0 run data modify storage bs:out hitbox set value {width:0.35,height:0.35}
-execute if score #s bs.ctx matches 1 run data modify storage bs:out hitbox set value {width:0.48999998,height:0.48999998}
-execute if score #s bs.ctx matches 2 run data modify storage bs:out hitbox set value {width:0.7,height:0.7}
+tp @s ~ ~ ~
+data modify storage bs:ctx _ set from entity @s Pos
+execute store result storage bs:ctx x int -1 run data get storage bs:ctx _[0]
+execute store result storage bs:ctx y int -1 run data get storage bs:ctx _[1]
+execute store result storage bs:ctx z int -1 run data get storage bs:ctx _[2]
+execute in minecraft:overworld run tp @s -30000000 0 1600
