@@ -6,6 +6,7 @@
 
 ### 🎉 Addition
 
+- ([203](https://github.com/Gunivers/Bookshelf/issues/203)) Add functions `#bs.hitbox:is_entity_in_block` and `#bs.hitbox:is_entity_in_blocks`.
 - ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a function to remove a link `#bs.link:remove_link`.
 - ([233](https://github.com/Gunivers/Bookshelf/issues/233)) Add a `bs.link:link_equal` predicate and new relationships functions:
   - `#bs.link:as_children`
@@ -25,6 +26,7 @@
 
 ### 🔁 Tweaks
 - ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.
+- ([252](https://github.com/Gunivers/Bookshelf/pull/252)) Enhanced speed of `bs.hitbox` module.
 
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
