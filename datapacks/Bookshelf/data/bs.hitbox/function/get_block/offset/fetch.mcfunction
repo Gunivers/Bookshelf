@@ -13,6 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data run data modify storage bs:out hitbox.offset set from storage bs:data hitbox.offsets[{k:[$(x),$(z)]}]
-execute if score #success bs.data matches 0 run return fail
+$execute store success score #s bs.ctx run data modify storage bs:out hitbox.offset set from storage bs:data hitbox.offsets[{k:[$(x),$(z)]}]
 data remove storage bs:out hitbox.offset.k

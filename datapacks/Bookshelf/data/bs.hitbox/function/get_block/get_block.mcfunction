@@ -15,15 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html#get
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #hitbox.id bs.data 0
-execute if block ~ ~ ~ #bs.hitbox:shape/group_1 run scoreboard players add #hitbox.id bs.data 1
-execute if block ~ ~ ~ #bs.hitbox:shape/group_2 run scoreboard players add #hitbox.id bs.data 2
-execute if block ~ ~ ~ #bs.hitbox:shape/group_4 run scoreboard players add #hitbox.id bs.data 4
-execute if block ~ ~ ~ #bs.hitbox:shape/group_8 run scoreboard players add #hitbox.id bs.data 8
-execute if block ~ ~ ~ #bs.hitbox:shape/group_16 run scoreboard players add #hitbox.id bs.data 16
-execute if block ~ ~ ~ #bs.hitbox:shape/group_32 run scoreboard players add #hitbox.id bs.data 32
-execute if block ~ ~ ~ #bs.hitbox:shape/group_64 run scoreboard players add #hitbox.id bs.data 64
+execute unless block ~ ~ ~ #bs.hitbox:is_composite run \
+  return run data modify storage bs:out hitbox set value {shape:[[0.0,0.0,0.0,16.0,16.0,16.0]]}
 
-data modify storage bs:out hitbox set value {shape:[],offset:{x:0d,z:0d}}
-execute store result storage bs:ctx y short 1 run scoreboard players get #hitbox.id bs.data
-function bs.hitbox:get_block/dispatch with storage bs:ctx
+loot replace block -30000000 0 1606 container.0 loot bs.hitbox:get_block/get
+data modify storage bs:out hitbox set from block -30000000 0 1606 item.components."minecraft:custom_data"
+execute if block ~ ~ ~ #bs.hitbox:has_offset as B5-0-0-0-1 run function bs.hitbox:get_block/offset/get

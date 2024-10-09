@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:wither_skeleton",
+    "minecraft:breeze",
+    "minecraft:wolf",
+    "#bs.hitbox:size/zombie_like",
+    "minecraft:player",
+    "minecraft:goat",
+    "minecraft:villager",
+    "minecraft:armadillo"
+  ]
+}

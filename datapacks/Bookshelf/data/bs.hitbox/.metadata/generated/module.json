@@ -9,6 +9,8 @@
   "features": [
     "bs.hitbox:get_block",
     "bs.hitbox:get_entity",
+    "bs.hitbox:is_entity_in_block",
+    "bs.hitbox:is_entity_in_blocks",
     "bs.hitbox:is_in_block",
     "bs.hitbox:is_in_entity"
   ]
