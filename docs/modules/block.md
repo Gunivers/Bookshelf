@@ -868,9 +868,9 @@ Spawn a block particles of the given block.
   - {nbt}`compound` Block particles data
     - {nbt}`string` **type**: Block type (similar to block output).
     - {nbt}`compound` **properties**: Block properties (similar to block output).
-    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particles. Same as in the /particle command.
-    - {nbt}`int` **speed**: Speed of the particles. Same as in the /particle command.
-    - {nbt}`int` **count**: Number of particles. Same as in the /particle command.
+    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particles. Similar to the /particle command.
+    - {nbt}`int` **speed**: Speed of the particles. Similar to the /particle command.
+    - {nbt}`int` **count**: Number of particles. Similar to the /particle command.
   :::
 
 :Outputs:
@@ -887,7 +887,7 @@ execute positioned 0 0 0 run function #bs.block:get_block
 data modify storage bs:in block.spawn_block_particles set from storage bs:out block
 data modify storage bs:in block.spawn_block_particles merge value { delta: "0 0 0", speed: 5, count: 30 }
 
-# Summon the block display
+# Summon the block particles
 function #bs.block:spawn_block_particles
 ```
 
