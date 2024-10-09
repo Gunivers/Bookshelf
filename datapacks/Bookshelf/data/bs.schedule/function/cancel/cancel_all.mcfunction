@@ -15,5 +15,5 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#cancel
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store result score #result bs.data run data remove storage bs:data schedule[$(with)]
+$execute store result score #result bs.data run data remove storage bs:data schedule.queue[$(with)]
 function #bs.log:info {namespace:"bs.schedule", tag:"cancel", path:"#bs.schedule:cancel", message:'["Canceled ",{"score":{"name":"#result","objective":"bs.data"}}," command(s)."]'}

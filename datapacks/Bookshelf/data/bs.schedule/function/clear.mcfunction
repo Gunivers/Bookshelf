@@ -16,5 +16,5 @@
 # ------------------------------------------------------------------------------------------------------------
 
 scoreboard players set #schedule.suid bs.data 0
-data modify storage bs:data schedule set value []
+data modify storage bs:data schedule.queue set value []
 schedule clear bs.schedule:execute/callback

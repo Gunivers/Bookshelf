@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$return run data remove storage bs:data schedule[{suid:$(suid)}]
+$return run data remove storage bs:data schedule.queue[{suid:$(suid)}]
