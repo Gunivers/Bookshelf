@@ -1,0 +1,20 @@
+{
+  "__bookshelf__": {
+    "feature": true,
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "authors": [
+      "theogiraudet"
+    ],
+    "created": {
+      "date": "2024/10/09",
+      "minecraft_version": "1.21.1"
+    },
+    "updated": {
+      "date": "2024/10/09",
+      "minecraft_version": "1.21.1"
+    }
+  },
+  "values": [
+    "bs.block:spawn/block_particles/spawn_block_particles"
+  ]
+}

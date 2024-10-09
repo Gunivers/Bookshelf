@@ -854,6 +854,44 @@ function #bs.block:spawn_solid_block_display
 ```
 
 ::::
+::::{tab-item} Block particles
+
+```{function} #bs.block:spawn_block_particles
+
+Spawn a block particles of the given block.
+
+:Inputs:
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position where the particles will be display.
+
+  **Storage `bs:in block.spawn_block_particles`**:
+  :::{treeview}
+  - {nbt}`compound` Block particles data
+    - {nbt}`string` **type**: Block type (similar to block output).
+    - {nbt}`compound` **properties**: Block properties (similar to block output).
+    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particles. Same as in the /particle command.
+    - {nbt}`int` **speed**: Speed of the particles. Same as in the /particle command.
+    - {nbt}`int` **count**: Number of particles. Same as in the /particle command.
+  :::
+
+:Outputs:
+  **State**: The particles are displayed.
+```
+
+*Display the particles of the block at 0 0 0:*
+
+```mcfunction
+# Get block data
+execute positioned 0 0 0 run function #bs.block:get_block
+
+# Setup the input
+data modify storage bs:in block.spawn_block_particles set from storage bs:out block
+data modify storage bs:in block.spawn_block_particles merge value { delta: "0 0 0", speed: 5, count: 30 }
+
+# Summon the block display
+function #bs.block:spawn_block_particles
+```
+
+::::
 :::::
 
 > **Credits**: Aksiome, theogiraudet
