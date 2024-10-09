@@ -13,5 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ append from storage bs:data schedule[{time:$(y)}]
-$data remove storage bs:data schedule[{time:$(y)}]
+$data modify storage bs:data schedule._ append from storage bs:data schedule.queue[{time:$(y)}]
+$data remove storage bs:data schedule.queue[{time:$(y)}]

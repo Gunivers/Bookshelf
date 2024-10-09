@@ -31,6 +31,6 @@ data modify storage bs:ctx _.Owner set from entity @s UUID
 execute as B5-0-0-0-1 run function bs.schedule:schedule/context
 
 # Add the command to the schedule queue
-data modify storage bs:data schedule prepend from storage bs:ctx _
+data modify storage bs:data schedule.queue prepend from storage bs:ctx _
 function #bs.log:info {namespace:"bs.schedule", tag:"schedule", path:"#bs.schedule:schedule", message:'"Command scheduled."'}
 return run data get storage bs:ctx _.suid 1
