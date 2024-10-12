@@ -1,7 +1,7 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
     "authors": [
       "Aksiome",
       "theogiraudet"
@@ -16,6 +16,6 @@
     }
   },
   "values": [
-    "bs.block:spawn/falling_block/spawn_falling_block"
+    "bs.block:produce/falling_block/spawn_falling_block"
   ]
 }

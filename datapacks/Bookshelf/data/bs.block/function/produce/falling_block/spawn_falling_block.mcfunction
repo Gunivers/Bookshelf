@@ -12,7 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce
 # ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:ctx _ set value {}
@@ -20,4 +20,4 @@ data modify storage bs:ctx _ set from storage bs:in block.spawn_falling_block.ex
 data modify storage bs:ctx _.BlockState.Name set from storage bs:in block.spawn_falling_block.type
 data modify storage bs:ctx _.BlockState.Properties set from storage bs:in block.spawn_falling_block.properties
 
-function bs.block:spawn/falling_block/run with storage bs:ctx
+function bs.block:produce/falling_block/run with storage bs:ctx
