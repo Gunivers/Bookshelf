@@ -13,7 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tag @s add bs.raycast.omit
 function #bs.hitbox:get_entity
 execute if entity @s[type=#bs.hitbox:is_shaped] run return run function bs.move:collision/check/entity/shape
 function bs.move:collision/check/entity/size
