@@ -16,7 +16,7 @@
 # ------------------------------------------------------------------------------------------------------------
 
 execute store result score $xp.get_total_points bs.out run xp query @s points
-execute store result score #xp.get_total_points.x bs.data store result score #xp.get_total_points.x2 bs.data run xp query @s levels
-execute if score #xp.get_total_points.x bs.data matches 1..16 run return run function bs.xp:get/total_points/range_1
-execute if score #xp.get_total_points.x bs.data matches 17..31 run return run function bs.xp:get/total_points/range_2
-execute if score #xp.get_total_points.x bs.data matches 32.. run return run function bs.xp:get/total_points/range_3
+execute store result score #x bs.ctx store result score #y bs.ctx run xp query @s levels
+execute if score #x bs.ctx matches 1..16 run return run function bs.xp:get/total_points/range_1
+execute if score #x bs.ctx matches 17..31 run return run function bs.xp:get/total_points/range_2
+execute if score #x bs.ctx matches 32.. run return run function bs.xp:get/total_points/range_3
