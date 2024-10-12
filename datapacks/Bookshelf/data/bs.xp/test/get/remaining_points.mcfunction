@@ -4,15 +4,15 @@
 
 xp set @s 5 levels
 xp set @s 5 points
-execute store result score #result bs.data run function #bs.xp:get_remaining_points
-assert score #result bs.data matches 12
+execute store result score #r bs.ctx run function #bs.xp:get_remaining_points
+assert score #r bs.ctx matches 12
 
 xp set @s 21 levels
 xp set @s 12 points
-execute store result score #result bs.data run function #bs.xp:get_remaining_points
-assert score #result bs.data matches 55
+execute store result score #r bs.ctx run function #bs.xp:get_remaining_points
+assert score #r bs.ctx matches 55
 
 xp set @s 42 levels
 xp set @s 18 points
-execute store result score #result bs.data run function #bs.xp:get_remaining_points
-assert score #result bs.data matches 202
+execute store result score #r bs.ctx run function #bs.xp:get_remaining_points
+assert score #r bs.ctx matches 202

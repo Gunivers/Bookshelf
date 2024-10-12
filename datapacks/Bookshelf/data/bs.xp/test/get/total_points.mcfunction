@@ -3,13 +3,13 @@
 # @dummy
 
 xp set @s 42 levels
-execute store result score #result bs.data run function #bs.xp:get_total_points
-assert score #result bs.data matches 3333
+execute store result score #r bs.ctx run function #bs.xp:get_total_points
+assert score #r bs.ctx matches 3333
 
 xp add @s -2500 points
-execute store result score #result bs.data run function #bs.xp:get_total_points
-assert score #result bs.data matches 833
+execute store result score #r bs.ctx run function #bs.xp:get_total_points
+assert score #r bs.ctx matches 833
 
 xp add @s -700 points
-execute store result score #result bs.data run function #bs.xp:get_total_points
-assert score #result bs.data matches 133
+execute store result score #r bs.ctx run function #bs.xp:get_total_points
+assert score #r bs.ctx matches 133
