@@ -1,7 +1,8 @@
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import permutations
 import bisect
 import requests
+import json
 
 
 BLOCKS_URL = "https://raw.githubusercontent.com/misode/mcmeta/{}-summary/blocks/data.min.json"
@@ -200,3 +201,16 @@ def count_common_prefix(a: list, b: list):
     while i < len(a) and i < len(b) and a[i] == b[i]:
         i += 1
     return i
+
+
+SOUNDS_URL = "https://raw.githubusercontent.com/Gunivers/Bookshelf-McData/{}/blocks/sounds.min.json"
+
+
+def get_sounds(mc_version: str) -> list[dict]:
+    """
+    Fetches block sounds data for the given version of minecraft.
+    """
+    requests.packages.urllib3.util.connection.HAS_IPV6 = False
+    response = requests.get(SOUNDS_URL.format(mc_version))
+    response.raise_for_status()
+    return response.json()

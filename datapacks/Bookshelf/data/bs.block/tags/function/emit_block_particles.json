@@ -1,7 +1,7 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
     "authors": [
       "theogiraudet"
     ],
@@ -15,6 +15,6 @@
     }
   },
   "values": [
-    "bs.block:spawn/block_particles/spawn_block_particles"
+    "bs.block:produce/block_particles/emit_block_particles"
   ]
 }

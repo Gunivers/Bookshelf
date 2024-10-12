@@ -12,12 +12,14 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce
 # ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:ctx _ set value {}
-data modify storage bs:ctx _ set from storage bs:in block.spawn_block_display.extra_nbt
-data modify storage bs:ctx _.block_state.Name set from storage bs:in block.spawn_block_display.type
-data modify storage bs:ctx _.block_state.Properties set from storage bs:in block.spawn_block_display.properties
+data modify storage bs:ctx _.name set from storage bs:in block.emit_block_particles.type
+data modify storage bs:ctx _.properties set from storage bs:in block.emit_block_particles.properties
+data modify storage bs:ctx _.delta set from storage bs:in block.emit_block_particles.delta
+data modify storage bs:ctx _.speed set from storage bs:in block.emit_block_particles.speed
+data modify storage bs:ctx _.count set from storage bs:in block.emit_block_particles.count
 
-function bs.block:spawn/block_display/run with storage bs:ctx
+function bs.block:produce/block_particles/run with storage bs:ctx _

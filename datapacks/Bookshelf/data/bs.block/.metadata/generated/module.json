@@ -12,6 +12,7 @@
     "theogiraudet"
   ],
   "features": [
+    "bs.block:emit_block_particles",
     "bs.block:fill_block",
     "bs.block:fill_random",
     "bs.block:fill_type",
@@ -31,7 +32,6 @@
     "bs.block:set_type",
     "bs.block:shift_properties",
     "bs.block:spawn_block_display",
-    "bs.block:spawn_block_particles",
     "bs.block:spawn_falling_block",
     "bs.block:spawn_solid_block_display"
   ]
