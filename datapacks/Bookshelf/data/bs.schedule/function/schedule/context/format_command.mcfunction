@@ -13,5 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _.entity set value $(text)
-data modify storage bs:ctx _.entity set from storage bs:ctx _.entity.insertion
+$data modify storage bs:data schedule.entry.cmd set value 'in $(dim) positioned $(x) $(y) $(z) rotated $(h) $(v) run $(command)'
