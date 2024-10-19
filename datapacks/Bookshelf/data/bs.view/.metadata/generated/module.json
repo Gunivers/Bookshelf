@@ -8,7 +8,8 @@
     "Leirof"
   ],
   "dependencies": [
-    "bs.hitbox"
+    "bs.hitbox",
+    "bs.raycast"
   ],
   "features": [
     "bs.view:as_aimed_entity",

@@ -664,6 +664,9 @@
             "Aksiome"
           ],
           "module_path": "datapacks/Bookshelf/data/bs.generate",
+          "dependencies": [
+            "bs.random"
+          ],
           "features": [
             {
               "name": "fractal_shape_2d",
@@ -3195,7 +3198,8 @@
           ],
           "module_path": "datapacks/Bookshelf/data/bs.view",
           "dependencies": [
-            "bs.hitbox"
+            "bs.hitbox",
+            "bs.raycast"
           ],
           "features": [
             {

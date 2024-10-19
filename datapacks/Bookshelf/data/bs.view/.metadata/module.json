@@ -2,5 +2,8 @@
   "name": "bs.view",
   "display_name": "View",
   "description": "Execute commands based on what an entity sees.",
-  "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html"
+  "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/view.html",
+  "dependencies": [
+    "bs.raycast"
+  ]
 }
