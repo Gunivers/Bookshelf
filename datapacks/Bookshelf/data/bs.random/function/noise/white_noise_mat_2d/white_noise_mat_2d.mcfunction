@@ -15,8 +15,11 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
+data modify storage bs:ctx _ set value {scale:1}
 $scoreboard players set #w bs.ctx $(width)
 $scoreboard players set #h bs.ctx $(height)
+$data modify storage bs:ctx _ merge value $(with)
+execute store result storage bs:ctx _.scale double .000001 run data get storage bs:ctx _.scale 1000
 
 scoreboard players set #y bs.ctx 0
 data modify storage bs:out random.white_noise_mat_2d set value []

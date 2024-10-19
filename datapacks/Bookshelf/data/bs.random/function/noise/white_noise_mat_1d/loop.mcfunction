@@ -17,5 +17,5 @@
 
 scoreboard players remove #i bs.ctx 1
 data modify storage bs:out random.white_noise_mat_1d append value 0f
-execute store result storage bs:out random.white_noise_mat_1d[-1] float .001 run random value 1..1000
-execute if score #i bs.ctx matches 1.. run function bs.random:noise/white_noise_mat_1d/loop
+$execute store result storage bs:out random.white_noise_mat_1d[-1] float $(scale) run random value 1..1000
+execute if score #i bs.ctx matches 1.. run function bs.random:noise/white_noise_mat_1d/loop with storage bs:ctx _
