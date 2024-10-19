@@ -16,13 +16,13 @@
 # ------------------------------------------------------------------------------------------------------------
 
 execute as B5-0-0-0-1 run function bs.position:get/position/ctx
-$execute store result score #position.get_relative_ata.x bs.data run data get storage bs:ctx _[0] $(scale)
-$execute store result score #position.get_relative_ata.y bs.data run data get storage bs:ctx _[1] $(scale)
-$execute store result score #position.get_relative_ata.z bs.data run data get storage bs:ctx _[2] $(scale)
+$execute store result score #x bs.ctx run data get storage bs:ctx _[0] $(scale)
+$execute store result score #y bs.ctx run data get storage bs:ctx _[1] $(scale)
+$execute store result score #z bs.ctx run data get storage bs:ctx _[2] $(scale)
 
 $execute store result score @s bs.pos.x run data get entity @s Pos[0] $(scale)
 $execute store result score @s bs.pos.y run data get entity @s Pos[1] $(scale)
 $execute store result score @s bs.pos.z run data get entity @s Pos[2] $(scale)
-scoreboard players operation @s bs.pos.x -= #position.get_relative_ata.x bs.data
-scoreboard players operation @s bs.pos.y -= #position.get_relative_ata.y bs.data
-scoreboard players operation @s bs.pos.z -= #position.get_relative_ata.z bs.data
+scoreboard players operation @s bs.pos.x -= #x bs.ctx
+scoreboard players operation @s bs.pos.y -= #y bs.ctx
+scoreboard players operation @s bs.pos.z -= #z bs.ctx

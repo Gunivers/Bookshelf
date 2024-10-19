@@ -1,5 +1,7 @@
 # @batch bs.hitbox
 
+await entity B5-0-0-0-1
+
 ## |TEST CASE|: Bottom stone slab
 setblock ~ ~ ~ minecraft:stone_slab[type=bottom]
 function #bs.hitbox:get_block

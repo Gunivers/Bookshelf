@@ -2,20 +2,15 @@
 # @batch bs.position
 # @dummy
 
-execute store result score #packtest.h_min bs.data store result score #packtest.h_max bs.data store result score @s bs.rot.h run random value -10000..10000
-execute store result score #packtest.v_min bs.data store result score #packtest.v_max bs.data store result score @s bs.rot.v run random value -10000..10000
+execute store result score @s bs.rot.h run random value -10000..10000
+execute store result score @s bs.rot.v run random value -10000..10000
 function #bs.position:set_rot {scale:.001}
-execute store result score #packtest.h bs.data run data get entity @s Rotation[0] 1000
-execute store result score #packtest.v bs.data run data get entity @s Rotation[1] 1000
 
-dummy @s leave
+execute store result score #h bs.ctx run data get entity @s Rotation[0] 1000
+execute store result score #v bs.ctx run data get entity @s Rotation[1] 1000
 
-scoreboard players remove #packtest.h_min bs.data 2
-scoreboard players remove #packtest.v_min bs.data 2
-scoreboard players add #packtest.h_max bs.data 2
-scoreboard players add #packtest.v_max bs.data 2
+scoreboard players operation #h bs.ctx -= @s bs.rot.h
+scoreboard players operation #v bs.ctx -= @s bs.rot.v
 
-assert score #packtest.h_min bs.data < #packtest.h bs.data
-assert score #packtest.v_min bs.data < #packtest.v bs.data
-assert score #packtest.h_max bs.data > #packtest.h bs.data
-assert score #packtest.v_max bs.data > #packtest.v bs.data
+assert score #h bs.ctx matches -2..2
+assert score #v bs.ctx matches -2..2

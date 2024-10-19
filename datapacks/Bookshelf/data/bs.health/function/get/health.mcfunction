@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#get
 # ------------------------------------------------------------------------------------------------------------
 
-execute store success score #success bs.data run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
-execute if score #success bs.data matches 1 store result storage bs:out health.get_health double 0.00001 run attribute @s minecraft:generic.max_health get 100000
-execute if score #success bs.data matches 0 run data modify storage bs:out health.get_health set from entity @s Health
+execute store success score #s bs.ctx run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
+execute if score #s bs.ctx matches 1 store result storage bs:out health.get_health double 0.00001 run attribute @s minecraft:generic.max_health get 100000
+execute if score #s bs.ctx matches 0 run data modify storage bs:out health.get_health set from entity @s Health
 $return run data get storage bs:out health.get_health $(scale)

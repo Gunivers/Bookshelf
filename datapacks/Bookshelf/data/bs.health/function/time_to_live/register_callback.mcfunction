@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:data health.ttl.callbacks[{uuid:$(UUID)}].on_death set from storage bs:ctx _.on_death
+$data modify storage bs:data health.ttl."$(UUID)".on_death set from storage bs:ctx _.on_death

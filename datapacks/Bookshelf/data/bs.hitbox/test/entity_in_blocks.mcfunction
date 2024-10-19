@@ -1,6 +1,8 @@
 # @batch bs.hitbox
 # @dummy
 
+await entity B5-0-0-0-1
+
 fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:air
 setblock ~-1 ~ ~-1 minecraft:bookshelf
 

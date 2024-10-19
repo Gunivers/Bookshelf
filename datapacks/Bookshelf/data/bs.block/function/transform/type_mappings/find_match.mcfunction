@@ -13,11 +13,11 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data if data storage bs:ctx _{attrs:$(attrs)}
-execute if score #success bs.data matches 1 store result score #result bs.data if data storage bs:ctx _.entry.attrs[]
-execute if score #success bs.data matches 1 run scoreboard players operation #block.attrs bs.data > #result bs.data
-execute if score #success bs.data matches 1 run data modify storage bs:ctx _.found append from storage bs:ctx _.entry
+$execute store success score #s bs.ctx if data storage bs:ctx _{attrs:$(attrs)}
+execute if score #s bs.ctx matches 1 store result score #r bs.ctx if data storage bs:ctx _.entry.attrs[]
+execute if score #s bs.ctx matches 1 run scoreboard players operation #a bs.ctx > #r bs.ctx
+execute if score #s bs.ctx matches 1 run data modify storage bs:ctx _.found append from storage bs:ctx _.entry
 
 data remove storage bs:ctx _.sets[-1]
-execute store success score #success bs.data run data modify storage bs:ctx _.entry set from storage bs:ctx _.sets[-1]
-execute if score #success bs.data matches 1 run function bs.block:transform/type_mappings/find_match with storage bs:ctx _.entry
+execute store success score #s bs.ctx run data modify storage bs:ctx _.entry set from storage bs:ctx _.sets[-1]
+execute if score #s bs.ctx matches 1 run function bs.block:transform/type_mappings/find_match with storage bs:ctx _.entry

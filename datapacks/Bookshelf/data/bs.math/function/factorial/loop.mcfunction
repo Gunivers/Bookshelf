@@ -13,6 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players remove #math.factorial.i bs.data 1
-scoreboard players operation $math.factorial bs.out *= #math.factorial.i bs.data
-execute if score #math.factorial.i bs.data matches 3.. run function bs.math:factorial/loop
+scoreboard players remove #i bs.ctx 1
+scoreboard players operation $math.factorial bs.out *= #i bs.ctx
+execute if score #i bs.ctx matches 3.. run function bs.math:factorial/loop

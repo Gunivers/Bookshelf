@@ -18,6 +18,6 @@
 kill B5-0-0-0-2
 forceload remove -30000000 1600
 
-scoreboard objectives remove bs.data
+scoreboard objectives remove bs.ctx
 
 data remove storage bs:data sidebar

@@ -1,6 +1,8 @@
 # @batch bs.hitbox
 # @dummy
 
+await entity B5-0-0-0-1
+
 ## |TEST CASE|: Player should not be inside the entity
 execute positioned ~.5 ~2 ~.5 if function #bs.hitbox:is_in_entity run fail "Should not be inside the entity"
 

@@ -16,15 +16,15 @@
 # ------------------------------------------------------------------------------------------------------------
 
 execute as B5-0-0-0-1 run function bs.position:get/position/ctx
-$execute store result score #position.get_distance.x1 bs.data run data get storage bs:ctx _[0] $(scale)
-$execute store result score #position.get_distance.y1 bs.data run data get storage bs:ctx _[1] $(scale)
-$execute store result score #position.get_distance.z1 bs.data run data get storage bs:ctx _[2] $(scale)
-$execute store result score #position.get_distance.x2 bs.data run data get entity @s Pos[0] $(scale)
-$execute store result score #position.get_distance.y2 bs.data run data get entity @s Pos[1] $(scale)
-$execute store result score #position.get_distance.z2 bs.data run data get entity @s Pos[2] $(scale)
+$execute store result score #x bs.ctx run data get storage bs:ctx _[0] $(scale)
+$execute store result score #y bs.ctx run data get storage bs:ctx _[1] $(scale)
+$execute store result score #z bs.ctx run data get storage bs:ctx _[2] $(scale)
+$execute store result score #u bs.ctx run data get entity @s Pos[0] $(scale)
+$execute store result score #v bs.ctx run data get entity @s Pos[1] $(scale)
+$execute store result score #w bs.ctx run data get entity @s Pos[2] $(scale)
 
-execute store result storage bs:ctx x int 1 run scoreboard players operation #position.get_distance.x1 bs.data -= #position.get_distance.x2 bs.data
-execute store result storage bs:ctx y int 1 run scoreboard players operation #position.get_distance.y1 bs.data -= #position.get_distance.y2 bs.data
-execute store result storage bs:ctx z int 1 run scoreboard players operation #position.get_distance.z1 bs.data -= #position.get_distance.z2 bs.data
+execute store result storage bs:ctx x int 1 run scoreboard players operation #x bs.ctx -= #u bs.ctx
+execute store result storage bs:ctx y int 1 run scoreboard players operation #y bs.ctx -= #v bs.ctx
+execute store result storage bs:ctx z int 1 run scoreboard players operation #z bs.ctx -= #w bs.ctx
 
 execute store result score $position.get_distance_ata bs.out as B5-0-0-0-2 run return run function bs.position:get/distance/compute with storage bs:ctx

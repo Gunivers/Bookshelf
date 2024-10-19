@@ -17,23 +17,23 @@
 
 # Note: Thanks to the Minecraft Commands' discord server for the help provided (https://discord.gg/QAFXFtZ)
 
-execute store result score #math.isqrt.t1 bs.data store result score #math.isqrt.t2 bs.data store result score #math.isqrt.t3 bs.data store result score #math.isqrt.t4 bs.data run scoreboard players operation $math.isqrt bs.out = $math.isqrt.x bs.in
+execute store result score #s bs.ctx store result score #t bs.ctx store result score #u bs.ctx store result score #v bs.ctx run scoreboard players operation $math.isqrt bs.out = $math.isqrt.x bs.in
 
 execute if score $math.isqrt.x bs.in matches 0..1515359 run scoreboard players operation $math.isqrt bs.out /= 559 bs.const
 execute if score $math.isqrt.x bs.in matches 0..1515359 run scoreboard players add $math.isqrt bs.out 15
 execute if score $math.isqrt.x bs.in matches 1515360.. run scoreboard players operation $math.isqrt bs.out /= 32768 bs.const
 execute if score $math.isqrt.x bs.in matches 1515360.. run scoreboard players add $math.isqrt bs.out 2456
 
-scoreboard players operation #math.isqrt.t1 bs.data /= $math.isqrt bs.out
-scoreboard players operation $math.isqrt bs.out += #math.isqrt.t1 bs.data
+scoreboard players operation #s bs.ctx /= $math.isqrt bs.out
+scoreboard players operation $math.isqrt bs.out += #s bs.ctx
 scoreboard players operation $math.isqrt bs.out /= 2 bs.const
-scoreboard players operation #math.isqrt.t2 bs.data /= $math.isqrt bs.out
-scoreboard players operation $math.isqrt bs.out += #math.isqrt.t2 bs.data
+scoreboard players operation #t bs.ctx /= $math.isqrt bs.out
+scoreboard players operation $math.isqrt bs.out += #t bs.ctx
 scoreboard players operation $math.isqrt bs.out /= 2 bs.const
-scoreboard players operation #math.isqrt.t3 bs.data /= $math.isqrt bs.out
-scoreboard players operation $math.isqrt bs.out += #math.isqrt.t3 bs.data
+scoreboard players operation #u bs.ctx /= $math.isqrt bs.out
+scoreboard players operation $math.isqrt bs.out += #u bs.ctx
 scoreboard players operation $math.isqrt bs.out /= 2 bs.const
 
-scoreboard players operation #math.isqrt.t4 bs.data /= $math.isqrt bs.out
-execute if score $math.isqrt bs.out > #math.isqrt.t4 bs.data run scoreboard players remove $math.isqrt bs.out 1
+scoreboard players operation #v bs.ctx /= $math.isqrt bs.out
+execute if score $math.isqrt bs.out > #v bs.ctx run scoreboard players remove $math.isqrt bs.out 1
 return run scoreboard players get $math.isqrt bs.out
