@@ -19,33 +19,33 @@
 execute as B5-0-0-0-1 run function bs.move:convert/canonical_to_local/sincos
 
 # X' = Z * sin(h) + X * cos(h)
-scoreboard players operation #move.canonical_to_local.x bs.data = @s bs.vel.z
-scoreboard players operation #move.canonical_to_local.x bs.data *= #move.canonical_to_local.sin.h bs.data
-scoreboard players operation #move.canonical_to_local bs.data = @s bs.vel.x
-scoreboard players operation #move.canonical_to_local bs.data *= #move.canonical_to_local.cos.h bs.data
-scoreboard players operation #move.canonical_to_local.x bs.data += #move.canonical_to_local bs.data
-scoreboard players operation #move.canonical_to_local.x bs.data /= 1000 bs.const
+scoreboard players operation #x bs.ctx = @s bs.vel.z
+scoreboard players operation #x bs.ctx *= #j bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.vel.x
+scoreboard players operation #t bs.ctx *= #i bs.ctx
+scoreboard players operation #x bs.ctx += #t bs.ctx
+scoreboard players operation #x bs.ctx /= 1000 bs.const
 
 # Y' = (z * cos(h) - x * sin(h)) * sin(v) + y * cos(v)
-scoreboard players operation #move.canonical_to_local.y bs.data = @s bs.vel.z
-scoreboard players operation #move.canonical_to_local.y bs.data *= #move.canonical_to_local.cos.h bs.data
-scoreboard players operation #move.canonical_to_local bs.data = @s bs.vel.x
-scoreboard players operation #move.canonical_to_local bs.data *= #move.canonical_to_local.sin.h bs.data
-scoreboard players operation #move.canonical_to_local.y bs.data -= #move.canonical_to_local bs.data
-execute store result score #move.canonical_to_local.z bs.data run scoreboard players operation #move.canonical_to_local.y bs.data /= 1000 bs.const
-scoreboard players operation #move.canonical_to_local.y bs.data *= #move.canonical_to_local.sin.v bs.data
-scoreboard players operation #move.canonical_to_local bs.data = @s bs.vel.y
-scoreboard players operation #move.canonical_to_local bs.data *= #move.canonical_to_local.cos.v bs.data
-scoreboard players operation #move.canonical_to_local.y bs.data += #move.canonical_to_local bs.data
-scoreboard players operation #move.canonical_to_local.y bs.data /= 1000 bs.const
+scoreboard players operation #y bs.ctx = @s bs.vel.z
+scoreboard players operation #y bs.ctx *= #i bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.vel.x
+scoreboard players operation #t bs.ctx *= #j bs.ctx
+scoreboard players operation #y bs.ctx -= #t bs.ctx
+execute store result score #z bs.ctx run scoreboard players operation #y bs.ctx /= 1000 bs.const
+scoreboard players operation #y bs.ctx *= #l bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.vel.y
+scoreboard players operation #t bs.ctx *= #k bs.ctx
+scoreboard players operation #y bs.ctx += #t bs.ctx
+scoreboard players operation #y bs.ctx /= 1000 bs.const
 
 # Z' = (z * cos(h) - x * sin(h)) * cos(v) - y * sin(v)
-scoreboard players operation #move.canonical_to_local.z bs.data *= #move.canonical_to_local.cos.v bs.data
-scoreboard players operation #move.canonical_to_local bs.data = @s bs.vel.y
-scoreboard players operation #move.canonical_to_local bs.data *= #move.canonical_to_local.sin.v bs.data
-scoreboard players operation #move.canonical_to_local.z bs.data -= #move.canonical_to_local bs.data
-scoreboard players operation #move.canonical_to_local.z bs.data /= 1000 bs.const
+scoreboard players operation #z bs.ctx *= #k bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.vel.y
+scoreboard players operation #t bs.ctx *= #l bs.ctx
+scoreboard players operation #z bs.ctx -= #t bs.ctx
+scoreboard players operation #z bs.ctx /= 1000 bs.const
 
-scoreboard players operation @s bs.vel.x = #move.canonical_to_local.x bs.data
-scoreboard players operation @s bs.vel.y = #move.canonical_to_local.y bs.data
-scoreboard players operation @s bs.vel.z = #move.canonical_to_local.z bs.data
+scoreboard players operation @s bs.vel.x = #x bs.ctx
+scoreboard players operation @s bs.vel.y = #y bs.ctx
+scoreboard players operation @s bs.vel.z = #z bs.ctx
