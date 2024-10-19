@@ -12,7 +12,7 @@
     "theogiraudet"
   ],
   "features": [
-    "bs.block:emit_block_particles",
+    "bs.block:emit_block_particle",
     "bs.block:fill_block",
     "bs.block:fill_random",
     "bs.block:fill_type",

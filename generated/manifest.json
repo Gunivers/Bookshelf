@@ -194,7 +194,7 @@
           "module_path": "datapacks/Bookshelf/data/bs.block",
           "features": [
             {
-              "name": "emit_block_particles",
+              "name": "emit_block_particle",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
               "authors": [
                 "theogiraudet"
