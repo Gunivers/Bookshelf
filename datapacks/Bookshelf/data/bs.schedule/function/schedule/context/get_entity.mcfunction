@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$$(command)
-
-data remove storage bs:data schedule.slice[-1]
-execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]
+tag @s add bs.schedule.this
+data modify entity B5-0-0-0-2 text set value '{"selector":"@n[tag=bs.schedule.this,sort=arbitrary]"}'
+tag @s remove bs.schedule.this
+function bs.schedule:schedule/context/format/entity with entity B5-0-0-0-2

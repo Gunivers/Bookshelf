@@ -13,5 +13,11 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute if data storage bs:data schedule._[-1] run function bs.schedule:execute/loop
-execute in minecraft:overworld run tp @s -30000000 0 1600
+tp @s ~ ~ ~ ~ ~
+data modify storage bs:ctx _ merge from entity @s
+data modify storage bs:ctx _.x set from storage bs:ctx _.Pos[0]
+data modify storage bs:ctx _.y set from storage bs:ctx _.Pos[1]
+data modify storage bs:ctx _.z set from storage bs:ctx _.Pos[2]
+data modify storage bs:ctx _.h set from storage bs:ctx _.Rotation[0]
+data modify storage bs:ctx _.v set from storage bs:ctx _.Rotation[1]
+kill @s
