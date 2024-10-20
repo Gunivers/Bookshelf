@@ -58,6 +58,6 @@ execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
-  run function bs.raycast:collide/block
+  run function bs.raycast:collide/shape
 
-execute if data storage bs:out hitbox.shape[0] run function bs.raycast:check/block/shape
+execute if data storage bs:out hitbox.shape[-1] run function bs.raycast:check/block/shape
