@@ -27,11 +27,12 @@ execute store result storage bs:data schedule.entry.time int 1 run function bs.s
 execute store result storage bs:data schedule.entry.suid int 1 run scoreboard players add #schedule.suid bs.data 1
 
 # Get the current context (entity location and selector)
+execute store success score #s bs.ctx if entity @s
 function bs.schedule:schedule/context/get_dimension
 execute summon minecraft:marker run function bs.schedule:schedule/context/get_position
-function bs.schedule:schedule/context/format_command with storage bs:ctx _
-data modify storage bs:data schedule.entry.uuid set value [I;181,0,0,4]
-data modify storage bs:data schedule.entry.uuid set from entity @s UUID
+execute if score #s bs.ctx matches 0 run function bs.schedule:schedule/context/format/command with storage bs:ctx _
+execute if score #s bs.ctx matches 1 run function bs.schedule:schedule/context/get_entity
+execute if score #s bs.ctx matches 1 run function bs.schedule:schedule/context/format/as_command with storage bs:ctx _
 
 # Add the command to the schedule queue
 data modify storage bs:data schedule.entry.id set from storage bs:ctx _.id

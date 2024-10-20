@@ -13,5 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _.dimension set from entity @s Brain.memories.minecraft:home.value.dimension
-kill @s
+$data modify storage bs:data schedule.entry.command set value 'execute as $(entity) in $(dimension) positioned $(x) $(y) $(z) rotated $(h) $(v) run $(command)'

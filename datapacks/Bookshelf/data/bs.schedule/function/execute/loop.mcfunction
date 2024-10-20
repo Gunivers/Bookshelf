@@ -13,8 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-data modify entity B5-0-0-0-4 Owner set from storage bs:data schedule.slice[-1].uuid
-$execute as B5-0-0-0-4 on origin $(cmd)
+$$(command)
 
 data remove storage bs:data schedule.slice[-1]
 execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]

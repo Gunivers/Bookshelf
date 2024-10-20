@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html
 # ------------------------------------------------------------------------------------------------------------
 
-kill B5-0-0-0-4
+kill B5-0-0-0-2
 forceload remove -30000000 1600
 
 scoreboard objectives remove bs.ctx

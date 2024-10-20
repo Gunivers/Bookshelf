@@ -13,5 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _.dimension set from entity @s Brain.memories.minecraft:home.value.dimension
-kill @s
+tag @s add bs.schedule.this
+data modify entity B5-0-0-0-2 text set value '{"selector":"@n[tag=bs.schedule.this,sort=arbitrary]"}'
+tag @s remove bs.schedule.this
+function bs.schedule:schedule/context/format/entity with entity B5-0-0-0-2
