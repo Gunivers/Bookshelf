@@ -17,8 +17,8 @@
 
 $execute store result storage bs:ctx y double 0.00001 store result score #h bs.ctx run data get storage bs:const health.point $(points)
 
-execute store success score #s bs.ctx run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
-execute if score #s bs.ctx matches 1 store result score #m bs.ctx run attribute @s minecraft:generic.max_health get 100000
+execute store success score #s bs.ctx run attribute @s minecraft:max_health modifier value get bs.health:limit
+execute if score #s bs.ctx matches 1 store result score #m bs.ctx run attribute @s minecraft:max_health get 100000
 execute if score #s bs.ctx matches 1 store result storage bs:ctx x double 0.00001 run scoreboard players operation #m bs.ctx -= #h bs.ctx
 execute if score #s bs.ctx matches 1 if score #m bs.ctx matches ..0 run function bs.health:apply/increase_health with storage bs:ctx
 
