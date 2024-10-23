@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# stop the recursion then get the travelled distance
+# get the travelled distance
 scoreboard players operation #raycast.distance bs.data = #raycast.tmin bs.data
 
 # get the normal of the surface that was hit

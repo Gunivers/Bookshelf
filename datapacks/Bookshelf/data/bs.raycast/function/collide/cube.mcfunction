@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# stop the recursion then compute the travelled distance
+# compute the travelled distance
 scoreboard players operation #raycast.lx bs.data -= #raycast.dx bs.data
 scoreboard players operation #raycast.ly bs.data -= #raycast.dy bs.data
 execute store result score #raycast.distance bs.data run scoreboard players operation #raycast.lz bs.data -= #raycast.dz bs.data

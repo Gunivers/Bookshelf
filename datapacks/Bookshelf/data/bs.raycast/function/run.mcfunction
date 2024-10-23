@@ -18,7 +18,7 @@
 tag @s add bs.raycast.omit
 scoreboard players set #raycast.distance bs.data 2147483647
 execute store result score #raycast.piercing bs.data run data get storage bs:data raycast.piercing
-execute store result score #raycast.max_distance bs.data store result score #raycast.limit bs.data run data get storage bs:data raycast.max_distance 1000
+execute store result score #raycast.max_distance bs.data run data get storage bs:data raycast.max_distance 1000
 data modify storage bs:out raycast set value {distance:0d,hit_normal:[0,0,0]}
 execute summon minecraft:marker run function bs.raycast:recurse/init
 tag @e[tag=bs.raycast.omit] remove bs.raycast.omit

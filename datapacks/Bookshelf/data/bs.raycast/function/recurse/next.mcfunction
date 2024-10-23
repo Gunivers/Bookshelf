@@ -18,6 +18,6 @@ $execute unless data storage bs:data raycast{blocks:0b} unless block ~ ~ ~ $(ign
 $execute unless data storage bs:data raycast{entities:0b} as @e[type=!$(ignored_entities),tag=$(entities),tag=!bs.raycast.omit,dx=0] run function bs.raycast:check/entity/any
 
 # advance on the grid by the shortest length
-execute if score #raycast.lx bs.data <= #raycast.ly bs.data if score #raycast.lx bs.data <= #raycast.lz bs.data if score #raycast.lx bs.data <= #raycast.limit bs.data run return run function bs.raycast:recurse/x with storage bs:data raycast
-execute if score #raycast.ly bs.data <= #raycast.lz bs.data if score #raycast.ly bs.data <= #raycast.limit bs.data run return run function bs.raycast:recurse/y with storage bs:data raycast
-execute if score #raycast.lz bs.data <= #raycast.limit bs.data run return run function bs.raycast:recurse/z with storage bs:data raycast
+execute if score #raycast.lx bs.data <= #raycast.ly bs.data if score #raycast.lx bs.data <= #raycast.lz bs.data if score #raycast.lx bs.data <= #raycast.max_distance bs.data run return run function bs.raycast:recurse/x with storage bs:data raycast
+execute if score #raycast.ly bs.data <= #raycast.lz bs.data if score #raycast.ly bs.data <= #raycast.max_distance bs.data run return run function bs.raycast:recurse/y with storage bs:data raycast
+execute if score #raycast.lz bs.data <= #raycast.max_distance bs.data run return run function bs.raycast:recurse/z with storage bs:data raycast
