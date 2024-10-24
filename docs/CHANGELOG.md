@@ -32,6 +32,7 @@
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
 - ([254](https://github.com/Gunivers/Bookshelf/issues/254)) Fix interruptions in the execution loop caused by `#bs.schedule:schedule` callbacks.
+- ([256](https://github.com/Gunivers/Bookshelf/issues/256)) Fix XP progress functions at bounds (0% and 100%).
 
 ### 📄 Documentation
 - ([244](https://github.com/Gunivers/Bookshelf/issues/244)) Merge the Inverse trigonometry section in `bs.math` with the Trigonometry one for better clarity.

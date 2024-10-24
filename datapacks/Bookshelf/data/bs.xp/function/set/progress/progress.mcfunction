@@ -16,9 +16,10 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # level 111111129 => max_points = 1000000002
-$execute store result storage bs:ctx x int 1 store result score #xp.set_progress bs.data run data get storage bs:const xp.progress $(progress)
+$execute store result storage bs:ctx x int 1 store result score #p bs.ctx run data get storage bs:const xp.progress $(progress)
 execute store result storage bs:ctx y int 1 run xp query @s levels
 xp set @s 111111129 levels
-execute if score #xp.set_progress bs.data matches 1000000000.. run xp set @s 1000000000 points
-execute if score #xp.set_progress bs.data matches 1..999999999 run function bs.xp:set/progress/apply with storage bs:ctx
+execute if score #p bs.ctx matches ..0 run xp set @s 0 points
+execute if score #p bs.ctx matches 1000000000.. run xp set @s 1000000000 points
+execute if score #p bs.ctx matches 1..999999999 run function bs.xp:set/progress/apply with storage bs:ctx
 function bs.xp:utils/restore_levels with storage bs:ctx
