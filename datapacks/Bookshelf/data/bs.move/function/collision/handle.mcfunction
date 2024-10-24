@@ -54,5 +54,5 @@ execute if score #move.e bs.data matches 1 if data storage bs:data move{entities
 execute if score #move.vx bs.data matches 0.. at B5-0-0-0-1 align xyz run function bs.move:collision/recurse/x_pos
 execute if score #move.vx bs.data matches ..-1 at B5-0-0-0-1 align xyz run function bs.move:collision/recurse/x_neg
 tag @e[tag=bs.move.omit] remove bs.move.omit
-execute if score #move.ctime bs.data matches 0..999 run function bs.move:collision/resolution/resolve with storage bs:data move
+$execute if score #move.ctime bs.data matches 0..999 run function bs.move:collision/resolution/resolve {type:$(type)}
 execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600

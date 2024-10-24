@@ -13,10 +13,9 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute positioned 0.0 0.0 0.0 rotated ~ 0.0 run tp @s ^ ^ ^10.0
-execute store result score #i bs.ctx run data get entity @s Pos[2] 100
-execute store result score #j bs.ctx run data get entity @s Pos[0] -100
-execute positioned 0.0 0.0 0.0 rotated 0.0 ~ run tp @s ^ ^ ^10.0
-execute store result score #k bs.ctx run data get entity @s Pos[2] 100
-execute store result score #l bs.ctx run data get entity @s Pos[1] -100
-execute in minecraft:overworld run tp @s -30000000 0 1600
+# resolve collision using the on_collision callback
+$function $(on_collision)
+execute store result storage bs:ctx x double .001 run scoreboard players get $move.vel_remaining.x bs.data
+execute store result storage bs:ctx y double .001 run scoreboard players get $move.vel_remaining.y bs.data
+execute store result storage bs:ctx z double .001 run scoreboard players get $move.vel_remaining.z bs.data
+execute unless data storage bs:ctx {x:0d,y:0d,z:0d} at @s run function bs.move:teleport/canonical/run with storage bs:ctx
