@@ -15,14 +15,14 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html#get-biome
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #biome.id bs.data 0
-execute if biome ~ ~ ~ #bs.biome:type/group_1 run scoreboard players add #biome.id bs.data 1
-execute if biome ~ ~ ~ #bs.biome:type/group_2 run scoreboard players add #biome.id bs.data 2
-execute if biome ~ ~ ~ #bs.biome:type/group_4 run scoreboard players add #biome.id bs.data 4
-execute if biome ~ ~ ~ #bs.biome:type/group_8 run scoreboard players add #biome.id bs.data 8
-execute if biome ~ ~ ~ #bs.biome:type/group_16 run scoreboard players add #biome.id bs.data 16
-execute if biome ~ ~ ~ #bs.biome:type/group_32 run scoreboard players add #biome.id bs.data 32
-execute if biome ~ ~ ~ #bs.biome:type/group_64 run scoreboard players add #biome.id bs.data 64
+scoreboard players set #i bs.ctx 0
+execute if biome ~ ~ ~ #bs.biome:type/group_1 run scoreboard players add #i bs.ctx 1
+execute if biome ~ ~ ~ #bs.biome:type/group_2 run scoreboard players add #i bs.ctx 2
+execute if biome ~ ~ ~ #bs.biome:type/group_4 run scoreboard players add #i bs.ctx 4
+execute if biome ~ ~ ~ #bs.biome:type/group_8 run scoreboard players add #i bs.ctx 8
+execute if biome ~ ~ ~ #bs.biome:type/group_16 run scoreboard players add #i bs.ctx 16
+execute if biome ~ ~ ~ #bs.biome:type/group_32 run scoreboard players add #i bs.ctx 32
+execute if biome ~ ~ ~ #bs.biome:type/group_64 run scoreboard players add #i bs.ctx 64
 
-execute store result storage bs:ctx y short 1 run scoreboard players remove #biome.id bs.data 1
-execute unless score #biome.id bs.data matches -1 run function bs.biome:get/biome/lookup with storage bs:ctx
+execute store result storage bs:ctx y short 1 run scoreboard players remove #i bs.ctx 1
+execute unless score #i bs.ctx matches -1 run function bs.biome:get/biome/lookup with storage bs:ctx

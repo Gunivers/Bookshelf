@@ -15,8 +15,8 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#manage-type
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data run data modify storage bs:ctx _ set from storage bs:const block.types."$(type)"
-execute if score #success bs.data matches 0 run return fail
-execute store success score #success bs.data run data modify storage bs:ctx _.group set from storage bs:out block.group
-execute if score #success bs.data matches 0 run data modify storage bs:out block.type set from storage bs:ctx _.type
-execute if score #success bs.data matches 1 run data modify storage bs:out block set from storage bs:ctx _
+$execute store success score #s bs.ctx run data modify storage bs:ctx _ set from storage bs:const block.types."$(type)"
+execute if score #s bs.ctx matches 0 run return fail
+execute store success score #s bs.ctx run data modify storage bs:ctx _.group set from storage bs:out block.group
+execute if score #s bs.ctx matches 0 run data modify storage bs:out block.type set from storage bs:ctx _.type
+execute if score #s bs.ctx matches 1 run data modify storage bs:out block set from storage bs:ctx _

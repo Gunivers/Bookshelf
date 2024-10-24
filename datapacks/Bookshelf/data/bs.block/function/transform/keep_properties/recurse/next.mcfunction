@@ -13,9 +13,9 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data run data modify storage bs:ctx _.i[-1].v set from storage bs:out block.properties."$(name)"
-execute if score #success bs.data matches 0 run function bs.block:transform/keep_properties/recurse/get_default with storage bs:ctx _.i[-1]
-execute if score #success bs.data matches 1 run function bs.block:transform/keep_properties/recurse/get_by_value with storage bs:ctx _.i[-1]
+$execute store success score #s bs.ctx run data modify storage bs:ctx _.i[-1].v set from storage bs:out block.properties."$(name)"
+execute if score #s bs.ctx matches 0 run function bs.block:transform/keep_properties/recurse/get_default with storage bs:ctx _.i[-1]
+execute if score #s bs.ctx matches 1 run function bs.block:transform/keep_properties/recurse/get_by_value with storage bs:ctx _.i[-1]
 
 data modify storage bs:ctx _.p merge from storage bs:ctx _.v.p
 data modify storage bs:ctx _.s merge from storage bs:ctx _.v.s

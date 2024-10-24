@@ -15,9 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives remove bs.out
-scoreboard objectives remove bs.data
 scoreboard objectives remove bs.const
+scoreboard objectives remove bs.ctx
+scoreboard objectives remove bs.out
 
 data remove storage bs:const color
 data remove storage bs:out color

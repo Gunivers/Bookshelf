@@ -854,41 +854,41 @@ function #bs.block:spawn_solid_block_display
 ```
 
 ::::
-::::{tab-item} Block particles
+::::{tab-item} Block particle
 
-```{function} #bs.block:emit_block_particles
+```{function} #bs.block:emit_block_particle
 
-Emit block particles of the given block.
+Emit block particle of the given block.
 
 :Inputs:
-  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position where the particles will be emitted.
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position where the particle will be emitted.
 
-  **Storage `bs:in block.emit_block_particles`**:
+  **Storage `bs:in block.emit_block_particle`**:
   :::{treeview}
-  - {nbt}`compound` Block particles data
+  - {nbt}`compound` Block particle data
     - {nbt}`string` **type**: Block type (similar to block output).
     - {nbt}`compound` **properties**: Block properties (similar to block output).
-    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particles. Similar to the /particle command.
-    - {nbt}`int` **speed**: Speed of the particles. Similar to the /particle command.
-    - {nbt}`int` **count**: Number of particles. Similar to the /particle command.
+    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particle. Similar to the /particle command.
+    - {nbt}`int` **speed**: Speed of the particle. Similar to the /particle command.
+    - {nbt}`int` **count**: Number of particle. Similar to the /particle command.
   :::
 
 :Outputs:
-  **State**: The particles are emitted.
+  **State**: The particle is emitted.
 ```
 
-*Emit the particles of the block at 0 0 0:*
+*Emit the particle of the block at 0 0 0:*
 
 ```mcfunction
 # Get block data
 execute positioned 0 0 0 run function #bs.block:get_block
 
 # Setup the input
-data modify storage bs:in block.emit_block_particles set from storage bs:out block
-data modify storage bs:in block.emit_block_particles merge value { delta: "0 0 0", speed: 5, count: 30 }
+data modify storage bs:in block.emit_block_particle set from storage bs:out block
+data modify storage bs:in block.emit_block_particle merge value { delta: "0 0 0", speed: 5, count: 30 }
 
-# Emit the block particles
-function #bs.block:emit_block_particles
+# Emit the block particle
+function #bs.block:emit_block_particle
 ```
 
 ::::

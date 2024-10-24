@@ -15,4 +15,4 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#imitate-behaviors
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result score @s bs.pos.x run scoreboard players operation #link.origin.x bs.data += @s bs.link.rx
+execute store result score @s bs.pos.x run scoreboard players operation #x bs.ctx += @s bs.link.rx

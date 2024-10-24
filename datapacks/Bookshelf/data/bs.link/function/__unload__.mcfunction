@@ -15,6 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/link.html
 # ------------------------------------------------------------------------------------------------------------
 
+scoreboard objectives remove bs.const
+scoreboard objectives remove bs.ctx
+
 scoreboard objectives remove bs.link.rx
 scoreboard objectives remove bs.link.ry
 scoreboard objectives remove bs.link.rz
@@ -27,5 +30,3 @@ scoreboard objectives remove bs.link.lv
 scoreboard objectives remove bs.link.lh
 
 scoreboard objectives remove bs.link.to
-
-scoreboard objectives remove bs.const

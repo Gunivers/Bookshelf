@@ -16,10 +16,10 @@
 # ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:ctx _ set value {}
-data modify storage bs:ctx _.name set from storage bs:in block.emit_block_particles.type
-data modify storage bs:ctx _.properties set from storage bs:in block.emit_block_particles.properties
-data modify storage bs:ctx _.delta set from storage bs:in block.emit_block_particles.delta
-data modify storage bs:ctx _.speed set from storage bs:in block.emit_block_particles.speed
-data modify storage bs:ctx _.count set from storage bs:in block.emit_block_particles.count
+data modify storage bs:ctx _.name set from storage bs:in block.emit_block_particle.type
+data modify storage bs:ctx _.properties set from storage bs:in block.emit_block_particle.properties
+data modify storage bs:ctx _.delta set from storage bs:in block.emit_block_particle.delta
+data modify storage bs:ctx _.speed set from storage bs:in block.emit_block_particle.speed
+data modify storage bs:ctx _.count set from storage bs:in block.emit_block_particle.count
 
-function bs.block:produce/block_particles/run with storage bs:ctx _
+function bs.block:produce/block_particle/run with storage bs:ctx _

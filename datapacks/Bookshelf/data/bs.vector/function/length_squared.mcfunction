@@ -15,14 +15,14 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#length
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #vector.scaling bs.data $(scaling)
+$scoreboard players set #s bs.ctx $(scaling)
 
 scoreboard players operation $vector.length_squared bs.out = $vector.length_squared.0 bs.in
 scoreboard players operation $vector.length_squared bs.out *= $vector.length_squared.0 bs.in
-scoreboard players operation #vector.length_squared bs.data = $vector.length_squared.1 bs.in
-scoreboard players operation #vector.length_squared bs.data *= $vector.length_squared.1 bs.in
-scoreboard players operation $vector.length_squared bs.out += #vector.length_squared bs.data
-scoreboard players operation #vector.length_squared bs.data = $vector.length_squared.2 bs.in
-scoreboard players operation #vector.length_squared bs.data *= $vector.length_squared.2 bs.in
-scoreboard players operation $vector.length_squared bs.out += #vector.length_squared bs.data
-return run scoreboard players operation $vector.length_squared bs.out /= #vector.scaling bs.data
+scoreboard players operation #t bs.ctx = $vector.length_squared.1 bs.in
+scoreboard players operation #t bs.ctx *= $vector.length_squared.1 bs.in
+scoreboard players operation $vector.length_squared bs.out += #t bs.ctx
+scoreboard players operation #t bs.ctx = $vector.length_squared.2 bs.in
+scoreboard players operation #t bs.ctx *= $vector.length_squared.2 bs.in
+scoreboard players operation $vector.length_squared bs.out += #t bs.ctx
+return run scoreboard players operation $vector.length_squared bs.out /= #s bs.ctx

@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/health.html
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives remove bs.data
+scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.ttl
 
 data remove storage bs:const health

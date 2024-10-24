@@ -15,15 +15,15 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/health.html#add-remove
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store result score #health bs.data run data get storage bs:const health.point $(points)
+$execute store result score #h bs.ctx run data get storage bs:const health.point $(points)
 
-execute store result score #health.max bs.data run attribute @s minecraft:generic.max_health get 100000
-execute store result score #health.mod bs.data run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
-scoreboard players operation #health.max bs.data -= #health.mod bs.data
-execute store result storage bs:ctx y double 0.00001 run scoreboard players operation #health.max bs.data += #health bs.data
+execute store result score #m bs.ctx run attribute @s minecraft:max_health get 100000
+execute store result score #a bs.ctx run attribute @s minecraft:max_health modifier value get bs.health:limit
+scoreboard players operation #m bs.ctx -= #a bs.ctx
+execute store result storage bs:ctx y double 0.00001 run scoreboard players operation #m bs.ctx += #h bs.ctx
 
-execute store success score #success bs.data run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
-execute if score #success bs.data matches 1 store result storage bs:ctx x double 0.00001 run scoreboard players operation #health.mod bs.data -= #health bs.data
-execute if score #success bs.data matches 1 if score #health.mod bs.data matches ..0 run function bs.health:apply/increase_health with storage bs:ctx
+execute store success score #s bs.ctx run attribute @s minecraft:max_health modifier value get bs.health:limit
+execute if score #s bs.ctx matches 1 store result storage bs:ctx x double 0.00001 run scoreboard players operation #a bs.ctx -= #h bs.ctx
+execute if score #s bs.ctx matches 1 if score #a bs.ctx matches ..0 run function bs.health:apply/increase_health with storage bs:ctx
 
 function bs.health:apply/set_max_health with storage bs:ctx

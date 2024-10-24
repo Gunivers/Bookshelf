@@ -13,6 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players operation $math.gcd bs.out %= #math.gcd.b bs.data
-scoreboard players operation $math.gcd bs.out >< #math.gcd.b bs.data
-execute unless score #math.gcd.b bs.data matches 0 run function bs.math:gcd/loop
+scoreboard players operation $math.gcd bs.out %= #t bs.ctx
+scoreboard players operation $math.gcd bs.out >< #t bs.ctx
+execute unless score #t bs.ctx matches 0 run function bs.math:gcd/loop

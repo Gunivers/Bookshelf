@@ -17,25 +17,18 @@
 
 # Note: the larger bs.in must be smaller than 46342
 
-# C(n,k)
-
-# keep n, k > 0
-scoreboard players operation #math.combine.n bs.data = $math.combine.n bs.in
-scoreboard players operation #math.combine.n bs.data > 0 bs.const
-scoreboard players operation #math.combine.k bs.data = $math.combine.k bs.in
-scoreboard players operation #math.combine.k bs.data > 0 bs.const
-
-# keep n <= k
-execute if score #math.combine.n bs.data > #math.combine.k bs.data run scoreboard players operation #math.combine.n bs.data >< #math.combine.k bs.data
+# keep n, k > 0 & n <= k
+execute store result score #n bs.ctx run scoreboard players set #k bs.ctx 0
+execute if score $math.combine.n bs.in matches 0.. run scoreboard players operation #n bs.ctx = $math.combine.n bs.in
+execute if score $math.combine.k bs.in matches 0.. run scoreboard players operation #k bs.ctx = $math.combine.k bs.in
+execute if score #n bs.ctx > #k bs.ctx run scoreboard players operation #n bs.ctx >< #k bs.ctx
 
 # get smaller n
-scoreboard players operation #math.combine.temp bs.data = #math.combine.k bs.data
-scoreboard players operation #math.combine.temp bs.data -= #math.combine.n bs.data
-scoreboard players operation #math.combine.n bs.data < #math.combine.temp bs.data
+scoreboard players operation #t bs.ctx = #k bs.ctx
+scoreboard players operation #t bs.ctx -= #n bs.ctx
+scoreboard players operation #n bs.ctx < #t bs.ctx
 
 # break if n is special
-execute if score #math.combine.n bs.data matches 0 run scoreboard players set $math.combine bs.out 1
-execute if score #math.combine.n bs.data matches 1 run scoreboard players operation $math.combine bs.out = #math.combine.k bs.data
-execute if score #math.combine.n bs.data matches 2.. run function bs.math:combine/recurse/init
-
-return run scoreboard players get $math.combine bs.out
+execute if score #n bs.ctx matches 0 run return run scoreboard players set $math.combine bs.out 1
+execute if score #n bs.ctx matches 1 run return run scoreboard players operation $math.combine bs.out = #k bs.ctx
+execute if score #n bs.ctx matches 2.. run return run function bs.math:combine/recurse/init

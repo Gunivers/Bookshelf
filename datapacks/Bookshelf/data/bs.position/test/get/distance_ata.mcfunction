@@ -2,5 +2,5 @@
 # @batch bs.position
 # @dummy
 
-execute at @s positioned ^ ^ ^7.5 store result score #result bs.data run function #bs.position:get_distance_ata {scale:10}
-assert score #result bs.data matches 74..76
+execute at @s positioned ^ ^ ^7.5 store result score #r bs.ctx run function #bs.position:get_distance_ata {scale:10}
+assert score #r bs.ctx matches 74..76

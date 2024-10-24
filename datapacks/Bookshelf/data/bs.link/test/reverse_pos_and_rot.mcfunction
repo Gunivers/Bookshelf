@@ -11,16 +11,16 @@ execute as @e[type=minecraft:armor_stand,tag=packtest.2] at @e[type=minecraft:ar
 execute as @e[type=minecraft:armor_stand,tag=packtest.1] at @s run tp @s ~1 ~1 ~1 ~42 ~42
 execute as @e[type=minecraft:armor_stand,tag=packtest.2] run function #bs.link:reverse_pos_and_rot
 
-execute store result score #packtest.x bs.data run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[0] 1000
-execute store result score #packtest.y bs.data run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[1] 1000
-execute store result score #packtest.z bs.data run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[2] 1000
-execute store result score #packtest.h bs.data run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Rotation[0] 1000
-execute store result score #packtest.v bs.data run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Rotation[1] 1000
+execute store result score #x bs.ctx run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[0] 1000
+execute store result score #y bs.ctx run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[1] 1000
+execute store result score #z bs.ctx run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Pos[2] 1000
+execute store result score #h bs.ctx run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Rotation[0] 1000
+execute store result score #v bs.ctx run data get entity @e[type=minecraft:armor_stand,tag=packtest.2,limit=1] Rotation[1] 1000
 
 kill @e[type=minecraft:armor_stand,tag=packtest]
 
-assert score #packtest.x bs.data matches -1001..-999
-assert score #packtest.y bs.data matches -1001..-999
-assert score #packtest.z bs.data matches -1001..-999
-assert score #packtest.h bs.data matches -42001..-41999
-assert score #packtest.v bs.data matches -42001..-41999
+assert score #x bs.ctx matches -1001..-999
+assert score #y bs.ctx matches -1001..-999
+assert score #z bs.ctx matches -1001..-999
+assert score #h bs.ctx matches -42001..-41999
+assert score #v bs.ctx matches -42001..-41999

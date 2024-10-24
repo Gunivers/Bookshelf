@@ -15,6 +15,6 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#exponential
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result score #math.ldexp.e bs.data store result score #math.exp2.x bs.data run data get storage bs:in math.exp.x 24204406.323122970759868621826171875
+execute store result score #e bs.ctx store result score #x bs.ctx run data get storage bs:in math.exp.x 24204406.323122970759868621826171875
 function bs.math:exp2/run
 data modify storage bs:out math.exp set from storage bs:ctx x

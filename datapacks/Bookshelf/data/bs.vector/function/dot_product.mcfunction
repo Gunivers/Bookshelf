@@ -15,14 +15,14 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#dot-product
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #vector.scaling bs.data $(scaling)
+$scoreboard players set #s bs.ctx $(scaling)
 
 scoreboard players operation $vector.dot_product bs.out = $vector.dot_product.u.0 bs.in
 scoreboard players operation $vector.dot_product bs.out *= $vector.dot_product.v.0 bs.in
-scoreboard players operation #vector.dot_product bs.data = $vector.dot_product.u.1 bs.in
-scoreboard players operation #vector.dot_product bs.data *= $vector.dot_product.v.1 bs.in
-scoreboard players operation $vector.dot_product bs.out += #vector.dot_product bs.data
-scoreboard players operation #vector.dot_product bs.data = $vector.dot_product.u.2 bs.in
-scoreboard players operation #vector.dot_product bs.data *= $vector.dot_product.v.2 bs.in
-scoreboard players operation $vector.dot_product bs.out += #vector.dot_product bs.data
-return run scoreboard players operation $vector.dot_product bs.out /= #vector.scaling bs.data
+scoreboard players operation #t bs.ctx = $vector.dot_product.u.1 bs.in
+scoreboard players operation #t bs.ctx *= $vector.dot_product.v.1 bs.in
+scoreboard players operation $vector.dot_product bs.out += #t bs.ctx
+scoreboard players operation #t bs.ctx = $vector.dot_product.u.2 bs.in
+scoreboard players operation #t bs.ctx *= $vector.dot_product.v.2 bs.in
+scoreboard players operation $vector.dot_product bs.out += #t bs.ctx
+return run scoreboard players operation $vector.dot_product bs.out /= #s bs.ctx

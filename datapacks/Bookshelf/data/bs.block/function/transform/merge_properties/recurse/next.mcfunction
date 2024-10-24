@@ -13,8 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store success score #success bs.data run data modify storage bs:ctx _.i[-1].v set from storage bs:ctx _.p."$(name)"
-execute if score #success bs.data matches 1 run function bs.block:transform/merge_properties/recurse/get_by_value with storage bs:ctx _.i[-1]
+$execute store success score #s bs.ctx run data modify storage bs:ctx _.i[-1].v set from storage bs:ctx _.p."$(name)"
+execute if score #s bs.ctx matches 1 run function bs.block:transform/merge_properties/recurse/get_by_value with storage bs:ctx _.i[-1]
 
 data modify storage bs:out block.properties merge from storage bs:ctx _.v.p
 data modify storage bs:out block._ merge from storage bs:ctx _.v.s

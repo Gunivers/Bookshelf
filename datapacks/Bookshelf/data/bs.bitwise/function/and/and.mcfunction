@@ -20,7 +20,7 @@
 # - Example: -178 & 32165 = 32004
 # The result is the number composed by keeping all one at the same position in the two binary representations of these numbers.
 
-scoreboard players operation #bitwise.and.a bs.data = $bitwise.and.a bs.in
-scoreboard players operation #bitwise.and.b bs.data = $bitwise.and.b bs.in
+scoreboard players operation #a bs.ctx = $bitwise.and.a bs.in
+scoreboard players operation #b bs.ctx = $bitwise.and.b bs.in
 function bs.bitwise:and/compute
-return run scoreboard players operation $bitwise.and bs.out = #bitwise.and bs.data
+return run scoreboard players operation $bitwise.and bs.out = #x bs.ctx

@@ -22,14 +22,14 @@
 # c4: 0.69315307320016572578680325023015029728412628173828
 # c5: 0.99999992506352930465851613917038775980472564697266
 
-$execute store result storage bs:ctx x float $(x) run scoreboard players set #math.exp2.x bs.data 31500
-execute store result score #math.exp2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.exp2.x bs.data 150816
-execute store result score #math.exp2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.exp2.x bs.data 936610
-execute store result score #math.exp2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.exp2.x bs.data 4029109
-execute store result score #math.exp2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.exp2.x bs.data 11629179
-execute store result score #math.exp2.x bs.data run data get storage bs:ctx x
-execute store result storage bs:ctx x float .000000059604644775390625 run scoreboard players add #math.exp2.x bs.data 16777215
+$execute store result storage bs:ctx x float $(x) run scoreboard players set #x bs.ctx 31500
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 150816
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 936610
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 4029109
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 11629179
+execute store result score #x bs.ctx run data get storage bs:ctx x
+execute store result storage bs:ctx x float .000000059604644775390625 run scoreboard players add #x bs.ctx 16777215

@@ -24,13 +24,13 @@ function bs.block:transform/type_mappings/filter_type with storage bs:out block
 execute unless data storage bs:ctx _.filter run return fail
 
 # find entries that match the attributes
-scoreboard players set #block.attrs bs.data 0
+scoreboard players set #a bs.ctx 0
 data modify storage bs:ctx _.attrs append from storage bs:ctx _.filter.attrs[]
 data modify storage bs:ctx _.entry set from storage bs:ctx _.sets[-1]
 function bs.block:transform/type_mappings/find_match with storage bs:ctx _.entry
 
 # filter out entries that have more attributes
-execute store result storage bs:ctx y byte 1 run scoreboard players get #block.attrs bs.data
+execute store result storage bs:ctx y byte 1 run scoreboard players get #a bs.ctx
 function bs.block:transform/type_mappings/keep_best with storage bs:ctx
 
 # filter out entries that are different from the input / output

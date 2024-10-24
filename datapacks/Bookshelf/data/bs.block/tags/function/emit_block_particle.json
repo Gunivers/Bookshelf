@@ -15,6 +15,6 @@
     }
   },
   "values": [
-    "bs.block:produce/block_particles/emit_block_particles"
+    "bs.block:produce/block_particle/emit_block_particle"
   ]
 }

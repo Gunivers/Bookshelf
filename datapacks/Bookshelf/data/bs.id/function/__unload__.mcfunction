@@ -18,4 +18,3 @@
 scoreboard objectives remove bs.in
 scoreboard objectives remove bs.id
 scoreboard objectives remove bs.cid
-scoreboard objectives remove bs.data

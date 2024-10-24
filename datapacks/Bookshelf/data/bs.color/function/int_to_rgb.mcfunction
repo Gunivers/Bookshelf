@@ -15,13 +15,13 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-rgb
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #color.int_to_rgb bs.data $(color)
+$scoreboard players set #c bs.ctx $(color)
 
-scoreboard players operation $color.int_to_rgb.r bs.out = #color.int_to_rgb bs.data
+scoreboard players operation $color.int_to_rgb.r bs.out = #c bs.ctx
 scoreboard players operation $color.int_to_rgb.r bs.out /= 65536 bs.const
-scoreboard players operation $color.int_to_rgb.g bs.out = #color.int_to_rgb bs.data
+scoreboard players operation $color.int_to_rgb.g bs.out = #c bs.ctx
 scoreboard players operation $color.int_to_rgb.g bs.out /= 256 bs.const
-scoreboard players operation $color.int_to_rgb.b bs.out = #color.int_to_rgb bs.data
+scoreboard players operation $color.int_to_rgb.b bs.out = #c bs.ctx
 
 execute store result storage bs:out color.int_to_rgb[0] int 1 run scoreboard players operation $color.int_to_rgb.r bs.out %= 256 bs.const
 execute store result storage bs:out color.int_to_rgb[1] int 1 run scoreboard players operation $color.int_to_rgb.g bs.out %= 256 bs.const

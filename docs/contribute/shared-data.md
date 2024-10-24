@@ -13,7 +13,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 | Objectives | Description |
 |------------|-------------|
 | `bs.const` | Contain constant values. Scoreholder format: `<value>` |
-| `bs.data`  | Global score storage. Scoreholder format: `#<module>.<feature>.<my_key>` |
+| `bs.data`  | Global score storage. Scoreholder format: `#<module>.<my_key>` |
 | `bs.in`    | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
 | `bs.out`   | Default score for outputs. Scoreholder format: `$<module>.<feature>` or `$<module>.<feature>.<output_key>` |
 | `bs.ctx`   | Fast contextual scoreboard. Scoreholder format: `#<single_letter>` |
@@ -25,7 +25,7 @@ In order to reduce the footprint of the library here are some shared objectives 
 | Namespaces | Description |
 |------------|-------------|
 | `bs:const` | Contain constant data. Path format: `<module>.<my_key>` |
-| `bs:data`  | Global data storage. Path format: `<module>.<feature>.<my_key>` |
+| `bs:data`  | Global data storage. Path format: `<module>.<my_key>` |
 | `bs:in`    | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
 | `bs:out`   | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
 | `bs:ctx`   | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |

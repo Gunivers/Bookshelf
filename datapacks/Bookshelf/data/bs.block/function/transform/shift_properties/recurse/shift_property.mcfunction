@@ -13,15 +13,15 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players set #block.shift_properties.by bs.data 1
-execute if data storage bs:ctx _.i[-1].by store result score #block.shift_properties.by bs.data run data get storage bs:ctx _.i[-1].by
+scoreboard players set #n bs.ctx 1
+execute if data storage bs:ctx _.i[-1].by store result score #n bs.ctx run data get storage bs:ctx _.i[-1].by
 
-scoreboard players set #block.shift_properties.i bs.data 0
-$execute store success score #success bs.data run data modify storage bs:ctx _.i[-1].v set from storage bs:out block.properties."$(name)"
-execute if score #success bs.data matches 1 \
-  store result score #block.shift_properties.i bs.data \
+scoreboard players set #i bs.ctx 0
+$execute store success score #s bs.ctx run data modify storage bs:ctx _.i[-1].v set from storage bs:out block.properties."$(name)"
+execute if score #s bs.ctx matches 1 \
+  store result score #i bs.ctx \
   run function bs.block:transform/shift_properties/recurse/index with storage bs:ctx _.i[-1]
 
-scoreboard players operation #block.shift_properties.i bs.data += #block.shift_properties.by bs.data
-execute store result storage bs:ctx _.i[-1].i short 1 run scoreboard players operation #block.shift_properties.i bs.data %= #block.shift_properties bs.data
+scoreboard players operation #i bs.ctx += #n bs.ctx
+execute store result storage bs:ctx _.i[-1].i short 1 run scoreboard players operation #i bs.ctx %= #l bs.ctx
 function bs.block:transform/shift_properties/recurse/update_property with storage bs:ctx _.i[-1]

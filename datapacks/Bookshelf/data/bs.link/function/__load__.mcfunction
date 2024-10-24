@@ -16,6 +16,7 @@
 # ------------------------------------------------------------------------------------------------------------
 
 scoreboard objectives add bs.const dummy [{"text":"BS ","color":"dark_gray"},{"text":"Constants","color":"aqua"}]
+scoreboard objectives add bs.ctx dummy [{"text":"BS ","color":"dark_gray"},{"text":"Context","color":"aqua"}]
 
 scoreboard objectives add bs.link.rx dummy [{"text":"BS ","color":"dark_gray"},{"text":"Link relative X","color":"aqua"}]
 scoreboard objectives add bs.link.ry dummy [{"text":"BS ","color":"dark_gray"},{"text":"Link relative Y","color":"aqua"}]
@@ -29,5 +30,5 @@ scoreboard objectives add bs.link.to dummy [{"text":"BS ","color":"dark_gray"},{
 
 scoreboard players set 10 bs.const 10
 
-execute store result score #result bs.data run worldborder get
-execute if score #result bs.data matches 2147484.. run worldborder set 2147483 0
+execute store result score #w bs.ctx run worldborder get
+execute if score #w bs.ctx matches 2147484.. run worldborder set 2147483 0
