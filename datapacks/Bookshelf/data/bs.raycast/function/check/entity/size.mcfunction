@@ -13,6 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
+tag @s add bs.raycast.omit
+
 # get the entity relative coordinates
 execute in minecraft:overworld positioned as @s as B5-0-0-0-1 run function bs.raycast:compute/entity_rpos with storage bs:data raycast
 execute store result score #raycast.min_x bs.data run data get storage bs:ctx _[0] 10000000
