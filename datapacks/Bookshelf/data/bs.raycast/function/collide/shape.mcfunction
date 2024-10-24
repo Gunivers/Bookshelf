@@ -13,8 +13,11 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~ ~ ~
-execute store result score #view.can_see_ata.x1 bs.data run data get entity @s Pos[0] 1000
-execute store result score #view.can_see_ata.y1 bs.data run data get entity @s Pos[1] 1000
-execute store result score #view.can_see_ata.z1 bs.data run data get entity @s Pos[2] 1000
-execute in minecraft:overworld run tp @s -30000000 0 1600
+# get the travelled distance
+scoreboard players operation #raycast.distance bs.data = #raycast.tmin bs.data
+
+# get the normal of the surface that was hit
+data modify storage bs:out raycast.hit_normal set value [0,0,0]
+execute if score #raycast.distance bs.data = #raycast.min_x bs.data store result storage bs:out raycast.hit_normal[0] int -1 run data get storage bs:data raycast.sx
+execute if score #raycast.distance bs.data = #raycast.min_y bs.data store result storage bs:out raycast.hit_normal[1] int -1 run data get storage bs:data raycast.sy
+execute if score #raycast.distance bs.data = #raycast.min_z bs.data store result storage bs:out raycast.hit_normal[2] int -1 run data get storage bs:data raycast.sz

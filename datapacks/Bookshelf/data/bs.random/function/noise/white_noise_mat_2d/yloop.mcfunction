@@ -17,7 +17,7 @@
 
 scoreboard players set #x bs.ctx 0
 data modify storage bs:out random.white_noise_mat_2d append value []
-function bs.random:noise/white_noise_mat_2d/xloop
+function bs.random:noise/white_noise_mat_2d/xloop with storage bs:ctx _
 
 scoreboard players add #y bs.ctx 1
 execute if score #y bs.ctx < #h bs.ctx run function bs.random:noise/white_noise_mat_2d/yloop

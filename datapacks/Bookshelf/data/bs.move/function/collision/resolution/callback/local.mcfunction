@@ -11,13 +11,13 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:out random.fractal_noise_mat_2d[-1] append value 0f
-$execute store result storage bs:out random.fractal_noise_mat_2d[-1][-1] float $(scale) run function #bs.random:fractal_noise_2d
-
-execute store result score $random.fractal_noise_2d.x bs.in run scoreboard players add #x bs.ctx 1
-scoreboard players operation $random.fractal_noise_2d.x bs.in *= #k bs.ctx
-execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/fractal_noise_mat_2d/xloop with storage bs:ctx _
+# resolve collision using the on_collision callback (ensure the velocity vector is in canonical space for simpler transformation)
+execute rotated as @s run function #bs.move:local_to_canonical
+$function $(on_collision)
+execute store result storage bs:ctx x double .001 run scoreboard players get $move.vel_remaining.x bs.data
+execute store result storage bs:ctx y double .001 run scoreboard players get $move.vel_remaining.y bs.data
+execute store result storage bs:ctx z double .001 run scoreboard players get $move.vel_remaining.z bs.data
+execute unless data storage bs:ctx {x:0d,y:0d,z:0d} at @s run function bs.move:teleport/canonical/run with storage bs:ctx
+execute rotated as @s run function #bs.move:canonical_to_local

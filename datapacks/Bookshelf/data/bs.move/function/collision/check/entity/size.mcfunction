@@ -13,6 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
+tag @s add bs.raycast.omit
+
 # get the entity relative coordinates
 execute store result score #move.min_x bs.data run data get entity @s Pos[0] 1000
 execute store result score #move.min_y bs.data run data get entity @s Pos[1] 1000
