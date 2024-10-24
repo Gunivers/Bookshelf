@@ -21,7 +21,12 @@ class ModuleDependencies:
     features_dependencies: dict[str, Dependencies]
 
 
-def compute_dependencies(module_manager: ModuleManager, weak_dependencies: set[str], logger: BaseLogger) -> ModuleDependencies:
+def compute_dependencies(
+    module_manager: ModuleManager,
+    module_dependencies: set[str],
+    weak_dependencies: set[str],
+    logger: BaseLogger
+) -> ModuleDependencies:
     """
     :param module_manager: The module manager to compute the dependencies from. The module manager should contains only one module.
     :return: A tuple containing the module dependencies and the weak dependencies.
@@ -31,7 +36,6 @@ def compute_dependencies(module_manager: ModuleManager, weak_dependencies: set[s
         getter = FunctionCallGetter()
         feature_set: VisitableFeatureSet = getter.build_function_call_tree(features)
 
-        module_dependencies: set[str] = set()
         feature_dependencies: dict[str, FeatureReferences] = {}
         visitor = Visitor([VisitableFunctionTag], partial(__compute_references, feature_dependencies, module_dependencies))
         visitor.visit(feature_set)

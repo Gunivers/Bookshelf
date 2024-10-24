@@ -6,6 +6,9 @@
   "authors": [
     "Aksiome"
   ],
+  "dependencies": [
+    "bs.random"
+  ],
   "features": [
     "bs.generate:fractal_shape_2d",
     "bs.generate:shape_2d",

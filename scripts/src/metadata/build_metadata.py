@@ -100,7 +100,12 @@ def build_module_metadata(manager: ModuleManager, logger: BaseLogger) -> ModuleM
         if icon:
             icon = module.path / '.metadata' / icon
 
-        module_dep: ModuleDependencies = compute_dependencies(manager, result.get("weak_dependencies", []), logger)
+        module_dep: ModuleDependencies = compute_dependencies(
+            manager,
+            set(result.get("dependencies", [])),
+            set(result.get("weak_dependencies", [])),
+            logger,
+        )
         authors = set(authors) if authors else set()
         contributors = set(contributors) if contributors else set()
 
