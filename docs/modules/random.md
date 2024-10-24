@@ -326,7 +326,7 @@ function #bs.random:fractal_noise_2d
 :::::{tab-set}
 ::::{tab-item} White noise 1D
 
-```{function} #bs.random:white_noise_mat_1d {length:<length>}
+```{function} #bs.random:white_noise_mat_1d {length:<length>,with:{}}
 
 Generates a 1-dimensional array of white noise values.
 
@@ -335,17 +335,19 @@ Generates a 1-dimensional array of white noise values.
   :::{treeview}
   - {nbt}`compound` Arguments
     - {nbt}`int` **length**: Length of the array to generate.
+    - {nbt}`compound` **with**:
+      - {nbt}`number` **scale**: Scalar for the function's output (default: 1).
   :::
 
 :Outputs:
-  **Storage `bs:out random.white_noise_mat_1d`**: {nbt}`list` Array of values between 0 and 1.
+  **Storage `bs:out random.white_noise_mat_1d`**: {nbt}`list` Array of values between 0 and {scale}.
 ```
 
 *Generate 4 random values:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:white_noise_mat_1d {length:4}
+function #bs.random:white_noise_mat_1d {length:4,with:{}}
 
 # Display the result
 tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_mat_1d","storage":"bs:out", "color": "gold"}]
@@ -354,7 +356,7 @@ tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_mat_1d
 ::::
 ::::{tab-item} White noise 2D
 
-```{function} #bs.random:white_noise_mat_2d {width:<width>,height:<height>}
+```{function} #bs.random:white_noise_mat_2d {width:<width>,height:<height>,with:{}}
 
 Generates a 2-dimensional array of white noise values.
 
@@ -364,17 +366,19 @@ Generates a 2-dimensional array of white noise values.
   - {nbt}`compound` Arguments
     - {nbt}`int` **width**: Width of the array to generate.
     - {nbt}`int` **height**: Height of the array to generate.
+    - {nbt}`compound` **with**:
+      - {nbt}`number` **scale**: Scalar for the function's output (default: 1).
   :::
 
 :Outputs:
-  **Storage `bs:out random.white_noise_mat_2d`**: {nbt}`list` 2D array of values between 0 and 1.
+  **Storage `bs:out random.white_noise_mat_2d`**: {nbt}`list` 2D array of values between 0 and {scale}.
 ```
 
 *Generate a 4x4 random noise pattern:*
 
 ```mcfunction
 # Generate random noise
-function #bs.random:white_noise_mat_2d {width:4,height:4}
+function #bs.random:white_noise_mat_2d {width:4,height:4,with:{}}
 
 # Display the result
 tellraw @a [{"text": "Noise: ", "color": "dark_gray"},{"nbt":"white_noise_mat_2d","storage":"bs:out", "color": "gold"}]
@@ -395,10 +399,11 @@ Generates a 2D simplex noise texture of size `width` by `height`. Simplex noise 
     - {nbt}`compound` **with**:
       - {nbt}`int` **size**: Size of the noise "cell" (default: 16). Lower size means more detail.
       - {nbt}`int` **seed**: Seed for the noise generation, allowing for reproducibility (default: random).
+      - {nbt}`number` **scale**: Scalar for the function's output (default: 1).
   :::
 
 :Outputs:
-  **Storage `bs:out random.simplex_noise_mat_2d`**: 2D array of values between -1 and 1.
+  **Storage `bs:out random.simplex_noise_mat_2d`**: 2D array of values between {-scale} and {scale}.
 ```
 
 *Generate a 16×16 simplex noise pattern:*
@@ -431,10 +436,11 @@ Generates a 2D fractal noise texture of size `width` by `height`. Fractal noise 
       - {nbt}`int` **octaves**: Number of noise layers (default: 4). More octaves = more detail.
       - {nbt}`double` **persistence**: Contribution of each octave (default: 0.5). Higher means more detail.
       - {nbt}`double` **lacunarity**: Increase in frequency for each octave (default: 2.0). Higher means more rapid frequency increase.
+      - {nbt}`number` **scale**: Scalar for the function's output (default: 1).
   :::
 
 :Outputs:
-  **Storage `bs:out random.fractal_noise_mat_2d`**: 2D array of values between -1 and 1.
+  **Storage `bs:out random.fractal_noise_mat_2d`**: 2D array of values between {-scale} and {scale}.
 ```
 
 *Generate a 16×16 fractal noise pattern:*
