@@ -16,11 +16,7 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # run the raycast at the entity eyes
-execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:run
-
-# run the command at the entity that was found or return early
-execute unless data storage bs:out raycast.targeted_entity run return fail
-data modify entity B5-0-0-0-4 Owner set from storage bs:out raycast.targeted_entity
 tag @s add bs.view.this
-$execute as B5-0-0-0-4 on origin at @s as @n[tag=bs.view.this,sort=arbitrary] run $(run)
+$data modify storage bs:data raycast.on_targeted_entity set value 'execute as @n[tag=bs.view.this,sort=arbitrary] run $(run)'
+execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:run
 tag @s remove bs.view.this

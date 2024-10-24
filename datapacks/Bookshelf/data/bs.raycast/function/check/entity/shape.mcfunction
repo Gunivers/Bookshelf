@@ -49,9 +49,9 @@ scoreboard players operation #raycast.tmax bs.data < #raycast.max_z bs.data
 
 # if tmin <= tmax, ray is intersecting with AABB, if tmax < 0, ray is intersecting AABB, but the whole AABB is behind
 execute if score #raycast.tmax bs.data matches 0.. \
-  if score #raycast.tmin bs.data < #raycast.distance bs.data \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
+  if score #raycast.tmin bs.data < #raycast.distance bs.data \
   if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
-  run function bs.raycast:collide/entity
+  run function bs.raycast:collide/shape
 
-execute if data storage bs:out hitbox.shape[0] run function bs.raycast:check/entity/shape
+execute if data storage bs:out hitbox.shape[-1] run function bs.raycast:check/entity/shape

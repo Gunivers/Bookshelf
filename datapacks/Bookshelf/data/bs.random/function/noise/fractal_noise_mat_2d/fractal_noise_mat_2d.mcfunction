@@ -15,10 +15,11 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set value {octaves:4,persistence:.5,lacunarity:2.0,size:16}
+data modify storage bs:ctx _ set value {octaves:4,persistence:.5,lacunarity:2.0,size:16,scale:1}
 $scoreboard players set #w bs.ctx $(width)
 $scoreboard players set #h bs.ctx $(height)
 $data modify storage bs:ctx _ merge value $(with)
+execute store result storage bs:ctx _.scale double .000001 run data get storage bs:ctx _.scale 1000
 
 execute store result score $random.fractal_noise_2d.octaves bs.in run data get storage bs:ctx _.octaves
 execute store result score $random.fractal_noise_2d.persistence bs.in run data get storage bs:ctx _.persistence 1000

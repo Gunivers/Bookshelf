@@ -1,11 +1,11 @@
 # White noise 1d generates the right number of random values
 # @batch bs.random
 
-function #bs.random:white_noise_mat_1d {length:0}
+function #bs.random:white_noise_mat_1d {length:0,with:{}}
 execute store result score #n bs.ctx if data storage bs:out random.white_noise_mat_1d[]
 assert score #n bs.ctx matches 0
 
-function #bs.random:white_noise_mat_1d {length:5}
+function #bs.random:white_noise_mat_1d {length:5,with:{}}
 execute store result score #n bs.ctx if data storage bs:out random.white_noise_mat_1d[]
 assert score #n bs.ctx matches 5
 

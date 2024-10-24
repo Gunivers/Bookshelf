@@ -15,10 +15,11 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/random.html#noise-generators
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set value {size:16}
+data modify storage bs:ctx _ set value {size:16,scale:1}
 $scoreboard players set #w bs.ctx $(width)
 $scoreboard players set #h bs.ctx $(height)
 $data modify storage bs:ctx _ merge value $(with)
+execute store result storage bs:ctx _.scale double .000001 run data get storage bs:ctx _.scale 1000
 
 execute if data storage bs:ctx _.seed store result score $random.simplex_noise_2d.seed bs.in run data get storage bs:ctx _.seed
 execute unless data storage bs:ctx _.seed store result score $random.simplex_noise_2d.seed bs.in run random value 1.. bs.random:simplex_noise_mat_2d

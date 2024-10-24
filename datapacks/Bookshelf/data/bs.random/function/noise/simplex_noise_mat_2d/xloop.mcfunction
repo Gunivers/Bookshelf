@@ -16,8 +16,8 @@
 # ------------------------------------------------------------------------------------------------------------
 
 data modify storage bs:out random.simplex_noise_mat_2d[-1] append value 0f
-execute store result storage bs:out random.simplex_noise_mat_2d[-1][-1] float .001 run function #bs.random:simplex_noise_2d
+$execute store result storage bs:out random.simplex_noise_mat_2d[-1][-1] float $(scale) run function #bs.random:simplex_noise_2d
 
 execute store result score $random.simplex_noise_2d.x bs.in run scoreboard players add #x bs.ctx 1
 scoreboard players operation $random.simplex_noise_2d.x bs.in *= #k bs.ctx
-execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/simplex_noise_mat_2d/xloop
+execute if score #x bs.ctx < #w bs.ctx run function bs.random:noise/simplex_noise_mat_2d/xloop with storage bs:ctx _
