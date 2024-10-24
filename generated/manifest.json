@@ -3,7 +3,7 @@
     {
       "name": "Bookshelf",
       "description": "Bookshelf - Library designed for mapmakers",
-      "pack_format": 48,
+      "pack_format": 57,
       "modules": [
         {
           "name": "bs.biome",
@@ -3558,7 +3558,7 @@
     {
       "name": "Bookshelf Dev",
       "description": "Bookshelf Development Kit - Library designed for mapmakers",
-      "pack_format": 48,
+      "pack_format": 57,
       "modules": [
         {
           "name": "bs.dump",
