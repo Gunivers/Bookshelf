@@ -13,4 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$$(command)
+data modify storage bs:ctx _.dimension set from entity @s Brain.memories.minecraft:home.value.dimension
+kill @s

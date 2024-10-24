@@ -13,7 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$$(command)
-
-data remove storage bs:data schedule.slice[-1]
-execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]
+$data modify storage bs:data schedule.entry.command set value 'execute as $(entity) in $(dimension) positioned $(x) $(y) $(z) rotated $(h) $(v) run $(command)'

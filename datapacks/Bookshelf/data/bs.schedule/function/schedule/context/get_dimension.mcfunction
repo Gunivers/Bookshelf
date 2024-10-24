@@ -13,5 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:data schedule._ append from storage bs:data schedule.queue[{time:$(y)}]
-$data remove storage bs:data schedule.queue[{time:$(y)}]
+execute if dimension minecraft:overworld run return run data modify storage bs:ctx _.dimension set value "minecraft:overworld"
+execute if dimension minecraft:the_nether run return run data modify storage bs:ctx _.dimension set value "minecraft:the_nether"
+execute if dimension minecraft:the_end run return run data modify storage bs:ctx _.dimension set value "minecraft:the_end"
+
+execute positioned -30000000 0 1600 summon piglin_brute run function bs.schedule:schedule/context/get_custom_dimension
