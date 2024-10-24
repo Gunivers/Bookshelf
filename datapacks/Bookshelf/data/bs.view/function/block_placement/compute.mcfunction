@@ -11,11 +11,11 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/raycast.html
 # ------------------------------------------------------------------------------------------------------------
 
-forceload add -30000000 1600
-execute unless entity B5-0-0-0-1 run summon minecraft:marker -30000000 0 1600 {UUID:[I;181,0,0,1],Tags:["bs.entity","bs.persistent"]}
+execute store result storage bs:ctx x int 1 run data get storage bs:out raycast.hit_normal[0]
+execute store result storage bs:ctx y int 1 run data get storage bs:out raycast.hit_normal[1]
+execute store result storage bs:ctx z int 1 run data get storage bs:out raycast.hit_normal[2]
 
-scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+function bs.view:block_placement/displace with storage bs:ctx
+$execute at @s as @n[tag=bs.view.this,sort=arbitrary] run $(run)

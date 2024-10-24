@@ -11,11 +11,11 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/raycast.html
 # ------------------------------------------------------------------------------------------------------------
 
-forceload add -30000000 1600
-execute unless entity B5-0-0-0-1 run summon minecraft:marker -30000000 0 1600 {UUID:[I;181,0,0,1],Tags:["bs.entity","bs.persistent"]}
-
-scoreboard objectives add bs.data dummy [{"text":"BS ","color":"dark_gray"},{"text":"Data","color":"aqua"}]
+$tp @s ~$(sx)$(x) ~$(sy)$(y) ~$(sz)$(z)
+data modify storage bs:ctx _ set from entity @s Pos
+data modify storage bs:ctx x set from storage bs:ctx _[0]
+data modify storage bs:ctx y set from storage bs:ctx _[1]
+data modify storage bs:ctx z set from storage bs:ctx _[2]
+kill @s

@@ -15,7 +15,6 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#looked-entity
 # ------------------------------------------------------------------------------------------------------------
 
-
 execute unless predicate bs.view:is_looking_at_entity run return fail
 execute if entity @n[tag=bs.view.is_lookable,tag=!bs.view.bi,sort=arbitrary] run function bs.view:looked_entity/setup
 tag @n[tag=bs.view.is_lookable,sort=arbitrary,limit=255] add bs.view.selected
