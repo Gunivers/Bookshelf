@@ -23,3 +23,5 @@ function bs.raycast:check/entity/shape
 execute if score #raycast.ux bs.data matches 0.. run scoreboard players operation #raycast.lx bs.data += #raycast.dx bs.data
 execute if score #raycast.uy bs.data matches 0.. run scoreboard players operation #raycast.ly bs.data += #raycast.dy bs.data
 execute if score #raycast.uz bs.data matches 0.. run scoreboard players operation #raycast.lz bs.data += #raycast.dz bs.data
+
+execute unless score #raycast.distance bs.data matches 2147483647 run function bs.raycast:collide/entity

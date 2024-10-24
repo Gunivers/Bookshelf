@@ -23,7 +23,7 @@
   - Includes only 2D shape algorithms for now, enabling texture and heightmap terrain generation.
 - ([251](https://github.com/Gunivers/Bookshelf/pull/251)) Enhanced `bs.block` fill functions: the `from` and `to` inputs now support both a list of 3 elements `[x, y, z]`, and a stringified version of coordinates (e.g., `~ ~5 25`)
 - ([258]https://github.com/Gunivers/Bookshelf/issues/258) Add `bs.block:emit_block_particles` feature.
-
+- ([245](https://github.com/Gunivers/Bookshelf/issues/245)) Add piercing and callback arguments to `#bs.raycast:run`.
 
 ### 🔁 Tweaks
 - ([247](https://github.com/Gunivers/Bookshelf/pull/247)) Improve default log format.
@@ -33,6 +33,7 @@
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
 - ([254](https://github.com/Gunivers/Bookshelf/issues/254)) Fix interruptions in the execution loop caused by `#bs.schedule:schedule` callbacks.
 - ([254](https://github.com/Gunivers/Bookshelf/pull/262)) Fix collisions with paintings for `bs.raycast` and `bs.move`.
+- ([256](https://github.com/Gunivers/Bookshelf/issues/256)) Fix XP progress functions at bounds (0% and 100%).
 
 ### 📄 Documentation
 - ([244](https://github.com/Gunivers/Bookshelf/issues/244)) Merge the Inverse trigonometry section in `bs.math` with the Trigonometry one for better clarity.

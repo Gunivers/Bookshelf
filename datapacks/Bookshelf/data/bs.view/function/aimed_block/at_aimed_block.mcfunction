@@ -16,11 +16,7 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # run the raycast at the entity eyes
+tag @s add bs.view.this
+$data modify storage bs:data raycast.on_targeted_block set value 'execute as @n[tag=bs.view.this,sort=arbitrary] run $(run)'
 execute at @s anchored eyes positioned ^ ^ ^ run function bs.raycast:run
-
-# run the command at the block that was found or return early
-execute if score #raycast.distance bs.data matches 2147483647 run return fail
-tp B5-0-0-0-1 @s
-data modify entity B5-0-0-0-1 Pos set from storage bs:out raycast.targeted_block
-$execute at B5-0-0-0-1 run $(run)
-execute in minecraft:overworld run tp B5-0-0-0-1 -30000000 0 1600
+tag @s remove bs.view.this

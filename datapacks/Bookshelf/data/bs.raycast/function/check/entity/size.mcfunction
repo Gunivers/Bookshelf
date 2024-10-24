@@ -16,7 +16,7 @@
 tag @s add bs.raycast.omit
 
 # get the entity relative coordinates
-execute at @s as B5-0-0-0-1 run function bs.raycast:compute/relative_pos with storage bs:data raycast
+execute in minecraft:overworld positioned as @s as B5-0-0-0-1 run function bs.raycast:compute/entity_rpos with storage bs:data raycast
 execute store result score #raycast.min_x bs.data run data get storage bs:ctx _[0] 10000000
 execute store result score #raycast.min_y bs.data run data get storage bs:ctx _[1] 10000000
 execute store result score #raycast.min_z bs.data run data get storage bs:ctx _[2] 10000000
@@ -62,4 +62,4 @@ execute if score #raycast.tmax bs.data matches 0.. \
   if score #raycast.tmin bs.data <= #raycast.tmax bs.data \
   if score #raycast.tmin bs.data < #raycast.distance bs.data \
   if score #raycast.tmin bs.data <= #raycast.max_distance bs.data \
-  run function bs.raycast:collide/entity
+  run function bs.raycast:collide/size

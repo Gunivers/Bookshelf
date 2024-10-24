@@ -15,15 +15,26 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#can-see-as-to-at
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.view:can_see_ata/max_distance/at
-execute store result score #view.can_see_ata.x2 bs.data run data get entity @s Pos[0] 1000
-execute store result score #view.can_see_ata.y2 bs.data run data get entity @s Pos[1] 1000
-execute store result score #view.can_see_ata.z2 bs.data run data get entity @s Pos[2] 1000
-execute store result storage bs:ctx x int 1 run scoreboard players operation #view.can_see_ata.x1 bs.data -= #view.can_see_ata.x2 bs.data
-execute store result storage bs:ctx y int 1 run scoreboard players operation #view.can_see_ata.y1 bs.data -= #view.can_see_ata.y2 bs.data
-execute store result storage bs:ctx z int 1 run scoreboard players operation #view.can_see_ata.z1 bs.data -= #view.can_see_ata.z2 bs.data
+data modify storage bs:ctx _ set value {sx:"",sy:"",sz:""}
+data modify storage bs:ctx _.pos set from entity @s Pos
+
+data modify storage bs:ctx _.s set string storage bs:ctx _.pos[0] 0 1
+execute if data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.x set string storage bs:ctx _.pos[0] 1 -1
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.x set from storage bs:ctx _.pos[0]
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.sx set value "-"
+
+data modify storage bs:ctx _.s set string storage bs:ctx _.pos[1] 0 1
+execute if data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.y set string storage bs:ctx _.pos[1] 1 -1
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.y set from storage bs:ctx _.pos[1]
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.sy set value "-"
+
+data modify storage bs:ctx _.s set string storage bs:ctx _.pos[2] 0 1
+execute if data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.z set string storage bs:ctx _.pos[2] 1 -1
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.z set from storage bs:ctx _.pos[2]
+execute unless data storage bs:ctx _{s:"-"} run data modify storage bs:ctx _.sz set value "-"
+
+execute summon minecraft:marker run function bs.view:can_see_ata/max_distance/get_rpos with storage bs:ctx _
 function bs.view:can_see_ata/max_distance/compute with storage bs:ctx
 
 execute facing entity @s eyes run function bs.raycast:run
-execute if score #raycast.distance bs.data matches 2147483647 run return 1
-return fail
+return run execute if score #raycast.distance bs.data matches 2147483647
