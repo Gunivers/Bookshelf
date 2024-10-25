@@ -13,7 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~
 execute store result score #v bs.ctx run data get entity @s Pos[1]
 scoreboard players remove #v bs.ctx 80
-execute in minecraft:overworld run tp @s -30000000 0 1600
+kill @s

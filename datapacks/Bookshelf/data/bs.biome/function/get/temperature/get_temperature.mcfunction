@@ -18,7 +18,7 @@
 function #bs.biome:get_biome
 execute store result score #t bs.ctx run data get storage bs:out biome.temperature 100000000
 
-execute as B5-0-0-0-1 run function bs.biome:get/temperature/variation
+execute summon minecraft:marker run function bs.biome:get/temperature/variation
 execute if score #v bs.ctx matches 1.. run scoreboard players operation #v bs.ctx *= 125000 bs.const
 execute if score #v bs.ctx matches 1.. run scoreboard players operation #t bs.ctx -= #v bs.ctx
 execute store result storage bs:ctx y double .00000001 run scoreboard players get #t bs.ctx
