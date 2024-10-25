@@ -32,6 +32,7 @@
 ### 🐛 Fixes
 - ([243](https://github.com/Gunivers/Bookshelf/issues/243)) Fix `bs.health` and `bs.move` unload functions.
 - ([254](https://github.com/Gunivers/Bookshelf/issues/254)) Fix interruptions in the execution loop caused by `#bs.schedule:schedule` callbacks.
+- ([264](https://github.com/Gunivers/Bookshelf/pull/264)) Fix schedule module not working outside of overworld.
 
 - ([255](https://github.com/Gunivers/Bookshelf/issues/255)) Fix `bs.move` local velocity collisions.
 - ([254](https://github.com/Gunivers/Bookshelf/pull/262)) Fix collisions with paintings for `bs.raycast` and `bs.move`.

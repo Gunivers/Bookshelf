@@ -13,7 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$$(command)
-
-data remove storage bs:data schedule.slice[-1]
-execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]
+$data modify storage bs:data schedule.slice append from storage bs:data schedule.queue[{time:$(y)}]
+$data remove storage bs:data schedule.queue[{time:$(y)}]

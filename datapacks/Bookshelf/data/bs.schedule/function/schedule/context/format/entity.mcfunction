@@ -13,7 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~ ~ ~
-data modify storage bs:ctx _.Pos set from entity @s Pos
-data modify storage bs:ctx _.Rotation set from entity @s Rotation
-execute in minecraft:overworld run tp @s -30000000 0 1600
+$data modify storage bs:ctx _.entity set value $(text)
+data modify storage bs:ctx _.entity set from storage bs:ctx _.entity.insertion
