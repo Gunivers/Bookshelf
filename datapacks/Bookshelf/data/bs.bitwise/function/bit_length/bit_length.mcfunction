@@ -19,7 +19,6 @@
 # - This function returns the number of bits needed to represent a number
 # - Example: a = 1451, (a)2 = 0b10110101011, |(a)2| = 11
 
-
 scoreboard players operation #n bs.ctx = $bitwise.bit_length.n bs.in
 execute if score #n bs.ctx matches ..-1 run scoreboard players operation #n bs.ctx *= -1 bs.const
 execute if score #n bs.ctx matches 0..127 run return run function bs.bitwise:bit_length/group_1
