@@ -18,19 +18,24 @@
 $data modify storage bs:ctx _ set value $(with)
 
 # Handle the unit, return early on failure
-scoreboard players set #success bs.data 1
+scoreboard players set #s bs.ctx 1
 execute if data storage bs:ctx _.unit run function bs.schedule:schedule/unit/handle with storage bs:ctx _
-execute if score #success bs.data matches 0 run return fail
+execute if score #s bs.ctx matches 0 run return fail
 
 # Schedule the callback, update the gametime and add a unique id
-execute store result storage bs:ctx _.time int 1 run function bs.schedule:schedule/callback with storage bs:ctx _
-execute store result storage bs:ctx _.suid int 1 run scoreboard players add #schedule.suid bs.data 1
+execute store result storage bs:data schedule.entry.time int 1 run function bs.schedule:schedule/callback with storage bs:ctx _
+execute store result storage bs:data schedule.entry.suid int 1 run scoreboard players add #schedule.suid bs.data 1
 
 # Get the current context (entity location and selector)
-data modify storage bs:ctx _.Owner set from entity @s UUID
-execute as B5-0-0-0-1 run function bs.schedule:schedule/context
+execute store success score #s bs.ctx if entity @s
+function bs.schedule:schedule/context/get_dimension
+execute summon minecraft:marker run function bs.schedule:schedule/context/get_position
+execute if score #s bs.ctx matches 0 run function bs.schedule:schedule/context/format/command with storage bs:ctx _
+execute if score #s bs.ctx matches 1 run function bs.schedule:schedule/context/get_entity
+execute if score #s bs.ctx matches 1 run function bs.schedule:schedule/context/format/as_command with storage bs:ctx _
 
 # Add the command to the schedule queue
-data modify storage bs:data schedule.queue prepend from storage bs:ctx _
+data modify storage bs:data schedule.entry.id set from storage bs:ctx _.id
+data modify storage bs:data schedule.queue prepend from storage bs:data schedule.entry
 function #bs.log:info {namespace:"bs.schedule", tag:"schedule", path:"#bs.schedule:schedule", message:'"Command scheduled."'}
-return run data get storage bs:ctx _.suid 1
+return run data get storage bs:data schedule.entry.suid 1
