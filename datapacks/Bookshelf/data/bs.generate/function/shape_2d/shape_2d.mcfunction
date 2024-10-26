@@ -24,4 +24,4 @@ data modify storage bs:data generate._ set value { \
 $data modify storage bs:data generate._ merge value $(with)
 $data modify storage bs:data generate._ merge value {impl:"dummy",cb:'$(run)',w:$(width),h:$(height),x:0,y:0,oy:"~",oz:"~"}
 
-execute align xyz as B5-0-0-0-1 positioned ~.5 ~.5 ~.5 run function bs.generate:shape_2d/recurse/init with storage bs:data generate._
+execute align xyz positioned ~.5 ~.5 ~.5 summon minecraft:marker run function bs.generate:shape_2d/recurse/init with storage bs:data generate._

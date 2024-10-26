@@ -15,5 +15,5 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/master/modules/position.html#get-position-and-rotation
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.position:get/position/ctx
+execute summon minecraft:marker run function bs.position:get/position/ctx
 $execute store result score @s bs.pos.x run data get storage bs:ctx _[0] $(scale)

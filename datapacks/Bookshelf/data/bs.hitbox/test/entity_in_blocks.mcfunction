@@ -1,9 +1,7 @@
 # @batch bs.hitbox
 # @dummy
 
-await entity B5-0-0-0-1
-
-fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:air
+fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:air replace minecraft:barrier
 setblock ~-1 ~ ~-1 minecraft:bookshelf
 
 ## |TEST CASE|: Entity is not inside a block

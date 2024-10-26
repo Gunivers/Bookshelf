@@ -20,4 +20,4 @@ execute unless block ~ ~ ~ #bs.hitbox:is_composite run \
 
 loot replace block -30000000 0 1606 container.0 loot bs.hitbox:get_block/get
 data modify storage bs:out hitbox set from block -30000000 0 1606 item.components."minecraft:custom_data"
-execute if block ~ ~ ~ #bs.hitbox:has_offset as B5-0-0-0-1 run function bs.hitbox:get_block/offset/get
+execute if block ~ ~ ~ #bs.hitbox:has_offset summon minecraft:marker run function bs.hitbox:get_block/offset/get

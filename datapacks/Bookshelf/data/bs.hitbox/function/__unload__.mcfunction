@@ -15,7 +15,6 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/hitbox.html
 # ------------------------------------------------------------------------------------------------------------
 
-kill B5-0-0-0-1
 setblock -30000000 0 1606 minecraft:air
 forceload remove -30000000 1600
 

@@ -1,8 +1,6 @@
 # Mirror around a point
 # @batch bs.link
 
-await entity B5-0-0-0-1
-
 summon minecraft:armor_stand 0.0 0.0 0.0 {Tags:["packtest","packtest.1"],NoGravity:1b,Rotation:[75f,12f]}
 summon minecraft:armor_stand 0.0 0.0 0.0 {Tags:["packtest","packtest.2"],NoGravity:1b,Rotation:[0f,0f]}
 

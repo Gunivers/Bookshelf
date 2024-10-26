@@ -33,4 +33,4 @@ execute store result score #c bs.ctx run data get storage bs:data generate._.siz
 execute store result storage bs:data generate._.k int .001 run scoreboard players operation #generate.k bs.data /= #c bs.ctx
 execute unless data storage bs:data generate._.seed store result storage bs:data generate._.seed int 1 run random value 1.. bs.generate:fractal_shape_2d
 
-execute align xyz as B5-0-0-0-1 positioned ~.5 ~.5 ~.5 run function bs.generate:shape_2d/recurse/init with storage bs:data generate._
+execute align xyz positioned ~.5 ~.5 ~.5 summon minecraft:marker run function bs.generate:shape_2d/recurse/init with storage bs:data generate._

@@ -15,10 +15,8 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html#shape-2d
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~ ~ ~
-data modify storage bs:data generate._.pos set from entity @s Pos
-data modify storage bs:data generate._.rot set from entity @s Rotation
-execute in minecraft:overworld run tp @s -30000000 0 1600
+execute summon minecraft:marker run function bs.generate:utils/get_location
+execute unless data storage bs:data generate._.dim run function bs.generate:utils/get_dimension
 
 execute store result storage bs:data generate._.x int 1 run scoreboard players get $generate.x bs.data
 execute store result storage bs:data generate._.y int 1 run scoreboard players get $generate.y bs.data

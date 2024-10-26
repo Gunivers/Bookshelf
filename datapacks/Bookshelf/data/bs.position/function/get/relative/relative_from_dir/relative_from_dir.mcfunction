@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-relative
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.position:get/relative/relative_from_dir/ctx
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.position:get/relative/relative_from_dir/ctx
 $execute store result score @s bs.pos.x run data get storage bs:ctx _[0] $(scale)
 $execute store result score @s bs.pos.y run data get storage bs:ctx _[1] $(scale)
 $execute store result score @s bs.pos.z run data get storage bs:ctx _[2] $(scale)

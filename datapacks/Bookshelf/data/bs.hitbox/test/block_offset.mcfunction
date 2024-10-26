@@ -1,7 +1,5 @@
 # @batch bs.hitbox
 
-await entity B5-0-0-0-1
-
 ## |TEST CASE|: Block with no offset
 setblock ~ ~ ~ minecraft:poppy
 function #bs.hitbox:get_block

@@ -17,6 +17,10 @@
       "required": false
     },
     {
+      "id": "#bs.generate:unload",
+      "required": false
+    },
+    {
       "id": "#bs.health:unload",
       "required": false
     },

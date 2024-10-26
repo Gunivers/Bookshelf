@@ -16,4 +16,4 @@
 # ------------------------------------------------------------------------------------------------------------
 
 $execute store result storage bs:ctx x double $(scale) run scoreboard players get @s bs.rot.h
-execute at @s run function bs.position:set/rotation/h/run with storage bs:ctx
+function bs.position:set/rotation/h/run with storage bs:ctx

@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-relative
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.position:get/position/ctx
+execute summon minecraft:marker run function bs.position:get/position/ctx
 $execute store result score #x bs.ctx run data get storage bs:ctx _[0] $(scale)
 $execute store result score #y bs.ctx run data get storage bs:ctx _[1] $(scale)
 $execute store result score #z bs.ctx run data get storage bs:ctx _[2] $(scale)

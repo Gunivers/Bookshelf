@@ -1,8 +1,6 @@
 # @batch bs.hitbox
 # @dummy
 
-await entity B5-0-0-0-1
-
 ## |TEST CASE|: Default entity scale
 function #bs.hitbox:get_entity
 assert data storage bs:out hitbox{ scale: 1.0 }

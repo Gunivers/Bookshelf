@@ -11,9 +11,10 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#set-rotation
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store result storage bs:ctx y double $(scale) run scoreboard players get @s bs.rot.v
-function bs.position:set/rotation/v/run with storage bs:ctx
+execute if dimension minecraft:overworld run return run data modify storage bs:data generate._.dim set value "minecraft:overworld"
+execute if dimension minecraft:the_nether run return run data modify storage bs:data generate._.dim set value "minecraft:the_nether"
+execute if dimension minecraft:the_end run return run data modify storage bs:data generate._.dim set value "minecraft:the_end"
+
+execute positioned -30000000 0 1600 summon piglin_brute run function bs.generate:utils/get_custom_dimension
