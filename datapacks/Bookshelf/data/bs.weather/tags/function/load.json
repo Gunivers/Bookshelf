@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.weather:__load__"
   ]
 }

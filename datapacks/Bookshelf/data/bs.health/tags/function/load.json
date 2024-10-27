@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.health:__load__",
     {
       "id": "#bs.log:load",

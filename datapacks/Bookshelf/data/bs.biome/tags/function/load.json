@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.biome:__load__"
   ]
 }

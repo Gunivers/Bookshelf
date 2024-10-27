@@ -1,2 +1,2 @@
 # @batch bs.generate
-# @beforebatch function #bs.generate:load
+# @beforebatch function #bs.generate:exclusive_load

@@ -1,2 +1,2 @@
 # @batch bs.block
-# @beforebatch function #bs.block:load
+# @beforebatch function #bs.block:exclusive_load

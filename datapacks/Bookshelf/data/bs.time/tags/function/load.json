@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.time:__load__"
   ]
 }
