@@ -13,7 +13,10 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$$(command)
+data modify entity @s {} merge from storage bs:data schedule.slice[-1]
+execute if data storage bs:data schedule.slice[-1].esid run function bs.schedule:execute/run/with_entity with storage bs:data schedule.slice[-1]
+execute unless data storage bs:data schedule.slice[-1].esid run function bs.schedule:execute/run/without_entity with storage bs:data schedule.slice[-1]
 
 data remove storage bs:data schedule.slice[-1]
-execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]
+execute if data storage bs:data schedule.slice[-1] run return run function bs.schedule:execute/loop
+tp @s -30000000 0 1600

@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:data schedule.entry.command set value 'execute as $(entity) in $(dimension) positioned $(x) $(y) $(z) rotated $(h) $(v) run $(command)'
+$execute at @s in $(dimension) as @e[predicate=bs.schedule:target] run $(command)

@@ -17,4 +17,4 @@ data modify storage bs:data schedule.slice set value []
 execute store result storage bs:ctx y int 1 run time query gametime
 function bs.schedule:execute/slice with storage bs:ctx
 
-execute if data storage bs:data schedule.slice[-1] run function bs.schedule:execute/loop with storage bs:data schedule.slice[-1]
+execute if data storage bs:data schedule.slice[-1] as B5-0-0-0-1 run function bs.schedule:execute/loop
