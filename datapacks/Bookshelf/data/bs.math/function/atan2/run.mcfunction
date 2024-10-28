@@ -19,5 +19,6 @@ execute store result entity @s Pos[0] double 0.001 run scoreboard players get $m
 execute store result entity @s Pos[2] double 0.001 run scoreboard players get $math.atan2.x bs.in
 execute positioned 0.0 0.0 0.0 facing entity @s feet rotated ~ 0.0 run tp @s -30000000 0 1600 ~ ~
 execute store result score $math.atan2 bs.out run data get entity @s Rotation[0] -100
-execute if score $math.atan2 bs.out matches 18000.. run scoreboard players remove $math.atan2 bs.out 36000
+execute if score $math.atan2 bs.out matches ..-18000 run scoreboard players add $math.atan2 bs.out 36000
+execute if score $math.atan2 bs.out matches 18001.. run scoreboard players remove $math.atan2 bs.out 36000
 return run scoreboard players get $math.atan2 bs.out

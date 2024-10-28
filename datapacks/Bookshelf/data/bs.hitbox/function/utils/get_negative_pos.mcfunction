@@ -11,14 +11,10 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#inverse-trigonometry
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result entity @s Pos[0] double 0.001 run scoreboard players get $math.atan.x bs.in
-data modify entity @s Pos[2] set value 1.0
-execute positioned 0.0 0.0 0.0 facing entity @s feet rotated ~ 0.0 run tp @s -30000000 0 1600 ~ ~
-execute store result score $math.atan bs.out run data get entity @s Rotation[0] -100
-execute if score $math.atan bs.out matches ..-18000 run scoreboard players add $math.atan bs.out 36000
-execute if score $math.atan bs.out matches 18001.. run scoreboard players remove $math.atan bs.out 36000
-return run scoreboard players get $math.atan bs.out
+data modify storage bs:ctx _ set from entity @s Pos
+execute store result storage bs:ctx x int -1 run data get storage bs:ctx _[0]
+execute store result storage bs:ctx y int -1 run data get storage bs:ctx _[1]
+execute store result storage bs:ctx z int -1 run data get storage bs:ctx _[2]
+kill @s
