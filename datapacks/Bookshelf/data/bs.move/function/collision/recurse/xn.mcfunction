@@ -13,4 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$tp @s $(x) $(y) $(z)
+scoreboard players operation #move.y bs.data = #move.ry bs.data
+$function bs.move:collision/recurse/$(sy) with storage bs:data move
+
+scoreboard players remove #move.x bs.data 10000000
+execute if score #move.x bs.data >= #move.nx bs.data positioned ~-1 ~ ~ run function bs.move:collision/recurse/xn with storage bs:data move

@@ -20,7 +20,7 @@ scoreboard players set #t bs.ctx 1000000000
 execute store result storage bs:ctx y double .000000001 run scoreboard players operation #t bs.ctx /= #s bs.ctx
 
 # sincos(h: Phi) & sincos(v: Theta)
-execute as B5-0-0-0-1 run function bs.vector:convert/basis_rot_3d/sincos with storage bs:ctx
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.vector:convert/basis_rot_3d/sincos with storage bs:ctx
 
 # X' = Z * sin(h) + X * cos(h)
 scoreboard players operation $vector.basis_rot_3d.0 bs.out = $vector.basis_rot_3d.pos.2 bs.in

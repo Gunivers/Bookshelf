@@ -19,7 +19,7 @@ execute store result storage bs:ctx x int 1 run scoreboard players get @s bs.vel
 execute store result storage bs:ctx y int 1 run scoreboard players get @s bs.vel.y
 execute store result storage bs:ctx z int 1 run scoreboard players get @s bs.vel.z
 
-execute as B5-0-0-0-1 run function bs.move:convert/local_to_canonical/compute with storage bs:ctx
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.move:convert/local_to_canonical/compute with storage bs:ctx
 
 execute store result score @s bs.vel.x run data get storage bs:ctx _[0]
 execute store result score @s bs.vel.y run data get storage bs:ctx _[1]

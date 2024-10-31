@@ -226,7 +226,7 @@ By modifying the `on_collision` input key, you have the freedom to specify the f
 
 ### How it works?
 
-Upon collision, you have the freedom to update both the velocity score that will be used in the next tick `@s bs.vel.[x,y,z]` and the remaining velocity `$move.vel_remaining.[x,y,z] bs.data`, which is always scaled by 1000. Since the module will attempt to continue moving based on the remaining velocity, it's crucial to avoid introducing a race condition.
+Upon collision, you have the freedom to update both the velocity score that will be used in the next tick `@s bs.vel.[x,y,z]` and the remaining velocity `$move.vel_remaining.[x,y,z] bs.data`. Since the module will attempt to continue moving based on the remaining velocity, it's crucial to avoid introducing a race condition.
 
 The simplest collision resolution is to stop the movement.
 

@@ -16,7 +16,7 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # sincos(h: Phi) & sincos(v: Theta)
-execute as B5-0-0-0-1 run function bs.move:convert/canonical_to_local/sincos
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.move:convert/canonical_to_local/sincos
 
 # X' = Z * sin(h) + X * cos(h)
 scoreboard players operation #x bs.ctx = @s bs.vel.z

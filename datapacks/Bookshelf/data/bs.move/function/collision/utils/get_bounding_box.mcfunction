@@ -13,20 +13,22 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# compute a bounding box that encompasses all passengers
+tag @s add bs.move.omit
+execute unless entity @s[type=#bs.hitbox:is_sized] on passengers run return run function bs.move:collision/utils/get_bounding_box
+
 function #bs.hitbox:get_entity
 
-execute store result score #h bs.ctx run data get storage bs:out hitbox.height 1000
-execute store result score #w bs.ctx run data get storage bs:out hitbox.width 500
+execute store result score #h bs.ctx run data get storage bs:out hitbox.height 10000
+execute store result score #w bs.ctx run data get storage bs:out hitbox.width 5000
 execute store result score #s bs.ctx run data get storage bs:out hitbox.scale 1000
-execute store result score #y bs.ctx run data get entity @s Pos[1] 1000
+execute store result score #y bs.ctx run data get entity @s Pos[1] 10000
 
 scoreboard players operation #h bs.ctx *= #s bs.ctx
 scoreboard players operation #w bs.ctx *= #s bs.ctx
 scoreboard players operation #y bs.ctx -= #move.y bs.data
 scoreboard players operation #y bs.ctx *= 1000 bs.const
 scoreboard players operation #h bs.ctx += #y bs.ctx
-execute store result score #move.sh bs.data run scoreboard players operation #move.h bs.data > #h bs.ctx
-execute store result score #move.sw bs.data run scoreboard players operation #move.w bs.data > #w bs.ctx
+scoreboard players operation #move.h bs.data > #h bs.ctx
+scoreboard players operation #move.w bs.data > #w bs.ctx
 
-execute on passengers run function bs.move:collision/hitbox
+execute on passengers run function bs.move:collision/utils/get_bounding_box

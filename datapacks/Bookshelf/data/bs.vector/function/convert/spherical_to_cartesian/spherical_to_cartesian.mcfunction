@@ -19,7 +19,7 @@ $scoreboard players set #s bs.ctx $(scaling)
 scoreboard players set #t bs.ctx 1000000000
 execute store result storage bs:ctx y double .000000001 run scoreboard players operation #t bs.ctx /= #s bs.ctx
 execute store result storage bs:ctx x int 1 run scoreboard players get $vector.spherical_to_cartesian.2 bs.in
-execute as B5-0-0-0-1 run function bs.vector:convert/spherical_to_cartesian/compute with storage bs:ctx
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.vector:convert/spherical_to_cartesian/compute with storage bs:ctx
 execute store result score $vector.spherical_to_cartesian.0 bs.out run data get storage bs:ctx _[0]
 execute store result score $vector.spherical_to_cartesian.1 bs.out run data get storage bs:ctx _[1]
 execute store result score $vector.spherical_to_cartesian.2 bs.out run data get storage bs:ctx _[2]

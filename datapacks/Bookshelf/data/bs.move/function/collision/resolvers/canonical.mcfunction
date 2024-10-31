@@ -13,11 +13,9 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# get the travelled distance
-scoreboard players operation #raycast.distance bs.data = #raycast.tmin bs.data
-
-# get the normal of the surface that was hit
-data modify storage bs:out raycast.hit_normal set value [0,0,0]
-execute if score #raycast.distance bs.data = #x bs.ctx store result storage bs:out raycast.hit_normal[0] int -1 run data get storage bs:data raycast.sx
-execute if score #raycast.distance bs.data = #y bs.ctx store result storage bs:out raycast.hit_normal[1] int -1 run data get storage bs:data raycast.sy
-execute if score #raycast.distance bs.data = #z bs.ctx store result storage bs:out raycast.hit_normal[2] int -1 run data get storage bs:data raycast.sz
+# resolve collision using the on_collision callback
+$function $(on_collision)
+execute store result storage bs:ctx x double .0000001 run scoreboard players get $move.vel_remaining.x bs.data
+execute store result storage bs:ctx y double .0000001 run scoreboard players get $move.vel_remaining.y bs.data
+execute store result storage bs:ctx z double .0000001 run scoreboard players get $move.vel_remaining.z bs.data
+execute unless data storage bs:ctx {x:0d,y:0d,z:0d} at @s run function bs.move:teleport/canonical/run with storage bs:ctx

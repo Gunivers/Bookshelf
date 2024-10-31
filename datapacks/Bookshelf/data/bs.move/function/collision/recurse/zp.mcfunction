@@ -13,11 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# get the travelled distance
-scoreboard players operation #raycast.distance bs.data = #raycast.tmin bs.data
+$execute if score #move.b bs.data matches 1 unless block ~ ~ ~ $(ignored_blocks) run function bs.move:collision/check/block/any
+$execute if score #move.e bs.data matches 1 as @e[type=!$(ignored_entities),tag=$(entities),tag=!bs.move.omit,dx=0] run function bs.move:collision/check/entity/any
 
-# get the normal of the surface that was hit
-data modify storage bs:out raycast.hit_normal set value [0,0,0]
-execute if score #raycast.distance bs.data = #x bs.ctx store result storage bs:out raycast.hit_normal[0] int -1 run data get storage bs:data raycast.sx
-execute if score #raycast.distance bs.data = #y bs.ctx store result storage bs:out raycast.hit_normal[1] int -1 run data get storage bs:data raycast.sy
-execute if score #raycast.distance bs.data = #z bs.ctx store result storage bs:out raycast.hit_normal[2] int -1 run data get storage bs:data raycast.sz
+scoreboard players add #move.z bs.data 10000000
+execute if score #move.z bs.data <= #move.nz bs.data positioned ~ ~ ~1 run function bs.move:collision/recurse/zp with storage bs:data move

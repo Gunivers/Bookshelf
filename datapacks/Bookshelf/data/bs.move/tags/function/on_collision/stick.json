@@ -1,5 +1,5 @@
 {
   "values": [
-    "bs.move:collision/resolution/behaviors/stick"
+    "bs.move:collision/resolvers/behaviors/stick"
   ]
 }

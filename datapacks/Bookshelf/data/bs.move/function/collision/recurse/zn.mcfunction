@@ -13,7 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard players operation #move.y1 bs.data /= 1000 bs.const
-scoreboard players operation #move.y1 bs.data *= 1000 bs.const
-scoreboard players operation #move.y1 bs.data -= #move.y bs.data
-scoreboard players operation #move.y2 bs.data += #move.sh bs.data
+$execute if score #move.b bs.data matches 1 unless block ~ ~ ~ $(ignored_blocks) run function bs.move:collision/check/block/any
+$execute if score #move.e bs.data matches 1 as @e[type=!$(ignored_entities),tag=$(entities),tag=!bs.move.omit,dx=0] run function bs.move:collision/check/entity/any
+
+scoreboard players remove #move.z bs.data 10000000
+execute if score #move.z bs.data >= #move.nz bs.data positioned ~ ~ ~-1 run function bs.move:collision/recurse/zn with storage bs:data move

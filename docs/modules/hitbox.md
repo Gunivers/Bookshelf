@@ -262,6 +262,13 @@ Determines if the entity's hitbox is intangible, meaning it won't interact physi
 Identifies if the entity has a non-standard hitbox shape, differing from the typical cubic or rectangular hitbox.
 
 :::
+:::{tab-item} Is sized
+
+**`#bs.hitbox:is_sized`**
+
+Identifies if the entity has a rectangular hitbox size.
+
+:::
 ::::
 
 > **Credits**: Aksiome
