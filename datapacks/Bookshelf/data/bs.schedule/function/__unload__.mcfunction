@@ -20,6 +20,7 @@ forceload remove -30000000 1600
 
 scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.data
+scoreboard objectives remove bs.schedule.id
 
 data remove storage bs:data schedule
 data remove storage bs:const schedule
