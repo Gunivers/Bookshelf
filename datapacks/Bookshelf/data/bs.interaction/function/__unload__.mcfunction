@@ -13,12 +13,11 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute as @e[predicate=bs.interaction:is_listener] run function bs.interaction:event/clear_events
+execute as @e[type=minecraft:interaction] run function #bs.interaction:clear_events {with:{}}
 
-data remove storage bs:data gui
-scoreboard objectives remove bs.interaction.hover_state
-scoreboard objectives remove bs.interaction.id
 scoreboard objectives remove bs.ctx
+scoreboard objectives remove bs.data
 
-kill B5-0-0-0-4
-forceload remove -30000000 1600
+scoreboard objectives remove bs.interaction.id
+
+data remove storage bs:data interaction

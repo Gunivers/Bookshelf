@@ -1,7 +1,7 @@
 {
   "__bookshelf__": {
     "feature": true,
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
     "authors": [
       "theogiraudet"
     ],
@@ -10,11 +10,11 @@
       "minecraft_version": "24w13a"
     },
     "updated": {
-      "date": "2024/03/30",
-      "minecraft_version": "24w13a"
+      "date": "2024/11/01",
+      "minecraft_version": "1.21.3"
     }
   },
   "values": [
-    "bs.interaction:on_event/default_callback/none"
+    "bs.interaction:callback/none"
   ]
 }

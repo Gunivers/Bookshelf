@@ -29,6 +29,10 @@
       "required": false
     },
     {
+      "id": "#bs.interaction:unload",
+      "required": false
+    },
+    {
       "id": "#bs.link:unload",
       "required": false
     },

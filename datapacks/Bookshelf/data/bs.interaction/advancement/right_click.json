@@ -9,7 +9,12 @@
             "entity": "this",
             "predicate": {
               "type": "minecraft:interaction",
-              "nbt": "{ Tags: [ \"bs.interaction.listen_right_click\" ] }"
+              "nbt": "{ Tags: [ \"bs.interaction.listen_right_click\" ] }",
+              "distance": {
+                "absolute": {
+                  "max": 24
+                }
+              }
             }
           }
         ]
@@ -17,6 +22,6 @@
     }
   },
   "rewards": {
-    "function": "bs.interaction:on_event/right_click/right_clicked"
+    "function": "bs.interaction:on_event/right_click/right_click"
   }
 }

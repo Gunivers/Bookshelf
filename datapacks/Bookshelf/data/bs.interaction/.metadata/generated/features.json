@@ -1,7 +1,7 @@
 [
   {
     "name": "callback\\glow",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
     "authors": [
       "theogiraudet"
     ],
@@ -10,13 +10,13 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/03/30",
-      "version": "24w13a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     }
   },
   {
     "name": "callback\\none",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
     "authors": [
       "theogiraudet"
     ],
@@ -25,13 +25,13 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/03/30",
-      "version": "24w13a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     }
   },
   {
     "name": "callback\\unglow",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#default-callback",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
     "authors": [
       "theogiraudet"
     ],
@@ -40,29 +40,30 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/03/30",
-      "version": "24w13a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     }
   },
   {
-    "name": "create_listener",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#listener",
+    "name": "clear_events",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#clear-events",
     "authors": [
-      "theogiraudet"
+      "Aksiome"
     ],
     "created": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     }
   },
   {
     "name": "on_hover",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
     "authors": [
+      "Aksiome",
       "theogiraudet"
     ],
     "created": {
@@ -70,8 +71,8 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "dependencies": [
       "bs.log"
@@ -81,6 +82,7 @@
     "name": "on_hover_enter",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
     "authors": [
+      "Aksiome",
       "theogiraudet"
     ],
     "created": {
@@ -88,8 +90,8 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "dependencies": [
       "bs.log"
@@ -99,6 +101,7 @@
     "name": "on_hover_leave",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
     "authors": [
+      "Aksiome",
       "theogiraudet"
     ],
     "created": {
@@ -106,8 +109,8 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "dependencies": [
       "bs.log"
@@ -117,6 +120,7 @@
     "name": "on_left_click",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
     "authors": [
+      "Aksiome",
       "theogiraudet"
     ],
     "created": {
@@ -124,8 +128,8 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "dependencies": [
       "bs.log"
@@ -135,6 +139,7 @@
     "name": "on_right_click",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
     "authors": [
+      "Aksiome",
       "theogiraudet"
     ],
     "created": {
@@ -142,44 +147,11 @@
       "version": "24w13a"
     },
     "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
+      "date": "2024/11/01",
+      "version": "1.21.3"
     },
     "dependencies": [
       "bs.log"
     ]
-  },
-  {
-    "name": "set_as_listener",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#listener",
-    "authors": [
-      "theogiraudet"
-    ],
-    "created": {
-      "date": "2024/03/30",
-      "version": "24w13a"
-    },
-    "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
-    },
-    "dependencies": [
-      "bs.log"
-    ]
-  },
-  {
-    "name": "unset_as_listener",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#on-event",
-    "authors": [
-      "theogiraudet"
-    ],
-    "created": {
-      "date": "2024/03/30",
-      "version": "24w13a"
-    },
-    "updated": {
-      "date": "2024/09/14",
-      "version": "23w37a"
-    }
   }
 ]

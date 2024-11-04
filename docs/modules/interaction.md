@@ -1,4 +1,4 @@
-# 🫵 Interaction
+# 🖱️ Interaction
 
 **`#bs.interaction:help`**
 
@@ -22,197 +22,171 @@ You can find below all functions available in this API.
 
 ---
 
-### Listener
+### Clear events
 
-:::::{tab-set}
-::::{tab-item} Create
+```{function} #bs.interaction:clear_events
 
-```{function} #bs.interaction:create_listener
-
-Create a new existing interaction and set it as listener.
+Clear events registered for the specified listener entity.
 
 :Inputs:
-  **Execution `at <entity>` or `positioned <x> <y> <z>`**: The position where summon the listener.
-  **Function macro**:
-    :::{treeview}
-    - {nbt}`compound` Arguments
-      - {nbt}`compound` **with**: the NBT of the interaction entity. See Minecraft Wiki to have the exhaustive list of supported NBT tags.
-    :::
+  **Execution `as <entity>`**: Listener entity for which the events will be cleared.
+
+  **Function Macro**:
+  :::{treeview}
+  - {nbt}`compound` **Arguments**:
+    - {nbt}`compound` **with**: Parameters to filter which events to clear. Clear all events if empty.
+      - {nbt}`string` **type**: Specify the type of events to clear.
+      - {nbt}`int` **id**: Specify the ID of events to clear.
+  :::
 
 :Outputs:
-  **State**: A new interaction with the listener role.
+  **Return**: The number of events removed.
+
+  **State**: The specified events for the listener entity will be removed.
 ```
 
-::::
-::::{tab-item} Set
-
-```{function} #bs.interaction:set_as_listener
-
-Set an interaction as listener.
-
-:Inputs:
-  **Execution `as <entities>`**: The interaction to set as listener.
-
-:Outputs:
-  **State**: The interaction is now a listener and events can be bind to it.
-```
-
-::::
-::::{tab-item} Unset
-
-```{function} #bs.interaction:unset_as_listener
-
-Unset an existing interaction to its listener role.
-
-:Inputs:
-  **Execution `as <entities>`**: The interactions to unset the listener role.
-
-:Outputs:
-  **State**: The interaction is not an listener anymore.
-```
-
-::::
-:::::
-
-*Set then unset an interaction as listener:*
+*Clear hover events for the listener entity:*
 
 ```mcfunction
 summon minecraft:interaction ~ ~ ~ { Tags: ["bs.entity.interaction"], width: 1f, height: 1f }
 
-# The interaction is now a listener
-execute as @n[tag="bs.entity.interaction"] run function #bs.interaction:set_as_listener
-# The interaction is not a listener anymore
-execute as @n[tag="bs.entity.interaction"] run function #bs.interaction:unset_as_listener
+# Register hover events for the listener
+execute as @n[tag=bs.entity.interaction] run function #bs.interaction:on_hover { run: "say Hovered", executor: "target" }
+
+# Clear hover events for the listener
+execute as @n[tag=bs.entity.interaction] run function #bs.interaction:clear_events { with: { type: "hover" } }
 ```
+
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
 ### On event
 
 :::::{tab-set}
-::::{tab-item} Right click
-
-```{function} #bs.interaction:on_right_click
-
-Add a new callback function to execute when the right click is pressed on the current listener.
-A listener can listen to several events.
-
-:Inputs:
-  **Execution `as <entity>`**: The listener on which add the new callback.
-
-  **Function macro**:
-  :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`string` **callback**: The function to execute when right clicked.
-    - {nbt}`string`{nbt}`compound` **executor**: Must be "target", "source" or a valid selector. The entity on which the callback will be executed (`execute as <entity>`). "source" is the player who right clicked on the listener. "target" is listener itself. Finally the selector can be used to target other entities.
-      - {nbt}`string` **selector**: Entities on which the callback will be executed (`execute as <entity>`).
-      - {nbt}`bool` **lazy**: If the selector should be interpreted now (`false`) or during the event (`true` - default). If `false`, the selector must target only one entity to replace the selector by the entity's UUID. Useful to optimize the execution, for instance when the entity that should be targeted is a graphical representation of the interaction. If several entities are targeted, takes the first one.
-  :::
-
-:Outputs:
-  **Return**: The callback ID.
-
-  **State**: The listener will trigger the callback when right clicked.
-```
-::::
 ::::{tab-item} Left click
 
 ```{function} #bs.interaction:on_left_click
 
-Add a new callback function to execute when the left click is pressed on the current listener.
-A listener can listen to several events.
+Register a command to run when the left click is pressed on the current listener.
+Each listener can respond to multiple events.
 
 :Inputs:
-  **Execution `as <entity>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: Listener entity for which the event is registered.
 
   **Function macro**:
   :::{treeview}
   - {nbt}`compound` Arguments
-    - {nbt}`string` **callback**: The function to execute when right clicked.
-    - {nbt}`string`{nbt}`compound` **executor**: Must be "target", "source" or a valid selector. The entity on which the callback will be executed (`execute as <entity>`). "source" is the player who left clicked on the listener. "target" is listener itself. Finally the selector can be used to target other entities.
-      - {nbt}`string` **selector**: Entities on which the callback will be executed (`execute as <entity>`).
-      - {nbt}`bool` **lazy**: If the selector should be interpreted now (`false`) or during the event (`true` - default). If `false`, the selector must target only one entity to replace the selector by the entity's UUID. Useful to optimize the execution, for instance when the entity that should be targeted is a graphical representation of the interaction. If several entities are targeted, takes the first one.
+    - {nbt}`string` **run**: Command to execute upon left-click.
+    - {nbt}`string` {nbt}`compound` **executor**: Defines the entity on which the command will be executed. Can be either **"source"** for the player who performed the action or **"target"** for the listener entity itself. A compound can also be used to target other entities:
+      - {nbt}`string` **selector**: Specifies entities for the command execution (`execute as <entity>`).
+      - {nbt}`bool` **lazy**: Determines whether to resolve the selector immediately (`false`) or at runtime (`true`, default). If `false`, the selector must target only one entity, replacing the selector with that entity’s UUID. Useful for optimizing execution, especially when targeting graphical representations. If multiple entities are targeted, the first one is selected.
   :::
 
 :Outputs:
-  **Return**: The callback ID.
+  **Return**: The ID of the created event.
 
-  **State**: The listener will trigger the callback when left clicked.
+  **State**: The listener will trigger the event when left clicked.
 ```
 ::::
-::::{tab-item} Enter hover
+::::{tab-item} Right click
 
-```{function} #bs.interaction:on_enter_hover
+```{function} #bs.interaction:on_right_click
 
-Add a new callback function to execute when the player starts hovering the listener.
-A listener can listen to several events.
+Register a command to run when the right click is pressed on the current listener.
+Each listener can respond to multiple events.
 
 :Inputs:
-  **Execution `as <entity>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: Listener entity for which the event is registered.
 
-  **Function macro**:
+  **Function Macro**:
   :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`string` **callback**: The function to execute when right clicked.
-    - {nbt}`string`{nbt}`compound` **executor**: Must be "target", "source" or a valid selector. The entity on which the callback will be executed (`execute as <entity>`). "source" is the player who start hovering the listener. "target" is listener itself. Finally the selector can be used to target other entities.
-      - {nbt}`string` **selector**: Entities on which the callback will be executed (`execute as <entity>`).
-      - {nbt}`bool` **lazy**: If the selector should be interpreted now (`false`) or during the event (`true` - default). If `false`, the selector must target only one entity to replace the selector by the entity's UUID. Useful to optimize the execution, for instance when the entity that should be targeted is a graphical representation of the interaction. If several entities are targeted, takes the first one.
+  - {nbt}`compound` **Arguments**:
+    - {nbt}`string` **run**: Command to execute upon right-click.
+    - {nbt}`string` {nbt}`compound` **executor**: Defines the entity on which the command will be executed. Can be either **"source"** for the player who performed the action or **"target"** for the listener entity itself. A compound can also be used to target other entities:
+      - {nbt}`string` **selector**: Specifies entities for the command execution (`execute as <entity>`).
+      - {nbt}`bool` **lazy**: Determines whether to resolve the selector immediately (`false`) or at runtime (`true`, default). If `false`, the selector must target only one entity, replacing the selector with that entity’s UUID. Useful for optimizing execution, especially when targeting graphical representations. If multiple entities are targeted, the first one is selected.
   :::
 
 :Outputs:
-  **Return**: The callback ID.
+  **Return**: The ID of the created event.
 
-  **State**: The listener will trigger the callback when start hovered.
+  **State**: The listener will trigger the event when right clicked.
 ```
 ::::
 ::::{tab-item} Hover
 
 ```{function} #bs.interaction:on_hover
 
-Add a new callback function to execute while the player hovers the listener.
-A listener can listen to several events.
+Register a command to run continuously while the player is hovering over the listener.
+Each listener can respond to multiple events.
 
 :Inputs:
-  **Execution `as <entity>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: Listener entity for which the event is registered.
 
-  **Function macro**:
+  **Function Macro**:
   :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`string` **callback**: The function to execute when right clicked.
-    - {nbt}`string`{nbt}`compound` **executor**: Must be "target", "source" or a valid selector. The entity on which the callback will be executed (`execute as <entity>`). "source" is the player who hovering the listener. "target" is listener itself. Finally the selector can be used to target other entities.
-      - {nbt}`string` **selector**: Entities on which the callback will be executed (`execute as <entity>`).
-      - {nbt}`bool` **lazy**: If the selector should be interpreted now (`false`) or during the event (`true` - default). If `false`, the selector must target only one entity to replace the selector by the entity's UUID. Useful to optimize the execution, for instance when the entity that should be targeted is a graphical representation of the interaction. If several entities are targeted, takes the first one.
+  - {nbt}`compound` **Arguments**:
+    - {nbt}`string` **run**: Command to execute while hovering over the listener.
+    - {nbt}`string` {nbt}`compound` **executor**: Defines the entity on which the command will be executed. Can be either **"source"** for the player who performed the action or **"target"** for the listener entity itself. A compound can also be used to target other entities:
+      - {nbt}`string` **selector**: Specifies entities for the command execution (`execute as <entity>`).
+      - {nbt}`bool` **lazy**: Determines whether to resolve the selector immediately (`false`) or at runtime (`true`, default). If `false`, the selector must target only one entity, replacing the selector with that entity’s UUID. Useful for optimizing execution, especially when targeting graphical representations. If multiple entities are targeted, the first one is selected.
   :::
 
 :Outputs:
-  **Return**: The callback ID.
+  **Return**: The ID of the created event.
 
-  **State**: The listener will trigger the callback while hovered.
+  **State**: The listener will trigger the event continuously while hovered over.
+```
+::::
+::::{tab-item} Enter hover
+
+```{function} #bs.interaction:on_hover_enter
+
+Register a command to run once when the player begins hovering over the listener.
+Each listener can respond to multiple events.
+
+:Inputs:
+  **Execution `as <entity>`**: Listener entity for which the event is registered.
+
+  **Function Macro**:
+  :::{treeview}
+  - {nbt}`compound` **Arguments**:
+    - {nbt}`string` **run**: Command to execute when hovering begins.
+    - {nbt}`string` {nbt}`compound` **executor**: Defines the entity on which the command will be executed. Can be either **"source"** for the player who performed the action or **"target"** for the listener entity itself. A compound can also be used to target other entities:
+      - {nbt}`string` **selector**: Specifies entities for the command execution (`execute as <entity>`).
+      - {nbt}`bool` **lazy**: Determines whether to resolve the selector immediately (`false`) or at runtime (`true`, default). If `false`, the selector must target only one entity, replacing the selector with that entity’s UUID. Useful for optimizing execution, especially when targeting graphical representations. If multiple entities are targeted, the first one is selected.
+  :::
+
+:Outputs:
+  **Return**: The ID of the created event.
+
+  **State**: The listener will trigger the event once upon hover entry.
 ```
 ::::
 ::::{tab-item} Leave hover
 
-```{function} #bs.interaction:on_leave_hover
+```{function} #bs.interaction:on_hover_leave
 
-Add a new callback function to execute when the player stops hovering the listener.
-A listener can listen to several events.
+Register a command to run once when the player stops hovering over the listener.
+Each listener can respond to multiple events.
 
 :Inputs:
-  **Execution `as <entity>`**: The listener on which add the new callback.
+  **Execution `as <entity>`**: Listener entity for which the event is registered.
 
-  **Function macro**:
+  **Function Macro**:
   :::{treeview}
-  - {nbt}`compound` Arguments
-    - {nbt}`string` **callback**: The function to execute when right clicked.
-    - {nbt}`string`{nbt}`compound` **executor**: Must be "target", "source" or a valid selector. The entity on which the callback will be executed (`execute as <entity>`). "source" is the player who stop hovering the listener. "target" is listener itself. Finally the selector can be used to target other entities.
-      - {nbt}`string` **selector**: Entities on which the callback will be executed (`execute as <entity>`).
-      - {nbt}`bool` **lazy**: If the selector should be interpreted now (`false`) or during the event (`true` - default). If `false`, the selector must target only one entity to replace the selector by the entity's UUID. Useful to optimize the execution, for instance when the entity that should be targeted is a graphical representation of the interaction. If several entities are targeted, takes the first one.
+  - {nbt}`compound` **Arguments**:
+    - {nbt}`string` **run**: Command to execute when hovering ends.
+    - {nbt}`string` {nbt}`compound` **executor**: Defines the entity on which the command will be executed. Can be either **"source"** for the player who performed the action or **"target"** for the listener entity itself. A compound can also be used to target other entities:
+      - {nbt}`string` **selector**: Specifies entities for the command execution (`execute as <entity>`).
+      - {nbt}`bool` **lazy**: Determines whether to resolve the selector immediately (`false`) or at runtime (`true`, default). If `false`, the selector must target only one entity, replacing the selector with that entity’s UUID. Useful for optimizing execution, especially when targeting graphical representations. If multiple entities are targeted, the first one is selected.
   :::
 
 :Outputs:
-  **Return**: The callback ID.
+  **Return**: The ID of the created event.
 
-  **State**: The listener will trigger the callback when stops hovered.
+  **State**: The listener will trigger the event once upon hover exit.
 ```
 ::::
 :::::
@@ -223,29 +197,19 @@ A listener can listen to several events.
 summon minecraft:interaction ~ ~ ~ { Tags: ["bs.entity.interaction"], width: 1f, height: 1f }
 summon block_display ~ ~ ~ { Tags: ["bs.entity.block_display"], width: 1f, height: 1f, block_state: { Name: "minecraft:slime_block" }}
 
-execute as @n[tag="bs.entity.interaction"] run function #bs.interaction:set_as_listener
-
 # Callback to glow the icon when the listener is hovered
-execute as @n[tag=bs.entity.interaction] run function #bs.interaction:event.listen_enter { callback: "#bs.interaction:callback.glow", executor: "@e[tag=bs.entity.block_display]" }
+execute as @n[tag=bs.entity.interaction] run function #bs.interaction:on_hover_enter { run: "function #bs.interaction:callback/glow", executor: { selector: "@e[tag=bs.entity.block_display]", lazy: false } }
 # Callback to unglow the icon when the listener is not hovered anymore
-execute as @n[tag=bs.entity.interaction] run function #bs.interaction:event.listen_leave { callback: "#bs.interaction:callback.unglow", executor: "@e[tag=bs.entity.block_display]" }
+execute as @n[tag=bs.entity.interaction] run function #bs.interaction:on_hover_leave { run: "function #bs.interaction:callback/unglow", executor: { selector: "@e[tag=bs.entity.block_display]", lazy: false } }
 ```
 
-> **Credits**: theogiraudet
-
-## 👁️ Predicates
-
-You can find below all predicates available in this API.
+> **Credits**: Aksiome, theogiraudet
 
 ---
 
-### Is listener?
+## 🏷️ Entity Tags
 
-**`bs.interaction:is_listener`**
-
-Determine if the current entity is a listener or not.
-
-> **Credits**: theogiraudet
+You can find below all tags available in this API.
 
 ---
 
@@ -254,38 +218,34 @@ Determine if the current entity is a listener or not.
 :::::{tab-set}
 ::::{tab-item} Right click
 
-```{function} bs.interaction:on_right_click
+**`bs.interaction.listen_right_click`**
+
 
 Determine if the current listener listen to right click interaction.
-```
 ::::
 ::::{tab-item} Left click
 
-```{function} bs.interaction:on_left_click
+**`bs.interaction.listen_left_click`**
 
 Determine if the current listener listen to left click interaction.
-```
-::::
-::::{tab-item} Enter hover
-
-```{function} bs.interaction:on_enter
-
-Determine if the current listener listen to enter hover interaction.
-```
 ::::
 ::::{tab-item} Hover
 
-```{function} bs.interaction:on_hover
+**`bs.interaction.listen_hover`**
 
 Determine if the current listener listen to hover interaction.
-```
+::::
+::::{tab-item} Enter hover
+
+**`bs.interaction.listen_hover_enter`**
+
+Determine if the current listener listen to enter hover interaction.
 ::::
 ::::{tab-item} Leave hover
 
-```{function} bs.interaction:on_leave_hover
+**`bs.interaction.listen_hover_leave`**
 
 Determine if the current listener listen to leave hover interaction.
-```
 ::::
 :::::
 
@@ -295,7 +255,7 @@ Determine if the current listener listen to leave hover interaction.
 
 ### Is source?
 
-**`bs.interaction:is_source`**
+**`bs.interaction.source`**
 
 Usable only in the callback of an event.
 Determine if the current entity is the source of the event.
@@ -306,7 +266,7 @@ Determine if the current entity is the source of the event.
 
 ### Is target?
 
-**`bs.interaction:is_target`**
+**`bs.interaction.target`**
 
 Usable only in the callback of an event.
 Determine if the current entity is the target of the event.

@@ -21,7 +21,6 @@ modules/biome
 modules/bitwise
 modules/block
 modules/color
-modules/gui
 modules/health
 modules/hitbox
 modules/id
