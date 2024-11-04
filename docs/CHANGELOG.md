@@ -39,7 +39,7 @@ Bookshelf is now based on **Minecraft 1.21.2**.
 - **[#252](https://github.com/Gunivers/Bookshelf/pull/252)** Optimized `bs.hitbox` module for improved performance.
 - **[#265](https://github.com/Gunivers/Bookshelf/pull/265)** Optimized `bs.schedule` module for improved performance.
 - **[#265](https://github.com/Gunivers/Bookshelf/pull/265)** Enabled `bs.move` module to function effectively at higher coordinate ranges. Collision detection has also been improved and should be more robust.
-- **[#265](https://github.com/Gunivers/Bookshelf/pull/265)** Load tags does not load modules in isolation anymore. This can now be done using the `exclusive_load` tag.
+- **[#265](https://github.com/Gunivers/Bookshelf/pull/265)** Load tags do not load modules in isolation anymore. This can now be done using the `exclusive_load` tag.
 
 ### 🐛 Fixes
 
