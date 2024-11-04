@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#cartesian-to-spherical
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.vector:convert/cartesian_to_spherical/compute
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.vector:convert/cartesian_to_spherical/compute
 $execute store result score $vector.cartesian_to_spherical.0 bs.out run data get entity B5-0-0-0-1 Rotation[0] $(scaling)
 $execute store result score $vector.cartesian_to_spherical.1 bs.out run data get entity B5-0-0-0-1 Rotation[1] $(scaling)
 execute store result score $vector.cartesian_to_spherical.2 bs.out as B5-0-0-0-2 run function bs.vector:length/compute with storage bs:ctx

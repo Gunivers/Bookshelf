@@ -16,68 +16,68 @@
 # ------------------------------------------------------------------------------------------------------------
 
 scoreboard players set $bitwise.bit_count bs.out 0
-scoreboard players operation #bitwise.bit_count bs.data = $bitwise.bit_count.n bs.in
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players operation #bitwise.bit_count bs.data *= -1 bs.const
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
-scoreboard players operation #bitwise.bit_count bs.data *= 2 bs.const
-execute if score #bitwise.bit_count bs.data matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx = $bitwise.bit_count.n bs.in
+execute if score #n bs.ctx matches ..-1 run scoreboard players operation #n bs.ctx *= -1 bs.const
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
+scoreboard players operation #n bs.ctx *= 2 bs.const
+execute if score #n bs.ctx matches ..-1 run scoreboard players add $bitwise.bit_count bs.out 1
 return run scoreboard players get $bitwise.bit_count bs.out

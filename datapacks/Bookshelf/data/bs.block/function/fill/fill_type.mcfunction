@@ -26,4 +26,4 @@ data modify storage bs:data block._ set value { \
 data modify storage bs:data block._ merge from storage bs:in block.fill_type
 
 execute if data storage bs:data block._.masks[0] run function bs.block:utils/masks/compile
-execute as B5-0-0-0-1 run function bs.block:fill/recurse/init
+execute summon minecraft:marker run function bs.block:fill/recurse/init

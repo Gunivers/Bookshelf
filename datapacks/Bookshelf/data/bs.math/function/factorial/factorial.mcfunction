@@ -31,6 +31,6 @@ execute if score $math.factorial.n bs.in matches 10 run return run scoreboard pl
 execute if score $math.factorial.n bs.in matches 11 run return run scoreboard players set $math.factorial bs.out 39916800
 execute if score $math.factorial.n bs.in matches 12 run return run scoreboard players set $math.factorial bs.out 479001600
 
-execute store result score #math.factorial.i bs.data run scoreboard players operation $math.factorial bs.out = $math.factorial.n bs.in
+execute store result score #i bs.ctx run scoreboard players operation $math.factorial bs.out = $math.factorial.n bs.in
 function bs.math:factorial/loop
 return run scoreboard players get $math.factorial bs.out

@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #vector.scale bs.data $(scale)
+$scoreboard players set #s bs.ctx $(scale)
 
 scoreboard players operation $vector.normalize_max_component.factor bs.out = $vector.normalize_max_component.0 bs.in
 execute if predicate bs.vector:normalize_max_component/check1 run scoreboard players operation $vector.normalize_max_component.factor bs.out = $vector.normalize_max_component.1 bs.in
@@ -26,9 +26,9 @@ scoreboard players operation $vector.normalize_max_component.0 bs.out = $vector.
 scoreboard players operation $vector.normalize_max_component.1 bs.out = $vector.normalize_max_component.1 bs.in
 scoreboard players operation $vector.normalize_max_component.2 bs.out = $vector.normalize_max_component.2 bs.in
 
-scoreboard players operation $vector.normalize_max_component.0 bs.out *= #vector.scale bs.data
-scoreboard players operation $vector.normalize_max_component.1 bs.out *= #vector.scale bs.data
-scoreboard players operation $vector.normalize_max_component.2 bs.out *= #vector.scale bs.data
+scoreboard players operation $vector.normalize_max_component.0 bs.out *= #s bs.ctx
+scoreboard players operation $vector.normalize_max_component.1 bs.out *= #s bs.ctx
+scoreboard players operation $vector.normalize_max_component.2 bs.out *= #s bs.ctx
 
 scoreboard players operation $vector.normalize_max_component.0 bs.out /= $vector.normalize_max_component.factor bs.out
 scoreboard players operation $vector.normalize_max_component.1 bs.out /= $vector.normalize_max_component.factor bs.out

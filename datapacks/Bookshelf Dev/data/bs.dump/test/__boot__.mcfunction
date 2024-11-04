@@ -1,2 +1,2 @@
 # @batch bs.dump
-# @beforebatch function #bs.dump:load
+# @beforebatch function #bs.dump:exclusive_load

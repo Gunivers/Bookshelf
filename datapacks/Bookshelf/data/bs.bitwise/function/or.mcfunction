@@ -21,8 +21,8 @@
 # - Formula: a | b = (a + b) - (a & b)
 # The result is the number composed by keeping all one in the two binary representations of these numbers.
 
-scoreboard players operation #bitwise.and.a bs.data = $bitwise.or.a bs.in
-execute store result score $bitwise.or bs.out run scoreboard players operation #bitwise.and.b bs.data = $bitwise.or.b bs.in
+scoreboard players operation #a bs.ctx = $bitwise.or.a bs.in
+execute store result score $bitwise.or bs.out run scoreboard players operation #b bs.ctx = $bitwise.or.b bs.in
 scoreboard players operation $bitwise.or bs.out += $bitwise.or.a bs.in
 function bs.bitwise:and/compute
-return run scoreboard players operation $bitwise.or bs.out -= #bitwise.and bs.data
+return run scoreboard players operation $bitwise.or bs.out -= #x bs.ctx

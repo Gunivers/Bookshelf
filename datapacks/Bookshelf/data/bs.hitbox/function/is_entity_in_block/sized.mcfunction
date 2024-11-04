@@ -19,8 +19,8 @@ execute store result score #s bs.ctx run data get storage bs:out hitbox.scale 10
 scoreboard players operation #h bs.ctx *= #s bs.ctx
 scoreboard players operation #w bs.ctx *= #s bs.ctx
 
-execute as B5-0-0-0-1 run function bs.hitbox:utils/get_negative_pos
-execute at @s as B5-0-0-0-1 run function bs.hitbox:utils/get_relative_pos with storage bs:ctx
+execute summon minecraft:marker run function bs.hitbox:utils/get_negative_pos
+execute at @s summon minecraft:marker run function bs.hitbox:utils/get_relative_pos with storage bs:ctx
 execute store result score #l bs.ctx store result score #x bs.ctx run data get storage bs:ctx _[0] 1000000
 execute store result score #m bs.ctx store result score #y bs.ctx run data get storage bs:ctx _[1] 1000000
 execute store result score #n bs.ctx store result score #z bs.ctx run data get storage bs:ctx _[2] 1000000

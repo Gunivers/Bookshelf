@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.random:__load__",
     {
       "id": "#bs.log:load",

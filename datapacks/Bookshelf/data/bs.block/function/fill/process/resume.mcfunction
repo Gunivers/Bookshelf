@@ -30,7 +30,7 @@ execute store result score #block.max_x bs.data run data get storage bs:data blo
 execute store result score #block.max_y bs.data run data get storage bs:data block._.max_y
 execute store result score #block.max_z bs.data run data get storage bs:data block._.max_z
 
-execute at @s run function bs.block:fill/recurse/next with storage bs:data block._
+$execute in $(dim) positioned as @s rotated as @s run function bs.block:fill/recurse/next with storage bs:data block._
 
 data remove storage bs:data block.fill[-1]
 execute if data storage bs:data block.fill[-1]._ \

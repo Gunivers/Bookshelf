@@ -10,8 +10,8 @@
       "minecraft_version": "1.21"
     },
     "updated": {
-      "date": "2024/09/28",
-      "minecraft_version": "1.21"
+      "date": "2024/10/24",
+      "minecraft_version": "1.21.2"
     }
   },
   "values": [
@@ -385,6 +385,21 @@
     "minecraft:oxidized_copper_trapdoor",
     "minecraft:oxidized_cut_copper_slab",
     "minecraft:oxidized_cut_copper_stairs",
+    "minecraft:pale_hanging_moss",
+    "minecraft:pale_moss_carpet",
+    "minecraft:pale_oak_button",
+    "minecraft:pale_oak_door",
+    "minecraft:pale_oak_fence",
+    "minecraft:pale_oak_fence_gate",
+    "minecraft:pale_oak_hanging_sign",
+    "minecraft:pale_oak_pressure_plate",
+    "minecraft:pale_oak_sapling",
+    "minecraft:pale_oak_sign",
+    "minecraft:pale_oak_slab",
+    "minecraft:pale_oak_stairs",
+    "minecraft:pale_oak_trapdoor",
+    "minecraft:pale_oak_wall_hanging_sign",
+    "minecraft:pale_oak_wall_sign",
     "minecraft:petrified_oak_slab",
     "minecraft:piglin_head",
     "minecraft:piglin_wall_head",
@@ -449,6 +464,7 @@
     "minecraft:potted_oak_sapling",
     "minecraft:potted_orange_tulip",
     "minecraft:potted_oxeye_daisy",
+    "minecraft:potted_pale_oak_sapling",
     "minecraft:potted_pink_tulip",
     "minecraft:potted_poppy",
     "minecraft:potted_red_mushroom",

@@ -2,7 +2,6 @@ import argparse
 import definitions
 import io
 import json
-import shutil
 import zipfile
 from pathlib import Path
 
@@ -43,7 +42,7 @@ def create_modules_archive(manifest: dict, target: Path, suffix: str = ""):
         for module in datapack["modules"]:
             print(f"🧩 Creating archive for module {module['name']}")
             data = create_datapack_archive(datapack, get_dependencies(module["name"], manifest))
-            with open(target / f"{module['display_name']}{suffix}.zip".lower().replace(" ", "-"), 'wb') as f:
+            with open(target / f"bs.{module['display_name']}{suffix}.zip".lower().replace(" ", "-"), 'wb') as f:
                 f.write(data.getvalue())
 
 
@@ -59,7 +58,7 @@ def get_dependencies(module: str, manifest: dict) -> list[str]:
             dirs.extend(gather_dependencies(dep))
         return dirs
 
-    return gather_dependencies(module)
+    return list(set(gather_dependencies(module)))
 
 
 if __name__ == "__main__":
@@ -79,6 +78,4 @@ if __name__ == "__main__":
         if args.datapacks:
             create_datapacks_archive(manifest, target, suffix)
         if args.modules:
-            (target / "modules").mkdir(parents=True, exist_ok=True)
-            create_modules_archive(manifest, target / "modules", suffix)
-            shutil.make_archive(target / f"bookshelf-modules{suffix}", "zip", target / "modules")
+            create_modules_archive(manifest, target, suffix)

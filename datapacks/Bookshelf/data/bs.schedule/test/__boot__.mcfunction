@@ -1,2 +1,2 @@
 # @batch bs.schedule
-# @beforebatch function #bs.schedule:load
+# @beforebatch function #bs.schedule:exclusive_load

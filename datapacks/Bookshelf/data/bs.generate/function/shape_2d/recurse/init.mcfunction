@@ -15,10 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/generate.html#shape-2d
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~
 execute if data storage bs:data generate._{direction:"xz"} run data modify storage bs:data generate._.oz set from entity @s Pos[2]
 execute unless data storage bs:data generate._{direction:"xz"} run data modify storage bs:data generate._.oy set from entity @s Pos[1]
-execute in minecraft:overworld run tp @s -30000000 0 1600
+kill @s
 
 $function bs.generate:shape_2d/strategy/$(impl)/setup
 

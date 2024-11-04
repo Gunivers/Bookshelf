@@ -1,2 +1,2 @@
 # @batch bs.hitbox
-# @beforebatch function #bs.hitbox:load
+# @beforebatch function #bs.hitbox:exclusive_load

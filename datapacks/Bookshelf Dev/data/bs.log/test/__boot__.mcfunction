@@ -1,2 +1,2 @@
 # @batch bs.log
-# @beforebatch function #bs.log:load
+# @beforebatch function #bs.log:exclusive_load

@@ -2,6 +2,8 @@
 # @batch bs.log
 # @dummy
 
+await entity B5-0-0-0-2
+
 function #bs.log:warn { namespace: "bs.foo", path: "bs.foo:bar", tag: "history", message: '"History warn log message"' }
 function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "history", message: '"History error log message"' }
 assert not chat "History warn log message"

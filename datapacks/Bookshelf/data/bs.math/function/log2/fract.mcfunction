@@ -25,20 +25,20 @@
 # c7: 15.723860485552176413648339803330600261688232421875
 # c8: -4.3731760053578137004137715848628431558609008789062
 
-$execute store result storage bs:ctx x float $(x) run scoreboard players set #math.log2.x bs.data -28749446
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.log2.x bs.data 203688367
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players remove #math.log2.x bs.data 639941865
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.log2.x bs.data 1173047633
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players remove #math.log2.x bs.data 1389339069
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.log2.x bs.data 1114625108
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players remove #math.log2.x bs.data 623763613
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-$execute store result storage bs:ctx x float $(x) run scoreboard players add #math.log2.x bs.data 263802604
-execute store result score #math.log2.x bs.data run data get storage bs:ctx x
-scoreboard players remove #math.log2.x bs.data 73369718
+$execute store result storage bs:ctx x float $(x) run scoreboard players set #x bs.ctx -28749446
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 203688367
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players remove #x bs.ctx 639941865
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 1173047633
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players remove #x bs.ctx 1389339069
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 1114625108
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players remove #x bs.ctx 623763613
+execute store result score #x bs.ctx run data get storage bs:ctx x
+$execute store result storage bs:ctx x float $(x) run scoreboard players add #x bs.ctx 263802604
+execute store result score #x bs.ctx run data get storage bs:ctx x
+scoreboard players remove #x bs.ctx 73369718

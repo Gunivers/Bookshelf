@@ -16,36 +16,36 @@
 # ------------------------------------------------------------------------------------------------------------
 
 # sincos(h: Phi) & sincos(v: Theta)
-execute as B5-0-0-0-1 run function bs.position:convert/canonical_to_local/sincos
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.position:convert/canonical_to_local/sincos
 
 # X' = Z * sin(h) + X * cos(h)
-scoreboard players operation #position.convert.x bs.data = @s bs.pos.z
-scoreboard players operation #position.convert.x bs.data *= #position.convert.sin.h bs.data
-scoreboard players operation #position.convert bs.data = @s bs.pos.x
-scoreboard players operation #position.convert bs.data *= #position.convert.cos.h bs.data
-scoreboard players operation #position.convert.x bs.data += #position.convert bs.data
-scoreboard players operation #position.convert.x bs.data /= 1000 bs.const
+scoreboard players operation #x bs.ctx = @s bs.pos.z
+scoreboard players operation #x bs.ctx *= #j bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.pos.x
+scoreboard players operation #t bs.ctx *= #i bs.ctx
+scoreboard players operation #x bs.ctx += #t bs.ctx
+scoreboard players operation #x bs.ctx /= 1000 bs.const
 
 # Y' = (z * cos(h) - x * sin(h)) * sin(v) + y * cos(v)
-scoreboard players operation #position.convert.y bs.data = @s bs.pos.z
-scoreboard players operation #position.convert.y bs.data *= #position.convert.cos.h bs.data
-scoreboard players operation #position.convert bs.data = @s bs.pos.x
-scoreboard players operation #position.convert bs.data *= #position.convert.sin.h bs.data
-scoreboard players operation #position.convert.y bs.data -= #position.convert bs.data
-execute store result score #position.convert.z bs.data run scoreboard players operation #position.convert.y bs.data /= 1000 bs.const
-scoreboard players operation #position.convert.y bs.data *= #position.convert.sin.v bs.data
-scoreboard players operation #position.convert bs.data = @s bs.pos.y
-scoreboard players operation #position.convert bs.data *= #position.convert.cos.v bs.data
-scoreboard players operation #position.convert.y bs.data += #position.convert bs.data
-scoreboard players operation #position.convert.y bs.data /= 1000 bs.const
+scoreboard players operation #y bs.ctx = @s bs.pos.z
+scoreboard players operation #y bs.ctx *= #i bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.pos.x
+scoreboard players operation #t bs.ctx *= #j bs.ctx
+scoreboard players operation #y bs.ctx -= #t bs.ctx
+execute store result score #z bs.ctx run scoreboard players operation #y bs.ctx /= 1000 bs.const
+scoreboard players operation #y bs.ctx *= #l bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.pos.y
+scoreboard players operation #t bs.ctx *= #k bs.ctx
+scoreboard players operation #y bs.ctx += #t bs.ctx
+scoreboard players operation #y bs.ctx /= 1000 bs.const
 
 # Z' = (z * cos(h) - x * sin(h)) * cos(v) - y * sin(v)
-scoreboard players operation #position.convert.z bs.data *= #position.convert.cos.v bs.data
-scoreboard players operation #position.convert bs.data = @s bs.pos.y
-scoreboard players operation #position.convert bs.data *= #position.convert.sin.v bs.data
-scoreboard players operation #position.convert.z bs.data -= #position.convert bs.data
-scoreboard players operation #position.convert.z bs.data /= 1000 bs.const
+scoreboard players operation #z bs.ctx *= #k bs.ctx
+scoreboard players operation #t bs.ctx = @s bs.pos.y
+scoreboard players operation #t bs.ctx *= #l bs.ctx
+scoreboard players operation #z bs.ctx -= #t bs.ctx
+scoreboard players operation #z bs.ctx /= 1000 bs.const
 
-scoreboard players operation @s bs.pos.x = #position.convert.x bs.data
-scoreboard players operation @s bs.pos.y = #position.convert.y bs.data
-scoreboard players operation @s bs.pos.z = #position.convert.z bs.data
+scoreboard players operation @s bs.pos.x = #x bs.ctx
+scoreboard players operation @s bs.pos.y = #y bs.ctx
+scoreboard players operation @s bs.pos.z = #z bs.ctx

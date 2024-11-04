@@ -15,17 +15,17 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/color.html#convert-to-hex
 # ------------------------------------------------------------------------------------------------------------
 
-$scoreboard players set #color.int_to_hex bs.data $(color)
+$scoreboard players set #c bs.ctx $(color)
 
-scoreboard players operation #color.int_to_hex.r bs.data = #color.int_to_hex bs.data
-scoreboard players operation #color.int_to_hex.r bs.data /= 65536 bs.const
-scoreboard players operation #color.int_to_hex.g bs.data = #color.int_to_hex bs.data
-scoreboard players operation #color.int_to_hex.g bs.data /= 256 bs.const
-scoreboard players operation #color.int_to_hex.b bs.data = #color.int_to_hex bs.data
+scoreboard players operation #r bs.ctx = #c bs.ctx
+scoreboard players operation #r bs.ctx /= 65536 bs.const
+scoreboard players operation #g bs.ctx = #c bs.ctx
+scoreboard players operation #g bs.ctx /= 256 bs.const
+scoreboard players operation #b bs.ctx = #c bs.ctx
 
-execute store result storage bs:ctx x int 1 run scoreboard players operation #color.int_to_hex.r bs.data %= 256 bs.const
-execute store result storage bs:ctx y int 1 run scoreboard players operation #color.int_to_hex.g bs.data %= 256 bs.const
-execute store result storage bs:ctx z int 1 run scoreboard players operation #color.int_to_hex.b bs.data %= 256 bs.const
+execute store result storage bs:ctx x int 1 run scoreboard players operation #r bs.ctx %= 256 bs.const
+execute store result storage bs:ctx y int 1 run scoreboard players operation #g bs.ctx %= 256 bs.const
+execute store result storage bs:ctx z int 1 run scoreboard players operation #b bs.ctx %= 256 bs.const
 
 function bs.color:int_to_hex/get_hexes with storage bs:ctx
 function bs.color:int_to_hex/concat_hexes with storage bs:ctx _

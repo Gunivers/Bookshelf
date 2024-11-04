@@ -15,10 +15,10 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/math.html#rounded-division
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result score #math.divide.x bs.data run scoreboard players operation $math.divide bs.out = $math.divide.x bs.in
+execute store result score #x bs.ctx run scoreboard players operation $math.divide bs.out = $math.divide.x bs.in
 scoreboard players operation $math.divide bs.out /= $math.divide.y bs.in
-execute store result score #math.divide.y bs.data run scoreboard players operation #math.divide.x bs.data %= $math.divide.y bs.in
-scoreboard players operation #math.divide.y bs.data -= $math.divide.y bs.in
-scoreboard players operation #math.divide.y bs.data *= -1 bs.const
-execute if score #math.divide.y bs.data < #math.divide.x bs.data run scoreboard players add $math.divide bs.out 1
+execute store result score #y bs.ctx run scoreboard players operation #x bs.ctx %= $math.divide.y bs.in
+scoreboard players operation #y bs.ctx -= $math.divide.y bs.in
+scoreboard players operation #y bs.ctx *= -1 bs.const
+execute if score #y bs.ctx < #x bs.ctx run scoreboard players add $math.divide bs.out 1
 return run scoreboard players get $math.divide bs.out

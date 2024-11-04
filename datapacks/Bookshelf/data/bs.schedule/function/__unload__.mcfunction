@@ -15,11 +15,12 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html
 # ------------------------------------------------------------------------------------------------------------
 
-kill B5-0-0-0-2
+kill B5-0-0-0-1
 forceload remove -30000000 1600
 
 scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.data
+scoreboard objectives remove bs.schedule.id
 
 data remove storage bs:data schedule
 data remove storage bs:const schedule

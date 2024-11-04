@@ -13,7 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~
 data modify storage bs:ctx _ set from entity @s Pos
 execute store result storage bs:ctx x int -1 run data get storage bs:ctx _[0]
 execute store result storage bs:ctx y int -1 run data get storage bs:ctx _[1]

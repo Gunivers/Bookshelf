@@ -35,4 +35,4 @@ execute store result storage bs:data block._.max_z int 1 run scoreboard players 
 
 data modify entity @s Pos set from storage bs:data block._.pos
 execute positioned as @s run function bs.block:fill/recurse/next with storage bs:data block._
-execute in minecraft:overworld run tp @s -30000000 0 1600 ~ ~
+kill @s

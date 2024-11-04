@@ -14,5 +14,5 @@
 # ------------------------------------------------------------------------------------------------------------
 
 function #bs.hitbox:get_entity
-execute if entity @s[type=#bs.hitbox:is_shaped] run return run function bs.move:collision/check/entity/shape
-function bs.move:collision/check/entity/size
+execute if entity @s[type=!#bs.hitbox:is_shaped] run return run function bs.move:collision/check/entity/size
+function bs.move:collision/check/entity/shape

@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.bitwise:__load__"
   ]
 }

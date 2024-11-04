@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.dump:__load__"
   ]
 }

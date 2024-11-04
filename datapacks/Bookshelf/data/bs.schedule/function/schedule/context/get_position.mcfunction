@@ -14,10 +14,6 @@
 # ------------------------------------------------------------------------------------------------------------
 
 tp @s ~ ~ ~ ~ ~
-data modify storage bs:ctx _ merge from entity @s
-data modify storage bs:ctx _.x set from storage bs:ctx _.Pos[0]
-data modify storage bs:ctx _.y set from storage bs:ctx _.Pos[1]
-data modify storage bs:ctx _.z set from storage bs:ctx _.Pos[2]
-data modify storage bs:ctx _.h set from storage bs:ctx _.Rotation[0]
-data modify storage bs:ctx _.v set from storage bs:ctx _.Rotation[1]
-kill @s
+data modify storage bs:ctx _.Pos set from entity @s Pos
+data modify storage bs:ctx _.Rotation set from entity @s Rotation
+tp @s -30000000 0 1600

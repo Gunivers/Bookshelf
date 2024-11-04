@@ -21,7 +21,7 @@ data remove storage bs:data generate._._
 $function bs.generate:shape_2d/strategy/$(impl)/setup
 data modify entity @s Pos set from storage bs:data generate._.pos
 data modify entity @s Rotation set from storage bs:data generate._.rot
-execute at @s run function bs.generate:shape_2d/recurse/next with storage bs:data generate._
+$execute in $(dim) positioned as @s rotated as @s run function bs.generate:shape_2d/recurse/next with storage bs:data generate._
 
 data remove storage bs:data generate.shape_2d[-1]
 execute if data storage bs:data generate.shape_2d[-1]._ \

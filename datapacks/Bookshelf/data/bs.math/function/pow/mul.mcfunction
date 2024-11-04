@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute store result storage bs:ctx x float $(y) run scoreboard players operation #math.log2.x bs.data += #math.frexp.e bs.data
+$execute store result storage bs:ctx x float $(y) run scoreboard players operation #x bs.ctx += #e bs.ctx

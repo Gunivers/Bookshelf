@@ -1,17 +1,13 @@
 # Position is added correctly
 # @batch bs.position
-# @dummy
 
-tp @s 0.0 0.0 0.0 0.0 0.0
+summon minecraft:marker ~ ~ ~ {Tags:["bs.packtest"],Rotation:[0.0,0.0]}
 
-execute store result score #packtest.h_min bs.data store result score #packtest.h_max bs.data store result score @s bs.rot.h run random value -10000..10000
-function #bs.position:add_rot_h {scale:.001}
-execute store result score #packtest.h bs.data run data get entity @s Rotation[0] 1000
+execute store result score @n[type=minecraft:marker,tag=bs.packtest] bs.rot.h run random value -10000..10000
+execute as @n[type=minecraft:marker,tag=bs.packtest] run function #bs.position:add_rot_h {scale:.001}
+execute store result score #h bs.ctx run data get entity @n[type=minecraft:marker,tag=bs.packtest] Rotation[0] 1000
+scoreboard players operation #h bs.ctx -= @n[type=minecraft:marker,tag=bs.packtest] bs.rot.h
 
-dummy @s leave
+kill @n[type=minecraft:marker,tag=bs.packtest]
 
-scoreboard players remove #packtest.h_min bs.data 2
-scoreboard players add #packtest.h_max bs.data 2
-
-assert score #packtest.h_min bs.data < #packtest.h bs.data
-assert score #packtest.h_max bs.data > #packtest.h bs.data
+assert score #h bs.ctx matches -2..2

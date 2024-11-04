@@ -1,2 +1,2 @@
 # @batch bs.color
-# @beforebatch function #bs.color:load
+# @beforebatch function #bs.color:exclusive_load

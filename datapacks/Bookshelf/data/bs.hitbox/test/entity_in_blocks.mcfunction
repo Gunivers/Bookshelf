@@ -1,7 +1,7 @@
 # @batch bs.hitbox
 # @dummy
 
-fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:air
+fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:air replace minecraft:barrier
 setblock ~-1 ~ ~-1 minecraft:bookshelf
 
 ## |TEST CASE|: Entity is not inside a block

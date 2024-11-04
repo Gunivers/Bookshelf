@@ -13,6 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result storage bs:ctx y int 1 run scoreboard players add #math.ldexp.e bs.data 127
+execute store result storage bs:ctx y int 1 run scoreboard players add #e bs.ctx 127
 function bs.math:ldexp/table with storage bs:ctx
 function bs.math:ldexp/mul with storage bs:ctx

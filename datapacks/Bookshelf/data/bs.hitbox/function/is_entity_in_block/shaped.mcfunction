@@ -20,8 +20,8 @@ execute store result score #l bs.ctx run data get storage bs:out hitbox.shape[-1
 execute store result score #m bs.ctx run data get storage bs:out hitbox.shape[-1][4] 62500
 execute store result score #n bs.ctx run data get storage bs:out hitbox.shape[-1][5] 62500
 
-execute as B5-0-0-0-1 run function bs.hitbox:utils/get_negative_pos
-execute at @s align xyz as B5-0-0-0-1 run function bs.hitbox:utils/get_relative_pos with storage bs:ctx
+execute summon minecraft:marker run function bs.hitbox:utils/get_negative_pos
+execute at @s align xyz summon minecraft:marker run function bs.hitbox:utils/get_relative_pos with storage bs:ctx
 execute store result score #i bs.ctx run data get storage bs:ctx _[0] 1000000
 execute store result score #j bs.ctx run data get storage bs:ctx _[1] 1000000
 execute store result score #k bs.ctx run data get storage bs:ctx _[2] 1000000

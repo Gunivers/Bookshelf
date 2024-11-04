@@ -15,4 +15,4 @@
 
 $tp @s ~$(x) ~$(y) ~$(z)
 
-execute unless data storage bs:data move{blocks:0b,entities:0b} run function bs.move:collision/handle {type:"canonical"}
+execute unless data storage bs:data move{blocks:0b,entities:0b} run function bs.move:collision/handle {resolver:"canonical"}
