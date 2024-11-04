@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "#bs.hitbox:load",
     "bs.raycast:__load__"
   ]

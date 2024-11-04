@@ -15,10 +15,12 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/block.html
 # ------------------------------------------------------------------------------------------------------------
 
+kill B5-0-0-0-1
 kill B5-0-0-0-2
 setblock -30000000 0 1606 minecraft:air
 forceload remove -30000000 1600
 
+scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.data
 
 data remove storage bs:in block

@@ -15,20 +15,20 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/position.html#get-distance
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.position:get/position/ctx
-$execute store result score #position.get_distance.x1 bs.data run data get storage bs:ctx _[0] $(scale)
-$execute store result score #position.get_distance.y1 bs.data run data get storage bs:ctx _[1] $(scale)
-$execute store result score #position.get_distance.z1 bs.data run data get storage bs:ctx _[2] $(scale)
-$execute store result score #position.get_distance.x2 bs.data run data get entity @s Pos[0] $(scale)
-$execute store result score #position.get_distance.y2 bs.data run data get entity @s Pos[1] $(scale)
-$execute store result score #position.get_distance.z2 bs.data run data get entity @s Pos[2] $(scale)
+execute summon minecraft:marker run function bs.position:get/position/ctx
+$execute store result score #x bs.ctx run data get storage bs:ctx _[0] $(scale)
+$execute store result score #y bs.ctx run data get storage bs:ctx _[1] $(scale)
+$execute store result score #z bs.ctx run data get storage bs:ctx _[2] $(scale)
+$execute store result score #u bs.ctx run data get entity @s Pos[0] $(scale)
+$execute store result score #v bs.ctx run data get entity @s Pos[1] $(scale)
+$execute store result score #w bs.ctx run data get entity @s Pos[2] $(scale)
 
-scoreboard players operation #position.get_distance.x1 bs.data -= #position.get_distance.x2 bs.data
-scoreboard players operation #position.get_distance.y1 bs.data -= #position.get_distance.y2 bs.data
-scoreboard players operation #position.get_distance.z1 bs.data -= #position.get_distance.z2 bs.data
-scoreboard players operation #position.get_distance.x1 bs.data *= #position.get_distance.x1 bs.data
-scoreboard players operation #position.get_distance.y1 bs.data *= #position.get_distance.y1 bs.data
-scoreboard players operation #position.get_distance.z1 bs.data *= #position.get_distance.z1 bs.data
+scoreboard players operation #x bs.ctx -= #u bs.ctx
+scoreboard players operation #y bs.ctx -= #v bs.ctx
+scoreboard players operation #z bs.ctx -= #w bs.ctx
+scoreboard players operation #x bs.ctx *= #x bs.ctx
+scoreboard players operation #y bs.ctx *= #y bs.ctx
+scoreboard players operation #z bs.ctx *= #z bs.ctx
 
-scoreboard players operation #position.get_distance.x1 bs.data += #position.get_distance.y1 bs.data
-execute store result score $position.get_distance_squared_ata bs.out run return run scoreboard players operation #position.get_distance.x1 bs.data += #position.get_distance.z1 bs.data
+scoreboard players operation #x bs.ctx += #y bs.ctx
+execute store result score $position.get_distance_squared_ata bs.out run return run scoreboard players operation #x bs.ctx += #z bs.ctx

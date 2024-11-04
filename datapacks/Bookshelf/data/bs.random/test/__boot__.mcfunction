@@ -1,2 +1,2 @@
 # @batch bs.random
-# @beforebatch function #bs.random:load
+# @beforebatch function #bs.random:exclusive_load

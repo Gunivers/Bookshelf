@@ -38,8 +38,8 @@ Fill all or part of a region with a specific block.
   :::{treeview}
   - {nbt}`compound` Fill block data
     - {nbt}`string` **block**: Block to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
@@ -86,8 +86,8 @@ Fill all or part of a region with a specific block type, preserving states and N
   :::{treeview}
   - {nbt}`compound` Fill type data
     - {nbt}`string` **type**: Block id to fill the region with.
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
@@ -127,8 +127,8 @@ Fill all or part of a region with random blocks or types.
       - {nbt}`compound` Block or type entry
         - {nbt}`string` **block | type**: Block or type to fill the region with.
         - {nbt}`int` **weight**: Determine the likelihood of selecting the entry (default: 1).
-    - {nbt}`list` **from**: List of 3 numbers representing the X, Y, and Z starting position.
-    - {nbt}`list` **to**: List of 3 numbers representing the X, Y, and Z ending position.
+    - {nbt}`string` {nbt}`list` **from**: Starting position as a valid position string or a list of 3 elements (x, y, z).
+    - {nbt}`string` {nbt}`list` **to**: Ending position as a valid position string or a list of 3 elements (x, y, z).
     - {nbt}`string` **mode**: Mode used to set blocks [destroy|keep|replace] (default: replace).
     - {nbt}`int` **limit**: Limit how many blocks can be set in a single tick (default: 4096).
     - {nbt}`list` **masks**: Determine which blocks will be replaced.
@@ -746,7 +746,7 @@ execute positioned 0 0 0 run function #bs.block:set_type
 
 ---
 
-### Spawn
+### Produce
 
 :::::{tab-set}
 ::::{tab-item} Block display
@@ -851,6 +851,44 @@ data modify storage bs:in block.spawn_solid_block_display set from storage bs:ou
 
 # Summon the block display
 function #bs.block:spawn_solid_block_display
+```
+
+::::
+::::{tab-item} Block particle
+
+```{function} #bs.block:emit_block_particle
+
+Emit block particle of the given block.
+
+:Inputs:
+  **Execution `at <entity>` or `positioned <x> <y> <z>`**: Position where the particle will be emitted.
+
+  **Storage `bs:in block.emit_block_particle`**:
+  :::{treeview}
+  - {nbt}`compound` Block particle data
+    - {nbt}`string` **type**: Block type (similar to block output).
+    - {nbt}`compound` **properties**: Block properties (similar to block output).
+    - {nbt}`string` **delta**: X Y Z coordinates, the motion value of the particle. Similar to the /particle command.
+    - {nbt}`int` **speed**: Speed of the particle. Similar to the /particle command.
+    - {nbt}`int` **count**: Number of particle. Similar to the /particle command.
+  :::
+
+:Outputs:
+  **State**: The particle is emitted.
+```
+
+*Emit the particle of the block at 0 0 0:*
+
+```mcfunction
+# Get block data
+execute positioned 0 0 0 run function #bs.block:get_block
+
+# Setup the input
+data modify storage bs:in block.emit_block_particle set from storage bs:out block
+data modify storage bs:in block.emit_block_particle merge value { delta: "0 0 0", speed: 5, count: 30 }
+
+# Emit the block particle
+function #bs.block:emit_block_particle
 ```
 
 ::::

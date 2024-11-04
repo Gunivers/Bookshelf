@@ -15,7 +15,7 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/vector.html#normalize
 # ------------------------------------------------------------------------------------------------------------
 
-execute as B5-0-0-0-1 run function bs.vector:normalize/compute
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.vector:normalize/compute
 $execute store result score $vector.normalize.0 bs.out run data get storage bs:ctx _[0] $(scale)
 $execute store result score $vector.normalize.1 bs.out run data get storage bs:ctx _[1] $(scale)
 $execute store result score $vector.normalize.2 bs.out run data get storage bs:ctx _[2] $(scale)

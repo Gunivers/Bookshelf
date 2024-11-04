@@ -17,17 +17,17 @@
 
 # Note: Thanks to XanBelOr for giving the idea to use an advancement to subtick heal the player.
 
-$execute store result score #health bs.data run data get storage bs:const health.point $(points)
+$execute store result score #h bs.ctx run data get storage bs:const health.point $(points)
 
-execute store success score #success bs.data run attribute @s minecraft:generic.max_health modifier value get bs.health:limit
-execute if score #success bs.data matches 1 store result score #health.points bs.data run attribute @s minecraft:generic.max_health get 100000
-execute if score #success bs.data matches 0 store result score #health.points bs.data run data get entity @s Health 100000
-scoreboard players operation #health bs.data += #health.points bs.data
+execute store success score #s bs.ctx run attribute @s minecraft:max_health modifier value get bs.health:limit
+execute if score #s bs.ctx matches 1 store result score #p bs.ctx run attribute @s minecraft:max_health get 100000
+execute if score #s bs.ctx matches 0 store result score #p bs.ctx run data get entity @s Health 100000
+scoreboard players operation #h bs.ctx += #p bs.ctx
 
-execute store result score #health.max bs.data run attribute @s minecraft:generic.max_health get 100000
-execute store result score #health.mod bs.data run attribute @s minecraft:generic.max_health modifier value get bs.health:limit 100000
-scoreboard players operation #health.mod bs.data -= #health.max bs.data
-execute store result storage bs:ctx x double 0.00001 run scoreboard players operation #health.mod bs.data += #health bs.data
-execute if score #health.mod bs.data matches 1.. run data modify storage bs:ctx x set value 0
-execute if score #health.points bs.data > #health bs.data run return run function bs.health:apply/decrease_health with storage bs:ctx
-execute if score #health.points bs.data < #health bs.data run return run function bs.health:apply/increase_health with storage bs:ctx
+execute store result score #m bs.ctx run attribute @s minecraft:max_health get 100000
+execute store result score #a bs.ctx run attribute @s minecraft:max_health modifier value get bs.health:limit 100000
+scoreboard players operation #a bs.ctx -= #m bs.ctx
+execute store result storage bs:ctx x double 0.00001 run scoreboard players operation #a bs.ctx += #h bs.ctx
+execute if score #a bs.ctx matches 1.. run data modify storage bs:ctx x set value 0
+execute if score #p bs.ctx > #h bs.ctx run return run function bs.health:apply/decrease_health with storage bs:ctx
+execute if score #p bs.ctx < #h bs.ctx run return run function bs.health:apply/increase_health with storage bs:ctx

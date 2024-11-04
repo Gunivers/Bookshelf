@@ -13,15 +13,15 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-# math magic
-scoreboard players add #math.combine.k bs.data 1
-scoreboard players add #math.combine.i bs.data 1
+scoreboard players add #k bs.ctx 1
+scoreboard players add #i bs.ctx 1
 
-scoreboard players set #math.combine.max_out_nonoverflow bs.data 2147483647
-scoreboard players operation #math.combine.max_out_nonoverflow bs.data /= #math.combine.k bs.data
-execute store result score #math.combine.flag bs.data if score $math.combine bs.out <= #math.combine.max_out_nonoverflow bs.data
-execute if score #math.combine.flag bs.data matches 1 run scoreboard players operation $math.combine bs.out *= #math.combine.k bs.data
-execute if score #math.combine.flag bs.data matches 1 run scoreboard players operation $math.combine bs.out /= #math.combine.i bs.data
-execute if score #math.combine.flag bs.data matches 0 run function bs.math:combine/recurse/overflow
+scoreboard players operation $math.combine bs.out /= #i bs.ctx
+scoreboard players operation $math.combine bs.out *= #k bs.ctx
 
-execute if score #math.combine.i bs.data < #math.combine.n bs.data run function bs.math:combine/recurse/next
+scoreboard players operation #m bs.ctx %= #i bs.ctx
+scoreboard players operation #m bs.ctx *= #k bs.ctx
+scoreboard players operation #m bs.ctx /= #i bs.ctx
+execute store result score #m bs.ctx run scoreboard players operation $math.combine bs.out += #m bs.ctx
+
+execute if score #i bs.ctx < #n bs.ctx run function bs.math:combine/recurse/next

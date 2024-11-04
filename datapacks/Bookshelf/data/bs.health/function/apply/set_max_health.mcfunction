@@ -13,6 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$attribute @s minecraft:generic.max_health base set $(y)
+$attribute @s minecraft:max_health base set $(y)
 effect give @s minecraft:health_boost 1 0 true
 effect clear @s minecraft:health_boost

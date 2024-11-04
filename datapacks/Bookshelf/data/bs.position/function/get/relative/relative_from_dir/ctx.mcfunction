@@ -13,6 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute positioned 0.0 0.0 0.0 positioned ^ ^ ^1 run tp @s ~ ~ ~ ~ ~
+execute positioned 0.0 0.0 0.0 run tp @s ^ ^ ^1
 data modify storage bs:ctx _ set from entity @s Pos
-execute in minecraft:overworld run tp @s -30000000 0 1600
+tp @s -30000000 0 1600

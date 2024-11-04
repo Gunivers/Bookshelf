@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-attribute @s minecraft:generic.max_health modifier remove bs.health:limit
+attribute @s minecraft:max_health modifier remove bs.health:limit

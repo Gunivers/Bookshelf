@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "bs.block:__load__"
   ]
 }

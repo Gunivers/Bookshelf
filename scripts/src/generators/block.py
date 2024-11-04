@@ -110,7 +110,7 @@ def format_types_loot_table(blocks: list[dict]):
             mid = len(entries) // 2
             self.keys = [entry["type"][10:] for entry in entries[:mid]]
             self.left = Node(entries[:mid]) if len(entries[:mid]) > 1 else entries[0]
-            self.right = Node(entries[mid:]) if len(entries[:mid]) > 1 else entries[1]
+            self.right = Node(entries[mid:]) if len(entries[mid:]) > 1 else entries[1]
 
     def format_node(node: Node):
         left = format_node(node.left) if isinstance(node.left, Node) else format_leaf(node.left)

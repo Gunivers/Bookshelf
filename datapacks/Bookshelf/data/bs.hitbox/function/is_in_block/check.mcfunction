@@ -13,26 +13,26 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute store result score #hitbox.min_x bs.data run data get storage bs:out hitbox.shape[-1][0] 62.5
-execute store result score #hitbox.min_y bs.data run data get storage bs:out hitbox.shape[-1][1] 62.5
-execute store result score #hitbox.min_z bs.data run data get storage bs:out hitbox.shape[-1][2] 62.5
-execute store result score #hitbox.max_x bs.data run data get storage bs:out hitbox.shape[-1][3] 62.5
-execute store result score #hitbox.max_y bs.data run data get storage bs:out hitbox.shape[-1][4] 62.5
-execute store result score #hitbox.max_z bs.data run data get storage bs:out hitbox.shape[-1][5] 62.5
+execute store result score #i bs.ctx run data get storage bs:out hitbox.shape[-1][0] 62500
+execute store result score #j bs.ctx run data get storage bs:out hitbox.shape[-1][1] 62500
+execute store result score #k bs.ctx run data get storage bs:out hitbox.shape[-1][2] 62500
+execute store result score #o bs.ctx run data get storage bs:out hitbox.shape[-1][3] 62500
+execute store result score #p bs.ctx run data get storage bs:out hitbox.shape[-1][4] 62500
+execute store result score #q bs.ctx run data get storage bs:out hitbox.shape[-1][5] 62500
 
 # offset coordinates if needed
-scoreboard players operation #hitbox.min_x bs.data += #hitbox.offset.x bs.data
-scoreboard players operation #hitbox.max_x bs.data += #hitbox.offset.x bs.data
-scoreboard players operation #hitbox.min_z bs.data += #hitbox.offset.z bs.data
-scoreboard players operation #hitbox.max_z bs.data += #hitbox.offset.z bs.data
+scoreboard players operation #i bs.ctx += #u bs.ctx
+scoreboard players operation #o bs.ctx += #u bs.ctx
+scoreboard players operation #k bs.ctx += #v bs.ctx
+scoreboard players operation #q bs.ctx += #v bs.ctx
 
 execute \
-  if score #hitbox.x bs.data >= #hitbox.min_x bs.data \
-  if score #hitbox.x bs.data < #hitbox.max_x bs.data \
-  if score #hitbox.y bs.data >= #hitbox.min_y bs.data \
-  if score #hitbox.y bs.data < #hitbox.max_y bs.data \
-  if score #hitbox.z bs.data >= #hitbox.min_z bs.data \
-  if score #hitbox.z bs.data < #hitbox.max_z bs.data \
+  if score #x bs.ctx >= #i bs.ctx \
+  if score #x bs.ctx < #o bs.ctx \
+  if score #y bs.ctx >= #j bs.ctx \
+  if score #y bs.ctx < #p bs.ctx \
+  if score #z bs.ctx >= #k bs.ctx \
+  if score #z bs.ctx < #q bs.ctx \
 run return 1
 
 data remove storage bs:out hitbox.shape[-1]

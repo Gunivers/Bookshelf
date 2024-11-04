@@ -1,2 +1,2 @@
 # @batch bs.view
-# @beforebatch function #bs.view:load
+# @beforebatch function #bs.view:exclusive_load

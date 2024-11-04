@@ -1,6 +1,5 @@
 {
   "values": [
-    "#minecraft:unload",
     "#bs.id:load",
     "#bs.position:load",
     "bs.link:__load__"

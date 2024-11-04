@@ -15,8 +15,8 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/link.html#reverse-behaviors
 # -------------------------------------------------------------------------------------------------------------
 
-scoreboard players operation @s bs.rot.v -= #link.origin.v bs.data
+scoreboard players operation @s bs.rot.v -= #v bs.ctx
 scoreboard players operation @s bs.rot.v -= @s bs.link.lv
 scoreboard players operation @s bs.rot.v += @s bs.rot.v
 scoreboard players operation @s bs.link.lv += @s bs.rot.v
-execute store result score @s bs.rot.v run scoreboard players operation #link.origin.v bs.data += @s bs.link.lv
+execute store result score @s bs.rot.v run scoreboard players operation #v bs.ctx += @s bs.link.lv

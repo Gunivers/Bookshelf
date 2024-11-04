@@ -16,6 +16,6 @@
 # ------------------------------------------------------------------------------------------------------------
 
 $data modify storage bs:ctx _ set value $(angle)
-execute as B5-0-0-0-1 run function bs.view:in_view_ata/angle
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.view:in_view_ata/angle
 execute facing entity @s eyes positioned as @s positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^1 run \
   return run function bs.view:in_view_ata/check with storage bs:ctx

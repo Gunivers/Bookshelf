@@ -1,2 +1,2 @@
 # @batch bs.id
-# @beforebatch function #bs.id:load
+# @beforebatch function #bs.id:exclusive_load

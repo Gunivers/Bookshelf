@@ -1,0 +1,6 @@
+{
+  "values": [
+    "#bs.random:load",
+    "bs.generate:__load__"
+  ]
+}

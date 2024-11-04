@@ -19,11 +19,11 @@ execute unless data storage bs:out block.state run data modify storage bs:out bl
 execute unless data storage bs:out block.properties run data modify storage bs:out block.properties set value {}
 
 # escape the nbt or default to an empty string
-execute store success score #success bs.data if data storage bs:out block.nbt{}
-execute if score #success bs.data matches 0 run data modify storage bs:out block.nbt set value ""
-execute if score #success bs.data matches 1 run data modify entity B5-0-0-0-2 text set value '{"storage":"bs:out","nbt":"block.nbt"}'
+execute store success score #s bs.ctx if data storage bs:out block.nbt{}
+execute if score #s bs.ctx matches 0 run data modify storage bs:out block.nbt set value ""
+execute if score #s bs.ctx matches 1 run data modify entity B5-0-0-0-2 text set value '{"storage":"bs:out","nbt":"block.nbt"}'
 
 # generate the full block string representation
 data modify storage bs:ctx _ set from storage bs:out block
-execute if score #success bs.data matches 1 run data modify storage bs:ctx _.nbt set string entity B5-0-0-0-2 text 1 -1
+execute if score #s bs.ctx matches 1 run data modify storage bs:ctx _.nbt set string entity B5-0-0-0-2 text 1 -1
 return run function bs.block:get/compile/concat/block with storage bs:ctx _

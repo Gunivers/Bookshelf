@@ -15,9 +15,9 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/biome.html
 # ------------------------------------------------------------------------------------------------------------
 
-scoreboard objectives remove bs.out
-scoreboard objectives remove bs.data
 scoreboard objectives remove bs.const
+scoreboard objectives remove bs.ctx
+scoreboard objectives remove bs.out
 
 data remove storage bs:out biome
 data remove storage bs:const biome

@@ -13,6 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-tp @s ~ ~ ~ ~ ~
 data modify storage bs:ctx _ set from entity @s Pos
-execute in minecraft:overworld run tp @s -30000000 0 1600
+kill @s

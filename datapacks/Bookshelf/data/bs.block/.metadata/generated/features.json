@@ -1,5 +1,20 @@
 [
   {
+    "name": "emit_block_particle",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
+    "authors": [
+      "theogiraudet"
+    ],
+    "created": {
+      "date": "2024/10/09",
+      "version": "1.21.1"
+    },
+    "updated": {
+      "date": "2024/10/09",
+      "version": "1.21.1"
+    }
+  },
+  {
     "name": "fill_block",
     "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#fill",
     "authors": [
@@ -10,7 +25,7 @@
       "version": "1.20.4"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/09/11",
       "version": "1.21"
     }
   },
@@ -28,7 +43,7 @@
       "version": "1.21"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/09/11",
       "version": "1.21"
     }
   },
@@ -43,7 +58,7 @@
       "version": "1.20.4"
     },
     "updated": {
-      "date": "2024/06/16",
+      "date": "2024/09/11",
       "version": "1.21"
     }
   },
@@ -286,7 +301,7 @@
   },
   {
     "name": "spawn_block_display",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
     "authors": [
       "Aksiome",
       "theogiraudet"
@@ -302,7 +317,7 @@
   },
   {
     "name": "spawn_falling_block",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
     "authors": [
       "Aksiome",
       "theogiraudet"
@@ -318,7 +333,7 @@
   },
   {
     "name": "spawn_solid_block_display",
-    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#spawn",
+    "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/block.html#produce",
     "authors": [
       "Aksiome",
       "theogiraudet"

@@ -15,22 +15,25 @@
 # Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/schedule.html#schedule
 # ------------------------------------------------------------------------------------------------------------
 
-$data modify storage bs:ctx _ set value $(with)
+data modify storage bs:ctx _ set value {time:1,unit:"tick"}
+$data modify storage bs:ctx _ merge value $(with)
 
 # Handle the unit, return early on failure
-scoreboard players set #success bs.data 1
 execute if data storage bs:ctx _.unit run function bs.schedule:schedule/unit/handle with storage bs:ctx _
-execute if score #success bs.data matches 0 run return fail
+execute if score #s bs.ctx matches 0 run return run function #bs.log:error {namespace:"bs.schedule", tag:"schedule", path:"#bs.schedule:schedule", message:'["Unit \\\'",{"storage":"bs:ctx","nbt":"_.unit"},"\\\' is not supported."]'}
+data remove storage bs:ctx _.unit
 
 # Schedule the callback, update the gametime and add a unique id
 execute store result storage bs:ctx _.time int 1 run function bs.schedule:schedule/callback with storage bs:ctx _
 execute store result storage bs:ctx _.suid int 1 run scoreboard players add #schedule.suid bs.data 1
 
 # Get the current context (entity location and selector)
-data modify storage bs:ctx _.Owner set from entity @s UUID
-execute as B5-0-0-0-1 run function bs.schedule:schedule/context
+function bs.schedule:schedule/context/get_dimension
+execute in minecraft:overworld as B5-0-0-0-1 run function bs.schedule:schedule/context/get_position
+execute unless score @s bs.schedule.id matches -2147483648.. store result score @s bs.schedule.id run scoreboard players add #counter bs.schedule.id 1
+execute if entity @s store result storage bs:ctx _.esid int 1 run scoreboard players get @s bs.schedule.id
 
 # Add the command to the schedule queue
-data modify storage bs:data schedule prepend from storage bs:ctx _
+data modify storage bs:data schedule.queue prepend from storage bs:ctx _
 function #bs.log:info {namespace:"bs.schedule", tag:"schedule", path:"#bs.schedule:schedule", message:'"Command scheduled."'}
-return run data get storage bs:ctx _.suid 1
+return run scoreboard players get #schedule.suid bs.data
