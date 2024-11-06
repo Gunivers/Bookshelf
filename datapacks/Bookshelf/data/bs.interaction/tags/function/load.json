@@ -1,9 +1,5 @@
 {
   "values": [
-    "bs.interaction:__load__",
-    {
-      "id": "#bs.log:load",
-      "required": false
-    }
+    "bs.interaction:__load__"
   ]
 }

@@ -13,11 +13,15 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
+kill B5-0-0-0-2
+forceload remove -30000000 1600
+
 execute as @e[type=minecraft:interaction] run function #bs.interaction:clear_events {with:{}}
+
+scoreboard objectives remove bs.interaction.id
 
 scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.data
-
-scoreboard objectives remove bs.interaction.id
+scoreboard objectives remove bs.const
 
 data remove storage bs:data interaction

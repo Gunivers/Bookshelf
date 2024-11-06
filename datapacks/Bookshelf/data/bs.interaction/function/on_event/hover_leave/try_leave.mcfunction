@@ -13,6 +13,8 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute as @n[type=minecraft:interaction,tag=bs.interaction.target] run function bs.interaction:on_event/hover_leave/as_target
-tag @s remove bs.interaction.source
-scoreboard players reset @s bs.interaction.id
+execute store result score #i bs.ctx run scoreboard players get @s bs.interaction.hover
+execute store result storage bs:ctx y int 1 run scoreboard players get @s bs.interaction.id
+execute at @s store result score #p bs.ctx if entity @a[distance=..24,predicate=bs.interaction:check_id]
+scoreboard players operation #i bs.ctx -= #p bs.ctx
+execute if score #i bs.ctx matches 1.. run function bs.interaction:on_event/hover_leave/as_target

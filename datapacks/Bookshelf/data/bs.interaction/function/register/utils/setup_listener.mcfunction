@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute unless score @s bs.interaction.id matches -2147483648.. store result score @s bs.interaction.id run scoreboard players add #counter bs.interaction.id 1
+execute unless score @s bs.interaction.id matches 1.. store result score @s bs.interaction.id run scoreboard players add #counter bs.interaction.id 1
 execute store result storage bs:ctx y int 1 run scoreboard players get @s bs.interaction.id
 
 return run function bs.interaction:register/utils/register_listener with storage bs:ctx

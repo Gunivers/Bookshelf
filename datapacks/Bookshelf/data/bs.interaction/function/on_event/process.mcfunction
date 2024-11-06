@@ -13,6 +13,10 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute as @n[type=minecraft:interaction,tag=bs.interaction.target] run function bs.interaction:on_event/hover_leave/as_target
-tag @s remove bs.interaction.source
-scoreboard players reset @s bs.interaction.id
+scoreboard players operation #interaction.unhandled_hover bs.data = #interaction.active_hover bs.data
+execute as @a at @s run function bs.interaction:on_event/player_process
+execute if score #interaction.unhandled_hover bs.data matches 1.. \
+  as @n[type=minecraft:interaction,scores={bs.interaction.hover=1..},limit=2147483647] \
+  run function bs.interaction:on_event/hover_leave/try_leave
+
+execute if score #interaction.process bs.data matches 1 run schedule function bs.interaction:on_event/process 1t

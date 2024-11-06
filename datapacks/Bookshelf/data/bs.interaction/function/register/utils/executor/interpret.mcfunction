@@ -13,7 +13,7 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$tag $(selector) add bs.interaction.this
+$execute store result score #i bs.ctx run tag $(selector) add bs.interaction.this
 data modify entity B5-0-0-0-2 text set value '{"selector":"@n[tag=bs.interaction.this]"}'
 function bs.interaction:register/utils/executor/unquote with entity B5-0-0-0-2
 data modify storage bs:ctx _.executor set from storage bs:ctx _.executor.insertion

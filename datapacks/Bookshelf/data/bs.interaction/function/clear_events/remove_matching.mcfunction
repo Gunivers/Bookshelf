@@ -27,4 +27,6 @@ execute unless entity @s[tag=bs.interaction.listen_hover] \
   unless entity @s[tag=bs.interaction.listen_hover_leave] \
   run tag @s remove bs.interaction.is_hoverable
 
+execute unless entity @s[tag=bs.interaction.is_hoverable] run scoreboard players set #interaction.process bs.data 0
+
 return run scoreboard players get #i bs.ctx

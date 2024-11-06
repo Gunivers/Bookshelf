@@ -13,4 +13,5 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-execute as @a[advancements={bs.interaction:hover=true}] at @s run function bs.interaction:on_event/hover/hover
+return 1
+$$(run)
