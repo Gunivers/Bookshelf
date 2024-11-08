@@ -1018,51 +1018,6 @@
           ],
           "features": [
             {
-              "name": "callback\\glow",
-              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
-              "authors": [
-                "theogiraudet"
-              ],
-              "created": {
-                "date": "2024/03/30",
-                "version": "24w13a"
-              },
-              "updated": {
-                "date": "2024/11/01",
-                "version": "1.21.3"
-              }
-            },
-            {
-              "name": "callback\\none",
-              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
-              "authors": [
-                "theogiraudet"
-              ],
-              "created": {
-                "date": "2024/03/30",
-                "version": "24w13a"
-              },
-              "updated": {
-                "date": "2024/11/01",
-                "version": "1.21.3"
-              }
-            },
-            {
-              "name": "callback\\unglow",
-              "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#helpers",
-              "authors": [
-                "theogiraudet"
-              ],
-              "created": {
-                "date": "2024/03/30",
-                "version": "24w13a"
-              },
-              "updated": {
-                "date": "2024/11/01",
-                "version": "1.21.3"
-              }
-            },
-            {
               "name": "clear_events",
               "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html#clear-events",
               "authors": [

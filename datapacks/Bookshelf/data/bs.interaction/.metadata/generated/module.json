@@ -11,9 +11,6 @@
     "bs.log"
   ],
   "features": [
-    "bs.interaction:callback\\glow",
-    "bs.interaction:callback\\none",
-    "bs.interaction:callback\\unglow",
     "bs.interaction:clear_events",
     "bs.interaction:on_hover",
     "bs.interaction:on_hover_enter",
