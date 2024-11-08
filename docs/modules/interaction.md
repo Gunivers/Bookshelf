@@ -188,6 +188,14 @@ Each listener can respond to multiple events.
 
   **State**: The listener will trigger the event once upon hover exit.
 ```
+
+
+```{admonition} Edge case
+:class: warning
+
+If a player logs out while hovering over the listener, the hover leave event will trigger on the executor. If the executor is the player, the event won’t be triggered again when they log back in. Be sure to account for this edge case and handle it appropriately when the player returns.
+```
+
 ::::
 :::::
 
@@ -195,7 +203,7 @@ Each listener can respond to multiple events.
 
 ```mcfunction
 summon minecraft:interaction ~ ~ ~ { Tags: ["bs.entity.interaction"], width: 1f, height: 1f }
-summon block_display ~ ~ ~ { Tags: ["bs.entity.block_display"], width: 1f, height: 1f, block_state: { Name: "minecraft:slime_block" }}
+summon block_display ~-.5 ~ ~-.5 { Tags: ["bs.entity.block_display"], width: 1f, height: 1f, block_state: { Name: "minecraft:slime_block" }}
 
 # Callback to glow the icon when the listener is hovered
 execute as @n[tag=bs.entity.interaction] run function #bs.interaction:on_hover_enter { run: "function #bs.interaction:callback/glow", executor: { selector: "@e[tag=bs.entity.block_display]", lazy: false } }
