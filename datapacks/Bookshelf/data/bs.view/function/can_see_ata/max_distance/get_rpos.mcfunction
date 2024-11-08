@@ -13,7 +13,9 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$tp @s ~$(sx)$(x) ~$(sy)$(y) ~$(sz)$(z)
+# Compute relative position
+# Thanks to SilicatYT for sharing this trick on the Minecraft Commands discord
+$execute rotated 180 90 run tp @s ^$(x) ^$(z) ^$(y)
 data modify storage bs:ctx _ set from entity @s Pos
 data modify storage bs:ctx x set from storage bs:ctx _[0]
 data modify storage bs:ctx y set from storage bs:ctx _[1]
