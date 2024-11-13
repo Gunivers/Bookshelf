@@ -29,7 +29,7 @@
       "date": "2024/11/01",
       "version": "1.21.3"
     },
-    "dependencies": [
+    "weak_dependencies": [
       "bs.log"
     ]
   },
@@ -48,7 +48,7 @@
       "date": "2024/11/01",
       "version": "1.21.3"
     },
-    "dependencies": [
+    "weak_dependencies": [
       "bs.log"
     ]
   },
@@ -67,7 +67,7 @@
       "date": "2024/11/01",
       "version": "1.21.3"
     },
-    "dependencies": [
+    "weak_dependencies": [
       "bs.log"
     ]
   },
@@ -86,7 +86,7 @@
       "date": "2024/11/01",
       "version": "1.21.3"
     },
-    "dependencies": [
+    "weak_dependencies": [
       "bs.log"
     ]
   },
@@ -105,7 +105,7 @@
       "date": "2024/11/01",
       "version": "1.21.3"
     },
-    "dependencies": [
+    "weak_dependencies": [
       "bs.log"
     ]
   }
