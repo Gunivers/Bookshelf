@@ -1,0 +1,4 @@
+#!tag "bs." + module + ":help"
+
+{% include 'resources/header.jinja' %}
+tellraw @s [{"text": "[{{ module }} documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "{{ documentation }}v{{ version }}/modules/{{ module }}.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]

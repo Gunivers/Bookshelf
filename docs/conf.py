@@ -1,7 +1,4 @@
 import os
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), "_exts/"))
 
 # -- Project information -----------------------------------------------------
 
@@ -17,8 +14,8 @@ extensions = [
   "sphinx_design",
   "sphinx_togglebutton",
   "sphinx_copybutton",
-  "bs_treeview",
-  "bs_nbt",
+  "_exts.treeview",
+  "_exts.nbt",
 ]
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]

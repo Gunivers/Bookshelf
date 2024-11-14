@@ -1,0 +1,3 @@
+extend: module.json
+broadcast: modules/*
+output: ../../build

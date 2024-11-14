@@ -1,0 +1,36 @@
+name: 📋 Review Modules
+
+on:
+  push:
+    branches: ["master"]
+    paths: ["modules/**"]
+  pull_request:
+    paths: ["modules/**"]
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 🔍 Check files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pdm-project/setup-pdm@v4
+      - name: Check headers and metadata
+        run: |
+          pdm install
+          pdm run check-headers
+          pdm run check-metadata
+  test:
+    name: 🧪 Test modules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pdm-project/setup-pdm@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Run packtest
+        run: |
+          pdm install
+          pdm run test

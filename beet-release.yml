@@ -1,0 +1,13 @@
+extend: module.json
+broadcast: modules/*
+output: ../../release
+
+data_pack:
+  zipped: true
+
+resource_pack:
+  zipped: true
+
+meta:
+  autosave:
+    link: false

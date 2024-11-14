@@ -1,0 +1,19 @@
+[build-system]
+requires = ["pdm-backend", "pdm-build-locked"]
+build-backend = "pdm.backend"
+
+[project]
+name = "bookshelf"
+version = "1.0.0"
+description = "Scripts for building Bookshelf and for the Github pipeline."
+authors = [{ name = "Bookshelf Contributors", email = "contact@gunivers.net" }]
+dependencies = ["beet>=0.108.5", "colorama>=0.4.6", "pydantic>=2.9.2", "requests>=2.32.3"]
+requires-python = "==3.12.*"
+license = { text = "MPL-2.0" }
+
+[project.scripts]
+build = "beet.toolchain.cli:main"
+check-headers = "scripts.check_headers:main"
+check-metadata = "scripts.check_metadata:main"
+gen-metadata = "scripts.gen_metadata:main"
+test = "scripts.test_modules:main"

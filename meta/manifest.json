@@ -1,0 +1,69 @@
+{
+  "modules": [
+    {
+      "id": "bs.biome",
+      "name": "Biome",
+      "description": "Comprehensive information and tools related to biome properties.",
+      "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html",
+      "kind": "data_pack",
+      "dependencies": [
+        "bs.block"
+      ],
+      "weak_dependencies": [
+        "bs.bitwise"
+      ],
+      "features": [
+        {
+          "id": "get_entity",
+          "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html#get",
+          "authors": [
+            "Aksiome",
+            "Update meta"
+          ],
+          "created": {
+            "date": "2023/11/21",
+            "minecraft_version": "1.20.3"
+          },
+          "updated": {
+            "date": "2024/09/28",
+            "minecraft_version": "1.21"
+          }
+        },
+        {
+          "id": "nested/feature",
+          "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html#get",
+          "authors": [
+            "Aksiome"
+          ],
+          "created": {
+            "date": "2023/11/21",
+            "minecraft_version": "1.20.3"
+          },
+          "updated": {
+            "date": "2024/09/28",
+            "minecraft_version": "1.21"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bs.bitwise",
+      "name": "Bitwise",
+      "description": "A collection of various bitwise operations, providing versatile tools for manipulating binary data.",
+      "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html",
+      "kind": "data_pack",
+      "dependencies": [
+        "bs.biome"
+      ],
+      "features": []
+    },
+    {
+      "id": "bs.block",
+      "name": "Block",
+      "description": "Manage blocks, including states and NBTs, while offering advanced tools for seamless transformations.",
+      "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html",
+      "kind": "data_pack",
+      "features": []
+    }
+  ]
+}

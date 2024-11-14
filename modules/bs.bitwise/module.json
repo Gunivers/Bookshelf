@@ -1,0 +1,15 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.bitwise",
+    "load": "."
+  },
+  "meta": {
+    "name": "Bitwise",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html",
+    "description": "A collection of various bitwise operations, providing versatile tools for manipulating binary data.",
+    "dependencies": [
+      "bs.biome"
+    ]
+  }
+}

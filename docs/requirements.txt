@@ -1,7 +1,8 @@
-sphinx
+linkify-it-py
 myst-parser
 pydata-sphinx-theme
+sphinx
+sphinx-autobuild
+sphinx-copybutton
 sphinx-design
 sphinx-togglebutton
-sphinx-copybutton
-linkify-it-py

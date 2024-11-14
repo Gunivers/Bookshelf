@@ -12,11 +12,11 @@ In order to reduce the footprint of the library here are some shared objectives 
 
 | Objectives | Description |
 |------------|-------------|
+| `bs.ctx`   | Fast contextual scoreboard. Scoreholder format: `#<single_letter>` |
 | `bs.const` | Contain constant values. Scoreholder format: `<value>` |
 | `bs.data`  | Global score storage. Scoreholder format: `#<module>.<my_key>` |
 | `bs.in`    | Default score for inputs. Scoreholder format: `$<module>.<feature>.<input_key>` |
 | `bs.out`   | Default score for outputs. Scoreholder format: `$<module>.<feature>` or `$<module>.<feature>.<output_key>` |
-| `bs.ctx`   | Fast contextual scoreboard. Scoreholder format: `#<single_letter>` |
 
 ---
 
@@ -24,11 +24,11 @@ In order to reduce the footprint of the library here are some shared objectives 
 
 | Namespaces | Description |
 |------------|-------------|
+| `bs:ctx`   | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |
 | `bs:const` | Contain constant data. Path format: `<module>.<my_key>` |
 | `bs:data`  | Global data storage. Path format: `<module>.<my_key>` |
 | `bs:in`    | Default storage for inputs. Path format: `<module>.<feature>.<input_key>` |
 | `bs:out`   | Default storage for outputs. Path format: `<module>.<feature>` or `<module>.<feature>.<output_key>` |
-| `bs:ctx`   | Fast contextual storage. Only path accepted are `x`, `y`, `z` for numbers (store) and `_` for other data. |
 
 ---
 
@@ -57,8 +57,4 @@ execute unless entity B5-0-0-0-2 run summon minecraft:text_display -30000000 0 1
 
 # An entity that can be used to manipulate loots or compute transformations
 execute unless entity B5-0-0-0-3 run summon minecraft:item_display -30000000 0 1600 {UUID:[I;181,0,0,3],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],view_range:0f}
-
-# An entity used as an UUID pointer (modify Owner then execute on origin)
-execute unless entity B5-0-0-0-4 run summon minecraft:snowball -30000000 0 1600 {UUID:[I;181,0,0,4],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],NoGravity:1b,Invulnerable:1b}
-
 ```
