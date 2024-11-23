@@ -33,6 +33,10 @@
       "required": false
     },
     {
+      "id": "#bs.interaction:load",
+      "required": false
+    },
+    {
       "id": "#bs.link:load",
       "required": false
     },

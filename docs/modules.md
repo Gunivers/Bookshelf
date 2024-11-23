@@ -25,6 +25,7 @@ modules/generate
 modules/health
 modules/hitbox
 modules/id
+modules/interaction
 modules/link
 modules/math
 modules/move
