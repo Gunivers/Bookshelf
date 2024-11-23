@@ -11,16 +11,17 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#can-see-as-to-at
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set from entity @s Pos
-data modify storage bs:ctx x set from storage bs:ctx _[0]
-data modify storage bs:ctx y set from storage bs:ctx _[1]
-data modify storage bs:ctx z set from storage bs:ctx _[2]
-execute summon minecraft:marker run function bs.view:can_see_ata/max_distance/get_rpos with storage bs:ctx
-function bs.view:can_see_ata/max_distance/compute with storage bs:ctx
+# The registered event has the following properties:
+# - id: The ID of the event.
+# - type: The type of event.
+# - run: The command to execute.
+# - executor: The executor of the command.
 
-execute facing entity @s eyes run function bs.raycast:run
-return run execute if score #raycast.distance bs.data matches 2147483647
+# Get a new ID based on the ID of the last registered event incremented by 1.
+$execute store result score #i bs.ctx run data get storage bs:data interaction.$(y)[0].id
+execute store result storage bs:ctx _.id int 1 run scoreboard players add #i bs.ctx 1
+
+$data modify storage bs:data interaction.$(y) prepend from storage bs:ctx _
+return run scoreboard players get #i bs.ctx

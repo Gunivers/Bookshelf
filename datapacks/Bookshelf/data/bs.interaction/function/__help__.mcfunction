@@ -12,15 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 #
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#can-see-as-to-at
+# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set from entity @s Pos
-data modify storage bs:ctx x set from storage bs:ctx _[0]
-data modify storage bs:ctx y set from storage bs:ctx _[1]
-data modify storage bs:ctx z set from storage bs:ctx _[2]
-execute summon minecraft:marker run function bs.view:can_see_ata/max_distance/get_rpos with storage bs:ctx
-function bs.view:can_see_ata/max_distance/compute with storage bs:ctx
-
-execute facing entity @s eyes run function bs.raycast:run
-return run execute if score #raycast.distance bs.data matches 2147483647
+tellraw @s [{"text": "[bs.interaction documentation]", "color": "dark_aqua", "clickEvent": {"action": "open_url", "value": "https://bookshelf.docs.gunivers.net/en/latest/modules/interaction.html"}, "hoverEvent": {"action": "show_text", "contents": "Click to open URL"}}]

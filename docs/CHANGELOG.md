@@ -18,13 +18,12 @@ Bookshelf is now based on **Minecraft 1.21.2**.
   - Random distributions: uniform, binomial, geometric, and Poisson.
   - Noise generation functions: white, simplex, and fractal.
   - Random selection of an element from a list.
-
 - **[#6](https://github.com/Gunivers/Bookshelf/issues/6)** Added the `bs.generate` module for terrain generation. Currently supports 2D shape algorithms, enabling texture and heightmap-based terrain generation.
+- **[#193](https://github.com/Gunivers/Bookshelf/issues/193)** Added the `bs.interaction` module, which proposes interactions to listen to different players' events: left click, right click, hover (enter, leave and continuous).
 
 ### ✨ Added features
 
 - **[#222](https://github.com/Gunivers/Bookshelf/issues/222)** Added `#bs.block:fill_random` for filling regions with randomly selected blocks.
-- **[#251](https://github.com/Gunivers/Bookshelf/issues/251)** Enhanced `bs.block` fill functions to accept `from` and `to` inputs as either `[x, y, z]` lists or as stringified coordinates (e.g., `~ ~5 25`).
 - **[#258](https://github.com/Gunivers/Bookshelf/issues/258)** Added `#bs.block:emit_block_particle` to emit block particles in specific locations.
 - **[#245](https://github.com/Gunivers/Bookshelf/issues/245)** Added `piercing` and callback options to `#bs.raycast:run`.
 - **[#203](https://github.com/Gunivers/Bookshelf/issues/203)** Added `#bs.hitbox:is_entity_in_block` and `#bs.hitbox:is_entity_in_blocks` to verify if an entity is within a block.
@@ -35,6 +34,7 @@ Bookshelf is now based on **Minecraft 1.21.2**.
 
 ### 🔁 Tweaks
 
+- **[#251](https://github.com/Gunivers/Bookshelf/issues/251)** Enhanced `bs.block` fill functions to accept `from` and `to` inputs as either `[x, y, z]` lists or as stringified coordinates (e.g., `~ ~5 25`).
 - **[#247](https://github.com/Gunivers/Bookshelf/pull/247)** Improved the default `bs.log` format for clarity.
 - **[#252](https://github.com/Gunivers/Bookshelf/pull/252)** Optimized `bs.hitbox` module for improved performance.
 - **[#265](https://github.com/Gunivers/Bookshelf/pull/265)** Optimized `bs.schedule` module for improved performance.

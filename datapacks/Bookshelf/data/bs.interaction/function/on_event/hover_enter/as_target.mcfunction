@@ -11,16 +11,11 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-#
-# Documentation of the feature: https://bookshelf.docs.gunivers.net/en/latest/modules/view.html#can-see-as-to-at
 # ------------------------------------------------------------------------------------------------------------
 
-data modify storage bs:ctx _ set from entity @s Pos
-data modify storage bs:ctx x set from storage bs:ctx _[0]
-data modify storage bs:ctx y set from storage bs:ctx _[1]
-data modify storage bs:ctx z set from storage bs:ctx _[2]
-execute summon minecraft:marker run function bs.view:can_see_ata/max_distance/get_rpos with storage bs:ctx
-function bs.view:can_see_ata/max_distance/compute with storage bs:ctx
-
-execute facing entity @s eyes run function bs.raycast:run
-return run execute if score #raycast.distance bs.data matches 2147483647
+scoreboard players add @s bs.interaction.hover 1
+scoreboard players add #interaction.active_hover bs.data 1
+execute store result storage bs:ctx y int 1 run scoreboard players operation @p[distance=0,tag=bs.interaction.source] bs.interaction.id = @s bs.interaction.id
+execute if entity @s[tag=bs.interaction.listen_hover_enter] run function bs.interaction:on_event/hover_enter/dispatch with storage bs:ctx
+execute if entity @s[tag=bs.interaction.listen_hover] run function bs.interaction:on_event/hover/dispatch with storage bs:ctx
+tag @s remove bs.interaction.target
