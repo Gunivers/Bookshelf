@@ -214,7 +214,7 @@ execute as @n[tag=bs.entity.interaction] run function #bs.interaction:on_hover_l
 
 ---
 
-### Default callbacks
+### Predefined callbacks
 
 :::::{tab-set}
 ::::{tab-item} Glow

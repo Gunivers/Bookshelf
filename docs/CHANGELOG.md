@@ -19,7 +19,7 @@ Bookshelf is now based on **Minecraft 1.21.2**.
   - Noise generation functions: white, simplex, and fractal.
   - Random selection of an element from a list.
 - **[#6](https://github.com/Gunivers/Bookshelf/issues/6)** Added the `bs.generate` module for terrain generation. Currently supports 2D shape algorithms, enabling texture and heightmap-based terrain generation.
-- **[#222](https://github.com/Gunivers/Bookshelf/issues/193)** Added the `bs.interaction` module, which proposes interactions to listen to different players' events: left click, right click, hover (enter, leave and continuous).
+- **[#193](https://github.com/Gunivers/Bookshelf/issues/193)** Added the `bs.interaction` module, which proposes interactions to listen to different players' events: left click, right click, hover (enter, leave and continuous).
 
 ### ✨ Added features
 
