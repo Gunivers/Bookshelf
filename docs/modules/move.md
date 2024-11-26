@@ -15,10 +15,6 @@ Make your entity move exactly the way you want them to!
 -- Heraclitus
 ```
 
-```{important}
-This module limits the world size to 2,147,480 to prevent scoreboard overflow.
-```
-
 ---
 
 ## 🔧 Functions
