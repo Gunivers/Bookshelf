@@ -10,12 +10,12 @@
     ]
   },
   "require": [
-    "scripts.plugins.requirements"
+    "scripts.pipeline.requirements"
   ],
   "pipeline": [
-    "scripts.plugins.pack_format",
-    "scripts.plugins.include_deps",
-    "scripts.plugins.gen_help",
-    "scripts.plugins.gen_load"
+    "scripts.pipeline.pack_format",
+    "scripts.pipeline.include_deps",
+    "scripts.pipeline.gen_help",
+    "scripts.pipeline.gen_load"
   ]
 }

@@ -1,6 +1,6 @@
-from .log import step
-from .packtest import Assets, Runner
-from .utils import ROOT_DIR, load_json
+from .toolkit.logger import step
+from .toolkit.packtest import Assets, Runner
+from .toolkit.helpers import ROOT_DIR, load_json
 from beet import Project, ProjectConfig
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -18,7 +18,7 @@ def main():
             config = ProjectConfig(
                 extend='module.json',
                 broadcast='modules/*',
-                require=['scripts.plugins.include_test'],
+                require=['scripts.pipeline.include_test'],
                 output=Path(tmpdir) / 'world/datapacks',
             )
             Project(config.resolve(ROOT_DIR)).build()

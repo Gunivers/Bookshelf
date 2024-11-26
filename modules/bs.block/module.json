@@ -6,7 +6,10 @@
   },
   "meta": {
     "name": "Block",
-    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html",
-    "description": "Manage blocks, including states and NBTs, while offering advanced tools for seamless transformations."
-  }
+    "description": "Manage blocks, including states and NBTs, while offering advanced tools for seamless transformations.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/block.html"
+  },
+  "pipeline": [
+    "generate"
+  ]
 }

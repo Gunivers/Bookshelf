@@ -1,6 +1,6 @@
-from .log import step
-from .metadata import get_feature_meta, get_module_meta
-from .utils import MODULES_DIR
+from .toolkit.logger import step
+from .toolkit.metadata import get_feature_meta, get_module_meta
+from .toolkit.helpers import MODULES_DIR
 
 
 def main():

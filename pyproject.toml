@@ -12,7 +12,6 @@ requires-python = "==3.12.*"
 license = { text = "MPL-2.0" }
 
 [project.scripts]
-build = "beet.toolchain.cli:main"
 check-headers = "scripts.check_headers:main"
 check-metadata = "scripts.check_metadata:main"
 gen-metadata = "scripts.gen_metadata:main"
