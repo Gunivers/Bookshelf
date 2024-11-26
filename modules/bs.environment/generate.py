@@ -8,9 +8,11 @@ from scripts.toolkit.helpers import generate_loot_table_tree
 def beet_default(ctx: Context):
     biomes = get_biomes(ctx, version := ctx.meta.get('minecraft_versions')[-1])
 
-    ctx.data[f'{ctx.data.name}:get/get_biome'] = generate_get_biome_loot_table(biomes)
-    ctx.data[f'{ctx.data.name}:can_snow'] = generate_can_snow_predicate(biomes, version)
-    ctx.data[f'{ctx.data.name}:has_precipitation'] = generate_has_precipitation_predicate(biomes, version)
+    with ctx.override(generate_namespace=ctx.data.name):
+        ctx.generate('get/get_biome', generate_get_biome_loot_table(biomes))
+
+        ctx.generate('can_snow', generate_can_snow_predicate(biomes, version))
+        ctx.generate('has_precipitation', generate_has_precipitation_predicate(biomes, version))
 
 
 def generate_get_biome_loot_table(biomes: list[dict]) -> LootTable:

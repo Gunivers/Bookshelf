@@ -67,17 +67,6 @@ def generate_loot_table_tree(
     return {"pools":[{"rolls":1,"entries":[subtree(items)]}]}
 
 
-def is_numeric_sequence(options: list):
-    """
-    Checks if a list contains only numeric value in a sequence.
-    """
-    try:
-        numbers = sorted(int(i) for i in options)
-        return all(numbers[i] + 1 == numbers[i + 1] for i in range(len(numbers) - 1))
-    except (ValueError, TypeError):
-        return False
-
-
 def load_json(file_path: Path) -> dict|list:
     """
     Loads data from a JSON file.
