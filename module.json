@@ -6,10 +6,10 @@
     "core.plugins.setup_jinja"
   ],
   "pipeline": [
-    "core.plugins.setup_pack",
     "core.plugins.auto_import",
     "core.plugins.dependencies",
-    "core.plugins.generate_help",
-    "core.plugins.generate_load"
+    "core.plugins.gen_help",
+    "core.plugins.gen_load",
+    "core.plugins.setup_pack"
   ]
 }

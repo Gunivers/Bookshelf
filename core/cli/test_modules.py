@@ -15,7 +15,7 @@ def main():
             config = ProjectConfig(
                 extend='module.json',
                 broadcast='modules/*',
-                require=['scripts.pipeline.include_test'],
+                require=['core.plugins.packtest'],
                 output=Path(tmpdir) / 'world/datapacks',
             )
             Project(config.resolve(ROOT_DIR)).build()
