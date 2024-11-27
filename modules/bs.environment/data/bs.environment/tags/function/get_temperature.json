@@ -16,6 +16,6 @@
     }
   },
   "values": [
-    "bs.biome:get/temperature/get_temperature"
+    "bs.environment:get/temperature/get_temperature"
   ]
 }

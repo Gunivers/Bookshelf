@@ -6,7 +6,7 @@ VERSION = "2.1.1"
 MINECRAFT_VERSIONS = ["1.20.5", "1.21.3"]
 
 DOC_URL = 'https://docs.mcbookshelf.dev/'
-GITHUB_REPO = 'Gunivers/Bookshelf'
+GITHUB_REPO = 'mcbookshelf/Bookshelf'
 META_MANIFEST = 'meta/manifest.json'
 META_VERSIONS = 'meta/versions.json'
 

@@ -1,7 +1,7 @@
 import json
 from beet import Context
 from bisect import insort
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import permutations
 from core.common.helpers import prefix
 
@@ -116,6 +116,40 @@ def get_blocks(ctx: Context, version: str) -> list[dict]:
             json.dump(format_blocks(blocks, items), file, indent=2)
 
     return json.loads(path.read_text('utf-8'))
+
+
+def get_shapes(ctx: Context, version: str) -> list[dict]:
+    cache = ctx.cache.get(f'version/{version}')
+    file = cache.download(f'https://raw.githubusercontent.com/mcbookshelf/Bookshelf-McData/refs/tags/{version}/blocks/shapes.min.json')
+    shapes = json.loads(file.read_text('utf-8'))
+
+    group = defaultdict(list)
+    for block, entries in shapes.items():
+        if all(item["shape"] in ([[0.0,0.0,0.0,1.0,1.0,1.0]], []) for item in entries):
+            continue
+
+        for prop in list(entries[0]["properties"].keys()):
+            values = {entry["properties"][prop] for entry in entries}
+            shapes = {value: [entry["shape"] for entry in entries if entry["properties"][prop] == value] for value in values}
+
+            first_shape = next(iter(shapes.values()))
+            if all(shape == first_shape for shape in shapes.values()):
+                entries = [entry for entry in entries if entry["properties"][prop] == next(iter(values))]
+                for entry in entries:
+                    entry["properties"].pop(prop)
+
+        group[json.dumps([{
+            "has_offset": entry["has_offset"],
+            "properties": entry["properties"],
+            "shape": [[value * 16 for value in shape] for shape in entry["shape"]]
+        } for entry in entries])].append(block)
+
+    i = 0
+    return [{
+        "group": (i := i + 1) if len(json.loads(shapes)) > 1 else 0,
+        "blocks": blocks,
+        "shapes": json.loads(shapes)
+    } for shapes, blocks in group.items()]
 
 
 def format_blocks(blocks: dict, items: dict) -> list[dict]:

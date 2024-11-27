@@ -8,5 +8,8 @@
     "name": "Hitbox",
     "description": "Get and check the hitboxes of blocks or entities.",
     "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/hitbox.html"
-  }
+  },
+  "pipeline": [
+    "generate"
+  ]
 }

@@ -15,6 +15,6 @@
     }
   },
   "values": [
-    "bs.biome:get/biome/get_biome"
+    "bs.environment:get/biome/get_biome"
   ]
 }
