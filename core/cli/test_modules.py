@@ -1,7 +1,7 @@
-from .toolkit.logger import step
-from .toolkit.packtest import Assets, Runner
-from .toolkit.helpers import ROOT_DIR, load_json
 from beet import Project, ProjectConfig
+from core.common.logger import log_step
+from core.common.packtest import Assets, Runner
+from core.definitions import ROOT_DIR, MINECRAFT_VERSIONS
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -10,11 +10,8 @@ def main():
     """
     Main entry point for building and running tests.
     """
-    data = load_json('module.json')
-    mc_version = data['meta']['minecraft_versions'][-1]
-
     with TemporaryDirectory(prefix='mcbs-') as tmpdir:
-        with step('🔨 Building project…'):
+        with log_step('🔨 Building project…'):
             config = ProjectConfig(
                 extend='module.json',
                 broadcast='modules/*',
@@ -23,7 +20,7 @@ def main():
             )
             Project(config.resolve(ROOT_DIR)).build()
 
-        runner = Runner(Assets(mc_version))
+        runner = Runner(Assets(MINECRAFT_VERSIONS[-1]))
         code = runner.run(Path(tmpdir))
 
     exit(code)

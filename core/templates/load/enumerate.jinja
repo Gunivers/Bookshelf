@@ -1,6 +1,6 @@
 #!tag "bs.load:enumerate"
 
-{% include 'resources/header.jinja' %}
+{% include 'core/header.jinja' %}
 execute store result storage bs:data load[{version:[{{ major }},{{ minor }},{{ patch }}]}].n int 1 run scoreboard players add #bs.modules.n load.status 1
 
 execute unless score #bs.modules.major load.status matches {{ major }}.. run scoreboard players set #bs.modules.major load.status {{ major }}

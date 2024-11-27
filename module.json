@@ -2,20 +2,14 @@
   "data_pack": {
     "description": "Bookshelf - Library designed for mapmakers"
   },
-  "meta": {
-    "version": "2.1.1",
-    "minecraft_versions": [
-      "1.20.5",
-      "1.21.3"
-    ]
-  },
   "require": [
-    "scripts.pipeline.requirements"
+    "core.plugins.setup_jinja"
   ],
   "pipeline": [
-    "scripts.pipeline.pack_format",
-    "scripts.pipeline.include_deps",
-    "scripts.pipeline.gen_help",
-    "scripts.pipeline.gen_load"
+    "core.plugins.setup_pack",
+    "core.plugins.auto_import",
+    "core.plugins.dependencies",
+    "core.plugins.generate_help",
+    "core.plugins.generate_load"
   ]
 }

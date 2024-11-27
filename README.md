@@ -7,11 +7,11 @@
 
 <h2>
 <div align="center">
-    <a href="https://bookshelf.docs.gunivers.net/en/latest/quickstart.html"><img src="resources/download.svg?v=2" alt="Download" style="height:3rem"></a>
+    <a href="https://bookshelf.docs.gunivers.net/en/latest/quickstart.html"><img src="docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
     &nbsp;&nbsp;
-    <a href="https://bookshelf.docs.gunivers.net/"><img src="resources/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
+    <a href="https://bookshelf.docs.gunivers.net/"><img src="docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
     &nbsp;&nbsp;
-    <a href="https://discord.gg/MkXytNjmBt"><img src="resources/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
+    <a href="https://discord.gg/MkXytNjmBt"><img src="docs/_imgs/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
   </div>
 </h2>
 

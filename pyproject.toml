@@ -12,7 +12,7 @@ requires-python = "==3.12.*"
 license = { text = "MPL-2.0" }
 
 [project.scripts]
-check-headers = "scripts.check_headers:main"
-check-metadata = "scripts.check_metadata:main"
-gen-metadata = "scripts.gen_metadata:main"
-test = "scripts.test_modules:main"
+check-headers = "core.cli.check_headers:main"
+check-metadata = "core.cli.check_metadata:main"
+gen-metadata = "core.cli.gen_metadata:main"
+test = "core.cli.test_modules:main"

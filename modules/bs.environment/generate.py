@@ -1,16 +1,16 @@
 from beet import Context, LootTable, Predicate
 from collections import defaultdict
-from mcdata import get_biomes
 from datetime import datetime
-from scripts.toolkit.helpers import generate_loot_table_tree
+from core.common.helpers import generate_loot_table_tree
+from core.common.mcdata import get_biomes
+from core.definitions import MINECRAFT_VERSIONS
 
 
 def beet_default(ctx: Context):
-    biomes = get_biomes(ctx, version := ctx.meta.get('minecraft_versions')[-1])
+    biomes = get_biomes(ctx, version := MINECRAFT_VERSIONS[-1])
 
     with ctx.override(generate_namespace=ctx.data.name):
         ctx.generate('get/get_biome', generate_get_biome_loot_table(biomes))
-
         ctx.generate('can_snow', generate_can_snow_predicate(biomes, version))
         ctx.generate('has_precipitation', generate_has_precipitation_predicate(biomes, version))
 

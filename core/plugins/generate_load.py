@@ -1,7 +1,8 @@
 from beet import Context, Function, FunctionTag
 
+
 def beet_default(ctx: Context):
-    ctx.require("beet.contrib.lantern_load.base_data_pack")
+    """ ctx.require("beet.contrib.lantern_load.base_data_pack")
     ctx.data['load:load'] = FunctionTag({'values': ['#bs.load:load']})
 
     version = ctx.meta.get('version')
@@ -43,7 +44,7 @@ def beet_default(ctx: Context):
             ctx.meta.get('dependencies', []) or [],
             ctx.meta.get('weak_dependencies', []) or [],
         )
-    })
+    }) """
 
 
 def get_load_tag_values(

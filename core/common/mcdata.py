@@ -1,8 +1,9 @@
+import json
 from beet import Context
 from bisect import insort
 from collections import Counter
 from itertools import permutations
-from scripts.toolkit.helpers import common_len, load_json, set_prefix, write_json
+from core.common.helpers import prefix
 
 
 SPECIAL_ITEMS = {
@@ -90,16 +91,31 @@ SPECIAL_ITEMS = {
 }
 
 
+def get_biomes(ctx: Context, version: str) -> list[dict]:
+    cache = ctx.cache.get(f'version/{version}')
+    file = cache.download(f'https://raw.githubusercontent.com/misode/mcmeta/{version}-summary/data/worldgen/biome/data.min.json')
+    biomes = json.loads(file.read_text('utf-8'))
+
+    return [{
+        'type': prefix(biome),
+        'temperature': float(data['temperature']),
+        'has_precipitation': bool(data['has_precipitation']),
+    } for biome, data in biomes.items()]
+
+
 def get_blocks(ctx: Context, version: str) -> list[dict]:
     cache = ctx.cache.get(f'version/{version}')
     path = cache.get_path('blocks.json')
 
     if not path.is_file():
-        blocks_file = cache.download(f'https://raw.githubusercontent.com/misode/mcmeta/{version}-summary/blocks/data.min.json')
-        items_file = cache.download(f'https://raw.githubusercontent.com/misode/mcmeta/{version}-registries/item/data.min.json')
-        items = {set_prefix(item): set_prefix(item) for item in load_json(items_file)} | SPECIAL_ITEMS
-        write_json(path, format_blocks(load_json(blocks_file), items))
-    return load_json(path)
+        file = cache.download(f'https://raw.githubusercontent.com/misode/mcmeta/{version}-summary/blocks/data.min.json')
+        blocks = json.loads(file.read_text('utf-8'))
+        file = cache.download(f'https://raw.githubusercontent.com/misode/mcmeta/{version}-registries/item/data.min.json')
+        items = {prefix(item): prefix(item) for item in json.loads(file.read_text('utf-8'))} | SPECIAL_ITEMS
+        with open(path, 'w') as file:
+            json.dump(format_blocks(blocks, items), file, indent=2)
+
+    return json.loads(path.read_text('utf-8'))
 
 
 def format_blocks(blocks: dict, items: dict) -> list[dict]:
@@ -117,8 +133,8 @@ def format_blocks(blocks: dict, items: dict) -> list[dict]:
             groups.append(props)
 
         insort(formatted_blocks, {
-            'type': set_prefix(block),
-            'item': items.get(set_prefix(block)),
+            'type': prefix(block),
+            'item': items.get(prefix(block)),
             'group': group
         }, key=lambda x: x['group'])
 
@@ -156,6 +172,13 @@ def format_groups(groups: list):
 
 
 def get_best_sequences(groups: list[dict[str, list]]):
+
+    def common_len(a, b):
+        i = 0
+        while i < len(a) and i < len(b) and a[i] == b[i]:
+            i += 1
+        return i
+
     counter = Counter()
     hgroups = [[(name, tuple(sorted(opts))) for name, opts in group.items()] for group in groups]
     counter.update(sum(hgroups, []))

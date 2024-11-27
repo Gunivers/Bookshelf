@@ -88,7 +88,7 @@ class StepLogger(logging.LoggerAdapter):
 
 
 @contextmanager
-def step(message: Optional[str] = None):
+def log_step(message: Optional[str] = None):
     """
     Create a new logging context with optional step message.
     """

@@ -1,6 +1,8 @@
-from .helpers import MODULES_DIR, ROOT_DIR, extract_feature_id, load_json
-from .logger import StepLogger
-from json import JSONDecodeError
+import json
+import re
+from core.common.helpers import extract_feature_id
+from core.common.logger import StepLogger
+from core.definitions import DOC_URL, MODULES_DIR, ROOT_DIR
 from pathlib import Path
 from pydantic import BaseModel, Field, ValidationError
 from typing import Literal, Optional
@@ -13,7 +15,7 @@ class Updated(BaseModel):
 
 class FeatureMeta(BaseModel):
     id: str
-    documentation: str = Field(pattern=r'^https://docs\.mcbookshelf\.dev/en/latest/modules/.+$')
+    documentation: str = Field(pattern=rf'^{re.escape(DOC_URL)}en/latest/modules/.+$')
     authors: list[str]
     contributors: list[str] = []
     created: Updated
@@ -24,7 +26,7 @@ class ModuleMeta(BaseModel):
     id: str = Field(pattern=r'^bs\..+$')
     name: str
     description: str
-    documentation: str = Field(pattern=r'^https://docs\.mcbookshelf\.dev/en/latest/modules/.+$')
+    documentation: str = Field(pattern=rf'^{re.escape(DOC_URL)}en/latest/modules/.+$')
     image: str = None
     kind: Literal['data_pack', 'resource_pack']
     tags: list[str] = []
@@ -42,17 +44,17 @@ def format_validation_errors(e: ValidationError) -> str:
     return "\n    - " + "\n    - ".join(errors)
 
 
-def get_feature_meta(file_path: Path, logger: StepLogger) -> Optional[FeatureMeta]:
+def get_feature_meta(file: Path, logger: StepLogger) -> Optional[FeatureMeta]:
     """
     Retrieve feature metadata from a JSON file.
     """
-    relative_path = file_path.relative_to(ROOT_DIR)
-    feature_id = extract_feature_id(file_path)
+    relative_path = file.relative_to(ROOT_DIR)
+    feature_id = extract_feature_id(file)
     if not feature_id:
         return None
 
     try:
-        meta = load_json(file_path).get('__bookshelf__', {})
+        meta = json.loads(file.read_text('utf-8')).get('__bookshelf__', {})
         return FeatureMeta(id=feature_id, **meta)
 
     except ValidationError as e:
@@ -62,7 +64,7 @@ def get_feature_meta(file_path: Path, logger: StepLogger) -> Optional[FeatureMet
             'file': relative_path,
         })
 
-    except JSONDecodeError as e:
+    except json.JSONDecodeError as e:
         logger.error(f'File "{relative_path}" has invalid JSON.', extra={
             'title': 'Malformed Json',
             'file': relative_path,
@@ -70,15 +72,15 @@ def get_feature_meta(file_path: Path, logger: StepLogger) -> Optional[FeatureMet
         })
 
 
-def get_module_meta(file_path: Path, logger: StepLogger) -> Optional[ModuleMeta]:
+def get_module_meta(file: Path, logger: StepLogger) -> Optional[ModuleMeta]:
     """
     Retrieve module metadata from a JSON file.
     """
-    relative_path = file_path.relative_to(ROOT_DIR)
-    module_id = file_path.parent.name
+    relative_path = file.relative_to(ROOT_DIR)
+    module_id = file.parent.name
 
     try:
-        data = load_json(file_path)
+        data = json.loads(file.read_text('utf-8'))
         meta = data.get('meta', {})
 
         if 'data_pack' in data and 'resource_pack' in data:
@@ -101,7 +103,7 @@ def get_module_meta(file_path: Path, logger: StepLogger) -> Optional[ModuleMeta]
             'file': relative_path,
         })
 
-    except JSONDecodeError as e:
+    except json.JSONDecodeError as e:
         logger.error(f'File "{relative_path}" has invalid JSON.', extra={
             'title': 'Malformed Json',
             'file': relative_path,
