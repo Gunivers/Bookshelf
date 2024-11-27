@@ -1,7 +1,7 @@
 import re
 import requests
 import subprocess
-from .logger import StepLogger, step
+from core.common.logger import StepLogger, log_step
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -18,7 +18,7 @@ class Assets:
         self.packtest_url = self._get_modrinth_url('packtest', mc_version)
 
     def download(self, out: Path):
-        with step('🚀 Downloading assets…') as logger:
+        with log_step('🚀 Downloading assets…') as logger:
             for url, file_path in [
                 (self.fabric_server_url, out / 'server.jar'),
                 (self.fabric_api_url, out / 'mods/fabric-api.jar'),
@@ -68,7 +68,7 @@ class Runner:
 
     def run(self, rundir: Path) -> int:
         self.assets.download(rundir)
-        with step('🧪 Running test server…') as logger:
+        with log_step('🧪 Running test server…') as logger:
             process = subprocess.Popen(
                 'java -Xmx2G -Dpacktest.auto -Dpacktest.auto.annotations -jar server.jar nogui',
                 cwd=rundir,
