@@ -11,10 +11,10 @@ def beet_default(ctx: Context):
 
     with ctx.override(generate_namespace=ctx.data.name):
         ctx.generate('has_state', generate_has_state_block_tag(blocks, version))
-        ctx.generate('get/get_block', generate_get_block_loot_table(blocks))
-        ctx.generate('get/get_types', generate_get_types_loot_table(blocks))
+        ctx.generate('get/get_block', generate_get_block_loot_table(blocks, ctx.data.name))
+        ctx.generate('get/get_type', generate_get_type_loot_table(blocks))
         for state in {s['id']: s for b in blocks for s in b['states']}.values():
-            ctx.generate(f'get/{state['id']}', generate_get_state_loot_table(state))
+            ctx.generate(f'get/{state['id']}', generate_get_state_loot_table(state, ctx.data.name))
 
         ctx.generate('import/groups_table',
             render=Function(source_path='groups_table.jinja'),
@@ -70,39 +70,39 @@ def format_groups_table(blocks: list[dict]) -> dict:
     }
 
 
-def generate_get_types_loot_table(blocks: list[dict]) -> LootTable:
+def generate_get_type_loot_table(blocks: list[dict]) -> LootTable:
     return LootTable(
         generate_loot_table_tree(blocks, lambda block: format_block_entry({
             'type': 'item',
             'name': 'egg',
         }, block), lambda blocks: [{
             'condition': 'location_check',
-            'predicate': {'block': {'blocks': [block['type'] for block in blocks]}}
+            'predicate': {'block': {'blocks': [block['type'][10:] for block in blocks]}}
         }])
     )
 
 
-def generate_get_block_loot_table(blocks: list[dict]) -> LootTable:
+def generate_get_block_loot_table(blocks: list[dict], namespace: str) -> LootTable:
     return LootTable(
         generate_loot_table_tree(blocks, lambda block: format_block_entry({
             'type': 'item',
             'name': 'egg',
         } if block['group'] == 0 else {
             'type': 'loot_table',
-            'value': f'bs.block:get/{block['states'][-1]['id']}',
+            'value': f'{namespace}:get/{block['states'][-1]['id']}',
         }, block), lambda blocks: [{
             'condition': 'location_check',
-            'predicate': {'block': {'blocks': [block['type'] for block in blocks]}}
+            'predicate': {'block': {'blocks': [block['type'][10:] for block in blocks]}}
         }])
     )
 
 
-def generate_get_state_loot_table(state: dict) -> LootTable:
+def generate_get_state_loot_table(state: dict, namespace: str) -> LootTable:
     return LootTable(
         {'pools': [{'rolls': 1, 'entries': [{'type': 'alternatives','children':[
             format_state_entry({
                 'type': 'loot_table',
-                'value': f'bs.block:get/{state['ref']}',
+                'value': f'{namespace}:get/{state['ref']}',
             } if state["ref"] else {
                 'type': 'item',
                 'name': 'egg',

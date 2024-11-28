@@ -17,13 +17,13 @@ def beet_default(ctx: Context):
 
 def generate_get_biome_loot_table(biomes: list[dict]) -> LootTable:
     return LootTable(
-        generate_loot_table_tree(biomes, lambda item: {
+        generate_loot_table_tree(biomes, lambda biome: {
             'type': 'item',
             'name': 'egg',
-            'functions': [{'function': 'set_custom_data', 'tag': item}],
-        }, lambda items: [{
+            'functions': [{'function': 'set_custom_data', 'tag': biome}],
+        }, lambda biomes: [{
             'condition': 'minecraft:location_check',
-            'predicate': {'biomes': [item['type'] for item in items]}
+            'predicate': {'biomes': [biome['type'][10:] for biome in biomes]}
         }])
     )
 
