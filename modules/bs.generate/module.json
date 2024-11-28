@@ -1,0 +1,12 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.generate",
+    "load": "."
+  },
+  "meta": {
+    "name": "Generate",
+    "description": "Generate diverse terrains and landscapes, incorporating natural features.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/generate.html"
+  }
+}

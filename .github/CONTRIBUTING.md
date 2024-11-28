@@ -9,7 +9,7 @@ Thank you for your interest in contributing to Bookshelf! Whether it's fixing a 
 - Click the **Fork** button in the top-right corner of this repository to create your own copy.
 - Clone your fork locally using:
   ```bash
-  git clone https://github.com/Gunivers/Bookshelf.git
+  git clone https://github.com/mcbookshelf/Bookshelf.git
   cd Bookshelf
   ```
 ### 2. Create a New Branch

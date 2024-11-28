@@ -1,0 +1,12 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.sidebar",
+    "load": "."
+  },
+  "meta": {
+    "name": "Sidebar",
+    "description": "Create a visually appealing and dynamic sidebar using the scoreboard.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/sidebar.html"
+  }
+}
