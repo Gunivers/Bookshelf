@@ -2,8 +2,8 @@ from pathlib import Path
 from os import listdir
 
 
-VERSION = "2.1.1"
-MINECRAFT_VERSIONS = ["1.20.5", "1.21.3"]
+VERSION = "2.2.0"
+MINECRAFT_VERSIONS = ["1.21.2", "1.21.4"]
 
 DOC_URL = 'https://docs.mcbookshelf.dev/'
 GITHUB_REPO = 'mcbookshelf/Bookshelf'

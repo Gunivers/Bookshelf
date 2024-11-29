@@ -77,7 +77,7 @@ While we strive to keep these modules as much optimized and accurate as possible
 
 If you have any doubts related to the project or want to discuss something, then join [our Discord](https://discord.gg/MkXytNjmBt) server.
 
-If you want to contribute, please refer to the [contribution docs](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html) for more information.
+If you want to contribute, please refer to the [contribution docs](https://docs.mcbookshelf.dev/en/latest/contribute/index.html) for more information.
 
 ```{toctree}
 :hidden:

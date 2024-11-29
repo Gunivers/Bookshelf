@@ -18,7 +18,7 @@ def main():
         exit(logger.errors)
 
     with log_step('⚙️ Generating versions file…') as logger:
-        versions =  json.loads((ROOT_DIR / META_MANIFEST).read_text('utf-8'))
+        versions =  json.loads((ROOT_DIR / META_VERSIONS).read_text('utf-8'))
         if any(entry['version'] == VERSION for entry in versions):
             return logger.debug(f'Version {VERSION} already exists. No update needed.')
 

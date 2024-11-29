@@ -11,7 +11,7 @@
 # - Any modifications must be documented and disclosed under the same license
 #
 # For more details, refer to the MPL v2.0.
-# -------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
 
 scoreboard players operation @s bs.rot.v -= #v bs.ctx
 scoreboard players operation @s bs.rot.v -= @s bs.link.lv

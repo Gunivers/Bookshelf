@@ -61,7 +61,7 @@ html_context = {
     "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True"
 }
 
-json_url = "https://bookshelf.docs.gunivers.net/en/master/_static/switcher.json"
+json_url = "https://docs.mcbookshelf.dev/en/master/_static/switcher.json"
 version_match = os.environ.get("READTHEDOCS_VERSION")
 
 if not version_match or version_match.isdigit():

@@ -7,9 +7,9 @@
 
 <h2>
 <div align="center">
-    <a href="https://bookshelf.docs.gunivers.net/en/latest/quickstart.html"><img src="docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
+    <a href="https://docs.mcbookshelf.dev/en/latest/quickstart.html"><img src="docs/_imgs/download.svg?v=2" alt="Download" style="height:3rem"></a>
     &nbsp;&nbsp;
-    <a href="https://bookshelf.docs.gunivers.net/"><img src="docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
+    <a href="https://docs.mcbookshelf.dev/"><img src="docs/_imgs/documentation.svg?v=2" alt="Documentation" style="height:3rem"></a>
     &nbsp;&nbsp;
     <a href="https://discord.gg/MkXytNjmBt"><img src="docs/_imgs/discord.svg?v=2" alt="Discord" style="height:3rem"></a>
   </div>
@@ -54,6 +54,6 @@ While we strive to keep these modules as much optimized and accurate as possible
 
 # 🤝 Contribution
 
-[👉 Please refer to the contribution docs for more information](https://bookshelf.docs.gunivers.net/en/latest/contribute/index.html)
+[👉 Please refer to the contribution docs for more information](https://docs.mcbookshelf.dev/en/latest/contribute/index.html)
 
 Anyone can contribute to this repository. Please do so by posting issues when you've found something that is unexpected or sending a pull request for improvements. If you have any doubts related to the project or want to discuss something, then join our Discord server.
