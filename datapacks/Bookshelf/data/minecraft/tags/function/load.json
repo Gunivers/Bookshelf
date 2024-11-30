@@ -91,6 +91,10 @@
     {
       "id": "#bs.xp:load",
       "required": false
+    },
+    {
+      "id": "#bs.string:load",
+      "required": false
     }
   ]
 }
