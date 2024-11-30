@@ -3,7 +3,7 @@ from os import listdir
 
 
 VERSION = "2.2.0"
-MINECRAFT_VERSIONS = ["1.21.2", "1.21.4"]
+MINECRAFT_VERSIONS = ["1.21.2", "1.21.3"]
 
 DOC_URL = 'https://docs.mcbookshelf.dev/'
 GITHUB_REPO = 'mcbookshelf/Bookshelf'
