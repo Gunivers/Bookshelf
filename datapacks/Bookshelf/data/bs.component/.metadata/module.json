@@ -1,0 +1,9 @@
+{
+  "name": "bs.component",
+  "display_name": "Component",
+  "description": "Create and manage graphical components based on Minecraft entities.",
+  "documentation": "https://bookshelf.docs.gunivers.net/en/latest/modules/component.html",
+  "dependencies": [
+    "bs.interaction"
+  ]
+}
