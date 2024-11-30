@@ -91,6 +91,10 @@
     {
       "id": "#bs.xp:unload",
       "required": false
+    },
+    {
+      "id": "#bs.string:unload",
+      "required": false
     }
   ]
 }
