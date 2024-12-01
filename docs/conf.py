@@ -19,6 +19,7 @@ extensions = [
   "sphinx_copybutton",
   "bs_treeview",
   "bs_nbt",
+  "bs_directory"
 ]
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
