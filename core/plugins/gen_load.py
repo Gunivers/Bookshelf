@@ -1,41 +1,33 @@
 from beet import Context, Function, FunctionTag
+from core.definitions import MODULES, VERSION
 
 
 def beet_default(ctx: Context):
-    """ ctx.require("beet.contrib.lantern_load.base_data_pack")
+    ctx.require("beet.contrib.lantern_load.base_data_pack")
     ctx.data['load:load'] = FunctionTag({'values': ['#bs.load:load']})
 
-    version = ctx.meta.get('version')
-    major, minor, patch = map(int, version.split('.'))
+    major, minor, patch = map(int, VERSION.split('.'))
 
-    ctx.generate('bs.load:check', render=Function(
-        source_path='resources/load/check.jinja'
-    ))
+    ctx.generate(f'bs.load:cleanup', render=Function(source_path='core/load/cleanup.jinja'))
+    ctx.generate(f'bs.load:exclusive', render=Function(source_path='core/load/exclusive.jinja'))
 
-    ctx.generate('bs.load:exclusive', render=Function(
-        source_path='resources/load/exclusive.jinja'
-    ))
+    ctx.generate(f'bs.load:v{VERSION}/enumerate', render=Function(
+        source_path='core/load/enumerate.jinja'
+    ), major=major, minor=minor, patch=patch)
 
-    ctx.generate('bs.load:cleanup', render=Function(
-        source_path='resources/load/cleanup.jinja'
-    ))
-
-    ctx.generate(f'bs.load:v{version}/enumerate', render=Function(
-        source_path='resources/load/enumerate.jinja'
+    ctx.generate(f'bs.load:validate', render=Function(
+        source_path='core/load/validate.jinja'
     ), major=major, minor=minor, patch=patch)
 
     ctx.data['bs.load:load'] = FunctionTag({
-        'values': ['#bs.load:cleanup','#bs.load:enumerate','#bs.load:check'] + [
-            {'id': f'#bs.load:module/{mod[3:]}', 'required': False}
-            for mod in ctx.meta.get('bookshelf_modules')
-        ]
+        'values': ['bs.load:cleanup','#bs.load:enumerate','bs.load:validate'] + [{
+            'id': f'#bs.load:module/{mod[3:]}',
+            'required': False
+        } for mod in MODULES]
     })
 
     ctx.data['bs.load:unload'] = FunctionTag({
-        'values': [
-            {'id': f'{mod}:__unload__', 'required': False}
-            for mod in ctx.meta.get('bookshelf_modules')
-        ]
+        'values': [{'id': f'{mod}:__unload__', 'required': False} for mod in MODULES]
     })
 
     ctx.data[f'bs.load:module/{ctx.directory.name[3:]}'] = FunctionTag({
@@ -44,7 +36,7 @@ def beet_default(ctx: Context):
             ctx.meta.get('dependencies', []) or [],
             ctx.meta.get('weak_dependencies', []) or [],
         )
-    }) """
+    })
 
 
 def get_load_tag_values(
