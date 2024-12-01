@@ -23,26 +23,26 @@ Bookshelf respects a certain tree structure which can be similar to Java package
 
 In addition to these few constraints, the Bookshelf contributor is free to organise their files as they wishes as long as it remains coherent, understandable and it respects the global structure detailed below:
 
-```
-📁 modules
- ├─ 📁 <module>
- │   ├─ 📁 data/<module>
- │   │   ├─ 📁 function
- │   │   │   ├─ 📁 <feature1>
- │   │   │   │   ├─ 📄 <feature1>.mcfunction
- │   │   │   │   └─ 📄 ...
- │   │   │   ├─ 📄 <feature2>.json
- │   │   │   ├─ 📄 __load__.mcfunction
- │   │   │   └─ 📄 __unload__.mcfunction
- │   │   ├─ 📁 <predicate|loot_table|...>
- │   │   │   ├─ 📁 <feature1>
- │   │   │   │   ├─ 📄 <feature1>.json
- │   │   │   │   └─ 📄 ...
- │   │   │   └─ 📄 <feature2>.json
- │   │   └─ 📁 tags
- │   │       └─ 📁 function
- │   │           ├─ 📄 <feature1>.json
- │   │           └─ 📄 ...
- │   └─ 📄 module.json
- └─ 📁 ...
-```
+:::{treeview}
+- {dir}`folder` modules
+  - {dir}`folder` \<module\>
+    - {dir}`folder` data/\<module\>
+      - {dir}`folder` function
+        - {dir}`folder` \<feature1\>
+          - {dir}`mcfunction` \<feature1\>.mcfunction
+          - {dir}`mcfunction` ...
+        - {dir}`mcfunction` \<feature2\>.mcfunction
+        - {dir}`mcfunction` \_\_load\_\_.mcfunction
+        - {dir}`mcfunction` \_\_unload\_\_.mcfunction
+      - {dir}`folder` \<predicate|loot_table|...\>
+        - {dir}`folder` \<feature1\>
+          - {dir}`json` \<feature1\>.json
+          - {dir}`json` ...
+        - {dir}`json` \<feature2\>.json
+      - {dir}`folder` tags
+        - {dir}`folder` function
+          - {dir}`json` \<feature1\>.json
+          - {dir}`json` ...
+    - {dir}`json` module.json
+  - {dir}`folder` ...
+:::
