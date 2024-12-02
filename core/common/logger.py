@@ -39,9 +39,9 @@ class GithubFormatter(logging.Formatter):
     }
 
     def format(self, record: logging.LogRecord) -> str:
-        if getattr(record, 'group', False):
+        if getattr(record, 'step', False):
             return f'::group::{record.msg}'
-        if getattr(record, 'end_group', False):
+        if getattr(record, 'end_step', False):
             return f'::endgroup::\n{record.msg}'
 
         annotation = f'::{self.ANNOTATIONS.get(record.levelno)} '
