@@ -1,6 +1,7 @@
 import click
 import subprocess
 from core.definitions import ROOT_DIR
+from typing import Optional
 
 
 @click.group()
@@ -12,19 +13,21 @@ def docs():
 
 
 @docs.command()
-def build():
+@click.argument('output', required=False)
+def build(output: Optional[str] = None):
     """
     Build static HTML documentation.
     """
-    subprocess.check_call(['sphinx-build', '.', '_build'], cwd=ROOT_DIR / 'docs')
+    subprocess.check_call(['sphinx-build', '.', output if output else '_build'], cwd=ROOT_DIR / 'docs')
 
 
 @docs.command()
-def watch():
+@click.argument('output', required=False)
+def watch(output: Optional[str] = None):
     """
     Build and serve live documentation.
     """
     try:
-        subprocess.check_call(['sphinx-autobuild', '.', '_build'], cwd=ROOT_DIR / 'docs')
+        subprocess.check_call(['sphinx-autobuild', '.', output if output else '_build'], cwd=ROOT_DIR / 'docs')
     except KeyboardInterrupt:
         print("\nExiting sphinx-autobuild...")
