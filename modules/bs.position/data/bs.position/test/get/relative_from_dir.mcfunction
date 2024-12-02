@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute at @s rotated 35 -18 run function #bs.position:get_relative_from_dir {scale:1000}

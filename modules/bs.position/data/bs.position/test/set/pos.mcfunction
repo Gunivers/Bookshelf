@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute store result score @s bs.pos.x run random value -10000..10000

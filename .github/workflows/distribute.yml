@@ -22,10 +22,7 @@ jobs:
         id: generate
         run: |
           pdm install
-          pdm run gen-metadata
-          git add .
-          git commit -m "🔖 Update metadata files"
-          git push
+          pdm run meta update
   release:
     needs: metadata
     name: 🔖 Create release
@@ -37,7 +34,7 @@ jobs:
       - name: Build release files
         run: |
           pdm install
-          pdm run build -p beet-release.yml
+          pdm run modules release
       - uses: softprops/action-gh-release@v2
         with:
           name: ${{ needs.metadata.outputs.release_tag }}

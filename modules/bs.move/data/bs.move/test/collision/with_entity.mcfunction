@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 summon minecraft:armor_stand .5 0 .5 {Tags:["bs.packtest"]}

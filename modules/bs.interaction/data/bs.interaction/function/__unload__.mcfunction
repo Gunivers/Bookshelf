@@ -19,6 +19,8 @@ forceload remove -30000000 1600
 execute as @e[type=minecraft:interaction] run function #bs.interaction:clear_events {with:{}}
 
 scoreboard objectives remove bs.interaction.id
+scoreboard objectives remove bs.interaction.hover
+scoreboard objectives remove bs.interaction.logout
 
 scoreboard objectives remove bs.ctx
 scoreboard objectives remove bs.data

@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute store result score #r bs.ctx run function #bs.health:get_max_health {scale:1}

@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 ## |TEST CASE|: Entity size (width and height)

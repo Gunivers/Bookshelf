@@ -7,6 +7,9 @@
   "meta": {
     "name": "Schedule",
     "description": "Enhance command scheduling. Cancel commands and maintain execution context (entity & location).",
-    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/schedule.html"
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/schedule.html",
+    "weak_dependencies": [
+      "bs.log"
+    ]
   }
 }

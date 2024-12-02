@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute at @s rotated ~1 ~1 run function #bs.position:get_rot {scale:10}

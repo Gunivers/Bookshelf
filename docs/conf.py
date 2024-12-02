@@ -10,13 +10,13 @@ author = "Gunivers"
 # -- General configuration ---------------------------------------------------
 
 extensions = [
-  "myst_parser",
-  "sphinx_design",
-  "sphinx_togglebutton",
-  "sphinx_copybutton",
-  "_exts.treeview",
-  "_exts.nbt",
-  "_exts.directory",
+    "docs._exts.treeview",
+    "docs._exts.nbt",
+    "docs._exts.directory",
+    "myst_parser",
+    "sphinx_design",
+    "sphinx_togglebutton",
+    "sphinx_copybutton",
 ]
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]

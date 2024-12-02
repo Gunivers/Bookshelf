@@ -22,7 +22,7 @@ class ConsoleFormatter(logging.Formatter):
         depth -= getattr(record, 'step', 0)
         depth -= getattr(record, 'end_step', 0)
         color = self.COLORS.get(record.levelno, '')
-        prefix = f'{record.title}:' if getattr(record, 'title', False) else ''
+        prefix = f'{record.title}: ' if getattr(record, 'title', False) else ''
         return '   ' * depth + f'{color}{prefix}{record.msg}{Style.RESET_ALL}'
 
 

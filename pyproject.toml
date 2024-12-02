@@ -7,12 +7,25 @@ name = "bookshelf"
 version = "1.0.0"
 description = "Scripts for building Bookshelf and for the Github pipeline."
 authors = [{ name = "Bookshelf Contributors", email = "contact@gunivers.net" }]
-dependencies = ["beet>=0.108.5", "colorama>=0.4.6", "pydantic>=2.9.2", "requests>=2.32.3"]
+dependencies = [
+  "beet>=0.108.5",
+  "click>=8.1.7",
+  "colorama>=0.4.6",
+  "linkify-it-py>=2.0.3",
+  "myst-parser>=4.0.0",
+  "pydantic>=2.9.2",
+  "pydata-sphinx-theme>=0.16.0",
+  "requests>=2.32.3",
+  "sphinx-autobuild>=2024.10.3",
+  "sphinx-copybutton>=0.5.2",
+  "sphinx-design>=0.6.1",
+  "sphinx-togglebutton>=0.3.2",
+  "sphinx>=8.1.3",
+]
 requires-python = "==3.12.*"
 license = { text = "MPL-2.0" }
 
 [project.scripts]
-check-headers = "core.cli.check_headers:main"
-check-metadata = "core.cli.check_metadata:main"
-gen-metadata = "core.cli.gen_metadata:main"
-test = "core.cli.test_modules:main"
+docs = "core.cli.docs:docs"
+meta = "core.cli.meta:meta"
+modules = "core.cli.modules:modules"

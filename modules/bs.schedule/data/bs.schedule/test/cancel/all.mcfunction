@@ -13,8 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-await entity B5-0-0-0-2
-
 scoreboard players set #packtest.schedule.ca bs.data 0
 function #bs.schedule:schedule {with:{command:"scoreboard players add #packtest.schedule.ca bs.data 1",time:1}}
 function #bs.schedule:schedule {with:{command:"scoreboard players add #packtest.schedule.ca bs.data 1",time:1,id:{cancel:"all"}}}

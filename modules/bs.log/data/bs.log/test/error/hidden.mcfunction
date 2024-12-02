@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 function #bs.log:error { namespace: "bs.foo", path: "bs.foo:bar", tag: "bar", message: '"Hidden error log message"' }

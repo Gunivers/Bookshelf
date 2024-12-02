@@ -7,6 +7,9 @@
   "meta": {
     "name": "Generate",
     "description": "Generate diverse terrains and landscapes, incorporating natural features.",
-    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/generate.html"
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/generate.html",
+    "dependencies": [
+      "bs.random"
+    ]
   }
 }

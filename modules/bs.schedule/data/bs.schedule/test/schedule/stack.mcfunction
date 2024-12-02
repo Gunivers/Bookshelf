@@ -13,8 +13,6 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-await entity B5-0-0-0-2
-
 function #bs.schedule:schedule {with:{command:"scoreboard players add #packtest.schedule.stack bs.data 1",time:1}}
 function #bs.schedule:schedule {with:{command:"scoreboard players add #packtest.schedule.stack bs.data 1",time:1}}
 await delay 1t

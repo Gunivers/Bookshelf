@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute at @s positioned ~-2.7 ~-5.2 ~-3.4 run function #bs.position:get_relative_ata {scale:10}

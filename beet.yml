@@ -1,6 +1,0 @@
-extend: module.json
-broadcast: modules/*
-output: ../../build
-
-require:
-  - core.plugins.packtest

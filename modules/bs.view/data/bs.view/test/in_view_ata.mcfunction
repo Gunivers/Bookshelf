@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute at @s anchored eyes positioned ^1 ^ ^1 store result score #success bs.data run function #bs.view:in_view_ata {angle:90}

@@ -12,7 +12,6 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
 
 execute at @s positioned ^ ^ ^7.5 store result score #r bs.ctx run function #bs.position:get_distance_squared_ata {scale:10}

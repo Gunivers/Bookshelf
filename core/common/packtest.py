@@ -94,7 +94,7 @@ class Runner:
         logger.error(match['message'], extra={
             'title': f'Test "{name}" failed',
             'file': f'modules/{name[:i]}/data/{name[:i]}/test/{name[i+1:]}.mcfunction',
-            'line': match['line'],
+            'line': int(match['line']) - 2,
         })
 
     def _monitor_process(self, process: subprocess.Popen, logger: StepLogger) -> None:

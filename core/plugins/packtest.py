@@ -5,9 +5,12 @@ from typing import ClassVar
 def beet_default(ctx: Context):
     ctx.data.extend_namespace.append(TestFunction)
     yield
-    offset = len(ctx.template.render('core/header.jinja'))
+    header = ctx.template.render('core/header.jinja')
+    offset = len(header)
     for _, function in ctx.data.all(extend=TestFunction):
-        function.text = f'# @batch {ctx.data.name}\n' + function.text[offset:]
+        batch = f'# @batch {ctx.data.name}\n'
+        beforebatch = f'# @beforebatch function #bs.load:exclusive {{module:"{ctx.data.name[3:]}"}}\n'
+        function.text = f'{header}{batch}{beforebatch}{function.text[offset:]}'
 
 
 class TestFunction(TextFile):

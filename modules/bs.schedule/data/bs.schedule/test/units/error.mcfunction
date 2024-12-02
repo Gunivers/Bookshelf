@@ -12,10 +12,7 @@
 #
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
-
 # @dummy
-
-await entity B5-0-0-0-2
 
 tag @s add bs.schedule.log.schedule._
 function #bs.schedule:schedule {with:{command:"say _",time:1,unit:"¯|_(ツ)_|¯"}}
