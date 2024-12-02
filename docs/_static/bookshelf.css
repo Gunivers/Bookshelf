@@ -260,3 +260,43 @@ button.btn.version-switcher__button {
 .bs-nbt-number {
   background-position: -32px -48px;
 }
+
+[class^="bs-dir-"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.bs-dir-folder {
+  background-image: url('folder.svg');
+}
+
+.bs-dir-json {
+  background-image: url('json.svg');
+}
+
+.bs-dir-mcfunction {
+  background-image: url('mcfunction.svg');
+}
+
+.bs-dir-mcmeta {
+  background-image: url('mcmeta.svg');
+}
+
+.bs-dir-image {
+  background-image: url('image.svg');
+}
+
+.bs-dir-nbt {
+  background-image: url('nbt.svg');
+}
+
+.bs-dir-audio {
+  background-image: url('audio.svg');
+}
+
+.bs-dir-yml {
+  background-image: url('yml.svg');
+}

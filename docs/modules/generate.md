@@ -130,13 +130,13 @@ Generates a shape in 2D space using a Fractal noise algorithm. The shape is gene
 
 ```mcfunction
 # Once
-function #bs.generate:fractal_shape_2d {width:64,height:64,run:"function bs.generate:shape_2d/demo/heightmap/heightmap",with:{}}
+function #bs.generate:fractal_shape_2d {width:64,height:64,run:"function mypack:generate",with:{}}
 
-# bs.generate:shape_2d/demo/heightmap/heightmaps
+# mypack:generate
 execute store result storage bs:ctx y int .01 run scoreboard players add $random.fractal_noise_2d bs.out 1000
-function bs.generate:shape_2d/demo/heightmap/run with storage bs:ctx
+function mypack:fill with storage bs:ctx
 
-# bs.generate:shape_2d/demo/heightmap/run
+# mypack:fill
 $fill ~ ~ ~ ~ ~$(y) ~ stone
 ```
 

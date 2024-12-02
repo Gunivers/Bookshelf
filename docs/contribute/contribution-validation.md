@@ -1,6 +1,6 @@
 # ✅ Contribution validation
 
-A Bookshelf contribution often requires some additional modifications other than the code itself.
+Contribution often requires some additional modifications other than the code itself.
 To ensure the different modifications are correctly contributed, we have set up different validation steps.
 
 ---
@@ -35,4 +35,3 @@ Here is a non-exhaustive list of what a feature contribution requires:
 ## 🔎 Manual review
 
 Finally, other Bookshelf contributors manually review the pull request before approving it.
-

@@ -1,52 +1,50 @@
 # 📝 Documentation
 
-The primary objective of Bookshelf is to streamline the datapack development process and ensure accessibility. To achieve this, it is crucial that the library is thoroughly documented.
-We have dedicated significant effort to creating this comprehensive documentation website.
-Moreover, we request that every new feature contribution be accompanied by appropriate documentation.
-
-This page aims to give some information on how to contribute to the documentation itself.
+Bookshelf aims to simplify datapack development and make it accessible. We’ve worked hard to create a comprehensive documentation website and ask that every new feature be documented properly.
 
 ---
 
 ## ⚙️ Install the required tools
 
-Bookshelf documentation requires Python.
-If you are not familiar with this programming language, don't worry, you don't have to use it.
-But to be able to build the documentation locally, you still need to install it.
-For that, you can download version 3.12 or higher on the [Python website](https://www.python.org/downloads/).
-After having installed Python and cloned the Bookshelf repository, navigate to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
-Then, execute this command:
+Bookshelf's documentation requires Python. You don’t need to write code in Python, but you’ll need it to build the docs locally.
+
+1. Install Python 3.12 or higher from the [Python website](https://www.python.org/downloads/).
+2. Navigate to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
+3. Run this command to install the required dependencies:
 
 ```shell
 pip install -r requirements.txt -U
 ```
 
-This command will install all the required dependencies, especially [Sphinx](https://www.sphinx-doc.org/en/master/) and [Myst Parser](https://myst-parser.readthedocs.io/en/latest/intro.html) that enable the generation of the documentation website from the different Markdown files.
+This will install all necessary dependencies, including [Sphinx](https://www.sphinx-doc.org/en/master/) and [Myst Parser](https://myst-parser.readthedocs.io/en/latest/intro.html), which are used to generate the documentation.
 
 ---
 
 ## ✍️ Write the documentation
 
-The documentation is mainly written in Markdown, extended by Myst Parser.
-You can find the documentation of Myst Parser [here](https://myst-parser.readthedocs.io/en/latest/intro.html).
-To write a new documentation page or to document a new feature, you can simply take as example the existing pages/features.
-
-All the images are stored into the `/docs/_imgs` folder.
+The documentation is written in Markdown, extended with Myst Parser. You can view the [Myst Parser documentation here](https://myst-parser.readthedocs.io/en/latest/intro.html). To add or update documentation, simply follow the structure of existing pages and features. All images are stored in the `/docs/_imgs` folder.
 
 ---
 
 ## 🔨 Build the documentation
 
-To ensure your documentation contribution works correctly, you can build and verify it locally on your computer.
-To do this, navigate to the `/docs` folder and open a terminal (or Powershell if you are on Windows).
-Then, execute this command:
+To verify that your documentation changes work as expected, you can build and view it locally on your computer.
+1. Navigate to the `/docs` folder.
+2. Open a terminal (or Powershell if you are on Windows).
+3. Choose one of the following options to build and view the documentation:
+
+### Option 1: Build Documentation
 
 ```shell
-# For Windows:
-./make html
-# For other OSs:
 make html
 ```
 
-You can now find the built documentation inside the `/docs/_build/html` folder.
-Open the `index.html` with your browser to see your changes.
+This command will generate the documentation, which you can find in the `/docs/_build/html` folder.
+
+### Option 2: Build with Hot Reload
+
+```shell
+make livehtml
+```
+
+This option will also generate the documentation but will allow you to view it in your browser at `http://127.0.0.1:8000` with hot reloading, so any changes you make will automatically update in the browser.

@@ -12,7 +12,7 @@ html_theme.sidebar_secondary.remove: true
 
 To minimize interference with scores and other data, Bookshelf aims to prevent accidental overwrites. This involves minimizing the creation of new scores, strictly forbidding score deletion, and avoiding unnecessary score rewrites whenever possible.
 
-To achieve this, each function begins by saving its inputs and restores them at the end. This ensures that only the function outputs are altered, leaving other data intact.
+To achieve this, each function should keep its inputs and ensure that only the function outputs are altered.
 
 Additionally, while default objectives for inputs and outputs are `bs.in` and `bs.out`, alternative ones can be used, particularly when representing entity states.
 

@@ -10,27 +10,10 @@ Bookshelf respects a certain tree structure which can be similar to Java package
 
 **Module requirements:**
 
-- Each module must declare a metadata file as detailed in the [metadata page](project:metadata.md).
+- Each module must declare a `module.json` file as detailed in the [metadata page](project:metadata.md).
 
-- Each module should be responsible for loading and unloading itself. This includes redefining objectives, constants, and any other necessary elements.
+- Each module should have `__load__` and `__unload__` functions and be responsible for loading and unloading itself. This includes redefining objectives, constants, and any other necessary elements.
 
-- Each module should have a help function tag, a load function tag (responsible for loading the module and its dependencies) and an unload function tag.
-
-- Each module's load and unload function tags should be referenced as optional in `#minecraft:load` and `#minecraft:unload` respectively.
-
-- The load function tag for each module must start by unloading all other modules using `#minecraft:unload`. After that, it should load the module and its dependencies. Weak dependencies can be specified with `"required"`: false. For example, in the health module:
-  ```json
-  {
-    "values": [
-      "#minecraft:unload",
-      "bs.health:__load__",
-      {
-        "id": "#bs.log:load",
-        "required": false
-      }
-    ]
-  }
-  ```
 
 **Feature requirements:**
 
@@ -40,30 +23,26 @@ Bookshelf respects a certain tree structure which can be similar to Java package
 
 In addition to these few constraints, the Bookshelf contributor is free to organise their files as they wishes as long as it remains coherent, understandable and it respects the global structure detailed below:
 
-```
-📁data
- ├─ 📁 <module>
- |   ├─ 📁 .metadata
- |   |   └─ 📄 module.json
- │   ├─ 📁 function
- │   │   ├─ 📁 <feature1>
- │   │   │   ├─ 📄 <feature1>.mcfunction
- │   │   │   └─ 📄 ...
- │   │   ├─ 📄 <feature2>.mcfunction
- │   │   ├─ 📄 __load__.mcfunction
- │   │   ├─ 📄 __unload__.mcfunction
- │   ├─ 📁 <predicate|loot_table|...>
- │   │   ├─ 📁 <feature1>
- │   │   │   ├─ 📄 <feature1>.json
- │   │   │   └─ 📄 ...
- │   │   ├─ 📄 <feature2>.json
- │   └─ 📁 tags
- │       └─ 📁 function
- │           ├─ 📄 <feature1>.json
- │           └─ 📄 ...
- └─ 📁 ...
-```
-
-:::{note}
-   Functions, predicates, structures, loot tables etc. must respect the same structure.
+:::{treeview}
+- {dir}`folder` modules
+  - {dir}`folder` \<module\>
+    - {dir}`folder` data/\<module\>
+      - {dir}`folder` function
+        - {dir}`folder` \<feature1\>
+          - {dir}`mcfunction` \<feature1\>.mcfunction
+          - {dir}`mcfunction` ...
+        - {dir}`mcfunction` \<feature2\>.mcfunction
+        - {dir}`mcfunction` \_\_load\_\_.mcfunction
+        - {dir}`mcfunction` \_\_unload\_\_.mcfunction
+      - {dir}`folder` \<predicate|loot_table|...\>
+        - {dir}`folder` \<feature1\>
+          - {dir}`json` \<feature1\>.json
+          - {dir}`json` ...
+        - {dir}`json` \<feature2\>.json
+      - {dir}`folder` tags
+        - {dir}`folder` function
+          - {dir}`json` \<feature1\>.json
+          - {dir}`json` ...
+    - {dir}`json` module.json
+  - {dir}`folder` ...
 :::
