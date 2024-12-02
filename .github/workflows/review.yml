@@ -13,10 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pdm-project/setup-pdm@v4
+      - run: pdm install
       - name: Check modules
-        run: |
-          pdm install
-          pdm run modules check
+        run: pdm run modules check
   test:
     name: 🧪 Test modules
     runs-on: ubuntu-latest
@@ -27,7 +26,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+      - run: pdm install
       - name: Test modules
-        run: |
-          pdm install
-          pdm run modules test
+        run: pdm run modules test

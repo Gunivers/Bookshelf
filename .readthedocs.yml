@@ -4,13 +4,11 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
+  commands:
+    - python -m pip install pdm
+    - pdm install
+    - cat docs/conf.py
+    - python -m sphinx -T -b html -d _build/doctrees -D language=en . $READTHEDOCS_OUTPUT/html
 
 sphinx:
-   configuration: docs/conf.py
-
-python:
-  install:
-  - method: pip
-    path: .
-    extra_requirements:
-    - docs
+  configuration: docs/conf.py
