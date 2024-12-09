@@ -136,7 +136,7 @@ def watch(modules: tuple[str, ...]):
     with log_step('🔨 Watching project…') as logger:
         config = create_config(
             modules,
-            require=['core.plugins.packtest'],
+            require=['beet.contrib.livereload','core.plugins.packtest'],
             output=ROOT_DIR / 'build',
         )
         project = create_project(config)

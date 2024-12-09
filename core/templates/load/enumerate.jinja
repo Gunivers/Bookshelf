@@ -1,7 +1,0 @@
-#!tag "bs.load:enumerate"
-
-{% include 'core/header.jinja' %}
-data modify storage bs:data load append value {version:[{{ major }},{{ minor }},{{ patch }}]}
-execute unless score $bs.modules.major load.status matches {{ major }}.. run scoreboard players set $bs.modules.major load.status {{ major }}
-execute if score $bs.modules.major load.status matches {{ major }} unless score $bs.modules.minor load.status matches {{ minor }}.. run scoreboard players set $bs.modules.minor load.status {{ minor }}
-execute if score $bs.modules.major load.status matches {{ major }} if score $bs.modules.minor load.status matches {{ minor }} unless score $bs.modules.patch load.status matches {{ patch }}.. run scoreboard players set $bs.modules.minor load.status {{ patch }}

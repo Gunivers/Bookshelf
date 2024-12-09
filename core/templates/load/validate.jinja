@@ -1,2 +1,9 @@
+#!tag "bs.load:validate"
+
 {% include 'core/header.jinja' %}
-data modify storage bs:data load[{version:[{{ major }},{{ minor }},{{ patch }}]}].selected set value 1b
+execute unless score $bs.load.major load.status matches {{ major }} run return 0
+execute unless score $bs.load.minor load.status matches {{ minor }} run return 0
+execute unless score $bs.load.patch load.status matches {{ patch }} run return 0
+
+# TODO: ADD HANDLING IF MULTIPLE VERSIONS OF SAME MODULE ARE FOUND AND PROPOSE A RESOLUTION STEP
+#execute store result score $bs.load.count load.status if data storage bs:data load[{modules:["bs.hitbox"]}].version
