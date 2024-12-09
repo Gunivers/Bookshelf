@@ -9,7 +9,7 @@ def beet_default(ctx: Context):
     offset = len(header)
     for _, function in ctx.data.all(extend=TestFunction):
         batch = f'# @batch {ctx.data.name}\n'
-        beforebatch = f'# @beforebatch function #bs.load:exclusive {{module:"{ctx.data.name[3:]}"}}\n'
+        beforebatch = f'# @beforebatch function #bs.load:exclusive {{module:"{ctx.data.name}"}}\n'
         function.text = f'{header}{batch}{beforebatch}{function.text[offset:]}'
 
 
