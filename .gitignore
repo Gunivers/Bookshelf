@@ -18,7 +18,6 @@ docs/_build/
 env.bak/
 env/
 ENV/
-pdm.lock
 release/
 venv.bak/
 venv/

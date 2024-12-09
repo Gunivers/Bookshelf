@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: fregante/setup-git-user@v2
       - uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
       - run: pdm install
       - name: Generate metadata
         id: generate

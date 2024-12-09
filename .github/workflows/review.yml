@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
       - run: pdm install
       - name: Check modules
         run: pdm run modules check
@@ -22,6 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
