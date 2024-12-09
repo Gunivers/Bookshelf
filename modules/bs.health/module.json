@@ -1,0 +1,15 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.health",
+    "load": "."
+  },
+  "meta": {
+    "name": "Health",
+    "description": "Efficiently manage the lifecycle and vital aspects of an entity.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/health.html",
+    "weak_dependencies": [
+      "bs.log"
+    ]
+  }
+}
