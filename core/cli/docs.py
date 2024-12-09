@@ -7,7 +7,7 @@ from typing import Optional
 @click.group()
 def docs():
     """
-    Documentation related commands.
+    Documentation-related commands.
     """
     pass
 
@@ -30,4 +30,4 @@ def watch(output: Optional[str] = None):
     try:
         subprocess.check_call(['sphinx-autobuild', '.', output if output else '_build'], cwd=ROOT_DIR / 'docs')
     except KeyboardInterrupt:
-        print("\nExiting sphinx-autobuild...")
+        click.echo('\nExiting sphinx-autobuild…')

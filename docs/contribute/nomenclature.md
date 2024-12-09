@@ -18,11 +18,11 @@ Bookshelf respects certain naming conventions in order to reduce the effort need
 
       *Example: `bs.<module>.my_tag`*
 *   - **Data storage**
-    - Use the snake_case convention. Is limited to what is defined in the [shared data](project:shared-data.md) section.
+    - Use the snake_case convention. Is limited to what is defined in the [Global Resources](project:global-resources.md) section.
 
       *Example: `bs:data <module>.<feature>`*
 *   - **Objectives**
-    - Use the snake_case convention and `bs.` prefix. Only create new objectives if no existing objective defined in the [shared data](project:shared-data.md) section can be used.
+    - Use the snake_case convention and `bs.` prefix. Only create new objectives if no existing objective defined in the [Global Resources](project:global-resources.md) section can be used.
 
       *Example: `bs.my_objective`*
 *   - **Scoreholders**

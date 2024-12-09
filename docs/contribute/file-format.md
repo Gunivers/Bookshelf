@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-# 📄 File format
+# 📄 File Format
 
 Each function of Bookshelf should have a header to indicate the license.
 

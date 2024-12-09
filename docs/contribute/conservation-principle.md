@@ -2,7 +2,7 @@
 html_theme.sidebar_secondary.remove: true
 ---
 
-# ♻️ Conservation principle
+# ♻️ Conservation Principle
 
 ```{epigraph}
 "Nothing is lost, nothing is created, everything is transformed"

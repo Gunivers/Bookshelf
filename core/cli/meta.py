@@ -10,7 +10,7 @@ from core.definitions import GITHUB_REPO, META_MANIFEST, META_VERSIONS, MINECRAF
 @click.group()
 def meta():
     """
-    Metadata related commands.
+    Metadata-related commands.
     """
     pass
 

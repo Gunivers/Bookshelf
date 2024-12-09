@@ -21,6 +21,21 @@ def modules():
 
 
 @modules.command()
+@click.argument('modules', nargs=-1)
+def build(modules: tuple[str, ...]):
+    """
+    Build the specified modules.
+    """
+    with log_step('🔨 Building project…'):
+        project = create_project(create_config(
+            modules,
+            require=['core.plugins.packtest'],
+            output=ROOT_DIR / 'build',
+        ))
+        project.build()
+
+
+@modules.command()
 def check():
     """
     Check modules for conventions.
@@ -29,6 +44,49 @@ def check():
     success &= check_modules()
     success &= check_features()
     exit(not success)
+
+
+@modules.command()
+@click.argument("world", required=False)
+@click.option(
+    "--minecraft",
+    metavar="DIRECTORY",
+    help="Path to the .minecraft directory.",
+)
+@click.option(
+    "--data-pack",
+    metavar="DIRECTORY",
+    help="Path to the data packs directory.",
+)
+@click.option(
+    "--resource-pack",
+    metavar="DIRECTORY",
+    help="Path to the resource packs directory.",
+)
+@click.option(
+    "-c",
+    "--clear",
+    is_flag=True,
+    help="Clear the link.",
+)
+def link(
+    world: Optional[str],
+    minecraft: Optional[str],
+    data_pack: Optional[str],
+    resource_pack: Optional[str],
+    clear: bool,
+):
+    """
+    Link the generated resource pack and data pack to Minecraft.
+    """
+    project = create_project(create_config())
+    with log_step('Clearing project link…' if clear else 'Linking project…'):
+        project.clear_link() if clear else click.echo(project.link(
+            world,
+            minecraft,
+            data_pack,
+            resource_pack,
+        ))
 
 
 @modules.command()
@@ -52,34 +110,6 @@ def release():
 
 @modules.command()
 @click.argument('modules', nargs=-1)
-@click.option(
-    "-l",
-    "--link",
-    metavar="WORLD",
-    help="Link the project to a specified Minecraft world.",
-)
-@click.option(
-    "-i",
-    "--instance",
-    metavar="DIRECTORY",
-    help="Specify the .minecraft directory instance.",
-)
-def build(modules: tuple[str, ...], link: Optional[str], instance: Optional[str]):
-    """
-    Build the specified modules.
-    """
-    with log_step('🔨 Building project…'):
-        project = create_project(create_config(
-            modules,
-            require=['core.plugins.packtest'],
-            output=ROOT_DIR / 'build',
-        ))
-        project.link(world=link, minecraft=instance)
-        project.build()
-
-
-@modules.command()
-@click.argument('modules', nargs=-1)
 def test(modules: tuple[str, ...]):
     """
     Build and test the specified modules.
@@ -99,19 +129,7 @@ def test(modules: tuple[str, ...]):
 
 @modules.command()
 @click.argument('modules', nargs=-1)
-@click.option(
-    "-l",
-    "--link",
-    metavar="WORLD",
-    help="Link the project to a Minecraft world.",
-)
-@click.option(
-    "-i",
-    "--instance",
-    metavar="DIRECTORY",
-    help="Specify the .minecraft directory instance.",
-)
-def watch(modules: tuple[str, ...], link: Optional[str], instance: Optional[str]):
+def watch(modules: tuple[str, ...]):
     """
     Watch for changes in specified modules and rebuild them.
     """
@@ -122,7 +140,6 @@ def watch(modules: tuple[str, ...], link: Optional[str], instance: Optional[str]
             output=ROOT_DIR / 'build',
         )
         project = create_project(config)
-        project.link(world=link, minecraft=instance)
 
         for changes in project.watch(0.5):
             filename, action = next(iter(changes.items()))
