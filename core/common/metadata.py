@@ -1,34 +1,40 @@
 import json
 import re
+from pathlib import Path
+from typing import Literal
+
+from pydantic import BaseModel, Field, ValidationError
+
 from core.common.helpers import extract_feature_id
 from core.common.logger import StepLogger
 from core.definitions import DOC_URL, MODULES_DIR, ROOT_DIR
-from pathlib import Path
-from pydantic import BaseModel, Field, ValidationError
-from typing import Literal, Optional
 
 
 class Updated(BaseModel):
-    date: str = Field(pattern=r'^\d{4}/(0[1-9]|1[0-2])/(0[1-9]|[1-2]\d|3[0-1])$')
+    """Represents metadata about when a feature or module was last updated."""
+
+    date: str = Field(pattern=r"^\d{4}/(0[1-9]|1[0-2])/(0[1-9]|[1-2]\d|3[0-1])$")
     minecraft_version: str
 
-
 class FeatureMeta(BaseModel):
+    """Represents metadata for a feature within the library."""
+
     id: str
-    documentation: str = Field(pattern=rf'^{re.escape(DOC_URL)}en/latest/modules/.+$')
+    documentation: str = Field(pattern=rf"^{re.escape(DOC_URL)}en/latest/modules/.+$")
     authors: list[str]
     contributors: list[str] = []
     created: Updated
     updated: Updated
 
-
 class ModuleMeta(BaseModel):
-    id: str = Field(pattern=r'^bs\..+$')
+    """Represents metadata for a module within the library."""
+
+    id: str = Field(pattern=r"^bs\..+$")
     name: str
     description: str
-    documentation: str = Field(pattern=rf'^{re.escape(DOC_URL)}en/latest/modules/.+$')
-    image: str = None
-    kind: Literal['data_pack', 'resource_pack']
+    documentation: str = Field(pattern=rf"^{re.escape(DOC_URL)}en/latest/modules/.+$")
+    image: str | None = None
+    kind: Literal["data_pack", "resource_pack"]
     tags: list[str] = []
     authors: list[str] = []
     contributors: list[str] = []
@@ -36,100 +42,92 @@ class ModuleMeta(BaseModel):
     weak_dependencies: list[str] = []
 
 
-def format_validation_errors(e: ValidationError) -> str:
-    """
-    Formats validation errors for better readability.
-    """
-    errors = (f"{'.'.join(map(str, error['loc']))}: {error['msg']}" for error in e.errors())
-    return "\n    - " + "\n    - ".join(errors)
-
-
-def get_feature_meta(file: Path, logger: StepLogger) -> Optional[FeatureMeta]:
-    """
-    Retrieve feature metadata from a JSON file.
-    """
+def get_feature_meta(file: Path, logger: StepLogger) -> FeatureMeta | None:
+    """Retrieve feature metadata from a JSON file."""
     relative_path = file.relative_to(ROOT_DIR)
     feature_id = extract_feature_id(file)
     if not feature_id:
         return None
 
     try:
-        meta = json.loads(file.read_text('utf-8')).get('__bookshelf__', {})
+        meta = json.loads(file.read_text("utf-8")).get("__bookshelf__", {})
         return FeatureMeta(id=feature_id, **meta)
 
-    except ValidationError as e:
-        errors = format_validation_errors(e)
-        logger.error(f'Feature "{feature_id}" has errors:{errors}', extra={
-            'title': 'Validation Error',
-            'file': relative_path,
+    except ValidationError:
+        logger.exception("Found errors in feature '%s'.", feature_id, extra={
+            "title": "Validation Error",
+            "file": relative_path,
         })
 
     except json.JSONDecodeError as e:
-        logger.error(f'File "{relative_path}" has invalid JSON.', extra={
-            'title': 'Malformed Json',
-            'file': relative_path,
-            'line': e.lineno
+        logger.exception("File '%s' has invalid JSON.", relative_path, extra={
+            "title": "Malformed Json",
+            "file": relative_path,
+            "line": e.lineno,
         })
 
+    return None
 
-def get_module_meta(file: Path, logger: StepLogger) -> Optional[ModuleMeta]:
-    """
-    Retrieve module metadata from a JSON file.
-    """
+
+def get_module_meta(file: Path, logger: StepLogger) -> ModuleMeta | None:
+    """Retrieve module metadata from a JSON file."""
     relative_path = file.relative_to(ROOT_DIR)
     module_id = file.parent.name
 
     try:
-        data = json.loads(file.read_text('utf-8'))
-        meta = data.get('meta', {})
+        data = json.loads(file.read_text("utf-8"))
+        meta = data.get("meta", {})
 
-        if 'data_pack' in data and 'resource_pack' in data:
-            raise ValueError('A module cannot have both "data_pack" and "resource_pack".')
-        if 'data_pack' in data:
-            meta['kind'] = 'data_pack'
-        if 'resource_pack' in data:
-            meta['kind'] = 'resource_pack'
+        if "data_pack" in data and "resource_pack" in data:
+            error_msg = "A module cannot have both 'data_pack' and 'resource_pack'."
+            raise ValueError(error_msg)
+        if "data_pack" in data:
+            meta["kind"] = "data_pack"
+        if "resource_pack" in data:
+            meta["kind"] = "resource_pack"
 
-        for key in ['image','tags']:
+        for key in ["image", "tags"]:
             if key not in meta:
-                logger.warning(f'Metadata file for module "{module_id}" is missing optional key "{key}". You should consider adding it.')
+                logger.warning(
+                    "Metadata file for module '%s' is missing optional key '%s'. "
+                    "You should consider adding it."
+                , module_id, key)
 
         return ModuleMeta(id=module_id, **meta)
 
-    except ValidationError as e:
-        errors = format_validation_errors(e)
-        logger.error(f'Module "{module_id}" has errors:{errors}', extra={
-            'title': 'Validation Error',
-            'file': relative_path,
+    except ValidationError:
+        logger.exception("Found errors in module '%s'.", module_id, extra={
+            "title": "Validation Error",
+            "file": relative_path,
         })
 
     except json.JSONDecodeError as e:
-        logger.error(f'File "{relative_path}" has invalid JSON.', extra={
-            'title': 'Malformed Json',
-            'file': relative_path,
-            'line': e.lineno
+        logger.exception("File '%s' has invalid JSON.", relative_path, extra={
+            "title": "Malformed Json",
+            "file": relative_path,
+            "line": e.lineno,
         })
 
+    return None
 
-def build_manifest(logger: StepLogger) -> Optional[dict]:
-    """
-    Build the manifest by gathering metadata for all modules and their features.
-    """
-    manifest = {'modules':[]}
+
+def build_manifest(logger: StepLogger) -> dict | None:
+    """Build the manifest by gathering metadata for all modules and their features."""
+    manifest: dict[str, list[dict]] = {"modules":[]}
     for module_dir in MODULES_DIR.iterdir():
-        if module_meta := get_module_meta(module_dir / 'module.json', logger):
+        if module_meta := get_module_meta(module_dir / "module.json", logger):
             module_dict = module_meta.model_dump(
                 exclude_defaults=True,
                 exclude_none=True,
             )
-            module_dict['features'] = []
-            for file_path in (module_dir / 'data') .rglob('*.json'):
+            module_dict["features"] = []
+            for file_path in (module_dir / "data") .rglob("*.json"):
                 if feature_meta := get_feature_meta(file_path, logger):
                     feature_dict = feature_meta.model_dump(
                         exclude_defaults=True,
                         exclude_none=True,
                     )
-                    module_dict['features'].append(feature_dict)
-            manifest['modules'].append(module_dict)
+                    module_dict["features"].append(feature_dict)
+            manifest["modules"].append(module_dict)
 
     return manifest if not logger.errors else None

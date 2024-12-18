@@ -1,33 +1,53 @@
-import click
+import shutil
 import subprocess
+
+import click
+
 from core.definitions import ROOT_DIR
-from typing import Optional
 
 
 @click.group()
-def docs():
-    """
-    Documentation-related commands.
-    """
-    pass
+def docs() -> None:
+    """Documentation-related commands."""
 
 
 @docs.command()
-@click.argument('output', required=False)
-def build(output: Optional[str] = None):
-    """
-    Build static HTML documentation.
-    """
-    subprocess.check_call(['sphinx-build', '.', output if output else '_build'], cwd=ROOT_DIR / 'docs')
+@click.argument("output", required=False)
+def build(output: str | None = None) -> None:
+    """Build static HTML documentation."""
+    sphinx = shutil.which("sphinx-build")
+    if not sphinx:
+        error_msg = (
+            "'sphinx-build' was not found. Please install "
+            "the documentation dependencies by running `pdm install -G docs`."
+        )
+        raise FileNotFoundError(error_msg)
+
+    subprocess.run(
+        [sphinx, ".", output if output else "_build"],
+        check=True,
+        cwd=ROOT_DIR / "docs",
+    )
 
 
 @docs.command()
-@click.argument('output', required=False)
-def watch(output: Optional[str] = None):
-    """
-    Build and serve live documentation.
-    """
+@click.argument("output", required=False)
+def watch(output: str | None = None) -> None:
+    """Build and serve live documentation."""
     try:
-        subprocess.check_call(['sphinx-autobuild', '.', output if output else '_build'], cwd=ROOT_DIR / 'docs')
+        sphinx = shutil.which("sphinx-autobuild")
+        if not sphinx:
+            error_msg = (
+                "'sphinx-autobuild' was not found. Please install "
+                "the documentation dependencies by running `pdm install -G docs`."
+            )
+            raise FileNotFoundError(error_msg)
+
+        subprocess.run(
+            [sphinx, ".", output if output else "_build"],
+            check=True,
+            cwd=ROOT_DIR / "docs",
+        )
+
     except KeyboardInterrupt:
-        click.echo('\nExiting sphinx-autobuild…')
+        click.echo("\nExiting sphinx-autobuild…")

@@ -8,7 +8,8 @@ To support automation by tools like the Bookshelf Manager, modules must declare 
 
 eature metadata are defined directly within each `.json` file, as shown below:
 
-```json
+```{code-block} json
+:force:
 {
   "__bookshelf__": {
     "feature": true,
@@ -47,7 +48,8 @@ eature metadata are defined directly within each `.json` file, as shown below:
 
 Module metadata are defined in `modules/<module>/module.json`. Below is an example:
 
-```json
+```{code-block} json
+:force:
 {
   ...
   "meta": {

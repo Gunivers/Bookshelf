@@ -48,13 +48,14 @@ setblock -30000000 0 1605 minecraft:repeating_command_block[facing=up]{auto:1b,C
 
 Global entities are summoned with specific UUIDs, ensuring they remain accessible and avoid selector conflicts. They must persist in always-loaded chunks (`-30000000 1600`) at the end of each tick. The UUID `B5-0-0-0-0` is reserved for temporary contextual entities that must not persist beyond the current tick.
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 # Marker for position, arithmetic, and various utilities
 execute unless entity B5-0-0-0-1 run summon minecraft:marker -30000000 0 1600 {UUID:[I;181,0,0,1],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"]}
 
 # Text display entity for interpreting text or computing transformations
-execute unless entity B5-0-0-0-2 run summon minecraft:text_display -30000000 0 1600 {UUID:[I;181,0,0,2],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],view_range:0f}
+execute unless entity B5-0-0-0-2 run summon minecraft:text_display -30000000 0 1600 {UUID:[I;181,0,0,2],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],view_range:0f,alignment:"center"}
 
 # Item display entity for manipulating loots or computing transformations
-execute unless entity B5-0-0-0-3 run summon minecraft:item_display -30000000 0 1600 {UUID:[I;181,0,0,3],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],view_range:0f}
+execute unless entity B5-0-0-0-3 run summon minecraft:item_display -30000000 0 1600 {UUID:[I;181,0,0,3],Tags:["bs.entity","bs.persistent","smithed.entity","smithed.strict"],view_range:0f,alignment:"center"}
 ```

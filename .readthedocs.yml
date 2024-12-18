@@ -6,7 +6,7 @@ build:
     python: "3.12"
   commands:
     - python -m pip install pdm
-    - pdm install
+    - pdm install -G docs
     - cat docs/conf.py
     - pdm run docs build $READTHEDOCS_OUTPUT/html
 

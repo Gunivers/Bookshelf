@@ -5,9 +5,11 @@ __pycache__/
 .env
 .ipynb_checkpoints
 .LSOverride
+.mypy_cache/
 .pdm-build/
 .pdm-python
 .pdm.toml
+.ruff_cache/
 .venv
 *.egg
 *.egg-info/

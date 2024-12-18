@@ -10,6 +10,6 @@
     "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/environment.html"
   },
   "pipeline": [
-    "generate"
+    "gen_biomes"
   ]
 }
