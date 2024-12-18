@@ -1,24 +1,22 @@
 import os
-import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "_exts/"))
+from sphinx_treeview import DecoratorType, imagesToDecoratorIcons
 
 # -- Project information -----------------------------------------------------
 
 project = "Bookshelf"
-copyright = "2024, Gunivers"
+copyright = "2024, Gunivers"  # noqa: A001
 author = "Gunivers"
 
 
 # -- General configuration ---------------------------------------------------
 
 extensions = [
-  "myst_parser",
-  "sphinx_design",
-  "sphinx_togglebutton",
-  "sphinx_copybutton",
-  "bs_treeview",
-  "bs_nbt",
+    "myst_parser",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_togglebutton",
+    "sphinx_treeview",
 ]
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
@@ -44,6 +42,19 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+# -- TreeView options  -------------------------------------------------------
+
+stv_disable_default_decorators = True
+stv_decorators = [
+    DecoratorType(
+        name="dir",
+        icons=imagesToDecoratorIcons("_static/icons/dir", "icons/dir"),
+    ),
+    DecoratorType(
+        name="nbt",
+        icons=imagesToDecoratorIcons("_static/icons/nbt", "icons/nbt"),
+    ),
+]
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -61,10 +72,10 @@ html_context = {
     "github_repo": "Bookshelf",
     "github_version": "master",
     "doc_path": "docs",
-    "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True"
+    "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True",
 }
 
-json_url = "https://bookshelf.docs.gunivers.net/en/master/_static/switcher.json"
+json_url = "https://docs.mcbookshelf.dev/en/master/_static/switcher.json"
 version_match = os.environ.get("READTHEDOCS_VERSION")
 
 if not version_match or version_match.isdigit():
@@ -93,13 +104,32 @@ html_theme_options = {
         "version_match": version_match,
     },
     "icon_links": [
-        # {"name": "Download", "url": "https://glib.gunivers.net/", "icon": "fa-solid fa-download"},
-        {"name": "GitHub", "url": "https://github.com/Gunivers/Bookshelf", "icon": "fa-brands fa-github"},
-        {"name": "Support us", "url": "https://www.helloasso.com/associations/altearn/formulaires/3/en", "icon": "fa-solid fa-heart"},
-        {"name": "Discord server", "url": "https://discord.gg/MkXytNjmBt", "icon": "fa-brands fa-discord"},
-        {"name": "Gunivers", "url": "https://gunivers.net", "icon": "_static/logo-gunivers.png", "type": "local"},
+        {
+            "name": "GitHub",
+            "url": "https://github.com/mcbookshelf/Bookshelf",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "Support us",
+            "url": "https://www.helloasso.com/associations/altearn/formulaires/3/en",
+            "icon": "fa-solid fa-heart",
+        },
+        {
+            "name": "Discord server",
+            "url": "https://discord.gg/MkXytNjmBt",
+            "icon": "fa-brands fa-discord",
+        },
+        {
+            "name": "Gunivers",
+            "url": "https://gunivers.net",
+            "icon": "_static/logo-gunivers.png",
+            "type": "local",
+        },
     ],
 }
 
 if version_match == "master":
-    html_theme_options["announcement"] = "⚠️ You are reading a doc of an undergoing development version. Information can be out of date and/or change at any time. ⚠️"
+    html_theme_options["announcement"] = (
+        "⚠️ You are reading a doc of an undergoing development version. "
+        "Information can be out of date and/or change at any time. ⚠️"
+    )

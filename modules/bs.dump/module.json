@@ -1,0 +1,12 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.dump",
+    "load": "."
+  },
+  "meta": {
+    "name": "Dump",
+    "description": "Dump the content of given variables to the chat.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/dump.html"
+  }
+}

@@ -473,7 +473,8 @@ data get storage bs:out block.block
 
 Swap related block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 data modify storage bs:const block.mapping_registry.bs.colors set value [ \
   { set: "wool", attrs: ["red"], type: "minecraft:red_wool" }, \
   { set: "wool", attrs: ["green"], type: "minecraft:green_wool" }, \
@@ -530,7 +531,8 @@ This function may sometimes behave unpredictably due to the arbitrary nature of 
 
 Mix block types while ensuring coherent replacements within the defined mapping registry. A mapping registry is defined as follows:
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 data modify storage bs:const block.mapping_registry.bs.colors set value [ \
   { set: "cube", attrs: ["stone"], type: "minecraft:stone" }, \
   { set: "cube", attrs: ["brick"], type: "minecraft:bricks" }, \
@@ -898,6 +900,7 @@ function #bs.block:emit_block_particle
 
 ---
 
+(custom-mapping-registry)=
 ## 🎓 Custom mapping registry
 
 This module allows you to create a personalized mapping registry tailored to your specific needs.
@@ -906,7 +909,8 @@ This module allows you to create a personalized mapping registry tailored to you
 
 To create a new registry, you need to define an array within the `bs:const block.mapping_registry` storage. Each new registry should be namespaced, and each element must include `set`, `attrs`, and `type`. Here’s how you can define a new mapping registry:
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 data modify storage bs:const block.mapping_registry.<namespace>.<name> [
   { set: "cube", attrs: ["oak"], type: "minecraft:oak_planks" }, \
   { set: "cube", attrs: ["spruce"], type: "minecraft:spruce_planks" }, \

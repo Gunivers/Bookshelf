@@ -86,7 +86,8 @@ Teleport an entity by its velocity scores, using the local reference frame, whil
 
 *Move a cube (block_display) by its velocity scores (uses an interaction as the hitbox):*
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 # Once
 summon minecraft:block_display ~ ~ ~ {block_state:{Name:"stone"},teleport_duration:3,transformation:[1f,0f,0f,-0.5f,0f,1f,0f,0f,0f,0f,1f,-0.5f,0f,0f,0f,1f],Passengers:[{id:"minecraft:interaction",width:1f,height:1f}]}
 scoreboard players set @e[type=minecraft:block_display] bs.vel.x 100

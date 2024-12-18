@@ -16,7 +16,7 @@ Construct coherent entity structures by linking entities' positions and rotation
 ```
 
 ```{important}
-This module limits the world size to 2,147,480 to prevent scoreboard overflow.
+This module uses scaled integers and can overflow when coordinates are higher than 2,000,000.
 ```
 
 ---

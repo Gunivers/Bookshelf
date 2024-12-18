@@ -1,0 +1,12 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.vector",
+    "load": "."
+  },
+  "meta": {
+    "name": "Vector",
+    "description": "Vectors are fundamental and incredibly powerful tools to manage motions, forces and… well… do physics!",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/vector.html"
+  }
+}

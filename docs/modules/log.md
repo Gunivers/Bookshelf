@@ -242,7 +242,8 @@ Will display the following message if the user has one of these tags: `bs.foo.lo
 Bookshelf proposes to define different log message format according to the namespace.
 To add new log message formats, you have to write directly inside the storage array `bs:const log.messages`:
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 {
   namespaces: ["<namespace>"],
   format: {
@@ -276,7 +277,8 @@ Bookshelf exposes several values that can be used directly in the log messages f
 
 A simple example to define custom log message formats for the namespace `bs.foo`:
 
-```mcfunction
+```{code-block} mcfunction
+:force:
 data modify storage bs:const log.messages append value { \
     namespaces: ["bs.foo"], \
     format: { \
