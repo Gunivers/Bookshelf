@@ -14,8 +14,7 @@ The documentation is written in Markdown, extended with Myst Parser. You can vie
 
 To verify that your documentation changes work as expected, you can build and view it locally on your computer.
 1. Open a terminal (or Powershell if you are on Windows).
-2. Install the documentation dependencies by running `pdm install -G docs`.
-3. Choose one of the following options to build and view the documentation:
+2. Choose one of the following options to build and view the documentation:
 
 ### Option 1: Build Documentation
 

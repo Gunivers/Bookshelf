@@ -15,12 +15,9 @@ def docs() -> None:
 @click.argument("output", required=False)
 def build(output: str | None = None) -> None:
     """Build static HTML documentation."""
-    sphinx = shutil.which("sphinx-build")
+    sphinx = shutil.which("sphinx-build", path=ROOT_DIR)
     if not sphinx:
-        error_msg = (
-            "'sphinx-build' was not found. Please install "
-            "the documentation dependencies by running `pdm install -G docs`."
-        )
+        error_msg = "The 'sphinx-build' command was not found."
         raise FileNotFoundError(error_msg)
 
     subprocess.run(
@@ -35,12 +32,9 @@ def build(output: str | None = None) -> None:
 def watch(output: str | None = None) -> None:
     """Build and serve live documentation."""
     try:
-        sphinx = shutil.which("sphinx-autobuild")
+        sphinx = shutil.which("sphinx-autobuild", path=ROOT_DIR)
         if not sphinx:
-            error_msg = (
-                "'sphinx-autobuild' was not found. Please install "
-                "the documentation dependencies by running `pdm install -G docs`."
-            )
+            error_msg = "The 'sphinx-autobuild' command was not found."
             raise FileNotFoundError(error_msg)
 
         subprocess.run(

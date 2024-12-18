@@ -1,5 +1,5 @@
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 from beet import Context, LootTable, Predicate
 from pydantic import BaseModel
@@ -82,7 +82,7 @@ def gen_can_snow_predicate(biomes: list[Biome], version: str) -> Predicate:
             "authors": ["Aksiome"],
             "created": {"date": "2024/04/22", "minecraft_version": "1.20.5"},
             "updated": {
-                "date": datetime.now(datetime.UTC).strftime("%Y/%m/%d"), # type: ignore[attr-defined]
+                "date": datetime.now(timezone.utc).strftime("%Y/%m/%d"),
                 "minecraft_version": version,
             },
         },
@@ -106,7 +106,7 @@ def gen_has_precipitation_predicate(biomes: list[Biome], version: str) -> Predic
             "authors": ["Aksiome"],
             "created": {"date": "2024/04/22", "minecraft_version": "1.20.5"},
             "updated": {
-                "date": datetime.now(datetime.UTC).strftime("%Y/%m/%d"), # type: ignore[attr-defined]
+                "date": datetime.now(timezone.utc).strftime("%Y/%m/%d"),
                 "minecraft_version": version,
             },
         },

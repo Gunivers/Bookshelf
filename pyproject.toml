@@ -9,6 +9,7 @@ description = "Scripts for Bookshelf and the Github pipeline."
 authors = [{ name = "Bookshelf Contributors", email = "contact@gunivers.net" }]
 dependencies = [
   "beet>=0.108.5",
+  "bookshelf[docs]",
   "click>=8.1.7",
   "colorama>=0.4.6",
   "pydantic>=2.9.2",
@@ -52,4 +53,4 @@ namespace-packages = ["core"]
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D100", "D203", "D213", "INP001", "S603"]
+ignore = ["D100", "D203", "D213", "INP001", "S603", "UP017"]

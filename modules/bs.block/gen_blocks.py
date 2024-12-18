@@ -1,6 +1,6 @@
 from bisect import insort
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timezone
 from itertools import chain, permutations
 
 import numpy as np
@@ -281,7 +281,7 @@ def gen_has_state_block_tag(blocks: list[Block], version: str) -> BlockTag:
             "authors": ["Aksiome"],
             "created": {"date": "2024/01/15", "minecraft_version": "1.20.5"},
             "updated": {
-                "date": datetime.now(datetime.UTC).strftime("%Y/%m/%d"), # type: ignore[attr-defined]
+                "date": datetime.now(timezone.utc).strftime("%Y/%m/%d"),
                 "minecraft_version": version,
             },
         },

@@ -1,5 +1,5 @@
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 from beet import BlockTag, Context, LootTable
 from pydantic import BaseModel
@@ -159,7 +159,7 @@ def gen_has_offset_block_tag(shapes: list[BlockShapes], version: str) -> BlockTa
             "authors": ["Aksiome"],
             "created": {"date": "2024/09/28", "minecraft_version": "1.21"},
             "updated": {
-                "date": datetime.now(datetime.UTC).strftime("%Y/%m/%d"), # type: ignore[attr-defined]
+                "date": datetime.now(timezone.utc).strftime("%Y/%m/%d"),
                 "minecraft_version": version,
             },
         },
@@ -176,7 +176,7 @@ def gen_is_composite_block_tag(shapes: list[BlockShapes], version: str) -> Block
             "authors": ["Aksiome"],
             "created": {"date": "2024/09/28", "minecraft_version": "1.21"},
             "updated": {
-                "date": datetime.now(datetime.UTC).strftime("%Y/%m/%d"), # type: ignore[attr-defined]
+                "date": datetime.now(timezone.utc).strftime("%Y/%m/%d"),
                 "minecraft_version": version,
             },
         },
