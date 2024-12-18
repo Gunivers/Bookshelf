@@ -84,7 +84,7 @@ class GithubFormatter(BaseFormatter):
         if record.step:
             return f"::group::{message}"
         if record.end_step:
-            return f"::endgroup::\n{message}"
+            return f"{message}\n::endgroup::"
 
         if annotation := self.ANNOTATIONS.get(record.levelno):
             return f"::{annotation} {",".join(filter(None, [
