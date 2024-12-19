@@ -38,6 +38,7 @@ def build(modules: tuple[str, ...]) -> None:
 def check() -> None:
     """Check modules for conventions."""
     success = check_headers()
+    success &= check_requirements()
     success &= check_modules()
     success &= check_features()
     sys.exit(not success)
@@ -191,5 +192,25 @@ def check_headers() -> bool:
                         "file": relative_path,
                     },
                 )
+
+    return not logger.errors
+
+
+def check_requirements() -> bool:
+    """Check that all modules have the required files."""
+    with log_step("⏳ Checking required module files…") as logger:
+        for module in MODULES_DIR.iterdir():
+            for file in [
+                module / "module.json",
+                module / f"data/{module.name}/function/__load__.mcfunction",
+                module / f"data/{module.name}/function/__unload__.mcfunction",
+            ]:
+                if not file.exists():
+                    logger.error(
+                        "File '%s' is missing from module '%s'.",
+                        file.name,
+                        module.name,
+                        extra={"title": "Missing required file", "file": file},
+                    )
 
     return not logger.errors
