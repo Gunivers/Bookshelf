@@ -1,0 +1,15 @@
+{
+  "extend": "../../module.json",
+  "data_pack": {
+    "name": "bs.view",
+    "load": "."
+  },
+  "meta": {
+    "name": "View",
+    "description": "Execute commands based on what an entity sees.",
+    "documentation": "https://docs.mcbookshelf.dev/en/latest/modules/view.html",
+    "dependencies": [
+      "bs.raycast"
+    ]
+  }
+}
