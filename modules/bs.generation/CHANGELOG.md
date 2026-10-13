@@ -2,17 +2,17 @@
 
 ## Unreleased
 
-- ⚠️ Inputs and outputs were completely reworked to follow new conventions
-- ⚠️ `#bs.generation:on_cuboid` and `#bs.generation:on_rectangle` have variants, such as `#bs.generation:on_cuboid/yzx` and `#bs.generation:on_rectangle/zy`: the `direction` argument is gone
-- ⚠️ `width`, `height` and `depth` are replaced by `size`, a list in the order of the function name
-- ⚠️ `spacing` is removed: positions are next to each other. A negative number in `size` goes the other way on its axis
-- ⚠️ `limit` is renamed to `batch`
-- ⚠️ The indexes of a position are the `bs.generation:i`, `bs.generation:j` and `bs.generation:k` integer providers, instead of scores
-- ✨ A command can start another generation without breaking the one that runs it: it starts at the next tick
-- ✨ Added `#bs.generation:on_cuboid_outline/*` and `#bs.generation:on_rectangle_outline/*` to run a command only on the outside of a cuboid, or on the edge of a rectangle
-- ✨ Added `#bs.generation:on_ellipsoid/*` and `#bs.generation:on_ellipse/*` to run a command inside an ellipsoid or an ellipse, such as a sphere or a disc
-- ✨ Added `#bs.generation:on_ellipsoid_outline/*` and `#bs.generation:on_ellipse_outline/*` to run a command only on the outside of an ellipsoid, or on the edge of an ellipse, such as a hollow sphere or a ring
-- ⚡ Positions run in blocks of up to 8, and a line that fits in the batch is counted once instead of position by position
+- ⚠️ Inputs and outputs were completely reworked to follow new conventions ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚠️ `#bs.generation:on_cuboid` and `#bs.generation:on_rectangle` have variants, such as `#bs.generation:on_cuboid/yzx` and `#bs.generation:on_rectangle/zy`: the `direction` argument is gone ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚠️ `width`, `height` and `depth` are replaced by `size`, a list in the order of the function name ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚠️ `spacing` is removed: positions are next to each other. A negative number in `size` goes the other way on its axis ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚠️ `limit` is renamed to `batch` ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚠️ The indexes of a position are the `bs.generation:i`, `bs.generation:j` and `bs.generation:k` integer providers, instead of scores ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ✨ A command can start another generation without breaking the one that runs it: it starts at the next tick ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ✨ Added `#bs.generation:on_cuboid_outline/*` and `#bs.generation:on_rectangle_outline/*` to run a command only on the outside of a cuboid, or on the edge of a rectangle ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ✨ Added `#bs.generation:on_ellipsoid/*` and `#bs.generation:on_ellipse/*` to run a command inside an ellipsoid or an ellipse, such as a sphere or a disc ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ✨ Added `#bs.generation:on_ellipsoid_outline/*` and `#bs.generation:on_ellipse_outline/*` to run a command only on the outside of an ellipsoid, or on the edge of an ellipse, such as a hollow sphere or a ring ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
+- ⚡ Positions run in blocks of up to 8, and a line that fits in the batch is counted once instead of position by position ([#602](https://github.com/mcbookshelf/bookshelf/pull/602))
 
 ## `v4.0.0`
 
