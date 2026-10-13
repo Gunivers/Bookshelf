@@ -13,4 +13,4 @@
 # For more details, refer to the MPL v2.0.
 # ------------------------------------------------------------------------------------------------------------
 
-$execute as @n[tag=bs.schedule.$(tag)] positioned $(x) $(y) $(z) rotated $(u) $(v) in $(dim) run $(run)
+$execute as @e[tag=bs.schedule.$(tag),limit=1] positioned $(x) $(y) $(z) rotated $(u) $(v) in $(dim) run $(run)
