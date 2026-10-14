@@ -1,0 +1,275 @@
+> Manipulate integers as sequences of bits.
+
+name: Position
+slug: bookshelf-position
+version: 5.0.0
+tags: runtime
+
+
+$scale = double > scaling
+
+feature function add_pos
+  > Add position scores to the entity’s coordinates.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_pos_x
+  > Add the x axis position score to the entity’s coordinates.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_pos_y
+  > Add the y axis position score to the entity’s coordinates.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_pos_z
+  > Add the z axis position score to the entity’s coordinates.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_rot
+  > Rotate an entity according to its scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_rot_h
+  > Rotate an entity according to its horizontal rotation score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function add_rot_v
+  > Rotate an entity according to its vertical rotation score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2024/01/22 1.20.4
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function canonical_to_local
+  > Convert a canonical position (using the relative reference frame) into a local position (using the local reference frame).
+  authors: "Aksiome"
+  contributors: "RacoonJohn"
+  created: 2023/10/20 1.20.2
+  updated: 2026/10/14 26.3
+
+  context rotation > Rotation used for the conversion.
+
+feature function get_distance_ata
+  > Compute the distance between the source entity and the execution position of the function.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn", "Triton365"
+  created: 2019/07/14 1.14.3
+  updated: 2026/10/14 26.3
+
+  context position > Position to get the distance from.
+  context executor > Entity positioned at the reference point.
+  input storage: $scale
+
+feature function get_distance_squared_ata
+  > Compute the squared distance between the source entity and the execution position of the function.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn
+  created: 2019/07/14 1.14.3
+  updated: 2026/10/14 26.3
+
+  context position > Position to get the distance from.
+  context executor > Entity positioned at the reference point.
+  input storage: $scale
+
+feature function get_pos
+  > Get the execution position of the function and store the coordinates in 3 scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_pos_x
+  > Get the execution x position of the function and store the coordinate in a score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_pos_y
+  > Get the execution y position of the function and store the coordinate in a score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_pos_z
+  > Get the execution z position of the function and store the coordinate in a score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_rot
+  > Get the execution rotation of the function and store it in 2 scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_rot_h
+  > Get the execution horizontal rotation of the function.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_rot_v
+  > Get the execution vertical rotation of the function.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+
+feature function get_relative_ata
+  > Get the execution position of the function relatively to the position of the executing entity.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2019/07/14 1.14.3
+  updated: 2026/10/14 26.3
+
+  context position > Position to get the relative position from.
+  context executor > Entity positioned at the reference point.
+  input storage: $scale
+
+feature function get_relative_from_dir
+  > Get a direction vector based on the execution position and rotation. Scale is used as the norm/length.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2023/10/20 1.20.2
+  updated: 2026/10/14 26.3
+
+  context position > Position to get the relative position from.
+  context rotation > Rotation to get the relative position from.
+  context executor > Entity to store the score to.
+  input storage: $scale
+
+feature function local_to_canonical
+  > Convert a local position (using the local reference frame) into a canonical position (using the relative reference frame).
+  authors: "Aksiome"
+  contributors: "RacoonJohn"
+  created: 2023/12/25 1.20.4
+  updated: 2026/10/14 26.3
+
+  context rotation > Rotation used for the conversion
+
+feature function set_pos
+  > Place an entity at coordinates given by scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_pos_x
+  > Place an entity at a precise x coordinate given by scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_pos_y
+  > Place an entity at a precise y coordinate given by scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_pos_z
+  > Place an entity at a precise z coordinate given by scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_rot
+  > Rotate an entity according to its scores.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_rot_h
+  > Rotate an entity according to its horizontal rotation score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
+
+feature function set_rot_v
+  > Rotate an entity according to its vertical rotation score.
+  authors: "Aksiome", "Leirof"
+  contributors: "RacoonJohn"
+  created: 2017/05/14 1.12
+  updated: 2026/10/14 26.3
+
+  input storage: $scale
+  output state
